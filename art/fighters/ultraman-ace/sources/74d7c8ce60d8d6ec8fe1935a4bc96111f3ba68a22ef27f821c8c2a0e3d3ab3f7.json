@@ -1,0 +1,783 @@
+{
+  "schema": "ace-installed-head-qa-v1",
+  "action": "chase_takeoff",
+  "frames": [
+    {
+      "frame": 0,
+      "image": "art/production/stage4/ultraman-ace/air/resume-headfit/chase_takeoff/runtime-snapshots/frame-0-11067a30b80d.png",
+      "image_sha256": "53252f1ff21f530e176c17fbe890e74c4a0e5fdfd84c36d5edafac90f0f4c954",
+      "source": "art/generation/stage4/ultraman-ace/air/chase_takeoff/sheet/01/raw.png",
+      "source_sha256": "b47651d4566a510fbcae1e9c2e410c8f88742328e409321f2ca8336d422a1803",
+      "request_source": "art/generation/stage4/ultraman-ace/air/chase_takeoff/sheet/01/raw.png",
+      "measurement_image": "art/generation/stage4/ultraman-ace/air/chase_takeoff/sheet/01/raw.png",
+      "measurement_sha256": "b47651d4566a510fbcae1e9c2e410c8f88742328e409321f2ca8336d422a1803",
+      "raw_points": {
+        "skull_top": [
+          381,
+          421
+        ],
+        "chin": [
+          418,
+          523
+        ],
+        "ear": [
+          368,
+          480
+        ],
+        "eye": [
+          408.2,
+          466.15
+        ],
+        "neck": [
+          370,
+          543
+        ],
+        "hip": [
+          281,
+          699
+        ],
+        "root": [
+          281,
+          919
+        ]
+      },
+      "native_points": {
+        "skull_top": [
+          153.69421487603307,
+          122.33567662565905
+        ],
+        "chin": [
+          163.0206611570248,
+          147.9701230228471
+        ],
+        "ear": [
+          150.41735537190084,
+          137.16344463971882
+        ],
+        "eye": [
+          160.55041322314048,
+          133.68268892794376
+        ],
+        "neck": [
+          150.92148760330576,
+          152.99648506151144
+        ],
+        "hip": [
+          128.48760330578511,
+          192.20210896309317
+        ],
+        "root": [
+          128.48760330578511,
+          247.49209138840072
+        ]
+      },
+      "cell_bounds": [
+        45,
+        356,
+        529,
+        925
+      ],
+      "scale": 0.2513763917903353,
+      "shared_source_scale": 0.2513763917903353,
+      "scale_readings": {
+        "head_long": 0.2478391099249513,
+        "body_torso": 0.22856383908724884
+      },
+      "scale_reading_difference": 0.0843321100777652,
+      "scale_policy": "整张原图头部长尺中位数共用比例",
+      "primary_head_ratio": 1.0142724926120623,
+      "independent_ear_eye_ratio": 1.0376854928862047,
+      "torso_ratio": 1.0998082321078722,
+      "straight_leg_ratios": {},
+      "standing_height": null,
+      "area": 7264,
+      "sqrt_area_ratio": 1.144659473487775,
+      "area_verdict": "需人工复核",
+      "components": [
+        7264
+      ],
+      "grid_pitch": [
+        1,
+        1
+      ],
+      "grid_phase": [
+        0,
+        0
+      ],
+      "offset": [
+        69,
+        106
+      ],
+      "raster_scale": [
+        0.25206611570247933,
+        0.2513181019332162
+      ],
+      "foot_anchor": [
+        128,
+        248
+      ],
+      "facing": "right",
+      "crest_qa": {
+        "mode": "side",
+        "pass_": false,
+        "review_required": true,
+        "disposition": "指挥目视通过；配准误配不拦",
+        "hard_rejection": false,
+        "iou": 0.7418,
+        "threshold": 0.7,
+        "alignment_shift": [
+          1,
+          1
+        ],
+        "eye_ear_transform": [
+          [
+            0.9874879696075274,
+            0.15769435589266684,
+            -74.60702990441217
+          ],
+          [
+            -0.15769435589266684,
+            0.9874879696075274,
+            -46.23551348120016
+          ]
+        ],
+        "expected_extent": {
+          "width": 44,
+          "height": 29,
+          "bounds": [
+            78,
+            38,
+            122,
+            67
+          ]
+        },
+        "actual_extent": {
+          "width": 48,
+          "height": 35,
+          "bounds": [
+            75,
+            35,
+            123,
+            70
+          ]
+        },
+        "length_ratio": 1.09091,
+        "height_ratio": 1.2069,
+        "transparent_hole_present": false,
+        "holes": [],
+        "issues": [
+          "前上角未找到定稿范围内的真透明小孔"
+        ],
+        "commander_decision": "指挥目视通过（2026-10-24）"
+      },
+      "mark_status": "高分原图25px头网格/50px全身网格人工标点；收腿不拆段，伸直后腿只用髋心→踝总长；头顶取冠下头盔圆顶；端点约3–5原图px误差；髋点原稿偏高，已保留marks-v1-endpoint-review.json；本稿按model02同定义修正，点位仍需指挥复核",
+      "head_tilted": false,
+      "face_hidden": false,
+      "head_oblique": false,
+      "grounded": true,
+      "inherited_measurements": "art/generation/stage4/ultraman-ace/air/chase_takeoff/sheet/01/processed/measurements.json",
+      "inherited_issues": [
+        "0:姿势待人工复核：髋点已按model02上腿根髋心复核；修正前读数作废，当前点位交指挥复核，不据旧长腿读数追加生成",
+        "0:头身独立读数矛盾0.0843",
+        "0:躯干1.0998超±8%",
+        "0:冠形需复核['前上角未找到定稿范围内的真透明小孔']"
+      ],
+      "commander_decision": "指挥目视通过（2026-10-24）",
+      "headfit_before": {
+        "scale": 1.13,
+        "rotation": 1.5,
+        "error": 0.1299464,
+        "center": [
+          151.6112,
+          127.0887
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 1.184572,
+        "grade": "只当辅助",
+        "character": "ultraman-ace",
+        "idle_median": 1.0125,
+        "relative_scale": 1.1160493827160494
+      },
+      "headfit": {
+        "scale": 1.13,
+        "rotation": 1.5,
+        "error": 0.1299464,
+        "center": [
+          151.6112,
+          127.0887
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 1.184572,
+        "grade": "只当辅助",
+        "character": "ultraman-ace",
+        "idle_median": 1.0125,
+        "relative_scale": 1.1160493827160494
+      },
+      "temporary": false,
+      "repair_notes": [],
+      "root_registration": {
+        "mode": "近脚脚底接地",
+        "ground_y": 248,
+        "simulation_anchor": [
+          128,
+          248
+        ]
+      },
+      "measurement_policy": "共用head_fit/idle中位数为主；历史躯干与手工头尺仅辅助；不可测按本轮指挥目视裁定",
+      "qc": {
+        "alpha_values": [
+          0,
+          255
+        ],
+        "colors": 31,
+        "components": [
+          7264
+        ],
+        "isolated_small": [],
+        "area": 7264
+      },
+      "pixel_sha256": "11067a30b80d4aad423f23ef0f50981d2c46cdda031ed6e05788e38d33cb81b7",
+      "hint": [
+        160.55041322314048,
+        133.68268892794376
+      ],
+      "runtime_record_source": "art/production/stage4/ultraman-ace/air/resume-headfit/chase_takeoff/frame-0.json",
+      "anchor": [
+        128,
+        248
+      ],
+      "commander_approved": true,
+      "commander_known_issue": "辅助档1.10–1.12，指挥知悉，目视可接受"
+    },
+    {
+      "frame": 1,
+      "image": "art/production/stage4/ultraman-ace/air/resume-headfit/chase_takeoff/runtime-snapshots/frame-1-c38fc0f767a4.png",
+      "image_sha256": "0e94ae9d8f1c772b7baf6be60462e77241205265d6902e134a9c0030c03d8cdd",
+      "source": "art/generation/stage4/ultraman-ace/air/chase_takeoff/sheet/01/raw.png",
+      "source_sha256": "b47651d4566a510fbcae1e9c2e410c8f88742328e409321f2ca8336d422a1803",
+      "request_source": "art/generation/stage4/ultraman-ace/air/chase_takeoff/sheet/01/raw.png",
+      "measurement_image": "art/generation/stage4/ultraman-ace/air/chase_takeoff/sheet/01/raw.png",
+      "measurement_sha256": "b47651d4566a510fbcae1e9c2e410c8f88742328e409321f2ca8336d422a1803",
+      "raw_points": {
+        "skull_top": [
+          796,
+          274
+        ],
+        "chin": [
+          831,
+          374
+        ],
+        "ear": [
+          785,
+          336
+        ],
+        "eye": [
+          823.4,
+          318.82
+        ],
+        "neck": [
+          789,
+          405
+        ],
+        "hip": [
+          745,
+          593
+        ],
+        "ankle_back": [
+          643,
+          885
+        ],
+        "root": [
+          738,
+          912
+        ]
+      },
+      "native_points": {
+        "skull_top": [
+          142.1465721040189,
+          87.86779184247538
+        ],
+        "chin": [
+          150.91725768321513,
+          113.0436005625879
+        ],
+        "ear": [
+          139.3900709219858,
+          103.47679324894514
+        ],
+        "eye": [
+          149.0127659574468,
+          99.15158931082982
+        ],
+        "neck": [
+          140.39243498817967,
+          120.84810126582279
+        ],
+        "hip": [
+          129.36643026004728,
+          168.17862165963433
+        ],
+        "ankle_back": [
+          103.80614657210401,
+          241.69198312236287
+        ],
+        "root": [
+          127.61229314420802,
+          248.48945147679325
+        ]
+      },
+      "cell_bounds": [
+        548,
+        207,
+        971,
+        918
+      ],
+      "scale": 0.2513763917903353,
+      "shared_source_scale": 0.2513763917903353,
+      "scale_readings": {
+        "head_long": 0.2538167260438112,
+        "body_torso": 0.21260895719415152
+      },
+      "scale_reading_difference": 0.1938195332571495,
+      "scale_policy": "整张原图头部长尺中位数共用比例",
+      "primary_head_ratio": 0.9903854474387369,
+      "independent_ear_eye_ratio": 1.026678326387083,
+      "torso_ratio": 1.1823414926059859,
+      "straight_leg_ratios": {
+        "back": 1.1699424230717004
+      },
+      "standing_height": null,
+      "area": 7231,
+      "sqrt_area_ratio": 1.1420564475072716,
+      "area_verdict": "需人工复核",
+      "components": [
+        7231
+      ],
+      "grid_pitch": [
+        1,
+        1
+      ],
+      "grid_phase": [
+        0,
+        0
+      ],
+      "offset": [
+        80,
+        71
+      ],
+      "raster_scale": [
+        0.25059101654846333,
+        0.2517580872011252
+      ],
+      "foot_anchor": [
+        128,
+        248
+      ],
+      "facing": "right",
+      "crest_qa": {
+        "mode": "side",
+        "pass_": false,
+        "review_required": true,
+        "disposition": "指挥目视通过；配准误配不拦",
+        "hard_rejection": false,
+        "iou": 0.73706,
+        "threshold": 0.7,
+        "alignment_shift": [
+          1,
+          1
+        ],
+        "eye_ear_transform": [
+          [
+            0.9977689548656549,
+            0.06676161102234345,
+            -50.429162803204804
+          ],
+          [
+            -0.06676161102234345,
+            0.9977689548656549,
+            -28.448256157578967
+          ]
+        ],
+        "expected_extent": {
+          "width": 44,
+          "height": 29,
+          "bounds": [
+            78,
+            38,
+            122,
+            67
+          ]
+        },
+        "actual_extent": {
+          "width": 49,
+          "height": 35,
+          "bounds": [
+            75,
+            35,
+            124,
+            70
+          ]
+        },
+        "length_ratio": 1.11364,
+        "height_ratio": 1.2069,
+        "transparent_hole_present": false,
+        "holes": [],
+        "issues": [
+          "前上角未找到定稿范围内的真透明小孔"
+        ],
+        "commander_decision": "指挥目视通过（2026-10-24）"
+      },
+      "mark_status": "高分原图25px头网格/50px全身网格人工标点；收腿不拆段，伸直后腿只用髋心→踝总长；头顶取冠下头盔圆顶；端点约3–5原图px误差；髋点原稿偏高，已保留marks-v1-endpoint-review.json；本稿按model02同定义修正，点位仍需指挥复核",
+      "head_tilted": false,
+      "face_hidden": false,
+      "head_oblique": false,
+      "grounded": false,
+      "inherited_measurements": "art/generation/stage4/ultraman-ace/air/chase_takeoff/sheet/01/processed/measurements.json",
+      "inherited_issues": [
+        "1:姿势待人工复核：髋点已按model02上腿根髋心复核；修正前读数作废，当前点位交指挥复核，不据旧长腿读数追加生成",
+        "1:头身独立读数矛盾0.1938",
+        "1:躯干1.1823超±8%",
+        "1:伸直back腿1.1699超±8%",
+        "1:冠形需复核['前上角未找到定稿范围内的真透明小孔']"
+      ],
+      "commander_decision": "指挥目视通过（2026-10-24）",
+      "headfit_before": {
+        "scale": 1.1375,
+        "rotation": 4.0,
+        "error": 0.1317386,
+        "center": [
+          140.3458,
+          92.738
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 1.503355,
+        "grade": "只当辅助",
+        "character": "ultraman-ace",
+        "idle_median": 1.0125,
+        "relative_scale": 1.123456790123457
+      },
+      "headfit": {
+        "scale": 1.1375,
+        "rotation": 4.0,
+        "error": 0.1317386,
+        "center": [
+          140.3458,
+          92.738
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 1.503355,
+        "grade": "只当辅助",
+        "character": "ultraman-ace",
+        "idle_median": 1.0125,
+        "relative_scale": 1.123456790123457
+      },
+      "temporary": false,
+      "repair_notes": [],
+      "root_registration": {
+        "mode": "近脚脚底接地",
+        "ground_y": 248,
+        "simulation_anchor": [
+          128,
+          248
+        ]
+      },
+      "measurement_policy": "共用head_fit/idle中位数为主；历史躯干与手工头尺仅辅助；不可测按本轮指挥目视裁定",
+      "qc": {
+        "alpha_values": [
+          0,
+          255
+        ],
+        "colors": 31,
+        "components": [
+          7231
+        ],
+        "isolated_small": [],
+        "area": 7231
+      },
+      "pixel_sha256": "c38fc0f767a46c984ee8e31f968cde34f2c4a823aeda4ab6870898f5ec106215",
+      "hint": [
+        149.0127659574468,
+        99.15158931082982
+      ],
+      "runtime_record_source": "art/production/stage4/ultraman-ace/air/resume-headfit/chase_takeoff/frame-1.json",
+      "anchor": [
+        128,
+        248
+      ],
+      "commander_approved": true,
+      "commander_known_issue": "辅助档1.10–1.12，指挥知悉，目视可接受"
+    },
+    {
+      "frame": 2,
+      "image": "art/production/stage4/ultraman-ace/air/resume-headfit/chase_takeoff/runtime-snapshots/frame-2-85f7abdbc09a.png",
+      "image_sha256": "89e432445b7ddae13dbb13794d2d6a8f0908c819e1f808f762f8d6e3b4eadba8",
+      "source": "art/generation/stage4/ultraman-ace/air/chase_takeoff/sheet/01/raw.png",
+      "source_sha256": "b47651d4566a510fbcae1e9c2e410c8f88742328e409321f2ca8336d422a1803",
+      "request_source": "art/generation/stage4/ultraman-ace/air/chase_takeoff/sheet/01/raw.png",
+      "measurement_image": "art/generation/stage4/ultraman-ace/air/chase_takeoff/sheet/01/raw.png",
+      "measurement_sha256": "b47651d4566a510fbcae1e9c2e410c8f88742328e409321f2ca8336d422a1803",
+      "raw_points": {
+        "skull_top": [
+          1287,
+          174
+        ],
+        "chin": [
+          1325,
+          274
+        ],
+        "ear": [
+          1279,
+          230
+        ],
+        "eye": [
+          1314.64,
+          212.68
+        ],
+        "neck": [
+          1281,
+          309
+        ],
+        "hip": [
+          1232,
+          490
+        ],
+        "ankle_back": [
+          1102,
+          780
+        ],
+        "root": [
+          1223,
+          813
+        ]
+      },
+      "native_points": {
+        "skull_top": [
+          144.26106194690266,
+          88.07152875175316
+        ],
+        "chin": [
+          153.84513274336285,
+          113.17671809256663
+        ],
+        "ear": [
+          142.2433628318584,
+          102.1304347826087
+        ],
+        "eye": [
+          151.23221238938055,
+          97.78221598877981
+        ],
+        "neck": [
+          142.74778761061947,
+          121.96353436185134
+        ],
+        "hip": [
+          130.38938053097345,
+          167.4039270687237
+        ],
+        "ankle_back": [
+          97.60176991150442,
+          240.20897615708276
+        ],
+        "root": [
+          128.11946902654867,
+          248.4936886395512
+        ]
+      },
+      "cell_bounds": [
+        1056,
+        106,
+        1508,
+        819
+      ],
+      "scale": 0.2513763917903353,
+      "shared_source_scale": 0.2513763917903353,
+      "scale_readings": {
+        "head_long": 0.2513763917903353,
+        "body_torso": 0.21891863138610523
+      },
+      "scale_reading_difference": 0.14826403855496673,
+      "scale_policy": "整张原图头部长尺中位数共用比例",
+      "primary_head_ratio": 1.0,
+      "independent_ear_eye_ratio": 0.9670733761683611,
+      "torso_ratio": 1.1482640385549665,
+      "straight_leg_ratios": {
+        "back": 1.2021034085632072
+      },
+      "standing_height": null,
+      "area": 7293,
+      "sqrt_area_ratio": 1.1469421042390022,
+      "area_verdict": "需人工复核",
+      "components": [
+        7293
+      ],
+      "grid_pitch": [
+        1,
+        1
+      ],
+      "grid_phase": [
+        0,
+        0
+      ],
+      "offset": [
+        86,
+        71
+      ],
+      "raster_scale": [
+        0.252212389380531,
+        0.25105189340813466
+      ],
+      "foot_anchor": [
+        128,
+        248
+      ],
+      "facing": "right",
+      "crest_qa": {
+        "mode": "side",
+        "pass_": false,
+        "review_required": true,
+        "disposition": "指挥目视通过；配准误配不拦",
+        "hard_rejection": false,
+        "iou": 0.8068,
+        "threshold": 0.7,
+        "alignment_shift": [
+          1,
+          1
+        ],
+        "eye_ear_transform": [
+          [
+            0.9992519700903579,
+            0.03867169857322351,
+            -50.528317931077424
+          ],
+          [
+            -0.03867169857322351,
+            0.9992519700903579,
+            -31.061475711231267
+          ]
+        ],
+        "expected_extent": {
+          "width": 44,
+          "height": 29,
+          "bounds": [
+            78,
+            38,
+            122,
+            67
+          ]
+        },
+        "actual_extent": {
+          "width": 47,
+          "height": 33,
+          "bounds": [
+            76,
+            37,
+            123,
+            70
+          ]
+        },
+        "length_ratio": 1.06818,
+        "height_ratio": 1.13793,
+        "transparent_hole_present": false,
+        "holes": [],
+        "issues": [
+          "前上角未找到定稿范围内的真透明小孔"
+        ],
+        "commander_decision": "指挥目视通过（2026-10-24）"
+      },
+      "mark_status": "高分原图25px头网格/50px全身网格人工标点；收腿不拆段，伸直后腿只用髋心→踝总长；头顶取冠下头盔圆顶；端点约3–5原图px误差；髋点原稿偏高，已保留marks-v1-endpoint-review.json；本稿按model02同定义修正，点位仍需指挥复核",
+      "head_tilted": false,
+      "face_hidden": false,
+      "head_oblique": false,
+      "grounded": false,
+      "inherited_measurements": "art/generation/stage4/ultraman-ace/air/chase_takeoff/sheet/01/processed/measurements.json",
+      "inherited_issues": [
+        "2:姿势待人工复核：髋点已按model02上腿根髋心复核；修正前读数作废，当前点位交指挥复核，不据旧长腿读数追加生成",
+        "2:头身独立读数矛盾0.1483",
+        "2:躯干1.1483超±8%",
+        "2:伸直back腿1.2021超±8%",
+        "2:冠形需复核['前上角未找到定稿范围内的真透明小孔']"
+      ],
+      "commander_decision": "指挥目视通过（2026-10-24）",
+      "headfit_before": {
+        "scale": 1.115,
+        "rotation": 2.5,
+        "error": 0.1305616,
+        "center": [
+          142.1582,
+          91.8959
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.835579,
+        "grade": "只当辅助",
+        "character": "ultraman-ace",
+        "idle_median": 1.0125,
+        "relative_scale": 1.1012345679012345
+      },
+      "headfit": {
+        "scale": 1.115,
+        "rotation": 2.5,
+        "error": 0.1305616,
+        "center": [
+          142.1582,
+          91.8959
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.835579,
+        "grade": "只当辅助",
+        "character": "ultraman-ace",
+        "idle_median": 1.0125,
+        "relative_scale": 1.1012345679012345
+      },
+      "temporary": false,
+      "repair_notes": [],
+      "root_registration": {
+        "mode": "近脚脚底接地",
+        "ground_y": 248,
+        "simulation_anchor": [
+          128,
+          248
+        ]
+      },
+      "measurement_policy": "共用head_fit/idle中位数为主；历史躯干与手工头尺仅辅助；不可测按本轮指挥目视裁定",
+      "qc": {
+        "alpha_values": [
+          0,
+          255
+        ],
+        "colors": 29,
+        "components": [
+          7293
+        ],
+        "isolated_small": [],
+        "area": 7293
+      },
+      "pixel_sha256": "85f7abdbc09a1f050fc6774f630941d5c90f4845a76d753b84e89160e58017c3",
+      "hint": [
+        151.23221238938055,
+        97.78221598877981
+      ],
+      "runtime_record_source": "art/production/stage4/ultraman-ace/air/resume-headfit/chase_takeoff/frame-2.json",
+      "anchor": [
+        128,
+        248
+      ],
+      "commander_approved": true,
+      "commander_known_issue": "辅助档1.10–1.12，指挥知悉，目视可接受"
+    }
+  ],
+  "atlas": "res://assets/fighters/ultraman-ace/animations/chase_takeoff/atlas.png",
+  "atlas_sha256": "c4d4d5664b99198c086043d484e9919de99ac8c91dda9a909e9cb7dd39dcb37f",
+  "ticks": [
+    1,
+    1,
+    1
+  ],
+  "policy": "与现装图集逐像素一致；只有安装/替换时更新。候选measurements不作为现装资源检查输入。"
+}

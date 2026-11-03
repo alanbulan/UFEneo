@@ -1,0 +1,233 @@
+{
+  "gomora_back_lift_capture_contact": {
+    "id": "gomora_back_lift_capture_contact",
+    "atlas_candidate": "art/fighters/gomora/stage4/super3-back-lift-pixelfx-v2/bake-a/gomora_back_lift_capture_contact/atlas.png",
+    "runtime_texture": null,
+    "rects": [
+      [
+        0,
+        0,
+        40,
+        36
+      ],
+      [
+        40,
+        0,
+        40,
+        36
+      ],
+      [
+        80,
+        0,
+        40,
+        36
+      ],
+      [
+        120,
+        0,
+        40,
+        36
+      ],
+      [
+        0,
+        36,
+        40,
+        36
+      ]
+    ],
+    "cell": [
+      40,
+      36
+    ],
+    "anchor": [
+      20,
+      18
+    ],
+    "anchor_space": "FX自身独立根，尚未挂实际本人/受方世界点",
+    "ticks": 1,
+    "loop": false,
+    "visual_scale": 1,
+    "display_scale": [
+      1,
+      1
+    ],
+    "source_kind": "pixelfx_code_baked",
+    "license": "MIT",
+    "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+    "installed": false,
+    "collision": false,
+    "trigger_contract": {
+      "event": "hit",
+      "move": "special3",
+      "move_kind": "throw",
+      "capture_confirmed": true,
+      "once": true,
+      "whiff": false
+    },
+    "layer_recommendation": "capture contact",
+    "attachment_status": "pending actual actor-victim geometry"
+  },
+  "gomora_back_lift_release_dust": {
+    "id": "gomora_back_lift_release_dust",
+    "atlas_candidate": "art/fighters/gomora/stage4/super3-back-lift-pixelfx-v2/bake-a/gomora_back_lift_release_dust/atlas.png",
+    "runtime_texture": null,
+    "rects": [
+      [
+        0,
+        0,
+        96,
+        64
+      ],
+      [
+        96,
+        0,
+        96,
+        64
+      ],
+      [
+        192,
+        0,
+        96,
+        64
+      ],
+      [
+        288,
+        0,
+        96,
+        64
+      ],
+      [
+        0,
+        64,
+        96,
+        64
+      ],
+      [
+        96,
+        64,
+        96,
+        64
+      ],
+      [
+        192,
+        64,
+        96,
+        64
+      ]
+    ],
+    "cell": [
+      96,
+      64
+    ],
+    "anchor": [
+      72,
+      46
+    ],
+    "anchor_space": "FX自身独立根，尚未挂实际本人/受方世界点",
+    "ticks": 2,
+    "loop": false,
+    "visual_scale": 1,
+    "display_scale": [
+      1,
+      1
+    ],
+    "source_kind": "pixelfx_code_baked",
+    "license": "MIT",
+    "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+    "installed": false,
+    "collision": false,
+    "trigger_contract": {
+      "transition": "captured successful victim motion.throw_released false->true",
+      "once": true,
+      "whiff": false,
+      "existing_named_event": false
+    },
+    "layer_recommendation": "behind actor and victim",
+    "attachment_status": "pending actual actor-victim geometry"
+  },
+  "gomora_back_lift_landing_dust": {
+    "id": "gomora_back_lift_landing_dust",
+    "atlas_candidate": "art/fighters/gomora/stage4/super3-back-lift-pixelfx-v2/bake-a/gomora_back_lift_landing_dust/atlas.png",
+    "runtime_texture": null,
+    "rects": [
+      [
+        0,
+        0,
+        128,
+        64
+      ],
+      [
+        128,
+        0,
+        128,
+        64
+      ],
+      [
+        256,
+        0,
+        128,
+        64
+      ],
+      [
+        384,
+        0,
+        128,
+        64
+      ],
+      [
+        0,
+        64,
+        128,
+        64
+      ],
+      [
+        128,
+        64,
+        128,
+        64
+      ],
+      [
+        256,
+        64,
+        128,
+        64
+      ],
+      [
+        384,
+        64,
+        128,
+        64
+      ]
+    ],
+    "cell": [
+      128,
+      64
+    ],
+    "anchor": [
+      64,
+      48
+    ],
+    "anchor_space": "FX自身独立根，尚未挂实际本人/受方世界点",
+    "ticks": 2,
+    "loop": false,
+    "visual_scale": 1,
+    "display_scale": [
+      1,
+      1
+    ],
+    "source_kind": "pixelfx_code_baked",
+    "license": "MIT",
+    "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+    "installed": false,
+    "collision": false,
+    "trigger_contract": {
+      "event": "throw_slam",
+      "move": "special3",
+      "once": true,
+      "whiff": false,
+      "not_capture_hit": true
+    },
+    "layer_recommendation": "volume behind victim; origin at actual ground contact",
+    "attachment_status": "pending actual actor-victim geometry"
+  }
+}

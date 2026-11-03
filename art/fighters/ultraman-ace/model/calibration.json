@@ -1,0 +1,184 @@
+{
+  "status": "已在已审角色校准，供指挥复核人工标点",
+  "method": "二维欧氏标志点距离；不受图像平面内头部转动影响。新规则只作为本阶段诊断，不批量拒收旧帧。",
+  "standing_target_from_seven": 135,
+  "records": [
+    {
+      "fighter": "ultraseven",
+      "source": "art/generation/stage4-pilot/ultraseven/model/05/raw.png",
+      "source_sha256": "92130406c5d7c20c31a73e101d8602f0b95f4b2f9b7f98efe1828b0b31e72bf2",
+      "native_reference": "assets/fighters/ultraseven/model-native.png",
+      "native_sha256": "289087585112913c6e6ba5653523c93e5aa8384b699246e72ec3aa60dc4f0736",
+      "source_points": {
+        "skull_top": [
+          636,
+          354
+        ],
+        "chin": [
+          681,
+          511
+        ],
+        "ear": [
+          606,
+          427
+        ],
+        "eye": [
+          683,
+          438
+        ]
+      },
+      "native_points": {
+        "skull_top": [
+          97.0,
+          48.833333333333336
+        ],
+        "chin": [
+          104.5,
+          74.99999999999999
+        ],
+        "ear": [
+          92.0,
+          60.99999999999999
+        ],
+        "eye": [
+          104.83333333333333,
+          62.833333333333336
+        ]
+      },
+      "source_to_native_scale": 0.16666666666666666,
+      "source_to_native_translation": [
+        -9.0,
+        -10.166666666666666
+      ],
+      "skull_standing_height": 135.1667,
+      "ornament_standing_height": 143,
+      "head_metrics": {
+        "skull_top_to_chin": {
+          "source_px": 163.3218,
+          "native_px": 27.2203,
+          "source_points": [
+            [
+              636,
+              354
+            ],
+            [
+              681,
+              511
+            ]
+          ]
+        },
+        "ear_to_eye": {
+          "source_px": 77.7817,
+          "native_px": 12.9636,
+          "source_points": [
+            [
+              606,
+              427
+            ],
+            [
+              683,
+              438
+            ]
+          ]
+        }
+      },
+      "method": "原1254×1254 GPT图；使用已审qa的6倍登记，raw=6×native+[54,61]。头骨顶取头镖下方固定头盔上缘，不用旧额灯平面裁切门的55。",
+      "uncertainty_native_px": 0.6,
+      "verdict": "量法校准可用：固定顶点/下巴、耳心/眼心测欧氏距离，头倾斜不改变长度；不拿含饰外框作头部标尺。"
+    },
+    {
+      "fighter": "ultraman",
+      "source": "art/model_sheets/ultraman/model.png",
+      "source_sha256": "a4c904cab24569d014a2508a04c2fa91db2e6c876d1a0209fec58b7e3f22f0e7",
+      "native_reference": "assets/fighters/ultraman/model-native.png",
+      "native_sha256": "cd76aea1686c18390a7324ea68368daef15796e8d6ab03671eb03df3301e3d44",
+      "source_points": {
+        "skull_top": [
+          192,
+          27
+        ],
+        "chin": [
+          204,
+          86
+        ],
+        "ear": [
+          175,
+          58
+        ],
+        "eye": [
+          198,
+          60
+        ]
+      },
+      "native_points": {
+        "skull_top": [
+          96.72093023255815,
+          47.95348837209303
+        ],
+        "chin": [
+          101.74418604651163,
+          72.65116279069767
+        ],
+        "ear": [
+          89.6046511627907,
+          60.93023255813954
+        ],
+        "eye": [
+          99.23255813953489,
+          61.76744186046512
+        ]
+      },
+      "source_to_native_scale": 0.4186046511627907,
+      "source_to_native_translation": [
+        16.348837209302324,
+        36.651162790697676
+      ],
+      "skull_standing_height": 136.0465,
+      "ornament_standing_height": 144,
+      "head_metrics": {
+        "skull_top_to_chin": {
+          "source_px": 60.208,
+          "native_px": 25.2033,
+          "source_points": [
+            [
+              192,
+              27
+            ],
+            [
+              204,
+              86
+            ]
+          ]
+        },
+        "ear_to_eye": {
+          "source_px": 23.0868,
+          "native_px": 9.6642,
+          "source_points": [
+            [
+              175,
+              58
+            ],
+            [
+              198,
+              60
+            ]
+          ]
+        }
+      },
+      "method": "原始384×384已审像素源，原网格2px；没有另存GPT高分辨率原图。按native_models的源裁框(78,8,304,352)还原到144px后登记。",
+      "uncertainty_native_px": 0.9,
+      "verdict": "量法校准可用：固定顶点/下巴、耳心/眼心测欧氏距离，头倾斜不改变长度；不拿含饰外框作头部标尺。"
+    }
+  ],
+  "ace_crest_revision": {
+    "source": "art/generation/stage4/ultraman-ace/model/05/raw.png",
+    "scale": 0.13366336633663367,
+    "model02_head_metrics_preserved": true,
+    "model02_bones_preserved": true,
+    "head_ratios": {
+      "skull_top_to_chin": 0.9447195655326404,
+      "ear_to_eye": 1.0740295721575348
+    },
+    "commander_approved": true
+  }
+}

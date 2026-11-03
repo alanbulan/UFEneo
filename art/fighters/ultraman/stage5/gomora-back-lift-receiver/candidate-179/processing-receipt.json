@@ -1,0 +1,876 @@
+{
+  "authorization": {
+    "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/authorization-source.json",
+    "sha256": "5731b1e397f7911439ebaf6f6651318d35a1dfbb842b53fe8d0fe4da5b414f6d",
+    "bytes": 1121
+  },
+  "tool": {
+    "path": "tools/rebuild/gomora/ultraman_receiver_179_unregistered_20261102_v1/process.py",
+    "sha256": "d553364d590884375542fc6d527c6c7eb47de0da0614ccc861cfa47a9d60ba1e",
+    "bytes": 13074
+  },
+  "accepted_scale_proposal": {
+    "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-scale-proposal-v1/measurement-v2/common-scale-proposal.json",
+    "sha256": "23891ed2db3dbfbbd544315fd8537f3737f1814df263084a396833e411ae0e64",
+    "bytes": 3466
+  },
+  "source_verification_tool": {
+    "path": "tools/rebuild/gomora/ultraman_receiver_scale_proposal_20261102_v1/proposal.py",
+    "sha256": "6fb912558b3689a464de25be0a898c0fdd847f1e350f623a6221a2c31c114749",
+    "bytes": 18861
+  },
+  "backend_wrapper": {
+    "path": "tools/rebuild/shared/forge_backend.py",
+    "sha256": "ff0f7d95bafd94bb9a546bfdf934fb6326297322d4540f2cf7d7327814e7b96b",
+    "bytes": 16324
+  },
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "rgb",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "art_source": "existing",
+  "image_generation_route_invoked": false,
+  "common_source_size": [
+    1024,
+    1024
+  ],
+  "common_output_size": [
+    179,
+    179
+  ],
+  "common_scale": 0.1748046875,
+  "pixel_processing_order": [
+    "完整源副本经forge_backend.binarize_alpha阈值128，原件不动",
+    "forge_backend._kcentroid_downscale完整1024方→179方，detail_bias=False",
+    "forge_backend.binarize_alpha复核最终二值Alpha128"
+  ],
+  "resampler_disclosure": "项目forge_backend中公开声明的RGB Lloyd三轮kCentroid兼容补充算法，不冒称forge原生缩放器。",
+  "resampling_block_edges_x_and_y": [
+    0,
+    5,
+    11,
+    17,
+    22,
+    28,
+    34,
+    40,
+    45,
+    51,
+    57,
+    62,
+    68,
+    74,
+    80,
+    85,
+    91,
+    97,
+    102,
+    108,
+    114,
+    120,
+    125,
+    131,
+    137,
+    143,
+    148,
+    154,
+    160,
+    165,
+    171,
+    177,
+    183,
+    188,
+    194,
+    200,
+    205,
+    211,
+    217,
+    223,
+    228,
+    234,
+    240,
+    245,
+    251,
+    257,
+    263,
+    268,
+    274,
+    280,
+    286,
+    291,
+    297,
+    303,
+    308,
+    314,
+    320,
+    326,
+    331,
+    337,
+    343,
+    348,
+    354,
+    360,
+    366,
+    371,
+    377,
+    383,
+    389,
+    394,
+    400,
+    406,
+    411,
+    417,
+    423,
+    429,
+    434,
+    440,
+    446,
+    451,
+    457,
+    463,
+    469,
+    474,
+    480,
+    486,
+    491,
+    497,
+    503,
+    509,
+    514,
+    520,
+    526,
+    532,
+    537,
+    543,
+    549,
+    554,
+    560,
+    566,
+    572,
+    577,
+    583,
+    589,
+    594,
+    600,
+    606,
+    612,
+    617,
+    623,
+    629,
+    634,
+    640,
+    646,
+    652,
+    657,
+    663,
+    669,
+    675,
+    680,
+    686,
+    692,
+    697,
+    703,
+    709,
+    715,
+    720,
+    726,
+    732,
+    737,
+    743,
+    749,
+    755,
+    760,
+    766,
+    772,
+    778,
+    783,
+    789,
+    795,
+    800,
+    806,
+    812,
+    818,
+    823,
+    829,
+    835,
+    840,
+    846,
+    852,
+    858,
+    863,
+    869,
+    875,
+    880,
+    886,
+    892,
+    898,
+    903,
+    909,
+    915,
+    921,
+    926,
+    932,
+    938,
+    943,
+    949,
+    955,
+    961,
+    966,
+    972,
+    978,
+    983,
+    989,
+    995,
+    1001,
+    1006,
+    1012,
+    1018,
+    1024
+  ],
+  "source_edge_formula": "edge[i]=floor(i*1024/179), i=0..179",
+  "source_block_coverage_rule": "每格Alpha128可见样本达到半数才输出；属于统一整图采样，不是组件筛选或删散点。",
+  "palette_mode": "rgb",
+  "shared_palette_learning_or_recoloring": false,
+  "alpha_threshold": 128,
+  "source_alpha_threshold_removal_disclosed_per_phase": true,
+  "outputs": [
+    {
+      "phase": 0,
+      "candidate": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/unregistered179/00.png",
+        "sha256": "419deac1c3ac5133a36f49266b66d7dc816ec9cf2d517812f3c036f3501ca63c",
+        "bytes": 11530
+      },
+      "source": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-00/request-001/candidate.png",
+        "sha256": "e0a3083268cc2a48005a2c529434c147393c3dcb925699724728dd1124d938b9",
+        "bytes": 303204
+      },
+      "source_provider": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-00/request-001/candidate.provider.png",
+        "sha256": "f0048cf52992408bb5abe293e929293a745a0df1b27f9e438578894e80c79c58",
+        "bytes": 804536
+      },
+      "source_metadata": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-00/request-001/candidate.metadata.json",
+        "sha256": "40968d857aa99cacfa1ac190c8c945b03c436c790bd6bb939ff68183bbd8fc20",
+        "bytes": 3171
+      },
+      "root_source_review": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-00/request-001/root-source-review.json",
+        "sha256": "c0632c7970a18729dfc703d903a29b3fa7fca96e534e256da2be24cd6f59d646",
+        "bytes": 2252
+      },
+      "source_dimensions": [
+        1024,
+        1024
+      ],
+      "candidate_dimensions": [
+        179,
+        179
+      ],
+      "source_alpha_extrema": [
+        0,
+        254
+      ],
+      "source_nonzero_alpha_pixels": 159797,
+      "source_pixels_at_or_above_alpha128": 126630,
+      "source_nonzero_below_threshold_pixels": 33167,
+      "binary_stage_exact_alpha128_and_visible_rgb_preserved": true,
+      "candidate_alpha_values": [
+        0,
+        255
+      ],
+      "candidate_opaque_pixels": 3898,
+      "final_binary_stage_pixel_changes": 0,
+      "all_candidate_borders_transparent": true,
+      "full_source_canvas_sampled": true,
+      "source_crop": null,
+      "component_filter": null,
+      "per_phase_scale": null,
+      "limb_transforms": null,
+      "runtime_root": null,
+      "runtime_grip": null,
+      "hold_point_override": null,
+      "hurtboxes": null,
+      "runtime_registration_done": false,
+      "strict_size_accepted": false,
+      "contact_accepted": false
+    },
+    {
+      "phase": 1,
+      "candidate": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/unregistered179/01.png",
+        "sha256": "3c87bb1465f8c26c7c13b5deda654d47509a4d10c0464fc4c7161c60955e4281",
+        "bytes": 11610
+      },
+      "source": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-01/request-001/candidate.png",
+        "sha256": "c2127f1343445346f75ea0edbbac30b17f2cfa756b5039b9d24d1531b5ccb0e7",
+        "bytes": 282965
+      },
+      "source_provider": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-01/request-001/candidate.provider.png",
+        "sha256": "1fc1e5f2d6a6f7f0c5aaeb0af752f1b3e95d2751eed16abab63029cc063bc6a1",
+        "bytes": 795143
+      },
+      "source_metadata": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-01/request-001/candidate.metadata.json",
+        "sha256": "3ae3c3209d4e7059dd2bf07b458d3a7e793720f086cb04fc0cff9a47ba5e39a0",
+        "bytes": 3171
+      },
+      "root_source_review": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-01/request-001/root-source-review.json",
+        "sha256": "10ec376cd1668871d6dbbffcb1000aeed3370f1f1329b58511d9c076d650c0f3",
+        "bytes": 2566
+      },
+      "source_dimensions": [
+        1024,
+        1024
+      ],
+      "candidate_dimensions": [
+        179,
+        179
+      ],
+      "source_alpha_extrema": [
+        0,
+        254
+      ],
+      "source_nonzero_alpha_pixels": 156019,
+      "source_pixels_at_or_above_alpha128": 133475,
+      "source_nonzero_below_threshold_pixels": 22544,
+      "binary_stage_exact_alpha128_and_visible_rgb_preserved": true,
+      "candidate_alpha_values": [
+        0,
+        255
+      ],
+      "candidate_opaque_pixels": 4090,
+      "final_binary_stage_pixel_changes": 0,
+      "all_candidate_borders_transparent": true,
+      "full_source_canvas_sampled": true,
+      "source_crop": null,
+      "component_filter": null,
+      "per_phase_scale": null,
+      "limb_transforms": null,
+      "runtime_root": null,
+      "runtime_grip": null,
+      "hold_point_override": null,
+      "hurtboxes": null,
+      "runtime_registration_done": false,
+      "strict_size_accepted": false,
+      "contact_accepted": false
+    },
+    {
+      "phase": 2,
+      "candidate": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/unregistered179/02.png",
+        "sha256": "fbf82c212a342449576541aa755e66ec88e4fee3ff33893897eceeefc101fbe3",
+        "bytes": 11390
+      },
+      "source": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-02/request-001/candidate.png",
+        "sha256": "a1bd22871293a01b36c5b233280d8b409eef9c034ffb97fe0e79ee88f851b886",
+        "bytes": 277727
+      },
+      "source_provider": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-02/request-001/candidate.provider.png",
+        "sha256": "ef5e75b66358c3d32b9b35fa8461a569cea3bbd658dc329c26dcbf0d26865e9d",
+        "bytes": 770660
+      },
+      "source_metadata": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-02/request-001/candidate.metadata.json",
+        "sha256": "2f9e78a9ed7b1c255c20ee1cf1e22063e911fd232ba920739481b4b4e3166af0",
+        "bytes": 2887
+      },
+      "root_source_review": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-02/request-001/root-source-review.json",
+        "sha256": "cc20d4cc590ae2e3378b39e22ecf74f160a70d4a508c3f8d98f8f6f420983e78",
+        "bytes": 2223
+      },
+      "source_dimensions": [
+        1024,
+        1024
+      ],
+      "candidate_dimensions": [
+        179,
+        179
+      ],
+      "source_alpha_extrema": [
+        0,
+        254
+      ],
+      "source_nonzero_alpha_pixels": 155469,
+      "source_pixels_at_or_above_alpha128": 130187,
+      "source_nonzero_below_threshold_pixels": 25282,
+      "binary_stage_exact_alpha128_and_visible_rgb_preserved": true,
+      "candidate_alpha_values": [
+        0,
+        255
+      ],
+      "candidate_opaque_pixels": 4002,
+      "final_binary_stage_pixel_changes": 0,
+      "all_candidate_borders_transparent": true,
+      "full_source_canvas_sampled": true,
+      "source_crop": null,
+      "component_filter": null,
+      "per_phase_scale": null,
+      "limb_transforms": null,
+      "runtime_root": null,
+      "runtime_grip": null,
+      "hold_point_override": null,
+      "hurtboxes": null,
+      "runtime_registration_done": false,
+      "strict_size_accepted": false,
+      "contact_accepted": false
+    },
+    {
+      "phase": 3,
+      "candidate": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/unregistered179/03.png",
+        "sha256": "81640b692edec9554a48dbd40604c048943abc582645dd98368c90cba9ffbec1",
+        "bytes": 13000
+      },
+      "source": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-03/request-001/candidate.png",
+        "sha256": "e705e8e3f8d80bb3cfd41cdf0254cc1abae9f38e195e30a074fcb246e22eaa2e",
+        "bytes": 327983
+      },
+      "source_provider": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-03/request-001/candidate.provider.png",
+        "sha256": "de533573a40568228f4c8346438f1d929535555cb8cb84aacba32c59b7637954",
+        "bytes": 865316
+      },
+      "source_metadata": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-03/request-001/candidate.metadata.json",
+        "sha256": "4299e2111b18915c43a9823c304506dcca11b03693efa5cb864922c9418ccf1f",
+        "bytes": 3171
+      },
+      "root_source_review": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-03/request-001/root-source-review.json",
+        "sha256": "fd792713023a831f21df722bdc3bacd75c376ebd17f2abb8cb0accd14b4605dd",
+        "bytes": 2590
+      },
+      "source_dimensions": [
+        1024,
+        1024
+      ],
+      "candidate_dimensions": [
+        179,
+        179
+      ],
+      "source_alpha_extrema": [
+        0,
+        254
+      ],
+      "source_nonzero_alpha_pixels": 176693,
+      "source_pixels_at_or_above_alpha128": 149285,
+      "source_nonzero_below_threshold_pixels": 27408,
+      "binary_stage_exact_alpha128_and_visible_rgb_preserved": true,
+      "candidate_alpha_values": [
+        0,
+        255
+      ],
+      "candidate_opaque_pixels": 4563,
+      "final_binary_stage_pixel_changes": 0,
+      "all_candidate_borders_transparent": true,
+      "full_source_canvas_sampled": true,
+      "source_crop": null,
+      "component_filter": null,
+      "per_phase_scale": null,
+      "limb_transforms": null,
+      "runtime_root": null,
+      "runtime_grip": null,
+      "hold_point_override": null,
+      "hurtboxes": null,
+      "runtime_registration_done": false,
+      "strict_size_accepted": false,
+      "contact_accepted": false
+    },
+    {
+      "phase": 4,
+      "candidate": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/unregistered179/04.png",
+        "sha256": "5e18289409ad8d8e0d0a0942b4899649248f3b7f2f444765c8bcd5508406cae7",
+        "bytes": 13733
+      },
+      "source": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-04/request-001/candidate.png",
+        "sha256": "82699b7169f27786b93264c9cb830d240663e74cad3a3561e50c016f03008b5b",
+        "bytes": 362538
+      },
+      "source_provider": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-04/request-001/candidate.provider.png",
+        "sha256": "a67dc7e7789d136c30a8be714acb5333c97286ff6ded625641bb12fa912a731e",
+        "bytes": 915418
+      },
+      "source_metadata": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-04/request-001/candidate.metadata.json",
+        "sha256": "88e892cd65874618cfc25339843c7226f658ba37aff7779f57bf8c90c3c6eade",
+        "bytes": 3169
+      },
+      "root_source_review": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-04/request-001/root-source-review.json",
+        "sha256": "ceb6a91e051ae1e10ba9c83457c1c37000d3409f1e3dc77837ab883082b4fcf0",
+        "bytes": 2588
+      },
+      "source_dimensions": [
+        1024,
+        1024
+      ],
+      "candidate_dimensions": [
+        179,
+        179
+      ],
+      "source_alpha_extrema": [
+        0,
+        254
+      ],
+      "source_nonzero_alpha_pixels": 190063,
+      "source_pixels_at_or_above_alpha128": 159484,
+      "source_nonzero_below_threshold_pixels": 30579,
+      "binary_stage_exact_alpha128_and_visible_rgb_preserved": true,
+      "candidate_alpha_values": [
+        0,
+        255
+      ],
+      "candidate_opaque_pixels": 4878,
+      "final_binary_stage_pixel_changes": 0,
+      "all_candidate_borders_transparent": true,
+      "full_source_canvas_sampled": true,
+      "source_crop": null,
+      "component_filter": null,
+      "per_phase_scale": null,
+      "limb_transforms": null,
+      "runtime_root": null,
+      "runtime_grip": null,
+      "hold_point_override": null,
+      "hurtboxes": null,
+      "runtime_registration_done": false,
+      "strict_size_accepted": false,
+      "contact_accepted": false
+    },
+    {
+      "phase": 5,
+      "candidate": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/unregistered179/05.png",
+        "sha256": "1573a8ea5d1827b223dbfb7c19ac7b716f1d9774ec55203804aaa1dc19451856",
+        "bytes": 13429
+      },
+      "source": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-05/request-001/candidate.png",
+        "sha256": "3de76139de7be0f5aa81f01ffb05b5b30860e4647a535db317d837eb2009e277",
+        "bytes": 349515
+      },
+      "source_provider": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-05/request-001/candidate.provider.png",
+        "sha256": "411c96dc04eb49be671e492eb242f5e88d4327bc10cc13b7bf8eda075a26d0c2",
+        "bytes": 898195
+      },
+      "source_metadata": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-05/request-001/candidate.metadata.json",
+        "sha256": "c1a6c39f916a0a4c8088d7714e9c2cffa0aa4686bd9b0f580c85ca880d99e34a",
+        "bytes": 3169
+      },
+      "root_source_review": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-05/request-001/root-source-review.json",
+        "sha256": "93d7735fb02bfcad4f66612b4b4ff59d80684c3bda8f09ceb51afa798e783829",
+        "bytes": 2575
+      },
+      "source_dimensions": [
+        1024,
+        1024
+      ],
+      "candidate_dimensions": [
+        179,
+        179
+      ],
+      "source_alpha_extrema": [
+        0,
+        254
+      ],
+      "source_nonzero_alpha_pixels": 177169,
+      "source_pixels_at_or_above_alpha128": 147750,
+      "source_nonzero_below_threshold_pixels": 29419,
+      "binary_stage_exact_alpha128_and_visible_rgb_preserved": true,
+      "candidate_alpha_values": [
+        0,
+        255
+      ],
+      "candidate_opaque_pixels": 4531,
+      "final_binary_stage_pixel_changes": 0,
+      "all_candidate_borders_transparent": true,
+      "full_source_canvas_sampled": true,
+      "source_crop": null,
+      "component_filter": null,
+      "per_phase_scale": null,
+      "limb_transforms": null,
+      "runtime_root": null,
+      "runtime_grip": null,
+      "hold_point_override": null,
+      "hurtboxes": null,
+      "runtime_registration_done": false,
+      "strict_size_accepted": false,
+      "contact_accepted": false
+    }
+  ],
+  "review_pages": [
+    {
+      "phase": 0,
+      "candidate": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/unregistered179/00.png",
+        "sha256": "419deac1c3ac5133a36f49266b66d7dc816ec9cf2d517812f3c036f3501ca63c",
+        "bytes": 11530
+      },
+      "one_x_dark_light": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase00-1x-dark-light.jpg",
+        "sha256": "e4710c12d839aa3745cc478a12d28cd029d8245c24672f9cef29b85b38dcf444",
+        "bytes": 83888,
+        "dimensions": [
+          744,
+          668
+        ],
+        "jpeg_quality": 90
+      },
+      "four_x_dark": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase00-4x-dark.jpg",
+        "sha256": "0f541e227f224499d1a130f5e2c67d13100b67068abd6038bdb4fb7b99f4a597",
+        "bytes": 113034,
+        "dimensions": [
+          768,
+          1680
+        ],
+        "jpeg_quality": 90
+      },
+      "four_x_light": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase00-4x-light.jpg",
+        "sha256": "258feaa2843c6d4da0e1f5fc8de233403c93d060bbe475921f0ffee49a4384dd",
+        "bytes": 117490,
+        "dimensions": [
+          768,
+          1680
+        ],
+        "jpeg_quality": 90
+      }
+    },
+    {
+      "phase": 1,
+      "candidate": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/unregistered179/01.png",
+        "sha256": "3c87bb1465f8c26c7c13b5deda654d47509a4d10c0464fc4c7161c60955e4281",
+        "bytes": 11610
+      },
+      "one_x_dark_light": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase01-1x-dark-light.jpg",
+        "sha256": "98db1e4b3a61520565ae52eabccf9b00a3d2fded038ad76e92a7ea1f80b1879b",
+        "bytes": 83840,
+        "dimensions": [
+          744,
+          668
+        ],
+        "jpeg_quality": 90
+      },
+      "four_x_dark": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase01-4x-dark.jpg",
+        "sha256": "f7c43091f1467b36d5c10d947a55d3d01c90c5e26ba28abf677ed57101e622a7",
+        "bytes": 112452,
+        "dimensions": [
+          768,
+          1680
+        ],
+        "jpeg_quality": 90
+      },
+      "four_x_light": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase01-4x-light.jpg",
+        "sha256": "27ce66815f68d594c0cbed751dea1cda1bcac39f88474f286d8154060d25ff18",
+        "bytes": 117389,
+        "dimensions": [
+          768,
+          1680
+        ],
+        "jpeg_quality": 90
+      }
+    },
+    {
+      "phase": 2,
+      "candidate": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/unregistered179/02.png",
+        "sha256": "fbf82c212a342449576541aa755e66ec88e4fee3ff33893897eceeefc101fbe3",
+        "bytes": 11390
+      },
+      "one_x_dark_light": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase02-1x-dark-light.jpg",
+        "sha256": "e2d33a3b9d2eea0dd14f395180d030a0a804c8b1e42649561e945bc0567be9b1",
+        "bytes": 83454,
+        "dimensions": [
+          744,
+          668
+        ],
+        "jpeg_quality": 90
+      },
+      "four_x_dark": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase02-4x-dark.jpg",
+        "sha256": "5089bf6cbe60b1408214485eafb66e2fdd88011f0e0133bbfe1e9e640371578a",
+        "bytes": 111805,
+        "dimensions": [
+          768,
+          1680
+        ],
+        "jpeg_quality": 90
+      },
+      "four_x_light": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase02-4x-light.jpg",
+        "sha256": "6b31919e69672a0b635b8b74739d12ae1de973992ae45a81fb42e2203d425adf",
+        "bytes": 116319,
+        "dimensions": [
+          768,
+          1680
+        ],
+        "jpeg_quality": 90
+      }
+    },
+    {
+      "phase": 3,
+      "candidate": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/unregistered179/03.png",
+        "sha256": "81640b692edec9554a48dbd40604c048943abc582645dd98368c90cba9ffbec1",
+        "bytes": 13000
+      },
+      "one_x_dark_light": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase03-1x-dark-light.jpg",
+        "sha256": "38a9535c1d6fd3547a12463f8cb2a4b05e4ed89b77aafbf9093a089d2791017b",
+        "bytes": 85518,
+        "dimensions": [
+          744,
+          668
+        ],
+        "jpeg_quality": 90
+      },
+      "four_x_dark": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase03-4x-dark.jpg",
+        "sha256": "56f9070312e5efd5ece2ccab0545213eddb3f6770416d813770d944c8264d9b5",
+        "bytes": 115924,
+        "dimensions": [
+          768,
+          1680
+        ],
+        "jpeg_quality": 90
+      },
+      "four_x_light": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase03-4x-light.jpg",
+        "sha256": "cb6ca1cefe22b66c79eedecb4496531a12adf626766639c52b5f0d27bf63485c",
+        "bytes": 120934,
+        "dimensions": [
+          768,
+          1680
+        ],
+        "jpeg_quality": 90
+      }
+    },
+    {
+      "phase": 4,
+      "candidate": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/unregistered179/04.png",
+        "sha256": "5e18289409ad8d8e0d0a0942b4899649248f3b7f2f444765c8bcd5508406cae7",
+        "bytes": 13733
+      },
+      "one_x_dark_light": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase04-1x-dark-light.jpg",
+        "sha256": "32d9e825c1f0a48da0b1443663336a4d7b04bb38acd97b948f6a65644fe109e4",
+        "bytes": 86106,
+        "dimensions": [
+          744,
+          668
+        ],
+        "jpeg_quality": 90
+      },
+      "four_x_dark": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase04-4x-dark.jpg",
+        "sha256": "625efb1456b55d2e44b46bfacb2e5bb3dbe77a4604704bea46d0d590fa264e80",
+        "bytes": 117515,
+        "dimensions": [
+          768,
+          1680
+        ],
+        "jpeg_quality": 90
+      },
+      "four_x_light": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase04-4x-light.jpg",
+        "sha256": "8817f2bb477bc44ca32b4e36489d409025bbafc1cd2a464e7ccece7f8ba7dd2e",
+        "bytes": 122717,
+        "dimensions": [
+          768,
+          1680
+        ],
+        "jpeg_quality": 90
+      }
+    },
+    {
+      "phase": 5,
+      "candidate": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/unregistered179/05.png",
+        "sha256": "1573a8ea5d1827b223dbfb7c19ac7b716f1d9774ec55203804aaa1dc19451856",
+        "bytes": 13429
+      },
+      "one_x_dark_light": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase05-1x-dark-light.jpg",
+        "sha256": "9e888246468e00ece3ea69b6c32deec373ad77e7f1d4858c41cbc328c02e06ad",
+        "bytes": 85282,
+        "dimensions": [
+          744,
+          668
+        ],
+        "jpeg_quality": 90
+      },
+      "four_x_dark": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase05-4x-dark.jpg",
+        "sha256": "8f4fb081230decfece04dbcda914fe29f8c525b7d10c536d32ae9dca67f7a682",
+        "bytes": 117095,
+        "dimensions": [
+          768,
+          1680
+        ],
+        "jpeg_quality": 90
+      },
+      "four_x_light": {
+        "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-179-unregistered-v1/candidate-01/review/phase05-4x-light.jpg",
+        "sha256": "6344ac9b3c0be38e034839f31d66418ead5739168ac964368f2b4fe0da1937cc",
+        "bytes": 121767,
+        "dimensions": [
+          768,
+          1680
+        ],
+        "jpeg_quality": 90
+      }
+    }
+  ],
+  "native_reference": {
+    "path": "assets/fighters/ultraman/model-native.png",
+    "sha256": "cd76aea1686c18390a7324ea68368daef15796e8d6ab03671eb03df3301e3d44",
+    "bytes": 5647
+  },
+  "one_x_display": "现装192方和新179方以1源px=1显示px；完整画布显示居中，未按身体/根配准。",
+  "four_x_display": "完整192方→768方、新179方→716方，均严格4x最近邻；上下两行，深浅各页。",
+  "outside_padding_canvas_created": false,
+  "root": null,
+  "grip": null,
+  "override": null,
+  "hurtboxes": null,
+  "strict_size_accepted": false,
+  "contact_accepted": false,
+  "runtime_registration_done": false,
+  "png_output_scope": "仅本报告candidate-01/unregistered179六张新候选；所有原PNG不改",
+  "post_requests": 0,
+  "budget_writes": 0,
+  "product_writes": 0,
+  "godot_runs": 0,
+  "git_writes": 0
+}

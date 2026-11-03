@@ -1,0 +1,446 @@
+{
+  "schema": "ufeneo.arc-luna.s2.light-chain-unregistered-processing.v1",
+  "fighter": "ultraman-arc__luna",
+  "root_delegated_instruction": "仅11保留旧源及已签00 request002，沿跳跃RGB兼容159整图+128二值；不裁bbox/删分量/逐相缩放/重着色，root/grip/判定先null。",
+  "source_dimensions": [
+    1024,
+    1024
+  ],
+  "whole_source_raster": [
+    159,
+    159
+  ],
+  "source_scale": 0.1552734375,
+  "recipe": [
+    "binarize_alpha(original.copy())，阈值128",
+    "palette_mode('rgb')内整张_kcentroid_downscale(clean,159,159,detail_bias=True)",
+    "同本人固定32色apply_palette",
+    "binarize_alpha(small)，阈值128"
+  ],
+  "jump_recipe_source": {
+    "path": "tools/rebuild/ultraman-arc/luna-jump-offline-resume-20261102-v1/offline_jump.py",
+    "sha256": "54890830bf4fde4a1524cf282ae91ff3d33fdee941bff414c64a5e0f89d07daf"
+  },
+  "palette": {
+    "path": "art/fighters/ultraman-arc__luna/model/palette.json",
+    "sha256": "8f5a5d9e0efba90618a9f2e3aa913bb9d559d82ca5f43deea26b259f0e212ffd"
+  },
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "rgb",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "canonical_palette_only_no_body_recoloring": true,
+  "bbox_crop_or_component_filter": false,
+  "per_phase_scale_or_area_fitting": false,
+  "whole_source_only": true,
+  "root": null,
+  "grip": null,
+  "hitboxes": null,
+  "hurtboxes": null,
+  "anchors": null,
+  "registration": null,
+  "runtime_canvas": null,
+  "unregistered": true,
+  "clip_or_atlas_written": false,
+  "selections": [
+    {
+      "action": "light1",
+      "phase": 0,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/light1/phase-00/request-002/candidate.png",
+        "sha256": "4c3bfe519035a75bf10e2fe2f039bba06f16814418d682cb8c731aeb48e2f421"
+      },
+      "metadata": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/light1/phase-00/request-002/candidate.metadata.json",
+        "sha256": "418e821265826ce553128287a3e70100ab9e08c3054ff6d10b416b20bece83eb"
+      },
+      "review": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/light1/phase-00/request-002/root-source-review.json",
+        "sha256": "d91bbf95bf102ffd86c3e65db48969f0cc0210d08e9f3386e38fdf34c3ce5dd6"
+      },
+      "provider": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/light1/phase-00/request-002/candidate.provider.png",
+        "sha256": "863356b8e7870d3e7055123d319b005348b3bbfa6b877ecad920ba268fa3612f"
+      },
+      "prior_attempt_disposition": "仅取根已签request002；request001错手源不处理",
+      "source_kind": "new_root_accepted_request002",
+      "original_client_transparency_accepted": true,
+      "original_quarantine_preserved": false
+    },
+    {
+      "action": "light1",
+      "phase": 3,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-03/request-001/raw.png",
+        "sha256": "a7d86ad2eeadb4b0fe92ed4c0b1b0b63a22673cb4a8b0c0f77e65e031f5844f2"
+      },
+      "metadata": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-03/request-001/raw.metadata.json",
+        "sha256": "abcc3fb1bc5689e8e3f03e30c563c85545f6a94ac0c6707f7d1f55c67485885f"
+      },
+      "provider": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-03/request-001/raw.provider.png",
+        "sha256": "c199ecb893940c3cd3e367b274c2a5e073d8761a1d0c636b85adef9a1531f666"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-03/request-001/request-state.json",
+        "sha256": "12242418a1d23e6281d6b073959d5f4858aded3ab9b9c8b531194d7496e1f5ea"
+      },
+      "review": {
+        "path": "reports/review/2026-11-02/luna-light-chain-root-review-v1/root-source-gap-review.json",
+        "sha256": "6e743a17873cfc5b83a60382b47efe0478c261cb4c3dc53680cd33dffd2fd25f"
+      },
+      "source_kind": "old_retained_whole_candidate",
+      "original_client_transparency_accepted": true,
+      "original_quarantine_preserved": false,
+      "historical_request_state": "returned"
+    },
+    {
+      "action": "light1",
+      "phase": 4,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-04/request-001/raw.png",
+        "sha256": "1a905090284b9ad4a4d9106b75aa684e503e9913fe39d9d632a28d0a4f0a3461"
+      },
+      "metadata": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-04/request-001/raw.metadata.json",
+        "sha256": "d355142085570d8818eb31191a926c491b67a57fa8c7f5a5d6334d0d59829437"
+      },
+      "provider": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-04/request-001/raw.provider.png",
+        "sha256": "60761a3b7a4b8d82a838e6926afad65f90a10415d36328eea920ffb7ec91d4b7"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-04/request-001/request-state.json",
+        "sha256": "713d520db368413d65b991175d6238b3003df884bdbef79ba3eb265443fdd849"
+      },
+      "review": {
+        "path": "reports/review/2026-11-02/luna-light-chain-root-review-v1/root-source-gap-review.json",
+        "sha256": "6e743a17873cfc5b83a60382b47efe0478c261cb4c3dc53680cd33dffd2fd25f"
+      },
+      "source_kind": "old_retained_whole_candidate",
+      "original_client_transparency_accepted": true,
+      "original_quarantine_preserved": false,
+      "historical_request_state": "returned"
+    },
+    {
+      "action": "light2",
+      "phase": 0,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-00/request-001/raw.png",
+        "sha256": "124cce09ab1a3d35d99b621230166ff74ccea44ee129c3701667929e214d106b"
+      },
+      "metadata": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-00/request-001/raw.metadata.json",
+        "sha256": "e76716f821bef5b283a4071883619f61aa46c84652738ea2c438a1413e08e682"
+      },
+      "provider": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-00/request-001/raw.provider.png",
+        "sha256": "e8a91e8935be96db993cea0deb1799e5c42321e3916320c502ab8d51cbeef1e0"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-00/request-001/request-state.json",
+        "sha256": "62c4a2c64f7d92fb61b8e23f4ea2cbe5341be8a8604b5a6fe8adada64641941f"
+      },
+      "review": {
+        "path": "reports/review/2026-11-02/luna-light-chain-root-review-v1/root-source-gap-review.json",
+        "sha256": "6e743a17873cfc5b83a60382b47efe0478c261cb4c3dc53680cd33dffd2fd25f"
+      },
+      "source_kind": "old_retained_whole_candidate",
+      "original_client_transparency_accepted": true,
+      "original_quarantine_preserved": false,
+      "historical_request_state": "returned"
+    },
+    {
+      "action": "light2",
+      "phase": 1,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-01/request-001/rejected/raw.png",
+        "sha256": "89bc7f372cfcc3b42a731718c79952f9abe2c524c3b35479f36c2e264b3f8410"
+      },
+      "metadata": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-01/request-001/rejected/raw.metadata.json",
+        "sha256": "1bada3c280851a9fc40856ccf509349ab58594626d43be754f63207158c063ac"
+      },
+      "provider": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-01/request-001/raw.provider.png",
+        "sha256": "50b4aef88d3424c6de62ebe9181a55acba7c32160c0f76cc6dc286355c8a061b"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-01/request-001/request-state.json",
+        "sha256": "3f3f69e7c84777d5c11e45d93e992da95cf2f2a4f47c324e18901710465c685c"
+      },
+      "review": {
+        "path": "reports/review/2026-11-02/luna-light-chain-root-review-v1/root-source-gap-review.json",
+        "sha256": "6e743a17873cfc5b83a60382b47efe0478c261cb4c3dc53680cd33dffd2fd25f"
+      },
+      "source_kind": "old_retained_whole_candidate",
+      "original_client_transparency_accepted": false,
+      "original_quarantine_preserved": true,
+      "historical_request_state": "returned_requires_review"
+    },
+    {
+      "action": "light2",
+      "phase": 2,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-02/request-001/raw.png",
+        "sha256": "096f16e005e93f9f79e0a52012d68dbbb23c287ac5014b0a13a81428bfb0a7df"
+      },
+      "metadata": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-02/request-001/raw.metadata.json",
+        "sha256": "48cf8994f85b25eb794ec737394cf2adb392b106ed8f5ad05da96c6c74909fc8"
+      },
+      "provider": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-02/request-001/raw.provider.png",
+        "sha256": "e308d6a6566f683d7cc67b3135d72791ac93afaf73490b306a20ba837b866968"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-02/request-001/request-state.json",
+        "sha256": "51fa9752cad3573bcf89ddfae58bd67caac34e34f2d37f01e7bdcf0256907e54"
+      },
+      "review": {
+        "path": "reports/review/2026-11-02/luna-light-chain-root-review-v1/root-source-gap-review.json",
+        "sha256": "6e743a17873cfc5b83a60382b47efe0478c261cb4c3dc53680cd33dffd2fd25f"
+      },
+      "source_kind": "old_retained_whole_candidate",
+      "original_client_transparency_accepted": true,
+      "original_quarantine_preserved": false,
+      "historical_request_state": "returned"
+    },
+    {
+      "action": "light2",
+      "phase": 3,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-03/request-001/rejected/raw.png",
+        "sha256": "5b95cd5fc18fbb9c9a9cc59467b17dd84f93b47a9aecc16cee68f674af92a11e"
+      },
+      "metadata": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-03/request-001/rejected/raw.metadata.json",
+        "sha256": "71dc2cba45db84392e3e85718b3175737bf4d46c735b1d20b133ec83722f2bb9"
+      },
+      "provider": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-03/request-001/raw.provider.png",
+        "sha256": "57d9bb01f98f486816ec434572a4a528b6de064e6eeb515ef24aa7c93e6956a0"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-03/request-001/request-state.json",
+        "sha256": "40ad1fe218ea14f50c83329c5d600255f448b0f5792c8a0e3fc95e8358846f91"
+      },
+      "review": {
+        "path": "reports/review/2026-11-02/luna-light-chain-root-review-v1/root-source-gap-review.json",
+        "sha256": "6e743a17873cfc5b83a60382b47efe0478c261cb4c3dc53680cd33dffd2fd25f"
+      },
+      "source_kind": "old_retained_whole_candidate",
+      "original_client_transparency_accepted": false,
+      "original_quarantine_preserved": true,
+      "historical_request_state": "returned_requires_review"
+    },
+    {
+      "action": "light2",
+      "phase": 4,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-04/request-001/raw.png",
+        "sha256": "ab35b900fdba9760a2506d65aeae1c1f6c206fca84e6076fe8dc4301c910bbbf"
+      },
+      "metadata": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-04/request-001/raw.metadata.json",
+        "sha256": "663878f39651e8a0379d90c28550bf667b9f9d206eaf28be3cde5780a7ff7692"
+      },
+      "provider": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-04/request-001/raw.provider.png",
+        "sha256": "8289928065216f7d925392ea427c179371002e57e7377732d79a658ac4e4df27"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-04/request-001/request-state.json",
+        "sha256": "f13993aef3e2a128521c6a0dc6f4d3d6940b1cb99dc106269f655941465af44f"
+      },
+      "review": {
+        "path": "reports/review/2026-11-02/luna-light-chain-root-review-v1/root-source-gap-review.json",
+        "sha256": "6e743a17873cfc5b83a60382b47efe0478c261cb4c3dc53680cd33dffd2fd25f"
+      },
+      "source_kind": "old_retained_whole_candidate",
+      "original_client_transparency_accepted": true,
+      "original_quarantine_preserved": false,
+      "historical_request_state": "returned"
+    },
+    {
+      "action": "light3",
+      "phase": 0,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-00/request-001/raw.png",
+        "sha256": "a2b629f6fa1439dc3340882a992bfac01551257b1a82d6ff9401a3a577fba2e4"
+      },
+      "metadata": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-00/request-001/raw.metadata.json",
+        "sha256": "7ab058fca72323e809631066cd1ec8913801dc8c5e1794ab20b676cd13bb8398"
+      },
+      "provider": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-00/request-001/raw.provider.png",
+        "sha256": "cace357ac9ab0814930a2463cb8b6c093e693a27c660b05a3df5867c0ebce25a"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-00/request-001/request-state.json",
+        "sha256": "df12df4e8a8653a66e5c1a74fcb3e7cc0c8adf75f115267a72436a0b04bc2fac"
+      },
+      "review": {
+        "path": "reports/review/2026-11-02/luna-light-chain-root-review-v1/root-source-gap-review.json",
+        "sha256": "6e743a17873cfc5b83a60382b47efe0478c261cb4c3dc53680cd33dffd2fd25f"
+      },
+      "source_kind": "old_retained_whole_candidate",
+      "original_client_transparency_accepted": true,
+      "original_quarantine_preserved": false,
+      "historical_request_state": "returned"
+    },
+    {
+      "action": "light3",
+      "phase": 1,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-01/request-001/raw.png",
+        "sha256": "72cd5d18ed0415828b2be9490d23766fbb5ad6693dbd8a8cfd2b67762b1aecd4"
+      },
+      "metadata": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-01/request-001/raw.metadata.json",
+        "sha256": "21c056208131ba67afaf0d8571a6a4cb245c62f0992b1313b5d35b97c60b77de"
+      },
+      "provider": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-01/request-001/raw.provider.png",
+        "sha256": "4685e9445f8ba4147064274092a8e30ad1100c87452edf1a3b3df926b69a0ad9"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-01/request-001/request-state.json",
+        "sha256": "781cc471253f9d080d73b4d67a82416994e9473f36c563048ca2500b18955954"
+      },
+      "review": {
+        "path": "reports/review/2026-11-02/luna-light-chain-root-review-v1/root-source-gap-review.json",
+        "sha256": "6e743a17873cfc5b83a60382b47efe0478c261cb4c3dc53680cd33dffd2fd25f"
+      },
+      "source_kind": "old_retained_whole_candidate",
+      "original_client_transparency_accepted": true,
+      "original_quarantine_preserved": false,
+      "historical_request_state": "returned"
+    },
+    {
+      "action": "light3",
+      "phase": 2,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-02/request-001/raw.png",
+        "sha256": "4da1a91d76b9d471eebca71f8cfe872d4ffe03497d0ca384ccd03536a2430c13"
+      },
+      "metadata": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-02/request-001/raw.metadata.json",
+        "sha256": "57f27367f92fd46cfa680dea722dc2677a8373c1aebc5564cbe113fa63d4fbd9"
+      },
+      "provider": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-02/request-001/raw.provider.png",
+        "sha256": "0b19b06b5149534108cf0841fa31c0ecfd27272fd898975e10500eb3dc5c37a4"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-02/request-001/request-state.json",
+        "sha256": "fbe7239b1beea5d9621656d496fb3ede7563a79fea3cf6368ef7d9f24b0fe1dd"
+      },
+      "review": {
+        "path": "reports/review/2026-11-02/luna-light-chain-root-review-v1/root-source-gap-review.json",
+        "sha256": "6e743a17873cfc5b83a60382b47efe0478c261cb4c3dc53680cd33dffd2fd25f"
+      },
+      "source_kind": "old_retained_whole_candidate",
+      "original_client_transparency_accepted": true,
+      "original_quarantine_preserved": false,
+      "historical_request_state": "returned"
+    },
+    {
+      "action": "light3",
+      "phase": 3,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-03/request-001/raw.png",
+        "sha256": "5d96dc5c8d4d91bf18c5c1ff4255e348e7c2c11f7079fc49e8be87770a130198"
+      },
+      "metadata": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-03/request-001/raw.metadata.json",
+        "sha256": "aca6082494541581c7e4e917a158f1538a166320c12953d181a3abe5ebb9290d"
+      },
+      "provider": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-03/request-001/raw.provider.png",
+        "sha256": "9ee8643a4fa98c17c98b93d50516be38407edf5ffc2ba97e5a0ab651e46010d3"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-03/request-001/request-state.json",
+        "sha256": "c6a6c8c8caeba49e6ff96d9ccccfbae9ff1fb5531ee9ba24552cb4f3e018668c"
+      },
+      "review": {
+        "path": "reports/review/2026-11-02/luna-light-chain-root-review-v1/root-source-gap-review.json",
+        "sha256": "6e743a17873cfc5b83a60382b47efe0478c261cb4c3dc53680cd33dffd2fd25f"
+      },
+      "source_kind": "old_retained_whole_candidate",
+      "original_client_transparency_accepted": true,
+      "original_quarantine_preserved": false,
+      "historical_request_state": "returned"
+    }
+  ],
+  "frozen_inputs": {
+    "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/light1/phase-00/request-002/candidate.png": "4c3bfe519035a75bf10e2fe2f039bba06f16814418d682cb8c731aeb48e2f421",
+    "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/light1/phase-00/request-002/candidate.metadata.json": "418e821265826ce553128287a3e70100ab9e08c3054ff6d10b416b20bece83eb",
+    "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/light1/phase-00/request-002/root-source-review.json": "d91bbf95bf102ffd86c3e65db48969f0cc0210d08e9f3386e38fdf34c3ce5dd6",
+    "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/light1/phase-00/request-002/candidate.provider.png": "863356b8e7870d3e7055123d319b005348b3bbfa6b877ecad920ba268fa3612f",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-03/request-001/raw.png": "a7d86ad2eeadb4b0fe92ed4c0b1b0b63a22673cb4a8b0c0f77e65e031f5844f2",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-03/request-001/raw.metadata.json": "abcc3fb1bc5689e8e3f03e30c563c85545f6a94ac0c6707f7d1f55c67485885f",
+    "reports/review/2026-11-02/luna-light-chain-root-review-v1/root-source-gap-review.json": "6e743a17873cfc5b83a60382b47efe0478c261cb4c3dc53680cd33dffd2fd25f",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-03/request-001/raw.provider.png": "c199ecb893940c3cd3e367b274c2a5e073d8761a1d0c636b85adef9a1531f666",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-03/request-001/request-state.json": "12242418a1d23e6281d6b073959d5f4858aded3ab9b9c8b531194d7496e1f5ea",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-04/request-001/raw.png": "1a905090284b9ad4a4d9106b75aa684e503e9913fe39d9d632a28d0a4f0a3461",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-04/request-001/raw.metadata.json": "d355142085570d8818eb31191a926c491b67a57fa8c7f5a5d6334d0d59829437",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-04/request-001/raw.provider.png": "60761a3b7a4b8d82a838e6926afad65f90a10415d36328eea920ffb7ec91d4b7",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light1/phase-04/request-001/request-state.json": "713d520db368413d65b991175d6238b3003df884bdbef79ba3eb265443fdd849",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-00/request-001/raw.png": "124cce09ab1a3d35d99b621230166ff74ccea44ee129c3701667929e214d106b",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-00/request-001/raw.metadata.json": "e76716f821bef5b283a4071883619f61aa46c84652738ea2c438a1413e08e682",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-00/request-001/raw.provider.png": "e8a91e8935be96db993cea0deb1799e5c42321e3916320c502ab8d51cbeef1e0",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-00/request-001/request-state.json": "62c4a2c64f7d92fb61b8e23f4ea2cbe5341be8a8604b5a6fe8adada64641941f",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-01/request-001/rejected/raw.png": "89bc7f372cfcc3b42a731718c79952f9abe2c524c3b35479f36c2e264b3f8410",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-01/request-001/rejected/raw.metadata.json": "1bada3c280851a9fc40856ccf509349ab58594626d43be754f63207158c063ac",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-01/request-001/raw.provider.png": "50b4aef88d3424c6de62ebe9181a55acba7c32160c0f76cc6dc286355c8a061b",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-01/request-001/request-state.json": "3f3f69e7c84777d5c11e45d93e992da95cf2f2a4f47c324e18901710465c685c",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-02/request-001/raw.png": "096f16e005e93f9f79e0a52012d68dbbb23c287ac5014b0a13a81428bfb0a7df",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-02/request-001/raw.metadata.json": "48cf8994f85b25eb794ec737394cf2adb392b106ed8f5ad05da96c6c74909fc8",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-02/request-001/raw.provider.png": "e308d6a6566f683d7cc67b3135d72791ac93afaf73490b306a20ba837b866968",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-02/request-001/request-state.json": "51fa9752cad3573bcf89ddfae58bd67caac34e34f2d37f01e7bdcf0256907e54",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-03/request-001/rejected/raw.png": "5b95cd5fc18fbb9c9a9cc59467b17dd84f93b47a9aecc16cee68f674af92a11e",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-03/request-001/rejected/raw.metadata.json": "71dc2cba45db84392e3e85718b3175737bf4d46c735b1d20b133ec83722f2bb9",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-03/request-001/raw.provider.png": "57d9bb01f98f486816ec434572a4a528b6de064e6eeb515ef24aa7c93e6956a0",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-03/request-001/request-state.json": "40ad1fe218ea14f50c83329c5d600255f448b0f5792c8a0e3fc95e8358846f91",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-04/request-001/raw.png": "ab35b900fdba9760a2506d65aeae1c1f6c206fca84e6076fe8dc4301c910bbbf",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-04/request-001/raw.metadata.json": "663878f39651e8a0379d90c28550bf667b9f9d206eaf28be3cde5780a7ff7692",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-04/request-001/raw.provider.png": "8289928065216f7d925392ea427c179371002e57e7377732d79a658ac4e4df27",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light2/phase-04/request-001/request-state.json": "f13993aef3e2a128521c6a0dc6f4d3d6940b1cb99dc106269f655941465af44f",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-00/request-001/raw.png": "a2b629f6fa1439dc3340882a992bfac01551257b1a82d6ff9401a3a577fba2e4",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-00/request-001/raw.metadata.json": "7ab058fca72323e809631066cd1ec8913801dc8c5e1794ab20b676cd13bb8398",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-00/request-001/raw.provider.png": "cace357ac9ab0814930a2463cb8b6c093e693a27c660b05a3df5867c0ebce25a",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-00/request-001/request-state.json": "df12df4e8a8653a66e5c1a74fcb3e7cc0c8adf75f115267a72436a0b04bc2fac",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-01/request-001/raw.png": "72cd5d18ed0415828b2be9490d23766fbb5ad6693dbd8a8cfd2b67762b1aecd4",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-01/request-001/raw.metadata.json": "21c056208131ba67afaf0d8571a6a4cb245c62f0992b1313b5d35b97c60b77de",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-01/request-001/raw.provider.png": "4685e9445f8ba4147064274092a8e30ad1100c87452edf1a3b3df926b69a0ad9",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-01/request-001/request-state.json": "781cc471253f9d080d73b4d67a82416994e9473f36c563048ca2500b18955954",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-02/request-001/raw.png": "4da1a91d76b9d471eebca71f8cfe872d4ffe03497d0ca384ccd03536a2430c13",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-02/request-001/raw.metadata.json": "57f27367f92fd46cfa680dea722dc2677a8373c1aebc5564cbe113fa63d4fbd9",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-02/request-001/raw.provider.png": "0b19b06b5149534108cf0841fa31c0ecfd27272fd898975e10500eb3dc5c37a4",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-02/request-001/request-state.json": "fbe7239b1beea5d9621656d496fb3ede7563a79fea3cf6368ef7d9f24b0fe1dd",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-03/request-001/raw.png": "5d96dc5c8d4d91bf18c5c1ff4255e348e7c2c11f7079fc49e8be87770a130198",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-03/request-001/raw.metadata.json": "aca6082494541581c7e4e917a158f1538a166320c12953d181a3abe5ebb9290d",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-03/request-001/raw.provider.png": "9ee8643a4fa98c17c98b93d50516be38407edf5ffc2ba97e5a0ab651e46010d3",
+    "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/light3/phase-03/request-001/request-state.json": "c6a6c8c8caeba49e6ff96d9ccccfbae9ff1fb5531ee9ba24552cb4f3e018668c",
+    "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/source-reference-contract.json": "8c22511ae3d20036445f589dc9ddf0b934b040fee5a625dd015b7a377525a2d9",
+    "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/timing-contract.json": "af8d9057c3761a808123b3e6b338764b0ae8311c0a75b9459c5239a5fb15c1c8",
+    "art/fighters/ultraman-arc__luna/model/palette.json": "8f5a5d9e0efba90618a9f2e3aa913bb9d559d82ca5f43deea26b259f0e212ffd",
+    "tools/rebuild/ultraman-arc/luna-jump-offline-resume-20261102-v1/offline_jump.py": "54890830bf4fde4a1524cf282ae91ff3d33fdee941bff414c64a5e0f89d07daf",
+    "tools/rebuild/shared/forge_backend.py": "ff0f7d95bafd94bb9a546bfdf934fb6326297322d4540f2cf7d7327814e7b96b",
+    "tools/rebuild/ultraman-arc/luna-s2-light-chain-unregistered-20261102-v1/sample_retained12.py": "ded988efe4035eb32edf79c4564fe633dadd575ea89c8740c0727184209c3757"
+  },
+  "sampling_script_POST_Godot_product_Git_or_user_file_reads": false
+}

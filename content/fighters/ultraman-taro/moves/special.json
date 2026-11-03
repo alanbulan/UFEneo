@@ -1,0 +1,5330 @@
+{
+  "id": "special",
+  "display_name": "泰罗切割",
+  "startup": 26,
+  "active": 29,
+  "recovery": 25,
+  "damage": 180,
+  "hitstun": 28,
+  "blockstun": 20,
+  "pushback": 4,
+  "stun": 27,
+  "stamina_cost": 45,
+  "energy_cost": 1000,
+  "kind": "projectile",
+  "level": "mid",
+  "unblockable": false,
+  "launch": false,
+  "bounce": false,
+  "knockdown": false,
+  "feedback": {
+    "spark": "taro_cutter_level1_hit",
+    "block_spark": "impact_guard",
+    "hitstop": 10,
+    "blockstop": 5,
+    "shake": 4,
+    "flash": 2,
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "block_color": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "chip_damage": 18,
+  "manual_projectiles": true,
+  "super_level": 1,
+  "air_allowed": false,
+  "production_note": "用户明确裁定：一级泰罗切割、二级斯特利姆光线、三级奥特爆炸。复用本招本人16独立整相与7层GPT特效；80tick，两刃各90伤/9削，实际错开回接。旧二级替换已退回并恢复；09/12倍率、末相收架、声音/原剧时点缺项保留。",
+  "cancel_rule": "完整收势后恢复行动，无招式取消",
+  "audio": {
+    "hit": "taro_ranged_forward_contact",
+    "block": "taro_guard"
+  },
+  "data_source": "普通泰罗T3简体资料支持双手交叉、一次两道新月切刃、切割后返回；GIF支持交臂。80tick、上下浅弧、每刃150/15、错开58/62和前后判定为本作编排，不借超级泰罗。",
+  "projectile": {
+    "weapon_id": "A",
+    "effect": "taro_cutter_level1_near_flight",
+    "spawn": [
+      17,
+      104
+    ],
+    "box": [
+      -12,
+      -17,
+      24,
+      33
+    ],
+    "frame_hitboxes": [
+      [
+        [
+          -7,
+          11,
+          10,
+          4
+        ],
+        [
+          -4,
+          7,
+          13,
+          4
+        ],
+        [
+          0,
+          3,
+          11,
+          4
+        ],
+        [
+          1,
+          -1,
+          10,
+          4
+        ],
+        [
+          1,
+          -5,
+          11,
+          4
+        ],
+        [
+          -1,
+          -9,
+          12,
+          4
+        ],
+        [
+          -5,
+          -13,
+          14,
+          4
+        ],
+        [
+          -8,
+          -16,
+          10,
+          3
+        ]
+      ],
+      [
+        [
+          -5,
+          12,
+          8,
+          4
+        ],
+        [
+          -2,
+          8,
+          7,
+          4
+        ],
+        [
+          0,
+          4,
+          7,
+          4
+        ],
+        [
+          0,
+          0,
+          8,
+          4
+        ],
+        [
+          1,
+          -4,
+          7,
+          4
+        ],
+        [
+          0,
+          -8,
+          8,
+          4
+        ],
+        [
+          -1,
+          -12,
+          7,
+          4
+        ],
+        [
+          -4,
+          -16,
+          8,
+          4
+        ],
+        [
+          -4,
+          -17,
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          -4,
+          11,
+          12,
+          4
+        ],
+        [
+          -7,
+          7,
+          10,
+          4
+        ],
+        [
+          -11,
+          3,
+          11,
+          4
+        ],
+        [
+          -12,
+          -1,
+          12,
+          4
+        ],
+        [
+          -11,
+          -5,
+          11,
+          4
+        ],
+        [
+          -11,
+          -9,
+          13,
+          4
+        ],
+        [
+          -8,
+          -13,
+          13,
+          4
+        ],
+        [
+          -2,
+          -16,
+          10,
+          3
+        ]
+      ],
+      [
+        [
+          -7,
+          12,
+          9,
+          4
+        ],
+        [
+          -3,
+          8,
+          11,
+          4
+        ],
+        [
+          -1,
+          4,
+          12,
+          4
+        ],
+        [
+          1,
+          0,
+          11,
+          4
+        ],
+        [
+          1,
+          -4,
+          11,
+          4
+        ],
+        [
+          0,
+          -8,
+          12,
+          4
+        ],
+        [
+          -4,
+          -12,
+          13,
+          4
+        ],
+        [
+          -8,
+          -15,
+          10,
+          3
+        ]
+      ]
+    ],
+    "speed": 0,
+    "life": 34,
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "integer_path": [
+      [
+        0,
+        0
+      ],
+      [
+        12,
+        1
+      ],
+      [
+        24,
+        2
+      ],
+      [
+        36,
+        3
+      ],
+      [
+        48,
+        4
+      ],
+      [
+        60,
+        5
+      ],
+      [
+        72,
+        6
+      ],
+      [
+        84,
+        6
+      ],
+      [
+        96,
+        7
+      ],
+      [
+        108,
+        7
+      ],
+      [
+        120,
+        7
+      ],
+      [
+        132,
+        7
+      ],
+      [
+        144,
+        8
+      ],
+      [
+        156,
+        7
+      ],
+      [
+        168,
+        7
+      ],
+      [
+        180,
+        7
+      ],
+      [
+        192,
+        7
+      ],
+      [
+        204,
+        6
+      ],
+      [
+        216,
+        6
+      ],
+      [
+        228,
+        5
+      ],
+      [
+        240,
+        4
+      ],
+      [
+        252,
+        3
+      ],
+      [
+        264,
+        2
+      ],
+      [
+        276,
+        1
+      ],
+      [
+        288,
+        0
+      ]
+    ],
+    "return_ticks": 8,
+    "return_anchor": [
+      10,
+      96
+    ],
+    "return_anchor_by_tick": {
+      "25": [
+        17,
+        104
+      ],
+      "26": [
+        17,
+        104
+      ],
+      "27": [
+        17,
+        104
+      ],
+      "28": [
+        17,
+        104
+      ],
+      "29": [
+        17,
+        104
+      ],
+      "30": [
+        18,
+        100
+      ],
+      "31": [
+        18,
+        100
+      ],
+      "32": [
+        18,
+        100
+      ],
+      "33": [
+        18,
+        100
+      ],
+      "34": [
+        18,
+        100
+      ],
+      "35": [
+        20,
+        99
+      ],
+      "36": [
+        20,
+        99
+      ],
+      "37": [
+        20,
+        99
+      ],
+      "38": [
+        20,
+        99
+      ],
+      "39": [
+        20,
+        99
+      ],
+      "40": [
+        16,
+        96
+      ],
+      "41": [
+        16,
+        96
+      ],
+      "42": [
+        16,
+        96
+      ],
+      "43": [
+        16,
+        96
+      ],
+      "44": [
+        16,
+        96
+      ],
+      "45": [
+        5,
+        86
+      ],
+      "46": [
+        5,
+        86
+      ],
+      "47": [
+        5,
+        86
+      ],
+      "48": [
+        5,
+        86
+      ],
+      "49": [
+        5,
+        86
+      ],
+      "50": [
+        15,
+        90
+      ],
+      "51": [
+        15,
+        90
+      ],
+      "52": [
+        15,
+        90
+      ],
+      "53": [
+        15,
+        90
+      ],
+      "54": [
+        15,
+        90
+      ],
+      "55": [
+        10,
+        96
+      ],
+      "56": [
+        10,
+        96
+      ],
+      "57": [
+        10,
+        96
+      ],
+      "58": [
+        10,
+        96
+      ],
+      "59": [
+        10,
+        96
+      ],
+      "60": [
+        20,
+        77
+      ],
+      "61": [
+        20,
+        77
+      ],
+      "62": [
+        20,
+        77
+      ],
+      "63": [
+        20,
+        77
+      ],
+      "64": [
+        20,
+        77
+      ]
+    },
+    "owner_interrupt_policy": "clear",
+    "return_effect": "taro_cutter_level1_return",
+    "locked_moves": [
+      "special",
+      "special2",
+      "special3"
+    ],
+    "max_hits": 1,
+    "hit_interval": 4,
+    "hit_overrides": {
+      "damage": 90,
+      "chip_damage": 9,
+      "knockdown": false,
+      "pushback": 4,
+      "stun": 27
+    },
+    "pair_trail_effect": "taro_cutter_level1_trail",
+    "pair_trail_peer_id": "B"
+  },
+  "review_fixture_gap": 150,
+  "review_whiff_gap": 700,
+  "review_still_tick": 26,
+  "frames": [
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          34,
+          27
+        ],
+        [
+          -24,
+          88,
+          70,
+          32
+        ],
+        [
+          -24,
+          56,
+          69,
+          32
+        ],
+        [
+          -47,
+          24,
+          85,
+          32
+        ],
+        [
+          -58,
+          0,
+          113,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "taro_ranged_forward_charge"
+        }
+      ],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          34,
+          27
+        ],
+        [
+          -24,
+          88,
+          70,
+          32
+        ],
+        [
+          -24,
+          56,
+          69,
+          32
+        ],
+        [
+          -47,
+          24,
+          85,
+          32
+        ],
+        [
+          -58,
+          0,
+          113,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          34,
+          27
+        ],
+        [
+          -24,
+          88,
+          70,
+          32
+        ],
+        [
+          -24,
+          56,
+          69,
+          32
+        ],
+        [
+          -47,
+          24,
+          85,
+          32
+        ],
+        [
+          -58,
+          0,
+          113,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          34,
+          27
+        ],
+        [
+          -24,
+          88,
+          70,
+          32
+        ],
+        [
+          -24,
+          56,
+          69,
+          32
+        ],
+        [
+          -47,
+          24,
+          85,
+          32
+        ],
+        [
+          -58,
+          0,
+          113,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          34,
+          27
+        ],
+        [
+          -24,
+          88,
+          70,
+          32
+        ],
+        [
+          -24,
+          56,
+          69,
+          32
+        ],
+        [
+          -47,
+          24,
+          85,
+          32
+        ],
+        [
+          -58,
+          0,
+          113,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -23,
+          120,
+          34,
+          25
+        ],
+        [
+          -75,
+          88,
+          135,
+          32
+        ],
+        [
+          -23,
+          56,
+          79,
+          32
+        ],
+        [
+          -42,
+          24,
+          74,
+          32
+        ],
+        [
+          -50,
+          0,
+          99,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -23,
+          120,
+          34,
+          25
+        ],
+        [
+          -75,
+          88,
+          135,
+          32
+        ],
+        [
+          -23,
+          56,
+          79,
+          32
+        ],
+        [
+          -42,
+          24,
+          74,
+          32
+        ],
+        [
+          -50,
+          0,
+          99,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -23,
+          120,
+          34,
+          25
+        ],
+        [
+          -75,
+          88,
+          135,
+          32
+        ],
+        [
+          -23,
+          56,
+          79,
+          32
+        ],
+        [
+          -42,
+          24,
+          74,
+          32
+        ],
+        [
+          -50,
+          0,
+          99,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -23,
+          120,
+          34,
+          25
+        ],
+        [
+          -75,
+          88,
+          135,
+          32
+        ],
+        [
+          -23,
+          56,
+          79,
+          32
+        ],
+        [
+          -42,
+          24,
+          74,
+          32
+        ],
+        [
+          -50,
+          0,
+          99,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -23,
+          120,
+          34,
+          25
+        ],
+        [
+          -75,
+          88,
+          135,
+          32
+        ],
+        [
+          -23,
+          56,
+          79,
+          32
+        ],
+        [
+          -42,
+          24,
+          74,
+          32
+        ],
+        [
+          -50,
+          0,
+          99,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          25
+        ],
+        [
+          -73,
+          88,
+          134,
+          32
+        ],
+        [
+          -24,
+          56,
+          41,
+          32
+        ],
+        [
+          -44,
+          24,
+          78,
+          32
+        ],
+        [
+          -52,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          25
+        ],
+        [
+          -73,
+          88,
+          134,
+          32
+        ],
+        [
+          -24,
+          56,
+          41,
+          32
+        ],
+        [
+          -44,
+          24,
+          78,
+          32
+        ],
+        [
+          -52,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          25
+        ],
+        [
+          -73,
+          88,
+          134,
+          32
+        ],
+        [
+          -24,
+          56,
+          41,
+          32
+        ],
+        [
+          -44,
+          24,
+          78,
+          32
+        ],
+        [
+          -52,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          25
+        ],
+        [
+          -73,
+          88,
+          134,
+          32
+        ],
+        [
+          -24,
+          56,
+          41,
+          32
+        ],
+        [
+          -44,
+          24,
+          78,
+          32
+        ],
+        [
+          -52,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          25
+        ],
+        [
+          -73,
+          88,
+          134,
+          32
+        ],
+        [
+          -24,
+          56,
+          41,
+          32
+        ],
+        [
+          -44,
+          24,
+          78,
+          32
+        ],
+        [
+          -52,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -23,
+          120,
+          52,
+          25
+        ],
+        [
+          -26,
+          88,
+          59,
+          32
+        ],
+        [
+          -23,
+          56,
+          43,
+          32
+        ],
+        [
+          -41,
+          24,
+          75,
+          32
+        ],
+        [
+          -50,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -23,
+          120,
+          52,
+          25
+        ],
+        [
+          -26,
+          88,
+          59,
+          32
+        ],
+        [
+          -23,
+          56,
+          43,
+          32
+        ],
+        [
+          -41,
+          24,
+          75,
+          32
+        ],
+        [
+          -50,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -23,
+          120,
+          52,
+          25
+        ],
+        [
+          -26,
+          88,
+          59,
+          32
+        ],
+        [
+          -23,
+          56,
+          43,
+          32
+        ],
+        [
+          -41,
+          24,
+          75,
+          32
+        ],
+        [
+          -50,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -23,
+          120,
+          52,
+          25
+        ],
+        [
+          -26,
+          88,
+          59,
+          32
+        ],
+        [
+          -23,
+          56,
+          43,
+          32
+        ],
+        [
+          -41,
+          24,
+          75,
+          32
+        ],
+        [
+          -50,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -23,
+          120,
+          52,
+          25
+        ],
+        [
+          -26,
+          88,
+          59,
+          32
+        ],
+        [
+          -23,
+          56,
+          43,
+          32
+        ],
+        [
+          -41,
+          24,
+          75,
+          32
+        ],
+        [
+          -50,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          45,
+          27
+        ],
+        [
+          -31,
+          88,
+          56,
+          32
+        ],
+        [
+          -22,
+          56,
+          43,
+          32
+        ],
+        [
+          -41,
+          24,
+          76,
+          32
+        ],
+        [
+          -50,
+          0,
+          102,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          45,
+          27
+        ],
+        [
+          -31,
+          88,
+          56,
+          32
+        ],
+        [
+          -22,
+          56,
+          43,
+          32
+        ],
+        [
+          -41,
+          24,
+          76,
+          32
+        ],
+        [
+          -50,
+          0,
+          102,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          45,
+          27
+        ],
+        [
+          -31,
+          88,
+          56,
+          32
+        ],
+        [
+          -22,
+          56,
+          43,
+          32
+        ],
+        [
+          -41,
+          24,
+          76,
+          32
+        ],
+        [
+          -50,
+          0,
+          102,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          45,
+          27
+        ],
+        [
+          -31,
+          88,
+          56,
+          32
+        ],
+        [
+          -22,
+          56,
+          43,
+          32
+        ],
+        [
+          -41,
+          24,
+          76,
+          32
+        ],
+        [
+          -50,
+          0,
+          102,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          45,
+          27
+        ],
+        [
+          -31,
+          88,
+          56,
+          32
+        ],
+        [
+          -22,
+          56,
+          43,
+          32
+        ],
+        [
+          -41,
+          24,
+          76,
+          32
+        ],
+        [
+          -50,
+          0,
+          102,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -17,
+          120,
+          39,
+          28
+        ],
+        [
+          -29,
+          88,
+          55,
+          32
+        ],
+        [
+          -19,
+          56,
+          45,
+          32
+        ],
+        [
+          -37,
+          24,
+          77,
+          32
+        ],
+        [
+          -47,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "taro_ranged_forward_cast"
+        }
+      ],
+      "attachments": [
+        {
+          "effect": "taro_cutter_level1_near_start",
+          "sprite": 0,
+          "anchor": [
+            17,
+            104
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "behind_fighter": false
+        },
+        {
+          "effect": "taro_cutter_level1_far_start",
+          "sprite": 0,
+          "anchor": [
+            -8,
+            97
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "behind_fighter": true
+        }
+      ],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard",
+      "shots": [
+        {
+          "weapon_id": "A",
+          "effect": "taro_cutter_level1_near_flight",
+          "spawn": [
+            17,
+            104
+          ],
+          "box": [
+            -12,
+            -17,
+            24,
+            33
+          ],
+          "frame_hitboxes": [
+            [
+              [
+                -7,
+                11,
+                10,
+                4
+              ],
+              [
+                -4,
+                7,
+                13,
+                4
+              ],
+              [
+                0,
+                3,
+                11,
+                4
+              ],
+              [
+                1,
+                -1,
+                10,
+                4
+              ],
+              [
+                1,
+                -5,
+                11,
+                4
+              ],
+              [
+                -1,
+                -9,
+                12,
+                4
+              ],
+              [
+                -5,
+                -13,
+                14,
+                4
+              ],
+              [
+                -8,
+                -16,
+                10,
+                3
+              ]
+            ],
+            [
+              [
+                -5,
+                12,
+                8,
+                4
+              ],
+              [
+                -2,
+                8,
+                7,
+                4
+              ],
+              [
+                0,
+                4,
+                7,
+                4
+              ],
+              [
+                0,
+                0,
+                8,
+                4
+              ],
+              [
+                1,
+                -4,
+                7,
+                4
+              ],
+              [
+                0,
+                -8,
+                8,
+                4
+              ],
+              [
+                -1,
+                -12,
+                7,
+                4
+              ],
+              [
+                -4,
+                -16,
+                8,
+                4
+              ],
+              [
+                -4,
+                -17,
+                1,
+                1
+              ]
+            ],
+            [
+              [
+                -4,
+                11,
+                12,
+                4
+              ],
+              [
+                -7,
+                7,
+                10,
+                4
+              ],
+              [
+                -11,
+                3,
+                11,
+                4
+              ],
+              [
+                -12,
+                -1,
+                12,
+                4
+              ],
+              [
+                -11,
+                -5,
+                11,
+                4
+              ],
+              [
+                -11,
+                -9,
+                13,
+                4
+              ],
+              [
+                -8,
+                -13,
+                13,
+                4
+              ],
+              [
+                -2,
+                -16,
+                10,
+                3
+              ]
+            ],
+            [
+              [
+                -7,
+                12,
+                9,
+                4
+              ],
+              [
+                -3,
+                8,
+                11,
+                4
+              ],
+              [
+                -1,
+                4,
+                12,
+                4
+              ],
+              [
+                1,
+                0,
+                11,
+                4
+              ],
+              [
+                1,
+                -4,
+                11,
+                4
+              ],
+              [
+                0,
+                -8,
+                12,
+                4
+              ],
+              [
+                -4,
+                -12,
+                13,
+                4
+              ],
+              [
+                -8,
+                -15,
+                10,
+                3
+              ]
+            ]
+          ],
+          "speed": 0,
+          "life": 34,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "integer_path": [
+            [
+              0,
+              0
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              24,
+              2
+            ],
+            [
+              36,
+              3
+            ],
+            [
+              48,
+              4
+            ],
+            [
+              60,
+              5
+            ],
+            [
+              72,
+              6
+            ],
+            [
+              84,
+              6
+            ],
+            [
+              96,
+              7
+            ],
+            [
+              108,
+              7
+            ],
+            [
+              120,
+              7
+            ],
+            [
+              132,
+              7
+            ],
+            [
+              144,
+              8
+            ],
+            [
+              156,
+              7
+            ],
+            [
+              168,
+              7
+            ],
+            [
+              180,
+              7
+            ],
+            [
+              192,
+              7
+            ],
+            [
+              204,
+              6
+            ],
+            [
+              216,
+              6
+            ],
+            [
+              228,
+              5
+            ],
+            [
+              240,
+              4
+            ],
+            [
+              252,
+              3
+            ],
+            [
+              264,
+              2
+            ],
+            [
+              276,
+              1
+            ],
+            [
+              288,
+              0
+            ]
+          ],
+          "return_ticks": 8,
+          "return_anchor": [
+            10,
+            96
+          ],
+          "return_anchor_by_tick": {
+            "25": [
+              17,
+              104
+            ],
+            "26": [
+              17,
+              104
+            ],
+            "27": [
+              17,
+              104
+            ],
+            "28": [
+              17,
+              104
+            ],
+            "29": [
+              17,
+              104
+            ],
+            "30": [
+              18,
+              100
+            ],
+            "31": [
+              18,
+              100
+            ],
+            "32": [
+              18,
+              100
+            ],
+            "33": [
+              18,
+              100
+            ],
+            "34": [
+              18,
+              100
+            ],
+            "35": [
+              20,
+              99
+            ],
+            "36": [
+              20,
+              99
+            ],
+            "37": [
+              20,
+              99
+            ],
+            "38": [
+              20,
+              99
+            ],
+            "39": [
+              20,
+              99
+            ],
+            "40": [
+              16,
+              96
+            ],
+            "41": [
+              16,
+              96
+            ],
+            "42": [
+              16,
+              96
+            ],
+            "43": [
+              16,
+              96
+            ],
+            "44": [
+              16,
+              96
+            ],
+            "45": [
+              5,
+              86
+            ],
+            "46": [
+              5,
+              86
+            ],
+            "47": [
+              5,
+              86
+            ],
+            "48": [
+              5,
+              86
+            ],
+            "49": [
+              5,
+              86
+            ],
+            "50": [
+              15,
+              90
+            ],
+            "51": [
+              15,
+              90
+            ],
+            "52": [
+              15,
+              90
+            ],
+            "53": [
+              15,
+              90
+            ],
+            "54": [
+              15,
+              90
+            ],
+            "55": [
+              10,
+              96
+            ],
+            "56": [
+              10,
+              96
+            ],
+            "57": [
+              10,
+              96
+            ],
+            "58": [
+              10,
+              96
+            ],
+            "59": [
+              10,
+              96
+            ],
+            "60": [
+              20,
+              77
+            ],
+            "61": [
+              20,
+              77
+            ],
+            "62": [
+              20,
+              77
+            ],
+            "63": [
+              20,
+              77
+            ],
+            "64": [
+              20,
+              77
+            ]
+          },
+          "owner_interrupt_policy": "clear",
+          "return_effect": "taro_cutter_level1_return",
+          "locked_moves": [
+            "special",
+            "special2",
+            "special3"
+          ],
+          "max_hits": 1,
+          "hit_interval": 4,
+          "hit_overrides": {
+            "damage": 90,
+            "chip_damage": 9,
+            "knockdown": false,
+            "pushback": 4,
+            "stun": 27
+          },
+          "pair_trail_effect": "taro_cutter_level1_trail",
+          "pair_trail_peer_id": "B"
+        },
+        {
+          "weapon_id": "B",
+          "effect": "taro_cutter_level1_far_flight",
+          "spawn": [
+            -8,
+            97
+          ],
+          "box": [
+            -13,
+            -17,
+            25,
+            34
+          ],
+          "frame_hitboxes": [
+            [
+              [
+                -9,
+                10,
+                16,
+                4
+              ],
+              [
+                -2,
+                6,
+                13,
+                4
+              ],
+              [
+                2,
+                2,
+                10,
+                4
+              ],
+              [
+                4,
+                -2,
+                8,
+                4
+              ],
+              [
+                2,
+                -6,
+                10,
+                4
+              ],
+              [
+                -2,
+                -10,
+                13,
+                4
+              ],
+              [
+                -10,
+                -14,
+                17,
+                4
+              ]
+            ],
+            [
+              [
+                -2,
+                13,
+                5,
+                4
+              ],
+              [
+                -1,
+                9,
+                6,
+                4
+              ],
+              [
+                0,
+                5,
+                6,
+                4
+              ],
+              [
+                0,
+                1,
+                6,
+                4
+              ],
+              [
+                1,
+                -3,
+                5,
+                4
+              ],
+              [
+                0,
+                -7,
+                6,
+                4
+              ],
+              [
+                -1,
+                -11,
+                6,
+                4
+              ],
+              [
+                -3,
+                -15,
+                6,
+                4
+              ],
+              [
+                -3,
+                -17,
+                3,
+                2
+              ]
+            ],
+            [
+              [
+                -5,
+                9,
+                11,
+                4
+              ],
+              [
+                -9,
+                5,
+                13,
+                4
+              ],
+              [
+                -11,
+                1,
+                10,
+                4
+              ],
+              [
+                -11,
+                -3,
+                10,
+                4
+              ],
+              [
+                -11,
+                -7,
+                14,
+                4
+              ],
+              [
+                -7,
+                -11,
+                12,
+                4
+              ],
+              [
+                0,
+                -12,
+                6,
+                1
+              ]
+            ],
+            [
+              [
+                -7,
+                9,
+                15,
+                4
+              ],
+              [
+                -11,
+                5,
+                13,
+                4
+              ],
+              [
+                -13,
+                1,
+                9,
+                4
+              ],
+              [
+                -13,
+                -3,
+                9,
+                4
+              ],
+              [
+                -12,
+                -7,
+                12,
+                4
+              ],
+              [
+                -9,
+                -11,
+                15,
+                4
+              ],
+              [
+                -3,
+                -13,
+                10,
+                2
+              ]
+            ]
+          ],
+          "speed": 0,
+          "life": 38,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "integer_path": [
+            [
+              0,
+              0
+            ],
+            [
+              12,
+              -1
+            ],
+            [
+              24,
+              -2
+            ],
+            [
+              36,
+              -3
+            ],
+            [
+              48,
+              -3
+            ],
+            [
+              60,
+              -4
+            ],
+            [
+              72,
+              -5
+            ],
+            [
+              84,
+              -6
+            ],
+            [
+              96,
+              -6
+            ],
+            [
+              108,
+              -6
+            ],
+            [
+              120,
+              -7
+            ],
+            [
+              132,
+              -7
+            ],
+            [
+              144,
+              -7
+            ],
+            [
+              156,
+              -7
+            ],
+            [
+              168,
+              -8
+            ],
+            [
+              180,
+              -7
+            ],
+            [
+              192,
+              -7
+            ],
+            [
+              204,
+              -7
+            ],
+            [
+              216,
+              -7
+            ],
+            [
+              228,
+              -6
+            ],
+            [
+              240,
+              -6
+            ],
+            [
+              252,
+              -6
+            ],
+            [
+              264,
+              -5
+            ],
+            [
+              276,
+              -4
+            ],
+            [
+              288,
+              -3
+            ],
+            [
+              300,
+              -3
+            ],
+            [
+              312,
+              -2
+            ],
+            [
+              324,
+              -1
+            ],
+            [
+              336,
+              0
+            ]
+          ],
+          "return_ticks": 8,
+          "return_anchor": [
+            19,
+            98
+          ],
+          "return_anchor_by_tick": {
+            "25": [
+              -8,
+              97
+            ],
+            "26": [
+              -8,
+              97
+            ],
+            "27": [
+              -8,
+              97
+            ],
+            "28": [
+              -8,
+              97
+            ],
+            "29": [
+              -8,
+              97
+            ],
+            "30": [
+              -22,
+              89
+            ],
+            "31": [
+              -22,
+              89
+            ],
+            "32": [
+              -22,
+              89
+            ],
+            "33": [
+              -22,
+              89
+            ],
+            "34": [
+              -22,
+              89
+            ],
+            "35": [
+              21,
+              90
+            ],
+            "36": [
+              21,
+              90
+            ],
+            "37": [
+              21,
+              90
+            ],
+            "38": [
+              21,
+              90
+            ],
+            "39": [
+              21,
+              90
+            ],
+            "40": [
+              43,
+              92
+            ],
+            "41": [
+              43,
+              92
+            ],
+            "42": [
+              43,
+              92
+            ],
+            "43": [
+              43,
+              92
+            ],
+            "44": [
+              43,
+              92
+            ],
+            "45": [
+              48,
+              98
+            ],
+            "46": [
+              48,
+              98
+            ],
+            "47": [
+              48,
+              98
+            ],
+            "48": [
+              48,
+              98
+            ],
+            "49": [
+              48,
+              98
+            ],
+            "50": [
+              45,
+              98
+            ],
+            "51": [
+              45,
+              98
+            ],
+            "52": [
+              45,
+              98
+            ],
+            "53": [
+              45,
+              98
+            ],
+            "54": [
+              45,
+              98
+            ],
+            "55": [
+              47,
+              96
+            ],
+            "56": [
+              47,
+              96
+            ],
+            "57": [
+              47,
+              96
+            ],
+            "58": [
+              47,
+              96
+            ],
+            "59": [
+              47,
+              96
+            ],
+            "60": [
+              19,
+              98
+            ],
+            "61": [
+              19,
+              98
+            ],
+            "62": [
+              19,
+              98
+            ],
+            "63": [
+              19,
+              98
+            ],
+            "64": [
+              19,
+              98
+            ]
+          },
+          "owner_interrupt_policy": "clear",
+          "return_effect": "taro_cutter_level1_return",
+          "locked_moves": [
+            "special",
+            "special2",
+            "special3"
+          ],
+          "max_hits": 1,
+          "hit_interval": 4,
+          "hit_overrides": {
+            "damage": 90,
+            "chip_damage": 9,
+            "knockdown": false,
+            "pushback": 4,
+            "stun": 27
+          }
+        }
+      ]
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -17,
+          120,
+          39,
+          28
+        ],
+        [
+          -29,
+          88,
+          55,
+          32
+        ],
+        [
+          -19,
+          56,
+          45,
+          32
+        ],
+        [
+          -37,
+          24,
+          77,
+          32
+        ],
+        [
+          -47,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [
+        {
+          "effect": "taro_cutter_level1_near_start",
+          "sprite": 1,
+          "anchor": [
+            17,
+            104
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "behind_fighter": false
+        },
+        {
+          "effect": "taro_cutter_level1_far_start",
+          "sprite": 1,
+          "anchor": [
+            -8,
+            97
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "behind_fighter": true
+        }
+      ],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -17,
+          120,
+          39,
+          28
+        ],
+        [
+          -29,
+          88,
+          55,
+          32
+        ],
+        [
+          -19,
+          56,
+          45,
+          32
+        ],
+        [
+          -37,
+          24,
+          77,
+          32
+        ],
+        [
+          -47,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [
+        {
+          "effect": "taro_cutter_level1_near_start",
+          "sprite": 2,
+          "anchor": [
+            17,
+            104
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "behind_fighter": false
+        },
+        {
+          "effect": "taro_cutter_level1_far_start",
+          "sprite": 2,
+          "anchor": [
+            -8,
+            97
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "behind_fighter": true
+        }
+      ],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -17,
+          120,
+          39,
+          28
+        ],
+        [
+          -29,
+          88,
+          55,
+          32
+        ],
+        [
+          -19,
+          56,
+          45,
+          32
+        ],
+        [
+          -37,
+          24,
+          77,
+          32
+        ],
+        [
+          -47,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [
+        {
+          "effect": "taro_cutter_level1_near_start",
+          "sprite": 3,
+          "anchor": [
+            17,
+            104
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "behind_fighter": false
+        },
+        {
+          "effect": "taro_cutter_level1_far_start",
+          "sprite": 3,
+          "anchor": [
+            -8,
+            97
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "behind_fighter": true
+        }
+      ],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -17,
+          120,
+          39,
+          28
+        ],
+        [
+          -29,
+          88,
+          55,
+          32
+        ],
+        [
+          -19,
+          56,
+          45,
+          32
+        ],
+        [
+          -37,
+          24,
+          77,
+          32
+        ],
+        [
+          -47,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [
+        {
+          "effect": "taro_cutter_level1_near_start",
+          "sprite": 3,
+          "anchor": [
+            17,
+            104
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "behind_fighter": false
+        },
+        {
+          "effect": "taro_cutter_level1_far_start",
+          "sprite": 3,
+          "anchor": [
+            -8,
+            97
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "behind_fighter": true
+        }
+      ],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 6,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          40,
+          24
+        ],
+        [
+          -38,
+          88,
+          65,
+          32
+        ],
+        [
+          -36,
+          56,
+          54,
+          32
+        ],
+        [
+          -40,
+          24,
+          76,
+          32
+        ],
+        [
+          -48,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 6,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          40,
+          24
+        ],
+        [
+          -38,
+          88,
+          65,
+          32
+        ],
+        [
+          -36,
+          56,
+          54,
+          32
+        ],
+        [
+          -40,
+          24,
+          76,
+          32
+        ],
+        [
+          -48,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 6,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          40,
+          24
+        ],
+        [
+          -38,
+          88,
+          65,
+          32
+        ],
+        [
+          -36,
+          56,
+          54,
+          32
+        ],
+        [
+          -40,
+          24,
+          76,
+          32
+        ],
+        [
+          -48,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 6,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          40,
+          24
+        ],
+        [
+          -38,
+          88,
+          65,
+          32
+        ],
+        [
+          -36,
+          56,
+          54,
+          32
+        ],
+        [
+          -40,
+          24,
+          76,
+          32
+        ],
+        [
+          -48,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 6,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          40,
+          24
+        ],
+        [
+          -38,
+          88,
+          65,
+          32
+        ],
+        [
+          -36,
+          56,
+          54,
+          32
+        ],
+        [
+          -40,
+          24,
+          76,
+          32
+        ],
+        [
+          -48,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 7,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          42,
+          25
+        ],
+        [
+          -24,
+          88,
+          61,
+          32
+        ],
+        [
+          -22,
+          56,
+          47,
+          32
+        ],
+        [
+          -40,
+          24,
+          75,
+          32
+        ],
+        [
+          -48,
+          0,
+          98,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 7,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          42,
+          25
+        ],
+        [
+          -24,
+          88,
+          61,
+          32
+        ],
+        [
+          -22,
+          56,
+          47,
+          32
+        ],
+        [
+          -40,
+          24,
+          75,
+          32
+        ],
+        [
+          -48,
+          0,
+          98,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 7,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          42,
+          25
+        ],
+        [
+          -24,
+          88,
+          61,
+          32
+        ],
+        [
+          -22,
+          56,
+          47,
+          32
+        ],
+        [
+          -40,
+          24,
+          75,
+          32
+        ],
+        [
+          -48,
+          0,
+          98,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 7,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          42,
+          25
+        ],
+        [
+          -24,
+          88,
+          61,
+          32
+        ],
+        [
+          -22,
+          56,
+          47,
+          32
+        ],
+        [
+          -40,
+          24,
+          75,
+          32
+        ],
+        [
+          -48,
+          0,
+          98,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 7,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          42,
+          25
+        ],
+        [
+          -24,
+          88,
+          61,
+          32
+        ],
+        [
+          -22,
+          56,
+          47,
+          32
+        ],
+        [
+          -40,
+          24,
+          75,
+          32
+        ],
+        [
+          -48,
+          0,
+          98,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 8,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -21,
+          120,
+          35,
+          25
+        ],
+        [
+          -26,
+          88,
+          86,
+          32
+        ],
+        [
+          -24,
+          56,
+          70,
+          32
+        ],
+        [
+          -44,
+          24,
+          78,
+          32
+        ],
+        [
+          -54,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 8,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -21,
+          120,
+          35,
+          25
+        ],
+        [
+          -26,
+          88,
+          86,
+          32
+        ],
+        [
+          -24,
+          56,
+          70,
+          32
+        ],
+        [
+          -44,
+          24,
+          78,
+          32
+        ],
+        [
+          -54,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 8,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -21,
+          120,
+          35,
+          25
+        ],
+        [
+          -26,
+          88,
+          86,
+          32
+        ],
+        [
+          -24,
+          56,
+          70,
+          32
+        ],
+        [
+          -44,
+          24,
+          78,
+          32
+        ],
+        [
+          -54,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 8,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -21,
+          120,
+          35,
+          25
+        ],
+        [
+          -26,
+          88,
+          86,
+          32
+        ],
+        [
+          -24,
+          56,
+          70,
+          32
+        ],
+        [
+          -44,
+          24,
+          78,
+          32
+        ],
+        [
+          -54,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 8,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -21,
+          120,
+          35,
+          25
+        ],
+        [
+          -26,
+          88,
+          86,
+          32
+        ],
+        [
+          -24,
+          56,
+          70,
+          32
+        ],
+        [
+          -44,
+          24,
+          78,
+          32
+        ],
+        [
+          -54,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 9,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -17,
+          120,
+          31,
+          25
+        ],
+        [
+          -24,
+          88,
+          88,
+          32
+        ],
+        [
+          -21,
+          56,
+          57,
+          32
+        ],
+        [
+          -40,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          104,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 9,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -17,
+          120,
+          31,
+          25
+        ],
+        [
+          -24,
+          88,
+          88,
+          32
+        ],
+        [
+          -21,
+          56,
+          57,
+          32
+        ],
+        [
+          -40,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          104,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 9,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -17,
+          120,
+          31,
+          25
+        ],
+        [
+          -24,
+          88,
+          88,
+          32
+        ],
+        [
+          -21,
+          56,
+          57,
+          32
+        ],
+        [
+          -40,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          104,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 9,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -17,
+          120,
+          31,
+          25
+        ],
+        [
+          -24,
+          88,
+          88,
+          32
+        ],
+        [
+          -21,
+          56,
+          57,
+          32
+        ],
+        [
+          -40,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          104,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 9,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -17,
+          120,
+          31,
+          25
+        ],
+        [
+          -24,
+          88,
+          88,
+          32
+        ],
+        [
+          -21,
+          56,
+          57,
+          32
+        ],
+        [
+          -40,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          104,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 10,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          32,
+          24
+        ],
+        [
+          -28,
+          88,
+          93,
+          32
+        ],
+        [
+          -24,
+          56,
+          45,
+          32
+        ],
+        [
+          -42,
+          24,
+          77,
+          32
+        ],
+        [
+          -51,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 10,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          32,
+          24
+        ],
+        [
+          -28,
+          88,
+          93,
+          32
+        ],
+        [
+          -24,
+          56,
+          45,
+          32
+        ],
+        [
+          -42,
+          24,
+          77,
+          32
+        ],
+        [
+          -51,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 10,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          32,
+          24
+        ],
+        [
+          -28,
+          88,
+          93,
+          32
+        ],
+        [
+          -24,
+          56,
+          45,
+          32
+        ],
+        [
+          -42,
+          24,
+          77,
+          32
+        ],
+        [
+          -51,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 10,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          32,
+          24
+        ],
+        [
+          -28,
+          88,
+          93,
+          32
+        ],
+        [
+          -24,
+          56,
+          45,
+          32
+        ],
+        [
+          -42,
+          24,
+          77,
+          32
+        ],
+        [
+          -51,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 10,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          32,
+          24
+        ],
+        [
+          -28,
+          88,
+          93,
+          32
+        ],
+        [
+          -24,
+          56,
+          45,
+          32
+        ],
+        [
+          -42,
+          24,
+          77,
+          32
+        ],
+        [
+          -51,
+          0,
+          105,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 11,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          26
+        ],
+        [
+          -25,
+          88,
+          88,
+          32
+        ],
+        [
+          -23,
+          56,
+          42,
+          32
+        ],
+        [
+          -42,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          102,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard",
+      "weapon_return_anchor": [
+        10,
+        96
+      ]
+    },
+    {
+      "sprite": 11,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          26
+        ],
+        [
+          -25,
+          88,
+          88,
+          32
+        ],
+        [
+          -23,
+          56,
+          42,
+          32
+        ],
+        [
+          -42,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          102,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard",
+      "weapon_return_anchor": [
+        10,
+        96
+      ]
+    },
+    {
+      "sprite": 11,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          26
+        ],
+        [
+          -25,
+          88,
+          88,
+          32
+        ],
+        [
+          -23,
+          56,
+          42,
+          32
+        ],
+        [
+          -42,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          102,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard",
+      "weapon_return_anchor": [
+        10,
+        96
+      ]
+    },
+    {
+      "sprite": 11,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          26
+        ],
+        [
+          -25,
+          88,
+          88,
+          32
+        ],
+        [
+          -23,
+          56,
+          42,
+          32
+        ],
+        [
+          -42,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          102,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard",
+      "weapon_return_anchor": [
+        10,
+        96
+      ]
+    },
+    {
+      "sprite": 11,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          26
+        ],
+        [
+          -25,
+          88,
+          88,
+          32
+        ],
+        [
+          -23,
+          56,
+          42,
+          32
+        ],
+        [
+          -42,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          102,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard",
+      "weapon_return_anchor": [
+        10,
+        96
+      ]
+    },
+    {
+      "sprite": 12,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          35,
+          27
+        ],
+        [
+          -24,
+          88,
+          54,
+          32
+        ],
+        [
+          -22,
+          56,
+          61,
+          32
+        ],
+        [
+          -42,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          104,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard",
+      "weapon_return_anchor": [
+        19,
+        98
+      ]
+    },
+    {
+      "sprite": 12,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          35,
+          27
+        ],
+        [
+          -24,
+          88,
+          54,
+          32
+        ],
+        [
+          -22,
+          56,
+          61,
+          32
+        ],
+        [
+          -42,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          104,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard",
+      "weapon_return_anchor": [
+        19,
+        98
+      ]
+    },
+    {
+      "sprite": 12,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          35,
+          27
+        ],
+        [
+          -24,
+          88,
+          54,
+          32
+        ],
+        [
+          -22,
+          56,
+          61,
+          32
+        ],
+        [
+          -42,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          104,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard",
+      "weapon_return_anchor": [
+        19,
+        98
+      ]
+    },
+    {
+      "sprite": 12,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          35,
+          27
+        ],
+        [
+          -24,
+          88,
+          54,
+          32
+        ],
+        [
+          -22,
+          56,
+          61,
+          32
+        ],
+        [
+          -42,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          104,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard",
+      "weapon_return_anchor": [
+        19,
+        98
+      ]
+    },
+    {
+      "sprite": 12,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -18,
+          120,
+          35,
+          27
+        ],
+        [
+          -24,
+          88,
+          54,
+          32
+        ],
+        [
+          -22,
+          56,
+          61,
+          32
+        ],
+        [
+          -42,
+          24,
+          78,
+          32
+        ],
+        [
+          -50,
+          0,
+          104,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard",
+      "weapon_return_anchor": [
+        19,
+        98
+      ]
+    },
+    {
+      "sprite": 13,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          33,
+          26
+        ],
+        [
+          -26,
+          88,
+          43,
+          32
+        ],
+        [
+          -24,
+          56,
+          77,
+          32
+        ],
+        [
+          -43,
+          24,
+          77,
+          32
+        ],
+        [
+          -50,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 13,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          33,
+          26
+        ],
+        [
+          -26,
+          88,
+          43,
+          32
+        ],
+        [
+          -24,
+          56,
+          77,
+          32
+        ],
+        [
+          -43,
+          24,
+          77,
+          32
+        ],
+        [
+          -50,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 13,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          33,
+          26
+        ],
+        [
+          -26,
+          88,
+          43,
+          32
+        ],
+        [
+          -24,
+          56,
+          77,
+          32
+        ],
+        [
+          -43,
+          24,
+          77,
+          32
+        ],
+        [
+          -50,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 13,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          33,
+          26
+        ],
+        [
+          -26,
+          88,
+          43,
+          32
+        ],
+        [
+          -24,
+          56,
+          77,
+          32
+        ],
+        [
+          -43,
+          24,
+          77,
+          32
+        ],
+        [
+          -50,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 13,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          120,
+          33,
+          26
+        ],
+        [
+          -26,
+          88,
+          43,
+          32
+        ],
+        [
+          -24,
+          56,
+          77,
+          32
+        ],
+        [
+          -43,
+          24,
+          77,
+          32
+        ],
+        [
+          -50,
+          0,
+          101,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 14,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          34,
+          25
+        ],
+        [
+          -34,
+          88,
+          80,
+          32
+        ],
+        [
+          -37,
+          56,
+          73,
+          32
+        ],
+        [
+          -41,
+          24,
+          75,
+          32
+        ],
+        [
+          -50,
+          0,
+          100,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 14,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          34,
+          25
+        ],
+        [
+          -34,
+          88,
+          80,
+          32
+        ],
+        [
+          -37,
+          56,
+          73,
+          32
+        ],
+        [
+          -41,
+          24,
+          75,
+          32
+        ],
+        [
+          -50,
+          0,
+          100,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 14,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          34,
+          25
+        ],
+        [
+          -34,
+          88,
+          80,
+          32
+        ],
+        [
+          -37,
+          56,
+          73,
+          32
+        ],
+        [
+          -41,
+          24,
+          75,
+          32
+        ],
+        [
+          -50,
+          0,
+          100,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 14,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          34,
+          25
+        ],
+        [
+          -34,
+          88,
+          80,
+          32
+        ],
+        [
+          -37,
+          56,
+          73,
+          32
+        ],
+        [
+          -41,
+          24,
+          75,
+          32
+        ],
+        [
+          -50,
+          0,
+          100,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 14,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          34,
+          25
+        ],
+        [
+          -34,
+          88,
+          80,
+          32
+        ],
+        [
+          -37,
+          56,
+          73,
+          32
+        ],
+        [
+          -41,
+          24,
+          75,
+          32
+        ],
+        [
+          -50,
+          0,
+          100,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 15,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          23
+        ],
+        [
+          -22,
+          88,
+          59,
+          32
+        ],
+        [
+          -21,
+          56,
+          51,
+          32
+        ],
+        [
+          -40,
+          24,
+          74,
+          32
+        ],
+        [
+          -48,
+          0,
+          98,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 15,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          23
+        ],
+        [
+          -22,
+          88,
+          59,
+          32
+        ],
+        [
+          -21,
+          56,
+          51,
+          32
+        ],
+        [
+          -40,
+          24,
+          74,
+          32
+        ],
+        [
+          -48,
+          0,
+          98,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 15,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          23
+        ],
+        [
+          -22,
+          88,
+          59,
+          32
+        ],
+        [
+          -21,
+          56,
+          51,
+          32
+        ],
+        [
+          -40,
+          24,
+          74,
+          32
+        ],
+        [
+          -48,
+          0,
+          98,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 15,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          23
+        ],
+        [
+          -22,
+          88,
+          59,
+          32
+        ],
+        [
+          -21,
+          56,
+          51,
+          32
+        ],
+        [
+          -40,
+          24,
+          74,
+          32
+        ],
+        [
+          -48,
+          0,
+          98,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 15,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -19,
+          120,
+          33,
+          23
+        ],
+        [
+          -22,
+          88,
+          59,
+          32
+        ],
+        [
+          -21,
+          56,
+          51,
+          32
+        ],
+        [
+          -40,
+          24,
+          74,
+          32
+        ],
+        [
+          -48,
+          0,
+          98,
+          24
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "attachments": [],
+      "audio_loop": "",
+      "impact_effect": "taro_cutter_level1_hit",
+      "block_effect": "impact_guard"
+    }
+  ]
+}

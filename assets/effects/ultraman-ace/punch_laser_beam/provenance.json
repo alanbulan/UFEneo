@@ -1,0 +1,65 @@
+{
+  "art_source": "api",
+  "route": "tools/art_pipeline.py:generate_image",
+  "request": "art/fighters/ultraman-ace/stage4/effects-v2/requests/punch_laser_beam/01/brief.json",
+  "request_sha256": "25a7571ba5ed56274d216c84c07d544bda4f9a864c97e18ec90de5fe446d14b7",
+  "source": "art/fighters/ultraman-ace/stage4/effects-v2/requests/punch_laser_beam/01/raw.provider.png",
+  "source_sha256": "cd6fd078409389abe2c7265fe6e96140791bac9de92d5a14d93114a366d21466",
+  "provider_image_sha256": "e1527adb5cf6fa579e722a0e0920a9a15029df360af1ff9c062ba4847a3e7150",
+  "model": "gpt-image-2.5-sunburst",
+  "requested_quality": "high",
+  "actual_quality": "medium（本机接口固定返回；不因quality被忽略重发）",
+  "source_rects": [
+    [
+      0,
+      0,
+      2048,
+      248
+    ],
+    [
+      0,
+      248,
+      2048,
+      437
+    ],
+    [
+      0,
+      437,
+      2048,
+      611
+    ],
+    [
+      0,
+      611,
+      2048,
+      768
+    ]
+  ],
+  "selection_reason": "按原剧配色的独立GPT像素图层；四相共用统一整帧比例，保留亮芯、外焰和粒子；不是通用库换色",
+  "episode_reference": "art/fighters/ultraman-ace/references/effects/episode-2s.png",
+  "description": "冲击镭射：额前蓝灯发射的青蓝激光，白芯、冰青内焰、饱和蓝中层、钴蓝与紫蓝碎焰，细而有体积，有短促点光与簇状电火花。水平向右持续光束，左端是平直发射截面，右端延伸出画，整条厚实能量有白芯、叠层火焰、簇状粒子；四相均为持续段，不从小到大生长，不做四次起手。",
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "oklab",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "client_alpha_accepted": true,
+  "client_alpha": {
+    "transparent_fraction": 0.7682027816772461,
+    "visible_fraction": 0.13807296752929688,
+    "nonzero_fraction": 0.2317972183227539,
+    "opaque_fraction": 0.00045299530029296875,
+    "has_alpha_channel": true,
+    "rectangular_matte": false,
+    "clear_corners": true
+  },
+  "transforms": "读取provider高分原图的实际长宽网格（不把客户端补上的透明边当格子）；共同外框统一等比缩放；整图共享调色板量化和二值Alpha；未代码绘制最终特效"
+}

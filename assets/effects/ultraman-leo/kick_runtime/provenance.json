@@ -1,0 +1,79 @@
+{
+  "fighter": "ultraman-leo",
+  "art_source": "api",
+  "source": {
+    "composition": "只预合成独立GPT能量层；不画新像素，不改人物；原始分层图集仍独立保留",
+    "sources": [
+      {
+        "kind": "body",
+        "rgba_sha256": "e980537490e3f91b55845fcb6e71f63ff4a21b6aa1663372a3d6a98c2ddf8ef5"
+      },
+      {
+        "kind": "body",
+        "rgba_sha256": "9d3890c2bef50313c058a4948ded246fe71ecb4fb320601dfd1aa95b5e7b21c3"
+      },
+      {
+        "kind": "body",
+        "rgba_sha256": "842cbc6f4d18307732beb43e702c589ba7724c12a46b57bc6096d2edde495f82"
+      },
+      {
+        "kind": "body",
+        "rgba_sha256": "86c0a6dc0bb28ad9f3415b96e02de51848afddadf7a4844a4c332b6cc50b7581"
+      },
+      {
+        "kind": "trail",
+        "rgba_sha256": "70ead58dc38e604b3f8b0c186627dc92b4e2b358a46b677b20dea45f052b10e2"
+      },
+      {
+        "kind": "trail",
+        "rgba_sha256": "b86d19183a1eb39b351381270c132cdb937281f6d170949f843122b2322ac581"
+      },
+      {
+        "kind": "trail",
+        "rgba_sha256": "8db9c65bcad4ea554609446887d33ea80a153131ecfc10db714d9676c8ba6d37"
+      },
+      {
+        "kind": "trail",
+        "rgba_sha256": "c260a89069566252a4ea4f69cb4a291b24eb63daf28c208298d3df542605fed5"
+      }
+    ],
+    "offset": [
+      1,
+      -3
+    ],
+    "input_assets": [
+      {
+        "role": "body",
+        "asset": "assets/effects/ultraman-leo/kick_flame",
+        "atlas_sha256": "05cdfd8284f93f48b0633fa021fbf7a8ca4c4ea0f98a17ab44f1f6a6e578c02d",
+        "provenance": "assets/effects/ultraman-leo/kick_flame/provenance.json",
+        "provenance_sha256": "ef9c8d8a6eab5003bb68bd2baef2146efb673ed5f6d094b85bf31d36638b7aae",
+        "generation": {
+          "selection": "art/fighters/ultraman-leo/stage4/specials/effects/kick_flame/selection.json",
+          "reason": "本轮明确保留现有已装主体，atlas字节不变；只补独立文件契约"
+        }
+      },
+      {
+        "role": "trail",
+        "asset": "assets/effects/ultraman-leo/kick_trail",
+        "atlas_sha256": "d9f42c6deedc0c4d0e0049279d930f8477f2436550d347b13248e7dc7b7ebb80",
+        "provenance": "assets/effects/ultraman-leo/kick_trail/provenance.json",
+        "provenance_sha256": "924ca9bfd45472c52a9fd5afb0c4be44ca7355e326b0e27be5dfdd334bdd96a5",
+        "generation": {
+          "measurement": "art/fighters/ultraman-leo/stage4/effects-v2/kick_trail/processed/measurement.json",
+          "source": "art/fighters/ultraman-leo/stage4/effects-v2/kick_trail/request-01/rejected/raw.png",
+          "source_sha256": "c51e438bcaaaec96c821c3e216adeff9165726bcf57902cdcadbe513732a33be",
+          "request": "art/fighters/ultraman-leo/stage4/effects-v2/kick_trail/request-01/request.json",
+          "brief": "art/fighters/ultraman-leo/stage4/effects-v2/kick_trail/brief.json",
+          "reason": "真Alpha、独立四相、原生整数显示，质量交审对比"
+        }
+      }
+    ],
+    "trail_resize_native": null,
+    "resampling": "最近邻；先保留独立原生图集，再整层预合成，未生成任何代码绘制像素"
+  },
+  "reason": "独立GPT像素层；保留亮芯、外焰、粒子与原生颜色，不由运行时着色重建",
+  "atlas_sha256": "b28e6d59a6798bc73b89a72fb918244882816310572fcf80b955afb77072794a",
+  "selected_for_runtime": true,
+  "review_status": "待指挥目视"
+}

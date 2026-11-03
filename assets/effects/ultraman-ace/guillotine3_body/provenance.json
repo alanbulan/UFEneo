@@ -1,0 +1,65 @@
+{
+  "art_source": "api",
+  "route": "tools/art_pipeline.py:generate_image",
+  "request": "art/fighters/ultraman-ace/stage4/effects-v2/requests/guillotine3_ceremony/01/brief.json",
+  "request_sha256": "4be28a2a424898b29889f3a4e6189248bb50372f7d9d7bc372cd6a84161b1864",
+  "source": "art/fighters/ultraman-ace/stage4/effects-v2/requests/guillotine3_ceremony/01/raw.provider.png",
+  "source_sha256": "c89adb1fa50e6a8f58a3cd6695db1b3d3b06e4ed7acb46b172863f39f937b55d",
+  "provider_image_sha256": "700759eb10ffd699763865959b424d1227a4c5f472e416d861a40bf48c5492ca",
+  "model": "gpt-image-2.5-sunburst",
+  "requested_quality": "high",
+  "actual_quality": "medium（本机接口固定返回；不因quality被忽略重发）",
+  "source_rects": [
+    [
+      0,
+      0,
+      351,
+      611
+    ],
+    [
+      351,
+      0,
+      702,
+      611
+    ],
+    [
+      702,
+      0,
+      1053,
+      611
+    ],
+    [
+      1053,
+      0,
+      1404,
+      611
+    ]
+  ],
+  "selection_reason": "按原剧配色的独立GPT像素图层；四相共用统一整帧比例，保留亮芯、外焰和粒子；不是通用库换色",
+  "episode_reference": "art/fighters/ultraman-ace/references/effects/episode-234s.png",
+  "description": "纯身体蓄能光效贴层：白金亮芯、金黄内焰、橙红与淡粉外焰，少量浅青光屑。竖立的中空能量拱，两股能量沿左右两侧上升，在顶端两侧聚成金白小光团，上方中央和中部大空洞保持完全透明；不画人物、人体、头脸、肢体、光轮、横向射线或飞行体。四相是同一中空拱的明暗起伏。",
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "oklab",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "client_alpha_accepted": false,
+  "client_alpha": {
+    "transparent_fraction": 0.5585231781005859,
+    "visible_fraction": 0.20988750457763672,
+    "nonzero_fraction": 0.44147682189941406,
+    "opaque_fraction": 2.86102294921875e-06,
+    "has_alpha_channel": true,
+    "rectangular_matte": false,
+    "clear_corners": false
+  },
+  "transforms": "读取provider高分原图的实际长宽网格（不把客户端补上的透明边当格子）；共同外框统一等比缩放；整图共享调色板量化和二值Alpha；未代码绘制最终特效"
+}

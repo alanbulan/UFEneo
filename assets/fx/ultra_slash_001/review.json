@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "language": "zh-CN",
+  "purpose": "reviewed_combat_effect_not_fighter",
+  "state": "slash",
+  "anchor_px": [
+    64,
+    64
+  ],
+  "bundle_sha256": "ec4eb157ac53bf01b1668b4fe7d726f5532e595d1ffd1675a884b71e7c421829",
+  "compose_report_sha256": "aea355dc0c1e8b39bb6e27527dfab68c53b52d417ad31a595fdeab66a5ea7efb",
+  "reviewer": "Codex：逐一查看4张128×128透明帧与完整联系表，复核中空环、相位差异、轮心和粗硬像素。",
+  "checks": {
+    "pixel_grid": true,
+    "alpha": true,
+    "pivot": true,
+    "motion": true,
+    "timing": true,
+    "curated": true
+  },
+  "frame_review": [
+    "白核位于上弧和右侧，竖向轮廓完整。",
+    "右下弧白核与侧齿改变，内孔保持透明。",
+    "下弧和左侧能量推进，轮心保持不变。",
+    "左上弧白核与外齿改变，完整中空。"
+  ],
+  "source_visual_packet": "art/shared/references/motion/ultraman-1966/episode-16/slash-release-v001/effect-review.json",
+  "adaptation_limits": [
+    "第16集B型原剧只确认中空白色光轮和举轮挥出阶段。",
+    "四相位、浅蓝像素边和循环时序为Neo改编，不是原剧逐帧转描。",
+    "自动检测3帧格距折叠，使用未修改的上游共识保护机制；实际逐帧检查无压扁、裁切和破环。",
+    "动画为独立光轮，不代表人物动作已经完成审核。"
+  ]
+}

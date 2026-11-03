@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "character": "ultraseven",
+  "idle_texture": "assets/fighters/ultraseven/animations/idle/atlas.png",
+  "idle_rect": [
+    0,
+    0,
+    192,
+    192
+  ],
+  "head_center": [
+    102,
+    51
+  ],
+  "neck_cut": [
+    [
+      93,
+      65
+    ],
+    [
+      107,
+      71
+    ]
+  ],
+  "template_radius": 36,
+  "background_ring": 3,
+  "upsample": 2,
+  "scale_range": [
+    0.65,
+    1.5
+  ],
+  "rotation_range": [
+    -180,
+    180
+  ],
+  "thresholds": {
+    "usable": 0.153699,
+    "auxiliary": 0.208699
+  },
+  "notes": "坐标是idle第0格的原生像素；模板只用于测量。含刚体头饰，切掉颈部；阈值待本次校准写入。",
+  "calibration": {
+    "report": "calibration/ultraseven.json",
+    "manifest_sha256": "2ff5cb825902f5af2904708b1e343cfd83f5f98b12662dcb7ceaed64315ff7df",
+    "maximum_relative_scale_error": 0.01,
+    "basis": "人工缩放旋转+idle/走路实帧误差P95+缺头负例；不作为美术硬门"
+  }
+}

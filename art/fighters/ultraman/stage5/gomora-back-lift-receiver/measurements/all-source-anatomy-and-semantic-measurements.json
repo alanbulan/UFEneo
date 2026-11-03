@@ -1,0 +1,1436 @@
+{
+  "manual_points_input": {
+    "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-scale-proposal-v1/manual-points-v2.json",
+    "sha256": "e8ca940adba81a7a02ac33518e16d9926b4ff9ef20a84af6a0ae480e3ce23c55",
+    "bytes": 28089
+  },
+  "measurements": [
+    {
+      "id": "canon-x4",
+      "source": {
+        "path": "art/fighters/ultraman/model/model-reference-x4.png",
+        "sha256": "9e084ba7ff4f4ff2ed343e2d20650ebbec5b648156cddd066ad10165e68f0e71",
+        "bytes": 11991
+      },
+      "points": {
+        "H0": {
+          "xy": [
+            393,
+            192
+          ],
+          "radius_px": 8,
+          "visibility": "anatomical_center_estimate",
+          "note": "不含头鳍的头骨冠点在鳍基下，按头型推定而非直接可见轮廓；扩大误差，不能称精确骨点。"
+        },
+        "H1": {
+          "xy": [
+            416,
+            291
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "读下颏最末端外表面；按头部长轴取点，不取整张人物Alpha最低点。"
+        },
+        "S": {
+          "xy": [
+            311,
+            338
+          ],
+          "radius_px": 8,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧上臂连肩的估计转动中心；完整皮套无可见关节骨点，采用保守误差。"
+        },
+        "P": {
+          "xy": [
+            360,
+            488
+          ],
+          "radius_px": 12,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧大腿连骨盆的估计转动中心；不取红色臀部外缘或Alpha极点，保留遮挡误差。"
+        }
+      },
+      "pose_note": "现装192定稿的精确四倍整图；左画面侧是近侧屈肘臂及近侧承重腿。颅顶不含红色鳍尖，髋中心受战斗站姿透视影响。 颅顶受鳍基遮挡，H0只是推定；不以本读数宣称严格骨尺。",
+      "point_neighborhood_evidence": [
+        {
+          "key": "H0",
+          "alpha_at_point": 255,
+          "signed_distance_to_alpha128_boundary_px": 13.45362404707371,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "H1",
+          "alpha_at_point": 255,
+          "signed_distance_to_alpha128_boundary_px": 6.4031242374328485,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "S",
+          "alpha_at_point": 255,
+          "signed_distance_to_alpha128_boundary_px": 31.38470965295043,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "P",
+          "alpha_at_point": 255,
+          "signed_distance_to_alpha128_boundary_px": 31.240998703626616,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        }
+      ],
+      "head": {
+        "endpoints": [
+          "H0",
+          "H1"
+        ],
+        "length_px": 101.6366075781753,
+        "error_bound_px": 16,
+        "interval_px": [
+          85.6366075781753,
+          117.6366075781753
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解"
+      },
+      "shoulder_hip": {
+        "endpoints": [
+          "S",
+          "P"
+        ],
+        "length_px": 157.8005069700348,
+        "error_bound_px": 20,
+        "interval_px": [
+          137.8005069700348,
+          177.8005069700348
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解"
+      }
+    },
+    {
+      "id": "phase-00",
+      "source": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-00/request-001/candidate.png",
+        "sha256": "e0a3083268cc2a48005a2c529434c147393c3dcb925699724728dd1124d938b9",
+        "bytes": 303204
+      },
+      "points": {
+        "H0": {
+          "xy": [
+            916,
+            503
+          ],
+          "radius_px": 12,
+          "visibility": "anatomical_center_estimate",
+          "note": "不含头鳍的头骨冠点在鳍基下，按头型推定而非直接可见轮廓；扩大误差，不能称精确骨点。"
+        },
+        "H1": {
+          "xy": [
+            883,
+            638
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "读下颏最末端外表面；按头部长轴取点，不取整张人物Alpha最低点。"
+        },
+        "S": {
+          "xy": [
+            752,
+            558
+          ],
+          "radius_px": 12,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧上臂连肩的估计转动中心；完整皮套无可见关节骨点，采用保守误差。"
+        },
+        "P": {
+          "xy": [
+            528,
+            506
+          ],
+          "radius_px": 16,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧大腿连骨盆的估计转动中心；不取红色臀部外缘或Alpha极点，保留遮挡误差。"
+        },
+        "A": {
+          "xy": [
+            609,
+            551
+          ],
+          "radius_px": 12,
+          "visibility": "direct_surface",
+          "note": "本人腹腰腹侧外表面读数；该点只是候选承重参考，未验证与另一完整人物接触。"
+        },
+        "D": {
+          "xy": [
+            639,
+            465
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "与A同一腹腰截面的本人背侧外表面读数；不把红银纹路界线当皮肤轮廓。"
+        },
+        "R": {
+          "xy": [
+            561,
+            485
+          ],
+          "radius_px": 14,
+          "visibility": "anatomical_center_estimate",
+          "note": "本人骨盆中线的可见形态估计，保留透视/遮挡误差；不是模拟根点或旧杰顿root。"
+        }
+      },
+      "pose_note": "落背缓冲：头右脚左，胸腹朝下，近臂向右前垂伸、近腿屈膝；A/D取本人腹腰两侧表面，独图不代表已压到哥莫拉。 颅顶受鳍基遮挡，H0只是推定；不以本读数宣称严格骨尺。",
+      "point_neighborhood_evidence": [
+        {
+          "key": "H0",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 12.083045973594572,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "H1",
+          "alpha_at_point": 3,
+          "signed_distance_to_alpha128_boundary_px": -4.242640687119285,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "S",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 56.72741841473134,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "P",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 34.0,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "A",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 12.0,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "D",
+          "alpha_at_point": 241,
+          "signed_distance_to_alpha128_boundary_px": 1.4142135623730951,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "R",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 42.485291572496,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        }
+      ],
+      "head": {
+        "endpoints": [
+          "H0",
+          "H1"
+        ],
+        "length_px": 138.97481786280562,
+        "error_bound_px": 20,
+        "interval_px": [
+          118.97481786280562,
+          158.97481786280562
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解",
+        "common_sampled_native_px": 24.293449606877154,
+        "native_reference_px": 25.409151894543825,
+        "native_reference_interval_px": [
+          21.409151894543825,
+          29.409151894543825
+        ],
+        "central_deviation_fraction": -0.04390946586085187,
+        "sampled_measurement_error_bound_native_px": 3.49609375,
+        "deviation_interval_at_fixed_common_scale": [
+          -0.2928270787456604,
+          0.29802168221149317
+        ],
+        "diagnostic_only_not_acceptance": true
+      },
+      "shoulder_hip": {
+        "endpoints": [
+          "S",
+          "P"
+        ],
+        "length_px": 229.95651762887695,
+        "error_bound_px": 28,
+        "interval_px": [
+          201.95651762887695,
+          257.95651762887695
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解",
+        "common_sampled_native_px": 40.19747720270408,
+        "native_reference_px": 39.4501267425087,
+        "native_reference_interval_px": [
+          34.4501267425087,
+          44.4501267425087
+        ],
+        "central_deviation_fraction": 0.018944184009175524,
+        "sampled_measurement_error_bound_native_px": 4.89453125,
+        "deviation_interval_at_fixed_common_scale": [
+          -0.20578525777423617,
+          0.3089068957492149
+        ],
+        "diagnostic_only_not_acceptance": true
+      },
+      "source_semantics_in_common_sample_canvas_only": {
+        "A": {
+          "xy": [
+            106.4560546875,
+            96.3173828125
+          ],
+          "radius_px": 2.09765625
+        },
+        "D": {
+          "xy": [
+            111.7001953125,
+            81.2841796875
+          ],
+          "radius_px": 1.3984375
+        },
+        "R": {
+          "xy": [
+            98.0654296875,
+            84.7802734375
+          ],
+          "radius_px": 2.447265625
+        }
+      },
+      "runtime_root": null,
+      "runtime_grip": null,
+      "hold_point_override": null,
+      "hurtboxes": null,
+      "actual_actor_contact_accepted": false
+    },
+    {
+      "id": "phase-01",
+      "source": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-01/request-001/candidate.png",
+        "sha256": "c2127f1343445346f75ea0edbbac30b17f2cfa756b5039b9d24d1531b5ccb0e7",
+        "bytes": 282965
+      },
+      "points": {
+        "H0": {
+          "xy": [
+            934,
+            430
+          ],
+          "radius_px": 12,
+          "visibility": "anatomical_center_estimate",
+          "note": "不含头鳍的头骨冠点在鳍基下，按头型推定而非直接可见轮廓；扩大误差，不能称精确骨点。"
+        },
+        "H1": {
+          "xy": [
+            886,
+            575
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "读下颏最末端外表面；按头部长轴取点，不取整张人物Alpha最低点。"
+        },
+        "S": {
+          "xy": [
+            763,
+            501
+          ],
+          "radius_px": 12,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧上臂连肩的估计转动中心；完整皮套无可见关节骨点，采用保守误差。"
+        },
+        "P": {
+          "xy": [
+            533,
+            460
+          ],
+          "radius_px": 16,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧大腿连骨盆的估计转动中心；不取红色臀部外缘或Alpha极点，保留遮挡误差。"
+        },
+        "A": {
+          "xy": [
+            606,
+            516
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "本人腹腰腹侧外表面读数；该点只是候选承重参考，未验证与另一完整人物接触。"
+        },
+        "D": {
+          "xy": [
+            636,
+            417
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "与A同一腹腰截面的本人背侧外表面读数；不把红银纹路界线当皮肤轮廓。"
+        },
+        "R": {
+          "xy": [
+            557,
+            448
+          ],
+          "radius_px": 14,
+          "visibility": "anatomical_center_estimate",
+          "note": "本人骨盆中线的可见形态估计，保留透视/遮挡误差；不是模拟根点或旧杰顿root。"
+        }
+      },
+      "pose_note": "随俯压背：头右、躯干近水平，两臂下垂方向不同；近肩髋弦线横向投影，近腿与远腿不同屈度。 颅顶受鳍基遮挡，H0只是推定；不以本读数宣称严格骨尺。",
+      "point_neighborhood_evidence": [
+        {
+          "key": "H0",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 15.231546211727817,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "H1",
+          "alpha_at_point": 216,
+          "signed_distance_to_alpha128_boundary_px": 1.0,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "S",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 57.62811813689564,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "P",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 41.012193308819754,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "A",
+          "alpha_at_point": 1,
+          "signed_distance_to_alpha128_boundary_px": -3.0,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "D",
+          "alpha_at_point": 215,
+          "signed_distance_to_alpha128_boundary_px": 1.0,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "R",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 53.9351462406472,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        }
+      ],
+      "head": {
+        "endpoints": [
+          "H0",
+          "H1"
+        ],
+        "length_px": 152.73833834371774,
+        "error_bound_px": 20,
+        "interval_px": [
+          132.73833834371774,
+          172.73833834371774
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解",
+        "common_sampled_native_px": 26.699377503442847,
+        "native_reference_px": 25.409151894543825,
+        "native_reference_interval_px": [
+          21.409151894543825,
+          29.409151894543825
+        ],
+        "central_deviation_fraction": 0.05077798795701138,
+        "sampled_measurement_error_bound_native_px": 3.49609375,
+        "deviation_interval_at_fixed_common_scale": [
+          -0.211018262728356,
+          0.4104001598091438
+        ],
+        "diagnostic_only_not_acceptance": true
+      },
+      "shoulder_hip": {
+        "endpoints": [
+          "S",
+          "P"
+        ],
+        "length_px": 233.62576912660984,
+        "error_bound_px": 28,
+        "interval_px": [
+          205.62576912660984,
+          261.62576912660984
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解",
+        "common_sampled_native_px": 40.838879564124184,
+        "native_reference_px": 39.4501267425087,
+        "native_reference_interval_px": [
+          34.4501267425087,
+          44.4501267425087
+        ],
+        "central_deviation_fraction": 0.035202746766312965,
+        "sampled_measurement_error_bound_native_px": 4.89453125,
+        "deviation_interval_at_fixed_common_scale": [
+          -0.19135554950510958,
+          0.32752518317132373
+        ],
+        "diagnostic_only_not_acceptance": true
+      },
+      "source_semantics_in_common_sample_canvas_only": {
+        "A": {
+          "xy": [
+            105.931640625,
+            90.19921875
+          ],
+          "radius_px": 1.3984375
+        },
+        "D": {
+          "xy": [
+            111.17578125,
+            72.8935546875
+          ],
+          "radius_px": 1.3984375
+        },
+        "R": {
+          "xy": [
+            97.3662109375,
+            78.3125
+          ],
+          "radius_px": 2.447265625
+        }
+      },
+      "runtime_root": null,
+      "runtime_grip": null,
+      "hold_point_override": null,
+      "hurtboxes": null,
+      "actual_actor_contact_accepted": false
+    },
+    {
+      "id": "phase-02",
+      "source": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-02/request-001/candidate.png",
+        "sha256": "a1bd22871293a01b36c5b233280d8b409eef9c034ffb97fe0e79ee88f851b886",
+        "bytes": 277727
+      },
+      "points": {
+        "H0": {
+          "xy": [
+            919,
+            392
+          ],
+          "radius_px": 12,
+          "visibility": "anatomical_center_estimate",
+          "note": "不含头鳍的头骨冠点在鳍基下，按头型推定而非直接可见轮廓；扩大误差，不能称精确骨点。"
+        },
+        "H1": {
+          "xy": [
+            878,
+            537
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "读下颏最末端外表面；按头部长轴取点，不取整张人物Alpha最低点。"
+        },
+        "S": {
+          "xy": [
+            744,
+            455
+          ],
+          "radius_px": 12,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧上臂连肩的估计转动中心；完整皮套无可见关节骨点，采用保守误差。"
+        },
+        "P": {
+          "xy": [
+            520,
+            438
+          ],
+          "radius_px": 16,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧大腿连骨盆的估计转动中心；不取红色臀部外缘或Alpha极点，保留遮挡误差。"
+        },
+        "A": {
+          "xy": [
+            607,
+            477
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "本人腹腰腹侧外表面读数；该点只是候选承重参考，未验证与另一完整人物接触。"
+        },
+        "D": {
+          "xy": [
+            627,
+            382
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "与A同一腹腰截面的本人背侧外表面读数；不把红银纹路界线当皮肤轮廓。"
+        },
+        "R": {
+          "xy": [
+            552,
+            415
+          ],
+          "radius_px": 14,
+          "visibility": "anatomical_center_estimate",
+          "note": "本人骨盆中线的可见形态估计，保留透视/遮挡误差；不是模拟根点或旧杰顿root。"
+        }
+      },
+      "pose_note": "最低俯伏母相：头右、胸腹朝下；腰背弯曲，近肩至近髋是二维弦线，不能当成未弯曲的真实骨长。 颅顶受鳍基遮挡，H0只是推定；不以本读数宣称严格骨尺。",
+      "point_neighborhood_evidence": [
+        {
+          "key": "H0",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 14.0,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "H1",
+          "alpha_at_point": 5,
+          "signed_distance_to_alpha128_boundary_px": -3.0,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "S",
+          "alpha_at_point": 254,
+          "signed_distance_to_alpha128_boundary_px": 63.60031446463138,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "P",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 29.832867780352597,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "A",
+          "alpha_at_point": 252,
+          "signed_distance_to_alpha128_boundary_px": 5.0,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "D",
+          "alpha_at_point": 247,
+          "signed_distance_to_alpha128_boundary_px": 3.0,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "R",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 51.97114584074513,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        }
+      ],
+      "head": {
+        "endpoints": [
+          "H0",
+          "H1"
+        ],
+        "length_px": 150.68510211696443,
+        "error_bound_px": 20,
+        "interval_px": [
+          130.68510211696443,
+          170.68510211696443
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解",
+        "common_sampled_native_px": 26.340462186461554,
+        "native_reference_px": 25.409151894543825,
+        "native_reference_interval_px": [
+          21.409151894543825,
+          29.409151894543825
+        ],
+        "central_deviation_fraction": 0.03665255321322669,
+        "sampled_measurement_error_bound_native_px": 3.49609375,
+        "deviation_interval_at_fixed_common_scale": [
+          -0.22322246767341192,
+          0.3936355855397278
+        ],
+        "diagnostic_only_not_acceptance": true
+      },
+      "shoulder_hip": {
+        "endpoints": [
+          "S",
+          "P"
+        ],
+        "length_px": 224.64416306683776,
+        "error_bound_px": 28,
+        "interval_px": [
+          196.64416306683776,
+          252.64416306683776
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解",
+        "common_sampled_native_px": 39.26885272359762,
+        "native_reference_px": 39.4501267425087,
+        "native_reference_interval_px": [
+          34.4501267425087,
+          44.4501267425087
+        ],
+        "central_deviation_fraction": -0.004595017402460044,
+        "sampled_measurement_error_bound_native_px": 4.89453125,
+        "deviation_interval_at_fixed_common_scale": [
+          -0.22667663755557654,
+          0.2819512770936641
+        ],
+        "diagnostic_only_not_acceptance": true
+      },
+      "source_semantics_in_common_sample_canvas_only": {
+        "A": {
+          "xy": [
+            106.1064453125,
+            83.3818359375
+          ],
+          "radius_px": 1.3984375
+        },
+        "D": {
+          "xy": [
+            109.6025390625,
+            66.775390625
+          ],
+          "radius_px": 1.3984375
+        },
+        "R": {
+          "xy": [
+            96.4921875,
+            72.5439453125
+          ],
+          "radius_px": 2.447265625
+        }
+      },
+      "runtime_root": null,
+      "runtime_grip": null,
+      "hold_point_override": null,
+      "hurtboxes": null,
+      "actual_actor_contact_accepted": false
+    },
+    {
+      "id": "phase-03",
+      "source": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-03/request-001/candidate.png",
+        "sha256": "e705e8e3f8d80bb3cfd41cdf0254cc1abae9f38e195e30a074fcb246e22eaa2e",
+        "bytes": 327983
+      },
+      "points": {
+        "H0": {
+          "xy": [
+            934,
+            474
+          ],
+          "radius_px": 12,
+          "visibility": "anatomical_center_estimate",
+          "note": "不含头鳍的头骨冠点在鳍基下，按头型推定而非直接可见轮廓；扩大误差，不能称精确骨点。"
+        },
+        "H1": {
+          "xy": [
+            892,
+            607
+          ],
+          "radius_px": 10,
+          "visibility": "direct_surface",
+          "note": "读下颏最末端外表面；按头部长轴取点，不取整张人物Alpha最低点。"
+        },
+        "S": {
+          "xy": [
+            756,
+            499
+          ],
+          "radius_px": 12,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧上臂连肩的估计转动中心；完整皮套无可见关节骨点，采用保守误差。"
+        },
+        "P": {
+          "xy": [
+            533,
+            386
+          ],
+          "radius_px": 16,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧大腿连骨盆的估计转动中心；不取红色臀部外缘或Alpha极点，保留遮挡误差。"
+        },
+        "A": {
+          "xy": [
+            597,
+            467
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "本人腹腰腹侧外表面读数；该点只是候选承重参考，未验证与另一完整人物接触。"
+        },
+        "D": {
+          "xy": [
+            650,
+            365
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "与A同一腹腰截面的本人背侧外表面读数；不把红银纹路界线当皮肤轮廓。"
+        },
+        "R": {
+          "xy": [
+            572,
+            369
+          ],
+          "radius_px": 16,
+          "visibility": "anatomical_center_estimate",
+          "note": "本人骨盆中线的可见形态估计，保留透视/遮挡误差；不是模拟根点或旧杰顿root。"
+        }
+      },
+      "pose_note": "随背抬升：髋高头低，两腿一屈一伸、双臂下垂；肩髋线倾斜，骨盆近远透视与02不同。 颅顶受鳍基遮挡，H0只是推定；不以本读数宣称严格骨尺。",
+      "point_neighborhood_evidence": [
+        {
+          "key": "H0",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 9.219544457292887,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "H1",
+          "alpha_at_point": 1,
+          "signed_distance_to_alpha128_boundary_px": -7.810249675906654,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "S",
+          "alpha_at_point": 254,
+          "signed_distance_to_alpha128_boundary_px": 57.30619512757761,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "P",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 49.24428900898052,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "A",
+          "alpha_at_point": 251,
+          "signed_distance_to_alpha128_boundary_px": 4.0,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "D",
+          "alpha_at_point": 252,
+          "signed_distance_to_alpha128_boundary_px": 7.810249675906654,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "R",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 55.54277630799526,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        }
+      ],
+      "head": {
+        "endpoints": [
+          "H0",
+          "H1"
+        ],
+        "length_px": 139.47401191619892,
+        "error_bound_px": 22,
+        "interval_px": [
+          117.47401191619892,
+          161.47401191619892
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解",
+        "common_sampled_native_px": 24.38071106738243,
+        "native_reference_px": 25.409151894543825,
+        "native_reference_interval_px": [
+          21.409151894543825,
+          29.409151894543825
+        ],
+        "central_deviation_fraction": -0.04047521268831633,
+        "sampled_measurement_error_bound_native_px": 3.845703125,
+        "deviation_interval_at_fixed_common_scale": [
+          -0.3017477003071205,
+          0.31842748051948755
+        ],
+        "diagnostic_only_not_acceptance": true
+      },
+      "shoulder_hip": {
+        "endpoints": [
+          "S",
+          "P"
+        ],
+        "length_px": 249.9959999679995,
+        "error_bound_px": 28,
+        "interval_px": [
+          221.9959999679995,
+          277.9959999679995
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解",
+        "common_sampled_native_px": 43.70047265065616,
+        "native_reference_px": 39.4501267425087,
+        "native_reference_interval_px": [
+          34.4501267425087,
+          44.4501267425087
+        ],
+        "central_deviation_fraction": 0.10773972757779715,
+        "sampled_measurement_error_bound_native_px": 4.89453125,
+        "deviation_interval_at_fixed_common_scale": [
+          -0.12697793584590333,
+          0.41058998893881626
+        ],
+        "diagnostic_only_not_acceptance": true
+      },
+      "source_semantics_in_common_sample_canvas_only": {
+        "A": {
+          "xy": [
+            104.3583984375,
+            81.6337890625
+          ],
+          "radius_px": 1.3984375
+        },
+        "D": {
+          "xy": [
+            113.623046875,
+            63.8037109375
+          ],
+          "radius_px": 1.3984375
+        },
+        "R": {
+          "xy": [
+            99.98828125,
+            64.5029296875
+          ],
+          "radius_px": 2.796875
+        }
+      },
+      "runtime_root": null,
+      "runtime_grip": null,
+      "hold_point_override": null,
+      "hurtboxes": null,
+      "actual_actor_contact_accepted": false
+    },
+    {
+      "id": "phase-04",
+      "source": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-04/request-001/candidate.png",
+        "sha256": "82699b7169f27786b93264c9cb830d240663e74cad3a3561e50c016f03008b5b",
+        "bytes": 362538
+      },
+      "points": {
+        "H0": {
+          "xy": [
+            915,
+            579
+          ],
+          "radius_px": 12,
+          "visibility": "anatomical_center_estimate",
+          "note": "不含头鳍的头骨冠点在鳍基下，按头型推定而非直接可见轮廓；扩大误差，不能称精确骨点。"
+        },
+        "H1": {
+          "xy": [
+            865,
+            721
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "读下颏最末端外表面；按头部长轴取点，不取整张人物Alpha最低点。"
+        },
+        "S": {
+          "xy": [
+            745,
+            622
+          ],
+          "radius_px": 12,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧上臂连肩的估计转动中心；完整皮套无可见关节骨点，采用保守误差。"
+        },
+        "P": {
+          "xy": [
+            516,
+            530
+          ],
+          "radius_px": 16,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧大腿连骨盆的估计转动中心；不取红色臀部外缘或Alpha极点，保留遮挡误差。"
+        },
+        "A": {
+          "xy": [
+            600,
+            646
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "本人腹腰腹侧外表面读数；该点只是候选承重参考，未验证与另一完整人物接触。"
+        },
+        "D": {
+          "xy": [
+            652,
+            547
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "与A同一腹腰截面的本人背侧外表面读数；不把红银纹路界线当皮肤轮廓。"
+        },
+        "R": {
+          "xy": [
+            551,
+            531
+          ],
+          "radius_px": 16,
+          "visibility": "anatomical_center_estimate",
+          "note": "本人骨盆中线的可见形态估计，保留透视/遮挡误差；不是模拟根点或旧杰顿root。"
+        },
+        "E": {
+          "xy": [
+            538,
+            590
+          ],
+          "radius_px": 16,
+          "visibility": "direct_surface",
+          "note": "本人卸重腹侧表面语义读数；与哥莫拉背缘配对前不能称为实际最后接触点。"
+        }
+      },
+      "pose_note": "背缘卸重：上抛双腿，近臂弯回、远臂扬起；E是骨盆向腹腰过渡的腹侧表面参照，尚无双方背缘配对，不声称它是实际最后接触点。 颅顶受鳍基遮挡，H0只是推定；不以本读数宣称严格骨尺。",
+      "point_neighborhood_evidence": [
+        {
+          "key": "H0",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 16.55294535724685,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "H1",
+          "alpha_at_point": 247,
+          "signed_distance_to_alpha128_boundary_px": 3.0,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "S",
+          "alpha_at_point": 254,
+          "signed_distance_to_alpha128_boundary_px": 61.61168720299745,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "P",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 60.92618484691127,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "A",
+          "alpha_at_point": 252,
+          "signed_distance_to_alpha128_boundary_px": 7.810249675906654,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "D",
+          "alpha_at_point": 252,
+          "signed_distance_to_alpha128_boundary_px": 4.0,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "R",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 41.677331968349414,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "E",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 12.806248474865697,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        }
+      ],
+      "head": {
+        "endpoints": [
+          "H0",
+          "H1"
+        ],
+        "length_px": 150.5456741324705,
+        "error_bound_px": 20,
+        "interval_px": [
+          130.5456741324705,
+          170.5456741324705
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解",
+        "common_sampled_native_px": 26.31608952120334,
+        "native_reference_px": 25.409151894543825,
+        "native_reference_interval_px": [
+          21.409151894543825,
+          29.409151894543825
+        ],
+        "central_deviation_fraction": 0.03569334507596311,
+        "sampled_measurement_error_bound_native_px": 3.49609375,
+        "deviation_interval_at_fixed_common_scale": [
+          -0.2240512119141711,
+          0.3924971628045224
+        ],
+        "diagnostic_only_not_acceptance": true
+      },
+      "shoulder_hip": {
+        "endpoints": [
+          "S",
+          "P"
+        ],
+        "length_px": 246.78938388836744,
+        "error_bound_px": 28,
+        "interval_px": [
+          218.78938388836744,
+          274.7893838883674
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解",
+        "common_sampled_native_px": 43.1399411289236,
+        "native_reference_px": 39.4501267425087,
+        "native_reference_interval_px": [
+          34.4501267425087,
+          44.4501267425087
+        ],
+        "central_deviation_fraction": 0.09353111614820286,
+        "sampled_measurement_error_bound_native_px": 4.89453125,
+        "deviation_interval_at_fixed_common_scale": [
+          -0.13958828283050495,
+          0.3943191773414554
+        ],
+        "diagnostic_only_not_acceptance": true
+      },
+      "source_semantics_in_common_sample_canvas_only": {
+        "A": {
+          "xy": [
+            104.8828125,
+            112.923828125
+          ],
+          "radius_px": 1.3984375
+        },
+        "D": {
+          "xy": [
+            113.97265625,
+            95.6181640625
+          ],
+          "radius_px": 1.3984375
+        },
+        "R": {
+          "xy": [
+            96.3173828125,
+            92.8212890625
+          ],
+          "radius_px": 2.796875
+        },
+        "E": {
+          "xy": [
+            94.044921875,
+            103.134765625
+          ],
+          "radius_px": 2.796875
+        }
+      },
+      "runtime_root": null,
+      "runtime_grip": null,
+      "hold_point_override": null,
+      "hurtboxes": null,
+      "actual_actor_contact_accepted": false
+    },
+    {
+      "id": "phase-05",
+      "source": {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-05/request-001/candidate.png",
+        "sha256": "3de76139de7be0f5aa81f01ffb05b5b30860e4647a535db317d837eb2009e277",
+        "bytes": 349515
+      },
+      "points": {
+        "H0": {
+          "xy": [
+            840,
+            645
+          ],
+          "radius_px": 12,
+          "visibility": "anatomical_center_estimate",
+          "note": "不含头鳍的头骨冠点在鳍基下，按头型推定而非直接可见轮廓；扩大误差，不能称精确骨点。"
+        },
+        "H1": {
+          "xy": [
+            790,
+            772
+          ],
+          "radius_px": 8,
+          "visibility": "direct_surface",
+          "note": "读下颏最末端外表面；按头部长轴取点，不取整张人物Alpha最低点。"
+        },
+        "S": {
+          "xy": [
+            676,
+            691
+          ],
+          "radius_px": 12,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧上臂连肩的估计转动中心；完整皮套无可见关节骨点，采用保守误差。"
+        },
+        "P": {
+          "xy": [
+            513,
+            491
+          ],
+          "radius_px": 16,
+          "visibility": "anatomical_center_estimate",
+          "note": "近侧大腿连骨盆的估计转动中心；不取红色臀部外缘或Alpha极点，保留遮挡误差。"
+        },
+        "A": {
+          "xy": [
+            567,
+            622
+          ],
+          "radius_px": 12,
+          "visibility": "direct_surface",
+          "note": "本人腹腰腹侧外表面读数；该点只是候选承重参考，未验证与另一完整人物接触。"
+        },
+        "D": {
+          "xy": [
+            630,
+            544
+          ],
+          "radius_px": 12,
+          "visibility": "direct_surface",
+          "note": "与A同一腹腰截面的本人背侧外表面读数；不把红银纹路界线当皮肤轮廓。"
+        },
+        "R": {
+          "xy": [
+            516,
+            489
+          ],
+          "radius_px": 16,
+          "visibility": "anatomical_center_estimate",
+          "note": "本人骨盆中线的可见形态估计，保留透视/遮挡误差；不是模拟根点或旧杰顿root。"
+        },
+        "E": {
+          "xy": [
+            528,
+            563
+          ],
+          "radius_px": 20,
+          "visibility": "direct_surface",
+          "note": "本人卸重腹侧表面语义读数；与哥莫拉背缘配对前不能称为实际最后接触点。"
+        }
+      },
+      "pose_note": "后翻前相：两腿上扬、胸腹斜向右下，两臂分开；R/E仅量本人骨盆及腹侧卸重表面，尚未与已装倒立格或哥莫拉原背缘配对。 颅顶受鳍基遮挡，H0只是推定；不以本读数宣称严格骨尺。",
+      "point_neighborhood_evidence": [
+        {
+          "key": "H0",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 19.0,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "H1",
+          "alpha_at_point": 222,
+          "signed_distance_to_alpha128_boundary_px": 1.4142135623730951,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "S",
+          "alpha_at_point": 254,
+          "signed_distance_to_alpha128_boundary_px": 40.0,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "P",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 64.00781202322104,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "A",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 8.48528137423857,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "D",
+          "alpha_at_point": 252,
+          "signed_distance_to_alpha128_boundary_px": 8.246211251235321,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "R",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 61.0,
+          "boundary_within_stated_radius_if_direct_surface": null,
+          "measurement_only_no_mask_or_point_was_changed": true
+        },
+        {
+          "key": "E",
+          "alpha_at_point": 253,
+          "signed_distance_to_alpha128_boundary_px": 15.811388300841896,
+          "boundary_within_stated_radius_if_direct_surface": true,
+          "measurement_only_no_mask_or_point_was_changed": true
+        }
+      ],
+      "head": {
+        "endpoints": [
+          "H0",
+          "H1"
+        ],
+        "length_px": 136.48809471891678,
+        "error_bound_px": 20,
+        "interval_px": [
+          116.48809471891678,
+          156.48809471891678
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解",
+        "common_sampled_native_px": 23.85875874481065,
+        "native_reference_px": 25.409151894543825,
+        "native_reference_interval_px": [
+          21.409151894543825,
+          29.409151894543825
+        ],
+        "central_deviation_fraction": -0.06101711525704623,
+        "sampled_measurement_error_bound_native_px": 3.49609375,
+        "deviation_interval_at_fixed_common_scale": [
+          -0.3076078811171544,
+          0.2777177082751279
+        ],
+        "diagnostic_only_not_acceptance": true
+      },
+      "shoulder_hip": {
+        "endpoints": [
+          "S",
+          "P"
+        ],
+        "length_px": 258.0096897405212,
+        "error_bound_px": 28,
+        "interval_px": [
+          230.0096897405212,
+          286.0096897405212
+        ],
+        "projection": "二维图像弦长，未作三维透视或姿态反解",
+        "common_sampled_native_px": 45.10130318706376,
+        "native_reference_px": 39.4501267425087,
+        "native_reference_interval_px": [
+          34.4501267425087,
+          44.4501267425087
+        ],
+        "central_deviation_fraction": 0.14324862582673914,
+        "sampled_measurement_error_bound_native_px": 4.89453125,
+        "deviation_interval_at_fixed_common_scale": [
+          -0.09546327797951848,
+          0.45125255447530477
+        ],
+        "diagnostic_only_not_acceptance": true
+      },
+      "source_semantics_in_common_sample_canvas_only": {
+        "A": {
+          "xy": [
+            99.1142578125,
+            108.728515625
+          ],
+          "radius_px": 2.09765625
+        },
+        "D": {
+          "xy": [
+            110.126953125,
+            95.09375
+          ],
+          "radius_px": 2.09765625
+        },
+        "R": {
+          "xy": [
+            90.19921875,
+            85.4794921875
+          ],
+          "radius_px": 2.796875
+        },
+        "E": {
+          "xy": [
+            92.296875,
+            98.4150390625
+          ],
+          "radius_px": 3.49609375
+        }
+      },
+      "runtime_root": null,
+      "runtime_grip": null,
+      "hold_point_override": null,
+      "hurtboxes": null,
+      "actual_actor_contact_accepted": false
+    }
+  ],
+  "point_definitions": {
+    "H0": "颅顶：不含头鳍的头骨冠点；鳍基遮住时明确为解剖推定，不能称可见轮廓",
+    "H1": "下颏：头部长轴另一端的完整下颏外表面",
+    "S": "近侧肩关节中心：同一近侧肱骨的肩端，不取肩外缘最高点",
+    "P": "近侧髋关节中心：同一近侧股骨与骨盆的转接中心",
+    "A": "腹腰腹侧外表面：候选承重参照，不声称独图能证明接触",
+    "D": "腹腰背侧外表面：与A同横截面的躯干外表面",
+    "R": "骨盆内部中线参考：离背后接续用本人语义参照，不是已注册root",
+    "E": "卸重边缘腹侧表面参考：只用于04/05，未配对则不称实际最后接触点"
+  },
+  "all_preview_pages": [
+    {
+      "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-scale-proposal-v1/measurement-v2/canon-x4-full-points.jpg",
+      "sha256": "2a033d80739a082ce68570e8f34e1828f18d38adfe7943e068e5dc235c69f00a",
+      "bytes": 100581
+    },
+    {
+      "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-scale-proposal-v1/measurement-v2/phase-00-full-points.jpg",
+      "sha256": "91364abf2a40d8060b677ab3d538cde197312df99c5479dcc1df21ce99a93201",
+      "bytes": 115865
+    },
+    {
+      "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-scale-proposal-v1/measurement-v2/phase-01-full-points.jpg",
+      "sha256": "c5e9724214a4c45ddd98e8fc8f82d3c8063b93779365ba9dad85fba7cdfe2c2a",
+      "bytes": 115145
+    },
+    {
+      "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-scale-proposal-v1/measurement-v2/phase-02-full-points.jpg",
+      "sha256": "64e4f6b4366b4a3eb223ac3f69673a1273fa016503786106074d1a53f07d7dfe",
+      "bytes": 114673
+    },
+    {
+      "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-scale-proposal-v1/measurement-v2/phase-03-full-points.jpg",
+      "sha256": "1a4993aa97e9e0477527b26edd1a37c3a994342ced74322fce2377894af665ae",
+      "bytes": 118542
+    },
+    {
+      "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-scale-proposal-v1/measurement-v2/phase-04-full-points.jpg",
+      "sha256": "c9fad7eabcf53a70acc51d2e9acf24cc5120b2190af943fbb3e31151ae397b7d",
+      "bytes": 122407
+    },
+    {
+      "path": "reports/review/2026-11-02/gomora-back-lift-ultraman-scale-proposal-v1/measurement-v2/phase-05-full-points.jpg",
+      "sha256": "12cb87da96fb91d39ea9e0505c8efbc41515f1a68a5d74423837763c5eb64190",
+      "bytes": 122304
+    }
+  ],
+  "runtime_points_not_approved": true
+}

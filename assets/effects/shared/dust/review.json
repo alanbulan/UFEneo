@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "language": "zh-CN",
+  "purpose": "reviewed_combat_effect_not_fighter",
+  "state": "dust",
+  "anchor_px": [
+    64,
+    120
+  ],
+  "bundle_sha256": "6d3708c92d34383c55f319b6a4a20efc5f4d7d92c8512cce1532eaa1094ab662",
+  "compose_report_sha256": "15fffd8e2491313effd22ba2e8135229ccee9e2012202b640e1bb5b1a696c0d4",
+  "reviewer": "Codex：查看提取联系表及最终四帧透明图集，复核贴地展开、颗粒缺口与收拢。",
+  "checks": {
+    "pixel_grid": true,
+    "alpha": true,
+    "pivot": true,
+    "motion": true,
+    "timing": true,
+    "curated": true
+  },
+  "frame_review": [
+    "低矮压缩尘团。",
+    "左右鼓起，顶缘颗粒展开。",
+    "轮廓破碎并出现透空缺口。",
+    "贴地残余，随后结束。"
+  ],
+  "frame_records": [
+    {
+      "bbox": [
+        30,
+        104,
+        96,
+        120
+      ],
+      "opaque_pixels": 572
+    },
+    {
+      "bbox": [
+        24,
+        98,
+        104,
+        120
+      ],
+      "opaque_pixels": 1128
+    },
+    {
+      "bbox": [
+        24,
+        102,
+        104,
+        120
+      ],
+      "opaque_pixels": 876
+    },
+    {
+      "bbox": [
+        30,
+        108,
+        98,
+        120
+      ],
+      "opaque_pixels": 472
+    }
+  ],
+  "source_run": "art/runs/ground_dust_cycle_v002",
+  "raw_sha256": "f6fe517bac58c996813bd70a68b9c805c65c9cc910dcf28ebbf167fe642409c9",
+  "source_warnings": [
+    "dust: pitch crosscheck: axis ratio y/x disagrees — run-length 1.066 vs grid 0.957 (11.5%); one axis may have collapsed to the other",
+    "dust: frame 0 own pitch 14.50x13.96 is outside the consensus pitch family 12.00x11.48 — harmonic/collapsed misdetection; snapped at consensus",
+    "palette: pinned (4 colors, palette.lock.json)",
+    "pixel unfake: pitch=[(12.0, 11.48), (11.4, 11.48), (11.0, 11.48), (12.0, 10.96)] scale=2x logical<=64x64 palette=4"
+  ],
+  "registration_dx": [
+    0,
+    10,
+    10,
+    -14
+  ],
+  "adaptation_limits": [
+    "原创通用水泥尘土，不宣称原剧逐帧转描。",
+    "保留原始格距检测分歧；最终导出四帧另以逐像素2×2方格、二值透明及原点断言验收。",
+    "只注册接地中心，没有重画、缩放、旋转或重定时。",
+    "这是贴地尘团动画，不代表材质摩擦物理已经实现。"
+  ]
+}

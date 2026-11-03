@@ -1,0 +1,30 @@
+{
+  "purpose": "reviewed_combat_effect_not_fighter",
+  "name": "定向重击扩散",
+  "state": "burst",
+  "anchor_px": [
+    64,
+    64
+  ],
+  "reviewer": "Codex：精修图集逐帧、深浅底、原速及两档慢放检查",
+  "bundle_sha256": "a80ed0d9d6d6dc18733cc8f6baf90f3e406719687a255cc27fc58c3d821e412e",
+  "compose_report_sha256": "efca2d5b13f9e6c310830265bd7f957c720377eff59afc2ce6e212025bdd8bbb",
+  "checks": {
+    "pixel_grid": true,
+    "alpha": true,
+    "pivot": true,
+    "motion": true,
+    "timing": true,
+    "curated": true
+  },
+  "evidence": {
+    "playback": "burst-review.html",
+    "pixel_audit": "qa/curated-atlas-audit.json",
+    "method": "实际浏览器逐帧查看全部三帧；三倍nearest显示，深浅底检查；原速、四分之一及十六分之一速播放后停止在第三帧，预览历史1→2→3。",
+    "motion": "短厚亮核→更宽的长刺扩张→非对称稀疏消散。使用接触朝向镜像末帧的侧向余迹。",
+    "pivot": "最终图集亮核中心距(64,64)分别1.305、1.902、0.860px；三帧精修只作整数平移，可见像素数量和RGBA颜色逐项一致，无裁切。",
+    "timing": "沿用合成器的42/42/42ms，非循环126ms结束；未复制静帧或重排。",
+    "extraction_warnings": "第一帧4x4自估计被标准谐波保护判为塌缩，以该行11x11共识提取；第二帧进入安全边距但未触发物理尺寸上限；5个远离主体的散点由标准连通提取过滤。全部警告保留。",
+    "limitations": "第二套原创通用接触特效；不冒充人物独有招式、剧中光线或完整角色动作。"
+  }
+}

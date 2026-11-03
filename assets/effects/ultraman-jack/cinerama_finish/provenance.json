@@ -1,0 +1,41 @@
+{
+  "request": "art/fighters/ultraman-jack/stage4/effects-v2/cinerama_finish/take-02/rejected/brief.json",
+  "source": "art/fighters/ultraman-jack/stage4/effects-v2/cinerama_finish/take-02/rejected/raw.png",
+  "source_sha256": "2b1ae8290074cf089c752e4bab90f646e84e05964eefc67cef22b957b37f15c3",
+  "provider_image_sha256": "c8819a81cc847e29d03bdc1831b98234c0714004f6a95a15d6bbbe010acd0ad5",
+  "model": "gpt-image-2.5-sunburst",
+  "quality_requested": "high",
+  "route": "tools/art_pipeline.py:generate_image",
+  "art_source": "api",
+  "selection": "art/fighters/ultraman-jack/stage4/effects-v2/cinerama_finish/selection.json",
+  "reason": "完整四相、独立GPT分层、原色多色阶、统一原生比例；执行目视后安装，待指挥终审",
+  "reference": {
+    "source_kind": "episode",
+    "source": "art/fighters/ultraman-jack/references/effects/cinerama/source.json",
+    "times": [
+      1,
+      8
+    ]
+  },
+  "character_frames_modified": false,
+  "phase_2_repair": {
+    "source": "reports/review/2026-10-25/presentation-fx2/art-fixes/jack-cinerama/request-01/raw.png",
+    "source_sha256": "0194fb7a385f9a9bf02535c79e20892e16d0b4ea791f90b95b911649899fc1a0",
+    "reference": "reports/review/2026-10-25/presentation-fx2/art-fixes/jack-cinerama/clean-reference-phase0.png",
+    "route": "tools/art_pipeline.py:generate_image",
+    "processing": "forge_backend，RGB兼容调色板，整帧统一比例与亮核配准",
+    "uniform_scale": 0.4128915590227273,
+    "source_bbox": [
+      42,
+      371,
+      982,
+      997
+    ],
+    "other_phases_rgba_unchanged": true,
+    "canvas_padding": [
+      96,
+      32
+    ],
+    "new_requests": 1
+  }
+}

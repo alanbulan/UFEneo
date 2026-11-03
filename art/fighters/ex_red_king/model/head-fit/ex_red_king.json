@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "character": "ex_red_king",
+  "idle_texture": "art/fighters/ex_red_king/model/model-native.png",
+  "idle_rect": [
+    0,
+    0,
+    512,
+    320
+  ],
+  "head_center": [
+    274,
+    142
+  ],
+  "neck_cut": [
+    [
+      263,
+      135
+    ],
+    [
+      272,
+      159
+    ]
+  ],
+  "template_radius": 28,
+  "background_ring": 3,
+  "upsample": 2,
+  "scale_range": [
+    0.65,
+    1.5
+  ],
+  "rotation_range": [
+    -180,
+    180
+  ],
+  "thresholds": {
+    "usable": 0.123934,
+    "auxiliary": 0.178934
+  },
+  "status": "current_model_real_idle_calibrated_pending_director",
+  "notes": "当前已审EX定稿为唯一模板源；切线沿后脑→颅底隔开节颈，排除大臂/肩甲；共享Alpha/暗部通道与本体相同误差函数。误差阈值由EX真实待机和缺头负例校准，所有尺寸读数除以本形态idle中位数。",
+  "calibration": {
+    "report": "calibration.json",
+    "maximum_relative_scale_error": 0.008823529411764675,
+    "basis": "完整静态定稿的已知缩放/旋转；没有真实动作样本，不代表动画可用性已审。"
+  },
+  "idle_normalization": {
+    "median": 1.01,
+    "report": "reports/review/2026-10-25/ex_red_king-ground-3/head-calibration.json"
+  },
+  "include_box": [
+    263,
+    126,
+    291,
+    160
+  ],
+  "loop_feature": {
+    "color": {
+      "red_min": 145,
+      "green_max": 105,
+      "red_green_ratio": 1.8,
+      "red_blue_ratio": 2.0
+    },
+    "search_radius": [
+      15,
+      13
+    ],
+    "target_offset": [
+      6,
+      -2
+    ],
+    "min_pixels": 1
+  }
+}

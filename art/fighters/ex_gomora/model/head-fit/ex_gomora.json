@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "character": "ex_gomora",
+  "idle_texture": "art/fighters/ex_gomora/model/model-native.png",
+  "idle_rect": [
+    0,
+    0,
+    384,
+    256
+  ],
+  "head_center": [
+    224.6724,
+    104.83975
+  ],
+  "neck_cut": [
+    [
+      199.2133,
+      93.1627
+    ],
+    [
+      231.6795,
+      127.4932
+    ]
+  ],
+  "template_radius": 65,
+  "include_box": [
+    177.0243,
+    57.6646,
+    252.7007,
+    132.3975
+  ],
+  "background_ring": 4,
+  "upsample": 2,
+  "scale_range": [
+    0.65,
+    1.5
+  ],
+  "rotation_range": [
+    -180,
+    180
+  ],
+  "thresholds": {
+    "usable": 0.175566,
+    "auxiliary": 0.230566
+  },
+  "notes": "改色后暗红褐定稿重建整头模板；真实EX六相idle正例、已知倍率旋转与缺头负例共同校准；只使用可用档定比例。",
+  "calibration": {
+    "report": "reports/review/2026-10-25/ex_gomora-ground-2/head-calibration/ex_gomora.json",
+    "maximum_relative_scale_error": 0.004347826086956386,
+    "real_idle_median": 0.9924999999999999,
+    "real_frames_calibrated": true,
+    "provisional": true
+  },
+  "loop_feature": {
+    "color": {
+      "hue": 23,
+      "hue_tolerance": 5,
+      "saturation_min": 0,
+      "value_min": 225
+    },
+    "target_offset": [
+      4.43781,
+      -1.63478
+    ],
+    "search_radius": [
+      12,
+      8
+    ],
+    "min_pixels": 2,
+    "source": "改色后EX定稿的白眼实际像素HSV；小搜索窗排除角、牙和棱甲"
+  },
+  "loop_feature_calibration": "reports/review/2026-10-25/ex_gomora-ground-2/white-eye-calibration.json"
+}

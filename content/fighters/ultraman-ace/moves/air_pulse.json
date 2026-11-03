@@ -1,0 +1,847 @@
+{
+  "id": "air_pulse",
+  "display_name": "俯射菱形弹",
+  "startup": 6,
+  "active": 4,
+  "recovery": 10,
+  "damage": 65,
+  "hitstun": 20,
+  "blockstun": 12,
+  "pushback": 8,
+  "stun": 65,
+  "stamina_cost": 30,
+  "energy_cost": 0,
+  "kind": "projectile",
+  "level": "mid",
+  "unblockable": false,
+  "launch": false,
+  "bounce": false,
+  "knockdown": false,
+  "frames": [
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -30,
+          145,
+          65,
+          47
+        ],
+        [
+          -30,
+          98,
+          64,
+          47
+        ],
+        [
+          -36,
+          51,
+          55,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "ace_air_pulse_charge"
+        }
+      ],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -30,
+          145,
+          65,
+          47
+        ],
+        [
+          -30,
+          98,
+          64,
+          47
+        ],
+        [
+          -36,
+          51,
+          55,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -30,
+          145,
+          65,
+          47
+        ],
+        [
+          -30,
+          98,
+          64,
+          47
+        ],
+        [
+          -36,
+          51,
+          55,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -23,
+          148,
+          55,
+          54
+        ],
+        [
+          -36,
+          94,
+          78,
+          54
+        ],
+        [
+          -42,
+          40,
+          72,
+          54
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -23,
+          148,
+          55,
+          54
+        ],
+        [
+          -36,
+          94,
+          78,
+          54
+        ],
+        [
+          -42,
+          40,
+          72,
+          54
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -23,
+          148,
+          55,
+          54
+        ],
+        [
+          -36,
+          94,
+          78,
+          54
+        ],
+        [
+          -42,
+          40,
+          72,
+          54
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -36,
+          148,
+          55,
+          51
+        ],
+        [
+          -36,
+          96,
+          76,
+          52
+        ],
+        [
+          -41,
+          44,
+          53,
+          52
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "ace_air_pulse_cast"
+        }
+      ],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard",
+      "shots": [
+        {
+          "effect": "ace_diamond_flight",
+          "spawn": [
+            37,
+            108
+          ],
+          "anchor": [
+            37,
+            108
+          ],
+          "box": [
+            -13,
+            -7,
+            27,
+            14
+          ],
+          "speed": 7,
+          "life": 100,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "frame_boxes": [
+            [
+              -13,
+              -7,
+              27,
+              14
+            ],
+            [
+              -13,
+              -5,
+              26,
+              12
+            ],
+            [
+              -13,
+              -4,
+              26,
+              9
+            ],
+            [
+              -12,
+              -6,
+              26,
+              13
+            ]
+          ],
+          "vy": -7,
+          "trail_effect": "ace_diamond_trail"
+        }
+      ],
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "sprite": 0,
+          "anchor": [
+            38,
+            110
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "audio_loop": "ace_air_pulse_loop"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -36,
+          148,
+          55,
+          51
+        ],
+        [
+          -36,
+          96,
+          76,
+          52
+        ],
+        [
+          -41,
+          44,
+          53,
+          52
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "sprite": 0,
+          "anchor": [
+            38,
+            110
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "audio_loop": "ace_air_pulse_loop"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -36,
+          148,
+          55,
+          51
+        ],
+        [
+          -36,
+          96,
+          76,
+          52
+        ],
+        [
+          -41,
+          44,
+          53,
+          52
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "sprite": 1,
+          "anchor": [
+            39,
+            109
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "audio_loop": "ace_air_pulse_loop"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -36,
+          148,
+          55,
+          51
+        ],
+        [
+          -36,
+          96,
+          76,
+          52
+        ],
+        [
+          -41,
+          44,
+          53,
+          52
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "sprite": 1,
+          "anchor": [
+            39,
+            109
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "audio_loop": "ace_air_pulse_loop"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -32,
+          145,
+          52,
+          46
+        ],
+        [
+          -35,
+          98,
+          78,
+          47
+        ],
+        [
+          -44,
+          51,
+          75,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "sprite": 2,
+          "anchor": [
+            41,
+            121
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -32,
+          145,
+          52,
+          46
+        ],
+        [
+          -35,
+          98,
+          78,
+          47
+        ],
+        [
+          -44,
+          51,
+          75,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "sprite": 2,
+          "anchor": [
+            41,
+            121
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -32,
+          145,
+          52,
+          46
+        ],
+        [
+          -35,
+          98,
+          78,
+          47
+        ],
+        [
+          -44,
+          51,
+          75,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "sprite": 3,
+          "anchor": [
+            44,
+            120
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -32,
+          145,
+          52,
+          46
+        ],
+        [
+          -35,
+          98,
+          78,
+          47
+        ],
+        [
+          -44,
+          51,
+          75,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "sprite": 3,
+          "anchor": [
+            44,
+            120
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -35,
+          147,
+          49,
+          49
+        ],
+        [
+          -34,
+          97,
+          79,
+          50
+        ],
+        [
+          -45,
+          47,
+          64,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -35,
+          147,
+          49,
+          49
+        ],
+        [
+          -34,
+          97,
+          79,
+          50
+        ],
+        [
+          -45,
+          47,
+          64,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -35,
+          147,
+          49,
+          49
+        ],
+        [
+          -34,
+          97,
+          79,
+          50
+        ],
+        [
+          -45,
+          47,
+          64,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -35,
+          147,
+          49,
+          49
+        ],
+        [
+          -34,
+          97,
+          79,
+          50
+        ],
+        [
+          -45,
+          47,
+          64,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -35,
+          147,
+          49,
+          49
+        ],
+        [
+          -34,
+          97,
+          79,
+          50
+        ],
+        [
+          -45,
+          47,
+          64,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -35,
+          147,
+          49,
+          49
+        ],
+        [
+          -34,
+          97,
+          79,
+          50
+        ],
+        [
+          -45,
+          47,
+          64,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "ace_diamond_hit",
+      "block_effect": "impact_guard"
+    }
+  ],
+  "feedback": {
+    "spark": "ace_diamond_hit",
+    "block_spark": "impact_guard",
+    "hitstop": 4,
+    "blockstop": 3,
+    "shake": 0,
+    "flash": 2,
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "block_color": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "manual_projectiles": true,
+  "audio": {
+    "hit": "ace_air_pulse_contact",
+    "block": "ace_guard",
+    "throw_slam": "down"
+  },
+  "production_note": "艾斯独立GPT整帧，实测掌/额灯/计时器/抓点；伤害、能量、硬直、取消与无敌沿用赛文，投射形状按MOVES改编。指挥终审另行。",
+  "adaptation": "空中梅塔利姆为已定案游戏改编；三级为许可三分光轮，不采用Space Q。菱形弹与断头刀飞行物速度为整数。"
+}

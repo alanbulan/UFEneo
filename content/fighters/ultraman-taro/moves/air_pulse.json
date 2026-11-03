@@ -1,0 +1,688 @@
+{
+  "id": "air_pulse",
+  "display_name": "斜下掌推光弹",
+  "startup": 6,
+  "active": 4,
+  "recovery": 10,
+  "damage": 65,
+  "hitstun": 20,
+  "blockstun": 12,
+  "pushback": 8,
+  "stun": 65,
+  "stamina_cost": 30,
+  "energy_cost": 0,
+  "kind": "projectile",
+  "level": "mid",
+  "unblockable": false,
+  "launch": false,
+  "bounce": false,
+  "knockdown": false,
+  "frames": [
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -35,
+          104,
+          92,
+          52
+        ],
+        [
+          -39,
+          52,
+          92,
+          52
+        ],
+        [
+          -2,
+          0,
+          37,
+          52
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "taro_air_pulse_charge"
+        }
+      ],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -35,
+          104,
+          92,
+          52
+        ],
+        [
+          -39,
+          52,
+          92,
+          52
+        ],
+        [
+          -2,
+          0,
+          37,
+          52
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -35,
+          104,
+          92,
+          52
+        ],
+        [
+          -39,
+          52,
+          92,
+          52
+        ],
+        [
+          -2,
+          0,
+          37,
+          52
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -26,
+          98,
+          45,
+          48
+        ],
+        [
+          -35,
+          49,
+          95,
+          49
+        ],
+        [
+          -55,
+          0,
+          113,
+          49
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -26,
+          98,
+          45,
+          48
+        ],
+        [
+          -35,
+          49,
+          95,
+          49
+        ],
+        [
+          -55,
+          0,
+          113,
+          49
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -26,
+          98,
+          45,
+          48
+        ],
+        [
+          -35,
+          49,
+          95,
+          49
+        ],
+        [
+          -55,
+          0,
+          113,
+          49
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -38,
+          87,
+          64,
+          43
+        ],
+        [
+          -38,
+          44,
+          107,
+          43
+        ],
+        [
+          -32,
+          0,
+          59,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "taro_air_pulse_cast"
+        }
+      ],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard",
+      "shots": [
+        {
+          "effect": "taro_palm_ball",
+          "spawn": [
+            62,
+            69
+          ],
+          "box": [
+            -9,
+            -9,
+            18,
+            18
+          ],
+          "speed": 7,
+          "life": 100,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "vy": -7,
+          "trail_effect": "taro_palm_trail"
+        }
+      ],
+      "audio_loop": "taro_air_pulse_loop"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -38,
+          87,
+          64,
+          43
+        ],
+        [
+          -38,
+          44,
+          107,
+          43
+        ],
+        [
+          -32,
+          0,
+          59,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard",
+      "audio_loop": "taro_air_pulse_loop"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -38,
+          87,
+          64,
+          43
+        ],
+        [
+          -38,
+          44,
+          107,
+          43
+        ],
+        [
+          -32,
+          0,
+          59,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard",
+      "audio_loop": "taro_air_pulse_loop"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -38,
+          87,
+          64,
+          43
+        ],
+        [
+          -38,
+          44,
+          107,
+          43
+        ],
+        [
+          -32,
+          0,
+          59,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard",
+      "audio_loop": "taro_air_pulse_loop"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -29,
+          102,
+          92,
+          51
+        ],
+        [
+          -35,
+          51,
+          94,
+          51
+        ],
+        [
+          -27,
+          0,
+          58,
+          51
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -29,
+          102,
+          92,
+          51
+        ],
+        [
+          -35,
+          51,
+          94,
+          51
+        ],
+        [
+          -27,
+          0,
+          58,
+          51
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -29,
+          102,
+          92,
+          51
+        ],
+        [
+          -35,
+          51,
+          94,
+          51
+        ],
+        [
+          -27,
+          0,
+          58,
+          51
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -29,
+          102,
+          92,
+          51
+        ],
+        [
+          -35,
+          51,
+          94,
+          51
+        ],
+        [
+          -27,
+          0,
+          58,
+          51
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -44,
+          103,
+          94,
+          51
+        ],
+        [
+          -45,
+          52,
+          95,
+          51
+        ],
+        [
+          -29,
+          0,
+          61,
+          52
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -44,
+          103,
+          94,
+          51
+        ],
+        [
+          -45,
+          52,
+          95,
+          51
+        ],
+        [
+          -29,
+          0,
+          61,
+          52
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -44,
+          103,
+          94,
+          51
+        ],
+        [
+          -45,
+          52,
+          95,
+          51
+        ],
+        [
+          -29,
+          0,
+          61,
+          52
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -44,
+          103,
+          94,
+          51
+        ],
+        [
+          -45,
+          52,
+          95,
+          51
+        ],
+        [
+          -29,
+          0,
+          61,
+          52
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -44,
+          103,
+          94,
+          51
+        ],
+        [
+          -45,
+          52,
+          95,
+          51
+        ],
+        [
+          -29,
+          0,
+          61,
+          52
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -44,
+          103,
+          94,
+          51
+        ],
+        [
+          -45,
+          52,
+          95,
+          51
+        ],
+        [
+          -29,
+          0,
+          61,
+          52
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "taro_palm_hit",
+      "block_effect": "impact_guard"
+    }
+  ],
+  "feedback": {
+    "spark": "taro_palm_hit",
+    "block_spark": "impact_guard",
+    "hitstop": 4,
+    "blockstop": 3,
+    "shake": 0,
+    "flash": 2,
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "block_color": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "manual_projectiles": true,
+  "data_source": "已审赛文同类伤害、消耗、命中和取消规则；泰罗MOVES独立手势/掌心/双束、回旋踢、屏障与超级炸弹。双束各半伤，合计同类总伤。",
+  "production_note": "人物和挂点已装，待指挥审片；不冒称用户通过。",
+  "audio": {
+    "hit": "taro_air_pulse_contact",
+    "block": "taro_guard"
+  }
+}

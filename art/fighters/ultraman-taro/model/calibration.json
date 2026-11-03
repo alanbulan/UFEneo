@@ -1,0 +1,279 @@
+{
+  "schema": 1,
+  "method": "眼心→耳心、耳心→下颌端点的欧氏距离；刚性头盔随倾斜旋转后距离不变；只测量不改图。",
+  "source_resolution_note": "赛文保留1254原始GPT图；初代仅保留384像素清洁源图，不能冒称仍有初次GPT高分辨率原图。",
+  "fighters": {
+    "ultraseven": {
+      "image": "assets/fighters/ultraseven/model-native.png",
+      "image_sha256": "289087585112913c6e6ba5653523c93e5aa8384b699246e72ec3aa60dc4f0736",
+      "source": "art/generation/stage4-pilot/ultraseven/model/05/raw.png",
+      "source_sha256": "92130406c5d7c20c31a73e101d8602f0b95f4b2f9b7f98efe1828b0b31e72bf2",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "source_landmarks": {
+        "eye": [
+          686.5040983606557,
+          439.7418032786885
+        ],
+        "ear": [
+          608.642590286426,
+          428.3063511830635
+        ],
+        "chin": [
+          675,
+          510
+        ]
+      },
+      "source_to_native": {
+        "raw_pixels_per_native": 6,
+        "translation": [
+          54,
+          61
+        ],
+        "source": "art/model_sheets/ultraseven/qa.json#registration"
+      },
+      "native_distances": {
+        "eye_to_ear": 13.116130870277292,
+        "ear_to_chin": 17.54134645861353
+      },
+      "native_raster_readback": {
+        "eye_to_ear": 12.980558460990181,
+        "ear_to_chin": 17.7341478509682
+      },
+      "readback_percent": {
+        "eye_to_ear": -1.0336311113998908,
+        "ear_to_chin": 1.0991253881767804
+      },
+      "skull_top_y": 49,
+      "foot_anchor": [
+        96,
+        184
+      ],
+      "standing_without_ornament": 135,
+      "standing_with_ornament": 143,
+      "native_bone_chain": {
+        "head_top": [
+          102,
+          49
+        ],
+        "neck": [
+          99,
+          78
+        ],
+        "hip": [
+          91,
+          121
+        ],
+        "knee": [
+          118,
+          146
+        ],
+        "ankle": [
+          123,
+          171
+        ],
+        "toe": [
+          143,
+          180
+        ]
+      },
+      "straightened_chain_length": 157.116163684858,
+      "silhouette_area": 4852,
+      "bone_crosscheck_native_points": {
+        "skull_base": [
+          102,
+          73
+        ],
+        "shoulder": [
+          84,
+          90
+        ],
+        "elbow": [
+          76,
+          109
+        ],
+        "wrist": [
+          94,
+          111
+        ],
+        "head_top": [
+          102,
+          49
+        ],
+        "neck": [
+          99,
+          78
+        ],
+        "hip": [
+          91,
+          121
+        ],
+        "knee": [
+          118,
+          146
+        ],
+        "ankle": [
+          123,
+          171
+        ],
+        "toe": [
+          143,
+          180
+        ]
+      },
+      "bone_crosscheck_native_lengths": {
+        "neck": 5.830951894845301,
+        "torso": 43.73785545725808,
+        "upper_arm": 20.615528128088304,
+        "forearm": 18.110770276274835,
+        "thigh": 36.796738985948195,
+        "shin": 25.495097567963924,
+        "foot": 21.93171219946131
+      },
+      "bone_crosscheck_note": "骨链继承仓库已审body-references的原生标点，肩/肘/腕/头壳基部补作原生交叉读数；不伪装成初代已遗失的GPT原图精度。头部两段实际在保留的最高分辨率清洁源图标量。",
+      "note": "赛文排除头镖从头壳49量135；初代中央鳍遮挡头壳弧顶，依据两侧头壳弧线标47±1，身体137±1。旧初代骨链标40含鳍，本次分开记。"
+    },
+    "ultraman": {
+      "image": "assets/fighters/ultraman/model-native.png",
+      "image_sha256": "cd76aea1686c18390a7324ea68368daef15796e8d6ab03671eb03df3301e3d44",
+      "source": "art/model_sheets/ultraman/model.png",
+      "source_sha256": "a4c904cab24569d014a2508a04c2fa91db2e6c876d1a0209fec58b7e3f22f0e7",
+      "source_size": [
+        384,
+        384
+      ],
+      "source_landmarks": {
+        "eye": [
+          198,
+          60
+        ],
+        "ear": [
+          173,
+          59
+        ],
+        "chin": [
+          206,
+          87
+        ]
+      },
+      "source_to_native": {
+        "raw_to_native_scale": 0.4186046511627907,
+        "source_crop": [
+          78,
+          8,
+          304,
+          352
+        ],
+        "native_offset": [
+          49,
+          40
+        ],
+        "source": "tools/rebuild/art_phase2.py#native_models"
+      },
+      "native_distances": {
+        "eye_to_ear": 10.473485025932208,
+        "ear_to_chin": 18.11644326283178
+      },
+      "native_raster_readback": {
+        "eye_to_ear": 10.04987562112089,
+        "ear_to_chin": 17.69180601295413
+      },
+      "readback_percent": {
+        "eye_to_ear": -4.044588823705453,
+        "ear_to_chin": -2.3439327671389343
+      },
+      "skull_top_y": 47,
+      "foot_anchor": [
+        96,
+        184
+      ],
+      "standing_without_ornament": 137,
+      "standing_with_ornament": 144,
+      "native_bone_chain": {
+        "head_top": [
+          100,
+          47
+        ],
+        "neck": [
+          98,
+          75
+        ],
+        "hip": [
+          90,
+          121
+        ],
+        "knee": [
+          122,
+          151
+        ],
+        "ankle": [
+          130,
+          176
+        ],
+        "toe": [
+          143,
+          180
+        ]
+      },
+      "straightened_chain_length": 158.47551221942285,
+      "silhouette_area": 4867,
+      "bone_crosscheck_native_points": {
+        "skull_base": [
+          101,
+          70
+        ],
+        "shoulder": [
+          75,
+          87
+        ],
+        "elbow": [
+          65,
+          111
+        ],
+        "wrist": [
+          87,
+          111
+        ],
+        "head_top": [
+          100,
+          47
+        ],
+        "neck": [
+          98,
+          75
+        ],
+        "hip": [
+          90,
+          121
+        ],
+        "knee": [
+          122,
+          151
+        ],
+        "ankle": [
+          130,
+          176
+        ],
+        "toe": [
+          143,
+          180
+        ]
+      },
+      "bone_crosscheck_native_lengths": {
+        "neck": 5.830951894845301,
+        "torso": 46.69047011971501,
+        "upper_arm": 26.0,
+        "forearm": 22.0,
+        "thigh": 43.86342439892262,
+        "shin": 26.248809496813376,
+        "foot": 13.601470508735444
+      },
+      "bone_crosscheck_note": "骨链继承仓库已审body-references的原生标点，肩/肘/腕/头壳基部补作原生交叉读数；不伪装成初代已遗失的GPT原图精度。头部两段实际在保留的最高分辨率清洁源图标量。",
+      "note": "赛文排除头镖从头壳49量135；初代中央鳍遮挡头壳弧顶，依据两侧头壳弧线标47±1，身体137±1。旧初代骨链标40含鳍，本次分开记。"
+    }
+  },
+  "target_body_height": 135,
+  "calibration_verdict": "两套读数接近已审原生头部，身体高度差约1.5%；沿用赛文135，初代不因鳍顶40而被误记成144身体。头点为人工标注，不加入共享自动拒收门。"
+}

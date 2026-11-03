@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UfeMoveData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://core/combat/move_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "light"
+display_name = "轻击"
+chain_next = "light_2"
+chain_open = 9
+chain_close = 18
+cancel_targets = PackedStringArray("heavy", "launcher", "sweep", "pulse", "special")
+reach = 117
+contact_height = 201
+show_swing_arc = false

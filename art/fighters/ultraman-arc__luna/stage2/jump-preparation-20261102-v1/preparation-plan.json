@@ -1,0 +1,346 @@
+{
+  "schema": "ufeneo.arc-luna.s2.jump-free-preparation.v1",
+  "fighter": "ultraman-arc__luna",
+  "prepared_by": "/root/teo_leapblade_runtime",
+  "scope": "仅S2基础起跳/垂直跳/前后空翻/落地17张缺源免费brief与整姿约束；不提交、不生成、不打开装甲",
+  "bound_gap": {
+    "path": "reports/review/2026-11-02/arc-luna-jump-existing-source-gap-v1/existing-source-gap.json",
+    "sha256": "d116aabe6aab02803f372ccf3bf5bb404a79a0c0fefcf229a284cd303c4d12c3"
+  },
+  "bound_arithmetic_preview": {
+    "path": "reports/review/2026-11-02/arc-luna-jump-existing-source-gap-v1/candidate-integer-clock-and-registration.json",
+    "sha256": "d0360f1d40c462a57a5c214dfacf6d16f3693ae3103c8ea32456ce5aa75a8ba5"
+  },
+  "identity_reference": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/walk-forward-repair-20261102-v1/references/identity.png",
+    "sha256": "d70d0f5fba22d54281b50703158ac2ba8ff1d29624f3020b4bdbe7c20992a6da"
+  },
+  "reuse_audit": {
+    "previous_all_briefs_exact_bytes": true,
+    "prior_brief_count_for_audit_only": 245,
+    "current_brief_count_before_drafts_for_audit_only": 245,
+    "added_briefs_before_this_prep": [],
+    "existing_basic_jump_request_or_source_found": false,
+    "all_17_require_new_independent_whole_body_sources": true,
+    "old_153_ground_jobs_not_relabelled": true
+  },
+  "phases": [
+    {
+      "action": "takeoff",
+      "phase": 0,
+      "title": "起跳压膝",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/takeoff/phase-00/brief.json",
+        "sha256": "6f844bd1e9af46cec1afe64b4f889b43f3c5fad03349bbf22e84d36a5c4604d3"
+      },
+      "motion_constraints": "idle护架→同脚序双膝压低，双臂和肩胸髋共同加载",
+      "next_neighbor_constraints": "phase1蹬伸仍须保持同一近后/远前脚序，不能突然换腿",
+      "registration_kind": "grounded_both_boots",
+      "candidate_phase_ticks": 1,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "takeoff",
+      "phase": 1,
+      "title": "起跳蹬伸",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/takeoff/phase-01/brief.json",
+        "sha256": "49f31c9d69b1c15741c3ca6e9266085ff2acc910526787e072485ac21d34adb3"
+      },
+      "motion_constraints": "压膝→胸髋上提/双膝蹬伸/脚踝伸展，完整双臂同步上提",
+      "next_neighbor_constraints": "自然接空中收腿；源里不预烘焙整人升高，也不重复额外离地",
+      "registration_kind": "takeoff_virtual_root",
+      "candidate_phase_ticks": 1,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "vertical_jump",
+      "phase": 0,
+      "title": "上升初收腿",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/vertical_jump/phase-00/brief.json",
+        "sha256": "dbeff00f8a00b9ed465fdc83186e2c809e1ff723ed227b4822bfe8e9082794a5"
+      },
+      "motion_constraints": "蹬伸→双腿初收，双臂上提护架；人物重心由正式整数轨迹决定",
+      "next_neighbor_constraints": "下一相加深双膝收束，同时肩胸/双肘发生真实变化",
+      "registration_kind": "airborne_hip_virtual_root",
+      "candidate_phase_ticks": 8,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "vertical_jump",
+      "phase": 1,
+      "title": "上升深收腿",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/vertical_jump/phase-01/brief.json",
+        "sha256": "23389c4d386d8d632fd09690dd5e628aaf24bd1fe70082725fa1450600077f3d"
+      },
+      "motion_constraints": "上升后段双膝更紧，胸髋轻收、双臂同时收束",
+      "next_neighbor_constraints": "顶点从收束逐渐展开双臂平衡，不能复制两张上升相",
+      "registration_kind": "airborne_hip_virtual_root",
+      "candidate_phase_ticks": 7,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "vertical_jump",
+      "phase": 2,
+      "title": "顶点平衡",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/vertical_jump/phase-02/brief.json",
+        "sha256": "441ce14a95a42dd77c0ef08bbd6a3e94a6325d504ac4e1c5376e7fa12537834f"
+      },
+      "motion_constraints": "双顶点附近短平衡，双臂展开但不成十字静像，双腿松收",
+      "next_neighbor_constraints": "下降相收回双臂并逐步伸腿，不把顶点整相循环",
+      "registration_kind": "airborne_hip_virtual_root",
+      "candidate_phase_ticks": 3,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "vertical_jump",
+      "phase": 3,
+      "title": "下落伸腿",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/vertical_jump/phase-03/brief.json",
+        "sha256": "83b66e8356efb43f8d1c1fefba9d62796f83a2eb4ac9143451de024d53cda6e7"
+      },
+      "motion_constraints": "下降时双膝伸展、双臂回收，近亮后/远暗前脚序重建",
+      "next_neighbor_constraints": "最后空中相应让两靴朝下并接共用落地，不能让源鞋底吸地",
+      "registration_kind": "airborne_hip_virtual_root",
+      "candidate_phase_ticks": 8,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "vertical_jump",
+      "phase": 4,
+      "title": "下落接地准备",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/vertical_jump/phase-04/brief.json",
+        "sha256": "87482731864f25050de5718dfa059fa47a973368a9dc7d3253fb28cd7b89c2fe"
+      },
+      "motion_constraints": "下降末段双腿更伸、双膝留缓冲，双臂恢复护架",
+      "next_neighbor_constraints": "直接接落地压膝；这是独立空中整相，不拿地面护架或落地相代替",
+      "registration_kind": "airborne_hip_virtual_root",
+      "candidate_phase_ticks": 7,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "flip_forward",
+      "phase": 0,
+      "title": "前翻入势",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/flip_forward/phase-00/brief.json",
+        "sha256": "28892899c929376d4ed29f41f05c1038b34d084b5eeafb1b0271f42fb7eb7c50"
+      },
+      "motion_constraints": "向前收胸屈髋入翻，双臂环收、双腿共同收束",
+      "next_neighbor_constraints": "下一相头向右下/髋左上；必须出现整人真实翻转而非只转头",
+      "registration_kind": "airborne_hip_virtual_root",
+      "candidate_phase_ticks": 8,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "flip_forward",
+      "phase": 1,
+      "title": "前翻头向右下",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/flip_forward/phase-01/brief.json",
+        "sha256": "bd0382c2293c94348150027b0b57092b1f55c8c2825872d9676472b23affc557"
+      },
+      "motion_constraints": "前翻中前段：头右下/髋左上，双腿向上左收扫",
+      "next_neighbor_constraints": "下一相头转到左下/髋右上，旋转方向连续；不对称镜像替代",
+      "registration_kind": "airborne_hip_virtual_root",
+      "candidate_phase_ticks": 8,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "flip_forward",
+      "phase": 2,
+      "title": "前翻头向左下",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/flip_forward/phase-02/brief.json",
+        "sha256": "37ac4f7b6c2c776c702e149f11a887e63dd7790f8b3f822d5de57404e7188c85"
+      },
+      "motion_constraints": "前翻中后段：头左下/髋右上，双腿移至上右，胸肩双臂随体",
+      "next_neighbor_constraints": "展开出翻接近亮后/远暗前落地顺序，不能折返同一半翻",
+      "registration_kind": "airborne_hip_virtual_root",
+      "candidate_phase_ticks": 8,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "flip_forward",
+      "phase": 3,
+      "title": "前翻展开回护",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/flip_forward/phase-03/brief.json",
+        "sha256": "de9d4747fbf184e4e10ebd671d4bd6d76fdd1ad64b90290c04cbb04cb6ed72fe"
+      },
+      "motion_constraints": "完成前翻后展开，胸髋回正、双臂回护、两腿准备触地",
+      "next_neighbor_constraints": "共用落地压膝，不能最后一相回到原翻入相循环",
+      "registration_kind": "airborne_hip_virtual_root",
+      "candidate_phase_ticks": 9,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "flip_back",
+      "phase": 0,
+      "title": "后翻后仰入势",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/flip_back/phase-00/brief.json",
+        "sha256": "e2be7b404179d3b68ac2eafb31919319f2f0f8f6f1dce356e52ff8db2314b63b"
+      },
+      "motion_constraints": "后仰抬胸入翻，双臂上提/双膝收束，后向旋转独立",
+      "next_neighbor_constraints": "下一相头在左/髋在右的横向后翻，方向与前翻相反",
+      "registration_kind": "airborne_hip_virtual_root",
+      "candidate_phase_ticks": 8,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "flip_back",
+      "phase": 1,
+      "title": "后翻横身",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/flip_back/phase-01/brief.json",
+        "sha256": "9472fd74174f62a8d5fbe1c3613ea19fbecb0ba3e55f34dac2d094ae5ea548b8"
+      },
+      "motion_constraints": "后翻横向：头左/髋右，双臂贴胸随体、双腿围髋收卷",
+      "next_neighbor_constraints": "继续同方向倒立，双臂和盔饰随转；不把身体改成仰卧受击",
+      "registration_kind": "airborne_hip_virtual_root",
+      "candidate_phase_ticks": 8,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "flip_back",
+      "phase": 2,
+      "title": "后翻倒立",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/flip_back/phase-02/brief.json",
+        "sha256": "9f6f65d12349d97cc8f7c8031c96890293dae0588384bd79d1a2795e6056a8fc"
+      },
+      "motion_constraints": "后翻倒立：髋上/头下，双腿在髋上方弯曲，双臂整体随转",
+      "next_neighbor_constraints": "展开回正接落地；不得复制或旋转前翻已有PNG充数",
+      "registration_kind": "airborne_hip_virtual_root",
+      "candidate_phase_ticks": 8,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "flip_back",
+      "phase": 3,
+      "title": "后翻展开回护",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/flip_back/phase-03/brief.json",
+        "sha256": "b8a817d894768ee88a127def9734132ae129e1f89b7a8d05e4724faf8e4be5f9"
+      },
+      "motion_constraints": "后翻出势双臂由上方落回护架，胸髋回正、脚序复原",
+      "next_neighbor_constraints": "共用落地压膝；保持与前翻/垂直下落不同的整身收势",
+      "registration_kind": "airborne_hip_virtual_root",
+      "candidate_phase_ticks": 9,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "land",
+      "phase": 0,
+      "title": "落地双膝吸震",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/land/phase-00/brief.json",
+        "sha256": "d65393d48ce32b66fd5a1eff8d9fc2e4eac218c47f8a9267d6c5aff96b2977f4"
+      },
+      "motion_constraints": "触地后同脚序双膝吸震，胸髋和双臂共同下沉",
+      "next_neighbor_constraints": "下一相伸膝回护，末相必须接本人idle且不交换两腿",
+      "registration_kind": "grounded_both_boots",
+      "candidate_phase_ticks": 2,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    },
+    {
+      "action": "land",
+      "phase": 1,
+      "title": "落地伸膝回护",
+      "brief": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1/drafts/land/phase-01/brief.json",
+        "sha256": "6834301e2a0fde25bbd2ed67f3a2d3b124dd20b44b02135d245398888b12867c"
+      },
+      "motion_constraints": "落地伸膝、胸髋起回、双臂同护；保留真实未完全复架的差别",
+      "next_neighbor_constraints": "idle近亮后/远暗前两脚保持；双手回护不要忽然掉臂/换侧",
+      "registration_kind": "grounded_both_boots",
+      "candidate_phase_ticks": 2,
+      "not_measured_or_accepted_art": true,
+      "returned_whole_source": null
+    }
+  ],
+  "allowed_sharing": "REBUILD_2D_PLAN.md 2.5.9：垂直/前/后跳共用本人的起跳2相与落地2相；前/后空翻各独立四相，不能互镜像代替",
+  "pose_reference_scope": "本作通用街机跳跃编排，参考现有矩阵与本体/赛文旧profile文字仅作节奏对照；不附其人物PNG、不拷其近前/远后坐标、不把旧前翻12tick循环移植为月亮新动作。没有宣称原剧某集的逐相动作。",
+  "limb_identity": "近侧左臂左腿亮银，远侧右臂右腿暗银；起跳/落地/出翻接idle须近亮在后左、远暗在前右；空翻中深度身份不随屏幕位置互换",
+  "clock_status": "仅沿既有未实跑算术候选；不是Godot结果，不得在源审前声称时钟/外观通过",
+  "candidate_total_table_ticks": {
+    "takeoff": 2,
+    "vertical_jump": 33,
+    "flip_forward": 33,
+    "flip_back": 33,
+    "land": 4
+  },
+  "absolute_air_index_warning": "takeoff年龄0/1占输入后n0/n1；air首次读绝对索引n2。垂直表0..32、前后翻表0..32只作为拟轨迹时钟，不给takeoff后再叠加33tick；实消耗n2..32为31tick。n16/17同顶点136，n33落地仍须正式main确认。",
+  "registration": {
+    "full_source_canvas": [
+      1024,
+      1024
+    ],
+    "common_full_source_raster_candidate": [
+      159,
+      159
+    ],
+    "runtime_canvas_candidate": [
+      320,
+      320
+    ],
+    "common_root_candidate": [
+      160,
+      280
+    ],
+    "uniform_common_scale_not_yet_validated_for_missing_sources": true,
+    "ground_root": "只有地面起跳首相/落地可读真实双靴接触；不按每相外框归一",
+    "air_root": "逐新整源标记髋/胸的表面代理和作者虚拟根，依据同一体积的整人姿态保持根-髋关系；最低鞋底不是空中地线，不为保持鞋底而改物理高度/位移",
+    "actual_source_landmarks_known": false,
+    "source_pivot_not_fabricated": true,
+    "no_limb_or_area_fit": true
+  },
+  "future_root_sequence": [
+    "先根审起跳00整身brief及可选新姿态guide；确认无新未决/预算空间后只提交这一独立请求",
+    "首张返回核本人/月亮装甲/两臂两腿/头冠/真Alpha与完整源，根实看后才顺序继续",
+    "按首张实际头壳/身体读数审共同159整图是否合适，不预签统一倍率或解剖骨尺",
+    "本人整源全套及相邻起止审完后另建离线PNG/atlas与新冻结，再由根独占Godot做正式main双向720/1080自然8/9/7输入及独立原输入回放",
+    "完整S2–S7及声音/变身仍独立补齐，不能据跳跃候选开放正式装甲"
+  ],
+  "exclude_from_this_preparation": [
+    "追击跳独立起跳另3相",
+    "全部空攻/空投/空中I或P",
+    "受方/受击/倒地及S3–S7",
+    "官方背核归属未知的补充设计"
+  ],
+  "cost": {
+    "POST_count": 0,
+    "charged_USD": 0,
+    "account_balance_claimed": false,
+    "budget_changes_written": false
+  },
+  "candidate_images_written": false,
+  "pose_guide_images_written": false,
+  "Godot_started": false,
+  "product_written": false,
+  "playable_or_transform_opened": false,
+  "strict_size_or_visual_accepted": false,
+  "root_acceptance": "pending root review; preparation authority does not approve sources or runtime"
+}

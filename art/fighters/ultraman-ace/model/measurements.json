@@ -1,0 +1,295 @@
+{
+  "schema": 1,
+  "fighter": "ultraman-ace",
+  "status": "commander_approved",
+  "source": "art/generation/stage4/ultraman-ace/model/05/raw.png",
+  "source_sha256": "0edb45974f5b90ab1b93313e899820e2aec42a96b7932347aa7b72b8cea9fcf7",
+  "native": "art/model_sheets/ultraman-ace/model-native.png",
+  "native_sha256": "c7263c41464b2910b056cefe9d31b9c5f3a7ac389d58698898ffaeb3dfd56c27",
+  "canvas": [
+    192,
+    192
+  ],
+  "foot_anchor": [
+    96,
+    184
+  ],
+  "source_bounds": [
+    250,
+    119,
+    1049,
+    1213
+  ],
+  "native_bounds": [
+    44,
+    38,
+    151,
+    184
+  ],
+  "source_manual_points": {
+    "skull_top": [
+      620,
+      203
+    ],
+    "chin": [
+      705,
+      373
+    ],
+    "ear": [
+      635,
+      325
+    ],
+    "eye": [
+      708,
+      286
+    ],
+    "sole": [
+      640,
+      1213
+    ]
+  },
+  "native_manual_points": {
+    "skull_top": [
+      93.54944,
+      49.21024
+    ],
+    "chin": [
+      104.93242,
+      71.89762
+    ],
+    "ear": [
+      95.5582,
+      65.49177
+    ],
+    "eye": [
+      105.33417,
+      60.28702
+    ],
+    "sole": [
+      96.22778,
+      184.0
+    ]
+  },
+  "source_measurement_uncertainty_px": 3,
+  "native_uncertainty_px": 0.4455,
+  "scale": {
+    "uniform_intended": 0.13366336633663367,
+    "raster_xy": [
+      0.13391739674593242,
+      0.13345521023765997
+    ],
+    "native_offset": [
+      44,
+      38
+    ],
+    "source_to_native": "native[i]=offset[i]+(raw[i]-source_bounds[i])*raster_xy[i]"
+  },
+  "standing": {
+    "without_ornaments": 135,
+    "with_ornaments": 146,
+    "raw_skull_top_y": 203,
+    "raw_sole_y": 1213,
+    "raster_skull_top_y": 49.21024,
+    "straight_frame_tolerance": 0.03,
+    "tolerance_baseline": "135px不含冠站高；量固定头骨顶至脚底边界，冠高随视角不能充当身体大小。实际站直相位另和已审待机及相邻帧比较，屈膝不拉直。",
+    "body_target_source": "赛文原定稿独立高分辨率标点得到135.17，取135；初代校准136.05。不是把原144含饰目标强套艾斯身体。"
+  },
+  "head": {
+    "method": "在干净GPT原图标头骨固定顶点→下巴、耳盘中心→眼灯中心，测欧氏距离后换算原生比例；头部在画面内倾斜不改变距离。",
+    "metrics": {
+      "skull_top_to_chin": {
+        "source_px": 181.069,
+        "native_px": 26.8914,
+        "source_points": [
+          [
+            620,
+            263
+          ],
+          [
+            685,
+            432
+          ]
+        ]
+      },
+      "ear_to_eye": {
+        "source_px": 69.3542,
+        "native_px": 10.3001,
+        "source_points": [
+          [
+            624,
+            387
+          ],
+          [
+            685,
+            354
+          ]
+        ]
+      }
+    },
+    "tolerance": 0.08,
+    "ornaments_excluded": true,
+    "hidden_face_policy": "背面等看不见眼/耳时不以较窄头宽缩放；直立用站高，其他遮挡仅用前后可靠帧比例插值并登记。"
+  },
+  "bones": {
+    "upper_arm": {
+      "source_points": [
+        [
+          515,
+          478
+        ],
+        [
+          432,
+          605
+        ]
+      ],
+      "source_px": 151.7168,
+      "native_px": 22.5322
+    },
+    "forearm": {
+      "source_points": [
+        [
+          432,
+          605
+        ],
+        [
+          552,
+          642
+        ]
+      ],
+      "source_px": 125.5747,
+      "native_px": 18.6497
+    },
+    "thigh": {
+      "source_points": [
+        [
+          623,
+          746
+        ],
+        [
+          478,
+          901
+        ]
+      ],
+      "source_px": 212.2499,
+      "native_px": 31.5223
+    },
+    "shin": {
+      "source_points": [
+        [
+          478,
+          901
+        ],
+        [
+          351,
+          1099
+        ]
+      ],
+      "source_px": 235.2297,
+      "native_px": 34.9351
+    },
+    "torso": {
+      "source_points": [
+        [
+          638,
+          470
+        ],
+        [
+          623,
+          746
+        ]
+      ],
+      "source_px": 276.4073,
+      "native_px": 41.0506
+    },
+    "neck": {
+      "source_points": [
+        [
+          643,
+          431
+        ],
+        [
+          638,
+          470
+        ]
+      ],
+      "source_px": 39.3192,
+      "native_px": 5.8395
+    },
+    "head_axial": {
+      "source_points": [
+        [
+          620,
+          263
+        ],
+        [
+          643,
+          431
+        ]
+      ],
+      "source_px": 169.5671,
+      "native_px": 25.1832
+    },
+    "ankle_to_sole": {
+      "source_points": [
+        [
+          351,
+          1099
+        ],
+        [
+          351,
+          1172
+        ]
+      ],
+      "source_px": 73.0,
+      "native_px": 10.8416
+    }
+  },
+  "straight_full_body_length": 149.3723,
+  "lying_frame_range": [
+    137.423,
+    161.322
+  ],
+  "straight_length_method": "沿近侧头轴+颈+躯干+大腿+小腿+踝到脚底逐段相加，伸直而不改变骨长。头轴终点在颈根后缘，和面部下巴标尺分开。",
+  "bone_policy": "以侧面可读的近侧关节定骨长，远腿是投影姿势不反推骨长；后续走路/倒地/起身先画固定骨长引导再GPT整帧生成。关节人工标点需指挥看图复核。",
+  "silhouette_area": 5544,
+  "silhouette_sqrt_baseline": 74.45804187594514,
+  "silhouette_review_threshold": 1.06,
+  "silhouette_policy": "sqrt(动作Alpha面积/定稿4903面积)>1.06只提示疑似过大，需人工复核；伸展/蜷缩不主观硬拦。",
+  "calibration": "art/model_sheets/ultraman-ace/calibration.json",
+  "revision": "第三稿宽板冠，指挥已审model/05",
+  "size_baseline": {
+    "source": "art/generation/stage4/ultraman-ace/model/02/raw.png",
+    "source_sha256": "84a1115034269177be180b013dcf2b25159fa1b99c065693675beb2bec6d2727",
+    "policy": "保持第二稿身体135、双尺26.8914/10.3001、全部骨长和伸直149.3723，不以第三稿外观重定义尺寸。"
+  },
+  "appearance_measurement": {
+    "source_points": {
+      "skull_top": [
+        620,
+        203
+      ],
+      "chin": [
+        705,
+        373
+      ],
+      "ear": [
+        635,
+        325
+      ],
+      "eye": [
+        708,
+        286
+      ],
+      "sole": [
+        640,
+        1213
+      ]
+    },
+    "scale": 0.13366336633663367,
+    "head_ratios_to_model02": {
+      "skull_top_to_chin": 0.9447195655326404,
+      "ear_to_eye": 1.0740295721575348
+    },
+    "note": "头骨顶藏冠下有估点误差；指挥接受两尺0.945/1.074，不判矛盾。"
+  }
+}

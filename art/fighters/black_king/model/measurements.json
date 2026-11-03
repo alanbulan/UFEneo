@@ -1,0 +1,383 @@
+{
+  "fighter": "black_king",
+  "model": "art/model_sheets/black_king/model-native.png",
+  "model_sha256": "ed7a36ddc00c581ce83634e66988671cc3117da147f5d4efdda81a2bbedd178b",
+  "raw_source": "art/generation/stage4/black_king/model/02/raw.png",
+  "raw_source_sha256": "96c53a84a2912bbd526e504ba8595004f660ec83bc5977a3d75079a48dd16f03",
+  "raw_dimensions": [
+    1536,
+    1024
+  ],
+  "canvas": [
+    512,
+    320
+  ],
+  "method": "先在GPT高分辨率原图上标刚性头部点，再按实际登记变换换算原生欧氏距离；独立原生复点只作校准读数，不倒推原图比例。身体为定稿骨架中心关节点，统一按头骨顶→颅底→颈根肩轴→髋→膝→踝→脚底中心骨链。",
+  "transform_raw_to_native": {
+    "scale": [
+      0.20376175548589343,
+      0.20366598778004075
+    ],
+    "translation": [
+      61.42319749216301,
+      97.68635437881873
+    ],
+    "basis": "take02实际Alpha≥128裁切、kCentroid尺寸和脚底登记；缩放各轴仅因整图宽度取整差0.047%，不是区域变形。"
+  },
+  "raw_head_landmarks": {
+    "eye": [
+      1125.9689440993789,
+      172.30434782608694
+    ],
+    "nose_plate_tip": [
+      1259,
+      209
+    ],
+    "nose_plate_root": [
+      1229,
+      218
+    ],
+    "ear_root": [
+      1033,
+      176
+    ],
+    "skull_top": [
+      1050,
+      124
+    ]
+  },
+  "native_head_landmarks": {
+    "eye": [
+      290.85260616445026,
+      132.77888957761445
+    ],
+    "nose_plate_tip": [
+      317.9592476489028,
+      140.25254582484726
+    ],
+    "nose_plate_root": [
+      311.846394984326,
+      142.08553971486762
+    ],
+    "ear_root": [
+      271.90909090909093,
+      133.5315682281059
+    ],
+    "skull_top": [
+      275.37304075235113,
+      122.94093686354378
+    ]
+  },
+  "head_segments": {
+    "eye_to_nose_plate": {
+      "start": "eye",
+      "end": "nose_plate_tip",
+      "raw_length": 137.9993939207814,
+      "native_length": 28.11806448296977,
+      "raw_points": [
+        [
+          1125.9689440993789,
+          172.30434782608694
+        ],
+        [
+          1259,
+          209
+        ]
+      ],
+      "native_points": [
+        [
+          290.85260616445026,
+          132.77888957761445
+        ],
+        [
+          317.9592476489028,
+          140.25254582484726
+        ]
+      ],
+      "independently_picked_native_check": null,
+      "native_check_length": null,
+      "native_check_deviation_percent": null,
+      "meaning": "仅侧视的刚性头部标志点欧氏距离，不用头部外框/眼睛面积当比例"
+    },
+    "nose_plate_root_to_ear": {
+      "start": "nose_plate_root",
+      "end": "ear_root",
+      "raw_length": 200.44949488586894,
+      "native_length": 40.84309837652038,
+      "raw_points": [
+        [
+          1229,
+          218
+        ],
+        [
+          1033,
+          176
+        ]
+      ],
+      "native_points": [
+        [
+          311.846394984326,
+          142.08553971486762
+        ],
+        [
+          271.90909090909093,
+          133.5315682281059
+        ]
+      ],
+      "independently_picked_native_check": null,
+      "native_check_length": null,
+      "native_check_deviation_percent": null,
+      "meaning": "仅侧视的刚性头部标志点欧氏距离，不用头部外框/眼睛面积当比例"
+    }
+  },
+  "manual_landmark_uncertainty": "头部原图点约±2原图px；身体投影关节约±1原生px，遮挡处为骨架中心估计，不声称透视下可见真实解剖骨长。后续姿势共用这份冻结的二维骨链。",
+  "skeleton_landmarks": {
+    "skull_top": [
+      275.37304075235113,
+      122.94093686354378
+    ],
+    "skull_base": [
+      281,
+      148
+    ],
+    "shoulder_axis": [
+      254,
+      173
+    ],
+    "shoulder_near": [
+      245,
+      165
+    ],
+    "elbow_near": [
+      247,
+      194
+    ],
+    "wrist_near": [
+      272,
+      198
+    ],
+    "shoulder_far": [
+      268,
+      177
+    ],
+    "elbow_far": [
+      292,
+      193
+    ],
+    "wrist_far": [
+      312,
+      176
+    ],
+    "hip_near": [
+      252,
+      236
+    ],
+    "knee_near": [
+      227,
+      268
+    ],
+    "ankle_near": [
+      212,
+      293
+    ],
+    "sole_near": [
+      218,
+      304
+    ],
+    "hip_far": [
+      267,
+      238
+    ],
+    "knee_far": [
+      288,
+      264
+    ],
+    "ankle_far": [
+      298,
+      292
+    ],
+    "sole_far": [
+      303,
+      304
+    ]
+  },
+  "bones_native": {
+    "skull_top_to_base": 25.683055029563754,
+    "neck": 36.796738985948195,
+    "torso": 63.0317380372777,
+    "upper_arm": 29.068883707497267,
+    "forearm": 25.317977802344327,
+    "thigh": 40.607881008493905,
+    "shin": 29.154759474226502,
+    "ankle_to_sole": 12.529964086141668,
+    "far_upper_arm": 28.844410203711913,
+    "far_forearm": 26.248809496813376,
+    "far_thigh": 33.421549934136806,
+    "far_shin": 29.732137494637012,
+    "tail": 190.23040439954434
+  },
+  "standing": {
+    "to_skull_top": 181.05906313645622,
+    "with_horn_or_crown": 214,
+    "ground_y": 304,
+    "skull_top": [
+      275.37304075235113,
+      122.94093686354378
+    ],
+    "upright_tolerance": 0.03,
+    "upright_ruler": "to_skull_top：排除额角/耳突/头冠等附属物。它们倾斜时最高点会变，不应带着整身重缩。",
+    "visible_feet": {
+      "near_alpha_bottom_exclusive": 304,
+      "far_alpha_bottom_exclusive": 301,
+      "note": "远脚约3px提踵原定稿暂不改；指挥已决定第2阶段待机统一地面。本轮未局部挪脚。"
+    }
+  },
+  "straight_full_length": {
+    "length": 207.8041366216517,
+    "points": [
+      [
+        275.37304075235113,
+        122.94093686354378
+      ],
+      [
+        281,
+        148
+      ],
+      [
+        254,
+        173
+      ],
+      [
+        252,
+        236
+      ],
+      [
+        227,
+        268
+      ],
+      [
+        212,
+        293
+      ],
+      [
+        218,
+        304
+      ]
+    ],
+    "point_names": [
+      "skull_top",
+      "skull_base",
+      "shoulder_axis",
+      "hip_near",
+      "knee_near",
+      "ankle_near",
+      "sole_near"
+    ],
+    "tolerance": 0.08,
+    "not_standing_height": true,
+    "method": "按同侧中心骨链伸直的头骨顶至脚底；不含主角、耳突、鼻尖向前投影、尾和脚爪前伸；倒地用这条同定义的关节链，不用外框长度或站高替代。"
+  },
+  "silhouette_area": 18677,
+  "silhouette_area_unit": "原生不透明像素个数",
+  "silhouette_rule": "后续sqrt(剪影面积/18677)>1.06只标需人工复核，不硬拦。",
+  "tail": {
+    "centerline_native": [
+      [
+        232,
+        238
+      ],
+      [
+        215,
+        258
+      ],
+      [
+        193,
+        271
+      ],
+      [
+        168,
+        272
+      ],
+      [
+        142,
+        266
+      ],
+      [
+        121,
+        254
+      ],
+      [
+        101,
+        239
+      ],
+      [
+        84,
+        224
+      ],
+      [
+        73,
+        214
+      ]
+    ],
+    "length": 190.23040439954434,
+    "method": "尾根中心到尾尖，沿粗尾逐段中心骨链求和，不能拿两端直线或尾巴外框宽代替。",
+    "policy": "后续动作保持这条尾骨链总长，弯曲/翻滚只改各段方向，不缩短尾长。",
+    "tip": [
+      73,
+      214
+    ],
+    "root": [
+      232,
+      238
+    ]
+  },
+  "schema": 1,
+  "status": "stage1_only_horn_revision_pending_review",
+  "candidate_take": 5,
+  "foot_anchor": [
+    256,
+    304
+  ],
+  "size_proposal": {
+    "height_with_horn": 214,
+    "hero_reference": 144,
+    "ratio": 1.4861111111111112,
+    "gomora_with_horn": 192,
+    "official_height_m": 65,
+    "reason": "指挥已认可原身体尺度，返角后据实记录214px（英雄144的1.486倍）；增高来自立起的角，不缩身体；结合新阵容图只复核金角。",
+    "previous_with_horn": 200,
+    "body_scale_approved": true
+  },
+  "head_policy": "仅基本侧视且两端点能可靠识别时，每段分别按定稿比例±8%；两段比例冲突转人工复核，不能只选好看的一段。转背、倒置或遮挡不硬套，按可测邻帧统一比例并复核骨长。",
+  "calibration_file": "art/model_sheets/black_king/calibration.json",
+  "image_sources": "art/references/stage4/black_king/sources.json",
+  "registration_note": "末12原生行的两只完整足部投影各取中心，再取双足中心平均；末6行三个爪簇不能当成三只脚。仅整帧平移，不改足部或尾巴像素。",
+  "model_generation_source": "art/generation/stage4/black_king/model/05/raw.png",
+  "model_generation_source_sha256": "b7604402b0f6d527945b08f9443c7bd9f55efd13cee210fd5e8e64f31fa9fe10",
+  "generation_transform_raw_to_native": {
+    "scale": [
+      0.2716823406478579,
+      0.27155465037338766
+    ],
+    "translation": [
+      -3.780564263322887,
+      32.51323828920569
+    ],
+    "basis": "保持候选02身体标尺；反算干净输入全图0.75倍与(240,240)平移。绝不按改角后的外框高度归一。"
+  },
+  "ruler_source_candidate": 2,
+  "ruler_provenance": "头骨、EN/BR侧视头尺、全身骨链和尾链继承指挥2026-10-23已审候选02。raw_source/transform_raw_to_native继续指向原始高分辨率量测来源，不伪装成take05重新描点。两段头尺均不含金角，不因返角换端点。",
+  "previous_silhouette_area": 18411,
+  "horn_revision": {
+    "date": "2026-10-23",
+    "take": 5,
+    "with_horn_standing_height": 214,
+    "raw_visible_top_y": 213,
+    "native_visible_top_y": 90,
+    "source": "art/generation/stage4/black_king/model/05/raw.png",
+    "geometry_evidence": "art/production/stage4/black_king/horn-geometry.json",
+    "skull_height_unchanged": true,
+    "head_rulers_exclude_horn": true,
+    "review": "只待金角复核，不进入第2阶段；不为压回200而缩小已审身体。"
+  }
+}

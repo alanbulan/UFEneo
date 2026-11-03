@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "fighter": "ultraman-ace",
+  "model": "art/fighters/ultraman-ace/model/model-native.png",
+  "model_sha256": "c7263c41464b2910b056cefe9d31b9c5f3a7ac389d58698898ffaeb3dfd56c27",
+  "reference_points": {
+    "skull_top": [
+      93.54944,
+      49.21024
+    ],
+    "chin": [
+      104.93242,
+      71.89762
+    ],
+    "ear": [
+      95.5582,
+      65.49177
+    ],
+    "eye": [
+      105.33417,
+      60.28702
+    ],
+    "sole": [
+      96.22778,
+      184.0
+    ]
+  },
+  "domain_boxes": [
+    [
+      72,
+      30,
+      126,
+      53
+    ],
+    [
+      72,
+      53,
+      87,
+      70
+    ]
+  ],
+  "hole_search_box": [
+    72,
+    30,
+    126,
+    70
+  ],
+  "minimum_iou": 0.7,
+  "hard_rejection": false,
+  "hole_position_policy": "relative_front_upper",
+  "alignment_scale_policy": "native_body_scale",
+  "policy": "保留已登记的原生身体尺度；眼耳只作旋转和平移对齐。比较头骨顶以上和后缘露出冠；主观差异交人工，不修改人物像素。",
+  "manual_policy": "背面、斜背或遮挡返回需人工复核，pass_=null，不硬拦、不自动通过。",
+  "threshold_basis": "连续拒收诊断发现眼耳二次缩放误伤；保留原生身体尺度后真实合格帧最低0.72896，旧错冠仍全部拒收。IoU0.70；小孔按冠自身前上部、真实Alpha核对。见crest-alignment-diagnosis.json。",
+  "template_status": "commander_approved_model05",
+  "installation_allowed": true,
+  "baseline_policy": "仅外观模板改用第三稿；头尺/站高/骨长仍用第二稿基准。",
+  "hole": {
+    "center": [
+      111.71428571428572,
+      44.0
+    ],
+    "area": 7,
+    "diameter": 2.985410660720923,
+    "bounds": [
+      111,
+      43,
+      114,
+      46
+    ]
+  }
+}

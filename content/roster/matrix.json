@@ -1,0 +1,1190 @@
+{
+  "schema": 1,
+  "cells": [
+    {
+      "id": "command_0",
+      "move": "light1",
+      "section": "2.5.1",
+      "input": "4/5/6□ · 轻击一段",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn"
+      ],
+      "directions": [
+        4,
+        5,
+        6
+      ],
+      "buttons": 1,
+      "motion": []
+    },
+    {
+      "id": "command_1",
+      "move": "light2",
+      "section": "2.5.1",
+      "input": "light1 / dash_light中 □ · 轻击二段",
+      "states": [
+        "light1",
+        "dash_light"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 1,
+      "motion": []
+    },
+    {
+      "id": "command_2",
+      "move": "light3",
+      "section": "2.5.1",
+      "input": "light2中 □ · 轻击三段",
+      "states": [
+        "light2"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 1,
+      "motion": []
+    },
+    {
+      "id": "command_3",
+      "move": "heavy",
+      "section": "2.5.1",
+      "input": "5△ · 重击",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn"
+      ],
+      "directions": [
+        5
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_4",
+      "move": "launcher",
+      "section": "2.5.1",
+      "input": "6△ · 升击",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn"
+      ],
+      "directions": [
+        6
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_5",
+      "move": "spin_heavy",
+      "section": "2.5.1",
+      "input": "4△ · 回旋重击",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn"
+      ],
+      "directions": [
+        4
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_6",
+      "move": "crush",
+      "section": "2.5.1",
+      "input": "4/5○ · 超重击",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn"
+      ],
+      "directions": [
+        4,
+        5
+      ],
+      "buttons": 64,
+      "motion": []
+    },
+    {
+      "id": "command_7",
+      "move": "tackle",
+      "section": "2.5.1",
+      "input": "6○ · 突进撞击",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn"
+      ],
+      "directions": [
+        6
+      ],
+      "buttons": 64,
+      "motion": []
+    },
+    {
+      "id": "command_8",
+      "move": "throw_forward",
+      "section": "2.5.1",
+      "input": "5/6× · 前投",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn"
+      ],
+      "directions": [
+        5,
+        6
+      ],
+      "buttons": 4,
+      "motion": []
+    },
+    {
+      "id": "command_9",
+      "move": "throw_back",
+      "section": "2.5.1",
+      "input": "4× · 后投",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn"
+      ],
+      "directions": [
+        4
+      ],
+      "buttons": 4,
+      "motion": []
+    },
+    {
+      "id": "command_10",
+      "move": "pulse",
+      "section": "2.5.1",
+      "input": "4/5I · 光弹",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn"
+      ],
+      "directions": [
+        4,
+        5
+      ],
+      "buttons": 128,
+      "motion": []
+    },
+    {
+      "id": "command_11",
+      "move": "ranged_forward",
+      "section": "2.5.1",
+      "input": "6I · 专属远程",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn"
+      ],
+      "directions": [
+        6
+      ],
+      "buttons": 128,
+      "motion": []
+    },
+    {
+      "id": "command_12",
+      "move": "crouch_light",
+      "section": "2.5.2",
+      "input": "1/2/3□ · 下段轻击",
+      "states": [
+        "crouch"
+      ],
+      "directions": [
+        1,
+        2,
+        3
+      ],
+      "buttons": 1,
+      "motion": []
+    },
+    {
+      "id": "command_13",
+      "move": "sweep",
+      "section": "2.5.2",
+      "input": "1/2/3△ · 扫腿",
+      "states": [
+        "crouch"
+      ],
+      "directions": [
+        1,
+        2,
+        3
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_14",
+      "move": "slide",
+      "section": "2.5.2",
+      "input": "1/2/3○ · 滑铲",
+      "states": [
+        "crouch"
+      ],
+      "directions": [
+        1,
+        2,
+        3
+      ],
+      "buttons": 64,
+      "motion": []
+    },
+    {
+      "id": "command_15",
+      "move": "low_pulse",
+      "section": "2.5.2",
+      "input": "1/2/3I · 低姿光弹",
+      "states": [
+        "crouch"
+      ],
+      "directions": [
+        1,
+        2,
+        3
+      ],
+      "buttons": 128,
+      "motion": []
+    },
+    {
+      "id": "command_16",
+      "move": "crouch_light2",
+      "section": "2.5.2",
+      "input": "crouch_light中 □ · 下段轻击二段",
+      "states": [
+        "crouch_light"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 1,
+      "motion": []
+    },
+    {
+      "id": "command_17",
+      "move": "sweep",
+      "section": "2.5.2",
+      "input": "crouch_light2中 △ · 扫腿",
+      "states": [
+        "crouch_light2"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_18",
+      "move": "vertical_light",
+      "section": "2.5.3",
+      "input": "vertical_air中 □ · 垂直跳轻击",
+      "states": [
+        "vertical_air"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 1,
+      "motion": []
+    },
+    {
+      "id": "command_19",
+      "move": "vertical_heavy",
+      "section": "2.5.3",
+      "input": "4/5/6/7/8/9△ · 垂直跳重击",
+      "states": [
+        "vertical_air"
+      ],
+      "directions": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_20",
+      "move": "diagonal_light",
+      "section": "2.5.3",
+      "input": "diagonal_air中 □ · 斜跳膝撞",
+      "states": [
+        "diagonal_air"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 1,
+      "motion": []
+    },
+    {
+      "id": "command_21",
+      "move": "diagonal_heavy",
+      "section": "2.5.3",
+      "input": "4/5/6/7/8/9△ · 斜跳飞踢",
+      "states": [
+        "diagonal_air"
+      ],
+      "directions": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_22",
+      "move": "air_crush",
+      "section": "2.5.3",
+      "input": "vertical_air / diagonal_air / chase_air / air_tech中 ○ · 空中双拳下砸",
+      "states": [
+        "vertical_air",
+        "diagonal_air",
+        "chase_air",
+        "air_tech"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 64,
+      "motion": []
+    },
+    {
+      "id": "command_23",
+      "move": "dive",
+      "section": "2.5.3",
+      "input": "1/2/3△ · 俯冲踢",
+      "states": [
+        "vertical_air",
+        "diagonal_air",
+        "chase_air",
+        "air_tech"
+      ],
+      "directions": [
+        1,
+        2,
+        3
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_24",
+      "move": "air_throw",
+      "section": "2.5.3",
+      "input": "vertical_air / diagonal_air / chase_air / air_tech中 × · 空投",
+      "states": [
+        "vertical_air",
+        "diagonal_air",
+        "chase_air",
+        "air_tech"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 4,
+      "motion": []
+    },
+    {
+      "id": "command_25",
+      "move": "air_pulse",
+      "section": "2.5.3",
+      "input": "vertical_air / diagonal_air / chase_air / air_tech中 I · 空中光弹",
+      "states": [
+        "vertical_air",
+        "diagonal_air",
+        "chase_air",
+        "air_tech"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 128,
+      "motion": []
+    },
+    {
+      "id": "command_26",
+      "move": "chase_light1",
+      "section": "2.5.4",
+      "input": "chase_air中 □ · 追击空中轻击一段",
+      "states": [
+        "chase_air"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 1,
+      "motion": []
+    },
+    {
+      "id": "command_27",
+      "move": "chase_light2",
+      "section": "2.5.4",
+      "input": "chase_light1中 □ · 追击空中轻击二段",
+      "states": [
+        "chase_light1"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 1,
+      "motion": []
+    },
+    {
+      "id": "command_28",
+      "move": "chase_end",
+      "section": "2.5.4",
+      "input": "chase_light2 / chase_air中 △ · 空中终结砸地",
+      "states": [
+        "chase_light2",
+        "chase_air"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_29",
+      "move": "sweep",
+      "section": "2.5.4",
+      "input": "1/2/3△ · 弹地落地追击扫腿（前2tick）",
+      "states": [
+        "land"
+      ],
+      "directions": [
+        1,
+        2,
+        3
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_30",
+      "move": "crush",
+      "section": "2.5.4",
+      "input": "5○ · 弹地落地追击超重击（前2tick）",
+      "states": [
+        "land"
+      ],
+      "directions": [
+        5
+      ],
+      "buttons": 64,
+      "motion": []
+    },
+    {
+      "id": "command_31",
+      "move": "dash_light",
+      "section": "2.5.5",
+      "input": "dash中 □ · 冲刺拳",
+      "states": [
+        "dash"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 1,
+      "motion": []
+    },
+    {
+      "id": "command_32",
+      "move": "dash_heavy",
+      "section": "2.5.5",
+      "input": "dash中 △ · 冲刺飞踢",
+      "states": [
+        "dash"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_33",
+      "move": "dash_throw",
+      "section": "2.5.5",
+      "input": "dash中 × · 冲刺擒抱",
+      "states": [
+        "dash"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 4,
+      "motion": []
+    },
+    {
+      "id": "command_34",
+      "move": "back_counter",
+      "section": "2.5.5",
+      "input": "backstep中 △ · 后撤反击",
+      "states": [
+        "backstep"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_35",
+      "move": "dodge_counter",
+      "section": "2.5.5",
+      "input": "dodge中 □ · 闪避反击",
+      "states": [
+        "dodge"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 1,
+      "motion": []
+    },
+    {
+      "id": "command_36",
+      "move": "wake_low",
+      "section": "2.5.5",
+      "input": "wake中 □ · 起身下段",
+      "states": [
+        "wake"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 1,
+      "motion": []
+    },
+    {
+      "id": "command_37",
+      "move": "wake_mid",
+      "section": "2.5.5",
+      "input": "wake中 △ · 起身中段",
+      "states": [
+        "wake"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_38",
+      "move": "guard_counter",
+      "section": "2.5.5",
+      "input": "6△ · 防御反击",
+      "states": [
+        "guard",
+        "blockstun"
+      ],
+      "directions": [
+        6
+      ],
+      "buttons": 2,
+      "motion": []
+    },
+    {
+      "id": "command_39",
+      "move": "burst",
+      "section": "2.5.5",
+      "input": "hit / launch / blockstun中 防御+蓄能 · 爆气脱离",
+      "states": [
+        "hit",
+        "launch",
+        "blockstun"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 24,
+      "motion": []
+    },
+    {
+      "id": "command_40",
+      "move": "motion_236",
+      "section": "2.5.7",
+      "input": "236□ · 角色专属（见各角色MOVES.md）",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn",
+        "crouch"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 1,
+      "motion": [
+        2,
+        3,
+        6
+      ]
+    },
+    {
+      "id": "command_41",
+      "move": "motion_623",
+      "section": "2.5.7",
+      "input": "623△ · 角色专属（见各角色MOVES.md）",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn",
+        "crouch"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 2,
+      "motion": [
+        6,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "command_42",
+      "move": "motion_214",
+      "section": "2.5.7",
+      "input": "214I · 角色专属（见各角色MOVES.md）",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn",
+        "crouch"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 128,
+      "motion": [
+        2,
+        1,
+        4
+      ]
+    },
+    {
+      "id": "command_43",
+      "move": "motion_22",
+      "section": "2.5.7",
+      "input": "22○ · 角色专属（见各角色MOVES.md）",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn",
+        "crouch"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 64,
+      "motion": [
+        2,
+        5,
+        2
+      ]
+    },
+    {
+      "id": "command_44",
+      "move": "motion_41236",
+      "section": "2.5.7",
+      "input": "idle / walk / charge / turn / crouch中 41236× · 半圈强投",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn",
+        "crouch"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 4,
+      "motion": [
+        4,
+        1,
+        2,
+        3,
+        6
+      ]
+    },
+    {
+      "id": "command_45",
+      "move": "special",
+      "section": "2.5.7",
+      "input": "idle / walk / charge / turn / crouch / light1 / heavy中 P · 能量终结",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn",
+        "crouch",
+        "light1",
+        "heavy"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 32,
+      "motion": []
+    },
+    {
+      "id": "command_46",
+      "move": "special",
+      "section": "2.5.7",
+      "input": "idle / walk / charge / turn / crouch / light1 / heavy中 □+△ · 能量终结",
+      "states": [
+        "idle",
+        "walk",
+        "charge",
+        "turn",
+        "crouch",
+        "light1",
+        "heavy"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 3,
+      "motion": []
+    },
+    {
+      "id": "command_47",
+      "move": "air_special",
+      "section": "2.5.7",
+      "input": "vertical_air / diagonal_air / chase_air / air_tech中 P · 空中必杀",
+      "states": [
+        "vertical_air",
+        "diagonal_air",
+        "chase_air",
+        "air_tech"
+      ],
+      "directions": [
+        0
+      ],
+      "buttons": 32,
+      "motion": [],
+      "optional_if_unsupported": true
+    },
+    {
+      "id": "throw_tech",
+      "section": "2.5.6",
+      "input": "拆投"
+    },
+    {
+      "id": "grabbed",
+      "section": "2.5.6",
+      "input": "被抓起（独立3帧）"
+    },
+    {
+      "id": "thrown_forward",
+      "section": "2.5.6",
+      "input": "被前投"
+    },
+    {
+      "id": "thrown_back",
+      "section": "2.5.6",
+      "input": "被后投"
+    },
+    {
+      "id": "thrown_air",
+      "section": "2.5.6",
+      "input": "被空投"
+    },
+    {
+      "id": "thrown_dash",
+      "section": "2.5.6",
+      "input": "被擒抱"
+    },
+    {
+      "id": "special_1",
+      "section": "2.5.7",
+      "input": "1格能量 · P / □+△",
+      "move": "special",
+      "clip": "special"
+    },
+    {
+      "id": "special_2",
+      "section": "2.5.7",
+      "input": "2格能量 · P / □+△",
+      "move": "special2",
+      "clip": "special2"
+    },
+    {
+      "id": "special_3",
+      "section": "2.5.7",
+      "input": "3格能量 · P / □+△",
+      "move": "special3",
+      "clip": "special3"
+    },
+    {
+      "id": "idle",
+      "section": "2.5.8",
+      "input": "idle",
+      "clip": "idle",
+      "expected_frames": 6
+    },
+    {
+      "id": "turn",
+      "section": "2.5.8",
+      "input": "turn",
+      "clip": "turn",
+      "expected_frames": 3
+    },
+    {
+      "id": "walk_forward",
+      "section": "2.5.8",
+      "input": "walk_forward",
+      "clip": "walk_forward",
+      "expected_frames": 8
+    },
+    {
+      "id": "walk_back",
+      "section": "2.5.8",
+      "input": "walk_back",
+      "clip": "walk_back",
+      "expected_frames": 8
+    },
+    {
+      "id": "dash_start",
+      "section": "2.5.8",
+      "input": "dash_start",
+      "clip": "dash_start",
+      "expected_frames": 2
+    },
+    {
+      "id": "dash",
+      "section": "2.5.8",
+      "input": "dash",
+      "clip": "dash",
+      "expected_frames": 4
+    },
+    {
+      "id": "dash_stop",
+      "section": "2.5.8",
+      "input": "dash_stop",
+      "clip": "dash_stop",
+      "expected_frames": 3
+    },
+    {
+      "id": "backstep",
+      "section": "2.5.8",
+      "input": "backstep",
+      "clip": "backstep",
+      "expected_frames": 5
+    },
+    {
+      "id": "dodge",
+      "section": "2.5.8",
+      "input": "dodge",
+      "clip": "dodge",
+      "expected_frames": 6
+    },
+    {
+      "id": "takeoff",
+      "section": "2.5.8",
+      "input": "takeoff",
+      "clip": "takeoff",
+      "expected_frames": 2
+    },
+    {
+      "id": "air_rise",
+      "section": "2.5.8",
+      "input": "air_rise",
+      "clip": "air_rise",
+      "expected_frames": 2
+    },
+    {
+      "id": "air_apex",
+      "section": "2.5.8",
+      "input": "air_apex",
+      "clip": "air_apex",
+      "expected_frames": 1
+    },
+    {
+      "id": "air_fall",
+      "section": "2.5.8",
+      "input": "air_fall",
+      "clip": "air_fall",
+      "expected_frames": 2
+    },
+    {
+      "id": "flip_forward",
+      "section": "2.5.8",
+      "input": "flip_forward",
+      "clip": "flip_forward",
+      "expected_frames": 4
+    },
+    {
+      "id": "flip_back",
+      "section": "2.5.8",
+      "input": "flip_back",
+      "clip": "flip_back",
+      "expected_frames": 4
+    },
+    {
+      "id": "land",
+      "section": "2.5.8",
+      "input": "land",
+      "clip": "land",
+      "expected_frames": 2
+    },
+    {
+      "id": "crouch_start",
+      "section": "2.5.8",
+      "input": "crouch_start",
+      "clip": "crouch_start",
+      "expected_frames": 2
+    },
+    {
+      "id": "crouch",
+      "section": "2.5.8",
+      "input": "crouch",
+      "clip": "crouch",
+      "expected_frames": 2
+    },
+    {
+      "id": "crouch_turn",
+      "section": "2.5.8",
+      "input": "crouch_turn",
+      "clip": "crouch_turn",
+      "expected_frames": 3
+    },
+    {
+      "id": "crouch_rise",
+      "section": "2.5.8",
+      "input": "crouch_rise",
+      "clip": "crouch_rise",
+      "expected_frames": 2
+    },
+    {
+      "id": "guard",
+      "section": "2.5.8",
+      "input": "guard",
+      "clip": "guard",
+      "expected_frames": 2
+    },
+    {
+      "id": "crouch_guard",
+      "section": "2.5.8",
+      "input": "crouch_guard",
+      "clip": "crouch_guard",
+      "expected_frames": 2
+    },
+    {
+      "id": "hit_high",
+      "section": "2.5.8",
+      "input": "hit_high",
+      "clip": "hit_high",
+      "expected_frames": 3
+    },
+    {
+      "id": "hit_mid",
+      "section": "2.5.8",
+      "input": "hit_mid",
+      "clip": "hit_mid",
+      "expected_frames": 3
+    },
+    {
+      "id": "hit_crouch",
+      "section": "2.5.8",
+      "input": "hit_crouch",
+      "clip": "hit_crouch",
+      "expected_frames": 3
+    },
+    {
+      "id": "hit_air",
+      "section": "2.5.8",
+      "input": "hit_air",
+      "clip": "hit_air",
+      "expected_frames": 3
+    },
+    {
+      "id": "launch_rise",
+      "section": "2.5.8",
+      "input": "launch_rise",
+      "clip": "launch_rise",
+      "expected_frames": 3
+    },
+    {
+      "id": "launch_fall",
+      "section": "2.5.8",
+      "input": "launch_fall",
+      "clip": "launch_fall",
+      "expected_frames": 3
+    },
+    {
+      "id": "bounce",
+      "section": "2.5.8",
+      "input": "bounce",
+      "clip": "bounce",
+      "expected_frames": 3
+    },
+    {
+      "id": "down",
+      "section": "2.5.8",
+      "input": "down",
+      "clip": "down",
+      "expected_frames": 2
+    },
+    {
+      "id": "wake",
+      "section": "2.5.8",
+      "input": "wake",
+      "clip": "wake",
+      "expected_frames": 5
+    },
+    {
+      "id": "roll_forward",
+      "section": "2.5.8",
+      "input": "roll_forward",
+      "clip": "roll_forward",
+      "expected_frames": 5
+    },
+    {
+      "id": "roll_back",
+      "section": "2.5.8",
+      "input": "roll_back",
+      "clip": "roll_back",
+      "expected_frames": 5
+    },
+    {
+      "id": "air_tech",
+      "section": "2.5.8",
+      "input": "air_tech",
+      "clip": "air_tech",
+      "expected_frames": 4
+    },
+    {
+      "id": "stun",
+      "section": "2.5.8",
+      "input": "stun",
+      "clip": "stun",
+      "expected_frames": 6
+    },
+    {
+      "id": "blockstun",
+      "section": "2.5.8",
+      "input": "blockstun",
+      "clip": "blockstun",
+      "expected_frames": 2
+    },
+    {
+      "id": "crouch_blockstun",
+      "section": "2.5.8",
+      "input": "crouch_blockstun",
+      "clip": "crouch_blockstun",
+      "expected_frames": 2
+    },
+    {
+      "id": "guardbreak",
+      "section": "2.5.8",
+      "input": "guardbreak",
+      "clip": "guardbreak",
+      "expected_frames": 4
+    },
+    {
+      "id": "intro",
+      "section": "2.5.8",
+      "input": "intro",
+      "clip": "intro",
+      "expected_frames": 8
+    },
+    {
+      "id": "victory",
+      "section": "2.5.8",
+      "input": "victory",
+      "clip": "victory",
+      "expected_frames": 8
+    },
+    {
+      "id": "defeat",
+      "section": "2.5.8",
+      "input": "defeat",
+      "clip": "defeat",
+      "expected_frames": 4
+    },
+    {
+      "id": "timeout",
+      "section": "2.5.8",
+      "input": "timeout",
+      "clip": "timeout",
+      "expected_frames": 4
+    },
+    {
+      "id": "taunt",
+      "section": "2.5.8",
+      "input": "防御+投技 · 挑衅",
+      "clip": "taunt",
+      "expected_frames": 6,
+      "move": "taunt"
+    },
+    {
+      "id": "chase_takeoff",
+      "section": "2.5.8",
+      "input": "chase_takeoff",
+      "clip": "chase_takeoff",
+      "expected_frames": 3
+    },
+    {
+      "id": "charge_start",
+      "section": "2.5.7",
+      "input": "charge_start",
+      "clip": "charge_start",
+      "expected_frames": 3
+    },
+    {
+      "id": "charge",
+      "section": "2.5.7",
+      "input": "charge",
+      "clip": "charge",
+      "expected_frames": 4
+    },
+    {
+      "id": "charge_stop",
+      "section": "2.5.7",
+      "input": "charge_stop",
+      "clip": "charge_stop",
+      "expected_frames": 2
+    }
+  ]
+}

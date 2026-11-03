@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "character": "ultraman-taro",
+  "idle_texture": "assets/fighters/ultraman-taro/animations/idle/atlas.png",
+  "idle_rect": [
+    0,
+    0,
+    192,
+    192
+  ],
+  "head_center": [
+    100,
+    57
+  ],
+  "neck_cut": [
+    [
+      89,
+      68
+    ],
+    [
+      104,
+      76
+    ]
+  ],
+  "template_radius": 37,
+  "background_ring": 3,
+  "upsample": 2,
+  "scale_range": [
+    0.65,
+    1.5
+  ],
+  "rotation_range": [
+    -180,
+    180
+  ],
+  "thresholds": {
+    "usable": 0.126608,
+    "auxiliary": 0.181608
+  },
+  "notes": "坐标是idle第0格的原生像素；模板只用于测量。含刚体头饰，切掉颈部；阈值待本次校准写入。",
+  "calibration": {
+    "report": "calibration/ultraman-taro.json",
+    "manifest_sha256": "eb8d840e6ad2b4debe841d6396da9d76cce8dfb3b256e0081002952b3ea459ea",
+    "maximum_relative_scale_error": 0.0065217,
+    "basis": "人工缩放旋转+idle/走路实帧误差P95+缺头负例；不作为美术硬门"
+  }
+}

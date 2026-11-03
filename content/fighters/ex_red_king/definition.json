@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "id": "ex_red_king",
+  "name": "EX雷德王",
+  "form_of": "red_king",
+  "switch": "battle",
+  "kind": "form",
+  "implemented": true,
+  "selectable": true,
+  "visible_in_character_select": true,
+  "roster_registered": true,
+  "status": "stage7_director_approved_xform_closeout_review",
+  "body_template": "biped_tail",
+  "inherits_animation_from": null,
+  "animation_manifest": "res://assets/fighters/ex_red_king/animations/manifest.json",
+  "runtime_resources_installed": true,
+  "palette": "content/fighters/ex_red_king/palette.json",
+  "production_plan": "content/fighters/ex_red_king/production_plan.json",
+  "transformation": {
+    "form_of": "red_king",
+    "switch": "battle",
+    "implemented": true,
+    "requirements": {
+      "energy_stocks": 3,
+      "hp_at_or_below_half": true,
+      "once_per_round": true
+    },
+    "performance_invulnerable": true,
+    "duration": "until_round_end",
+    "select_screen_visible": true,
+    "input_binding": "22+P",
+    "implementation_owner": "content/catalogs/battle_form_catalog.gd 与 core/combat/battle_transform.gd",
+    "original_work": "《奥特银河大怪兽之战NEO》第13话",
+    "phases": [
+      {
+        "frames": [
+          0,
+          1
+        ],
+        "appearance": "普通雷德王受压半跪，双拳内收，长尾贴地；每相新画，不引用本体旧帧。"
+      },
+      {
+        "frames": [
+          2,
+          3
+        ],
+        "appearance": "普通轮廓中横环沟缝逐渐变红，身躯压缩蓄力；不是运行时调色替代。"
+      },
+      {
+        "frames": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "appearance": "前臂和拳端逐相膨大、表面变厚黑岩壳，红眼亮起；整人重画，禁止手臂拼接。"
+      },
+      {
+        "frames": [
+          8,
+          9
+        ],
+        "appearance": "EX双巨拳撑起躯干，双足落稳，颈部回竖。"
+      },
+      {
+        "frames": [
+          10,
+          11
+        ],
+        "appearance": "EX双拳张开短吼，准备接独立form_entry。"
+      }
+    ]
+  },
+  "note": "2026-11-01用户授权EX直选；既有对局变身入口保持。原form_entry首相细差与未完成独立二级抓摔另留台账，不用可选状态冒称全部动作完成。",
+  "display_name": "EX雷德王",
+  "template": "biped_tail",
+  "production_status": "pilot_partial",
+  "playable": true,
+  "pilot_playable": true,
+  "pilot_manual_ready": true,
+  "max_health": 1000,
+  "walk_speed": 2,
+  "jump_speed": 10,
+  "stage2_status": "director_approved_except_walks",
+  "presentation": {
+    "model": "res://assets/fighters/ex_red_king/model-native.png",
+    "manifest": "res://assets/fighters/ex_red_king/animations/manifest.json",
+    "native": true,
+    "cell": [
+      512,
+      320
+    ],
+    "anchor": [
+      256,
+      304
+    ],
+    "target_height": 176,
+    "anchor_y": 304
+  },
+  "unsupported_moves": [],
+  "select_visible": true,
+  "selection_visible": true,
+  "direct_selection": true,
+  "direct_selection_authorization": {
+    "date": "2026-11-01",
+    "by": "user",
+    "scope": "EX可直选，保留普通本体既有对局变身入口；本人形态保持至结算结束"
+  },
+  "training_entry_limitation": "可在选人页直接选择EX雷德王；普通本体仍可按既有条件在对局中变身。",
+  "hud_portrait": "res://assets/fighters/ex_red_king/portraits/special3.png"
+}

@@ -1,0 +1,116 @@
+{
+  "fighter": "ultraman-arc__galaxion",
+  "stage": 2,
+  "action": "slide",
+  "phase": 5,
+  "asset_kind": "character",
+  "model": "gpt-image-2.5-sunburst",
+  "quality": "high",
+  "background": "transparent",
+  "size": "1024x1024",
+  "prompt": "整张重画输入1这一个本相完整人物，透明背景。身份是亚刻奥特曼银河装甲，独立2D侧视街机像素整帧。\n输入1是本相尚未量化或修补的干净GPT原图；输入2是本装甲按本人骨长重建的正确本相骨架；输入3是本人唯一装甲定稿，只核身份和配色。整个人必须由GPT完整重画，禁止分肢拼接或把武器/装甲贴上去。\n这是slide第6/8相：臀部低沉，近侧亮左腿折在身体下，远侧暗右腿向画面右方伸直贴地滑铲；两脚不能朝画面左方。双腿必须同时符合骨架：白线亮左腿折叠撑地、深灰线暗右腿按本相屈伸，鼻尖和胸口朝画面右边。近脚掌准确接地，远侧攻击脚位置按线稿；头、手、脚和甲尖不裁切。骨架线、字和地线不画进成品。\n原生256×256、根(128,248)，头壳至下巴22.148，躯干颈根至髋37.100，每条腿的实际骨长保持本人定稿；深蹲只是关节弯曲，不能缩短身体。头刃保留定稿低后掠开孔，不增高。\n保持输入3的装甲、胸灯、头壳、花纹和自然皮套表面，银河保留靴甲、月亮保留圆盘腕甲。远侧右肢在生成时整条暗色，近侧左肢亮色；交叉一像素深线，不因迈前互换身份。32色硬阶像素风、深描边、左上光，禁止柔焦渐变和塑料高光。\n实物只供本人造型配色。肩肘腕髋膝踝是自然连续表面，去球关节、活动轴、圆盘连接缝、支架、螺丝和塑料分模线，保留本人真实装甲分节。只画一个完整人物，方图1024×1024，真正PNG Alpha透明背景，无地面、投影、其它人物、武器、特效或文字。",
+  "references": [
+    "art/fighters/ultraman-arc__galaxion/stage2/ground-codex-20261027/slide/phase-05/request-002/raw.provider.png",
+    "art/fighters/ultraman-arc__galaxion/stage2/ground-codex-20261027/slide/phase-05/request-003/pose-guide.png",
+    "art/fighters/ultraman-arc__galaxion/model/clean-model-source.png"
+  ],
+  "source_sha256": "5f8ef023d1df1d84110c688aca87712c956844dc710843232dc9ae37a8a55f42",
+  "canonical_model_sha256": "cfc78e662076bfbfb2b2bf92da3d7bba0dfc173785e5c543b888c4838d540740",
+  "target": {
+    "points": {
+      "skull_top": [
+        148.75764618846847,
+        170.3093151368539
+      ],
+      "chin": [
+        162.88398130195313,
+        187.4283779076511
+      ],
+      "ear": [
+        146.08933844481027,
+        179.10442995487819
+      ],
+      "eye": [
+        162.41310346483698,
+        177.53387373737382
+      ],
+      "neck_base": [
+        150.32723897885566,
+        192.76826904716586
+      ],
+      "hip_center": [
+        128,
+        222.39751591513763
+      ],
+      "near_shoulder": [
+        139.02617088806795,
+        196.22349272567538
+      ],
+      "near_elbow": [
+        149.85574042364112,
+        214.9808573853882
+      ],
+      "near_wrist": [
+        155.37148700420198,
+        235.56590386571565
+      ],
+      "far_shoulder": [
+        163.51181841810802,
+        198.73638267368233
+      ],
+      "far_elbow": [
+        152.68224888253485,
+        217.49374733339516
+      ],
+      "far_wrist": [
+        131.3710405888174,
+        217.49374733339516
+      ],
+      "near_hip": [
+        128,
+        222.39751591513763
+      ],
+      "near_knee": [
+        164.09929122171474,
+        219.2392371719167
+      ],
+      "near_ankle": [
+        132.59749228573287,
+        245.6723850405199
+      ],
+      "near_toe": [
+        140.12677086888476,
+        247.0
+      ],
+      "far_hip": [
+        131,
+        221.39751591513763
+      ],
+      "far_knee": [
+        167.21885772044106,
+        222.5498599421098
+      ],
+      "far_ankle": [
+        201,
+        246
+      ],
+      "far_toe": [
+        208.6454298416338,
+        246.0
+      ]
+    },
+    "upright": false,
+    "grounded": true,
+    "facing": "right",
+    "support": "near",
+    "description": "臀部低沉，近侧亮左腿折在身体下，远侧暗右腿向画面右方伸直贴地滑铲；两脚不能朝画面左方"
+  },
+  "repair_method": 2,
+  "repair_method_name": "本相干净原图整身编辑＋本人正确骨长引导",
+  "previous_returned_count": 2,
+  "max_returned_images_per_phase": 6,
+  "first_method_limits": "前法改为低姿，但部分近远腿反转、收势仍伸直；首法中间指南曾把远足落到地线以下，本次按完整两段骨长与目标足点校正并数值验证。",
+  "noimage_supplement_of": "art/fighters/ultraman-arc__galaxion/stage2/ground-codex-20261027/slide/phase-05/request-003/brief.json",
+  "prior_noimage_state_sha256": "76c258d068a67dcf55ec6d292b481670eb0d204ab74472687e418db0cf46e5d5",
+  "network_failure_does_not_count_as_material_generation": true
+}

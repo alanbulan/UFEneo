@@ -1,0 +1,35 @@
+{
+  "ultraman-teo": {
+    "motion_41236": {
+      "phases": {
+        "enclose": {
+          "effect": "teo_capture_enclose",
+          "subject": "victim",
+          "behind_fighter": true
+        },
+        "shrink": {
+          "effect": "teo_capture_shrink_shell",
+          "subject": "victim",
+          "behind_fighter": true
+        },
+        "return": {
+          "effect": "teo_capture_ball_return",
+          "subject": "victim",
+          "behind_fighter": true
+        },
+        "release": {
+          "effect": "teo_capture_rule_release",
+          "subject": "owner",
+          "start_age": 2,
+          "end_age": 6,
+          "anchor": [
+            41,
+            90
+          ]
+        }
+      },
+      "guard_dissolve": "teo_capture_guard_dissolve",
+      "miss_dissolve": "teo_capture_miss_dissolve"
+    }
+  }
+}

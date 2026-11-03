@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "character": "black_king",
+  "idle_texture": "assets/fighters/black_king/animations/idle/atlas.png",
+  "idle_rect": [
+    0,
+    0,
+    512,
+    320
+  ],
+  "head_center": [
+    302,
+    129
+  ],
+  "neck_cut": [
+    [
+      282,
+      135
+    ],
+    [
+      306,
+      157
+    ]
+  ],
+  "template_radius": 53,
+  "background_ring": 4,
+  "upsample": 2,
+  "scale_range": [
+    0.65,
+    1.5
+  ],
+  "rotation_range": [
+    -180,
+    180
+  ],
+  "thresholds": {
+    "usable": 0.18,
+    "auxiliary": 0.241913
+  },
+  "notes": "坐标是idle第0格的原生像素；模板只用于测量。含刚体头饰，切掉颈部；阈值待本次校准写入。",
+  "calibration": {
+    "report": "calibration/black_king.json",
+    "manifest_sha256": "632812db10256a3253ab454f3a325723e164e6ddaca6718a53024931bb02b06e",
+    "maximum_relative_scale_error": 0.0029412,
+    "basis": "人工缩放旋转+idle/走路实帧误差P95+缺头负例；不作为美术硬门"
+  }
+}

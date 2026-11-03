@@ -1,0 +1,350 @@
+{
+  "schema": 1,
+  "fighter": "ultraman-jack",
+  "date": "2026-10-23",
+  "status": "commander_approved",
+  "method": "jack-landmarks-v1",
+  "native_image": "art/model_sheets/ultraman-jack/model-native.png",
+  "native_sha256": "44de866ad2acb79819f01a74e9febe91e972c9b374a00b83ee2ac1a55a7dccc8",
+  "high_resolution_source": "art/generation/stage4/ultraman-jack/model/02/raw.png",
+  "source_sha256": "05ad0ce7cf955d609057d4cd1be437f6cfcd8900993e7962cb810ba3a2ae7b04",
+  "canvas": [
+    192,
+    192
+  ],
+  "foot_anchor": [
+    96,
+    184
+  ],
+  "body_height_without_fin": 135,
+  "height_with_fin": 138,
+  "fin_extra_height": 3,
+  "standing_height_policy": {
+    "reference": 135,
+    "tolerance_fraction": 0.03,
+    "allowed_interval": [
+      130.95,
+      139.05
+    ],
+    "reason": "仍以头壳至脚底135作原骨长基准；新总轮廓高按当前PNG含一像素外描边实量，不能按总高缩身体。"
+  },
+  "head_policy": {
+    "tolerance_fraction": 0.08,
+    "primary": "eye_to_ear",
+    "secondary": "eye_to_chin",
+    "rule": "眼耳、眼下颌、头盔圆顶至下巴三段均在高分原图量欧氏距离，再用冻结登记变换换算原生，均须±8%；遮挡/背面不伪造。",
+    "landmarks_source": {
+      "eye_center": [
+        678.293897882939,
+        340.159402241594
+      ],
+      "ear_center": [
+        590,
+        338
+      ],
+      "chin_apex": [
+        674,
+        422
+      ],
+      "skull_top": [
+        632,
+        238
+      ],
+      "helmet_dome_top": [
+        645.8304347826087,
+        242.6086956521739
+      ]
+    },
+    "landmarks_native": {
+      "eye_center": [
+        100.10787,
+        63.51628
+      ],
+      "ear_center": [
+        87.5138,
+        63.20686
+      ],
+      "chin_apex": [
+        99.4954,
+        75.24319
+      ],
+      "skull_top": [
+        93.5046,
+        48.8779
+      ],
+      "helmet_dome_top": [
+        95.47734729261137,
+        49.53827929627517
+      ]
+    },
+    "distances": {
+      "eye_to_ear": {
+        "landmarks": [
+          "eye_center",
+          "ear_center"
+        ],
+        "source_distance": 88.3203,
+        "native_distance": 12.59787
+      },
+      "eye_to_chin": {
+        "landmarks": [
+          "eye_center",
+          "chin_apex"
+        ],
+        "source_distance": 81.95316,
+        "native_distance": 11.74289
+      },
+      "dome_to_chin": {
+        "landmarks": [
+          "helmet_dome_top",
+          "chin_apex"
+        ],
+        "source_distance": 181.58954947945443,
+        "native_distance": 26.017054119646467,
+        "manual_evidence": {
+          "source": "art/generation/stage4/ultraman-jack/model/02/raw.png",
+          "source_sha256": "05ad0ce7cf955d609057d4cd1be437f6cfcd8900993e7962cb810ba3a2ae7b04",
+          "point": [
+            645.8304347826087,
+            242.6086956521739
+          ],
+          "preview_point": [
+            89,
+            80
+          ],
+          "preview_page": 0,
+          "evidence": "人工查看高分原图头部裁片JPEG，逆变换至原图；圆顶排除头鳍，约±2预览像素。",
+          "reason": null
+        }
+      }
+    },
+    "uncertainty": "手动侧耳/下颌标点约±3源像素（约0.43原生像素）；保留原图标注，指挥可复核。",
+    "tertiary": "dome_to_chin"
+  },
+  "registration": {
+    "raw_bounds": [
+      327,
+      190,
+      979,
+      1181
+    ],
+    "native_offset": [
+      50,
+      42
+    ],
+    "scale_x": 0.14263803680981596,
+    "scale_y": 0.1432896064581231
+  },
+  "joints_source": {
+    "skull_top": [
+      632,
+      238
+    ],
+    "chin": [
+      674,
+      422
+    ],
+    "neck_base": [
+      644,
+      453
+    ],
+    "shoulder_near": [
+      713,
+      493
+    ],
+    "elbow_near": [
+      806,
+      615
+    ],
+    "wrist_near": [
+      863,
+      533
+    ],
+    "shoulder_far": [
+      520,
+      485
+    ],
+    "elbow_far": [
+      451,
+      617
+    ],
+    "wrist_far": [
+      583,
+      626
+    ],
+    "hip": [
+      642,
+      752
+    ],
+    "knee_near": [
+      815,
+      906
+    ],
+    "ankle_near": [
+      867,
+      1126
+    ],
+    "toe_near": [
+      965,
+      1171
+    ],
+    "knee_far": [
+      479,
+      899
+    ],
+    "ankle_far": [
+      375,
+      1120
+    ],
+    "toe_far": [
+      426,
+      1171
+    ],
+    "head_base": [
+      641,
+      421
+    ]
+  },
+  "joints_native": {
+    "skull_top": [
+      93.5046,
+      48.8779
+    ],
+    "chin": [
+      99.4954,
+      75.24319
+    ],
+    "neck_base": [
+      95.21626,
+      79.68517
+    ],
+    "shoulder_near": [
+      105.05828,
+      85.41675
+    ],
+    "elbow_near": [
+      118.32362,
+      102.89808
+    ],
+    "wrist_near": [
+      126.45399,
+      91.14834
+    ],
+    "shoulder_far": [
+      77.52914,
+      84.27043
+    ],
+    "elbow_far": [
+      67.68712,
+      103.18466
+    ],
+    "wrist_far": [
+      86.51534,
+      104.47427
+    ],
+    "hip": [
+      94.93098,
+      122.52876
+    ],
+    "knee_near": [
+      119.60736,
+      144.59536
+    ],
+    "ankle_near": [
+      127.02454,
+      176.11907
+    ],
+    "toe_near": [
+      141.00307,
+      182.5671
+    ],
+    "knee_far": [
+      71.68098,
+      143.59233
+    ],
+    "ankle_far": [
+      56.84663,
+      175.25933
+    ],
+    "toe_far": [
+      64.12117,
+      182.5671
+    ],
+    "head_base": [
+      94.78834,
+      75.0999
+    ]
+  },
+  "bones_native": {
+    "head": 26.2534,
+    "neck": 4.60519,
+    "torso": 42.84454,
+    "upper_arm_near": 21.94462,
+    "forearm_near": 14.28843,
+    "upper_arm_far": 21.32167,
+    "forearm_far": 18.87233,
+    "thigh_near": 33.10375,
+    "shin_near": 32.38455,
+    "foot_near": 15.39404,
+    "thigh_far": 31.37254,
+    "shin_far": 34.96937,
+    "foot_far": 10.31128
+  },
+  "guide_bones_native": {
+    "upper_arm": 21.63314,
+    "forearm": 18.87233,
+    "thigh": 33.10375,
+    "shin": 32.38455,
+    "torso": 42.84454,
+    "neck": 4.60519,
+    "head": 26.2534,
+    "foot": 15.39404
+  },
+  "bone_policy": "二维中心骨链估计，优先取较少透视缩短的可见段；近侧屈臂前臂有投影缩短，后续骨架取远侧前臂长度。标点只作测量，不分件拼接人物。",
+  "straight_body_length": 154.58547,
+  "straight_body_chain": [
+    "head",
+    "neck",
+    "torso",
+    "thigh_near",
+    "shin_near",
+    "foot_near"
+  ],
+  "lying_length_policy": {
+    "reference": 154.58547,
+    "tolerance_fraction": 0.08,
+    "interval": [
+      142.21863,
+      166.95231
+    ],
+    "rule": "由头壳顶沿头/颈/躯干/同一侧大腿/小腿/足的骨链伸直后求和；卧姿弯折须沿同骨链标点，不能用135站高或含手臂外框比较。"
+  },
+  "silhouette_area": 4506,
+  "silhouette_policy": {
+    "formula": "sqrt(frame_area / 4529)",
+    "review_above": 1.06,
+    "hard_rejection": false,
+    "rule": "面积只能标疑似过大、需人工复核；四肢展开可改变剪影，不单项硬拒收。"
+  },
+  "calibration": "art/model_sheets/ultraman-jack/calibration.json",
+  "legal_detached_components": {
+    "model": [],
+    "future": [
+      "超级火花飞出武器",
+      "超级长枪投掷武器",
+      "八分光轮",
+      "超级射线光弹"
+    ],
+    "policy": "只在对应招式/帧声明中登记；定稿不允许独立块，≤20像素孤块全部报错。"
+  },
+  "visual_review": "已自检原图缩图、全身4倍与头部8倍；未代替指挥审定。",
+  "approval": "2026-10-23用户转达指挥审定第2稿及135/142/154.585标尺。",
+  "head_top_repair": {
+    "authority": "指挥选定fixed_c3",
+    "source": "art/production/stage4/ultraman-jack/head-top-fix/prototype/fixed_c3.png",
+    "source_sha256": "44de866ad2acb79819f01a74e9febe91e972c9b374a00b83ee2ac1a55a7dccc8",
+    "report": "reports/review/2026-10-24-ultraman-jack-head-top-fix/model-fix.json",
+    "body_and_bone_readings_unchanged": true,
+    "high_resolution_source_policy": "保留原高分主体与骨长来源；头顶原位遮罩另记，不把原高分尖顶冒充新头顶。"
+  }
+}

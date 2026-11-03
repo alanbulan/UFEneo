@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "character": "ultraman",
+  "idle_texture": "assets/fighters/ultraman/animations/idle/head-calibrated.png",
+  "idle_rect": [
+    0,
+    0,
+    192,
+    192
+  ],
+  "head_center": [
+    102,
+    62
+  ],
+  "neck_cut": [
+    [
+      94,
+      73
+    ],
+    [
+      107,
+      80
+    ]
+  ],
+  "template_radius": 31,
+  "background_ring": 3,
+  "upsample": 2,
+  "scale_range": [
+    0.65,
+    1.5
+  ],
+  "rotation_range": [
+    -180,
+    180
+  ],
+  "thresholds": {
+    "usable": 0.143193,
+    "auxiliary": 0.193548
+  },
+  "notes": "坐标是idle第0格的原生像素；模板只用于测量。含刚体头饰，切掉颈部；阈值待本次校准写入。",
+  "calibration": {
+    "report": "calibration/ultraman.json",
+    "manifest_sha256": "f517c5f7987a0e3d147031d4bf331ea938141f000eebfca3a018e23f7d7196c0",
+    "maximum_relative_scale_error": 0.0117647,
+    "basis": "人工缩放旋转+idle/走路实帧误差P95+缺头负例；不作为美术硬门"
+  }
+}

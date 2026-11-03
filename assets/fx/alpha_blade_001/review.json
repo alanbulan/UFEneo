@@ -1,0 +1,33 @@
+{
+  "purpose": "reviewed_combat_effect_not_fighter",
+  "name": "双端光刃 · 能量成形",
+  "state": "formation",
+  "anchor_px": [
+    96,
+    96
+  ],
+  "reviewer": "Codex：全部精修帧、深浅底、三倍nearest显示、原速及十六分之一速连续播放核对",
+  "bundle_sha256": "d1383f4185ccfa83fe8ca27216b6f41fe8ae9e149e6a078ecd85bc14d9091611",
+  "compose_report_sha256": "32039b10d2f662255df0ca04d65f00b414a66b13019609ef3183a8a44d72dee5",
+  "checks": {
+    "pixel_grid": true,
+    "alpha": true,
+    "pivot": true,
+    "motion": true,
+    "timing": true,
+    "curated": true
+  },
+  "source_character_id": "ultraman-z",
+  "source_visual_packet": "art/shared/references/motion/ultraman-z/episode-01-blade-v001.json",
+  "usage": "独立技能特效造型研究，仅在工坊展示，未装备给训练素体或正式角色",
+  "evidence": {
+    "playback": "formation-review.html",
+    "screenshot": "reports/art-reference/alpha-blade-formation-browser.png",
+    "pixel_audit": "qa/curated-atlas-audit.json",
+    "motion": "细蓝刃与短白核→白核扩张→完整双端亮刃；连接电弧两端位置稳定，内部枝节变化。非循环成形，未补画人物或复制静帧。",
+    "curation": "第二帧只擦除16个输出像素（4个逻辑像素）的孤立残点；主体与其他帧RGB逐像素保留，无平移、缩放、旋转或时序修改。",
+    "timing": "沿用合成器83/83/83ms，共249ms；12fps请求的整数毫秒输出，不改为人为250ms。",
+    "extraction_warnings": "实测网格8×8.34与run-length6.82×6.82有分歧；首帧4×4塌缩由标准谐波共识保护处理，末帧使用共识回退；原警告保留。未设置pitch_hint或另行缩小挽救。",
+    "limitations": "参考仅证实泽塔阿尔法装甲的双端刃与连接电弧造型，技能专名、全身起手、接触、收势仍未完成核对，不宣称人物技能复刻完成。"
+  }
+}

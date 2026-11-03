@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "selected_take": 4,
+  "review_status": "pending_commander_color_review",
+  "candidates": [
+    {
+      "take": 1,
+      "source": "art/fighters/ex_gomora/stage4/model/generation/01/raw.png",
+      "source_sha256": "e1f552f7daaa08ccfaf11e3662232da1994968c806f315ec769b813e495c79f4",
+      "head_long": 30.05805,
+      "head_ratio_to_base": 1.10496,
+      "tail_length": 190.19483,
+      "client_alpha_accepted": true,
+      "selected": false,
+      "decision": "首稿完整候选，头骨比本体约+10.5%，保留对照"
+    },
+    {
+      "take": 2,
+      "source": "art/fighters/ex_gomora/stage4/model/generation/02/rejected/raw.png",
+      "source_sha256": "41f7c9eff2900145c962bf59f4d6324a8d633a43636e5c7e53034bccfc5fe70f",
+      "head_long": 29.91111,
+      "head_ratio_to_base": 1.09955,
+      "tail_length": 185.29289,
+      "client_alpha_accepted": false,
+      "selected": false,
+      "decision": "文字修订后头长变化小；主体多Alpha252/253且左下角Alpha1，客户端拒收。二值后只作研究，未采用"
+    },
+    {
+      "take": 3,
+      "source": "art/fighters/ex_gomora/stage4/model/generation/03/raw.png",
+      "source_sha256": "22214e7a00d52b334ad53b895088edbc4e3850c2cd7770d83d38a2ce7da4738e",
+      "head_long": 29.25011,
+      "head_ratio_to_base": 1.07526,
+      "tail_length": 194.46864,
+      "client_alpha_accepted": true,
+      "selected": false,
+      "decision": "加明确头框的第二种修法，头长29.25，比本体+7.5%，尾链接近本体；采用待审，未宣称精确照片比例",
+      "outline_approved": true,
+      "outline_approval": "指挥2026-10-25；颜色要求返修",
+      "native": "art/fighters/ex_gomora/stage4/model/candidates/03/model-native.png",
+      "measurements": "art/fighters/ex_gomora/stage4/model/candidates/03/measurements.json"
+    },
+    {
+      "take": 4,
+      "source": "art/fighters/ex_gomora/stage4/model-color/generation/04/rejected/raw.png",
+      "source_sha256": "e18aa509ae8aa4de7707dd320d73fc6cb35beb92282834ba2faaec96d4cbd07f",
+      "native": "art/fighters/ex_gomora/model/model-native.png",
+      "head_long": 29.16134,
+      "head_ratio_to_base": 1.07199,
+      "tail_length": 193.87844,
+      "client_alpha_accepted": false,
+      "final_binary_alpha_valid": true,
+      "selected": true,
+      "decision": "整帧改为深红褐/炭黑褐，双角暗灰褐，远侧手脚爪压暗；剪影/站高保留第3稿，颜色待指挥审"
+    }
+  ],
+  "issue": "主体、角与甲片偏亮；远侧爪高光偏亮",
+  "repair_methods": [
+    "GPT整帧颜色编辑，以第3稿干净高分源为输入1；后处理仅全图RGB量化和二值Alpha"
+  ],
+  "limit_observed": "历史3张，本轮1张，总计4/6；还余2张，不为耗完额度追加请求",
+  "residual": "头长仍比本体约+7.2%，保持指挥已接受的外形；颜色和深色舞台轮廓由指挥目视。原始返回被Alpha门隔离，最终二值结果单独核验。",
+  "next": "停在第1阶段颜色验收门，不进入第2阶段",
+  "outline_baseline_approved_take": 3,
+  "model_approved": true,
+  "model_approval": {
+    "by": "指挥",
+    "date": "2026-10-25",
+    "scope": "第4稿暗红褐/炭黑褐定稿",
+    "commit": "4db693290b"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "fighter": "eleking",
+  "candidate_take": 3,
+  "status": "pending_director_review",
+  "user_approved": false,
+  "source": "art/generation/stage4/eleking/model/03/rejected/raw.png",
+  "source_sha256": "d2a72617be47c7c22a6131085278d71dba64a68f66f95b67355c716e6809c92f",
+  "native_sha256": "e700b7271a1b3ff2490108ebc0655795b10a174818a77088e3a3730bf1a955ac",
+  "canvas": [
+    512,
+    320
+  ],
+  "foot_anchor": [
+    256,
+    304
+  ],
+  "bounds": [
+    21,
+    120,
+    304,
+    304
+  ],
+  "height": 184,
+  "raw_bounds": [
+    24,
+    26,
+    1521,
+    1001
+  ],
+  "crop_to_native_scale": 0.18871794871794872,
+  "offset": [
+    21,
+    120
+  ],
+  "measured_pitch": [
+    1.0,
+    1.0
+  ],
+  "phase": [
+    0.0,
+    0.0
+  ],
+  "grid_factor": 1,
+  "opaque_colors": 29,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "source_foot_contact_spans": [
+    [
+      188,
+      223
+    ],
+    [
+      246,
+      282
+    ]
+  ],
+  "foot_center_before_padding": 235,
+  "detached_components": [],
+  "detached_component_whitelist": [],
+  "source_alpha": {
+    "transparent_fraction": 0.7483221689860026,
+    "visible_fraction": 0.22033055623372397,
+    "nonzero_fraction": 0.2516778310139974,
+    "opaque_fraction": 0.0,
+    "has_alpha_channel": true,
+    "rectangular_matte": false,
+    "clear_corners": false
+  },
+  "source_alpha_note": "客户端因原图左上角Alpha=1拒收；原图不改，只经全图统一Alpha≥128二值化后透明复核。不是区域擦除或换色。",
+  "foot_contact_search_rows": 10,
+  "pipeline": "stage4_pilot同法：detect_pixel_grid → grid_snap_downscale（pitch>1）→ kCentroid → 二值Alpha → 整图32色量化 → 脚底登记",
+  "no_region_recolor": true,
+  "automatic_checks_are_not_user_approval": true,
+  "foot_sole_contacts": [
+    {
+      "x_span": [
+        209,
+        244
+      ],
+      "sole_boundary": 304
+    },
+    {
+      "x_span": [
+        267,
+        303
+      ],
+      "sole_boundary": 301
+    }
+  ],
+  "foot_sole_height_difference": 3,
+  "local_visual_review": {
+    "reviewed": true,
+    "approval_scope": "仅执行会话自检，非指挥审片",
+    "images": [
+      "reports/review/2026-10-23-eleking-model/body-x4-qa.png",
+      "reports/review/2026-10-23-eleking-model/tail-x4-qa.png",
+      "reports/review/2026-10-23-eleking-model/head-x8.png"
+    ],
+    "finding": "双月牙角、窄口带、钝指和完整尾可读，远侧灰白与黑斑可分；远脚脚底高3px，保留整帧候选交审。"
+  }
+}

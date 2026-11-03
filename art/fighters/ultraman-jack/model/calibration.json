@@ -1,0 +1,187 @@
+{
+  "schema": 1,
+  "method": "jack-landmarks-v1",
+  "status": "calibrated_before_jack_batch",
+  "date": "2026-10-23",
+  "records": [
+    {
+      "fighter": "ultraseven",
+      "native_image": "assets/fighters/ultraseven/model-native.png",
+      "native_sha256": "289087585112913c6e6ba5653523c93e5aa8384b699246e72ec3aa60dc4f0736",
+      "head_source": "art/generation/stage4-pilot/ultraseven/model/05/raw.png",
+      "head_source_sha256": "92130406c5d7c20c31a73e101d8602f0b95f4b2f9b7f98efe1828b0b31e72bf2",
+      "head_source_note": "已审第5稿GPT高分头部；按qa.json登记6源像素/原生像素。眼/耳沿用eye-ear-v2，另手量下颌尖。",
+      "head_source_landmarks": {
+        "eye_center": [
+          686.5040983606557,
+          439.7418032786885
+        ],
+        "ear_center": [
+          608.642590286426,
+          428.3063511830635
+        ],
+        "chin_apex": [
+          681,
+          506
+        ]
+      },
+      "head_source_to_native": {
+        "scale_x": 0.16666666666666666,
+        "scale_y": 0.16666666666666666
+      },
+      "head_scales": {
+        "eye_to_ear": {
+          "landmarks": [
+            "eye_center",
+            "ear_center"
+          ],
+          "source_distance": 78.69679,
+          "native_distance": 13.11613
+        },
+        "eye_to_chin": {
+          "landmarks": [
+            "eye_center",
+            "chin_apex"
+          ],
+          "source_distance": 66.48642,
+          "native_distance": 11.08107
+        }
+      },
+      "body_height_without_ornament": 135,
+      "height_with_ornament": 143,
+      "ground_line": 184,
+      "skull_top_y": 49,
+      "joints_native": {
+        "head_top": [
+          102,
+          49
+        ],
+        "neck": [
+          99,
+          78
+        ],
+        "hip": [
+          91,
+          121
+        ],
+        "knee": [
+          118,
+          146
+        ],
+        "ankle": [
+          123,
+          171
+        ],
+        "toe": [
+          143,
+          180
+        ],
+        "head_base": [
+          100,
+          74
+        ]
+      },
+      "bones_native": {
+        "head": 25.07987,
+        "neck": 4.12311,
+        "torso": 43.73786,
+        "thigh": 36.79674,
+        "shin": 25.4951,
+        "foot": 21.93171
+      },
+      "straight_body_length": 157.16439,
+      "silhouette_area": 4852,
+      "verdict": "校准读数合理：除饰站高135；骨链伸直总长明显大于屈膝站高；眼耳和眼下颌为旋转不变的两条独立距离。"
+    },
+    {
+      "fighter": "ultraman",
+      "native_image": "assets/fighters/ultraman/model-native.png",
+      "native_sha256": "cd76aea1686c18390a7324ea68368daef15796e8d6ab03671eb03df3301e3d44",
+      "head_source": "art/model_sheets/ultraman/model.png",
+      "head_source_sha256": "a4c904cab24569d014a2508a04c2fa91db2e6c876d1a0209fec58b7e3f22f0e7",
+      "head_source_note": "已审旧定稿原始384图，不冒称可追溯GPT原图；art_phase2.native_models记录裁切(78,8,304,352)→95×144。头鳍排除后头壳顶为原生y49。",
+      "head_source_landmarks": {
+        "eye_center": [
+          197,
+          59
+        ],
+        "ear_center": [
+          172,
+          61
+        ],
+        "chin_apex": [
+          205,
+          84
+        ]
+      },
+      "head_source_to_native": {
+        "scale_x": 0.42035398230088494,
+        "scale_y": 0.4186046511627907
+      },
+      "head_scales": {
+        "eye_to_ear": {
+          "landmarks": [
+            "eye_center",
+            "ear_center"
+          ],
+          "source_distance": 25.07987,
+          "native_distance": 10.54215
+        },
+        "eye_to_chin": {
+          "landmarks": [
+            "eye_center",
+            "chin_apex"
+          ],
+          "source_distance": 26.24881,
+          "native_distance": 10.99215
+        }
+      },
+      "body_height_without_ornament": 135,
+      "height_with_ornament": 144,
+      "ground_line": 184,
+      "skull_top_y": 49,
+      "joints_native": {
+        "head_top": [
+          100,
+          49
+        ],
+        "neck": [
+          98,
+          75
+        ],
+        "hip": [
+          90,
+          121
+        ],
+        "knee": [
+          122,
+          151
+        ],
+        "ankle": [
+          130,
+          176
+        ],
+        "toe": [
+          143,
+          180
+        ],
+        "head_base": [
+          99,
+          71
+        ]
+      },
+      "bones_native": {
+        "head": 22.02272,
+        "neck": 4.12311,
+        "torso": 46.69047,
+        "thigh": 43.86342,
+        "shin": 26.24881,
+        "foot": 13.60147
+      },
+      "straight_body_length": 156.55,
+      "silhouette_area": 4867,
+      "verdict": "校准读数合理：除饰站高135；骨链伸直总长明显大于屈膝站高；眼耳和眼下颌为旋转不变的两条独立距离。"
+    }
+  ],
+  "caution": "初代原始图不是高分GPT生成记录，校准的两条标志距离来自其可追溯最高分定稿；只用于验证量法，不伪造缺失来源。"
+}

@@ -1,0 +1,27 @@
+{
+  "fighter": "black_king",
+  "asset_key": "model",
+  "asset_kind": "character",
+  "model": "gpt-image-2.5-sunburst",
+  "quality": "high",
+  "background": "transparent",
+  "size": "1536x1024",
+  "references": [
+    "art/production/stage4/black_king/horn-input02-padded.png",
+    "art/production/stage4/black_king/horn-photo-p4-head.png",
+    "art/production/stage4/black_king/horn-shape-guide.png"
+  ],
+  "mask": "art/production/stage4/black_king/horn-edit-mask.png",
+  "source_clean": {
+    "path": "art/generation/stage4/black_king/model/02/raw.png",
+    "sha256": "96c53a84a2912bbd526e504ba8595004f660ec83bc5977a3d75079a48dd16f03",
+    "scale": 0.75,
+    "offset": [
+      240,
+      240
+    ],
+    "no_other_input_edits": true
+  },
+  "authorization": "2026-10-23指挥：候选02只改金角，其他外形/姿势不变；不进入第2阶段。",
+  "prompt": "透明背景。只改第一张图的金角，第一张1536×1024已审完整人物的位置、大小、黑色头骨/耳/眼/嘴/鼻甲、颈身手脚尾巴全部保持。第一张仍来自干净候选02，绝不使用任何返工图。\n第二张是万代P4真角照片，只决定有纵脊的纤细弯刃材质；第三张是同一画布坐标的简单角投影范围图，只作形状与位置指导，必须由你按第一张像素风重新画好，并不直接粘第三张。最终必须整张完整角色，不能只输出一根角。\n金角必须大幅缩短前伸长度！不得复制照片的横向长度。角根约(1040,332)，角尖只到(1148,230)，严格比吻端约(1185,397)靠左，至少留35px横向余量。整根金角绝不能伸到第一张嘴前或鼻前。照第三图的轮廓和空隙：细根在额头中线，先明显向前上立起，再弯到前上方尖端；起始角身约40–50度向上斜起，弯刃与头顶之间保留大透明空隙。保留金色纵脊沟。角身明显比旧发髻薄，前端不要又长又平的金枪，不做头盔。\n严格保持mask外的第一张像素，人物不平移不缩放、不重新居中、不换身体颜色；远侧肢体的暗色、交叉轮廓也不改。仅修改角，直接输出完整人物的真正透明PNG，无文字、编号、几何图、地面、投影或特效。透明背景。"
+}

@@ -1,0 +1,307 @@
+{
+  "schema": 1,
+  "fighter": "ultraman-leo",
+  "candidate_take": 5,
+  "status": "director_approved_model",
+  "source": "art/generation/stage4/ultraman-leo/model/05/raw.png",
+  "source_sha256": "cb43c842209a0d46a18304ade1b62d34a509ff046f0c52c31ada3ee75b18f996",
+  "native_model": "art/model_sheets/ultraman-leo/model-native.png",
+  "native_sha256": "b965e13b5949a12817344788b530f1596aac117cd0dd32cdc3ee3d9e8dd8c014",
+  "source_dimensions": [
+    1254,
+    1254
+  ],
+  "canvas": [
+    192,
+    192
+  ],
+  "foot_anchor": [
+    96,
+    184
+  ],
+  "source_to_native_uniform_scale": 0.13975155279503104,
+  "source_to_native_raster_transform": [
+    0.13922518159806296,
+    0.13928914505283382,
+    6.915254237288131,
+    17.410182516810757
+  ],
+  "raster_note": "宽/高分别取整到115×145，x/y栅格映射有不足1%的取整差；欧氏头尺与骨长使用原图统一比例，不用原生二十余像素整数尺反推。",
+  "source_landmarks": {
+    "skull_top": [
+      684,
+      230
+    ],
+    "chin": [
+      725,
+      384
+    ],
+    "ear": [
+      607,
+      307
+    ],
+    "eye": [
+      706.519,
+      292.205
+    ],
+    "forehead_lamp": [
+      752,
+      260
+    ],
+    "neck_base": [
+      670,
+      435
+    ],
+    "hip_center": [
+      669,
+      717
+    ],
+    "near_shoulder": [
+      771,
+      445
+    ],
+    "near_elbow": [
+      875,
+      590
+    ],
+    "near_wrist": [
+      981,
+      504
+    ],
+    "far_shoulder": [
+      503,
+      435
+    ],
+    "far_elbow": [
+      382,
+      610
+    ],
+    "far_wrist": [
+      505,
+      647
+    ],
+    "near_hip": [
+      644,
+      707
+    ],
+    "near_knee": [
+      489,
+      903
+    ],
+    "near_ankle": [
+      316,
+      1104
+    ],
+    "near_toe": [
+      267,
+      1186
+    ],
+    "far_hip": [
+      702,
+      727
+    ],
+    "far_knee": [
+      873,
+      885
+    ],
+    "far_ankle": [
+      922,
+      1111
+    ],
+    "far_toe": [
+      1063,
+      1185
+    ]
+  },
+  "native_landmarks": {
+    "skull_top": [
+      102.14527845036321,
+      49.44668587896253
+    ],
+    "chin": [
+      107.85351089588377,
+      70.89721421709893
+    ],
+    "ear": [
+      91.42493946731236,
+      60.17195004803074
+    ],
+    "eye": [
+      105.28049031476999,
+      58.11116714697406
+    ],
+    "forehead_lamp": [
+      111.6125907990315,
+      53.62536023054755
+    ],
+    "neck_base": [
+      100.19612590799031,
+      78.00096061479347
+    ],
+    "hip_center": [
+      100.05690072639226,
+      117.2804995196926
+    ],
+    "near_shoulder": [
+      114.25786924939467,
+      79.39385206532181
+    ],
+    "near_elbow": [
+      128.73728813559322,
+      99.5907780979827
+    ],
+    "near_wrist": [
+      143.49515738498792,
+      87.611911623439
+    ],
+    "far_shoulder": [
+      76.94552058111381,
+      78.00096061479347
+    ],
+    "far_elbow": [
+      60.09927360774818,
+      102.37656099903938
+    ],
+    "far_wrist": [
+      77.22397094430994,
+      107.53025936599425
+    ],
+    "near_hip": [
+      96.57627118644069,
+      115.88760806916426
+    ],
+    "near_knee": [
+      74.99636803874091,
+      143.1882804995197
+    ],
+    "near_ankle": [
+      50.91041162227603,
+      171.1853986551393
+    ],
+    "near_toe": [
+      44.08837772397094,
+      182.60710854947166
+    ],
+    "far_hip": [
+      104.65133171912834,
+      118.67339097022094
+    ],
+    "far_knee": [
+      128.4588377723971,
+      140.6810758885687
+    ],
+    "far_ankle": [
+      135.2808716707022,
+      172.16042267050912
+    ],
+    "far_toe": [
+      154.91162227602908,
+      182.46781940441883
+    ]
+  },
+  "landmark_precision": {
+    "source_pixels": 4,
+    "native_pixels": 0.5590062111801242,
+    "meaning": "人工关节/壳顶的读点精度估计；不是重新放宽尺寸公差"
+  },
+  "standing_height": {
+    "excluding_ornament": 135,
+    "including_ornament": 145,
+    "native_skull_top_pixel": [
+      102,
+      49
+    ],
+    "native_topmost_opaque_row": 39,
+    "foot_boundary_y": 184,
+    "continuous_raw_mapped_body_height": 134.55331412103746,
+    "upright_tolerance": 0.03,
+    "upright_reference": "excluding_ornament",
+    "reason": "狮冠角度/遮挡会改变含饰极值，身体不能随冠缩放；与赛文固定头壳顶49→脚底184的135一致。背面直立也用身体站高，不量较窄头宽。"
+  },
+  "head_gauges": {
+    "eye_to_ear": {
+      "landmarks": [
+        "eye",
+        "ear"
+      ],
+      "raw_points": [
+        [
+          706.519,
+          292.205
+        ],
+        [
+          607,
+          307
+        ]
+      ],
+      "raw_pixels": 100.6127396804202,
+      "native_pixels": 14.06078660130096,
+      "method": "原图两个固定标志点的欧氏距离，再乘整体比例；不使用屏幕横宽/竖高"
+    },
+    "skull_to_chin": {
+      "landmarks": [
+        "skull_top",
+        "chin"
+      ],
+      "raw_points": [
+        [
+          684,
+          230
+        ],
+        [
+          725,
+          384
+        ]
+      ],
+      "raw_pixels": 159.3643623900902,
+      "native_pixels": 22.271417104205153,
+      "method": "原图两个固定标志点的欧氏距离，再乘整体比例；不使用屏幕横宽/竖高"
+    }
+  },
+  "head_policy": {
+    "tolerance": 0.08,
+    "primary": "侧视可见黄色眼形中心→后方灰银耳片中心；仅旋转/平移不改变距离",
+    "secondary": "固定头壳顶（V形眉冠内侧的头壳顶，不是冠尖）→颏尖",
+    "no_face_upright": "改用不含饰身体站高±3%",
+    "occluded": "只可用同条前后可见原图的可靠标尺插值/已登记辅助点，不按姿势外框定比例"
+  },
+  "bone_lengths": {
+    "head_shell": 22.271417104205153,
+    "neck": 10.48229809524178,
+    "torso": 39.410185673860916,
+    "upper_arm": 24.93733224166218,
+    "forearm": 19.075958978480006,
+    "far_upper_arm": 29.733271850896248,
+    "far_forearm": 17.950323991484147,
+    "thigh": 34.921393621888676,
+    "shin": 37.061837777576685,
+    "foot": 13.349748336248833,
+    "far_thigh": 32.53691078221587,
+    "far_shin": 32.31767878099536,
+    "far_foot": 22.253871572585663,
+    "straightened_full_body_length": 157.49688060902204,
+    "far_chain_full_body_length": 159.27236200910474
+  },
+  "straightened_full_body_length": 157.49688060902204,
+  "lying_tolerance": 0.08,
+  "lying_policy": "同一近侧完整骨链：头壳顶→颏尖→颈根→胯中心→近侧髋→近膝→近踝→足尖；胯中心到髋的横向偏置不重复计长度。冠角不计骨长。不能以135站高测躺倒。",
+  "bone_note": "近侧可见完整链为后续骨架主尺；远侧肢体投影长度另存复核，不拼接两条腿各自最长片段。斜向/遮挡会造成投影差，非新自动硬门。",
+  "silhouette": {
+    "area": 5964,
+    "source": "最终原生二值Alpha主体像素",
+    "rule": "sqrt(动作面积/5964)>1.06仅标需人工复核，不以剪影相似度自动拒收",
+    "review_ratio": 1.06
+  },
+  "components": {
+    "count": 1,
+    "areas": [
+      5964
+    ],
+    "small_detached": [],
+    "whitelist": []
+  },
+  "calibration_file": "art/production/stage4/ultraman-leo/reference-calibration.json",
+  "checks_are_not_director_approval": true,
+  "director_approved": true,
+  "approval_source": "art/production/stage4/ultraman-leo/director-stage2.json"
+}

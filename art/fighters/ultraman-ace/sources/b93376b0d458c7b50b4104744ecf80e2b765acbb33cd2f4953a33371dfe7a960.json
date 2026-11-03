@@ -1,0 +1,559 @@
+{
+  "schema": "ace-installed-head-qa-v1",
+  "action": "land",
+  "frames": [
+    {
+      "frame": 0,
+      "image": "art/production/stage4/ultraman-ace/air/resume-headfit/land/runtime-snapshots/frame-0-8baa90500452.png",
+      "image_sha256": "9f96132f6c20f3b4bf98bed59dfce561bad177ea3c68f630f7661f9923f4d326",
+      "source": "art/generation/stage4/ultraman-ace/air/land/frame-00/06/raw.provider.png",
+      "source_sha256": "ddedf012ce1fc1ff70d009566f1ba87b5f9b12016d6d0db316defe03963df7ec",
+      "request_source": "art/generation/stage4/ultraman-ace/air/land/frame-00/06/raw.png",
+      "measurement_image": "art/generation/stage4/ultraman-ace/air/land/frame-00/06/raw.provider.png",
+      "measurement_sha256": "ddedf012ce1fc1ff70d009566f1ba87b5f9b12016d6d0db316defe03963df7ec",
+      "raw_points": {
+        "skull_top": [
+          671.395,
+          286.762
+        ],
+        "chin": [
+          745.075,
+          456.49
+        ],
+        "ear": [
+          679.555,
+          406.146
+        ],
+        "eye": [
+          752.57,
+          372.076
+        ],
+        "neck": [
+          717.796,
+          491.936
+        ],
+        "hip": [
+          565.272,
+          705.299
+        ],
+        "root": [
+          565.272,
+          1144
+        ]
+      },
+      "native_points": {
+        "skull_top": [
+          142.28908139534883,
+          130.33874291710387
+        ],
+        "chin": [
+          152.3986627906977,
+          153.66966421825813
+        ],
+        "ear": [
+          143.40870930232558,
+          146.74934522560335
+        ],
+        "eye": [
+          153.4270465116279,
+          142.0660608604407
+        ],
+        "neck": [
+          148.65573023255814,
+          158.5420944386149
+        ],
+        "hip": [
+          127.72801860465117,
+          187.871111227702
+        ],
+        "root": [
+          127.72801860465117,
+          248.17523609653725
+        ]
+      },
+      "cell_bounds": [
+        232,
+        197,
+        1092,
+        1150
+      ],
+      "scale": 0.1373006774836205,
+      "shared_source_scale": 0.1373006774836205,
+      "scale_readings": {
+        "head_long": 0.1373006774836205,
+        "body_torso": 0.15651834615028762
+      },
+      "scale_reading_difference": 0.13996776286089152,
+      "scale_policy": "整张原图头部长尺中位数共用比例",
+      "primary_head_ratio": 1.0,
+      "primary_head_reference_native": 25.404831724564445,
+      "head_reference": "art/production/stage4/ultraman-ace/air/current-model-head-reference.json",
+      "independent_ear_eye_ratio": 1.0740363836828761,
+      "torso_ratio": 0.8772177885893677,
+      "straight_leg_ratios": {},
+      "standing_height": null,
+      "area": 5479,
+      "sqrt_area_ratio": 0.9941205225100291,
+      "area_verdict": "面积无异常",
+      "components": [
+        5479
+      ],
+      "grid_pitch": [
+        1,
+        1
+      ],
+      "grid_phase": [
+        0,
+        0
+      ],
+      "offset": [
+        82,
+        118
+      ],
+      "raster_scale": [
+        0.1372093023255814,
+        0.13746065057712487
+      ],
+      "foot_anchor": [
+        128,
+        248
+      ],
+      "facing": "right",
+      "crest_qa": {
+        "mode": "side",
+        "pass_": true,
+        "review_required": false,
+        "disposition": "指挥目视通过；配准误配不拦",
+        "hard_rejection": false,
+        "iou": 0.92743,
+        "threshold": 0.7,
+        "alignment_shift": [
+          0,
+          0
+        ],
+        "eye_ear_transform": [
+          [
+            0.9986511801819622,
+            0.05192128967171122,
+            -55.27649205573189
+          ],
+          [
+            -0.05192128967171122,
+            0.9986511801819622,
+            -73.61367166334671
+          ]
+        ],
+        "expected_extent": {
+          "width": 44,
+          "height": 29,
+          "bounds": [
+            78,
+            38,
+            122,
+            67
+          ]
+        },
+        "actual_extent": {
+          "width": 48,
+          "height": 33,
+          "bounds": [
+            75,
+            37,
+            123,
+            70
+          ]
+        },
+        "length_ratio": 1.09091,
+        "height_ratio": 1.13793,
+        "transparent_hole_present": true,
+        "holes": [
+          {
+            "center": [
+              111.71428571428572,
+              44.0
+            ],
+            "area": 7,
+            "diameter": 2.985410660720923,
+            "bounds": [
+              111,
+              43,
+              114,
+              46
+            ]
+          },
+          {
+            "center": [
+              87.5,
+              64.5
+            ],
+            "area": 2,
+            "diameter": 1.5957691216057308,
+            "bounds": [
+              87,
+              64,
+              89,
+              66
+            ]
+          }
+        ],
+        "issues": [],
+        "commander_decision": "指挥目视通过（2026-10-24）"
+      },
+      "mark_status": "未确认诊断：model05头区与同姿态干净原图躯干分开配准；禁止据建议直接入库",
+      "source_boundary_touch": false,
+      "body_endpoint_review_required": true,
+      "head_tilted": false,
+      "face_hidden": false,
+      "head_oblique": false,
+      "grounded": true,
+      "review_note": "新原图独立头区/躯干区建议，必须在最后合成原图中确认",
+      "inherited_measurements": "art/generation/stage4/ultraman-ace/air/land/frame-00/06/processed/measurements.json",
+      "inherited_issues": [
+        "0:身体端点待复核，身体读数不能用作安装结论",
+        "0:姿势待人工复核：配准内点不足，仅供人工复核；身体配准覆盖不足，可能只对上胸/腰，须重标髋心",
+        "0:头身独立读数矛盾0.1400",
+        "0:躯干0.8772超±8%"
+      ],
+      "commander_decision": "指挥目视通过（2026-10-24）",
+      "headfit_before": {
+        "scale": 1.0125,
+        "rotation": -3.0,
+        "error": 0.0904373,
+        "center": [
+          144.4667,
+          136.091
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.652979,
+        "grade": "可用",
+        "character": "ultraman-ace",
+        "idle_median": 1.0125,
+        "relative_scale": 1.0
+      },
+      "headfit": {
+        "scale": 1.0125,
+        "rotation": -3.0,
+        "error": 0.0904373,
+        "center": [
+          144.4667,
+          136.091
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.652979,
+        "grade": "可用",
+        "character": "ultraman-ace",
+        "idle_median": 1.0125,
+        "relative_scale": 1.0
+      },
+      "temporary": false,
+      "repair_notes": [],
+      "root_registration": {
+        "mode": "近脚脚底接地",
+        "ground_y": 248,
+        "simulation_anchor": [
+          128,
+          248
+        ]
+      },
+      "measurement_policy": "共用head_fit/idle中位数为主；历史躯干与手工头尺仅辅助；不可测按本轮指挥目视裁定",
+      "qc": {
+        "alpha_values": [
+          0,
+          255
+        ],
+        "colors": 30,
+        "components": [
+          5479
+        ],
+        "isolated_small": [],
+        "area": 5479
+      },
+      "pixel_sha256": "8baa90500452d0c3fe85d75c57277b9a71aacfa3b3b321f0af8889688467b165",
+      "hint": [
+        153.4270465116279,
+        142.0660608604407
+      ],
+      "runtime_record_source": "art/production/stage4/ultraman-ace/air/resume-headfit/land/frame-0.json",
+      "anchor": [
+        128,
+        248
+      ],
+      "commander_approved": true
+    },
+    {
+      "frame": 1,
+      "image": "art/production/stage4/ultraman-ace/air/resume-headfit/land/runtime-snapshots/frame-1-ab1936447242.png",
+      "image_sha256": "856c400c73d181c5339eea6cd8d8ff1ffdd9fa87e16a7619b705c1e4aed4ee71",
+      "source": "art/generation/stage4/ultraman-ace/air/land/frame-01/02/raw.provider.png",
+      "source_sha256": "b30223c99d6240fdb60bf4fab58ba67cd7caf2fec1631dd03c008e61e4856636",
+      "request_source": "art/generation/stage4/ultraman-ace/air/land/frame-01/02/raw.png",
+      "measurement_image": "art/generation/stage4/ultraman-ace/air/land/frame-01/02/raw.provider.png",
+      "measurement_sha256": "b30223c99d6240fdb60bf4fab58ba67cd7caf2fec1631dd03c008e61e4856636",
+      "raw_points": {
+        "skull_top": [
+          663.305,
+          297.707
+        ],
+        "chin": [
+          729.261,
+          458.473
+        ],
+        "ear": [
+          668.698,
+          409.957
+        ],
+        "eye": [
+          737.903,
+          379.356
+        ],
+        "neck": [
+          684.817,
+          491.308
+        ],
+        "hip": [
+          591.196,
+          769.735
+        ],
+        "root": [
+          591.196,
+          1145
+        ]
+      },
+      "native_points": {
+        "skull_top": [
+          139.04081349206348,
+          124.10561858974359
+        ],
+        "chin": [
+          148.72482936507936,
+          147.63653952991453
+        ],
+        "ear": [
+          139.83264285714284,
+          140.53537286324786
+        ],
+        "eye": [
+          149.99369444444443,
+          136.05638034188036
+        ],
+        "neck": [
+          142.19932142857144,
+          152.4425170940171
+        ],
+        "hip": [
+          128.45338095238097,
+          193.19518696581196
+        ],
+        "root": [
+          128.45338095238097,
+          248.1217948717949
+        ]
+      },
+      "cell_bounds": [
+        268,
+        215,
+        1024,
+        1151
+      ],
+      "scale": 0.14619830193193203,
+      "shared_source_scale": 0.14619830193193203,
+      "scale_readings": {
+        "head_long": 0.14619830193193203,
+        "body_standing": 0.15933095163066377
+      },
+      "scale_reading_difference": 0.08982764864701442,
+      "scale_policy": "整张原图头部长尺中位数共用比例",
+      "primary_head_ratio": 1.0000000000000002,
+      "primary_head_reference_native": 25.404831724564445,
+      "head_reference": "art/production/stage4/ultraman-ace/air/current-model-head-reference.json",
+      "independent_ear_eye_ratio": 1.0740319491555528,
+      "torso_ratio": 1.0461506049347467,
+      "straight_leg_ratios": {},
+      "standing_height": 123.87279783881249,
+      "area": 5833,
+      "sqrt_area_ratio": 1.02573311691123,
+      "area_verdict": "面积无异常",
+      "components": [
+        5833
+      ],
+      "grid_pitch": [
+        1,
+        1
+      ],
+      "grid_phase": [
+        0,
+        0
+      ],
+      "offset": [
+        81,
+        112
+      ],
+      "raster_scale": [
+        0.14682539682539683,
+        0.14636752136752137
+      ],
+      "foot_anchor": [
+        128,
+        248
+      ],
+      "facing": "right",
+      "crest_qa": {
+        "mode": "side",
+        "pass_": true,
+        "review_required": false,
+        "disposition": "指挥目视通过；配准误配不拦",
+        "hard_rejection": false,
+        "iou": 0.87352,
+        "threshold": 0.7,
+        "alignment_shift": [
+          1,
+          0
+        ],
+        "eye_ear_transform": [
+          [
+            0.9972591606493952,
+            0.07398761045515381,
+            -54.28906046967671
+          ],
+          [
+            -0.07398761045515381,
+            0.9972591606493952,
+            -64.31253487452344
+          ]
+        ],
+        "expected_extent": {
+          "width": 44,
+          "height": 29,
+          "bounds": [
+            78,
+            38,
+            122,
+            67
+          ]
+        },
+        "actual_extent": {
+          "width": 48,
+          "height": 33,
+          "bounds": [
+            76,
+            37,
+            124,
+            70
+          ]
+        },
+        "length_ratio": 1.09091,
+        "height_ratio": 1.13793,
+        "transparent_hole_present": true,
+        "holes": [
+          {
+            "center": [
+              112.83333333333334,
+              44.166666666666664
+            ],
+            "area": 6,
+            "diameter": 2.763953195770684,
+            "bounds": [
+              112,
+              43,
+              115,
+              46
+            ]
+          }
+        ],
+        "issues": [],
+        "commander_decision": "指挥目视通过（2026-10-24）"
+      },
+      "mark_status": "未确认诊断：model05头区与同姿态干净原图躯干分开配准；禁止据建议直接入库",
+      "source_boundary_touch": false,
+      "body_endpoint_review_required": true,
+      "head_tilted": false,
+      "face_hidden": false,
+      "head_oblique": false,
+      "grounded": true,
+      "review_note": "新原图独立头区/躯干区建议，必须在最后合成原图中确认",
+      "inherited_measurements": "art/generation/stage4/ultraman-ace/air/land/frame-01/02/processed/measurements.json",
+      "inherited_issues": [
+        "1:身体端点待复核，身体读数不能用作安装结论",
+        "1:姿势待人工复核：配准内点不足，仅供人工复核",
+        "1:头身独立读数矛盾0.0898",
+        "1:直立站高123.8728超±3%"
+      ],
+      "commander_decision": "指挥目视通过（2026-10-24）",
+      "headfit_before": {
+        "scale": 1.035,
+        "rotation": -5.5,
+        "error": 0.0979189,
+        "center": [
+          140.9093,
+          129.4524
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.882464,
+        "grade": "可用",
+        "character": "ultraman-ace",
+        "idle_median": 1.0125,
+        "relative_scale": 1.0222222222222221
+      },
+      "headfit": {
+        "scale": 1.035,
+        "rotation": -5.5,
+        "error": 0.0979189,
+        "center": [
+          140.9093,
+          129.4524
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.882464,
+        "grade": "可用",
+        "character": "ultraman-ace",
+        "idle_median": 1.0125,
+        "relative_scale": 1.0222222222222221
+      },
+      "temporary": false,
+      "repair_notes": [],
+      "root_registration": {
+        "mode": "近脚脚底接地",
+        "ground_y": 248,
+        "simulation_anchor": [
+          128,
+          248
+        ]
+      },
+      "measurement_policy": "共用head_fit/idle中位数为主；历史躯干与手工头尺仅辅助；不可测按本轮指挥目视裁定",
+      "qc": {
+        "alpha_values": [
+          0,
+          255
+        ],
+        "colors": 31,
+        "components": [
+          5833
+        ],
+        "isolated_small": [],
+        "area": 5833
+      },
+      "pixel_sha256": "ab1936447242f6fe3d838360347591daacc1a9aaea20fa3471d06e95e5e2a0be",
+      "hint": [
+        149.99369444444443,
+        136.05638034188036
+      ],
+      "runtime_record_source": "art/production/stage4/ultraman-ace/air/resume-headfit/land/frame-1.json",
+      "anchor": [
+        128,
+        248
+      ],
+      "commander_approved": true
+    }
+  ],
+  "atlas": "res://assets/fighters/ultraman-ace/animations/land/atlas.png",
+  "atlas_sha256": "da2d00c253210567cd5792e8ed6c96305bbf04a7b9fd3099eeb7b9e464625676",
+  "ticks": [
+    2,
+    2
+  ],
+  "policy": "与现装图集逐像素一致；只有安装/替换时更新。候选measurements不作为现装资源检查输入。"
+}

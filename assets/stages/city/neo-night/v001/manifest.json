@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "language": "zh-CN",
+  "id": "city-neo-night-v001",
+  "name": "城市夜战",
+  "kind": "ufe-layered-stage",
+  "layers": {
+    "skyline": {
+      "texture": "res://assets/stages/city/neo-night/v001/skyline/image.png",
+      "sha256": "fbd2637e447f50bd45be928864369e7e382617a5f6f4240d7eafe46100029947",
+      "size": [
+        235,
+        61
+      ]
+    },
+    "ground": {
+      "texture": "res://assets/stages/city/neo-night/v001/ground/image.png",
+      "sha256": "a1cff99a25bf4a7a07498a347130afb34b2f52f8d31d27b69c0825e082c28d0e",
+      "size": [
+        202,
+        209
+      ]
+    },
+    "rubble": {
+      "texture": "res://assets/stages/city/neo-night/v001/rubble/image.png",
+      "sha256": "82c093adbb5b125c0ebc69f2132adcbfb5ea51b080065dbfefb2781ce51997b9",
+      "size": [
+        320,
+        58
+      ]
+    }
+  },
+  "sky": {
+    "texture": "res://assets/ui/backgrounds/neo.png",
+    "sha256": "cb926dbe97826c6cf8e28aa0226a851fbe7b0cfe366f1a2ca518197e26e0a9b4",
+    "source_rect": [
+      392,
+      60,
+      1280,
+      469
+    ],
+    "tint": [
+      0.38,
+      0.48,
+      0.62,
+      1.0
+    ]
+  },
+  "skyline": {
+    "scale": 2,
+    "starts": [
+      -30,
+      440,
+      910
+    ],
+    "world_depth": -640
+  },
+  "ground": {
+    "world_origin": [
+      -1000,
+      -640
+    ],
+    "world_texel_size": 8,
+    "far_depth": -640,
+    "tint": [
+      0.7,
+      0.76,
+      0.8,
+      1.0
+    ]
+  },
+  "props": [
+    {
+      "layer": "rubble",
+      "world_position": [
+        -200,
+        160
+      ],
+      "tint": [
+        0.75,
+        0.8,
+        0.87,
+        1
+      ]
+    },
+    {
+      "layer": "rubble",
+      "world_position": [
+        1480,
+        220
+      ],
+      "tint": [
+        0.75,
+        0.8,
+        0.87,
+        1
+      ]
+    }
+  ],
+  "texture_limit": 4,
+  "render_scope": "同一固定相机下的2.5D像素表现；非完整旋转3D场景"
+}

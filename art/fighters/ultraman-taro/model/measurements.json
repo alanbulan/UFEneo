@@ -1,0 +1,484 @@
+{
+  "schema": 1,
+  "fighter": "ultraman-taro",
+  "status": "commander_approved_stage1",
+  "native_image": "art/model_sheets/ultraman-taro/model-native.png",
+  "native_sha256": "5dc6ae5d6b3a6a7e2926f868d088f9347f6e32584a49a3271fe4b062fedee662",
+  "source": "art/generation/stage4/ultraman-taro/model/02/raw.png",
+  "source_sha256": "8123f661279552ffc3d36370d2e0e300da43f5fc7426b5a88c7a09a26eaa08f3",
+  "source_size": [
+    1122,
+    1402
+  ],
+  "source_to_native": {
+    "scale": 0.12311557788944724,
+    "scale_x_after_integer_rounding": 0.1225,
+    "crop": [
+      178,
+      97,
+      978,
+      1291
+    ],
+    "offset": [
+      49,
+      37
+    ],
+    "note": "等比例按头骨顶到脚底缩放一次；目标宽度取整造成不足1%横向量化差，不逐帧按外框归一。"
+  },
+  "canvas": [
+    192,
+    192
+  ],
+  "foot_anchor": [
+    96,
+    184
+  ],
+  "facing": "right",
+  "standing": {
+    "body_target": 135,
+    "without_ornament": 134.81155778894473,
+    "without_ornament_rounded": 135,
+    "with_ornament": 147,
+    "skull_top_raw": [
+      538,
+      196
+    ],
+    "skull_top_native": [
+      93.1,
+      49.188442211055275
+    ],
+    "feet": [
+      {
+        "side": "near_left",
+        "bottom_exclusive": 184
+      },
+      {
+        "side": "far_right",
+        "bottom_exclusive": 183
+      }
+    ],
+    "tolerance_percent": 3,
+    "tolerance_uses": "不含双角/中央头鳍的135身体站高。角冠随倾角与遮挡改变外框，不能用含饰147决定人体缩放；真实屈膝相位改按头部标尺。"
+  },
+  "head_calipers": [
+    {
+      "id": "eye_to_ear",
+      "label": "可见眼部发光区几何中心→银色耳护块中心",
+      "raw_points": [
+        [
+          585.5404742436631,
+          316.2076860179886
+        ],
+        [
+          501,
+          330.5
+        ]
+      ],
+      "raw_distance": 85.74008411649629,
+      "native_distance": 10.555940004292257,
+      "native_points": [
+        [
+          98.92370809484873,
+          63.98788094191317
+        ],
+        [
+          88.5675,
+          65.74748743718592
+        ]
+      ],
+      "native_anisotropic_rounding_readback": 10.504630460992743,
+      "tolerance_percent": 8,
+      "method": "在清洁GPT原图直接标点，取欧氏距离；整帧比例换算，不随头倾角变化。"
+    },
+    {
+      "id": "ear_to_chin",
+      "label": "银色耳护块中心→固定下颌最下端",
+      "raw_points": [
+        [
+          501,
+          330.5
+        ],
+        [
+          602,
+          407
+        ]
+      ],
+      "raw_distance": 126.70142067080384,
+      "native_distance": 15.598918625299971,
+      "native_points": [
+        [
+          88.5675,
+          65.74748743718592
+        ],
+        [
+          100.94,
+          75.16582914572865
+        ]
+      ],
+      "native_anisotropic_rounding_readback": 15.549402457614748,
+      "tolerance_percent": 8,
+      "method": "在清洁GPT原图直接标点，取欧氏距离；整帧比例换算，不随头倾角变化。"
+    }
+  ],
+  "head_landmarks_source": {
+    "eye": [
+      585.5404742436631,
+      316.2076860179886
+    ],
+    "ear": [
+      501,
+      330.5
+    ],
+    "chin": [
+      602,
+      407
+    ]
+  },
+  "head_landmarks_native": {
+    "eye": [
+      98.92370809484873,
+      63.98788094191317
+    ],
+    "ear": [
+      88.5675,
+      65.74748743718592
+    ],
+    "chin": [
+      100.94,
+      75.16582914572865
+    ]
+  },
+  "skull_top_to_chin_distance": 27.146077595110825,
+  "bones": {
+    "head": {
+      "raw_points": [
+        [
+          538,
+          196
+        ],
+        [
+          553,
+          387
+        ]
+      ],
+      "raw_distance": 191.58809983921236,
+      "native_distance": 23.587479628445745
+    },
+    "neck": {
+      "raw_points": [
+        [
+          553,
+          387
+        ],
+        [
+          536,
+          427
+        ]
+      ],
+      "raw_distance": 43.46262762420146,
+      "native_distance": 5.350926516547416
+    },
+    "torso": {
+      "raw_points": [
+        [
+          536,
+          427
+        ],
+        [
+          549,
+          785
+        ]
+      ],
+      "raw_distance": 358.235955761004,
+      "native_distance": 44.10442671429446
+    },
+    "upper_arm": {
+      "raw_points": [
+        [
+          440,
+          456
+        ],
+        [
+          334,
+          633
+        ]
+      ],
+      "raw_distance": 206.31286920597077,
+      "native_distance": 25.400328118323035
+    },
+    "forearm": {
+      "raw_points": [
+        [
+          334,
+          633
+        ],
+        [
+          480,
+          650
+        ]
+      ],
+      "raw_distance": 146.98639392814562,
+      "native_distance": 18.096314830349588
+    },
+    "thigh": {
+      "raw_points": [
+        [
+          571,
+          791
+        ],
+        [
+          789,
+          1045
+        ]
+      ],
+      "raw_distance": 334.72376670920755,
+      "native_distance": 41.20970997173661
+    },
+    "shin": {
+      "raw_points": [
+        [
+          789,
+          1045
+        ],
+        [
+          848,
+          1219
+        ]
+      ],
+      "raw_distance": 183.73078130786905,
+      "native_distance": 22.62012131679795
+    },
+    "foot": {
+      "raw_points": [
+        [
+          848,
+          1219
+        ],
+        [
+          967,
+          1280
+        ]
+      ],
+      "raw_distance": 133.7235955244997,
+      "native_distance": 16.46345774045348
+    }
+  },
+  "skeleton_source": {
+    "skull_top": [
+      538,
+      196
+    ],
+    "skull_base": [
+      553,
+      387
+    ],
+    "neck": [
+      536,
+      427
+    ],
+    "hip": [
+      549,
+      785
+    ],
+    "near_shoulder": [
+      440,
+      456
+    ],
+    "near_elbow": [
+      334,
+      633
+    ],
+    "near_wrist": [
+      480,
+      650
+    ],
+    "near_knee": [
+      326,
+      1042
+    ],
+    "near_ankle": [
+      257,
+      1225
+    ],
+    "near_toe": [
+      188,
+      1284
+    ],
+    "far_shoulder": [
+      632,
+      478
+    ],
+    "far_elbow": [
+      756,
+      617
+    ],
+    "far_wrist": [
+      835,
+      514
+    ],
+    "far_hip": [
+      571,
+      791
+    ],
+    "far_knee": [
+      789,
+      1045
+    ],
+    "far_ankle": [
+      848,
+      1219
+    ],
+    "far_toe": [
+      967,
+      1280
+    ]
+  },
+  "skeleton_native": {
+    "skull_top": [
+      93.1,
+      49.188442211055275
+    ],
+    "skull_base": [
+      94.9375,
+      72.7035175879397
+    ],
+    "neck": [
+      92.85499999999999,
+      77.62814070351759
+    ],
+    "hip": [
+      94.44749999999999,
+      121.7035175879397
+    ],
+    "near_shoulder": [
+      81.095,
+      81.19849246231156
+    ],
+    "near_elbow": [
+      68.11,
+      102.98994974874373
+    ],
+    "near_wrist": [
+      85.995,
+      105.08291457286433
+    ],
+    "near_knee": [
+      67.13,
+      153.34422110552765
+    ],
+    "near_ankle": [
+      58.6775,
+      175.8743718592965
+    ],
+    "near_toe": [
+      50.225,
+      183.13819095477388
+    ],
+    "far_shoulder": [
+      104.61500000000001,
+      83.9070351758794
+    ],
+    "far_elbow": [
+      119.80499999999999,
+      101.02010050251256
+    ],
+    "far_wrist": [
+      129.48250000000002,
+      88.3391959798995
+    ],
+    "far_hip": [
+      97.1425,
+      122.44221105527639
+    ],
+    "far_knee": [
+      123.8475,
+      153.713567839196
+    ],
+    "far_ankle": [
+      131.075,
+      175.1356783919598
+    ],
+    "far_toe": [
+      145.6525,
+      182.64572864321607
+    ]
+  },
+  "straightened_body_length": {
+    "native_distance": 156.1435890154042,
+    "raw_path": [
+      [
+        538,
+        196
+      ],
+      [
+        553,
+        387
+      ],
+      [
+        536,
+        427
+      ],
+      [
+        549,
+        785
+      ],
+      [
+        571,
+        791
+      ],
+      [
+        789,
+        1045
+      ],
+      [
+        848,
+        1219
+      ],
+      [
+        967,
+        1280
+      ]
+    ],
+    "path_labels": [
+      "skull_top",
+      "skull_base",
+      "neck",
+      "hip",
+      "far_hip",
+      "far_knee",
+      "far_ankle",
+      "far_toe"
+    ],
+    "method": "原图同一中心骨链各段欧氏距离之和：头骨顶→枕/头壳基部→颈根→胯心→同一远腿髋心→膝→踝→脚尖；不是站姿外框。",
+    "tolerance_percent": 8,
+    "standing_height_must_not_replace": true
+  },
+  "landmark_uncertainty_note": "在原图按皮套关节中心标注侧视中心骨链，关节被材质遮挡时人工推断中心，约±1原生像素；不用靴口当膝关节。",
+  "silhouette": {
+    "opaque_pixels": 4857,
+    "sqrt_area": 69.6921803361037,
+    "future_ratio_formula": "sqrt(action_opaque_area / model_opaque_area)",
+    "review_trigger_above": 1.06,
+    "decision": "超过1.06只标需人工复核，不自动拒收；姿态改变会影响面积。"
+  },
+  "calibration": "art/model_sheets/ultraman-taro/calibration.json",
+  "automatic_qa_is_not_visual_approval": true,
+  "stage3_torso_reannotation": {
+    "source": "art/generation/stage4/ultraman-taro/model/02/raw.png",
+    "source_sha256": "8123f661279552ffc3d36370d2e0e300da43f5fc7426b5a88c7a09a26eaa08f3",
+    "neck_root_raw": [
+      536,
+      427
+    ],
+    "hip_center_raw": [
+      549,
+      785
+    ],
+    "raw_distance": 358.235955761004,
+    "native_distance": 44.10442671429446,
+    "definition": "颈根为头盔下方颈与胸肩连接中心；髋心为左右髋关节中心，不用拳背或腕带定比例。",
+    "preview": "reports/review/2026-10-23-ultraman-taro-air-resume/previews/torso-details.jpg",
+    "manually_reannotated": true,
+    "note": "在高分干净原图上复核重标，端点与旧躯干骨链相同；前臂/腕不参与定比例。"
+  }
+}

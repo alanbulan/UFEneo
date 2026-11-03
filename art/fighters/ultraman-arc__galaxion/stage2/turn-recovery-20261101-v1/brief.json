@@ -1,0 +1,28 @@
+{
+  "fighter": "ultraman-arc__galaxion",
+  "stage": 2,
+  "action": "turn",
+  "phase": 1,
+  "asset_kind": "character",
+  "model": "gpt-image-2.5-sunburst",
+  "quality": "high",
+  "background": "transparent",
+  "size": "1024x1024",
+  "prompt": "为主游戏画亚刻奥特曼银河装甲自己的2D整帧街机像素人物，透明背景。一张1024×1024方图只画一个完整人物，只画站立turn三相中的第2相（phase01），这是全新完整人物重画，不是局部编辑。\n输入1是本人银河装甲唯一干净定稿，身份和比例以它为准，保持本人低头刃开孔、紫色胸肩臂甲和小腿靴甲。输入2是旧第2相的完整原源，只供甲型/画风参考：它的斜后3/4与回望方向是明确缺陷，本次必须改正。输入3/4分别是本人转身前/后完整相，只供连续护架和脚位参考，不得提取拼接任何身体部分。\n本相要求完整正背：肩背和髋部背面正对镜头，头随身体转至背向，主要看到头后壳和后颈，不把脸或双眼回望镜头；左右肩背基本对称展开，完整双臂保持自然护架。固定侧视的主游戏镜头不移动，只有人物转到正背。不得画成斜后3/4、正面、攻击、深蹲或重踢姿势。脚位和胸髋根点自然接续左右两端，不增加武器、光束或特效。\n装甲背面的隐藏纹样缺少原剧完整背视证据，不能凭参考1的正面星核直接在背部复制完整胸甲，也不要把未经证实的新徽记当官方结构；以已有可辨后颈/肩甲的连续结构自然衔接，待根按资料复核，不借吉尔亚刻或本体无甲的背面。\n全头全脚、手和甲尖都完整，留透明边，保持本人定稿头身、站高和自然连续皮套；肩肘腕腰髋膝踝不画玩具球关节、活动轴、插接缝、螺丝孔、分模线、支架或塑料反光，保留本人有依据的装甲分节。保持已有32色硬阶街机像素质感、深轮廓和左上光，后侧肢体生成时处理明暗，不用局部蒙版换色。不要写实渐变或照片质感。\n必须是GPT Image完整人物帧，真正透明PNG Alpha；人物外完全透明，不画背景、地板、投影、棋盘格、文字、骨架线或尺寸线。不镜像已有相，不切肢体旋转或拼接，不从别招借相，不把甲贴到本体旧帧。",
+  "references": [
+    "art/fighters/ultraman-arc__galaxion/model/clean-model-source.png",
+    "art/fighters/ultraman-arc__galaxion/stage2/ground-codex-20261027/turn/phase-01/request-001/raw.provider.png",
+    "art/fighters/ultraman-arc__galaxion/stage2/ground-codex-20261027/turn/phase-00/request-001/raw.provider.png",
+    "art/fighters/ultraman-arc__galaxion/stage2/ground-codex-20261027/turn/phase-02/request-001/raw.provider.png"
+  ],
+  "source_sha256": "cfc78e662076bfbfb2b2bf92da3d7bba0dfc173785e5c543b888c4838d540740",
+  "reference_manifest": "art/fighters/ultraman-arc__galaxion/stage2/turn-recovery-20261101-v1/references.json",
+  "pose_game_adaptation": true,
+  "whole_character_frame": true,
+  "requested_frames": 1,
+  "replaces_only": "turn/phase-01",
+  "generation_client": "tools/art_pipeline.py:generate_image",
+  "route_requirement": "由根使用当时获准的项目官方配置；本轮只写brief，不读密钥、不联网、不POST。",
+  "hidden_back_details_not_officially_verified": true,
+  "review_gate": "先实际审完整源、Alpha、像素画风、本人身份与背向，再经Forge整帧处理及根主游戏双向转身/原输入回放；不直接安装。"
+}

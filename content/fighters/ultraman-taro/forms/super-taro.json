@@ -1,0 +1,34 @@
+{
+  "id": "super-taro",
+  "name": "超级泰罗",
+  "status": "战斗中形态机制已接入，交指挥主游戏审片",
+  "implemented": true,
+  "palette_mapping": "res://content/fighters/ultraman-taro/super_state.json",
+  "condition": "能量满3格且自身体力不高于一半，每局一次；变身演出期间无敌",
+  "signature": "宇宙奇迹光线",
+  "source": "art/shared/references/stage4-preparation/sources.json#taro",
+  "reuse_approved": true,
+  "switch": "battle",
+  "kind": "form",
+  "source_url": "https://zh.wikipedia.org/w/index.php?oldid=94671807&variant=zh-cn",
+  "source_work": "《奥特物语》；奥特五兄弟输送能量",
+  "legacy_ids": [
+    "super_taro"
+  ],
+  "fighter_id": "ultraman-taro",
+  "select_visible": false,
+  "planned_batch": 1,
+  "battle_rules": {
+    "energy_required": 3000,
+    "health_at_most_percent": 50,
+    "uses_per_round": 1,
+    "invulnerable_during_transformation": true,
+    "duration": "round_end",
+    "revert_after_move": "super_special3"
+  },
+  "end_condition": "持续到本局结束；超级泰罗放出宇宙奇迹光线后变回普通泰罗",
+  "production_method": "same_silhouette_palette_and_aura",
+  "decision": "指挥定案（2026-10-25）",
+  "input": "22+P",
+  "runtime_state": "super-taro"
+}

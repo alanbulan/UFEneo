@@ -1,0 +1,981 @@
+{
+  "id": "pulse",
+  "display_name": "短掷螺旋光矛（游戏编排）",
+  "startup": 8,
+  "active": 3,
+  "recovery": 12,
+  "damage": 65,
+  "hitstun": 20,
+  "blockstun": 12,
+  "pushback": 8,
+  "stun": 65,
+  "stamina_cost": 30,
+  "energy_cost": 0,
+  "kind": "projectile",
+  "level": "mid",
+  "unblockable": false,
+  "launch": false,
+  "bounce": false,
+  "knockdown": false,
+  "frames": [
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -36,
+          89,
+          64,
+          45
+        ],
+        [
+          -36,
+          44,
+          98,
+          45
+        ],
+        [
+          -70,
+          -1,
+          136,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "pulse"
+        }
+      ],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "blazar_pulse_body_back",
+          "anchor": [
+            38,
+            73
+          ],
+          "sprite": 0,
+          "behind_fighter": true
+        },
+        {
+          "effect": "blazar_pulse_body_front",
+          "anchor": [
+            51,
+            66
+          ],
+          "sprite": 0
+        }
+      ]
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -36,
+          89,
+          64,
+          45
+        ],
+        [
+          -36,
+          44,
+          98,
+          45
+        ],
+        [
+          -70,
+          -1,
+          136,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "blazar_pulse_body_back",
+          "anchor": [
+            38,
+            73
+          ],
+          "sprite": 0,
+          "behind_fighter": true
+        },
+        {
+          "effect": "blazar_pulse_body_front",
+          "anchor": [
+            51,
+            66
+          ],
+          "sprite": 0
+        }
+      ],
+      "audio_loop": "blazar_original_pulse_charge_window"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -41,
+          94,
+          98,
+          46
+        ],
+        [
+          -63,
+          47,
+          112,
+          47
+        ],
+        [
+          -73,
+          0,
+          145,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "blazar_pulse_body_back",
+          "anchor": [
+            41,
+            98
+          ],
+          "sprite": 1,
+          "behind_fighter": true
+        },
+        {
+          "effect": "blazar_pulse_body_front",
+          "anchor": [
+            47,
+            105
+          ],
+          "sprite": 1
+        }
+      ],
+      "audio_loop": "blazar_original_pulse_charge_window"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -41,
+          94,
+          98,
+          46
+        ],
+        [
+          -63,
+          47,
+          112,
+          47
+        ],
+        [
+          -73,
+          0,
+          145,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "blazar_pulse_body_back",
+          "anchor": [
+            41,
+            98
+          ],
+          "sprite": 1,
+          "behind_fighter": true
+        },
+        {
+          "effect": "blazar_pulse_body_front",
+          "anchor": [
+            47,
+            105
+          ],
+          "sprite": 1
+        }
+      ],
+      "audio_loop": "blazar_original_pulse_charge_window"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -41,
+          94,
+          98,
+          46
+        ],
+        [
+          -63,
+          47,
+          112,
+          47
+        ],
+        [
+          -73,
+          0,
+          145,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "blazar_pulse_body_back",
+          "anchor": [
+            41,
+            98
+          ],
+          "sprite": 2,
+          "behind_fighter": true
+        },
+        {
+          "effect": "blazar_pulse_body_front",
+          "anchor": [
+            47,
+            105
+          ],
+          "sprite": 2
+        }
+      ],
+      "audio_loop": "blazar_original_pulse_charge_window"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -77,
+          92,
+          130,
+          45
+        ],
+        [
+          -71,
+          46,
+          124,
+          46
+        ],
+        [
+          -84,
+          0,
+          149,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "blazar_pulse_body_back",
+          "anchor": [
+            45,
+            101
+          ],
+          "sprite": 2,
+          "behind_fighter": true
+        },
+        {
+          "effect": "blazar_pulse_body_front",
+          "anchor": [
+            34,
+            111
+          ],
+          "sprite": 2
+        }
+      ],
+      "audio_loop": "blazar_original_pulse_charge_window"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -77,
+          92,
+          130,
+          45
+        ],
+        [
+          -71,
+          46,
+          124,
+          46
+        ],
+        [
+          -84,
+          0,
+          149,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "blazar_pulse_body_back",
+          "anchor": [
+            45,
+            101
+          ],
+          "sprite": 3,
+          "behind_fighter": true
+        },
+        {
+          "effect": "blazar_pulse_body_front",
+          "anchor": [
+            34,
+            111
+          ],
+          "sprite": 3
+        }
+      ],
+      "audio_loop": "blazar_original_pulse_charge_window"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -77,
+          92,
+          130,
+          45
+        ],
+        [
+          -71,
+          46,
+          124,
+          46
+        ],
+        [
+          -84,
+          0,
+          149,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "blazar_original_spear_release"
+        }
+      ],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "blazar_pulse_body_back",
+          "anchor": [
+            45,
+            101
+          ],
+          "sprite": 3,
+          "behind_fighter": true
+        },
+        {
+          "effect": "blazar_pulse_body_front",
+          "anchor": [
+            34,
+            111
+          ],
+          "sprite": 3
+        },
+        {
+          "effect": "blazar_pulse_start",
+          "anchor": [
+            34,
+            111
+          ],
+          "sprite": 0
+        }
+      ],
+      "audio_loop": "blazar_original_pulse_charge_window"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          12,
+          65,
+          75,
+          35
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -47,
+          94,
+          125,
+          46
+        ],
+        [
+          -48,
+          47,
+          96,
+          47
+        ],
+        [
+          -76,
+          0,
+          154,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "blazar_pulse_start",
+          "anchor": [
+            64,
+            103
+          ],
+          "sprite": 1
+        }
+      ]
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          12,
+          65,
+          75,
+          35
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -47,
+          94,
+          125,
+          46
+        ],
+        [
+          -48,
+          47,
+          96,
+          47
+        ],
+        [
+          -76,
+          0,
+          154,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "blazar_pulse_start",
+          "anchor": [
+            64,
+            103
+          ],
+          "sprite": 2
+        }
+      ]
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          12,
+          65,
+          75,
+          35
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -47,
+          94,
+          125,
+          46
+        ],
+        [
+          -48,
+          47,
+          96,
+          47
+        ],
+        [
+          -76,
+          0,
+          154,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "blazar_pulse_start",
+          "anchor": [
+            64,
+            103
+          ],
+          "sprite": 3
+        }
+      ]
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -33,
+          94,
+          67,
+          46
+        ],
+        [
+          -35,
+          47,
+          113,
+          47
+        ],
+        [
+          -78,
+          0,
+          154,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -33,
+          94,
+          67,
+          46
+        ],
+        [
+          -35,
+          47,
+          113,
+          47
+        ],
+        [
+          -78,
+          0,
+          154,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -33,
+          94,
+          67,
+          46
+        ],
+        [
+          -35,
+          47,
+          113,
+          47
+        ],
+        [
+          -78,
+          0,
+          154,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -33,
+          94,
+          67,
+          46
+        ],
+        [
+          -35,
+          47,
+          113,
+          47
+        ],
+        [
+          -78,
+          0,
+          154,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -33,
+          94,
+          67,
+          46
+        ],
+        [
+          -35,
+          47,
+          113,
+          47
+        ],
+        [
+          -78,
+          0,
+          154,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -33,
+          94,
+          67,
+          46
+        ],
+        [
+          -35,
+          47,
+          113,
+          47
+        ],
+        [
+          -78,
+          0,
+          154,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -37,
+          82,
+          75,
+          42
+        ],
+        [
+          -43,
+          40,
+          115,
+          42
+        ],
+        [
+          -83,
+          -2,
+          156,
+          42
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -37,
+          82,
+          75,
+          42
+        ],
+        [
+          -43,
+          40,
+          115,
+          42
+        ],
+        [
+          -83,
+          -2,
+          156,
+          42
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -37,
+          82,
+          75,
+          42
+        ],
+        [
+          -43,
+          40,
+          115,
+          42
+        ],
+        [
+          -83,
+          -2,
+          156,
+          42
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -37,
+          82,
+          75,
+          42
+        ],
+        [
+          -43,
+          40,
+          115,
+          42
+        ],
+        [
+          -83,
+          -2,
+          156,
+          42
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -37,
+          82,
+          75,
+          42
+        ],
+        [
+          -43,
+          40,
+          115,
+          42
+        ],
+        [
+          -83,
+          -2,
+          156,
+          42
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -37,
+          82,
+          75,
+          42
+        ],
+        [
+          -43,
+          40,
+          115,
+          42
+        ],
+        [
+          -83,
+          -2,
+          156,
+          42
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "blazar_pulse_hit",
+      "block_effect": "impact_guard"
+    }
+  ],
+  "feedback": {
+    "spark": "blazar_pulse_hit",
+    "block_spark": "impact_guard",
+    "hitstop": 8,
+    "blockstop": 5,
+    "shake": 3,
+    "flash": 2,
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "projectile": {
+    "effect": "blazar_pulse_flight",
+    "speed": 8,
+    "life": 90,
+    "spawn": [
+      64,
+      103
+    ],
+    "box": [
+      0,
+      -8,
+      120,
+      16
+    ],
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "trail_effect": "blazar_pulse_trail",
+    "visual_scale": 1
+  },
+  "production_note": "现选独立整帧训练暂装；姿势/内部比例/晶冠仍阻塞，非阶段验收；普通光弹23tick/伤害消耗沿通用规则，发射相改为近左掌松指。",
+  "audio": {
+    "hit": "blazar_original_spear_hit"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "art_source": "api",
+  "route": "tools/art_pipeline.py:generate_image",
+  "sources": [
+    {
+      "file": "assets/effects/neronga/pulse_core/atlas.png",
+      "sha256": "ce606e2e0423f81789e1b159faa07b4aaef6e8869888eb463c692e51099fa2d9"
+    },
+    {
+      "file": "assets/effects/neronga/pulse_trail/atlas.png",
+      "sha256": "aabcbaaddcce173daa7acff4a3e8d6e1fe4233a6c1f489386c3a91c2bb0cab4c"
+    }
+  ],
+  "selection_reason": "两个独立GPT图层原像素合成；飞行核与拖尾仍各有独立图集。现有非返程飞行物不产生trail_points，因此用离线alpha合成保留可见拖尾，不更改模拟路径。",
+  "composition": [
+    {
+      "layer": "pulse_trail",
+      "offset": [
+        0,
+        16
+      ]
+    },
+    {
+      "layer": "pulse_core",
+      "offset": [
+        32,
+        0
+      ]
+    }
+  ],
+  "code_drawing": false,
+  "source_provenance": [
+    {
+      "file": "assets/effects/neronga/pulse_core/provenance.json",
+      "sha256": "bdb927f6dbbf72236e69bbe1cb40cdedb3128a3732a255bf385ac61a382b724b",
+      "request": "art/fighters/neronga/stage4/effects-v2/pulse_core/request-02/brief.json",
+      "source": "art/fighters/neronga/stage4/effects-v2/pulse_core/request-02/raw.provider.png",
+      "source_sha256": "84d34275040476de71af1cf4443675847b573d07b6b44fdefc54ff819858d075"
+    },
+    {
+      "file": "assets/effects/neronga/pulse_trail/provenance.json",
+      "sha256": "22f723d88da00c80ab1e2e7d68bd5c4efebe6760766f52f7bef0539d5750c52e",
+      "request": "art/fighters/neronga/stage4/effects-v2/pulse_trail/request-01/brief.json",
+      "source": "art/fighters/neronga/stage4/effects-v2/pulse_trail/request-01/raw.provider.png",
+      "source_sha256": "7c23b146f4c1005c44e60de0aff8eee8e5f774bdc7b99e89fbcdff2f15a9288b"
+    }
+  ],
+  "whole_image_palette": "forge_backend统一32色RGB量化，二值Alpha"
+}

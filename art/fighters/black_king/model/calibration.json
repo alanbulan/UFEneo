@@ -1,0 +1,642 @@
+{
+  "schema": 1,
+  "scope": "只读已审定稿，不改赛文/哥莫拉源文件",
+  "conclusion": "原图欧氏两段转原生读数与独立原生复点相符；站高143/192与已审规格吻合。关节骨链比头骨站高更长，符合屈膝分腿；此校准不作人物外形验收。",
+  "records": [
+    {
+      "fighter": "ultraseven",
+      "model": "art/model_sheets/ultraseven/model-native.png",
+      "model_sha256": "289087585112913c6e6ba5653523c93e5aa8384b699246e72ec3aa60dc4f0736",
+      "raw_source": "art/generation/stage4-pilot/ultraseven/model/05/raw.png",
+      "raw_source_sha256": "92130406c5d7c20c31a73e101d8602f0b95f4b2f9b7f98efe1828b0b31e72bf2",
+      "raw_dimensions": [
+        1254,
+        1254
+      ],
+      "canvas": [
+        192,
+        192
+      ],
+      "method": "先在GPT高分辨率原图上标刚性头部点，再按实际登记变换换算原生欧氏距离；独立原生复点只作校准读数，不倒推原图比例。身体为定稿骨架中心关节点，统一按头骨顶→颅底→颈根肩轴→髋→膝→踝→脚底中心骨链。",
+      "transform_raw_to_native": {
+        "scale": [
+          0.16666666666666666,
+          0.16666666666666666
+        ],
+        "translation": [
+          -9.0,
+          -10.166666666666666
+        ],
+        "basis": "已审qa.json的raw=6*native+(54,61)，这里只读反变换"
+      },
+      "raw_head_landmarks": {
+        "ear_center": [
+          605,
+          404
+        ],
+        "nose_front": [
+          718,
+          442
+        ],
+        "skull_top": [
+          653,
+          342
+        ],
+        "chin": [
+          685,
+          486
+        ]
+      },
+      "native_head_landmarks": {
+        "ear_center": [
+          91.83333333333333,
+          57.166666666666664
+        ],
+        "nose_front": [
+          110.66666666666666,
+          63.49999999999999
+        ],
+        "skull_top": [
+          99.83333333333333,
+          46.833333333333336
+        ],
+        "chin": [
+          105.16666666666666,
+          70.83333333333333
+        ]
+      },
+      "head_segments": {
+        "ear_to_nose": {
+          "start": "ear_center",
+          "end": "nose_front",
+          "raw_length": 119.21828718783037,
+          "native_length": 19.869714531305057,
+          "raw_points": [
+            [
+              605,
+              404
+            ],
+            [
+              718,
+              442
+            ]
+          ],
+          "native_points": [
+            [
+              91.83333333333333,
+              57.166666666666664
+            ],
+            [
+              110.66666666666666,
+              63.49999999999999
+            ]
+          ],
+          "independently_picked_native_check": [
+            [
+              92,
+              57
+            ],
+            [
+              110,
+              63.5
+            ]
+          ],
+          "native_check_length": 19.13765920900464,
+          "native_check_deviation_percent": -3.6842769992847857,
+          "meaning": "仅侧视的刚性头部标志点欧氏距离，不用头部外框/眼睛面积当比例"
+        },
+        "skull_to_chin": {
+          "start": "skull_top",
+          "end": "chin",
+          "raw_length": 147.5127113166862,
+          "native_length": 24.58545188611436,
+          "raw_points": [
+            [
+              653,
+              342
+            ],
+            [
+              685,
+              486
+            ]
+          ],
+          "native_points": [
+            [
+              99.83333333333333,
+              46.833333333333336
+            ],
+            [
+              105.16666666666666,
+              70.83333333333333
+            ]
+          ],
+          "independently_picked_native_check": [
+            [
+              100,
+              47
+            ],
+            [
+              105,
+              71
+            ]
+          ],
+          "native_check_length": 24.515301344262525,
+          "native_check_deviation_percent": -0.2853335467527196,
+          "meaning": "仅侧视的刚性头部标志点欧氏距离，不用头部外框/眼睛面积当比例"
+        }
+      },
+      "manual_landmark_uncertainty": "头部原图点约±2原图px；身体投影关节约±1原生px，遮挡处为骨架中心估计，不声称透视下可见真实解剖骨长。后续姿势共用这份冻结的二维骨链。",
+      "skeleton_landmarks": {
+        "skull_top": [
+          99.83333333333333,
+          46.833333333333336
+        ],
+        "skull_base": [
+          98,
+          74
+        ],
+        "shoulder_axis": [
+          91,
+          88
+        ],
+        "shoulder_near": [
+          82,
+          91
+        ],
+        "elbow_near": [
+          75,
+          110
+        ],
+        "wrist_near": [
+          93,
+          113
+        ],
+        "shoulder_far": [
+          103,
+          89
+        ],
+        "elbow_far": [
+          115,
+          107
+        ],
+        "wrist_far": [
+          124,
+          90
+        ],
+        "hip_near": [
+          93,
+          125
+        ],
+        "knee_near": [
+          70,
+          151
+        ],
+        "ankle_near": [
+          57,
+          177
+        ],
+        "sole_near": [
+          57,
+          184
+        ],
+        "hip_far": [
+          93,
+          125
+        ],
+        "knee_far": [
+          118,
+          147
+        ],
+        "ankle_far": [
+          126,
+          177
+        ],
+        "sole_far": [
+          126,
+          184
+        ]
+      },
+      "bones_native": {
+        "skull_top_to_base": 27.228457335825855,
+        "neck": 15.652475842498529,
+        "torso": 37.05401462729781,
+        "upper_arm": 20.248456731316587,
+        "forearm": 18.24828759089466,
+        "thigh": 34.713109915419565,
+        "shin": 29.068883707497267,
+        "ankle_to_sole": 7.0,
+        "far_upper_arm": 21.633307652783937,
+        "far_forearm": 19.235384061671343,
+        "far_thigh": 33.301651610693426,
+        "far_shin": 31.04834939252005
+      },
+      "standing": {
+        "to_skull_top": 137.16666666666666,
+        "with_horn_or_crown": 143,
+        "ground_y": 184,
+        "skull_top": [
+          99.83333333333333,
+          46.833333333333336
+        ],
+        "upright_tolerance": 0.03,
+        "upright_ruler": "to_skull_top：排除额角/耳突/头冠等附属物。它们倾斜时最高点会变，不应带着整身重缩。"
+      },
+      "straight_full_length": {
+        "length": 150.71694142853903,
+        "points": [
+          [
+            99.83333333333333,
+            46.833333333333336
+          ],
+          [
+            98,
+            74
+          ],
+          [
+            91,
+            88
+          ],
+          [
+            93,
+            125
+          ],
+          [
+            70,
+            151
+          ],
+          [
+            57,
+            177
+          ],
+          [
+            57,
+            184
+          ]
+        ],
+        "point_names": [
+          "skull_top",
+          "skull_base",
+          "shoulder_axis",
+          "hip_near",
+          "knee_near",
+          "ankle_near",
+          "sole_near"
+        ],
+        "tolerance": 0.08,
+        "not_standing_height": true,
+        "method": "按同侧中心骨链伸直的头骨顶至脚底；不含主角、耳突、鼻尖向前投影、尾和脚爪前伸；倒地用这条同定义的关节链，不用外框长度或站高替代。"
+      },
+      "silhouette_area": 4852,
+      "silhouette_area_unit": "原生不透明像素个数",
+      "silhouette_rule": "后续sqrt(动作面积/此定稿面积)>1.06标需人工复核，不硬拦；姿态遮挡改变面积，不能用它单独判合格。"
+    },
+    {
+      "fighter": "gomora",
+      "model": "art/model_sheets/gomora/model-native.png",
+      "model_sha256": "bc9a7e641c3d627e823530cd3bb62d897da2b932310bba20287a7af38ae5d708",
+      "raw_source": "art/generation/stage4-pilot/gomora/model/01/raw.png",
+      "raw_source_sha256": "1307721805377f265542934b4f11c72ba58d12a315b80b6e21396a58e974faab",
+      "raw_dimensions": [
+        1312,
+        1199
+      ],
+      "canvas": [
+        384,
+        256
+      ],
+      "method": "先在GPT高分辨率原图上标刚性头部点，再按实际登记变换换算原生欧氏距离；独立原生复点只作校准读数，不倒推原图比例。身体为定稿骨架中心关节点，统一按头骨顶→颅底→颈根肩轴→髋→膝→踝→脚底中心骨链。",
+      "transform_raw_to_native": {
+        "scale": [
+          0.17934347477982385,
+          0.1792717086834734
+        ],
+        "translation": [
+          28.826261008807045,
+          41.65826330532213
+        ],
+        "basis": "原图Alpha≥128包围框(40,80,1289,1151)→224×192；画布偏移(36,56)，实图复核"
+      },
+      "raw_head_landmarks": {
+        "eye": [
+          1154.9242424242425,
+          344.3560606060606
+        ],
+        "nose_tip": [
+          1287,
+          305
+        ],
+        "nose_root": [
+          1204,
+          365
+        ],
+        "ear_root": [
+          1060,
+          313
+        ]
+      },
+      "native_head_landmarks": {
+        "eye": [
+          235.95438775262636,
+          103.39156268568033
+        ],
+        "nose_tip": [
+          259.6413130504403,
+          96.33613445378151
+        ],
+        "nose_root": [
+          244.75580464371495,
+          107.0924369747899
+        ],
+        "ear_root": [
+          218.93034427542034,
+          97.7703081232493
+        ]
+      },
+      "head_segments": {
+        "eye_to_nasal_tip": {
+          "start": "eye",
+          "end": "nose_tip",
+          "raw_length": 137.81474973905435,
+          "native_length": 24.715369663423886,
+          "raw_points": [
+            [
+              1154.9242424242425,
+              344.3560606060606
+            ],
+            [
+              1287,
+              305
+            ]
+          ],
+          "native_points": [
+            [
+              235.95438775262636,
+              103.39156268568033
+            ],
+            [
+              259.6413130504403,
+              96.33613445378151
+            ]
+          ],
+          "independently_picked_native_check": [
+            [
+              236.1667,
+              103.3333
+            ],
+            [
+              259,
+              96
+            ]
+          ],
+          "native_check_length": 23.982011545739866,
+          "native_check_deviation_percent": -2.9672148451386993,
+          "meaning": "仅侧视的刚性头部标志点欧氏距离，不用头部外框/眼睛面积当比例"
+        },
+        "nasal_root_to_ear": {
+          "start": "nose_root",
+          "end": "ear_root",
+          "raw_length": 153.1012736720371,
+          "native_length": 27.45644714013599,
+          "raw_points": [
+            [
+              1204,
+              365
+            ],
+            [
+              1060,
+              313
+            ]
+          ],
+          "native_points": [
+            [
+              244.75580464371495,
+              107.0924369747899
+            ],
+            [
+              218.93034427542034,
+              97.7703081232493
+            ]
+          ],
+          "independently_picked_native_check": [
+            [
+              245,
+              108
+            ],
+            [
+              219,
+              98
+            ]
+          ],
+          "native_check_length": 27.85677655436824,
+          "native_check_deviation_percent": 1.458052501071938,
+          "meaning": "仅侧视的刚性头部标志点欧氏距离，不用头部外框/眼睛面积当比例"
+        }
+      },
+      "manual_landmark_uncertainty": "头部原图点约±2原图px；身体投影关节约±1原生px，遮挡处为骨架中心估计，不声称透视下可见真实解剖骨长。后续姿势共用这份冻结的二维骨链。",
+      "skeleton_landmarks": {
+        "skull_top": [
+          228,
+          94
+        ],
+        "skull_base": [
+          220,
+          115
+        ],
+        "shoulder_axis": [
+          209,
+          118
+        ],
+        "shoulder_near": [
+          209,
+          118
+        ],
+        "elbow_near": [
+          203,
+          138
+        ],
+        "wrist_near": [
+          231,
+          142
+        ],
+        "shoulder_far": [
+          225,
+          126
+        ],
+        "elbow_far": [
+          236,
+          140
+        ],
+        "wrist_far": [
+          250,
+          145
+        ],
+        "hip_near": [
+          190,
+          176
+        ],
+        "knee_near": [
+          167,
+          207
+        ],
+        "ankle_near": [
+          153,
+          239
+        ],
+        "sole_near": [
+          153,
+          248
+        ],
+        "hip_far": [
+          190,
+          176
+        ],
+        "knee_far": [
+          221,
+          200
+        ],
+        "ankle_far": [
+          224,
+          238
+        ],
+        "sole_far": [
+          224,
+          248
+        ]
+      },
+      "bones_native": {
+        "skull_top_to_base": 22.47220505424423,
+        "neck": 11.40175425099138,
+        "torso": 61.032778078668514,
+        "upper_arm": 20.8806130178211,
+        "forearm": 28.284271247461902,
+        "thigh": 38.600518131237564,
+        "shin": 34.92849839314596,
+        "ankle_to_sole": 9.0,
+        "far_upper_arm": 17.804493814764857,
+        "far_forearm": 14.866068747318506,
+        "far_thigh": 39.20459156782532,
+        "far_shin": 38.118237105091836,
+        "tail": 200.03745970946906
+      },
+      "standing": {
+        "to_skull_top": 154,
+        "with_horn_or_crown": 192,
+        "ground_y": 248,
+        "skull_top": [
+          228,
+          94
+        ],
+        "upright_tolerance": 0.03,
+        "upright_ruler": "to_skull_top：排除额角/耳突/头冠等附属物。它们倾斜时最高点会变，不应带着整身重缩。"
+      },
+      "straight_full_length": {
+        "length": 177.43575390828764,
+        "points": [
+          [
+            228,
+            94
+          ],
+          [
+            220,
+            115
+          ],
+          [
+            209,
+            118
+          ],
+          [
+            190,
+            176
+          ],
+          [
+            167,
+            207
+          ],
+          [
+            153,
+            239
+          ],
+          [
+            153,
+            248
+          ]
+        ],
+        "point_names": [
+          "skull_top",
+          "skull_base",
+          "shoulder_axis",
+          "hip_near",
+          "knee_near",
+          "ankle_near",
+          "sole_near"
+        ],
+        "tolerance": 0.08,
+        "not_standing_height": true,
+        "method": "按同侧中心骨链伸直的头骨顶至脚底；不含主角、耳突、鼻尖向前投影、尾和脚爪前伸；倒地用这条同定义的关节链，不用外框长度或站高替代。"
+      },
+      "silhouette_area": 18086,
+      "silhouette_area_unit": "原生不透明像素个数",
+      "silhouette_rule": "后续sqrt(动作面积/此定稿面积)>1.06标需人工复核，不硬拦；姿态遮挡改变面积，不能用它单独判合格。",
+      "tail": {
+        "centerline_native": [
+          [
+            177,
+            178
+          ],
+          [
+            159,
+            197
+          ],
+          [
+            141,
+            210
+          ],
+          [
+            121,
+            215
+          ],
+          [
+            104,
+            209
+          ],
+          [
+            86,
+            195
+          ],
+          [
+            70,
+            175
+          ],
+          [
+            56,
+            155
+          ],
+          [
+            45,
+            140
+          ],
+          [
+            42,
+            127
+          ],
+          [
+            44,
+            119
+          ]
+        ],
+        "length": 200.03745970946906,
+        "method": "尾根中心到尾尖，沿粗尾逐段中心骨链求和，不能拿两端直线或尾巴外框宽代替。",
+        "policy": "后续动作保持这条尾骨链总长，弯曲/翻滚只改各段方向，不缩短尾长。",
+        "tip": [
+          44,
+          119
+        ],
+        "root": [
+          177,
+          178
+        ]
+      }
+    }
+  ],
+  "existing_gomora_ruler_note": "既有batch3的208.6293是鼻尖→脚尖链，本文件177.43左右是头骨顶→脚底中心链，端点定义不同，不混作同一容差标尺。"
+}

@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "character": "ultraman-leo",
+  "idle_texture": "assets/fighters/ultraman-leo/animations/idle/atlas.png",
+  "idle_rect": [
+    0,
+    0,
+    192,
+    192
+  ],
+  "head_center": [
+    100,
+    56
+  ],
+  "neck_cut": [
+    [
+      93,
+      65
+    ],
+    [
+      110,
+      73
+    ]
+  ],
+  "template_radius": 39,
+  "background_ring": 3,
+  "upsample": 2,
+  "scale_range": [
+    0.65,
+    1.5
+  ],
+  "rotation_range": [
+    -180,
+    180
+  ],
+  "thresholds": {
+    "usable": 0.097128,
+    "auxiliary": 0.152128
+  },
+  "notes": "坐标是idle第0格的原生像素；模板只用于测量。含刚体头饰，切掉颈部；阈值待本次校准写入。",
+  "calibration": {
+    "report": "calibration/ultraman-leo.json",
+    "manifest_sha256": "78541d99378689cf42ae761acc1f09f60381acc754dc5557d8d745df36e858c8",
+    "maximum_relative_scale_error": 0.0086957,
+    "basis": "人工缩放旋转+idle/走路实帧误差P95+缺头负例；不作为美术硬门"
+  }
+}

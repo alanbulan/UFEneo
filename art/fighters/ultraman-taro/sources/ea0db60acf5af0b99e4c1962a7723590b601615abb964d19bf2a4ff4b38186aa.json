@@ -1,0 +1,34 @@
+{
+  "asset_kind": "effect",
+  "model": "gpt-image-2.5-sunburst",
+  "quality": "high",
+  "background": "transparent",
+  "size": "1024x1024",
+  "prompt": "为固定侧视2D像素街机格斗游戏制作普通泰罗的独立特效图集。只有特效，不画任何人物、手、文字、编号、地面或背景。输出1024×1024方图，严格2列×2行共4格，按从左到右从上到下四相排列。每格边缘留透明安全边，互不跨格，不多画格。附件1只是格子定位辅助，格线与编号绝不能进入成品；附件2为原剧画面，提取特效颜色和密度，不复制人物或摄影场景。每相都要画完整能量形状；相邻四相必须各有真实形态变化，不得复制同一帧平移。硬边像素簇、锐利阶梯、有限色板、细碎像素抖动，禁止柔糊光晕、摄影火焰、矢量感、干净几何线条。至少三层颜色：白金亮芯、饱和能量中层、较暗外焰；周围有合乎方向的碎粒与火花，密度要达到90年代街机大招。双手射击光束的掌心蓄力层：小而浓密的白金压缩能量核、淡蓝交错电纹、金白像素小火花，四相由掌心小核聚亮到双掌发射前一刻；透明间隙、不画手。与彩虹斯特利姆明显不同，不用彩虹。 透明背景，真透明PNG Alpha，所有空白完全透明，不画棋盘背景、不画黑底、白底或灰底。",
+  "art_source": "api",
+  "route": "tools/art_pipeline.py::generate_image",
+  "references": [
+    "art/fighters/ultraman-taro/stage4/effects-v2/shoot_body/layout-guide.png",
+    "art/fighters/ultraman-taro/stage4/effects-v2/shoot_body/episode-reference.png"
+  ],
+  "source_kind": "episode",
+  "source_frame": 116,
+  "native_spec": {
+    "size": [
+      80,
+      80
+    ],
+    "art": [
+      66,
+      66
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "ref": "shoot",
+    "kind": "center",
+    "loop": true,
+    "brief": "双手射击光束的掌心蓄力层：小而浓密的白金压缩能量核、淡蓝交错电纹、金白像素小火花，四相由掌心小核聚亮到双掌发射前一刻；透明间隙、不画手。与彩虹斯特利姆明显不同，不用彩虹。"
+  }
+}

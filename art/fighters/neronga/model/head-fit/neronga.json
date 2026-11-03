@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "character": "neronga",
+  "idle_texture": "assets/fighters/neronga/animations/idle/atlas.png",
+  "idle_rect": [
+    0,
+    0,
+    640,
+    320
+  ],
+  "head_center": [
+    383,
+    166
+  ],
+  "neck_cut": [
+    [
+      352,
+      178
+    ],
+    [
+      393,
+      194
+    ]
+  ],
+  "template_radius": 54,
+  "background_ring": 4,
+  "upsample": 2,
+  "scale_range": [
+    0.65,
+    1.5
+  ],
+  "rotation_range": [
+    -180,
+    180
+  ],
+  "thresholds": {
+    "usable": 0.166702,
+    "auxiliary": 0.221702
+  },
+  "notes": "模板保留鼻角、颅骨和下颌；排除可甩动长须及其背景。非美术区域换色。",
+  "include_box": [
+    353,
+    130,
+    425,
+    196
+  ],
+  "exclude_boxes": [
+    [
+      0,
+      0,
+      397,
+      146
+    ]
+  ],
+  "calibration": {
+    "report": "calibration/neronga.json",
+    "manifest_sha256": "33b1f3f97f09bdb486fb47af6316f701b9e0345885a9d7f7904de384c1abf065",
+    "maximum_relative_scale_error": 0.005,
+    "basis": "人工缩放旋转+idle/走路实帧误差P95+缺头负例；不作为美术硬门"
+  }
+}

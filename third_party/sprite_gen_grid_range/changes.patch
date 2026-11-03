@@ -1,0 +1,48 @@
+--- upstream/sprite_gen/frames/extract.py
++++ project/sprite_gen/frames/extract.py
+@@ -2206,6 +2206,9 @@
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument("--run-dir", required=True, type=Path)
+     parser.add_argument("--states", default="all")
++    parser.add_argument("--pixel-grid-max-pitch", type=int, default=48,
++                        help="maximum source pixel-block spacing to search (2..256); "
++                        "does not change grid crosscheck or frame acceptance thresholds")
+     parser.add_argument("--key-threshold", type=float, default=96.0)
+     parser.add_argument("--fringe-key-threshold", type=float, default=180.0)
+     parser.add_argument("--fringe-delta", type=float, default=18.0)
+@@ -2551,6 +2554,8 @@
+ 
+ 
+ def _run(args: argparse.Namespace):
++    if not 2 <= args.pixel_grid_max_pitch <= 256:
++        raise SystemExit("--pixel-grid-max-pitch must be between 2 and 256")
+     if args.fringe_key_threshold < args.key_threshold:
+         raise SystemExit("--fringe-key-threshold must be greater than or equal to --key-threshold")
+     if args.fringe_unmix_reach is not None and args.fringe_unmix_reach < 0:
+@@ -2819,7 +2824,7 @@
+         # 정수로 반올림하면 그 오차가 폭 전체에 누적돼 셀 경계가 블록 한가운데를 지난다.
+         # 측정은 소수·축별로 하고, 격자선은 `_grid_edges` 가 정수로 확정한다.
+         hint = int(fit_config.get("pitch_hint", 0))
+-        grids = [detect_pixel_grid(component) for component in images]
++        grids = [detect_pixel_grid(component, max_pitch=args.pixel_grid_max_pitch) for component in images]
+ 
+         def _consensus(axis: int) -> float:
+             confident = sorted(g[0][axis] for g in grids if g[0][axis] >= 2.0)
+@@ -2840,7 +2845,7 @@
+                     f"{tag}: pitch from fit.pitch_hint={hint} (all per-frame detections inconclusive)"
+                 )
+                 return float(hint)
+-            strip_pitch, _ = detect_pixel_grid(strip)
++            strip_pitch, _ = detect_pixel_grid(strip, max_pitch=args.pixel_grid_max_pitch)
+             if strip_pitch[axis] >= 2.0:
+                 all_warnings.append(
+                     f"{tag}: pitch from whole-strip detection={strip_pitch[axis]:.2f}"
+@@ -2851,7 +2856,7 @@
+         # 세컨드 오피니언 (perfectpixel unfake 이식): 동일색 런 최빈값으로 축별
+         # 피치를 따로 추정해 합의 피치와 교차검증한다. 경고 전용 — 스냅은 아래에서
+         # 계속 detect_pixel_grid 합의만 쓴다 (자동 교체 금지, No Silent Fallback).
+-        runlen_axes = [estimate_pixel_grid_runlen(component) for component in images]
++        runlen_axes = [estimate_pixel_grid_runlen(component, max_pitch=args.pixel_grid_max_pitch) for component in images]
+ 
+         def _runlen_consensus(axis: int) -> float:
+             confident = sorted(e[axis] for e in runlen_axes if e[axis] >= 2.0)

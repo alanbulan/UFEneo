@@ -1,0 +1,53 @@
+{
+  "native": "art/fighters/ultraman-arc/model/model-native.png",
+  "alpha_values": [
+    0,
+    255
+  ],
+  "transparent_pixels": 32476,
+  "opaque_pixels": 4388,
+  "colors": 32,
+  "palette_limit": 32,
+  "components": [
+    4388
+  ],
+  "small_detached": [],
+  "near_foot_boundary": 184,
+  "foot_target": 184,
+  "body_height": 134.6927870837882,
+  "body_target": 135,
+  "body_tolerance": 0.03,
+  "numeric_pass": true,
+  "identity_review": "根与提欧席实际看高分及原生8倍，08比05长平钩明显改善；开口与蓝线接根无明显断线，残余后掠/正式尺缺项保留。",
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "oklab",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "operations": [
+    "GPT Image同帧头刃遮罩重画",
+    "源像素格最近邻采样",
+    "原生旧格中心采样",
+    "全候选RGB调色板量化后仅回贴本帧头刃格",
+    "源图与原生保护区RGBA逐字节保持"
+  ],
+  "foot_evidence": {
+    "method": "原生Alpha的足部区域分近左/远右，取实际不透明足底边界；不是取脚尖标点",
+    "near_boundary": 184,
+    "far_boundary": 182,
+    "far_gap": 2,
+    "note": "0–3允许；4–7只标注不拦帧；近脚必须184"
+  },
+  "crest_fix_proof": "art/fighters/ultraman-arc/stage4/crest-fix/base/generation/08/registered-v1/registration-proof.json",
+  "art_approved": false,
+  "backend_palette_mode": "rgb",
+  "source_and_native_protection": "脸/眼/蓝线/宝石/颈/身体的源及原生RGBA逐字节保持"
+}

@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "input": "22+P",
+  "energy_required": 3000,
+  "health_fraction": [
+    1,
+    2
+  ],
+  "uses_per_round": 1,
+  "forms": {
+    "ultraman-taro": {
+      "id": "super-taro",
+      "enabled": true,
+      "mode": "palette",
+      "palette_switch_tick": 48,
+      "transform": "res://content/fighters/ultraman-taro/forms/super_transform.json",
+      "super_move": "res://content/fighters/ultraman-taro/forms/super_special3.json",
+      "revert_tick": 88,
+      "transform_animation": "super_transform"
+    },
+    "gomora": {
+      "id": "ex_gomora",
+      "enabled": true,
+      "mode": "definition",
+      "target": "ex_gomora",
+      "transform": "res://content/catalogs/battle_form_rules/ex_gomora.json",
+      "transform_animation": "transformation",
+      "entry_animation": "form_entry"
+    },
+    "red_king": {
+      "id": "ex_red_king",
+      "enabled": true,
+      "mode": "definition",
+      "target": "ex_red_king",
+      "transform": "res://content/catalogs/battle_form_rules/ex_red_king.json",
+      "transform_animation": "transformation",
+      "entry_animation": "form_entry"
+    }
+  }
+}

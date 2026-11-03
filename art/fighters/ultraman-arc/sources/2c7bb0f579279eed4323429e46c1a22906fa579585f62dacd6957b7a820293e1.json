@@ -1,0 +1,77 @@
+{
+  "source": "art/fighters/ultraman-arc/stage4/crest-user-return-defeat-web-20261030/01/request-003-serial-guide-v3/processed-front-protection-v3/same-frame-composite.png",
+  "source_sha256": "77b2ba4d61944ab24df511a4fbe0041548fba01d74b317fc05612f04feccfe60",
+  "native_before": "art/fighters/ultraman-arc/stage4/crest-user-return-defeat-web-20261030/01/request-003-serial-guide-v3/processed-front-protection-v3/frame.png",
+  "native_before_sha256": "66dfa09c35bb2184bc3f0c2c01d4c02b95c98f328d34381773e09d264827aad8",
+  "provider": "art/fighters/ultraman-arc/stage4/suit-joints-user-return-defeat-20261030/01/request-002-official-sunburst/candidate.provider.png",
+  "provider_sha256": "c715cbab5c23bdc41fb0dcb4ef020391f99a32ee7d92fa9ad537f462d653a678",
+  "mask": "art/fighters/ultraman-arc/stage4/suit-joints-user-return-defeat-20261030/01/request-001/offline-editable-mask.png",
+  "mask_sha256": "49b1311c5735c504644dabbeab05f8427e3b86c4c5f18ab77075520c57a60b87",
+  "registration": {
+    "method": "SIFT/RANSAC全帧相似变换，只用mask外保护区；返回图到本相原图",
+    "matrix": [
+      [
+        0.9998234850229927,
+        0.0009307505568987124,
+        -0.34556166156706575
+      ],
+      [
+        -0.0009307505568987124,
+        0.9998234850229927,
+        0.347249585653768
+      ]
+    ],
+    "matches": 115,
+    "inliers": 86,
+    "protected_pixels": 49403,
+    "scale": 0.999823918247669,
+    "rotation_degrees": -0.053337478148735344,
+    "median_inlier_residual": 0.5840798616409302,
+    "protected_mse_before": 183.3969850009109,
+    "protected_mse_after": 183.3969850009109,
+    "sampling": "整张返回图统一最近邻配准，再只取原mask内本相结果；不变换最终保护区"
+  },
+  "normalized_entire_canvas_from": [
+    1024,
+    1024
+  ],
+  "normalized_entire_canvas_to": [
+    638,
+    638
+  ],
+  "high_protected_changed_pixels": 0,
+  "native_protected_changed_pixels": 0,
+  "native_changed_pixels": 262,
+  "native_changed_inside": 262,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "components": 1,
+  "small_islands": [],
+  "seam_qa": {
+    "pass_": true,
+    "status": "pass",
+    "broken_outline_pixels": 0,
+    "disconnected_boundary_pixels": 0,
+    "boundary_pixels": 187,
+    "broken_points": [],
+    "limit": "描边接点和跨区实体在8邻域连续；原生1像素阶梯容差",
+    "source": "revision-6指挥授权：只贴回遮罩内，接缝不连续则拒收"
+  },
+  "source_scale_kept": 0.30034264086489854,
+  "source_translation_kept": [
+    43.453743483238696,
+    94.55614196929298
+  ],
+  "provider_alpha_source": "official_native_alpha; max254 and low-alpha specks retained in raw; binary Alpha only at native finish",
+  "operation": "整张返回图统一相似配准，同一帧四个原位区域采样；无分肢、无代码绘色、无跨帧拼件",
+  "installed": false,
+  "user_approved": false,
+  "previous_failed_attempt": "processed/proof.json",
+  "native_mask_is_strict_subset_of_original": true,
+  "protected_old_boundary_pixels": 197,
+  "mask_refinement": "保留本相原生mask内边缘一像素的旧实体；只缩小可改区，不绘色，不借其它帧。",
+  "native_frame_sha256": "5bbcf746353a8b65679af9b7a6f3820cd5ddff7d05b52bbc6ac5a5e0505c8804",
+  "native_allowed_mask_sha256": "001c185b1d394497fcc3cad98ead2c7880bfd97a199018b3d263e74a1679ed43"
+}

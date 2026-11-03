@@ -1,0 +1,5054 @@
+{
+  "schema": 1,
+  "character": "ultraman-taro",
+  "coordinate_system": "脚底根点为(0,0)，x朝前、y朝上；一个单位为一个战斗Viewport原生像素。",
+  "measurement": "逐显示sprite核对现装整帧，同一sprite的各tick复用同一解剖点；偏心闪光另记录已测图集亮芯atlas_point，保留既有补偿。",
+  "moves": {
+    "air_pulse": {
+      "part": "斜下前伸近侧右掌掌心",
+      "evidence": "content/fighters/ultraman-taro/MOVES.md：|command_25 / 2.5.3|vertical_air / diagonal_air / chase_air / air_tech中 I · 空中光弹|斜下掌推光弹（游戏编排） / `air_pulse`|5|侧身收膝→近侧掌伸向斜下、远掌护胸放单弹→缩掌恢复下落；不复用地面或空中必杀。|游戏编排，参考《街头霸王III 三度冲击》隆/肯的同类拳脚、护架和收势；T2能力的方向改编，不宣称原剧有该空中发射镜头|",
+      "source": "game_design",
+      "frames": [
+        {
+          "frame": 6,
+          "point": [
+            62,
+            69
+          ],
+          "field": "shots[0].spawn",
+          "tolerance": 2
+        }
+      ],
+      "evidence_review": "依MOVES.md所引中文原文；原文未确定的掌型/方向按游戏编排。本条没有新追加精确发射剧照，不冒称已逐镜核实。"
+    },
+    "air_special": {
+      "part": "斜下T字右前臂前端拳面（空中游戏编排）",
+      "evidence": "content/fighters/ultraman-taro/MOVES.md：|command_47 / 2.5.7|vertical_air / diagonal_air / chase_air / air_tech中 P · 空中必杀|空中斯特利姆光线（游戏改编） / `air_special`|8|浮空收腿蓄势，T形双臂朝前下方发射，独立8帧，第6阶段制作。|T1斯特利姆光线已核实；空中前下发射为指挥统一裁定的游戏改编，不声称原剧空中发射。|",
+      "source": "game_design",
+      "frames": [
+        {
+          "frame": 0,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 1,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 2,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 3,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 4,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 5,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 6,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 7,
+          "point": [
+            59,
+            72
+          ],
+          "field": "shots[0].spawn",
+          "tolerance": 2
+        },
+        {
+          "frame": 7,
+          "point": [
+            59,
+            72
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 7,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 8,
+          "point": [
+            59,
+            72
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 8,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 9,
+          "point": [
+            59,
+            72
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 9,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 10,
+          "point": [
+            59,
+            72
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 10,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 11,
+          "point": [
+            59,
+            72
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 11,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 12,
+          "point": [
+            59,
+            72
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 12,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 13,
+          "point": [
+            60,
+            120
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 13,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 14,
+          "point": [
+            60,
+            120
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 14,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 15,
+          "point": [
+            60,
+            120
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 15,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 16,
+          "point": [
+            60,
+            120
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 16,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 17,
+          "point": [
+            60,
+            120
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 17,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 18,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 19,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 20,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 21,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 22,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 23,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 24,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        }
+      ],
+      "evidence_review": "依MOVES.md所引中文原文；原文未确定的掌型/方向按游戏编排。本条没有新追加精确发射剧照，不冒称已逐镜核实。"
+    },
+    "burst": {
+      "part": "全身爆气光环，脚底/身体构图根点",
+      "evidence": "content/fighters/ultraman-taro/MOVES.md：现装人物完整姿势上的发射部位；本轮按游戏编排登记，不补造原剧集数。",
+      "source": "game_design",
+      "frames": [
+        {
+          "frame": 0,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 1,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 2,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 3,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 4,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 5,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 6,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 7,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 8,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 9,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 10,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 11,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 12,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 13,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 14,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 15,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 16,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 17,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        }
+      ],
+      "evidence_review": "依MOVES.md所引中文原文；原文未确定的掌型/方向按游戏编排。本条没有新追加精确发射剧照，不冒称已逐镜核实。"
+    },
+    "low_pulse": {
+      "part": "低姿前伸近侧右掌掌心",
+      "evidence": "content/fighters/ultraman-taro/MOVES.md：|command_15 / 2.5.2|1/2/3I · 低姿光弹|低姿掌推光弹（游戏编排） / `low_pulse`|5|单膝低蹲、掌心收至髋侧→近侧掌贴膝前推发低弹→掌收回、身形保持低位。|游戏编排，参考《街头霸王III 三度冲击》隆/肯的同类拳脚、护架和收势；T2能力的游戏方向改编，不称原剧低姿专名|",
+      "source": "game_design",
+      "frames": [
+        {
+          "frame": 7,
+          "point": [
+            65,
+            58
+          ],
+          "field": "shots[0].spawn",
+          "tolerance": 2
+        }
+      ],
+      "evidence_review": "依MOVES.md所引中文原文；原文未确定的掌型/方向按游戏编排。本条没有新追加精确发射剧照，不冒称已逐镜核实。"
+    },
+    "motion_22": {
+      "part": "张臂形成的身体前方防壁中心（构图锚点）",
+      "evidence": "content/fighters/ultraman-taro/MOVES.md：|command_43 / 2.5.7|22○ · 角色专属（见各角色MOVES.md）|泰罗屏障 / `motion_22`|8|双目短亮、双手先收向胸前→两臂向左右张开构成防壁→双掌合回后回架；人物需要完整开合动作。|T4 原剧资料名；以中文描述的张臂光壁为准，不移用其他角色屏障动作|",
+      "source": "episode",
+      "frames": [
+        {
+          "frame": 10,
+          "point": [
+            0,
+            82
+          ],
+          "field": "shots[0].spawn",
+          "tolerance": 2
+        },
+        {
+          "frame": 10,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 11,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 12,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 13,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 14,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 15,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 16,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 17,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 18,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 19,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 20,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 21,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 22,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 23,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 24,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        }
+      ],
+      "episode_still": "art/fighters/ultraman-taro/references/effects/barrier-122.jpg",
+      "evidence_review": "亲见所引原剧画面；截图仅供该能力的部位/起势或全身效果对照。能量等级、侧视衔接和逐相时长仍为游戏编排。合辑时码不等于原剧集数。"
+    },
+    "motion_236": {
+      "part": "前伸上方右掌掌心与下方左掌掌心，分别发射双束",
+      "evidence": "content/fighters/ultraman-taro/MOVES.md：|command_40 / 2.5.7|236□ · 角色专属（见各角色MOVES.md）|射击光束 / `motion_236`|8|双手在腹前聚能→双臂向前平伸、两掌各发直束→双肘分别收回；用双束型。|T2 原剧资料名；双手双束有中文原文支持，与5I单掌光弹分开|",
+      "source": "episode",
+      "frames": [
+        {
+          "frame": 0,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 1,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 2,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 3,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 4,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 5,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 6,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 7,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 8,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 9,
+          "point": [
+            39,
+            90
+          ],
+          "field": "shots[0].spawn",
+          "tolerance": 2
+        },
+        {
+          "frame": 9,
+          "point": [
+            39,
+            90
+          ],
+          "field": "shots[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 9,
+          "point": [
+            59,
+            115
+          ],
+          "field": "shots[1].spawn",
+          "tolerance": 2
+        },
+        {
+          "frame": 9,
+          "point": [
+            59,
+            115
+          ],
+          "field": "shots[1].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 9,
+          "point": [
+            39,
+            90
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 9,
+          "point": [
+            59,
+            115
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 9,
+          "point": [
+            15,
+            85
+          ],
+          "field": "attachments[2].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 10,
+          "point": [
+            39,
+            90
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 10,
+          "point": [
+            59,
+            115
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 10,
+          "point": [
+            15,
+            85
+          ],
+          "field": "attachments[2].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 11,
+          "point": [
+            39,
+            90
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 11,
+          "point": [
+            59,
+            115
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 11,
+          "point": [
+            15,
+            85
+          ],
+          "field": "attachments[2].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 12,
+          "point": [
+            39,
+            90
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 12,
+          "point": [
+            59,
+            115
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 12,
+          "point": [
+            15,
+            85
+          ],
+          "field": "attachments[2].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 13,
+          "point": [
+            39,
+            92
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 13,
+          "point": [
+            55,
+            113
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 13,
+          "point": [
+            15,
+            85
+          ],
+          "field": "attachments[2].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 14,
+          "point": [
+            39,
+            92
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 14,
+          "point": [
+            55,
+            113
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 14,
+          "point": [
+            15,
+            85
+          ],
+          "field": "attachments[2].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 15,
+          "point": [
+            39,
+            92
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 15,
+          "point": [
+            55,
+            113
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 15,
+          "point": [
+            15,
+            85
+          ],
+          "field": "attachments[2].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 16,
+          "point": [
+            39,
+            92
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 16,
+          "point": [
+            55,
+            113
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 16,
+          "point": [
+            15,
+            85
+          ],
+          "field": "attachments[2].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 10,
+          "field": "shots[0].origin_by_frame",
+          "point": [
+            39,
+            90
+          ],
+          "tolerance": 2,
+          "part": "下方左掌掌心",
+          "kind": "dual_beam_lower"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 11,
+          "field": "shots[0].origin_by_frame",
+          "point": [
+            39,
+            90
+          ],
+          "tolerance": 2,
+          "part": "下方左掌掌心",
+          "kind": "dual_beam_lower"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 12,
+          "field": "shots[0].origin_by_frame",
+          "point": [
+            39,
+            90
+          ],
+          "tolerance": 2,
+          "part": "下方左掌掌心",
+          "kind": "dual_beam_lower"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 13,
+          "field": "shots[0].origin_by_frame",
+          "point": [
+            39,
+            92
+          ],
+          "tolerance": 2,
+          "part": "下方左掌掌心",
+          "kind": "dual_beam_lower"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 14,
+          "field": "shots[0].origin_by_frame",
+          "point": [
+            39,
+            92
+          ],
+          "tolerance": 2,
+          "part": "下方左掌掌心",
+          "kind": "dual_beam_lower"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 15,
+          "field": "shots[0].origin_by_frame",
+          "point": [
+            39,
+            92
+          ],
+          "tolerance": 2,
+          "part": "下方左掌掌心",
+          "kind": "dual_beam_lower"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 16,
+          "field": "shots[0].origin_by_frame",
+          "point": [
+            39,
+            92
+          ],
+          "tolerance": 2,
+          "part": "下方左掌掌心",
+          "kind": "dual_beam_lower"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 10,
+          "field": "shots[1].origin_by_frame",
+          "point": [
+            59,
+            115
+          ],
+          "tolerance": 2,
+          "part": "上方右掌掌心",
+          "kind": "dual_beam_upper"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 11,
+          "field": "shots[1].origin_by_frame",
+          "point": [
+            59,
+            115
+          ],
+          "tolerance": 2,
+          "part": "上方右掌掌心",
+          "kind": "dual_beam_upper"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 12,
+          "field": "shots[1].origin_by_frame",
+          "point": [
+            59,
+            115
+          ],
+          "tolerance": 2,
+          "part": "上方右掌掌心",
+          "kind": "dual_beam_upper"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 13,
+          "field": "shots[1].origin_by_frame",
+          "point": [
+            55,
+            113
+          ],
+          "tolerance": 2,
+          "part": "上方右掌掌心",
+          "kind": "dual_beam_upper"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 14,
+          "field": "shots[1].origin_by_frame",
+          "point": [
+            55,
+            113
+          ],
+          "tolerance": 2,
+          "part": "上方右掌掌心",
+          "kind": "dual_beam_upper"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 15,
+          "field": "shots[1].origin_by_frame",
+          "point": [
+            55,
+            113
+          ],
+          "tolerance": 2,
+          "part": "上方右掌掌心",
+          "kind": "dual_beam_upper"
+        },
+        {
+          "frame": 9,
+          "follow_frame": 16,
+          "field": "shots[1].origin_by_frame",
+          "point": [
+            55,
+            113
+          ],
+          "tolerance": 2,
+          "part": "上方右掌掌心",
+          "kind": "dual_beam_upper"
+        }
+      ],
+      "episode_still": "art/fighters/ultraman-taro/references/effects/shoot-145.jpg",
+      "evidence_review": "亲见所引原剧画面；截图仅供该能力的部位/起势或全身效果对照。能量等级、侧视衔接和逐相时长仍为游戏编排。合辑时码不等于原剧集数。"
+    },
+    "pulse": {
+      "part": "前伸近侧右掌掌心",
+      "evidence": "content/fighters/ultraman-taro/MOVES.md：|command_10 / 2.5.1|4/5I · 光弹|掌推光弹（游戏编排） / `pulse`|6|近侧单掌由腹前收拢→掌根前推至胸高发出单枚光弹→曲肘回护；与双手射击光束不同。|游戏编排，参考《街头霸王III 三度冲击》隆/肯的同类拳脚、护架和收势；以T2所载手部放能能力作游戏远程，单掌/光弹形式不冒称原剧|",
+      "source": "game_design",
+      "frames": [
+        {
+          "frame": 6,
+          "point": [
+            60,
+            101
+          ],
+          "field": "shots[0].spawn",
+          "tolerance": 2
+        }
+      ],
+      "evidence_review": "依MOVES.md所引中文原文；原文未确定的掌型/方向按游戏编排。本条没有新追加精确发射剧照，不冒称已逐镜核实。"
+    },
+    "ranged_forward": {
+      "part": "胸前交叉双掌朝敌一侧的掌刃",
+      "evidence": "content/fighters/ultraman-taro/MOVES.md：|command_11 / 2.5.1|6I · 专属远程|泰罗切割 / `ranged_forward`|8|双手抬至胸前→前臂交叉呈十字、双掌展开→发出成对新月光刃后分别收臂。|T3 原剧资料名；十字手势有中文原文支持，不采用未写明的“第二种手势”|",
+      "source": "episode",
+      "frames": [
+        {
+          "frame": 9,
+          "point": [
+            38,
+            105
+          ],
+          "field": "shots[0].spawn",
+          "tolerance": 2
+        }
+      ],
+      "episode_still": "art/fighters/ultraman-taro/references/effects/cutter-113.jpg",
+      "evidence_review": "亲见所引原剧画面；截图仅供该能力的部位/起势或全身效果对照。能量等级、侧视衔接和逐相时长仍为游戏编排。合辑时码不等于原剧集数。"
+    },
+    "special": {
+      "part": "T字水平右前臂的前端拳面",
+      "evidence": "content/fighters/ultraman-taro/MOVES.md：|special_1 / 2.5.7|1格能量 · P / □+△|斯特利姆光线·一级 / `special`|14|6帧：近臂上举过头聚能→另一拳收腰→双臂在胸前组成T形；4帧独立持续发射；4帧松臂收势。|T1 原剧资料名；R3/R4/R6官方实拍核对蓄势、T形手臂及发射侧；1格等级为游戏规则|",
+      "source": "episode",
+      "frames": [
+        {
+          "frame": 0,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 1,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 2,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 3,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 4,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 5,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 6,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 7,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 8,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 9,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 10,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 11,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 12,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 13,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 14,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 15,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 16,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 17,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 18,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 19,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 20,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 21,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 22,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 23,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 24,
+          "point": [
+            46,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 24,
+          "point": [
+            46,
+            113
+          ],
+          "field": "shots[0].spawn",
+          "tolerance": 2
+        },
+        {
+          "frame": 24,
+          "point": [
+            46,
+            113
+          ],
+          "field": "shots[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 24,
+          "point": [
+            46,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 24,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 25,
+          "point": [
+            46,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 25,
+          "point": [
+            46,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 25,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 26,
+          "point": [
+            46,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 26,
+          "point": [
+            46,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 26,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 27,
+          "point": [
+            46,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 27,
+          "point": [
+            46,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 27,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 28,
+          "point": [
+            46,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 28,
+          "point": [
+            46,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 28,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 29,
+          "point": [
+            46,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 29,
+          "point": [
+            46,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 29,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 30,
+          "point": [
+            46,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 30,
+          "point": [
+            46,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 30,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 31,
+          "point": [
+            46,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 31,
+          "point": [
+            46,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 31,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 32,
+          "point": [
+            58,
+            114
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 32,
+          "point": [
+            58,
+            114
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 32,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 33,
+          "point": [
+            58,
+            114
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 33,
+          "point": [
+            58,
+            114
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 33,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 34,
+          "point": [
+            58,
+            114
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 34,
+          "point": [
+            58,
+            114
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 34,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 35,
+          "point": [
+            58,
+            114
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 35,
+          "point": [
+            58,
+            114
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 35,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 36,
+          "point": [
+            58,
+            114
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 36,
+          "point": [
+            58,
+            114
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 36,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 37,
+          "point": [
+            58,
+            114
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 37,
+          "point": [
+            58,
+            114
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 37,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 38,
+          "point": [
+            58,
+            114
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 38,
+          "point": [
+            58,
+            114
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 38,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 39,
+          "point": [
+            58,
+            114
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 39,
+          "point": [
+            58,
+            114
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 39,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 40,
+          "point": [
+            47,
+            122
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 40,
+          "point": [
+            47,
+            122
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 40,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 41,
+          "point": [
+            47,
+            122
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 41,
+          "point": [
+            47,
+            122
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 41,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 42,
+          "point": [
+            47,
+            122
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 42,
+          "point": [
+            47,
+            122
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 42,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 43,
+          "point": [
+            47,
+            122
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 43,
+          "point": [
+            47,
+            122
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 43,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 44,
+          "point": [
+            47,
+            122
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 44,
+          "point": [
+            47,
+            122
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 44,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 45,
+          "point": [
+            47,
+            122
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 45,
+          "point": [
+            47,
+            122
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 45,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 46,
+          "point": [
+            47,
+            122
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 46,
+          "point": [
+            47,
+            122
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 46,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 47,
+          "point": [
+            47,
+            122
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 47,
+          "point": [
+            47,
+            122
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 47,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 48,
+          "point": [
+            59,
+            111
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 48,
+          "point": [
+            59,
+            111
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 48,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 49,
+          "point": [
+            59,
+            111
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 49,
+          "point": [
+            59,
+            111
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 49,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 50,
+          "point": [
+            59,
+            111
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 50,
+          "point": [
+            59,
+            111
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 50,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 51,
+          "point": [
+            59,
+            111
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 51,
+          "point": [
+            59,
+            111
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 51,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 52,
+          "point": [
+            59,
+            111
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 52,
+          "point": [
+            59,
+            111
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 52,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 53,
+          "point": [
+            59,
+            111
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 53,
+          "point": [
+            59,
+            111
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 53,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 54,
+          "point": [
+            59,
+            111
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 54,
+          "point": [
+            59,
+            111
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 54,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 55,
+          "point": [
+            59,
+            111
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 55,
+          "point": [
+            59,
+            111
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 55,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        }
+      ],
+      "episode_still": "art/fighters/ultraman-taro/references/effects/storium-175.jpg",
+      "evidence_review": "亲见所引原剧画面；截图仅供该能力的部位/起势或全身效果对照。能量等级、侧视衔接和逐相时长仍为游戏编排。合辑时码不等于原剧集数。"
+    },
+    "special2": {
+      "part": "T字水平右前臂的前端拳面",
+      "evidence": "content/fighters/ultraman-taro/MOVES.md：|special_2 / 2.5.7|2格能量 · P / □+△|斯特利姆光线·二级 / `special2`|16|8帧：双臂先向两侧展开、抬掌向上再收腰蓄势→T形发射；4帧独立持续；4帧屈膝卸力收势。|T1 原剧资料名；2格/加长蓄势和更强光束为游戏编排，人物帧不与一级共用|",
+      "source": "episode",
+      "frames": [
+        {
+          "frame": 0,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 1,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 2,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 3,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 4,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 5,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 6,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 7,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 8,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 9,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 10,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 11,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 12,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 13,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 14,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 15,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 16,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 17,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 18,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 19,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 20,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 21,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 22,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 23,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 24,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 25,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 26,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 27,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 28,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 29,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 30,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 31,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 32,
+          "point": [
+            56,
+            105
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 32,
+          "point": [
+            56,
+            105
+          ],
+          "field": "shots[0].spawn",
+          "tolerance": 2
+        },
+        {
+          "frame": 32,
+          "point": [
+            56,
+            105
+          ],
+          "field": "shots[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 32,
+          "point": [
+            56,
+            105
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 32,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 33,
+          "point": [
+            56,
+            105
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 33,
+          "point": [
+            56,
+            105
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 33,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 34,
+          "point": [
+            56,
+            105
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 34,
+          "point": [
+            56,
+            105
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 34,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 35,
+          "point": [
+            56,
+            105
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 35,
+          "point": [
+            56,
+            105
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 35,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 36,
+          "point": [
+            56,
+            105
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 36,
+          "point": [
+            56,
+            105
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 36,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 37,
+          "point": [
+            56,
+            105
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 37,
+          "point": [
+            56,
+            105
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 37,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 38,
+          "point": [
+            56,
+            105
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 38,
+          "point": [
+            56,
+            105
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 38,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 39,
+          "point": [
+            56,
+            105
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 39,
+          "point": [
+            56,
+            105
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 39,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 40,
+          "point": [
+            48,
+            115
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 40,
+          "point": [
+            48,
+            115
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 40,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 41,
+          "point": [
+            48,
+            115
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 41,
+          "point": [
+            48,
+            115
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 41,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 42,
+          "point": [
+            48,
+            115
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 42,
+          "point": [
+            48,
+            115
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 42,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 43,
+          "point": [
+            48,
+            115
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 43,
+          "point": [
+            48,
+            115
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 43,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 44,
+          "point": [
+            48,
+            115
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 44,
+          "point": [
+            48,
+            115
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 44,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 45,
+          "point": [
+            48,
+            115
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 45,
+          "point": [
+            48,
+            115
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 45,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 46,
+          "point": [
+            48,
+            115
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 46,
+          "point": [
+            48,
+            115
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 46,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 47,
+          "point": [
+            48,
+            115
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 47,
+          "point": [
+            48,
+            115
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 47,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 48,
+          "point": [
+            55,
+            112
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 48,
+          "point": [
+            55,
+            112
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 48,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 49,
+          "point": [
+            55,
+            112
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 49,
+          "point": [
+            55,
+            112
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 49,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 50,
+          "point": [
+            55,
+            112
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 50,
+          "point": [
+            55,
+            112
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 50,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 51,
+          "point": [
+            55,
+            112
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 51,
+          "point": [
+            55,
+            112
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 51,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 52,
+          "point": [
+            55,
+            112
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 52,
+          "point": [
+            55,
+            112
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 52,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 53,
+          "point": [
+            55,
+            112
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 53,
+          "point": [
+            55,
+            112
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 53,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 54,
+          "point": [
+            55,
+            112
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 54,
+          "point": [
+            55,
+            112
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 54,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 55,
+          "point": [
+            55,
+            112
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 55,
+          "point": [
+            55,
+            112
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 55,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 56,
+          "point": [
+            54,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 56,
+          "point": [
+            54,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 56,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 57,
+          "point": [
+            54,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 57,
+          "point": [
+            54,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 57,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 58,
+          "point": [
+            54,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 58,
+          "point": [
+            54,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 58,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 59,
+          "point": [
+            54,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 59,
+          "point": [
+            54,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 59,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 60,
+          "point": [
+            54,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 60,
+          "point": [
+            54,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 60,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 61,
+          "point": [
+            54,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 61,
+          "point": [
+            54,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 61,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 62,
+          "point": [
+            54,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 62,
+          "point": [
+            54,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 62,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 63,
+          "point": [
+            54,
+            113
+          ],
+          "field": "beam_origin",
+          "tolerance": 2
+        },
+        {
+          "frame": 63,
+          "point": [
+            54,
+            113
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2
+        },
+        {
+          "frame": 63,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[1].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        }
+      ],
+      "episode_still": "art/fighters/ultraman-taro/references/effects/storium-175.jpg",
+      "evidence_review": "亲见所引原剧画面；截图仅供该能力的部位/起势或全身效果对照。能量等级、侧视衔接和逐相时长仍为游戏编排。合辑时码不等于原剧集数。"
+    },
+    "special3": {
+      "part": "全身燃烧、抱持和再生光效，根点配准",
+      "evidence": "content/fighters/ultraman-taro/MOVES.md：|special_3 / 2.5.7|3格能量 · P / □+△|超级炸弹·三级 / `special3`|16|8帧专属起手：双拳收腹、胸背前挺聚能→张臂燃烧→压低肩膀冲向对手抱住→引爆；4帧再生重聚；4帧回架，配独立背景/特写/爆炸。|T5 原剧资料名；抓抱自爆后再生有中文原文支持，3格和演出时停为游戏规则，不使用超级泰罗合体|",
+      "source": "episode",
+      "frames": [
+        {
+          "frame": 0,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 1,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 2,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 3,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 4,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 5,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 6,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 7,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 8,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 9,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 10,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 11,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 12,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 13,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 14,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 15,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 16,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 17,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 18,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 19,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 20,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 21,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 22,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 23,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 24,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 25,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 26,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 27,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 28,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 29,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 30,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 31,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 48,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 49,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 50,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 51,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 52,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 53,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 54,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 55,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 56,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 57,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 58,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 59,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 60,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 61,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 62,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 63,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 64,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 65,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 66,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 67,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 68,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 69,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 70,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 71,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 72,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 73,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 74,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 75,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 76,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 77,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 78,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 79,
+          "point": [
+            0,
+            0
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "part": "全身光效/头顶许可符号的构图根点；不是手或额灯的发射口",
+          "kind": "layout_anchor"
+        }
+      ],
+      "episode_still": "art/fighters/ultraman-taro/references/effects/bomb-287.jpg",
+      "evidence_review": "亲见所引原剧画面；截图仅供该能力的部位/起势或全身效果对照。能量等级、侧视衔接和逐相时长仍为游戏编排。合辑时码不等于原剧集数。"
+    },
+    "state:charge_start": {
+      "part": "全身蓄能光环的身体构图锚点",
+      "evidence": "游戏编排；全身能量围绕身体，图集根点按现装角色脚底对齐，不伪称从胸灯或手掌发射。",
+      "source": "game_design",
+      "frames": [
+        {
+          "frame": 0,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 1,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 2,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 3,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 4,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 5,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 6,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 7,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 8,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        }
+      ],
+      "evidence_review": "依MOVES.md所引中文原文；原文未确定的掌型/方向按游戏编排。本条没有新追加精确发射剧照，不冒称已逐镜核实。"
+    },
+    "state:charge": {
+      "part": "全身蓄能光环的身体构图锚点",
+      "evidence": "游戏编排；全身能量围绕身体，图集根点按现装角色脚底对齐，不伪称从胸灯或手掌发射。",
+      "source": "game_design",
+      "frames": [
+        {
+          "frame": 0,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 1,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 2,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 3,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 4,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 5,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 6,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 7,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 8,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 9,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 10,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 11,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 12,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 13,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 14,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 15,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 16,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 17,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 18,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 19,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 20,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 21,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 22,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 23,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        }
+      ],
+      "evidence_review": "依MOVES.md所引中文原文；原文未确定的掌型/方向按游戏编排。本条没有新追加精确发射剧照，不冒称已逐镜核实。"
+    },
+    "state:charge_stop": {
+      "part": "全身蓄能光环的身体构图锚点",
+      "evidence": "游戏编排；全身能量围绕身体，图集根点按现装角色脚底对齐，不伪称从胸灯或手掌发射。",
+      "source": "game_design",
+      "frames": [
+        {
+          "frame": 0,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 1,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 2,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 3,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 4,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 5,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 6,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 7,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        },
+        {
+          "frame": 8,
+          "point": [
+            0,
+            82
+          ],
+          "field": "attachments[0].anchor",
+          "tolerance": 2,
+          "kind": "layout_anchor"
+        }
+      ],
+      "evidence_review": "依MOVES.md所引中文原文；原文未确定的掌型/方向按游戏编排。本条没有新追加精确发射剧照，不冒称已逐镜核实。"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-23",
+  "authority": "本会话用户直接转达指挥终审裁定",
+  "requests_at_takeover": 198,
+  "approved": [
+    "idle",
+    "turn",
+    "backstep",
+    "dodge",
+    "crouch_start",
+    "crouch",
+    "crouch_turn",
+    "crouch_rise",
+    "light1",
+    "light2",
+    "light3",
+    "launcher",
+    "crush",
+    "tackle",
+    "crouch_light",
+    "sweep",
+    "dash_light",
+    "back_counter",
+    "dodge_counter",
+    "dash_start",
+    "dash",
+    "dash_stop"
+  ],
+  "approval_label": "指挥目视通过（2026-10-23）",
+  "repairs": {
+    "heavy": [
+      2,
+      3
+    ],
+    "spin_heavy": [
+      1,
+      5
+    ],
+    "dash_heavy": [
+      2
+    ],
+    "crouch_light2": [
+      1
+    ],
+    "slide": [
+      0,
+      2,
+      4
+    ]
+  },
+  "installed_exception_frames": {
+    "heavy": [
+      2,
+      3
+    ],
+    "spin_heavy": [
+      1,
+      5
+    ],
+    "dash_heavy": [
+      2
+    ]
+  },
+  "size_repair_method": "director_adjacent_scale_v1",
+  "per_frame_limit": 3,
+  "scale_rule": "输入1使用同动作相邻合格帧的干净原图单人物；输入2固定骨长骨架；使用输入帧相同处理比例，禁止重新按本帧头尺缩放",
+  "candidate_rule": "蹲轻二段第1帧与滑铲第0/2/4帧按指挥指定相邻合格帧重画；历史方法、请求、失败全部保留",
+  "walking": "仍用walk_peer_pose_v1原计数，每帧三次；只用剩余额度，不另起计数",
+  "heads": "两头尺偏差方向相反且相差超过10%，交与待机并排的头部八倍图，由指挥逐帧审",
+  "dash_sequence": "面积比1.14为跑步肢体张开，指挥目视通过",
+  "review_sheet": "所有行同一原生比例、同地面线，不按各行画布缩放",
+  "scope": "只完成阶段二，交终审后停；尾帧缺失已知，不修共享录屏代码"
+}

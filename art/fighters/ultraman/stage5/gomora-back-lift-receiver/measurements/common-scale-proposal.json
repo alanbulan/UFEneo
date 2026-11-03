@@ -1,0 +1,116 @@
+{
+  "status": "root_review_required_scale_proposal_only",
+  "native_reference": {
+    "path": "assets/fighters/ultraman/model-native.png",
+    "sha256": "cd76aea1686c18390a7324ea68368daef15796e8d6ab03671eb03df3301e3d44",
+    "bytes": 5647
+  },
+  "exact_x4_reference": {
+    "path": "art/fighters/ultraman/model/model-reference-x4.png",
+    "sha256": "9e084ba7ff4f4ff2ed343e2d20650ebbec5b648156cddd066ad10165e68f0e71",
+    "bytes": 11991
+  },
+  "method": "六个独立整人源H0–H1弦长的中位数；肩髋弦长独立复核，不据偏差再缩放各相",
+  "calculation_backend": {
+    "path": "tools/rebuild/shared/forge_backend.py",
+    "sha256": "ff0f7d95bafd94bb9a546bfdf934fb6326297322d4540f2cf7d7327814e7b96b",
+    "bytes": 16324
+  },
+  "art_source": "existing",
+  "image_generation_route_not_invoked": true,
+  "forge_backend_result": {
+    "scale": 0.17522363561403076,
+    "basis": "head_ruler_median",
+    "source_median": 145.0098430243347,
+    "target_native": 25.409151894543825,
+    "source_readings": [
+      138.97481786280562,
+      152.73833834371774,
+      150.68510211696443,
+      139.47401191619892,
+      150.5456741324705,
+      136.48809471891678
+    ],
+    "checks": [
+      {
+        "kind": "head",
+        "index": 0,
+        "raw": 138.97481786280562,
+        "native": 24.351672844718546,
+        "deviation": -0.041618038028744864,
+        "needs_review": false
+      },
+      {
+        "kind": "head",
+        "index": 1,
+        "raw": 152.73833834371774,
+        "native": 26.76336694223214,
+        "deviation": 0.05329634980768905,
+        "needs_review": false
+      },
+      {
+        "kind": "head",
+        "index": 2,
+        "raw": 150.68510211696443,
+        "native": 26.403591425805992,
+        "deviation": 0.03913706114196214,
+        "needs_review": false
+      },
+      {
+        "kind": "head",
+        "index": 3,
+        "raw": 139.47401191619892,
+        "native": 24.439143441631025,
+        "deviation": -0.03817555410501883,
+        "needs_review": false
+      },
+      {
+        "kind": "head",
+        "index": 4,
+        "raw": 150.5456741324705,
+        "native": 26.37916034745663,
+        "deviation": 0.03817555410501905,
+        "needs_review": false
+      },
+      {
+        "kind": "head",
+        "index": 5,
+        "raw": 136.48809471891678,
+        "native": 23.91594017468079,
+        "deviation": -0.05876668871359203,
+        "needs_review": false
+      }
+    ],
+    "policy": "one_clean_source_one_scale; no_per_frame_rescale"
+  },
+  "central_nominal_scale": 0.17522363561403076,
+  "conservative_scale_interval": [
+    0.1289631476333939,
+    0.2357253439136421
+  ],
+  "interval_is_not_statistical_confidence": true,
+  "proposed_common_full_canvas_sample_pixels": [
+    179,
+    179
+  ],
+  "proposed_common_sample_scale": 0.1748046875,
+  "sample_shape_is_for_future_only_no_png_resampled": true,
+  "all_source_dimensions": [
+    1024,
+    1024
+  ],
+  "proposed_outer_padding_canvas": [
+    256,
+    256
+  ],
+  "outer_padding_and_root_not_executed": true,
+  "per_phase_scales": null,
+  "runtime_registration": null,
+  "approved_scale": null,
+  "head_reference_native_px": 25.409151894543825,
+  "shoulder_hip_reference_native_px": 39.4501267425087,
+  "bbox_used_for_scale": false,
+  "alpha_components_removed": 0,
+  "strict_size_accepted": false,
+  "projection_limit": "头部俯仰、躯干弯曲、遮挡及近远侧透视只记录；本工具不将二维投影改成三维骨尺。"
+}

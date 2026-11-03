@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "character": "red_king",
+  "idle_texture": "assets/fighters/red_king/animations/idle/atlas.png",
+  "idle_rect": [
+    0,
+    0,
+    512,
+    320
+  ],
+  "head_center": [
+    279,
+    144
+  ],
+  "neck_cut": [
+    [
+      266,
+      148
+    ],
+    [
+      283,
+      158
+    ]
+  ],
+  "template_radius": 28,
+  "background_ring": 3,
+  "upsample": 2,
+  "scale_range": [
+    0.65,
+    1.5
+  ],
+  "rotation_range": [
+    -180,
+    180
+  ],
+  "thresholds": {
+    "usable": 0.100755,
+    "auxiliary": 0.155755
+  },
+  "notes": "坐标是idle第0格的原生像素；模板只用于测量。含刚体头饰，切掉颈部；阈值待本次校准写入。",
+  "calibration": {
+    "report": "calibration/red_king.json",
+    "manifest_sha256": "d41a627b83ec333914a097b11a30cab93846cdc209d4e631c37cae3a3b6e43c3",
+    "maximum_relative_scale_error": 0.0075,
+    "basis": "人工缩放旋转+idle/走路实帧误差P95+缺头负例；不作为美术硬门"
+  }
+}

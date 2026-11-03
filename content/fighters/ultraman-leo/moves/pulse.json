@@ -1,0 +1,1041 @@
+{
+  "id": "pulse",
+  "display_name": "手臂光弹",
+  "startup": 6,
+  "active": 8,
+  "recovery": 12,
+  "damage": 65,
+  "hitstun": 20,
+  "blockstun": 12,
+  "pushback": 8,
+  "stun": 65,
+  "stamina_cost": 30,
+  "energy_cost": 0,
+  "kind": "projectile",
+  "level": "mid",
+  "unblockable": false,
+  "launch": false,
+  "bounce": false,
+  "knockdown": false,
+  "frames": [
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -36,
+          99,
+          68,
+          49
+        ],
+        [
+          -44,
+          50,
+          82,
+          49
+        ],
+        [
+          -63,
+          0,
+          118,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "leo_pulse_charge"
+        }
+      ],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -36,
+          99,
+          68,
+          49
+        ],
+        [
+          -44,
+          50,
+          82,
+          49
+        ],
+        [
+          -63,
+          0,
+          118,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -36,
+          99,
+          68,
+          49
+        ],
+        [
+          -44,
+          50,
+          82,
+          49
+        ],
+        [
+          -63,
+          0,
+          118,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -42,
+          98,
+          78,
+          49
+        ],
+        [
+          -38,
+          49,
+          80,
+          49
+        ],
+        [
+          -55,
+          0,
+          117,
+          49
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "leo_arm_pulse_start",
+          "anchor": [
+            -11,
+            100
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -42,
+          98,
+          78,
+          49
+        ],
+        [
+          -38,
+          49,
+          80,
+          49
+        ],
+        [
+          -55,
+          0,
+          117,
+          49
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "leo_arm_pulse_start",
+          "anchor": [
+            -11,
+            100
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -42,
+          98,
+          78,
+          49
+        ],
+        [
+          -38,
+          49,
+          80,
+          49
+        ],
+        [
+          -55,
+          0,
+          117,
+          49
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "leo_arm_pulse_start",
+          "anchor": [
+            -11,
+            100
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          61,
+          98,
+          20,
+          18
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -21,
+          96,
+          96,
+          48
+        ],
+        [
+          -21,
+          48,
+          84,
+          48
+        ],
+        [
+          -51,
+          0,
+          119,
+          48
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "leo_pulse_cast"
+        }
+      ],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard",
+      "audio_loop": "leo_pulse_loop",
+      "attachments": [
+        {
+          "effect": "leo_arm_pulse_start",
+          "anchor": [
+            71,
+            107
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          61,
+          98,
+          20,
+          18
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -21,
+          96,
+          96,
+          48
+        ],
+        [
+          -21,
+          48,
+          84,
+          48
+        ],
+        [
+          -51,
+          0,
+          119,
+          48
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard",
+      "audio_loop": "leo_pulse_loop",
+      "attachments": [
+        {
+          "effect": "leo_arm_pulse_start",
+          "anchor": [
+            71,
+            107
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          61,
+          98,
+          20,
+          18
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -21,
+          96,
+          96,
+          48
+        ],
+        [
+          -21,
+          48,
+          84,
+          48
+        ],
+        [
+          -51,
+          0,
+          119,
+          48
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard",
+      "audio_loop": "leo_pulse_loop",
+      "attachments": [
+        {
+          "effect": "leo_arm_pulse_start",
+          "anchor": [
+            71,
+            107
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          61,
+          98,
+          20,
+          18
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -21,
+          96,
+          96,
+          48
+        ],
+        [
+          -21,
+          48,
+          84,
+          48
+        ],
+        [
+          -51,
+          0,
+          119,
+          48
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard",
+      "audio_loop": "leo_pulse_loop",
+      "attachments": [
+        {
+          "effect": "leo_arm_pulse_start",
+          "anchor": [
+            71,
+            107
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          66,
+          93,
+          20,
+          18
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -16,
+          91,
+          96,
+          45
+        ],
+        [
+          -16,
+          46,
+          75,
+          45
+        ],
+        [
+          -46,
+          0,
+          118,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard",
+      "audio_loop": "leo_pulse_loop"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          66,
+          93,
+          20,
+          18
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -16,
+          91,
+          96,
+          45
+        ],
+        [
+          -16,
+          46,
+          75,
+          45
+        ],
+        [
+          -46,
+          0,
+          118,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard",
+      "audio_loop": "leo_pulse_loop"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          66,
+          93,
+          20,
+          18
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -16,
+          91,
+          96,
+          45
+        ],
+        [
+          -16,
+          46,
+          75,
+          45
+        ],
+        [
+          -46,
+          0,
+          118,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard",
+      "audio_loop": "leo_pulse_loop"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          66,
+          93,
+          20,
+          18
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -16,
+          91,
+          96,
+          45
+        ],
+        [
+          -16,
+          46,
+          75,
+          45
+        ],
+        [
+          -46,
+          0,
+          118,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard",
+      "audio_loop": "leo_pulse_loop"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -29,
+          100,
+          73,
+          49
+        ],
+        [
+          -35,
+          50,
+          80,
+          50
+        ],
+        [
+          -56,
+          0,
+          122,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -29,
+          100,
+          73,
+          49
+        ],
+        [
+          -35,
+          50,
+          80,
+          50
+        ],
+        [
+          -56,
+          0,
+          122,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -29,
+          100,
+          73,
+          49
+        ],
+        [
+          -35,
+          50,
+          80,
+          50
+        ],
+        [
+          -56,
+          0,
+          122,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -29,
+          100,
+          73,
+          49
+        ],
+        [
+          -35,
+          50,
+          80,
+          50
+        ],
+        [
+          -56,
+          0,
+          122,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -29,
+          100,
+          73,
+          49
+        ],
+        [
+          -35,
+          50,
+          80,
+          50
+        ],
+        [
+          -56,
+          0,
+          122,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -25,
+          94,
+          87,
+          47
+        ],
+        [
+          -34,
+          47,
+          92,
+          47
+        ],
+        [
+          -49,
+          0,
+          113,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -25,
+          94,
+          87,
+          47
+        ],
+        [
+          -34,
+          47,
+          92,
+          47
+        ],
+        [
+          -49,
+          0,
+          113,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -25,
+          94,
+          87,
+          47
+        ],
+        [
+          -34,
+          47,
+          92,
+          47
+        ],
+        [
+          -49,
+          0,
+          113,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -25,
+          94,
+          87,
+          47
+        ],
+        [
+          -34,
+          47,
+          92,
+          47
+        ],
+        [
+          -49,
+          0,
+          113,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -25,
+          94,
+          87,
+          47
+        ],
+        [
+          -34,
+          47,
+          92,
+          47
+        ],
+        [
+          -49,
+          0,
+          113,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -25,
+          94,
+          87,
+          47
+        ],
+        [
+          -34,
+          47,
+          92,
+          47
+        ],
+        [
+          -49,
+          0,
+          113,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -25,
+          94,
+          87,
+          47
+        ],
+        [
+          -34,
+          47,
+          92,
+          47
+        ],
+        [
+          -49,
+          0,
+          113,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "leo_arm_pulse_hit",
+      "block_effect": "impact_guard"
+    }
+  ],
+  "feedback": {
+    "spark": "leo_arm_pulse_hit",
+    "block_spark": "impact_guard",
+    "hitstop": 4,
+    "blockstop": 3,
+    "shake": 0,
+    "flash": 2,
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "block_color": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "projectile": {
+    "effect": "leo_arm_pulse",
+    "spawn": [
+      71,
+      107
+    ],
+    "anchor": [
+      71,
+      107
+    ],
+    "speed": 9,
+    "life": 65,
+    "box": [
+      -10,
+      -9,
+      20,
+      18
+    ],
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "vy": 0,
+    "trail_effect": "leo_arm_pulse_trail"
+  },
+  "production_note": "雷欧第6阶段独立GPT整帧；规则时长与伤害消耗基于已审赛文，招式身份与姿势依MOVES；候选交指挥审。",
+  "audio": {
+    "hit": "leo_pulse_contact",
+    "block": "leo_guard",
+    "throw_slam": "down"
+  }
+}

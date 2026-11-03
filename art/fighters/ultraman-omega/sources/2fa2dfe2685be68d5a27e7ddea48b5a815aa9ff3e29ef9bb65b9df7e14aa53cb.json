@@ -1,0 +1,1003 @@
+{
+  "action": "air_pulse",
+  "author_agent": "/root/native_exit_source_fix",
+  "reference": {
+    "idle_atlas": {
+      "path": "assets/fighters/ultraman-omega/animations/idle/atlas.png",
+      "sha256": "c24cfee8d0de2b54d1b15090ed24dec4404ba9f22aae8d795abaee257df844d0"
+    },
+    "idle_anchor": [
+      96,
+      184
+    ],
+    "idle_head_length_median": 25.84862755323296,
+    "idle_torso_length": 40.05944859814658,
+    "idle_area_median": 4923.5,
+    "manual_baseline": {
+      "path": "art/fighters/ultraman-omega/stage3/codex-air/runtime-idle-manual-baseline.json",
+      "sha256": "ccd3b5d71ed5ede94a8a0b0e66a531f2b78fa65f43bef9eef80ab42339f2308f"
+    },
+    "head_config": {
+      "path": "art/fighters/ultraman-omega/stage3/codex-air/head-fit/config.json",
+      "sha256": "df75e28182827e8407398a28cac720f25e07051c8167a05149358f70fef3023e"
+    },
+    "head_calibration": {
+      "path": "art/fighters/ultraman-omega/stage3/codex-air/head-fit/calibration.json",
+      "sha256": "3b2494bf6929d8eb016cc2fe03ab9f8e2240497c1fa22558320805dc65652615"
+    },
+    "idle_self_fit": {
+      "scale": 1.0,
+      "rotation": 0.0,
+      "error": 1e-07,
+      "center": [
+        105.1534,
+        62.4181
+      ],
+      "search": "bbox_hint",
+      "reason": "",
+      "elapsed_seconds": 0.318736
+    },
+    "jump_atlas": {
+      "path": "assets/fighters/ultraman-omega/animations/vertical_jump/atlas.png",
+      "sha256": "7be18e540fa3ab6e9821154f5523a6eca53011a13282e747104dab6ffd2e5d72"
+    },
+    "jump_source": {
+      "path": "art/fighters/ultraman-omega/stage3/codex-air/vertical_jump/candidate.json",
+      "sha256": "6c4921771d3502f8795cd2b89814e13119b16197b65b24114aa037b1f17c9b94"
+    },
+    "jump_frames": [
+      {
+        "frame": 0,
+        "anchor": [
+          160,
+          312
+        ],
+        "hip": [
+          159.7442557007043,
+          231.95869747623252
+        ],
+        "hip_height_over_root": 80.04130252376748,
+        "lowest_alpha_gap": 2,
+        "native_rgba_sha256": "d16f0f5956ec428a74e366ef47a9eaeb37b78d71e24effbcdc5be5a73406e5e1"
+      },
+      {
+        "frame": 1,
+        "anchor": [
+          160,
+          312
+        ],
+        "hip": [
+          159.88938715409333,
+          236.90391086177388
+        ],
+        "hip_height_over_root": 75.09608913822612,
+        "lowest_alpha_gap": 31,
+        "native_rgba_sha256": "116a4cdf22801c927b75c91e4b1d274286e0460ed68fe3a6f97cc2fcee10d4e7"
+      },
+      {
+        "frame": 2,
+        "anchor": [
+          160,
+          312
+        ],
+        "hip": [
+          160.5621167450925,
+          232.60749399493847
+        ],
+        "hip_height_over_root": 79.39250600506153,
+        "lowest_alpha_gap": 44,
+        "native_rgba_sha256": "3d7be9275411c5cb10c71e16f5635204d318f7668263d64b6994e533540cf4ca"
+      },
+      {
+        "frame": 3,
+        "anchor": [
+          160,
+          312
+        ],
+        "hip": [
+          160.01334753710393,
+          231.95869747623252
+        ],
+        "hip_height_over_root": 80.04130252376748,
+        "lowest_alpha_gap": 8,
+        "native_rgba_sha256": "00b9b274b410d94da67140914b23b93841ab9adee9b3ba7740bc44e82a48cd2d"
+      },
+      {
+        "frame": 4,
+        "anchor": [
+          160,
+          312
+        ],
+        "hip": [
+          159.57166266329233,
+          231.78610443882053
+        ],
+        "hip_height_over_root": 80.21389556117947,
+        "lowest_alpha_gap": 9,
+        "native_rgba_sha256": "24e30dd8eecfebdadbe40f270d795bbf41cdf94bb83f2e920f3f3a5653b4ea14"
+      }
+    ],
+    "air_hip_height_over_root": 80.04130252376748,
+    "source_identity": "只读欧米伽本人现装idle与vertical_jump；均不修改",
+    "model_nominal_bones_not_used_for_scale": true
+  },
+  "palette": {
+    "path": "content/fighters/ultraman-omega/palette.json",
+    "sha256": "1c97ec3085e2d9e92d1b5dc169ab4d4634bd30b25cfba2667b1fc58d3b210268"
+  },
+  "script": {
+    "path": "tools/rebuild/ultraman-omega/codex_low_air_pulse_bodies.py",
+    "sha256": "29e52092acfdafbfd046e10c72ccdeeb7a25e29e9bd64e086f6662143ddfa9c4"
+  },
+  "common_action_scale": 0.16210097804917142,
+  "frames": [
+    {
+      "frame": 0,
+      "image": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-pulse-runtime-20261030-v1/bodies-native-v1/air_pulse/frame-00.png",
+        "sha256": "f44aeca012812af7fecbf3dcf72ae621981499b27dcb79a606d2d0f427c04342"
+      },
+      "source": {
+        "path": "art/fighters/ultraman-omega/stage6/specials-bulk-codex-20261027/body/air_pulse__00/request-001/raw.png",
+        "sha256": "515eed4df97b2c11f306b2e94268eb390b015f368f8bab946a97dcb67096a02f"
+      },
+      "high_composite": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/00/processed-high-v2/same-frame-composite.png",
+        "sha256": "33b9857ff19ad9b08ff0270dd36191b7c0ab0bd7dc6197dab22940beac619764"
+      },
+      "high_proof": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/00/processed-high-v2/proof.json",
+        "sha256": "a7eb276c577ad3d1196f2121abbf77b7ac30b994b654b4dc0210ce51c8c91b02"
+      },
+      "allowed_mask": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/00/processed-high-v2/allowed-high.png",
+        "sha256": "881c78e8f5dbb4f3f0df6c130769a0c4fca78b870a5908237d7f3a5a4586d088"
+      },
+      "plan": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/00/plan.json",
+        "sha256": "72bd8076527b7a37db87cc3d944a0c1754c4089bfe9ddfdfdf829f82745953d3"
+      },
+      "high_integrity": {
+        "outside_rgba_unchanged": true,
+        "full_alpha_unchanged": true,
+        "allowed_pixels": 9026,
+        "changed_pixels": 9022
+      },
+      "source_bbox": [
+        366,
+        42,
+        750,
+        929
+      ],
+      "raw_points": {
+        "skull_top": [
+          470,
+          100
+        ],
+        "chin": [
+          556,
+          239
+        ],
+        "neck_base": [
+          519,
+          266
+        ],
+        "hip_center": [
+          520,
+          505
+        ]
+      },
+      "landmark_uncertainty_source_px": 8,
+      "source_head_long": 163.45335726133007,
+      "source_torso_long": 239.00209204105306,
+      "head_scale_estimate": 0.15814069521928534,
+      "body_scale_estimate": 0.16761128848723894,
+      "head_body_scale_gap": 0.05988713565993398,
+      "common_action_scale": 0.16210097804917142,
+      "scale": 0.16210097804917142,
+      "scale_reason": "同动作头壳长尺和独立躯干候选倍率的中位数；本相两尺在±8%内，保持共同整帧比例",
+      "raster_scale": [
+        0.16145833333333334,
+        0.16234498308906425
+      ],
+      "raster_size": [
+        62,
+        144
+      ],
+      "offset": [
+        135,
+        157
+      ],
+      "canvas": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        312
+      ],
+      "native_points": {
+        "skull_top": [
+          151.79166666666666,
+          166.41600901916573
+        ],
+        "chin": [
+          165.67708333333334,
+          188.98196166854567
+        ],
+        "neck_base": [
+          159.703125,
+          193.3652762119504
+        ],
+        "hip_center": [
+          159.86458333333334,
+          232.16572717023675
+        ]
+      },
+      "native_ankle_centers": [
+        [
+          141.70052083333334,
+          277.62232243517474
+        ],
+        [
+          172.37760416666669,
+          268.6933483652762
+        ]
+      ],
+      "head_long_native": 26.495792401455034,
+      "torso_long_native": 38.80078689098698,
+      "head_over_idle": 1.0250367199144055,
+      "torso_over_idle": 0.9685801539660275,
+      "silhouette_pixels": 3728,
+      "silhouette_sqrt_over_idle": 0.8701637371323445,
+      "lowest_alpha_gap_to_root": 11,
+      "hip_height_to_root": 79.83427282976325,
+      "components": 1,
+      "small_islands": [],
+      "probe_head_fit": {
+        "scale": 0.95,
+        "rotation": -2.5,
+        "error": 0.1649867,
+        "center": [
+          24.9785,
+          20.7712
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.268442,
+        "grade": "只当辅助",
+        "probe_scale": 0.16,
+        "policy": "使用原阈值；辅助或不可测的倍率不单独决定本相比例"
+      },
+      "head_fit": {
+        "scale": 0.99,
+        "rotation": -2.5,
+        "error": 0.158038,
+        "center": [
+          160.2487,
+          178.1589
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.276258,
+        "grade": "只当辅助",
+        "normalized_to_idle_median": 0.9875311720698254
+      },
+      "head_fit_used_to_override_manual_scale": false,
+      "upright": false,
+      "standing_height_gate_applied": false,
+      "numeric_blockers": [],
+      "review_notes": [
+        "自动整头配准仅按原阈值记录；不是美术或尺寸通过",
+        "手工高分候选点尚未由根确认；不测收膝腿投影、不凭蹲姿/空中外框站高定比"
+      ],
+      "status": "candidate_pending_root_review",
+      "not_installed": true,
+      "user_approved": false,
+      "dimensions_approved": false
+    },
+    {
+      "frame": 1,
+      "image": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-pulse-runtime-20261030-v1/bodies-native-v1/air_pulse/frame-01.png",
+        "sha256": "f6ec83f22af8138044dabaead387524faf748dfad1143adc98c1a55be833c3ed"
+      },
+      "source": {
+        "path": "art/fighters/ultraman-omega/stage6/pulse-pose-correction-20261030-v1/air_pulse-01/candidate.png",
+        "sha256": "2c430b48455f88a223535f702aecdf008602aecb14a6c813c239a377a699c63e"
+      },
+      "high_composite": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/01/processed-high-v2/same-frame-composite.png",
+        "sha256": "6f7fb6ad12c4db94fa5d1737d1d79e7629aafa102f5f792230b40fb15ed2cd35"
+      },
+      "high_proof": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/01/processed-high-v2/proof.json",
+        "sha256": "5a1dbf81f3c2d6a0bf592b5e1fd735e08bb18ed0a098d83a0de4e7f58efd44be"
+      },
+      "allowed_mask": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/01/processed-high-v2/allowed-high.png",
+        "sha256": "02e7f8fac35eba2a2598cfea54983421ce5e42611b4234e75616c1f4b8bad517"
+      },
+      "plan": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/01/plan.json",
+        "sha256": "871ba38a031d229bfc34edfbe9634dcf78e27c22e766a1e7e10f67489ab96d6b"
+      },
+      "high_integrity": {
+        "outside_rgba_unchanged": true,
+        "full_alpha_unchanged": true,
+        "allowed_pixels": 10410,
+        "changed_pixels": 10409
+      },
+      "source_bbox": [
+        352,
+        56,
+        795,
+        945
+      ],
+      "raw_points": {
+        "skull_top": [
+          460,
+          119
+        ],
+        "chin": [
+          558,
+          269
+        ],
+        "neck_base": [
+          529,
+          298
+        ],
+        "hip_center": [
+          523,
+          546
+        ]
+      },
+      "landmark_uncertainty_source_px": 8,
+      "source_head_long": 179.17589123540031,
+      "source_torso_long": 248.07257002740147,
+      "head_scale_estimate": 0.14426398202910665,
+      "body_scale_estimate": 0.1614827814043355,
+      "head_body_scale_gap": 0.11935619087344196,
+      "common_action_scale": 0.16210097804917142,
+      "scale": 0.15263076057769356,
+      "scale_reason": "读数差超门限：仅取头身均衡的最佳整帧候选；比例阻塞，不能当独立校准通过",
+      "raster_scale": [
+        0.15349887133182843,
+        0.1529808773903262
+      ],
+      "raster_size": [
+        68,
+        136
+      ],
+      "offset": [
+        134,
+        157
+      ],
+      "canvas": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        312
+      ],
+      "native_points": {
+        "skull_top": [
+          150.57787810383746,
+          166.63779527559055
+        ],
+        "chin": [
+          165.62076749435664,
+          189.5849268841395
+        ],
+        "neck_base": [
+          161.16930022573362,
+          194.02137232845894
+        ],
+        "hip_center": [
+          160.24830699774267,
+          231.96062992125985
+        ]
+      },
+      "native_ankle_centers": [
+        [
+          141.75169300225733,
+          270.05286839145106
+        ],
+        [
+          171.68397291196388,
+          264.69853768278966
+        ]
+      ],
+      "head_long_native": 27.43828293234583,
+      "torso_long_native": 37.95043471712685,
+      "head_over_idle": 1.061498637629372,
+      "torso_over_idle": 0.9473528978849374,
+      "silhouette_pixels": 3906,
+      "silhouette_sqrt_over_idle": 0.8906952747766173,
+      "lowest_alpha_gap_to_root": 19,
+      "hip_height_to_root": 80.03937007874015,
+      "components": 1,
+      "small_islands": [],
+      "probe_head_fit": {
+        "scale": 1.045,
+        "rotation": -2.5,
+        "error": 0.1529734,
+        "center": [
+          28.0264,
+          22.5983
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.289032,
+        "grade": "只当辅助",
+        "probe_scale": 0.16,
+        "policy": "使用原阈值；辅助或不可测的倍率不单独决定本相比例"
+      },
+      "head_fit": {
+        "scale": 1.0175,
+        "rotation": -3.0,
+        "error": 0.1429521,
+        "center": [
+          160.482,
+          178.7579
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.285941,
+        "grade": "只当辅助",
+        "normalized_to_idle_median": 1.0149625935162097
+      },
+      "head_fit_used_to_override_manual_scale": false,
+      "upright": false,
+      "standing_height_gate_applied": false,
+      "numeric_blockers": [
+        "头壳/躯干候选倍率差超地面4%或空中8%门；高分端点约±8像素，需根直观复核"
+      ],
+      "review_notes": [
+        "自动整头配准仅按原阈值记录；不是美术或尺寸通过",
+        "手工高分候选点尚未由根确认；不测收膝腿投影、不凭蹲姿/空中外框站高定比"
+      ],
+      "status": "candidate_blocked_pending_root_review",
+      "not_installed": true,
+      "user_approved": false,
+      "dimensions_approved": false
+    },
+    {
+      "frame": 2,
+      "image": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-pulse-runtime-20261030-v1/bodies-native-v1/air_pulse/frame-02.png",
+        "sha256": "2bb766bfa36c78e4642b3d6367736339e48a221dd5a4847b58ba3dbf918fccd4"
+      },
+      "source": {
+        "path": "art/fighters/ultraman-omega/stage6/specials-bulk-codex-20261027/body/air_pulse__02/request-001/raw.png",
+        "sha256": "3410ebd574c6c6e3081008d09292f13b92c5e22fcf5b5eef1c67750137532385"
+      },
+      "high_composite": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/02/processed-high-v2/same-frame-composite.png",
+        "sha256": "209432c5e66860d50e28a0eceb0157698a8371ed8aac3ea517216101af99fd9b"
+      },
+      "high_proof": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/02/processed-high-v2/proof.json",
+        "sha256": "abbbe0ba5b2804576edcd25165a2ca39824ebc03aa199ac21a4cec4e083f28cd"
+      },
+      "allowed_mask": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/02/processed-high-v2/allowed-high.png",
+        "sha256": "74eb96a237368be6b0655cfcdccd86d97aeef038fe23ce01a342a14be26db74d"
+      },
+      "plan": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/02/plan.json",
+        "sha256": "e9bb757db6badb66d7bf2cc14344b7fbe8250f21cfe3742c334043151009e2ca"
+      },
+      "high_integrity": {
+        "outside_rgba_unchanged": true,
+        "full_alpha_unchanged": true,
+        "allowed_pixels": 10415,
+        "changed_pixels": 10414
+      },
+      "source_bbox": [
+        265,
+        25,
+        909,
+        947
+      ],
+      "raw_points": {
+        "skull_top": [
+          430,
+          105
+        ],
+        "chin": [
+          532,
+          269
+        ],
+        "neck_base": [
+          501,
+          294
+        ],
+        "hip_center": [
+          494,
+          554
+        ]
+      },
+      "landmark_uncertainty_source_px": 8,
+      "source_head_long": 193.13207915827965,
+      "source_torso_long": 260.09421369957465,
+      "head_scale_estimate": 0.133839120180801,
+      "body_scale_estimate": 0.15401899191966564,
+      "head_body_scale_gap": 0.15077708006152468,
+      "common_action_scale": 0.16210097804917142,
+      "scale": 0.14357495035577045,
+      "scale_reason": "读数差超门限：仅取头身均衡的最佳整帧候选；比例阻塞，不能当独立校准通过",
+      "raster_scale": [
+        0.14285714285714285,
+        0.14316702819956617
+      ],
+      "raster_size": [
+        92,
+        132
+      ],
+      "offset": [
+        127,
+        156
+      ],
+      "canvas": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        312
+      ],
+      "native_points": {
+        "skull_top": [
+          150.57142857142856,
+          167.4533622559653
+        ],
+        "chin": [
+          165.14285714285714,
+          190.93275488069415
+        ],
+        "neck_base": [
+          160.71428571428572,
+          194.5119305856833
+        ],
+        "hip_center": [
+          159.71428571428572,
+          231.73535791757052
+        ]
+      },
+      "native_ankle_centers": [
+        [
+          137.35714285714286,
+          266.9544468546638
+        ],
+        [
+          164.5,
+          263.37527114967463
+        ]
+      ],
+      "head_long_native": 27.633465375128345,
+      "torso_long_native": 37.23685731009383,
+      "head_over_idle": 1.069049616588721,
+      "torso_over_idle": 0.9295399365985447,
+      "silhouette_pixels": 4146,
+      "silhouette_sqrt_over_idle": 0.9176512863916603,
+      "lowest_alpha_gap_to_root": 24,
+      "hip_height_to_root": 80.26464208242948,
+      "components": 1,
+      "small_islands": [],
+      "probe_head_fit": {
+        "scale": 1.1625,
+        "rotation": -2.5,
+        "error": 0.1559315,
+        "center": [
+          36.8356,
+          26.2529
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.325658,
+        "grade": "只当辅助",
+        "probe_scale": 0.16,
+        "policy": "使用原阈值；辅助或不可测的倍率不单独决定本相比例"
+      },
+      "head_fit": {
+        "scale": 1.03,
+        "rotation": -2.0,
+        "error": 0.1583324,
+        "center": [
+          159.5498,
+          179.042
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.287898,
+        "grade": "只当辅助",
+        "normalized_to_idle_median": 1.0274314214463842
+      },
+      "head_fit_used_to_override_manual_scale": false,
+      "upright": false,
+      "standing_height_gate_applied": false,
+      "numeric_blockers": [
+        "头壳/躯干候选倍率差超地面4%或空中8%门；高分端点约±8像素，需根直观复核"
+      ],
+      "review_notes": [
+        "自动整头配准仅按原阈值记录；不是美术或尺寸通过",
+        "手工高分候选点尚未由根确认；不测收膝腿投影、不凭蹲姿/空中外框站高定比"
+      ],
+      "status": "candidate_blocked_pending_root_review",
+      "not_installed": true,
+      "user_approved": false,
+      "dimensions_approved": false
+    },
+    {
+      "frame": 3,
+      "image": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-pulse-runtime-20261030-v1/bodies-native-v1/air_pulse/frame-03.png",
+        "sha256": "c034339666eadca34e4719d9c7915d66d0b18aaa90cdc5afff8bd032ca37f0b7"
+      },
+      "source": {
+        "path": "art/fighters/ultraman-omega/stage6/specials-bulk-codex-20261027/body/air_pulse__03/request-001/raw.png",
+        "sha256": "6d9f7c63786195d8212a1029e2e5307b1499dceea331fd93e10cc816c2c0d400"
+      },
+      "high_composite": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/03/processed-high-v2/same-frame-composite.png",
+        "sha256": "01bf0a45528a29e93fcafb8a5c0c55f3dc4bd145ac58e430e088a967a42eea5f"
+      },
+      "high_proof": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/03/processed-high-v2/proof.json",
+        "sha256": "7898a8d4c75f959497d4cb2c8d043a3e895f824b38ff02ba1f727548fa0657b6"
+      },
+      "allowed_mask": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/03/processed-high-v2/allowed-high.png",
+        "sha256": "0b48b16c8cb80eb6b2bf061d5bdc0a62a3d45dc7b60143d9b60bd14c56aefb5f"
+      },
+      "plan": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/03/plan.json",
+        "sha256": "a60ffafb3afc3ba4ebd31bd87668ff4ab7a2795646bfd9a29201ded8e1505d14"
+      },
+      "high_integrity": {
+        "outside_rgba_unchanged": true,
+        "full_alpha_unchanged": true,
+        "allowed_pixels": 10522,
+        "changed_pixels": 10522
+      },
+      "source_bbox": [
+        315,
+        38,
+        770,
+        920
+      ],
+      "raw_points": {
+        "skull_top": [
+          456,
+          103
+        ],
+        "chin": [
+          548,
+          239
+        ],
+        "neck_base": [
+          525,
+          268
+        ],
+        "hip_center": [
+          525,
+          508
+        ]
+      },
+      "landmark_uncertainty_source_px": 8,
+      "source_head_long": 164.19500601419034,
+      "source_torso_long": 240.0,
+      "head_scale_estimate": 0.157426393047539,
+      "body_scale_estimate": 0.1669143691589441,
+      "head_body_scale_gap": 0.06026928476052906,
+      "common_action_scale": 0.16210097804917142,
+      "scale": 0.16210097804917142,
+      "scale_reason": "同动作头壳长尺和独立躯干候选倍率的中位数；本相两尺在±8%内，保持共同整帧比例",
+      "raster_scale": [
+        0.16263736263736264,
+        0.1621315192743764
+      ],
+      "raster_size": [
+        74,
+        143
+      ],
+      "offset": [
+        126,
+        156
+      ],
+      "canvas": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        312
+      ],
+      "native_points": {
+        "skull_top": [
+          148.93186813186813,
+          166.53854875283446
+        ],
+        "chin": [
+          163.8945054945055,
+          188.58843537414967
+        ],
+        "neck_base": [
+          160.15384615384616,
+          193.29024943310657
+        ],
+        "hip_center": [
+          160.15384615384616,
+          232.20181405895693
+        ]
+      },
+      "native_ankle_centers": [
+        [
+          136.97802197802199,
+          275.4909297052154
+        ],
+        [
+          173.57142857142856,
+          272.2482993197279
+        ]
+      ],
+      "head_long_native": 26.647289109000322,
+      "torso_long_native": 38.91156462585036,
+      "head_over_idle": 1.0308976387285007,
+      "torso_over_idle": 0.971345487457625,
+      "silhouette_pixels": 4041,
+      "silhouette_sqrt_over_idle": 0.9059567269712782,
+      "lowest_alpha_gap_to_root": 13,
+      "hip_height_to_root": 79.79818594104307,
+      "components": 1,
+      "small_islands": [],
+      "probe_head_fit": {
+        "scale": 1.0025,
+        "rotation": 0.0,
+        "error": 0.1862598,
+        "center": [
+          31.9051,
+          21.6766
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.274748,
+        "grade": "头不可测",
+        "probe_scale": 0.16,
+        "policy": "使用原阈值；辅助或不可测的倍率不单独决定本相比例"
+      },
+      "head_fit": {
+        "scale": 1.0025,
+        "rotation": 0.0,
+        "error": 0.185026,
+        "center": [
+          158.4051,
+          177.6766
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.271409,
+        "grade": "头不可测",
+        "normalized_to_idle_median": 1.0
+      },
+      "head_fit_used_to_override_manual_scale": false,
+      "upright": false,
+      "standing_height_gate_applied": false,
+      "numeric_blockers": [],
+      "review_notes": [
+        "自动整头配准仅按原阈值记录；不是美术或尺寸通过",
+        "手工高分候选点尚未由根确认；不测收膝腿投影、不凭蹲姿/空中外框站高定比"
+      ],
+      "status": "candidate_pending_root_review",
+      "not_installed": true,
+      "user_approved": false,
+      "dimensions_approved": false
+    },
+    {
+      "frame": 4,
+      "image": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-pulse-runtime-20261030-v1/bodies-native-v1/air_pulse/frame-04.png",
+        "sha256": "65f81af0f6b5387ea270d5bffc5b435bf437d91fa82b3e89936e498406eb846f"
+      },
+      "source": {
+        "path": "art/fighters/ultraman-omega/stage6/specials-bulk-codex-20261027/body/air_pulse__04/request-001/raw.png",
+        "sha256": "9a1aba488de2aee37b0ca28f9b2491f919ab69526b577674324060cfa6800662"
+      },
+      "high_composite": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/04/processed-high-v2/same-frame-composite.png",
+        "sha256": "33d05582441342e1cb1d9d5e8cc17064febd8dfec9a883454c6078bad7b71a5e"
+      },
+      "high_proof": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/04/processed-high-v2/proof.json",
+        "sha256": "358d2ec27236e747db5a8c7c4d7c61b683dcfeab36a373a9288d8393761fa842"
+      },
+      "allowed_mask": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/04/processed-high-v2/allowed-high.png",
+        "sha256": "aec5ebc414ca02b1fb29b33f0a62d595d9e3524300edc699a948d48273e07057"
+      },
+      "plan": {
+        "path": "art/fighters/ultraman-omega/stage6/low-air-ankles-sameframe-20261030-v1/air_pulse/04/plan.json",
+        "sha256": "1778b907f250e06156ddc520ffad4bce4826eeaefe2c4a0ea8400e8112399d5b"
+      },
+      "high_integrity": {
+        "outside_rgba_unchanged": true,
+        "full_alpha_unchanged": true,
+        "allowed_pixels": 7583,
+        "changed_pixels": 7583
+      },
+      "source_bbox": [
+        366,
+        85,
+        725,
+        950
+      ],
+      "raw_points": {
+        "skull_top": [
+          445,
+          144
+        ],
+        "chin": [
+          532,
+          277
+        ],
+        "neck_base": [
+          514,
+          294
+        ],
+        "hip_center": [
+          506,
+          530
+        ]
+      },
+      "landmark_uncertainty_source_px": 8,
+      "source_head_long": 158.927656498169,
+      "source_torso_long": 236.13555429032706,
+      "head_scale_estimate": 0.16264398609269595,
+      "body_scale_estimate": 0.16964598456399227,
+      "head_body_scale_gap": 0.04305107517043805,
+      "common_action_scale": 0.16210097804917142,
+      "scale": 0.16210097804917142,
+      "scale_reason": "同动作头壳长尺和独立躯干候选倍率的中位数；本相两尺在±8%内，保持共同整帧比例",
+      "raster_scale": [
+        0.1615598885793872,
+        0.16184971098265896
+      ],
+      "raster_size": [
+        58,
+        140
+      ],
+      "offset": [
+        137,
+        160
+      ],
+      "canvas": [
+        320,
+        320
+      ],
+      "anchor": [
+        160,
+        312
+      ],
+      "native_points": {
+        "skull_top": [
+          149.76323119777157,
+          169.5491329479769
+        ],
+        "chin": [
+          163.81894150417827,
+          191.07514450867052
+        ],
+        "neck_base": [
+          160.9108635097493,
+          193.8265895953757
+        ],
+        "hip_center": [
+          159.6183844011142,
+          232.02312138728325
+        ]
+      },
+      "native_ankle_centers": [
+        [
+          153.80222841225628,
+          280.5780346820809
+        ],
+        [
+          149.76323119777157,
+          261.5606936416185
+        ]
+      ],
+      "head_long_native": 25.708601010726806,
+      "torso_long_native": 38.218392734081085,
+      "head_over_idle": 0.9945828248630307,
+      "torso_over_idle": 0.9540419070034161,
+      "silhouette_pixels": 3510,
+      "silhouette_sqrt_over_idle": 0.8443384892997888,
+      "lowest_alpha_gap_to_root": 12,
+      "hip_height_to_root": 79.97687861271675,
+      "components": 1,
+      "small_islands": [],
+      "probe_head_fit": {
+        "scale": 1.0025,
+        "rotation": 0.0,
+        "error": 0.1913976,
+        "center": [
+          21.4051,
+          20.1766
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.265575,
+        "grade": "头不可测",
+        "probe_scale": 0.16,
+        "policy": "使用原阈值；辅助或不可测的倍率不单独决定本相比例"
+      },
+      "head_fit": {
+        "scale": 0.9775,
+        "rotation": -3.0,
+        "error": 0.1880717,
+        "center": [
+          158.713,
+          180.62
+        ],
+        "search": "bbox_hint",
+        "reason": "",
+        "elapsed_seconds": 0.269411,
+        "grade": "头不可测",
+        "normalized_to_idle_median": 0.975062344139651
+      },
+      "head_fit_used_to_override_manual_scale": false,
+      "upright": false,
+      "standing_height_gate_applied": false,
+      "numeric_blockers": [],
+      "review_notes": [
+        "自动整头配准仅按原阈值记录；不是美术或尺寸通过",
+        "手工高分候选点尚未由根确认；不测收膝腿投影、不凭蹲姿/空中外框站高定比"
+      ],
+      "status": "candidate_pending_root_review",
+      "not_installed": true,
+      "user_approved": false,
+      "dimensions_approved": false
+    }
+  ],
+  "review_pages": [
+    {
+      "path": "reports/review/2026-10-30/omega-s6-low-air-pulse-v1/bodies-native-v1/air_pulse/air_pulse-all-native-1x.jpg",
+      "sha256": "68ff952fe56075f7c855c6b629c04d5484179d07db8e3e91bd32a22c41b3a779"
+    },
+    {
+      "path": "reports/review/2026-10-30/omega-s6-low-air-pulse-v1/bodies-native-v1/air_pulse/air_pulse-heads-8x.jpg",
+      "sha256": "8aa0a58868805f7fea0139d76fff6a3ca7235dbeeb8577dfdd88c24f3994d0ef"
+    },
+    {
+      "path": "reports/review/2026-10-30/omega-s6-low-air-pulse-v1/bodies-native-v1/air_pulse/air_pulse-00-ankles-8x.jpg",
+      "sha256": "d403af396ff4ef10c6d3b243c4a7ae770780bd2e51ec08e6adc9a3e73b594d32"
+    },
+    {
+      "path": "reports/review/2026-10-30/omega-s6-low-air-pulse-v1/bodies-native-v1/air_pulse/air_pulse-01-ankles-8x.jpg",
+      "sha256": "69677bf99bb3ea270a09aa8df1597b24c6bf27096c53c2093b0ef33066cc6761"
+    },
+    {
+      "path": "reports/review/2026-10-30/omega-s6-low-air-pulse-v1/bodies-native-v1/air_pulse/air_pulse-02-ankles-8x.jpg",
+      "sha256": "0a4317ccaeac6ab7dbe97927312e43612c06e560f8a83a27c0f05beff05c876d"
+    },
+    {
+      "path": "reports/review/2026-10-30/omega-s6-low-air-pulse-v1/bodies-native-v1/air_pulse/air_pulse-03-ankles-8x.jpg",
+      "sha256": "e1f44b9f531552b89119213972736a6846a7c7006e7849c03b0a70ca0bcef880"
+    },
+    {
+      "path": "reports/review/2026-10-30/omega-s6-low-air-pulse-v1/bodies-native-v1/air_pulse/air_pulse-04-ankles-8x.jpg",
+      "sha256": "5eaec124645e8146639e345cb2bb94ad7ed94d6d08c2d9ba5ee854a57243bebc"
+    }
+  ],
+  "new_image_requests": 0,
+  "generated_videos": 0,
+  "godot_runs": 0,
+  "processing": "只读本人v2完整高分源；Forge整图Alpha128、整帧kCentroid等比缩小、整图本人RGB色板；仅平移到根点；不删独立块、不局部换色、不拼片",
+  "source_high_resolution_alpha_and_outside_rgba_proof_verified": true,
+  "native_pixel_outside_high_mask_preservation_claimed": false,
+  "not_installed": true,
+  "user_approved": false,
+  "dimensions_approved": false
+}

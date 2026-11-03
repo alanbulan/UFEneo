@@ -1,0 +1,65 @@
+{
+  "art_source": "api",
+  "route": "tools/art_pipeline.py:generate_image",
+  "request": "art/fighters/ultraman-ace/stage4/effects-v2/requests/guillotine3_explosion/01/brief.json",
+  "request_sha256": "1086c80f42d23862f8aca53c1cbd11e04e9e47c31f43eb8c603c2b4022a5b527",
+  "source": "art/fighters/ultraman-ace/stage4/effects-v2/requests/guillotine3_explosion/01/raw.provider.png",
+  "source_sha256": "e92390ece9350faec0257ec340047d4c27f09b18fb1f4f6dad834b1728d15514",
+  "provider_image_sha256": "f76ad1951673aced5c20aff417402a212da62bbca6b90e4585f2a886695b9ad3",
+  "model": "gpt-image-2.5-sunburst",
+  "requested_quality": "high",
+  "actual_quality": "medium（本机接口固定返回；不因quality被忽略重发）",
+  "source_rects": [
+    [
+      0,
+      0,
+      670,
+      579
+    ],
+    [
+      670,
+      0,
+      1341,
+      579
+    ],
+    [
+      0,
+      579,
+      670,
+      1173
+    ],
+    [
+      670,
+      579,
+      1341,
+      1173
+    ]
+  ],
+  "selection_reason": "按原剧配色的独立GPT像素图层；四相共用统一整帧比例，保留亮芯、外焰和粒子；不是通用库换色",
+  "episode_reference": "art/fighters/ultraman-ace/references/effects/episode-234s.png",
+  "description": "只画爆炸，不画任何飞行体、光轮、锯齿盘、刀刃、光束或椭圆空洞。三级断头刀命中产生圆形金白色高密度冲击爆炸，白亮实体冲击核、金黄厚焰、橙红外焰、淡粉余焰和浅青碎光。四格依次是紧密小爆核、完整圆形大爆炸、破碎扩散、余烬退散。第一、二格中心也必须是明亮实心爆核，不能是空心光轮。",
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "oklab",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "client_alpha_accepted": false,
+  "client_alpha": {
+    "transparent_fraction": 0.37950611114501953,
+    "visible_fraction": 0.24975204467773438,
+    "nonzero_fraction": 0.6204938888549805,
+    "opaque_fraction": 1.621246337890625e-05,
+    "has_alpha_channel": true,
+    "rectangular_matte": false,
+    "clear_corners": false
+  },
+  "transforms": "读取provider高分原图的实际长宽网格（不把客户端补上的透明边当格子）；共同外框统一等比缩放；整图共享调色板量化和二值Alpha；未代码绘制最终特效"
+}

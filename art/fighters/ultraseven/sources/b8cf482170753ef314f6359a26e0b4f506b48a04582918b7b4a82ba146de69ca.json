@@ -1,0 +1,51 @@
+{
+  "model_sha256": "289087585112913c6e6ba5653523c93e5aa8384b699246e72ec3aa60dc4f0736",
+  "frames": [
+    {
+      "mode": "attached",
+      "iou": 0.70737,
+      "alignment_shift": [
+        1,
+        1
+      ],
+      "threshold": 0.75,
+      "expected_pixels": 321,
+      "actual_pixels": 420,
+      "occluded_pixels": 22,
+      "visible_fraction": 0.9811,
+      "minimum_visible_fraction": 0.15,
+      "pass_": false,
+      "frame": 0,
+      "review_required": true,
+      "disposition": "需人工复核"
+    },
+    {
+      "mode": "attached",
+      "iou": 0.87535,
+      "alignment_shift": [
+        1,
+        1
+      ],
+      "threshold": 0.75,
+      "expected_pixels": 321,
+      "actual_pixels": 356,
+      "occluded_pixels": 7,
+      "visible_fraction": 0.994,
+      "minimum_visible_fraction": 0.15,
+      "pass_": true,
+      "frame": 1,
+      "review_required": false,
+      "disposition": "模板比对通过"
+    }
+  ],
+  "issues": [
+    "frame 0头镖剪影不符"
+  ],
+  "metric_scope": "旧帧缩放前模板比对历史值；本轮保留两相既有头镖轮廓，不把旧IoU当新尺度测量",
+  "previous_report": "art/fighters/ultraseven/stage4/pilot/ultraseven-first/assembled/crouch/slugger-qa.json",
+  "scale_visual_review": {
+    "executor": "根及执行子代理实看完整前后4倍与头8倍",
+    "accepted_for_install": true,
+    "user_approved": false
+  }
+}

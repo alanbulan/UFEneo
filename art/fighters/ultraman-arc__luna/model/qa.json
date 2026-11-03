@@ -1,0 +1,50 @@
+{
+  "native": "art/fighters/ultraman-arc__luna/model/model-native.png",
+  "alpha_values": [
+    0,
+    255
+  ],
+  "transparent_pixels": 31511,
+  "opaque_pixels": 5353,
+  "colors": 32,
+  "palette_limit": 32,
+  "components": [
+    5327
+  ],
+  "small_detached": [],
+  "near_foot_boundary": 184,
+  "foot_target": 184,
+  "body_height": 135.294547372098,
+  "body_target": 135,
+  "body_tolerance": 0.03,
+  "numeric_pass": true,
+  "identity_review": "执行会话看过本轮同帧头刃与接缝；新定稿待指挥审",
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "oklab",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "operations": [
+    "GPT Image同帧头刃遮罩重画",
+    "源像素格最近邻采样",
+    "原生旧格中心采样",
+    "全候选RGB调色板量化后仅回贴本帧头刃格",
+    "源图与原生保护区RGBA逐字节保持"
+  ],
+  "foot_evidence": {
+    "method": "原生Alpha的足部区域分近左/远右，取实际不透明足底边界；不是取脚尖标点",
+    "near_boundary": 184,
+    "far_boundary": 182,
+    "far_gap": 2,
+    "note": "0–3允许；4–7只标注不拦帧；近脚必须184"
+  },
+  "crest_fix_proof": "art/fighters/ultraman-arc/stage4/crest-fix/luna/generation/02/proof.json"
+}

@@ -1,0 +1,28 @@
+{
+  "purpose": "reviewed_combat_effect_not_fighter",
+  "name": "命中爆闪",
+  "state": "burst",
+  "anchor_px": [
+    64,
+    64
+  ],
+  "reviewer": "Codex：精修图集逐帧、原速及慢放检查",
+  "bundle_sha256": "27071bf64c6652b8cae6c37570b66eb689eda3c591cec5edd53bda33bd63d45e",
+  "compose_report_sha256": "168c39b22f3543417e43de6241c874fb6c339faf9b60dd1e0bc5d239120ea437",
+  "checks": {
+    "pixel_grid": true,
+    "alpha": true,
+    "pivot": true,
+    "motion": true,
+    "timing": true,
+    "curated": true
+  },
+  "evidence": {
+    "playback": "burst-review.html",
+    "pixel_audit": "qa/curated-atlas-audit.json",
+    "method": "浏览器三倍逐帧检查全部三帧，深浅底核对；原速、四分之一速及十六分之一速按1→2→3播放。",
+    "motion": "首帧亮核集中，第二帧射线扩张，第三帧核心和射线减退；非循环99ms后由运行时隐藏。",
+    "pivot": "按最终图集实测，核心距(64,64)最大1.32px；合成器额外统一向上1px，无像素裁切。",
+    "limitations": "仅一套通用爆闪。不是完整人物动作，也未生成独立防御或必杀特效。"
+  }
+}

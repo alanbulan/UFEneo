@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "character": "gomora",
+  "idle_texture": "assets/fighters/gomora/animations/idle/atlas.png",
+  "idle_rect": [
+    0,
+    0,
+    512,
+    320
+  ],
+  "head_center": [
+    289,
+    150
+  ],
+  "neck_cut": [
+    [
+      276,
+      163
+    ],
+    [
+      311,
+      183
+    ]
+  ],
+  "template_radius": 61,
+  "background_ring": 4,
+  "upsample": 2,
+  "scale_range": [
+    0.65,
+    1.5
+  ],
+  "rotation_range": [
+    -180,
+    180
+  ],
+  "thresholds": {
+    "usable": 0.163153,
+    "auxiliary": 0.218153
+  },
+  "notes": "坐标是idle第0格的原生像素；模板只用于测量。含刚体头饰，切掉颈部；阈值待本次校准写入。",
+  "calibration": {
+    "report": "calibration/gomora.json",
+    "manifest_sha256": "f83ec69644cc59d842117df4ce3e56bb2eaf7770d40fdd55d23a470afa9f1075",
+    "maximum_relative_scale_error": 0.0058824,
+    "basis": "人工缩放旋转+idle/走路实帧误差P95+缺头负例；不作为美术硬门"
+  }
+}

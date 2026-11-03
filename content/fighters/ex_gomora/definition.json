@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "id": "ex_gomora",
+  "display_name": "EX哥莫拉",
+  "form_of": "gomora",
+  "switch": "battle",
+  "template": "biped_tail",
+  "implemented": true,
+  "playable": true,
+  "select_visible": true,
+  "selection_visible": true,
+  "production_status": "pilot_partial",
+  "model_candidate": "art/fighters/ex_gomora/model/model-native.png",
+  "model_status": "commander_approved",
+  "transform_conditions": {
+    "energy_bars": 3,
+    "health_max_fraction": "1/2",
+    "uses_per_round": 1,
+    "invulnerable_during_transform": true,
+    "lasts_until": "round_end",
+    "mechanism_implemented": true,
+    "input": "22+P"
+  },
+  "identity_notes": "暗红褐至炭黑褐身体、暗灰褐宽大扇角和鼻角、白眼、胸腹棱锥甲、肩膝尖甲、长爪、矛尖长尾",
+  "presentation": {
+    "model": "res://assets/fighters/ex_gomora/model-native.png",
+    "manifest": "res://assets/fighters/ex_gomora/animations/manifest.json",
+    "native": true,
+    "cell": [
+      512,
+      320
+    ],
+    "anchor": [
+      256,
+      304
+    ],
+    "target_height": 188,
+    "anchor_y": 304
+  },
+  "references": "art/fighters/ex_gomora/references/sources.json",
+  "production_plan": "content/fighters/ex_gomora/production_plan.json",
+  "mechanism_owner": "content/catalogs/battle_form_catalog.gd 与 core/combat/battle_transform.gd；保持既有72tick结束边界",
+  "model_approved": true,
+  "model_approval": {
+    "by": "指挥",
+    "date": "2026-10-25",
+    "scope": "第4稿暗红褐/炭黑褐定稿",
+    "commit": "4db693290b"
+  },
+  "pilot_playable": true,
+  "pilot_manual_ready": true,
+  "max_health": 1000,
+  "walk_speed": 2,
+  "jump_speed": 10,
+  "unsupported_moves": [],
+  "walks_installed": true,
+  "training_entry_limitation": "可在选人页直接选择EX哥莫拉；普通本体仍可按既有条件在对局中变身。",
+  "hud_portrait": "res://assets/fighters/ex_gomora/portraits/hud.png",
+  "selectable": true,
+  "visible_in_character_select": true,
+  "roster_registered": true,
+  "direct_selection": true,
+  "direct_selection_authorization": {
+    "date": "2026-11-01",
+    "by": "user",
+    "scope": "EX可直选，保留普通本体既有对局变身入口；本人形态保持至结算结束"
+  }
+}

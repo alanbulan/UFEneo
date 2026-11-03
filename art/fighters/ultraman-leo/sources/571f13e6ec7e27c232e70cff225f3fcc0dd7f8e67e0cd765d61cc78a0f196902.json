@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-24T09:16:17.120757+00:00",
+  "stage": 5,
+  "source": "本轮用户转达指挥：第4阶段全部终审通过；先遮罩返修后滚#3、眩晕#1，再制作十套投技被投；交指挥审后停。",
+  "actions": [
+    "throw_forward",
+    "throw_back",
+    "dash_throw",
+    "air_throw",
+    "throw_tech",
+    "grabbed",
+    "thrown_forward",
+    "thrown_back",
+    "thrown_air",
+    "thrown_dash"
+  ],
+  "stage4_approval": "指挥目视通过（2026-10-24）",
+  "stage4_repairs": [
+    [
+      "roll_back",
+      3
+    ],
+    [
+      "stun",
+      1
+    ]
+  ],
+  "ledger_baseline": 532,
+  "inherited_ledger_sha256": "d5114c33a3740ad54a363c6a07c921d06d8794a75e4f70b032bb250d86b9a97e",
+  "inherited_brake_sha256": "36b566c3e0bfda18ca394f3cea94dbcef0ae3e61b1a853ceefea41bd990778c7",
+  "art_source": "api",
+  "route": "tools/art_pipeline.py:generate_image",
+  "quality": "high",
+  "background": "transparent",
+  "size": "1024x1024",
+  "limits": {
+    "frame_per_method": 3,
+    "frame_total": 6,
+    "action_total": 12,
+    "inflight": 4
+  },
+  "processing": "generate2dsprite→forge_backend；palette_mode(rgb)；32色、二值Alpha、整帧等比注册",
+  "stop": "第5阶段交审后停止，不进入第6阶段"
+}

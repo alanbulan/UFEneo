@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-23",
+  "fighter": "gomora",
+  "actions": {
+    "air_pulse": {
+      "status": "本轮新制已安装，待指挥审片",
+      "frames": 5,
+      "ticks": 20,
+      "atlas_sha256": "db1503a95f9b182299cc9d79b1f69f4ffabc425c04b95bd449dab47733977028",
+      "integrated": true,
+      "reviewed": false,
+      "energy_cost": 0,
+      "origin": "后作超振动波的空中游戏改编",
+      "runtime_observed": true,
+      "audio": [
+        "gomora_body_shift",
+        "gomora_vibration_cast1",
+        "gomora_vibration_hit"
+      ],
+      "runtime_status": "原主游戏真实跳跃→I，杰顿/赛文双朝向均单发命中",
+      "runtime_evidence": "reports/review/2026-10-23/gomora-air-pulse/delivery.json",
+      "video": "reports/review/2026-10-23/gomora-air-pulse/2026-10-23-gomora-air-pulse.mp4",
+      "logic": "reports/review/2026-10-23/gomora-air-pulse/logic/result.json",
+      "verify": "reports/review/2026-10-23/gomora-air-pulse/verify/result.json"
+    }
+  },
+  "matrix": [
+    {
+      "cell": "command_25",
+      "section": "2.5.3",
+      "input": "vertical_air / diagonal_air / chase_air / air_tech中 I · 空中光弹",
+      "action": "air_pulse",
+      "planned_name": "空中短促鼻角震波（后作空中游戏改编）",
+      "reference_frames": 5,
+      "reference_status": "指挥决定：后作能力空中游戏改编",
+      "source_refs": [
+        "REBUILD_2D_PLAN.md#2.5",
+        "art/shared/references/games/lpc-walk-cycle（仅走路相位；非角色招式名依据）",
+        "art/shared/references/stage4-preparation/sources.json#gomora_identity"
+      ],
+      "note": "后作超振动波的空中游戏改编；空中I，鼻角短甩，躯干不前倾；新生成5人物帧和4短脉冲特效帧，不共用air_special或地面pulse人物帧。",
+      "completed": false,
+      "implemented": true,
+      "integrated": true,
+      "reviewed": false,
+      "animation": {
+        "clip": "air_pulse",
+        "frames": 5
+      },
+      "boxes": true,
+      "sound": true,
+      "review_note": "本轮已安装；指挥审片前不标已审或验收完成"
+    }
+  ],
+  "shared_production": "content/roster/production.json接手时已有其他会话未提交改动，未写入；交指挥增量合并",
+  "runtime_evidence": "reports/review/2026-10-23/gomora-air-pulse/delivery.json",
+  "progress_append": "2026-10-23：哥莫拉空中I已补齐并开放，五张新人物整帧与四相短脉冲，0能量；47招/100动画条目。实机杰顿、赛文双朝向命中，专项确定性/回放与完整verify成功；新帧待指挥审片，未打完成tag。"
+}

@@ -1,0 +1,77 @@
+{
+  "texture": "res://assets/effects/ultraman-jack/super_portrait/atlas.png",
+  "rects": [
+    [
+      0,
+      0,
+      256,
+      256
+    ]
+  ],
+  "ticks": 3,
+  "display_scale": [
+    1,
+    1
+  ],
+  "anchor": [
+    128,
+    128
+  ],
+  "frame_boxes": [
+    [
+      -104,
+      -104,
+      207,
+      225
+    ]
+  ],
+  "atlas_sha256": "81482cf50ba04c83fbe5975571fe0971fb2146f8b45e126a7fef61d115404553",
+  "art_source": "api",
+  "models": [
+    "gpt-image-2.5-sunburst"
+  ],
+  "provenance": "reports/review/2026-10-24/ultraman-jack-specials-continue/effects/super_portrait/measurements.json",
+  "independent_parts_whitelist": [],
+  "review": "待指挥目视",
+  "head_top_cleanup": {
+    "qa": {
+      "qc_version": "cleanup-v3-pose-aware-head",
+      "pass_numeric": true,
+      "errors": [],
+      "score": 7.0,
+      "outside_mask_unchanged": true,
+      "old_eye_to_top": 17.0,
+      "new_eye_to_top": 14.0,
+      "reference_eye_to_top": 15.0,
+      "height_error_native": 3,
+      "height_error_float_auxiliary": 3.296,
+      "eye_axis_top": 59.0,
+      "eye_visible": true,
+      "boundary_loss": 3,
+      "boundary_gain": 0,
+      "isolated": [],
+      "black_blocks": 11,
+      "red_pixels": 12,
+      "red_observable": true,
+      "red_seam_loss": 0,
+      "changed_pixels": 2168,
+      "manual_visual_review": true,
+      "measurement_reflected_side": false,
+      "portrait_scaled_gate": {
+        "scale": 3.2960000000000003,
+        "normalized_height_error": 1.0,
+        "height_tolerance": 2,
+        "boundary_loss_limit": 7,
+        "boundary_gain_limit": 14,
+        "black_kernel": 7,
+        "black_blocks": 0,
+        "basis": "同头部比例的像素容差，特写自身8倍对照复核；原始普通像素读数同时保留"
+      },
+      "binary_alpha": true,
+      "candidate": 1,
+      "native": "art/fighters/ultraman-jack/stage4/head-top-fix/cleanup/repair/jobs/fx_super_portrait/00/c01/native.png",
+      "raw": "art/fighters/ultraman-jack/stage4/head-top-fix/cleanup/repair/jobs/fx_super_portrait/00/c01/raw.png"
+    },
+    "policy": "同一帧原位遮罩；身体、眼耳、锚点和时长不变；待指挥目视"
+  }
+}

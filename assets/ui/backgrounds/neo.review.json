@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "language": "zh-CN",
+  "purpose": "pixel_style_environment_background_not_a_sprite",
+  "accepted": true,
+  "source": "art/shared/legacy/concepts/backgrounds/neo/pixel-cosmos/v001/pixel-cosmos-v001.png",
+  "source_sha256": "cb926dbe97826c6cf8e28aa0226a851fbe7b0cfe366f1a2ca518197e26e0a9b4",
+  "installed": "assets/ui/backgrounds/neo.png",
+  "installed_sha256": "cb926dbe97826c6cf8e28aa0226a851fbe7b0cfe366f1a2ca518197e26e0a9b4",
+  "dimensions": [
+	1672,
+	941
+  ],
+  "reviewer": "Codex：查看完整原图，确认明确方形色块、星云阶梯与稀疏像素星点，右侧留白；无人物、怪兽、巨人剪影、文字或UI。",
+  "checks": {
+	"pixel_art_visual_style": true,
+	"environment_only": true,
+	"no_character_silhouettes": true,
+	"menu_negative_space": true,
+	"runtime_bytes_match_source": true,
+	"no_resize_or_pixelate_filter": true
+  },
+  "presentation": "Godot使用nearest和原尺寸居中裁切，背景、装饰、人物、底座、名字、菜单与HUD分别绘制。",
+  "limitations": [
+	"背景经过视觉风格验收，没有把所有局部色块都声明为严格统一像素间距；不将背景当作精灵像素网格门槛的证明。",
+    "人物仍为两份既有静态像素样板，没有新增正式战斗人物。"
+  ]
+}

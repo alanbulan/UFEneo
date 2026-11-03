@@ -1,0 +1,4421 @@
+{
+  "schema": 1,
+  "fighter": "ultraman-omega",
+  "status": "stage7_root_match_accepted_with_recorded_deviations",
+  "director_stage1_approved": true,
+  "stage2_authorized": true,
+  "requests_authorized": true,
+  "authorization_scope": "2026-11-01用户明确委托根自行验收并继续；本体S6已按现装效果受托验收，严格尺寸偏差保留，S7声音与实战收尾已授权。正式可玩须完成实际资源/声音/对战闭环；四套装甲按各自阶段继续。",
+  "animation_reuse_policy": [
+    "直/前/后跳共用起跳与落地",
+    "空中攻击落地共用落地两帧",
+    "击飞下落与空中受击后半允许共用；实际使用时登记帧索引",
+    "单纯配色形态允许共帧；本角色四套装甲均不适用"
+  ],
+  "cells": [
+    {
+      "cell": "command_0",
+      "section": "2.5.1",
+      "input": "4/5/6□ · 轻击一段",
+      "action": "light1",
+      "planned_name": "观察前掌",
+      "pose": "近侧左掌短探→掌根点对手上胸→回到观察掌，肘不锁死",
+      "reference_frames": 5,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_light1"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_1",
+      "section": "2.5.1",
+      "input": "light1 / dash_light中 □ · 轻击二段",
+      "action": "light2",
+      "planned_name": "右拳追身",
+      "pose": "右拳收肋蓄势→远侧直拳追胸→原路回肋，与轻一独立",
+      "reference_frames": 5,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_light2"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_2",
+      "section": "2.5.1",
+      "input": "light2中 □ · 轻击三段",
+      "action": "light3",
+      "planned_name": "回身掌推",
+      "pose": "重心后移→转髋横掌推胸击退→双手回戒备",
+      "reference_frames": 6,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_light3"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_3",
+      "section": "2.5.1",
+      "input": "5△ · 重击",
+      "action": "heavy",
+      "planned_name": "沉肩重拳",
+      "pose": "肩后引→近侧直拳穿胸→沉肘收回",
+      "reference_frames": 7,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_heavy"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_4",
+      "section": "2.5.1",
+      "input": "6△ · 升击",
+      "action": "launcher",
+      "planned_name": "抬掌升击",
+      "pose": "左掌下沉→掌根自下向上托颏→右手护胸、收掌",
+      "reference_frames": 7,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_launcher"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_5",
+      "section": "2.5.1",
+      "input": "4△ · 回旋重击",
+      "action": "spin_heavy",
+      "planned_name": "回旋肘击",
+      "pose": "先看后方并转髋→近侧肘横扫上胸→回正朝向",
+      "reference_frames": 7,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_spin_heavy"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_6",
+      "section": "2.5.1",
+      "input": "4/5○ · 超重击",
+      "action": "crush",
+      "planned_name": "双掌破架",
+      "pose": "双掌分开后收→交替前推集中胸口→沉掌回身",
+      "reference_frames": 9,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_crush"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_7",
+      "section": "2.5.1",
+      "input": "6○ · 突进撞击",
+      "action": "tackle",
+      "planned_name": "踏步肩撞",
+      "pose": "前倾蓄步→银肩贴身撞击→前脚撑住刹停",
+      "reference_frames": 8,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_tackle"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_8",
+      "section": "2.5.1",
+      "input": "5/6× · 前投",
+      "action": "throw_forward",
+      "planned_name": "扣腕过胯前投",
+      "pose": "左掌扣腕、右手控肩→跨胯翻身前摔→松手回观察掌",
+      "reference_frames": 8,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_training_pending_user_review_with_known_issues",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_throw_forward"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-runtime-v1/README.md"
+    },
+    {
+      "cell": "command_9",
+      "section": "2.5.1",
+      "input": "4× · 后投",
+      "action": "throw_back",
+      "planned_name": "转腕返身后投",
+      "pose": "反扣对手腕肩→转髋引到身后摔地→向原对手方向回身",
+      "reference_frames": 8,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_training_pending_user_review_with_known_issues",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_throw_back"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-runtime-v1/README.md"
+    },
+    {
+      "cell": "command_10",
+      "section": "2.5.1",
+      "input": "4/5I · 光弹",
+      "action": "pulse",
+      "planned_name": "交掌短束（游戏编排）",
+      "pose": "缩小幅度收拢双掌→十字交接前缘释放一发短青蓝光团→分掌回收",
+      "reference_frames": 6,
+      "phase": 6,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "training_game_choreography",
+      "effect_plan": {
+        "id": "fx_pulse",
+        "kind": "projectile",
+        "origin": "胸前双掌十字交接点朝向对手的一侧前缘：一掌竖起、一掌横接，光束从交点外缘开始。横掌和竖掌的交接处是双手共同发射点，不能简化成单臂推掌、胸灯或额头出束。",
+        "source_kind": "episode",
+        "source_images": [
+          "art/fighters/ultraman-omega/references/storyboards/half-summary/half-summary-00160.0s.jpg",
+          "art/fighters/ultraman-omega/references/effects/ep-25_1.jpg"
+        ],
+        "original_status": "原作光线发射部位的游戏短束改编；没有把这三个光团冒称原剧专名。",
+        "colors_shape": "青蓝外晕、白青亮芯、蓝色星屑；短光团为游戏造型，保持原作冷青束色。",
+        "layers": [
+          "身体胸肩青色聚光（人物前）",
+          "交掌交点短闪",
+          "独立飞行体，至少4帧",
+          "独立青蓝拖尾，至少4帧",
+          "命中青白星形爆闪，至少4帧"
+        ]
+      },
+      "emission_part": "胸前双掌十字交接点朝向对手的一侧前缘：一掌竖起、一掌横接，光束从交点外缘开始。横掌和竖掌的交接处是双手共同发射点，不能简化成单臂推掌、胸灯或额头出束。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_pulse"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "review": "reports/review/2026-10-30/omega-s6-pulse-runtime-v1/README.md"
+    },
+    {
+      "cell": "command_11",
+      "section": "2.5.1",
+      "input": "6I · 专属远程",
+      "action": "ranged_forward",
+      "planned_name": "欧米伽头镖·直投（游戏编排）",
+      "pose": "右手取下头镖→朝前平投实体头镖→同一镖按确定轨迹回到右手并装回",
+      "reference_frames": 8,
+      "phase": 6,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "pending_director_review",
+      "effect_plan": {
+        "id": "fx_ranged_forward",
+        "kind": "weapon_projectile",
+        "origin": "头顶中央欧米伽头镖先由右手取下；投射物spawn在右手握持点松开瞬间的整镖中心，刃缘朝向运动前方；握持时只沿实体刃缘出斩光。",
+        "source_kind": "episode",
+        "source_images": [
+          "art/fighters/ultraman-omega/references/storyboards/opening108/opening108-00076.0s.jpg",
+          "art/fighters/ultraman-omega/references/effects/ep-19_1.jpg"
+        ],
+        "original_status": "实体头镖为原作武器；直投、弧回和横斩的招式名/轨迹是游戏编排。",
+        "colors_shape": "实体红色头镖、银白刃缘；白红亮芯、玫红外缘与红色短火花，不生成凭空银轮。",
+        "layers": [
+          "握持点与刃缘启动闪",
+          "独立旋转整镖飞行体（或刃缘斩光）",
+          "红白短拖尾，至少4帧",
+          "命中红白切割爆闪，至少4帧"
+        ]
+      },
+      "emission_part": "头顶中央欧米伽头镖先由右手取下；投射物spawn在右手握持点松开瞬间的整镖中心，刃缘朝向运动前方；握持时只沿实体刃缘出斩光。",
+      "sound_plan": {
+        "voice": "欧米伽发力喊声+取镖金属短声/挥切或投出/回接与归位，逐相分事件",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_ranged_forward"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s6-weapon-throws-runtime-v1/README.md"
+    },
+    {
+      "cell": "command_12",
+      "section": "2.5.2",
+      "input": "1/2/3□ · 下段轻击",
+      "action": "crouch_light",
+      "planned_name": "低姿前掌",
+      "pose": "屈膝左手收腰→掌根短击腹胯→收回保持低姿",
+      "reference_frames": 4,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_crouch_light"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_16",
+      "section": "2.5.2",
+      "input": "crouch_light中 □ · 下段轻击二段",
+      "action": "crouch_light2",
+      "planned_name": "低姿追拳",
+      "pose": "蹲姿右拳回肋→向腹部补一直拳→双手回低架，与轻一另画",
+      "reference_frames": 4,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_crouch_light2"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_13",
+      "section": "2.5.2",
+      "input": "1/2/3△ · 扫腿",
+      "action": "sweep",
+      "planned_name": "转髋扫腿",
+      "pose": "支撑腿下蹲→近侧小腿沿地横扫踝部→收腿蹲稳",
+      "reference_frames": 7,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_sweep"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_14",
+      "section": "2.5.2",
+      "input": "1/2/3○ · 滑铲",
+      "action": "slide",
+      "planned_name": "低身滑铲",
+      "pose": "压低身体、前掌护脸→伸腿向前滑铲→屈膝收腿起架",
+      "reference_frames": 8,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_slide"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_15",
+      "section": "2.5.2",
+      "input": "1/2/3I · 低姿光弹",
+      "action": "low_pulse",
+      "planned_name": "低姿交掌短束（游戏编排）",
+      "pose": "蹲稳并在腹前交掌→从交点前缘低位发青蓝光团→分掌收低架",
+      "reference_frames": 5,
+      "phase": 6,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "pending_director_review",
+      "effect_plan": {
+        "id": "fx_low_pulse",
+        "kind": "projectile",
+        "origin": "腹前低位双掌十字交接点朝向对手的一侧前缘：一掌竖起、一掌横接，光束从交点外缘开始。横掌和竖掌的交接处是双手共同发射点，不能简化成单臂推掌、胸灯或额头出束。 蹲姿高度属于游戏编排，不冒称原剧低姿发射镜头。",
+        "source_kind": "episode",
+        "source_images": [
+          "art/fighters/ultraman-omega/references/storyboards/half-summary/half-summary-00160.0s.jpg",
+          "art/fighters/ultraman-omega/references/effects/ep-25_1.jpg"
+        ],
+        "original_status": "原作光线发射部位的游戏短束改编；没有把这三个光团冒称原剧专名。",
+        "colors_shape": "青蓝外晕、白青亮芯、蓝色星屑；短光团为游戏造型，保持原作冷青束色。",
+        "layers": [
+          "身体胸肩青色聚光（人物前）",
+          "交掌交点短闪",
+          "独立飞行体，至少4帧",
+          "独立青蓝拖尾，至少4帧",
+          "命中青白星形爆闪，至少4帧"
+        ]
+      },
+      "emission_part": "腹前低位双掌十字交接点朝向对手的一侧前缘：一掌竖起、一掌横接，光束从交点外缘开始。横掌和竖掌的交接处是双手共同发射点，不能简化成单臂推掌、胸灯或额头出束。 蹲姿高度属于游戏编排，不冒称原剧低姿发射镜头。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_low_pulse"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_18",
+      "section": "2.5.3",
+      "input": "vertical_air中 □ · 垂直跳轻击",
+      "action": "vertical_light",
+      "planned_name": "直跳前掌",
+      "pose": "空中左掌收胸→前下方短掌击→屈肘平衡",
+      "reference_frames": 4,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_vertical_light"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "command_19",
+      "section": "2.5.3",
+      "input": "4/5/6/7/8/9△ · 垂直跳重击",
+      "action": "vertical_heavy",
+      "planned_name": "直跳落踵",
+      "pose": "空中屈髋提腿→近侧脚跟向前下方砸落→收腿待落地",
+      "reference_frames": 5,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_vertical_heavy"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "command_20",
+      "section": "2.5.3",
+      "input": "diagonal_air中 □ · 斜跳膝撞",
+      "action": "diagonal_light",
+      "planned_name": "斜跳膝撞",
+      "pose": "前跳收后腿→近膝撞对手上身→放松收膝",
+      "reference_frames": 4,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_diagonal_light"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "command_21",
+      "section": "2.5.3",
+      "input": "4/5/6/7/8/9△ · 斜跳飞踢",
+      "action": "diagonal_heavy",
+      "planned_name": "斜跳飞踢",
+      "pose": "斜跳弯后膝→近腿伸直踢胸、髋踝长度按定稿→收腿",
+      "reference_frames": 5,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_diagonal_heavy"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "command_22",
+      "section": "2.5.3",
+      "input": "vertical_air / diagonal_air / chase_air / air_tech中 ○ · 空中双拳下砸",
+      "action": "air_crush",
+      "planned_name": "空中并拳下砸",
+      "pose": "双臂上举合拳→向下砸肩胸→收臂落地准备",
+      "reference_frames": 6,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_air_crush"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "command_23",
+      "section": "2.5.3",
+      "input": "1/2/3△ · 俯冲踢",
+      "action": "dive",
+      "planned_name": "折身俯冲踢",
+      "pose": "空中折髋→一腿沿前下方伸出俯冲→屈腿接落地，不拿长腿补距离",
+      "reference_frames": 5,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_dive"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "command_24",
+      "section": "2.5.3",
+      "input": "vertical_air / diagonal_air / chase_air / air_tech中 × · 空投",
+      "action": "air_throw",
+      "planned_name": "翻肩空投",
+      "pose": "空中扣对手双肩→绕肩翻身向下抛→松手回空中平衡",
+      "reference_frames": 6,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_training_pending_user_review_with_known_issues",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_air_throw"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-runtime-v1/README.md"
+    },
+    {
+      "cell": "command_25",
+      "section": "2.5.3",
+      "input": "vertical_air / diagonal_air / chase_air / air_tech中 I · 空中光弹",
+      "action": "air_pulse",
+      "planned_name": "空中交掌短束（游戏编排）",
+      "pose": "收膝留在空中→双掌交点前缘朝前下发一发短束→分掌保持平衡",
+      "reference_frames": 5,
+      "phase": 6,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "pending_director_review",
+      "effect_plan": {
+        "id": "fx_air_pulse",
+        "kind": "projectile",
+        "origin": "胸前双掌十字交接点朝向对手的一侧前缘：一掌竖起、一掌横接，光束从交点外缘开始。横掌和竖掌的交接处是双手共同发射点，不能简化成单臂推掌、胸灯或额头出束。",
+        "source_kind": "episode",
+        "source_images": [
+          "art/fighters/ultraman-omega/references/storyboards/half-summary/half-summary-00160.0s.jpg",
+          "art/fighters/ultraman-omega/references/effects/ep-25_1.jpg"
+        ],
+        "original_status": "原作光线发射部位的游戏短束改编；没有把这三个光团冒称原剧专名。",
+        "colors_shape": "青蓝外晕、白青亮芯、蓝色星屑；短光团为游戏造型，保持原作冷青束色。",
+        "layers": [
+          "身体胸肩青色聚光（人物前）",
+          "交掌交点短闪",
+          "独立飞行体，至少4帧",
+          "独立青蓝拖尾，至少4帧",
+          "命中青白星形爆闪，至少4帧"
+        ]
+      },
+      "emission_part": "胸前双掌十字交接点朝向对手的一侧前缘：一掌竖起、一掌横接，光束从交点外缘开始。横掌和竖掌的交接处是双手共同发射点，不能简化成单臂推掌、胸灯或额头出束。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_air_pulse"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_26",
+      "section": "2.5.4",
+      "input": "chase_air中 □ · 追击空中轻击一段",
+      "action": "chase_light1",
+      "planned_name": "追击空中掌",
+      "pose": "追跳后左掌收颏→横掌追击胸口→回掌，不复用直跳掌",
+      "reference_frames": 4,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_chase_light1"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "command_27",
+      "section": "2.5.4",
+      "input": "chase_light1中 □ · 追击空中轻击二段",
+      "action": "chase_light2",
+      "planned_name": "追击空中拳",
+      "pose": "空中右拳蓄至肩侧→拳击对手肋部→收拳维持高度",
+      "reference_frames": 4,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_chase_light2"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "command_28",
+      "section": "2.5.4",
+      "input": "chase_light2 / chase_air中 △ · 空中终结砸地",
+      "action": "chase_end",
+      "planned_name": "追击终结砸地",
+      "pose": "追击后双掌上抬→合拳向下砸地使对手弹地→收臂待落地",
+      "reference_frames": 6,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_chase_end"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "command_31",
+      "section": "2.5.5",
+      "input": "dash中 □ · 冲刺拳",
+      "action": "dash_light",
+      "planned_name": "冲刺探拳",
+      "pose": "跑步中缩肘→单次前拳→前脚撑稳，命中可接轻二",
+      "reference_frames": 5,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "角色短促发力气声，脚接地相配脚步；空相只播衣身掠动",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_dash_light"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_32",
+      "section": "2.5.5",
+      "input": "dash中 △ · 冲刺飞踢",
+      "action": "dash_heavy",
+      "planned_name": "冲刺跳踢",
+      "pose": "跑动压步→短跃侧踢胸腹→收腿刹停",
+      "reference_frames": 6,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "角色短促发力气声，脚接地相配脚步；空相只播衣身掠动",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_dash_heavy"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_33",
+      "section": "2.5.5",
+      "input": "dash中 × · 冲刺擒抱",
+      "action": "dash_throw",
+      "planned_name": "冲刺抱身摔",
+      "pose": "跑步双手前伸→抱住躯干跨步前摔→落地松手，不复用前投",
+      "reference_frames": 6,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_training_pending_user_review_with_known_issues",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "角色短促发力气声，脚接地相配脚步；空相只播衣身掠动",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_dash_throw"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-runtime-v1/README.md"
+    },
+    {
+      "cell": "command_34",
+      "section": "2.5.5",
+      "input": "backstep中 △ · 后撤反击",
+      "action": "back_counter",
+      "planned_name": "后撤返掌",
+      "pose": "后撤收身→蹬后脚向前返掌→回观察架",
+      "reference_frames": 6,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_back_counter"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_35",
+      "section": "2.5.5",
+      "input": "dodge中 □ · 闪避反击",
+      "action": "dodge_counter",
+      "planned_name": "侧闪肘击",
+      "pose": "原地肩胸侧开→左肘短击胸肋→恢复正侧面，坐标不横移",
+      "reference_frames": 5,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_dodge_counter"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "command_36",
+      "section": "2.5.5",
+      "input": "wake中 □ · 起身下段",
+      "action": "wake_low",
+      "planned_name": "起身扫踝",
+      "pose": "侧卧撑掌→近腿低扫→蹲稳起身",
+      "reference_frames": 5,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_wake_low"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "command_37",
+      "section": "2.5.5",
+      "input": "wake中 △ · 起身中段",
+      "action": "wake_mid",
+      "planned_name": "起身上掌",
+      "pose": "单膝撑起→上身立起同时推掌中段→站稳",
+      "reference_frames": 6,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_wake_mid"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "command_38",
+      "section": "2.5.5",
+      "input": "6△ · 防御反击",
+      "action": "guard_counter",
+      "planned_name": "守势推掌",
+      "pose": "双臂承击→前脚撑地、左掌反推→收掌；消耗1格",
+      "reference_frames": 6,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_guard_counter"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "command_39",
+      "section": "2.5.5",
+      "input": "hit / launch / blockstun中 防御+蓄能 · 爆气脱离",
+      "action": "burst",
+      "planned_name": "交掌震开（游戏编排）",
+      "pose": "受压缩身→双臂向两侧张开释放爆气→站稳，消耗2格，不编原剧能力",
+      "reference_frames": 5,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "training_installed_with_known_visual_issues",
+      "design_status": "pending_director_review",
+      "effect_plan": {
+        "id": "fx_burst",
+        "kind": "aura",
+        "origin": "胸灯周围及双肩/躯干轮廓，依人物逐帧跟随，不作为投射物。",
+        "source_kind": "original",
+        "source_images": [
+          "art/fighters/ultraman-omega/references/photos/base-scope.jpg"
+        ],
+        "original_status": "游戏蓄能/爆气规则，不冒称原剧命名能力。",
+        "colors_shape": "青白亮芯、青蓝外层和散点星屑",
+        "layers": [
+          "背层青蓝星屑",
+          "前层胸肩微光；爆气用独立GPT环形像素帧，至少4帧"
+        ],
+        "runtime_id": "omega_burst_ring",
+        "actual_layers": [
+          "人物后层独立四相像素环；逐相胸灯锚点"
+        ],
+        "production_note": "不宣称前层胸肩微光已制作；保持游戏前方框，非全周攻击"
+      },
+      "emission_part": "胸灯周围及双肩/躯干轮廓，依人物逐帧跟随，不作为投射物。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_burst"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-burst-runtime-v1/README.md",
+      "generated_frames": 5,
+      "generated_effect_frames": 4
+    },
+    {
+      "cell": "command_40",
+      "section": "2.5.7",
+      "input": "236□ · 角色专属（见各角色MOVES.md）",
+      "action": "motion_236",
+      "planned_name": "欧米伽头镖·横斩（游戏编排）",
+      "pose": "右手从头顶取镖→右手持镖从外上方向前下横斩→回手装回头顶",
+      "reference_frames": 10,
+      "phase": 6,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "pending_director_review",
+      "effect_plan": {
+        "id": "fx_motion_236",
+        "kind": "weapon_slash",
+        "origin": "右手取下并始终握住头顶中央欧米伽头镖；斩光逐帧贴红镖银白实体刃缘的运动前缘，斩到哪才亮到哪，不生成脱手飞行体。",
+        "source_kind": "episode",
+        "source_images": [
+          "art/fighters/ultraman-omega/references/storyboards/opening108/opening108-00076.0s.jpg",
+          "art/fighters/ultraman-omega/references/effects/ep-19_1.jpg"
+        ],
+        "original_status": "实体头镖为原作武器；直投、弧回和横斩的招式名/轨迹是游戏编排。",
+        "colors_shape": "实体红色头镖、银白刃缘；白红亮芯、玫红外缘与红色短火花，不生成凭空银轮。",
+        "layers": [
+          "握持点与刃缘启动闪",
+          "独立旋转整镖飞行体（或刃缘斩光）",
+          "红白短拖尾，至少4帧",
+          "命中红白切割爆闪，至少4帧"
+        ]
+      },
+      "emission_part": "右手取下并始终握住头顶中央欧米伽头镖；斩光逐帧贴红镖银白实体刃缘的运动前缘，斩到哪才亮到哪，不生成脱手飞行体。",
+      "sound_plan": {
+        "voice": "欧米伽发力喊声+取镖金属短声/挥切或投出/回接与归位，逐相分事件",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_motion_236"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s6-weapon236-runtime-v1/README.md"
+    },
+    {
+      "cell": "command_41",
+      "section": "2.5.7",
+      "input": "623△ · 角色专属（见各角色MOVES.md）",
+      "action": "motion_623",
+      "planned_name": "观察升掌（游戏编排）",
+      "pose": "左掌前探确认距离→下沉后升掌迎击上方→收掌站稳，不增原作未证实光线",
+      "reference_frames": 12,
+      "phase": 6,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_motion_623"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s6-623-runtime-v1/README.md",
+      "runtime_input_replay_verified": true,
+      "runtime_note": "十二本人整帧，23tick/115伤/30体/0能；623+K双对手双向命中/防御/落空及原输入回放正常。头身辅助差、相序/手侧、头饰小差和本人喊声缺失保留，未过用户美术门。"
+    },
+    {
+      "cell": "command_42",
+      "section": "2.5.7",
+      "input": "214I · 角色专属（见各角色MOVES.md）",
+      "action": "motion_214",
+      "planned_name": "欧米伽头镖·弧回斩（游戏编排）",
+      "pose": "右手取镖绕到肩后→过肩掷出上弧回旋镖→回接并重新装回，与6I独立",
+      "reference_frames": 12,
+      "phase": 6,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "pending_director_review",
+      "effect_plan": {
+        "id": "fx_motion_214",
+        "kind": "weapon_projectile",
+        "origin": "头顶中央欧米伽头镖先由右手取下；投射物spawn在右手握持点松开瞬间的整镖中心，刃缘朝向运动前方；握持时只沿实体刃缘出斩光。",
+        "source_kind": "episode",
+        "source_images": [
+          "art/fighters/ultraman-omega/references/storyboards/opening108/opening108-00076.0s.jpg",
+          "art/fighters/ultraman-omega/references/effects/ep-19_1.jpg"
+        ],
+        "original_status": "实体头镖为原作武器；直投、弧回和横斩的招式名/轨迹是游戏编排。",
+        "colors_shape": "实体红色头镖、银白刃缘；白红亮芯、玫红外缘与红色短火花，不生成凭空银轮。",
+        "layers": [
+          "握持点与刃缘启动闪",
+          "独立旋转整镖飞行体（或刃缘斩光）",
+          "红白短拖尾，至少4帧",
+          "命中红白切割爆闪，至少4帧"
+        ]
+      },
+      "emission_part": "头顶中央欧米伽头镖先由右手取下；投射物spawn在右手握持点松开瞬间的整镖中心，刃缘朝向运动前方；握持时只沿实体刃缘出斩光。",
+      "sound_plan": {
+        "voice": "欧米伽发力喊声+取镖金属短声/挥切或投出/回接与归位，逐相分事件",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_motion_214"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s6-weapon-throws-runtime-v1/README.md"
+    },
+    {
+      "cell": "command_43",
+      "section": "2.5.7",
+      "input": "22○ · 角色专属（见各角色MOVES.md）",
+      "action": "motion_22",
+      "planned_name": "欧米伽感知·截击（游戏编排）",
+      "pose": "向对手伸观察掌→侧肩避开同时掌根短击→收掌；感知只是观察，不编反射盾",
+      "reference_frames": 12,
+      "phase": 6,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_motion_22"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s6-22-runtime-v1/README.md",
+      "runtime_note": "本人十二相与可见短掌框；22+O普通近战，不添加屏障/反射。相序/手侧及辅助比例差与本人喊声缺失留账，非用户美术批准。"
+    },
+    {
+      "cell": "command_44",
+      "section": "2.5.7",
+      "input": "idle / walk / charge / turn / crouch中 41236× · 半圈强投",
+      "action": "motion_41236",
+      "planned_name": "锁肩跨身重摔（游戏编排）",
+      "pose": "双手扣肩腕→跨身举起后过顶重摔→后撤半步收掌",
+      "reference_frames": 8,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "逐动作独立起手、生效和收招",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_training_pending_user_review_with_known_issues",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_motion_41236"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-strong-throw-v1/README.md"
+    },
+    {
+      "cell": "command_45",
+      "section": "2.5.7",
+      "input": "idle / walk / charge / turn / crouch / light1 / heavy中 P · 能量终结",
+      "action": "special",
+      "planned_name": "欧米伽头镖·回旋切割（游戏编排）",
+      "pose": "取下唯一头镖→实体回旋切割→空手等候→真实接回并装回",
+      "reference_frames": 14,
+      "phase": 6,
+      "reference_status": "本人原作欧米伽头镖；已装正确持有者/唯一武器整帧作生成参考，回旋路线和两次切割是游戏编排。",
+      "reference_detail": "十四张全新完整人物，不复用6I/214I；路线和两次外飞接触为游戏编排",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "distinct_mechanism_design_ready_assets_pending",
+      "effect_plan": {
+        "id": "fx_special",
+        "kind": "returning_physical_weapon",
+        "origin": "右手投出与实际镖心回接；镖在头顶/手持/外飞仅一个位置",
+        "layers": [
+          "取镖起闪",
+          "独立完整实体镖四相",
+          "红白切割拖尾四相",
+          "刃体命中四相"
+        ],
+        "frame_plan": "十四独立人物相；空手期独立武器推进，不提前回接/装回"
+      },
+      "emission_part": "右手松脱的实体头镖；不从掌/额头发束；回接真实镖心",
+      "sound_plan": {
+        "voice": "本人取镖/掷出发力声；挥切、实体刃命中、回接、装回各按事件发声",
+        "events": [
+          {
+            "phase": "draw",
+            "event": "weapon_draw"
+          },
+          {
+            "phase": "release",
+            "event": "weapon_throw"
+          },
+          {
+            "phase": "contact",
+            "event": "weapon_hit"
+          },
+          {
+            "phase": "return",
+            "event": "weapon_catch"
+          },
+          {
+            "phase": "seat",
+            "event": "weapon_seat"
+          }
+        ],
+        "verification": "本人喊声和完整武器声仍待补及听审，不拿光束蓄力/持续声冒充实体回旋完成。"
+      },
+      "current_plan_valid": true,
+      "generation_allowed": true,
+      "revision_policy": "docs/SUPER_MOVE_DIVERSITY.md",
+      "design_contract": {
+        "path": "art/fighters/ultraman-omega/stage6/super-diversity-20261031-v1/design.json",
+        "sha256": "c881616e4a2a548e43bab7cf1675236fb5f892c6ae34d8a1a1e9892950b5a319"
+      },
+      "mechanism": "returning_physical_weapon_two_outbound_contacts",
+      "combat_role": "中距离实体切割压制；无光束，返手阶段不伤害",
+      "runtime_review": "reports/review/2026-10-31/omega-super1-native-v1/RUNTIME_REVIEW.md"
+    },
+    {
+      "cell": "special_2",
+      "section": "2.5.7",
+      "input": "2000..2980能P或J+K",
+      "action": "special2",
+      "planned_name": "欧米伽头镖·八重连斩（游戏编排）",
+      "pose": "唯一头镖取下，八条连续独立刀路，逐段卡肉后末击重斩倒地，再装回",
+      "reference_frames": 32,
+      "phase": 6,
+      "reference_status": "本人官方持头镖照片与可取下攻击的简体资料；连斩、推进与效果为游戏编排，不冒称原剧正式招名",
+      "reference_detail": "本人持镖造型有据；32相中保留本招14旧相各一次，新增18张不同刀路整帧。八连斩为本作编排，不冒称原剧完整连段。",
+      "source_refs": [
+        "reports/review/2026-11-01/omega-super-diversity-rejection-v1/SOURCES.md",
+        "art/fighters/ultraman-omega/stage6/super2-slash-20261101-v1/plan.json"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "eight_slash_root_accepted_with_known_size_deviations",
+      "effect_plan": {
+        "ids": [
+          "omega_super2_slash1",
+          "omega_super2_eight_cross",
+          "omega_super2_eight_low",
+          "omega_super2_eight_rise",
+          "omega_super2_slash1",
+          "omega_super2_eight_cross",
+          "omega_super2_eight_rise",
+          "omega_super2_slash2",
+          "omega_super2_hit"
+        ],
+        "frame_plan": "原横/斜斩与命中保留，新增上撩/低扫/回割各四相GPT像素斩光"
+      },
+      "emission_part": "无远程发射；近侧右手握实体头镖，两次实体刃接触；斩光只表现，无额外判定。",
+      "sound_plan": {
+        "voice": "omega_voice_s7_weapon_slash_01",
+        "sfx": [
+          "omega_super1_take",
+          "omega_super1_throw",
+          "omega_super1_hit",
+          "omega_super1_block",
+          "omega_super1_seat"
+        ],
+        "note": "三次本人发力声配八次挥镖；击中才播真实切击反馈，八次hitstop由实体接触触发。人耳听审仍待。"
+      },
+      "current_plan_valid": true,
+      "generation_allowed": true,
+      "revision_policy": "docs/SUPER_MOVE_DIVERSITY.md",
+      "design_contract": {
+        "path": "art/fighters/ultraman-omega/stage6/super2-eight-slash-20261101-v1/plan.json",
+        "sha256": "d714c806ce9e6427a6b47e1d0a08f024a14f96fad953212855e363d4de7a4bb5"
+      },
+      "mechanism": "eight_independent_entity_blade_hit_groups",
+      "combat_role": "八次实体刃真实接触，各6tick命中停顿，前七不倒地/不击退，末段击倒；两格主动近战，落空可反击。",
+      "runtime_review": "reports/review/2026-11-01/omega-super2-eight-slash-runtime-v1/README.md",
+      "root_acceptance": {
+        "path": "reports/review/2026-11-01/omega-super2-eight-slash-v1/root-runtime-acceptance-v1.json",
+        "sha256": "579e9f5e9161b586093bc13fc651577f1a790ed898a4405766e4df36ce855594"
+      }
+    },
+    {
+      "cell": "special_3",
+      "section": "2.5.7",
+      "input": "3格能量 · P / □+△",
+      "action": "special3",
+      "planned_name": "欧米伽连斩终结（游戏编排）",
+      "pose": "探距→取镖→近身两次独立实体斩击→装回→独立双掌光线→收势",
+      "reference_frames": 20,
+      "phase": 6,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "reference_detail": "旧special3可复用无冲突整帧；重复头镖相整帧纠正；不拼部件，不强制抓中，不以纯FX冒充第二斩",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "distinct_mechanism_design_ready_assets_pending",
+      "effect_plan": {
+        "id": "fx_special3",
+        "kind": "melee_groups_then_beam_finisher",
+        "origin": "胸前双掌十字交接点朝向对手的一侧前缘：一掌竖起、一掌横接，光束从交点外缘开始。横掌和竖掌的交接处是双手共同发射点，不能简化成单臂推掌、胸灯或额头出束。 头镖双斩阶段由右手握持，斩光贴实体镖刃前缘；装回头顶后才进入双掌光线阶段。",
+        "source_kind": "episode",
+        "source_images": [
+          "art/fighters/ultraman-omega/references/storyboards/half-summary/half-summary-00160.0s.jpg",
+          "art/fighters/ultraman-omega/references/effects/ep-25_1.jpg",
+          "art/fighters/ultraman-omega/references/storyboards/opening108/opening108-00086.0s.jpg"
+        ],
+        "original_status": "《欧米伽奥特曼》第1话及圆谷官方角色页；中文技能名沿用名册“雷特克鲁特光线”，英文为Reticlute Beam。",
+        "colors_shape": "原作青蓝至青白光束，明亮白芯、青色放射星屑、蓝色外层；星状起手闪，不用彩虹染色代替。",
+        "layers": [
+          "胸灯、肩胸和双臂青色能量：背层+前层独立",
+          "双掌交点起手星闪，至少4帧",
+          "原生尺寸独立的青白持续束，至少4帧无缝循环",
+          "命中青白星爆，至少4帧",
+          "头镖双斩独立红白拖尾",
+          "专属大爆炸与终结闪，至少8帧"
+        ],
+        "beam_native_plan": [
+          384,
+          96
+        ],
+        "frame_plan": "二十独立人物相；近身两斩按hit_group分别结算，装回后发独立束"
+      },
+      "cinematic_plan": {
+        "phases": "1–8独立起手；9–12取镖双斩并装回；13–16交掌束持续循环；17–20拆掌收势",
+        "cut_in": "取镖前插入单独GPT像素头胸特写，红脸青眼、后扬头镖与星状胸灯保持定稿；不是放大运行帧",
+        "background": "起手切入专属GPT星空能量背景，光线结束淡回主场景；不新增规则暂停或改伤害时序",
+        "ending": "独立大爆炸与青白终结星闪，人物和发射点始终按原生比例，不放大二级束代替"
+      },
+      "emission_part": "胸前双掌十字交接点朝向对手的一侧前缘：一掌竖起、一掌横接，光束从交点外缘开始。横掌和竖掌的交接处是双手共同发射点，不能简化成单臂推掌、胸灯或额头出束。 头镖双斩阶段由右手握持，斩光贴实体镖刃前缘；装回头顶后才进入双掌光线阶段。",
+      "sound_plan": {
+        "voice": "欧米伽必杀发力喊声；蓄力、发射、束持续、命中及爆炸各独立事件",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "charge",
+            "event": "special3_charge"
+          },
+          {
+            "phase": "release",
+            "event": "special3_release"
+          },
+          {
+            "phase": "sustain",
+            "event": "special3_sustain"
+          },
+          {
+            "phase": "hit",
+            "event": "special3_hit"
+          },
+          {
+            "phase": "explosion",
+            "event": "special3_explosion"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "current_plan_valid": true,
+      "generation_allowed": true,
+      "revision_policy": "docs/SUPER_MOVE_DIVERSITY.md",
+      "design_contract": {
+        "path": "art/fighters/ultraman-omega/stage6/super-diversity-20261031-v1/design.json",
+        "sha256": "c881616e4a2a548e43bab7cf1675236fb5f892c6ae34d8a1a1e9892950b5a319"
+      },
+      "mechanism": "two_independent_blade_melee_groups_then_separate_beam",
+      "combat_role": "近身确认连段；实体两段不击倒，独立束终结击倒；每段自然判断命中/防御/落空",
+      "runtime_review": "reports/review/2026-10-31/omega-super3-native-v1/RUNTIME_REVIEW.md"
+    },
+    {
+      "cell": "command_47",
+      "section": "2.5.7",
+      "input": "vertical_air / diagonal_air / chase_air / air_tech中 P · 空中必杀",
+      "action": "air_special",
+      "planned_name": "空中雷特克鲁特光线（游戏编排落点）",
+      "pose": "空中屈膝后仰蓄力→双掌胸前十字交接朝前下方发束→分掌回空中平衡，不复用地面必杀",
+      "reference_frames": 8,
+      "phase": 6,
+      "reference_status": "《欧米伽奥特曼》第1话及圆谷官方角色页；中文技能名沿用名册“雷特克鲁特光线”，英文为Reticlute Beam。",
+      "reference_detail": "原作束的游戏等级/落点改编",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "pending_director_review",
+      "effect_plan": {
+        "id": "fx_air_special",
+        "kind": "beam_finisher",
+        "origin": "胸前双掌十字交接点朝向对手的一侧前缘：一掌竖起、一掌横接，光束从交点外缘开始。横掌和竖掌的交接处是双手共同发射点，不能简化成单臂推掌、胸灯或额头出束。",
+        "source_kind": "episode",
+        "source_images": [
+          "art/fighters/ultraman-omega/references/storyboards/half-summary/half-summary-00160.0s.jpg",
+          "art/fighters/ultraman-omega/references/effects/ep-25_1.jpg",
+          "art/fighters/ultraman-omega/references/storyboards/opening108/opening108-00086.0s.jpg"
+        ],
+        "original_status": "第1话开篇CG宇宙战，官方108秒片段80–86s；空中/宇宙发射的姿态与落点进入第6阶段逐帧复核。",
+        "colors_shape": "原作青蓝至青白光束，明亮白芯、青色放射星屑、蓝色外层；星状起手闪，不用彩虹染色代替。",
+        "layers": [
+          "胸灯、肩胸和双臂青色能量：背层+前层独立",
+          "双掌交点起手星闪，至少4帧",
+          "原生尺寸独立的青白持续束，至少4帧无缝循环",
+          "命中青白星爆，至少4帧"
+        ],
+        "beam_native_plan": [
+          256,
+          96
+        ],
+        "frame_plan": "8独立人物相；持续段独立绘制"
+      },
+      "emission_part": "胸前双掌十字交接点朝向对手的一侧前缘：一掌竖起、一掌横接，光束从交点外缘开始。横掌和竖掌的交接处是双手共同发射点，不能简化成单臂推掌、胸灯或额头出束。",
+      "sound_plan": {
+        "voice": "欧米伽必杀发力喊声；蓄力、发射、束持续、命中及爆炸各独立事件",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "charge",
+            "event": "air_special_charge"
+          },
+          {
+            "phase": "release",
+            "event": "air_special_release"
+          },
+          {
+            "phase": "sustain",
+            "event": "air_special_sustain"
+          },
+          {
+            "phase": "hit",
+            "event": "air_special_hit"
+          },
+          {
+            "phase": "explosion",
+            "event": "air_special_explosion"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-31/omega-air-super-native-v1/RUNTIME_REVIEW.md"
+    },
+    {
+      "cell": "state_throw_tech",
+      "section": "2.5.6",
+      "input": "throw_tech",
+      "action": "throw_tech",
+      "planned_name": "拆投",
+      "pose": "双方同时抓腕→双掌推开→各自回架",
+      "reference_frames": 4,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_training_pending_user_review_with_known_issues",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_throw_tech"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-runtime-v1/README.md"
+    },
+    {
+      "cell": "state_grabbed",
+      "section": "2.5.6",
+      "input": "grabbed",
+      "action": "grabbed",
+      "planned_name": "被抓起",
+      "pose": "手腕被扣→胸肩被牵住→脚离地，抓点跟攻击者逐帧对齐",
+      "reference_frames": 3,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_training_pending_user_review_with_known_issues",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_grabbed"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-runtime-v1/README.md"
+    },
+    {
+      "cell": "state_thrown_forward",
+      "section": "2.5.6",
+      "input": "thrown_forward",
+      "action": "thrown_forward",
+      "planned_name": "被前投",
+      "pose": "被拉向前肩→躯干越胯翻转→背先落地→四肢回弹",
+      "reference_frames": 4,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_training_pending_user_review_with_known_issues",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_thrown_forward"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-runtime-v1/README.md"
+    },
+    {
+      "cell": "state_thrown_back",
+      "section": "2.5.6",
+      "input": "thrown_back",
+      "action": "thrown_back",
+      "planned_name": "被后投",
+      "pose": "肩被引到身后→侧背旋落→背部着地→低姿收身",
+      "reference_frames": 4,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_training_pending_user_review_with_known_issues",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_thrown_back"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-runtime-v1/README.md"
+    },
+    {
+      "cell": "state_thrown_air",
+      "section": "2.5.6",
+      "input": "thrown_air",
+      "action": "thrown_air",
+      "planned_name": "被空投",
+      "pose": "空中肩被扣→倒转抛下→背先撞地→弹回倒地",
+      "reference_frames": 4,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_training_pending_user_review_with_known_issues",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_thrown_air"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-runtime-v1/README.md"
+    },
+    {
+      "cell": "state_thrown_dash",
+      "section": "2.5.6",
+      "input": "thrown_dash",
+      "action": "thrown_dash",
+      "planned_name": "被擒抱",
+      "pose": "胸腰被抱→身体被抬离地→肩背前摔→收臂倒地",
+      "reference_frames": 4,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_training_pending_user_review_with_known_issues",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_thrown_dash"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-runtime-v1/README.md"
+    },
+    {
+      "cell": "state_idle",
+      "section": "2.5.8",
+      "input": "idle",
+      "action": "idle",
+      "planned_name": "观察待机",
+      "pose": "左掌朝对手停留、右拳护肋→胸肩轻呼吸→回观察相；双脚固定",
+      "reference_frames": 6,
+      "phase": 2,
+      "reference_status": "欧米伽感知的掌心观察姿态：圆谷官方角色页及第1话；呼吸/过渡为游戏编排。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短呼吸/疲劳气声；只在进入状态触发，不每循环重复喊叫",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_idle"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_turn",
+      "section": "2.5.8",
+      "input": "turn",
+      "action": "turn",
+      "planned_name": "站立转身",
+      "pose": "头先回看→肩髋依序转过背面→在新朝向伸观察掌，不用镜像代替",
+      "reference_frames": 3,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短呼吸/疲劳气声；只在进入状态触发，不每循环重复喊叫",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_turn"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_walk_forward",
+      "section": "2.5.8",
+      "input": "walk_forward",
+      "action": "walk_forward",
+      "planned_name": "前走",
+      "pose": "观察掌低于脸→近远腿交替推进→后脚回收，八相完整原顺序，逐相量躯干、眼和撑地脚",
+      "reference_frames": 8,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "角色短促发力气声，脚接地相配脚步；空相只播衣身掠动",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_walk_forward"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_walk_back",
+      "section": "2.5.8",
+      "input": "walk_back",
+      "action": "walk_back",
+      "planned_name": "后走",
+      "pose": "保持面向对手→后脚先探、前脚随后收回→独立八相，不倒放前走",
+      "reference_frames": 8,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "角色短促发力气声，脚接地相配脚步；空相只播衣身掠动",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_walk_back"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_dash_start",
+      "section": "2.5.8",
+      "input": "dash_start",
+      "action": "dash_start",
+      "planned_name": "冲刺起步",
+      "pose": "前掌收肋→身体前倾、后脚蹬地",
+      "reference_frames": 2,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "角色短促发力气声，脚接地相配脚步；空相只播衣身掠动",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_dash_start"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_dash",
+      "section": "2.5.8",
+      "input": "dash",
+      "action": "dash",
+      "planned_name": "冲刺跑步",
+      "pose": "腾空B→着地B→腾空A→着地A；一次性四关键相，和起步刹停共22tick",
+      "reference_frames": 4,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "角色短促发力气声，脚接地相配脚步；空相只播衣身掠动",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_dash"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_dash_stop",
+      "section": "2.5.8",
+      "input": "dash_stop",
+      "action": "dash_stop",
+      "planned_name": "冲刺刹停",
+      "pose": "前脚接地→屈膝消去前倾→重新伸观察掌",
+      "reference_frames": 3,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "角色短促发力气声，脚接地相配脚步；空相只播衣身掠动",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_dash_stop"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_backstep",
+      "section": "2.5.8",
+      "input": "backstep",
+      "action": "backstep",
+      "planned_name": "后撤步",
+      "pose": "缩掌后仰→双脚短后跳→后脚再前脚接地回架",
+      "reference_frames": 5,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "角色短促发力气声，脚接地相配脚步；空相只播衣身掠动",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_backstep"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_dodge",
+      "section": "2.5.8",
+      "input": "dodge",
+      "action": "dodge",
+      "planned_name": "原地侧闪",
+      "pose": "缩掌→肩髋侧开躲攻击→回到原侧面；模拟x不变",
+      "reference_frames": 6,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_dodge"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_takeoff",
+      "section": "2.5.8",
+      "input": "takeoff",
+      "action": "takeoff",
+      "planned_name": "起跳",
+      "pose": "双膝下沉→脚尖蹬离地；直跳前后跳共用起跳",
+      "reference_frames": 2,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "角色短促发力气声，脚接地相配脚步；空相只播衣身掠动",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_takeoff"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_air_rise",
+      "section": "2.5.8",
+      "input": "air_rise",
+      "action": "air_rise",
+      "planned_name": "跳跃上升",
+      "pose": "离地伸髋→收膝上升、双掌平衡",
+      "reference_frames": 2,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "existing_stage3_runtime_clip_confirmed",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_air_rise"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-burst-runtime-v1/resource-validation.json",
+      "runtime_note": "仅纠正not_started遗留：本人vertical_jump整帧与状态早已实装，本批未新作或改动运行资源。"
+    },
+    {
+      "cell": "state_air_apex",
+      "section": "2.5.8",
+      "input": "air_apex",
+      "action": "air_apex",
+      "planned_name": "跳跃顶点",
+      "pose": "顶点收膝悬停的一张完整人物相",
+      "reference_frames": 1,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "existing_stage3_runtime_clip_confirmed",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_air_apex"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-burst-runtime-v1/resource-validation.json",
+      "runtime_note": "仅纠正not_started遗留：本人vertical_jump整帧与状态早已实装，本批未新作或改动运行资源。"
+    },
+    {
+      "cell": "state_air_fall",
+      "section": "2.5.8",
+      "input": "air_fall",
+      "action": "air_fall",
+      "planned_name": "跳跃下落",
+      "pose": "前腿探地→收髋准备落地",
+      "reference_frames": 2,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "existing_stage3_runtime_clip_confirmed",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_air_fall"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-burst-runtime-v1/resource-validation.json",
+      "runtime_note": "仅纠正not_started遗留：本人vertical_jump整帧与状态早已实装，本批未新作或改动运行资源。"
+    },
+    {
+      "cell": "state_flip_forward",
+      "section": "2.5.8",
+      "input": "flip_forward",
+      "action": "flip_forward",
+      "planned_name": "前空翻",
+      "pose": "收膝抱身→倒立→前翻腹朝下→展腿准备落地",
+      "reference_frames": 4,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_flip_forward"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_flip_back",
+      "section": "2.5.8",
+      "input": "flip_back",
+      "action": "flip_back",
+      "planned_name": "后空翻",
+      "pose": "后仰收膝→倒立背卷→背翻腹朝上→展腿准备落地",
+      "reference_frames": 4,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_flip_back"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_land",
+      "section": "2.5.8",
+      "input": "land",
+      "action": "land",
+      "planned_name": "落地",
+      "pose": "近脚先触线、双膝缓冲→恢复观察架；全部空中攻击共用此两帧",
+      "reference_frames": 2,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "角色短促发力气声，脚接地相配脚步；空相只播衣身掠动",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_land"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_crouch_start",
+      "section": "2.5.8",
+      "input": "crouch_start",
+      "action": "crouch_start",
+      "planned_name": "下蹲",
+      "pose": "屈膝降髋→双掌降低，头不随身体放大",
+      "reference_frames": 2,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_crouch_start"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_crouch",
+      "section": "2.5.8",
+      "input": "crouch",
+      "action": "crouch",
+      "planned_name": "蹲姿保持",
+      "pose": "单膝低架→轻呼吸→回低架，不复用站姿平移",
+      "reference_frames": 2,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短呼吸/疲劳气声；只在进入状态触发，不每循环重复喊叫",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_crouch"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_crouch_turn",
+      "section": "2.5.8",
+      "input": "crouch_turn",
+      "action": "crouch_turn",
+      "planned_name": "蹲姿转身",
+      "pose": "头回看→低髋转身→新朝向低掌",
+      "reference_frames": 3,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_crouch_turn"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_crouch_rise",
+      "section": "2.5.8",
+      "input": "crouch_rise",
+      "action": "crouch_rise",
+      "planned_name": "蹲姿起身",
+      "pose": "撑前脚伸膝→恢复观察掌",
+      "reference_frames": 2,
+      "phase": 2,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_crouch_rise"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_guard",
+      "section": "2.5.8",
+      "input": "guard",
+      "action": "guard",
+      "planned_name": "站立防御",
+      "pose": "两前臂抬到面胸前→停止举臂并保持，loop=false",
+      "reference_frames": 2,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_guard"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_crouch_guard",
+      "section": "2.5.8",
+      "input": "crouch_guard",
+      "action": "crouch_guard",
+      "planned_name": "下蹲防御",
+      "pose": "低架前臂贴颏胸→低姿保持，loop=false，不套循环眼高门",
+      "reference_frames": 2,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_crouch_guard"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_hit_high",
+      "section": "2.5.8",
+      "input": "hit_high",
+      "action": "hit_high",
+      "planned_name": "站立上段受击",
+      "pose": "颏被击后仰→肩跟随后撤→收掌护颏",
+      "reference_frames": 3,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_hit_high"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_hit_mid",
+      "section": "2.5.8",
+      "input": "hit_mid",
+      "action": "hit_mid",
+      "planned_name": "站立中段受击",
+      "pose": "腹部收缩→弓背并屈肘→回侧身架",
+      "reference_frames": 3,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_hit_mid"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_hit_crouch",
+      "section": "2.5.8",
+      "input": "hit_crouch",
+      "action": "hit_crouch",
+      "planned_name": "蹲姿受击",
+      "pose": "低架受压→肩腹收紧→低掌回位",
+      "reference_frames": 3,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_hit_crouch"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_hit_air",
+      "section": "2.5.8",
+      "input": "hit_air",
+      "action": "hit_air",
+      "planned_name": "空中受击",
+      "pose": "胸被击后仰→躯干松开后飘→收腿下落",
+      "reference_frames": 3,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_hit_air"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_launch_rise",
+      "section": "2.5.8",
+      "input": "launch_rise",
+      "action": "launch_rise",
+      "planned_name": "击飞上升",
+      "pose": "脚离地胸向后→髋跟随后翻→到最高点",
+      "reference_frames": 3,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_launch_rise"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_launch_fall",
+      "section": "2.5.8",
+      "input": "launch_fall",
+      "action": "launch_fall",
+      "planned_name": "击飞下落",
+      "pose": "背朝后开始落下→收腿→展背准备撞地；仅后半允许与空中受击共用",
+      "reference_frames": 3,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_launch_fall"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_bounce",
+      "section": "2.5.8",
+      "input": "bounce",
+      "action": "bounce",
+      "planned_name": "弹地",
+      "pose": "背部撞线→身体小幅反弹→再落回地面",
+      "reference_frames": 3,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_bounce"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_down",
+      "section": "2.5.8",
+      "input": "down",
+      "action": "down",
+      "planned_name": "倒地",
+      "pose": "躺平收臂→保持，按伸直骨链量长度",
+      "reference_frames": 2,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_down"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_wake",
+      "section": "2.5.8",
+      "input": "wake",
+      "action": "wake",
+      "planned_name": "普通起身",
+      "pose": "侧卧撑掌→坐起→单膝→起身半蹲→回观察掌",
+      "reference_frames": 5,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_wake"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_roll_forward",
+      "section": "2.5.8",
+      "input": "roll_forward",
+      "action": "roll_forward",
+      "planned_name": "前滚起身",
+      "pose": "侧卧收膝→肩着地前滚→倒立中相→脚落地→站稳",
+      "reference_frames": 5,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_roll_forward"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_roll_back",
+      "section": "2.5.8",
+      "input": "roll_back",
+      "action": "roll_back",
+      "planned_name": "后滚起身",
+      "pose": "仰卧卷背→后滚倒立→髋越肩→脚落地→站稳",
+      "reference_frames": 5,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_roll_back"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_air_tech",
+      "section": "2.5.8",
+      "input": "air_tech",
+      "action": "air_tech",
+      "planned_name": "空中受身",
+      "pose": "空中散身→卷腰翻正→展臂平衡→落地准备",
+      "reference_frames": 4,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_air_tech"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_stun",
+      "section": "2.5.8",
+      "input": "stun",
+      "action": "stun",
+      "planned_name": "眩晕",
+      "pose": "膝松、观察掌垂下→头肩左右轻摇→回初相，眼高总幅≤12、相邻≤4",
+      "reference_frames": 6,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短呼吸/疲劳气声；只在进入状态触发，不每循环重复喊叫",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_stun"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_blockstun",
+      "section": "2.5.8",
+      "input": "blockstun",
+      "action": "blockstun",
+      "planned_name": "站立防御硬直",
+      "pose": "举臂承击后缩→回已举臂守势",
+      "reference_frames": 2,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_blockstun"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_crouch_blockstun",
+      "section": "2.5.8",
+      "input": "crouch_blockstun",
+      "action": "crouch_blockstun",
+      "planned_name": "下蹲防御硬直",
+      "pose": "低架承击屈髋→回低架",
+      "reference_frames": 2,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_crouch_blockstun"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_guardbreak",
+      "section": "2.5.8",
+      "input": "guardbreak",
+      "action": "guardbreak",
+      "planned_name": "破防",
+      "pose": "双前臂被打开→胸口露出后仰→脚步失衡→破绽保持",
+      "reference_frames": 4,
+      "phase": 4,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_guardbreak"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_intro",
+      "section": "2.5.8",
+      "input": "intro",
+      "action": "intro",
+      "planned_name": "登场观察",
+      "pose": "落地半蹲→缓慢站起→左掌朝对手观察→收为战斗待机",
+      "reference_frames": 8,
+      "phase": 5,
+      "reference_status": "欧米伽感知的掌心观察姿态：圆谷官方角色页及第1话；呼吸/过渡为游戏编排。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "training_installed_visual_pending_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_intro"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-ceremonies-v1/README.md",
+      "user_approved": false,
+      "current_status_note": "本人已有独立完整GPT帧接训练；主游戏真实流程及输入回放闭环，无新请求/视频。明暗、手势与头身细差留账，不判用户通过。"
+    },
+    {
+      "cell": "state_victory",
+      "section": "2.5.8",
+      "input": "victory",
+      "action": "victory",
+      "planned_name": "胜利收掌",
+      "pose": "缓慢收拳松肩→看向远处→观察掌轻收胸侧→站稳",
+      "reference_frames": 8,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "training_installed_visual_pending_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_victory"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-ceremonies-v1/README.md",
+      "user_approved": false,
+      "current_status_note": "本人已有独立完整GPT帧接训练；主游戏真实流程及输入回放闭环，无新请求/视频。明暗、手势与头身细差留账，不判用户通过。"
+    },
+    {
+      "cell": "state_defeat",
+      "section": "2.5.8",
+      "input": "defeat",
+      "action": "defeat",
+      "planned_name": "战败",
+      "pose": "膝软→单膝下沉→向侧后倒下→躺地",
+      "reference_frames": 4,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽对应强度受击闷哼；倒地接躯干撞地",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_defeat"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_timeout",
+      "section": "2.5.8",
+      "input": "timeout",
+      "action": "timeout",
+      "planned_name": "时间到",
+      "pose": "掌缓慢放下→低头看胸灯→抬头停住",
+      "reference_frames": 4,
+      "phase": 5,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "training_installed_visual_pending_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短呼吸/疲劳气声；只在进入状态触发，不每循环重复喊叫",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_timeout"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-ceremonies-v1/README.md",
+      "user_approved": false,
+      "current_status_note": "本人已有独立完整GPT帧接训练；主游戏真实流程及输入回放闭环，无新请求/视频。明暗、手势与头身细差留账，不判用户通过。"
+    },
+    {
+      "cell": "state_taunt",
+      "section": "2.5.8",
+      "input": "防御+投技",
+      "action": "taunt",
+      "planned_name": "近前观察",
+      "pose": "探头→左掌向对手再次张开→偏头观察→回待机；不编挑衅台词",
+      "reference_frames": 6,
+      "phase": 5,
+      "reference_status": "欧米伽感知的掌心观察姿态：圆谷官方角色页及第1话；呼吸/过渡为游戏编排。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "training_installed_visual_pending_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "欧米伽短促发力喊声+相应挥掌、拳腿、抓腕或落地声",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_taunt"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_review": "reports/review/2026-10-30/omega-s5-ceremonies-v1/README.md",
+      "user_approved": false,
+      "current_status_note": "本人已有独立完整GPT帧接训练；主游戏真实流程及输入回放闭环，无新请求/视频。明暗、手势与头身细差留账，不判用户通过。"
+    },
+    {
+      "cell": "state_chase_takeoff",
+      "section": "2.5.8",
+      "input": "升击命中后8/9",
+      "action": "chase_takeoff",
+      "planned_name": "追击起跳",
+      "pose": "升击命中后沉膝→向对手方向蹬地→收膝进入追击空中",
+      "reference_frames": 3,
+      "phase": 3,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": false,
+      "installed": true,
+      "animation_status": "installed_self_reviewed_with_blockers",
+      "design_status": "pending_director_review",
+      "effect_plan": null,
+      "emission_part": "无远程发射；实体拳、掌、肘或脚接触命中，只允许普通共享命中/防御火花。",
+      "sound_plan": {
+        "voice": "角色短促发力气声，脚接地相配脚步；空相只播衣身掠动",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_chase_takeoff"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      },
+      "runtime_reviewed": true,
+      "art_passed": false
+    },
+    {
+      "cell": "state_charge_start",
+      "section": "2.5.7",
+      "input": "按住Q",
+      "action": "charge_start",
+      "planned_name": "蓄能起手",
+      "pose": "双掌向身体收拢→肘向外→胸前聚力",
+      "reference_frames": 3,
+      "phase": 6,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "pending_director_review",
+      "effect_plan": {
+        "id": "fx_charge_start",
+        "kind": "aura",
+        "origin": "胸灯周围及双肩/躯干轮廓，依人物逐帧跟随，不作为投射物。",
+        "source_kind": "original",
+        "source_images": [
+          "art/fighters/ultraman-omega/references/photos/base-scope.jpg"
+        ],
+        "original_status": "游戏蓄能/爆气规则，不冒称原剧命名能力。",
+        "colors_shape": "青白亮芯、青蓝外层和散点星屑",
+        "layers": [
+          "背层青蓝星屑",
+          "前层胸肩微光；爆气用独立GPT环形像素帧，至少4帧"
+        ]
+      },
+      "emission_part": "胸灯周围及双肩/躯干轮廓，依人物逐帧跟随，不作为投射物。",
+      "sound_plan": {
+        "voice": "角色低发力气声+青色聚能起/持续/收尾，循环噪音需音高门复核",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_charge_start"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_charge",
+      "section": "2.5.7",
+      "input": "保持Q",
+      "action": "charge",
+      "planned_name": "蓄能循环",
+      "pose": "双臂低举、胸灯青光轻亮→呼吸→回初相；眼高总幅≤6、相邻≤3",
+      "reference_frames": 4,
+      "phase": 6,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "pending_director_review",
+      "effect_plan": {
+        "id": "fx_charge",
+        "kind": "aura",
+        "origin": "胸灯周围及双肩/躯干轮廓，依人物逐帧跟随，不作为投射物。",
+        "source_kind": "original",
+        "source_images": [
+          "art/fighters/ultraman-omega/references/photos/base-scope.jpg"
+        ],
+        "original_status": "游戏蓄能/爆气规则，不冒称原剧命名能力。",
+        "colors_shape": "青白亮芯、青蓝外层和散点星屑",
+        "layers": [
+          "背层青蓝星屑",
+          "前层胸肩微光；爆气用独立GPT环形像素帧，至少4帧"
+        ]
+      },
+      "emission_part": "胸灯周围及双肩/躯干轮廓，依人物逐帧跟随，不作为投射物。",
+      "sound_plan": {
+        "voice": "角色低发力气声+青色聚能起/持续/收尾，循环噪音需音高门复核",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_charge"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    },
+    {
+      "cell": "state_charge_stop",
+      "section": "2.5.7",
+      "input": "松开Q",
+      "action": "charge_stop",
+      "planned_name": "蓄能收势",
+      "pose": "胸前能量减弱→拆掌恢复观察架",
+      "reference_frames": 2,
+      "phase": 6,
+      "reference_status": "游戏编排，参考《街头霸王III 3rd Strike》隆的同类站蹲跳、受击和投摔；冲刺/追击参考《拳皇’98》草薙京的跑动与空中拳腿，不宣称原剧招式名。",
+      "source_refs": [
+        "art/fighters/ultraman-omega/references/sources.json",
+        "REBUILD_2D_PLAN.md#2.5"
+      ],
+      "completed": true,
+      "installed": true,
+      "animation_status": "root_accepted_with_recorded_deviations",
+      "design_status": "pending_director_review",
+      "effect_plan": {
+        "id": "fx_charge_stop",
+        "kind": "aura",
+        "origin": "胸灯周围及双肩/躯干轮廓，依人物逐帧跟随，不作为投射物。",
+        "source_kind": "original",
+        "source_images": [
+          "art/fighters/ultraman-omega/references/photos/base-scope.jpg"
+        ],
+        "original_status": "游戏蓄能/爆气规则，不冒称原剧命名能力。",
+        "colors_shape": "青白亮芯、青蓝外层和散点星屑",
+        "layers": [
+          "背层青蓝星屑",
+          "前层胸肩微光；爆气用独立GPT环形像素帧，至少4帧"
+        ]
+      },
+      "emission_part": "胸灯周围及双肩/躯干轮廓，依人物逐帧跟随，不作为投射物。",
+      "sound_plan": {
+        "voice": "角色低发力气声+青色聚能起/持续/收尾，循环噪音需音高门复核",
+        "voice_source_kind": "episode",
+        "seek_episode": "《欧米伽奥特曼》第1话战斗；受击/投摔补第3、4话；第7阶段Kits分离后逐段听辨确认",
+        "source_refs": [
+          "art/fighters/ultraman-omega/references/pages/ep1-storyboards.json",
+          "art/fighters/ultraman-omega/references/pages/ep4-storyboards.json"
+        ],
+        "events": [
+          {
+            "phase": "key_pose",
+            "event": "omega_charge_stop"
+          }
+        ],
+        "verification": "原声暂未取，不编造可用音频秒点。第7阶段目标约-20LUFS、≤-1dBTP、SNR≥12dB；无音乐音调/节拍/长平直段。"
+      }
+    }
+  ],
+  "forms": [
+    "rekiness_armor",
+    "trigaron_armor",
+    "valgeness_armor",
+    "gamedon_armor"
+  ],
+  "matrix_template": "content/templates/humanoid/command_table.json",
+  "effect_requirements": "每专属特效独立目录：atlas.png/effect.json/provenance.json/island-whitelist.json；全部GPT像素帧、至少4帧，持续段无缝。二三级采用更大原生图集，运行时不得放大。",
+  "emission_acceptance": "第6阶段每个发射相输出人物+十字发射点+原剧截图，左右朝向原生误差≤2；光束起点贴交掌前缘。换朝向同时核武器左右手与装甲不对称部位。",
+  "caveats": [
+    "空中光团等是明确游戏编排；不把地面原剧截图称为空中原剧截图。",
+    "本轮只定发射部位，不填写尚不存在的beam_origin像素坐标。",
+    "四套装甲只交身份定稿，不混入本体动作矩阵。",
+    "空中必杀宇宙发射依据在官方开篇CG；第6阶段须复核悬空姿态后放行，若证据不成立则标阻塞，不偷换另一招。"
+  ],
+  "director_stage2_approved": false,
+  "stage2_review": "reports/review/2026-10-26/ultraman-omega-ground/README.md",
+  "stage2_next_authorized": true,
+  "runtime_native_scale_profile": {
+    "factor": 1.125,
+    "evidence": "reports/review/2026-10-26/ultraman-omega-ground/absolute-size-codex/correction.json",
+    "policy": "后续动作先按身份定稿制作，再沿用整帧9/8交付变换；判定和发射原点同步，不重复放大已交付资源。"
+  },
+  "codex_closeout_review": {
+    "self_reviewed": true,
+    "reviewed_at": "2026-10-26T13:30:25.341650+00:00",
+    "reviewer": "当前主执行会话",
+    "note": "根已看新比例153相全部安全分页、29动作头部预览、双对手双朝向32页实录抽帧、双分辨率双朝向主游戏截图及用户原截图对照；9/8修正绝对尺寸，末相四组合可见。完整verify退出1仅loop-resources；眼点窗口SHA绑定迁移后定向仍退出1仅两角色走路，不降门、不改原证据。走路、头镖及sweep辅助缺项保留；自审非用户批准，也未冒称全片连续播放。",
+    "user_approved": false,
+    "director_approved": false,
+    "size_gate_passed": false,
+    "walk_blockers_preserved": true,
+    "authorization": "用户已授权按总交接顺序推进；自审不等于尺寸全过或用户批准",
+    "verification": {
+      "label": "final-size-codex",
+      "result": "reports/review/2026-10-26/ultraman-omega-ground/final-size-codex/result.json",
+      "attribution": "reports/review/2026-10-26/ultraman-omega-ground/final-size-codex/failure-attribution.json"
+    },
+    "verify_exit": 1,
+    "verify_failures": [
+      "loop-resources"
+    ],
+    "verify_sha256": "e700cc3a7aba1886b30012894365fb760d6688715b3a24115cb0170bf27ee201",
+    "movie": "reports/review/2026-10-26/ultraman-omega-ground/ultraman-omega-ground.mp4",
+    "movie_sha256": "b5c628f7930c377abcca9471392396f521924c116facea238ab884e6dc748a0a",
+    "evidence_files": {
+      "reports/review/2026-10-26/ultraman-omega-ground/movie-evidence.json": "b39ea131cf8203d3f219d9dbd636a249156aa5445bd335eca046431dedc7d250",
+      "reports/review/2026-10-26/ultraman-omega-ground/media-render-evidence.json": "546362f2faf265e1ce1bd6ffc5b9fa0749e7f3c7aa93e9fad1ad265d58252f05",
+      "reports/review/2026-10-26/ultraman-omega-ground/absolute-size-codex/logic-check/logic/logic-complete-size-codex.json": "caee079a7b3a95ca79eebed87a07ed69028f18fdbc8cceb85baf04d9c2088798",
+      "reports/review/2026-10-26/ultraman-omega-ground/final-size-codex/result.json": "e700cc3a7aba1886b30012894365fb760d6688715b3a24115cb0170bf27ee201"
+    },
+    "unchanged_runtime_files": 66
+  },
+  "stage3_root_self_reviewed": true,
+  "stage3_review": "reports/review/2026-10-26/ultraman-omega-air/codex-runtime-review/root-runtime-review.json",
+  "stage3_art_blockers_preserved": true,
+  "stage4_authorized": true,
+  "stage4_root_self_reviewed": true,
+  "stage4_review": "reports/review/2026-10-26/ultraman-omega-defense/codex-runtime-review/root-runtime-review.json",
+  "stage4_art_blockers_preserved": true,
+  "stage5_authorized": true,
+  "stage5_review": "reports/review/2026-10-30/omega-s5-runtime-v1/README.md",
+  "stage5_runtime_integration": {
+    "installed_actions": [
+      "throw_forward",
+      "throw_back",
+      "dash_throw",
+      "air_throw",
+      "throw_tech",
+      "grabbed",
+      "thrown_forward",
+      "thrown_back",
+      "thrown_air",
+      "thrown_dash"
+    ],
+    "frames": 51,
+    "training_only": true,
+    "runtime_validation": "reports/review/2026-10-30/omega-s5-runtime-v1/runtime-validation.json",
+    "user_approved": false,
+    "stage6_authorized": false,
+    "known_issues": [
+      "前投对杰顿最低4原生像素穿地",
+      "跑投对杰顿最低1原生像素穿地",
+      "副手接触及部分比例/头饰小误差留账"
+    ],
+    "policy": "按用户2026-10-30差不多即可裁定，停止反复微修，继续S5剩余主要动作；本批0生图、0新视频。"
+  },
+  "stage5_strong_throw_review": "reports/review/2026-10-30/omega-s5-strong-throw-v1/README.md",
+  "stage5_strong_throw_runtime": {
+    "action": "motion_41236",
+    "frames": 8,
+    "training_only": true,
+    "damage": 115,
+    "stamina_cost": 30,
+    "ticks": 23,
+    "user_approved": false,
+    "stage6_authorized": false,
+    "known_issues": [
+      "副手接触",
+      "举起/前掀相体量与部分比例/头饰误差留账"
+    ]
+  },
+  "stage5_ceremonies_review": "reports/review/2026-10-30/omega-s5-ceremonies-v1/README.md",
+  "stage5_ceremonies_root_self_reviewed": true,
+  "stage5_runtime_matrix_installed": true,
+  "stage6_authorized": true,
+  "stage5_ceremonies_runtime": {
+    "actions": [
+      "intro",
+      "victory",
+      "timeout",
+      "taunt"
+    ],
+    "frames": 26,
+    "ticks": {
+      "intro": 48,
+      "victory": 56,
+      "timeout": 32,
+      "taunt": 30
+    },
+    "training_only": true,
+    "source": "existing_stage7_advance_candidates",
+    "new_image_requests": 0,
+    "generated_videos": 0,
+    "user_approved": false,
+    "validation": "reports/review/2026-10-30/omega-s5-ceremonies-v1/runtime-validation.json"
+  },
+  "stage4_burst_review": "reports/review/2026-10-30/omega-burst-runtime-v1/README.md",
+  "stage4_burst_runtime": {
+    "training_installed": true,
+    "frames": 5,
+    "fx_frames": 4,
+    "validation": "reports/review/2026-10-30/omega-burst-runtime-v1/runtime-validation.json",
+    "user_approved": false,
+    "stage6_authorized": false
+  },
+  "stage5_user_gate_20261030": {
+    "user_response": "继续继续",
+    "decision": "按现有效果通过S5并继续S6专属招式和必杀",
+    "source": "用户对欧米伽S5验收问题的直接回复",
+    "review": "reports/review/2026-10-30/omega-s5-user-gate-v1/README.md",
+    "user_approved": true,
+    "stage6_authorized": true,
+    "training_only": true,
+    "playable_unchanged": true,
+    "known_issues_preserved": true,
+    "does_not_approve_individual_art_changes": true,
+    "does_not_open_armor_or_s7": true
+  },
+  "stage6_pulse_runtime": {
+    "review": "reports/review/2026-10-30/omega-s6-pulse-runtime-v1/README.md",
+    "validation": "reports/review/2026-10-30/omega-s6-pulse-runtime-v1/runtime/validation.json",
+    "frames": 6,
+    "ticks": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      3
+    ],
+    "origin": [
+      39,
+      111
+    ],
+    "damage": 65,
+    "stamina_cost": 30,
+    "energy_cost": 0,
+    "fx": [
+      "start",
+      "flight",
+      "trail",
+      "hit"
+    ],
+    "suit_seam_review_pending": true,
+    "body_front_missing": true,
+    "character_voice_missing": true,
+    "training_only": true,
+    "user_approved": false,
+    "new_image_requests": 0,
+    "generated_videos": 0,
+    "suit_seam_progress": "第1–5相双踝及第0相近踝已修；第0远踝保留、旧待机另待"
+  },
+  "stage6_low_air_pulse_runtime": {
+    "review": "reports/review/2026-10-30/omega-s6-low-air-pulse-v1/RUNTIME_REVIEW.md",
+    "validation": "reports/review/2026-10-30/omega-s6-low-air-pulse-v1/runtime/validation.json",
+    "actions": [
+      "low_pulse",
+      "air_pulse"
+    ],
+    "frames_per_action": 5,
+    "ticks": 23,
+    "damage": 65,
+    "stamina_cost": 30,
+    "energy_cost": 0,
+    "body_front_missing": true,
+    "character_voice_missing": true,
+    "training_only": true,
+    "user_approved": false,
+    "generated_videos": 0
+  },
+  "stage6_pulse_ankle_repair": {
+    "review": "reports/review/2026-10-30/omega-s6-pulse-ankle-fix-v1/README.md",
+    "validation": "reports/review/2026-10-30/omega-s6-pulse-ankle-fix-v1/runtime/validation.json",
+    "fixed_frames": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "frame0_near_fixed": true,
+    "frame0_far_pending": true,
+    "old_idle_seam_pending": true,
+    "original_alpha_and_outside_unchanged": true,
+    "user_approved": false,
+    "requests": 6,
+    "estimated_cost_usd": "0.395838",
+    "generated_videos": 0
+  },
+  "super_slot_revision": {
+    "date": "2026-11-01",
+    "policy": "docs/SUPER_MOVE_DIVERSITY.md",
+    "status": "eight_slash_root_accepted_with_recorded_deviations",
+    "generation_hold_actions": [],
+    "old_same_beam_level1_level2_plan_rejected": true,
+    "approved_limited_skill_exception": false,
+    "runtime_installed": true,
+    "next_step": "八段真实连中和停帧/防御/落空/打断/原输入回放已完成，继续S7正常对战；严格比例/人耳听审与四英雄/EX/八装甲/武器保持。",
+    "design_contract": {
+      "path": "art/fighters/ultraman-omega/stage6/super2-eight-slash-20261101-v1/plan.json",
+      "sha256": "d714c806ce9e6427a6b47e1d0a08f024a14f96fad953212855e363d4de7a4bb5"
+    },
+    "root_acceptance": {
+      "path": "reports/review/2026-11-01/omega-super2-eight-slash-v1/root-runtime-acceptance-v1.json",
+      "sha256": "579e9f5e9161b586093bc13fc651577f1a790ed898a4405766e4df36ce855594"
+    }
+  },
+  "stage6_root_self_reviewed": true,
+  "director_stage6_approved": true,
+  "stage6_review": "reports/review/2026-11-01/omega-s6-root-acceptance-v1/acceptance-v1.json",
+  "stage7_authorized": true,
+  "stage6_gate_authority": "root_delegated_by_user",
+  "stage6_strict_size_passed": false,
+  "stage7_formal_opening": {
+    "authority": "root_delegated_by_user",
+    "user_instruction": "你自己验收啊，不要让我验收，你继续啊；非严重问题记账后继续，把角色实机到主游戏",
+    "scope": "欧米伽本体正式选人、普通CPU/本地对局、结算、F4和原输入回放",
+    "status": "formal_entry_opened_runtime_validation_pending",
+    "stage6_review": "reports/review/2026-11-01/omega-s6-root-acceptance-v1/acceptance-v1.json",
+    "latest_super2_review": "reports/review/2026-11-01/omega-super2-eight-slash-v1/root-runtime-acceptance-v1.json",
+    "audio_review": "reports/review/2026-11-01/omega-s7-audio-runtime-v1/RUNTIME_REVIEW.md",
+    "strict_size_passed": false,
+    "listening_review_complete": false,
+    "known_issues": [
+      "既有严格头尺/躯干/整体比例偏差保全",
+      "本人语音音色和SNR尚未经人耳逐条听审"
+    ],
+    "armor_scope": "四套装甲资源尚缺，不在本次开放范围；原implemented/playable保持false",
+    "frozen_user_approval_fields_unchanged": true
+  },
+  "stage7_root_self_reviewed": true,
+  "stage7_gate_authority": "root_delegated_by_user",
+  "stage7_review": "reports/review/2026-11-01/omega-s7-formal-opening-v1/acceptance-v1.json",
+  "stage7_strict_size_passed": false,
+  "stage7_listening_review_complete": false
+}
