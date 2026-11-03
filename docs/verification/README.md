@@ -5,6 +5,7 @@
 - [repository-cleanup.json](repository-cleanup.json)：清理范围、初始盘点、去重和最终全量源SHA审计。清理前记录的4710个运行二进制内容均可在原位置或119个合并目标中找到相同SHA；没有重新编码或替换画帧/音频。
 - [cleanup-regression.json](cleanup-regression.json)：空缓存导入、当前全部默认回归及定点补跑结果。结果按初次执行与定点补跑合并；每项列出实际运行批次，旧断言修正及退役基线单独说明。
 - [runtime-catalog.json](runtime-catalog.json)：清理时实际definition与三槽招式快照。列为可玩不代表全动作美术、声音和独立技能规范全部达标；后续改数据时须同步重导。
+- [remote-lfs.json](remote-lfs.json)：首次push完成后，用已认证gh接口逐项检查全部唯一LFS对象的远端下载可用性和大小；绑定对象清单SHA，不重复下载素材。
 
 验证使用Godot 4.7.2.stable.steam.ed1daf0bf、Python 3.12.10、Pillow 12.3.0、NumPy 2.5.2。主游戏无缓存导入与启动通过；图形菜单用注入键盘事件触发退出，外层进程返回0，重复退出检查也通过。
 
