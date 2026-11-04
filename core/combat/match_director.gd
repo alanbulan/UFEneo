@@ -32,6 +32,8 @@ func _init(first: UfeFighterDefinition, second: UfeFighterDefinition, rule: UfeR
 	var fingerprint_data: Array = [6, 60, rule.simulation_data(), first.simulation_data(), second.simulation_data(), form_rules, ["round_end_identity", 1], ["move_start_conditions", MOVE_START_RULE_REVISION], ["hit_pushback_bounds", UfeHitResolver.PUSHBACK_BOUNDARY_REVISION], ["throw_target_air", UfeHitResolver.THROW_TARGET_RULE_REVISION]]
 	if UfeThrowResolver.RootOffsets.used_in(fingerprint_data):
 		fingerprint_data.append(["throw_root_overrides", UfeThrowResolver.ROOT_OVERRIDE_RULE_REVISION])
+	if UfeThrowResolver.CurrentCapture.used_in(fingerprint_data):
+		fingerprint_data.append(["throw_current_capture", UfeThrowResolver.CurrentCapture.REVISION])
 	content_fingerprint = JSON.stringify(fingerprint_data, "", true).sha256_text()
 
 func command_state(f: UfeFighter) -> String:

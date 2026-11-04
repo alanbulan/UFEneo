@@ -1,10 +1,12 @@
 class_name UfeThrowResolver
 extends RefCounted
+const CurrentCapture = preload("res://core/combat/throw_current_capture.gd")
 const HoldPoints = preload("res://core/combat/throw_hold_points.gd")
 const RootOffsets = preload("res://core/combat/throw_root_offsets.gd")
 const ROOT_OVERRIDE_RULE_REVISION = RootOffsets.REVISION
 ## 全部抓点为角色本地整数坐标(x,离根点高度)，由招式数据与被投姿势数据提供。
 static func can_capture(victim: UfeFighter, move: Dictionary) -> bool:
+	if not CurrentCapture.valid_move(move):return false
 	for frame in move.frames:
 		var target: Dictionary=frame.get("target",{})
 		if target.has("root_overrides") and not RootOffsets.valid(target.root_overrides):return false
@@ -178,6 +180,10 @@ static func sync(sim: UfeMatchDirector) -> void:
 		var frame := a.frame()
 		if not frame.has("target"):continue
 		var target: Dictionary=frame.target
+		if str(target.get("mode",""))=="capture_current" and not CurrentCapture.active(b):
+			abort_hold(sim,owner,b,"missing_capture_snapshot")
+			continue
+		if CurrentCapture.preserve(b,target):continue
 		var offset: Array=RootOffsets.offset(b,target)
 		if offset.is_empty():
 			abort_hold(sim,owner,b,"invalid_root_override")

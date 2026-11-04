@@ -1,11 +1,13 @@
 class_name UfeMoveData
 extends RefCounted
+const CurrentCapture = preload("res://core/combat/throw_current_capture.gd")
 const HoldPoints = preload("res://core/combat/throw_hold_points.gd")
 const RootOffsets = preload("res://core/combat/throw_root_offsets.gd")
 ## 每个 tick 均显式包含图片索引、位移、框、取消窗口和事件。
 static func validate(move: Dictionary) -> bool:
-	if not move.has("frames") or move.frames.is_empty():
+	if not move.get("frames",null) is Array or move.frames.is_empty():
 		return false
+	if not CurrentCapture.valid_move(move):return false
 	if move.has("throw_target_air"):
 		if not move.throw_target_air is bool or str(move.get("kind",""))!="throw":return false
 	if move.has("air_only"):

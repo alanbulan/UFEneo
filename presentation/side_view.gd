@@ -373,6 +373,8 @@ func _update_camera_framing() -> void:
 	camera_lift=0.0
 
 func _animation(f: UfeFighter, manifest: Dictionary) -> Dictionary:
+	if UfeThrowResolver.CurrentCapture.active(f):
+		return _animation(UfeThrowResolver.CurrentCapture.visual_fighter(f),manifest)
 	# 换定义前也必须播放EX自己的完整变身帧；开放前不会读取未完成素材。
 	if f.state=="transform" and str(f.battle_form.get("mode",""))=="definition":
 		var form_id: String=f.battle_form.target_definition.id

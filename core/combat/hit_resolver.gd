@@ -1,5 +1,6 @@
 class_name UfeHitResolver
 extends RefCounted
+const CurrentCapture = preload("res://core/combat/throw_current_capture.gd")
 const PUSHBACK_BOUNDARY_REVISION := 1
 const THROW_TARGET_RULE_REVISION := 1
 static func world_box(f: UfeFighter, box: Array) -> Rect2i:
@@ -14,6 +15,7 @@ static func can_hit(attacker: UfeFighter, target: UfeFighter) -> bool:
 		var air_throw: bool=bool(throw_move.get("throw_target_air",attacker.move_id=="air_throw"))
 		if air_throw!=(target.height>0):return false
 		if not UfeThrowResolver.can_capture(target,throw_move):return false
+		if not CurrentCapture.eligible(attacker,target,throw_move):return false
 	if not attacker.move_id.is_empty():
 		var move: Dictionary=attacker.definition.moves[attacker.move_id]
 		if move.has("hit_groups"):move=UfeMeleeHitGroups.contact_move(attacker,move)
@@ -49,6 +51,7 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 	# 否则持续远程可让受方永远以0体再次破防。
 	if b.state=="guardbreak":UfeStaminaRules.finish_guard_break(b)
 	if str(move.kind)=="throw":
+		CurrentCapture.remember(b,move)
 		a.combat.confirmed=true
 		b.clear_move()
 		b.facing=-a.facing

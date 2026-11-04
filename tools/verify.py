@@ -13,7 +13,7 @@ from runtime.environment import ROOT, godot_path, isolated_test_environment
 CASES = [
     "logic_2d", "review_inputs", "armor_transform_routing", "air_only_start",
     "projectile_ground_expiry", "projectile_ground_clip", "hit_pushback_bounds",
-    "throw_hold_point_overrides", "throw_root_overrides", "capture_mechanism",
+    "throw_hold_point_overrides", "throw_root_overrides", "throw_current_capture", "capture_mechanism",
     "capture_receiver_availability", "ko_finish_presentation", "transform_mechanism",
     "phase3_standing", "phase3_air", "phase3_reaction", "phase3_zetton",
     "phase3_zetton_air", "phase3_zetton_defense", "phase3_throws",

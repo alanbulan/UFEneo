@@ -1,5 +1,6 @@
 class_name UfeFighter
 extends RefCounted
+const CurrentCapture = preload("res://core/combat/throw_current_capture.gd")
 var definition: UfeFighterDefinition
 var base_definition: UfeFighterDefinition
 var battle_form: Dictionary = {}
@@ -27,11 +28,13 @@ func _init(data: UfeFighterDefinition, start_x: int) -> void:
 	stats.hp = data.max_health
 
 func enter(id: String, duration: int = 0) -> void:
+	if id!="thrown":motion.erase("throw_current_capture")
 	state = id
 	state_tick = 0
 	motion.duration = duration
 
 func frame() -> Dictionary:
+	if CurrentCapture.active(self):return motion.throw_current_capture.frame
 	if state == "captured" and motion.has("capture_victim"):
 		var captured: Dictionary = motion.capture_victim
 		var poses: Array = definition.state_frames.get(str(captured.animation),[])
@@ -70,6 +73,7 @@ func frame() -> Dictionary:
 	return frames[clampi(move_tick, 0, frames.size() - 1)]
 
 func animation_key() -> String:
+	if CurrentCapture.active(self):return str(motion.throw_current_capture.animation)
 	if state == "captured" and motion.has("capture_victim"): return str(motion.capture_victim.animation)
 	if state == "transform": return str(battle_form.get("transform_animation", "transformation"))
 	if state == "form_entry": return str(battle_form.get("entry_animation", "form_entry"))

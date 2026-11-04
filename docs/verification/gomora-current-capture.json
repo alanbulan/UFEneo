@@ -1,0 +1,117 @@
+{
+  "date": "2026-11-04",
+  "status": "generic_opt_in_logic_verified_not_installed",
+  "final_code_snapshot_utc": "2026-11-04T23:41:04Z",
+  "scope": "显式opt-in空接保相：地面攻击方接空中受方；保相至首承重为静止段。不是哥莫拉三级安装或美术验收。",
+  "constraints": [
+    "攻击方捕获时height/vy均为0；first_tick至entry_tick含首承重dx/dy均0且无throw_height。",
+    "首承重仅固定sprite，拒绝非空throw_hold_variants和throw_hold_floor_variants。",
+    "真实指定躯干框相交且入口root差在显式0至24像素界限内；不扩框、不吸附、不增加无敌。",
+    "入口统一RootOffsets.offset；保存捕获前整相、朝向、root与动画参数；hold/root、拆投、中断后清快照。",
+    "无opt-in旧指纹不变，仅实际含该字段的模拟内容绑定版本1。"
+  ],
+  "input_replay_cases": 12,
+  "tests": [
+    {
+      "run": "reports/verification/runs/7609d0abb234",
+      "name": "throw_root_overrides",
+      "status": "passed",
+      "exit": 0,
+      "log_sha256": "c09d8c13fb3601ce59696a2d634e157badfbc0151792f0df00193e9483466d1a"
+    },
+    {
+      "run": "reports/verification/runs/7609d0abb234",
+      "name": "throw_hold_point_overrides",
+      "status": "passed",
+      "exit": 0,
+      "log_sha256": "f81ec5747f110385d910ac6920c68b357a8aff881e2bad485fcb593cdc9d2b4d"
+    },
+    {
+      "run": "reports/verification/runs/7609d0abb234",
+      "name": "phase3_throws",
+      "status": "passed",
+      "exit": 0,
+      "log_sha256": "9d2657cd73da715144ccbe90cea99b759530b01b2b95df550df3f2d843127143"
+    },
+    {
+      "run": "reports/verification/runs/214a622c70c3",
+      "name": "logic_2d",
+      "status": "passed",
+      "exit": 0,
+      "log_sha256": "23f27dba5277267ed66ba6830fffca21eb41e25c6418c5e5975faeb71d8cb113"
+    },
+    {
+      "run": "reports/verification/runs/214a622c70c3",
+      "name": "review_inputs",
+      "status": "passed",
+      "exit": 0,
+      "log_sha256": "bedb10662c4768e10e011fa2820566a76ac3225ff3bea7fb6882505761764144"
+    },
+    {
+      "run": "reports/verification/runs/214a622c70c3",
+      "name": "throw_current_capture",
+      "status": "passed",
+      "exit": 0,
+      "log_sha256": "3315ec071866e974b32c682070f5a96dc86b220a43190f249ce5a4ff5c396c08"
+    }
+  ],
+  "files": [
+    {
+      "path": "core/combat/throw_current_capture.gd",
+      "sha256": "523aecc0cf063be498d87b1d7c4e0c01d83c752b3639d4915b06e7c9129cf75c"
+    },
+    {
+      "path": "core/combat/throw_current_capture.gd.uid",
+      "sha256": "05791fc05145b53e6ae2bd37fd364b84ca6d726ae8696a7465fe377b7f2ff6c1"
+    },
+    {
+      "path": "core/combat/hit_resolver.gd",
+      "sha256": "4e07fcb4c6d6db97cf32f7bc74812524d001b07c400ede4b05b29d191cd2a0a5"
+    },
+    {
+      "path": "core/combat/match_director.gd",
+      "sha256": "a8bf3a09b39a7ba3b57e7f1edc654b8b259ad3322a98161f7464cb89ba3486fb"
+    },
+    {
+      "path": "core/combat/move_data.gd",
+      "sha256": "84f7c2ef9da587c81cf0cd19721325b874fdf7fa675765cba2e3f2adf15d7957"
+    },
+    {
+      "path": "core/combat/throw_resolver.gd",
+      "sha256": "015ead0b61d9bd113730e9aa3be7cb07972893ce5c788137dfaad77551fd981f"
+    },
+    {
+      "path": "core/fighters/fighter.gd",
+      "sha256": "dfacd7976ab10034889bdf008d1cd1741c4984b6ade39b212f6a82b663d137e1"
+    },
+    {
+      "path": "presentation/side_view.gd",
+      "sha256": "184ba03346d001a037fccfc4b227f2e2c355a2a13be7466b3ae0318d0e6d1ca5"
+    },
+    {
+      "path": "tests/throw_current_capture.gd",
+      "sha256": "77244b2decbd102bfcd385aa60d64f44623fe0bb79bee0bd9059c9b5c2574f4a"
+    },
+    {
+      "path": "tests/throw_current_capture.gd.uid",
+      "sha256": "1911fabdcd60528dbe7af96ea7eafd1f5bfc9a89106f608ac77f0da29f6c0bab"
+    },
+    {
+      "path": "tools/verify.py",
+      "sha256": "17c986913a4f3aebf43f926a523559f95d316c433c03c4bc7176521fa6ad736d"
+    }
+  ],
+  "uid_generated_by": "完整Godot editor import；实体已只读核对，不重复导入。",
+  "full_suite": {
+    "run": "reports/verification/runs/7609d0abb234",
+    "limitation": "main_shutdown_menu_exit因无图形显示服务失败；不得称全量全通过。"
+  },
+  "not_run": [
+    "哥莫拉背掀实际安装与配对输入回归",
+    "主游戏双向720/1080视觉验收",
+    "录屏"
+  ],
+  "runtime_gomora_installed": false,
+  "paid_requests": 0,
+  "user_codex_invoked": false
+}
