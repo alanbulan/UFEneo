@@ -1,14 +1,19 @@
 class_name UfeThrowResolver
 extends RefCounted
 const HoldPoints = preload("res://core/combat/throw_hold_points.gd")
+const RootOffsets = preload("res://core/combat/throw_root_offsets.gd")
+const ROOT_OVERRIDE_RULE_REVISION = RootOffsets.REVISION
 ## 全部抓点为角色本地整数坐标(x,离根点高度)，由招式数据与被投姿势数据提供。
 static func can_capture(victim: UfeFighter, move: Dictionary) -> bool:
+	for frame in move.frames:
+		var target: Dictionary=frame.get("target",{})
+		if target.has("root_overrides") and not RootOffsets.valid(target.root_overrides):return false
 	return HoldPoints.can_capture(victim,move)
 
-static func abort_hold(sim: UfeMatchDirector, owner: int, victim: UfeFighter) -> void:
+static func abort_hold(sim: UfeMatchDirector, owner: int, victim: UfeFighter, reason: String="missing_hold_point") -> void:
 	var actor:=sim.fighters[owner]
 	# 正常数据已经过捕获前预检；仅防运行中损坏，保留最后有效位置及已付费用。
-	sim.events.append({"kind":"throw_hold_abort","player":owner,"move":actor.move_id,"reason":"missing_hold_point"})
+	sim.events.append({"kind":"throw_hold_abort","player":owner,"move":actor.move_id,"reason":reason})
 	actor.clear_move()
 	actor.combat.buffer=""
 	actor.combat.buffer_ticks=0
@@ -122,7 +127,8 @@ static func floor_safe_hold_sprite(a: UfeFighter, b: UfeFighter, target: Diction
 	var choices: Array=poses[fallback].get("throw_hold_floor_variants",[])
 	# 只有角色自身显式登记的姿势参与；没有登记的旧角色逐帧保持原编号。
 	if choices.is_empty():return preferred
-	var offset: Array=target.get("root",[0,0])
+	var offset: Array=RootOffsets.offset(b,target)
+	if offset.is_empty():return preferred # sync在改姿势前拒绝非法覆盖。
 	var available:=a.height+int(target.grip[1])+int(offset[1])
 	for candidate in [preferred]+choices:
 		var index:=int(candidate)
@@ -172,6 +178,10 @@ static func sync(sim: UfeMatchDirector) -> void:
 		var frame := a.frame()
 		if not frame.has("target"):continue
 		var target: Dictionary=frame.target
+		var offset: Array=RootOffsets.offset(b,target)
+		if offset.is_empty():
+			abort_hold(sim,owner,b,"invalid_root_override")
+			continue
 		if str(target.get("mode","root"))=="hold" and target.has("hold_point_overrides") and not can_capture(b,a.definition.moves[a.move_id]):
 			abort_hold(sim,owner,b)
 			continue
@@ -181,7 +191,6 @@ static func sync(sim: UfeMatchDirector) -> void:
 		b.motion.pose=str(target.pose)
 		b.motion.pose_sprite=victim_sprite(a,b,target)
 		b.facing=a.facing*int(target.get("facing",-1))
-		var offset: Array=target.get("root",[0,0])
 		if str(target.get("mode","root"))=="hold":
 			var pose:=b.frame()
 			var grabbed: Array

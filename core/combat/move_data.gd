@@ -1,6 +1,7 @@
 class_name UfeMoveData
 extends RefCounted
 const HoldPoints = preload("res://core/combat/throw_hold_points.gd")
+const RootOffsets = preload("res://core/combat/throw_root_offsets.gd")
 ## 每个 tick 均显式包含图片索引、位移、框、取消窗口和事件。
 static func validate(move: Dictionary) -> bool:
 	if not move.has("frames") or move.frames.is_empty():
@@ -17,6 +18,7 @@ static func validate(move: Dictionary) -> bool:
 		for box in frame.hitboxes + frame.hurtboxes:
 			if box.size() != 4 or int(box[2]) <= 0 or int(box[3]) <= 0: return false
 		var target: Dictionary=frame.get("target",{})
+		if target.has("root_overrides") and not RootOffsets.valid(target.root_overrides):return false
 		if str(target.get("mode",""))=="hold" and target.has("hold_point_overrides") and not HoldPoints.valid(target.hold_point_overrides):return false
 		if frame.has("melee_guard"):
 			if not frame.melee_guard is String or frame.melee_guard!="block" or not valid_guard_box(frame.get("guard_box",null)):return false
