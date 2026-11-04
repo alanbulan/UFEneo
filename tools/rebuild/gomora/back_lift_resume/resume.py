@@ -167,7 +167,8 @@ def register():
              'palette_sha256':sha(palette_path),'common_actor_scale':[1,4],'common_receiver_scale':[179,1024],
              'per_phase_scaling':False,'limb_editing':False,'runtime_installed':False,'contact_accepted':False,
              'strict_size_accepted':False,'reviewer':'root_delegated_by_user','scope':'离线完整帧注册候选'}
-    if prior and prior.get('static_actor_review'):receipt['static_actor_review']=prior['static_actor_review']
+    for key in ['static_actor_review','static_receiver_review','paired_static_review']:
+        if prior and prior.get(key):receipt[key]=prior[key]
     save(receipt_path,receipt);print(receipt_path,receipt['status'])
 
 def main():

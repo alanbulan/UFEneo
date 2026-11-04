@@ -39,4 +39,13 @@ python tools/godot_lock.py -- python tools/verify.py --skip-import --only throw_
 
 ## 本次重建实测
 
-新环境锁内四项回归通过：throw_root_overrides、logic_2d、throw_hold_point_overrides、phase3_throws；见docs/verification/gomora-root-resume.json。已生成并实际看18相完整攻击方注册候选，初代六相仍等LFS。背部测点在Forge结果上与源图投影误差0至0.5px，均为真实可见上缘；仍未接受受方配对或主游戏画面。
+新环境锁内四项回归通过：throw_root_overrides、logic_2d、throw_hold_point_overrides、phase3_throws；见docs/verification/gomora-root-resume.json。已生成并实际看18相完整攻击方注册候选，初代六相也已到齐、不重采样注册并实看双向完整帧。背部测点在Forge结果上与源图投影误差0至0.5px，均为真实可见上缘；受方配对已实看双向及两种绘制顺序，末两相的头/臂与头角重叠，明确未通过；主游戏画面未验收。
+
+
+## 实际注册像素的配对复现
+
+运行 `python tools/rebuild/gomora/back_lift_resume/contact_review.py`，输出 reports/gomora-resume/contact-review 的双向完整人物检查页及 measurement.json。使用当前收据SHA和真实可见背部上缘，受方A/E必须是腹侧实际下缘；不修改任何注册像素。两种绘制顺序同时展示，不能用遮挡掩盖穿体。
+
+重新测得候选相序骨盆最大步长38.04→23.28px（此前源投影估算24.23px不作为现注册结果）。07→02→09候选只减轻突跳，尚未批准。末两相不能继续将腹缘固定在背部：整轮廓保守检验中，若仅末帧突然平移，在前移/上移各0–80px搜索范围内，04最小约56.6px、05约76.5px才能完全无重叠（不是任意方向全局下界），因此不能采用末端瞬移修补。下一步应从03卸重阶段设计整数、独立离背轨迹，按接续速度和实际头臂/头角轮廓验证，再接既有倒立/落地动作。轮廓零重叠是保守诊断，不是所有真实遮挡都错误。
+
+普通三级保持不变。源及候选是生产材料，不是已安装资产；此目录不运行旧安装器。无录屏。
