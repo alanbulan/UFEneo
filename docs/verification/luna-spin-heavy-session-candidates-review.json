@@ -1,0 +1,139 @@
+{
+  "date_utc": "2026-11-05",
+  "action": "spin_heavy",
+  "status": "两版完整源候选已保存，均未通过转轴/转髋与干净Alpha要求",
+  "sources": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/source.json",
+  "review_scope": "本接续者实际打开两版完整原图；Pillow逐项读取Alpha与像素SHA。没有修改/抠图/配准/拼肢/缩放或Godot运行。",
+  "attempts": [
+    {
+      "attempt": 1,
+      "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/turn-chamber-attempt-01.raw.png",
+      "sha256": "47a526dbd26410c774081bde555bed18bd4d6ff94f16ce692f2ef33fd7ac1a5a",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        254
+      ],
+      "alpha_zero_pixels": 1110362,
+      "alpha_full255_pixels": 0,
+      "alpha_intermediate_pixels": 462502,
+      "alpha_threshold_bboxes": {
+        "1": [
+          0,
+          21,
+          1008,
+          1536
+        ],
+        "16": [
+          179,
+          60,
+          834,
+          1409
+        ],
+        "64": [
+          180,
+          60,
+          834,
+          1408
+        ],
+        "128": [
+          180,
+          61,
+          834,
+          1408
+        ],
+        "200": [
+          181,
+          61,
+          833,
+          1408
+        ],
+        "254": [
+          210,
+          64,
+          810,
+          1407
+        ]
+      },
+      "identity": "月亮蓝青胸肩甲、圆灯、双腕圆盘、银白后掠头冠/黄眼和红银腿部可辨；未见其他装甲替代。",
+      "whole_body": "全头冠、两拳、两条手臂及两条腿/鞋在主要不透明人物轮廓内完整，无明显第三腿或断肢。",
+      "legs": "一腿抬膝、小腿收下，另一腿支撑；单图和交叠不能严格锁定解剖左右沿全链不互换，不把画面左右当解剖左右通过。",
+      "pivot": "支撑鞋底接近平放，未清楚呈现脚掌前部着地/脚跟轻提的转轴；单图缺相邻肩髋角度，未能证明回旋真实转髋，而不是站姿提膝。",
+      "alpha_verdict": "真实透明通道存在，但低Alpha噪点触边，透明零值不等于干净sprite；显示可见人物外围光晕，违反无光晕要求，不冒称原生干净透明。",
+      "decision": "保留原字节候选，不注册、不安装，不签本关键相动作合格。",
+      "individual_observation": "右上肩甲较宽、抬膝较高，双臂护胸组合可读；支撑鞋仍近水平。"
+    },
+    {
+      "attempt": 2,
+      "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/turn-chamber-attempt-02.raw.png",
+      "sha256": "5bc62789bf8e6ab2f7e6b0df2c224c9021717eff125d938da2a49556c6311987",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        254
+      ],
+      "alpha_zero_pixels": 1094107,
+      "alpha_full255_pixels": 0,
+      "alpha_intermediate_pixels": 478757,
+      "alpha_threshold_bboxes": {
+        "1": [
+          0,
+          0,
+          1012,
+          1536
+        ],
+        "16": [
+          101,
+          43,
+          798,
+          1428
+        ],
+        "64": [
+          101,
+          44,
+          797,
+          1428
+        ],
+        "128": [
+          102,
+          44,
+          797,
+          1428
+        ],
+        "200": [
+          102,
+          44,
+          797,
+          1427
+        ],
+        "254": [
+          223,
+          227,
+          714,
+          1423
+        ]
+      },
+      "identity": "月亮蓝青胸肩甲、圆灯、双腕圆盘、银白后掠头冠/黄眼和红银腿部可辨；未见其他装甲替代。",
+      "whole_body": "全头冠、两拳、两条手臂及两条腿/鞋在主要不透明人物轮廓内完整，无明显第三腿或断肢。",
+      "legs": "一腿抬膝、小腿收下，另一腿支撑；单图和交叠不能严格锁定解剖左右沿全链不互换，不把画面左右当解剖左右通过。",
+      "pivot": "支撑鞋底接近平放，未清楚呈现脚掌前部着地/脚跟轻提的转轴；单图缺相邻肩髋角度，未能证明回旋真实转髋，而不是站姿提膝。",
+      "alpha_verdict": "真实透明通道存在，但低Alpha噪点触边，透明零值不等于干净sprite；显示可见人物外围光晕，违反无光晕要求，不冒称原生干净透明。",
+      "decision": "保留原字节候选，不注册、不安装，不签本关键相动作合格。",
+      "individual_observation": "抬膝略降低、双拳更接近脸胸，身体主轮廓较窄；支撑鞋仍近水平，并未明确解决第一版转轴问题。"
+    }
+  ],
+  "installed": false,
+  "playable": false,
+  "art_passed": false,
+  "godot_run": false,
+  "recording": false,
+  "next_step": "先保留两版问题，不再自行生成。若后续明确继续，针对支撑脚跟/真实肩髋转动与无外围光晕修正；仍需完整回旋链及可靠本人背甲参考，不能把单张当整招。"
+}

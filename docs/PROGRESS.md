@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 月亮4K回旋重击两版内置生成候选已保存，月亮身份、双拳双腿和整身可辨；支撑鞋仍近水平，未明确呈现前掌转轴/抬跟，单图不足证明肩髋真实回旋。真实Alpha存在但低透明噪点触边、外围可见光晕，均不签关键相合格；未配准、未运行、未安装。[两版逐项审阅](verification/luna-spin-heavy-session-candidates-review.json)
+
 - 月亮下一项按原计划为4K回旋重击；已完成一张“转体收右膝”完整生成brief及参考SHA核验，排除旧侧踢/直腿骨架作为正确姿势参考。仅准备文字，未生成/收费/运行；背面随势参考与完整回旋链仍缺。[brief](../art/fighters/ultraman-arc__luna/stage2/spin-heavy-keyframe-brief-20261105-v1/brief.json)
 
 - 月亮升击七相RAM候选：共同159/1254尺度、真实6K唯一12×12拳框/75伤/体力30；720/1080双向命中、格挡、落空的24组432原生PNG技术核验完成，12对180tick原输入/独立回放五字段一致。12原输入逐相静帧已审，入蓄头肩下降及回架腕甲转面保留为实速待判，不据静帧强制补相，也不签整招顺滑。命中白闪、站防与头形细差保留；无录屏、声音或真人键盘验收，不安装/不开放。[逻辑](verification/luna-launcher-session-resume.json)、[图形与边界](verification/luna-launcher-session-graphical-review.json)、[独立复核](verification/luna-launcher-session-evidence-recheck.json)
