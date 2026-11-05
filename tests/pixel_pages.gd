@@ -35,6 +35,25 @@ func run() -> void:
 	require(sim.fighters[1].definition.moves.pulse.display_name=="脸部小火球","杰顿5I必须显示自己的招式名")
 	var commands:=UfeCommandPages.new();root.add_child(commands);commands.set_fighter(sim.fighters[1].definition)
 	require(commands.entries.any(func(e):return e.move=="special2") and commands.entries.any(func(e):return e.move=="special3"),"按能量选择的三档必杀必须分别展示实际数据")
+	commands.show_page(7)
+	var special_rows:=commands.rows.rows.get_children()
+	var displayed_costs: Array=[]
+	for row in special_rows:
+		displayed_costs.append(row.get_child(1).get_child(1).text)
+	for id in ["special","special2","special3"]:
+		require(displayed_costs.has(UfeCommandPages.move_costs(sim.fighters[1].definition.moves[id])),"各必杀行应显示自身实际能量和体力费用 "+id)
+	require(UfeCommandPages.move_costs({"energy_cost":1500,"stamina_cost":37})=="能量 1500点 · 体力 37","非整格费用不能四舍五入")
+	require(UfeCommandPages.move_costs({})=="能量 0 · 体力 0","缺省费用为零")
+	require(UfeCommandPages.move_title({"move":"air_throw","display_name":"空投"},{},false)=="待制作：空投","缺资源不能把任意招式误称半圈投技")
+	var original_moves:=JSON.stringify(sim.fighters[1].definition.moves)
+	commands.clips.erase("special2");commands.show_page(7)
+	var unavailable_found:=false
+	for row in commands.rows.rows.get_children():
+		if row.get_child(1).get_child(0).text=="待制作："+str(sim.fighters[1].definition.moves.special2.display_name):
+			unavailable_found=true
+			require(row.get_child(1).get_child(1).text=="费用待实装核验" and row.get_child(2).text=="—","缺资源不宣称就绪费用与帧数")
+	require(unavailable_found,"缺资源行保留本人招名")
+	require(JSON.stringify(sim.fighters[1].definition.moves)==original_moves,"查看招式费用不修改模拟数据")
 	var training:=UfeTrainingOverlay.new();root.add_child(training)
 	sim._start(sim.fighters[0],"ranged_forward");training.update_match(sim)
 	require(training.info[0].text.contains("八分光轮") and training.info[0].text.contains("起手%d"%int(sim.fighters[0].definition.moves.ranged_forward.startup)),"训练应显示当前招式完整帧数据")

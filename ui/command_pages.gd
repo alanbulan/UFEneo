@@ -111,9 +111,23 @@ func show_page(index: int) -> void:
 		else:
 			input.show_input(int(entry.directions[0]),int(entry.buttons),entry.motion if not entry.motion.is_empty() else entry.directions,entry.motion.is_empty() and entry.directions.size()>1);row.add_child(input)
 		var move: Dictionary=fighter_data.moves.get(entry.move,{}) if fighter_data!=null else {}
-		var label:=Label.new();label.text=str(move.get("display_name",entry.display_name)) if clips.has(entry.move) else "待制作：半圈投技";label.custom_minimum_size.x=220;label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;row.add_child(label)
+		var ready: bool=not move.is_empty() and clips.has(entry.move) and not clips[entry.move].is_empty()
+		var details:=VBoxContainer.new();details.custom_minimum_size.x=220;row.add_child(details)
+		var label:=Label.new();label.text=move_title(entry,move,ready);label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;details.add_child(label)
+		var costs:=Label.new();costs.text=move_costs(move) if ready else "费用待实装核验";costs.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;details.add_child(costs)
 		for key in ["startup","active","recovery","damage"]:
-			var number:=Label.new();number.text=str(int(move.get(key,0))) if clips.has(entry.move) else "—";number.custom_minimum_size.x=40;row.add_child(number)
+			var number:=Label.new();number.text=str(int(move.get(key,0))) if ready else "—";number.custom_minimum_size.x=40;row.add_child(number)
+
+static func move_title(entry: Dictionary, move: Dictionary, ready: bool) -> String:
+	var move_name:=str(move.get("display_name",entry.get("display_name",entry.get("move","未命名招式"))))
+	return move_name if ready else "待制作："+move_name
+
+static func move_costs(move: Dictionary) -> String:
+	var energy:=int(move.get("energy_cost",0))
+	var energy_text:="0"
+	if energy>0:
+		energy_text=("%d格"%(energy/1000) if energy%1000==0 else "%d点"%energy)
+	return "能量 %s · 体力 %d"%[energy_text,int(move.get("stamina_cost",0))]
 
 func _quick_entry(entry: Dictionary) -> Dictionary:
 	for candidate in entries:
