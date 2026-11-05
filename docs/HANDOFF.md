@@ -6,6 +6,8 @@
 
 ### 月亮升击内置生图单相（2026-11-05）
 
+- 月亮升击七相RAM候选：五新完整源与本人idle六源统一159/1254、整图固定x80与足底280；6K双向命中/格挡/落空6组180tick独立回放0错，唯一12×12上挑拳框、75伤、体力30。起收招/头形/鞋位仍待画面，不开放装甲；正式main原/回放与图形尚未计完成。[当前逻辑与限制](verification/luna-launcher-session-resume.json)
+
 - 升击新增回收中相：同右闭拳由03高位降至上胸、双圆腕甲可辨，双鞋保持近似窄站；进入01仍需全身下沉与远腕遮挡变化，不将五张关键源当完整招式或默认以01替代正式护架。未配准安装，来源/Alpha与未知元数据据实保存。[回收相审阅](verification/luna-launcher-return-mid-candidate-review.json)
 
 - 升击新增胸前渐伸中相：同右闭拳由腹侧向上至胸前、双圆腕甲可辨，可补01→02拳路；头冠/伸膝已接近02，全身分段与支撑脚、旧起收招仍须核，未宣布实速或整招通过。保留本会话原字节及未知model/high/usage。[来源与实测](verification/luna-launcher-rise-mid-candidate-review.json)

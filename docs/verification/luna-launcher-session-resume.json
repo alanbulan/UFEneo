@@ -1,0 +1,149 @@
+{
+  "date_utc": "2026-11-05",
+  "status": "ram_candidate_logic_passed_graphical_pending",
+  "installed": false,
+  "art_passed": false,
+  "playable": false,
+  "source": "五张本会话内置image_gen原图，仅候选，model/high/usage/费用未提供；本人idle六源共同尺度重新注册。",
+  "registration": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/launcher-registered-20261105-v1/manifest.json",
+    "sha256": "28ba94cc37b745ca09ebbe4393f7fe580c79662c2bac2450753e7db94bf4122e"
+  },
+  "source_review": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/launcher-registered-20261105-v1/registration-review.json",
+    "sha256": "99d307e8d8c6b4e92ad14e65efb600c998fe2c6f784208b52883d76341828f2f"
+  },
+  "contract": {
+    "path": "reports/luna-launcher-resume/contract-v1.json",
+    "sha256": "be444ea4692c9f239083b52b540e09e5a9903f24c06459713ddf6acb448fa07d"
+  },
+  "logic": {
+    "result": {
+      "path": "reports/luna-launcher-resume/logic-v1.json",
+      "sha256": "37951de4bcc0c92fc529589ac30087892bab18cc44d3c692748a35b7957b5175"
+    },
+    "log": {
+      "path": "reports/luna-launcher-resume/logic-v1.log",
+      "sha256": "c7ab722470ead772c22cd6e9f435e1ee401c74385c46679dbc3eb91c7f850932"
+    },
+    "case_count": 6,
+    "errors": [],
+    "cases": [
+      {
+        "contact_counts": {
+          "launcher": 1
+        },
+        "contacts": {
+          "launcher": "hit"
+        },
+        "damage": 75,
+        "direction": 1,
+        "final_hash": "a9cbeaaf62567f726cec0552884a8f35fb15d83d1baec2f76eed35db85d7d2f6",
+        "initial_gap": 70,
+        "kind": "hit",
+        "moves": [
+          "launcher"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "launcher": 1
+        },
+        "contacts": {
+          "launcher": "block"
+        },
+        "damage": 0,
+        "direction": 1,
+        "final_hash": "ae8e63489ed6648fafcb60defd46c3507523e8226d7666c34782d65e0b075757",
+        "initial_gap": 74,
+        "kind": "block",
+        "moves": [
+          "launcher"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {},
+        "contacts": {},
+        "damage": 0,
+        "direction": 1,
+        "final_hash": "2b783bf977b62b02846aa1c4a0e189d01c6249329b7455ea9d2c7675ebe688d6",
+        "initial_gap": 260,
+        "kind": "whiff",
+        "moves": [
+          "launcher"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "launcher": 1
+        },
+        "contacts": {
+          "launcher": "hit"
+        },
+        "damage": 75,
+        "direction": -1,
+        "final_hash": "9620597abfc417a0d83cf536a917199fbef31cce6368bac7677dfb67204dc573",
+        "initial_gap": 70,
+        "kind": "hit",
+        "moves": [
+          "launcher"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "launcher": 1
+        },
+        "contacts": {
+          "launcher": "block"
+        },
+        "damage": 0,
+        "direction": -1,
+        "final_hash": "3f3049fd8bb71e493b80401136166e83b080967feaf374baa966c550dc1c8b7f",
+        "initial_gap": 74,
+        "kind": "block",
+        "moves": [
+          "launcher"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {},
+        "contacts": {},
+        "damage": 0,
+        "direction": -1,
+        "final_hash": "0c4a30501706f187746a2c59180fd58c5fd3b86798b701bf4ea563a8ee44b62f",
+        "initial_gap": 260,
+        "kind": "whiff",
+        "moves": [
+          "launcher"
+        ],
+        "replay_errors": []
+      }
+    ],
+    "duration_ticks_each": 180,
+    "input": "tick20同时真实前方向与HEAVY，之后中立；陪练防御为真实GUARD，非真人键盘。",
+    "replay": "每例原InputFrame独立重播hash/events/projectiles一致。"
+  },
+  "import": {
+    "exit_code": 0,
+    "log": {
+      "path": "reports/luna-launcher-resume/import-v1/log.txt",
+      "sha256": "ebab0fa4183124b27717041ec0337079bd7513a2ee4c1892140dca85659ca440"
+    },
+    "engine_actual": "4.6.3.stable，不冒称目标4.7"
+  },
+  "headless_main": "正在串行核12组，尚未作为完成计入本回执",
+  "graphical": "未运行，等待无头完成后交真实云桌面。",
+  "rules": "候选9/5/9共23tick，phase3拳面12×12、伤75、体力30，初始测试站距70/74/260；不扩大框、不改正式规则/开关。取消窗口不沿用旧动画。",
+  "limits": [
+    "本人idle为旧候选曾使用源，不是严格美术签收",
+    "统一159/1254固定x80/bbox截止y280；不逐肢修复",
+    "idle→蓄腹存在显著拳位下沉及头肩变化，缺专用中相；return→idle转腕/拳路与2–3px脚位边界待验",
+    "旧idle与新02头冠/面头形细差不由统一缩放消除",
+    "未验实速、录屏、声音或真人键盘"
+  ]
+}
