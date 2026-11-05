@@ -6,12 +6,14 @@
 
 ### 当前获取与运行
 
-- 最新开发在私有仓库的checkpoint/full-20261105-0020。2026-11-05 04:45 UTC实际核验到22aa9defa0abbfd555186ace8d936b378bbe524e；main停99a084d8a03647d7c84546ba36cf0a4617f9c553。不要把main当成已含后续月亮与镜头改动。最终回执/本文的上传状态须另核远端，不猜测成功。
+- 最新开发在私有仓库的checkpoint/full-20261105-0020。2026-11-05 05:19 UTC实际核验到abdc9b3106aac186fe30a89b4a5d6e74203680b6；main停99a084d8a03647d7c84546ba36cf0a4617f9c553。不要把main当成已含后续月亮与镜头改动。最终回执/本文的上传状态须另核远端，不猜测成功。
 - GitHub已认证；本轮新增LFS远端下载SHA与大小已核验通过。早期限流/认证待回复已不是当前阻塞。云环境实际Godot4.6.3，下面历史Windows4.7.2记录不是本轮验收版本。
 - Godot继续通过tools/godot_lock.py串行导入/运行，隔离XDG目录。未开放的月亮候选必须从已冻结审片入口装配，不修改正式选人开关。旧冻结合同在依赖变动后会按SHA拒绝，不能篡改旧合同假装可重放；需要时按现有工具新建当前合同并保留旧结果。
 - 工作树可能出现已恢复LFS实体造成的大量PNG标M，不能整树暂存。仅按明确文件核SHA和diff提交。没有复制用户凭据或本机环境。
 
 ### 已完成与未通过的具体动作
+
+- 银河6K升拳：本人七完整相保序统一尺度，02同臂上挑拳面14×12有效，03降臂前伸仅后摇；真实75伤/可防/落空、完整挑空→落地→起身模拟与180tick回放通过。24组432PNG窗口与图形技术门通过，七相和双方顶点/倒地轮廓静帧带限制接受。保留缺渐伸、原腹部蓄力差异、白闪/旧站防/动态缩放；wake只有trace，未验起身动画，银河仍不开放。[源审](verification/galaxion-launcher-source-review.json)、[逻辑](verification/galaxion-launcher-resume.json)、[图形及旧失败](verification/galaxion-launcher-graphical-review.json)
 
 - 银河单远侧直拳：同招完整帧重排“原04护架→00/01/02接触保持→03回护”，小拳框11–12px；真实J扣30体力，命中65、防御0、落空0与独立回放通过。24组264PNG技术全过，132原输入图实看，单远拳静帧带限制接受。没有补渐伸相，原brief近侧左拳和左右交替三连仍未完成；旧站防手位/白闪/长训练板保守缩放保留，银河不开放。[源缺口](verification/galaxion-standing-attack-source-review.json)、[逻辑](verification/galaxion-light1-resume.json)、[图形](verification/galaxion-light1-graphical-review.json)
 

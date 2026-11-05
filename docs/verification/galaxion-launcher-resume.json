@@ -1,7 +1,7 @@
 {
   "fighter": "ultraman-arc__galaxion",
   "reviewer": "root_delegated_by_user",
-  "status": "logic_pass_graphical_pending",
+  "status": "single_launcher_candidate_static_pass_with_limits",
   "source_review": "docs/verification/galaxion-launcher-source-review.json",
   "manifest": "art/fighters/ultraman-arc__galaxion/stage2/launcher-registered-20261105-v1/manifest.json",
   "registration": {
@@ -133,7 +133,7 @@
     },
     "max_height": 171,
     "contact_height": 134,
-    "graphical_pending": true,
+    "graphical_pending": false,
     "window_wait_fix": {
       "reason": "v1图形第18组观测499ms而第二次时钟读数已>=500，成功条件与记录时刻不一致。",
       "fix": "观测和>=500门共享同一次elapsed_ms采样，不放宽8稳定帧或500ms门。",
@@ -145,12 +145,19 @@
       "python_tests": 28,
       "simulation_compared_against_v1": "12组state_hash/simulation_fingerprint/inputs/pair/events/projectiles逐tick完全一致",
       "old_graphical_failure_preserved": "docs/verification/galaxion-launcher-graphical-review.json"
+    },
+    "graphical_final": {
+      "groups": 24,
+      "pngs": 432,
+      "replay_pairs": 12,
+      "report": "docs/verification/galaxion-launcher-graphical-review.json",
+      "static_pass_with_limits": true
     }
   },
   "limits": [
     "只为单次真实6K候选，不代表完整装甲或追击连段。",
     "原brief腹部收拳未完全符合，02上挑后03已前伸仅作后摇，不能把03挂上挑判定。",
-    "图形尚未运行，不能以逻辑通过代替相邻姿态、美术或全身边界实际验收。",
+    "24组图形技术门与所检七相/挑空/倒地静帧通过；02→03角度跳、缺渐伸相和原brief腹部蓄力差异保留，wake仅trace不称动画验收。",
     "无实速、录屏、音频、真人硬件输入验收。"
   ],
   "installed": false,

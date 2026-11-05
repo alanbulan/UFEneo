@@ -21,3 +21,11 @@ python tools/rebuild/ultraman-arc/galaxion-launcher-resume/test_check.py
 合成正负例仅检验门禁；GALAXION_LAUNCHER_TRACE_DIR可指向实际运行目录补验真实trace。独立逻辑入口tests/review/fighters/ultraman-arc/galaxion_launcher/logic_check.gd，也须tools/godot_lock.py串行包装。
 
 本次contract-v1已完成Godot4.6.3导入、12组headless主游戏原输入/独立回放、6组逻辑和25项含实际trace的Python检查。两向均在tick26命中75或格挡0，落空0，扣30体力。真实受方轨迹：26进入launch，31首次正高度，48顶点171，50开始下降，67落地down，102起身wake，122回idle。结果见reports/galaxion-launcher-resume/headless-summary-v1.json。未提交、未启动图形，无录屏、真人硬件和声音验收。图形及美术结论以之后真实回执为准，旧light1记录不改。
+
+## 最终实际回执
+
+v1图形因入口观测499ms与第二次时钟读到500ms产生记录门不一致，停在18组324PNG；旧证据保留。入口已改成一次elapsed_ms同时供记录和500ms判断，未放宽8稳定帧门。合同v2经28项Python、6逻辑、12组180tick无头复验，全部模拟字段与v1一致。
+
+graphical-v2完整24组432PNG、12对180tick回放通过，实际稳定等待501–2046ms；216原输入图的静帧覆盖完成（前162图与v1 SHA一致沿用已实看观察，新增54图实看），七相和双方升空/倒地HUD边界可带限制接受。02→03角度变化、缺渐伸相、腹部蓄力不完全符原brief、白闪/旧站防/动态缩放限制保留；tick102 wake仅trace，无专门起身动画截图。无录屏、声音、实速和真人键盘验收，八装甲仍不开放。
+
+完整回执：docs/verification/galaxion-launcher-graphical-review.json；历史失败与最终结果不互相覆盖。
