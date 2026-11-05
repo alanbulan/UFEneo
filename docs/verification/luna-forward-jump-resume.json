@@ -1,0 +1,63 @@
+{
+  "schema": "ufeneo.luna.forward-jump-resume.v1",
+  "date": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "action": "前跳：起跳2相、前翻4相、落地2相",
+  "manifest": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/forward_jump-registered-20261105-v1/manifest.json",
+    "sha256": "c54889048f0a7608ed43dfce056f6ba58057d95693fda08b05c28aa899eb1882"
+  },
+  "source_review": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/forward_jump-registered-20261105-v1/root-review.json",
+    "sha256": "60f9056789dbe81a167e4fdb5eacbc886b82f79da37d63d7e9c2c6d3a9e306f8"
+  },
+  "contract": {
+    "path": "reports/luna-forward-jump-resume/candidate-runtime-v1.json",
+    "sha256": "2d30c33cbafac5a6e1061987cb3dc1abdeb962724d19ee6ffd631bff6ce96fe9"
+  },
+  "implementation": [
+    "4张本人前翻整源SHA及完整159采样逐像素一致；新可移植clip引用现存图集，无复制PNG、无拼肢或旋转贴肢。",
+    "直接复用垂直跳起落注册，包括land01整幅上移4px的支撑修正；不再次改图。",
+    "真实相对9单tick输入，左向为左上，右向为右上，整帧镜像不倒放；自然水平位移每tick4，完整132，不在建sim后改位置或状态。",
+    "统一轨迹时钟，起跳2tick占用总33tick中的前2tick，前翻00实际可见6tick，其余相按8/8/9；不为凑显示时长改模拟。",
+    "保持现有镜头/HUD，不掩盖垂直跳已发现的脚底/HUD避让缺口。"
+  ],
+  "validation": {
+    "engine": "Godot 4.6.3，目标4.7未验",
+    "headless": {
+      "path": "reports/luna-forward-jump-resume/headless-v1/runner-result.json",
+      "sha256": "844e38d6e0999ab9cb909f84082d6ea2a32aa71860880018f56a73d3f7d99a6f"
+    },
+    "python_tests": {
+      "path": "reports/luna-forward-jump-resume/python-tests-v1.log",
+      "sha256": "614a111895ca2c46aeb3a5cbfa6b723db10adc9ac84961f606b129e6b83ff2f5"
+    },
+    "headless_runs": 4,
+    "ticks_each": 120,
+    "phases_reached": 8,
+    "capture_gates_each": 17,
+    "displacement_both_facings": [
+      132,
+      -132
+    ],
+    "peak_height": 136,
+    "hp_stamina_unchanged": true,
+    "no_attack_events_or_projectiles": true,
+    "independent_replay_inputs_hashes_fingerprint_equal": true,
+    "positive_negative_tests": 30,
+    "registration_idempotence_and_pixel_checks": true
+  },
+  "graphical_status": "已交双向720/1080原输入及回放共8组图形验收，未计通过。",
+  "limits": [
+    "前翻00→01及02→03角度跨度大，起跳伸腿到深收膝、展开到落地须真实逐相核。",
+    "髋根粗代理约±3.1运行像素，不冒称严格骨尺。",
+    "落地末回idle脚位收窄与既有HUD遮脚缺口仍保留。",
+    "无实速、声音、真人硬件输入验收；无录屏。",
+    "仅前跳候选，不含后跳或空中攻击；装甲未开放。"
+  ],
+  "art_passed": false,
+  "strict_size_accepted": false,
+  "installed": false,
+  "playable": false,
+  "paid_generation": false
+}
