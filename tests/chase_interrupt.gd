@@ -27,11 +27,11 @@ func write_json(path: String, value: Variant) -> void:
 	var file:=FileAccess.open(path,FileAccess.WRITE)
 	check(file!=null,"写入证据/"+path)
 	if file!=null:file.store_string(JSON.stringify(value,"\t",true)+"\n")
-func legacy_fingerprint(sim: UfeMatchDirector) -> String:
-	# 精确旧指纹构成，只缺本轮chase_interrupt规则项，不改内容或格式。
+func fingerprint_without_chase_rule(sim: UfeMatchDirector) -> String:
+	# 人工负面夹具：从当前规则构成只移除chase_interrupt项，保留弹体方向项；不是历史版本指纹。
 	var forms: Array=[]
 	for f in sim.fighters:forms.append(UfeBattleTransform.simulation_data(f.battle_form))
-	var data: Array=[6,60,sim.rules.simulation_data(),sim.fighters[0].definition.simulation_data(),sim.fighters[1].definition.simulation_data(),forms,["round_end_identity",1],["move_start_conditions",UfeMatchDirector.MOVE_START_RULE_REVISION],["hit_pushback_bounds",UfeHitResolver.PUSHBACK_BOUNDARY_REVISION],["throw_target_air",UfeHitResolver.THROW_TARGET_RULE_REVISION]]
+	var data: Array=[6,60,sim.rules.simulation_data(),sim.fighters[0].definition.simulation_data(),sim.fighters[1].definition.simulation_data(),forms,["round_end_identity",1],["move_start_conditions",UfeMatchDirector.MOVE_START_RULE_REVISION],["hit_pushback_bounds",UfeHitResolver.PUSHBACK_BOUNDARY_REVISION],["throw_target_air",UfeHitResolver.THROW_TARGET_RULE_REVISION],["projectile_contact_direction",UfeHitResolver.PROJECTILE_DIRECTION_RULE_REVISION]]
 	if UfeThrowResolver.RootOffsets.used_in(data):data.append(["throw_root_overrides",UfeThrowResolver.ROOT_OVERRIDE_RULE_REVISION])
 	if UfeThrowResolver.CurrentCapture.used_in(data):data.append(["throw_current_capture",UfeThrowResolver.CurrentCapture.REVISION])
 	return JSON.stringify(data,"",true).sha256_text()
@@ -95,13 +95,13 @@ func test_case(facing: int, kind: String, jumper: int=0) -> void:
 			replay.step([UfeInputFrame.unpack(pair[0]),UfeInputFrame.unpack(pair[1])])
 			check(observe(replay)==rows[i],label+"/独立回放逐tick状态事件 %s"%i)
 		check(replay.state_hash()==loaded.final_hash,label+"/回放末hash")
-	var old:=legacy_fingerprint(sim)
-	check(old!=sim.content_fingerprint,label+"/规则变更指纹不同")
+	var old:=fingerprint_without_chase_rule(sim)
+	check(old!=sim.content_fingerprint,label+"/移除追击规则项后指纹不同")
 	recorder.fingerprint=old
-	var old_path:=out+label+"-old-rule.json"
-	check(recorder.save_file(old_path)==OK,label+"/旧规则指纹夹具保存")
-	check(UfeReplayRecorder.load_file(old_path,sim.content_fingerprint)==null and UfeReplayRecorder.last_error=="规则或招式数据已改变，无法播放该回放",label+"/旧规则明确拒绝")
-	var result: Dictionary={"case":label,"jump":jump_row,"chased":chased,"hits":seen_launcher,"hash":sim.state_hash(),"fingerprint":sim.content_fingerprint,"old_fingerprint":old}
+	var old_path:=out+label+"-missing-chase-rule.json"
+	check(recorder.save_file(old_path)==OK,label+"/缺追击规则项的人工指纹夹具保存")
+	check(UfeReplayRecorder.load_file(old_path,sim.content_fingerprint)==null and UfeReplayRecorder.last_error=="规则或招式数据已改变，无法播放该回放",label+"/缺追击规则项的人工指纹夹具明确拒绝")
+	var result: Dictionary={"case":label,"jump":jump_row,"chased":chased,"hits":seen_launcher,"hash":sim.state_hash(),"fingerprint":sim.content_fingerprint,"missing_chase_fingerprint":old}
 	summary.append(result)
 	write_json(out+label+"-trace.json",{"summary":result,"rows":rows})
 func state_entry_units() -> void:

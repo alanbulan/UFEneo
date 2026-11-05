@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-05",
+  "acceptance": "root_delegated_by_user",
+  "scope": "弹体离手后仍按自身飞行方向处理普通防御、受击朝向、击退及挑空水平速度，不随射手换边改向。",
+  "reproduction": {
+    "fighters": [
+      "zetton",
+      "ultraman"
+    ],
+    "input": "真实Q蓄能14tick，tick25按I发脸部火球，收招后真实4H，tick73瞬移越身；受方中立或持续U。只初始化双方站位与朝向，不直接赋能量/状态/弹体。",
+    "before": "正向tick80火球从左向右击中却使初代780→772、朝右；持U在tick82错误挡住背后来弹。镜像同样错误。",
+    "after": "同一输入下正确780→788、朝左；镜像500→492、朝右，背后来弹不再被朝向射手的普通U防住。",
+    "controls": "未越身中立/前防四组保持，未发生瞬移手刀近战接触干扰。"
+  },
+  "changes": [
+    "只消费已有contact.facing；apply新增可选方向参数0保留近战旧路径，不临时改变射手facing。",
+    "不改伤害、判定、轨迹、寿命、反射归属、捕获位姿或回程无伤。",
+    "追加全局projectile_contact_direction=1模拟指纹，旧方向版本回放明确拒绝。"
+  ],
+  "validation": {
+    "engine": "Godot4.6.3，4.7未验",
+    "cases": 8,
+    "ticks_each": 200,
+    "before_failures": 6,
+    "after_failures": 0,
+    "same_inputs": "独立逐项核对8组修前/修后落盘frames数组完全相同。",
+    "unaffected_controls": "4组未越身200tick末状态hash与修前逐项相同。",
+    "replay": "每组正式recorder保存原输入、正式loader载入后独立模拟，逐tick状态/事件/弹体/hash一致；旧方向指纹等于修前真实指纹并被新版loader拒绝。",
+    "fixtures": "固定站位fixture回放，不冒称默认470/750起点普通录像；额外明确标注底层单元覆盖艾斯正式挑空弹体vx、射手朝向不变、近战默认参数等价。",
+    "related": [
+      {
+        "name": "projectile_ground_expiry",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "projectile_ground_clip",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "phase3_zetton",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "phase3_zetton_defense",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "phase3_specials",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "capture_mechanism",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "capture_mechanism_replay",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "phase3_throws",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "chase_interrupt",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "frame_guard",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "projectile_frame_hitboxes",
+        "status": "failed",
+        "exit": 1
+      }
+    ],
+    "import": "完整隔离XDG锁内editor import生成UID，未见错误。",
+    "verify": "已纳入默认verify，每次--test-out唯一输出目录。"
+  },
+  "preserved_failures": [
+    {
+      "path": "reports/projectile-contact-direction-after/run1.log",
+      "reason": "首次漏声明局部方向变量导致编译拒跑，未执行用例，不计通过；run2和final才实际通过。"
+    },
+    {
+      "test": "projectile_frame_hitboxes",
+      "reason": "额外尝试在读取硬编码历史contract时失败，不是方向断言失败；此项未完成，不能称全部回归通过。",
+      "missing": "reports/review/2026-10-28/ultraman-teo-s6/air-special-return-v1/beam-collision-contract-v1.json",
+      "policy": "未伪造历史文件或修改测试绕过。"
+    }
+  ],
+  "fingerprint_test_note": "chase_interrupt测试现在为人工移除当前追击规则项的负面夹具，不是历史真实版本；方向测试才精确对应本轮修前版本。历史候选与旧回执保持原记录，重跑须重封当前源码合同。",
+  "limits": [
+    "无新美术或收费请求，不调用用户Codex。",
+    "本批没有真实图形、录屏、音频或硬件输入验收；不冒称全项目全量通过。"
+  ],
+  "evidence": {
+    "reports/projectile-contact-direction-before/run1/summary.json": "b321107aca6e819d12685db997cfbf929d96da5c988f2c48c9fed2a6ff6538c3",
+    "reports/projectile-contact-direction-after/final/summary.json": "a85f23e210f727daf13135cadc523df961eafd8da6eda8caf0e2498b04f7688c",
+    "reports/verification/runs/f5f150522013/results.json": "c44448ac8d4ac6f68694fa1867c84a936fa8477a657ed71cc3603f8df7d1bd52"
+  }
+}

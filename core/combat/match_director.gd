@@ -30,7 +30,7 @@ func _init(first: UfeFighterDefinition, second: UfeFighterDefinition, rule: UfeR
 	for f in fighters:
 		f.battle_form = battle_forms.get(f.definition.id, {})
 		form_rules.append(UfeBattleTransform.simulation_data(f.battle_form))
-	var fingerprint_data: Array = [6, 60, rule.simulation_data(), first.simulation_data(), second.simulation_data(), form_rules, ["round_end_identity", 1], ["move_start_conditions", MOVE_START_RULE_REVISION], ["hit_pushback_bounds", UfeHitResolver.PUSHBACK_BOUNDARY_REVISION], ["throw_target_air", UfeHitResolver.THROW_TARGET_RULE_REVISION], ["chase_interrupt", CHASE_INTERRUPT_RULE_REVISION]]
+	var fingerprint_data: Array = [6, 60, rule.simulation_data(), first.simulation_data(), second.simulation_data(), form_rules, ["round_end_identity", 1], ["move_start_conditions", MOVE_START_RULE_REVISION], ["hit_pushback_bounds", UfeHitResolver.PUSHBACK_BOUNDARY_REVISION], ["throw_target_air", UfeHitResolver.THROW_TARGET_RULE_REVISION], ["chase_interrupt", CHASE_INTERRUPT_RULE_REVISION], ["projectile_contact_direction", UfeHitResolver.PROJECTILE_DIRECTION_RULE_REVISION]]
 	if UfeThrowResolver.RootOffsets.used_in(fingerprint_data):
 		fingerprint_data.append(["throw_root_overrides", UfeThrowResolver.ROOT_OVERRIDE_RULE_REVISION])
 	if UfeThrowResolver.CurrentCapture.used_in(fingerprint_data):
@@ -113,7 +113,8 @@ func step(inputs: Array) -> void:
 			var b := fighters[1-index]
 			var input: UfeInputFrame = inputs[1-index]
 			var guardable := b.height==0 and b.move_id.is_empty() and b.state in ["idle","walk","crouch","crouch_start","crouch_rise","guard","crouch_guard","blockstun","crouch_blockstun"]
-			var facing_attack := (a.x-b.x)*b.facing>=0
+			var projectile_facing := int(contact.facing) if bool(contact.projectile) else 0
+			var facing_attack := projectile_facing*b.facing<0 if projectile_facing!=0 else (a.x-b.x)*b.facing>=0
 			var defending := guardable and facing_attack and (input.held(UfeInputFrame.GUARD) or input.x * b.facing < 0)
 			var old_power := int(a.combat.power)
 			var feedback: Dictionary=contact.move.get("feedback",{"spark":"impact_heavy","block_spark":"impact_guard","hitstop":6,"blockstop":3,"shake":0,"flash":2}).duplicate(true)
@@ -129,7 +130,7 @@ func step(inputs: Array) -> void:
 				result="block"
 				feedback.block_spark=contact.guard_frame.get("guard_effect",feedback.block_spark)
 				feedback.block_color=[1,1,1,1]
-			else:result=UfeHitResolver.apply(a, b, contact.move, defending, rules)
+			else:result=UfeHitResolver.apply(a, b, contact.move, defending, rules, projectile_facing)
 			a.combat.power = old_power
 			if result in ["capture","ignored"]:continue
 			if contact.has("hit_group"):UfeMeleeHitGroups.record(a,int(contact.hit_group),str(contact.move.id),result)

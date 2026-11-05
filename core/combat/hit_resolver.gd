@@ -3,6 +3,7 @@ extends RefCounted
 const CurrentCapture = preload("res://core/combat/throw_current_capture.gd")
 const PUSHBACK_BOUNDARY_REVISION := 1
 const THROW_TARGET_RULE_REVISION := 1
+const PROJECTILE_DIRECTION_RULE_REVISION := 1
 static func world_box(f: UfeFighter, box: Array) -> Rect2i:
 	return Rect2i(f.x + int(box[0]) if f.facing > 0 else f.x - int(box[0]) - int(box[2]),
 		f.height + int(box[1]), int(box[2]), int(box[3]))
@@ -45,7 +46,7 @@ static func contact_point(a: UfeFighter,b: UfeFighter) -> Vector2i:
 			if area.has_area():return area.get_center()
 	return Vector2i(b.x,b.height+60)
 
-static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: bool, rules: UfeRuleSet) -> String:
+static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: bool, rules: UfeRuleSet, projectile_facing: int = 0) -> String:
 	a.combat.connected = true
 	# 破防被真实命中/投中终止也属于结束，不能绕过自然收势的最低恢复，
 	# 否则持续远程可让受方永远以0体再次破防。
@@ -73,7 +74,8 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 	if str(move.kind)=="projectile": impact_height=int(move.get("projectile",{}).get("spawn",[0,75])[1])+a.height-b.height
 	b.motion.hit_pose = "hit_air" if airborne else "hit_crouch" if crouching else "hit_high" if impact_height>=100 else "hit_mid"
 	# 素材为朝右、从右侧受击；记录攻击来向，防止背面受击仍向攻击者倾倒。
-	b.facing = 1 if a.x>=b.x else -1
+	# 弹体离手后可与射手朝向分离；0保留近战原有来向判定。
+	b.facing = -projectile_facing if projectile_facing!=0 else (1 if a.x>=b.x else -1)
 	b.clear_move()
 	b.stats.hp = maxi(0, int(b.stats.hp) - int(move.damage) * int(a.combat.power))
 	b.stats.stun = mini(rules.stun_threshold, int(b.stats.stun) + int(move.stun))
@@ -81,11 +83,12 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 	b.stats.energy = mini(3000, int(b.stats.energy) + 40)
 	a.combat.combo = int(a.combat.combo) + 1
 	a.combat.combo_ticks = 90
-	b.x = clampi(b.x + a.facing * int(move.pushback), 28, 1252)
+	var impact_facing := projectile_facing if projectile_facing!=0 else a.facing
+	b.x = clampi(b.x + impact_facing * int(move.pushback), 28, 1252)
 	b.enter("hit", int(move.hitstun))
 	if bool(move.launch):
 		b.vy = 18
-		b.vx = a.facing * 2
+		b.vx = impact_facing * 2
 		b.enter("launch")
 		# 同tick互击的后结算不能给已受击的攻击者重新授予追击。
 		if a.chase_allowed(): a.motion.chase_window = 24
