@@ -90,32 +90,33 @@ func invalid_midhold_case() -> void:
 	var sim:=fixture(t);UfeThrowResolver.sync(sim)
 	check(sim.fighters[1].state=="down" and sim.fighters[0].move_id.is_empty(),"运行时非法覆盖有界退出")
 	check(sim.events.size()==1 and sim.events[0].reason=="invalid_root_override" and sim.hitstop==0,"非法覆盖不静默回零或制造命中")
-func legacy_fingerprint(sim: UfeMatchDirector) -> String:
+# 人工对照：保留当前全部全局规则，仅省root扩展；不代表真实历史全局版本。
+func fingerprint_without_root_rule(sim: UfeMatchDirector) -> String:
 	var forms: Array=[]
 	for f in sim.fighters:forms.append(UfeBattleTransform.simulation_data(f.battle_form))
-	var payload:=[6,60,sim.rules.simulation_data(),sim.fighters[0].definition.simulation_data(),sim.fighters[1].definition.simulation_data(),forms,["round_end_identity",1],["move_start_conditions",UfeMatchDirector.MOVE_START_RULE_REVISION],["hit_pushback_bounds",UfeHitResolver.PUSHBACK_BOUNDARY_REVISION],["throw_target_air",UfeHitResolver.THROW_TARGET_RULE_REVISION]]
+	var payload:=[6,60,sim.rules.simulation_data(),sim.fighters[0].definition.simulation_data(),sim.fighters[1].definition.simulation_data(),forms,["round_end_identity",1],["move_start_conditions",UfeMatchDirector.MOVE_START_RULE_REVISION],["hit_pushback_bounds",UfeHitResolver.PUSHBACK_BOUNDARY_REVISION],["throw_target_air",UfeHitResolver.THROW_TARGET_RULE_REVISION],["chase_interrupt",UfeMatchDirector.CHASE_INTERRUPT_RULE_REVISION],["projectile_contact_direction",UfeHitResolver.PROJECTILE_DIRECTION_RULE_REVISION]]
 	return JSON.stringify(payload,"",true).sha256_text()
 
 func fingerprint_and_loader_case() -> void:
 	for enabled in [false,true]:
 		var target:={"mode":"root","pose":"thrown_back","sprite":0,"facing":1,"root":[7,11]}
 		if enabled:target.root_overrides={"ultraseven":[-19,90]}
-		var sim:=fixture(target);var legacy_sha:=legacy_fingerprint(sim)
-		check((sim.content_fingerprint!=legacy_sha)==enabled,"仅覆盖内容绑定新语义")
+		var sim:=fixture(target);var baseline_sha:=fingerprint_without_root_rule(sim)
+		check((sim.content_fingerprint!=baseline_sha)==enabled,"仅覆盖内容绑定新语义")
 		var replay:=UfeReplayRecorder.new();replay.append([UfeInputFrame.make(),UfeInputFrame.make()],sim)
 		var current_path:=OUT+"current-%s.json"%enabled;check(replay.save_file(current_path)==OK,"隔离合成回放保存")
 		check(UfeReplayRecorder.load_file(current_path,sim.content_fingerprint)!=null,"同规则文件可读")
-		var data: Variant=JSON.parse_string(FileAccess.get_file_as_string(current_path));data.content=legacy_sha
+		var data: Variant=JSON.parse_string(FileAccess.get_file_as_string(current_path));data.content=baseline_sha
 		var old_path:=OUT+"prior-%s.json"%enabled;write_json(old_path,data)
-		check((UfeReplayRecorder.load_file(old_path,sim.content_fingerprint)==null)==enabled,"无字段旧回放可读/覆盖语义隔离")
-		results.append({"case":"fingerprint","uses_overrides":enabled,"old":legacy_sha,"new":sim.content_fingerprint})
+		check((UfeReplayRecorder.load_file(old_path,sim.content_fingerprint)==null)==enabled,"无覆盖时当前规则去root基线可读/覆盖语义隔离")
+		results.append({"case":"fingerprint","uses_overrides":enabled,"current_rules_without_root":baseline_sha,"new":sim.content_fingerprint})
 	var actor:=clone("ultraman");var victim:=clone("ultraseven");var changed:=clone("ultraseven")
 	changed.moves.throw_forward.frames[0].target.root_overrides={"ultraman":[1,2]}
 	for enabled in [false,true]:
 		var choice:={"id":"test-form","enabled":enabled,"mode":"temporary","target_definition":changed}
 		var form:={"id":"test-choice","enabled":true,"mode":"temporary","target_definition":victim,"choices":{"test":choice}}
 		var sim:=UfeMatchDirector.new(actor,victim,load("res://content/rules/neo.tres"),UfeContentDatabase.states(),{"ultraman":form})
-		check((sim.content_fingerprint!=legacy_fingerprint(sim))==enabled,"只对可达开放形态绑定版本")
+		check((sim.content_fingerprint!=fingerprint_without_root_rule(sim))==enabled,"只对可达开放形态绑定版本")
 
 func input_fixture(facing: int,edge: int,invalid: bool=false) -> UfeMatchDirector:
 	var actor:=clone("ultraman");var victim:=clone("ultraseven")

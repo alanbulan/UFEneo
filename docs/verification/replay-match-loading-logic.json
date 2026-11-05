@@ -1,0 +1,90 @@
+{
+  "status": "logic_passed_graphical_pending",
+  "base_commit": "0580eb5c53a59a5476816d6722a5003ae78fda08",
+  "engine": "Godot 4.6.3.stable.official.7d41c59c4",
+  "evidence_directory": "reports/replay-match-loading/green-20261105",
+  "files_sha256": {
+    "app/game_app.gd": "4fab69898996f16e55abb225e9636cf36cec375f4928f00e5419c1dee62267db",
+    "core/replay/replay_recorder.gd": "ba65f88b9ccff792e16a4f278e8215da21034d3edaacb2ef8307e3b1d68fa9ac",
+    "tests/replay_match_loading.gd": "b702338ed30d7d27dda82ae3d7d8245ef8d2cbd45d3fea9508a9eaad37bd86db",
+    "tests/replay_match_loading.gd.uid": "fe0b9bda139bc3c8cb7d796d7ec13c3be81bc9614fc91dd66efd4b3f04c557c9",
+    "tests/throw_root_overrides.gd": "4c6c54a777f3e70cfc38c94fd70357731b981fd9442e325e4451bed9f33447c2",
+    "tests/throw_current_capture.gd": "bea0f7e94ad51e90fe8c9006ccad9ac1ca472b28c3d3476957d71aa9e6fe6165"
+  },
+  "primary": {
+    "script": "tests/replay_match_loading.gd",
+    "exit": 0,
+    "checks": 327,
+    "errors": [],
+    "cases": 31,
+    "global_error_count": 0,
+    "command": "XDG_DATA_HOME=/tmp/ufeneo-replay-match-green-20261105/data XDG_CONFIG_HOME=/tmp/ufeneo-replay-match-green-20261105/config XDG_CACHE_HOME=/tmp/ufeneo-replay-match-green-20261105/cache python tools/godot_lock.py -- godot --headless --path . --script tests/replay_match_loading.gd -- --replay-test-out=/tmp/ufeneo-replay-match-green-20261105/final-evidence"
+  },
+  "red_to_green_same_files": [
+    {
+      "file": "standard-original.json",
+      "bytes_identical": true,
+      "sha256": "37d67f2105a650b5bbc31d3179f01327dc617f375ce744bd04f859a155137633"
+    },
+    {
+      "file": "ex_direct-original.json",
+      "bytes_identical": true,
+      "sha256": "3df479d4df26f49eaeea684d03d77ab7ea3f704b47154fb7ee1b7c491b283bf6"
+    },
+    {
+      "file": "changed_round_rule-original.json",
+      "bytes_identical": true,
+      "sha256": "e2bcc2b36d14a6201fb4c8b1b9ed60d84142a2e33a41ec09d2ede8e8b023013e"
+    }
+  ],
+  "behavior": [
+    "使用JSON.new().parse单次读取并结构检查，坏JSON返回解释文本，不打印全局ERROR。",
+    "验证人物ID语法及现有可加载定义后，用录制人物建当前规则临时模拟；仅严格指纹相同才提交主游戏状态。",
+    "保留load_file(path,expected)严格调用；不改格式6、60tick、neo或规则指纹组成。",
+    "成功同步selected_fighters；四正例真实R事件再战仍为当前回放双方，75tick开场和空完整回放录制。",
+    "同/不同组合的坏元数据、真实round_ticks变化、伪造当前指纹、未知人物均拒绝且文件/模拟/选人/recorder/磁带/暂停保持。"
+  ],
+  "regressions": {
+    "initial_runner": "reports/verification/runs/dbe5bab3be10",
+    "initial_passed": [
+      "training_lifecycle",
+      "training_tape",
+      "logic_2d",
+      "chase_interrupt",
+      "projectile_contact_direction",
+      "computer_ai",
+      "hit_pushback_bounds"
+    ],
+    "final_runner": "reports/verification/runs/cd10156d7f3c",
+    "final_passed": [
+      "training_lifecycle",
+      "training_tape",
+      "throw_root_overrides"
+    ],
+    "additional_passed": [
+      "throw_current_capture",
+      "transform_mechanism"
+    ],
+    "final_app_change_note": "第一次8项回归后仅App成功路径增加R再战人物同步；最终主入口327项与lifecycle/tape已重跑。所有core回放加载代码在上述各回归间保持同一字节。",
+    "complete_xdg_note": "第一次verify只由工具隔离DATA，CONFIG/CACHE未显式设置；出现Fontconfig不可写缓存警告。后续verify外部显式设置CONFIG/CACHE，工具仍独立隔离DATA；environment.py未改。"
+  },
+  "retained_failure": {
+    "log": "initial-regression/throw_root_overrides.log",
+    "failures": [
+      "仅覆盖内容绑定新语义",
+      "无字段旧回放可读/覆盖语义隔离",
+      "只对可达开放形态绑定版本"
+    ],
+    "reason": "人工payload缺近期新增两个全局版本项，错误地把当前无root规则当作旧全局规则相等。",
+    "remedy": "仅测试夹具补当前chase_interrupt/projectile_contact_direction版本，重命名注释为当前规则仅省root扩展；保留原启用/未启用和可达choices断言。",
+    "capture_fixture": "同类throw_current_capture人工基线同步修正并保留opt-in条件；该旧夹具本轮未先运行，不冒称实测其红灯。",
+    "production_fingerprint_unchanged": true
+  },
+  "limits": [
+    "逻辑使用Input.action_press、合成键事件及实际按钮信号，不是物理键鼠或图形验收。",
+    "Godot4.7未验，不宣称全项目默认清单通过。",
+    "成功F4仍按既有语义先保存已录入的当前局；加载旧文件的换人测试在新局0输入时暂停，避免覆盖。",
+    "本提交保存代码和逻辑结果；720/1080真实主游戏换人回放与再战验收正在进行，尚未接受。"
+  ],
+  "acceptance": "root_delegated_by_user"
+}

@@ -429,13 +429,29 @@ func _reset_computers() -> void:
 
 func play_replay() -> void:
 	if not recorder.frames.is_empty() and replay == null: recorder.save_file("user://last_replay.json")
-	var value := UfeReplayRecorder.load_file("user://last_replay.json", simulation.content_fingerprint)
+	var value := UfeReplayRecorder.read_candidate("user://last_replay.json")
 	if value == null:
 		message = UfeReplayRecorder.last_error
 		return
+	# 不以当前选人组合校验另一组人物；也不把文件自报指纹当作可信规则。
+	for id in value.fighter_ids:
+		if not UfeRosterModel.implemented(id):
+			UfeReplayRecorder.last_error="回放角色不存在或尚不可用："+id
+			message=UfeReplayRecorder.last_error
+			return
+	var next_match:=_battle_match(value.fighter_ids[0],value.fighter_ids[1],true)
+	if next_match==null:
+		UfeReplayRecorder.last_error="无法建立回放对局"
+		message=UfeReplayRecorder.last_error
+		return
+	if not value.matches_content(next_match.content_fingerprint):
+		message=UfeReplayRecorder.last_error
+		return
 	audio.suspend_battle()
 	ko_finish.reset()
-	simulation = _battle_match(str(value.fighter_ids[0]),str(value.fighter_ids[1]),true)
+	simulation = next_match
+	selected_fighters=value.fighter_ids.duplicate()
+	message=""
 	view.bind_match(simulation)
 	replay = value
 	dummy_recording=false

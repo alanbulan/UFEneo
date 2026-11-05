@@ -114,13 +114,14 @@ func run() -> void:
 	UfeThrowResolver.sync(sim);check(not b.motion.has("throw_current_capture"),"root停用")
 	b.enter("air");Capture.remember(b,move);b.enter("thrown");a.clear_move();UfeThrowResolver.sync(sim)
 	check(not Capture.active(b) and not b.motion.has("throw_current_capture"),"中断清快照")
-	var legacy:=fixture(1,false)
+	# 人工对照：当前全局规则仅省capture扩展，不是历史版本回放。
+	var baseline:=fixture(1,false)
 	var forms: Array=[]
-	for fighter in legacy.fighters:forms.append(UfeBattleTransform.simulation_data(fighter.battle_form))
-	var payload: Array=[6,60,legacy.rules.simulation_data(),legacy.fighters[0].definition.simulation_data(),legacy.fighters[1].definition.simulation_data(),forms,["round_end_identity",1],["move_start_conditions",UfeMatchDirector.MOVE_START_RULE_REVISION],["hit_pushback_bounds",UfeHitResolver.PUSHBACK_BOUNDARY_REVISION],["throw_target_air",UfeHitResolver.THROW_TARGET_RULE_REVISION]]
+	for fighter in baseline.fighters:forms.append(UfeBattleTransform.simulation_data(fighter.battle_form))
+	var payload: Array=[6,60,baseline.rules.simulation_data(),baseline.fighters[0].definition.simulation_data(),baseline.fighters[1].definition.simulation_data(),forms,["round_end_identity",1],["move_start_conditions",UfeMatchDirector.MOVE_START_RULE_REVISION],["hit_pushback_bounds",UfeHitResolver.PUSHBACK_BOUNDARY_REVISION],["throw_target_air",UfeHitResolver.THROW_TARGET_RULE_REVISION],["chase_interrupt",UfeMatchDirector.CHASE_INTERRUPT_RULE_REVISION],["projectile_contact_direction",UfeHitResolver.PROJECTILE_DIRECTION_RULE_REVISION]]
 	if UfeThrowResolver.RootOffsets.used_in(payload):payload.append(["throw_root_overrides",UfeThrowResolver.ROOT_OVERRIDE_RULE_REVISION])
-	check(legacy.content_fingerprint==JSON.stringify(payload,"",true).sha256_text(),"未opt-in完整旧指纹不变")
-	check(not Capture.used_in(payload),"旧内容不含新语义")
+	check(baseline.content_fingerprint==JSON.stringify(payload,"",true).sha256_text(),"未opt-in时当前规则省capture人工基线相等")
+	check(not Capture.used_in(payload),"未opt-in内容不含capture扩展语义")
 	check(Capture.used_in(move),"opt-in参与语义")
 	var opted:=fixture()
 	payload[3]=opted.fighters[0].definition.simulation_data()
