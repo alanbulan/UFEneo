@@ -19,6 +19,8 @@
 
 ### 升击之后：回旋重击关键相brief（2026-11-05）
 
+- 回旋展开中相已保存：腰高大腿与屈膝分段可辨、支撑仍抬跟；但攻击脚尖上翘，与接触版脚尖下压形成新踝脚边界。胸肩较接触版接近，蓄势→展开转髋/骨长和同支撑点需统一尺度核，尚非连续整招，不安装。[展开相审阅](verification/luna-spin-heavy-unfold-candidate-review.json)
+
 - 回旋接触关键候选已保存：腰高横展腿、绷脚尖向下、支撑脚抬跟可辨，大片外围光晕较蓄势减少；胸面比蓄势第三版展开且踢腿角跨度大，仍不能直连判回旋连续。原图尺寸不同须按骨长统一整图尺度，低Alpha边噪/解剖左右/后续随势回架待核，未安装。[接触相审阅](verification/luna-spin-heavy-contact-candidate-review.json)
 
 - 回旋下一接触关键相brief已准备：右髋带动右腿腰高横扫、脚背/胫前接触，左前掌抬跟转轴持续；以本人定稿和第三版蓄腿为参考，排除旧侧踹。下一张关键图不等于可直接相邻播放，展开中相与背面随势仍待；必须露大面积背甲时参考不足即阻碍。未生成/收费/运行。[接触相brief](../art/fighters/ultraman-arc__luna/stage2/spin-heavy-keyframe-brief-20261105-v1/contact-brief.json)
