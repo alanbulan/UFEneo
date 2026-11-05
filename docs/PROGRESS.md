@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 回旋最小过中线brief已准备：右膝随右髋经身体前方/朝镜头转过，暂呈合理透视缩短，左前掌持续抬跟支撑；只补蓄势→展开含糊路径，不假称现有两端已证明该弧线。三项明确图像参考，不展示未知大背甲；未生成。[转髋中相brief](../art/fighters/ultraman-arc__luna/stage2/spin-heavy-keyframe-brief-20261105-v1/turn-through-brief.json)
+
 - 回旋三关键相已按支撑股胫投影总长作统一整图尺度/前掌比较锚，提供可移植RAM几何配方，重复构建逐像素一致且原源不变。三相体量未见明显失配，脚上翘→下压可解释为绷踝，不单据此否决；但蓄势→展开髋膝路径及接触后随势/回架未成立，故未启动整招输入回放或安装。[几何复核与误差](verification/luna-spin-heavy-geometry-review.json)
 
 - 回旋展开中相已保存：腰高大腿与屈膝分段可辨、支撑仍抬跟；但攻击脚尖上翘，与接触版脚尖下压形成新踝脚边界。胸肩较接触版接近，蓄势→展开转髋/骨长和同支撑点需统一尺度核，尚非连续整招，不安装。[展开相审阅](verification/luna-spin-heavy-unfold-candidate-review.json)
