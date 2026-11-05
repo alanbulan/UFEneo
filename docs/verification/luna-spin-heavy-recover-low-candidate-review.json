@@ -1,0 +1,80 @@
+{
+  "schema": "ufeneo.luna.spin-recover-low-review.v1",
+  "date_utc": "2026-11-05",
+  "status": "保留悬空腿下收候选；不是落脚完成或完整动作验收",
+  "raw_file": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/recover-low-attempt-01.raw.png",
+  "raw_sha256": "b3668acd40a61d89da61dfc8475af090db312b1b5d9fae6192e03b04d9d232f8",
+  "source_manifest": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/source.json",
+  "size": [
+    1312,
+    1199
+  ],
+  "mode": "RGBA",
+  "alpha": {
+    "min": 0,
+    "max": 255,
+    "zero": 1266255,
+    "full": 176,
+    "partial": 306657,
+    "bbox_nonzero": [
+      0,
+      16,
+      1298,
+      1180
+    ],
+    "bbox_128": [
+      256,
+      37,
+      843,
+      1109
+    ],
+    "assessment": "真实RGBA透明；非零Alpha噪点触左边缘，128阈值人物整身有留白。未清理或重编码原图，原生透明不等于干净运行素材。"
+  },
+  "visual_review": {
+    "identity": "实看新图、既有follow与本人定稿：头冠/黄眼、蓝青胸肩甲、胸灯、双腕圆盘、红银四肢仍一致；双拳双脚完整，无新增肢体或大片未知背甲。",
+    "legs": "近侧悬空大腿由腰髋向右膝连接，小腿向下折，脚仍离地；另一腿自较后骨盆向下到唯一支撑鞋，和follow拓扑相符，未见可证实换腿。解剖右攻左撑沿计划追踪，不能靠红银配色单帧独立证明左右。",
+    "retraction": "相较follow，攻击膝从约(758,483)下收至约(724,621)，攻击踝从约(918,561)回至约(676,833)，小腿更竖直，脚明显靠近地面。人工点±18源像素，属投影诊断，非精确骨架。",
+    "support": "支撑脚跟已经接近整鞋底水平，表现明显降跟，较提示词“开始下降”更靠后。支撑膝仍微屈，未见第二支撑点。原图支撑鞋位置改变，须统一整图尺度/前掌点复核，不能据同画布就声称同一地面接触点已保持。",
+    "torso": "躯干由后仰转较直立，胸灯更正，画面左拳降至腰胸前、另一拳护面，更接近本人护架。这是可见回架方向，同时与follow的头肩/拳路位移仍需时序确认，不能用静帧签平顺。",
+    "back": "仍主要展示前斜胸面，不引入中央背甲；不要求本帧凭空增加背部，两翼官方文字事实不等于已核完整翼根与背面。"
+  },
+  "raw_same_canvas_diagnostics": {
+    "method": "follow和本图均1312×1199，以下只是原图Alpha>=128固定ROI鞋轮廓；没有整图配准，鞋姿态变动会改变轮廓，不能当实际滑步测量。",
+    "roi_bboxes": {
+      "follow_support_shoe": [
+        483,
+        1035,
+        656,
+        1131
+      ],
+      "low_support_shoe": [
+        456,
+        1035,
+        637,
+        1109
+      ],
+      "low_air_foot": [
+        630,
+        840,
+        794,
+        907
+      ]
+    },
+    "airfoot_bottom_gap_source_px": 202,
+    "interpretation": "攻击脚虽下降但与支撑鞋底仍有明显间隔，不是接触前最后一瞬或已落地；支撑脚原图位置亦变化，须同尺全链核根点。"
+  },
+  "remaining": [
+    "高位回收到本相的拳肩/髋膝与降跟时序未验证。",
+    "攻击脚仍离地，需要后续真实落脚/承重转换及护架接续，不能以本相直接结束动作。",
+    "未完成包含新相的统一骨尺配准、全招时序、真实输入与独立回放。"
+  ],
+  "generation_performed_by_reviewer": false,
+  "installed": false,
+  "playable": false,
+  "art_passed": false,
+  "godot_run": false,
+  "real_input_replay": false,
+  "recording": false,
+  "next_step": "保留下收价值，明确降跟程度和脚仍离地；补合法落脚回架后统一完整整图尺度和支撑点，再判断是否可进入真实输入回放。",
+  "independent_review": "独立目视结论一致：膝踝下收、支撑跟下降、躯干回正有效；攻击脚距地约200源像素，尚非落地。定稿是宽站架，不能省略落脚与重心转换。配准不能把鞋底中心强行锁定掩盖前掌漂移。"
+}
