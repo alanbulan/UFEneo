@@ -15,3 +15,9 @@
 候选入口tests/review/fighters/ultraman-arc/luna_dash_light/main_entry.gd实例化正式main；左右命中/格挡/落空核真实指令、位移、65伤害、收势和独立原输入回放。图形使用原生720/1080稳定门和逐tick冻结截图，不遮训练人物，正式HUD保留。所有Godot调用经python tools/godot_lock.py串行并隔离XDG目录。
 
 prepare/register拒绝覆写当前候选；test_check只读检查；main_bundle封新合同绑定SHA，不覆盖历史结果。03→04换前后腿回护架、严格头身尺寸须实际画面核查。逻辑通过不等于美术/声音/目标4.7通过；无录屏，不开放未齐S2–S7装甲。
+
+## 实际图形结果
+
+最终v2十二组720/1080双向hit/block/whiff、144张原生PNG尺寸/SHA/tick/相位/hash核对通过。实际前置dash只走00–04，tick35接直拳，tick42 height95真实接触；命中65一次、格挡0伤一次、落空无接触。03伸拳→04收臂回架未见扫腿式再伸回弹，但过渡短，静态逐相不等于原速连续性通过。
+
+杰顿既有防御手位仍高于胸部火花；相同tick50的720右与1080右命中第4相白闪显隐不同，模拟hash正确，不能因此声称表现FX跨运行确定。未改FX或判定伪修。详见docs/verification/luna-dash-light-graphical-review.json，完整装甲仍未开放。
