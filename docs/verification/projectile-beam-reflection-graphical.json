@@ -1,0 +1,502 @@
+{
+  "status": "四组实际主游戏画面技术通过，静帧带限制接受",
+  "reviewer": "root_delegated_by_user",
+  "engine": "Godot 4.6.3；4.7未验",
+  "source_receipt": {
+    "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/technical-summary.json",
+    "sha256": "6b59bc83aefbbbc0b352c1b166d8baa8a4ba0f2a2f8a9cec871a6515b724d15a"
+  },
+  "contract": "reports/hud-framing/beam-reflection-v1-contract.json",
+  "contract_sha256": "5b0caf419659857add0c1a51b0d149c2778b27b57ae32384d6db87dd88e81a65",
+  "counts": {
+    "runs": 4,
+    "png": 48,
+    "ticks_each": 150
+  },
+  "independent_review": "独立PIL解码48图、核实际尺寸/SHA与四组trace；另实看720右tick43与1080左tick44原生图。双方护屏与反向短束可辨，接触白闪遮细节，光束延至视口外。",
+  "observations": [
+    "四组均t43从屏障前向杰克反射，t44/45束仍在且杰克白闪与血条下降；不是下一tick瞬灭。",
+    "t50/51截图中束已消散，仅接触火花残留；t56余光，t71/150双方回护架。",
+    "四组trace均单次65伤，束在t43–48存在，t49删除；t49无专门截图，精确撤束时刻只由trace证明。"
+  ],
+  "limitations": [
+    "图形复用既有正式main与HUD冻结入口，站位右500/780、左780/500，是280间距统一居中平移/镜像夹具，不冒称默认470/750图形。默认起点真实输入另见逻辑回执。",
+    "450长度反射束在杰克一侧延伸超出视口，完整特效未全部可见；未为修复改变长度/镜头/判定。",
+    "白闪与大接触火花遮挡杰克受击细节。静帧不证明每个中间帧或实速顺滑。",
+    "无真人硬件键盘、音频或录屏验收；双反射与KO短尾只见逻辑模型，不冒称本批画面涵盖。"
+  ],
+  "parts": [
+    {
+      "directory": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-left-original",
+      "exit": 0,
+      "diagnostics_passed": true,
+      "trace_ticks": 150,
+      "pngs": [
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-left-original/frame-000.png",
+          "sha256": "85699d34cadbd62e641e83f83621532d063f1a603331592d42df0adf37b56463",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 1
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-left-original/frame-028.png",
+          "sha256": "00b40ab548fab3bf9f023da1a3634ae89e122be2890ed5dc6a93033640e5a545",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 29
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-left-original/frame-037.png",
+          "sha256": "64e275f5122b14ad0572b96e48d33f41e3f8c202968dd7c93d2a619494981b22",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 38
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-left-original/frame-041.png",
+          "sha256": "d21e44e56fe4f1501d7fd70e7064a42e5f8a5c492ff1569dd2a1a94fb220eda1",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 42
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-left-original/frame-042.png",
+          "sha256": "7c70ca96c3e3cc34677c29a062ba9d60dd5c15f3dfd17e0d51283e92c8b954b5",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 43
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-left-original/frame-043.png",
+          "sha256": "4453b9fb83c5ed1bb81b59537b4c2f7c8eefc6dec2d80746f1f1c19dd5d06a02",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 44
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-left-original/frame-044.png",
+          "sha256": "ac52e4d1d7cbbd4ae8e269e0e7a7a0c40a00bc08ce26c0aaff94e87c3a211b64",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 45
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-left-original/frame-049.png",
+          "sha256": "51f0e771e9e54e28a9c82213dc7ebfbe9da8efd81d15b207bf0825bba6ae0d92",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 50
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-left-original/frame-050.png",
+          "sha256": "f6fa638d0b5b03f67420eec13604eebaaf9e39df4afc3f4c7ecedbb557eda3d2",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 51
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-left-original/frame-055.png",
+          "sha256": "e37698f03b25281a55f4725e9c5a010179827e34238a0bc6b7a1f09cfee19f1e",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 56
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-left-original/frame-070.png",
+          "sha256": "367090feb1654cf7b49d6a575b1e3212eefb7e9bd0a80921466e0eab8004e157",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 71
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-left-original/frame-149.png",
+          "sha256": "2b4dadd62e2231efb70f99f0fafa3190d5e7b006f27daeae92208060a75d7874",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 150
+        }
+      ]
+    },
+    {
+      "directory": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-right-original",
+      "exit": 0,
+      "diagnostics_passed": true,
+      "trace_ticks": 150,
+      "pngs": [
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-right-original/frame-000.png",
+          "sha256": "8f399b6651f49ef4da3df6cc3039062bc33ae569d2bcce52b39e6361301111cb",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 1
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-right-original/frame-028.png",
+          "sha256": "3618d995b8265e2dd2b20c67b9152628a803fc69bcfdd5ab5dc1f48204938b7f",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 29
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-right-original/frame-037.png",
+          "sha256": "fd6220e6f5f9d7c04832bb1db277b3536d3481620e7276fa07101fe2665fd903",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 38
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-right-original/frame-041.png",
+          "sha256": "eaa5de43cc9a954d6f115d142fdc435b7d2e3517981f33e3613f52003872d4cd",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 42
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-right-original/frame-042.png",
+          "sha256": "9a1d00dceceea27e562d58f95a89f23384d57c41fe5c5a2b24472edbc2b0d0c8",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 43
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-right-original/frame-043.png",
+          "sha256": "f06a7eb38000161f30155fe56a00fa287e23fe1ecf2a617679eb4b3bd3ec3677",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 44
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-right-original/frame-044.png",
+          "sha256": "a5aa14364c291b2cb27ed4a768910902b9950a62c4bcb0d84f5218991ff7dc50",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 45
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-right-original/frame-049.png",
+          "sha256": "b3ad29eec7069435f00fe3aad4dee8f5499997bc3b51d3883f1d97f83670fff2",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 50
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-right-original/frame-050.png",
+          "sha256": "a77023ebe4f9e776c97d70beba0de4dad8dc96b4971b4223ffd6282beb83cf58",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 51
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-right-original/frame-055.png",
+          "sha256": "892763a38a71f9a9095a77a64bddf30bf4fe166afd90c3df17bd9c0a7d5a20aa",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 56
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-right-original/frame-070.png",
+          "sha256": "b9b26937cc2e650749616498474da1144852e82d95549b3f189d9399f64ba099",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 71
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1280x720-right-original/frame-149.png",
+          "sha256": "33fb9c8fa3ba36d33775e11568ce548444f9bc1d9161b52dad4d49f19a284010",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "tick": 150
+        }
+      ]
+    },
+    {
+      "directory": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-left-original",
+      "exit": 0,
+      "diagnostics_passed": true,
+      "trace_ticks": 150,
+      "pngs": [
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-left-original/frame-000.png",
+          "sha256": "4e31d0e319cd50c8159c49883e1d24f3c7b6887fbd21a4ee14057ef6c5245d58",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 1
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-left-original/frame-028.png",
+          "sha256": "d652f3f81717cd39a6563e56fe57ede84a051dc1fb81ab2f503c1f428a2f3fae",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 29
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-left-original/frame-037.png",
+          "sha256": "917060b6658c27b34ad45d40df36253af4279d945e8b83fb641c8493d86a7ddb",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 38
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-left-original/frame-041.png",
+          "sha256": "e5a6d77a06fcb70ae5dfeb9faa9f6f463ad29d4cbf5265ece49c58bbfd4ce0a4",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 42
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-left-original/frame-042.png",
+          "sha256": "84283fb8cd283f1eb6814e02efc08639e43af8dd2a4a4d57b7f3047b8f9d607a",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 43
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-left-original/frame-043.png",
+          "sha256": "3df163443e4d8e6e8e4c8b67c5db6698a91dff54a46ba741739355ebfcff7c39",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 44
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-left-original/frame-044.png",
+          "sha256": "9925a8532d59d5170c3560e166b6fe56bc845e9468667ee3de855362950e2567",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 45
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-left-original/frame-049.png",
+          "sha256": "cad730677f92cfa1dabf7603764e2c1ba2d97895b3194f056bd8816d15f23632",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 50
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-left-original/frame-050.png",
+          "sha256": "a3116ceceb6f4dc65aa368bd54862dab42f0e200b107018c7027beeb87f70935",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 51
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-left-original/frame-055.png",
+          "sha256": "75868f74e36d524d2cf169cc093047b8eb32c879810de0d7c7bed99fa283f1c0",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 56
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-left-original/frame-070.png",
+          "sha256": "ec85a35cccbcb7474c0dc76fbf2783bf485e5dc9662b3ea1f3b98890a390301a",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 71
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-left-original/frame-149.png",
+          "sha256": "434a83a8d2feb9666e8b3864e9ba8c21d72da0332c27d9753d31a51687117032",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 150
+        }
+      ]
+    },
+    {
+      "directory": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-right-original",
+      "exit": 0,
+      "diagnostics_passed": true,
+      "trace_ticks": 150,
+      "pngs": [
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-right-original/frame-000.png",
+          "sha256": "6f9ab2b7d78b0fc1d41d923b54ae80ec0fe38535d87f6facd30f083c531c551c",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 1
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-right-original/frame-028.png",
+          "sha256": "ebeb6b5a4ff74e4011be09b8a0870866fc21421abe25569ae95ae217ee06fe0a",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 29
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-right-original/frame-037.png",
+          "sha256": "88f763eacc8cf5ed7e90d0695931405747516afbd33f41bbff72e38fb242ada0",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 38
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-right-original/frame-041.png",
+          "sha256": "e0a98001984f56d9fd8bc4a438951bff59a6dd13f760ab388e77014cf7bb79b2",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 42
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-right-original/frame-042.png",
+          "sha256": "030c9f65e29156bdaee9db60d3f3ccda63e464d8478cdd49076eecf235af7c22",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 43
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-right-original/frame-043.png",
+          "sha256": "dd06cfda3fff750a0f0d385536a1b773ac817a15c81b9a48eba882ecaaa7c8d8",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 44
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-right-original/frame-044.png",
+          "sha256": "e2c90bfc831327c875fd95fb41be84e078fe7ba91c7843789bcc421dc15f5588",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 45
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-right-original/frame-049.png",
+          "sha256": "6feb002b31dd81acf1013fd448212306023a45f35709fa5c1f5283fcd0895f99",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 50
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-right-original/frame-050.png",
+          "sha256": "d00219c853ba7f59a274f0a22ba8cac01ac69932778976f7c2f43f0235163fb6",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 51
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-right-original/frame-055.png",
+          "sha256": "dd0c305b64bfa982aca01cbeab2fdecd83db81a21d9fdbd50db92b2571f0b8cf",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 56
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-right-original/frame-070.png",
+          "sha256": "d16ef5001d6d938ea5ec6ce2b194c5abab5f10afabbbf0a3e4d9f897e3f710cd",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 71
+        },
+        {
+          "path": "reports/hud-framing/gui-beam-reflection-v1-20261105/1920x1080-right-original/frame-149.png",
+          "sha256": "ee3f4816cdd9a584db8b1b20f20a36650d5e880ff60280d23d1b01693d6e5b0b",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "tick": 150
+        }
+      ]
+    }
+  ],
+  "cleanup": {
+    "native_game_window_absent": true,
+    "terminal_prompt_returned": true,
+    "observed_utc": "2026-11-05T08:18:06Z",
+    "lock_absent_checked": true,
+    "manual_lock_deletion": false
+  },
+  "initial_launch_note": "桌面python别名不存在，首次未启动Godot/未创建输出；用已安装python3运行同一脚本成功，未改合同或源码。"
+}
