@@ -9,7 +9,7 @@ import main_bundle as B
 class VerticalTraceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        path=Path(os.environ.get('LUNA_VERTICAL_TRACE',str(B.REPORT/'headless-v4/1280x720-right-original/main-trace.json')))
+        path=Path(os.environ.get('LUNA_VERTICAL_TRACE',str(B.REPORT/'headless-v5/1280x720-right-original/main-trace.json')))
         cls.base=B.read(path)
         B.check_trace(cls.base)
     def rejects(self, edit):
@@ -51,5 +51,28 @@ class VerticalTraceTests(unittest.TestCase):
     def test_missing_boundary_capture(self):
         d=self.graphical();d['stills'].pop()
         with patch.object(B,'sha',return_value='fixture'),self.assertRaises(AssertionError):B.check_trace(d,True,[1280,720])
+
+class DiagnosticTests(unittest.TestCase):
+    def test_exact_vsync_is_classified_with_receipt(self):
+        result=B.classify_diagnostics({'engine.log':'Godot\n'+B.KNOWN_VSYNC_WARNING+'\n     at: set_use_vsync (...)'})
+        self.assertTrue(result['passed'])
+        self.assertEqual(result['fatal_diagnostics'],[])
+        self.assertEqual(result['known_environment_warnings'],[{'source':'engine.log','line_number':2,'text':B.KNOWN_VSYNC_WARNING,'classification':'confirmed_unsupported_vsync_environment_warning'}])
+    def test_unknown_warning_is_fatal(self):
+        result=B.classify_diagnostics({'stdout.log':'WARNING: A new graphics warning.'})
+        self.assertFalse(result['passed']);self.assertEqual(len(result['fatal_diagnostics']),1)
+    def test_error_is_fatal_even_with_known_warning(self):
+        result=B.classify_diagnostics({'engine.log':B.KNOWN_VSYNC_WARNING+'\nERROR: Condition "status < 0" is true. Returning: ERR_CANT_OPEN'})
+        self.assertFalse(result['passed']);self.assertEqual(len(result['fatal_diagnostics']),1);self.assertEqual(len(result['known_environment_warnings']),1)
+    def test_audio_fallback_is_not_permitted(self):
+        self.assertFalse(B.classify_diagnostics({'stdout.log':'WARNING: All audio drivers failed, falling back to the dummy driver.'})['passed'])
+    def test_extended_vsync_message_is_not_swallowed(self):
+        self.assertFalse(B.classify_diagnostics({'stdout.log':B.KNOWN_VSYNC_WARNING+' Additional warning.'})['passed'])
+    def test_script_and_parse_errors_are_fatal(self):
+        for line in ['SCRIPT ERROR: Unknown variable.','Parse Error: Unknown class.']:
+            with self.subTest(line=line):self.assertFalse(B.classify_diagnostics({'stdout.log':line})['passed'])
+    def test_clean_log_has_empty_receipt(self):
+        result=B.classify_diagnostics({'stdout.log':'UFEneo 2D | 60 tick | replay v6'})
+        self.assertTrue(result['passed']);self.assertEqual(result['known_environment_warnings'],[])
 
 if __name__=='__main__':unittest.main()

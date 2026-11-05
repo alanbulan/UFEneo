@@ -12,8 +12,8 @@
     "sha256": "86e670af4f27bff94eba8ec7c15bfe36e2231f18d8cd23d3f0938a0ea37c4559"
   },
   "contract": {
-    "path": "reports/luna-vertical-jump-resume/candidate-runtime-v4.json",
-    "sha256": "4e2d22c2a9b82085b123d18be47e9a2b724bce59f623d94a9d391ba39f6f3d57"
+    "path": "reports/luna-vertical-jump-resume/candidate-runtime-v5.json",
+    "sha256": "9af2df30372524ed8e7d514f075d60371cceb384f378a42669096f46efcc2839"
   },
   "changes": [
     "复用9张本人完整源的159/1024统一整图采样，不生图、不拼肢。",
@@ -24,16 +24,12 @@
   "validation": {
     "engine": "Godot 4.6.3，未验证目标4.7",
     "headless": {
-      "path": "reports/luna-vertical-jump-resume/headless-v4/runner-result.json",
-      "sha256": "1dceb428339f17ae2132b158a02b82cf03cc5dcf89b66841d8816fe46800dcf3"
-    },
-    "technical": {
-      "path": "reports/luna-vertical-jump-resume/headless-v4/technical-review.json",
-      "sha256": "fcf51dfb0626861dee1326b72248c605ad3b5f7bf46308ed98a89002a13b34bf"
+      "path": "reports/luna-vertical-jump-resume/headless-v5/runner-result.json",
+      "sha256": "87894112d25222e7718c21ac82d820bf3e70be3f1b7b95e1d15d31c7121ecde0"
     },
     "python_tests": {
-      "path": "reports/luna-vertical-jump-resume/headless-v4/python-negative-tests.log",
-      "sha256": "60a8cbf7e0896cfec5e9fbafed129981fa3c7ccb948aeba126dfd3aa4cb6afe6"
+      "path": "reports/luna-vertical-jump-resume/headless-v5/python-negative-tests.log",
+      "sha256": "2e6948e25800709a85f9d3591a1f7cd440d7d2777015f809847d82b9963a237c"
     },
     "runs": 4,
     "ticks_each": 120,
@@ -42,16 +38,26 @@
     "hp_stamina": 1000,
     "events_projectiles_empty": true,
     "independent_replay_inputs_and_hashes_match": true,
-    "positive_negative_tests": 17,
+    "positive_negative_tests": 24,
     "negative_tests_note": "截图元数据解析的mock只用于拒绝错误尺寸/tick/hash，不是实际图形证据。",
     "registration_idempotence": true,
-    "source_pixels_unchanged_except_whole_land_shift": true
+    "source_pixels_unchanged_except_whole_land_shift": true,
+    "v4_input_hash_comparison": {
+      "path": "reports/luna-vertical-jump-resume/headless-v5/v4-comparison.json",
+      "sha256": "1fb5b40052229c6f285be89b9331037f52ce30eabf14abbcadaaaac67a80c6f7"
+    },
+    "technical_v4": {
+      "path": "reports/luna-vertical-jump-resume/headless-v4/technical-review.json",
+      "sha256": "fcf51dfb0626861dee1326b72248c605ad3b5f7bf46308ed98a89002a13b34bf"
+    }
   },
   "previous_attempts": {
     "v1": "Python封存；原源校验中手动停止，未启动Godot",
     "v2": "正式main启动，缺anchor_y导致SCRIPT ERROR，失败",
     "v3": "register.py SHA变化被启动前门禁拒绝，未启动Godot",
-    "v4": "已修复clip锚字段，4组headless和17项Python测试通过；图形待专员"
+    "v4": "已修复clip锚字段，4组headless和17项Python测试通过；图形待专员",
+    "graphical_v4": "首组Godot正常退出并生成19PNG，但VSync不支持及ALSA音频诊断使runner失败；余7组未运行，不计图形验收通过。",
+    "v5": "显式Dummy音频、gl_compatibility，只分类精确已知VSync警告；4组headless与24项测试通过，输入/hash/模拟指纹与v4一致，真实图形待重跑。"
   },
   "graphical_status": "待双向720/1080真实窗口原输入及回放；本收据不声称图形通过。",
   "limits": [
@@ -65,5 +71,14 @@
   "installed": false,
   "playable": false,
   "paid_generation": false,
-  "user_codex_used": false
+  "user_codex_used": false,
+  "previous_technical_contract": {
+    "path": "reports/luna-vertical-jump-resume/candidate-runtime-v4.json",
+    "sha256": "4e2d22c2a9b82085b123d18be47e9a2b724bce59f623d94a9d391ba39f6f3d57"
+  },
+  "environment_diagnostic_policy": "每组保存原文和行号；仅精确VSync不支持警告可列为环境诊断，音频回退、未知警告、SCRIPT ERROR及其他ERROR仍失败。",
+  "failed_graphical_v4": {
+    "path": "reports/luna-vertical-jump-resume/gui-v4-20261105-technical-summary.json",
+    "sha256": "af6bee3229ecf04d68a0b4fd66103e9a60ea341a069c164b90400a6963cd5364"
+  }
 }

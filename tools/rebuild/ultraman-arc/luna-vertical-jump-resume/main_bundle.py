@@ -24,6 +24,21 @@ FID = 'ultraman-arc__luna'
 CLOCKS = {'takeoff':[1,1], 'vertical_jump':[8,7,3,8,7], 'land':[2,2]}
 STATE_KEYS = {'takeoff':'takeoff', 'vertical_jump':'vertical_air', 'land':'land'}
 CAPTURE_N = [0,1,2,7,8,14,15,17,18,25,26,32,33,34,35,36,37]
+KNOWN_VSYNC_WARNING = 'WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.'
+
+def classify_diagnostics(logs):
+    result={'policy':'Only the exact confirmed unsupported-V-Sync warning is permitted; every other WARNING/ERROR/Parse Error is fatal.',
+            'known_environment_warnings':[], 'fatal_diagnostics':[], 'audio_driver':'Dummy', 'rendering_method':'gl_compatibility'}
+    for source,contents in logs.items():
+        for number,line in enumerate(contents.splitlines(),1):
+            if not any(marker in line for marker in ['SCRIPT ERROR:','Parse Error:','ERROR:','WARNING:']):continue
+            item={'source':source,'line_number':number,'text':line}
+            if line.strip()==KNOWN_VSYNC_WARNING:
+                item['classification']='confirmed_unsupported_vsync_environment_warning'
+                result['known_environment_warnings'].append(item)
+            else:result['fatal_diagnostics'].append(item)
+    result['passed']=not result['fatal_diagnostics']
+    return result
 
 def read(path): return json.loads(Path(path).read_text('utf-8'))
 def sha(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -175,7 +190,7 @@ def run(contract,out,headless):
             original=None
             for replay in [False,True]:
                 check(contract);folder=out/(size+'-'+direction+('-replay' if replay else '-original'));folder.mkdir()
-                cmd=[cfg['engine']['path'],'--path',str(ROOT),'--windowed','--resolution',size,'--fixed-fps','60','--log-file',str(folder/'engine.log'),'--script','res://tests/review/fighters/ultraman-arc/luna_vertical_jump/main_entry.gd']
+                cmd=[cfg['engine']['path'],'--path',str(ROOT),'--audio-driver','Dummy','--rendering-method','gl_compatibility','--windowed','--resolution',size,'--fixed-fps','60','--log-file',str(folder/'engine.log'),'--script','res://tests/review/fighters/ultraman-arc/luna_vertical_jump/main_entry.gd']
                 if headless:cmd.append('--headless')
                 cmd+=['--','--contract='+str(contract),'--out='+str(folder),'--window-size='+size]
                 if direction=='left':cmd.append('--left')
@@ -184,10 +199,11 @@ def run(contract,out,headless):
                 started=time.time()
                 with (folder/'stdout.log').open('x') as log:result=subprocess.run(wrapped,cwd=ROOT,env=env,stdout=log,stderr=subprocess.STDOUT,timeout=180)
                 write(folder/'process.json',{'command':wrapped,'exit_code':result.returncode,'elapsed_seconds':time.time()-started})
+                logs={name:(folder/name).read_text() if (folder/name).is_file() else '' for name in ['stdout.log','engine.log']}
+                diagnostics=classify_diagnostics(logs)
+                write(folder/'engine-log-review.json',diagnostics)
                 assert result.returncode==0,str(folder/'stdout.log')
-                logs=(folder/'stdout.log').read_text()+(folder/'engine.log').read_text()
-                diagnostics=[line for line in logs.splitlines() if any(x in line for x in ['SCRIPT ERROR:','Parse Error:','ERROR:','WARNING:'])]
-                assert not diagnostics,diagnostics
+                assert diagnostics['passed'],diagnostics['fatal_diagnostics']
                 trace=read(folder/'main-trace.json');check_trace(trace,not headless,[int(n) for n in size.split('x')])
                 assert not read(folder/'auxiliary-fresh-sim-replay.json')['errors']
                 window=read(folder/'window-setup.json');assert window['simulation_tick_before']==window['simulation_tick_after']==window['trace_count_before_start']==0
