@@ -8,6 +8,9 @@ var camera_lift: float = 0.0
 var camera_y: int = 0
 var camera_zoom: float = 1.0
 var framed_bounds := Rect2()
+var framing_safe_rect := UfeBattleFraming.SAFE
+var framing_safe_provider: Callable
+var framing_entities: Array[Sprite2D] = []
 var frame_bounds: Dictionary = {}
 var camera_config:Dictionary={}
 var fighters: Array[Sprite2D] = []
@@ -44,6 +47,7 @@ func _process(_delta: float) -> void:
 		(fighters[i].material as ShaderMaterial).set_shader_parameter("hit_flash",int(visible[i])>0)
 
 func _ready() -> void:
+	RenderingServer.frame_pre_draw.connect(_refresh_layout_framing)
 	if FileAccess.file_exists("res://content/presentation/camera_follow.json"):
 		camera_config=UfeContentDatabase.read_json("res://content/presentation/camera_follow.json")
 	if FileAccess.file_exists("res://content/presentation/phase3_projectiles.json"):
@@ -173,8 +177,6 @@ func update_view() -> void:
 	capture_view.sync_events(self)
 	feedback.sync(simulation,camera_x,camera_y)
 	cinematic.sync(simulation,camera_x,camera_y)
-	_update_camera_framing()
-	if layered_stage!=null:layered_stage.sync(camera_x,camera_y,cinematic.active,camera_zoom,position)
 	backdrop.visible=true # 专用透明星云以最远星空打底，不能露出Viewport默认灰色。
 	for layer in stage_layers:layer.node.visible=not cinematic.active
 	while projectile_sprites.size()<simulation.projectiles.size():
@@ -214,6 +216,8 @@ func update_view() -> void:
 		(effect.material as ShaderMaterial).set_shader_parameter("palette_tint",Color(float(tint[0]),float(tint[1]),float(tint[2]),float(tint[3])))
 	_update_weapon_trails()
 	_update_attached_effects()
+	_update_camera_framing()
+	if layered_stage!=null:layered_stage.sync(camera_x,camera_y,cinematic.active,camera_zoom,position)
 	super_state.sync(self)
 	debug_overlay.queue_redraw()
 
@@ -235,6 +239,7 @@ func attachments_for(i:int) -> Array:
 	return UfeChargeEffectPolicy.filter(f,manifests[i],combined,holding)
 
 func _update_attached_effects() -> void:
+	framing_entities.clear()
 	for i in range(fighters.size()):
 		var f := simulation.fighters[i]
 		var attachments:=attachments_for(i)
@@ -268,6 +273,7 @@ func _update_attached_effects() -> void:
 			var tint:Array=a.get("color",[1.0,1.0,1.0,1.0])
 			(effect.material as ShaderMaterial).set_shader_parameter("palette_tint",Color(float(tint[0]),float(tint[1]),float(tint[2]),float(tint[3])))
 			effect.position=Vector2(f.x+int(a.anchor[0])*f.facing-camera_x+320,GROUND-f.height-int(a.anchor[1])+camera_y)
+			if UfeBattleFraming.is_held_entity(a,clip):framing_entities.append(effect)
 
 func _update_weapon_trails() -> void:
 	var entries: Array=[]
@@ -360,12 +366,24 @@ func _sprite_bounds(sprite: Sprite2D) -> Rect2:
 	var used: Rect2i = frame_bounds[key]
 	if sprite.flip_h:used.position.x=int(region.size.x)-used.end.x
 	if sprite.flip_v:used.position.y=int(region.size.y)-used.end.y
-	return Rect2(sprite.position+(sprite.offset+Vector2(used.position))*sprite.scale,Vector2(used.size)*sprite.scale)
+	var local := Rect2(sprite.get_rect().position+Vector2(used.position),Vector2(used.size))
+	return sprite.transform*local
 
-func _update_camera_framing() -> void:
+func _refresh_layout_framing() -> void:
+	if not framing_safe_provider.is_valid() or fighters.is_empty() or fighters[0].texture==null:return
+	var safe: Rect2 = framing_safe_provider.call()
+	if safe.is_equal_approx(framing_safe_rect):return
+	# 排版回调只收紧共同镜头，不重复模拟、特效时钟或镜头回近插值。
+	_update_camera_framing(false)
+	if layered_stage!=null:layered_stage.sync(camera_x,camera_y,cinematic.active,camera_zoom,position)
+
+func _update_camera_framing(recover_zoom: bool = true) -> void:
 	var bounds := _sprite_bounds(fighters[0])
 	for i in range(1,fighters.size()):bounds=bounds.merge(_sprite_bounds(fighters[i]))
-	var frame := UfeBattleFraming.fit(bounds,camera_zoom,feedback.shake)
+	for entity in framing_entities:
+		if entity.visible and entity.texture!=null:bounds=bounds.merge(_sprite_bounds(entity))
+	if framing_safe_provider.is_valid():framing_safe_rect=framing_safe_provider.call()
+	var frame := UfeBattleFraming.fit(bounds,camera_zoom,feedback.shake,framing_safe_rect,recover_zoom)
 	camera_zoom=float(frame.zoom)
 	scale=Vector2.ONE*camera_zoom
 	position=frame.origin

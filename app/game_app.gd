@@ -253,11 +253,13 @@ func start_match() -> void:
 	hud.review_long_text = "--review-long-text" in OS.get_cmdline_user_args()
 	ui_layer.add_child(hud)
 	hud.action_requested.connect(_action)
+	view.framing_safe_provider=hud.battle_safe_rect
 	training_overlay=UfeTrainingOverlay.new()
 	ui_layer.add_child(training_overlay)
 	training_overlay.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
 	training_overlay.offset_top=56
 	training_overlay.offset_bottom=56
+	hud.framing_top_overlays.append(training_overlay)
 	front=UfeFrontEnd.new()
 	ui_layer.add_child(front)
 	front.action_requested.connect(_front_action)
@@ -546,6 +548,13 @@ func _physics_process(_delta: float) -> void:
 	view.ending_tick=ending_tick
 	if not paused and display_sim.finished: ending_tick+=1
 	view.feedback.advance_effects(ko_finish.effect_steps)
+	var label: String = "训练："+["站立","下蹲","跳跃","自动防御","对手录制回放"][dummy] if training else ("本地双人" if local else "对战电脑")
+	hud.dummy_relative = dummy_relative
+	hud.dummy_name = ["站立","下蹲","跳跃","自动防御","对手录制回放"][dummy]
+	hud.debug_visible = view.show_boxes
+	hud.update_match(display_sim,label+"  | Enter 暂停  F1 判定框  F2 招式表  F3 训练  "+message,intro,training)
+	training_overlay.visible=training and not paused and not view.show_boxes
+	training_overlay.update_match(simulation)
 	view.update_view()
 	if review: review_driver.observe_walk(capture_tick,simulation,view)
 	audio.sync(display_sim,paused,intro>0,simulation)
@@ -557,13 +566,6 @@ func _physics_process(_delta: float) -> void:
 		review_driver.trace[-1]["winner"]=simulation.winner
 		review_driver.trace[-1]["intro_tick"]=view.intro_tick
 		review_driver.trace[-1]["ending_tick"]=ending_tick
-	var label: String = "训练："+["站立","下蹲","跳跃","自动防御","对手录制回放"][dummy] if training else ("本地双人" if local else "对战电脑")
-	hud.dummy_relative = dummy_relative
-	hud.dummy_name = ["站立","下蹲","跳跃","自动防御","对手录制回放"][dummy]
-	hud.debug_visible = view.show_boxes
-	hud.update_match(display_sim,label+"  | Enter 暂停  F1 判定框  F2 招式表  F3 训练  "+message,intro,training)
-	training_overlay.visible=training and not paused and not view.show_boxes
-	training_overlay.update_match(simulation)
 	if ui_fixes_debug!=null:ui_fixes_debug.observe(capture_tick)
 	if gate_b_driver!=null:gate_b_driver.observe(capture_tick,simulation)
 	if review and review_driver is UfePixelHudReview and not review_driver.trace.is_empty():

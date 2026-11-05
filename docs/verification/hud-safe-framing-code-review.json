@@ -1,0 +1,98 @@
+{
+  "schema": "ufeneo.hud-safe-framing-code-review.v1",
+  "date": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "problem": "真实高跳画面对手脚底被底部能量槽覆盖；旧固定安全区底332越过实际HUD上沿，独立持握实体也未参与人物取景。",
+  "files": [
+    {
+      "path": "presentation/battle_framing.gd",
+      "sha256": "2d4f5ecd1971d773a6d9d5ec7facd83ec57fa78f3f371ef5c56ad319058568a0"
+    },
+    {
+      "path": "presentation/side_view.gd",
+      "sha256": "59003c2c652a560a46c227d8c5fd9bf26f5781f351bb023156e493ea87e3eb48"
+    },
+    {
+      "path": "ui/battle_hud.gd",
+      "sha256": "497abc5c0828b85f57e5e5c3fc7b6a1c876e9c2dd8db3db8eca146fc8cd97c36"
+    },
+    {
+      "path": "app/game_app.gd",
+      "sha256": "35ca3c81ff9df9ae1509614a5cc9a2fc4fc3962a325b0869ad94c392c87172eb"
+    },
+    {
+      "path": "tests/battle_framing.gd",
+      "sha256": "10563802d705205946d00b99b8500624053908835775bcdd02a00c905828ee41"
+    },
+    {
+      "path": "tests/battle_framing.gd.uid",
+      "sha256": "a93c1bacc596b1357d7a218f44637d686fefb1f708edafa368a1051d100efbad"
+    },
+    {
+      "path": "tests/battle_framing.md",
+      "sha256": "754ac4e37c03883aadd2479b3db68c91790fb395be4b0b7dd3462a011c206cfe"
+    }
+  ],
+  "changes": [
+    "HUD提供当前上下栏、arena和新最小高度的动态可用区，含训练信息与顶部结算；同帧先更新HUD，绘制前布局变化时只重新fit，不再推进模拟或特效。",
+    "首次未排版与结算reparent旧size做专门处理，保留2个原生像素缓冲；不同窗口仍共用640×360真实战斗Viewport。",
+    "双方完整当帧Alpha及显式持握实体合并后共用世界缩放平移，不改单人位置、独立缩放、模拟坐标或判定。",
+    "Alpha边界使用Sprite实际局部Rect和完整transform，支持居中、翻转、偏心、旋转和缩放。"
+  ],
+  "held_entities": [
+    "red_king_super1_held",
+    "red_king_super2_held",
+    "red_king_super3_held",
+    "red_king_rock_small",
+    "red_king_rock_large"
+  ],
+  "scope_limits": [
+    "剑/矛烘入人物整帧时已随Alpha覆盖；只保护仍持握的独立实体。",
+    "已离手头镖/剑/岩石、光束、刀光和拖尾不纳人物取景，不声称自由飞行物始终保屏。",
+    "Ready/Fight、连击提示、暂停菜单等刻意叠层不作全屏取景障碍。"
+  ],
+  "verification": {
+    "engine": "Godot 4.6.3，目标4.7未验证",
+    "battle_framing_checks": 746,
+    "battle_framing_failures": 0,
+    "same_inputs_hashes_ticks": 120,
+    "other_passes": [
+      "pixel_ui",
+      "ui_facing",
+      "phase3_air：19项动作"
+    ],
+    "logs": [
+      {
+        "path": "reports/hud-safe-framing/battle_framing.log",
+        "sha256": "4526bd54f75f7d01a790b1a6f3847b35fb9c0c0ff760a0e6de0de5503bde802c"
+      },
+      {
+        "path": "reports/hud-safe-framing/pixel_ui.log",
+        "sha256": "40e657d818952907698a2e2e90f2d0526de39267ac26678143f328a604f8681a"
+      },
+      {
+        "path": "reports/hud-safe-framing/ui_facing.log",
+        "sha256": "fc418672810642453675d99b01dbfe45110ea499391992e311526f96600681cd"
+      },
+      {
+        "path": "reports/hud-safe-framing/phase3_air.log",
+        "sha256": "ffd76e0e7864bb85463aabb718774dc34b7861a269a73b7385ebceee6d81f457"
+      },
+      {
+        "path": "reports/hud-safe-framing/import.log",
+        "sha256": "9572934ad4d57fbab2c09b2c82f3821584fba7ba71d7e1dec5055bc7fa531f3f"
+      },
+      {
+        "path": "reports/hud-safe-framing/code-sha256.txt",
+        "sha256": "b492da083368a28d90fb7e2cf228b316d4834a802aa22c85c0b6104fcc6f178e"
+      }
+    ],
+    "import": "最终隔离XDG导入完成，uid已生成；不以早期有环境诊断的导入充当成功。"
+  },
+  "graphics_status": "正式场景与原月亮遮脚复验尚在进行，不计图形验收通过。",
+  "simulation_rules_changed": false,
+  "character_art_changed": false,
+  "hud_hidden_to_hide_problem": false,
+  "recording": false,
+  "paid_generation": false
+}

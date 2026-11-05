@@ -29,6 +29,8 @@ var timer: Label
 var timer_frame: NinePatchRect
 var word: TextureRect
 var top_bar: HBoxContainer
+var bottom_bar: HBoxContainer
+var framing_top_overlays: Array[Control] = []
 var arena_space: Control
 var word_center: CenterContainer
 var word_key: String=""
@@ -131,6 +133,7 @@ func _ready() -> void:
 	result_panel.add_child(result_name)
 	result_panel.hide()
 	var bottom:=HBoxContainer.new()
+	bottom_bar=bottom
 	ignore(bottom)
 	column.add_child(bottom)
 	_player_bottom(bottom,0)
@@ -338,3 +341,34 @@ func show_selection(ids: Array) -> void:
 	close_overlays()
 	for i in range(2):selection_names[i].set_fighter(str(ids[i]),"玩家%d："%[i+1])
 	selection.show()
+
+## 与世界共用同一Viewport坐标。容器延迟排版期间同时保守采用新最小高度，
+## 绘制前由镜头再次读取最终布局；不把暂停/Ready等有意叠层当作障碍。
+func battle_safe_rect() -> Rect2:
+	var viewport_rect := get_viewport_rect()
+	var safe := arena_space.get_global_rect().intersection(viewport_rect)
+	var layout_ready := safe.has_area()
+	var outer: MarginContainer = top_bar.get_parent().get_parent()
+	var inner := outer.get_global_rect() if layout_ready else viewport_rect
+	inner.position.y += outer.get_theme_constant("margin_top")
+	inner.size.y -= outer.get_theme_constant("margin_top")+outer.get_theme_constant("margin_bottom")
+	if not layout_ready:safe=inner
+	var top := safe.position.y
+	var bottom := safe.end.y
+	if top_bar.visible:
+		top = maxf(top,inner.position.y+top_bar.get_combined_minimum_size().y)
+		if layout_ready:top=maxf(top,top_bar.get_global_rect().end.y)
+	if bottom_bar.visible:
+		bottom = minf(bottom,inner.end.y-bottom_bar.get_combined_minimum_size().y)
+		if layout_ready:bottom=minf(bottom,bottom_bar.get_global_rect().position.y)
+	for overlay in framing_top_overlays:
+		if is_instance_valid(overlay) and overlay.is_visible_in_tree():
+			var rect := overlay.get_global_rect()
+			top = maxf(top,rect.position.y+maxf(rect.size.y,overlay.get_combined_minimum_size().y))
+	if word_center.get_parent()==self and word_center.is_visible_in_tree():
+		# 结算刚reparent时size还可能残留原arena高度；TOP_WIDE的目标高度是内容最小值。
+		top = maxf(top,word_center.get_global_rect().position.y+word_center.get_combined_minimum_size().y)
+	# 两个原生像素缓冲覆盖整数吸附及最近邻边缘；水平保留舞台边距。
+	var left := maxf(viewport_rect.position.x+16,safe.position.x+2)
+	var right := minf(viewport_rect.end.x-16,safe.end.x-2)
+	return Rect2(left,top+2,maxf(1,right-left),maxf(1,bottom-top-4))
