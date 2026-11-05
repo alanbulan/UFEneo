@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 回旋踢后初收腿原源已保存：与接触版同尺寸下前掌比较锚约差−1.9源像素/高度不变，膝屈曲及踢脚内收可辨、双腿拓扑未见交换。脚尖回翘可属收踝，不单独判失败；胸肩仍近接触角，不能签继续转髋随势。真实Alpha有边噪，无新增大背甲；还缺下收落脚/回架，全链未运行或安装。[来源与审阅](verification/luna-spin-heavy-follow-candidate-review.json)
+
 - 回旋转髋中相原源与四相同尺诊断已保存：攻击膝投影约121→160→189→195，新相确补跨身收膝；髋被遮挡，改用可见支撑胫骨交叉尺，不猜髋点。三/四相重复构建及旧帧保持通过；真实左右/时序与接触后随势回架仍待，不安装。[中相及同尺证据](verification/luna-spin-heavy-turn-mid-candidate-review.json)
 
 - 回旋最小过中线brief已准备：右膝随右髋经身体前方/朝镜头转过，暂呈合理透视缩短，左前掌持续抬跟支撑；只补蓄势→展开含糊路径，不假称现有两端已证明该弧线。三项明确图像参考，不展示未知大背甲；未生成。[转髋中相brief](../art/fighters/ultraman-arc__luna/stage2/spin-heavy-keyframe-brief-20261105-v1/turn-through-brief.json)
