@@ -9,8 +9,11 @@ func _physics_process(delta: float) -> void:
 	# 禁用旧共用入口的异步截图调度，改为本候选单tick停住后取图。
 	for old_frame in [0,23,112,135]:still_keys["idle-%03d"%old_frame]=true
 	super._physics_process(delta)
+	# 审片只隐藏遮挡人物的训练说明板，正式HUD与记录仍保留。
+	if training_overlay!=null:training_overlay.hide()
 	if review_driver.trace.is_empty() or finishing:return
 	var row: Dictionary=review_driver.trace[-1]
+	row["training_overlay_visible"]=training_overlay.visible
 	var own: Dictionary=row.pair[0]
 	var key: String=""
 	if not str(own.move_id).is_empty():

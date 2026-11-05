@@ -43,3 +43,9 @@ XDG_DATA_HOME="$PWD/reports/luna-heavy-resume/userdata" python tools/godot_lock.
 实际云桌面验收发现CLI分辨率曾被窗口布局改写，且旧deferred截图可能跨过多个physics tick，不能将旧输出当作相位/分辨率验收。新入口必须使用`--window-size=1280x720`或`--window-size=1920x1080`（默认720）；在主游戏_ready后冻结模拟，显式请求无边框窗口，等待窗口和根viewport至少连续8帧且500ms保持目标尺寸。5秒内未达到就写真实`window-setup.json`并在tick0退出，不重标尺寸。
 
 每次需截图的physics tick立即停止后续physics，记录tick/相位/状态hash/图集区域；等待frame_post_draw后核对这些值未改变，才保存原尺寸PNG并恢复推进。图像仍需实际目视，不把程序相位检查当美术通过。无头入口只检查冻结门和输入/回放，截图明确captured=false。修改入口后必须重封新合同，旧05输出保持原样作为问题证据。
+
+## 图形复核与训练说明板
+
+合同06已由真实云桌面跑完720/1080、双向命中/格挡/落空12组，108张PNG的原生尺寸/文件SHA/冻结tick与相位核对通过，各组七个heavy相图片独立。技术通过不等于视觉通过：训练说明板会遮人物，故07仅在heavy候选隐藏该板，正式HUD保留，输入/帧数据仍写trace；一般主游戏UI不改。
+
+站防的低位火花不是随意定位：真实block交点height57，而杰顿现装站防硬直抬手较高，蹲防硬直源也不对应这个低位接触。当前记录为受方完整反应素材缺口，不挪火花到高位手上、不改攻击属性或扩大判定冒充修复。详见`docs/verification/luna-heavy-graphical-review.json`；旧06真实输出保留。07已完成720/1080的left-whiff、right-block四组真实图形复查：36张原生PNG的尺寸/SHA/tick/相位正确，各组七相独立，训练板遮挡消除且HUD保留，所有120tick输入与状态hash均与对应06一致。低位站防表现仍未解决，不宣称美术全通过或完整装甲完成。
