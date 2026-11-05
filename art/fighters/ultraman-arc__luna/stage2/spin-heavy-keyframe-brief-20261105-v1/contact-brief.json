@@ -1,0 +1,81 @@
+{
+  "schema": "ufeneo.luna.spin-heavy-contact-brief.v1",
+  "date_utc": "2026-11-05",
+  "fighter": "ultraman-arc__luna",
+  "stage": 2,
+  "action": "spin_heavy",
+  "input": "4K：相对本人朝向的后+HEAVY",
+  "next_requested_image": "腰高右腿扫击接触关键相",
+  "production_plan_basis": "旧计划phase03明确右腿绕腰高回旋；此处以脚背/胫前扫过而非脚跟直推区分侧踢，是游戏动作设计细化，不冒称原剧逐帧复刻。",
+  "pose_game_adaptation": true,
+  "episode_verified": false,
+  "references": [
+    {
+      "role": "身份",
+      "path": "art/fighters/ultraman-arc__luna/model/clean-model-source.png",
+      "sha256": "f07ca34c959008bb1104af55a9d6c5c6a8e7b2d57c510a13cf8c2ed2c2bc4ddf",
+      "use": "只取本人头冠/甲/配色/骨长，不复制站姿。"
+    },
+    {
+      "role": "前段较优候选",
+      "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/turn-chamber-attempt-03.raw.png",
+      "sha256": "419811794ebc8bd7c3e5ddbb6bb989ed82b6999f1e5f06d29730eec367cd54d3",
+      "use": "同一人物、抬跟支撑和转体蓄腿关系；不是已通过完整动作，不继承外部光晕，不把画面近远当解剖左右。"
+    },
+    {
+      "role": "原计划",
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/spin_heavy/phase-03/request-001/brief.json",
+      "sha256": "0ff0136c58ce96214b827b7e3c3fcea3be8f4032aacb2608cc2cc520b182261e",
+      "use": "原定右腿绕腰高回旋，游戏改编；本次只细化可辨的接触姿态。"
+    },
+    {
+      "role": "排除旧错接触",
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/spin_heavy/phase-03/request-001/raw.provider.png",
+      "sha256": "ab79cf5fa556448e97411eac938798e87cc3a1c2773246d758750ff17aadfd97",
+      "use": "原七相仅侧踢，此图不得作为正确扫击姿势模板。"
+    },
+    {
+      "role": "既有源审",
+      "path": "docs/verification/luna-spin-heavy-session-candidates-review.json",
+      "sha256": "ac660e0380045e43c2d5acd3cab5608db8d3b9a3030a42e61b5dc31fd84208fc",
+      "use": "第三版抬跟与转体改善，但全链左右腿/Alpha未验收。"
+    }
+  ],
+  "generation_image_references": [
+    "art/fighters/ultraman-arc__luna/model/clean-model-source.png",
+    "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/turn-chamber-attempt-03.raw.png"
+  ],
+  "prompt": "画亚刻奥特曼月亮装甲本人一张完整2D街机像素动作原帧，固定水平侧视镜头，攻击目标在画面右侧，真实透明背景。参考1只用于本人身份与骨长；参考2是较优的转体收右膝候选，只用于同一人物、支撑侧与动作方向，不复制收膝，不复制它外围的任何光晕。\n\n这是同一记4K回旋重击的“腰高右腿扫击接触关键相”，不是前踹、侧踹、膝撞、跳踢或第二次起跳。解剖右腿从收膝状态沿腰高的横向圆弧展开：右髋带动右大腿绕左支撑轴转出，右膝自然伸展但不僵直锁死，右小腿跟随旋出，右脚背/胫骨前侧作为向右侧目标扫过的接触面。踢出的右脚位于画面右侧、接近本人腰部高度，脚趾自然绷出略向下，不把脚跟朝右直线推出，不把鞋底平面正对对手。右大腿、小腿与脚必须连为一条腿，整条腿不是从腹部直接长出。\n\n解剖左腿仍是唯一支撑腿，不换腿、不腾空：左前脚掌维持接地点，左脚跟高于前掌，左脚与左膝随转髋一起自然转向，膝盖朝向与脚尖方向相容，不能脚尖钉住而膝扭成相反方向。左膝轻屈、骨盆重心在合理支撑范围内，身体允许为扫腿略作反向倾斜，但不要夸张后仰跌倒。不要为了让踢腿伸得更远而滑动支撑脚或拉长腿。\n\n肩带、胸腹和骨盆继续承接参考2的转体，近肩遮住部分胸甲，胸灯和胸面仍仅以斜向窄面可辨；头看向右侧目标，颈自然连接。双臂真实弯曲辅助平衡与护头胸，不能把双拳原封贴在转过的上身上。双腕圆甲随手臂转面，可以变窄/部分遮挡，不强行让两圆面正对镜头。保持相同银白后掠头冠、黄眼、蓝青肩胸甲、圆胸灯、双腕圆盘和红银四肢，不增加腿甲、武器或其他装甲特征。\n\n整张只一具完整人物，恰好两条臂、两条腿、两拳和两鞋。完整头冠、肩腕甲尖、伸出的右脚和左支撑脚均在画布内并留透明余量。整体骨长、头身比例、甲体积延续本人参考，不按每个肢体分别缩放，不因横向踢腿而压短身体。像素硬边、硬阶明暗、深轮廓、同一左上光；完整人物重新作画，不贴甲、不切肢、不把旧站姿整体旋转，不复制旧侧踢。\n\n不画对手、接触火花、光圈、能量、运动轨迹线、拖影、地板、地线、阴影、光晕、文字或背景。画面是接触姿态，不用特效证明接触。保持胸面仍部分可辨的侧斜观察，不主动展示大面积未知背甲；若这个扫击角度必须露出参考没有的背部结构，停止该姿态输出并先取得本人可靠背面参考，不能从胸甲镜像出背灯或借别的装甲背甲。",
+  "sequence_boundary": {
+    "previous_key": "turn-chamber-attempt-03：收右膝、左脚前掌支撑",
+    "current_key": "右髋领腿展开，腰高脚背/胫前扫击",
+    "after_key": "同向随势、右膝重新屈收、落脚回架，均未提供合格源。",
+    "not_immediate_frame": "这是下一张要准备的关键相，不代表可直接紧接现收膝候选播放。收膝到展开的髋/膝角跨度需实看，可能仍缺整身展开中相。",
+    "rules_unchanged": "本轮不指定伤害/攻击框、不改帧时长或取消；未来只按实际接触部位注册，禁止扩大框凑命中。"
+  },
+  "visible_evidence_review": [
+    "第三版完整人物与抬跟可辨，胸甲从宽正面缩为斜面，适合作为同人物蓄势参照。",
+    "第三版单图仅能证明有抬起腿与支撑腿；解剖左右跨帧仍未签，生成后须沿骨盆/大腿/膝/脚逐一跟踪，不因画面近远换色就换腿身份。",
+    "旧接触相和骨架为直腿侧踢，不作为本相正确旋转/发力依据。",
+    "本人干净模型仅正侧信息；未取得可核实大面积背甲源。"
+  ],
+  "rear_armor_blocker": {
+    "status": "接触关键相可先限定侧斜胸面；完整背面随势仍明确阻碍。",
+    "condition": "若自然扫击或连接后续相需要露出大面积背甲，则现有两个参考不足，不能用文字让生成器猜补。",
+    "required": "取得月亮本人同版本可靠背面参考，确认甲片和背部结构；不以本体/太阳/银河/镜像胸甲替代。"
+  },
+  "acceptance": [
+    "同一右腿从收膝到展开，左腿从前掌支撑到转轴保持，双腿不互换。",
+    "右腿动作可读为髋带动的圆弧扫击，不是水平脚跟直推；接触脚完整且在腰高附近。",
+    "左前掌接地、脚跟抬起、膝脚同向，未靠滑根/拉长腿增加距离。",
+    "整身头肩髋协调，无断肢/第三腿/甲尖裁切，不强迫两个腕圆盘正面可见。",
+    "干净真实Alpha：主体留白，外围无光晕/背景/投影；保留原字节与真实生成元数据。",
+    "先统一整图尺度审相邻关键相/必要中相，再主游戏真实输入与独立回放、双向720/1080；不能以单张接触图宣布整招完成。"
+  ],
+  "generation_performed": false,
+  "paid_request_count": 0,
+  "codex_used": false,
+  "installed": false,
+  "playable": false,
+  "godot_run": false
+}

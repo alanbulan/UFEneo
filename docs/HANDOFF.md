@@ -19,6 +19,8 @@
 
 ### 升击之后：回旋重击关键相brief（2026-11-05）
 
+- 回旋下一接触关键相brief已准备：右髋带动右腿腰高横扫、脚背/胫前接触，左前掌抬跟转轴持续；以本人定稿和第三版蓄腿为参考，排除旧侧踹。下一张关键图不等于可直接相邻播放，展开中相与背面随势仍待；必须露大面积背甲时参考不足即阻碍。未生成/收费/运行。[接触相brief](../art/fighters/ultraman-arc__luna/stage2/spin-heavy-keyframe-brief-20261105-v1/contact-brief.json)
+
 - 回旋蓄腿第三版已保留：支撑脚跟明确高于前掌、胸甲缩为斜面，转体比前两版清楚；保留为较优蓄势候选，不再沿用前两版平脚结论。低Alpha光晕/触边、统一骨尺及全链左右腿跟踪仍待核，未配准/安装。[逐版比较](verification/luna-spin-heavy-session-candidates-review.json)
 
 - 月亮4K回旋重击两版内置生成候选已保存，月亮身份、双拳双腿和整身可辨；支撑鞋仍近水平，未明确呈现前掌转轴/抬跟，单图不足证明肩髋真实回旋。真实Alpha存在但低透明噪点触边、外围可见光晕，均不签关键相合格；未配准、未运行、未安装。[两版逐项审阅](verification/luna-spin-heavy-session-candidates-review.json)
