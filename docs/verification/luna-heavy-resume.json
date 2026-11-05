@@ -1,0 +1,189 @@
+{
+  "date": "2026-11-05",
+  "scope": "月亮装甲S2 heavy七相整图注册与正式main内存候选",
+  "status": "候选配准、六组逻辑及正式main无头独立回放通过；未正式安装或开放装甲。",
+  "reviewer": "root_delegated_by_user",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "art": {
+    "retained_whole_sources": 7,
+    "decoded_source_size": [
+      1254,
+      1254
+    ],
+    "whole_sample_size": [
+      159,
+      159
+    ],
+    "registered_canvas": [
+      320,
+      320
+    ],
+    "root": [
+      160,
+      280
+    ],
+    "common_scale": 0.12679425837320574,
+    "per_phase_rescale": false,
+    "limb_editing": false,
+    "generated_new_sources": false,
+    "new_cost": 0,
+    "review": "实看七相源联系图、第3相完整大图、共同尺度双向格图及拳面坐标网格；只接受候选注册，未冒称严格美术通过。"
+  },
+  "candidate_rule_changes": [
+    "第3相实际拳面局部框[40,49,10,10]，只在tick9–12生效。",
+    "第4相已收拳，移除参考动作的空气攻击框；startup9、active4、recovery15，整体28tick。",
+    "伤害100、体力30、能量0、位移、取消、命中反馈保留参考，受击框按月亮本人Alpha派生。",
+    "普通亚刻及正式月亮content/assets不改，只在正式main内存候选定义装配。"
+  ],
+  "checks": {
+    "python_unit_tests": {
+      "count": 8,
+      "passed": true,
+      "log": {
+        "path": "reports/luna-heavy-resume/python-tests.log",
+        "sha256": "f1e6f8cd8480cf23fd755d1a9b0028f029c6ccecfc70725f44e21d5587fe29b2"
+      }
+    },
+    "logic": {
+      "cases": [
+        {
+          "contact_counts": {
+            "heavy": 1
+          },
+          "contacts": {
+            "heavy": "hit"
+          },
+          "damage": 100,
+          "direction": 1,
+          "final_hash": "de581425feba27ebf826a923edf8357fae5c20880e3aa8ac5312e7eeeb4d9071",
+          "initial_gap": 70,
+          "kind": "hit",
+          "moves": [
+            "heavy"
+          ],
+          "replay_errors": []
+        },
+        {
+          "contact_counts": {
+            "heavy": 1
+          },
+          "contacts": {
+            "heavy": "block"
+          },
+          "damage": 0,
+          "direction": 1,
+          "final_hash": "b36779ae37588c3c9904187dbaaf69467fc7f23da556b88cfc30b7c516dba8f1",
+          "initial_gap": 70,
+          "kind": "block",
+          "moves": [
+            "heavy"
+          ],
+          "replay_errors": []
+        },
+        {
+          "contact_counts": {},
+          "contacts": {},
+          "damage": 0,
+          "direction": 1,
+          "final_hash": "64e51a6c93ddb1f4d3b877bb2e1506c6247191a6a6082519c91a388032cfb69a",
+          "initial_gap": 260,
+          "kind": "whiff",
+          "moves": [
+            "heavy"
+          ],
+          "replay_errors": []
+        },
+        {
+          "contact_counts": {
+            "heavy": 1
+          },
+          "contacts": {
+            "heavy": "hit"
+          },
+          "damage": 100,
+          "direction": -1,
+          "final_hash": "bbf18514c3209737785a88be5c6cc781848aca5a69b8c504508a5b70393c6e9e",
+          "initial_gap": 70,
+          "kind": "hit",
+          "moves": [
+            "heavy"
+          ],
+          "replay_errors": []
+        },
+        {
+          "contact_counts": {
+            "heavy": 1
+          },
+          "contacts": {
+            "heavy": "block"
+          },
+          "damage": 0,
+          "direction": -1,
+          "final_hash": "cbae998c6bfc8891497772a419ff4f0706586d2a44b079a4b09d80bc313fbd39",
+          "initial_gap": 70,
+          "kind": "block",
+          "moves": [
+            "heavy"
+          ],
+          "replay_errors": []
+        },
+        {
+          "contact_counts": {},
+          "contacts": {},
+          "damage": 0,
+          "direction": -1,
+          "final_hash": "ebffa125856a51c1c0ff67b38883bc24c40c082b47f24577c5bfcc9514073341",
+          "initial_gap": 260,
+          "kind": "whiff",
+          "moves": [
+            "heavy"
+          ],
+          "replay_errors": []
+        }
+      ],
+      "errors": [],
+      "seven_phases_per_case": true,
+      "report": {
+        "path": "reports/luna-heavy-resume/logic-05.json",
+        "sha256": "20cb205f8f789b4361215bad763e6405b5c2dc1221841ead18a0204cb80c79a1"
+      }
+    },
+    "main_headless": {
+      "original_tick_count": 120,
+      "independent_replay_tick_count": 120,
+      "failures": [],
+      "every_tick_hash_equal": true,
+      "original": {
+        "path": "reports/luna-heavy-resume/main-headless-hit-05/main-trace.json",
+        "sha256": "5b7d13f80826988e515624830ff62b6b35f416bebe585e6903b38c9dbbafad5e"
+      },
+      "replay": {
+        "path": "reports/luna-heavy-resume/main-headless-replay-05/main-trace.json",
+        "sha256": "5b7d13f80826988e515624830ff62b6b35f416bebe585e6903b38c9dbbafad5e"
+      },
+      "actual_input_tape": {
+        "path": "reports/luna-heavy-resume/main-headless-hit-05/actual-input-tape.json",
+        "sha256": "1a75c4e8c6194cb4640e7333893ff9fd0e3df067b9c262b88a389017b98541e3"
+      }
+    },
+    "contract": {
+      "path": "reports/luna-heavy-resume/contract-05.json",
+      "sha256": "ff3b1e9400fbd16ce51eddfca9f3a7edac4ea9e729bd5f0730f3c5cc8e1ef226"
+    }
+  },
+  "candidate": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/heavy-registered-20261105-v1/manifest.json",
+    "sha256": "ade6dcac3adf58a4cc785787e26c68c2d08017283bc29316367043d9f66bfe3a"
+  },
+  "limits": [
+    "本轮仅S2 heavy候选；不是整套S2，更不是S2–S7完整装甲。所有正式可玩、选人和变身开关保持关闭。",
+    "目标Godot4.7未验证；当前无头main记录截图captured=false，不伪造图形证据。",
+    "真实720/1080双向主游戏画面、严格头/躯干尺寸与动态接续、真人按键和听感尚未在本轮验收。",
+    "无录屏。"
+  ],
+  "development_notes": [
+    "首跑修复JSON浮点与整数数组严格相等造成的测试断言；没有改实际命中规则来凑断言。",
+    "新source收据只保留固定Forge模块SHA和版本，未提交本机解释器/安装路径。",
+    "03/04是开发阶段合同；最终05重封后六组逻辑、主游戏原跑/独立回放均重新通过。"
+  ]
+}
