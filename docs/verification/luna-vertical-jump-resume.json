@@ -57,9 +57,9 @@
     "v3": "register.py SHA变化被启动前门禁拒绝，未启动Godot",
     "v4": "已修复clip锚字段，4组headless和17项Python测试通过；图形待专员",
     "graphical_v4": "首组Godot正常退出并生成19PNG，但VSync不支持及ALSA音频诊断使runner失败；余7组未运行，不计图形验收通过。",
-    "v5": "显式Dummy音频、gl_compatibility，只分类精确已知VSync警告；4组headless与24项测试通过，输入/hash/模拟指纹与v4一致，真实图形待重跑。"
+    "v5": "4组headless与24项测试通过，输入/hash/模拟指纹与v4一致；8组真实图形及4对独立回放完成，152原生PNG核验通过。"
   },
-  "graphical_status": "待双向720/1080真实窗口原输入及回放；本收据不声称图形通过。",
+  "graphical_status": "v5已完成8组152张原生PNG技术检查；逐相静帧可读，回架脚位收窄及对手脚底/HUD交叠保留，不等于实速或最终美术通过。",
   "limits": [
     "空中根为髋表面粗代理，约±20源像素（±3.1运行像素），未严格骨尺验收。",
     "起跳、收腿、落地、回架的实际连续性与体量需逐图验收。",
@@ -80,5 +80,9 @@
   "failed_graphical_v4": {
     "path": "reports/luna-vertical-jump-resume/gui-v4-20261105-technical-summary.json",
     "sha256": "af6bee3229ecf04d68a0b4fd66103e9a60ea341a069c164b90400a6963cd5364"
+  },
+  "graphical_review": {
+    "path": "docs/verification/luna-vertical-jump-graphical-review.json",
+    "sha256": "b6ea599ce225952d49736c7df81176a36fb7ec185013b7dbead5aba88598d987"
   }
 }
