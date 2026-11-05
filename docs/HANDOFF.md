@@ -6,6 +6,8 @@
 
 ### 月亮S2下项crush（2026-11-05）
 
+- 蹲左拳v3近肩跨胸出拳、远拳护颏已成立；近腕盘完整，远腕甲遮挡不能判缺失。实际蹲架→v3→蹲架同尺重复通过，接触头肩约低14px、前踝约收5.7px及直臂保留实速待核，无静态硬阻塞；可继续RAM试排，未宣称全招或安装。[第三版与候选边界](verification/luna-crouch-light-contact-v3-candidate-review.json)
+
 - 蹲左拳第二版仍近侧护颏、远侧出拳，未解决肩臂归属；原源/实际prompt和四端点同尺对照已存，停止双参考盲重试。找到本人既有近侧跨胸整帧可限作第三拓扑参考，保留其原生Alpha拒收/站姿长拳限制；不改名掩盖左拳缺口、不安装。[第二版核验与可行策略](verification/luna-crouch-light-contact-v2-candidate-review.json)
 
 - 蹲左拳新接触原源已保存：真Alpha、双脚低蹲及前伸拳成立，但近侧臂仍护胸，出拳沿远侧肩臂链；按原近侧=左约定实际打反，不通过左拳。三端点同胫尺保留足位/头身差与测点误差，已给整身纠正肩臂归属方案，未运行安装。[原源与核验](verification/luna-crouch-light-contact-candidate-review.json)

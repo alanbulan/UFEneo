@@ -1,0 +1,325 @@
+{
+  "schema": "ufeneo.luna.crouch-light-contact-v3-review.v1",
+  "date_utc": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "本轮完成": [
+    "v3原源逐字节归档，实际完整prompt为既有proposed_prompt+换行+拓扑增补，三参考顺序及未知model/quality/usage/cost如实保留。",
+    "父侧与独立审阅均实看原图及同尺atlas：本次近侧肩臂跨胸甲前层，远拳回护颏，解决v1/v2攻击侧错误。",
+    "actual crouch→v3→actual crouch三端点完整整图RAM几何配方已重复构建一致，不采用旧低跪四槽、不同侧拳、切肢或局部缩放。"
+  ],
+  "怎么看": {
+    "source": {
+      "path": "art/fighters/ultraman-arc__luna/stage2/crouch-light-session-candidate-20261105/contact-attempt-03.source.json",
+      "sha256": "554a739c1296499544f883dc4ddd5e8812c68c69ce9a611ce3271f629ea0b4c4"
+    },
+    "raw": {
+      "path": "art/fighters/ultraman-arc__luna/stage2/crouch-light-session-candidate-20261105/contact-attempt-03.raw.png",
+      "sha256": "aca704e242e7622cd7ea33a401a8c5b625d6574927117888e8622bc447f37225"
+    },
+    "geometry_plan": {
+      "path": "tools/rebuild/ultraman-arc/luna-crouch-light-geometry/plan-v3.json",
+      "sha256": "d5f807bd0c549b497a62492745cb0fcc639ae13ca171513c5bf2c2b67a347a4f"
+    },
+    "geometry_tool": {
+      "path": "tools/rebuild/ultraman-arc/luna-crouch-light-geometry/geometry.py",
+      "sha256": "09a78e6641cd59eef245c7a27a6a5fca0d477c56bba6bbf18ce68fb33d2e736b"
+    },
+    "geometry_receipt": {
+      "path": "reports/luna-crouch-light-geometry-v3b/geometry.json",
+      "sha256": "79530ca0ebb50bc0e8fccdeb4534c5de3658ba42bc036f8a896f9191df23868e"
+    },
+    "independent_review": {
+      "path": "reports/luna-crouch-light-review/independent-review-v3.json",
+      "sha256": "4d29fda654ad6d4df1fc7ea4768cdd1d777cae5bd12ea3c71a0c95f058b11853"
+    },
+    "atlas_temporary": "reports/luna-crouch-light-geometry-v3b/atlas.png"
+  },
+  "alpha": {
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "zero_pixels": 1171531,
+    "full_pixels": 635,
+    "partial_pixels": 400350,
+    "nonzero_bbox": [
+      0,
+      25,
+      1224,
+      1254
+    ],
+    "alpha128_bbox": [
+      196,
+      164,
+      1081,
+      1126
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "visual_review": {
+    "status": "攻击侧拓扑通过，可推进RAM几何诊断候选；未验收安装",
+    "source": "reports/luna-crouch-light-contact-v3.png",
+    "actual_visual_review": true,
+    "topology": "画面左侧近肩大甲下的银红上臂向前跨在胸甲和胸灯上方，连续经肘、圆盘腕甲、闭拳向画面右伸出。另一臂在后层弯曲，拳收下颏。因此按brief近侧=左的约定，本次左拳成立，不再是v1/v2的远侧出拳。",
+    "confidence_boundary": "由肩肘腕拳连续性与遮挡共同判近远；解剖左右名称来自制作约定。局部关节被甲遮挡，不能把推定关节中心当精确测量。",
+    "wrist_armor": "近侧出拳圆盘完整，拳不被代替或吞没。远侧护拳旁可见蓝色腕缘，下方弯臂及蓝甲被出拳近臂遮挡；第二圆盘没有朝镜头的完整正面，但可由转向和遮挡解释，当前不能定性缺失或改造。动画过渡应再确认其连续性。",
+    "extension": "手臂较直但未见明显反折，接触帧伸展本身不是自动拒收项。相对原蹲架，尤其近侧上臂投影看起来较长，需要同尺肩肘腕拳诊断；原蹲架上臂向下且可有透视缩短，肘受甲遮挡，投影差不能直接证明真实骨长拉伸，也不是硬失败。不可仅按拳够远判合格，也不可仅按直臂废图。",
+    "stance_and_identity": "双脚低蹲、双膝离地、两脚朝向及前后腿关系仍可读；人物身份保持，头、拳、脚完整。头相对整体高度没有明显突变，但足位和横向蹲幅不是逐像素相同，必须同尺对齐再验。",
+    "geometry_next_step": "可作为诊断候选，与actual crouch按统一整帧尺度和基准锚点叠看；并列报告头冠至下颏、肩至肘、肘至拳、髋膝踝链、两脚底及左右足位。不以各自bbox独立缩放掩盖骨长或脚位漂移，不通过切肢/局部缩放修复。",
+    "missing_whole_phases": "至少需验证actual crouch→接触→actual crouch完整序列。当前近臂从腹前护架到近水平击出、远拳从胸前移到下颏，若直接跳帧明显，应补完整人物的近侧左拳展开/前送相及完整回收相；双脚低蹲和两条臂链须连续。不能把现有旧低跪crouch_light相自动当有效过渡。需要几何预览后再定准确数量，避免预设必须生成。",
+    "alpha_scope": "本轮实际看图确认视觉背景不作黑底解释；未重做v3像素级Alpha统计，不把v1/v2统计套给v3。",
+    "generation_metadata": "父报告第三参考策略与完整prompt已执行，transparent=true；model/quality/usage未知。",
+    "geometry_atlas_review": {
+      "actual_viewed": "reports/luna-crouch-light-geometry-v3/atlas.png",
+      "data_read": "reports/luna-crouch-light-geometry-v3/geometry.json",
+      "static_blocker": "未见新增静态硬阻塞。近侧左拳、低蹲双脚、完整人物继续成立，可保留几何候选；不是运行验收。",
+      "visible_comparison": "三端点中接触帧头肩明显更低，冠顶约低14px；两膝和后脚大致稳定，前脚略回收。近拳从腹前移至前伸，远拳升到下颏，动作意图明确。未见换腿、跪地、足部裁断或整体比例崩坏。",
+      "numbers_and_limits": "geometry记录前胫28.40→28.06，前踝x约-5.71、y约-0.47，后踝约(+0.31,+1.60)；与视觉总体相符。后胫由构造等尺，不能用它再次独立证明骨长；头代理20.43→18.38有点选和透视误差，不据此硬判缩水。",
+      "conditional_followup": "先按真实预定tick做离线完整序列或交替预览，核头肩下沉/回升是否闪跳、前脚是否滑移、近拳前送回收是否清楚。若实际节奏显示跳变，再补完整人物的展开及回收过渡相，以渐进头肩下沉和护拳转换连接两端；不能仅因直臂强制重画接触，也不能把静态三端点当运动通过。",
+      "geometry_report_cleanup": "geometry.json的crush-endpoint schema及旧06低位随势说明与本任务不符，建议清理复用文字，保持蹲左拳来源与范围明确。"
+    },
+    "changes_performed": "只读审图并写本报告，未生成、安装、运行游戏或提交"
+  },
+  "腕甲和臂长判断": "近腕圆盘完整并附着前臂；远腕甲转向且被近臂遮住，不能因没有第二正面圆盘断言缺甲。击臂近伸直但无明确反折；原护架存在投影缩短及关节遮挡，跨胸上臂显长不能直接当真实骨长拉伸。保持具体待核，不机械废图。",
+  "whole_frame_geometry": {
+    "source_count": 2,
+    "slots": 3,
+    "runtime_timings_registered": false,
+    "repeat_build_equal": true,
+    "shared_frames_v3_v3b_byte_equal": true,
+    "frames": [
+      {
+        "key": "actual_crouch00",
+        "source": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/crouch/phase-00/request-001/raw.png",
+        "source_sha256": "5bba4df2963de4822aeb327b58bb66b72dad53356b2c64dcd6484b3f85890a97",
+        "source_size": [
+          1024,
+          1024
+        ],
+        "scale": 0.17602067577960165,
+        "sample_size": [
+          180,
+          180
+        ],
+        "raster_rounding_anisotropy": 0.0,
+        "whole_image_translation": [
+          56,
+          107
+        ],
+        "source_rear_forefoot_anchor": [
+          309.62382445141066,
+          982
+        ],
+        "alpha_bbox": [
+          98,
+          137,
+          197,
+          280
+        ],
+        "whole_source_preserved_no_crop": true,
+        "rear_shin_target_by_construction": 41.976041425451086,
+        "front_shin_independent_projection": 28.404850822702397,
+        "joint_distance_uncertainty_native": 6.3367443280656595,
+        "native_landmarks": {
+          "rear_knee": [
+            135.277,
+            236.902
+          ],
+          "rear_ankle": [
+            106.801,
+            267.664
+          ],
+          "front_knee": [
+            182.562,
+            235.848
+          ],
+          "front_ankle": [
+            178.871,
+            263.973
+          ],
+          "ear_proxy": [
+            155.844,
+            159.559
+          ],
+          "chin_proxy": [
+            172.543,
+            171.336
+          ],
+          "near_fist": [
+            157.426,
+            213.523
+          ],
+          "far_fist": [
+            184.848,
+            204.383
+          ]
+        },
+        "frame_sha256": "86318c78be369a88f82c118a6b9d3aa9a8c1c412760043fb62e17782f8f7b246"
+      },
+      {
+        "key": "contact03_near_arm_candidate",
+        "source": "art/fighters/ultraman-arc__luna/stage2/crouch-light-session-candidate-20261105/contact-attempt-03.raw.png",
+        "source_sha256": "aca704e242e7622cd7ea33a401a8c5b625d6574927117888e8622bc447f37225",
+        "source_size": [
+          1254,
+          1254
+        ],
+        "scale": 0.1338222127064022,
+        "sample_size": [
+          168,
+          168
+        ],
+        "raster_rounding_anisotropy": 0.0,
+        "whole_image_translation": [
+          70,
+          129
+        ],
+        "source_rear_forefoot_anchor": [
+          300.3615221987315,
+          1126
+        ],
+        "alpha_bbox": [
+          96,
+          151,
+          215,
+          280
+        ],
+        "whole_source_preserved_no_crop": true,
+        "rear_shin_target_by_construction": 41.976041425451086,
+        "front_shin_independent_projection": 28.057064394937438,
+        "joint_distance_uncertainty_native": 4.817599657430479,
+        "native_landmarks": {
+          "rear_knee": [
+            135.244,
+            238.053
+          ],
+          "rear_ankle": [
+            107.11,
+            269.268
+          ],
+          "front_knee": [
+            182.0,
+            236.847
+          ],
+          "front_ankle": [
+            173.158,
+            263.507
+          ],
+          "ear_proxy": [
+            153.062,
+            170.397
+          ],
+          "chin_proxy": [
+            166.325,
+            183.124
+          ],
+          "near_fist": [
+            208.526,
+            205.364
+          ],
+          "far_fist": [
+            171.952,
+            191.565
+          ]
+        },
+        "frame_sha256": "5dceef344ea836ee25a8837ea511c4a2c63a1cfe655b3f49f54d2327c8036076"
+      },
+      {
+        "key": "return_actual_crouch00",
+        "source": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/crouch/phase-00/request-001/raw.png",
+        "source_sha256": "5bba4df2963de4822aeb327b58bb66b72dad53356b2c64dcd6484b3f85890a97",
+        "source_size": [
+          1024,
+          1024
+        ],
+        "scale": 0.17602067577960165,
+        "sample_size": [
+          180,
+          180
+        ],
+        "raster_rounding_anisotropy": 0.0,
+        "whole_image_translation": [
+          56,
+          107
+        ],
+        "source_rear_forefoot_anchor": [
+          309.62382445141066,
+          982
+        ],
+        "alpha_bbox": [
+          98,
+          137,
+          197,
+          280
+        ],
+        "whole_source_preserved_no_crop": true,
+        "rear_shin_target_by_construction": 41.976041425451086,
+        "front_shin_independent_projection": 28.404850822702397,
+        "joint_distance_uncertainty_native": 6.3367443280656595,
+        "native_landmarks": {
+          "rear_knee": [
+            135.277,
+            236.902
+          ],
+          "rear_ankle": [
+            106.801,
+            267.664
+          ],
+          "front_knee": [
+            182.562,
+            235.848
+          ],
+          "front_ankle": [
+            178.871,
+            263.973
+          ],
+          "ear_proxy": [
+            155.844,
+            159.559
+          ],
+          "chin_proxy": [
+            172.543,
+            171.336
+          ],
+          "near_fist": [
+            157.426,
+            213.523
+          ],
+          "far_fist": [
+            184.848,
+            204.383
+          ]
+        },
+        "frame_sha256": "86318c78be369a88f82c118a6b9d3aa9a8c1c412760043fb62e17782f8f7b246"
+      }
+    ],
+    "method_note": "同画面左侧膝踝投影至model近胫约41.98；统一整图等比缩放、后前掌比较锚[110,280]，并非运行root或物理承重证据。手工点约±18源像素。",
+    "independent_checks": "另一胫投影28.40→28.06、后踝约dx0.31/dy1.60；前踝约dx−5.71/dy−0.47。头代理20.43→18.38、冠顶低14px，显示接触头肩下沉和体量/透视差异，不能无条件签骨长不变。",
+    "punch_path": "近拳由约(157.4,213.5)到(208.5,205.4)，前送约51、抬约8；远护拳由(184.8,204.4)到(172.0,191.6)。这只是端点，不证明3tick期间拳路连续或接触到目标腰腹。"
+  },
+  "证据纠正": "初次复用比较器的临时v3结果带crush schema和旧06说明，独立审阅指出不相干。新增蹲拳专用包装器仅修schema/notes，输出新v3b；所有帧与atlas字节保持，旧crush被冻结工具不改。不把旧说明当本动作事实。",
+  "已知问题": [
+    "近侧左拳这一关键语义现在成立；仍未完成左短拳全招。",
+    "头肩下沉、前脚轻微收回与近直臂的观感须实际时序验证。三端点静图不能判定必需补相或已经顺滑。",
+    "实际蹲架单相仅比较基线；完整蹲循环、第二拳取消、真实输入/独立回放、双向720/1080画面和音频均未在本候选验。",
+    "真Alpha含低透明散点触边；派生Alpha128清理不冒称原图天然二值透明。"
+  ],
+  "下一步": [
+    "可保留v3作为正确近侧出拳的RAM接触候选，下一轮按原3/3/12在正式主游戏训练候选试排，而非建新研究场景；保留原输入/伤害/下段规则，不能为命中加大框。",
+    "先看actual crouch→接触→actual crouch实际时序；只有可见头肩闪跳、滑脚或出收拳硬切才有依据补完整展开/回收，不预设新增数量或延长停帧遮缺口。",
+    "单相未通过整招/严尺/实速或安装，不开放装甲。"
+  ],
+  "accepted_for_ram_geometry_candidate": true,
+  "accepted_for_full_move": false,
+  "installed": false,
+  "runtime_executed": false,
+  "video_recorded": false,
+  "audio_reviewed": false,
+  "generation_called_by_reviewer": false
+}
