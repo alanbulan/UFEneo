@@ -19,6 +19,8 @@
 
 ### 升击之后：回旋重击关键相brief（2026-11-05）
 
+- 含新起手的十槽全现源已用同胫尺/同头部代理尺双方案整图评估：起手与中段有用，但两尺仍不能共同确认头胸/腿长；低收→落脚的原后层承重腿归属及回idle足路未锁定。另一landing映射可减小髋差，旧大位移不是必然缺陷。最小障碍是同腿落脚链和可靠运行尺度，故未虚设时序跑回放/安装。[全链评估](verification/luna-spin-heavy-full-evaluation-v6.json)
+
 - 回旋卸重起手已保存并作三相同尺诊断：左侧低屈腿/右鞋承重与idle、蓄势骨盆拓扑相容，强化右鞋承重假设；髋/膝提供中间路径，攻击脚源离地109px。两臂已近蓄势终点，实际idle尺度与抬臂变化、后段腿映射仍待。实际生成参考为clean-model而非idle，未运行或安装。[完整来源与核验](verification/luna-spin-heavy-entry-candidate-review.json)
 
 - 回旋腿映射/尺度复核：idle画面左腿与蓄势抬腿均在骨盆前层，支持另一种“idle右鞋承重”映射，尚不唯一；此前40/47位移只适用v3假设，不是无条件动作缺陷。头部代理尺与腿尺亦不一致。定向查turn/步行/backstep未有可直接采用桥接；只保留卸重低收设计草案，腿映射未定前不生成。[复核及既有源](verification/luna-spin-heavy-existing-bridge-review.json)
