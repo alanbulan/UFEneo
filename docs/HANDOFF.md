@@ -6,7 +6,7 @@
 
 ### 月亮S2下项crush（2026-11-05）
 
-- 蹲左拳三槽RAM按原3/3/12试排：仅两独立图、65伤/30体力low和原二拳取消字段保留；8逻辑与16主游戏原输入/独立回放通过，站防受击、蹲防格挡、落空均双向一致。仅第一拳，二拳/站转蹲未验；32组图形待核头肩脚位与拳接点，不安装。[运行候选与边界](verification/luna-crouch-light-session-resume.json)
+- 蹲左拳三槽RAM按原3/3/12试排：仅两独立图、65伤/30体力low和原二拳取消字段保留；8逻辑与16主游戏原输入/独立回放通过，站防受击、蹲防格挡、落空均双向一致。新增720/1080双向32组/256原生PNG技术核验、16对180tick五字段一致，16组original逐相静审完成；原批自然结束，无重跑。头肩/前脚换相、接触特效遮挡与受方蹲防硬直较高站姿保留；仅第一拳，二拳/站转蹲未验，无实速/音频/录屏验收，不安装。[运行候选](verification/luna-crouch-light-session-resume.json)、[图形终态与限制](verification/luna-crouch-light-session-graphical-review.json)
 
 - 蹲左拳v3近肩跨胸出拳、远拳护颏已成立；近腕盘完整，远腕甲遮挡不能判缺失。实际蹲架→v3→蹲架同尺重复通过，接触头肩约低14px、前踝约收5.7px及直臂保留实速待核，无静态硬阻塞；可继续RAM试排，未宣称全招或安装。[第三版与候选边界](verification/luna-crouch-light-contact-v3-candidate-review.json)
 
