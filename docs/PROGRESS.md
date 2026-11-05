@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 尾段新增可保留的旧源：backstep00近层腿左落脚、后层右承重，比当前landing更相容实际idle；三相同尺下到idle约18px差不作机械失败门。Alpha只证轮廓、不证髋或承重；最低待核是低收攻击腿空中回摆到原落点，已给一张完整过渡设计，未生成/安装。[事实与不确定分层](verification/luna-spin-heavy-tail-tracking-v7.json)
+
 - 含新起手的十槽全现源已用同胫尺/同头部代理尺双方案整图评估：起手与中段有用，但两尺仍不能共同确认头胸/腿长；低收→落脚的原后层承重腿归属及回idle足路未锁定。另一landing映射可减小髋差，旧大位移不是必然缺陷。最小障碍是同腿落脚链和可靠运行尺度，故未虚设时序跑回放/安装。[全链评估](verification/luna-spin-heavy-full-evaluation-v6.json)
 
 - 回旋卸重起手已保存并作三相同尺诊断：左侧低屈腿/右鞋承重与idle、蓄势骨盆拓扑相容，强化右鞋承重假设；髋/膝提供中间路径，攻击脚源离地109px。两臂已近蓄势终点，实际idle尺度与抬臂变化、后段腿映射仍待。实际生成参考为clean-model而非idle，未运行或安装。[完整来源与核验](verification/luna-spin-heavy-entry-candidate-review.json)

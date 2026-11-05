@@ -1,0 +1,42 @@
+{
+  "schema": "ufeneo.luna.spin-tail-air-return-brief.v1",
+  "date_utc": "2026-11-05",
+  "status": "下一完整相设计，未生成；使用前须沿本轮相对腿身份核原参考",
+  "selected_phase": "近层攻击腿低位空中回摆，尚未接地",
+  "why": "现有backstep00提供更相容的近层左落脚/后层右承重端点；最小需要看清低收攻击腿如何离地向原idle落点回摆，而不是再画一个右侧两脚已落地端点。",
+  "references": [
+    {
+      "role": "腿身份与低收起点，前层抬膝腿是同一攻击腿",
+      "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/recover-low-attempt-01.raw.png",
+      "sha256": "b3668acd40a61d89da61dfc8475af090db312b1b5d9fae6192e03b04d9d232f8"
+    },
+    {
+      "role": "实际游戏护架落点与前后腿关系，不用clean-model替代",
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/idle/phase-00/request-001/raw.provider.png",
+      "sha256": "fcbe466ab9489a4ccd5cc8a8a3fdddacfad9d7895b70133624bf5134851a491b"
+    },
+    {
+      "role": "可行旧落脚方向参考，非已验收插入相，不复制后撤位移",
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/backstep/phase-00/request-001/raw.png",
+      "sha256": "dd9d84656d953173fad1c5fd9b4a574a4b23b9bf228d87491601f262f380839b"
+    },
+    {
+      "role": "仅本人身份和比例交叉参考",
+      "path": "art/fighters/ultraman-arc__luna/model/clean-model-source.png",
+      "sha256": "f07ca34c959008bb1104af55a9d6c5c6a8e7b2d57c510a13cf8c2ed2c2bc4ddf"
+    }
+  ],
+  "leg_contract": "本设计采取目前较有依据的映射：参考1前层抬起腿为原攻击腿，后层下行腿为唯一承重腿；前者最后回到实际idle画面左侧近层落点，后者对应idle画面右侧后层脚。名称来自完整连接/遮挡，不仅来自红银配色。不复用旧landing的画面右脚落地要求。",
+  "prompt": "画亚刻奥特曼月亮装甲本人单张完整2D街机像素动作中相，固定侧视朝右、透明背景。位于参考1低收腿之后、参考2实际待机落脚之前：保持参考1同一条骨盆前层抬起的攻击腿，膝降低并在身体前方向画面左侧回摆，小腿开始向左下自然展开，整只攻击鞋仍清楚离地，正接近参考2近层左鞋的原落点，不踢第二脚，也不先落在右侧再沿地面滑向左。参考1骨盆后层的原承重腿持续承担重量，髋到膝踝连接保留，原前掌接地区域不横移，脚跟自然放低。两腿不得交换前后根部；尽量露出前层大腿根和后层支撑腿入口，让同腿路径能看懂。躯干和肩胸向参考2的真实护架回转，胸灯仍可辨，头看右，一拳在腹胸前、一拳靠面部，腕圆甲各随其前臂，不突换双臂。头胸体量和骨长保持本人一致，不拉长腿或缩小头。保留银白后掠头冠、黄眼、蓝青肩胸甲、圆灯、双腕圆盘、红银四肢；不展示未知大片背甲。单人、恰好两臂两腿，完整头冠双拳双脚留透明边；像素硬边和硬阶阴影，不画地面、影子、光晕、轨迹、文字、对手或其他物体。必须整身完整作画，不拼接或单独旋转肢体。",
+  "acceptance": [
+    "低收→新相→backstep00或实际idle保持同一髋膝踝链，承重腿不能因前掌对齐方便而变更。",
+    "新相攻击脚确实离地，接下来才接地；没有近地水平滑鞋冒充回摆。",
+    "允许合理遮挡/透视和小测点误差，不因像素差自动淘汰；若髋入口仍完全遮住而无法跟踪，记为未确认，不编造连接。",
+    "统一整图比例，头胸与肢段交叉核；不靠改变攻防框/停帧时长掩盖运动。",
+    "一张新相不保证全招闭环，不承诺必须新增几张。"
+  ],
+  "generation_performed": false,
+  "paid_request": false,
+  "user_codex_invoked": false,
+  "installed": false
+}
