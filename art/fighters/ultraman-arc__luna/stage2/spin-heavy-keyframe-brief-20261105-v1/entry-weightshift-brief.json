@@ -1,0 +1,39 @@
+{
+  "schema": "ufeneo.luna.spin-entry-weightshift-brief.v1",
+  "date_utc": "2026-11-05",
+  "status": "最小动作设计草案，腿映射未锁定，不可直接作为生成指令执行",
+  "selected_phase": "卸重低位内收起手",
+  "scope": "只解决实际idle→高位收膝蓄势之间的起腿和部分移重；不同时解决着地回idle。",
+  "references": [
+    {
+      "role": "实际起点护架，不是clean-model替代",
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/idle/phase-00/request-001/raw.provider.png",
+      "sha256": "fcbe466ab9489a4ccd5cc8a8a3fdddacfad9d7895b70133624bf5134851a491b"
+    },
+    {
+      "role": "终点高收膝，仅跟踪本人同腿/护臂",
+      "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/turn-chamber-attempt-03.raw.png",
+      "sha256": "419811794ebc8bd7c3e5ddbb6bb989ed82b6999f1e5f06d29730eec367cd54d3"
+    },
+    {
+      "role": "本人身份与头身比例",
+      "path": "art/fighters/ultraman-arc__luna/model/clean-model-source.png",
+      "sha256": "f07ca34c959008bb1104af55a9d6c5c6a8e7b2d57c510a13cf8c2ed2c2bc4ddf"
+    }
+  ],
+  "release_gate": [
+    "先确认实际idle哪条髋膝踝链对应蓄势的离地攻击腿，另条才是原承重腿；画面左右/配色不等于解剖左右。",
+    "在已确认同一身体比例的两端上核原承重前掌锚；不要以v3条件位移值作为新图硬坐标。"
+  ],
+  "full_frame_design": "同一月亮装甲完整像素整帧，固定侧视朝右。原承重腿承担移重，其前掌留在同一接地区域，脚跟刚开始升起；已确认的原攻击腿卸重，脚刚离地、膝仍低于髋，向身体中线内收，尚未到高收膝。骨盆重心向承重腿上方移动，胸肩转到idle和chamber之间的可解释斜面；头看右，两拳从原护架向蓄势转位，不换臂。必须能分辨两条大腿根与膝踝连续，避免把双髋完全盖住。保留头冠、黄眼、蓝青胸肩甲、胸灯、双腕圆甲和红银四肢，整体头胸和骨长一致。只画一个人、两臂两腿，完整头冠双拳双脚留边，真正透明，无光晕/阴影/文字/对手，不主动展示未知中央背甲。",
+  "acceptance": [
+    "三完整帧中攻击腿从原地卸重到低收再高收，原支撑前掌路径可解释。",
+    "髋和两拳连续移动，不以单肢挪动或整帧滑动假造移重。",
+    "头胸与腿尺交叉一致，非只满足胫尺或bbox。",
+    "新图单帧身份正确不等于三相接续通过。"
+  ],
+  "generation_performed": false,
+  "paid_request": false,
+  "user_codex_invoked": false,
+  "installed": false
+}
