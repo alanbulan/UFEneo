@@ -1,6 +1,6 @@
 extends SceneTree
 ## 纯模拟专项；人物/FX/声音与主游戏画面验收另行完成。
-const OUT := "res://reports/review/2026-10-29/capture-core-v1/"
+var OUT := "user://capture-mechanism/"
 var errors: Array = []
 var cases: Array = []
 
@@ -235,6 +235,8 @@ func new_cases() -> void:
 
 func run() -> void:
 	var args := OS.get_cmdline_user_args()
+	for argument in args:
+		if argument.begins_with("--test-out="):OUT=argument.trim_prefix("--test-out=").trim_suffix("/")+"/"
 	if "--replay" in args:
 		var source: Array = JSON.parse_string(FileAccess.get_file_as_string(OUT+"capture-cases.json"))
 		for record in source:

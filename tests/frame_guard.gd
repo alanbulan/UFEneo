@@ -1,6 +1,6 @@
 extends SceneTree
 ## 新增逐帧护屏的整数接触规则；先保存旧输入逐tick基线，再比较。
-const OUT := "res://reports/review/2026-10-28/frame-guard-core-v1/"
+var OUT := "user://frame-guard/"
 var errors: Array = []
 var completed: Array = []
 
@@ -135,6 +135,8 @@ func test_validation() -> void:
 
 func run() -> void:
 	var args:=OS.get_cmdline_user_args()
+	for argument in args:
+		if argument.begins_with("--test-out="):OUT=argument.trim_prefix("--test-out=").trim_suffix("/")+"/"
 	if "--baseline" in args:
 		write_json("legacy-before.json",legacy())
 		print("FRAME_GUARD_BASELINE_SAVED");quit(0);return

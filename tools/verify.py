@@ -12,7 +12,7 @@ from runtime.environment import ROOT, godot_path, isolated_test_environment
 
 CASES = [
     "logic_2d", "review_inputs", "armor_transform_routing", "air_only_start", "chase_interrupt",
-    "projectile_ground_expiry", "projectile_ground_clip", "projectile_contact_direction", "projectile_air_knockdown_direction", "hit_pushback_bounds",
+    "projectile_ground_expiry", "projectile_ground_clip", "projectile_contact_direction", "projectile_air_knockdown_direction", "projectile_move_isolation", "hit_pushback_bounds",
     "throw_hold_point_overrides", "throw_root_overrides", "throw_current_capture", "capture_mechanism",
     "capture_receiver_availability", "ko_finish_presentation", "transform_mechanism",
     "phase3_standing", "phase3_air", "phase3_reaction", "phase3_zetton",
@@ -72,7 +72,7 @@ def main():
             command.append("--headless")
         command += ["--path", str(ROOT), "--script", "res://tests/" + case + ".gd"]
         case_output = run_output / case
-        if case in ("hit_pushback_bounds", "chase_interrupt", "projectile_contact_direction", "projectile_air_knockdown_direction"):
+        if case in ("hit_pushback_bounds", "chase_interrupt", "projectile_contact_direction", "projectile_air_knockdown_direction", "projectile_move_isolation", "capture_mechanism", "frame_guard", "phase3_specials", "phase3_zetton"):
             command += ["--", "--test-out=" + str(case_output)]
         elif case == "replay_match_loading":
             command += ["--", "--replay-test-out=" + str(case_output)]
@@ -84,7 +84,7 @@ def main():
             command += ["--", "--shutdown-out=" + str(case_output)]
         run(case, command)
         if case == "capture_mechanism" and outcomes[-1]["status"] == "passed":
-            run("capture_mechanism_replay", command + ["--", "--replay"])
+            run("capture_mechanism_replay", command + ["--replay"])
     if args.only is None:
         run("fx-audio-resources", [sys.executable, str(ROOT / "tools/check_fx_audio.py")])
         run("pixel-ui-resources", [sys.executable, str(ROOT / "tools/check_pixel_ui.py")])

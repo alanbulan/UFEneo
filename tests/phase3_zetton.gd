@@ -1,9 +1,13 @@
 extends SceneTree
+var out := "user://phase3-zetton/"
 var failures: Array[String]=[]
 func check(ok: bool,label: String) -> void:
 	if not ok:failures.append(label)
 func _initialize() -> void:call_deferred("run")
 func run() -> void:
+	for argument in OS.get_cmdline_user_args():
+		if argument.begins_with("--test-out="):out=argument.trim_prefix("--test-out=").trim_suffix("/")+"/"
+	DirAccess.make_dir_recursive_absolute(out)
 	var driver:=UfePhase3ZettonReview.new()
 	var sim:=UfeContentDatabase.match_for()
 	var twin:=UfeContentDatabase.match_for()
@@ -58,7 +62,7 @@ func run() -> void:
 		var trial:=UfeContentDatabase.match_for();trial.fighters[1].x=500;trial.fighters[0].x=900;trial.fighters[1].facing=1
 		for tick in range(120):trial.step([UfeInputFrame.make(direction),UfeInputFrame.make(direction)])
 		check(trial.fighters[1].x==500+direction*240,"走速每tick2像素 "+str(direction))
-	var report:=FileAccess.open("res://reports/phase3-zetton-evidence.json",FileAccess.WRITE)
+	var report:=FileAccess.open(out+"phase3-zetton-evidence.json",FileAccess.WRITE)
 	report.store_string(JSON.stringify({"failures":failures,"actions":results},"\t"))
 	print("PHASE3_ZETTON "+JSON.stringify({"failures":failures,"hits":hits}))
 	quit(0 if failures.is_empty() else 1)

@@ -1,9 +1,13 @@
 extends SceneTree
+var out := "user://phase3-specials/"
 var errors: Array = []
 func check(ok: bool, text: String) -> void:
 	if not ok:errors.append(text);printerr(text)
 func _initialize() -> void:call_deferred("run")
 func run() -> void:
+	for argument in OS.get_cmdline_user_args():
+		if argument.begins_with("--test-out="):out=argument.trim_prefix("--test-out=").trim_suffix("/")+"/"
+	DirAccess.make_dir_recursive_absolute(out)
 	var summaries:=[]
 	for part in range(13):
 		var driver:=UfePhase3SpecialReview.new()
@@ -61,7 +65,7 @@ func run() -> void:
 			var clip: Dictionary=manifest.clips[a]
 			check(int(clip.ticks.reduce(func(total,t):return total+int(t),0))==m.frames.size(),id+"图/数据时长一致 "+a)
 			check(clip.rects.size()==(6 if a=="taunt" else 8),id+"独立帧数 "+a)
-	var file:=FileAccess.open("res://reports/phase3-specials-evidence.json",FileAccess.WRITE)
+	var file:=FileAccess.open(out+"phase3-specials-evidence.json",FileAccess.WRITE)
 	file.store_string(JSON.stringify({"passed":errors.is_empty(),"errors":errors,"groups":summaries},"\t"))
 	print("PHASE3_SPECIALS "+("PASS" if errors.is_empty() else str(errors)))
 	quit(0 if errors.is_empty() else 1)

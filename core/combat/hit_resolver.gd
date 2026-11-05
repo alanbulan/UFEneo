@@ -4,6 +4,7 @@ const CurrentCapture = preload("res://core/combat/throw_current_capture.gd")
 const PUSHBACK_BOUNDARY_REVISION := 1
 const THROW_TARGET_RULE_REVISION := 1
 const PROJECTILE_DIRECTION_RULE_REVISION := 2
+const PROJECTILE_MOVE_ISOLATION_RULE_REVISION := 1
 static func world_box(f: UfeFighter, box: Array) -> Rect2i:
 	return Rect2i(f.x + int(box[0]) if f.facing > 0 else f.x - int(box[0]) - int(box[2]),
 		f.height + int(box[1]), int(box[2]), int(box[3]))
@@ -47,7 +48,10 @@ static func contact_point(a: UfeFighter,b: UfeFighter) -> Vector2i:
 	return Vector2i(b.x,b.height+60)
 
 static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: bool, rules: UfeRuleSet, projectile_facing: int = 0) -> String:
-	a.combat.connected = true
+	# 非零来向只由真实离手弹体接触传入；它的去重由弹体自身负责。
+	# 旧弹可能在下一次同名招式起手时到达，不能消耗射手当前招式的接触/发射许可。
+	# 命中confirmed仍沿既有规则写入，不扩大或收窄命中取消。
+	if projectile_facing==0:a.combat.connected = true
 	# 破防被真实命中/投中终止也属于结束，不能绕过自然收势的最低恢复，
 	# 否则持续远程可让受方永远以0体再次破防。
 	if b.state=="guardbreak":UfeStaminaRules.finish_guard_break(b)

@@ -1,0 +1,370 @@
+{
+  "scope": "默认470/750起点，真实两次I，不改站位/能量/状态/招式数据；旧离手弹体与当前招式connected隔离，confirmed保持。",
+  "baseline_commit": "ccefbcd7703d90afc050f2e9a9c1f862a58a3360",
+  "engine": "Godot 4.6.3.stable.official.7d41c59c4",
+  "red": {
+    "exit": 1,
+    "cases": 8,
+    "failures": [
+      "p1-neutral-second-36/旧弹接触不能消耗新招发射许可",
+      "p1-neutral-second-36/两次起手必须各自产生一颗火球",
+      "p1-neutral-second-36/两颗火球均到达并真实接触",
+      "p1-neutral-second-36/维持正式65伤害或格挡无伤",
+      "p1-guard-second-36/旧弹接触不能消耗新招发射许可",
+      "p1-guard-second-36/两次起手必须各自产生一颗火球",
+      "p1-guard-second-36/两颗火球均到达并真实接触",
+      "p2-neutral-second-36/旧弹接触不能消耗新招发射许可",
+      "p2-neutral-second-36/两次起手必须各自产生一颗火球",
+      "p2-neutral-second-36/两颗火球均到达并真实接触",
+      "p2-neutral-second-36/维持正式65伤害或格挡无伤",
+      "p2-guard-second-36/旧弹接触不能消耗新招发射许可",
+      "p2-guard-second-36/两次起手必须各自产生一颗火球",
+      "p2-guard-second-36/两颗火球均到达并真实接触"
+    ],
+    "path": "reports/projectile-move-isolation/before/"
+  },
+  "green": {
+    "exit": 0,
+    "cases": 8,
+    "failures": [],
+    "path": "reports/projectile-move-isolation/after/"
+  },
+  "cases": [
+    {
+      "case": "p1-neutral-second-36",
+      "target": "ultraman",
+      "before_birth_ticks": [
+        12
+      ],
+      "after_birth_ticks": [
+        12,
+        55
+      ],
+      "after_contact_ticks": [
+        39,
+        83
+      ],
+      "after_hp": 870,
+      "compatibility": {
+        "actual_checked": true,
+        "actual_rejected": true,
+        "old_fingerprint": "b66a6bcc8530bbf1243dc7c3c7898c8ac3f1cb47dcde7288da50607714e24afd",
+        "same_input": true,
+        "changed_hash_tick_count": 82
+      }
+    },
+    {
+      "case": "p1-guard-second-36",
+      "target": "ultraman",
+      "before_birth_ticks": [
+        12
+      ],
+      "after_birth_ticks": [
+        12,
+        52
+      ],
+      "after_contact_ticks": [
+        40,
+        80
+      ],
+      "after_hp": 1000,
+      "compatibility": {
+        "actual_checked": true,
+        "actual_rejected": true,
+        "old_fingerprint": "b66a6bcc8530bbf1243dc7c3c7898c8ac3f1cb47dcde7288da50607714e24afd",
+        "same_input": true,
+        "changed_hash_tick_count": 81
+      }
+    },
+    {
+      "case": "p1-crouch-second-36",
+      "target": "ultraman-leo",
+      "before_birth_ticks": [
+        12,
+        47
+      ],
+      "after_birth_ticks": [
+        12,
+        47
+      ],
+      "after_contact_ticks": [],
+      "after_hp": 1000,
+      "compatibility": {
+        "actual_checked": true,
+        "actual_rejected": true,
+        "old_fingerprint": "47362bc95e93189c0adc95158f2ba24a7980ed6d85cfa50fbf5c31a23a078cd4",
+        "same_input": true,
+        "changed_hash_tick_count": 0
+      }
+    },
+    {
+      "case": "p1-neutral-second-65",
+      "target": "ultraman",
+      "before_birth_ticks": [
+        12,
+        76
+      ],
+      "after_birth_ticks": [
+        12,
+        76
+      ],
+      "after_contact_ticks": [
+        39,
+        104
+      ],
+      "after_hp": 870,
+      "compatibility": {
+        "actual_checked": true,
+        "actual_rejected": true,
+        "old_fingerprint": "b66a6bcc8530bbf1243dc7c3c7898c8ac3f1cb47dcde7288da50607714e24afd",
+        "same_input": true,
+        "changed_hash_tick_count": 43
+      }
+    },
+    {
+      "case": "p2-neutral-second-36",
+      "target": "ultraman",
+      "before_birth_ticks": [
+        12
+      ],
+      "after_birth_ticks": [
+        12,
+        55
+      ],
+      "after_contact_ticks": [
+        39,
+        83
+      ],
+      "after_hp": 870,
+      "compatibility": {
+        "actual_checked": true,
+        "actual_rejected": true,
+        "old_fingerprint": "cb1791ecb5b2d256c2a09ed69727c35e84dffca211bc62e06235c192b054bdbe",
+        "same_input": true,
+        "changed_hash_tick_count": 82
+      }
+    },
+    {
+      "case": "p2-guard-second-36",
+      "target": "ultraman",
+      "before_birth_ticks": [
+        12
+      ],
+      "after_birth_ticks": [
+        12,
+        52
+      ],
+      "after_contact_ticks": [
+        40,
+        80
+      ],
+      "after_hp": 1000,
+      "compatibility": {
+        "actual_checked": true,
+        "actual_rejected": true,
+        "old_fingerprint": "cb1791ecb5b2d256c2a09ed69727c35e84dffca211bc62e06235c192b054bdbe",
+        "same_input": true,
+        "changed_hash_tick_count": 81
+      }
+    },
+    {
+      "case": "p2-crouch-second-36",
+      "target": "ultraman-leo",
+      "before_birth_ticks": [
+        12,
+        47
+      ],
+      "after_birth_ticks": [
+        12,
+        47
+      ],
+      "after_contact_ticks": [],
+      "after_hp": 1000,
+      "compatibility": {
+        "actual_checked": true,
+        "actual_rejected": true,
+        "old_fingerprint": "1ce0f9f07452e57e9d894e70791ebbf65a1a6dfeaf0e1356e8239a1f28608a71",
+        "same_input": true,
+        "changed_hash_tick_count": 0
+      }
+    },
+    {
+      "case": "p2-neutral-second-65",
+      "target": "ultraman",
+      "before_birth_ticks": [
+        12,
+        76
+      ],
+      "after_birth_ticks": [
+        12,
+        76
+      ],
+      "after_contact_ticks": [
+        39,
+        104
+      ],
+      "after_hp": 870,
+      "compatibility": {
+        "actual_checked": true,
+        "actual_rejected": true,
+        "old_fingerprint": "cb1791ecb5b2d256c2a09ed69727c35e84dffca211bc62e06235c192b054bdbe",
+        "same_input": true,
+        "changed_hash_tick_count": 43
+      }
+    }
+  ],
+  "regressions": [
+    {
+      "name": "logic_2d",
+      "status": "passed",
+      "exit": 0,
+      "args": []
+    },
+    {
+      "name": "projectile_contact_direction",
+      "status": "passed",
+      "exit": 0,
+      "args": [
+        "--test-out=/workspace/scratch/a5f6e938602a/ufeneo/reports/projectile-move-isolation/regressions/projectile_contact_direction"
+      ]
+    },
+    {
+      "name": "projectile_air_knockdown_direction",
+      "status": "passed",
+      "exit": 0,
+      "args": [
+        "--test-out=/workspace/scratch/a5f6e938602a/ufeneo/reports/projectile-move-isolation/regressions/projectile_air_knockdown_direction"
+      ]
+    },
+    {
+      "name": "capture_mechanism",
+      "status": "passed",
+      "exit": 0,
+      "args": [
+        "--test-out=/workspace/scratch/a5f6e938602a/ufeneo/reports/projectile-move-isolation/regressions/capture_mechanism"
+      ]
+    },
+    {
+      "name": "capture_mechanism_replay",
+      "status": "passed",
+      "exit": 0,
+      "args": [
+        "--test-out=/workspace/scratch/a5f6e938602a/ufeneo/reports/projectile-move-isolation/regressions/capture_mechanism",
+        "--replay"
+      ]
+    },
+    {
+      "name": "chase_interrupt",
+      "status": "passed",
+      "exit": 0,
+      "args": [
+        "--test-out=/workspace/scratch/a5f6e938602a/ufeneo/reports/projectile-move-isolation/regressions/chase_interrupt"
+      ]
+    },
+    {
+      "name": "throw_root_overrides",
+      "status": "passed",
+      "exit": 0,
+      "args": []
+    },
+    {
+      "name": "throw_current_capture",
+      "status": "passed",
+      "exit": 0,
+      "args": []
+    },
+    {
+      "name": "frame_guard",
+      "status": "passed",
+      "exit": 0,
+      "args": [
+        "--test-out=/workspace/scratch/a5f6e938602a/ufeneo/reports/projectile-move-isolation/regressions/frame_guard"
+      ]
+    },
+    {
+      "name": "phase3_specials",
+      "status": "passed",
+      "exit": 0,
+      "args": [
+        "--test-out=/workspace/scratch/a5f6e938602a/ufeneo/reports/projectile-move-isolation/regressions/phase3_specials"
+      ]
+    },
+    {
+      "name": "phase3_zetton",
+      "status": "passed",
+      "exit": 0,
+      "args": [
+        "--test-out=/workspace/scratch/a5f6e938602a/ufeneo/reports/projectile-move-isolation/regressions/phase3_zetton"
+      ]
+    },
+    {
+      "name": "import_uid",
+      "status": "passed",
+      "exit": 0,
+      "args": []
+    }
+  ],
+  "source_sha256": {
+    "core/combat/hit_resolver.gd": "8c55af274e656a6fd8f075eb2f4e6845400c41a125fa2f059874384b6603e007",
+    "core/combat/match_director.gd": "b31e00f205e24ec65762172f719a3a3a081f968cb27445bbbf29f66c3e7bf96b",
+    "tests/projectile_move_isolation.gd": "87d6b373c56820b1231a1c50c35cb0e9ac3a8b51b4ba54e225b49239e9041927",
+    "tests/projectile_move_isolation.gd.uid": "5a48c55964f9dc45156004a2778a90d374080f97cbfb98d256da47ce862ef64f",
+    "tests/chase_interrupt.gd": "91e26a0d70b1e4f28e335193239d9e6d31bd9667c37267c0f95b1513850e212f",
+    "tests/throw_root_overrides.gd": "f952170194bf241bf722f35071ecd4f7d4e20f2f4bf0b23b8dc6d87c3c9d2a64",
+    "tests/throw_current_capture.gd": "c99119fe9433cd280027e99816968ae7f6f710303b238ff8de3b55321ae489c1",
+    "tests/capture_mechanism.gd": "233691645dc76c760aeee8feb814f844229ffb8e742da425944270750fd0aca0",
+    "tests/frame_guard.gd": "5a40ef954a13578928aaea69364a66e4567669d04cbf48b7ce5eacb8695f7f57",
+    "tests/phase3_specials.gd": "8962b782ca13edb7ea2aa80c816226bf9737a71d53947f5451f3d711aed95bfe",
+    "tests/phase3_zetton.gd": "9b702fc49c5fc48edc7bf76bd30e8e30b02d668dad6adf45b03806b29bccc209",
+    "tools/verify.py": "c1918fd292469fcdb3e91cfe38c157f8c864baf7e1d289cba0ee811cc6d6417d"
+  },
+  "isolation": "全部Godot经tools/godot_lock.py串行，XDG_DATA_HOME/XDG_CONFIG_HOME/XDG_CACHE_HOME独立；四个必要旧测试输出已最小参数化，未覆旧证据。",
+  "boundaries": [
+    "纯模拟及回放验证，无真人键盘输入、画面、录屏或声音验收。",
+    "未改变confirmed，未改变近战/投技/捕获协议或弹体自身去重。",
+    "延迟对照各43tick hash变化；记录字段中只有射手connected及hash不同，不声称修前后完整hash保持。"
+  ],
+  "godot_lock_released": true,
+  "reviewer": "root_delegated_by_user",
+  "review_note": "独立核对core最小diff、新测试默认起点与真实两次起手、源SHA和八组红绿结果。新规则改变旧弹体对当前connected的写入；所有旧全局指纹录像拒绝，不宣称旧版本兼容。当前人工root/capture/chase基线加入新规则，原条件分支未删除。",
+  "source_report": {
+    "path": "reports/projectile-move-isolation/review.json",
+    "sha256": "8db98d27dbe87c1a1139672ee809fb415faf4038e0bd223b6c45446147600bdf"
+  },
+  "verify_entry_regression": {
+    "directory": "reports/verification/runs/35cdaf5f70f6",
+    "results": [
+      {
+        "name": "projectile_move_isolation",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "capture_mechanism",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "capture_mechanism_replay",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "frame_guard",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "phase3_specials",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "phase3_zetton",
+        "status": "passed",
+        "exit": 0
+      }
+    ],
+    "note": "统一入口新增专项、四项独立输出及capture单独进程重放参数实跑；与前述11项存在重合，不累加为独立功能数。"
+  }
+}
