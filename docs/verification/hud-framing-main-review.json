@@ -2,7 +2,7 @@
   "schema": "ufeneo.hud-framing-main-review.v1",
   "date": "2026-11-05",
   "reviewer": "root_delegated_by_user",
-  "status": "正式主游戏逻辑完成，实际图形待核",
+  "status": "05正式far/near图形通过；三级持岩可辨失败与Luna候选接线遗漏已记录，补充复验中",
   "files": [
     {
       "path": "tests/review/app/hud_framing/main_driver.gd",
@@ -361,5 +361,45 @@
   "paid_generation": false,
   "simulation_rules_changed": false,
   "character_art_changed": false,
-  "scope": "只保护双方整帧轮廓及仍持握的实体，不把已离手投射物/刀光/拖尾纳入人物取景。"
+  "scope": "只保护双方整帧轮廓及仍持握的实体，不把已离手投射物/刀光/拖尾纳入人物取景。",
+  "graphical_round_05": {
+    "receipts": [
+      {
+        "path": "reports/hud-framing/gui-far-05-20261105-technical-summary.json",
+        "sha256": "d0be8ccf0a76bf23b7c18e29c935f56cbb8c65db1bb144548bf47cf0fc4875cf"
+      },
+      {
+        "path": "reports/hud-framing/gui-near-05-20261105-technical-summary.json",
+        "sha256": "7e3f2fc491e131ae105e85c2e04bcd95e18f8791317187a8b4dcdec870d12590"
+      },
+      {
+        "path": "reports/hud-framing/gui-held-rock-05-20261105-technical-summary.json",
+        "sha256": "120e53bea8f2ea34299cecbeed72490426c27b90ab8dd6070568b6e54f923597"
+      },
+      {
+        "path": "reports/luna-vertical-jump-resume/gui-hud-v1-20261105-technical-summary.json",
+        "sha256": "3c736891ee00f28ff82e36bd56d9ad10db66f600d1643b9e6af5adf640c7013d"
+      }
+    ],
+    "far_near": "8组108PNG；训练板/变身提示、高跳/长尾倒地与挑空，已检静帧HUD避让通过。",
+    "held_rock": "4组68PNG技术边界过，但三级必杀固定屏幕立绘/岩坑覆盖普通world，持石不可辨，不计视觉通过。",
+    "luna_hud_v1": "8组152PNG技术过但原遮脚图SHA与旧v5完全相同，视觉回归失败。共享候选自行装配HUD遗漏安全区provider，并非正式算法通过可替代此失败。",
+    "no_recording": true
+  },
+  "supplement_preparation": {
+    "candidate_fix": "共享候选start_match接入正式HUD安全区provider和训练overlay列表；垂直跳截图重算最终双方Alpha与实际安全区并拒绝超界。",
+    "python_tests": "29项通过，含HUD不匹配/隐藏HUD/缺第二角色/上下边界侵入负例；旧测试夹具先缺新增字段失败，补显式元数据后再通过，不作为图形证据。",
+    "luna_contract": "reports/luna-vertical-jump-resume/candidate-runtime-hud-v2.json",
+    "luna_contract_sha256": "96183b993b1c8e609ce4a9b1e32a70a693476fdfea9c242c604638a1c75f519f",
+    "luna_headless": "4组120tick通过，与旧v5逐tick模拟一致；实际图形待复验。",
+    "luna_comparison": "reports/luna-vertical-jump-resume/hud-v2-gameplay-comparison.json",
+    "held_rock": "另封06，显式2000能量中立P走二级special2，不隐藏三级立绘，不修改生产招式或判定。",
+    "scope_limit": "旧Luna候选仍在view更新后隐藏训练板，所以保守缩放曾按更紧训练区计算；本轮不宣称理想缩放或完整动作美术通过。正式far保留训练板。",
+    "held_rock_headless": {
+      "path": "reports/hud-framing/headless-held-rock-06/runner-result.json",
+      "contract_sha256": "297b15999e9aee43f73518c109a164fc68fcb305a378b701e19086b9f70e49bb",
+      "passed": "四组190tick，真实special2及独立super2_held；原带/fresh sim/独立进程逐tickhash一致；无bounds或日志失败。",
+      "graphics": "待真实可见性验收，不能只凭实体数组计通过。"
+    }
+  }
 }

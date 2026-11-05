@@ -12,6 +12,6 @@ static func make_match(cfg: Dictionary,direction: int) -> UfeMatchDirector:
 	sim.fighters[1].x=640+direction*int(cfg.gap)/2
 	for i in range(2):
 		sim.fighters[i].facing=direction if i==0 else -direction
-		sim.fighters[i].stats.energy=3000
+		sim.fighters[i].stats.energy=int(cfg.get("initial_energy",[3000,3000])[i])
 		sim.fighters[i].stats.hp=int(cfg.initial_hp[i])
 	return sim

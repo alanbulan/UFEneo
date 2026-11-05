@@ -60,6 +60,19 @@ func _save_still(frame: int, key: String) -> void:
 		failures.append({"kind":"render_region_does_not_match_requested_phase","expected":r})
 		_resume_after_capture()
 		return
+	# 候选同样核绘制前最终HUD安全区，不能仅用旧trace的屏幕边界冒充避让。
+	var safe: Rect2=hud.battle_safe_rect()
+	var final_bounds: Array=[]
+	for node in view.fighters+view.framing_entities:
+		var b: Rect2=view.get_global_transform()*view._sprite_bounds(node)
+		final_bounds.append([b.position.x,b.position.y,b.size.x,b.size.y])
+		if not safe.grow(0.1).encloses(b):failures.append({"kind":"final_alpha_outside_hud_safe_area","movie_frame":frame,"bounds":final_bounds[-1]})
+	if not safe.is_equal_approx(view.framing_safe_rect):failures.append({"kind":"candidate_hud_provider_not_applied","movie_frame":frame})
+	expected["final_render_bounds"]=final_bounds
+	expected["final_safe_rect"]=[view.framing_safe_rect.position.x,view.framing_safe_rect.position.y,view.framing_safe_rect.size.x,view.framing_safe_rect.size.y]
+	expected["hud_safe_rect"]=[safe.position.x,safe.position.y,safe.size.x,safe.size.y]
+	expected["hud_visible"]=hud.visible
+	expected["training_overlay_visible"]=training_overlay.visible
 	var picture: Image = get_viewport().get_texture().get_image()
 	var dimensions := Vector2i(picture.get_width(),picture.get_height())
 	var window_dimensions: Vector2i = DisplayServer.window_get_size()

@@ -25,7 +25,7 @@ def freeze(out,engine):
   else:
    inputs[25][0]=[0,0,32]
    captures=[0,25,30,35,40,45,46,47,48,50,53,55,60,70,85,100,150]
-  write(out/(case+'.json'),{'schema':'ufeneo.hud_framing.v1','case':case,'training':case=='far','fighter':'red_king' if case=='held_rock' else 'ultraman-arc','opponent':'gomora','initial_hp':[1000,500] if case=='far' else [1000,1000],'gap':540 if case!='near' else 70,'length_frames':190,'inputs':inputs,'capture_frames':captures,'engine':str(engine),'engine_sha256':sha(engine),'bound_resources':bound})
+  write(out/(case+'.json'),{'schema':'ufeneo.hud_framing.v1','case':case,'training':case=='far','fighter':'red_king' if case=='held_rock' else 'ultraman-arc','opponent':'gomora','initial_energy':[2000,3000] if case=='held_rock' else [3000,3000],'initial_hp':[1000,500] if case=='far' else [1000,1000],'gap':540 if case!='near' else 70,'length_frames':190,'inputs':inputs,'capture_frames':captures,'engine':str(engine),'engine_sha256':sha(engine),'bound_resources':bound})
 def diagnostics(logs):
  source=ROOT/'tools/rebuild/ultraman-arc/luna-forward-jump-resume/main_bundle.py'
  spec=importlib.util.spec_from_file_location('prior_bundle',source);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
@@ -67,7 +67,10 @@ def run(contract,out,headless):
     if c['case']=='near':
      assert any(r['pair'][0]['move']=='motion_623' for r in data['trace'])
      assert any(r['pair'][1]['state'] in ['knockdown','down','wake'] for r in data['trace']), sorted({r['pair'][1]['state'] for r in data['trace']})
-    if c['case']=='held_rock':assert any(r['entities'] for r in data['trace']), '真实独立持握实体未覆盖' 
+    if c['case']=='held_rock':
+     assert any(r['entities'] for r in data['trace']), '真实独立持握实体未覆盖'
+     assert any(r['pair'][0]['move']=='special2' for r in data['trace']), '未触发二级真实持石'
+     assert not any(r['pair'][0]['move']=='special3' for r in data['trace']), '三级立绘遮挡案例不能替代二级持物证明'
     assert all(row['hud_visible'] and row['training_overlay_visible']==c['training'] for row in data['trace'])
     assert len(data['stills'])==len(c['capture_frames'])
     if not headless:

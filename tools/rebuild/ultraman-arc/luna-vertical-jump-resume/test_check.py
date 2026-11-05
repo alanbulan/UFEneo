@@ -35,7 +35,7 @@ class VerticalTraceTests(unittest.TestCase):
         for frame in [0,100]+[40+n for n in B.CAPTURE_N]:
             row=d['trace'][frame];sprite=row['pair'][0]['frame_sprite']
             d['stills'].append({'movie_frame':frame,'dimensions':[1280,720],'window_dimensions':[1280,720],'resized':False,'path':'parser-fixture-only','sha256':'fixture',
-                'request':{'tick':row['tick'],'movie_frame':frame,'sprite':sprite,'state_hash':row['state_hash']},'captured_tick':row['tick'],'captured_sprite':sprite})
+                'request':{'final_safe_rect':[16,62,608,256],'hud_safe_rect':[16,62,608,256],'hud_visible':True,'final_render_bounds':[[20,80,100,150],[500,150,100,160]],'tick':row['tick'],'movie_frame':frame,'sprite':sprite,'state_hash':row['state_hash']},'captured_tick':row['tick'],'captured_sprite':sprite})
         return d
     def test_graphical_parser_success(self):
         with patch.object(B,'sha',return_value='fixture'):B.check_trace(self.graphical(),True,[1280,720])
@@ -48,6 +48,14 @@ class VerticalTraceTests(unittest.TestCase):
     def test_capture_wrong_hash(self):
         d=self.graphical();d['stills'][0]['request']['state_hash']='wrong'
         with patch.object(B,'sha',return_value='fixture'),self.assertRaises(AssertionError):B.check_trace(d,True,[1280,720])
+    def reject_graphic(self,edit):
+        d=self.graphical();edit(d['stills'][0]['request'])
+        with patch.object(B,'sha',return_value='fixture'),self.assertRaises(AssertionError):B.check_trace(d,True,[1280,720])
+    def test_hud_provider_mismatch(self):self.reject_graphic(lambda r:r.update(final_safe_rect=[16,62,608,270]))
+    def test_hidden_hud(self):self.reject_graphic(lambda r:r.update(hud_visible=False))
+    def test_missing_second_body(self):self.reject_graphic(lambda r:r.update(final_render_bounds=[[20,80,100,150]]))
+    def test_lower_hud_overlap(self):self.reject_graphic(lambda r:r.update(final_render_bounds=[[20,80,100,150],[500,170,100,160]]))
+    def test_upper_hud_overlap(self):self.reject_graphic(lambda r:r.update(final_render_bounds=[[20,50,100,150],[500,150,100,160]]))
     def test_missing_boundary_capture(self):
         d=self.graphical();d['stills'].pop()
         with patch.object(B,'sha',return_value='fixture'),self.assertRaises(AssertionError):B.check_trace(d,True,[1280,720])

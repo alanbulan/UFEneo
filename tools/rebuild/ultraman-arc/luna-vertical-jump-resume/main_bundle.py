@@ -177,6 +177,12 @@ def check_trace(data,graphical=False,size=None):
             assert still['dimensions']==size and still['window_dimensions']==size and not still['resized']
             assert sha(still['path'])==still['sha256']
             assert still['request']['tick']==still['captured_tick'] and still['request']['sprite']==still['captured_sprite']
+            request=still['request']
+            assert request['final_safe_rect']==request['hud_safe_rect'] and request['hud_visible']
+            sx,sy,sw,sh=request['hud_safe_rect']
+            assert len(request['final_render_bounds'])>=2
+            for x,y,w,h in request['final_render_bounds']:
+                assert x>=sx-0.1 and y>=sy-0.1 and x+w<=sx+sw+0.1 and y+h<=sy+sh+0.1
             row=data['trace'][still['movie_frame']]
             assert still['request']['movie_frame']==row['movie_frame'] and still['captured_tick']==row['tick']
             assert still['request']['state_hash']==row['state_hash'] and still['captured_sprite']==row['pair'][0]['frame_sprite']

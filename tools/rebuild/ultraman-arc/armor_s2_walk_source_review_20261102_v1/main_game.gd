@@ -55,11 +55,13 @@ func start_match() -> void:
 	hud = UfeMatchUI.new()
 	ui_layer.add_child(hud)
 	hud.action_requested.connect(_action)
+	view.framing_safe_provider=hud.battle_safe_rect
 	training_overlay = UfeTrainingOverlay.new()
 	ui_layer.add_child(training_overlay)
 	training_overlay.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
 	training_overlay.offset_top = 56
 	training_overlay.offset_bottom = 56
+	hud.framing_top_overlays.append(training_overlay)
 	front = UfeFrontEnd.new()
 	ui_layer.add_child(front)
 	front.action_requested.connect(_front_action)
