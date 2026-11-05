@@ -1,0 +1,71 @@
+{
+  "schema": "ufeneo.luna.crush-keyframe-brief.v1",
+  "date_utc": "2026-11-05",
+  "status": "只读设计，未生成",
+  "fighter": "ultraman-arc__luna",
+  "action": "crush",
+  "phase_role": "双拳由头顶向前下方砸落的接触关键相",
+  "plan_source": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/production-plan.json",
+    "sha256": "f1937130bd56ab5ffcc00376923204d5d6faf98baa136690074ea9950314fbed"
+  },
+  "sequence_in_plan": "heavy→launcher→spin_heavy→crush→tackle；仅推进crush设计，spin保留待实速",
+  "game_definition": {
+    "path": "content/fighters/ultraman-arc/moves/crush.json",
+    "sha256": "45204172834db03f1a2231bba1532416182bbf56fbaa44f42554f9807cbc132e"
+  },
+  "input_source": {
+    "path": "content/fighters/ultraman-arc/command_table.json",
+    "sha256": "d90069770de4340f9abd729b8b07dc4c4393c416f6910f48cc928bdda6c1babe"
+  },
+  "input": "地面O/CRUSH=64，中立5或后4；不是4K回旋，也不是air_crush",
+  "game_adaptation_not_episode_claim": true,
+  "intended_motion": "双肘收胸→举顶蓄势→两臂真实前下砸→屈膝承重随势→回护架；并非只有举手加命中特效",
+  "minimum_generation_references": [
+    {
+      "path": "art/fighters/ultraman-arc__luna/model/clean-model-source.png",
+      "sha256": "f07ca34c959008bb1104af55a9d6c5c6a8e7b2d57c510a13cf8c2ed2c2bc4ddf",
+      "purpose": "唯一本人身份/头身比例；不是动作模板"
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/crush/phase-05/request-001/raw.provider.png",
+      "sha256": "08cffba8d0039b9e558cb06cb085123c9d24f58153e266a0ada25eb4c270e788",
+      "purpose": "只作现有举顶蓄势和同双脚站位参考，明确不将旧“接触”标签当真实下砸"
+    }
+  ],
+  "continuity_check_only_reference": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/idle/phase-00/request-001/raw.provider.png",
+    "sha256": "fcbe466ab9489a4ccd5cc8a8a3fdddacfad9d7895b70133624bf5134851a491b",
+    "purpose": "后续核真实idle接续，本次不需要加入生成参考堆叠"
+  },
+  "prompt": "画亚刻奥特曼月亮装甲本人一张完整2D街机像素动作原帧，固定水平侧视朝右，单人、真正透明背景。参考1只用于本人身份、头身和骨长，参考2只用于双拳举顶的蓄势起点与同一双脚站位；不要复制参考2的高举姿势或宽拳距。本张必须画出双臂重砸真正向前下方落下的接触关键相，不是举手蓄力、水平直拳、劈掌、肘击、升拳或砸地。\n双肩带动两上臂向前下方摆，双肘保持自然微屈，两条前臂分别连到自己的闭拳；两只闭拳都已降到本人下胸至上腹高度、位于胸腹前方的画面右侧，沿同一向前下砸的方向，以闭拳下缘形成双拳重砸的接触面。两拳靠近但各自完整可辨，不合成一个共享拳，不穿插、交叉或变成三条手臂；两块圆盘腕甲分别附着各自前臂，按透视可遮挡一部分，不强迫两个圆盘都正面朝镜头。\n保留参考2画面左侧后脚和右侧前脚的同腿连接与落点，两鞋仍着地；前腿膝自然弯曲接住前移重量，后腿支撑，脚不滑开，不换腿、不跳起、不跪地。髋略下沉，躯干从髋处小幅向前倾，胸肩跟随真实下砸而不是整张站姿倾斜；头向右看接触方向，胸前圆灯和斜向胸甲仍可辨，不全背面，不臆造未知背甲。\n保持本人银白后掠头冠、黄眼、蓝青肩胸甲、圆胸灯、双腕圆盘和红银四肢，头胸体量与四肢骨长一致，不借拳或肩甲放大来表现力量。恰好两臂两腿两拳两鞋，全身完整作画，头冠、甲尖、两拳和双脚都在画布内，四周有明确透明余量。像素硬边、硬阶明暗、深轮廓。不得出现对手、武器、火花、轨迹、光晕、阴影、地线、场景、文字或参考骨架线。",
+  "requested_background": "transparent",
+  "requested_tool_if_later_authorized": "仅待后续明确委托；本轮没有生成或调用任何付费服务",
+  "generation_metadata": {
+    "generated": false,
+    "model": null,
+    "quality": null,
+    "usage": null,
+    "cost": null
+  },
+  "spatial_requirements": [
+    "闭拳必须明显低于脸，不停在头顶；落到本人下胸/上腹前侧，以拳下缘前下砸，不是直拳水平推出",
+    "肩→上臂→肘→前臂→腕→拳各自连通；双腕盘沿原臂透视，不增加武器",
+    "保持源05前后双脚站位与腿根层次，前腿屈膝承重、后脚支撑，无跳跃滑步或交换腿",
+    "胸肩髋共同参与小幅前下压，胸灯可辨，无需大面积背甲",
+    "整图统一尺度，后续校核头盔体量/胸腹/股胫和前后鞋位置，禁止切肢拼片或局部放大"
+  ],
+  "acceptance_checks": [
+    "先读真实Alpha和原生尺寸，低透明边噪与实体裁切分别判断，不用RGB棋盘格冒充透明",
+    "与model核月亮身份，与05核同一双臂/腿/脚路；遮挡无法确认处写不确定，不凭亮暗强签解剖左右",
+    "确认是下砸接触而非再画举顶；来源提示词不能取代眼见动作",
+    "完整头冠、双拳双脚和甲尖留边；关节连续、两拳不共享手腕",
+    "单张通过也不能宣称35tick整招成立；需核举顶到下砸及收势回idle后才考虑RAM输入图形"
+  ],
+  "not_authorized": [
+    "不生成、不收费、不调用用户Codex",
+    "不安装、不改正式crush数据/攻击框/装甲开关",
+    "不将旧04/05高举图或06护架图伪作下砸接触",
+    "不声称此游戏改编已有具体原剧镜头证明"
+  ]
+}

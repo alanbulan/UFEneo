@@ -4,6 +4,10 @@
 
 用户已恢复开发，要求优先已有完整源、真实玩法与验证；不要调用用户Codex，不发收费请求。根AGENTS中的2026-11-03停止状态与本文后面的清理记录是历史，当前明确委托优先。本文和PROGRESS继续是唯一交接位置，不新建备份。
 
+### 月亮S2下项crush（2026-11-05）
+
+- 月亮S2下项已按原计划核到crush双臂重砸（O/CRUSH）：旧九相所谓04/05接触仍双拳举顶，06已回护架，缺真正前下砸。已设计一张完整接触相，最小参考为本人定稿+旧05举顶/足位，明确禁复制高举和宽拳距；无生成/收费/运行/安装，spin仍待实速。[旧源核验](verification/luna-crush-existing-source-review.json)、[精确brief](../art/fighters/ultraman-arc__luna/stage2/crush-keyframe-brief-20261105-v1/brief.json)
+
 ### 月亮升击内置生图单相（2026-11-05）
 
 - 月亮升击七相RAM候选：共同159/1254尺度、真实6K唯一12×12拳框/75伤/体力30；720/1080双向命中、格挡、落空的24组432原生PNG技术核验完成，12对180tick原输入/独立回放五字段一致。12原输入逐相静帧已审，入蓄头肩下降及回架腕甲转面保留为实速待判，不据静帧强制补相，也不签整招顺滑。命中白闪、站防与头形细差保留；无录屏、声音或真人键盘验收，不安装/不开放。[逻辑](verification/luna-launcher-session-resume.json)、[图形与边界](verification/luna-launcher-session-graphical-review.json)、[独立复核](verification/luna-launcher-session-evidence-recheck.json)

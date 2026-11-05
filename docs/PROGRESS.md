@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 月亮S2下项已按原计划核到crush双臂重砸（O/CRUSH）：旧九相所谓04/05接触仍双拳举顶，06已回护架，缺真正前下砸。已设计一张完整接触相，最小参考为本人定稿+旧05举顶/足位，明确禁复制高举和宽拳距；无生成/收费/运行/安装，spin仍待实速。[旧源核验](verification/luna-crush-existing-source-review.json)、[精确brief](../art/fighters/ultraman-arc__luna/stage2/crush-keyframe-brief-20261105-v1/brief.json)
+
 - 回旋十槽已进入主游戏RAM候选：全相同权重头代理/支撑胫双尺整图试排，低收→左回摆02→实际idle直连；沿原4K 9/4/15共28tick、仅脚背20×16、100伤/30体力。逻辑六例、headless十二组及720/1080双向24有效图形组/480原生PNG通过，12对180tick原输入/独立回放一致；一例tick0稳定门超时保留并原门限续跑补齐。逐相静审保留跨身足路/鞋向/共同镜头影响，无实速/声音/真人键盘验收，单相idle亦仅对照，不安装。[运行候选与限制](verification/luna-spin-heavy-session-resume.json)
 
 - 尾段第二版已补到有效左侧空中回摆位置：前层攻击腿左下伸、鞋离支撑底93源像素；同尺到idle脚尖约横移−2.6/下降16.3逻辑像素，值得优先直连试排，不强插旧backstep00制造反向脚路。拓扑相容不等于遮挡髋唯一证明，跨身时序/脚转向/尺度仍待，未安装。[两版差异与同尺核验](verification/luna-spin-heavy-tail-air2-candidate-review.json)
