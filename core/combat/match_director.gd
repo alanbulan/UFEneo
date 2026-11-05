@@ -2,6 +2,7 @@ class_name UfeMatchDirector
 extends RefCounted
 const MOVE_START_RULE_REVISION := 2
 const CHASE_INTERRUPT_RULE_REVISION := 1
+const CROUCH_GUARD_RESUME_RULE_REVISION := 1
 var rules: UfeRuleSet
 var fighters: Array[UfeFighter] = []
 var states: Dictionary
@@ -31,6 +32,8 @@ func _init(first: UfeFighterDefinition, second: UfeFighterDefinition, rule: UfeR
 		f.battle_form = battle_forms.get(f.definition.id, {})
 		form_rules.append(UfeBattleTransform.simulation_data(f.battle_form))
 	var fingerprint_data: Array = [6, 60, rule.simulation_data(), first.simulation_data(), second.simulation_data(), form_rules, ["round_end_identity", 1], ["move_start_conditions", MOVE_START_RULE_REVISION], ["hit_pushback_bounds", UfeHitResolver.PUSHBACK_BOUNDARY_REVISION], ["throw_target_air", UfeHitResolver.THROW_TARGET_RULE_REVISION], ["chase_interrupt", CHASE_INTERRUPT_RULE_REVISION], ["projectile_contact_direction", UfeHitResolver.PROJECTILE_DIRECTION_RULE_REVISION], ["projectile_move_isolation", UfeHitResolver.PROJECTILE_MOVE_ISOLATION_RULE_REVISION], ["projectile_beam_reflection", UfeProjectileResolver.BEAM_REFLECTION_RULE_REVISION]]
+	# 恢复姿态影响state_tick和实际受击框；旧格式6仍可解析，但旧内容指纹不可重放。
+	fingerprint_data.append(["crouch_guard_resume_hold", CROUCH_GUARD_RESUME_RULE_REVISION])
 	if UfeThrowResolver.RootOffsets.used_in(fingerprint_data):
 		fingerprint_data.append(["throw_root_overrides", UfeThrowResolver.ROOT_OVERRIDE_RULE_REVISION])
 	if UfeThrowResolver.CurrentCapture.used_in(fingerprint_data):
