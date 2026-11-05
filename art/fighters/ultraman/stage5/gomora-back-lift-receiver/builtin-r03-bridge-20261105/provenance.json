@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "origin": "根任务按用户明确要求调用内置image_gen，完整提示词及参考顺序由根任务提供；第三参考路径后续明确核实。",
+  "tool": "image_gen",
+  "transparent_background_requested": true,
+  "project_paid_api_used": false,
+  "user_codex_used": false,
+  "model": null,
+  "quality": null,
+  "usage": null,
+  "cost": null,
+  "missing_metadata_reason": "内置工具未返回，不冒称high或项目旧客户端。",
+  "candidate": "art/fighters/ultraman/stage5/gomora-back-lift-receiver/builtin-r03-bridge-20261105/candidate.png",
+  "sha256": "e7122bcbb7bd61a06142baf4113b3f2b271a5721dca913f22e1d9746453b7118",
+  "prompt_verbatim": "Create a single complete pixel-art game animation in-between frame of the same Ultraman Type C shown in references 1 and 2, side view, head to the right. This is the first instant he leaves the monster's back, BETWEEN those poses: keep both arms bent and pulled BACK beside the ribs as in reference 1, with both fists clearly behind the torso and above the belly, NOT hanging under the chest as in reference 2. Slightly open the shoulders and begin lifting the bent hips and feet toward the left, but make the pose very close to reference 1, not yet fully airborne or inverted. The composite reference 3 shows the monster's horns sweeping upward: ensure the character's head, neck, torso and both forearms can clear that horn, but do not draw the monster. Preserve reference 4 identity, short natural torso, silver-red markings and blue chest light. Exactly two connected arms, two hands, two legs and two feet. Crisp coherent whole-body 2D pixel sprite, no ground, text, grid or extra objects, transparent background.",
+  "reference_order": [
+    {
+      "path": "art/fighters/ultraman/stage5/gomora-back-lift-receiver/builtin-r02-20261105/candidate-5.png",
+      "sha256": "edda91826d3c7b13e7c255dd5544228224ca387d2147d81951d75488682f1ccf"
+    },
+    {
+      "path": "art/fighters/ultraman/stage5/gomora-back-lift-receiver/builtin-r03-20261105/candidate.png",
+      "sha256": "efd543af4e5be3dd460f36e77aa580421aa74bee6fa222df881efb33756bd340"
+    },
+    {
+      "path": "reports/gomora-builtin/review-5/neighbors/A02.png",
+      "sha256": "468d6eb19e93ed4780dc8612f3a3fc1fbd9082b19fbbae3ff8557fc4b21acb7a"
+    },
+    {
+      "path": "art/fighters/ultraman/model/model-reference-x4.png",
+      "sha256": "9e084ba7ff4f4ff2ed343e2d20650ebbec5b648156cddd066ad10165e68f0e71"
+    }
+  ],
+  "reference_reproduction": "第三参考由review_v5_neighbors.py复现。"
+}
