@@ -149,7 +149,7 @@
     }
   ],
   "input_scope": "真实前方向+HEAVY InputFrame，非真人硬件；ufeneo_luna_launcher_tape_v1候选专用输入带，不冒称正式format6录像。",
-  "graphical_status": "由enable_godot_display持锁串行完成24组，待其最终回执，不据目录存在判断完成。",
+  "graphical_status": "24组自然完成，432原生PNG；12对180tick五字段独立重核相等。图形技术及静帧复核完成，整招实速未验收。",
   "limits": [
     "本人idle为旧候选曾使用源，不是严格美术签收",
     "统一159/1254固定x80/bbox截止y280；不逐肢修复",
@@ -184,6 +184,117 @@
       "move2→3护脸拳下移至腹侧、头肩下沉清晰可见；双鞋仍在地面附近，不把有意蓄力姿态变化直接判为断裂，也不签连续顺滑。",
       "move19→20抬拳内收护脸与腕甲转面清晰可见，人物完整且未被HUD遮脚；只据静帧不能决定是否需补完整中相。"
     ],
-    "acceptance": "仅记录四张静帧观察；原速/双向1080/全部动作与输入验证分别等待图形worker及明确回执。"
-  }
+    "acceptance": "仅记录四张静帧观察；全矩阵视觉覆盖与限制见图形review。实速未验，不安装。"
+  },
+  "graphical_independent_replay_check": {
+    "pairs": [
+      {
+        "original": "reports/luna-launcher-resume/graphical-v1/1280x720-left-block-original",
+        "ticks": 180,
+        "equal": true,
+        "differences": [],
+        "pngs_original": 16,
+        "pngs_replay": 16
+      },
+      {
+        "original": "reports/luna-launcher-resume/graphical-v1/1280x720-left-hit-original",
+        "ticks": 180,
+        "equal": true,
+        "differences": [],
+        "pngs_original": 22,
+        "pngs_replay": 22
+      },
+      {
+        "original": "reports/luna-launcher-resume/graphical-v1/1280x720-left-whiff-original",
+        "ticks": 180,
+        "equal": true,
+        "differences": [],
+        "pngs_original": 16,
+        "pngs_replay": 16
+      },
+      {
+        "original": "reports/luna-launcher-resume/graphical-v1/1280x720-right-block-original",
+        "ticks": 180,
+        "equal": true,
+        "differences": [],
+        "pngs_original": 16,
+        "pngs_replay": 16
+      },
+      {
+        "original": "reports/luna-launcher-resume/graphical-v1/1280x720-right-hit-original",
+        "ticks": 180,
+        "equal": true,
+        "differences": [],
+        "pngs_original": 22,
+        "pngs_replay": 22
+      },
+      {
+        "original": "reports/luna-launcher-resume/graphical-v1/1280x720-right-whiff-original",
+        "ticks": 180,
+        "equal": true,
+        "differences": [],
+        "pngs_original": 16,
+        "pngs_replay": 16
+      },
+      {
+        "original": "reports/luna-launcher-resume/graphical-v1/1920x1080-left-block-original",
+        "ticks": 180,
+        "equal": true,
+        "differences": [],
+        "pngs_original": 16,
+        "pngs_replay": 16
+      },
+      {
+        "original": "reports/luna-launcher-resume/graphical-v1/1920x1080-left-hit-original",
+        "ticks": 180,
+        "equal": true,
+        "differences": [],
+        "pngs_original": 22,
+        "pngs_replay": 22
+      },
+      {
+        "original": "reports/luna-launcher-resume/graphical-v1/1920x1080-left-whiff-original",
+        "ticks": 180,
+        "equal": true,
+        "differences": [],
+        "pngs_original": 16,
+        "pngs_replay": 16
+      },
+      {
+        "original": "reports/luna-launcher-resume/graphical-v1/1920x1080-right-block-original",
+        "ticks": 180,
+        "equal": true,
+        "differences": [],
+        "pngs_original": 16,
+        "pngs_replay": 16
+      },
+      {
+        "original": "reports/luna-launcher-resume/graphical-v1/1920x1080-right-hit-original",
+        "ticks": 180,
+        "equal": true,
+        "differences": [],
+        "pngs_original": 22,
+        "pngs_replay": 22
+      },
+      {
+        "original": "reports/luna-launcher-resume/graphical-v1/1920x1080-right-whiff-original",
+        "ticks": 180,
+        "equal": true,
+        "differences": [],
+        "pngs_original": 16,
+        "pngs_replay": 16
+      }
+    ],
+    "fields": [
+      "state_hash",
+      "events",
+      "projectiles",
+      "original_inputs",
+      "pair"
+    ],
+    "errors": [],
+    "lock_absent_after_worker_completion": true,
+    "scope": "仅只读重核已完成图形运行的原输入与独立回放，不重跑Godot、不以字段一致代替美术验收。"
+  },
+  "graphical_review": "docs/verification/luna-launcher-session-graphical-review.json"
 }

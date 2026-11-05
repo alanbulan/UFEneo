@@ -4,7 +4,7 @@
 
 ## 当前成果与证据索引
 
-- 月亮升击七相RAM候选：五新完整源与本人idle六源统一159/1254、整图固定x80与足底280；6K双向命中/格挡/落空6组180tick独立回放0错，唯一12×12上挑拳框、75伤、体力30。起收招/头形/鞋位仍待画面，不开放装甲；正式main12组原/回放、6对180tick逐字段一致已完成；实际图形仍待完成。[当前逻辑与限制](verification/luna-launcher-session-resume.json)
+- 月亮升击七相RAM候选：共同159/1254尺度、真实6K唯一12×12拳框/75伤/体力30；720/1080双向命中、格挡、落空的24组432原生PNG技术核验完成，12对180tick原输入/独立回放五字段一致。12原输入逐相静帧已审，入蓄头肩下降及回架腕甲转面保留为实速待判，不据静帧强制补相，也不签整招顺滑。命中白闪、站防与头形细差保留；无录屏、声音或真人键盘验收，不安装/不开放。[逻辑](verification/luna-launcher-session-resume.json)、[图形与边界](verification/luna-launcher-session-graphical-review.json)、[独立复核](verification/luna-launcher-session-evidence-recheck.json)
 
 - 升击新增回收中相：同右闭拳由03高位降至上胸、双圆腕甲可辨，双鞋保持近似窄站；进入01仍需全身下沉与远腕遮挡变化，不将五张关键源当完整招式或默认以01替代正式护架。未配准安装，来源/Alpha与未知元数据据实保存。[回收相审阅](verification/luna-launcher-return-mid-candidate-review.json)
 

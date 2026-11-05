@@ -1,0 +1,461 @@
+{
+  "date_utc": "2026-11-05",
+  "status": "图形技术与静帧复核完成，整招实速连续未验收",
+  "installed": false,
+  "art_passed": false,
+  "playable": false,
+  "candidate_commit": "fb4e8326",
+  "engine_actual": "Godot 4.6.3 stable，非目标4.7",
+  "technical_source": {
+    "path": "reports/luna-launcher-resume/gui-v1-20261105-technical-summary.json",
+    "sha256": "49ead6c10abd00a0c20640d1818600fab68b8d3d1d4a3578b04c24cb45c7beb0"
+  },
+  "scope": {
+    "runs": 24,
+    "original_replay_pairs": 12,
+    "native_sizes": [
+      [
+        1280,
+        720
+      ],
+      [
+        1920,
+        1080
+      ]
+    ],
+    "directions": [
+      "left",
+      "right"
+    ],
+    "kinds": [
+      "hit",
+      "block",
+      "whiff"
+    ],
+    "png_count": 432,
+    "source": "existing main game with RAM candidate and frozen InputFrame tape; not human hardware input",
+    "tape_schema": "ufeneo_luna_launcher_tape_v1",
+    "audio_reviewed": false,
+    "video_recorded": false,
+    "real_time_motion_reviewed": false
+  },
+  "technical_result": "720/1080×左右×命中/格挡/落空×原输入/独立回放24组，432原生PNG，窗口至少8次观察及500ms稳定后推进；冻结tick/精灵、双方轮廓/HUD安全区、日志及退出码技术检查通过。12对180tick原输入与回放五字段一致，另接续者独立重核0异常。",
+  "input_scope": "ufeneo_luna_launcher_tape_v1候选专用InputFrame带，不是正式format6，不是真人键盘。",
+  "visual_review": {
+    "coverage": "Viewed all 12 original contact sheets covering every captured phase first/last and return, plus selected full native PNG boundaries and contact/apex frames. Replay images audited technically, not all independently visually inspected.",
+    "identity": "双向上挑均可辨月亮本人蓝甲、银白尖头和红银双腿。所审静帧未见缺肢、整身裁切或明显整体体量突变；头形和腕甲转面细差保留。",
+    "entry_boundary": {
+      "keys": [
+        "launcher-tick-02-phase-00",
+        "launcher-tick-03-phase-01"
+      ],
+      "global_ticks": [
+        22,
+        23
+      ],
+      "finding": "护脸到腹部蓄拳时头肩下沉、拳位下降。相邻两图板高和背景一致，这一差异不是镜头缩放所致；脚底基本稳定，未见断肢。静帧可确认姿态差，但不足据此判为阻塞级硬切或强制新增入蓄相。需实速再判。"
+    },
+    "return_boundary": {
+      "keys": [
+        "launcher-tick-19-phase-05",
+        "launcher-tick-20-phase-06"
+      ],
+      "global_ticks_by_kind": {
+        "whiff": [
+          39,
+          40
+        ],
+        "block": [
+          42,
+          43
+        ],
+        "hit": [
+          43,
+          44
+        ]
+      },
+      "finding": "胸前竖拳转回护脸时腕甲转面、肘部收回；头肩与脚位接近。静帧未提供必须新增回架相的充分依据，也不等于实速顺滑已通过。phase06末到returned-idle未见缺帧或整体跳位。"
+    },
+    "middle": "腹蓄、抬拳、上挑、收回胸前和回护七相可辨。上挑拳臂向头侧上方展开；近距离命中白闪和格挡蓝火花覆盖接触细节，不能签精确无穿插或完美站防姿势。",
+    "opponent": "命中对手升空、顶点、下降、倒地、恢复站立的已捕获画面双向完整，未碰训练板和底部HUD；未单独捕获起身动画全过程，不冒称已实看每个wake相。",
+    "camera": "输入后训练板内容增高以及对手升空均引起共同取景变化；这些整幅缩放不能误作素材体量突变。两人全轮廓在所审正常画面内，未隐藏训练板。",
+    "remaining_limits": [
+      "无原速录屏，未验整招实速连贯性或声音。",
+      "命中白闪/格挡火花遮挡局部接触；杰顿既有高位站防手型限制保留。",
+      "不以相数、SHA、逻辑回放通过代替完整美术接受；本轮未安装、未开放装甲。"
+    ]
+  },
+  "cleanup": {
+    "desktop_observed_utc": "2026-11-05T16:11:00Z",
+    "godot_window_absent": true,
+    "terminal_returned_to_shell_prompt": true,
+    "lock_absent_verified_utc": "2026-11-05T16:11:19Z",
+    "lock_manually_deleted": false,
+    "source_or_contract_modified_by_review": false
+  },
+  "groups": [
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1280x720-right-hit-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 22,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 1526,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "3f6b6b092288f42868d5340bfb6b9d4cc87adba3d69e326e1757aa290048fc7f",
+      "png_audit_sha256": "ce23ff85324db7d0b35fbc7698bf6be41917f81a1840113db310b464d77ad83d"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1280x720-right-hit-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 22,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 968,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "4fa058171cd7f676363d5e041a6672271496b3b05c051f6f7f6286f8e511ff1a",
+      "png_audit_sha256": "00210118f4e3700a068d2abf4f8da6d6ba681719d30a4797179a93fc57ac1faf"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1280x720-right-block-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 9,
+      "window_elapsed_ms": 527,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "cb8188e4a5b65f8009cb089a29f4e862c3d062d3fab8c8248661a26867415fc2",
+      "png_audit_sha256": "9cf809e2e2757071111eb74d9b2371f9bb188a915bec96fb27dd9fab28d8a3c1"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1280x720-right-block-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 540,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "58265d198cf65da4d3618098634e3c11d8ca4434adb7ca7388a87f9ef020e7a7",
+      "png_audit_sha256": "a58869de016f5649eecfa4bb0effbf2dc3c96747e2f2f663e6f9af52d8e28d54"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1280x720-right-whiff-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 645,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "631dfb49d9cbd595cf3cdcce3f478d8207cdc07535535506bc7869b9c31d9571",
+      "png_audit_sha256": "5f672bdde72801a582726297fd705a6950eb9c1c5aabf1ad99a6f5a7bd5c5aca"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1280x720-right-whiff-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 791,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "4653ffaf56afedc5636129860447f20593e35d42b9a290e1ed50472687bd2ebf",
+      "png_audit_sha256": "06ba6d500f9afabdc9833e6b574ba2f5de982d1de7c22c94f2c528e62061cd33"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1280x720-left-hit-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 22,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 511,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "d5ad2df70677e7ce2f34ed23f2662ff21c427801e65d31580c6655c6cece9fd2",
+      "png_audit_sha256": "b2e5899db341060fcd9a7d9a30b4a34d2d34977f138aff16b332d0fc01f5a0f3"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1280x720-left-hit-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 22,
+      "exit_code": 0,
+      "window_stable_frames": 10,
+      "window_elapsed_ms": 544,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "4043a5a58ca4bb7dbde0ab1cb9e6b0936a746841893436cd63ac4a4c7abce99a",
+      "png_audit_sha256": "85bfd8bf8a1d0a3f6d2c2b9f871aa84e8e02e14310cfb2bc43a36756f5731741"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1280x720-left-block-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 13,
+      "window_elapsed_ms": 551,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "4fa54896b5a23d58f849025cacf0d09581342044a064ed7ab3d7086202f381fd",
+      "png_audit_sha256": "18010e3676af3be0aee0f962ff746d1a9adb760eed4a735fdaef9042e342a0f2"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1280x720-left-block-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 17,
+      "window_elapsed_ms": 527,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "9caebdf436ab9aacd91a5119e180deea273e79ffe651e4c23ff3ff56f2c5153e",
+      "png_audit_sha256": "f310bcb05b55fee978855faf71bfc406933125de38266a89215749df6ff8efe0"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1280x720-left-whiff-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 523,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "9c8811536d46bda67d77a8c42b9482d38298d90568c729ef85a146068d2b690a",
+      "png_audit_sha256": "9bbc52ff87495ab7e8b782b14e9a9a37736350fac1d64830dff0c7791a51cd4c"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1280x720-left-whiff-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 984,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "2a1ea624e0c4eb17c808a0dc63ad88eae27dc0ede071cb847eb223980fcd8ea0",
+      "png_audit_sha256": "249f35cbaa716ad91b2ab47f1dbdfd23c696cc020b6594819c9bce6a0fd03304"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1920x1080-right-hit-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 22,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 2147,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "691854f34c3a3b13c527bd148c786f4b464e0e3f0e5bb7cbdae6394019afc6aa",
+      "png_audit_sha256": "656345e84282ed3a438eada0a5728993bdfa8fb23e676ff72ac287eb33853856"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1920x1080-right-hit-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 22,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 634,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "27bf95470e0ffb023fd7028e2e450a441aa348effb9be5c2092787c2387aa66f",
+      "png_audit_sha256": "e1300e0d6781438965ee37d36459e527d4db47052d81e79d6e544203dfc317e7"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1920x1080-right-block-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 14,
+      "window_elapsed_ms": 522,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "aa95a5d2cfd881ee57d81aeb0be378ddc3b33a13ec5fe28edd076fdef7fe9d3f",
+      "png_audit_sha256": "70caef0092781c237e863c7b2c3a6e2dd0a5bdecee26d42c997703c941735088"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1920x1080-right-block-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 12,
+      "window_elapsed_ms": 532,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "67480427f031af5b43f9cacd70fa9d46a407efba4dd883ae1abb3e62e4f9afd8",
+      "png_audit_sha256": "f2680796933e17ced8974d551737863a70a6c53d6b66959a389aef08a64deda6"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1920x1080-right-whiff-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 554,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "f406ea10496ef685c97151fff69b0e936b19c98ba826d2fe2ecb44b63f6785b6",
+      "png_audit_sha256": "7aa0ab2a59a250e5ca5efde7de6033a1282cc139c00e44ca70f68701f483974f"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1920x1080-right-whiff-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 904,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "42593fbb0a57a6a170fd73519fc515246ad1e574248423ab52cc34c7e0941012",
+      "png_audit_sha256": "e3ec42ea58ee0b050ecb96be564c14467a481641f5c63d4b1a62e139914ffc8d"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1920x1080-left-hit-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 22,
+      "exit_code": 0,
+      "window_stable_frames": 10,
+      "window_elapsed_ms": 545,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "b11a83b6d23774049907533fa71120e45cc248de193d17c5a2d5df3f90329dd1",
+      "png_audit_sha256": "d165a074f46494f3f8d6c9432d015024cee99749cc903aebddb1051044eb2376"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1920x1080-left-hit-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 22,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 525,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "05d376be442c27e7d6a6433b080d8ac3ac2d2df4c63cfffc5843896abd969e63",
+      "png_audit_sha256": "8e368e73591b6df530411b1c404647029f4ac861af5c1942190fe85468bc3e51"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1920x1080-left-block-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 720,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "b7fc56bea43d49bfd6445149b32a4d108c2ec8baf7e742505108293ef7693a0a",
+      "png_audit_sha256": "c443a6850c9737174ac0ca0545aae3db5c03aa44f39271547d1daef1264c1d41"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1920x1080-left-block-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 1304,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "16c90a8213c8a7e1106c0d76407ef977bcde6d62d6607eed2621d5e920c73752",
+      "png_audit_sha256": "2143b7087ab919c20e0eb2bd0563e9363aefe119c97b8a184fcd9739835da71b"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1920x1080-left-whiff-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 512,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "343106fcfb9769c75e8ac6be62e087b18df7d5e8009149560e7fdc7626aed2e3",
+      "png_audit_sha256": "e3bc45a93895356b13833fd0d372dd9996c82c93b8f5d3deb8ca224fc2ee9b82"
+    },
+    {
+      "folder": "reports/luna-launcher-resume/graphical-v1/1920x1080-left-whiff-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 2322,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "161e95aee6831b5375a78311a6d34097f05409f52b3114b75b99be49268761ea",
+      "png_audit_sha256": "d64c9915a785e271d833ef51a91660e680e55804074319507aaefdc8681bee54"
+    }
+  ],
+  "next_step": "保留候选、起收静帧边界及现有头形差异。只有实速观察才可进一步判断需不需要完整入蓄/回架中相；本轮不收费补图、不安装、不开放八装甲。",
+  "video": "无录屏",
+  "audio": "未验声音/听感"
+}
