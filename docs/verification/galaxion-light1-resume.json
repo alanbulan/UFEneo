@@ -1,0 +1,648 @@
+{
+  "fighter": "ultraman-arc__galaxion",
+  "reviewer": "root_delegated_by_user",
+  "status": "single_far_arm_punch_candidate_graphical_pending",
+  "source_review": "docs/verification/galaxion-standing-attack-source-review.json",
+  "manifest": "art/fighters/ultraman-arc__galaxion/stage2/light1-registered-20261105-v1/manifest.json",
+  "source_order": [
+    4,
+    0,
+    1,
+    2,
+    3
+  ],
+  "semantic_limits": [
+    "原04收势整帧重用于起始护架；00/01/02只作同一远侧拳接触保持；03回护。",
+    "不存在新增渐伸中间帧，不能说连续起探三阶段。",
+    "原brief近侧左拳与实际远侧拳不同，不代表原近侧第一拳或左右交替三连完成。",
+    "仅单拳，无light2取消或假三连；正式角色/核心规则不变。"
+  ],
+  "registration": {
+    "full_source_size": [
+      1254,
+      1254
+    ],
+    "common_sample_size": [
+      151,
+      151
+    ],
+    "canvas": [
+      320,
+      320
+    ],
+    "root": [
+      160,
+      280
+    ],
+    "source_frames": 5,
+    "previously_accepted_own_idle_frames": 6,
+    "per_phase_rescale": false,
+    "limb_editing": false,
+    "independent_source_reconstruction": "reports/galaxion-light1-resume/registration-reproduction.json",
+    "fist_alpha_review": "reports/galaxion-light1-resume/fist-alpha-review.json",
+    "active_fist_boxes": {
+      "1": [
+        52,
+        90,
+        11,
+        11
+      ],
+      "2": [
+        49,
+        93,
+        11,
+        11
+      ],
+      "3": [
+        51,
+        86,
+        12,
+        12
+      ]
+    }
+  },
+  "rules": {
+    "reference": "content/fighters/ultraman-arc/moves/light1.json",
+    "startup": 2,
+    "active": 6,
+    "recovery": 12,
+    "damage": 65,
+    "stamina_cost": 30,
+    "expanded_hitbox": false,
+    "invulnerability_added": false,
+    "phase_ticks": [
+      2,
+      2,
+      2,
+      2,
+      12
+    ],
+    "cancel_light2": false
+  },
+  "verification": {
+    "engine": "Godot4.6.3",
+    "target4_7_verified": false,
+    "contract": "reports/galaxion-light1-resume/contract-v3.json",
+    "contract_sha256": "e40801d5deeb6f339055b51fda5fd6fb8e4c6f9bec895c30b199cb62f092b08c",
+    "headless_groups": 12,
+    "ticks_each": 120,
+    "independent_root_replay_pairs": 6,
+    "python_tests_passed": 21,
+    "separate_logic_cases": 6,
+    "summary": {
+      "contract": "reports/galaxion-light1-resume/contract-v3.json",
+      "cases": [
+        {
+          "case": "1280x720-left-block-original",
+          "direction": -1,
+          "kind": "block",
+          "failures": [],
+          "damage": 0,
+          "cost_tick": 21,
+          "stamina_before": 1000,
+          "stamina_after": 970,
+          "contacts": [
+            {
+              "tick": 22,
+              "attacker_x": 690,
+              "defender_x": 616,
+              "defender_state": "blockstun",
+              "event": {
+                "feedback": {
+                  "block_spark": "impact_guard",
+                  "blockstop": 3.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "flash": 2.0,
+                  "hitstop": 4.0,
+                  "shake": 0.0,
+                  "spark": "impact_light"
+                },
+                "height": 95,
+                "kind": "block",
+                "move": "light1",
+                "player": 0,
+                "projectile": false,
+                "x": 632
+              }
+            }
+          ],
+          "recovered": "idle",
+          "trace_sha256": "43223b31747e67bc272bdaff503bee4ff414d5712ac1353d21c2df146fb59ce5",
+          "fresh_replay_errors": []
+        },
+        {
+          "case": "1280x720-left-block-replay",
+          "direction": -1,
+          "kind": "block",
+          "failures": [],
+          "damage": 0,
+          "cost_tick": 21,
+          "stamina_before": 1000,
+          "stamina_after": 970,
+          "contacts": [
+            {
+              "tick": 22,
+              "attacker_x": 690,
+              "defender_x": 616,
+              "defender_state": "blockstun",
+              "event": {
+                "feedback": {
+                  "block_spark": "impact_guard",
+                  "blockstop": 3.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "flash": 2.0,
+                  "hitstop": 4.0,
+                  "shake": 0.0,
+                  "spark": "impact_light"
+                },
+                "height": 95,
+                "kind": "block",
+                "move": "light1",
+                "player": 0,
+                "projectile": false,
+                "x": 632
+              }
+            }
+          ],
+          "recovered": "idle",
+          "trace_sha256": "43223b31747e67bc272bdaff503bee4ff414d5712ac1353d21c2df146fb59ce5",
+          "fresh_replay_errors": []
+        },
+        {
+          "case": "1280x720-left-hit-original",
+          "direction": -1,
+          "kind": "hit",
+          "failures": [],
+          "damage": 65,
+          "cost_tick": 21,
+          "stamina_before": 1000,
+          "stamina_after": 970,
+          "contacts": [
+            {
+              "tick": 22,
+              "attacker_x": 690,
+              "defender_x": 612,
+              "defender_state": "hit",
+              "event": {
+                "feedback": {
+                  "block_spark": "impact_guard",
+                  "blockstop": 3.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "flash": 2.0,
+                  "hitstop": 4.0,
+                  "shake": 0.0,
+                  "spark": "impact_light"
+                },
+                "height": 95,
+                "kind": "hit",
+                "move": "light1",
+                "player": 0,
+                "projectile": false,
+                "x": 632
+              }
+            }
+          ],
+          "recovered": "idle",
+          "trace_sha256": "18e09fbb808bcbea6ee4a58c3e4a58604fa0dc0369feabfbab3a2eb4d3d90863",
+          "fresh_replay_errors": []
+        },
+        {
+          "case": "1280x720-left-hit-replay",
+          "direction": -1,
+          "kind": "hit",
+          "failures": [],
+          "damage": 65,
+          "cost_tick": 21,
+          "stamina_before": 1000,
+          "stamina_after": 970,
+          "contacts": [
+            {
+              "tick": 22,
+              "attacker_x": 690,
+              "defender_x": 612,
+              "defender_state": "hit",
+              "event": {
+                "feedback": {
+                  "block_spark": "impact_guard",
+                  "blockstop": 3.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "flash": 2.0,
+                  "hitstop": 4.0,
+                  "shake": 0.0,
+                  "spark": "impact_light"
+                },
+                "height": 95,
+                "kind": "hit",
+                "move": "light1",
+                "player": 0,
+                "projectile": false,
+                "x": 632
+              }
+            }
+          ],
+          "recovered": "idle",
+          "trace_sha256": "18e09fbb808bcbea6ee4a58c3e4a58604fa0dc0369feabfbab3a2eb4d3d90863",
+          "fresh_replay_errors": []
+        },
+        {
+          "case": "1280x720-left-whiff-original",
+          "direction": -1,
+          "kind": "whiff",
+          "failures": [],
+          "damage": 0,
+          "cost_tick": 21,
+          "stamina_before": 1000,
+          "stamina_after": 970,
+          "contacts": [],
+          "recovered": "idle",
+          "trace_sha256": "3c2a6564574affd6fedb4f7caf690bb11c2d851047600dbb8dea02e97fc24370",
+          "fresh_replay_errors": []
+        },
+        {
+          "case": "1280x720-left-whiff-replay",
+          "direction": -1,
+          "kind": "whiff",
+          "failures": [],
+          "damage": 0,
+          "cost_tick": 21,
+          "stamina_before": 1000,
+          "stamina_after": 970,
+          "contacts": [],
+          "recovered": "idle",
+          "trace_sha256": "3c2a6564574affd6fedb4f7caf690bb11c2d851047600dbb8dea02e97fc24370",
+          "fresh_replay_errors": []
+        },
+        {
+          "case": "1280x720-right-block-original",
+          "direction": 1,
+          "kind": "block",
+          "failures": [],
+          "damage": 0,
+          "cost_tick": 21,
+          "stamina_before": 1000,
+          "stamina_after": 970,
+          "contacts": [
+            {
+              "tick": 22,
+              "attacker_x": 590,
+              "defender_x": 664,
+              "defender_state": "blockstun",
+              "event": {
+                "feedback": {
+                  "block_spark": "impact_guard",
+                  "blockstop": 3.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "flash": 2.0,
+                  "hitstop": 4.0,
+                  "shake": 0.0,
+                  "spark": "impact_light"
+                },
+                "height": 95,
+                "kind": "block",
+                "move": "light1",
+                "player": 0,
+                "projectile": false,
+                "x": 647
+              }
+            }
+          ],
+          "recovered": "idle",
+          "trace_sha256": "059622888302af2e8d63505a193ce9b94c90d76cdc36ee92cec04bb57e42be79",
+          "fresh_replay_errors": []
+        },
+        {
+          "case": "1280x720-right-block-replay",
+          "direction": 1,
+          "kind": "block",
+          "failures": [],
+          "damage": 0,
+          "cost_tick": 21,
+          "stamina_before": 1000,
+          "stamina_after": 970,
+          "contacts": [
+            {
+              "tick": 22,
+              "attacker_x": 590,
+              "defender_x": 664,
+              "defender_state": "blockstun",
+              "event": {
+                "feedback": {
+                  "block_spark": "impact_guard",
+                  "blockstop": 3.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "flash": 2.0,
+                  "hitstop": 4.0,
+                  "shake": 0.0,
+                  "spark": "impact_light"
+                },
+                "height": 95,
+                "kind": "block",
+                "move": "light1",
+                "player": 0,
+                "projectile": false,
+                "x": 647
+              }
+            }
+          ],
+          "recovered": "idle",
+          "trace_sha256": "059622888302af2e8d63505a193ce9b94c90d76cdc36ee92cec04bb57e42be79",
+          "fresh_replay_errors": []
+        },
+        {
+          "case": "1280x720-right-hit-original",
+          "direction": 1,
+          "kind": "hit",
+          "failures": [],
+          "damage": 65,
+          "cost_tick": 21,
+          "stamina_before": 1000,
+          "stamina_after": 970,
+          "contacts": [
+            {
+              "tick": 22,
+              "attacker_x": 590,
+              "defender_x": 668,
+              "defender_state": "hit",
+              "event": {
+                "feedback": {
+                  "block_spark": "impact_guard",
+                  "blockstop": 3.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "flash": 2.0,
+                  "hitstop": 4.0,
+                  "shake": 0.0,
+                  "spark": "impact_light"
+                },
+                "height": 95,
+                "kind": "hit",
+                "move": "light1",
+                "player": 0,
+                "projectile": false,
+                "x": 647
+              }
+            }
+          ],
+          "recovered": "idle",
+          "trace_sha256": "fcc710c5c7998cc1e5959435d2800f752d8b22dfd53c76d073917fd8f3368948",
+          "fresh_replay_errors": []
+        },
+        {
+          "case": "1280x720-right-hit-replay",
+          "direction": 1,
+          "kind": "hit",
+          "failures": [],
+          "damage": 65,
+          "cost_tick": 21,
+          "stamina_before": 1000,
+          "stamina_after": 970,
+          "contacts": [
+            {
+              "tick": 22,
+              "attacker_x": 590,
+              "defender_x": 668,
+              "defender_state": "hit",
+              "event": {
+                "feedback": {
+                  "block_spark": "impact_guard",
+                  "blockstop": 3.0,
+                  "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "flash": 2.0,
+                  "hitstop": 4.0,
+                  "shake": 0.0,
+                  "spark": "impact_light"
+                },
+                "height": 95,
+                "kind": "hit",
+                "move": "light1",
+                "player": 0,
+                "projectile": false,
+                "x": 647
+              }
+            }
+          ],
+          "recovered": "idle",
+          "trace_sha256": "fcc710c5c7998cc1e5959435d2800f752d8b22dfd53c76d073917fd8f3368948",
+          "fresh_replay_errors": []
+        },
+        {
+          "case": "1280x720-right-whiff-original",
+          "direction": 1,
+          "kind": "whiff",
+          "failures": [],
+          "damage": 0,
+          "cost_tick": 21,
+          "stamina_before": 1000,
+          "stamina_after": 970,
+          "contacts": [],
+          "recovered": "idle",
+          "trace_sha256": "3efb88f03fe997d913129a710f6d0252a722dffbac061621782123519310241e",
+          "fresh_replay_errors": []
+        },
+        {
+          "case": "1280x720-right-whiff-replay",
+          "direction": 1,
+          "kind": "whiff",
+          "failures": [],
+          "damage": 0,
+          "cost_tick": 21,
+          "stamina_before": 1000,
+          "stamina_after": 970,
+          "contacts": [],
+          "recovered": "idle",
+          "trace_sha256": "3efb88f03fe997d913129a710f6d0252a722dffbac061621782123519310241e",
+          "fresh_replay_errors": []
+        }
+      ],
+      "graphical_evidence": false,
+      "earlier_failure": "headless-v1 only one side JSON normalization caused event numeric representation mismatches; v2 never ran runtime due synthetic negative example fix; v3 retains all event fields"
+    },
+    "separate_logic_result": {
+      "candidate_contract_sha256": "e40801d5deeb6f339055b51fda5fd6fb8e4c6f9bec895c30b199cb62f092b08c",
+      "cases": [
+        {
+          "contact_counts": {
+            "light1": 1
+          },
+          "contacts": {
+            "light1": "hit"
+          },
+          "damage": 65,
+          "direction": 1,
+          "final_hash": "961ffd91acd7727c08b475586118e5275968460f5d5fb37761da2bf70e0a0df0",
+          "initial_gap": 70,
+          "kind": "hit",
+          "moves": [
+            "light1"
+          ],
+          "replay_errors": []
+        },
+        {
+          "contact_counts": {
+            "light1": 1
+          },
+          "contacts": {
+            "light1": "block"
+          },
+          "damage": 0,
+          "direction": 1,
+          "final_hash": "9e086a4cc326c1595dbbd3fa0503207f67cf4f555e52d3e11b7273392c2b6138",
+          "initial_gap": 74,
+          "kind": "block",
+          "moves": [
+            "light1"
+          ],
+          "replay_errors": []
+        },
+        {
+          "contact_counts": {},
+          "contacts": {},
+          "damage": 0,
+          "direction": 1,
+          "final_hash": "0e8c35c9b981988afcb259387e9ab08f0591980de574b763df5fbdf873ce357c",
+          "initial_gap": 260,
+          "kind": "whiff",
+          "moves": [
+            "light1"
+          ],
+          "replay_errors": []
+        },
+        {
+          "contact_counts": {
+            "light1": 1
+          },
+          "contacts": {
+            "light1": "hit"
+          },
+          "damage": 65,
+          "direction": -1,
+          "final_hash": "4e7a233dea51fb92929affb73017fe6bb9a5ab10d093e2549eedf19354b87ef7",
+          "initial_gap": 70,
+          "kind": "hit",
+          "moves": [
+            "light1"
+          ],
+          "replay_errors": []
+        },
+        {
+          "contact_counts": {
+            "light1": 1
+          },
+          "contacts": {
+            "light1": "block"
+          },
+          "damage": 0,
+          "direction": -1,
+          "final_hash": "6f19b5cf85ba2f414070362cf880a84604f9279eab9dd7fb21dc0cb0632de2d0",
+          "initial_gap": 74,
+          "kind": "block",
+          "moves": [
+            "light1"
+          ],
+          "replay_errors": []
+        },
+        {
+          "contact_counts": {},
+          "contacts": {},
+          "damage": 0,
+          "direction": -1,
+          "final_hash": "fd2605485078190d4f8640358dde752b8455076548f6415c07fc68f8ae60cf97",
+          "initial_gap": 260,
+          "kind": "whiff",
+          "moves": [
+            "light1"
+          ],
+          "replay_errors": []
+        }
+      ],
+      "errors": [],
+      "graphical_review": false,
+      "installed": false,
+      "original_inputs_replayed": true,
+      "phases": [
+        "light1:0",
+        "light1:1",
+        "light1:2",
+        "light1:3",
+        "light1:4"
+      ],
+      "playable": false,
+      "simulation_presentation_phase_checked": true,
+      "single_light1_input_checked": true
+    },
+    "headless_passed": true,
+    "graphical_started_or_requested": true,
+    "graphical_accepted": false
+  },
+  "actual_timing": {
+    "input_movie_frame": 20,
+    "input_sim_tick": 21,
+    "stamina_before": 1000,
+    "stamina_after": 970,
+    "hit_or_block_tick": 22,
+    "right_contact": [
+      647,
+      95
+    ],
+    "left_contact": [
+      632,
+      95
+    ],
+    "hit_damage": 65,
+    "block_damage": 0,
+    "whiff_contacts": 0,
+    "first_visible_move_tick": 1,
+    "capture_note": "phase0唯一可见图同时覆盖首尾，其余4相各首尾，外加入前/归idle，共11选定图/组，不伪造tick0。"
+  },
+  "historical_gates": [
+    "v1事件比较一侧JSON归一产生数值表示误报，并发现首可见move_tick=1不含0；仅修门禁/截图，不改core或素材。",
+    "v2合同已冻但主游戏未跑，修正合成负例自身等于正确值后另冻v3；旧证据保留。"
+  ],
+  "playable": false,
+  "implemented": false,
+  "select_visible": false,
+  "transform_enabled": false,
+  "limits": [
+    "实际图形待验；无录屏/实速/音频/真人键盘验收。",
+    "原近侧轻击/完整三连、light3收腿回架与heavy同臂砸落缺口仍在。"
+  ]
+}
