@@ -1,5 +1,7 @@
 extends Control
 const TrainingTape = preload("res://input/training_tape.gd")
+const TrainingInputAudit = preload("res://app/training_input_audit.gd")
+var training_input_audit: TrainingInputAudit
 var simulation: UfeMatchDirector
 var recorder: UfeReplayRecorder
 var replay: UfeReplayRecorder
@@ -50,6 +52,7 @@ func _on_joy_connection_changed(_device: int, _connected: bool) -> void:
 
 func _ready() -> void:
 	get_tree().auto_accept_quit = false
+	training_input_audit=TrainingInputAudit.from_arguments(OS.get_cmdline_user_args())
 	UfeInputRouter.configure()
 	# 随主节点自动断开，避免Input单例在语言卸载后才释放匿名脚本引用。
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
@@ -466,6 +469,7 @@ func play_replay() -> void:
 	hud.close_overlays()
 
 func _input(event: InputEvent) -> void:
+	if training_input_audit!=null:training_input_audit.record_event(event)
 	if is_instance_valid(front) and front.has_method("capture_binding_input") and bool(front.call("capture_binding_input",event)):
 		get_viewport().set_input_as_handled()
 		return
@@ -505,6 +509,7 @@ func _notification(what: int) -> void:
 func shutdown(exit_code: int = 0) -> void:
 	if _shutting_down: return
 	_shutting_down = true
+	if training_input_audit!=null:training_input_audit.close()
 	set_physics_process(false)
 	viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
 	await get_tree().process_frame
@@ -521,6 +526,7 @@ func shutdown(exit_code: int = 0) -> void:
 	get_tree().quit(exit_code)
 
 func _physics_process(_delta: float) -> void:
+	if training_input_audit!=null:training_input_audit.begin_frame(self)
 	if is_instance_valid(view) and view.layered_stage!=null:view.layered_stage.frozen=paused
 	if ui_fixes_debug!=null:ui_fixes_debug.drive(capture_tick)
 	if gate_b_driver!=null:gate_b_driver.drive(capture_tick,self)
@@ -533,6 +539,7 @@ func _physics_process(_delta: float) -> void:
 		if ui_fixes_debug!=null:ui_fixes_debug.observe(capture_tick)
 		capture_tick+=1
 		if not capture_path.is_empty() and capture_tick==capture_frame:_capture.call_deferred()
+		if training_input_audit!=null:training_input_audit.end_frame(self)
 		if auto_quit>0 and capture_tick>=auto_quit:shutdown()
 		return
 	if capture_ui=="training-last":
@@ -557,6 +564,7 @@ func _physics_process(_delta: float) -> void:
 		elif replay != null:
 			if replay_cursor < replay.frames.size():
 				var pair: Array = replay.frames[replay_cursor]
+				if training_input_audit!=null:training_input_audit.sampled(UfeInputFrame.unpack(pair[1]),"replay")
 				simulation.step([UfeInputFrame.unpack(pair[0]),UfeInputFrame.unpack(pair[1])])
 				replay_cursor += 1
 			else:
@@ -577,6 +585,7 @@ func _physics_process(_delta: float) -> void:
 			_record_dummy_input(second)
 			var inputs: Array = [first,second]
 			if review: review_driver.remember_inputs(inputs)
+			if training_input_audit!=null:training_input_audit.sampled(second,"live")
 			simulation.step(inputs)
 			recorder.append(inputs,simulation)
 			hud.record_inputs(inputs)
@@ -615,6 +624,7 @@ func _physics_process(_delta: float) -> void:
 	capture_tick += 1
 	if review and (capture_tick == review_driver.length_frames()-1 or (review_capture_frames>0 and capture_tick==review_capture_frames-2)): review_driver.save_file(review_trace)
 	if not capture_path.is_empty() and capture_tick == capture_frame: _capture.call_deferred()
+	if training_input_audit!=null:training_input_audit.end_frame(self)
 	if auto_quit > 0 and capture_tick >= auto_quit: shutdown()
 
 func _record_dummy_input(frame: UfeInputFrame) -> void:

@@ -13,6 +13,8 @@
 
 ### 已完成与未通过的具体动作
 
+- 2P原生录制疑点：旧整局全零录像不含录制模式，无法判断箭头发生时是否仍在录制。已加入默认关闭、白名单、有界的主游戏被动观察，1017项证明不改输入/模式/hash；720真实本地双人和录制对照正在进行。这是辨因工具，不是已修输入bug。[仪器与边界](verification/training-input-audit-logic.json)
+
 - 换人回放加载：先读并验证录像人物，再按该组合创建当前规则模拟严格比指纹；同版本换角色/换边/EX不再假报规则改变，R再战保持录像双方，真实内容变化仍拒绝且不破坏现局。327项主游戏入口与相关回归通过，720/1080真实换赛文后载回初代/杰顿及R保持双方已验，未冒称EX/换边全图形通过；不扩大旧规则兼容。[修前红灯](verification/replay-match-loading-red.json)、[逻辑回执](verification/replay-match-loading-logic.json)、[实际菜单及关闭阶段限制](verification/replay-match-loading-graphical.json)
 
 - 弹体方向：已修杰顿真实火球后瞬移越身导致反向击退/受击朝向及背后来弹误防；8组200tick原输入修前后完全相同，独立回放通过，4组普通未越身末hash保持。相关10项通过，另1项因缺历史contract未执行；全局方向规则指纹更新，旧回放明确拒绝。[证据与限制](verification/projectile-contact-direction-review.json)

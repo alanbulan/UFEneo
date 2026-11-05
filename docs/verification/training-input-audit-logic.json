@@ -1,0 +1,79 @@
+{
+  "status": "instrumentation_passed_native_diagnosis_pending",
+  "source_commit": "011995c4bd0cbbdb06c4344b4b092d049bd1527f",
+  "engine": "Godot4.6.3.stable.official.7d41c59c4",
+  "files_sha256": {
+    "app/game_app.gd": "618e83b7d8d59bd9d2ffdf2fc1f42c67cf1ae3025cd81e75e46547a97e68a770",
+    "app/training_input_audit.gd": "1794d23ae2b21651b837fcf8aa1f74a7fc6531de50eb46dccb46d6df200cfebd",
+    "app/training_input_audit.gd.uid": "2cb70a5cf0e6072e106596c2c0ba6ab4a12b0cb0dfea2df57c2c1c2524c41991",
+    "tests/training_input_audit.gd": "b667bd8dc7c10cb749ef0c4e31fc4f6759064993638a33193a207180c6da4d29",
+    "tests/training_input_audit.gd.uid": "59876f6cd0de81a9be84c7759f09978669a5c4d05d785d20b14b279861de31f6"
+  },
+  "evidence_directory": "reports/training-input-audit/logic-20261105",
+  "scope": [
+    "仅显式--training-input-audit=<新文件路径>创建观察器；默认零日志写入。父目录须预先存在，已有文件拒绝覆盖。",
+    "主游戏白名单原始InputEventKey字段、每physics前后只读模式/Input状态、poll2及真正送模拟second，sampled/advanced/source显式区分没采样/没推进。",
+    "白名单只含D/Right/Down/Enter/R/F4；记录数字键码、pressed/echo及修饰状态，不记unicode或任意文本。",
+    "不改Input/绑定/模式/模拟输入，不将诊断序号或日志加入core/state_hash。",
+    "去重排除sequence/physics_sample/tick；状态变化或60physics心跳写入，跳过计数保留；录制中磁带长度/游标变化会保留。",
+    "上限20000行/16MiB，写明确limit并停止观察；正常关闭flush，重复关闭安全。"
+  ],
+  "tests": {
+    "script": "tests/training_input_audit.gd",
+    "command": "XDG_DATA_HOME=/tmp/ufeneo-input-audit-20261105/data XDG_CONFIG_HOME=/tmp/ufeneo-input-audit-20261105/config XDG_CACHE_HOME=/tmp/ufeneo-input-audit-20261105/cache python tools/godot_lock.py -- godot --headless --path . --script tests/training_input_audit.gd -- --audit-test-out=/tmp/ufeneo-input-audit-20261105/final-result",
+    "exit": 0,
+    "checks": 1017,
+    "errors": [],
+    "physics_samples": 257,
+    "rows": 240,
+    "scope": "instrumentation with action samples and constructed InputEventKey; not native hardware input acceptance",
+    "verified": [
+      "禁用不创建对象/日志",
+      "257次physics采样双实例state_hash、模式、磁带和实际输入帧一致",
+      "被动记录router非零样本和真正送入模拟second",
+      "暂停/开场sampled=false且advanced=false",
+      "只记白名单键，序号严格递增，无unicode/text字段",
+      "3行测试上限产生limit终止行",
+      "close结束记录已刷盘，旧文件不截断"
+    ]
+  },
+  "cli_check": {
+    "command": "同隔离XDG经python tools/godot_lock.py -- godot --headless --path . -- --auto-quit=120 --training-input-audit=/tmp/ufeneo-input-audit-20261105/native-entry.jsonl",
+    "entry": "app/scenes/main.tscn",
+    "exit": 0,
+    "physics_samples": 120,
+    "rows": 5,
+    "kinds": [
+      "header",
+      "physics",
+      "physics",
+      "physics",
+      "closed"
+    ],
+    "closed": true,
+    "note": "这是headless正式入口CLI接线测试，不是原生GUI/物理输入验收。",
+    "warnings": [
+      "一次ObjectDB instances leaked at exit，原因未定位，原日志保留；不能仅因早先也出现而认定同源。"
+    ]
+  },
+  "retained_initial_failure": {
+    "log": "initial-json-comparison-failure.log",
+    "errors": [
+      "被动记录实际router样本及真正送模拟second"
+    ],
+    "reason": "日志已有非零输入；测试直接比较JSON float数组与整数数组导致假失败，改用UfeInputFrame.unpack().pack()后通过，未改产品输入。"
+  },
+  "native_plan": [
+    "仅720正式主游戏启动前创建报告目录并选择不存在的新.jsonl；确认header存在。",
+    "本地双人：按Right/Down/D，保持各一次。",
+    "训练：鼠标点录制后不再Enter，等开场结束按Right/Down/D，最后Enter停止。",
+    "按事件码→physical/logical/action→poll2→mode→sampled second链路辨因；未取得原生证据前不判游戏bug或工具错误。"
+  ],
+  "limits": [
+    "未验物理键盘/CUA事件送达。旧1378帧2P全零现象原因仍未知。",
+    "仪器回归使用测试action样本和构造键事件，不能替代真实设备。",
+    "Godot4.7未验；无录屏、声音或双分辨率诊断承诺。",
+    "未提交，代码冻结交父任务审阅和GUI。"
+  ],
+  "acceptance": "root_delegated_by_user"
+}

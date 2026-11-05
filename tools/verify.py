@@ -18,7 +18,7 @@ CASES = [
     "phase3_standing", "phase3_air", "phase3_reaction", "phase3_zetton",
     "phase3_zetton_air", "phase3_zetton_defense", "phase3_throws",
     "phase3_specials", "phase3_supers", "phase3_fx_audio", "codex_impact_feedback_policy",
-    "catalogue_identity_display", "computer_ai", "training_tape", "training_lifecycle", "replay_match_loading", "pixel_ui", "pixel_pages", "ui_facing",
+    "catalogue_identity_display", "computer_ai", "training_tape", "training_lifecycle", "replay_match_loading", "training_input_audit", "pixel_ui", "pixel_pages", "ui_facing",
     "main_shutdown_menu_exit", "main_shutdown_reentrancy",
 ]
 
@@ -76,6 +76,8 @@ def main():
             command += ["--", "--test-out=" + str(case_output)]
         elif case == "replay_match_loading":
             command += ["--", "--replay-test-out=" + str(case_output)]
+        elif case == "training_input_audit":
+            command += ["--", "--audit-test-out=" + str(case_output)]
         elif case == "capture_receiver_availability":
             command += ["--", "--expect-fixed", "--output=" + str(run_output / "capture-receivers.json")]
         elif case.startswith("main_shutdown_"):
