@@ -6,6 +6,8 @@
 
 ### 月亮升击内置生图单相（2026-11-05）
 
+- 新增升击01蓄拳/03高位回收整帧候选：双闭拳蓄腹→同右臂上挑→高位回收方向可读，但01远腕圆面遮挡、近鞋底约9源像素漂移、缺渐伸及旧起收招接续仍在；真实alpha有低透明边缘噪点，未配准/安装/运行验证。保存原字节、提示词及未知model/high/usage/费用。[两相逐项审阅](verification/luna-launcher-neighbor-candidates-review.json)
+
 用户本次明确要求用本会话生图能力；这次仅保留候选，不继承历史客户端的model/high/usage或费用。完整原字节位于art/fighters/ultraman-arc__luna/stage2/launcher-session-candidate-20261105/phase-02.raw.png。向上弯肘拳与月亮身份可辨，但前鞋内收、原01张掌及03水平拳不能接续；真实alpha存在低透明噪点触边。未安装、未开放装甲、未改模拟，未进行游戏/回放/图形验收。后续先解决完整蓄拳与回收链和统一尺度，不以这张图宣布升击完成。[来源与测量](verification/luna-launcher-session-candidate-review.json)。
 
 ### 当前获取与运行
