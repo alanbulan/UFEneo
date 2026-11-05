@@ -12,7 +12,7 @@ main_bundle.py freeze --root-review PATH --out reports/galaxion-light1-resume/�
 
 main_bundle.py run --contract 合同 --out reports/galaxion-light1-resume/新的运行目录 --headless
 
-移除--headless得到720/1080、双朝向、hit/block/whiff与独立原输入回放，共24组。无头12组。每组120tick，tick20仅一次J对应LIGHT，block陪练全程GUARD；距离只在tick0设定，运行中绝不修改模拟字段。独立回放逐tick核状态哈希、事件和投射物。
+移除--headless得到720/1080、双朝向、hit/block/whiff与独立原输入回放，共24组。无头12组。每组120tick，输入序号movie_frame=20（模拟tick21）仅一次J对应LIGHT，block陪练全程GUARD；距离只在tick0设定，运行中绝不修改模拟字段。独立回放逐tick核状态哈希、事件和投射物。
 
 每个图形组11张原生PNG：输入前idle、五相各首尾模拟tick、归idle。正式模拟J启动当tick已推进move_tick=1，因此0相唯一可见tick同时覆盖首尾，不伪造缺失的tick0。其余相覆盖首尾，命中停顿不重复截同key。保留真实HUD及训练板，绘制前取安全区；截图期间暂停模拟并核双方相位/区域/冻结tick/SHA/尺寸。没有录屏、音频和真人键盘验收。
 
@@ -25,3 +25,7 @@ python tools/rebuild/ultraman-arc/galaxion-light1-resume/test_check.py 只验证
 headless-v1首个实际用例命中65，但新事件比较仅规范化一侧，造成tick21声音、tick22命中事件整数/浮点表示差异误报；这是门禁失败，原结果保留，不能改写为通过。修正为两侧JSON往返后完整比较全部事件/投射物字段。另据真实trace，J启动首个可见move_tick=1，因此去掉不可见tick0截图预期，0相唯一帧覆盖首尾，其余相不变。
 
 contract-v2冻结后发现合成负例更改的帧值恰好等于更新后正确值，负例本身未能制造错误；改正负例后另建contract-v3，不覆写v2，不声称v2跑过主游戏。最终运行结果以对应新的runner-result与真实trace为准。
+
+## 本批实际结论
+
+contract-v3完成12组headless原输入/独立回放、21项含真实trace检查和6个独立逻辑用例。J于模拟tick21扣30体力，tick22命中/格挡一次，命中65、防御0、落空0。随后24组图形264原生PNG全部技术通过，与headless逐tick模拟字段一致；12原输入组132张全部实际目视，单远侧直拳静帧带限制接受。护架直接伸至接触，不存在渐伸中间相，更不代表原brief近侧第一拳或左右交替三连。保留站防高举手、白闪遮点、长训练板令缩放保守，无实速/声音/真人硬件验收。回执：docs/verification/galaxion-light1-graphical-review.json。
