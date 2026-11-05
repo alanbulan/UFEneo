@@ -12,6 +12,9 @@ var form_note: RichTextLabel
 var clips: Dictionary={}
 var tabs: PixelTabBar
 var table_headers: HBoxContainer
+var match_choices: HBoxContainer
+var match_buttons: Array[Button]=[]
+var match_fighters: Array=[]
 func _init() -> void:
 	theme=PixelPanel.NEO_THEME
 	theme_type_variation="PixelPanel"
@@ -27,6 +30,10 @@ func _init() -> void:
 	fighter_choice=FighterName.new(12,true);fighter_choice.custom_minimum_size.x=136;heading.add_child(fighter_choice)
 	var next:=PixelButton.new("下一位");heading.add_child(next)
 	next.pressed.connect(func():cycle_fighter(1))
+	match_choices=HBoxContainer.new();column.add_child(match_choices);match_choices.hide()
+	for player in range(2):
+		var button:=PixelButton.new("%dP当前"%[player+1]);match_choices.add_child(button);match_buttons.append(button)
+		button.pressed.connect(select_match_player.bind(player))
 	form_note=RichTextLabel.new();form_note.bbcode_enabled=true;form_note.fit_content=false;form_note.scroll_active=true;form_note.custom_minimum_size.y=28;column.add_child(form_note)
 	tabs=PixelTabBar.new();column.add_child(tabs);tabs.set_tabs(TITLES)
 	tabs.tab_changed.connect(show_page)
@@ -48,7 +55,21 @@ static func category(entry: Dictionary) -> int:
 	if id.begins_with("crouch_") or id in ["sweep","slide","low_pulse"]:return 1
 	if not "idle" in entry.states and not "light" in id:return 4
 	return 0
+func set_match_fighters(fighters: Array) -> void:
+	match_fighters.clear()
+	for fighter in fighters:
+		match_fighters.append({"definition":fighter.definition,"form_id":fighter.form_id})
+	match_choices.visible=match_fighters.size()==2
+	if match_choices.visible:select_match_player(0)
+
+func select_match_player(player: int) -> void:
+	if player<0 or player>=match_fighters.size():return
+	var selected: Dictionary=match_fighters[player]
+	set_fighter(selected.definition,str(selected.form_id))
+	title.text="招式表 · %dP当前 · F2关闭"%[player+1]
+
 func set_fighter(data: UfeFighterDefinition, form_id: String="") -> void:
+	title.text="招式表 · F2关闭"
 	if UfeBattleFormCatalog.battle_playable(data.id) and not data.moves.has("battle_transform"):
 		data = UfeBattleFormCatalog.prepare(data.id,true).definition
 	fighter_data=data;entries=data.command_table.duplicate(true)

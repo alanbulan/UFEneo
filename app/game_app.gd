@@ -313,7 +313,7 @@ func _action(action: String) -> void:
 			hud.close_overlays()
 			hud.toast.show_message("录制陪练：使用2P键位，Enter停止" if dummy_recording else "循环播放陪练录制")
 		"commands":
-			hud.show_commands(simulation.fighters[0].definition)
+			hud.show_commands(simulation.fighters[0].definition,simulation.fighters)
 			paused = hud.commands.visible
 		"home":
 			hud.close_overlays()

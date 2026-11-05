@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-05",
+  "scope": "正式对局F2及暂停菜单直接查看1P/2P当前角色招式",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "changes": [
+    "双方当前角色按钮沿用PixelButton并在非对局页面隐藏。",
+    "每次打开按实际对局定义与form_id重新绑定，不回退EX身份。",
+    "自由名册浏览清除当前玩家标题，按钮可返回当前双方。",
+    "F2重复开关语义保留，打开后焦点落到1P按钮。"
+  ],
+  "tests": [
+    {
+      "name": "pixel_pages",
+      "status": "passed",
+      "log": "reports/verification/runs/fea87406f9e5/pixel_pages.log",
+      "sha256": "69992b71b68575579daf6893f89851bbf13a9a59a1216914679530ce9c03beaa"
+    },
+    {
+      "name": "pixel_ui",
+      "status": "passed",
+      "log": "reports/verification/runs/e8735102ead6/pixel_ui.log",
+      "sha256": "06777aba6af8e65c8a71087b1639d34cc1aca2830d887583da94027fde9d16ba"
+    },
+    {
+      "name": "ui_facing",
+      "status": "passed",
+      "log": "reports/verification/runs/e8735102ead6/ui_facing.log",
+      "sha256": "5af45e79947bbf25ebbb185b2fc8045bbc68dace52408a4d9de77d4679776bf2"
+    },
+    {
+      "name": "logic_2d",
+      "status": "passed",
+      "log": "reports/verification/runs/e8735102ead6/logic_2d.log",
+      "sha256": "1731798ba17eab419e2bad3db5ae5adbca0b834ad8b19a46955e107c9a67e413"
+    }
+  ],
+  "coverage": [
+    "点击双方按钮、自由浏览后返回、新局重绑定、无对局隐藏。",
+    "EX及超级泰罗显示身份的状态夹具检查。",
+    "读取招式表前后模拟state_hash相同。",
+    "HUD入口重复开关与切换对局后重开。"
+  ],
+  "limits": [
+    "未在目标Godot4.7验证。",
+    "无DISPLAY，未进行720/1080实际画面或键盘/手柄实测。",
+    "形态状态夹具并非重新验收完整变身演出。",
+    "无录屏；没有修改core、角色数据、素材或回放格式。"
+  ]
+}

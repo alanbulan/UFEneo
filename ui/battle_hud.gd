@@ -322,11 +322,13 @@ func record_inputs(inputs: Array) -> void:
 			input_history[i].append(value)
 			if input_history[i].size()>12: input_history[i].pop_front()
 
-func show_commands(data: UfeFighterDefinition) -> void:
+func show_commands(data: UfeFighterDefinition, fighters: Array=[]) -> void:
 	var was_visible:=commands.visible
 	close_overlays()
 	commands.set_fighter(data,primary_display_form if data.id==primary_display_id else "")
+	commands.set_match_fighters(fighters)
 	commands.visible=not was_visible
+	if commands.visible and commands.match_choices.visible:commands.match_buttons[0].grab_focus()
 
 func show_selection(ids: Array) -> void:
 	close_overlays()
