@@ -5,6 +5,7 @@ func require(value: bool,message: String) -> void:
 func run() -> void:
 	test_air_recovery()
 	test_guard_counter()
+	test_burst_escape()
 	var a:=UfeContentDatabase.match_for();var b:=UfeContentDatabase.match_for()
 	var ai:=UfeComputerController.new(301,"hard",1);var copy:=UfeComputerController.new(301,"hard",1)
 	var player:=UfeComputerController.new(917,"normal",0)
@@ -222,4 +223,104 @@ func counter_match(facing: int) -> UfeMatchDirector:
 	sim.fighters[1].x=720 if facing==1 else 650
 	sim.fighters[0].facing=facing;sim.fighters[1].facing=-facing
 	sim.fighters[1].stats.energy=1000
+	return sim
+
+func test_burst_escape() -> void:
+	var rates: Array=[]
+	for level in ["easy","normal","hard"]:
+		var sim:=UfeContentDatabase.match_for()
+		var f:=sim.fighters[1]
+		var successes:=0
+		for seed in range(1,101):
+			var ai:=UfeComputerController.new(seed,level,1)
+			f.enter("hit",60);f.state_tick=int(UfeComputerController.LEVELS[level].delay)-1
+			f.stats.hp=f.base_definition.max_health/2;f.stats.energy=2000
+			var before:=ai.rng
+			require(ai.burst_input(f,100)==null and ai.rng==before,"爆气不得跳过难度反应时间")
+			f.state_tick+=1
+			var chosen:=ai.burst_input(f,101)
+			var decided:=ai.rng
+			if chosen!=null:
+				successes+=1;require(chosen.buttons==0,"爆气先释放旧键，不能跳过真实和弦边沿")
+			for tick in range(5):
+				var repeated:=ai.burst_input(f,102+tick)
+				require(ai.rng==decided and (repeated==null)==(chosen==null),"hitstop中爆气不得重掷")
+				if repeated!=null:require(repeated.buttons==24,"释放后同时按GUARD和CHARGE")
+			f.enter("launch");f.state_tick=30;f.vy=2
+			ai.burst_input(f,110);require(ai.rng==decided,"同轮受击转击飞不得重掷爆气")
+			f.enter("idle");ai.burst_input(f,111)
+			f.enter("hit",60);f.state_tick=30
+			require(ai.burst_input(f,400)==null and ai.rng==decided,"爆气尝试后5秒内不能再次抽签")
+			ai.burst_input(f,401);require(ai.rng!=decided,"冷却结束且重新受击后可再次决定")
+		rates.append(successes)
+		require(successes>0 and successes<100,"每档爆气均保留成功与失败")
+	require(rates[0]<rates[1] and rates[1]<rates[2],"爆气概率随难度递增")
+	for variant in ["healthy","poor","missing_move","missing_command","command_energy","guard","falling"]:
+		var sim:=UfeContentDatabase.match_for()
+		var f:=sim.fighters[1]
+		f.enter("blockstun" if variant=="guard" else "launch" if variant=="falling" else "hit",60)
+		f.state_tick=30;f.vy=-1
+		f.stats.hp=f.base_definition.max_health/2+(1 if variant=="healthy" else 0)
+		f.stats.energy=1999 if variant=="poor" else 2000
+		if variant=="missing_move":f.definition.moves.erase("burst")
+		if variant=="missing_command":f.definition.command_table=f.definition.command_table.filter(func(e):return e.move!="burst")
+		if variant=="command_energy":
+			for entry in f.definition.command_table:
+				if entry.move=="burst":entry.min_energy=3000
+		var ai:=UfeComputerController.new(6,"hard",1)
+		var before:=ai.rng
+		require(ai.burst_input(f,100)==null and ai.rng==before,"不满足爆气门槛/可免费受身时不得触发："+variant)
+	var apex_sim:=burst_match(1)
+	var apex:=apex_sim.fighters[1]
+	apex.enter("launch");apex.state_tick=15;apex.vy=0
+	var apex_ai:=UfeComputerController.new(6,"hard",1)
+	require(apex_ai.burst_input(apex,100)!=null,"顶点符合门槛时可以先决定爆气")
+	apex.vy=-1
+	require(apex_ai.burst_input(apex,101)==null and not apex_ai.burst_allowed,"释放后进入免费受身窗口须放弃付费和弦")
+	# 长按旧GUARD超过和弦窗口后，必须真实释放再重按两键。
+	var chord_sim:=burst_match(1)
+	var chord_f:=chord_sim.fighters[1]
+	chord_f.enter("hit",60)
+	for tick in range(8):chord_sim.step([UfeInputFrame.make(),UfeInputFrame.make(0,0,UfeInputFrame.GUARD)])
+	var chord_ai:=UfeComputerController.new(6,"hard",1)
+	var release:=chord_ai.burst_input(chord_f,chord_sim.tick)
+	require(release!=null and release.buttons==0,"旧GUARD长按后第一帧必须释放")
+	if release!=null:
+		chord_sim.step([UfeInputFrame.make(),release])
+		var chord:=chord_ai.burst_input(chord_f,chord_sim.tick)
+		if chord!=null:chord_sim.step([UfeInputFrame.make(),chord])
+		require(chord_f.move_id=="burst" and int(chord_f.stats.energy)==0,"旧GUARD长按后真实和弦仍须成功扣费爆气")
+	for facing in [-1,1]:
+		var sim:=burst_match(facing);var replay_sim:=burst_match(facing)
+		var ai:=UfeComputerController.new(25,"hard",1)
+		var record:=UfeReplayRecorder.new()
+		var damaged:=false;var escaped:=false;var paid:=false;var hit:=false
+		for tick in range(100):
+			var first:=UfeInputFrame.make(0,0,UfeInputFrame.HEAVY) if tick==0 else UfeInputFrame.make()
+			var second:=UfeInputFrame.make()
+			if sim.fighters[1].state=="hit":
+				var before:=sim.state_hash();second=ai.sample(sim)
+				require(before==sim.state_hash() and ai.sample(sim).pack()==second.pack(),"爆气决策只读且同tick一致")
+			var old_energy:=int(sim.fighters[1].stats.energy);var old_move:=sim.fighters[1].move_id
+			var pair: Array=[first,second];sim.step(pair);record.append(pair,sim)
+			damaged=damaged or sim.fighters[1].state=="hit"
+			if old_move!="burst" and sim.fighters[1].move_id=="burst":
+				escaped=true;paid=int(sim.fighters[1].stats.energy)==old_energy-2000
+			for event in sim.events:
+				if event.kind=="hit" and event.player==1 and event.move=="burst":hit=true
+		require(damaged and escaped and paid and hit,"双向真实受击后爆气须扣两格并命中："+str([facing,damaged,escaped,paid,hit]))
+		var path:="user://ai-burst-%d.json"%facing;record.save_file(path)
+		var loaded:=UfeReplayRecorder.load_file(path,sim.content_fingerprint)
+		require(loaded!=null,"爆气回放可加载")
+		if loaded!=null:
+			for pair in loaded.frames:replay_sim.step([UfeInputFrame.unpack(pair[0]),UfeInputFrame.unpack(pair[1])])
+			require(replay_sim.state_hash()==sim.state_hash(),"爆气100tick原输入独立回放一致")
+	print("电脑爆气：半血/两格门槛、三档单次概率、5秒冷却、双向扣费命中与回放通过")
+
+func burst_match(facing: int) -> UfeMatchDirector:
+	var sim:=UfeContentDatabase.match_for("ultraman","ultraman")
+	sim.fighters[0].x=650 if facing==1 else 720
+	sim.fighters[1].x=720 if facing==1 else 650
+	sim.fighters[0].facing=facing;sim.fighters[1].facing=-facing
+	sim.fighters[1].stats.energy=2000;sim.fighters[1].stats.hp=sim.fighters[1].base_definition.max_health/2
 	return sim

@@ -1,7 +1,7 @@
 class_name UfeComputerController
 extends RefCounted
 ## 只观察模拟并产出设备同款输入。随机状态、反应记忆和指令队列全部属于input层。
-const LEVELS={"easy":{"delay":22,"guard":30,"combo":40,"recover":35,"counter":20},"normal":{"delay":12,"guard":65,"combo":75,"recover":65,"counter":45},"hard":{"delay":6,"guard":90,"combo":95,"recover":90,"counter":70}}
+const LEVELS={"easy":{"delay":22,"guard":30,"combo":40,"recover":35,"counter":20,"burst":10},"normal":{"delay":12,"guard":65,"combo":75,"recover":65,"counter":45,"burst":20},"hard":{"delay":6,"guard":90,"combo":95,"recover":90,"counter":70,"burst":35}}
 var difficulty: String
 var player: int
 var seed_value: int
@@ -29,6 +29,9 @@ var counter_age: int=-1
 var counter_state: String=""
 var counter_decided: bool=false
 var counter_allowed: bool=false
+var burst_decided: bool=false
+var burst_allowed: bool=false
+var burst_next_tick: int=0
 
 func _init(match_seed: int=20261022,level: String="normal",index: int=1) -> void:
 	seed_value=match_seed;difficulty=level if LEVELS.has(level) else "normal";player=index
@@ -68,6 +71,8 @@ func decide(sim: UfeMatchDirector,seen: Dictionary) -> UfeInputFrame:
 	if direction==0:direction=f.facing
 	var gap:=absi(int(seen.x)-f.x)
 	if sim.finished:return emit()
+	var escape:=burst_input(f,sim.tick)
+	if escape!=null:return escape
 	var counter:=guard_counter_input(f)
 	if counter!=null:return counter
 	if f.state in ["blockstun","crouch_blockstun"] and f.move_id.is_empty():
@@ -160,3 +165,27 @@ func guard_counter_input(f: UfeFighter) -> UfeInputFrame:
 	if not counter_allowed:return null
 	queue.clear()
 	return emit(f.facing,0,UfeInputFrame.GUARD|UfeInputFrame.HEAVY)
+
+func burst_input(f: UfeFighter, tick: int) -> UfeInputFrame:
+	# 保守使用昂贵脱离：格挡另有一格防反；连续受击不逐段重掷。
+	if f.state not in ["hit","launch"]:
+		burst_decided=false;burst_allowed=false
+		return null
+	# 释放旧键后也重新核免费窗口，顶点转下降时放弃付费和弦。
+	if f.state=="launch" and f.vy<0 and f.state_tick>=13:
+		burst_allowed=false
+		return null
+	if burst_decided:
+		return emit(0,0,UfeInputFrame.GUARD|UfeInputFrame.CHARGE) if burst_allowed else null
+	if tick<burst_next_tick or f.state_tick<int(LEVELS[difficulty].delay):return null
+	if int(f.stats.hp)*2>f.base_definition.max_health or int(f.stats.hp)<=0:return null
+	var move: Dictionary=f.definition.moves.get("burst",{})
+	var mask:=UfeInputFrame.GUARD|UfeInputFrame.CHARGE
+	var available:=f.definition.command_table.any(func(entry):return str(entry.move)=="burst" and (f.state in entry.states or "*" in entry.states) and int(entry.buttons)==mask and entry.directions.any(func(d):return int(d) in [0,5]) and entry.motion.is_empty() and int(f.stats.energy)>=int(entry.get("min_energy",0)))
+	if move.is_empty() or not available or int(f.stats.energy)<int(move.get("energy_cost",2000)):return null
+	burst_decided=true;burst_next_tick=tick+300
+	burst_allowed=roll()<int(LEVELS[difficulty].burst)
+	if not burst_allowed:return null
+	note("burst");queue.clear()
+	# 先释放旧按键一tick，再同时按GUARD+CHARGE，满足真实和弦边沿窗口。
+	return emit()

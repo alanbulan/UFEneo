@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-05",
+  "scope": "电脑保守使用已有两格爆气脱离",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "behavior": [
+    "仅半血以下、本人现装burst动作与指令支持、足额真实能量的hit/launch状态考虑爆气。",
+    "按easy/normal/hard原反应延迟22/12/6帧及10/20/35%概率；连续hit/launch受击只判一次，成功失败均冷却300个模拟tick。",
+    "格挡仍使用原一格防反；下降且已有免费空中受身窗口时放弃付费爆气，包括先释放旧键后才进入下降的边界。",
+    "先释放旧键一tick，再同时输出GUARD+CHARGE，满足真实和弦按键边沿；不直接改状态、扣费、无敌或判定。",
+    "不改core、素材、招式数据、回放格式或规则指纹，不加能量或提高实际技能强度。"
+  ],
+  "tests": [
+    {
+      "name": "computer_ai",
+      "status": "passed",
+      "exit": 0,
+      "log": "reports/verification/runs/534355f9428b/computer_ai.log",
+      "sha256": "8a0e0ebca3a6a97d94534e78543ccd8a10d7ec38e5ce58080a0cf3a20910e470"
+    },
+    {
+      "name": "logic_2d",
+      "status": "passed",
+      "exit": 0,
+      "log": "reports/verification/runs/534355f9428b/logic_2d.log",
+      "sha256": "1731798ba17eab419e2bad3db5ae5adbca0b834ad8b19a46955e107c9a67e413"
+    },
+    {
+      "name": "phase3_reaction",
+      "status": "passed",
+      "exit": 0,
+      "log": "reports/verification/runs/534355f9428b/phase3_reaction.log",
+      "sha256": "b2f4e91083a53169197ebd994a1c36cab181fb3cc789a2311a5f5563acae9c44"
+    }
+  ],
+  "coverage": [
+    "100同种子三档概率递增且有成功/失败；反应窗、半血边界、真实两格费用、缺动作/指令和command.min_energy。",
+    "连续受击转击飞不重掷，hitstop不重掷，300tick冷却及期满后新受击可重新决定。",
+    "格挡不浪费两格、下降可免费受身时跳过，顶点释放后下降也撤销付费和弦。",
+    "旧GUARD已长按8tick时，真实释放与重新同时按键仍解析爆气并扣2000能量。",
+    "左右真实重击受伤后，电脑通过实际输入爆气、扣2000能量并命中对手；100tick存盘加载、无AI独立回放hash一致。",
+    "既有电脑确定性、空中受身、防反、逻辑和反应动作回归。"
+  ],
+  "limits": [
+    "真实完整爆气命中回放覆盖hard的地面受击；launch覆盖资格与免费受身切换逻辑，未另做完整空中爆气命中场景。",
+    "概率/冷却是本轮保守初值，尚未真人平衡验收。",
+    "目标Godot4.7、双向720/1080画面、真人设备及听感未在本轮验收，无录屏。"
+  ],
+  "development_fixes": [
+    "审阅发现顶点抽签后进入下降可能浪费能量，发和弦前已复核免费受身窗口。",
+    "实际成功场景使用包含先前威胁判断的固定种子25；没有为通过测试提高爆气概率。"
+  ]
+}
