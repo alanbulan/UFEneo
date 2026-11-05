@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "reviewer": "root_delegated_by_user",
-  "status": "七相扫腿完整源统一配准、真实下蹲输入八案与正式main独立回放通过；真实720/1080画面待验收，不开放装甲。",
+  "status": "七相候选配准、八逻辑与正式main独立回放通过；16组真实图形技术核验通过，但04→05收腿换脚回弹与低防姿势不匹配未过视觉验收，装甲未开放。",
   "source_selection": {
     "path": "docs/verification/luna-s2-crouch-source-review.json",
     "sha256": "c2a6b9588a90c634b3fc2a75cb9a7f18f1110edef655d2aacd614359223e312c"
@@ -196,7 +196,10 @@
     "target_down_phases": 2,
     "target_wake_phases": 5,
     "headless_captured": false,
-    "actual_graphical_review": false
+    "actual_graphical_review": true,
+    "graphical_cases": 16,
+    "original_png_count": 296,
+    "visual_accepted": false
   },
   "actual_input": "tick10–79保持DOWN(-1)，tick32单次HEAVY；其余中立。对手蹲防DOWN+GUARD、站防GUARD，未强设状态。",
   "validation_history": [
@@ -216,10 +219,14 @@
     }
   ],
   "limits": [
-    "第3→4→5相收腿脚位接续仍待真实图形核查。",
+    "真实720/1080双向确认04→05收腿换脚回弹；已查12个现存03–06整源，04/request002腿路改善但共同尺度下缩人跳变，不合格，需完整过渡帧。",
     "本人蹲族借用现存修复候选并核源/帧/图集SHA和像素，不冒称本轮生成；旧strict_size_passed仍false。",
     "source第2相旧透明角拒绝记录保留；免费Alpha128净化并非重生图。",
     "crouch_light/2缺出拳；完整S2与S2–S7、严格头身比例、声音、目标4.7与真人硬件均未整体验收。",
     "无录屏，正式core/content/assets及开放标志未改。"
-  ]
+  ],
+  "graphical_review": {
+    "path": "docs/verification/luna-sweep-graphical-review.json",
+    "sha256": "1cee67390f9ae1d99465e892f596bf3a9c0a1daa7735da268032ec1d5fcf6cad"
+  }
 }
