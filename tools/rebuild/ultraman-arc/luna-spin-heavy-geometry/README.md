@@ -34,3 +34,14 @@
     python tools/rebuild/ultraman-arc/luna-spin-heavy-geometry/geometry.py --plan tools/rebuild/ultraman-arc/luna-spin-heavy-geometry/plan-turn-v2.json --out reports/luna-spin-turn-new-review
 
 旧三相采样比例、平移与像素保持不变。四相攻击膝投影x约121→160→189→195，新增相确实提供跨身分段；对齐结果只诊断横向序列，不证明身体骨盆中线或完整3D转向。当前四相仍缺接触后的随势、收膝、落脚回架，没有进入Godot输入/回放，也未安装。详见`docs/verification/luna-spin-heavy-turn-mid-candidate-review.json`。
+
+## 完整现源链诊断v3
+
+`plan-chain-v3.json`包含实际idle phase00首尾对照，加蓄势、跨身、展开、接触、初收、下收和前掌着地，共九槽（八独立原图）。这不是已通过的九帧招式。原四动作相比例/平移保持；follow沿用接触支撑股胫尺；下收、着地和idle以可见支撑胫尺41.186比较，并只在指定前掌ROI取锚，避免整平鞋底中心移动被误当作前掌。
+
+    python tools/rebuild/ultraman-arc/luna-spin-heavy-geometry/geometry.py --plan tools/rebuild/ultraman-arc/luna-spin-heavy-geometry/plan-chain-v3.json --out reports/luna-spin-chain-new-review
+    python tools/rebuild/ultraman-arc/luna-spin-heavy-geometry/test_chain.py
+
+这里的idle为统一诊断尺重采样，不覆盖既有idle运行注册比例/根点。骨盆遮挡、支撑腿映射及投影缩短仍是条件，强制归一不证明身体比例或真实无滑步。低收和着地上身在此尺下偏大，需用可靠头胸尺度交叉校准；不据单胫尺直接判原源坏。
+
+同前掌锚下，idle→蓄势髋横向相差约40逻辑像素；着地→idle髋相差约47，攻击脚尖相差约42，缺相应移重与落地后移步路径。中段下收/初落脚虽已补充，首尾并未闭环。不靠延长停帧、改变伤害或整体滑动隐藏接续。因此v3没有创建运行时序、攻击框或Godot候选，没有真实输入/回放或720/1080验收，更没有安装/开放装甲。

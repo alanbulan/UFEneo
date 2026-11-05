@@ -1,4 +1,4 @@
-"""三张完整回旋关键相的可移植内存几何诊断；不注册招式，不调用Godot。"""
+"""现有完整回旋关键相的可移植内存几何诊断；不注册招式，不调用Godot。"""
 from pathlib import Path
 import argparse, hashlib, json, math, sys
 from PIL import Image, ImageDraw
@@ -20,7 +20,7 @@ def angle(a, b, c):
     return math.degrees(math.acos(max(-1, min(1, sum(u[i]*v[i] for i in range(2))/(math.hypot(*u)*math.hypot(*v))))))
 
 def build_frames(root=ROOT, plan_path=None):
-    """只在RAM创建三整帧；返回帧与诊断。无时序、判定、玩法开关或用户存档写入。"""
+    """只在RAM创建配方中的完整整帧；返回帧与诊断。无时序、判定、玩法开关或用户存档写入。"""
     plan_path = Path(plan_path) if plan_path is not None else Path(__file__).with_name('plan.json')
     plan = read(plan_path)
     measurement = root / plan['model_measurement']['path']
@@ -62,6 +62,8 @@ def build_frames(root=ROOT, plan_path=None):
             out = dict(key=row['key'],source=row['path'],source_sha256=row['sha256'],source_size=list(raw.size),uniform_scale=scale,sample_size=sample_size,raster_scale=raster,raster_rounding_anisotropy=abs(raster[0]-raster[1])/scale,scale_ruler=ruler,ruler_target_by_construction=ruler_target,projected_bone_lengths=lengths,joint_length_uncertainty_native=2*18*scale,projected_attack_knee_angle_deg=angle(points['attack_hip'],points['attack_knee'],points['attack_ankle']) if 'attack_hip' in points else None,attack_ankle_to_toe_angle_deg=attack_direction,source_support_anchor=anchor_source,whole_image_translation=offset,canvas=list(frame.size),alpha_bbox=frame.getbbox(),visible_pixels=frame.getchannel('A').histogram()[255],whole_source_preserved_no_crop=True,native_landmarks={k:[round(v[i]*raster[i]+offset[i],3) for i in range(2)] for k,v in points.items()})
             rows.append(out); frames.append(frame)
     result={'schema':'ufeneo.luna.spin-geometry-result.v1','plan_sha256':sha(plan_path),'backend':info,'frames':rows,'installed':False,'playable':False,'runtime_candidate_accepted':False,'physics_run':False,'notes':['人工投影关节有误差与透视缩短，不作自动解剖硬门。','支撑股胫总长按构造归一，不把总长相等当独立验证；支撑点也是整图对齐的比较坐标，不证明实游无滑步。','仅现有关键相，没有idle入招、接触后随势/收腿/回架及合法完整时序，不合成攻击框或伪装成整招。']}
+    if "diagnostic_notes" in plan:
+        result["notes"] = plan["diagnostic_notes"]
     return frames,result
 
 def main():
