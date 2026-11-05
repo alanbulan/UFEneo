@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- overhead蹲姿受击恢复已采用保持语义方案：原hit→crouch→guard及state_tick/指令不变，限定上下文同步本人已有低防保持图与hurtboxes，原frame其它字段/推挤/声音入态键保留。52例红绿、7800tick非姿态字段一致与旧拒新接通过，原40例低防恢复不回退。v3八逻辑/十六headless通过，必要八组图形待核；新素材未安装，非纯显示且未验听感。[根因、被否方案及修复证据](verification/hit-crouch-guard-recovery-audit.json)
+
 - 杰顿v2实际图形收尾：原32组自然完成，176原生PNG与16对180tick回放通过；720/1080双向low40→41、mid39→40直接低蹲保持，旧恢复站高闪回已在此限定路径消除。overhead受击后旧起架仍高，后震/脚缘与无实速/音频限制保留；正式core已修、新两图仍RAM未安装。环境重连未清锁/重启，唯一原批自然退出。[v2准确图形回执](verification/zetton-crouch-block-session-graphical-v2-review.json)
 
 - 已最小修复低蹲受挡后持续下防重新起架：仅恢复进入本人crouch_guard末保持行，初次入架/松键不改；40例红绿、旧内容拒载/新录接受及既有回归通过。规则指纹新增版本，旧格式6录像不混跑新语义。候选v2八逻辑/十六主游戏headless通过，图形待核；overhead后的独立旧入架路径未动，新素材仍未安装。[恢复修复](verification/crouch-guard-resume-repair.json)、[v2阶段](verification/zetton-crouch-block-session-resume.json)

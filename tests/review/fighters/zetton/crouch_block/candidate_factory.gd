@@ -131,6 +131,8 @@ static func verify_trace(cfg: Dictionary,kind: String,trace: Array) -> Array:
 		if kind in ["low","mid"] and not phases.is_empty() and str(target.state)=="crouch_guard":
 			resumed_hold=true
 			if int(target.frame_sprite)!=int(hold[-1].sprite) or int(target.state_tick)<hold.size()-1:errors.append({"kind":"crouch_guard_resume_replayed_entry"})
+		if kind=="overhead" and not contacts.is_empty() and str(target.state) in ["crouch","crouch_guard"]:
+			if str(target.animation.key)!="crouch_guard" or int(target.frame_sprite)!=int(hold[-1].sprite):errors.append({"kind":"hit_crouch_recovery_pose_not_held"})
 	if kind in ["low","mid"] and not resumed_hold:errors.append({"kind":"missing_resumed_crouch_hold"})
 	if moves.size()!=1 or not moves.has(expected_move):errors.append({"kind":"unexpected_moves","moves":moves.keys()})
 	var expected_contact: String="hit" if kind=="overhead" else "block"

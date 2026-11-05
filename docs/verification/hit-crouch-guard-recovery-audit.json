@@ -1,0 +1,202 @@
+{
+  "schema": "ufeneo.hit-crouch-guard-recovery-audit.v1",
+  "reviewer": "root_delegated_by_user",
+  "status": "core_and_main_candidate_passed_graphical_pending",
+  "actual_trace": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-overhead-original/main-trace.json",
+  "sequence": {
+    "29_to_56": "hit，hit_crouch三个整帧低髋",
+    "57": "crouch state_tick0，现有图为较高弓步",
+    "58_to_60": "crouch_guard首相站高",
+    "61": "crouch_guard末相低蹲保持"
+  },
+  "finding": "并非站姿受击后首次下蹲。目标先前已低蹲，蹲姿受击三相也低；恢复经通用crouch再重新播放guard入架导致抬高。仅改guard帧不能消除tick57高弓步。",
+  "candidate_minimal_fix": "只在hit恢复且height=0、hit_pose=hit_crouch、当前下+GUARD/后方向时直接进入crouch_guard本人末保持行；其余路径不变。未实施。",
+  "behavior_analysis": [
+    "crouch和crouch_guard均guardable/actionable，直接恢复不新增可防或起招tick；退出hit当tick起招处理仍在状态退出之前",
+    "持续下防下一tick的command_state将由crouch变guard，guard专属taunt/guard_counter解析可提前一tick",
+    "crouch先判下防而crouch_guard先判jump，独立跳键/缓存可提前一tick起跳",
+    "状态入态音频时点会改变，不可称纯显示修复",
+    "需要新增独立恢复语义指纹，旧格式6仍可解析但不混用新规则"
+  ],
+  "asset_scope": [
+    "无需为持续下防生成或安装新图，可用现有本人低蹲防御保持",
+    "受击后只下不防或松防返回crouch的较高弓步素材仍是独立范围，不强用guard图替代普通crouch",
+    "新两张低蹲blockstun仍只RAM，与本次hit恢复路径无依赖"
+  ],
+  "not_changed": [
+    "dffc7312低蹲格挡恢复修复保持",
+    "所有正式资源及候选美术未安装",
+    "原逐tick状态/输入/指令/声音入态时点保持；姿态对应hurtboxes变化需新规则指纹"
+  ],
+  "next": "锁释放，overhead双向720/1080原/回放八图形组交验，仅核必要路径，不重复整批。",
+  "rejected_direct_transition": "根明确要求不提前反击/嘲讽/跳跃，故不实施直接hit→guard方案。",
+  "selected_fix": "原hit→crouch→guard的状态与state_tick不变，单次恢复上下文仅将显示key/sprite及hurtboxes映射至本人已有低防保持；原frame其它字段保持。松防/离态/起招/再受击清，声音入态仍走原crouch再guard。",
+  "baseline_source_refs": [
+    {
+      "path": "core/states/hit.gd",
+      "sha256": "77a46e6695342b56a7d43054d5de7916d3cf89dfb8ddafc8e16fffbd712d1d21"
+    },
+    {
+      "path": "core/states/crouch.gd",
+      "sha256": "4a3e42eb2a76dedfe28916de381a07a919cf0a8eb9c40348b0cea73a22b8f92b"
+    },
+    {
+      "path": "core/states/crouch_guard.gd",
+      "sha256": "d141593198d9aac0b673ed886ac16d97747837162a4d71d3ce584f73216eb6ed"
+    },
+    {
+      "path": "core/combat/match_director.gd",
+      "sha256": "3d015be339b31347064bf035d1257cd2387e4cd53296c1f617732c8eda3f27be"
+    },
+    {
+      "path": "assets/fighters/zetton/animations/hit_crouch/head-calibrated.png",
+      "sha256": "5a3f295957d19a2b361569529bc319bfe6d0c9f1e395c1e70965870cdd52c7b7"
+    },
+    {
+      "path": "assets/fighters/zetton/animations/crouch/head-calibrated.png",
+      "sha256": "bbbe7d6f873f158b2608f9edf7881885de25e854b0cc34cf2bd232bc9e5d3260"
+    },
+    {
+      "path": "assets/fighters/zetton/animations/crouch_guard/head-calibrated.png",
+      "sha256": "ae36d80f21c5d2c3bcf13911a96aea0b5c81feab497cc847ed42a80822d0ac2f"
+    }
+  ],
+  "repair": {
+    "source_report": "reports/hit-crouch-guard-resume/repair-summary-v1.json",
+    "sha256": "add84513406fd77bf1260621534a076eb0a5d8748a902d23014c6ea12fbce11d",
+    "commit": "e7ac4ab49d30b749242bedf8ca88eadb5b5661f8",
+    "reports": [
+      {
+        "path": "reports/hit-crouch-guard-resume/red-v2/result.json",
+        "sha256": "1a71f2a8b4aa39ff61578c88ef5f8ea643f8cdfdf5ad1b6da2734fd47d09ca24"
+      },
+      {
+        "path": "reports/hit-crouch-guard-resume/green-v2/result.json",
+        "sha256": "235a23e87b3397e3a3b44649b6fb1f55568fb0b6a5694c105715dffefabd30b9"
+      },
+      {
+        "path": "reports/hit-crouch-guard-resume/independent-static-checks.json",
+        "sha256": "bbe7991fbb91071905fbb2cb2cef4fbf26bd13121f592928d654d3feee32d943"
+      },
+      {
+        "path": "reports/crouch-guard-resume/hit-resume-regression/result.json",
+        "sha256": "0fb4c89db903d5149657c55510c143b9c6c6ccadef25f0139a4718cbf87bc233"
+      },
+      {
+        "path": "reports/hit-crouch-guard-resume/regression/crouch-block.json",
+        "sha256": "2dac9e4f5963ba6677b5a640b40fcb74ef7441fa42281196d6cfda238fd96068"
+      }
+    ],
+    "logs": [
+      {
+        "path": "reports/hit-crouch-guard-resume/green-v1.log",
+        "sha256": "9221c9de5e1e08e3fe5b3ddc62fb3d245a471977b6e9a62d1cb0205b5840156f"
+      },
+      {
+        "path": "reports/hit-crouch-guard-resume/green-v2.log",
+        "sha256": "2622d97ffd35e7ad3c44af35565d81f4a58f992e1bf768a41f43fda95e55d528"
+      },
+      {
+        "path": "reports/hit-crouch-guard-resume/red-v1.log",
+        "sha256": "0646824c1488186a0b632c418ae94721e117e9932a8bbe4796573614b521ccdb"
+      },
+      {
+        "path": "reports/hit-crouch-guard-resume/red-v2.log",
+        "sha256": "59fdb775001271a8601891e17e8f6aec6f7845cf095e5b4cd185ef57423b6471"
+      },
+      {
+        "path": "reports/hit-crouch-guard-resume/regression/block-resume.log",
+        "sha256": "4bb737c80f041f55484f23230483c21775ec9616eeec0b699aa8de5ea87078f6"
+      },
+      {
+        "path": "reports/hit-crouch-guard-resume/regression/crouch-block.log",
+        "sha256": "bca356d016e77d48a5def65bee59fb565ef536988a47c82401980b16f4205f30"
+      },
+      {
+        "path": "reports/hit-crouch-guard-resume/regression/logic-2d.log",
+        "sha256": "23f27dba5277267ed66ba6830fffca21eb41e25c6418c5e5975faeb71d8cb113"
+      },
+      {
+        "path": "reports/hit-crouch-guard-resume/script-uid.log",
+        "sha256": "08ef1468aa58f95fadb0076f2a77a67c4e37f4c3d311fbbfdbd85470dfb76b9a"
+      }
+    ],
+    "source_files": [
+      {
+        "path": "core/combat/match_director.gd",
+        "sha256": "c499b39b30b0759c97c547310ea8962d1bb33b97370e4699f75974d24aa813ec"
+      },
+      {
+        "path": "core/fighters/fighter.gd",
+        "sha256": "61a2c9fdc833672ce75ab1ec1ab045d22bd6e67a7da8e56cb1b5fd4c603bbe13"
+      },
+      {
+        "path": "core/states/crouch.gd",
+        "sha256": "aee24bd8077762d1c9ac42b2f76bf4cb0c5f95ba66e6de550093599f6dd1f89f"
+      },
+      {
+        "path": "core/states/hit.gd",
+        "sha256": "e7aada39e4d9ccde7da741b63bd07e3767f1e81a87be641b23fa96994f39ef83"
+      },
+      {
+        "path": "presentation/side_audio.gd",
+        "sha256": "a17d49742c880331e5f9ae363ead5a9b1fa0c8c0cb1bb27b27b5a9cef27045e2"
+      },
+      {
+        "path": "tests/hit_crouch_guard_resume.gd",
+        "sha256": "4886cc4585d3ce21b51cf5fe7fcdfecb127671c49229d24a1cf5cbea64e38432"
+      },
+      {
+        "path": "tests/hit_crouch_guard_resume.gd.uid",
+        "sha256": "78a38bc480357c5778f71f0847f0abd4378085c3ba39901068480ebc530fee0e"
+      }
+    ],
+    "unchanged_blockstun_source": {
+      "path": "core/states/crouch_blockstun.gd",
+      "sha256": "b5bc2c3dd2b685418b5106cd149c45e67bf23e9fac1ac170f93e40d5d4bd8975"
+    },
+    "formal_green": {
+      "cases": 52,
+      "checks": 24948,
+      "errors": 0,
+      "ticks_non_pose_fields_unchanged": 7800,
+      "unmarked_hashes_unchanged": 6744,
+      "marked_ticks": 1056,
+      "old_content_rejected": 52,
+      "new_independent_replays_accepted": 52
+    },
+    "regression": {
+      "logic_2d": "PASS",
+      "crouch_block_audit_cases": 8,
+      "crouch_block_failures": [],
+      "block_resume_cases": 40,
+      "block_resume_checks": 13896,
+      "block_resume_errors": 0
+    },
+    "not_authoritative": [
+      "red-v1: 默认Godot用户目录不可写崩溃，未模拟；改允许/tmp XDG后恢复",
+      "green-v1: 核心/姿态/回放通过，但旧报告JSON数值类型导致7800条比较伪差；独立Python核无差异，规范化后green-v2全绿"
+    ],
+    "scope": "保留原state/state_tick、输入命令上下文、起招/跳跃及状态入声键时点；仅标记恢复中的sprite/hurtboxes和动画key变化。受击轮廓可能改变后续接触，非纯显示。其余frame字段与pushbox保持。",
+    "art_installed": false,
+    "graphical_review": false,
+    "audio_listened": false,
+    "video_recorded": false,
+    "godot_lock_released": true
+  },
+  "main_candidate": {
+    "contract": "reports/zetton-crouch-block-resume/contract-v3.json",
+    "contract_sha256": "ce36a725b57b4b039a043d57c26384371541717abebd5d1481531201b9a90c0f",
+    "logic_cases": 8,
+    "headless_runs": 16,
+    "ticks_per_run": 180,
+    "independent_replay_pairs": 8,
+    "results": "reports/zetton-crouch-block-resume/headless-v3/runner-result.json",
+    "new_capture_keys": [
+      "post-hit-crouch-first",
+      "post-hit-guard-age-1",
+      "post-hit-guard-age-2",
+      "post-hit-guard-age-3"
+    ]
+  }
+}

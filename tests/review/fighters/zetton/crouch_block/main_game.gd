@@ -125,6 +125,9 @@ func _physics_process(delta: float) -> void:
 		if int(own.state_tick)==int(own.duration)-1:keys.append("overhead-hit-last")
 	elif review_driver.saw_contact and str(own.state)==("guard" if case_kind=="release_down" else "crouch_guard"):
 		keys.append("returned-guard")
+	if case_kind=="overhead" and review_driver.saw_contact:
+		if str(own.state)=="crouch" and int(own.state_tick)==0:keys.append("post-hit-crouch-first")
+		if str(own.state)=="crouch_guard" and int(own.state_tick) in [1,2,3]:keys.append("post-hit-guard-age-%d"%int(own.state_tick))
 	var fresh: Array=[]
 	for key in keys:
 		if not still_keys.has(key):fresh.append(key)

@@ -145,7 +145,7 @@ def check(contract):
 
 def move_for(kind):return 'spin_heavy' if kind=='overhead' else 'light1' if kind=='mid' else 'crouch_light'
 def capture_keys(kind):
-    return {'before-input-crouch-guard','returned-guard'}|({'overhead-hit-first','overhead-hit-last'} if kind=='overhead' else {f'stun-phase-{phase}-{edge}' for phase in range(2) for edge in ['first','last']})
+    return {'before-input-crouch-guard','returned-guard'}|({'overhead-hit-first','overhead-hit-last','post-hit-crouch-first','post-hit-guard-age-1','post-hit-guard-age-2','post-hit-guard-age-3'} if kind=='overhead' else {f'stun-phase-{phase}-{edge}' for phase in range(2) for edge in ['first','last']})
 
 def check_trace(data,cfg,graphical=False,size=None):
     assert not data['failures'],data['failures'];assert len(data['trace'])==LENGTH
@@ -179,6 +179,8 @@ def check_trace(data,cfg,graphical=False,size=None):
             resumed_hold=True
             assert target['frame_sprite']==hold[-1]['sprite'] and target['state_tick']>=len(hold)-1,'低蹲受挡恢复不得重播站高起架'
         if resumed_hold:assert target['state']=='crouch_guard'
+        if kind=='overhead' and contacts and target['state'] in ['crouch','crouch_guard']:
+            assert target['animation']['key']=='crouch_guard' and target['frame_sprite']==hold[-1]['sprite'],'蹲姿受击恢复上下文必须同步低防保持'
         assert row['training_overlay_visible'] is True
     if kind in ['low','mid']:assert resumed_hold
     assert moves=={move_for(kind)} and len(contacts)==1
