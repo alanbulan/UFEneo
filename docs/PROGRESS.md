@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 银河S2：已用本人12张完整原源补齐待机／入蹲／保持／起身候选，真实Down两轮与240tick独立回放通过；8组352原生PNG技术全过，125张原输入选样覆盖全部12相，静帧可带观察接受。护拳回环、入蹲相间高度近似与起身头长细差保留，不称实速顺滑；装甲仍关闭。[逻辑与配准](verification/galaxion-crouch-resume.json)、[图形回执](verification/galaxion-crouch-graphical-review.json)
+
 - 镜头/HUD：已按实际容器布局共同取景，保护双方完整Alpha轮廓（含尾巴、整帧武器）及仍持握独立实体，不单独移动人物、不改判定。正式训练/普通对战/二级持岩12组176PNG、原月亮遮脚回归8组152PNG完成双向720/1080核验。原1080左向跳跃顶点的杰顿脚底与底HUD已分离。详见[代码回执](verification/hud-safe-framing-code-review.json)与[主游戏最终回执](verification/hud-framing-main-review.json)。历史三级立绘遮物、候选接线遗漏和门禁失败均保留；不以数值边界代替实际画面。
 - 月亮S2：轻击三连、heavy、tackle、sweep、dash_light、dash_heavy、垂直跳、前跳已建立现有整帧候选与真实输入/回放路径，但不是完整装甲完成。各动作状态看[接续索引](HANDOFF.md#2026-11-05-开发接续索引)，尤其扫腿/飞踢/前跳的视觉缺帧仍未通过。
 - 月亮后撤backstep五相已复用现存新03/04修复源，真实双后每次80px、两次触发与回放完成；8组192PNG技术通过，但02抬膝到03宽站仍缺落脚中间整帧，视觉未接受，不算动作完成。[回执](verification/luna-backstep-graphical-review.json)
@@ -14,7 +16,7 @@
 
 本轮实际引擎为Godot4.6.3，项目要求的4.7未验。镜头单元746项、相关pixel_ui/ui_facing/phase3_air及本批原输入/独立回放通过；不等于全项目全量或完整美术/声音通过。图形使用真实原生窗口与冻结tick截图，无录屏、无音频及真人硬件输入验收。月亮land→idle收脚、保守缩放、站/低防手位、三级必杀立绘遮普通world等限制仍在。
 
-2026-11-05 03:38 UTC已核验远端checkpoint/full-20261105-0020到2e2d38537836a281cfbe54d37faec5061dcb456b；远端main仍为99a084d8a03647d7c84546ba36cf0a4617f9c553。最新开发在checkpoint分支，不可只取main冒称最新。此前新增LFS已逐对象远端下载校验SHA/大小通过，GitHub已认证，不沿用早期限流/待登录结论。本次最终回执与文档另随后续检查点保存，以实际远端核验为准。
+2026-11-05 04:23 UTC已核验远端checkpoint/full-20261105-0020到6158fa34a653b0b1d5d60b97f1454194bf2f60f0；远端main仍为99a084d8a03647d7c84546ba36cf0a4617f9c553。最新开发在checkpoint分支，不可只取main冒称最新。此前新增LFS已逐对象远端下载校验SHA/大小通过，GitHub已认证，不沿用早期限流/待登录结论。本次最终回执与文档另随后续检查点保存，以实际远端核验为准。
 
 ## 2026-11-03 历史清理交接记录
 

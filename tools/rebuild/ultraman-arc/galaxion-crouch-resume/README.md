@@ -26,13 +26,13 @@ python tools/rebuild/ultraman-arc/galaxion-crouch-resume/test_check.py
 
 ## 状态边界
 
-Godot 4.6.3 headless主游戏双向原/独立回放四组各240tick通过，逐tick哈希、事件、弹体一致，检查器带真实trace 21项全过。合同为本机 `reports/galaxion-crouch-resume/contract-v1.json`，真实证据在 `logic-v1/`，检查汇总为 `verification-summary.json`。曾在第四组落盘前过早启动检查器，其真实trace项因只有3文件失败；等待runner完成后原样重跑全过，没有修改代码或失败记录。合成图形fixture仍只验证拒绝逻辑，不是图形证据。实际图形、截图目视和严格尺度结论由根跑完后记录；无录屏。
+Godot 4.6.3 headless主游戏双向原/独立回放四组各240tick通过，逐tick哈希、事件、弹体一致，检查器带真实trace 21项全过。合同为本机 `reports/galaxion-crouch-resume/contract-v1.json`，真实证据在 `logic-v1/`，检查汇总为 `verification-summary.json`。曾在第四组落盘前过早启动检查器，其真实trace项因只有3文件失败；等待runner完成后原样重跑全过，没有修改代码或失败记录。合成图形fixture仍只验证拒绝逻辑，不是图形证据。后续图形结果见下节；严格模型全部尺寸门、实速和音频不在本批验收范围，无录屏。
 
 如已有真实运行目录，设置 `GALAXION_TRACE_DIR` 后运行 `test_check.py` 可验证其各组trace。整帧连续性、美术与尺度必须根目视判断，不以脚本数量代替。
 
 ## 完整运行依赖冻结补验
 
-contract-v2额外冻结整个addons/controller_icons和assets/audio（排除缓存），覆盖autoload/preload及Dummy仍加载的音频。logic-v2四组真实headless各240tick与21项检查器全过，零警告/错误；运行后Godot锁已释放。v1历史逻辑通过保留，但不作为完整运行依赖冻结的最终合同。最终合同SHA256：`fb6649a891dae65ef7e74af31f7a1119a08259b30a0b10e4b52d49bc0b1a602c`。本机汇总 `reports/galaxion-crouch-resume/logic-v2/verification-summary.json`。仍未启动图形，不宣称图形/美术/声音验收。
+contract-v2额外冻结整个addons/controller_icons和assets/audio（排除缓存），覆盖autoload/preload及Dummy仍加载的音频。logic-v2四组真实headless各240tick与21项检查器全过，零警告/错误；运行后Godot锁已释放。v1历史逻辑通过保留，但不作为完整运行依赖冻结的最终合同。最终合同SHA256：`fb6649a891dae65ef7e74af31f7a1119a08259b30a0b10e4b52d49bc0b1a602c`。本机汇总 `reports/galaxion-crouch-resume/logic-v2/verification-summary.json`。随后同v2完成双向720/1080原输入与独立回放8组352原生PNG，全部技术通过。实际目视125张原输入选样覆盖12相与首轮边界/idle回环，静帧带观察接受；idle护拳变化、start相间高度近似、rise头长手位细差保留。每组44张选定相位不是240tick全帧目视，无录屏、实速或音频验收。最终回执为 `docs/verification/galaxion-crouch-graphical-review.json`，装甲仍关闭。
 
 ## 整帧配准复现
 
