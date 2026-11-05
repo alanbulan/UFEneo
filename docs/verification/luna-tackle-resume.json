@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "reviewer": "root_delegated_by_user",
-  "status": "共同尺度八相候选注册、六组逻辑与正式main独立输入回放通过；真实图形待验收，装甲未开放。",
+  "status": "共同尺度八相候选注册、六组逻辑、正式main独立输入回放及十二组真实720/1080图形技术核查通过；既有站防表现缺口保留，装甲未开放。",
   "source_selection": {
     "path": "docs/verification/luna-s2-next-source-review.json",
     "sha256": "28780b991fdcf62538f8543f0288742c24c88c11cae29b46701a0394faf998d8"
@@ -154,7 +154,9 @@
     "every_tick_input_and_hash_equal": true,
     "capture_gate_checks_each": 10,
     "headless_captured": false,
-    "actual_graphical_review": false
+    "actual_graphical_review": true,
+    "graphical_cases": 12,
+    "original_png_count": 120
   },
   "correction_history": {
     "contract01": {
@@ -173,8 +175,12 @@
   },
   "limits": [
     "tackle实际接触部位为护面前臂/腕甲，非裸肩；不扩大攻击框或加无敌。",
-    "严格头身比例、近脚接地与动作接续仍需真实720/1080双向图形验收。",
+    "720/1080双向真实画面已核，前倾护面前顶和收势可辨、无训练板遮挡；严格头身尺寸与受方站防姿态仍未全通过。",
     "Godot4.6.3逻辑结果，不冒称目标4.7、声音或真人硬件通过；无录屏。",
     "launcher/spin_heavy/crush仍有独立动作素材缺口，完整S2和S2–S7装甲均未完成；正式content/assets与开放标志未改。"
-  ]
+  ],
+  "graphical_review": {
+    "path": "docs/verification/luna-tackle-graphical-review.json",
+    "sha256": "0f194f390b646fee9cac339be539ac998a125da9c891aedffa105b6a0e9c59e0"
+  }
 }

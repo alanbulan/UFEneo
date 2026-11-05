@@ -25,3 +25,7 @@ production-plan中heavy之后为launcher、spin_heavy、crush、tackle。前三�
 正式main入口tests/review/fighters/ultraman-arc/luna_tackle/main_entry.gd，传--contract和--out，可选--left、--kind=hit|block|whiff、--tape。真实输入仅tick20相对前+CRUSH（O），其余中立；对手格挡使用真实GUARD输入。无头不生成窗口截图；图形须传--window-size=1280x720或1920x1080，经窗口稳定门与逐相冻结截图门，保留HUD、隐藏候选训练说明板。
 
 所有Godot运行经python tools/godot_lock.py串行，隔离用户数据。逻辑与回放通过不等于美术、本人声音、真人硬件或4.7通过；这不是完整S2，更不是完整装甲。无录屏。
+
+## 本轮实际结果
+
+合同02九项Python检查、六组逻辑和正式main独立120tick输入回放通过。真实云桌面720/1080双向命中/格挡/落空十二组、120张原生PNG完成尺寸/SHA/冻结tick/相位核对，各组八相独立；实际观察前倾护面前顶和收势可辨，训练板不遮人物。命中一次100伤害，格挡一次0伤害，落空无接触。杰顿既有站防举臂与胸腹真接点不匹配仍保留，未移火花或改判定伪修。详见docs/verification/luna-tackle-graphical-review.json，不宣称完整装甲或最终美术全通过。
