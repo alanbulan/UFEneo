@@ -1,0 +1,5273 @@
+{
+  "schema": "ufeneo.luna.crush-session-graphical-review.v1",
+  "date_utc": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "本轮完成": [
+    "24组主游戏图形原输入/独立回放全部自然exit0，384张原生PNG；本批没有失败或重跑。",
+    "双向720/1080的hit、持续GUARD及whiff全部覆盖；12对180tick五字段一致，父侧另读全部trace/PNG独立复核。",
+    "实际查看12组original全部16捕获点联系表及关键原图；回放384总图均做技术核验，但不冒称每张回放都作独立美术审阅。"
+  ],
+  "怎么看": {
+    "graphical_summary": {
+      "path": "reports/luna-crush-resume/gui-v1-20261105-technical-summary.json",
+      "sha256": "f1b49bd3444aa83e663b323521d87f1b5a272aba521402e30deb860619efcb8a"
+    },
+    "parent_audit": {
+      "path": "reports/luna-crush-resume/parent-gui-audit.json",
+      "sha256": "d51a3bdb5e24663af05b04d423b156def0e5105d9fc344b2142dba9e4ef1f75c"
+    },
+    "contract": {
+      "path": "reports/luna-crush-resume/contract-v1.json",
+      "sha256": "c05771d42ae49a1910c19076c48957b7239d3e52d54f4beef2fa99eee1a8d347"
+    },
+    "runner": {
+      "path": "reports/luna-crush-resume/graphical-v1/runner-result.json",
+      "sha256": "66901464603345f0fc0e44cec8761a98189d1109ac9bb45e2b3bbe327a8acb76"
+    },
+    "registered_manifest": {
+      "path": "art/fighters/ultraman-arc__luna/stage2/crush-registered-20261105-v1/manifest.json",
+      "sha256": "dcf5999ca1119607d027c97cf94a3bf124a51825cfe7483fedf3c6347bb708d2"
+    },
+    "runtime_receipt": "docs/verification/luna-crush-session-resume.json",
+    "reports_note": "reports为本机临时证据，非仓库附件；逐图SHA等保存于本回执便于核源。"
+  },
+  "技术核验": [
+    "实际窗口达到原生尺寸并至少8次稳定观察、500ms后才从tick0开始；没有缩图伪装原生截图。",
+    "每张PNG尺寸/SHA、请求/捕获tick和sprite一致，捕获期间模拟冻结，双方动画绑定一致。",
+    "正常训练HUD显示；final_safe_rect与HUD安全区相等，双方完整身体落在安全区内。",
+    "所有日志仅允许已确认的unsupported VSync环境警告，无其它诊断错误；Dummy音频不算听审。",
+    "12对原输入/独立回放逐tick核state_hash、events、projectiles、original_inputs、pair一致。"
+  ],
+  "静态观察": {
+    "coverage": "全部十二组original逐相联系表及选定原生关键图实际查看；回放所有图做尺寸/SHA/状态技术核验，未逐张独立视觉判断。",
+    "identity": "月亮本人蓝甲、白尖头与红银双腿清楚；双臂举顶、胸前下降、低位接触、低随势、回到护拳和idle七槽均可辨。所审正常图无缺肢或HUD裁切，不据此自动接受严格体量。",
+    "entry": {
+      "keys": [
+        "crush-tick-02-phase-00",
+        "crush-tick-03-phase-01"
+      ],
+      "ticks": [
+        22,
+        23
+      ],
+      "finding": "站姿护拳转双臂举过头顶，站幅/上身角度发生变化，完整双臂仍可辨。共同取景随最高举臂高度变化，不能把整幅缩放全判为素材体量突变。无实速连续观察，不签起手顺滑。"
+    },
+    "descent_contact": {
+      "keys": [
+        "crush-tick-07-phase-01",
+        "crush-tick-08-phase-02",
+        "crush-tick-11-phase-02",
+        "crush-tick-12-phase-03"
+      ],
+      "ticks": [
+        27,
+        28,
+        31,
+        32
+      ],
+      "finding": "举顶转到胸前双拳、再下降到腹前低位的方向可辨。命中首次白闪遮住受方与局部接点，不能据被遮区声称完全无穿插；后续低位双拳与受方身体距离和姿态可见。"
+    },
+    "hold": {
+      "phase": 3,
+      "move_ticks": [
+        12,
+        19
+      ],
+      "finding": "trace覆盖八个move_tick；首尾静帧显示同一低接触姿态。hit/guard的hitstop使全局时间更长；截图不证明八tick实速停顿观感。"
+    },
+    "follow_guard": {
+      "keys": [
+        "crush-tick-23-phase-04",
+        "crush-tick-24-phase-05"
+      ],
+      "global_ticks_by_kind": {
+        "whiff": [
+          43,
+          44
+        ],
+        "hit": [
+          50,
+          51
+        ],
+        "block": [
+          50,
+          51
+        ]
+      },
+      "finding": "低随势双拳抬回胸前护拳，whiff关键原图双脚与头位接近、手臂抬起可辨。未见缺肢；不能仅凭静帧或复用素材判实速接续通过。"
+    },
+    "guard_idle": {
+      "keys": [
+        "crush-tick-28-phase-05",
+        "crush-tick-29-phase-06"
+      ],
+      "global_ticks_by_kind": {
+        "whiff": [
+          48,
+          49
+        ],
+        "hit": [
+          55,
+          56
+        ],
+        "block": [
+          55,
+          56
+        ]
+      },
+      "finding": "向前护拳转本人常规护脸站姿，胸头抬回、两脚站幅收回和肩腕转面可见，伴背景/对手共同取景变化。固定世界位置/anchor不能证明无滑步；无实速，不强行认定必须补新相，也不签已连贯。"
+    },
+    "unblockable": "目录枚举block实际为受方持续GUARD输入：正常图显示白闪受击与掉血，不是蓝防火花；trace唯一hit、伤害130，与普通hit相同。whiff零伤零接触。",
+    "framing": "训练板与HUD保持可见，双方完整轮廓包括最高举臂均在实际安全区内；举臂/俯身导致共同镜头微调，所见身体屏幕位移混合了构图和姿态，request无直接camera/scale值，不把屏幕鞋点等同素材滑步。",
+    "remaining_limits": [
+      "未录像、未验原速动作连续性、未验音频或真人键盘输入。",
+      "首接触白闪遮挡，局部穿插与精确接点的视觉接受受限。",
+      "起手举顶、下降接触、护拳回idle的姿态跨度与支撑/尺度变化保留，不以逻辑和PNG数量接受整招。",
+      "仅RAM候选，未安装、未开放装甲，strict_size与美术接受仍为false。"
+    ]
+  },
+  "父侧抽看": "另看720右whiff move23/24/29原图：低随势到高护拳头脚接近、双拳抬回；idle时立身、站幅和共同背景取景均改变，不把屏幕鞋位差全判素材滑步。",
+  "groups": [
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 2096,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "84c0f72d3804dcd08804fbd7a49debfee7a21ec4d8cff25a204116d073a06505",
+      "png_audit_sha256": "deb2fd0de9376150889cf0f45d5ba2d1274a494b4757ee7f6d79c3f14d89866f"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 529,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "4eee44746aaa07378fc5608cdc86c8d7b3d4bcee6ad8159acc59131498dcbbf6",
+      "png_audit_sha256": "e3c1d3132022a88ec19e25a05bae847c5a8bda38135753f0eda420d4f0cdf8d0"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 18,
+      "window_elapsed_ms": 503,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "bd3ffd426502614518e29b9de3e862a252420af3d6d2c70c0758d0e49d2df7a6",
+      "png_audit_sha256": "30789e45032ceeeea886114f9de8b1ab4850b750aaf24f2251792722a0a13069"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 9,
+      "window_elapsed_ms": 533,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "324c34b52370b6a0a0342751e438de771b02616d6f9089d990f177842e852592",
+      "png_audit_sha256": "e71db15efdb680a7d05c7133a93fffd9460cb79fd2640125c32411bfafad2ce2"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 20,
+      "window_elapsed_ms": 534,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "fa103c2f06a24ad7bb23c6a9cd94d84a65e7581f84fb28e695ed904bfba4f593",
+      "png_audit_sha256": "ddd2e494f532027f704fb901088fbdc1667b3d9c365bcba7743b4aaa489297c2"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 22,
+      "window_elapsed_ms": 501,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "12b07d009a32c23f0358442b8f4b858387eaa4f7fc816dcb164c84f527160c0e",
+      "png_audit_sha256": "dc6cc9418db092395ca77d818ac968977554e6ad46361d5db868eca7f2b94e99"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 12,
+      "window_elapsed_ms": 531,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "cab9b5632238e35c0b2ef93ce38946d06232ecdde0f79b4dec2d956838cf7d3a",
+      "png_audit_sha256": "b4b3760753876cad11d83126e69d88501d2a81efc77fddf767086ebaf4c28b01"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 13,
+      "window_elapsed_ms": 514,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "f785d7442dad028244dc1ab1cbd40761833b4c8c20101627a50b07cfd7fd4c52",
+      "png_audit_sha256": "137652874f0ebe292bdc8e9375e028f3bc56c129dac7b93567fba049fe229b2f"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 17,
+      "window_elapsed_ms": 511,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "e63fe57104915444c550195b25800771ab2c6d02cf93362a0311861842dbc66d",
+      "png_audit_sha256": "fd5a4ae8cbfbee643196c96e6eca94675ffcdec4defb09558edb355c18ce5344"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 24,
+      "window_elapsed_ms": 508,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "441fcb3cd85e00c5b7845f7a5a8d31f88e005b9be1134296e81019c63701a557",
+      "png_audit_sha256": "eff2afbb4add23f592372026dc84117aa507e3ee442ccc542383f038a95bb111"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 22,
+      "window_elapsed_ms": 510,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "0bd9c5fd8b9aabc8a80cc4198d2db88c4293d8f734e0955be70ad5023aaa0441",
+      "png_audit_sha256": "c0ca619a659b27e9c714a29bccd94db8a062c73f8fe06d8ae95e51d3a6a2fd91"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 23,
+      "window_elapsed_ms": 502,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "7cd92f42f6258e48d4c60e2c09ee21a9545eedab1871421c757eea5746b2c4f6",
+      "png_audit_sha256": "10c028a965f22568d435c733f469b3c7737a333081e014e07924244dc4b6fe30"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 9,
+      "window_elapsed_ms": 545,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "8bd18b0b89b469567889fb206bece84d836f4cd3e21603258c07286d0abc2dcb",
+      "png_audit_sha256": "3d76ad46b2cf8f859398908f26e8e19ca367883b0045c1f7153c01e27ceb3045"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 15,
+      "window_elapsed_ms": 521,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "5ed120cca7c38753795343f33539b5d7b01e983fc67ebfda21b48fe816e3e421",
+      "png_audit_sha256": "2f014ec348c2863c2b4399873f85165e9a68621b159c4ca275cfdba0fbbeb82e"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 10,
+      "window_elapsed_ms": 518,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "8e3a1a5d9a3030fbcef266f860fd51af103ea5248b2e8e7b3b8f4497986383e1",
+      "png_audit_sha256": "2080f074a9d9ab8b7bfcce6e88415d7f1adab47189668eb8e6fec451572e915b"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 15,
+      "window_elapsed_ms": 506,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "e49326648aa3c09c968bfdfd601850eaefefcb67d05fe50d41df340ee7b871b0",
+      "png_audit_sha256": "7ae084470563341a2c9d7bca8693f38d23a8c04c76e9999870f91062e169add1"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 10,
+      "window_elapsed_ms": 541,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "496ad710f9e10c98517a3b165d7ce3287c55bd25f74528fb18b264e7b9fdb5f2",
+      "png_audit_sha256": "be48e183cd9f65dcb10d4ba4978b52aeeab2a4fd3adbb813876d161dbfc738fb"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 520,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "d37cb5577b071eb61aa4b5c5a81e8de267b427aa8c36051e0ac81fd32689ae03",
+      "png_audit_sha256": "97f2f8015884d7aead528c50a26430e616a66390b9059078942d5931820cf665"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 15,
+      "window_elapsed_ms": 518,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "3cbbfd919969294453fcefec0f0190c464a79a206561e1120a03d58f2b520f9d",
+      "png_audit_sha256": "30c34408b65c107dc33539d181f30f57556d764b567db5ff011574ff287e46ab"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 13,
+      "window_elapsed_ms": 513,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "86b23771cfb7eccb605490500000ecc5da2438ca87cfb661bbab39e5b36601e4",
+      "png_audit_sha256": "0ce165d6044149001ee52729b33c25a30a5599c7a7cd3479b3da42a3e1692ce9"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 17,
+      "window_elapsed_ms": 513,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "9716acf129de51d6a21a38bb39b45a784fbd0476b1e3e20c42b90ad199b4b1bd",
+      "png_audit_sha256": "226bb0f90c4070a30288e086f7d80a339ca87a90a2d4387da2d14db686464e39"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 15,
+      "window_elapsed_ms": 507,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "0190348c3e1b6f17f2e63f1cd1f69902d3456cd0345302d67aef0aeeece5d07b",
+      "png_audit_sha256": "33f2e18d5971328fafdda0795ebd3a0e079c92b7183297606cc928da6d02de59"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 13,
+      "window_elapsed_ms": 520,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "aee1e6cbf4dd0752a0305064e1a34ecccbe16309987b841beda8798018abaaba",
+      "png_audit_sha256": "e84c56c080f695528d15be0d3270e7364b9bcb6bed8cfa67c806bbc77401f2f2"
+    },
+    {
+      "folder": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 16,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 511,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "727f4ee17c8cf48c2fd1d96e6e8f015d519d172b55d9713880d459b5ec735575",
+      "png_audit_sha256": "153cfdb18e26e2e286ee936c2a6a9437aa8c887e93efb06989257823e415b0c0"
+    }
+  ],
+  "replay_pairs": [
+    {
+      "original": "1280x720-right-hit-original",
+      "replay": "1280x720-right-hit-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1280x720-right-block-original",
+      "replay": "1280x720-right-block-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1280x720-right-whiff-original",
+      "replay": "1280x720-right-whiff-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1280x720-left-hit-original",
+      "replay": "1280x720-left-hit-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1280x720-left-block-original",
+      "replay": "1280x720-left-block-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1280x720-left-whiff-original",
+      "replay": "1280x720-left-whiff-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-right-hit-original",
+      "replay": "1920x1080-right-hit-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-right-block-original",
+      "replay": "1920x1080-right-block-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-right-whiff-original",
+      "replay": "1920x1080-right-whiff-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-left-hit-original",
+      "replay": "1920x1080-left-hit-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-left-block-original",
+      "replay": "1920x1080-left-block-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-left-whiff-original",
+      "replay": "1920x1080-left-whiff-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "52eae476b455c23c422b739a53b6dbb18332c3702ef02dfc7fee9a8b48b17b52",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ef828325a836f0956263ec4e1510b1156d7330486ed65b7f2414fb387dd871b5",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "9a718fccd7bc5c4168a95137ca4bd07b7686a2b963add806d29f0a458be6254b",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e21215fea967ccd943b81a9633a483fa5d9122e34067c2735cbcb094733ec7a9",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "825693220cafd6ef240461697504342dd25d023e51f22c584743b52abae6ae1a",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "409e91c76bccf33514a23e02845a2bb60d3ceb8bf8ddda1c476acb42c639076f",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "61424a6c4fd87be79c2721ece043f3af3413515856014381cd00de16277d8fee",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1d44a0703f09353bd02871de605d503f40149a8fb291c816a99f0d585006aa2a",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "9be56d0c578d86367b427c25d648914bd9239195e7c3628dabfaef8adb323127",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7dc67751782f8f66027b368cc30bc89ce4d85076aa862a9a4e6041721f8630ce",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2bb63ceb4b2e2dfac5d112dd81d9c28b74d5c8565c4c1088e5c9ea2cb2e6681e",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "36681465a40d2f0b5531cf964c8ad1dc0e38d778a77198379f949266d44e8019",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4d131270bc72f464c0cf8b575fe8a15a2f3f65be96f253a094e774ab6976b77b",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "92328e6cc082a8924fcf60f37a09a9374dfc30f02b24f8161d610c5a49a066ad",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7d85ce396056a77d8902e272d92e4449f9f648d06c84c1df06a09f70b064f098",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-original/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a0122331e23cce542a4daeccab033acf793919c5067413c1e41a68b6d7f071cc",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "52eae476b455c23c422b739a53b6dbb18332c3702ef02dfc7fee9a8b48b17b52",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ef828325a836f0956263ec4e1510b1156d7330486ed65b7f2414fb387dd871b5",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "9a718fccd7bc5c4168a95137ca4bd07b7686a2b963add806d29f0a458be6254b",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e21215fea967ccd943b81a9633a483fa5d9122e34067c2735cbcb094733ec7a9",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "825693220cafd6ef240461697504342dd25d023e51f22c584743b52abae6ae1a",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "409e91c76bccf33514a23e02845a2bb60d3ceb8bf8ddda1c476acb42c639076f",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "61424a6c4fd87be79c2721ece043f3af3413515856014381cd00de16277d8fee",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1d44a0703f09353bd02871de605d503f40149a8fb291c816a99f0d585006aa2a",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "9be56d0c578d86367b427c25d648914bd9239195e7c3628dabfaef8adb323127",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7dc67751782f8f66027b368cc30bc89ce4d85076aa862a9a4e6041721f8630ce",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2bb63ceb4b2e2dfac5d112dd81d9c28b74d5c8565c4c1088e5c9ea2cb2e6681e",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "36681465a40d2f0b5531cf964c8ad1dc0e38d778a77198379f949266d44e8019",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4d131270bc72f464c0cf8b575fe8a15a2f3f65be96f253a094e774ab6976b77b",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "92328e6cc082a8924fcf60f37a09a9374dfc30f02b24f8161d610c5a49a066ad",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7d85ce396056a77d8902e272d92e4449f9f648d06c84c1df06a09f70b064f098",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-hit-replay/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a0122331e23cce542a4daeccab033acf793919c5067413c1e41a68b6d7f071cc",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "01f17a0e06b7cf4a93a1243e3614efdf4d39fca5c36c3f29543c6718a5d92d40",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c50bb51054b3416df3206723537c2f0245776e0e566e4f22a0fd89af6a8f2bc0",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "156e562f9d1f9e98b4fcfd7cd28d0fc0431f858993e1124aec71fdee96c823e5",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "39849019a2e2f8be062c0539f56cc4e126e82ab6062118f3cb2d5bf057bdf9e7",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "90c540dd60f6d6dd65dbdf6a845096d68662470b6fa5197b19228a20b4028cf2",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1265c905ed8905f9c904f1039859b937762fe32afd4702d243254defc3ff5ab3",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "35ea9a339dde6fc280c8f1a695cf6e3df9123cf845cf94c156e6af6b9cd72f2d",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6cdcc121cf129cae0fc42b13faea77b9b74d0df7c4fcfcc094200930a464a660",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1b6890d1b3dd40fb6c47954b971b1e497507b7225951ed8577a56451eb1a039a",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "0e5acaecce425ee17ac5873820a7dc506cf187ddc07017998b8702566ffaff11",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "06fdebe036441f95bb6624334382b6f4cd6d3940d5932de9d74f81650c3bcc6f",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "110c2e0ce7a587d3c0524428dc7a5e4e2e349c1fd0187f873b405804c481a040",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "598b549bb8d88f26bcac30bfefdb38749adc47fd2b6940113f8d9b7b8efd2c60",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2fd067fa6aed823309bbad88634b577c029db4d7867c7f5cffcf218d7dc517ff",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ff382fb208bbb711826cc94714467bfb45e0c23d7e4d5ec8812fe338c43917e8",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-original/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c51c410d58ff1d85b837751003eb83fdc549d1e1a05744f397872a488f6f5874",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "01f17a0e06b7cf4a93a1243e3614efdf4d39fca5c36c3f29543c6718a5d92d40",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c50bb51054b3416df3206723537c2f0245776e0e566e4f22a0fd89af6a8f2bc0",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "156e562f9d1f9e98b4fcfd7cd28d0fc0431f858993e1124aec71fdee96c823e5",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "39849019a2e2f8be062c0539f56cc4e126e82ab6062118f3cb2d5bf057bdf9e7",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "90c540dd60f6d6dd65dbdf6a845096d68662470b6fa5197b19228a20b4028cf2",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1265c905ed8905f9c904f1039859b937762fe32afd4702d243254defc3ff5ab3",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "35ea9a339dde6fc280c8f1a695cf6e3df9123cf845cf94c156e6af6b9cd72f2d",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6cdcc121cf129cae0fc42b13faea77b9b74d0df7c4fcfcc094200930a464a660",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1b6890d1b3dd40fb6c47954b971b1e497507b7225951ed8577a56451eb1a039a",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "0e5acaecce425ee17ac5873820a7dc506cf187ddc07017998b8702566ffaff11",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "06fdebe036441f95bb6624334382b6f4cd6d3940d5932de9d74f81650c3bcc6f",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "110c2e0ce7a587d3c0524428dc7a5e4e2e349c1fd0187f873b405804c481a040",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "598b549bb8d88f26bcac30bfefdb38749adc47fd2b6940113f8d9b7b8efd2c60",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2fd067fa6aed823309bbad88634b577c029db4d7867c7f5cffcf218d7dc517ff",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ff382fb208bbb711826cc94714467bfb45e0c23d7e4d5ec8812fe338c43917e8",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-block-replay/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c51c410d58ff1d85b837751003eb83fdc549d1e1a05744f397872a488f6f5874",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "15f46292f3da5eb95098a0fa97287bc80740938f3e110c6dc2ba558209089574",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "fb1864c30d46c16feca6fd427890230154505f5b2433fb802ebb354487d7251b",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4070809e6aeaa79e10130f1415f3517e00f9605acd81cb8f1a85b3ed071839e1",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "3333414c06daf3e33b1a733b0339d09c184d61a88cd02f38e3af53ce40700fb5",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2bc4ee2d03201143c46aa3a9d6950d91cc675438d6918890e8085b73a280dd08",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "34f578f08d36249830d1af90f45cefb97352e3b57ee4c7b7ed0ae9a3fe2fbf12",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c25c166ba8dd48db99ea9703787d17941d05b6e4c28829b6b39bcf6ea0e3c4c6",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "68f36d5577bc28dcf3bb00cf001d4f4879ec68370b79bfaf2a464f447a999e77",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2f87b0adcfaec06a3196901c98c1897262b6afef73da1d9f181c9b53822aa025",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5e81cd6df45adb090c8f09906dbe0dfa14ebd43e57a4056b155dcfd62b27009f",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "15b3f72982084d8b371f7408424318464f4a3c5769ca8a3cef84d060a0971182",
+      "captured_tick": 43,
+      "movie_frame": 42
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ac2932d6cc8a0dff832659ca73586417a72be1b3b16a48d5ed6c98bc386d422c",
+      "captured_tick": 44,
+      "movie_frame": 43
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c0f69d92269ebd2f1a8000bf1cadcfc1f2d94982ce07626617badf6173c9494a",
+      "captured_tick": 48,
+      "movie_frame": 47
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "43d5b61d9d5679c6eb6b6c407ab54a6980291b7ce4357fea3e70fc9388cbcec8",
+      "captured_tick": 49,
+      "movie_frame": 48
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ea6509198011fefb6c87649a40c0074b23eb38f32cb948d464dc73b8e081f621",
+      "captured_tick": 54,
+      "movie_frame": 53
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-original/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7a0a7055837f2d5a6ac6001ae7906e035437f159523bc3d800b2f83fa6c77ca9",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "15f46292f3da5eb95098a0fa97287bc80740938f3e110c6dc2ba558209089574",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "fb1864c30d46c16feca6fd427890230154505f5b2433fb802ebb354487d7251b",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4070809e6aeaa79e10130f1415f3517e00f9605acd81cb8f1a85b3ed071839e1",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "3333414c06daf3e33b1a733b0339d09c184d61a88cd02f38e3af53ce40700fb5",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2bc4ee2d03201143c46aa3a9d6950d91cc675438d6918890e8085b73a280dd08",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "34f578f08d36249830d1af90f45cefb97352e3b57ee4c7b7ed0ae9a3fe2fbf12",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c25c166ba8dd48db99ea9703787d17941d05b6e4c28829b6b39bcf6ea0e3c4c6",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "68f36d5577bc28dcf3bb00cf001d4f4879ec68370b79bfaf2a464f447a999e77",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2f87b0adcfaec06a3196901c98c1897262b6afef73da1d9f181c9b53822aa025",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5e81cd6df45adb090c8f09906dbe0dfa14ebd43e57a4056b155dcfd62b27009f",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "15b3f72982084d8b371f7408424318464f4a3c5769ca8a3cef84d060a0971182",
+      "captured_tick": 43,
+      "movie_frame": 42
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ac2932d6cc8a0dff832659ca73586417a72be1b3b16a48d5ed6c98bc386d422c",
+      "captured_tick": 44,
+      "movie_frame": 43
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c0f69d92269ebd2f1a8000bf1cadcfc1f2d94982ce07626617badf6173c9494a",
+      "captured_tick": 48,
+      "movie_frame": 47
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "43d5b61d9d5679c6eb6b6c407ab54a6980291b7ce4357fea3e70fc9388cbcec8",
+      "captured_tick": 49,
+      "movie_frame": 48
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ea6509198011fefb6c87649a40c0074b23eb38f32cb948d464dc73b8e081f621",
+      "captured_tick": 54,
+      "movie_frame": 53
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-right-whiff-replay/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7a0a7055837f2d5a6ac6001ae7906e035437f159523bc3d800b2f83fa6c77ca9",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7eb5995fa08ebb54097eb5da3ddde418c310b65ee73c8f90578fa4257ca974d6",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6a65a9499e06d8405408ddc184c9479b5582a719df479893a887265257775680",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a1133e1501b5dec8a8d1fef65997976a3aa83dddd5d17ebdf3eefb24f6239873",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "86efc024b35039f7c72c2ba6013afba0c0a6aafd7e5c8d6a9424dff04af6cad9",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "94924a2d8f77730ba0a4aa76bb11b0c9dc7aa133c106d65af338fd513a2db77e",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "102dd1ee565fd9f9d8c4e7db860aeeef1af79c1d0f2ef0465f03813d27f37ada",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "51fcc957381c750f1673d7da70a4a675719d4bf2ecee43feb35a33be54dbbee0",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f80a7809b6f26ca89252a1323e1ed47f82b4cbb323d244fef7445f08ef5afa63",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5ccd8feae8046ec1510cc6cfa047c5730dc284bda6c46ec05fac5199d3b5db7a",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7508d452dbc497846dee3d3fa6709edf58bd6e71c4eb1083d6bf9cf6cbc81a4d",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a0ccaaa68ec810197dc7701b20e45f67f3c13d387e0d542707ee31a7f23bfa84",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5983d05319a7bd16d9bcd12aad39fa85938bb9a95f32f60f62021f6a5e1cb607",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e9e24ae7af37d9ee55d5b1c7511e14c3b3b778d62b1e8edc1d1a83ec50cfb67c",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7fd3bf08dadeb6c1fa244c13cb61e015647e0083060bef485e0a6fa46249be21",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6a94a16f3ca5ee90ac5701fdc51a85fe9d9af23c176aedfd9f7043515c83cb1d",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-original/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "751c01df67bc321f0b2887c7257babd190c373378c78e52ba5725e797a5a83c4",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7eb5995fa08ebb54097eb5da3ddde418c310b65ee73c8f90578fa4257ca974d6",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6a65a9499e06d8405408ddc184c9479b5582a719df479893a887265257775680",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a1133e1501b5dec8a8d1fef65997976a3aa83dddd5d17ebdf3eefb24f6239873",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "86efc024b35039f7c72c2ba6013afba0c0a6aafd7e5c8d6a9424dff04af6cad9",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "94924a2d8f77730ba0a4aa76bb11b0c9dc7aa133c106d65af338fd513a2db77e",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "102dd1ee565fd9f9d8c4e7db860aeeef1af79c1d0f2ef0465f03813d27f37ada",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "51fcc957381c750f1673d7da70a4a675719d4bf2ecee43feb35a33be54dbbee0",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f80a7809b6f26ca89252a1323e1ed47f82b4cbb323d244fef7445f08ef5afa63",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5ccd8feae8046ec1510cc6cfa047c5730dc284bda6c46ec05fac5199d3b5db7a",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7508d452dbc497846dee3d3fa6709edf58bd6e71c4eb1083d6bf9cf6cbc81a4d",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a0ccaaa68ec810197dc7701b20e45f67f3c13d387e0d542707ee31a7f23bfa84",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5983d05319a7bd16d9bcd12aad39fa85938bb9a95f32f60f62021f6a5e1cb607",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e9e24ae7af37d9ee55d5b1c7511e14c3b3b778d62b1e8edc1d1a83ec50cfb67c",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7fd3bf08dadeb6c1fa244c13cb61e015647e0083060bef485e0a6fa46249be21",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6a94a16f3ca5ee90ac5701fdc51a85fe9d9af23c176aedfd9f7043515c83cb1d",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-hit-replay/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "751c01df67bc321f0b2887c7257babd190c373378c78e52ba5725e797a5a83c4",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "076f21451ef096205b6ea7e75659b6e4c7848bec2ec7c7e0c380eac192c0b179",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "730df13f1262983aa2f024daa1e127115be4b1267a7ee0419682e4608f1ac727",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "8a87317dbe48d274c8b7b39da410f3a12a9c46c8e78af2f7dace7226f20c6245",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "18ebf35b5c7adeaacce8d586d28b90e937b522038deabee03b47db6f7fc34861",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "80184b5c1ec1d3ab972879f5df8393dcc04edf1a0246e67afa1e434c2f5332d3",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d69d7f693187ce2fe4e6be0ff026d4751691eb99929884e6294b041ba053b8e5",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f55b6fa8ff14f87d6ca1072d6c130a761c1ad7db2881a0e07c1f2aea57db19f0",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "aa147f8d053a9a26957670b56b022cccb2f6531a796570e643bfcd83a87343f3",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e599424eca9fdcdae6d6cf58a92286c0a08396021a5b230646f457af3c989d49",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4f30f3ff207af99ceac7a462ecc823db69803d384b772b5db362e168dde09225",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "3142b3c221033603dec6986ed75868fbc02739ea2df0ca83808aa5d3b885d437",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "731eedcc139222def7c52cba0c9d3dcdbf70e0731d554b8f4d091b68a920e926",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e41d2b4cb2bac6fce57fb1a495aa4e901e9a6cb5c9eeef8d8fbf0b9664daef47",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d10fe9d529eb03354782f24e56bcc91fe89b9c0f1bed2125e289633c92e50f29",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c27afb4df943c73bf26090208abad736e4dbdb7889526811e1cec936ed67a3ab",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-original/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5536a90df3fed8b5ac715934bfc76e5c350ee907dd7f3dadc5371e3ff895e7d3",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "076f21451ef096205b6ea7e75659b6e4c7848bec2ec7c7e0c380eac192c0b179",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "730df13f1262983aa2f024daa1e127115be4b1267a7ee0419682e4608f1ac727",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "8a87317dbe48d274c8b7b39da410f3a12a9c46c8e78af2f7dace7226f20c6245",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "18ebf35b5c7adeaacce8d586d28b90e937b522038deabee03b47db6f7fc34861",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "80184b5c1ec1d3ab972879f5df8393dcc04edf1a0246e67afa1e434c2f5332d3",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d69d7f693187ce2fe4e6be0ff026d4751691eb99929884e6294b041ba053b8e5",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f55b6fa8ff14f87d6ca1072d6c130a761c1ad7db2881a0e07c1f2aea57db19f0",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "aa147f8d053a9a26957670b56b022cccb2f6531a796570e643bfcd83a87343f3",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e599424eca9fdcdae6d6cf58a92286c0a08396021a5b230646f457af3c989d49",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4f30f3ff207af99ceac7a462ecc823db69803d384b772b5db362e168dde09225",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "3142b3c221033603dec6986ed75868fbc02739ea2df0ca83808aa5d3b885d437",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "731eedcc139222def7c52cba0c9d3dcdbf70e0731d554b8f4d091b68a920e926",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e41d2b4cb2bac6fce57fb1a495aa4e901e9a6cb5c9eeef8d8fbf0b9664daef47",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d10fe9d529eb03354782f24e56bcc91fe89b9c0f1bed2125e289633c92e50f29",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c27afb4df943c73bf26090208abad736e4dbdb7889526811e1cec936ed67a3ab",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-block-replay/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5536a90df3fed8b5ac715934bfc76e5c350ee907dd7f3dadc5371e3ff895e7d3",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "18e0e0554cd9ba292246642ccfa31a3f3b733cbd8f7b8755fb4456629622735b",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "956ebb6e48e94c2f70c53cf78495aea48afa4533e0e45bda7f41a8d7e6b0a520",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f10d80c8eb02d5014d9703c0886c1900b7259769d077b77b199becf720842581",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a3a0e3a186fdb44b1dfc399c20b299f6e55426568283dcfc3d71ee177cec5749",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "31c90f5dfc2451341544ed6d9ef2ebd6c5313147b076a8877d803df769fd0ea9",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c1c42ebb637fbb013eeaa804aadff7d6438e6dd61627d0f8aa1789863174c23f",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "35a5d076d9c1cfdea56de1306d40c2ba252d0b80118bf1d4e7d1272dc96cfbc0",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "cdad06457a7f60f8940da163bcf059ec06c8ec5d56bf45d00f38eb18ab882ec7",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f0f49facbf0fb56cf3ffd34c0ca1a318f982ffe34eb95fece33bbbe0df55d750",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "84932e36394f3f43cb56fe522dc47d4ea51d59d914a53ee547487fd615f2460b",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2e6946161c700a82beb64175198580e733bc17718785e647014217f9119fcba7",
+      "captured_tick": 43,
+      "movie_frame": 42
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1174fc50a270d3cd9f73b2526b3380d2894eab693d8785c82e69dc510180945b",
+      "captured_tick": 44,
+      "movie_frame": 43
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b35f9b18e425d4f5607f6d65a8afdd2fca057c41454ab2ad0db63f5b4f89d36c",
+      "captured_tick": 48,
+      "movie_frame": 47
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d1bb99bb805d05373aa34664a0f83eaf4cf979ba96557f19eaab2e704eb7819f",
+      "captured_tick": 49,
+      "movie_frame": 48
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d4dabdba4d2f06343033d20524db58361f551f7ebcb365627158eee04eab0289",
+      "captured_tick": 54,
+      "movie_frame": 53
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-original/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b9bc4bcef2133be6af468b22ac2b42e4206120e08f43bac09f03c850249b5370",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "18e0e0554cd9ba292246642ccfa31a3f3b733cbd8f7b8755fb4456629622735b",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "956ebb6e48e94c2f70c53cf78495aea48afa4533e0e45bda7f41a8d7e6b0a520",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f10d80c8eb02d5014d9703c0886c1900b7259769d077b77b199becf720842581",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a3a0e3a186fdb44b1dfc399c20b299f6e55426568283dcfc3d71ee177cec5749",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "31c90f5dfc2451341544ed6d9ef2ebd6c5313147b076a8877d803df769fd0ea9",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c1c42ebb637fbb013eeaa804aadff7d6438e6dd61627d0f8aa1789863174c23f",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "35a5d076d9c1cfdea56de1306d40c2ba252d0b80118bf1d4e7d1272dc96cfbc0",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "cdad06457a7f60f8940da163bcf059ec06c8ec5d56bf45d00f38eb18ab882ec7",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f0f49facbf0fb56cf3ffd34c0ca1a318f982ffe34eb95fece33bbbe0df55d750",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "84932e36394f3f43cb56fe522dc47d4ea51d59d914a53ee547487fd615f2460b",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2e6946161c700a82beb64175198580e733bc17718785e647014217f9119fcba7",
+      "captured_tick": 43,
+      "movie_frame": 42
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1174fc50a270d3cd9f73b2526b3380d2894eab693d8785c82e69dc510180945b",
+      "captured_tick": 44,
+      "movie_frame": 43
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b35f9b18e425d4f5607f6d65a8afdd2fca057c41454ab2ad0db63f5b4f89d36c",
+      "captured_tick": 48,
+      "movie_frame": 47
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d1bb99bb805d05373aa34664a0f83eaf4cf979ba96557f19eaab2e704eb7819f",
+      "captured_tick": 49,
+      "movie_frame": 48
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d4dabdba4d2f06343033d20524db58361f551f7ebcb365627158eee04eab0289",
+      "captured_tick": 54,
+      "movie_frame": 53
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1280x720-left-whiff-replay/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b9bc4bcef2133be6af468b22ac2b42e4206120e08f43bac09f03c850249b5370",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "38f81711e2a015753e2f2974838d4d2f0dbd80419bccc275a6a261bb8f83d4ab",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "68bf8843567d22ded647ccbd4635b469e33f69c3f862572448fe3d65e3fee6d7",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "66d50e9f3edd22918d8c7c7ac4ab7cc3425f485f7e7fa2d7987604eb59b446cc",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e9a281a7337df134a173bf77478b25db49b9699ab1295141643c9d576c6d6303",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "bcde1d1ce368138706e6f884c80dbc746306405c97a2585be2896392de110abe",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ecf2cc2923ff5a87f0bb066466857a8751b4e71b70ed1c54bdc38e4e7264c966",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "355aece5826524d20a0d2fd1133bec991e4ab13f2539526cc54453caf6f48ae5",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "206dfca86ff3f22e2bb577d39ff9fa992bdfb9fabb2b914b3d93b07c31adcd4b",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "466ece632ec376547fbd93a065b7913c7fd2d4df99c85c1e479342f7db4221d5",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8cba978334d30d4d5e14ef676740d9bc7c3f4a365f6623232710640297fb6008",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "226d9e9c810ee66530630e23f9669bbf9914bc7e200cd7a865e4eb473d967597",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "123b07441c43f4d372bdad32db259588695c50753d1cfd2ad84236b0f2a100b0",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "47f835f6cfbd1bdb1790f4442b3623c1968c7ed47a59f71298bd050754aabbfc",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d4e4f1e053dd5c4f8025d1b22f99624f75fd948072b8da5133a5ce0acd2ee006",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "3039ef7accf3eac3ff834a0e0c34681e9650f01d4f75acc84250f6f5c0dfa206",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-original/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "215fa94c0e9d7ba37079d1fe8cbafe454b58d1ccaf5cfb1fd0f37a4d372015f8",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "38f81711e2a015753e2f2974838d4d2f0dbd80419bccc275a6a261bb8f83d4ab",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "68bf8843567d22ded647ccbd4635b469e33f69c3f862572448fe3d65e3fee6d7",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "66d50e9f3edd22918d8c7c7ac4ab7cc3425f485f7e7fa2d7987604eb59b446cc",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e9a281a7337df134a173bf77478b25db49b9699ab1295141643c9d576c6d6303",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "bcde1d1ce368138706e6f884c80dbc746306405c97a2585be2896392de110abe",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ecf2cc2923ff5a87f0bb066466857a8751b4e71b70ed1c54bdc38e4e7264c966",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "355aece5826524d20a0d2fd1133bec991e4ab13f2539526cc54453caf6f48ae5",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "206dfca86ff3f22e2bb577d39ff9fa992bdfb9fabb2b914b3d93b07c31adcd4b",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "466ece632ec376547fbd93a065b7913c7fd2d4df99c85c1e479342f7db4221d5",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8cba978334d30d4d5e14ef676740d9bc7c3f4a365f6623232710640297fb6008",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "226d9e9c810ee66530630e23f9669bbf9914bc7e200cd7a865e4eb473d967597",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "123b07441c43f4d372bdad32db259588695c50753d1cfd2ad84236b0f2a100b0",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "47f835f6cfbd1bdb1790f4442b3623c1968c7ed47a59f71298bd050754aabbfc",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d4e4f1e053dd5c4f8025d1b22f99624f75fd948072b8da5133a5ce0acd2ee006",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "3039ef7accf3eac3ff834a0e0c34681e9650f01d4f75acc84250f6f5c0dfa206",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-hit-replay/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "215fa94c0e9d7ba37079d1fe8cbafe454b58d1ccaf5cfb1fd0f37a4d372015f8",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c5278779c3f9e443b076ebc36083ed379fddda2eb46d8eb4330eedefdf50cb47",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "498d6ecf0276272345556fc938988487923f81ab757983d6df5331ba27647ebe",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "f668a9cd2dbdc9dd8c2fcf2e36ba663519c9af5a66b880d8cac7b66e03046c30",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "04f8221e41fa6ea57f6bbf57dd64229d713e83c645ad861febe2176c24bd392c",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8d0e9d3bc1061518fe5336128b908327d89b6435423396d1eb82ad601ad2dcd8",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e96977cd7e3a65e4f5e6c702d425d3f03fcc43eadd3498d67194fe337f423d58",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ecb2eb92c9dd34bec694bfa7db0fcda56e3ade2a2db4816735f3e7e0c21612de",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b14f9fe691638b2c7b5afabc2ea31cbd2a5df09a4170dabe7c631e9491008543",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ef5295b4606c7e097c6db1569875c85972f96ac6e10a76e472552550ae1dfc08",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "66fba77fb1c0f146695c941ff52379e6b3fc703cfdd133ea6e25dbf1af415847",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b34f9dc2782ffcd72d20fb7580e3fc10b3f80319de713b57e311e46b6524424d",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "12f88bb8dee7dd9ae038c566256d5414ec4fe919a34cfadad0ed78e86897a932",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "07f55440755a4e48b1d5d768c2eeb52d6e6f68cbbbaa44c5fdd18263de55991e",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "5a55149fea6a1f76701235b270348e5bf0cc0a96e00d6f620c7d9c278b37824e",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "35fb4f97270c5ea01bf4d2621cf0f5a9fd0f6399ec566d38793e68f637a231a1",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-original/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1877e1aac4250289af70402b9d8e8d620b6891112a75ad26ad0e828570948785",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c5278779c3f9e443b076ebc36083ed379fddda2eb46d8eb4330eedefdf50cb47",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "498d6ecf0276272345556fc938988487923f81ab757983d6df5331ba27647ebe",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "f668a9cd2dbdc9dd8c2fcf2e36ba663519c9af5a66b880d8cac7b66e03046c30",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "04f8221e41fa6ea57f6bbf57dd64229d713e83c645ad861febe2176c24bd392c",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8d0e9d3bc1061518fe5336128b908327d89b6435423396d1eb82ad601ad2dcd8",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e96977cd7e3a65e4f5e6c702d425d3f03fcc43eadd3498d67194fe337f423d58",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ecb2eb92c9dd34bec694bfa7db0fcda56e3ade2a2db4816735f3e7e0c21612de",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b14f9fe691638b2c7b5afabc2ea31cbd2a5df09a4170dabe7c631e9491008543",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ef5295b4606c7e097c6db1569875c85972f96ac6e10a76e472552550ae1dfc08",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "66fba77fb1c0f146695c941ff52379e6b3fc703cfdd133ea6e25dbf1af415847",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b34f9dc2782ffcd72d20fb7580e3fc10b3f80319de713b57e311e46b6524424d",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "12f88bb8dee7dd9ae038c566256d5414ec4fe919a34cfadad0ed78e86897a932",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "07f55440755a4e48b1d5d768c2eeb52d6e6f68cbbbaa44c5fdd18263de55991e",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "5a55149fea6a1f76701235b270348e5bf0cc0a96e00d6f620c7d9c278b37824e",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "35fb4f97270c5ea01bf4d2621cf0f5a9fd0f6399ec566d38793e68f637a231a1",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-block-replay/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1877e1aac4250289af70402b9d8e8d620b6891112a75ad26ad0e828570948785",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "541f1eb5dd881b3553769f8c5320dc01aff63eedeceae4f32e5302773ea5fe4a",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "3f3350c33eaf7695ace868f3e5bb5c5768ea2cf2cc0e8a0b8706faa51cdccc71",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "96c8c64ce4daeb5ed4eb08b876c2860e965fba95d8136716bc71722bc76d24b1",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "56c886bedaa3c77a34ebb39501336cd8e42ac66c53435760d9f46e94111ec0e1",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "49e7cb4f5a5db8f54baf1e8769faef65b6f29610190429d988545231a388e9b0",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "53068e36419b4ca7da327c7e8ed397ecf331810e37e5cfa1914e3526efdb6415",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "df47f5cfebe55a225ab4fe2703fc6c5fb845100f30171b1d67725fc21aec6f17",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d2e6656eda5e713e9e3135c852e6fe7e24ca4e673edc7a241a350591ca8c21a1",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7af7a1d9230827f4cb1b4dd7b95bb8d3557e02311fbcf0c972cab7e768374453",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8280bb8b594986499c2b087c74b7ed4d149b6542b3b8a799adffe40e328fe34c",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "337609dad2479c421e32e02600822cf9b06af6730bfc0fe55bdc7f4ef7f0b6b3",
+      "captured_tick": 43,
+      "movie_frame": 42
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "cb1b71cd1b79bee85bf3bae2cbb36344e882de1992c3eae526394a4fd1d06513",
+      "captured_tick": 44,
+      "movie_frame": 43
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "32aa73518507d0a5764e5b3ffb83a484c8108d615b7782a6c85e56d4f54b18cc",
+      "captured_tick": 48,
+      "movie_frame": 47
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8b20f3105ca2c883387de469c3d0e6db0111ac73e8d9cbcf07029a2fb264a2fa",
+      "captured_tick": 49,
+      "movie_frame": 48
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "bad1cfb3f9c55d72300f44af848faff4535a37bf9bf08ad13f27e7df8083dc84",
+      "captured_tick": 54,
+      "movie_frame": 53
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-original/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b155d97a3ef06a4538a48277d0c5df489c22cc63149112800d8007a4c0644402",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "541f1eb5dd881b3553769f8c5320dc01aff63eedeceae4f32e5302773ea5fe4a",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "3f3350c33eaf7695ace868f3e5bb5c5768ea2cf2cc0e8a0b8706faa51cdccc71",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "96c8c64ce4daeb5ed4eb08b876c2860e965fba95d8136716bc71722bc76d24b1",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "56c886bedaa3c77a34ebb39501336cd8e42ac66c53435760d9f46e94111ec0e1",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "49e7cb4f5a5db8f54baf1e8769faef65b6f29610190429d988545231a388e9b0",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "53068e36419b4ca7da327c7e8ed397ecf331810e37e5cfa1914e3526efdb6415",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "df47f5cfebe55a225ab4fe2703fc6c5fb845100f30171b1d67725fc21aec6f17",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d2e6656eda5e713e9e3135c852e6fe7e24ca4e673edc7a241a350591ca8c21a1",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7af7a1d9230827f4cb1b4dd7b95bb8d3557e02311fbcf0c972cab7e768374453",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8280bb8b594986499c2b087c74b7ed4d149b6542b3b8a799adffe40e328fe34c",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "337609dad2479c421e32e02600822cf9b06af6730bfc0fe55bdc7f4ef7f0b6b3",
+      "captured_tick": 43,
+      "movie_frame": 42
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "cb1b71cd1b79bee85bf3bae2cbb36344e882de1992c3eae526394a4fd1d06513",
+      "captured_tick": 44,
+      "movie_frame": 43
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "32aa73518507d0a5764e5b3ffb83a484c8108d615b7782a6c85e56d4f54b18cc",
+      "captured_tick": 48,
+      "movie_frame": 47
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8b20f3105ca2c883387de469c3d0e6db0111ac73e8d9cbcf07029a2fb264a2fa",
+      "captured_tick": 49,
+      "movie_frame": 48
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "bad1cfb3f9c55d72300f44af848faff4535a37bf9bf08ad13f27e7df8083dc84",
+      "captured_tick": 54,
+      "movie_frame": 53
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-right-whiff-replay/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b155d97a3ef06a4538a48277d0c5df489c22cc63149112800d8007a4c0644402",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "599a4c9791e023552e0132a3dde615414f68f0731762ea0c25277abf5986233c",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "dca609d4fc4d75da8d8d11759693d557804fa2933898354d7d54923b1739e03d",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ffae8d4f6c51b57b6b8a4e5412b171cc35c1f47e3a27cab51b207c6a9aec3766",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "fd54d6d1da9913b9dbbb9b67a7e75f15d0cdcc5085430deb85e1e69d74af9de1",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1f10438da843c8266b4176eb3786d67a8940c3cb5a741df89098012b6cb358fd",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c11545aff6d405f737af39912200e2ec30586501cb113bcf7181474f3452b702",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1c1e22ac631267663c3f07de1942946c6aa90cbd02aa3ab8f56a14bcb2000dba",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "79e45a349e2abfdd04a900e75d3f77cd216eb63033a4ebd767e701174e21d256",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "613d31ccab7804fc4f44cbf7d2d9daf61433f6675223edf40e8bdaccc8405f2c",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "574bdf546af5fd12becf051140d0b53a31bbfcf12481b6a93b2503bff0217908",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "05ea25ed5adc7bf7ce511e1ddaf37687217c2b991be0477e6b78161dd0a03afb",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ff5a509fc4efac3c3105c58ff490ce21dd782e2f67de40df2d00b0c996d2316d",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d2103b12b19395e5f2bc7f729c858dbb4fa917d60f690c565ed002680a3f51c0",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c4fb22dc793830bb65773ee9d85c2c0d780ca5e992323dbd4a174063218bd818",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "324d68f94299da0efa863341feb1f770e9cb666451ff72e350d52e7a30b276b3",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-original/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7e2a81e4598ee9bbf84534cba80e971d248c6402670072f0d9046dd49e43c789",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "599a4c9791e023552e0132a3dde615414f68f0731762ea0c25277abf5986233c",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "dca609d4fc4d75da8d8d11759693d557804fa2933898354d7d54923b1739e03d",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ffae8d4f6c51b57b6b8a4e5412b171cc35c1f47e3a27cab51b207c6a9aec3766",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "fd54d6d1da9913b9dbbb9b67a7e75f15d0cdcc5085430deb85e1e69d74af9de1",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1f10438da843c8266b4176eb3786d67a8940c3cb5a741df89098012b6cb358fd",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c11545aff6d405f737af39912200e2ec30586501cb113bcf7181474f3452b702",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1c1e22ac631267663c3f07de1942946c6aa90cbd02aa3ab8f56a14bcb2000dba",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "79e45a349e2abfdd04a900e75d3f77cd216eb63033a4ebd767e701174e21d256",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "613d31ccab7804fc4f44cbf7d2d9daf61433f6675223edf40e8bdaccc8405f2c",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "574bdf546af5fd12becf051140d0b53a31bbfcf12481b6a93b2503bff0217908",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "05ea25ed5adc7bf7ce511e1ddaf37687217c2b991be0477e6b78161dd0a03afb",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ff5a509fc4efac3c3105c58ff490ce21dd782e2f67de40df2d00b0c996d2316d",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d2103b12b19395e5f2bc7f729c858dbb4fa917d60f690c565ed002680a3f51c0",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c4fb22dc793830bb65773ee9d85c2c0d780ca5e992323dbd4a174063218bd818",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "324d68f94299da0efa863341feb1f770e9cb666451ff72e350d52e7a30b276b3",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-hit-replay/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7e2a81e4598ee9bbf84534cba80e971d248c6402670072f0d9046dd49e43c789",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "374866730dd2bb089f42e558407361a96f97e707923e839e8bcb8f4c8fa149b1",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "5dc81bd8ccf6031eb8fd5126022a5e2b901893bea19ced242513b0df0203037a",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "31115c1c7bea5be7637dca3e6b29a9a1d1b1ad7a75880645ee5806ac5741bb78",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "cfb170628b6a5daa7daad74feec5ecc484dc00ce349b0501436ab147e6c449b5",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0fb207e6ae64a28034fffe6561171cc2243e07da3a7c20831beac9282973600c",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c56a7d0cbe96ff537384335af6dd9bcdd17c61892b5aaba922822a544eb58d24",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "51fe489c30af3e0b5bd32a7f9ea5e84fe6d1e095a1a112916a93c5da646d072a",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "63702a49234fecaaa3aca2dc17ebedd964d16822d782e23c9c37150de0ae1a01",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "eb2ef908dff6d64314d9e230cd5e3a69a8595020e7c4082366c4d5bbefea2a62",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ec1793534bd78ea21bc6e8a1c26ff6accc75294fb521378b88780d779ccbd3aa",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "fca5cb37f27cd0de6eafc5d924bf8627f79b332971ca1c557649a654b06a3197",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a9e979485b083f03d68f9c84b5fcaad8af8e56e664172112a5c6dfcbd9942d56",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9789bb08b72472910d0b3910d6173ee2eec7125afedc1e8a9581e07b3ffe46d0",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "700cbec49f6f52a3b0763637308daadd950ead9fc05d96caea384b3b4477c845",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "4ab468a2df3da1051c99664054f875b6676a9da4566b199ef4749e0297a35265",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-original/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "2c857fb602afadfc61f355e0f56d6280508522ec71416f8566848bfa6f9bf14d",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "374866730dd2bb089f42e558407361a96f97e707923e839e8bcb8f4c8fa149b1",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "5dc81bd8ccf6031eb8fd5126022a5e2b901893bea19ced242513b0df0203037a",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "31115c1c7bea5be7637dca3e6b29a9a1d1b1ad7a75880645ee5806ac5741bb78",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "cfb170628b6a5daa7daad74feec5ecc484dc00ce349b0501436ab147e6c449b5",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0fb207e6ae64a28034fffe6561171cc2243e07da3a7c20831beac9282973600c",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c56a7d0cbe96ff537384335af6dd9bcdd17c61892b5aaba922822a544eb58d24",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "51fe489c30af3e0b5bd32a7f9ea5e84fe6d1e095a1a112916a93c5da646d072a",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "63702a49234fecaaa3aca2dc17ebedd964d16822d782e23c9c37150de0ae1a01",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "eb2ef908dff6d64314d9e230cd5e3a69a8595020e7c4082366c4d5bbefea2a62",
+      "captured_tick": 46,
+      "movie_frame": 45
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ec1793534bd78ea21bc6e8a1c26ff6accc75294fb521378b88780d779ccbd3aa",
+      "captured_tick": 47,
+      "movie_frame": 46
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "fca5cb37f27cd0de6eafc5d924bf8627f79b332971ca1c557649a654b06a3197",
+      "captured_tick": 50,
+      "movie_frame": 49
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a9e979485b083f03d68f9c84b5fcaad8af8e56e664172112a5c6dfcbd9942d56",
+      "captured_tick": 51,
+      "movie_frame": 50
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9789bb08b72472910d0b3910d6173ee2eec7125afedc1e8a9581e07b3ffe46d0",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "700cbec49f6f52a3b0763637308daadd950ead9fc05d96caea384b3b4477c845",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "4ab468a2df3da1051c99664054f875b6676a9da4566b199ef4749e0297a35265",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-block-replay/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "2c857fb602afadfc61f355e0f56d6280508522ec71416f8566848bfa6f9bf14d",
+      "captured_tick": 62,
+      "movie_frame": 61
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "2da051a83bf42af06f7bd2165f63bd2555343050d5fe7fe28a2965d7439ff1d0",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "5e6ac839f752a5116223c1138963f8c09eaf2de9ca31fdebad08258457232049",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "4dec837421455bd6b47188068fd9215265889fc5955c82f8134a15eb3f6c82cb",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1a8d6d933eb0bdef71a10d06af29c27f5cf09485a436e345fb0ea32897123325",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "27f78258ae60d32f7dcb38ce03f46685d939aaebe54d08254b3a812d8b1fc812",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "37ade289c2fcc79834ac1b350163c825e3f0de47097f9a05736d078e9d451a89",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1a11960af1cb01e768f18c90da90f914f5b15b75d143e814d0d9cc67e49b084c",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "5466c1f927e62db1b086bf44f02210feb4ab82a614efb5e7c51935c36299dd98",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "cbb73ee1a49aa547c87df495f786b3b0ce7be05e91fe19e994ecf82cab379ab8",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6d526b147e54abbed07330a2bfd238923064f5a7e141ced2819a9e8d927b3165",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b02a738a7bf90991d722c69910f692a165ace31e836288a9de9a10d8d13677ae",
+      "captured_tick": 43,
+      "movie_frame": 42
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9111b010736b71b1d6f834505d34781fd99a96f8855b6b3b02b569a16d9159c6",
+      "captured_tick": 44,
+      "movie_frame": 43
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "62010d459d4728824139b15904e7bbe4a39d83e2390e3ee81f3c0da3f05f8faa",
+      "captured_tick": 48,
+      "movie_frame": 47
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ca80633409f77b40eaf3d9ce54ce4f092f192a213d24f53a8cd1c90094a2734a",
+      "captured_tick": 49,
+      "movie_frame": 48
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e729ac3c5b99e7842b0effc6a2b7bed1cd702728ff032e41b81a0ca22e26f2ab",
+      "captured_tick": 54,
+      "movie_frame": 53
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-original/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9e7ca2c361f527b429cddfacd505e093b62c9cd218c56e6d527924ededbc6695",
+      "captured_tick": 55,
+      "movie_frame": 54
+    },
+    {
+      "key": "before-input-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/before-input-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "2da051a83bf42af06f7bd2165f63bd2555343050d5fe7fe28a2965d7439ff1d0",
+      "captured_tick": 1,
+      "movie_frame": 0
+    },
+    {
+      "key": "crush-tick-01-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "5e6ac839f752a5116223c1138963f8c09eaf2de9ca31fdebad08258457232049",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crush-tick-02-phase-00",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "4dec837421455bd6b47188068fd9215265889fc5955c82f8134a15eb3f6c82cb",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crush-tick-03-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1a8d6d933eb0bdef71a10d06af29c27f5cf09485a436e345fb0ea32897123325",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crush-tick-07-phase-01",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-07-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "27f78258ae60d32f7dcb38ce03f46685d939aaebe54d08254b3a812d8b1fc812",
+      "captured_tick": 27,
+      "movie_frame": 26
+    },
+    {
+      "key": "crush-tick-08-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-08-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "37ade289c2fcc79834ac1b350163c825e3f0de47097f9a05736d078e9d451a89",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crush-tick-11-phase-02",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-11-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1a11960af1cb01e768f18c90da90f914f5b15b75d143e814d0d9cc67e49b084c",
+      "captured_tick": 31,
+      "movie_frame": 30
+    },
+    {
+      "key": "crush-tick-12-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-12-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "5466c1f927e62db1b086bf44f02210feb4ab82a614efb5e7c51935c36299dd98",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "crush-tick-19-phase-03",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-19-phase-03.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "cbb73ee1a49aa547c87df495f786b3b0ce7be05e91fe19e994ecf82cab379ab8",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "crush-tick-20-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-20-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6d526b147e54abbed07330a2bfd238923064f5a7e141ced2819a9e8d927b3165",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "crush-tick-23-phase-04",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-23-phase-04.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b02a738a7bf90991d722c69910f692a165ace31e836288a9de9a10d8d13677ae",
+      "captured_tick": 43,
+      "movie_frame": 42
+    },
+    {
+      "key": "crush-tick-24-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-24-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9111b010736b71b1d6f834505d34781fd99a96f8855b6b3b02b569a16d9159c6",
+      "captured_tick": 44,
+      "movie_frame": 43
+    },
+    {
+      "key": "crush-tick-28-phase-05",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-28-phase-05.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "62010d459d4728824139b15904e7bbe4a39d83e2390e3ee81f3c0da3f05f8faa",
+      "captured_tick": 48,
+      "movie_frame": 47
+    },
+    {
+      "key": "crush-tick-29-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-29-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ca80633409f77b40eaf3d9ce54ce4f092f192a213d24f53a8cd1c90094a2734a",
+      "captured_tick": 49,
+      "movie_frame": 48
+    },
+    {
+      "key": "crush-tick-34-phase-06",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/crush-tick-34-phase-06.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e729ac3c5b99e7842b0effc6a2b7bed1cd702728ff032e41b81a0ca22e26f2ab",
+      "captured_tick": 54,
+      "movie_frame": 53
+    },
+    {
+      "key": "returned-idle",
+      "path": "reports/luna-crush-resume/graphical-v1/1920x1080-left-whiff-replay/returned-idle.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9e7ca2c361f527b429cddfacd505e093b62c9cd218c56e6d527924ededbc6695",
+      "captured_tick": 55,
+      "movie_frame": 54
+    }
+  ],
+  "结束状态": {
+    "desktop_observed_utc": "2026-11-05T19:55:28Z",
+    "godot_window_absent": true,
+    "terminal_returned_to_shell_prompt": true,
+    "lock_absent_verified_utc": "2026-11-05T19:56:04Z",
+    "lock_manually_deleted": false,
+    "source_or_contract_modified_by_review": false
+  },
+  "已知问题": [
+    "正常命中和GUARD均白闪掉130，证明不可防语义；白闪遮挡局部接触，不能据此签完全无穿插。",
+    "起手抬臂、接触相8tick含hitstop观感、低随势回高护拳及回idle站幅/胸头/腕甲变化，仍需实速连续观察；没有证据据静帧强制再补新相。",
+    "共同取景会随最高手臂和身体轮廓变化；未直接记录camera/scale数值，不把镜头变化全归作素材体量或滑步，也不以固定anchor证明无滑步。",
+    "无录屏、实速连续观感、听感或真人键盘验收；单相idle不是完整idle循环通过。",
+    "未接受整招美术/严格尺度、未装正式资源、未开放装甲。"
+  ],
+  "下一步": [
+    "保留七槽完整候选及具体实速待判点，不靠延长停帧掩盖缺相；在具备实速观察条件时再判断是否确需补起收中相。",
+    "crush技术候选阶段关闭，后续按原S2顺序只读核下一项tackle现有源和真实动作，不据数量机械生图。"
+  ],
+  "installed": false,
+  "playable_release_accepted": false,
+  "art_passed": false,
+  "real_time_motion_reviewed": false,
+  "audio_reviewed": false,
+  "video_recorded": false
+}

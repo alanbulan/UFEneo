@@ -4,7 +4,7 @@
 
 ## 当前成果与证据索引
 
-- crush七槽已进入主游戏RAM试排：原12/8/15、130伤/30体力不可防，远拳12×11真实Alpha框；逻辑六例与headless十二组通过，六对180tick原输入/独立回放五字段一致，GUARD按原规则同受130伤。正式资源未动，图形24组已启动但尚未签通过，实速/音频/整招美术未验、不安装。[技术回执与图形合同](verification/luna-crush-session-resume.json)
+- crush七槽已进入主游戏RAM试排：原12/8/15、130伤/30体力不可防，远拳12×11真实Alpha框；逻辑六例与headless十二组通过，六对180tick原输入/独立回放五字段一致，GUARD按原规则同受130伤。正式资源未动；图形24组/384原生PNG及12对180tick通过，12original逐相静审完成。白闪遮接点、起收姿态/共同镜头影响保留，实速/音频/整招美术未验、不安装。[技术回执](verification/luna-crush-session-resume.json)、[图形终态与限制](verification/luna-crush-session-graphical-review.json)
 
 - crush低位随势已保存并核同尺：双拳再下约8–11px、肘再下约9px，脚位差在标点误差内，未靠整身缩水。已组成七槽/五独立姿态候选，明确复用高护拳作屈肘回收、不强插旧06；独立审阅未见阻止RAM试排的硬几何矛盾。备原12/8/15时序建议，起手/8tick接触/回护实速仍待，未运行安装。[随势与完整候选](verification/luna-crush-followthrough-candidate-review.json)
 
