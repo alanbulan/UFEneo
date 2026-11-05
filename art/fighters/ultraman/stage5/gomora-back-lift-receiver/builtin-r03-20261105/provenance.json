@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "origin": "根任务按用户明确要求调用内置image_gen，完整提示词及参考顺序由根任务提供。",
+  "tool": "image_gen",
+  "transparent_background_requested": true,
+  "project_paid_api_used": false,
+  "user_codex_used": false,
+  "model": null,
+  "quality": null,
+  "usage": null,
+  "cost": null,
+  "missing_metadata_reason": "内置工具未返回，不冒称high或旧项目客户端。",
+  "candidate": "art/fighters/ultraman/stage5/gomora-back-lift-receiver/builtin-r03-20261105/candidate.png",
+  "sha256": "efd543af4e5be3dd460f36e77aa580421aa74bee6fa222df881efb33756bd340",
+  "prompt_verbatim": "Create ONE new whole-character pixel-art animation frame immediately after reference 1. This is phase 03 of a back-body-drop: the red-and-silver Ultraman Type C is being thrown off the monster's back and begins lifting free. Fixed side view; head right, legs left. His waist and bent legs start rising up and toward the monster's rear while the upper torso and head also lift clear of the upward sweeping horns, not fully upside down yet. Both arms remain anatomically connected and begin opening naturally away from the ribs; no hands droop into the horn region. References 2 and 3 show actual compositions at the next two monster poses: do NOT replicate the monster, grid, lettering or background, only use them to understand that the horns must clear the character's head, chest and abdomen. Preserve reference 1 character identity, proportions, blue chest light, palette and pixel style, with exactly two arms, two hands, two legs and two feet. Output a complete isolated character sprite on transparent background, no monster or other objects.",
+  "reference_order": [
+    {
+      "path": "art/fighters/ultraman/stage5/gomora-back-lift-receiver/builtin-r02-20261105/candidate-5.png",
+      "sha256": "edda91826d3c7b13e7c255dd5544228224ca387d2147d81951d75488682f1ccf"
+    },
+    {
+      "path": "reports/gomora-builtin/review-5/neighbors/A02.png",
+      "sha256": "468d6eb19e93ed4780dc8612f3a3fc1fbd9082b19fbbae3ff8557fc4b21acb7a"
+    },
+    {
+      "path": "reports/gomora-builtin/review-5/neighbors/A09.png",
+      "sha256": "ff29a465cbfc70df2901cefca6b9161721ad3a1034fbd8cceaa97fa9c7b7c661"
+    },
+    {
+      "path": "art/fighters/ultraman/model/model-reference-x4.png",
+      "sha256": "9e084ba7ff4f4ff2ed343e2d20650ebbec5b648156cddd066ad10165e68f0e71"
+    }
+  ],
+  "reference_reproduction": "先运行review_builtin_r02.py --candidate 5，再运行review_v5_neighbors.py生成第二、第三参考四格图。"
+}
