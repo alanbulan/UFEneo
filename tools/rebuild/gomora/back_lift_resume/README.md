@@ -65,3 +65,5 @@ python tools/godot_lock.py -- python tools/verify.py --skip-import --only throw_
 v1仅允许地面攻击方接空中受方，保相至首承重段必须静止且不改变投技高度，首承重必须为固定sprite（无variants/floor_variants）。捕获要求实际躯干框相交，入口root差按实际 `root_overrides` 和 `hold_point_overrides` 解析后受限，不扩判定、不吸附、不添加无敌。
 
 最终快照已通过 `throw_current_capture`、`throw_root_overrides`、`throw_hold_point_overrides`、`phase3_throws`；补跑 `logic_2d`、`review_inputs`、`throw_current_capture` 也通过。专用测试包含12组双向真实输入、拆投1/2/3与4边界、落空、唯一落地伤害、独立文件逐tick回放、原整相一致、异常清理及schema/指纹兼容。回执：`docs/verification/gomora-current-capture.json`。这些是通用能力测试，哥莫拉03穿体和主游戏双向720/1080美术验收仍未完成，无录屏。
+
+最新承重缺口与已有替代源核查见 [RECEIVER_GAP.md](RECEIVER_GAP.md)：00–02本身头肩/角冠关系也未通过，不能靠提前卸重绕过。未找到可直接替换承重的保留整帧；若继续新增，先仅解决02最低承重母相，成功后再补00/01/03，当前未发起生成。
