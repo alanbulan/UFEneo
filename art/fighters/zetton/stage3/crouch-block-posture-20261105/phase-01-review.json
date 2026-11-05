@@ -1,0 +1,160 @@
+{
+  "date_utc": "2026-11-05",
+  "status": "two_fullframe_candidates_ready_for_ram_review_only",
+  "accepted_for_ram_trial": true,
+  "art_passed": false,
+  "installed": false,
+  "root_approved": false,
+  "user_approved": false,
+  "source": {
+    "reported_by": "父任务：按phase-00-v2-review.second_phase_brief.prompt与三参考原顺序，通过本会话内置图片工具",
+    "transparent_background_requested": true,
+    "model": null,
+    "quality": null,
+    "usage": null,
+    "cost": null,
+    "full_prompt": "Create ONE complete whole-body pixel-art frame of the exact Zetton, facing right in the same low kneeling crouch. This is the SECOND crouching block-stun frame, settling after the backward recoil in reference 1 toward the original low guard in reference 2. Reference 3 is identity only, not a standing-pose instruction. The first reference is a provisional strong-recoil candidate, not permission to change the character. Keep the pelvis low, the rear leg deeply folded and both support feet in the low-guard positions of reference 2. Move the head and shoulders forward to the right PARTWAY back from reference 1 toward reference 2, approximately halfway between their relative head-to-hip positions. Keep the elbows bent and both forearms braced, gradually relaxing the compression without opening the guard. Do not straighten knees, lift hips, step, widen the stance or reproduce the same strong recoil. Preserve the same head size and complete black segmented body, two curved antennae, narrow orange vertical face light, TWO orange chest organs naturally occluded by the arms, pale segmented arms and thighs, and black hands and feet. Keep a fixed side view; do not turn the face toward the camera. Entire body and antenna tips visible with margin, genuinely transparent background, crisp coherent pixel art. No opponent, effects, sparks, ground, shadow, lettering, duplicate limbs or pasted body parts. This must be a distinct newly drawn complete settling pose; the next pose will be the original low crouching guard.",
+    "references": [
+      {
+        "path": "art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-00-v2.raw.png",
+        "sha256": "b2ee507426ac5f359f442d89cd9b8d55d1e1e27715aa6cd86e3cab49b85ac0fd"
+      },
+      {
+        "path": "art/fighters/zetton/stage3/crouch-block-posture-20261105/reference-crouch-guard-hold.png",
+        "sha256": "c59d556ade8c0bb50c016c41a3ac5afceb8fe33b57a3f6d2856ed0cb44ad0620"
+      },
+      {
+        "path": "assets/fighters/zetton/model-native.png",
+        "sha256": "f968b3581fd3e4ff26c74de0930c373da7de5768c3bf356c94b74b52d10ca925"
+      }
+    ],
+    "original_received_path": "reports/zetton-crouch-block-01.png",
+    "original_bytes_preserved": true
+  },
+  "candidate": {
+    "path": "art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-01.raw.png",
+    "sha256": "53c78d345f42a1de45c668510994fe4571c71e11221a8d59a67461711a7e4de4",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_zero": 1399758,
+    "alpha_opaque": 291,
+    "threshold_diagnostics": {
+      "1": {
+        "pixels": 172758,
+        "components_4_connected": 816,
+        "other_pixels": 1917,
+        "largest_bbox": [
+          336,
+          453,
+          868,
+          1105
+        ]
+      },
+      "16": {
+        "pixels": 157279,
+        "components_4_connected": 9,
+        "other_pixels": 8,
+        "largest_bbox": [
+          337,
+          458,
+          865,
+          1095
+        ]
+      },
+      "32": {
+        "pixels": 156612,
+        "components_4_connected": 1,
+        "other_pixels": 0,
+        "largest_bbox": [
+          337,
+          458,
+          865,
+          1095
+        ]
+      },
+      "64": {
+        "pixels": 155819,
+        "components_4_connected": 1,
+        "other_pixels": 0,
+        "largest_bbox": [
+          337,
+          458,
+          865,
+          1095
+        ]
+      },
+      "128": {
+        "pixels": 154324,
+        "components_4_connected": 1,
+        "other_pixels": 0,
+        "largest_bbox": [
+          338,
+          458,
+          864,
+          1094
+        ]
+      }
+    }
+  },
+  "scale_diagnostic": {
+    "image": {
+      "path": "art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-01-scale-diagnostic.png",
+      "sha256": "7cbbcc079c4640825f8039075fdeabbf1275b650bb190bf3c90e066309333b68"
+    },
+    "operation": "整张1254 Alpha128后最近邻缩到256，x不平移、y整体+25使bbox截止248；不切肢或局部变形。只是同尺诊断，不是Forge注册运行成品。",
+    "uniform_scale": 0.20414673046251994,
+    "alpha_bbox": [
+      69,
+      118,
+      176,
+      248
+    ],
+    "face_light_centers": {
+      "original_hold": [
+        145.2659574468085,
+        162.7872340425532
+      ],
+      "recoil00_v2": [
+        99.64285714285714,
+        153.15714285714284
+      ],
+      "settle01": [
+        145.8375,
+        157.85
+      ],
+      "method": "三张同尺图橙脸灯连通域色阈值诊断，非头部骨点；显示回缓方向与幅度，不以此替代全身视觉验收。"
+    },
+    "support_alpha_bottom14_regions": {
+      "rear": [
+        69,
+        234,
+        120,
+        248
+      ],
+      "front": [
+        131,
+        234,
+        163,
+        248
+      ]
+    },
+    "support_interpretation": "两新相底部支撑接近，原保持后侧外缘62，新相约69–70，约7–8px差仍保留。底部14px包含部分贴地腿，非精确脚骨点，不使用总体bbox误推脚距。"
+  },
+  "review": {
+    "identity": "黑体、双弯触角、竖橙脸灯、胸橙器官和米白分节四肢可辨，双臂双腿完整；相比v2头面回到朝右倾向，未见明显错身份。胸器官可被双臂分段遮挡，不把可见分块数当额外器官。",
+    "posture": "低髋和后腿深折保持，没有站起来，双前臂仍护胸。",
+    "return_direction": "头肩由v2后仰向右前回缓明确，脸灯x几乎回到原保持，不是提示词期望的半程；两相共同可表达一次低蹲受挡后震→回缓，但4/6tick是否过快仍未验。",
+    "alpha": "有真实透明，alpha32以上单个人物，未见首版大灰污背景；alpha低值仍有小岛，后续需保留真实Alpha128后处理来源，不冒称原生干净。",
+    "ram_trial": "允许仅内存试排原4/6动画节拍并同步候选轮廓，保持正式content/assets未改；先真实低段接触、双向原/回放和720/1080核低蹲保持→两相→低蹲回防。大幅后震与回正速度、脚缘/头形差保留。",
+    "not_verified": [
+      "Forge共同尺度与根点运行注册",
+      "主游戏逐tick/双向720/1080",
+      "独立回放和内容指纹",
+      "实速/音频/录屏"
+    ]
+  },
+  "next_step": "只有RAM全流程通过且姿态边界被明确接受才考虑正式替换；不能用状态选择测试通过冒充这两张新图验收。通用防御规则、duration、伤害/费用/位移不改；新轮廓若安装须同步真实受击框和内容指纹。"
+}

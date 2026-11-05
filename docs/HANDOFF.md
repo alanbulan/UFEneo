@@ -2,6 +2,8 @@
 
 ## 2026-11-05 开发接续索引
 
+- 杰顿低蹲硬直第二相回缓方向成立：同尺脸灯由后震x99.64回x145.84，几乎回到原保持x145.27而非半程；两相低髋/深折支撑保留，原后脚缘差仍在。可仅RAM试排原4/6节拍，大幅后震与回正速度需实际画面，不安装。原字节/完整prompt与未知元数据已存。[第二相与试排边界](../art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-01-review.json)
+
 - 杰顿低蹲硬直v2形成明确上身后震，低髋/深折腿保留，透明背景明显改善；同尺脸灯左移约45.6px、上移9.6px，超过小幅目标，尚须两相及4/6tick实际评估。单独脚区核证前脚接近、后缘约8px差，已纠正以总bbox误推站距。未安装，第二回缓相仅brief。[完整来源与同尺证据](../art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-00-v2-review.json)
 
 - 杰顿低蹲硬直首候选已保存：本人低蹲完整，但姿态仍接近保持，未接受独立受挡动作。灰污背景是低alpha噪声（上方最大24），Alpha128诊断只剩单人物，可离线清理而非仅据背景重生成；原源未处理未安装，model/high/usage/费用未知。[原源、提示词与透明诊断](../art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-00-review.json)
