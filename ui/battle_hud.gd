@@ -37,6 +37,8 @@ var commands_list: PixelList
 var help_label: Label
 var toast: Toast
 var dummy_name: String="站立"
+var dummy_relative: bool=false
+var dummy_facing_button: Button
 
 func text(parent: Node, value: String, font_size: int=12) -> Label:
 	var label:=Label.new()
@@ -227,6 +229,7 @@ func _build_overlays() -> void:
 	for item in [["训练 / 对战电脑 F3","training"],["本地双人","local"],["对手行为 F5","dummy"],["训练角色 F6","select"],["播放回放 F4","replay"],["返回暂停菜单","back_pause"]]: _button(settings,item[0],item[1])
 	_button(settings,"录制陪练（2P）","dummy_record")
 	_button(settings,"循环播放陪练录制","dummy_playback")
+	dummy_facing_button=_button(settings,"陪练方向：原始左右","dummy_facing")
 	home=_dialog("奥特曼格斗进化Neo",288)
 	for item in [["继续对战","pause"],["重新开始","restart"],["训练模式","training"],["返回暂停菜单","back_pause"]]: _button(home,item[0],item[1])
 	selection=_dialog("训练角色选择")
@@ -263,6 +266,7 @@ func show_pause(value: bool) -> void:
 	if value: (menu.get_child(0).get_child(1) as Button).grab_focus()
 
 func update_match(sim: UfeMatchDirector, message: String, intro: int, training: bool) -> void:
+	dummy_facing_button.text="陪练方向：随当前朝向" if dummy_relative else "陪练方向：原始左右"
 	(settings.get_child(0).get_child(1) as Button).text="当前：训练 / 切换对战" if training else "当前：对战 / 切换训练"
 	(settings.get_child(0).get_child(3) as Button).text="对手行为："+dummy_name
 	for i in range(2):

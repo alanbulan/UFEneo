@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-05",
+  "scope": "陪练录制支持按当前朝向复现原始输入",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "behavior": [
+    "默认保持原始左右模式；训练设置中的陪练方向按钮切换相对朝向模式。",
+    "每帧保存原InputFrame及录制时朝向，仅播放时按双方朝向乘积转换x。",
+    "y和按钮不变，缺朝向元数据的旧磁带保持原始方向。",
+    "切换模式从磁带开头播放；离开训练不再追加其他模式的输入。",
+    "实际送入模拟的适配后输入照常写入对局回放，不改回放格式或规则指纹。"
+  ],
+  "tests": [
+    {
+      "name": "training_tape",
+      "status": "passed",
+      "log": "reports/verification/runs/9b116ed3d8c0/training_tape.log",
+      "sha256": "a200d6a8bb21c62fae36a23f150d417c89ee541b362490e9eb5ebb2cb1ccda83"
+    },
+    {
+      "name": "pixel_pages",
+      "status": "passed",
+      "log": "reports/verification/runs/9b116ed3d8c0/pixel_pages.log",
+      "sha256": "69992b71b68575579daf6893f89851bbf13a9a59a1216914679530ce9c03beaa"
+    },
+    {
+      "name": "pixel_ui",
+      "status": "passed",
+      "log": "reports/verification/runs/9b116ed3d8c0/pixel_ui.log",
+      "sha256": "06777aba6af8e65c8a71087b1639d34cc1aca2830d887583da94027fde9d16ba"
+    },
+    {
+      "name": "ui_facing",
+      "status": "passed",
+      "log": "reports/verification/runs/9b116ed3d8c0/ui_facing.log",
+      "sha256": "5af45e79947bbf25ebbb185b2fc8045bbc68dace52408a4d9de77d4679776bf2"
+    },
+    {
+      "name": "logic_2d",
+      "status": "passed",
+      "log": "reports/verification/runs/9b116ed3d8c0/logic_2d.log",
+      "sha256": "1731798ba17eab419e2bad3db5ae5adbca0b834ad8b19a46955e107c9a67e413"
+    }
+  ],
+  "coverage": [
+    "左右录制/播放四种朝向配对和两个模式。",
+    "逐帧不同朝向、循环索引、空磁带、原始帧不变。",
+    "实际app陪练入口与录制入口。",
+    "同一236轻击在左右双方真实触发初代切割光线。",
+    "将60tick实际输入存盘再加载，独立模拟重放最终状态hash一致。"
+  ],
+  "limits": [
+    "尚未验证项目目标Godot4.7。",
+    "无DISPLAY，未进行主游戏画面、720/1080或真人键盘手柄验收。",
+    "无录屏。",
+    "没有新增或修改角色动作资源。"
+  ]
+}

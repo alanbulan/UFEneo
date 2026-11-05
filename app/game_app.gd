@@ -1,4 +1,5 @@
 extends Control
+const TrainingTape = preload("res://input/training_tape.gd")
 var simulation: UfeMatchDirector
 var recorder: UfeReplayRecorder
 var replay: UfeReplayRecorder
@@ -34,6 +35,8 @@ var front: UfeFrontEnd
 var training_overlay: UfeTrainingOverlay
 var direct_battle: bool=false
 var dummy_tape: Array=[]
+var dummy_facings: Array=[]
+var dummy_relative: bool=false
 var dummy_recording: bool=false
 var dummy_cursor: int=0
 var match_seed: int=20261022
@@ -303,12 +306,18 @@ func _action(action: String) -> void:
 		"dummy":
 			dummy = (dummy+1)%5
 			hud.toast.show_message("对手行为："+["站立","下蹲","跳跃","自动防御","对手录制回放"][dummy])
+		"dummy_facing":
+			dummy_relative=not dummy_relative
+			dummy_cursor=0
+			hud.toast.show_message("陪练按当前朝向复现，从头播放" if dummy_relative else "陪练按原始左右复现，从头播放")
 		"dummy_record","dummy_playback":
 			training=true
 			dummy=4
 			dummy_recording=action=="dummy_record"
 			dummy_cursor=0
-			if dummy_recording:dummy_tape.clear()
+			if dummy_recording:
+				dummy_tape.clear()
+				dummy_facings.clear()
 			paused=false
 			hud.close_overlays()
 			hud.toast.show_message("录制陪练：使用2P键位，Enter停止" if dummy_recording else "循环播放陪练录制")
@@ -521,7 +530,7 @@ func _physics_process(_delta: float) -> void:
 				first = review_driver.sample(capture_tick,simulation)
 				second = review_driver.second_sample(capture_tick)
 				if review_driver is UfePixelPagesReview and dummy==4 and not dummy_recording:second=_dummy_input()
-			if dummy_recording:dummy_tape.append(second.pack())
+			_record_dummy_input(second)
 			var inputs: Array = [first,second]
 			if review: review_driver.remember_inputs(inputs)
 			simulation.step(inputs)
@@ -549,6 +558,7 @@ func _physics_process(_delta: float) -> void:
 		review_driver.trace[-1]["intro_tick"]=view.intro_tick
 		review_driver.trace[-1]["ending_tick"]=ending_tick
 	var label: String = "训练："+["站立","下蹲","跳跃","自动防御","对手录制回放"][dummy] if training else ("本地双人" if local else "对战电脑")
+	hud.dummy_relative = dummy_relative
 	hud.dummy_name = ["站立","下蹲","跳跃","自动防御","对手录制回放"][dummy]
 	hud.debug_visible = view.show_boxes
 	hud.update_match(display_sim,label+"  | Enter 暂停  F1 判定框  F2 招式表  F3 训练  "+message,intro,training)
@@ -563,6 +573,11 @@ func _physics_process(_delta: float) -> void:
 	if not capture_path.is_empty() and capture_tick == capture_frame: _capture.call_deferred()
 	if auto_quit > 0 and capture_tick >= auto_quit: shutdown()
 
+func _record_dummy_input(frame: UfeInputFrame) -> void:
+	if not dummy_recording or not training or dummy!=4:return
+	dummy_tape.append(frame.pack())
+	dummy_facings.append(simulation.fighters[1].facing)
+
 func _dummy_input() -> UfeInputFrame:
 	match dummy:
 		1: return UfeInputFrame.make(0,-1)
@@ -573,7 +588,10 @@ func _dummy_input() -> UfeInputFrame:
 				var frame:=UfeInputRouter.poll(1)
 				return frame
 			if not dummy_tape.is_empty():
-				var frame:=UfeInputFrame.unpack(dummy_tape[dummy_cursor%dummy_tape.size()])
+				var index:=dummy_cursor%dummy_tape.size()
+				# 旧审片注入的磁带无朝向元数据时沿原始方向，不猜录制朝向。
+				var facing:=int(dummy_facings[index]) if index<dummy_facings.size() else 0
+				var frame:=TrainingTape.sample(dummy_tape[index],facing,simulation.fighters[1].facing,dummy_relative)
 				dummy_cursor+=1
 				return frame
 	return UfeInputFrame.make()
