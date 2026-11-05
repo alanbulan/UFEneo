@@ -1,0 +1,147 @@
+{
+  "fighter": "ultraman-arc__galaxion",
+  "reviewer": "root_delegated_by_user",
+  "status": "logic_pass_graphical_pending",
+  "source_review": "docs/verification/galaxion-launcher-source-review.json",
+  "manifest": "art/fighters/ultraman-arc__galaxion/stage2/launcher-registered-20261105-v1/manifest.json",
+  "registration": {
+    "source_size": [
+      1254,
+      1254
+    ],
+    "sample_size": [
+      160,
+      160
+    ],
+    "canvas": [
+      320,
+      320
+    ],
+    "root": [
+      160,
+      280
+    ],
+    "source_frames": 7,
+    "own_idle_frames": 6,
+    "source_order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "per_phase_rescale": false,
+    "limb_editing": false,
+    "reproduction": "reports/galaxion-launcher-resume/registration-reproduction.json",
+    "fist_boxes": {
+      "2": [
+        36,
+        128,
+        14,
+        12
+      ]
+    }
+  },
+  "rules": {
+    "reference": "content/fighters/ultraman-arc/moves/launcher.json",
+    "startup": 6,
+    "active": 5,
+    "recovery": 12,
+    "total": 23,
+    "original_active_recovery": [
+      8,
+      9
+    ],
+    "damage": 75,
+    "stamina_cost": 30,
+    "launch": true,
+    "blockable": true,
+    "level": "mid",
+    "expanded_hitbox": false,
+    "invulnerability_added": false,
+    "phase_ticks": [
+      3,
+      3,
+      5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "phase03_active": false,
+    "formal_definition_changed": false
+  },
+  "verification": {
+    "engine": "Godot4.6.3",
+    "target4_7_verified": false,
+    "contract": "reports/galaxion-launcher-resume/contract-v1.json",
+    "contract_sha256": "d5141de862ac8b582ad5ba9fde96c54640ca7feb3c9fbb8c0c1983334e9ea354",
+    "bound_resources": 8782,
+    "headless_groups": 12,
+    "ticks_each": 180,
+    "independent_root_replay_pairs": [
+      {
+        "original": "1280x720-left-block-original",
+        "replay": "1280x720-left-block-replay",
+        "ticks": 180,
+        "all_fields_equal": true
+      },
+      {
+        "original": "1280x720-left-hit-original",
+        "replay": "1280x720-left-hit-replay",
+        "ticks": 180,
+        "all_fields_equal": true
+      },
+      {
+        "original": "1280x720-left-whiff-original",
+        "replay": "1280x720-left-whiff-replay",
+        "ticks": 180,
+        "all_fields_equal": true
+      },
+      {
+        "original": "1280x720-right-block-original",
+        "replay": "1280x720-right-block-replay",
+        "ticks": 180,
+        "all_fields_equal": true
+      },
+      {
+        "original": "1280x720-right-hit-original",
+        "replay": "1280x720-right-hit-replay",
+        "ticks": 180,
+        "all_fields_equal": true
+      },
+      {
+        "original": "1280x720-right-whiff-original",
+        "replay": "1280x720-right-whiff-replay",
+        "ticks": 180,
+        "all_fields_equal": true
+      }
+    ],
+    "python_tests_passed": 25,
+    "separate_logic_cases": 6,
+    "summary": "reports/galaxion-launcher-resume/headless-summary-v1.json",
+    "trajectory_simulation_ticks": {
+      "contact_launch": 26,
+      "first_positive_height": 31,
+      "apex": 48,
+      "first_descent": 50,
+      "down": 67,
+      "wake": 102,
+      "recovered_idle": 122
+    },
+    "max_height": 171,
+    "contact_height": 134,
+    "graphical_pending": true
+  },
+  "limits": [
+    "只为单次真实6K候选，不代表完整装甲或追击连段。",
+    "原brief腹部收拳未完全符合，02上挑后03已前伸仅作后摇，不能把03挂上挑判定。",
+    "图形尚未运行，不能以逻辑通过代替相邻姿态、美术或全身边界实际验收。",
+    "无实速、录屏、音频、真人硬件输入验收。"
+  ],
+  "installed": false,
+  "playable": false,
+  "transform_enabled": false
+}
