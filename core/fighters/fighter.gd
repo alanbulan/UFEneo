@@ -1,6 +1,8 @@
 class_name UfeFighter
 extends RefCounted
 const CurrentCapture = preload("res://core/combat/throw_current_capture.gd")
+# 追击许可只属于尚未被中断的可行动链；自然收招清move不清此窗口。
+const CHASE_ACTIONABLE_STATES := ["idle","walk","dash","backstep","dodge","crouch","crouch_start","crouch_rise","guard","crouch_guard","air","charge","takeoff","turn","crouch_turn","charge_start","charge_stop","attack","air_attack","land"]
 var definition: UfeFighterDefinition
 var base_definition: UfeFighterDefinition
 var battle_form: Dictionary = {}
@@ -30,8 +32,12 @@ func _init(data: UfeFighterDefinition, start_x: int) -> void:
 func enter(id: String, duration: int = 0) -> void:
 	if id!="thrown":motion.erase("throw_current_capture")
 	state = id
+	if not chase_allowed(): motion.chase_window = 0
 	state_tick = 0
 	motion.duration = duration
+
+func chase_allowed() -> bool:
+	return state in CHASE_ACTIONABLE_STATES
 
 func frame() -> Dictionary:
 	if CurrentCapture.active(self):return motion.throw_current_capture.frame

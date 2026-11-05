@@ -87,7 +87,8 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 		b.vy = 18
 		b.vx = a.facing * 2
 		b.enter("launch")
-		a.motion.chase_window = 24
+		# 同tick互击的后结算不能给已受击的攻击者重新授予追击。
+		if a.chase_allowed(): a.motion.chase_window = 24
 	elif bool(move.bounce) and b.height > 0 and not b.combat.bounced:
 		b.vy = -18
 		b.combat.bounced = true

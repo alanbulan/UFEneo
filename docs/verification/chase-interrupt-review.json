@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-05",
+  "acceptance": "root_delegated_by_user",
+  "scope": "修复受击后残留追击窗口使角色跳键逃离真实挑空硬直；不修改招式数据、无敌、判定与美术。",
+  "before": {
+    "evidence": "reports/chase-interrupt-before/run.log",
+    "actual_failures": [
+      "trade/1",
+      "trade/-1"
+    ],
+    "timeline": "双方真实升拳在sim.tick=8互中，tick16停顿归零，tick17跳键把launch非法切成takeoff/chase。正常单方命中追击是合法对照。",
+    "evidence_limit": "修前仅控制台记录含关键快照与140tick末hash；当时未保存完整trace或回放文件，不补造。"
+  },
+  "fix": [
+    "角色进入受击、击飞、倒地、投技捕获、防御硬直、变身或终局等不可行动状态时清除追击窗口。",
+    "同tick互击后结算不得给已经受击的攻击者重新授予窗口；两个跳键入口也检查可行动链。",
+    "自然收招仍保留未耗尽追击窗口，不加confirmed条件破坏合法延迟追击。"
+  ],
+  "validation": {
+    "engine": "Godot 4.6.3，项目目标4.7未验",
+    "command": "python tools/godot_lock.py -- python tools/verify.py --only chase_interrupt（默认清单也已纳入，输出目录每轮唯一）",
+    "actual_output": "reports/chase-interrupt-after/parameterized/summary.json",
+    "cases": 20,
+    "ticks_each": 180,
+    "cases_scope": "双朝向、互击双方、停顿内跳键、恢复后新跳、正常/收招后延迟追击、落空/过期；初始位置固定后全部通过真实输入触发战斗。",
+    "replay": "每组真实recorder落盘、当前指纹loader载入，新模拟按原输入逐tick比较状态、事件及hash；末hash一致。",
+    "entry_units": "另有明确标注的状态入口单元，直接设置窗口测试取消，不冒充真实整局。",
+    "regressions": [
+      {
+        "name": "logic_2d",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "phase3_air",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "phase3_zetton_air",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "phase3_throws",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "phase3_reaction",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "air_only_start",
+        "status": "passed",
+        "exit": 0
+      }
+    ],
+    "normal_trajectory": "修前修后正常追击双向140tick末hash相同。",
+    "import": "editor实际生成UID；初次缺隔离XDG_CONFIG_HOME导致设置空路径保存错误，保留原日志。补齐CONFIG/DATA/CACHE后锁内重跑无ERROR/SCRIPT ERROR，日志reports/chase-interrupt-after/import-isolated-config.log。"
+  },
+  "compatibility": {
+    "revision": "chase_interrupt=1",
+    "policy": "此次全局战斗规则确有改变，模拟指纹追加修订。旧规则回放明确拒绝并显示规则或招式数据已改变，不静默按新规则解释。",
+    "old_fixture": "精确旧指纹构成的负面测试，非声称旧文件均已实播。",
+    "historic_candidates": "历史候选合同与回执保留原版本意义；重跑须重封当前源码合同，不覆盖历史证据。"
+  },
+  "limits": [
+    "本批为战斗/回放逻辑修复，无新美术、录屏、音频或真人硬件输入验收。",
+    "训练录制生命周期是另一在制批次，不包含本提交。"
+  ],
+  "evidence_sha256": {
+    "reports/chase-interrupt-before/run.log": "2025ee983bd1fccb3f70d62978304b85af7f71c96eee6350672fcabc63006011",
+    "reports/chase-interrupt-after/parameterized/summary.json": "a40a2b210c957baba3304bb6a34971dc23149e9efd43968b7a7b8366e6de3705",
+    "reports/verification/runs/276269ca6cb5/results.json": "ad7830cf104e3052c7735fd28a95bbdba9d3ca1cc3e1c0fcfd7fa2b5c9843c15"
+  }
+}

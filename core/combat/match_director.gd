@@ -1,6 +1,7 @@
 class_name UfeMatchDirector
 extends RefCounted
 const MOVE_START_RULE_REVISION := 2
+const CHASE_INTERRUPT_RULE_REVISION := 1
 var rules: UfeRuleSet
 var fighters: Array[UfeFighter] = []
 var states: Dictionary
@@ -29,7 +30,7 @@ func _init(first: UfeFighterDefinition, second: UfeFighterDefinition, rule: UfeR
 	for f in fighters:
 		f.battle_form = battle_forms.get(f.definition.id, {})
 		form_rules.append(UfeBattleTransform.simulation_data(f.battle_form))
-	var fingerprint_data: Array = [6, 60, rule.simulation_data(), first.simulation_data(), second.simulation_data(), form_rules, ["round_end_identity", 1], ["move_start_conditions", MOVE_START_RULE_REVISION], ["hit_pushback_bounds", UfeHitResolver.PUSHBACK_BOUNDARY_REVISION], ["throw_target_air", UfeHitResolver.THROW_TARGET_RULE_REVISION]]
+	var fingerprint_data: Array = [6, 60, rule.simulation_data(), first.simulation_data(), second.simulation_data(), form_rules, ["round_end_identity", 1], ["move_start_conditions", MOVE_START_RULE_REVISION], ["hit_pushback_bounds", UfeHitResolver.PUSHBACK_BOUNDARY_REVISION], ["throw_target_air", UfeHitResolver.THROW_TARGET_RULE_REVISION], ["chase_interrupt", CHASE_INTERRUPT_RULE_REVISION]]
 	if UfeThrowResolver.RootOffsets.used_in(fingerprint_data):
 		fingerprint_data.append(["throw_root_overrides", UfeThrowResolver.ROOT_OVERRIDE_RULE_REVISION])
 	if UfeThrowResolver.CurrentCapture.used_in(fingerprint_data):
@@ -172,7 +173,7 @@ func _advance(index: int, input: UfeInputFrame, command: Dictionary) -> void:
 	if f.state in ["transform", "form_entry"]:
 		states[f.state].step(f, input, command)
 		return
-	if command.jump and int(f.motion.chase_window) > 0 and f.combat.confirmed:
+	if command.jump and f.chase_allowed() and int(f.motion.chase_window) > 0 and f.combat.confirmed:
 		f.clear_move()
 		f.vy = 18
 		f.vx = f.facing * 4
@@ -254,7 +255,7 @@ func _advance(index: int, input: UfeInputFrame, command: Dictionary) -> void:
 			f.clear_move()
 			f.enter("air" if f.height > 0 else "crouch" if input.y<0 else "idle")
 	else:
-		if command.jump and int(f.motion.chase_window) > 0:
+		if command.jump and f.chase_allowed() and int(f.motion.chase_window) > 0:
 			f.clear_move()
 			f.vy = 18
 			f.vx = f.facing * 4
