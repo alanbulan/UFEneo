@@ -456,6 +456,10 @@ func play_replay() -> void:
 	selected_fighters=value.fighter_ids.duplicate()
 	message=""
 	view.bind_match(simulation)
+	# 验证并成功装配后才清显示；失败加载不能破坏当前输入与上一招。
+	hud.input_history=[[],[]]
+	hud.debug_label.text=""
+	training_overlay.reset_display()
 	replay = value
 	dummy_recording=false
 	dummy_cursor=0
@@ -564,8 +568,11 @@ func _physics_process(_delta: float) -> void:
 		elif replay != null:
 			if replay_cursor < replay.frames.size():
 				var pair: Array = replay.frames[replay_cursor]
-				if training_input_audit!=null:training_input_audit.sampled(UfeInputFrame.unpack(pair[1]),"replay")
-				simulation.step([UfeInputFrame.unpack(pair[0]),UfeInputFrame.unpack(pair[1])])
+				var inputs: Array=[UfeInputFrame.unpack(pair[0]),UfeInputFrame.unpack(pair[1])]
+				if training_input_audit!=null:training_input_audit.sampled(inputs[1],"replay")
+				simulation.step(inputs)
+				hud.record_inputs(inputs)
+				training_overlay.record(inputs)
 				replay_cursor += 1
 			else:
 				message = "回放验证一致" if replay.final_hash == simulation.state_hash() else "回放状态不一致"

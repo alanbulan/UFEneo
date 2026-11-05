@@ -20,6 +20,15 @@ func _ready() -> void:
 		var list:=HBoxContainer.new();column.add_child(list);lists.append(list)
 		if i==0:
 			var spacer:=Control.new();spacer.size_flags_horizontal=Control.SIZE_EXPAND_FILL;spacer.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(spacer)
+func reset_display() -> void:
+	history=[[],[]]
+	previous=["",""]
+	last_moves=[{},{}]
+	feedback=["",""]
+	feedback_ticks=[0,0]
+	for list in lists:
+		for child in list.get_children():list.remove_child(child);child.queue_free()
+	for label in info:label.text=""
 func record(inputs: Array) -> void:
 	for i in range(2):
 		var f: UfeInputFrame=inputs[i]

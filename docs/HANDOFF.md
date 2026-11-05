@@ -13,6 +13,8 @@
 
 ### 已完成与未通过的具体动作
 
+- 回放输入复盘：修复F4播放时训练图标/F1历史停在录制末尾，以及成功加载残留旧上一招/反馈。仅成功装配后清显示、每tick沿实际录像输入更新，坏文件拒绝保留显示；不改模拟或录像格式。既有回放测试同一红绿通过，三带字节不变、逐tick模拟hash保持；5项相关回归及normal关闭通过，原生画面待验。[回执](verification/replay-input-display-review.json)
+
 - 屏障反射持续束：修复归属反转后误查新拥有者招式、下一tick清束的问题；初代真实Q→2H反杰克I，双向t43反射、t44回击65、t49原发射招中断撤束。6组150tick真实输入及独立回放通过，4组未反射束/普通火球对照旧hash保持；新增规则指纹，旧录像拒绝。导入及12项相关回归通过，四组720/1080双向48图实际反射/回击可辨；保留束超视口、白闪遮细节与t49撤束仅trace。图形为居中平移夹具，双反射/KO尾迹仅模型。未改素材/长度/寿命/速度或判定。[逻辑回执](verification/projectile-beam-reflection-review.json)、[实际画面](verification/projectile-beam-reflection-graphical.json)
 
 - 旧弹体与新招隔离：默认470/750起点连续两次I，旧火球命中或被防不再吞掉已扣体力的第二发；保留confirmed、原判定与伤害。8组真实输入红绿及独立回放通过，11项相关回归通过；新增规则指纹，真实旧录像8组拒绝。蹲避对照逐tick hash保持，延迟对照connected残留清除会改变hash；无真人键盘、图形/录屏或声音验收。[回执](verification/projectile-move-isolation-review.json)

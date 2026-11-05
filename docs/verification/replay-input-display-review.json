@@ -1,0 +1,89 @@
+{
+  "status": "逻辑红绿通过，原生画面待验",
+  "reviewer": "root_delegated_by_user",
+  "problem": "F4播放只推进模拟，未同步训练输入图标和F1历史；成功加载还残留旧输入、上一招与拒招反馈，误导搓招复盘。",
+  "fix": [
+    "只在成功验证并装配回放后清HUD历史及训练显示；坏文件拒绝保持完整原显示。",
+    "每个实际消费的录像tick使用同一解包InputFrame推进模拟并更新既有两套显示。",
+    "未改普通新局/R再战、core指纹、招式、输入解析或回放格式；不新增通用工具。"
+  ],
+  "red": {
+    "path": "reports/replay-input-display/20261105/red/result.json",
+    "sha256": "24b69442105539b9f1d9ab86b506b68de8a53303f3e19e575eb529b4f85708de",
+    "checks": 1927,
+    "failures": 547,
+    "note": "同一扩展测试，重复逐tick断言组成，不等于547个独立功能bug；失败集中显示，模拟hash断言没有失败。"
+  },
+  "green": {
+    "path": "reports/replay-input-display/20261105/green/result.json",
+    "sha256": "740ab22532d1f0b397397f30a7c4e4ca956571453ccf5505434973f4d3499d8d",
+    "checks": 1927,
+    "failures": 0,
+    "cases": 31
+  },
+  "source_comparison": {
+    "standard-original.json": {
+      "same_bytes": true,
+      "sha256": "51b8e937a8b0657b55b0194945d21d2e2ef656689be54749ae84346498801b01",
+      "final_hash": "c33b40928c50bb26c2d6f0aaf668e03c6646a5abb3a372717e92b5befd876e38"
+    },
+    "ex_direct-original.json": {
+      "same_bytes": true,
+      "sha256": "06cd0e9e22f5959f510f6969221922c3bca628d237ac8a24f49bf95716b9590f",
+      "final_hash": "32ae4a28d0dd0a7ed351d87d74d15584b1301ea6fa67231118bba26daf7c32ce"
+    },
+    "changed_round_rule-original.json": {
+      "same_bytes": true,
+      "sha256": "5290556007fec3381160d697d67955129f87b0317e0e75f20c0c008f86a2d2e3",
+      "final_hash": "302557a524905b6349546da9fdd7b9d3b9ea9ad4b0366df52808a06e0587929e"
+    }
+  },
+  "regressions": {
+    "directory": "reports/verification/runs/2349797b6deb",
+    "results": [
+      {
+        "name": "training_lifecycle",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "training_tape",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "training_input_audit",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "pixel_ui",
+        "status": "passed",
+        "exit": 0
+      },
+      {
+        "name": "main_shutdown_reentrancy",
+        "status": "passed",
+        "exit": 0
+      }
+    ]
+  },
+  "normal_shutdown": {
+    "path": "reports/replay-input-display/20261105/related/normal-shutdown.log",
+    "sha256": "08c439c4d041903388bd003f3355c872849e453bc6d48d112065326f790dada4",
+    "exit": 0,
+    "failures": []
+  },
+  "source_sha256": {
+    "app/game_app.gd": "14fc9cbf2e47ed02d9cdbedc10c14fe00721b074e6b9bbc59ecb91b9f989d740",
+    "ui/training_overlay.gd": "ba8410381dc2bccb1b0aa7251cfb6fb4094ba941f8d7af58ef218e0bba38081e",
+    "tests/replay_match_loading.gd": "a9f21163af6bdfad11680c3e3b0f203d9ea0c09e6f6bb390f93322c4268cb393"
+  },
+  "limitations": [
+    "Godot4.6.3；项目4.7未验。",
+    "通过Input.action_press、正式app physics、合成F4/Esc事件及真实按钮信号验收，不冒称物理键盘。",
+    "当前原生720/1080观察进行中，无录屏、音频或实速图形验收结论。",
+    "回放结束最终hash/暂停状态有检查；未新增暂停中间时段逐tick显示专项，不扩大声称覆盖。",
+    "main_shutdown_reentrancy既有baseline-duplicate退出仍有ObjectDB泄漏警告，本次指定normal关闭无警告；未定位或修复旧泄漏。"
+  ]
+}
