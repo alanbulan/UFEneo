@@ -13,6 +13,8 @@
 
 ### 已完成与未通过的具体动作
 
+- 屏障反射持续束：修复归属反转后误查新拥有者招式、下一tick清束的问题；初代真实Q→2H反杰克I，双向t43反射、t44回击65、t49原发射招中断撤束。6组150tick真实输入及独立回放通过，4组未反射束/普通火球对照旧hash保持；新增规则指纹，旧录像拒绝。导入及12项相关回归通过，实际画面待验；双反射/KO尾迹仅模型。未改素材/长度/寿命/速度或判定。[逻辑回执](verification/projectile-beam-reflection-review.json)
+
 - 旧弹体与新招隔离：默认470/750起点连续两次I，旧火球命中或被防不再吞掉已扣体力的第二发；保留confirmed、原判定与伤害。8组真实输入红绿及独立回放通过，11项相关回归通过；新增规则指纹，真实旧录像8组拒绝。蹲避对照逐tick hash保持，延迟对照connected残留清除会改变hash；无真人键盘、图形/录屏或声音验收。[回执](verification/projectile-move-isolation-review.json)
 
 - 空中击倒弹体方向：补齐先前方向修复遗漏的knockdown空中vx分支。默认起点真实后走、杰顿火球/瞬移、雷德王闪避/投岩及跳跃273tick完整场景复现并修复；7组同输入回放与8相关回归通过，方向规则升2、真实v1录像拒绝。未改招式/素材，未另称图形通过。[回执](verification/projectile-air-knockdown-direction-review.json)

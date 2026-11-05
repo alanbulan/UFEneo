@@ -1,0 +1,266 @@
+{
+  "status": "逻辑通过，实际图形待验",
+  "engine": "Godot 4.6.3.stable.official.7d41c59c4",
+  "scope": "root_delegated_by_user",
+  "source_sha256": {
+    "core/combat/projectile_resolver.gd": "e3023da5df1a82fdabbc95f918c510974f40b6bb7c3314ea73af72add1239ce7",
+    "core/combat/match_director.gd": "cc28f2de8e87a085f5120aaa3c963e73e8b63075a08d330e143bceeed0f35796",
+    "presentation/ko_finish_presentation.gd": "50647028d63e5a3d6bc92f2b024d0b6b4700c54e7130897662a30139b7000ebc",
+    "tests/projectile_beam_reflection.gd": "6da522ed00d2a478486a4fcf21183f982e2900c89c3696c1219c7a2727538fcc",
+    "tests/projectile_beam_reflection.gd.uid": "ba8ea3ea2c39f7120eac4b9a39fd99a626692a1c13ccfcce9ed14e8f0863ca00",
+    "tests/chase_interrupt.gd": "37a4b0e728f77a6c29d837b5b27dd4ea8dc6eedd0d4ff593fc913f4e34c3bc98",
+    "tests/throw_root_overrides.gd": "349059d5a6ce42a235f9b634ccc1e359114e9e4d8088c44809b070a29e1fdc06",
+    "tests/throw_current_capture.gd": "854c46a070431ba9312f78be0968e6e4c35eb834ab5b23ef5fcac57e4292dca0",
+    "tools/verify.py": "f791cbbb1e803857cdd8ec4fea4976fc3a8f0a9c4a81ff28eaf4936eeba5b25a"
+  },
+  "before_sources": [
+    {
+      "directory": "reports/verification/projectile-beam-reflection-before",
+      "cases": 4,
+      "contract_sha256": "82e1c7b3e1578b6ed54486e4dcef2ee8c7212cf8bf1278236a81c1601bd5d6c6",
+      "all_recorded_evidence_sha256_unchanged": true
+    },
+    {
+      "directory": "reports/verification/projectile-beam-reflection-before-controls",
+      "cases": 6,
+      "contract_sha256": "8fb018913db69bf6bcbd50a4ac6d6f368bee8864d24de224b3c0666f235f5788",
+      "all_recorded_evidence_sha256_unchanged": true
+    }
+  ],
+  "actual_input_cases": [
+    {
+      "case": "p1-shield",
+      "replay_ticks_matched": 150,
+      "hp": [
+        935,
+        1000
+      ],
+      "reflection_ticks": [
+        43
+      ],
+      "contact_ticks": [
+        44
+      ],
+      "same_before_inputs": true,
+      "real_before_rejected": true,
+      "changed_hash_ticks": 108
+    },
+    {
+      "case": "p1-neutral",
+      "replay_ticks_matched": 150,
+      "hp": [
+        1000,
+        935
+      ],
+      "reflection_ticks": [],
+      "contact_ticks": [
+        43
+      ],
+      "same_before_inputs": true,
+      "real_before_rejected": true,
+      "changed_hash_ticks": 0
+    },
+    {
+      "case": "fireball-p1-shield",
+      "replay_ticks_matched": 150,
+      "hp": [
+        935,
+        1000
+      ],
+      "reflection_ticks": [
+        63
+      ],
+      "contact_ticks": [
+        81
+      ],
+      "same_before_inputs": true,
+      "real_before_rejected": true,
+      "changed_hash_ticks": 0
+    },
+    {
+      "case": "p2-shield",
+      "replay_ticks_matched": 150,
+      "hp": [
+        1000,
+        935
+      ],
+      "reflection_ticks": [
+        43
+      ],
+      "contact_ticks": [
+        44
+      ],
+      "same_before_inputs": true,
+      "real_before_rejected": true,
+      "changed_hash_ticks": 108
+    },
+    {
+      "case": "p2-neutral",
+      "replay_ticks_matched": 150,
+      "hp": [
+        935,
+        1000
+      ],
+      "reflection_ticks": [],
+      "contact_ticks": [
+        43
+      ],
+      "same_before_inputs": true,
+      "real_before_rejected": true,
+      "changed_hash_ticks": 0
+    },
+    {
+      "case": "fireball-p2-shield",
+      "replay_ticks_matched": 150,
+      "hp": [
+        1000,
+        935
+      ],
+      "reflection_ticks": [
+        63
+      ],
+      "contact_ticks": [
+        81
+      ],
+      "same_before_inputs": true,
+      "real_before_rejected": true,
+      "changed_hash_ticks": 0
+    }
+  ],
+  "source_interrupt_cleanup": {
+    "actual_shield_cases": [
+      "p1-shield",
+      "p2-shield"
+    ],
+    "source_hit_tick": 44,
+    "first_advancing_tick_after_hitstop": 49,
+    "beam_life_before_cleanup": 6,
+    "projectiles_after_cleanup": 0
+  },
+  "model_only_cases": [
+    "double-reflection-model-only",
+    "source-interrupt-same-name-model-only",
+    "ko-reflected-tail-model-only"
+  ],
+  "regressions": [
+    {
+      "name": "import",
+      "passed": true,
+      "exit": 0,
+      "seconds": 27.276,
+      "directory": "reports/verification/projectile-beam-reflection-regressions/import"
+    },
+    {
+      "name": "logic_2d",
+      "passed": true,
+      "exit": 0,
+      "seconds": 7.034,
+      "directory": "reports/verification/projectile-beam-reflection-regressions/logic_2d"
+    },
+    {
+      "name": "projectile_contact_direction",
+      "passed": true,
+      "exit": 0,
+      "seconds": 13.197,
+      "directory": "reports/verification/projectile-beam-reflection-regressions/projectile_contact_direction"
+    },
+    {
+      "name": "projectile_air_knockdown_direction",
+      "passed": true,
+      "exit": 0,
+      "seconds": 14.28,
+      "directory": "reports/verification/projectile-beam-reflection-regressions/projectile_air_knockdown_direction"
+    },
+    {
+      "name": "projectile_move_isolation",
+      "passed": true,
+      "exit": 0,
+      "seconds": 11.366,
+      "directory": "reports/verification/projectile-beam-reflection-regressions/projectile_move_isolation"
+    },
+    {
+      "name": "capture_mechanism",
+      "passed": true,
+      "exit": 0,
+      "seconds": 26.069,
+      "directory": "reports/verification/projectile-beam-reflection-regressions/capture_mechanism"
+    },
+    {
+      "name": "capture_mechanism_replay",
+      "passed": true,
+      "exit": 0,
+      "seconds": 21.379,
+      "directory": "reports/verification/projectile-beam-reflection-regressions/capture_mechanism"
+    },
+    {
+      "name": "frame_guard",
+      "passed": true,
+      "exit": 0,
+      "seconds": 24.238,
+      "directory": "reports/verification/projectile-beam-reflection-regressions/frame_guard"
+    },
+    {
+      "name": "ko_finish_presentation",
+      "passed": true,
+      "exit": 0,
+      "seconds": 2.47,
+      "directory": "reports/verification/projectile-beam-reflection-regressions/ko_finish_presentation"
+    },
+    {
+      "name": "phase3_specials",
+      "passed": true,
+      "exit": 0,
+      "seconds": 31.045,
+      "directory": "reports/verification/projectile-beam-reflection-regressions/phase3_specials"
+    },
+    {
+      "name": "throw_current_capture",
+      "passed": true,
+      "exit": 0,
+      "seconds": 29.792,
+      "directory": "reports/verification/projectile-beam-reflection-regressions/throw_current_capture"
+    },
+    {
+      "name": "throw_root_overrides",
+      "passed": true,
+      "exit": 0,
+      "seconds": 46.577,
+      "directory": "reports/verification/projectile-beam-reflection-regressions/throw_root_overrides"
+    },
+    {
+      "name": "chase_interrupt",
+      "passed": true,
+      "exit": 0,
+      "seconds": 26.535,
+      "directory": "reports/verification/projectile-beam-reflection-regressions/chase_interrupt"
+    }
+  ],
+  "warning_or_error_logs": [],
+  "limitations": [
+    "实际引擎Godot4.6.3，项目4.7未验。",
+    "目前仅逻辑与独立输入回放；实际画面另有冻结合同在验，未验真人键盘、音频或录屏。",
+    "双反射、同名原发射招中断、反射KO短尾仅直接模型验证，不冒称真实输入可达。",
+    "保留原长度/寿命/速度/判定与捕获、返航专用处理；源头被打断后撤束，不改成独立移动弹。"
+  ],
+  "godot_lock_released_at_handoff": true,
+  "source_receipt": {
+    "path": "reports/verification/projectile-beam-reflection-final/final-contract.json",
+    "sha256": "e8af6512d3f60e803bd14ae8eb884995db03919c4b94c4a390d4f4d0625904b7"
+  },
+  "review_note": "独立核对源码diff、全部源SHA、两份修前合同和真实输入结果；原4组红灯与补齐对照6组红灯分开保存，旧录像拒绝不冒称兼容。实战路径不改站位/能量/状态，三项直接模型明确另列。",
+  "verify_entry_regression": {
+    "directory": "reports/verification/runs/945c73589ae9",
+    "results": [
+      {
+        "name": "projectile_beam_reflection",
+        "status": "passed",
+        "exit": 0
+      }
+    ]
+  },
+  "graphical_pending": {
+    "contract": "reports/hud-framing/beam-reflection-v1-contract.json",
+    "sha256": "5b0caf419659857add0c1a51b0d149c2778b27b57ae32384d6db87dd88e81a65",
+    "scope": "复用既有正式main冻结入口，四组720/1080双向；280间距整体平移到500/780再镜像，不冒称默认470/750图形。"
+  }
+}

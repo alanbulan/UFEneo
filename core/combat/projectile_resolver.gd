@@ -1,5 +1,6 @@
 class_name UfeProjectileResolver
 extends RefCounted
+const BEAM_REFLECTION_RULE_REVISION := 1
 ## 飞行物与护盾/反射/吸收共用一套整数判定，不依赖角色 ID。
 static func spawn(sim: UfeMatchDirector, index: int, shot: Dictionary, move_id: String) -> void:
 	var f := sim.fighters[index]
@@ -77,13 +78,16 @@ static func advance(sim: UfeMatchDirector, contacts: Array) -> void:
 		var returning: bool=p.has("integer_path")
 		if returning:UfeReturningProjectile.advance(sim,p)
 		if bool(p.get("beam",false)):
-			var emitter:=sim.fighters[int(p.owner)]
+			# 攻击归属可反转，持续发射许可仍属于原发射者。
+			var emitter:=sim.fighters[int(p.get("source_owner",p.owner))]
 			if emitter.move_id!=str(p.move):
 				p.life=0
 				continue
-			var anchor: Array=beam_origin(emitter,p)
-			p.x=emitter.x+emitter.facing*int(anchor[0])
-			p.height=emitter.height+int(anchor[1])
+			# 反射束保留已登记的屏外缘原点；双反射也不重新粘回人物。
+			if not bool(p.get("beam_reflected",false)):
+				var anchor: Array=beam_origin(emitter,p)
+				p.x=emitter.x+emitter.facing*int(anchor[0])
+				p.height=emitter.height+int(anchor[1])
 		if not returning:
 			p.x=int(p.x)+int(p.facing)*int(p.speed)
 			p.height=int(p.height)+int(p.vy)
@@ -138,6 +142,7 @@ static func advance(sim: UfeMatchDirector, contacts: Array) -> void:
 				p.owner=target_index
 				p.facing=target.facing
 				p.x=target.x+target.facing*(int(guard[0])+int(guard[2])+2)
+				if bool(p.get("beam",false)):p.beam_reflected=true
 				sim.events.append(UfeFrameGuard.decorate({"kind":"projectile_reflect","player":target_index,"move":target.move_id},frame,point,target.facing))
 			else:
 				p.life=0

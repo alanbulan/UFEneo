@@ -223,7 +223,7 @@ func _advance_projectiles() -> void:
 		p.end_alpha=mini(1000,left*1000/maxi(1,fade))
 		if bool(p.get("beam",false)):
 			var actor:=scene.fighters[int(p.owner)]
-			if actor.move_id==str(p.move) and actor.frame().has("beam_origin"):
+			if not bool(p.get("beam_reflected",false)) and actor.move_id==str(p.move) and actor.frame().has("beam_origin"):
 				var anchor: Array=actor.frame().beam_origin
 				p.x=actor.x+actor.facing*int(anchor[0]);p.height=actor.height+int(anchor[1])
 			else:
