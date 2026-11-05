@@ -1,0 +1,57 @@
+{
+  "schema": "ufeneo.luna.crush-timing-proposal.v1",
+  "status": "候选后续RAM测试建议，尚未注册或运行，须结合当前atlas静态复核",
+  "plan": "tools/rebuild/ultraman-arc/luna-crush-geometry/plan-followthrough-v3.json",
+  "phase_order": [
+    "idle_start",
+    "raised_05",
+    "descent_01_candidate",
+    "contact_01",
+    "followthrough_01",
+    "return_guard_candidate",
+    "idle_return"
+  ],
+  "ticks": [
+    3,
+    5,
+    4,
+    8,
+    4,
+    5,
+    6
+  ],
+  "comparison_rear_foot_anchor": [
+    110,
+    280
+  ],
+  "suggested_runtime_sprite_root": [
+    160,
+    280
+  ],
+  "root_note": "后脚比较锚不是人物运行根点；现有320画布原样可用，不单独挪脚。注册时需核root/框与真实身体位置。",
+  "rule_reference": {
+    "path": "content/fighters/ultraman-arc/moves/crush.json",
+    "sha256": "45204172834db03f1a2231bba1532416182bbf56fbaa44f42554f9807cbc132e"
+  },
+  "unchanged_rules": {
+    "startup": 12,
+    "active": 8,
+    "recovery": 15,
+    "damage": 130,
+    "stamina_cost": 30,
+    "unblockable": true,
+    "launch": false,
+    "knockdown": false
+  },
+  "input": "实际中立方向+CRUSH=64（默认O）；不直接设置move_id",
+  "contact_phase_only": 3,
+  "hitbox_not_yet_registered": true,
+  "future_test_caution": "原crush unblockable=true，因此持续GUARD对手应仍按原规则受击，不能直接沿用spin的block0断言或为通过测试改规则。",
+  "reused_pose": "下降候选整图在屈肘回护阶段复用一次，必须注明同源；不是新增生成相，也不是把整段攻击倒放。",
+  "not_claimed": [
+    "未验实际起手速度/重砸节奏/回护自然性",
+    "未构建攻击框或正式资源",
+    "未运行Godot/输入/回放/图形",
+    "未安装或解锁"
+  ]
+}

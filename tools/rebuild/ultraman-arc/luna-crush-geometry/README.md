@@ -15,3 +15,9 @@
 ## 下降候选v2
 
 `--plan tools/rebuild/ultraman-arc/luna-crush-geometry/plan-descent-v2.json`只在举顶与接触之间加入新候选。原五帧像素不变，新增近肘/腕投影点供路径比较。其高护拳外观不自动判无效，拳高度处于中间也不自动通过；肩肘提前终态及真实下砸读感仍待。没有新增时序或运行判定。
+
+## 低位随势与完整候选v3
+
+`plan-followthrough-v3.json`包含七槽、五种独立原源姿态。新follow紧接contact继续下压；既有descent整图在回收阶段明确复用为高护拳候选，避免强插旧06开掌护架。复用不声称新相或整段倒放，也不能自动签回架通过。
+
+`candidate-timing-proposal.json`仅提出保持原crush 12/8/15共35tick的后续RAM建议，尚未注册攻击框/运行。原招unblockable=true，未来真实GUARD测试必须按原规则受击，不能套回旋的格挡0伤。后脚比较锚[110,280]与建议运行人物root[160,280]不同。
