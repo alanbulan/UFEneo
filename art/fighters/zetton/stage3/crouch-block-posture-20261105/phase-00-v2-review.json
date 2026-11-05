@@ -1,0 +1,166 @@
+{
+  "date_utc": "2026-11-05",
+  "status": "distinct_recoil_candidate_not_accepted_not_installed",
+  "art_passed": false,
+  "installed": false,
+  "source": {
+    "reported_by": "父任务：本会话内置图片工具，原phase00提示词后追加指定文本，两原参考原顺序",
+    "transparent_background_requested": true,
+    "model": null,
+    "quality": null,
+    "usage": null,
+    "cost": null,
+    "base_prompt": "Create ONE complete whole-body 2D pixel-art fighting-game animation frame of the exact Zetton shown in the references, fixed side view facing right. Reference 1 is the actual low crouching guard that this frame must continue; reference 2 is identity only and MUST NOT change the pose to standing. Keep the pelvis as low as reference 1, the rear leg deeply folded close to the ground and the front knee bent, with BOTH feet at the same contact positions. Preserve body scale, head size, ground baseline, black alien body, pale segmented arms and thighs, two distinct curved antennae, the narrow vertical orange face light and paired orange chest organs. Both complete arms, hands, legs, feet and antenna tips must remain attached and fully inside the canvas. Keep near/far limbs distinct; no added limbs, human facial features, weapons or armor. Do not stand up, widen the stance, straighten the knees, enlarge the head, compress the entire sprite, or replace the character with a translated copy. Sharp coherent pixel art, isolated genuine transparent background with margins. No opponent, ground, shadow, text, sparks, beams, trails or effects. This is the FIRST moment of low crouching block stun after an incoming attack from the right. The bent forearms brace together in front of the low upper body; the shoulders and torso recoil a SMALL amount backward while the hips stay low and the bent knees and planted feet do not change support. The head remains near its original crouching height, not the higher standing guard. Make a new complete reaction pose, not the unchanged reference guard.",
+    "appended_prompt": "The recoil must be visibly distinct from the original hold: keep the hips and both feet fixed, and move the head and shoulders backward to the left by roughly one quarter of the head width. Bend the elbows tighter and brace both forearms under the impact, without moving the feet or lifting the hips. This is a complete newly drawn whole-body reaction, not a duplicate guard pose.",
+    "full_prompt": "Create ONE complete whole-body 2D pixel-art fighting-game animation frame of the exact Zetton shown in the references, fixed side view facing right. Reference 1 is the actual low crouching guard that this frame must continue; reference 2 is identity only and MUST NOT change the pose to standing. Keep the pelvis as low as reference 1, the rear leg deeply folded close to the ground and the front knee bent, with BOTH feet at the same contact positions. Preserve body scale, head size, ground baseline, black alien body, pale segmented arms and thighs, two distinct curved antennae, the narrow vertical orange face light and paired orange chest organs. Both complete arms, hands, legs, feet and antenna tips must remain attached and fully inside the canvas. Keep near/far limbs distinct; no added limbs, human facial features, weapons or armor. Do not stand up, widen the stance, straighten the knees, enlarge the head, compress the entire sprite, or replace the character with a translated copy. Sharp coherent pixel art, isolated genuine transparent background with margins. No opponent, ground, shadow, text, sparks, beams, trails or effects. This is the FIRST moment of low crouching block stun after an incoming attack from the right. The bent forearms brace together in front of the low upper body; the shoulders and torso recoil a SMALL amount backward while the hips stay low and the bent knees and planted feet do not change support. The head remains near its original crouching height, not the higher standing guard. Make a new complete reaction pose, not the unchanged reference guard. The recoil must be visibly distinct from the original hold: keep the hips and both feet fixed, and move the head and shoulders backward to the left by roughly one quarter of the head width. Bend the elbows tighter and brace both forearms under the impact, without moving the feet or lifting the hips. This is a complete newly drawn whole-body reaction, not a duplicate guard pose.",
+    "references": [
+      {
+        "path": "art/fighters/zetton/stage3/crouch-block-posture-20261105/reference-crouch-guard-hold.png",
+        "sha256": "c59d556ade8c0bb50c016c41a3ac5afceb8fe33b57a3f6d2856ed0cb44ad0620"
+      },
+      {
+        "path": "assets/fighters/zetton/model-native.png",
+        "sha256": "f968b3581fd3e4ff26c74de0930c373da7de5768c3bf356c94b74b52d10ca925"
+      }
+    ],
+    "original_received_path": "reports/zetton-crouch-block-00-v2.png",
+    "original_bytes_preserved": true
+  },
+  "candidate": {
+    "path": "art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-00-v2.raw.png",
+    "sha256": "b2ee507426ac5f359f442d89cd9b8d55d1e1e27715aa6cd86e3cab49b85ac0fd",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_zero": 1411642,
+    "alpha_opaque": 183,
+    "thresholds": {
+      "1": {
+        "pixels": 160874,
+        "components_4_connected": 447,
+        "other_pixels": 1315,
+        "largest_bbox": [
+          339,
+          478,
+          801,
+          1125
+        ]
+      },
+      "16": {
+        "pixels": 147780,
+        "components_4_connected": 2,
+        "other_pixels": 1,
+        "largest_bbox": [
+          341,
+          480,
+          797,
+          1125
+        ]
+      },
+      "32": {
+        "pixels": 146984,
+        "components_4_connected": 1,
+        "other_pixels": 0,
+        "largest_bbox": [
+          341,
+          480,
+          797,
+          1125
+        ]
+      },
+      "64": {
+        "pixels": 146013,
+        "components_4_connected": 1,
+        "other_pixels": 0,
+        "largest_bbox": [
+          342,
+          480,
+          797,
+          1125
+        ]
+      },
+      "128": {
+        "pixels": 144480,
+        "components_4_connected": 1,
+        "other_pixels": 0,
+        "largest_bbox": [
+          342,
+          481,
+          797,
+          1124
+        ]
+      }
+    }
+  },
+  "scale_diagnostic": {
+    "image": {
+      "path": "art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-00-v2-scale-diagnostic.png",
+      "sha256": "70e0aafd1d0183f733b9a0d43df8a1acf09ad75d3d506c1a55427c25461624ee"
+    },
+    "method": "整张1254先Alpha128二值化，再整张最近邻缩到256，x不平移，只整图y平移使bbox截止248。不切人物或局部变形，非Forge运行注册成品。",
+    "uniform_scale": 0.20414673046251994,
+    "face_light_centers": {
+      "reference": [
+        145.2659574468085,
+        162.7872340425532
+      ],
+      "candidate": [
+        99.64285714285714,
+        153.15714285714284
+      ],
+      "delta": [
+        -45.62310030395136,
+        -9.63009118541036
+      ],
+      "method": "同尺图橙脸灯连通域色阈值诊断，非头部骨骼中心。"
+    },
+    "support_region_note": "alpha128底部14目标像素区域；包含部分贴地腿，不能当精确骨点。",
+    "reference_support_x": {
+      "rear": [
+        62,
+        117
+      ],
+      "front": [
+        131,
+        166
+      ]
+    },
+    "candidate_support_x": {
+      "rear": [
+        69.82,
+        118.61
+      ],
+      "front": [
+        131.27,
+        162.7
+      ]
+    },
+    "correction": "审查初报错误地从全身bbox收窄推断双脚大幅收窄，已向父任务立即纠正并记下：拳臂和头后撤改变全身bbox，前脚实际接近，仅后侧外缘约8px差。后续不得用总体bbox代替脚位核对。"
+  },
+  "review": {
+    "identity": "本人黑体、双弯触角、竖橙脸灯、米白分节四肢与低跪结构可辨；头面因后仰更正向、胸橙块被双臂遮挡分段，不能仅因分段认新增胸灯，也未独立签身份细节最终通过。",
+    "motion": "上身后撤和双肘收紧清楚，低髋/后腿深折保留，较v1不再只是保持微变。但后震幅度明显超出四分之一头宽设计目标，脸灯同尺左45.6/上9.6px，需实际4/6tick评估冲击与回缓，不先称连续。",
+    "alpha": "大面积灰污背景已消失，仍有alpha低值小岛；alpha32以上仅单个人物且有边距。不是完全干净原生Alpha，离线清理需记录。",
+    "boundary": "可继续设计缓冲相作为完整动作候选，不把此第一相预先接受，不改正式装甲/角色状态、图集或判定。",
+    "unverified": [
+      "完整两相与原护架循环",
+      "共同Forge注册/头身骨段",
+      "真实主游戏双向720/1080",
+      "独立回放/新内容指纹",
+      "实速/音频/录屏"
+    ]
+  },
+  "second_phase_brief": {
+    "status": "仅设计未生成",
+    "references": [
+      "art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-00-v2.raw.png",
+      "art/fighters/zetton/stage3/crouch-block-posture-20261105/reference-crouch-guard-hold.png",
+      "assets/fighters/zetton/model-native.png"
+    ],
+    "prompt": "Create ONE complete whole-body pixel-art frame of the exact Zetton, facing right in the same low kneeling crouch. This is the SECOND crouching block-stun frame, settling after the backward recoil in reference 1 toward the original low guard in reference 2. Reference 3 is identity only, not a standing-pose instruction. The first reference is a provisional strong-recoil candidate, not permission to change the character. Keep the pelvis low, the rear leg deeply folded and both support feet in the low-guard positions of reference 2. Move the head and shoulders forward to the right PARTWAY back from reference 1 toward reference 2, approximately halfway between their relative head-to-hip positions. Keep the elbows bent and both forearms braced, gradually relaxing the compression without opening the guard. Do not straighten knees, lift hips, step, widen the stance or reproduce the same strong recoil. Preserve the same head size and complete black segmented body, two curved antennae, narrow orange vertical face light, TWO orange chest organs naturally occluded by the arms, pale segmented arms and thighs, and black hands and feet. Keep a fixed side view; do not turn the face toward the camera. Entire body and antenna tips visible with margin, genuinely transparent background, crisp coherent pixel art. No opponent, effects, sparks, ground, shadow, lettering, duplicate limbs or pasted body parts. This must be a distinct newly drawn complete settling pose; the next pose will be the original low crouching guard.",
+    "acceptance": "回缓相须仍低髋深折，头肩从v2向原护架恢复一部分；不是又一张同后震，也不抬身。若第一相幅度经实际画面不通过，应修第一相而非靠第二相掩盖。",
+    "no_rule_change": "站/蹲状态、低段/中段/overhead规则、硬直duration、4/6动画节拍、伤害/体力/位移/取消均不改。实际新完整轮廓若安装，需同步本人受击框并如实更新内容指纹，不能宣称所有旧回放指纹不变。"
+  }
+}

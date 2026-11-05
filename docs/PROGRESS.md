@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 杰顿低蹲硬直v2形成明确上身后震，低髋/深折腿保留，透明背景明显改善；同尺脸灯左移约45.6px、上移9.6px，超过小幅目标，尚须两相及4/6tick实际评估。单独脚区核证前脚接近、后缘约8px差，已纠正以总bbox误推站距。未安装，第二回缓相仅brief。[完整来源与同尺证据](../art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-00-v2-review.json)
+
 - 杰顿低蹲硬直首候选已保存：本人低蹲完整，但姿态仍接近保持，未接受独立受挡动作。灰污背景是低alpha噪声（上方最大24），Alpha128诊断只剩单人物，可离线清理而非仅据背景重生成；原源未处理未安装，model/high/usage/费用未知。[原源、提示词与透明诊断](../art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-00-review.json)
 
 - 杰顿蹲防硬直站高已定位为实际源姿态缺口：模拟与表现均正确选crouch_blockstun，同动作raw/旧processed/正式两相本来高弓步，无可换回低蹲源；未改正确core或用蹲防保持冒充。新增8组正式低拳/双受方/双向/松蹲独立回放，状态和实际动画选择通过。完整低蹲参考及两相brief已备，未生成、未修复画面。[证据与修复依赖](verification/zetton-crouch-block-posture-review.json)
