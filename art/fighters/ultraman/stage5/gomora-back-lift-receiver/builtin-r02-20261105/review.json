@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "reviewed_at_utc": "2026-11-05T08:38:00Z",
+  "reviewed_at_utc": "2026-11-05T08:59:00Z",
   "reviewer": "root_delegated_by_user",
   "accepted": false,
   "runtime_installed": false,
@@ -777,12 +777,183 @@
       "projected_bones": null,
       "projected_bones_limit": "第四版头前下转、肩髋深屈与遮挡，本轮未独立签收骨点，不套前三版读点。180/200/220宽仅作完整图尺度诊断，不是通过的共同体尺。",
       "contact_limit": "腹侧被双拳遮挡；列最末Alpha可能来自腿或拳，已改选上方连续段并明确surface_ambiguous_under_arms=true。该点不是接受的腹侧测点。"
+    },
+    {
+      "schema": 1,
+      "source_sha256": "edda91826d3c7b13e7c255dd5544228224ca387d2147d81951d75488682f1ccf",
+      "source_size": [
+        1774,
+        887
+      ],
+      "source_mode": "RGBA",
+      "alpha_levels": 256,
+      "transparent_pixels": 1281160,
+      "opaque_pixels": 127,
+      "partial_alpha_pixels": 292251,
+      "alpha_lt128_nonzero_pixels": 36584,
+      "original_edges_nonzero": [
+        0,
+        28,
+        7,
+        0
+      ],
+      "forge_files": {
+        "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+        "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+        "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+      },
+      "palette_applied": false,
+      "alpha_threshold": 128,
+      "roi_note": "头/前臂矩形ROI只作诊断，不是精确人体分割；Alpha重叠不等价于穿体。",
+      "whole_frame_only": true,
+      "limb_editing": false,
+      "runtime_installed": false,
+      "accepted": false,
+      "pairs": [
+        {
+          "size": [
+            200,
+            100
+          ],
+          "scale": 0.11273957158962795,
+          "pelvis_low_boundary": [
+            94,
+            85
+          ],
+          "actor_contact": [
+            241,
+            192
+          ],
+          "paste": [
+            147,
+            107
+          ],
+          "alpha_overlap_pixels": 49,
+          "accepted": false
+        },
+        {
+          "size": [
+            220,
+            110
+          ],
+          "scale": 0.12401352874859076,
+          "pelvis_low_boundary": [
+            104,
+            93
+          ],
+          "actor_contact": [
+            241,
+            192
+          ],
+          "paste": [
+            137,
+            99
+          ],
+          "alpha_overlap_pixels": 76,
+          "accepted": false
+        },
+        {
+          "size": [
+            240,
+            120
+          ],
+          "scale": 0.13528748590755355,
+          "pelvis_low_boundary": [
+            113,
+            102
+          ],
+          "actor_contact": [
+            241,
+            192
+          ],
+          "paste": [
+            128,
+            90
+          ],
+          "alpha_overlap_pixels": 83,
+          "accepted": false
+        },
+        {
+          "size": [
+            220,
+            110
+          ],
+          "source_abdomen_column": 960,
+          "surface_ambiguous_under_arms": false,
+          "column_selection": "last_alpha",
+          "contact": [
+            119,
+            85
+          ],
+          "paste": [
+            122,
+            107
+          ],
+          "alpha_overlap_pixels": 15,
+          "head_roi_overlap_pixels": 0,
+          "near_forearm_roi_overlap_pixels": 0,
+          "accepted": false
+        },
+        {
+          "size": [
+            220,
+            110
+          ],
+          "source_abdomen_column": 1000,
+          "surface_ambiguous_under_arms": false,
+          "column_selection": "last_alpha",
+          "contact": [
+            124,
+            79
+          ],
+          "paste": [
+            117,
+            113
+          ],
+          "alpha_overlap_pixels": 75,
+          "head_roi_overlap_pixels": 0,
+          "near_forearm_roi_overlap_pixels": 5,
+          "accepted": false
+        },
+        {
+          "size": [
+            220,
+            110
+          ],
+          "source_abdomen_column": 1040,
+          "surface_ambiguous_under_arms": false,
+          "column_selection": "last_alpha",
+          "contact": [
+            129,
+            74
+          ],
+          "paste": [
+            112,
+            118
+          ],
+          "alpha_overlap_pixels": 147,
+          "head_roi_overlap_pixels": 0,
+          "near_forearm_roi_overlap_pixels": 25,
+          "accepted": false
+        }
+      ],
+      "candidate_path": "art/fighters/ultraman/stage5/gomora-back-lift-receiver/builtin-r02-20261105/candidate-5.png",
+      "visual_verdict": "腰腹银色指状褶条消失，两臂两腿完整，保住第二版抬头及头角净距。腹侧三列配对头部ROI均零重叠，未复现第三/四版吞头。但仍抬胸、臀低，腹侧支撑弯曲变化小；不以最少交叠代替最低承重验收。当前是较干净的继续审查候选，不安装。",
+      "identity": "可识别为初代，未发现明确额外臂；未仅因局部脸部细差判错身份。",
+      "projected_bones": null,
+      "projected_bones_limit": "第五版未独立签收骨点，不复用第二版精确读点；整体比例视觉相近，不把220宽当已通过共同体尺。",
+      "independent_visual_review": {
+        "verdict": "960可作为静态配准候选继续验证；可见银色腰腹外缘落在背脊上，头在角冠上方，两层序未吞头胸肩。",
+        "anatomy": "两臂可追至各自拳头，未见额外手指、断臂或必须拦截的比例畸变。",
+        "remaining": "须核接触是否仅侧面遮挡，以及相邻相头角净距与骨盆连续性；不等于整段承重通过。",
+        "recommended_contact_source_x": 960
+      }
     }
   ],
   "process": {
     "forge_commit": "5324342fdfab72430f4e9604f3fe427009f8596d",
     "script": "tools/rebuild/gomora/back_lift_resume/review_builtin_r02.py",
-    "script_sha256": "10140ae1bf7c959cbe6283dddd9f5238329d4ccb10c844f54a91c075c86554b7",
+    "script_sha256": "2d7d9c8c19109cdbd819f3bec6d1c3fb4956d57a65d48465323f2c71e4d3871b",
     "no_component_filtering": true,
     "no_limb_edits": true,
     "no_rotation": true,

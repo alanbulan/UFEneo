@@ -8,13 +8,14 @@ ROOT=Path(__file__).resolve().parents[4];sys.path[:0]=[str(ROOT/'tools/rebuild/s
 import forge_backend as forge
 from resume import FORGE_SHA
 assert forge.backend_info()['files']==FORGE_SHA
-parser=argparse.ArgumentParser();parser.add_argument('--candidate',type=int,choices=[1,2,3,4],default=1);args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('--candidate',type=int,choices=[1,2,3,4,5],default=1);args=parser.parse_args()
+fifth=args.candidate==5
 fourth=args.candidate==4
 third=args.candidate==3
 second=args.candidate>=2
 source_name=f'candidate-{args.candidate}.png' if second else 'candidate.png'
 source_path=ROOT/'art/fighters/ultraman/stage5/gomora-back-lift-receiver/builtin-r02-20261105'/source_name
-expected='c11be3012441d0808be0fd2ecc84558b81ece3178fbfab94c6c7b399104125b8' if fourth else '60806c5b0d590d50f4cb3824c4e701026e4efc9c9b1c514dcaf36b3646c623b2' if third else '0bb3e641890632da50580d3ea25b56dfca4e5bf2ac4c77fef58033f9f43b612d' if second else '40717933f95997ffd78bc6be4d5affa57a5d1587fdea812afaa9d3cb20c6ff00'
+expected='edda91826d3c7b13e7c255dd5544228224ca387d2147d81951d75488682f1ccf' if fifth else 'c11be3012441d0808be0fd2ecc84558b81ece3178fbfab94c6c7b399104125b8' if fourth else '60806c5b0d590d50f4cb3824c4e701026e4efc9c9b1c514dcaf36b3646c623b2' if third else '0bb3e641890632da50580d3ea25b56dfca4e5bf2ac4c77fef58033f9f43b612d' if second else '40717933f95997ffd78bc6be4d5affa57a5d1587fdea812afaa9d3cb20c6ff00'
 assert hashlib.sha256(source_path.read_bytes()).hexdigest()==expected
 source=Image.open(source_path)
 assert source.mode=='RGBA' and source.size==(1774,887)

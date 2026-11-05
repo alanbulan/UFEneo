@@ -111,6 +111,34 @@
       "usage": null,
       "cost": null,
       "missing_metadata_reason": "内置工具未提供；不得伪称项目旧客户端、high或已知费用。"
+    },
+    {
+      "candidate": 5,
+      "path": "art/fighters/ultraman/stage5/gomora-back-lift-receiver/builtin-r02-20261105/candidate-5.png",
+      "sha256": "edda91826d3c7b13e7c255dd5544228224ca387d2147d81951d75488682f1ccf",
+      "tool": "image_gen",
+      "transparent_background_requested": true,
+      "prompt_verbatim": "Use the first image as the base: a complete side-view sprite of Ultraman Type C. The second image shows its actual intended placement on the monster in four panels. Preserve the first image's raised head and both arms tucked back: this head and arm positioning already clears the monster horns in the second image. Make only these whole-character changes: replace the confusing silver finger-like stripes at the abdomen with smooth silver/red suit fabric; slightly lower the waist and both bent legs so the central abdomen visibly bears weight on the monster's back instead of appearing airborne. Maintain the approximate head position, head-to-torso scale, two arms and two legs. Reference 3 specifies the character's accurate proportions, pattern and palette. Output ONLY the full isolated character sprite, no monster, no panels, no text, no frame or shadow; genuine transparent background. Crisp coherent 2D pixel art; avoid inventing extra appendages.",
+      "reference_order": [
+        {
+          "path": "art/fighters/ultraman/stage5/gomora-back-lift-receiver/builtin-r02-20261105/candidate-2.png",
+          "sha256": "0bb3e641890632da50580d3ea25b56dfca4e5bf2ac4c77fef58033f9f43b612d"
+        },
+        {
+          "path": "reports/gomora-builtin/review-2/abdomen-960.png",
+          "sha256": "22294a3b1550a312439c45284eb438fff7c59ffc136faa423ea112818d3e3f4a"
+        },
+        {
+          "path": "art/fighters/ultraman/model/model-reference-x4.png",
+          "sha256": "9e084ba7ff4f4ff2ed343e2d20650ebbec5b648156cddd066ad10165e68f0e71"
+        }
+      ],
+      "model": null,
+      "quality": null,
+      "usage": null,
+      "cost": null,
+      "missing_metadata_reason": "内置工具未提供；不得伪称项目旧客户端、high或已知费用。",
+      "reference_reproduction": "第二参考是已有离线实配四格图，使用本目录第二候选运行review_builtin_r02.py --candidate 2可重建；不是新增生图。"
     }
   ],
   "runtime_installed": false,
