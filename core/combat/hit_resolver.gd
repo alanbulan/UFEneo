@@ -3,7 +3,7 @@ extends RefCounted
 const CurrentCapture = preload("res://core/combat/throw_current_capture.gd")
 const PUSHBACK_BOUNDARY_REVISION := 1
 const THROW_TARGET_RULE_REVISION := 1
-const PROJECTILE_DIRECTION_RULE_REVISION := 1
+const PROJECTILE_DIRECTION_RULE_REVISION := 2
 static func world_box(f: UfeFighter, box: Array) -> Rect2i:
 	return Rect2i(f.x + int(box[0]) if f.facing > 0 else f.x - int(box[0]) - int(box[2]),
 		f.height + int(box[1]), int(box[2]), int(box[3]))
@@ -100,7 +100,7 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 		a.motion.bounce_followup = true
 	elif bool(move.knockdown):
 		if airborne:
-			b.vx=a.facing*2
+			b.vx=impact_facing*2
 			b.vy=mini(b.vy,-6)
 			b.enter("launch")
 		else: b.enter("down", 35)

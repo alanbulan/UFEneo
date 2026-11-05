@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-05",
+  "acceptance": "root_delegated_by_user",
+  "scope": "补齐此前方向修复遗漏的空中knockdown分支，不是新增招式或素材。",
+  "change": "b.vx从射手当前facing改为已有impact_facing；PROJECTILE_DIRECTION_RULE_REVISION由已发布1升2，旧规则录像明确拒绝。",
+  "real_scenario": [
+    "杰顿真实Q蓄能、I慢火球、后H瞬移；雷德王N避手刀后后H投岩；杰顿向远处跳。",
+    "旧火球先令雷德王翻面，同tick已离手岩块命中空中杰顿，原vx错误跟射手新朝向。",
+    "默认470/750起点先由真实双方后走68/69tick拉距，全273tick输入可从正式默认初态重播，tick181复现；不直接赋位置/能量/状态/弹体。",
+    "其余双向/间距组明确为初始站位fixture；不把它们冒称全部默认起点。"
+  ],
+  "validation": {
+    "engine": "Godot4.6.3，4.7未验",
+    "before": {
+      "summary": "reports/projectile-air-knockdown-direction/before-final/summary.json",
+      "exit": 1,
+      "expected_vx_failures": 5
+    },
+    "final": {
+      "summary": "reports/projectile-air-knockdown-direction/final-checked/summary.json",
+      "exit": 0,
+      "cases": 7,
+      "failures": []
+    },
+    "scope": "4组双向缺陷、1默认完整场景、1未翻面空中与1地面对照。",
+    "input_and_replay": "独立核7组修前后落盘frames逐项一致，独立回放逐tick/末hash一致；7份真实修前revision1文件均被新版正式loader拒绝。两个不受影响对照末hash保持。",
+    "related_exit_codes": "projectile_contact_direction 0\nhit_pushback_bounds 0\nphase3_air 0\nphase3_zetton_air 0\nphase3_specials 0\nchase_interrupt 0\nthrow_root_overrides 0\nthrow_current_capture 0\n",
+    "default_verify": "新测试纳入默认清单、--test-out每轮唯一；可选--legacy-dir仅用于实际修前文件额外检查，默认不依赖未提交reports。"
+  },
+  "preserved_attempts": [
+    "probe2是收集defects的诊断探针，exit0不代表没有缺陷；before-final强化断言才是exit1。",
+    "首次after输入比较遇JSON数值与内存int类型差异假失败，原目录保留；改为两份均由正式loader读取后通过，未以改输入绕过。"
+  ],
+  "limits": [
+    "本批没有图形、录屏、音频或物理键盘验收；未改伤害、无敌、判定或招式。",
+    "没有收费调用或用户Codex使用。"
+  ],
+  "sha256": {
+    "reports/projectile-air-knockdown-direction/before-final/summary.json": "f8144272306a7a95239cb8c198ed2d9c2854803a9ffb61b7adf3b7309704da6e",
+    "reports/projectile-air-knockdown-direction/final-checked/summary.json": "23feb81951c378369fffde02faf08ccedb55b54f7cac84952930a1ce4a5f6960",
+    "reports/projectile-air-knockdown-direction/regressions/exit-codes.txt": "8bae7993734ec5f39d23e8cc24b57b19312c030401d1d58ee44dc9a45d1b7fe4"
+  }
+}

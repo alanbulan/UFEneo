@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 空中击倒弹体方向：补齐先前方向修复遗漏的knockdown空中vx分支。默认起点真实后走、杰顿火球/瞬移、雷德王闪避/投岩及跳跃273tick完整场景复现并修复；7组同输入回放与8相关回归通过，方向规则升2、真实v1录像拒绝。未改招式/素材，未另称图形通过。[回执](verification/projectile-air-knockdown-direction-review.json)
+
 - 2P原生录制疑点：旧整局全零录像不含录制模式，无法判断箭头发生时是否仍在录制。已加入默认关闭、白名单、有界的主游戏被动观察，1017项证明不改输入/模式/hash；720真实两段及Sky对照已确认云桌面逻辑箭头与物理码不匹配，录制开启时亦为零；未改产品输入，默认2P有效物理箭头下非零录播仍未验。[仪器与边界](verification/training-input-audit-logic.json)、[原生辨因回执](verification/training-input-native-diagnosis.json)
 
 - 换人回放加载：先读并验证录像人物，再按该组合创建当前规则模拟严格比指纹；同版本换角色/换边/EX不再假报规则改变，R再战保持录像双方，真实内容变化仍拒绝且不破坏现局。327项主游戏入口与相关回归通过，720/1080真实换赛文后载回初代/杰顿及R保持双方已验，未冒称EX/换边全图形通过；不扩大旧规则兼容。[修前红灯](verification/replay-match-loading-red.json)、[逻辑回执](verification/replay-match-loading-logic.json)、[实际菜单及关闭阶段限制](verification/replay-match-loading-graphical.json)
@@ -34,7 +36,7 @@
 
 本轮实际引擎为Godot4.6.3，项目要求的4.7未验。镜头单元746项、相关pixel_ui/ui_facing/phase3_air及本批原输入/独立回放通过；不等于全项目全量或完整美术/声音通过。图形使用真实原生窗口与冻结tick截图，无录屏、无音频及真人硬件输入验收。月亮land→idle收脚、保守缩放、站/低防手位、三级必杀立绘遮普通world等限制仍在。
 
-2026-11-05 06:34 UTC已核验远端checkpoint/full-20261105-0020到0580eb5c53a59a5476816d6722a5003ae78fda08；远端main仍为99a084d8a03647d7c84546ba36cf0a4617f9c553。最新开发在checkpoint分支，不可只取main冒称最新。此前新增LFS已逐对象远端下载校验SHA/大小通过，GitHub已认证，不沿用早期限流/待登录结论。本次最终回执与文档另随后续检查点保存，以实际远端核验为准。
+2026-11-05 07:18 UTC已核验远端checkpoint/full-20261105-0020到10bd14fdb7ab3189aceea0410fd8b5cd89b31f77；远端main仍为99a084d8a03647d7c84546ba36cf0a4617f9c553。最新开发在checkpoint分支，不可只取main冒称最新。此前新增LFS已逐对象远端下载校验SHA/大小通过，GitHub已认证，不沿用早期限流/待登录结论。本次最终回执与文档另随后续检查点保存，以实际远端核验为准。
 
 ## 2026-11-03 历史清理交接记录
 
