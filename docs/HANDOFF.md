@@ -20,6 +20,7 @@
 - 垂直跳九相：真实起跳/空中/落地与回放已核，静帧落地屈膝起身可辨；land01→idle脚位一次收窄仍保留，未验实速顺滑。[动作回执](verification/luna-vertical-jump-graphical-review.json)。原对手脚底被HUD覆盖的问题已由本轮全局镜头及候选装配修复，最终结果以[HUD回执](verification/hud-framing-main-review.json)为准，不改写旧失败记录。
 - 前跳八相：真实斜上输入与位移/回放通过；42→43骤收膝、48→49大角跨度、64→65倒置直切站立未过。[回执](verification/luna-forward-jump-graphical-review.json)
 - 后跳、背身/闪避反击与空中攻击：已有后翻缺展开中间帧，背反缺收腿、闪反无实际击肋相；没有合格独立月亮空攻源，不用基础形态/别的装甲或飞踢改名冒充。见[后跳缺口](verification/luna-back-jump-source-gap.json)、[反击缺口](verification/luna-s2-counter-source-review.json)、[空攻缺口](verification/luna-air-attacks-source-gap.json)。
+- 后撤backstep五相：复用已有新03/04消除旧三腿源，01整图下移4px接地；真实双后两轮各80px、独立回放及8组192PNG技术通过，但02末→03首抬膝直切宽站/立躯干，缺完整落脚中间相，视觉未接受。[回执](verification/luna-backstep-graphical-review.json)。后走缺腿交换、完整dash缺B/A换腿、dodge后仰→低跪→站立缺过渡，不能把旧offline-four当完整闪避。
 - 哥莫拉三级背掀仍未安装：已有通用root与显式空接保相代码、离线18+6整帧配准，但受方角臂/离背过渡缺合格整帧，不用整人瞬移规避穿角。见[基础机制](verification/gomora-root-resume.json)、[离背候选拒绝](verification/gomora-departure-candidate.json)、[通用空接](verification/gomora-current-capture.json)。本轮不收费补画。
 
 ### 全局镜头修复的范围与验证
