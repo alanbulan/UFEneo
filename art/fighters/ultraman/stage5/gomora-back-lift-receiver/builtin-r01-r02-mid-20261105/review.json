@@ -209,7 +209,7 @@
           221
         ]
       ],
-      "head_roi_overlap": 2,
+      "head_roi_overlap": 0,
       "belly_samples": [
         {
           "receiver_canvas": [
@@ -345,7 +345,7 @@
     "真实Alpha合成可见完整两臂两腿，没有按预览黑底否决。",
     "近远双膝都在髋左下，远侧大腿确实较早相后摆；近腿仍较向下伸展。",
     "同髋双膝弧已分段，但前后肩髋脚及实际接触、速度仍须整链验证。",
-    "A06完整图下移4px有实体腹边接点且头ROI为0；多下1px时头ROI交叠2，余量敏感，不能签全头颈安全。",
+    "中段正确头ROI为缩图x102:132/y16:49；先前复用旧画布x106:134/y47:81误取下方躯干，2px不是头交叠。更正后名义及多下1px头ROI均0，仍不等于全头颈验收。",
     "头ROI/腹点仅诊断，不能替代全头颈轮廓或动态承重验收。",
     "未改运行合同、捕获范围、素材层级或正式三级。"
   ],
@@ -359,6 +359,24 @@
       31.25699921617557
     ],
     "meaning": "同髋相对膝差，不含实际根运动；骨盆和膝关节有人工读点误差。"
+  },
+  "measurement_correction": {
+    "previous_mislabeled_roi": [
+      106,
+      47,
+      134,
+      81
+    ],
+    "previous_reported_head_overlap_at_down5": 2,
+    "actual_meaning": "该矩形取到下方躯干，不是中段头。",
+    "correct_head_roi": [
+      102,
+      16,
+      132,
+      49
+    ],
+    "source_image_changed": false,
+    "runtime_changed": false
   },
   "leg_length_limit": "不能用共用骨盆中心到膝的距离冒称精确股骨长度；隐藏近远髋关节不同，源骨点误差需保留。"
 }
