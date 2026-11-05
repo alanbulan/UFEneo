@@ -1,0 +1,188 @@
+{
+  "schema": "ufeneo.luna.crouch-light-contact-review.v1",
+  "date_utc": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "本轮完成": [
+    "原源逐字节保存，完整实际提示词/顺序参考/请求透明及未知生成元数据已归档。",
+    "父侧及独立审阅均沿肩肘腕拳核到近侧护拳、远侧前伸；未通过原brief近侧左拳要求。",
+    "实际蹲架→新候选→实际蹲架三端点同后胫投影尺、完整整图重复构建相同，不切肢；只用于几何对照，无运行时序或判定。"
+  ],
+  "怎么看": {
+    "source": {
+      "path": "art/fighters/ultraman-arc__luna/stage2/crouch-light-session-candidate-20261105/contact-attempt-01.source.json",
+      "sha256": "36b85d6f442f27fa9ce7ca42ef0f79c5a2c6b64eed92aba679a25a968151a53f"
+    },
+    "raw": {
+      "path": "art/fighters/ultraman-arc__luna/stage2/crouch-light-session-candidate-20261105/contact-attempt-01.raw.png",
+      "sha256": "f1f6477e21b0a32b5e0091997e03e055586e2212411f41331d37c21992db59ee"
+    },
+    "geometry_plan": {
+      "path": "tools/rebuild/ultraman-arc/luna-crouch-light-geometry/plan.json",
+      "sha256": "7dd63e872d7b1e310432d76f11dd9e720f9c5d921429939a2c40ea297e05e706"
+    },
+    "geometry_tool": {
+      "path": "tools/rebuild/ultraman-arc/luna-crush-geometry/geometry.py",
+      "sha256": "9d6c48e5e22b36b7dca3567c4442569de70fc46f3b8b6d4f861450e5820f27c7"
+    },
+    "geometry_receipt": {
+      "path": "reports/luna-crouch-light-geometry-v1/geometry.json",
+      "sha256": "807a9a124f5490dd46613d0588bb3fdebb0bfe6123b493959c2744005e7231ff"
+    },
+    "correction_proposal": {
+      "path": "art/fighters/ultraman-arc__luna/stage2/crouch-light-session-candidate-20261105/correction-proposal.json",
+      "sha256": "8e3847241aa1a7077839ead153621c4c9a88d3028fdc01251eb3f1b60a5bffe3"
+    }
+  },
+  "alpha": {
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "zero_pixels": 1161467,
+    "full_pixels": 614,
+    "partial_pixels": 410435,
+    "nonzero_bbox": [
+      0,
+      15,
+      1240,
+      1254
+    ],
+    "alpha128_bbox": [
+      195,
+      209,
+      1165,
+      1134
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "finding": "真实非恒定Alpha；低透明噪点触左/底边，高Alpha人体留白完整。未把原源称为干净二值透明。"
+  },
+  "observed_identity": "银白后掠头冠、黄眼、蓝青肩胸甲、圆灯、双腕圆甲与红银腿仍为月亮本人；两臂两腿两拳双鞋完整，无明显裁断。",
+  "arm_topology": {
+    "certain_visible": "画面左大肩甲下上臂向下接左侧弯肘，前臂/圆盘甲在胸腹前层，接约(580,550)收护拳；前伸拳约(1119,574)经腕甲、前臂、肘回接画面右侧肩甲下的另一条上臂。",
+    "occlusion": "远侧肩根部分被胸甲边缘遮挡，不独立声称自然解剖左右已证明。",
+    "brief_convention": "原brief明确近侧=解剖左、远侧=右；依此约定，新图是约定右拳出拳、左拳收护，与任务相反。判断基于可见连通和遮挡层次，不只看亮暗。",
+    "result": "拒绝作为已合格crouch_light接触，不自动改名塞入crouch_light2。"
+  },
+  "pose_and_geometry": {
+    "visible": "双膝离地、低髋、左右两鞋完整，读作双脚低蹲，不是旧招低跪。没有地面参考，接地只能由鞋底姿态与相对基线判读，不能声称实测承重。",
+    "method": "两相分别按画面左侧膝踝投影归一至model近胫投影约41.98，再整图平移让左前掌ROI底部对齐[110,280]。沿用免费Forge RGB/Alpha128，仅派生对照，原字节保持。",
+    "repeated_equal": true,
+    "metrics": [
+      {
+        "key": "actual_crouch00",
+        "scale": 0.17602067577960165,
+        "bbox": [
+          98,
+          137,
+          197,
+          280
+        ],
+        "native_landmarks": {
+          "rear_knee": [
+            135.277,
+            236.902
+          ],
+          "rear_ankle": [
+            106.801,
+            267.664
+          ],
+          "front_knee": [
+            182.562,
+            235.848
+          ],
+          "front_ankle": [
+            178.871,
+            263.973
+          ],
+          "ear_proxy": [
+            155.844,
+            159.559
+          ],
+          "chin_proxy": [
+            172.543,
+            171.336
+          ],
+          "near_fist": [
+            157.426,
+            213.523
+          ],
+          "far_fist": [
+            184.848,
+            204.383
+          ]
+        },
+        "head_proxy": 20.434146177415897,
+        "front_shin_projection": 28.404850822702397,
+        "manual_joint_error_bound_native": 6.3367443280656595
+      },
+      {
+        "key": "contact01_wrong_arm_candidate",
+        "scale": 0.13278704583349274,
+        "bbox": [
+          97,
+          157,
+          226,
+          280
+        ],
+        "native_landmarks": {
+          "rear_knee": [
+            136.655,
+            240.2
+          ],
+          "rear_ankle": [
+            107.356,
+            270.431
+          ],
+          "front_knee": [
+            182.2,
+            238.868
+          ],
+          "front_ankle": [
+            170.348,
+            265.237
+          ],
+          "ear_proxy": [
+            157.829,
+            176.144
+          ],
+          "chin_proxy": [
+            171.546,
+            186.931
+          ],
+          "near_fist": [
+            148.241,
+            201.979
+          ],
+          "far_fist": [
+            220.022,
+            205.442
+          ]
+        },
+        "head_proxy": 17.450371285448334,
+        "front_shin_projection": 28.825801435144783,
+        "manual_joint_error_bound_native": 4.780333650005739
+      }
+    ],
+    "interpretation": "后胫被归一不证明真实骨长；独立前胫约28.4/28.8相近，前踝横向约−8.5px、头侧代理下移约16.6px，反映新姿态/体量变化。头部代理长度约20.4→17.5，与胫尺不完全同倍率；手工点±18源像素及透视使它不能单独构成严格比例失败。不能说足位逐像素保持，也不能把anchor强制对齐等同无滑步。"
+  },
+  "已知问题": [
+    "关键确定不符是攻击肩臂近远侧，不是相数不足。",
+    "原源半透明噪点触边；Alpha128对照去掉噪点不代表原图天然干净。",
+    "肘腕圆形关节/机械连接感、前伸肘接近伸直，仍需结合本人装甲结构判断，不能一概删掉真实腕甲或机械分节。",
+    "尚未证明目标对手腰腹高度、实际游戏身体/判定关系或整招连续性；无Godot、输入、回放、图形、录屏、实速或音频验收。"
+  ],
+  "下一步": [
+    "若继续调整，只作新的完整整身图，明确从近侧大肩甲发出左拳、前臂越过胸甲前层，远侧拳回护；不要局部旋转剪贴或水平翻转现图。",
+    "取得新结果后重新沿两条肩肘腕拳链及同尺双脚核验；动作侧不满足前不做运行候选安装。"
+  ],
+  "accepted_as_left_punch": false,
+  "runtime_candidate_accepted": false,
+  "installed": false,
+  "generation_called_by_reviewer": false
+}
