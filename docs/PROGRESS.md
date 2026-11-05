@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 升击新增回收中相：同右闭拳由03高位降至上胸、双圆腕甲可辨，双鞋保持近似窄站；进入01仍需全身下沉与远腕遮挡变化，不将五张关键源当完整招式或默认以01替代正式护架。未配准安装，来源/Alpha与未知元数据据实保存。[回收相审阅](verification/luna-launcher-return-mid-candidate-review.json)
+
 - 升击新增胸前渐伸中相：同右闭拳由腹侧向上至胸前、双圆腕甲可辨，可补01→02拳路；头冠/伸膝已接近02，全身分段与支撑脚、旧起收招仍须核，未宣布实速或整招通过。保留本会话原字节及未知model/high/usage。[来源与实测](verification/luna-launcher-rise-mid-candidate-review.json)
 
 - 新增升击01蓄拳/03高位回收整帧候选：双闭拳蓄腹→同右臂上挑→高位回收方向可读，但01远腕圆面遮挡、近鞋底约9源像素漂移、缺渐伸及旧起收招接续仍在；真实alpha有低透明边缘噪点，未配准/安装/运行验证。保存原字节、提示词及未知model/high/usage/费用。[两相逐项审阅](verification/luna-launcher-neighbor-candidates-review.json)
