@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "reviewer": "root_delegated_by_user",
-  "status": "正式冲刺飞踢六相候选注册、六案真实双击前接K及main独立回放通过；真实图形待核，未开放装甲。",
+  "status": "冲刺飞踢六相、六逻辑及main独立回放通过；12组真实图形技术核对通过，但03→04落地与05→护架两处硬切未过视觉验收，不开放装甲。",
   "source_review": {
     "path": "docs/verification/luna-s2-dash-heavy-source-review.json",
     "sha256": "3cf0489dbad747ecc34a30101a72df8e6f93ea7f5e3901fe4efce36c9a642389"
@@ -170,7 +170,10 @@
       4,
       5
     ],
-    "actual_graphical_review": false
+    "actual_graphical_review": true,
+    "graphical_cases": 12,
+    "original_png_count": 192,
+    "visual_accepted": false
   },
   "actual_input": "tick20/22相对前双击，tick34单HEAVY；前移首步2+dash66+本招35=103，近距140/落空320，原velocity[0,4]产生峰值10，落地不截收势。",
   "validation_history": [
@@ -193,10 +196,14 @@
     "recovered_guard_first": 62
   },
   "limits": [
-    "03伸腿→04低身落地及05→正式护架须实际720/1080双向重点审。",
+    "真实720/1080双向确认03→04、05→护架硬切；现有04/05r001可减低伏但缺放脚且可能换脚跳变，未采用，不冒称已补齐。",
     "前置dash只验00–04，不冒称完整九相冲刺通过。",
     "旧Alpha角点拒绝源免费净化但不回写历史状态；原始SHA/LFS oid一致。",
     "完整S2/S2–S7、严格比例、本人声音、4.7与真人硬件未整体验收，无录屏。",
     "正式core/content/assets和开放标志未改。"
-  ]
+  ],
+  "graphical_review": {
+    "path": "docs/verification/luna-dash-heavy-graphical-review.json",
+    "sha256": "1040d658731c102567fdc487e91d073393bf45607f8fe1df8d0ac3023eb33f33"
+  }
 }

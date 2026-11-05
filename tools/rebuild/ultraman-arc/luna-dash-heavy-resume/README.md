@@ -17,3 +17,9 @@
 通过tests/review/fighters/ultraman-arc/luna_dash_heavy/main_entry.gd进入正式main内存候选；沿用原生720/1080窗口稳定、逐tick冻结截图、关闭旧walk异步截取及隐藏候选训练板，保留HUD。所有Godot调用经tools/godot_lock.py串行，XDG数据与缓存隔离到reports，不改系统权限。
 
 prepare/register拒绝覆盖当前候选；test_check只读核查；main_bundle封新合同，源/代码变更重封，不改旧输出。图形须重点看03伸腿→04低身落地和05→正式护架，不能仅凭资源齐全或逻辑通过宣称动作完成。严格头身比例、完整S2/S2–S7、声音和4.7仍未整体验收；无录屏。
+
+## 实际图形结果与过渡缺口
+
+最终v2十二组720/1080双向hit/block/whiff、192张原生PNG的尺寸/SHA/tick/相位/hash核对通过；hit65一次、block0伤一次、落空无接触，真实峰高10。技术采集正确不等于美术通过：03末腾空伸腿→04首低伏落地、05末低弓步→护架首直立均硬切，两个边界是相邻tick，没有漏截。
+
+已核现有04/05 request001完整源及共同159样本，屈膝着地→站起可降低低伏幅度，头身无明显缩人；但03→04仍缺放脚过程，04→05明暗近远腿前后互换可能产生新硬切，尚无通过的完整过渡。没有替换运行或伪称修复。保留原图形失败证据，不切肢、不改判定/时序、不开放装甲。详见docs/verification/luna-dash-heavy-graphical-review.json。
