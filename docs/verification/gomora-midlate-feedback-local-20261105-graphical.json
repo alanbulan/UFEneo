@@ -1,0 +1,4202 @@
+{
+  "title": "哥莫拉候选局部捕获与落地终结反馈：正常主游戏八组图形验证",
+  "source_commit": "9924f3bce18ec3f0eefeae21ef2980646cce1aad",
+  "contract": "reports/gomora-builtin/main-midlate-feedback-local-20261105/contract.json",
+  "contract_sha256": "c5fb548202e7b01bd440777af9d97a38a38c1f087500adf01174574cbddf30b7",
+  "diagnostic_fx_hidden": false,
+  "technical_pass": true,
+  "candidate_feedback_timing_visual_check_pass": true,
+  "art_accepted": false,
+  "installed": false,
+  "realtime_motion_validated": false,
+  "video_recorded": false,
+  "audible_audio_validated": false,
+  "image_count": 182,
+  "method": "云桌面终端经Godot锁，四组命中720/1080双向，另双向720拆投与落空。隔离用户目录，自动物理键经InputRouter输入而非真人手按；Dummy音频。全部正常显示，不隐藏FX。逐图PIL格式/尺寸/SHA、请求实际捕获帧、双方状态/图集区域与状态hash核对；八组联系表均实际看，重点原图另看。",
+  "visual_findings": [
+    "捕获hit原图保留局部亮火花与白闪，不再在背部生成持续大爆炸/烟团。R00到中段及新t27在正常显示下可见，原大烟尘遮腹髋的问题在这些已捕获画面不再出现。",
+    "真实throw_slam当帧可见落地点亮芯，随后body-17出现火焰/烟团，落地伤害一次490。后段爆炸在地面，不是重贴捕获背部。",
+    "终结爆炸向下延伸到能量/体力HUD区域，部分被HUD盖住，不能称整个特效完整无遮挡。人物本身包括尾巴、倒地轮廓仍在可见范围。",
+    "拆投两向7图/组，hit和throw_tech各一次，双方血量保持；throw_tech原图为亮火花，选定图内未见终结爆炸烟团，无throw_slam。拆投画面从必杀火山背景返回城市，按实际演出记录，不是不同case冒充。",
+    "落空两向10图/组，真实throw_whiff及后续收招可见，无捕获、无落地终结爆炸，受方HP1000。跳跃轮廓与尾巴均完整。",
+    "反馈修复不改变动作本身的验收边界：t27中间姿态与腹背支撑可辨，t26到27腿轴/鞋抬升仍有单tick姿态差；R00贴角、首相髋跳、早期换相和bridge胸颈近角问题不因火焰移位自动解除。"
+  ],
+  "limits": [
+    "此次确认候选反馈时序与可见性，不代表正式安装或整体动作美术接受。",
+    "截图只覆盖指定相位与事件，不宣称逐tick所有渲染特效均实际看过；完整事件序列另存，生产Feedback节点审计与独立回放由runtime另行回执。",
+    "无原速录屏、实速连续性或听感验收。",
+    "未使用废弃impact_hit合同；本轮spark=impact_light、finish_effect=explosion、finish_trigger=throw_slam。"
+  ],
+  "groups": [
+    {
+      "name": "owner0-1080",
+      "diagnostic_fx_hidden": false,
+      "trace_sha256": "25085714c4f8ca29c88c891ea8916872971be2da6e6949686ce1d85974b4576b",
+      "audit_path": "reports/gomora-builtin/main-midlate-feedback-local-20261105/gui/owner0-1080/png-audit.json",
+      "audit_sha256": "f53fc47e6616288308764407fb75ef20f85d81a64b0ef028082d1c41371e1268",
+      "events": [
+        {
+          "movie_frame": 329,
+          "tick": 255,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "finish_effect": "explosion",
+              "finish_trigger": "throw_slam",
+              "flash": 0.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 117,
+            "kind": "hit",
+            "move": "special3",
+            "player": 0,
+            "projectile": false,
+            "x": 451
+          }
+        },
+        {
+          "movie_frame": 383,
+          "tick": 309,
+          "event": {
+            "height": 0,
+            "kind": "throw_slam",
+            "move": "special3",
+            "player": 0,
+            "x": 213
+          }
+        },
+        {
+          "movie_frame": 383,
+          "tick": 309,
+          "event": {
+            "id": "land",
+            "kind": "sound",
+            "player": 1
+          }
+        }
+      ],
+      "event_counts": {
+        "hit": 1,
+        "throw_slam": 1,
+        "sound": 1
+      },
+      "receiver_final_hp": 510,
+      "owner": 0,
+      "case": "rear_vertical_hit",
+      "trace_frames": 760,
+      "failures": [],
+      "run_result": {
+        "exit": 0,
+        "diagnostics": [],
+        "sources_unchanged": true,
+        "isolated_user_data": true,
+        "installed": false,
+        "visual_accepted": false,
+        "audio_driver": "Dummy",
+        "audible_audio_validated": false
+      },
+      "images": [
+        {
+          "key": "body-00",
+          "file": "owner0-1080/stills/body-00.png",
+          "sha256": "acb512c7f9849ebc55e801ee83b2d398e7ff1c0782b5c688c12cad8b9f69204f",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 312,
+          "actual_frame": 312,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 238
+        },
+        {
+          "key": "body-01",
+          "file": "owner0-1080/stills/body-01.png",
+          "sha256": "0465f744b4e6f92285c98d7efc2c603830bc0cd0115099a261b9ac58b3e2c62f",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 315,
+          "actual_frame": 315,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 241
+        },
+        {
+          "key": "body-03",
+          "file": "owner0-1080/stills/body-03.png",
+          "sha256": "6b8ecd30b8a53105c3824b9a6a6fc96569b356a7161320c9ab8e81c3c8170b87",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 323,
+          "actual_frame": 323,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 249
+        },
+        {
+          "key": "body-04",
+          "file": "owner0-1080/stills/body-04.png",
+          "sha256": "9c53ac8cbbe23b5090e25ce4f1f1b63251c3356cad19f7432cfe821c472f1566",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 327,
+          "actual_frame": 327,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 253
+        },
+        {
+          "key": "receiver-vertical_jump-04",
+          "file": "owner0-1080/stills/receiver-vertical_jump-04.png",
+          "sha256": "f388e3fed4a4f53ea421991ca0bc81dd1489cb8a99892785c57d0a81d40d1197",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 329,
+          "actual_frame": 329,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 255
+        },
+        {
+          "key": "hit",
+          "file": "owner0-1080/stills/hit.png",
+          "sha256": "f388e3fed4a4f53ea421991ca0bc81dd1489cb8a99892785c57d0a81d40d1197",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 329,
+          "actual_frame": 329,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 255
+        },
+        {
+          "key": "body-05",
+          "file": "owner0-1080/stills/body-05.png",
+          "sha256": "8a73310a684d601005d84d97702d58f07f9561ccd9cb26781e2d40b32f3b10b8",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 335,
+          "actual_frame": 335,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 261
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-00",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-00.png",
+          "sha256": "8a73310a684d601005d84d97702d58f07f9561ccd9cb26781e2d40b32f3b10b8",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 335,
+          "actual_frame": 335,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 261
+        },
+        {
+          "key": "body-06",
+          "file": "owner0-1080/stills/body-06.png",
+          "sha256": "3b49919a02e1daa83316ef721801cb7ba52ff074c8ce2f7ad56768696b19d22d",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 339,
+          "actual_frame": 339,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 265
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-01",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-01.png",
+          "sha256": "3b49919a02e1daa83316ef721801cb7ba52ff074c8ce2f7ad56768696b19d22d",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 339,
+          "actual_frame": 339,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 265
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-12",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-12.png",
+          "sha256": "bbf5423ad7c4eeea3e120d1a8aefe2ca8f6d88f9ff0ad7ab30da622c18bc77f7",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 340,
+          "actual_frame": 340,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 266
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-13",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-13.png",
+          "sha256": "12e2f7da5859c254f1a2e2ce8156ecccea2accdb6fac9602390e888a02576a0d",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 341,
+          "actual_frame": 341,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 267
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-15",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-15.png",
+          "sha256": "fb611b56e74b345cadfa59e722d987b41a935aaf59e4e1a7199639b2d1fe1c35",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 342,
+          "actual_frame": 342,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 268
+        },
+        {
+          "key": "body-07",
+          "file": "owner0-1080/stills/body-07.png",
+          "sha256": "314abf893a1d5f9bf6a011ce270e337a11477c8f00213d2c954d7e2b77bf4ab1",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 343,
+          "actual_frame": 343,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 269
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-14",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-14.png",
+          "sha256": "314abf893a1d5f9bf6a011ce270e337a11477c8f00213d2c954d7e2b77bf4ab1",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 343,
+          "actual_frame": 343,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 269
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-02",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-02.png",
+          "sha256": "829a414e4f0956ee6cfccebbf2057da4b39d66aceb83bf963512845688638000",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 345,
+          "actual_frame": 345,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 271
+        },
+        {
+          "key": "body-02",
+          "file": "owner0-1080/stills/body-02.png",
+          "sha256": "e416775f394f727ca76beab3c9f7922e537159dc8288c6a69eb688485f66ff25",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 347,
+          "actual_frame": 347,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 273
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-03",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-03.png",
+          "sha256": "e416775f394f727ca76beab3c9f7922e537159dc8288c6a69eb688485f66ff25",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 347,
+          "actual_frame": 347,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 273
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-04",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-04.png",
+          "sha256": "fdd1a352b1caba797b9ae8f24a407ff5098d682eacd28276c04d3a62710fdd82",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 349,
+          "actual_frame": 349,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 275
+        },
+        {
+          "key": "body-09",
+          "file": "owner0-1080/stills/body-09.png",
+          "sha256": "a031eccf2c4deca7fcf2e1f6b1a76296b196ceb65cc1e44037b3581d8c683a30",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 351,
+          "actual_frame": 351,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 277
+        },
+        {
+          "key": "body-08",
+          "file": "owner0-1080/stills/body-08.png",
+          "sha256": "ddaf2d188d5ca6138f2d4aec23a26558f7afb17040908cc474837e972f2ab37d",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 355,
+          "actual_frame": 355,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 281
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-05",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-05.png",
+          "sha256": "ddaf2d188d5ca6138f2d4aec23a26558f7afb17040908cc474837e972f2ab37d",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 355,
+          "actual_frame": 355,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 281
+        },
+        {
+          "key": "body-10",
+          "file": "owner0-1080/stills/body-10.png",
+          "sha256": "86a1c16df430d43b4d32e41901859a1a435bd9b66037665bc78e3915ebd47fd7",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 359,
+          "actual_frame": 359,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 285
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-06",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-06.png",
+          "sha256": "86a1c16df430d43b4d32e41901859a1a435bd9b66037665bc78e3915ebd47fd7",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 359,
+          "actual_frame": 359,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 285
+        },
+        {
+          "key": "body-11",
+          "file": "owner0-1080/stills/body-11.png",
+          "sha256": "880e29dcc97f26bc3e479181e17157111b0be6106bfbfffba8f16ad47997e436",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 363,
+          "actual_frame": 363,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 289
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-07",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-07.png",
+          "sha256": "880e29dcc97f26bc3e479181e17157111b0be6106bfbfffba8f16ad47997e436",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 363,
+          "actual_frame": 363,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 289
+        },
+        {
+          "key": "body-12",
+          "file": "owner0-1080/stills/body-12.png",
+          "sha256": "a34b5d1a223e53d513d3f82e11d11d05f0c0924e652c39d9ffc2f1dbcbdb975b",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 367,
+          "actual_frame": 367,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 293
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-08",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-08.png",
+          "sha256": "a34b5d1a223e53d513d3f82e11d11d05f0c0924e652c39d9ffc2f1dbcbdb975b",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 367,
+          "actual_frame": 367,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 293
+        },
+        {
+          "key": "body-13",
+          "file": "owner0-1080/stills/body-13.png",
+          "sha256": "9b42e7628f6bbe28f2c5424ef688a62aff7c4e42bfde09982b9cb1d1c57e24fe",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 371,
+          "actual_frame": 371,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 297
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-09",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-09.png",
+          "sha256": "9b42e7628f6bbe28f2c5424ef688a62aff7c4e42bfde09982b9cb1d1c57e24fe",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 371,
+          "actual_frame": 371,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 297
+        },
+        {
+          "key": "body-14",
+          "file": "owner0-1080/stills/body-14.png",
+          "sha256": "8f96783be40bff0fa608a793830dafdfd502911bece2783c27055809bd71976f",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 375,
+          "actual_frame": 375,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 301
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-10",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-10.png",
+          "sha256": "8f96783be40bff0fa608a793830dafdfd502911bece2783c27055809bd71976f",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 375,
+          "actual_frame": 375,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 301
+        },
+        {
+          "key": "body-15",
+          "file": "owner0-1080/stills/body-15.png",
+          "sha256": "9c0e31c7a34210a545984fb1d8ddace2283eabe5eec35ca10f3a3a3f26773669",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 379,
+          "actual_frame": 379,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 305
+        },
+        {
+          "key": "body-16",
+          "file": "owner0-1080/stills/body-16.png",
+          "sha256": "ee6c600c0049fd955fcb35aeb296824997668c852f428e367f6eee1a37c94d30",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 383,
+          "actual_frame": 383,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 309
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-11",
+          "file": "owner0-1080/stills/receiver-gomora_back_lift_receiver-11.png",
+          "sha256": "ee6c600c0049fd955fcb35aeb296824997668c852f428e367f6eee1a37c94d30",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 383,
+          "actual_frame": 383,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 309
+        },
+        {
+          "key": "throw_slam",
+          "file": "owner0-1080/stills/throw_slam.png",
+          "sha256": "ee6c600c0049fd955fcb35aeb296824997668c852f428e367f6eee1a37c94d30",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 383,
+          "actual_frame": 383,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 309
+        },
+        {
+          "key": "body-17",
+          "file": "owner0-1080/stills/body-17.png",
+          "sha256": "3b523099c4c27ff887c1a7ba7c70b2db72e6afa092039f215ca79b7aaed2f3d3",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 391,
+          "actual_frame": 391,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 317
+        }
+      ]
+    },
+    {
+      "name": "owner0-720",
+      "diagnostic_fx_hidden": false,
+      "trace_sha256": "bc33281cf967fc7d7e3670aac3dbd2896e3ee0056fb1103adcb6c471b6c0e546",
+      "audit_path": "reports/gomora-builtin/main-midlate-feedback-local-20261105/gui/owner0-720/png-audit.json",
+      "audit_sha256": "d5f8d3c2038de529d3943d1a6c2f1208c0fb80196061e957497fce58c023f4e4",
+      "events": [
+        {
+          "movie_frame": 329,
+          "tick": 255,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "finish_effect": "explosion",
+              "finish_trigger": "throw_slam",
+              "flash": 0.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 117,
+            "kind": "hit",
+            "move": "special3",
+            "player": 0,
+            "projectile": false,
+            "x": 451
+          }
+        },
+        {
+          "movie_frame": 383,
+          "tick": 309,
+          "event": {
+            "height": 0,
+            "kind": "throw_slam",
+            "move": "special3",
+            "player": 0,
+            "x": 213
+          }
+        },
+        {
+          "movie_frame": 383,
+          "tick": 309,
+          "event": {
+            "id": "land",
+            "kind": "sound",
+            "player": 1
+          }
+        }
+      ],
+      "event_counts": {
+        "hit": 1,
+        "throw_slam": 1,
+        "sound": 1
+      },
+      "receiver_final_hp": 510,
+      "owner": 0,
+      "case": "rear_vertical_hit",
+      "trace_frames": 760,
+      "failures": [],
+      "run_result": {
+        "exit": 0,
+        "diagnostics": [],
+        "sources_unchanged": true,
+        "isolated_user_data": true,
+        "installed": false,
+        "visual_accepted": false,
+        "audio_driver": "Dummy",
+        "audible_audio_validated": false
+      },
+      "images": [
+        {
+          "key": "body-00",
+          "file": "owner0-720/stills/body-00.png",
+          "sha256": "3b8a19c119a22fe7f1aaeb7217942364ef2aac31c86f6ff910e199056499dabb",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 312,
+          "actual_frame": 312,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 238
+        },
+        {
+          "key": "body-01",
+          "file": "owner0-720/stills/body-01.png",
+          "sha256": "c66b4558a253fab8a026b4551f318e1ea5e8d2f4b8b192bfda96335a5ab486de",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 315,
+          "actual_frame": 315,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 241
+        },
+        {
+          "key": "body-03",
+          "file": "owner0-720/stills/body-03.png",
+          "sha256": "37aca376bc48d6459b0de2b73fbeb0ed3e1935bd055326e3dc6c431333b04840",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 323,
+          "actual_frame": 323,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 249
+        },
+        {
+          "key": "body-04",
+          "file": "owner0-720/stills/body-04.png",
+          "sha256": "da6bc6b7e644e00855b377fd9b73e1967e2b055afc992b48bd86ee5919095766",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 327,
+          "actual_frame": 327,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 253
+        },
+        {
+          "key": "receiver-vertical_jump-04",
+          "file": "owner0-720/stills/receiver-vertical_jump-04.png",
+          "sha256": "c1c55bc91a030a832d94fc1fd3b3657b28dba9bdb267795122f23141375ef697",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 329,
+          "actual_frame": 329,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 255
+        },
+        {
+          "key": "hit",
+          "file": "owner0-720/stills/hit.png",
+          "sha256": "c1c55bc91a030a832d94fc1fd3b3657b28dba9bdb267795122f23141375ef697",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 329,
+          "actual_frame": 329,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 255
+        },
+        {
+          "key": "body-05",
+          "file": "owner0-720/stills/body-05.png",
+          "sha256": "acee3c59d3a89fd7ff1a81fba27630cbf39c5af56e52f61e274b50854bec80a2",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 335,
+          "actual_frame": 335,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 261
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-00",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-00.png",
+          "sha256": "acee3c59d3a89fd7ff1a81fba27630cbf39c5af56e52f61e274b50854bec80a2",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 335,
+          "actual_frame": 335,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 261
+        },
+        {
+          "key": "body-06",
+          "file": "owner0-720/stills/body-06.png",
+          "sha256": "f8ef5579e4cd8fd097e9d24391532382842deb785e0e2fb233819ac0c05ae8a2",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 339,
+          "actual_frame": 339,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 265
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-01",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-01.png",
+          "sha256": "f8ef5579e4cd8fd097e9d24391532382842deb785e0e2fb233819ac0c05ae8a2",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 339,
+          "actual_frame": 339,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 265
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-12",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-12.png",
+          "sha256": "68e2a2c110813562b3b33da32b5c9db7a8d596837f7154565e984bc5ba76a741",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 340,
+          "actual_frame": 340,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 266
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-13",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-13.png",
+          "sha256": "9b96a4a2c8d947f105e770a9bf5bb0b3eed1ac2dc624886cdf9ec839314dd7e4",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 341,
+          "actual_frame": 341,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 267
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-15",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-15.png",
+          "sha256": "ad3f74e7051208702a1b4017a932a2503b5f39977ed37fef5048ed38fc70ebcc",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 342,
+          "actual_frame": 342,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 268
+        },
+        {
+          "key": "body-07",
+          "file": "owner0-720/stills/body-07.png",
+          "sha256": "2c9217e13e9b68fcc7ff25e1f495a02954b0100827a812527577fba108877133",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 343,
+          "actual_frame": 343,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 269
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-14",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-14.png",
+          "sha256": "2c9217e13e9b68fcc7ff25e1f495a02954b0100827a812527577fba108877133",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 343,
+          "actual_frame": 343,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 269
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-02",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-02.png",
+          "sha256": "e7d17baa23fff407e9c37c49006fc858106e64d0a53b17889cbb1aeb17fc336d",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 345,
+          "actual_frame": 345,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 271
+        },
+        {
+          "key": "body-02",
+          "file": "owner0-720/stills/body-02.png",
+          "sha256": "8022c204c0faffbdb566927893831817a181ee076fb134ed985c967f5ab74537",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 347,
+          "actual_frame": 347,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 273
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-03",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-03.png",
+          "sha256": "8022c204c0faffbdb566927893831817a181ee076fb134ed985c967f5ab74537",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 347,
+          "actual_frame": 347,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 273
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-04",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-04.png",
+          "sha256": "a0eb036203470882052d8bbe178955ec3b96186255cce1c37f21a2d6295071ae",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 349,
+          "actual_frame": 349,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 275
+        },
+        {
+          "key": "body-09",
+          "file": "owner0-720/stills/body-09.png",
+          "sha256": "ed204f32441401b4c3f746b5529c270ca6075a2d181f8be7d8585f6fadc088be",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 351,
+          "actual_frame": 351,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 277
+        },
+        {
+          "key": "body-08",
+          "file": "owner0-720/stills/body-08.png",
+          "sha256": "a23f9e1f39191dd6ceff47567b0bd3337a25209f4c3e3e63d24bf9eb9da5b02c",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 355,
+          "actual_frame": 355,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 281
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-05",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-05.png",
+          "sha256": "a23f9e1f39191dd6ceff47567b0bd3337a25209f4c3e3e63d24bf9eb9da5b02c",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 355,
+          "actual_frame": 355,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 281
+        },
+        {
+          "key": "body-10",
+          "file": "owner0-720/stills/body-10.png",
+          "sha256": "b3e1e2567b2c33ed70efe2cf1bd199ec820d20f153f3bd2e32d4dcca4748c655",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 359,
+          "actual_frame": 359,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 285
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-06",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-06.png",
+          "sha256": "b3e1e2567b2c33ed70efe2cf1bd199ec820d20f153f3bd2e32d4dcca4748c655",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 359,
+          "actual_frame": 359,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 285
+        },
+        {
+          "key": "body-11",
+          "file": "owner0-720/stills/body-11.png",
+          "sha256": "19584a0c5377b5bcdcf4850c7bc9a236ad510befa0d9f328c368eda5f50f3bc5",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 363,
+          "actual_frame": 363,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 289
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-07",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-07.png",
+          "sha256": "19584a0c5377b5bcdcf4850c7bc9a236ad510befa0d9f328c368eda5f50f3bc5",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 363,
+          "actual_frame": 363,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 289
+        },
+        {
+          "key": "body-12",
+          "file": "owner0-720/stills/body-12.png",
+          "sha256": "0de439f2fc163909080d27c4507bc33c305cef5e10063756bc222dceeffe5090",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 367,
+          "actual_frame": 367,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 293
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-08",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-08.png",
+          "sha256": "0de439f2fc163909080d27c4507bc33c305cef5e10063756bc222dceeffe5090",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 367,
+          "actual_frame": 367,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 293
+        },
+        {
+          "key": "body-13",
+          "file": "owner0-720/stills/body-13.png",
+          "sha256": "ca31e9a36ecb8545a37ab8d3e40c8c358a5631eb1553a839012cb65be6be18a8",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 371,
+          "actual_frame": 371,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 297
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-09",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-09.png",
+          "sha256": "ca31e9a36ecb8545a37ab8d3e40c8c358a5631eb1553a839012cb65be6be18a8",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 371,
+          "actual_frame": 371,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 297
+        },
+        {
+          "key": "body-14",
+          "file": "owner0-720/stills/body-14.png",
+          "sha256": "f1316200b41d3ba5e0b753d6f5427eb8b7ae57bb4a9eb2bd6afb2a8975f753fb",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 375,
+          "actual_frame": 375,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 301
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-10",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-10.png",
+          "sha256": "f1316200b41d3ba5e0b753d6f5427eb8b7ae57bb4a9eb2bd6afb2a8975f753fb",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 375,
+          "actual_frame": 375,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 301
+        },
+        {
+          "key": "body-15",
+          "file": "owner0-720/stills/body-15.png",
+          "sha256": "127be864616f92c6d2981dd6baacf9c9eef67c64f72c12acab2b358531a8cce5",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 379,
+          "actual_frame": 379,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 305
+        },
+        {
+          "key": "body-16",
+          "file": "owner0-720/stills/body-16.png",
+          "sha256": "7ca4c2147f558cbb0397f39107c45b99f34756e617362fb615990fb9e2ccc502",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 383,
+          "actual_frame": 383,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 309
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-11",
+          "file": "owner0-720/stills/receiver-gomora_back_lift_receiver-11.png",
+          "sha256": "7ca4c2147f558cbb0397f39107c45b99f34756e617362fb615990fb9e2ccc502",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 383,
+          "actual_frame": 383,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 309
+        },
+        {
+          "key": "throw_slam",
+          "file": "owner0-720/stills/throw_slam.png",
+          "sha256": "7ca4c2147f558cbb0397f39107c45b99f34756e617362fb615990fb9e2ccc502",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 383,
+          "actual_frame": 383,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 309
+        },
+        {
+          "key": "body-17",
+          "file": "owner0-720/stills/body-17.png",
+          "sha256": "1a34f4a4d61a7817fec03580b5db5091324b47c72b84f396d89b607417a527a7",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 391,
+          "actual_frame": 391,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 317
+        }
+      ]
+    },
+    {
+      "name": "owner1-1080",
+      "diagnostic_fx_hidden": false,
+      "trace_sha256": "6f646606638ddce559ccc8353eb724bd7423ba193814d6b3bc8e58032dbc5781",
+      "audit_path": "reports/gomora-builtin/main-midlate-feedback-local-20261105/gui/owner1-1080/png-audit.json",
+      "audit_sha256": "29e2a57ac1c4d7bb71cb8f3a7d14cc9ca5b9a1e1d700b485998fe881bf07680b",
+      "events": [
+        {
+          "movie_frame": 329,
+          "tick": 255,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "finish_effect": "explosion",
+              "finish_trigger": "throw_slam",
+              "flash": 0.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 117,
+            "kind": "hit",
+            "move": "special3",
+            "player": 1,
+            "projectile": false,
+            "x": 768
+          }
+        },
+        {
+          "movie_frame": 383,
+          "tick": 309,
+          "event": {
+            "height": 0,
+            "kind": "throw_slam",
+            "move": "special3",
+            "player": 1,
+            "x": 1007
+          }
+        },
+        {
+          "movie_frame": 383,
+          "tick": 309,
+          "event": {
+            "id": "land",
+            "kind": "sound",
+            "player": 0
+          }
+        }
+      ],
+      "event_counts": {
+        "hit": 1,
+        "throw_slam": 1,
+        "sound": 1
+      },
+      "receiver_final_hp": 510,
+      "owner": 1,
+      "case": "rear_vertical_hit",
+      "trace_frames": 760,
+      "failures": [],
+      "run_result": {
+        "exit": 0,
+        "diagnostics": [],
+        "sources_unchanged": true,
+        "isolated_user_data": true,
+        "installed": false,
+        "visual_accepted": false,
+        "audio_driver": "Dummy",
+        "audible_audio_validated": false
+      },
+      "images": [
+        {
+          "key": "body-00",
+          "file": "owner1-1080/stills/body-00.png",
+          "sha256": "3ab73003a3614deb7631dc0a764a4dfd989074b4af34b64a6347a65329b2602c",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 312,
+          "actual_frame": 312,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 238
+        },
+        {
+          "key": "body-01",
+          "file": "owner1-1080/stills/body-01.png",
+          "sha256": "6070f9644d348a728714785e2f068dd09539fc350533dada9be2ec2fdc8c6a7d",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 315,
+          "actual_frame": 315,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 241
+        },
+        {
+          "key": "body-03",
+          "file": "owner1-1080/stills/body-03.png",
+          "sha256": "6aa7f9593af1049748b45c5d877093219e4238681ecb229d1ee65cb46504df44",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 323,
+          "actual_frame": 323,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 249
+        },
+        {
+          "key": "body-04",
+          "file": "owner1-1080/stills/body-04.png",
+          "sha256": "545e83e776fd0138c5279405c2f761f89f44a765b81a6fc1c1b1f8a3b2c0a1c6",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 327,
+          "actual_frame": 327,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 253
+        },
+        {
+          "key": "receiver-vertical_jump-04",
+          "file": "owner1-1080/stills/receiver-vertical_jump-04.png",
+          "sha256": "7ce2d7227e4124b67fc38b81cfa612b172d89b82da6f43e0faa9ad4329dfe612",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 329,
+          "actual_frame": 329,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 255
+        },
+        {
+          "key": "hit",
+          "file": "owner1-1080/stills/hit.png",
+          "sha256": "7ce2d7227e4124b67fc38b81cfa612b172d89b82da6f43e0faa9ad4329dfe612",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 329,
+          "actual_frame": 329,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 255
+        },
+        {
+          "key": "body-05",
+          "file": "owner1-1080/stills/body-05.png",
+          "sha256": "4f6ce14bca30720c140e1838aa2343dab38d3aba9cac36683a35562376092141",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 335,
+          "actual_frame": 335,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 261
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-00",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-00.png",
+          "sha256": "4f6ce14bca30720c140e1838aa2343dab38d3aba9cac36683a35562376092141",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 335,
+          "actual_frame": 335,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 261
+        },
+        {
+          "key": "body-06",
+          "file": "owner1-1080/stills/body-06.png",
+          "sha256": "8d1153f1011cc341ccb1f27fb688514d38bb233e816e368746361f836060b8b2",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 339,
+          "actual_frame": 339,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 265
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-01",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-01.png",
+          "sha256": "8d1153f1011cc341ccb1f27fb688514d38bb233e816e368746361f836060b8b2",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 339,
+          "actual_frame": 339,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 265
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-12",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-12.png",
+          "sha256": "22652c89f7576a13da0d6c956b0ad085372e6e96d7ddff272aae37aa5d179750",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 340,
+          "actual_frame": 340,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 266
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-13",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-13.png",
+          "sha256": "7fd085755b93ea018e24e7d97bb9b00f1a5e18167626702d0b06de27f4041caa",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 341,
+          "actual_frame": 341,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 267
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-15",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-15.png",
+          "sha256": "ef05c150ed19f74093d6de94a981cb7ccfa4ed73077fa569ec835cc346271565",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 342,
+          "actual_frame": 342,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 268
+        },
+        {
+          "key": "body-07",
+          "file": "owner1-1080/stills/body-07.png",
+          "sha256": "fa81beda79574133a10ac8b4f8db0bb0aef3d045d2cfe8a9a32842c95f482e11",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 343,
+          "actual_frame": 343,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 269
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-14",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-14.png",
+          "sha256": "fa81beda79574133a10ac8b4f8db0bb0aef3d045d2cfe8a9a32842c95f482e11",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 343,
+          "actual_frame": 343,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 269
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-02",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-02.png",
+          "sha256": "1d5d410051f58964d0878d2a265c0cadddb9591b5a2243ce0b6f81067294d9f1",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 345,
+          "actual_frame": 345,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 271
+        },
+        {
+          "key": "body-02",
+          "file": "owner1-1080/stills/body-02.png",
+          "sha256": "daaa959749961c5d40aad8355645e97ebb85154cf37fcd9b90a77e01d0160f19",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 347,
+          "actual_frame": 347,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 273
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-03",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-03.png",
+          "sha256": "daaa959749961c5d40aad8355645e97ebb85154cf37fcd9b90a77e01d0160f19",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 347,
+          "actual_frame": 347,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 273
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-04",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-04.png",
+          "sha256": "a4c61069ce782f61ef7d37a89fa2801f9a96dae2d538d2e72e3fef3697fdbf5a",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 349,
+          "actual_frame": 349,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 275
+        },
+        {
+          "key": "body-09",
+          "file": "owner1-1080/stills/body-09.png",
+          "sha256": "dfdb09f32cfb1deb2c76585d407ea27f803d0af3ea84fc5575d68c46f2d43df8",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 351,
+          "actual_frame": 351,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 277
+        },
+        {
+          "key": "body-08",
+          "file": "owner1-1080/stills/body-08.png",
+          "sha256": "749e95f596e1513f2b915e4726593fcb9c51cc72f75af144526b8eda68adc9a9",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 355,
+          "actual_frame": 355,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 281
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-05",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-05.png",
+          "sha256": "749e95f596e1513f2b915e4726593fcb9c51cc72f75af144526b8eda68adc9a9",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 355,
+          "actual_frame": 355,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 281
+        },
+        {
+          "key": "body-10",
+          "file": "owner1-1080/stills/body-10.png",
+          "sha256": "59356e94a47ea5916b5e05a663f1726ab9e110e8f746944c48a957fb45f4c9fb",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 359,
+          "actual_frame": 359,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 285
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-06",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-06.png",
+          "sha256": "59356e94a47ea5916b5e05a663f1726ab9e110e8f746944c48a957fb45f4c9fb",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 359,
+          "actual_frame": 359,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 285
+        },
+        {
+          "key": "body-11",
+          "file": "owner1-1080/stills/body-11.png",
+          "sha256": "7baa20196c687314828fae569c16d9a91fc553c905d2c1d90cd38a0212679a2a",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 363,
+          "actual_frame": 363,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 289
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-07",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-07.png",
+          "sha256": "7baa20196c687314828fae569c16d9a91fc553c905d2c1d90cd38a0212679a2a",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 363,
+          "actual_frame": 363,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 289
+        },
+        {
+          "key": "body-12",
+          "file": "owner1-1080/stills/body-12.png",
+          "sha256": "b288e30fb5a7f1ff098db3f9440406631c52a6a471bf41be3d18b2f6a59b949f",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 367,
+          "actual_frame": 367,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 293
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-08",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-08.png",
+          "sha256": "b288e30fb5a7f1ff098db3f9440406631c52a6a471bf41be3d18b2f6a59b949f",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 367,
+          "actual_frame": 367,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 293
+        },
+        {
+          "key": "body-13",
+          "file": "owner1-1080/stills/body-13.png",
+          "sha256": "a32ddf4a76c7143aecf0d09a9448bb6dfbc1a08da0150e64f9bf51856b1ca2c0",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 371,
+          "actual_frame": 371,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 297
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-09",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-09.png",
+          "sha256": "a32ddf4a76c7143aecf0d09a9448bb6dfbc1a08da0150e64f9bf51856b1ca2c0",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 371,
+          "actual_frame": 371,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 297
+        },
+        {
+          "key": "body-14",
+          "file": "owner1-1080/stills/body-14.png",
+          "sha256": "50a0137238daaf5f8962f3189fda6cf119274c4ababb23f3e8e0043497cd9844",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 375,
+          "actual_frame": 375,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 301
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-10",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-10.png",
+          "sha256": "50a0137238daaf5f8962f3189fda6cf119274c4ababb23f3e8e0043497cd9844",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 375,
+          "actual_frame": 375,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 301
+        },
+        {
+          "key": "body-15",
+          "file": "owner1-1080/stills/body-15.png",
+          "sha256": "119e04f98a354d56e23b395af680ffa432158aa25d9c49a783c397b154000cdf",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 379,
+          "actual_frame": 379,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 305
+        },
+        {
+          "key": "body-16",
+          "file": "owner1-1080/stills/body-16.png",
+          "sha256": "1ff11771d755a76706ba0fc5bfdae8d39ea5612635c54c47c94c0d658ed3cf62",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 383,
+          "actual_frame": 383,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 309
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-11",
+          "file": "owner1-1080/stills/receiver-gomora_back_lift_receiver-11.png",
+          "sha256": "1ff11771d755a76706ba0fc5bfdae8d39ea5612635c54c47c94c0d658ed3cf62",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 383,
+          "actual_frame": 383,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 309
+        },
+        {
+          "key": "throw_slam",
+          "file": "owner1-1080/stills/throw_slam.png",
+          "sha256": "1ff11771d755a76706ba0fc5bfdae8d39ea5612635c54c47c94c0d658ed3cf62",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 383,
+          "actual_frame": 383,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 309
+        },
+        {
+          "key": "body-17",
+          "file": "owner1-1080/stills/body-17.png",
+          "sha256": "b963a3c972e389e53e0c54f1dcc8fa6b8dbb932cae7dc2bec87094cd741a8867",
+          "format": "PNG",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 391,
+          "actual_frame": 391,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 317
+        }
+      ]
+    },
+    {
+      "name": "owner1-720",
+      "diagnostic_fx_hidden": false,
+      "trace_sha256": "8c754629c04328f55da3729c732a26ffc5bbd59ccc37f8d2fd54ec25599d30bd",
+      "audit_path": "reports/gomora-builtin/main-midlate-feedback-local-20261105/gui/owner1-720/png-audit.json",
+      "audit_sha256": "09df59856fde692480ef3b94e10c7eac9ed99deb5db4e0a71c9b41aba328fa56",
+      "events": [
+        {
+          "movie_frame": 329,
+          "tick": 255,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "finish_effect": "explosion",
+              "finish_trigger": "throw_slam",
+              "flash": 0.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 117,
+            "kind": "hit",
+            "move": "special3",
+            "player": 1,
+            "projectile": false,
+            "x": 768
+          }
+        },
+        {
+          "movie_frame": 383,
+          "tick": 309,
+          "event": {
+            "height": 0,
+            "kind": "throw_slam",
+            "move": "special3",
+            "player": 1,
+            "x": 1007
+          }
+        },
+        {
+          "movie_frame": 383,
+          "tick": 309,
+          "event": {
+            "id": "land",
+            "kind": "sound",
+            "player": 0
+          }
+        }
+      ],
+      "event_counts": {
+        "hit": 1,
+        "throw_slam": 1,
+        "sound": 1
+      },
+      "receiver_final_hp": 510,
+      "owner": 1,
+      "case": "rear_vertical_hit",
+      "trace_frames": 760,
+      "failures": [],
+      "run_result": {
+        "exit": 0,
+        "diagnostics": [],
+        "sources_unchanged": true,
+        "isolated_user_data": true,
+        "installed": false,
+        "visual_accepted": false,
+        "audio_driver": "Dummy",
+        "audible_audio_validated": false
+      },
+      "images": [
+        {
+          "key": "body-00",
+          "file": "owner1-720/stills/body-00.png",
+          "sha256": "646f39d130f83b98eb957b32b7d31e12a84cb692116f60cccc57e4ccf11c835c",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 312,
+          "actual_frame": 312,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 238
+        },
+        {
+          "key": "body-01",
+          "file": "owner1-720/stills/body-01.png",
+          "sha256": "f0a6804f2c25e2bea1ed16dbcddbf86bf0fcc4558fdeb5108a597e6c2f1f4c00",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 315,
+          "actual_frame": 315,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 241
+        },
+        {
+          "key": "body-03",
+          "file": "owner1-720/stills/body-03.png",
+          "sha256": "795735c5e11fe023c7eafe2c988ca58aff5709e5ee310880af4cb48a28f942a8",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 323,
+          "actual_frame": 323,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 249
+        },
+        {
+          "key": "body-04",
+          "file": "owner1-720/stills/body-04.png",
+          "sha256": "c67777056154e182743d698ee6ea55636f09d231415134479cf94cbd064bf842",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 327,
+          "actual_frame": 327,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 253
+        },
+        {
+          "key": "receiver-vertical_jump-04",
+          "file": "owner1-720/stills/receiver-vertical_jump-04.png",
+          "sha256": "c6d3ea08fc8662d7cf4b2286bd001770ab12d90b466b8107cf24941462eebd04",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 329,
+          "actual_frame": 329,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 255
+        },
+        {
+          "key": "hit",
+          "file": "owner1-720/stills/hit.png",
+          "sha256": "c6d3ea08fc8662d7cf4b2286bd001770ab12d90b466b8107cf24941462eebd04",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 329,
+          "actual_frame": 329,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 255
+        },
+        {
+          "key": "body-05",
+          "file": "owner1-720/stills/body-05.png",
+          "sha256": "6c7ee3143a2f9820c12b943e51eb3326f8335f2ae9520a3f521e6d3c5ca7c35d",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 335,
+          "actual_frame": 335,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 261
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-00",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-00.png",
+          "sha256": "6c7ee3143a2f9820c12b943e51eb3326f8335f2ae9520a3f521e6d3c5ca7c35d",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 335,
+          "actual_frame": 335,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 261
+        },
+        {
+          "key": "body-06",
+          "file": "owner1-720/stills/body-06.png",
+          "sha256": "b044f808990b964bb71fcc5f74434450b6f8aa664fab18acc0d3ac9fd992a2e4",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 339,
+          "actual_frame": 339,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 265
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-01",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-01.png",
+          "sha256": "b044f808990b964bb71fcc5f74434450b6f8aa664fab18acc0d3ac9fd992a2e4",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 339,
+          "actual_frame": 339,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 265
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-12",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-12.png",
+          "sha256": "d062e78722bf7625f97ee01fc2ccc9239152cfe9aa3c684405331f048d12bb40",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 340,
+          "actual_frame": 340,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 266
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-13",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-13.png",
+          "sha256": "7ffde3d4d891ae002b8fdfc005a67893c9f434997ec9164478b4d3dca207aedb",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 341,
+          "actual_frame": 341,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 267
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-15",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-15.png",
+          "sha256": "bbc6336bfb02b73a67c58ce5b9f23a213aebcadeb9291548467518fbc85a3083",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 342,
+          "actual_frame": 342,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 268
+        },
+        {
+          "key": "body-07",
+          "file": "owner1-720/stills/body-07.png",
+          "sha256": "1cb36c526e99d47c1b782e3576a10e94159eb26ec6ce3c19bccbf2e2a33c8892",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 343,
+          "actual_frame": 343,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 269
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-14",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-14.png",
+          "sha256": "1cb36c526e99d47c1b782e3576a10e94159eb26ec6ce3c19bccbf2e2a33c8892",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 343,
+          "actual_frame": 343,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 269
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-02",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-02.png",
+          "sha256": "49aaef6513780a6fe7ee78cc8f4d189d23fd88928a1284a6e8a16c3d2ec6862e",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 345,
+          "actual_frame": 345,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 271
+        },
+        {
+          "key": "body-02",
+          "file": "owner1-720/stills/body-02.png",
+          "sha256": "f09dfa2138b5f96d99b82ae0badf0b87d197c327a2d3b79494b21725c7637f3a",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 347,
+          "actual_frame": 347,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 273
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-03",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-03.png",
+          "sha256": "f09dfa2138b5f96d99b82ae0badf0b87d197c327a2d3b79494b21725c7637f3a",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 347,
+          "actual_frame": 347,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 273
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-04",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-04.png",
+          "sha256": "a76f11417a429a00e32a780b1e4a4dd1fc1b2e416648822d50a2e10b5a578a3f",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 349,
+          "actual_frame": 349,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 275
+        },
+        {
+          "key": "body-09",
+          "file": "owner1-720/stills/body-09.png",
+          "sha256": "2af23fbfad5a9eb01d35928e1a4d73bb2c47dca3cdbfc32576172b13ae583b1b",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 351,
+          "actual_frame": 351,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 277
+        },
+        {
+          "key": "body-08",
+          "file": "owner1-720/stills/body-08.png",
+          "sha256": "a9d0dbe6a5381a4a8aed1cf1660dc007892af0e09b352618a296738bdc64b9e4",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 355,
+          "actual_frame": 355,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 281
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-05",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-05.png",
+          "sha256": "a9d0dbe6a5381a4a8aed1cf1660dc007892af0e09b352618a296738bdc64b9e4",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 355,
+          "actual_frame": 355,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 281
+        },
+        {
+          "key": "body-10",
+          "file": "owner1-720/stills/body-10.png",
+          "sha256": "603fc00669acd0664161fedb5c5d3012c449072544e1d53475f934a758caba89",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 359,
+          "actual_frame": 359,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 285
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-06",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-06.png",
+          "sha256": "603fc00669acd0664161fedb5c5d3012c449072544e1d53475f934a758caba89",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 359,
+          "actual_frame": 359,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 285
+        },
+        {
+          "key": "body-11",
+          "file": "owner1-720/stills/body-11.png",
+          "sha256": "b5dd7996b54208322abb83fbd17761a4127ff250893eceed14dc4e4cc93a6c8b",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 363,
+          "actual_frame": 363,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 289
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-07",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-07.png",
+          "sha256": "b5dd7996b54208322abb83fbd17761a4127ff250893eceed14dc4e4cc93a6c8b",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 363,
+          "actual_frame": 363,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 289
+        },
+        {
+          "key": "body-12",
+          "file": "owner1-720/stills/body-12.png",
+          "sha256": "5dedb68d7a8adef062c7df4fb3f03fedbf0711a68d32ade5220c497c99a82c2a",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 367,
+          "actual_frame": 367,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 293
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-08",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-08.png",
+          "sha256": "5dedb68d7a8adef062c7df4fb3f03fedbf0711a68d32ade5220c497c99a82c2a",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 367,
+          "actual_frame": 367,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 293
+        },
+        {
+          "key": "body-13",
+          "file": "owner1-720/stills/body-13.png",
+          "sha256": "118ab0171301c03a1dc6cc0e6c51323947aa64de3bca1fe83aeb928d5a85fb99",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 371,
+          "actual_frame": 371,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 297
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-09",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-09.png",
+          "sha256": "118ab0171301c03a1dc6cc0e6c51323947aa64de3bca1fe83aeb928d5a85fb99",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 371,
+          "actual_frame": 371,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 297
+        },
+        {
+          "key": "body-14",
+          "file": "owner1-720/stills/body-14.png",
+          "sha256": "2362d7d124333b1910fc3a22424b34cb3908f23c824077e99847e017a3a0ed35",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 375,
+          "actual_frame": 375,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 301
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-10",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-10.png",
+          "sha256": "2362d7d124333b1910fc3a22424b34cb3908f23c824077e99847e017a3a0ed35",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 375,
+          "actual_frame": 375,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 301
+        },
+        {
+          "key": "body-15",
+          "file": "owner1-720/stills/body-15.png",
+          "sha256": "c2bf353161c7aa2f6657f13154dfca854d2ee1c873d0b7001243725d7c04132f",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 379,
+          "actual_frame": 379,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 305
+        },
+        {
+          "key": "body-16",
+          "file": "owner1-720/stills/body-16.png",
+          "sha256": "6fcc194b88b8e80b1d73b010d1704ba4a48c92789c82193d0278fae2f78a9454",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 383,
+          "actual_frame": 383,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 309
+        },
+        {
+          "key": "receiver-gomora_back_lift_receiver-11",
+          "file": "owner1-720/stills/receiver-gomora_back_lift_receiver-11.png",
+          "sha256": "6fcc194b88b8e80b1d73b010d1704ba4a48c92789c82193d0278fae2f78a9454",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 383,
+          "actual_frame": 383,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 309
+        },
+        {
+          "key": "throw_slam",
+          "file": "owner1-720/stills/throw_slam.png",
+          "sha256": "6fcc194b88b8e80b1d73b010d1704ba4a48c92789c82193d0278fae2f78a9454",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 383,
+          "actual_frame": 383,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 309
+        },
+        {
+          "key": "body-17",
+          "file": "owner1-720/stills/body-17.png",
+          "sha256": "e844ce308a07ea1dca41ca26a10fe756e7df346758593515c2944b0c807cc235",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 391,
+          "actual_frame": 391,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 317
+        }
+      ]
+    },
+    {
+      "name": "rear_vertical_tech1-owner0-720",
+      "diagnostic_fx_hidden": false,
+      "trace_sha256": "7ed73ffc674e0a657eaea9f4a90541453475548498820936b2f2ec6316c1dfd6",
+      "audit_path": "reports/gomora-builtin/main-midlate-feedback-local-20261105/gui/rear_vertical_tech1-owner0-720/png-audit.json",
+      "audit_sha256": "44143a541da73d107b75d1310c70883e1e4a40d9c667f1173c71a902da511c10",
+      "events": [
+        {
+          "movie_frame": 329,
+          "tick": 255,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "finish_effect": "explosion",
+              "finish_trigger": "throw_slam",
+              "flash": 0.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 117,
+            "kind": "hit",
+            "move": "special3",
+            "player": 0,
+            "projectile": false,
+            "x": 451
+          }
+        },
+        {
+          "movie_frame": 330,
+          "tick": 256,
+          "event": {
+            "kind": "throw_tech",
+            "player": 0
+          }
+        }
+      ],
+      "event_counts": {
+        "hit": 1,
+        "throw_tech": 1
+      },
+      "receiver_final_hp": 1000,
+      "owner": 0,
+      "case": "rear_vertical_tech1",
+      "trace_frames": 760,
+      "failures": [],
+      "run_result": {
+        "exit": 0,
+        "diagnostics": [],
+        "sources_unchanged": true,
+        "isolated_user_data": true,
+        "installed": false,
+        "visual_accepted": false,
+        "audio_driver": "Dummy",
+        "audible_audio_validated": false
+      },
+      "images": [
+        {
+          "key": "body-00",
+          "file": "rear_vertical_tech1-owner0-720/stills/body-00.png",
+          "sha256": "3b8a19c119a22fe7f1aaeb7217942364ef2aac31c86f6ff910e199056499dabb",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 312,
+          "actual_frame": 312,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 238
+        },
+        {
+          "key": "body-01",
+          "file": "rear_vertical_tech1-owner0-720/stills/body-01.png",
+          "sha256": "c66b4558a253fab8a026b4551f318e1ea5e8d2f4b8b192bfda96335a5ab486de",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 315,
+          "actual_frame": 315,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 241
+        },
+        {
+          "key": "body-03",
+          "file": "rear_vertical_tech1-owner0-720/stills/body-03.png",
+          "sha256": "37aca376bc48d6459b0de2b73fbeb0ed3e1935bd055326e3dc6c431333b04840",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 323,
+          "actual_frame": 323,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 249
+        },
+        {
+          "key": "body-04",
+          "file": "rear_vertical_tech1-owner0-720/stills/body-04.png",
+          "sha256": "da6bc6b7e644e00855b377fd9b73e1967e2b055afc992b48bd86ee5919095766",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 327,
+          "actual_frame": 327,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 253
+        },
+        {
+          "key": "receiver-vertical_jump-04",
+          "file": "rear_vertical_tech1-owner0-720/stills/receiver-vertical_jump-04.png",
+          "sha256": "c1c55bc91a030a832d94fc1fd3b3657b28dba9bdb267795122f23141375ef697",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 329,
+          "actual_frame": 329,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 255
+        },
+        {
+          "key": "hit",
+          "file": "rear_vertical_tech1-owner0-720/stills/hit.png",
+          "sha256": "c1c55bc91a030a832d94fc1fd3b3657b28dba9bdb267795122f23141375ef697",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 329,
+          "actual_frame": 329,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 255
+        },
+        {
+          "key": "throw_tech",
+          "file": "rear_vertical_tech1-owner0-720/stills/throw_tech.png",
+          "sha256": "68af4dceb3612c7bdda25adfde5c9582e9b7420d5be41c36be2cc2283335b1de",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 330,
+          "actual_frame": 330,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 256
+        }
+      ]
+    },
+    {
+      "name": "rear_vertical_tech1-owner1-720",
+      "diagnostic_fx_hidden": false,
+      "trace_sha256": "580c0162404b534e4257dd8b88a96d628e9bb0f36f51aa104e8d65a4a012381f",
+      "audit_path": "reports/gomora-builtin/main-midlate-feedback-local-20261105/gui/rear_vertical_tech1-owner1-720/png-audit.json",
+      "audit_sha256": "42e4b003bb7c526912abb5bf463624b2c0e5358cbf6cd01b771912c84e1a6573",
+      "events": [
+        {
+          "movie_frame": 329,
+          "tick": 255,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "finish_effect": "explosion",
+              "finish_trigger": "throw_slam",
+              "flash": 0.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 117,
+            "kind": "hit",
+            "move": "special3",
+            "player": 1,
+            "projectile": false,
+            "x": 768
+          }
+        },
+        {
+          "movie_frame": 330,
+          "tick": 256,
+          "event": {
+            "kind": "throw_tech",
+            "player": 1
+          }
+        }
+      ],
+      "event_counts": {
+        "hit": 1,
+        "throw_tech": 1
+      },
+      "receiver_final_hp": 1000,
+      "owner": 1,
+      "case": "rear_vertical_tech1",
+      "trace_frames": 760,
+      "failures": [],
+      "run_result": {
+        "exit": 0,
+        "diagnostics": [],
+        "sources_unchanged": true,
+        "isolated_user_data": true,
+        "installed": false,
+        "visual_accepted": false,
+        "audio_driver": "Dummy",
+        "audible_audio_validated": false
+      },
+      "images": [
+        {
+          "key": "body-00",
+          "file": "rear_vertical_tech1-owner1-720/stills/body-00.png",
+          "sha256": "646f39d130f83b98eb957b32b7d31e12a84cb692116f60cccc57e4ccf11c835c",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 312,
+          "actual_frame": 312,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 238
+        },
+        {
+          "key": "body-01",
+          "file": "rear_vertical_tech1-owner1-720/stills/body-01.png",
+          "sha256": "f0a6804f2c25e2bea1ed16dbcddbf86bf0fcc4558fdeb5108a597e6c2f1f4c00",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 315,
+          "actual_frame": 315,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 241
+        },
+        {
+          "key": "body-03",
+          "file": "rear_vertical_tech1-owner1-720/stills/body-03.png",
+          "sha256": "795735c5e11fe023c7eafe2c988ca58aff5709e5ee310880af4cb48a28f942a8",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 323,
+          "actual_frame": 323,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 249
+        },
+        {
+          "key": "body-04",
+          "file": "rear_vertical_tech1-owner1-720/stills/body-04.png",
+          "sha256": "c67777056154e182743d698ee6ea55636f09d231415134479cf94cbd064bf842",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 327,
+          "actual_frame": 327,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 253
+        },
+        {
+          "key": "receiver-vertical_jump-04",
+          "file": "rear_vertical_tech1-owner1-720/stills/receiver-vertical_jump-04.png",
+          "sha256": "c6d3ea08fc8662d7cf4b2286bd001770ab12d90b466b8107cf24941462eebd04",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 329,
+          "actual_frame": 329,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 255
+        },
+        {
+          "key": "hit",
+          "file": "rear_vertical_tech1-owner1-720/stills/hit.png",
+          "sha256": "c6d3ea08fc8662d7cf4b2286bd001770ab12d90b466b8107cf24941462eebd04",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 329,
+          "actual_frame": 329,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 255
+        },
+        {
+          "key": "throw_tech",
+          "file": "rear_vertical_tech1-owner1-720/stills/throw_tech.png",
+          "sha256": "67bc0fd798e0f5c6ef3e4c579af7ab84bc84e2f50cb149b907a0203aad94539e",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 330,
+          "actual_frame": 330,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 256
+        }
+      ]
+    },
+    {
+      "name": "whiff-owner0-720",
+      "diagnostic_fx_hidden": false,
+      "trace_sha256": "f46bbf42d932d2b777668a54da2e0c1d0ef42670cc686f07e879950dbf78004e",
+      "audit_path": "reports/gomora-builtin/main-midlate-feedback-local-20261105/gui/whiff-owner0-720/png-audit.json",
+      "audit_sha256": "b45503702b5dc7d748f2d65a668c2a8d6b072fb3adc46cec52bb9c53541dab66",
+      "events": [
+        {
+          "movie_frame": 279,
+          "tick": 205,
+          "event": {
+            "kind": "throw_whiff",
+            "move": "special3",
+            "player": 0
+          }
+        }
+      ],
+      "event_counts": {
+        "throw_whiff": 1
+      },
+      "receiver_final_hp": 1000,
+      "owner": 0,
+      "case": "whiff",
+      "trace_frames": 760,
+      "failures": [],
+      "run_result": {
+        "exit": 0,
+        "diagnostics": [],
+        "sources_unchanged": true,
+        "isolated_user_data": true,
+        "installed": false,
+        "visual_accepted": false,
+        "audio_driver": "Dummy",
+        "audible_audio_validated": false
+      },
+      "images": [
+        {
+          "key": "body-00",
+          "file": "whiff-owner0-720/stills/body-00.png",
+          "sha256": "ca639f5526dbec667353e3218324c3210de725df8af7e5be9cf1bc2f6013fc8d",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 260,
+          "actual_frame": 260,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 186
+        },
+        {
+          "key": "body-01",
+          "file": "whiff-owner0-720/stills/body-01.png",
+          "sha256": "1abfaab42a7d6aa53de6ddbd74e90e97ff8ea8a37bf51c21cc7430122941e53d",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 263,
+          "actual_frame": 263,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 189
+        },
+        {
+          "key": "body-03",
+          "file": "whiff-owner0-720/stills/body-03.png",
+          "sha256": "94fb105786a69f48b3f45ee542c065e3ecddec815a4085dc544b4bb9e29a3fa0",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 271,
+          "actual_frame": 271,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 197
+        },
+        {
+          "key": "body-04",
+          "file": "whiff-owner0-720/stills/body-04.png",
+          "sha256": "acf72dd4f6a41bf7a89c94881272062383e367b2687f3fce3bd1241921c7d85c",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 275,
+          "actual_frame": 275,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 201
+        },
+        {
+          "key": "body-13",
+          "file": "whiff-owner0-720/stills/body-13.png",
+          "sha256": "8e5dfefce6d750b1522719a8a0c9764c940fe0a6e0364b42036be51568a1bcc7",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 279,
+          "actual_frame": 279,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 205
+        },
+        {
+          "key": "throw_whiff",
+          "file": "whiff-owner0-720/stills/throw_whiff.png",
+          "sha256": "8e5dfefce6d750b1522719a8a0c9764c940fe0a6e0364b42036be51568a1bcc7",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 279,
+          "actual_frame": 279,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 205
+        },
+        {
+          "key": "body-14",
+          "file": "whiff-owner0-720/stills/body-14.png",
+          "sha256": "26b3c9b28ba7f3c7c5cf4d774a56f9a38e38397ff8a4c3508363d4370fda59b4",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 283,
+          "actual_frame": 283,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 209
+        },
+        {
+          "key": "body-15",
+          "file": "whiff-owner0-720/stills/body-15.png",
+          "sha256": "bcc8afe1e6ee5fa01916acf54685f41d1a8eedc165bc6f40c06a6d0865e35442",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 287,
+          "actual_frame": 287,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 213
+        },
+        {
+          "key": "body-16",
+          "file": "whiff-owner0-720/stills/body-16.png",
+          "sha256": "aa737cad91d7e3711f4578031997744733d3fa2346a89ee1b07fc8102a5820ae",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 291,
+          "actual_frame": 291,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 217
+        },
+        {
+          "key": "body-17",
+          "file": "whiff-owner0-720/stills/body-17.png",
+          "sha256": "07958744cf77cc10d66fe448bb03cae4f77ff7defb8ecc9af284d305e617f1b8",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 295,
+          "actual_frame": 295,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 221
+        }
+      ]
+    },
+    {
+      "name": "whiff-owner1-720",
+      "diagnostic_fx_hidden": false,
+      "trace_sha256": "a11eef84d6bdf41e4044fb7537b61a1e89aad21df88a856613d9755741dece09",
+      "audit_path": "reports/gomora-builtin/main-midlate-feedback-local-20261105/gui/whiff-owner1-720/png-audit.json",
+      "audit_sha256": "26bed0d075d313d84dd71baa6e6e00756f3956ddf4266fc7fce580da7da0f177",
+      "events": [
+        {
+          "movie_frame": 279,
+          "tick": 205,
+          "event": {
+            "kind": "throw_whiff",
+            "move": "special3",
+            "player": 1
+          }
+        }
+      ],
+      "event_counts": {
+        "throw_whiff": 1
+      },
+      "receiver_final_hp": 1000,
+      "owner": 1,
+      "case": "whiff",
+      "trace_frames": 760,
+      "failures": [],
+      "run_result": {
+        "exit": 0,
+        "diagnostics": [],
+        "sources_unchanged": true,
+        "isolated_user_data": true,
+        "installed": false,
+        "visual_accepted": false,
+        "audio_driver": "Dummy",
+        "audible_audio_validated": false
+      },
+      "images": [
+        {
+          "key": "body-00",
+          "file": "whiff-owner1-720/stills/body-00.png",
+          "sha256": "2650879f3c0a4e0b6e29f1fd19b1a1799e7228bc40a4017bbcacd5c68f25f89a",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 260,
+          "actual_frame": 260,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 186
+        },
+        {
+          "key": "body-01",
+          "file": "whiff-owner1-720/stills/body-01.png",
+          "sha256": "6c363d32118d12c673c628004f08871e627f8ca9d236384d0a406910f5a1e33b",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 263,
+          "actual_frame": 263,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 189
+        },
+        {
+          "key": "body-03",
+          "file": "whiff-owner1-720/stills/body-03.png",
+          "sha256": "2badc2ba8d4fa78213ae5fa343b1ae3127802ac6c3ec6b3fad4758fd58178eec",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 271,
+          "actual_frame": 271,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 197
+        },
+        {
+          "key": "body-04",
+          "file": "whiff-owner1-720/stills/body-04.png",
+          "sha256": "9011080d9b5506d392a3eb35da52f2d5fe32ac577cbc692b7d9fd86be24bb947",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 275,
+          "actual_frame": 275,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 201
+        },
+        {
+          "key": "body-13",
+          "file": "whiff-owner1-720/stills/body-13.png",
+          "sha256": "c142eaed405d77393739b869d2fa2efffad284187c57d4d484c48cf79280661c",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 279,
+          "actual_frame": 279,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 205
+        },
+        {
+          "key": "throw_whiff",
+          "file": "whiff-owner1-720/stills/throw_whiff.png",
+          "sha256": "c142eaed405d77393739b869d2fa2efffad284187c57d4d484c48cf79280661c",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 279,
+          "actual_frame": 279,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 205
+        },
+        {
+          "key": "body-14",
+          "file": "whiff-owner1-720/stills/body-14.png",
+          "sha256": "fe704e319b019455a90d996b877c3bc733bd35659e01d7fcf59cc7af3febea54",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 283,
+          "actual_frame": 283,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 209
+        },
+        {
+          "key": "body-15",
+          "file": "whiff-owner1-720/stills/body-15.png",
+          "sha256": "a008e051700352c91c421b12e2d21b33d6c13c4816a4872e1b682d9e24d32962",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 287,
+          "actual_frame": 287,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 213
+        },
+        {
+          "key": "body-16",
+          "file": "whiff-owner1-720/stills/body-16.png",
+          "sha256": "3fafec03b690b3c66cc645f81831da2c36387ddf5eb186c2ca50470285e674ee",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 291,
+          "actual_frame": 291,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 217
+        },
+        {
+          "key": "body-17",
+          "file": "whiff-owner1-720/stills/body-17.png",
+          "sha256": "436a4cc5cfeea433982daf04cc3a4310a7505ce4394e68697baa76ece4e3aff2",
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            720
+          ],
+          "sha_matches": true,
+          "dimensions_match": true,
+          "request_frame": 295,
+          "actual_frame": 295,
+          "frame_matches": true,
+          "pair_matches": true,
+          "state_hash_matches": true,
+          "tick_matches": true,
+          "snapshot_nonpair_matches": true,
+          "tick": 221
+        }
+      ]
+    }
+  ],
+  "cleanup": {
+    "godot_window_closed": true,
+    "terminal_prompt_returned": true,
+    "lock_released": true,
+    "verified_at_utc": "2026-11-05T13:12:59Z"
+  }
+}
