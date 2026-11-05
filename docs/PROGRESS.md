@@ -4,7 +4,7 @@
 
 ## 当前成果与证据索引
 
-- 扫腿新回收原源已保存：身份/真Alpha/近层承重与远层屈膝成立，接受晚回收静态候选；远鞋相对足底高差与06仅0.38逻辑px，不能据此判悬空。远踝相对支撑脚102.3→38.3→56.9，仍有大幅内收再外展；旧端点比例/根点漂移未过。根看同尺后要求03→新相另备早回收整相，不重复帧掩盖，不安装。[原源与审查](../art/fighters/ultraman-arc__luna/stage2/sweep-recovery-session-candidate-20261105/review.md)
+- 扫腿新回收原源已保存：身份/真Alpha/近层承重与远层屈膝成立，接受晚回收静态候选；远鞋相对足底高差与06仅0.38逻辑px，不能据此判悬空。远踝相对支撑脚102.3→38.3→56.9，仍有大幅内收再外展；旧端点比例/根点漂移未过。根看同尺后已备03→新相早回收整相brief（model→03→晚回收），固定近层支撑，远脚在两端之间；不重复帧掩盖，不安装。[早回收完整方案](../art/fighters/ultraman-arc__luna/stage2/sweep-early-recovery-keyframe-brief-20261105-v1/brief.json)[原源与审查](../art/fighters/ultraman-arc__luna/stage2/sweep-recovery-session-candidate-20261105/review.md)
 
 - 扫腿尾段源复核：03扫击与06低架的近/远腿层次可作端点；旧04变层落脚、05重新伸腿回弹仍未解决，12旧源SHA一致且无新增替代。已备单张低位屈膝回收整相brief（本人定稿→03→06），不把未知解剖左右当确定、不发明撑地手；一张尚不保证整招修复，未生成。二拳→扫腿尚缺技术连接，正独立RAM核查，正式装甲仍关。[最小回收相与来源](../art/fighters/ultraman-arc__luna/stage2/sweep-recovery-keyframe-brief-20261105-v1/brief.json)
 
