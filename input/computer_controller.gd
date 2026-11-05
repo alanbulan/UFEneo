@@ -1,7 +1,7 @@
 class_name UfeComputerController
 extends RefCounted
 ## 只观察模拟并产出设备同款输入。随机状态、反应记忆和指令队列全部属于input层。
-const LEVELS={"easy":{"delay":22,"guard":30,"combo":40},"normal":{"delay":12,"guard":65,"combo":75},"hard":{"delay":6,"guard":90,"combo":95}}
+const LEVELS={"easy":{"delay":22,"guard":30,"combo":40,"recover":35},"normal":{"delay":12,"guard":65,"combo":75,"recover":65},"hard":{"delay":6,"guard":90,"combo":95,"recover":90}}
 var difficulty: String
 var player: int
 var seed_value: int
@@ -22,6 +22,9 @@ var observed_age: int=-1
 var threat_serial: int=0
 var combo_move: String=""
 var combo_age: int=-1
+var recovery_age: int=-1
+var recovery_decided: bool=false
+var recovery_allowed: bool=false
 
 func _init(match_seed: int=20261022,level: String="normal",index: int=1) -> void:
 	seed_value=match_seed;difficulty=level if LEVELS.has(level) else "normal";player=index
@@ -61,6 +64,19 @@ func decide(sim: UfeMatchDirector,seen: Dictionary) -> UfeInputFrame:
 	if direction==0:direction=f.facing
 	var gap:=absi(int(seen.x)-f.x)
 	if sim.finished:return emit()
+	# 受身使用已有GUARD规则，不直接改状态或无敌。每次击飞只掷一次，
+	# 上升期及难度反应窗内不提前输入；hitstop中保持已作出的选择。
+	if f.state=="launch":
+		queue.clear()
+		if f.state_tick<recovery_age:recovery_decided=false;recovery_allowed=false
+		recovery_age=f.state_tick
+		if f.vy>=0 or f.state_tick<maxi(13,int(LEVELS[difficulty].delay)):return emit()
+		if not recovery_decided:
+			recovery_decided=true
+			recovery_allowed=roll()<int(LEVELS[difficulty].recover)
+			if recovery_allowed:note("air_recovery")
+		return emit(0,0,UfeInputFrame.GUARD if recovery_allowed else 0)
+	recovery_age=-1;recovery_decided=false;recovery_allowed=false
 	# 延迟后的威胁每次只掷一次防御概率，不能逐tick反复抽签变成必防。
 	var threat:="%s:%d"%[seen.move,int(seen.move_start)] if seen.threat else ""
 	if threat!=last_threat:
