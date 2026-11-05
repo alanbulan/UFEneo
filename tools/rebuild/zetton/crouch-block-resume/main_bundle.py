@@ -150,8 +150,9 @@ def capture_keys(kind):
 def check_trace(data,cfg,graphical=False,size=None):
     assert not data['failures'],data['failures'];assert len(data['trace'])==LENGTH
     kind=data['kind'];direction=data['direction'];assert kind in CASES and direction in [-1,1]
-    trace=data['trace'];contacts=[];phases=set();ages=set();moves=set();first_block=None
+    trace=data['trace'];contacts=[];phases=set();ages=set();moves=set();first_block=None;resumed_hold=False
     rule=cfg['attack_rules'][move_for(kind)]
+    hold=read(ROOT/'content/fighters/zetton/state_frames.json')['crouch_guard']
     for i,row in enumerate(trace):
         assert row['movie_frame']==i and row['tick']==i+1 and not row['projectiles']
         attack=([0,-1,1 if i==20 else 0] if kind in ['low','release_down'] else [0,0,1 if i==20 else 0] if kind=='mid' else [-direction if i==20 else 0,0,2 if i==20 else 0])
@@ -174,7 +175,12 @@ def check_trace(data,cfg,graphical=False,size=None):
             assert target['frame_sprite']==phase and target['animation']['key']==ACTION and target['animation']['texture']==cfg['clip']['texture']
             phases.add(phase);ages.add(age)
         else:assert target['animation']['texture']!=cfg['clip']['texture']
+        if kind in ['low','mid'] and phases and target['state']=='crouch_guard':
+            resumed_hold=True
+            assert target['frame_sprite']==hold[-1]['sprite'] and target['state_tick']>=len(hold)-1,'低蹲受挡恢复不得重播站高起架'
+        if resumed_hold:assert target['state']=='crouch_guard'
         assert row['training_overlay_visible'] is True
+    if kind in ['low','mid']:assert resumed_hold
     assert moves=={move_for(kind)} and len(contacts)==1
     assert contacts[0]['kind']==('hit' if kind=='overhead' else 'block') and contacts[0]['player']==0 and contacts[0]['move']==move_for(kind)
     if kind!='overhead':assert phases=={0,1} and ages==set(range(rule['blockstun']))

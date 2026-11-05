@@ -110,6 +110,8 @@ static func verify_trace(cfg: Dictionary,kind: String,trace: Array) -> Array:
 	var moves: Dictionary={}
 	var phases: Dictionary={}
 	var ages: Dictionary={}
+	var resumed_hold:=false
+	var hold: Array=UfeContentDatabase.fighter("zetton",false).state_frames.crouch_guard
 	var expected_move:=move_for(kind)
 	var official: Dictionary=UfeContentDatabase.fighter("ultraman",false).moves[expected_move]
 	for row in trace:
@@ -126,6 +128,10 @@ static func verify_trace(cfg: Dictionary,kind: String,trace: Array) -> Array:
 			if int(target.duration)!=int(official.blockstun) or int(target.frame_sprite)!=phase_at(int(target.state_tick),int(target.duration),cfg.state_frames):errors.append({"kind":"changed_duration_or_proportional_sprite"})
 			if str(target.animation.key)!=ACTION or str(target.animation.texture)!=str(cfg.clip.texture) or int(target.animation.index)!=int(target.frame_sprite):errors.append({"kind":"wrong_candidate_animation"})
 		elif str(target.animation.get("texture",""))==str(cfg.clip.texture):errors.append({"kind":"candidate_clip_leaked_into_other_state"})
+		if kind in ["low","mid"] and not phases.is_empty() and str(target.state)=="crouch_guard":
+			resumed_hold=true
+			if int(target.frame_sprite)!=int(hold[-1].sprite) or int(target.state_tick)<hold.size()-1:errors.append({"kind":"crouch_guard_resume_replayed_entry"})
+	if kind in ["low","mid"] and not resumed_hold:errors.append({"kind":"missing_resumed_crouch_hold"})
 	if moves.size()!=1 or not moves.has(expected_move):errors.append({"kind":"unexpected_moves","moves":moves.keys()})
 	var expected_contact: String="hit" if kind=="overhead" else "block"
 	if contacts.size()!=1 or str(contacts[0].kind)!=expected_contact or str(contacts[0].move)!=expected_move or int(contacts[0].player)!=0:errors.append({"kind":"missing_or_repeated_real_contact","contacts":contacts})

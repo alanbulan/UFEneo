@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 已最小修复低蹲受挡后持续下防重新起架：仅恢复进入本人crouch_guard末保持行，初次入架/松键不改；40例红绿、旧内容拒载/新录接受及既有回归通过。规则指纹新增版本，旧格式6录像不混跑新语义。候选v2八逻辑/十六主游戏headless通过，图形待核；overhead后的独立旧入架路径未动，新素材仍未安装。[恢复修复](verification/crouch-guard-resume-repair.json)、[v2阶段](verification/zetton-crouch-block-session-resume.json)
+
 - 杰顿两相RAM图形32组/176原生PNG、16对180tick回放技术通过；硬直内新两相低髋成立，但持续下恢复时旧crouch_guard重新播放站高首相3tick，整回防链不通过。overhead后旧入架亦保留；有意松蹲站防正确。大后震/脚缘及未验实速音频仍在，未安装。下一步仅针对低蹲受挡恢复修逻辑，旧失败不覆盖。[实际图形与失败边界](verification/zetton-crouch-block-session-graphical-review.json)
 
 - 杰顿低蹲硬直两整源已按共同尺度注册为RAM候选：仅新Alpha44/42条受击框与同名clip替换，原4/6比例及正式规则不变。八例180tick真实低/中防、overhead受击、松蹲双向独立回放通过；含hitstop实测两相8/7tick。正式主游戏16组headless及8对独立回放亦通过，32组图形已交验；大幅后震、近乎回正及后脚缘差保留，不安装。[阶段证据](verification/zetton-crouch-block-session-resume.json)
