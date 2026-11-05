@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 其他现源可用性：其余六装甲仍仅model；交叉核18正式角色清单后，剑技/八斩/EX等疑似旧缺项实际已装，未找到新的合格未接入整帧。四角色三槽区分及哥莫拉受方缺口仍在，不以重装或FX改名补数。本次是索引/现装核查，不冒称逐张审完历史源。[范围与证据](verification/other-existing-fullframe-availability.json)
+
 - 银河后续现源核查：回旋踢方向、双砸接触、蹲拳回架、冲击换腿及后撤/后走等13项存在明确缺口；原地闪避虽可筛四相，但按支撑鞋测得头胸约48px跳与远鞋12–15px滑移，仍缺过渡，已停止候选。未跑已知失败图形、未新增功能，不重复扫这些源。[可复核原源SHA与缺口](verification/galaxion-following-source-review.json)
 
 - 银河6K升拳：本人七完整相保序统一尺度，02同臂上挑拳面14×12有效，03降臂前伸仅后摇；真实75伤/可防/落空、完整挑空→落地→起身模拟与180tick回放通过。24组432PNG窗口与图形技术门通过，七相和双方顶点/倒地轮廓静帧带限制接受。保留缺渐伸、原腹部蓄力差异、白闪/旧站防/动态缩放；wake只有trace，未验起身动画，银河仍不开放。[源审](verification/galaxion-launcher-source-review.json)、[逻辑](verification/galaxion-launcher-resume.json)、[图形及旧失败](verification/galaxion-launcher-graphical-review.json)
