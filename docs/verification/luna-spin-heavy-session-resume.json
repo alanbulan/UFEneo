@@ -1,6 +1,6 @@
 {
   "date_utc": "2026-11-05",
-  "status": "logic_and_main_headless_passed_graphical_in_progress",
+  "status": "logic_headless_and_graphical_technical_passed_realtime_unaccepted",
   "installed": false,
   "art_passed": false,
   "playable": false,
@@ -219,5 +219,66 @@
     "all_completed": true,
     "script_input_not_human_keyboard": true,
     "sources_unchanged_after_run": true
+  },
+  "independent_headless_review": {
+    "completed": true,
+    "original_input_right": [
+      -1,
+      0,
+      2
+    ],
+    "original_input_left": [
+      1,
+      0,
+      2
+    ],
+    "contact_tick": 9,
+    "contact_phase": 5,
+    "comparison": "六对各180tick五字段一致；受方高度0，hit/whiff结束idle、block结束guard",
+    "contract_still_valid": true
+  },
+  "tail_v11_diagnostic": {
+    "scope": "同一最终双尺候选，不能沿用v9单头尺数值",
+    "attack_toe_low": [
+      187.419,
+      247.761
+    ],
+    "attack_toe_tail02": [
+      86.231,
+      263.117
+    ],
+    "attack_toe_idle": [
+      76.055,
+      280.108
+    ],
+    "support_ankle_low": [
+      146.578,
+      270.43
+    ],
+    "support_ankle_tail02": [
+      146.581,
+      269.273
+    ],
+    "support_ankle_idle": [
+      143.124,
+      267.447
+    ],
+    "uncertainty": "人工关节约±18源像素映射后约±2.5；两点差保守约5像素，不当精确关节或承重证明",
+    "observation": "低收到左回摆脚路约跨101逻辑像素，左回摆到idle约左10/下17；需实速判断跳位，不能只看anchor同坐标。"
+  },
+  "graphical": {
+    "review": {
+      "path": "docs/verification/luna-spin-heavy-session-graphical-review.json",
+      "sha256": "038a7667c124ae327bd8632520b2e8ff679de78f19aec2be932ebdd9303d3d8e"
+    },
+    "valid_groups": 24,
+    "native_png": 480,
+    "original_replay_pairs": 12,
+    "failed_startup_attempts_preserved": 1,
+    "technical_passed": true,
+    "real_time_motion_reviewed": false,
+    "audio_reviewed": false,
+    "video_recorded": false,
+    "human_keyboard_reviewed": false
   }
 }
