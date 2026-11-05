@@ -1,0 +1,268 @@
+{
+  "date": "2026-11-05",
+  "scope": "现有正式人物动作能否直接补齐第一项独立三槽技能",
+  "result": "未发现符合现行独立整帧规则的现成可交付新技能；本轮不修改玩法、不开放装甲。",
+  "priority": [
+    "HANDOFF先接月亮轻击三连与哥莫拉背掀受方，随后推进八装甲S2–S7和全名册独立三槽。文档未给出三槽逐角固定先后，不伪造排序。",
+    "月亮轻击三连本轮已有候选注册和真实输入回放，仍不等于整套装甲正式开放；哥莫拉受方00–03缺合适新完整源，既有审查不允许强行接入。"
+  ],
+  "roles": {
+    "ultraman": {
+      "missing_independent_slots": 2,
+      "blocker": "三槽仍为斯派修姆分级；八分光轮、拘束之环、屏障等已有普通/指令消费者，不能借帧凑新槽。",
+      "runtime_slots": {
+        "special": {
+          "name": "斯派修姆光线·1级",
+          "path": "content/fighters/ultraman/moves/special.json",
+          "sha256": "014da595246f353e82b337634796020dc8672f35a17874e5857cef06bc870422"
+        },
+        "special2": {
+          "name": "斯派修姆光线·2级",
+          "path": "content/fighters/ultraman/moves/special2.json",
+          "sha256": "a16b1a9e2be7d5346ddcdf30d25e5144c3e59f3a6108c7dfbc3cd3b89f08ad2f"
+        },
+        "special3": {
+          "name": "斯派修姆光线·3级",
+          "path": "content/fighters/ultraman/moves/special3.json",
+          "sha256": "3f00753702148fc4669590bf613b637a70d340602f0fa531f42006e872e019cb"
+        }
+      },
+      "animation_manifest": "assets/fighters/ultraman/animations/manifest.json"
+    },
+    "ultraseven": {
+      "missing_independent_slots": 1,
+      "blocker": "一级与二级集束射线共用wide_hold人物源；头镖/念力等已装其它招式。",
+      "runtime_slots": {
+        "special": {
+          "name": "集束射线·一级",
+          "path": "content/fighters/ultraseven/moves/special.json",
+          "sha256": "b5855c89979d0c25d3d2235c4109d9371ef9737b76df6639dc78416038462f4b"
+        },
+        "special2": {
+          "name": "集束射线·二级",
+          "path": "content/fighters/ultraseven/moves/special2.json",
+          "sha256": "36b8990aec0baddf9faaea1d8b1db5681a37af3e8222b548ea0838eb3bfd9880"
+        },
+        "special3": {
+          "name": "艾梅利姆光线·三级",
+          "path": "content/fighters/ultraseven/moves/special3.json",
+          "sha256": "dafc72c9b50bd2ec8e5716c34856cb374e8809e561fbbd65660d658d73bf772a"
+        }
+      },
+      "animation_manifest": "assets/fighters/ultraseven/animations/manifest.json"
+    },
+    "ultraman-jack": {
+      "missing_independent_slots": 1,
+      "blocker": "一级二级斯派修姆重复；火花/长枪/盾牌/流星飞踢已有消费者，未找到新增人物动作。",
+      "runtime_slots": {
+        "special": {
+          "name": "斯派修姆光线·一级",
+          "path": "content/fighters/ultraman-jack/moves/special.json",
+          "sha256": "2bea5f98128136b6846f09ce0c53db8d8d277ff7c2930b6628047889ec2ebf8a"
+        },
+        "special2": {
+          "name": "斯派修姆光线·二级",
+          "path": "content/fighters/ultraman-jack/moves/special2.json",
+          "sha256": "f478262c0eb4eb3b036bd368c3f56d130ab803a7f4069a15aeb891557f532660"
+        },
+        "special3": {
+          "name": "希奈拉玛射线·三级",
+          "path": "content/fighters/ultraman-jack/moves/special3.json",
+          "sha256": "b7ca04184431abdd91a28a4cc5b6958422e4e087311f24ab667b1ae0b72df4d0"
+        }
+      },
+      "animation_manifest": "assets/fighters/ultraman-jack/animations/manifest.json"
+    },
+    "ultraman-ace": {
+      "missing_independent_slots": 1,
+      "blocker": "梅塔利姆与蓄力版重复；现存effects-v2是FX，计时器与断头刀等已有动作消费者。",
+      "runtime_slots": {
+        "special": {
+          "name": "梅塔利姆光线",
+          "path": "content/fighters/ultraman-ace/moves/special.json",
+          "sha256": "c86cc4880cd0436c83259f9be9405d9dd5747e2dd790fdfdca14396c62feb310"
+        },
+        "special2": {
+          "name": "梅塔利姆光线·蓄力",
+          "path": "content/fighters/ultraman-ace/moves/special2.json",
+          "sha256": "245d621bc8492a7deb7a4d586376e360f7e207947a5a2487b8b4e25365697ced"
+        },
+        "special3": {
+          "name": "许可·艾斯断头刀",
+          "path": "content/fighters/ultraman-ace/moves/special3.json",
+          "sha256": "4a864ab4c2656b2af62702eee7d510428929b3a070abf699dbc513d6b3fcdbed"
+        }
+      },
+      "animation_manifest": "assets/fighters/ultraman-ace/animations/manifest.json"
+    },
+    "zetton": {
+      "missing_independent_slots": 2,
+      "blocker": "三槽火球分级；吸收反击/护盾/瞬移/连射已有指令消费者，phase3_supers的portrait/background不是动作。",
+      "runtime_slots": {
+        "special": {
+          "name": "一兆度火球·1级",
+          "path": "content/fighters/zetton/moves/special.json",
+          "sha256": "ea920e61a75216901895a3bef7407a75bf4102ddd245144ba85c1039d1d6479b"
+        },
+        "special2": {
+          "name": "一兆度火球·2级",
+          "path": "content/fighters/zetton/moves/special2.json",
+          "sha256": "7e774c26670d7f21b28eb66a9ff59a93da5ff49bcce75504e9c443add134ffea"
+        },
+        "special3": {
+          "name": "一兆度火球·3级",
+          "path": "content/fighters/zetton/moves/special3.json",
+          "sha256": "bfc2be5049a06d600937215ea2747bc1901ac0b69263ccaf079c635256d5439d"
+        }
+      },
+      "animation_manifest": "assets/fighters/zetton/animations/manifest.json"
+    },
+    "black_king": {
+      "missing_independent_slots": 2,
+      "blocker": "三槽熔岩热射线分级；stage4/specials保留源按现装动作ID分组，没有确认独立未接入技能整帧。",
+      "runtime_slots": {
+        "special": {
+          "name": "熔岩热射线·一段",
+          "path": "content/fighters/black_king/moves/special.json",
+          "sha256": "8d3dabc71f7e55d3d49110d0c5f9503a85844066ff2bab9e962541662d575d59"
+        },
+        "special2": {
+          "name": "熔岩热射线·二段",
+          "path": "content/fighters/black_king/moves/special2.json",
+          "sha256": "604b4865a30ff9896b00178f430efdcc940bc3f3f95eacf9592fff3097db2335"
+        },
+        "special3": {
+          "name": "熔岩热射线·终结",
+          "path": "content/fighters/black_king/moves/special3.json",
+          "sha256": "942ba19c1c9e82390a57665d5955d9f2a1d6feec840b9ecfe5737928450b27e6"
+        }
+      },
+      "animation_manifest": "assets/fighters/black_king/animations/manifest.json"
+    },
+    "neronga": {
+      "missing_independent_slots": 2,
+      "blocker": "三槽暴君电击分级；透明化/鼻角升顶等已有指令消费者，不能借其人物帧冒充新招。",
+      "runtime_slots": {
+        "special": {
+          "name": "暴君电击·一级",
+          "path": "content/fighters/neronga/moves/special.json",
+          "sha256": "659213e3c58d6ca0d1cd1896451bdd164dbbe7c7aa73343265e60d3f415267db"
+        },
+        "special2": {
+          "name": "暴君电击·二级",
+          "path": "content/fighters/neronga/moves/special2.json",
+          "sha256": "9c531ea0dbf653998d172f9c888c777c411c008536abf9263c178dc3f600f373"
+        },
+        "special3": {
+          "name": "暴君电击·三级",
+          "path": "content/fighters/neronga/moves/special3.json",
+          "sha256": "8182be891097fc88acaa1b5e626e382372a245a7e745f46869276f6222346273"
+        }
+      },
+      "animation_manifest": "assets/fighters/neronga/animations/manifest.json"
+    }
+  },
+  "armors": [
+    {
+      "id": "ultraman-arc__galaxion",
+      "playable": false,
+      "production_status": "model_draft_only",
+      "local_move_manifest_exists": false,
+      "runtime_animation_manifest_exists": false
+    },
+    {
+      "id": "ultraman-arc__luna",
+      "playable": false,
+      "production_status": "model_draft_only",
+      "local_move_manifest_exists": false,
+      "runtime_animation_manifest_exists": false
+    },
+    {
+      "id": "ultraman-arc__solis",
+      "playable": false,
+      "production_status": "model_draft_only",
+      "local_move_manifest_exists": false,
+      "runtime_animation_manifest_exists": false
+    },
+    {
+      "id": "ultraman-blazar__firdran_armor",
+      "playable": false,
+      "production_status": "stage1_model_candidate_only",
+      "local_move_manifest_exists": false,
+      "runtime_animation_manifest_exists": false
+    },
+    {
+      "id": "ultraman-omega__gamedon_armor",
+      "playable": false,
+      "production_status": "stage1_model_draft",
+      "local_move_manifest_exists": false,
+      "runtime_animation_manifest_exists": false
+    },
+    {
+      "id": "ultraman-omega__rekiness_armor",
+      "playable": false,
+      "production_status": "stage1_model_draft",
+      "local_move_manifest_exists": false,
+      "runtime_animation_manifest_exists": false
+    },
+    {
+      "id": "ultraman-omega__trigaron_armor",
+      "playable": false,
+      "production_status": "stage1_model_draft",
+      "local_move_manifest_exists": false,
+      "runtime_animation_manifest_exists": false
+    },
+    {
+      "id": "ultraman-omega__valgeness_armor",
+      "playable": false,
+      "production_status": "stage1_model_draft",
+      "local_move_manifest_exists": false,
+      "runtime_animation_manifest_exists": false
+    }
+  ],
+  "armor_sources": [
+    "月亮与银河stage2/goal-closeout-20261101-v1/bundle.json各声明27个S2地面动作、153相，均为offline_registration_only_ground_review_pending；不是S6独立必杀完成证明。",
+    "月亮heavy等保留完整源可作为下一项免费S2配准/动作审查候选，但尚不是已有正式技能，不能搬为独立必杀或以此开放装甲。",
+    "其余六装甲主要为stage1模型材料；未见正式动作manifest与本地技能move_manifest。"
+  ],
+  "source_gate": "skill_library.json声明资料不是已实现战斗招式，维基描述不能替代原剧逐帧。没有找到可实施素材，因此未宣称完成新技能的原剧动作核验。",
+  "next_required": [
+    "先明确替代技能与本人原剧版本/动作证据，再获得对应独立整人物起手、攻击、收招与武器同框源；不能用FX、portrait或其它招式人物帧替代。",
+    "优先补哥莫拉最低承重受方完整母相；如保持零收费可转月亮S2保留源配准与正式main候选验证，但要明确为候选阶段而非技能全完成。"
+  ],
+  "evidence": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "109dce33db9e95e0dc9a162931e056b744f23912951e3d3ee7599814472ad389"
+    },
+    {
+      "path": "REBUILD_2D_PLAN.md",
+      "sha256": "c47123e6d22d0d558a9790d8374409b82cb2c48fac1b59400d0c83ec0d7b1cca"
+    },
+    {
+      "path": "docs/HANDOFF.md",
+      "sha256": "3b4b4b6554834a8f3b3fdc2ff480a8f16f5a81f3e32fa05e09cdb4850e6e2534"
+    },
+    {
+      "path": "docs/SUPER_MOVE_DIVERSITY.md",
+      "sha256": "c80b76f6967effb563dd113530701ce48c8dd3b3f1dab16e8ebabfb206428989"
+    },
+    {
+      "path": "docs/WEAPON_COVERAGE.md",
+      "sha256": "631bbfcbc4d88e633bd2f10ac961a6a05474a038fe1b1ea1d023243f96c9df63"
+    },
+    {
+      "path": "art/source-index.json",
+      "sha256": "ef4cc290dbfab6cb7bcb8ca0fbb4db994c1f32a6a4d44978f1d3df7592359304"
+    },
+    {
+      "path": "content/combat/skill_library.json",
+      "sha256": "a5b90778941383574f02238dfe15125f4f23be0cc74b299a446b8bc8a6437331"
+    }
+  ],
+  "limits": [
+    "静态资源/引用与生产收据核查，不是重看全库所有源图后的视觉不可能性证明。",
+    "未新增原剧视频逐帧验证，未运行游戏或录屏；仅确定没有发现合规现成候选。",
+    "未收费、未调用用户Codex、未运行旧安装器、未移动普通招式凑新必杀。"
+  ]
+}
