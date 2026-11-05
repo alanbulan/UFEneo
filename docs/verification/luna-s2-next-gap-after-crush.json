@@ -1,0 +1,230 @@
+{
+  "schema": "ufeneo.luna.s2-next-gap-recheck.v1",
+  "date_utc": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "report_zh": "# 月亮 S2 tackle 去重与下一真实缺口（2026-11-05）\n\n## 本轮完成\n\n只读核原生产计划、正式动作/指令、已有候选和历史回执，实看 tackle 八相 provider 整图、03原图及实际 idle 原源；顺查并实看 crouch_light/2 八张 provider 完整源。仅写本 reports 目录，未生成、收费、调用用户 Codex、运行 Godot、安装、开放或提交。\n\n## 怎么看\n\n原顺序确为 crush → tackle → crouch_light → crouch_light2 → sweep。tackle 不是新缺口：已有 art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/manifest.json，31项引用全部存在且SHA相符（manifest-sha-check.json）。八张1254方图整图统一159/1254，不逐相面积缩放；正式命令是相对前6+O（buttons=64，priority=10），原4/9/13共26tick、伤害100、体力30、生效9tick每tick前移3、共27。\n\n已保存的 docs/verification/luna-tackle-resume.json 与 luna-tackle-graphical-review.json 记载六组逻辑、120tick主游戏原输入/独立回放，以及720/1080双向命中/格挡/落空12组120原生PNG。是既有历史技术证据，本轮未重跑，不能冒充当前全局规则重新验证。其旧限制中 launcher/spin/crush缺源的描述已由后续工作更新，不据旧文倒退当前状态。\n\n现源00开始抬后跟、01低身迈步、02/03护面前顶、04下沉、05回较高架势、06/07摆臂低身；完整人物及月亮装甲可辨，没有“缺少一张接触相”的证据。03最前侧的是护面前臂与圆盘腕甲，不是裸肩。旧注册已明确此点，不能改口说成纯肩撞。可复用既有八相候选，毋须重新生成/注册/重复已验批次。\n\n## 已知问题\n\n- tackle的05→06→07并非单调回到idle：后两相仍摆臂低身，07远拳较低。到idle的护拳/屈膝变化是应看实速的具体点，不因静帧跨度直接判必须补相。\n- 02→03腿在画面前后层及亮暗关系发生变化；仅凭遮挡和颜色不能唯一锁定解剖左右，也不能直接宣判换腿。原03前臂覆盖肩部不能证明裸肩接触。\n- 严格比例、实速、声音、真人键盘、目标引擎仍未整体验收；受方站防高举与胸腹接点的旧缺口保留。本轮无录屏。\n\n## 下一步\n\n下一真正尚未有合格动作候选的点是 crouch_light（蹲身左短拳），不是tackle。随后crouch_light2也有独立缺口。\n\n依据：docs/verification/luna-s2-crouch-source-review.json 的两项缺口；所列八张源本轮SHA全部相符（crouch-source-sha-check.json），仓库未找到对应registered候选或运行回执，现有crouch-family-repair是蹲起状态族，不是这两招补拳。\n\n本轮实看确认：\n1. crouch_light正式生效tick3–5用phase01，原brief要求“左拳向腰线平出”；实际01躯干抬高、双拳仍屈肘在身侧/前胸附近，没有该水平伸拳。00/02是低跪护架，03前臂向前下垂，不可冒称指定腰线短拳。最小明确缺口是本人低蹲左短拳的完整接触姿态，不能拿站姿短拳下移或切肢代替。起收是否能接须先以实际蹲架/旧00、02及新接触共同整图核，不预先规定要补几张。\n2. crouch_light2正式生效tick3–9用01/02，原brief要求“右拳从肋下探出”；两相前侧拳向地面/膝旁下垂，非向对手肋下前探，03更转为撑地开掌。缺右短拳接触与合适回护是动作语义问题，不是相数或像素误差问题；不能把撑地03签成收拳。\n\n建议根下一项只准备 crouch_light 的完整接触关键相设计与现有蹲架接续约束，保持不生成不收费；若只处理免费已有资源，本项到此是明确素材缺口，不能虚设时序运行后称通过。tackle后续只在需要当前规则/实速收尾时沿已有候选续验，不重新生产。\n\n## 本轮视觉索引\n\n- provider-idle-sheet.png：实际provider八相和idle整图缩览，仅用于观察，非新注册素材或骨长证明。\n- raw-contact-sheet.png：raw.png八相缩览；正式候选来源以provider及manifest为准。\n- crouch-lights-provider-sheet.png：两蹲轻击各四相原provider缩览。\n",
+  "tackle_reference_checks": [
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/samples.json",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/registration-review.json",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "content/fighters/ultraman-arc/moves/tackle.json",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/clip.json",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/move.json",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/tackle/phase-00/request-001/raw.provider.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/samples/phase-00.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/frame-00.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/tackle/phase-01/request-001/raw.provider.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/samples/phase-01.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/frame-01.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/tackle/phase-02/request-001/raw.provider.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/samples/phase-02.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/frame-02.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/tackle/phase-03/request-001/raw.provider.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/samples/phase-03.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/frame-03.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/tackle/phase-04/request-001/raw.provider.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/samples/phase-04.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/frame-04.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/tackle/phase-05/request-001/raw.provider.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/samples/phase-05.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/frame-05.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/tackle/phase-06/request-001/raw.provider.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/samples/phase-06.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/frame-06.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/tackle/phase-07/request-001/raw.provider.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/samples/phase-07.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/frame-07.png",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "tools/rebuild/ultraman-arc/luna-tackle-resume/prepare.py",
+      "exists": true,
+      "sha_matches": true
+    },
+    {
+      "path": "tools/rebuild/ultraman-arc/luna-tackle-resume/register.py",
+      "exists": true,
+      "sha_matches": true
+    }
+  ],
+  "crouch_source_checks": [
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/crouch_light/phase-00/request-001/raw.provider.png",
+      "sha_matches": true,
+      "sha256": "67dc5523b66b490ccd12b2a8a8ba7db5d7e68f7210410ee59a00fa3e55147641"
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/crouch_light/phase-01/request-001/raw.provider.png",
+      "sha_matches": true,
+      "sha256": "0ccc4626f69b3021381c2be7aa37637067d3f30c952bd92add040cc4b46ab3f1"
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/crouch_light/phase-02/request-001/raw.provider.png",
+      "sha_matches": true,
+      "sha256": "7fd267d491b0bcadcdb708fd1d663178e73a1f9546600932e06c67ee3ce478e7"
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/crouch_light/phase-03/request-001/raw.provider.png",
+      "sha_matches": true,
+      "sha256": "01568265b01bcf176b88cb5187ad60775996ac95665c2eeb1dc6b7e615840b6d"
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/crouch_light2/phase-00/request-001/raw.provider.png",
+      "sha_matches": true,
+      "sha256": "7d3e2fdd5e78efb930097626fe8c277a6046590369e704705a3c5a7b38f03c79"
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/crouch_light2/phase-01/request-001/raw.provider.png",
+      "sha_matches": true,
+      "sha256": "e48203568f0de69ae9a93f19b357555ad0d0fdeb954f2b352479e7fdbddabe0e"
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/crouch_light2/phase-02/request-001/raw.provider.png",
+      "sha_matches": true,
+      "sha256": "404eba43b5426a471b8141adacdc8808809219c1b3620000d5a20dfb688b9398"
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/crouch_light2/phase-03/request-001/raw.provider.png",
+      "sha_matches": true,
+      "sha256": "e427942115d0258f033e35960b9721081613b8359a48a627d5abf0d1a13ef528"
+    }
+  ],
+  "references": [
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/production-plan.json",
+      "sha256": "f1937130bd56ab5ffcc00376923204d5d6faf98baa136690074ea9950314fbed"
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/manifest.json",
+      "sha256": "e36f13a3396c7d3acf11977abf77522efd8d560a82f5a25b5c190e2e036b75ab"
+    },
+    {
+      "path": "docs/verification/luna-tackle-resume.json",
+      "sha256": "d1b6774c652d8cec0bdc05035bd11e0d7d474e3e46137c2336b794e104ab54c3"
+    },
+    {
+      "path": "docs/verification/luna-tackle-graphical-review.json",
+      "sha256": "0f194f390b646fee9cac339be539ac998a125da9c891aedffa105b6a0e9c59e0"
+    },
+    {
+      "path": "docs/verification/luna-s2-crouch-source-review.json",
+      "sha256": "c2a6b9588a90c634b3fc2a75cb9a7f18f1110edef655d2aacd614359223e312c"
+    }
+  ],
+  "generated": false,
+  "runtime_rerun": false,
+  "installed": false
+}
