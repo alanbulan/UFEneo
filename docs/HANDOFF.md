@@ -2,6 +2,8 @@
 
 ## 2026-11-05 开发接续索引
 
+- 蹲一二拳RAM已复用右拳v2并按最新core验证：原左3/3/12、右3/7/8与cancel保持；8逻辑、114输入语义及16主游戏回放通过。命中确认才取消，gap75两拳130；gap100二拳够不到仅65。格挡/空挥晚按可收招后缓存起右拳，非取消。32组图形待核，正式受方旧高硬直与未验实速保留，不安装。[二连候选与准确边界](verification/luna-crouch-chain-session-resume.json)
+
 - overhead恢复限定路径图形已完成：八组64原生PNG、四对180tick回放通过；双向720/1080完整56→57→58–61均低姿，tick57仍原crouch0、58仍guard0，不跳过逻辑中间tick。首次站入蹲/松防及旧低防恢复不回退；声音只程序键时点对照，无听感/实速验收。普通蹲较高资产另保留，两新blockstun仍RAM未安装。[准确图形回执](verification/hit-crouch-guard-recovery-graphical-review.json)
 
 - overhead蹲姿受击恢复已采用保持语义方案：原hit→crouch→guard及state_tick/指令不变，限定上下文同步本人已有低防保持图与hurtboxes，原frame其它字段/推挤/声音入态键保留。52例红绿、7800tick非姿态字段一致与旧拒新接通过，原40例低防恢复不回退。v3八逻辑/十六headless通过，必要八组图形待核；新素材未安装，非纯显示且未验听感。[根因、被否方案及修复证据](verification/hit-crouch-guard-recovery-audit.json)

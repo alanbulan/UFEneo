@@ -1,0 +1,3404 @@
+{
+  "formal_baseline_check": {
+    "checked_paths": 71,
+    "changed": [],
+    "source": {
+      "path": "reports/luna-crouch-chain-resume/parent-original-resource-sha.json",
+      "sha256": "569ffecb01ec354a224bb91ce19d800d5f329974dbecfe4da7b9228a03aa430f"
+    }
+  },
+  "schema": "ufeneo.luna.crouch-chain-technical-receipt.v1",
+  "status": "logic_and_headless_passed_graphical_pending",
+  "reviewer": "root_delegated_by_user",
+  "contract": {
+    "path": "reports/luna-crouch-chain-resume/contract-v3.json",
+    "sha256": "2d4a051ba1079a8f3600ba7bbc879ac78ac5478b3f980c01bfc9e7ffb4cbd204"
+  },
+  "manifest": {
+    "path": "/workspace/scratch/a5f6e938602a/ufeneo/art/fighters/ultraman-arc__luna/stage2/crouch-chain-registered-20261105-v1/manifest.json",
+    "sha256": "a73760bbfceaa3626241d86d2029aabcff5a9bdb95af8846a614b87612273a6f"
+  },
+  "first_component_review": {
+    "path": "/workspace/scratch/a5f6e938602a/ufeneo/art/fighters/ultraman-arc__luna/stage2/crouch-light-registered-20261105-v1/registration-review.json",
+    "sha256": "7f516d9704dcdd2485ca97ba95ce033b4f4486ff5c3edf76f5749592f04d1b60"
+  },
+  "right_component_review": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/crouch-chain-registered-20261105-v1/registration-review.json",
+    "sha256": "75e87e550d3c79a6fea1ffa05644be8cd33533c682a4922cad8c94682df07aed"
+  },
+  "rule_preservation": {
+    "first": [
+      3,
+      3,
+      12,
+      65,
+      30
+    ],
+    "second": [
+      3,
+      7,
+      8,
+      65,
+      30
+    ],
+    "level": "low",
+    "first_cancel_frames": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "first_cancel_target": "crouch_light2",
+    "second_cancel_frames": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "second_cancel_target": "sweep",
+    "sweep_loaded": false,
+    "second_fist_box": [
+      52,
+      69,
+      13,
+      14
+    ],
+    "formal_assets_content_core_changed": false
+  },
+  "logic": {
+    "path": "reports/luna-crouch-chain-resume/logic-v3/result.json",
+    "sha256": "a0322196a44615098d1458d4241a8ffbfcc860951c723898af3f84cddc91b852"
+  },
+  "semantics": {
+    "path": "reports/luna-crouch-chain-resume/logic-v3/semantics.json",
+    "sha256": "c66bd576e8fc71a09db9b10250ebc8014e0cd6e239c95829d6f97610c2c10040"
+  },
+  "headless": {
+    "path": "reports/luna-crouch-chain-resume/headless-v3/runner-result.json",
+    "sha256": "75b74bba55a6eec372b2a670d003daf270ebfff378f6f246f580016a4efe70aa"
+  },
+  "offline_checks": {
+    "path": "reports/luna-crouch-chain-resume/offline-check-v3.json",
+    "sha256": "2d3b00305614a0cb25758fde540194c116da699d81a76991c744e743faaaf3ec"
+  },
+  "semantic_cases": 114,
+  "main_cases": 16,
+  "original_replay_pairs": 8,
+  "trace_frames_per_case": 180,
+  "comparison_fields": [
+    "state_hash",
+    "events",
+    "projectiles",
+    "original_inputs",
+    "pair"
+  ],
+  "main_inputs": "零基20/27帧两次LIGHT，中间松开，全程下方向；非真人硬件",
+  "findings": [
+    "directions[0]为9方向通配，非中立；持续长按20..50只有首沿",
+    "只有真实hit设置confirmed；block分支提前return，不能格挡直接取消",
+    "gap75命中/站防22帧第一拳命中，27帧第一拳move_tick3取消，29帧第二拳命中，总130，双方镜向相同",
+    "gap100仍能取消，推退后实际间距108，第二拳未够到，总65；未扩判定或加无敌",
+    "block第二沿34..40于41自然收招后buffer起右拳；whiff第二沿30..37于38后起，均is_cancel=false",
+    "hit第二沿44是在首招结束后重新起左拳，不是二拳",
+    "20/27主游戏格挡仅首拳block，落空仅首拳；不泛称格挡/落空永远不出右拳"
+  ],
+  "receiver_policy": "正式杰顿图/状态；含最新恢复规则，不混入新RAM blockstun图。旧硬直高姿保留。",
+  "graphical_status": "未由本worker验收；交父任务双向720/1080正式main原生截图",
+  "limits": [
+    "两拳各只有蹲架/独立接触/回同蹲架三槽，二拳3/7/8保持，无独立随势相",
+    "原错左拳02仅在独立审图确认远侧右拳后用于第二拳",
+    "受方使用正式杰顿状态与图，旧crouch_blockstun高姿保留，新RAM低蹲图不混入",
+    "图形输入仅20/27，不覆盖晚buffer右拳格挡/空挥画面",
+    "无实速、听感、录屏或硬件输入验收",
+    "第一拳cancel造成其恢复相未在hit链完整播放；独立block/whiff有完整恢复",
+    "新装甲仍未齐未开放，未安装任何正式资源"
+  ],
+  "version_history": [
+    {
+      "contract": {
+        "path": "reports/luna-crouch-chain-resume/contract-v1.json",
+        "sha256": "81c52d12835fef92a19e70ff4442ac01a314b59767134a764dfcf97da20c6dcf"
+      },
+      "outcome": "首8逻辑通过；旧复制标签仍在，未主游戏",
+      "changes_to_next": "加入114语义矩阵依赖并修正误导注释/单拳结果标签，图像/规则/20+27输入不变"
+    },
+    {
+      "contract": {
+        "path": "reports/luna-crouch-chain-resume/contract-v2.json",
+        "sha256": "6ec438f19e2ce52a8fe6cfcb43e0a9c5da1bc6411a18524d8568b8edcd8e59c2"
+      },
+      "outcome": "8逻辑及114语义通过；首主游戏original自然成功且原输入辅助回放通过，外层Python检查器range(float) TypeError中止批，非玩法失败",
+      "failure_log": {
+        "path": "reports/luna-crouch-chain-resume/headless-v2-runner.log",
+        "sha256": "5ca2b1931a22833818630e1c187c627078ff903b81e1e0e9e801a6f300d46b9b"
+      },
+      "changes_to_next": "检查器显式int读取Godot JSON整数值；离线test_不纳入运行依赖。图像/规则/输入不变"
+    },
+    {
+      "contract": {
+        "path": "reports/luna-crouch-chain-resume/contract-v3.json",
+        "sha256": "2d4a051ba1079a8f3600ba7bbc879ac78ac5478b3f980c01bfc9e7ffb4cbd204"
+      },
+      "outcome": "8逻辑、114语义、16主游戏headless及8对独立180tick五字段一致；图形待核"
+    }
+  ],
+  "first_base_contract_scope": "*-first-base.json仅当前源码一拳组件中间构建合同，未执行，不是完整二拳合同",
+  "no_recording": true,
+  "本轮完成": [
+    "已复用现有v2远侧右拳作二拳接触，另审通过肩臂归属后登记，不把旧左拳失败记录改成通过，也没有生成新图。",
+    "按最新core/回放规则重封候选；左3/3/12、右3/7/8、各65伤30体力low及两招原cancel字段保留。",
+    "8基础逻辑、114输入语义和16主游戏headless全部通过，父侧另复核8对180tick五字段与正式71路径SHA。"
+  ],
+  "怎么看": {
+    "technical_receipt": {
+      "path": "reports/luna-crouch-chain-resume/technical-receipt-v3.json",
+      "sha256": "1a20c5f883d7f501e6797755f1a26305ddb264368fd82bdba5250307a5d676cb"
+    },
+    "independent_review": {
+      "path": "reports/luna-crouch-chain-resume/independent-review.json",
+      "sha256": "3eb3a7a388a89056b69eba07525a7675a4adb48dd1c88cf70cb6b0b0def4c989"
+    },
+    "parent_pair_audit": {
+      "path": "reports/luna-crouch-chain-resume/parent-headless-pair-audit.json",
+      "sha256": "67d6e2ca35ba48cc438d85beddb6a2174454bfa1138dbbb65ddf42bb6a8c0ea9"
+    },
+    "tools": "tools/rebuild/ultraman-arc/luna-crouch-chain-resume/README.md",
+    "reports_note": "reports为本机临时证据；本回执保存结果与SHA，不假称临时截图已上传。"
+  },
+  "semantic_audit_digest": [
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 21,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 65,
+      "second_starts": [],
+      "final_hash": "c8648582c4632630d1325888267adbd9fbe22fe801a1fcf9b74faeeeb264245a",
+      "replay_hash": "c8648582c4632630d1325888267adbd9fbe22fe801a1fcf9b74faeeeb264245a"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 22,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 9,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "b1dcf7e67ecba6d8955ec624f197889b20d93a12080d0300093f8c64c6f99b22",
+      "replay_hash": "b1dcf7e67ecba6d8955ec624f197889b20d93a12080d0300093f8c64c6f99b22"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 23,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 10,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "443963a6649bd69bf3a3bec6bb7a34941ded76c60481e845ecf928dffdd0dd04",
+      "replay_hash": "443963a6649bd69bf3a3bec6bb7a34941ded76c60481e845ecf928dffdd0dd04"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "51720d5782a4beb4da75b6eb39f27980ca44fef65f0a59a9e20e0e38e7e0966e",
+      "replay_hash": "51720d5782a4beb4da75b6eb39f27980ca44fef65f0a59a9e20e0e38e7e0966e"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 30,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 6,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 30,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "981e079528efb48f99586cff7c94ad06bb9337ea9391b72ba475077abb83c3dc",
+      "replay_hash": "981e079528efb48f99586cff7c94ad06bb9337ea9391b72ba475077abb83c3dc"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 34,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 10,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 34,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "daeba31299d75566cce3132c9e6e5ed17460309dae160df8b3de77423dd46e78",
+      "replay_hash": "daeba31299d75566cce3132c9e6e5ed17460309dae160df8b3de77423dd46e78"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 36,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 12,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 36,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "72c5165c279103872966c84b36de74bc79351a4d39f68505f62e3b2de6c0588d",
+      "replay_hash": "72c5165c279103872966c84b36de74bc79351a4d39f68505f62e3b2de6c0588d"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 37,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 13,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 37,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "a40363789a0e36a5564db6ce74f8842a53cfebafbd0e0a45f7fb3f37789e0c92",
+      "replay_hash": "a40363789a0e36a5564db6ce74f8842a53cfebafbd0e0a45f7fb3f37789e0c92"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 38,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 14,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 38,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "7be68df626e55b04e2c32c9f80caeb568bb9cd8f9a9209dbee6cf269dfb1f5b7",
+      "replay_hash": "7be68df626e55b04e2c32c9f80caeb568bb9cd8f9a9209dbee6cf269dfb1f5b7"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 40,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 16,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 40,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "9a353c98c3370394b417112d5ef6b11704081b75e1441392a13238fc15527c8f",
+      "replay_hash": "9a353c98c3370394b417112d5ef6b11704081b75e1441392a13238fc15527c8f"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 44,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [],
+      "final_hash": "50efeec157ba521e2340ebfab270f4b433797b4f226caf8df18766cc11f7fd32",
+      "replay_hash": "50efeec157ba521e2340ebfab270f4b433797b4f226caf8df18766cc11f7fd32"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": true,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 65,
+      "second_starts": [],
+      "final_hash": "c8648582c4632630d1325888267adbd9fbe22fe801a1fcf9b74faeeeb264245a",
+      "replay_hash": "c8648582c4632630d1325888267adbd9fbe22fe801a1fcf9b74faeeeb264245a"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 21,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "bede0c05395933fe945b36cc47d452338ec0d83674290f9603e874c82a982265",
+      "replay_hash": "bede0c05395933fe945b36cc47d452338ec0d83674290f9603e874c82a982265"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 22,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "b9ca64e80535a2ccd2e598c2dd728fa81a76f43f730b081af1c60fe1b0d8969f",
+      "replay_hash": "b9ca64e80535a2ccd2e598c2dd728fa81a76f43f730b081af1c60fe1b0d8969f"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 23,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "4cf3e476263105828e756d5d9d443f0e699063a8bc3cae423bc372bddf829d1e",
+      "replay_hash": "4cf3e476263105828e756d5d9d443f0e699063a8bc3cae423bc372bddf829d1e"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "e28c894e22d4bcf212a6c6e1b8b96a1faadfbf6b93d91c8ae6ae3b2d1b3eb1a7",
+      "replay_hash": "e28c894e22d4bcf212a6c6e1b8b96a1faadfbf6b93d91c8ae6ae3b2d1b3eb1a7"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 30,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "4e2720b004792b75e67b67cc988f2c37b438d113a2d3a80699283ab3eb37d3f8",
+      "replay_hash": "4e2720b004792b75e67b67cc988f2c37b438d113a2d3a80699283ab3eb37d3f8"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 34,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 3,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 75,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 75,
+          "input_frame": 41,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "893b0e530783c01f008755fbd60a005478b0a4030d5c887ed9b0985703043543",
+      "replay_hash": "893b0e530783c01f008755fbd60a005478b0a4030d5c887ed9b0985703043543"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 36,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 5,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 75,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 75,
+          "input_frame": 41,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "c21f5356a9928cf3be67867674dfd6064a3203e2f61ea26365ddaf4c185e2618",
+      "replay_hash": "c21f5356a9928cf3be67867674dfd6064a3203e2f61ea26365ddaf4c185e2618"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 37,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 6,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 75,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 75,
+          "input_frame": 41,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "9a2b86b96ca187583e41942f9e7f13642669676f6f35458c2437a5e69b61089f",
+      "replay_hash": "9a2b86b96ca187583e41942f9e7f13642669676f6f35458c2437a5e69b61089f"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 38,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 7,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 75,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 75,
+          "input_frame": 41,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "59518027598343b8852147b6ba868dc59cad2bde920b1ee28f5ad3f93155a3a3",
+      "replay_hash": "59518027598343b8852147b6ba868dc59cad2bde920b1ee28f5ad3f93155a3a3"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 40,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 9,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 75,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 75,
+          "input_frame": 41,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "4005856ab845ba74e217d0ca18d08114668ecf851a869a047cb24e70f06d9cd3",
+      "replay_hash": "4005856ab845ba74e217d0ca18d08114668ecf851a869a047cb24e70f06d9cd3"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 44,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "3d505492580a0d14e73a5c51a4f7fc38cbcffee598b5f2cddfd0a1ed37f27b47",
+      "replay_hash": "3d505492580a0d14e73a5c51a4f7fc38cbcffee598b5f2cddfd0a1ed37f27b47"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": true,
+        "kind": "block",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "bede0c05395933fe945b36cc47d452338ec0d83674290f9603e874c82a982265",
+      "replay_hash": "bede0c05395933fe945b36cc47d452338ec0d83674290f9603e874c82a982265"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 21,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "b03b09fec26818c9aced6f259a37aea6e9592ea588328daa565b6b78d95825c4",
+      "replay_hash": "b03b09fec26818c9aced6f259a37aea6e9592ea588328daa565b6b78d95825c4"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 22,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "7f7e5fe4d94be9b61b85e5ec50bd56c82e0eb573549778c13d8d8cbb513e2f0d",
+      "replay_hash": "7f7e5fe4d94be9b61b85e5ec50bd56c82e0eb573549778c13d8d8cbb513e2f0d"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 23,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "8cfb6a0b7710607e8c2e1d1f8a80703021f17f4a5e20eadcb665b131ee39e5c4",
+      "replay_hash": "8cfb6a0b7710607e8c2e1d1f8a80703021f17f4a5e20eadcb665b131ee39e5c4"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "5b1798915df6d987180bb62b75ee86418823efd8496429fe5944be578bb4c247",
+      "replay_hash": "5b1798915df6d987180bb62b75ee86418823efd8496429fe5944be578bb4c247"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 30,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 2,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 260,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 260,
+          "input_frame": 38,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "79f3ca2c2b4b5dfb78970d328ff03135a8f52b5f7e3ca403fcb5b3d35861b31f",
+      "replay_hash": "79f3ca2c2b4b5dfb78970d328ff03135a8f52b5f7e3ca403fcb5b3d35861b31f"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 34,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 6,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 260,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 260,
+          "input_frame": 38,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "b7cf4ed09bcf32ad46415fc6f1f4ed709c78385c91545240e3e18afb1731118f",
+      "replay_hash": "b7cf4ed09bcf32ad46415fc6f1f4ed709c78385c91545240e3e18afb1731118f"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 36,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 8,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 260,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 260,
+          "input_frame": 38,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "f78ae88fe2803a040dfe87d69558fa1f6ac675abab8dbc5b42379e154f5fd4bf",
+      "replay_hash": "f78ae88fe2803a040dfe87d69558fa1f6ac675abab8dbc5b42379e154f5fd4bf"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 37,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 9,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 260,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 260,
+          "input_frame": 38,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "10f746311776a370b98ae040a937e6b2e0235fef1a7977d6e5ffdea0d0b70c27",
+      "replay_hash": "10f746311776a370b98ae040a937e6b2e0235fef1a7977d6e5ffdea0d0b70c27"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 38,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "365cb594c0685493a613b358ba00ae366104536ca527edb6147973dbabf0e003",
+      "replay_hash": "365cb594c0685493a613b358ba00ae366104536ca527edb6147973dbabf0e003"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 40,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "16b57a02bfdea5531d0b06875a4b5cdedbc0922d6fea2e981e438b9a52ee0847",
+      "replay_hash": "16b57a02bfdea5531d0b06875a4b5cdedbc0922d6fea2e981e438b9a52ee0847"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 44,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "00006f73b200c0feb2defcbb8eb939e16768e4cc7176a97f2764d986b6a8afb5",
+      "replay_hash": "00006f73b200c0feb2defcbb8eb939e16768e4cc7176a97f2764d986b6a8afb5"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 260,
+        "held": true,
+        "kind": "whiff",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "b03b09fec26818c9aced6f259a37aea6e9592ea588328daa565b6b78d95825c4",
+      "replay_hash": "b03b09fec26818c9aced6f259a37aea6e9592ea588328daa565b6b78d95825c4"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": -1,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "eda94dc317a7c692322943ea5171ff8bf6f99cb3bc534dac46dc7dfe5730ee66",
+      "replay_hash": "eda94dc317a7c692322943ea5171ff8bf6f99cb3bc534dac46dc7dfe5730ee66"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": -1,
+        "y": 0
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "eda94dc317a7c692322943ea5171ff8bf6f99cb3bc534dac46dc7dfe5730ee66",
+      "replay_hash": "eda94dc317a7c692322943ea5171ff8bf6f99cb3bc534dac46dc7dfe5730ee66"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": -1,
+        "y": 1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "900d57321a91cc294bb99368e3ef1e35bb685b45516494a93ca5d0a25f628592",
+      "replay_hash": "900d57321a91cc294bb99368e3ef1e35bb685b45516494a93ca5d0a25f628592"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "51720d5782a4beb4da75b6eb39f27980ca44fef65f0a59a9e20e0e38e7e0966e",
+      "replay_hash": "51720d5782a4beb4da75b6eb39f27980ca44fef65f0a59a9e20e0e38e7e0966e"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": 0
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "51720d5782a4beb4da75b6eb39f27980ca44fef65f0a59a9e20e0e38e7e0966e",
+      "replay_hash": "51720d5782a4beb4da75b6eb39f27980ca44fef65f0a59a9e20e0e38e7e0966e"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": 1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "33954ad2cdd7d8b7936daa0f94ac1c26a4ce7c56378c124f52f8f1db7f034c73",
+      "replay_hash": "33954ad2cdd7d8b7936daa0f94ac1c26a4ce7c56378c124f52f8f1db7f034c73"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 1,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "f011a87274a76cb46a56f55822c70a22c110c825b113196c7f45cba2785db9af",
+      "replay_hash": "f011a87274a76cb46a56f55822c70a22c110c825b113196c7f45cba2785db9af"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 1,
+        "y": 0
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "f011a87274a76cb46a56f55822c70a22c110c825b113196c7f45cba2785db9af",
+      "replay_hash": "f011a87274a76cb46a56f55822c70a22c110c825b113196c7f45cba2785db9af"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 1,
+        "y": 1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "ad000abb8f9443c1777369430c1916b57d7a72238473bd4982b100d077a9d94e",
+      "replay_hash": "ad000abb8f9443c1777369430c1916b57d7a72238473bd4982b100d077a9d94e"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 36,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 44,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 44,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "77106bc5962762eef916461c09d1e85ba878a3f8081641e41c579807d4a994ab",
+      "replay_hash": "77106bc5962762eef916461c09d1e85ba878a3f8081641e41c579807d4a994ab"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 55,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 63,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 63,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "1840dbdb201a131d807a8c7afc0411b31c764849622dd73f3cda10723a495254",
+      "replay_hash": "1840dbdb201a131d807a8c7afc0411b31c764849622dd73f3cda10723a495254"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 65,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 73,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 73,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "d946e224da35d8ea59ed344f9b46cd3ee3ff625ee8041349a81cec77a0f74b99",
+      "replay_hash": "d946e224da35d8ea59ed344f9b46cd3ee3ff625ee8041349a81cec77a0f74b99"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 70,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 78,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 78,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "a6193e8b7450ab6056de50a70ad5294e593cdfc13ad3ea06ae9d00c8a355e789",
+      "replay_hash": "a6193e8b7450ab6056de50a70ad5294e593cdfc13ad3ea06ae9d00c8a355e789"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "51720d5782a4beb4da75b6eb39f27980ca44fef65f0a59a9e20e0e38e7e0966e",
+      "replay_hash": "51720d5782a4beb4da75b6eb39f27980ca44fef65f0a59a9e20e0e38e7e0966e"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 80,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 88,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 88,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "35a4a8ab0b28dc0af9a48df4193870ed1bfa7476996e5d65bc2ce4490a87bde7",
+      "replay_hash": "35a4a8ab0b28dc0af9a48df4193870ed1bfa7476996e5d65bc2ce4490a87bde7"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 85,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 93,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 93,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "ae558addb5dbecf51c03f7d1f03ee914a7fc94681cc1e15f352204c8bec7368a",
+      "replay_hash": "ae558addb5dbecf51c03f7d1f03ee914a7fc94681cc1e15f352204c8bec7368a"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 90,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 98,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 98,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "4c5e6fb39642329eb5758f013f74ac333c69a2f0cb2fd5799026c57579736d8e",
+      "replay_hash": "4c5e6fb39642329eb5758f013f74ac333c69a2f0cb2fd5799026c57579736d8e"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 100,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 65,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 108,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 108,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "74527f5408bce4206ea4683e6557654a44bbedb01ebdbe903e1970a26de08354",
+      "replay_hash": "74527f5408bce4206ea4683e6557654a44bbedb01ebdbe903e1970a26de08354"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 120,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "7ef073fbc2266aa9cf565edf85f84a09210de3c114173aba6abf8252d1a06e99",
+      "replay_hash": "7ef073fbc2266aa9cf565edf85f84a09210de3c114173aba6abf8252d1a06e99"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 160,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "64951e99e5b66de026a0c9c747ed17bdd0d036534e725a394d46968f82bb7bda",
+      "replay_hash": "64951e99e5b66de026a0c9c747ed17bdd0d036534e725a394d46968f82bb7bda"
+    },
+    {
+      "request": {
+        "facing": 1,
+        "gap": 260,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "5b1798915df6d987180bb62b75ee86418823efd8496429fe5944be578bb4c247",
+      "replay_hash": "5b1798915df6d987180bb62b75ee86418823efd8496429fe5944be578bb4c247"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 21,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 65,
+      "second_starts": [],
+      "final_hash": "013b3677c70bd4806eac709dfd4d9c07bd91f607197327ef3e78fc2318890bd3",
+      "replay_hash": "013b3677c70bd4806eac709dfd4d9c07bd91f607197327ef3e78fc2318890bd3"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 22,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 9,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "a32ebdba8576837a6bffd11959488e78cb6d1f7b0b052e34961bd89f0a1d0566",
+      "replay_hash": "a32ebdba8576837a6bffd11959488e78cb6d1f7b0b052e34961bd89f0a1d0566"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 23,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 10,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "cc7f3238c151a92ed2398a1915354732782db70a6bee0f5628501d124195e8ab",
+      "replay_hash": "cc7f3238c151a92ed2398a1915354732782db70a6bee0f5628501d124195e8ab"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "b428a5c6af25fb9ec082bc4c17b1c02e8916a2833e68dd8dfbdec8e842b83ecf",
+      "replay_hash": "b428a5c6af25fb9ec082bc4c17b1c02e8916a2833e68dd8dfbdec8e842b83ecf"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 30,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 6,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 30,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "a258dbae56c73dc576560f3d75a0f6160ff5929565d01cfb95bec213e86e0be3",
+      "replay_hash": "a258dbae56c73dc576560f3d75a0f6160ff5929565d01cfb95bec213e86e0be3"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 34,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 10,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 34,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "a7c3821b13c1cea20f7eb96c0e8933e667d3d818163fd3372dbdedb6ddc96662",
+      "replay_hash": "a7c3821b13c1cea20f7eb96c0e8933e667d3d818163fd3372dbdedb6ddc96662"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 36,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 12,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 36,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "ecf6cfc57d10d3998f27f1190d45d81b739f6d20059673bf51cfa81704e0897c",
+      "replay_hash": "ecf6cfc57d10d3998f27f1190d45d81b739f6d20059673bf51cfa81704e0897c"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 37,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 13,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 37,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "6820c0fcb965c70cae890fdf60f049d1aa172a834283437f9020566c0cdf425f",
+      "replay_hash": "6820c0fcb965c70cae890fdf60f049d1aa172a834283437f9020566c0cdf425f"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 38,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 14,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 38,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "e380ea2fe34d1279484a491a1dcf270f46eb634354597186c1bb0148f90f89a2",
+      "replay_hash": "e380ea2fe34d1279484a491a1dcf270f46eb634354597186c1bb0148f90f89a2"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 40,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 16,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 40,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "b839ebaef52c8ee5fe5c2d1a1176bd94991c5237bb4aa36daef2074fba6cc184",
+      "replay_hash": "b839ebaef52c8ee5fe5c2d1a1176bd94991c5237bb4aa36daef2074fba6cc184"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 44,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [],
+      "final_hash": "0561c83643362b8430ceb60db88017bfc03b2cd14e1ce82624ddcf0940be53be",
+      "replay_hash": "0561c83643362b8430ceb60db88017bfc03b2cd14e1ce82624ddcf0940be53be"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": true,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 65,
+      "second_starts": [],
+      "final_hash": "013b3677c70bd4806eac709dfd4d9c07bd91f607197327ef3e78fc2318890bd3",
+      "replay_hash": "013b3677c70bd4806eac709dfd4d9c07bd91f607197327ef3e78fc2318890bd3"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 21,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "76b1fc39e2b311c5f7c72d4a0bbcbc4bac922da14054cacd554ad6985774c6fd",
+      "replay_hash": "76b1fc39e2b311c5f7c72d4a0bbcbc4bac922da14054cacd554ad6985774c6fd"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 22,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "8220509b850d8434d01a90fdc5fba7e73002ffcf19a51f678f1b1496498f5dfa",
+      "replay_hash": "8220509b850d8434d01a90fdc5fba7e73002ffcf19a51f678f1b1496498f5dfa"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 23,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "ae722042641ad79c0410f1660ecc637892fcf50eb5a53de2527e9d9dd340e6b5",
+      "replay_hash": "ae722042641ad79c0410f1660ecc637892fcf50eb5a53de2527e9d9dd340e6b5"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "74de41c92862063fe14c2e5fb5e696416c15843853b654d26f1b08d4d24b5db3",
+      "replay_hash": "74de41c92862063fe14c2e5fb5e696416c15843853b654d26f1b08d4d24b5db3"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 30,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "f1161cbbad36e4fc86ad63cee4958fc8666a35dff47293973fe23d1e3f0f9085",
+      "replay_hash": "f1161cbbad36e4fc86ad63cee4958fc8666a35dff47293973fe23d1e3f0f9085"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 34,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 3,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 75,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 75,
+          "input_frame": 41,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "b5d895118387248a63e6f1b71820db1557b2ad7ec8ebcbc860b2bcd8597272a1",
+      "replay_hash": "b5d895118387248a63e6f1b71820db1557b2ad7ec8ebcbc860b2bcd8597272a1"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 36,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 5,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 75,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 75,
+          "input_frame": 41,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "8d3cb355d6e2ceab9415858e55546bc440686dd8157de2d62faac694c589f578",
+      "replay_hash": "8d3cb355d6e2ceab9415858e55546bc440686dd8157de2d62faac694c589f578"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 37,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 6,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 75,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 75,
+          "input_frame": 41,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "396fcc12e8d031d66f6ac254f27844593298a79e7b4b095b8efcce989d235e46",
+      "replay_hash": "396fcc12e8d031d66f6ac254f27844593298a79e7b4b095b8efcce989d235e46"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 38,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 7,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 75,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 75,
+          "input_frame": 41,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "28a068d7da7fe5cf38a19b5a07321704bea4b536ae007d19f93232ac862dc640",
+      "replay_hash": "28a068d7da7fe5cf38a19b5a07321704bea4b536ae007d19f93232ac862dc640"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 40,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 9,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 75,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 75,
+          "input_frame": 41,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "4e60e7181b14d7aec2656c0f11b6ee629326e94b81b321f63e45f09c29226d10",
+      "replay_hash": "4e60e7181b14d7aec2656c0f11b6ee629326e94b81b321f63e45f09c29226d10"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "block",
+        "second_tick": 44,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "196bd655d9fb057950842036283d02577de27c0b0d3dca05ec9c000015af026d",
+      "replay_hash": "196bd655d9fb057950842036283d02577de27c0b0d3dca05ec9c000015af026d"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": true,
+        "kind": "block",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "76b1fc39e2b311c5f7c72d4a0bbcbc4bac922da14054cacd554ad6985774c6fd",
+      "replay_hash": "76b1fc39e2b311c5f7c72d4a0bbcbc4bac922da14054cacd554ad6985774c6fd"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 21,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "f968a46d3fb92de12ad7152abbe6572dbd72b0a8f79db25c68ccbe82bbdf3685",
+      "replay_hash": "f968a46d3fb92de12ad7152abbe6572dbd72b0a8f79db25c68ccbe82bbdf3685"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 22,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "8b42176a4fcf062a5747c71e10d56a606b82973e673ae48a5bdd2621001739e2",
+      "replay_hash": "8b42176a4fcf062a5747c71e10d56a606b82973e673ae48a5bdd2621001739e2"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 23,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "90b8d996cf3d2b9421cca58f2bdc356dd0760d89f4ba06f14c26d11059f066c5",
+      "replay_hash": "90b8d996cf3d2b9421cca58f2bdc356dd0760d89f4ba06f14c26d11059f066c5"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "ad3f0de349bdf8fbef9e2c1d7a4d7bdd6c2e7285c8dd6b5840bd835050b52459",
+      "replay_hash": "ad3f0de349bdf8fbef9e2c1d7a4d7bdd6c2e7285c8dd6b5840bd835050b52459"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 30,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 2,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 260,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 260,
+          "input_frame": 38,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "a81df2b3e26020ea6a44b913427fae271c090a3fe10181d391f53e78135cabb5",
+      "replay_hash": "a81df2b3e26020ea6a44b913427fae271c090a3fe10181d391f53e78135cabb5"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 34,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 6,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 260,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 260,
+          "input_frame": 38,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "81ec59da9d90b091a9c9abc8f9596b2889e9504d4c60452247c498b659d6163c",
+      "replay_hash": "81ec59da9d90b091a9c9abc8f9596b2889e9504d4c60452247c498b659d6163c"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 36,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 8,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 260,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 260,
+          "input_frame": 38,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "cf93baf667844cdc895997f4687d43003a408706e867151f8bb6ea36ec2109f2",
+      "replay_hash": "cf93baf667844cdc895997f4687d43003a408706e867151f8bb6ea36ec2109f2"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 37,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "crouch_light2",
+            "buffer_ticks": 9,
+            "cancel": [],
+            "confirmed": false,
+            "gap": 260,
+            "move": "",
+            "move_tick": 0,
+            "state": "crouch"
+          },
+          "gap": 260,
+          "input_frame": 38,
+          "is_cancel": false
+        }
+      ],
+      "final_hash": "df1588b7d2a7488da104bd08b02f8ef5a242b238fa6a0a37859b5a6a51a9293d",
+      "replay_hash": "df1588b7d2a7488da104bd08b02f8ef5a242b238fa6a0a37859b5a6a51a9293d"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 38,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "30cbcfa10373639583ee423e9c7c787828c96d84de04740800d6297a9fc4703b",
+      "replay_hash": "30cbcfa10373639583ee423e9c7c787828c96d84de04740800d6297a9fc4703b"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 40,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "35abb954e06bd4bcd0f5cf86d0e6eda658074ef2890930e932706c587f73aa43",
+      "replay_hash": "35abb954e06bd4bcd0f5cf86d0e6eda658074ef2890930e932706c587f73aa43"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 260,
+        "held": false,
+        "kind": "whiff",
+        "second_tick": 44,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "0688b2ab1817d3d2b3440381895e2bd3be92995163f15bcb7fe652ad3a58ff78",
+      "replay_hash": "0688b2ab1817d3d2b3440381895e2bd3be92995163f15bcb7fe652ad3a58ff78"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 260,
+        "held": true,
+        "kind": "whiff",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "f968a46d3fb92de12ad7152abbe6572dbd72b0a8f79db25c68ccbe82bbdf3685",
+      "replay_hash": "f968a46d3fb92de12ad7152abbe6572dbd72b0a8f79db25c68ccbe82bbdf3685"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": -1,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "923ac225d00f8ccbcf26a8770111a1f5e2eef08f75ca1a837fa0ed131daeacac",
+      "replay_hash": "923ac225d00f8ccbcf26a8770111a1f5e2eef08f75ca1a837fa0ed131daeacac"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": -1,
+        "y": 0
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "923ac225d00f8ccbcf26a8770111a1f5e2eef08f75ca1a837fa0ed131daeacac",
+      "replay_hash": "923ac225d00f8ccbcf26a8770111a1f5e2eef08f75ca1a837fa0ed131daeacac"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": -1,
+        "y": 1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "03790fcabc9a7151407e93c807286eb4ca879dbff187b838e8a9ba86c63a9586",
+      "replay_hash": "03790fcabc9a7151407e93c807286eb4ca879dbff187b838e8a9ba86c63a9586"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "b428a5c6af25fb9ec082bc4c17b1c02e8916a2833e68dd8dfbdec8e842b83ecf",
+      "replay_hash": "b428a5c6af25fb9ec082bc4c17b1c02e8916a2833e68dd8dfbdec8e842b83ecf"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": 0
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "b428a5c6af25fb9ec082bc4c17b1c02e8916a2833e68dd8dfbdec8e842b83ecf",
+      "replay_hash": "b428a5c6af25fb9ec082bc4c17b1c02e8916a2833e68dd8dfbdec8e842b83ecf"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": 1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "503d7b2d46295b29ad5d8c8d9a205deb62d935213c7452416e900821b5fe2f1f",
+      "replay_hash": "503d7b2d46295b29ad5d8c8d9a205deb62d935213c7452416e900821b5fe2f1f"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 1,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "484dc8463ee93db8e6204824c61cabcb9201e6cc3759053c3e7c7cb58329d57f",
+      "replay_hash": "484dc8463ee93db8e6204824c61cabcb9201e6cc3759053c3e7c7cb58329d57f"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 1,
+        "y": 0
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "484dc8463ee93db8e6204824c61cabcb9201e6cc3759053c3e7c7cb58329d57f",
+      "replay_hash": "484dc8463ee93db8e6204824c61cabcb9201e6cc3759053c3e7c7cb58329d57f"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 1,
+        "y": 1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "616bdcae9c9afd96f9de30e0ed622483b6e80b1c86a93f4b18737081f5658eae",
+      "replay_hash": "616bdcae9c9afd96f9de30e0ed622483b6e80b1c86a93f4b18737081f5658eae"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 36,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 44,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 44,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "18f3dab715054177f963001043bdaa8ce957ca7e24972895afad80a85ecbc8fd",
+      "replay_hash": "18f3dab715054177f963001043bdaa8ce957ca7e24972895afad80a85ecbc8fd"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 55,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 63,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 63,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "84fd28bc0e54344f21e032d87e0410698c3cbcb012d6426046c0bd13a3498a60",
+      "replay_hash": "84fd28bc0e54344f21e032d87e0410698c3cbcb012d6426046c0bd13a3498a60"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 65,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 73,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 73,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "fdc165e829838dd77389d6578029e575b64c3d07cef6df2e484bab3af1e0b2a4",
+      "replay_hash": "fdc165e829838dd77389d6578029e575b64c3d07cef6df2e484bab3af1e0b2a4"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 70,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 78,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 78,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "ecf086ccb0978b18a8a8bbc1bcbb198c350ba853177493e9446255eca0e0050e",
+      "replay_hash": "ecf086ccb0978b18a8a8bbc1bcbb198c350ba853177493e9446255eca0e0050e"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 75,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 83,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 83,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "b428a5c6af25fb9ec082bc4c17b1c02e8916a2833e68dd8dfbdec8e842b83ecf",
+      "replay_hash": "b428a5c6af25fb9ec082bc4c17b1c02e8916a2833e68dd8dfbdec8e842b83ecf"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 80,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 88,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 88,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "6c2c327ff0fcb1145711718a13a854a044678179d19920a14e8a724e89dff602",
+      "replay_hash": "6c2c327ff0fcb1145711718a13a854a044678179d19920a14e8a724e89dff602"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 85,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 93,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 93,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "03d61b3044269fa4204bc94ffc5ac7c820740e5ee8449c16f5393cef432d66e9",
+      "replay_hash": "03d61b3044269fa4204bc94ffc5ac7c820740e5ee8449c16f5393cef432d66e9"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 90,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 130,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 98,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 98,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "60b85b2955eee62ec3728b9bf1b04083da37c4773d4af637d65f0dfaf49b9568",
+      "replay_hash": "60b85b2955eee62ec3728b9bf1b04083da37c4773d4af637d65f0dfaf49b9568"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 100,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 65,
+      "second_starts": [
+        {
+          "after_move": "crouch_light2",
+          "after_move_tick": 1,
+          "after_state": "attack",
+          "before": {
+            "buffer": "",
+            "buffer_ticks": 0,
+            "cancel": [
+              "crouch_light2"
+            ],
+            "confirmed": true,
+            "gap": 108,
+            "move": "crouch_light",
+            "move_tick": 3,
+            "state": "attack"
+          },
+          "gap": 108,
+          "input_frame": 27,
+          "is_cancel": true
+        }
+      ],
+      "final_hash": "04949e93c521ae990ad3ff347f8835b4e22fad85f2d1f02bffe33a4fca84ab23",
+      "replay_hash": "04949e93c521ae990ad3ff347f8835b4e22fad85f2d1f02bffe33a4fca84ab23"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 120,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "ede4726d999597e1ef4e5b57014fe0fcc3dc7b172c76558ebe6a56bb1cb34758",
+      "replay_hash": "ede4726d999597e1ef4e5b57014fe0fcc3dc7b172c76558ebe6a56bb1cb34758"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 160,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "a6c4511400dd0838fbcde1a91526b3f18bb76563e8ba200e547ccf8fb6288cd7",
+      "replay_hash": "a6c4511400dd0838fbcde1a91526b3f18bb76563e8ba200e547ccf8fb6288cd7"
+    },
+    {
+      "request": {
+        "facing": -1,
+        "gap": 260,
+        "held": false,
+        "kind": "hit",
+        "second_tick": 27,
+        "x": 0,
+        "y": -1
+      },
+      "damage": 0,
+      "second_starts": [],
+      "final_hash": "ad3f0de349bdf8fbef9e2c1d7a4d7bdd6c2e7285c8dd6b5840bd835050b52459",
+      "replay_hash": "ad3f0de349bdf8fbef9e2c1d7a4d7bdd6c2e7285c8dd6b5840bd835050b52459"
+    }
+  ],
+  "early_interpretation_correction": "初读曾误说格挡也会设置confirmed；随后沿blocked提前return核实并向父纠正，最终所有判定以原引擎真实运行结果为准。没有修改规则以符合该误读。",
+  "graphical": {
+    "status": "已交接显示负责人，32组待核",
+    "expected_groups": 32,
+    "expected_png": 368,
+    "hit_and_stand_guard_keys": 13,
+    "block_and_whiff_keys": 10,
+    "runtime_contract": {
+      "path": "reports/luna-crouch-chain-resume/contract-v3.json",
+      "sha256": "2d4a051ba1079a8f3600ba7bbc879ac78ac5478b3f980c01bfc9e7ffb4cbd204"
+    }
+  },
+  "已知问题": [
+    "两拳各只有蹲架/独立接触/回同蹲架三槽，二拳3/7/8保持，无独立随势相",
+    "原错左拳02仅在独立审图确认远侧右拳后用于第二拳",
+    "受方使用正式杰顿状态与图，旧crouch_blockstun高姿保留，新RAM低蹲图不混入",
+    "图形输入仅20/27，不覆盖晚buffer右拳格挡/空挥画面",
+    "无实速、听感、录屏或硬件输入验收",
+    "第一拳cancel造成其恢复相未在hit链完整播放；独立block/whiff有完整恢复",
+    "新装甲仍未齐未开放，未安装任何正式资源"
+  ],
+  "下一步": [
+    "按最终v3固定20/27输入做双向720/1080主游戏图形，核左接触→右拳起势低蹲→右接触→回架是否有实际头肩/脚位/拳面问题。",
+    "保持晚缓存后起与真正取消、第二拳起招与实际连中分开。sweep取消仅字段保留，未加载/未验。",
+    "静帧不能签实速；不因两张接触源或检查数量宣布装甲完整，不安装不解锁。"
+  ]
+}
