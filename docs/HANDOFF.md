@@ -2,6 +2,8 @@
 
 ## 2026-11-05 开发接续索引
 
+- 扫腿尾段源复核：03扫击与06低架的近/远腿层次可作端点；旧04变层落脚、05重新伸腿回弹仍未解决，12旧源SHA一致且无新增替代。已备单张低位屈膝回收整相brief（本人定稿→03→06），不把未知解剖左右当确定、不发明撑地手；一张尚不保证整招修复，未生成。二拳→扫腿尚缺技术连接，正独立RAM核查，正式装甲仍关。[最小回收相与来源](../art/fighters/ultraman-arc__luna/stage2/sweep-recovery-keyframe-brief-20261105-v1/brief.json)
+
 - 蹲一二拳RAM已复用右拳v2并按最新core验证：原左3/3/12、右3/7/8与cancel保持；8逻辑、114输入语义及16主游戏回放通过。命中确认才取消，gap75两拳130；gap100二拳够不到仅65。格挡/空挥晚按可收招后缓存起右拳，非取消。新增32有效图形组/368原生PNG、16对180tick通过；窗口门一次暂态失败保留，只续6组。近/远拳可辨，换相头肩/足缘、共同取景和旧受方高硬直仍待实速，不安装。[二连候选与准确边界](verification/luna-crouch-chain-session-resume.json)、[图形终态与失败记录](verification/luna-crouch-chain-session-graphical-review.json)
 
 - overhead恢复限定路径图形已完成：八组64原生PNG、四对180tick回放通过；双向720/1080完整56→57→58–61均低姿，tick57仍原crouch0、58仍guard0，不跳过逻辑中间tick。首次站入蹲/松防及旧低防恢复不回退；声音只程序键时点对照，无听感/实速验收。普通蹲较高资产另保留，两新blockstun仍RAM未安装。[准确图形回执](verification/hit-crouch-guard-recovery-graphical-review.json)

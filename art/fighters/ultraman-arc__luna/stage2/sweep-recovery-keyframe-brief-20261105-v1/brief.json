@@ -1,0 +1,106 @@
+{
+  "status": "brief_only_not_generated",
+  "prompt": "绘制一张亚刻奥特曼月亮装甲的完整人物2D像素格斗动画关键相，真正透明背景，只有一个人物。使用参考1的本人形象、银色头部、头冠、蓝青月亮装甲、红银身体、胸甲与腕甲细节；不是普通亚刻换色，不增减装甲，不出现玩具关节、插接缝、塑料高光。镜头固定侧视，人物朝画面右，镜头角度、整个人物骨段长度、头胸甲体积及整图尺度与参考2和3一致。头顶、全部手指、双脚和装甲外缘完整留在画布内。不要按蹲姿包围盒重新放大人物。\n\n本张是参考2低位扫腿之后、参考3恢复低架之前的一张真实收腿中间相，不是再次出脚、跳跃、换脚攻击或站立。按画面可见的前后层腿辨认，不把屏幕左右误写成解剖左右：参考2画面左下的近层亮色承重腿继续承重，脚底稳定接地，膝盖深屈，骨盆维持低位；该腿不要突然越到画面右方，也不要抬成悬空后腿。参考2向画面右伸出的远层扫腿正在屈膝收回，右侧脚踝沿低位向身体靠近，离伸直接触位明显缩短，但尚未完全达到参考3的最终低架。保持这条腿从髋部到膝、胫、踝的连续关系和前后遮挡，不通过两腿交换身份实现回收。扫腿脚接近地面准备落位，不能再次向前绷直踢出，不能穿入支撑腿，也不能突然挪到身体另一侧。\n\n上身随着收腿略回正，头面仍看向画面右；肩、胸、腰和髋自然协调，不用单独平移上半身。两臂由扫腿时的低位向护架收回，双拳保留，腕部蓝色圆甲属于原来的臂；没有手掌撑地，不增加撑地手，不借手支撑起跳。姿态明确处在“扫完正在收回”而不是蹲姿终点。保持统一像素边缘与有限色阶，不使用模糊、运动拖影、光效、速度线、地面、阴影底板、文字、参考拼贴或多个连续人物。输出单张完整人物RGBA PNG，透明背景，不能用棋盘格图案冒充透明。",
+  "references": [
+    {
+      "order": 1,
+      "path": "art/fighters/ultraman-arc__luna/model/clean-model-source.png",
+      "sha256": "f07ca34c959008bb1104af55a9d6c5c6a8e7b2d57c510a13cf8c2ed2c2bc4ddf",
+      "role": "identity"
+    },
+    {
+      "order": 2,
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-03/request-003/raw.provider.png",
+      "sha256": "2eda787349e705ee650e8c0b39ffe1eacf7ca408268528b25fe204380403398d",
+      "role": "sweep_phase_03_before"
+    },
+    {
+      "order": 3,
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-06/request-003/raw.provider.png",
+      "sha256": "d72f6c46dcc8af8d930aa349a8f279256ea8665ad0b3404aac93b2e48817c0e5",
+      "role": "sweep_phase_06_after"
+    }
+  ],
+  "limits": "- 已知：现用03是低扫远端、06为双足低架；实看七相atlas及03–06独立共同尺度样本，04→05前伸/后抬反复仍在。两手没有撑地。不能从有限遮挡确定解剖左右，故提示词只绑定连续腿链和画面层次。\n- 已知：旧回执列出的03–06全部12个provider源仍存在且SHA逐项匹配，当前同目录只有这12源，没有新增合格替代。\n- 推断/制作选择：03→新收腿相→06可能比强接旧04/05连贯；新相应候选替换不可信尾段，而非塞在04/05中间后保留坏腿路。一张只是最小先验制作，不承诺足够修复整招。\n- 暂不指定把新相重复覆盖04与05，也不改变时序来掩盖问题。需先共同尺度、统一根点实看03→新相→06，并核完整膝踝路径；若缺第二回收阶段，再明确缺口，不预先批量生成。\n- 规则6/7/15、伤害65、体力30、低段倒地及原输入/取消保持；后续如何分配恢复槽仅能在候选RAM试排后决定。单帧合格不等于全招、严格比例或实速通过。\n- 本次未生成、未收费、未运行Godot、未安装、未开放装甲，无录屏。\n",
+  "reviewer": "root_delegated_by_user",
+  "schema": "ufeneo.luna.sweep-recovery-whole-keyframe-brief.v1",
+  "prompt_source": "本轮独立审阅后拟定，尚未调用图片工具",
+  "source_audit": {
+    "checked_sources": [
+      {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-03/request-001/raw.provider.png",
+        "sha256": "994f745995fa277da2a73ef9d0e364325828fbcf076e40711875822bce5877eb",
+        "exists": true,
+        "sha_matches": true
+      },
+      {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-03/request-002/raw.provider.png",
+        "sha256": "bda7f3d6c19e060ba7fe44bfefb7ff480030fa3f37926ca54d326e4ab6f9bb1c",
+        "exists": true,
+        "sha_matches": true
+      },
+      {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-03/request-003/raw.provider.png",
+        "sha256": "2eda787349e705ee650e8c0b39ffe1eacf7ca408268528b25fe204380403398d",
+        "exists": true,
+        "sha_matches": true
+      },
+      {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-04/request-001/raw.provider.png",
+        "sha256": "4b4bb81d3d67ff696ead92ff241a14a802d48e4af6b400ac92e507fba46fe210",
+        "exists": true,
+        "sha_matches": true
+      },
+      {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-04/request-002/raw.provider.png",
+        "sha256": "b6f790219a708c88bc6c78855cd58fddd240f93f1e8d66d65e78e8afb42b0b6a",
+        "exists": true,
+        "sha_matches": true
+      },
+      {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-04/request-003/raw.provider.png",
+        "sha256": "31f71b95be8a7272508b30edd1269b360f93d5e59f5bda02b524a0474a85bbcd",
+        "exists": true,
+        "sha_matches": true
+      },
+      {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-05/request-001/raw.provider.png",
+        "sha256": "57280c5a200c70387db3365c46592c3ea34c881c690651dd0d21c9301a6a3ae8",
+        "exists": true,
+        "sha_matches": true
+      },
+      {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-05/request-002/raw.provider.png",
+        "sha256": "f2c93b73537153c600a3399da14a3a82a0361ebf106af3a9f4c02bfa6b0e6be3",
+        "exists": true,
+        "sha_matches": true
+      },
+      {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-05/request-004/raw.provider.png",
+        "sha256": "8afbec4b1bb13e7319e2ecd70713fbfb652313c6f77c0f09bdf8f6c11c1bc5cf",
+        "exists": true,
+        "sha_matches": true
+      },
+      {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-06/request-001/raw.provider.png",
+        "sha256": "45961d7cec51a2d6560b9ed56cb376648e6f3186565d07b2afb57c2aabd43d12",
+        "exists": true,
+        "sha_matches": true
+      },
+      {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-06/request-002/raw.provider.png",
+        "sha256": "7f9115b253e4f2a487833a5c06e7636cf6a05841b4d867d7b895e60ede5e4de4",
+        "exists": true,
+        "sha_matches": true
+      },
+      {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/sweep/phase-06/request-003/raw.provider.png",
+        "sha256": "d72f6c46dcc8af8d930aa349a8f279256ea8665ad0b3404aac93b2e48817c0e5",
+        "exists": true,
+        "sha_matches": true
+      }
+    ],
+    "actual_source_count": 12,
+    "visual_scope": "实看现用七相atlas及03–06独立159样本；未重审全部12大源，旧替代拒绝结论由同SHA历史回执支持。"
+  }
+}
