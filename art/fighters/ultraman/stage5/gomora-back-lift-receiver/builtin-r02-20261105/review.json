@@ -611,12 +611,178 @@
       "visual_verdict": "指状腰褶消失、两臂结构清楚，但全身变斜直飞行、失去屈膝及腹腰压重；腹侧共点后头颈再次与角冠重合，不作为R02升级。",
       "identity": "可识别为初代；没有仅因局部差异判错身份。",
       "candidate_path": "art/fighters/ultraman/stage5/gomora-back-lift-receiver/builtin-r02-20261105/candidate-3.png"
+    },
+    {
+      "schema": 1,
+      "source_sha256": "c11be3012441d0808be0fd2ecc84558b81ece3178fbfab94c6c7b399104125b8",
+      "source_size": [
+        1774,
+        887
+      ],
+      "source_mode": "RGBA",
+      "alpha_levels": 256,
+      "transparent_pixels": 1302657,
+      "opaque_pixels": 554,
+      "partial_alpha_pixels": 270327,
+      "alpha_lt128_nonzero_pixels": 51201,
+      "original_edges_nonzero": [
+        0,
+        2,
+        14,
+        0
+      ],
+      "forge_files": {
+        "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+        "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+        "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+      },
+      "palette_applied": false,
+      "alpha_threshold": 128,
+      "roi_note": "头/前臂矩形ROI只作诊断，不是精确人体分割；Alpha重叠不等价于穿体。",
+      "whole_frame_only": true,
+      "limb_editing": false,
+      "runtime_installed": false,
+      "accepted": false,
+      "pairs": [
+        {
+          "size": [
+            180,
+            90
+          ],
+          "scale": 0.10146561443066517,
+          "ambiguous_upper_body_boundary": [
+            75,
+            42
+          ],
+          "actor_contact": [
+            241,
+            192
+          ],
+          "paste": [
+            166,
+            150
+          ],
+          "alpha_overlap_pixels": 1495,
+          "accepted": false
+        },
+        {
+          "size": [
+            200,
+            100
+          ],
+          "scale": 0.11273957158962795,
+          "ambiguous_upper_body_boundary": [
+            83,
+            47
+          ],
+          "actor_contact": [
+            241,
+            192
+          ],
+          "paste": [
+            158,
+            145
+          ],
+          "alpha_overlap_pixels": 1799,
+          "accepted": false
+        },
+        {
+          "size": [
+            220,
+            110
+          ],
+          "scale": 0.12401352874859076,
+          "ambiguous_upper_body_boundary": [
+            92,
+            51
+          ],
+          "actor_contact": [
+            241,
+            192
+          ],
+          "paste": [
+            149,
+            141
+          ],
+          "alpha_overlap_pixels": 2207,
+          "accepted": false
+        },
+        {
+          "size": [
+            200,
+            100
+          ],
+          "source_abdomen_column": 840,
+          "surface_ambiguous_under_arms": true,
+          "column_selection": "upper_contiguous_run",
+          "contact": [
+            95,
+            43
+          ],
+          "paste": [
+            146,
+            149
+          ],
+          "alpha_overlap_pixels": 1583,
+          "head_roi_overlap_pixels": 469,
+          "near_forearm_roi_overlap_pixels": 290,
+          "accepted": false
+        },
+        {
+          "size": [
+            200,
+            100
+          ],
+          "source_abdomen_column": 860,
+          "surface_ambiguous_under_arms": true,
+          "column_selection": "upper_contiguous_run",
+          "contact": [
+            97,
+            43
+          ],
+          "paste": [
+            144,
+            149
+          ],
+          "alpha_overlap_pixels": 1501,
+          "head_roi_overlap_pixels": 469,
+          "near_forearm_roi_overlap_pixels": 259,
+          "accepted": false
+        },
+        {
+          "size": [
+            200,
+            100
+          ],
+          "source_abdomen_column": 880,
+          "surface_ambiguous_under_arms": true,
+          "column_selection": "upper_contiguous_run",
+          "contact": [
+            99,
+            43
+          ],
+          "paste": [
+            142,
+            149
+          ],
+          "alpha_overlap_pixels": 1428,
+          "head_roi_overlap_pixels": 469,
+          "near_forearm_roi_overlap_pixels": 234,
+          "accepted": false
+        }
+      ],
+      "visual_verdict": "弓背与屈膝恢复，但双拳遮住腹胸下缘；以有歧义的上方连续体表段作接点时，头颈重新位于角根/脸颊区。两种完整层序对照会吞掉整头，不通过。",
+      "identity": "可识别为初代；近侧臂可完整追溯，远臂部分被身体遮挡，未发现明确额外臂。",
+      "candidate_path": "art/fighters/ultraman/stage5/gomora-back-lift-receiver/builtin-r02-20261105/candidate-4.png",
+      "projected_bones": null,
+      "projected_bones_limit": "第四版头前下转、肩髋深屈与遮挡，本轮未独立签收骨点，不套前三版读点。180/200/220宽仅作完整图尺度诊断，不是通过的共同体尺。",
+      "contact_limit": "腹侧被双拳遮挡；列最末Alpha可能来自腿或拳，已改选上方连续段并明确surface_ambiguous_under_arms=true。该点不是接受的腹侧测点。"
     }
   ],
   "process": {
     "forge_commit": "5324342fdfab72430f4e9604f3fe427009f8596d",
     "script": "tools/rebuild/gomora/back_lift_resume/review_builtin_r02.py",
-    "script_sha256": "78a631ef7fe6e0b519c2c5dc696439290d75390b441ebb8e7d7ed403a4a038a3",
+    "script_sha256": "10140ae1bf7c959cbe6283dddd9f5238329d4ccb10c844f54a91c075c86554b7",
     "no_component_filtering": true,
     "no_limb_edits": true,
     "no_rotation": true,
