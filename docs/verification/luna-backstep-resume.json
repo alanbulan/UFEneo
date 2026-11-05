@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "status": "整帧后撤候选逻辑完成，实际图形在验",
+  "manifest": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/backstep-registered-20261105-v1/manifest.json",
+    "sha256": "d1f55c9bcab6da3fd5f64abf7bf1b7b0f697d879f8b325756de27a5cdc671107"
+  },
+  "root_review": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/backstep-registered-20261105-v1/root-review.json",
+    "sha256": "2e7ba2175ab75dbc72350766a9dd80085d593f48a4eb27f8286594901f2ae786"
+  },
+  "source_decision": [
+    "旧backstep03三腿三鞋拒用；复用已有20261102 request002新03/04完整两腿两鞋回护源，不新增收费。",
+    "新03/04原源弱Alpha并非原生干净透明，沿既有整图128二值与共同159栅格派生。",
+    "与旧offline-five全图像素核对后仅01向下平移4px，对齐真实低鞋底280，其余不动；禁止切肢与每相重新缩放。"
+  ],
+  "phases": 5,
+  "ticks": [
+    3,
+    3,
+    4,
+    3,
+    3
+  ],
+  "runtime_rules": "真实双后InputFrame于38/40、78/80触发两轮；入状态首tick不移动，随后16次每次向后5px，共80px自然回idle。建sim后不写状态、坐标、速度；不改core、无敌、伤害或体力规则。",
+  "headless": {
+    "groups": 4,
+    "ticks_per_group": 120,
+    "original_and_independent_replay": true,
+    "runner": {
+      "path": "reports/luna-backstep-resume/logic-v2/runner-result.json",
+      "sha256": "644a7a22afa9796d9ad0ee83f447113b76b75f918c1d3b36e5bb7840e489274a"
+    },
+    "contract_for_graphics": {
+      "path": "reports/luna-backstep-resume/contract-v3.json",
+      "sha256": "a4f411c5871ef89d1f030c4c33c806aecfcceacb8099097115f20ef9fcad8ab6"
+    },
+    "v3_difference": "GDScript与通过v2逐文件SHA相同，v3仅Python验收器增强/测试文件纳入。"
+  },
+  "python_tests": {
+    "passed": 19,
+    "source": {
+      "path": "tools/rebuild/ultraman-arc/luna-backstep-resume/test_check.py",
+      "sha256": "5eab84ab465c12f9d96efdbd59c6f46e5558b1c3c32c2fa487253a84e462a031"
+    },
+    "scope": "实际trace与拒绝错误时钟、位移、height、相位、第二次输入、HUD、双方state/sprite/region；虚构图形fixture仅验解析器，不是画面证据。"
+  },
+  "prior_failure": "v1首tap进入walk触发继承入口旧异步cycle截图，缺新request；自身测试会话Ctrl-C正常停止exit130、旧证据保留。v2预封旧walk截图键，未影响新冻结后撤截图。",
+  "limits": [
+    "首tap沿旧本人walk_back单tick前导移动2px，不代表后走步态验收。",
+    "完整后走缺换腿、dash02/04缺B/A互换、dodge后仰到低跪到全站缺过渡，不因源图齐全强接。",
+    "02到03落脚及04到idle回架待实际双向720/1080图形，不预判顺滑。",
+    "Godot4.6.3，项目4.7未验；无录屏/音频/真人输入验收。"
+  ],
+  "playable": false,
+  "installed": false,
+  "art_passed": false,
+  "strict_size_accepted": false,
+  "paid_requests": 0,
+  "user_codex_used": false
+}
