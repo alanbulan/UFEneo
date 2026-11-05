@@ -1,0 +1,247 @@
+{
+  "schema": 1,
+  "source_sha256": "f966aa07f80e588140d53627dbfa85c11e0d45d831ddb17d3e0720c7eb704596",
+  "size": [
+    1199,
+    1312
+  ],
+  "alpha": {
+    "zero": 1383959,
+    "partial": 189054,
+    "opaque": 75
+  },
+  "uniform_size": [
+    176,
+    193
+  ],
+  "readpoints": {
+    "pelvis": [
+      490,
+      755
+    ],
+    "pelvis_radius": 45,
+    "knees": [
+      [
+        455,
+        900
+      ],
+      [
+        585,
+        940
+      ]
+    ],
+    "knee_radius": [
+      25,
+      30
+    ],
+    "abdomen": [
+      [
+        570,
+        754
+      ],
+      [
+        620,
+        725
+      ],
+      [
+        675,
+        700
+      ]
+    ],
+    "head_length": 170,
+    "head_length_radius": 25
+  },
+  "native_pelvis": [
+    72,
+    111
+  ],
+  "knees_relative": [
+    [
+      -5,
+      21
+    ],
+    [
+      14,
+      27
+    ]
+  ],
+  "trials": [
+    {
+      "tick_trial": 26,
+      "actor": 6,
+      "pelvis": [
+        214,
+        195
+      ],
+      "paste": [
+        142,
+        84
+      ],
+      "knees_world": [
+        [
+          209,
+          216
+        ],
+        [
+          228,
+          222
+        ]
+      ],
+      "head_roi_overlap": 0,
+      "belly_samples": [
+        {
+          "receiver_canvas": [
+            244,
+            186
+          ],
+          "receiver_alpha": 130,
+          "actor_upper_y": 189,
+          "gap_down": 3
+        },
+        {
+          "receiver_canvas": [
+            240,
+            188
+          ],
+          "receiver_alpha": 236,
+          "actor_upper_y": 191,
+          "gap_down": 3
+        },
+        {
+          "receiver_canvas": [
+            236,
+            190
+          ],
+          "receiver_alpha": 228,
+          "actor_upper_y": 195,
+          "gap_down": 5
+        },
+        {
+          "receiver_canvas": [
+            232,
+            192
+          ],
+          "receiver_alpha": 249,
+          "actor_upper_y": 197,
+          "gap_down": 5
+        },
+        {
+          "receiver_canvas": [
+            229,
+            194
+          ],
+          "receiver_alpha": 251,
+          "actor_upper_y": 198,
+          "gap_down": 4
+        }
+      ]
+    },
+    {
+      "tick_trial": 28,
+      "actor": 7,
+      "pelvis": [
+        219,
+        192
+      ],
+      "paste": [
+        147,
+        81
+      ],
+      "knees_world": [
+        [
+          214,
+          213
+        ],
+        [
+          233,
+          219
+        ]
+      ],
+      "head_roi_overlap": 0,
+      "belly_samples": [
+        {
+          "receiver_canvas": [
+            249,
+            183
+          ],
+          "receiver_alpha": 130,
+          "actor_upper_y": 187,
+          "gap_down": 4
+        },
+        {
+          "receiver_canvas": [
+            245,
+            185
+          ],
+          "receiver_alpha": 236,
+          "actor_upper_y": 189,
+          "gap_down": 4
+        },
+        {
+          "receiver_canvas": [
+            241,
+            187
+          ],
+          "receiver_alpha": 228,
+          "actor_upper_y": 192,
+          "gap_down": 5
+        },
+        {
+          "receiver_canvas": [
+            237,
+            189
+          ],
+          "receiver_alpha": 249,
+          "actor_upper_y": 194,
+          "gap_down": 5
+        },
+        {
+          "receiver_canvas": [
+            234,
+            191
+          ],
+          "receiver_alpha": 251,
+          "actor_upper_y": 196,
+          "gap_down": 5
+        }
+      ]
+    }
+  ],
+  "to_R02": {
+    "knees": [
+      [
+        200,
+        185
+      ],
+      [
+        196,
+        167
+      ]
+    ],
+    "delta": [
+      [
+        -14,
+        -28
+      ],
+      [
+        -37,
+        -52
+      ]
+    ],
+    "distance": [
+      31.304951684997057,
+      63.8200595424354
+    ],
+    "meaning": "不同完整姿态相邻切换的剩余跳变，不能除以静帧持有tick宣称平滑。"
+  },
+  "accepted": false,
+  "installed": false,
+  "main_tested": false,
+  "conclusions": [
+    "真实Alpha合成可见完整两臂两腿，没有按预览黑底否决。",
+    "近膝略左、远膝仍右下；主要是小腿向后折，未实现要求的双大腿后摆。",
+    "名义髋可小步衔接但不能替代膝弧；远膝接R02的大跳仍在。",
+    "头ROI/腹点仅诊断，不能替代全头颈轮廓或动态承重验收。",
+    "未改运行合同、捕获范围、素材层级或正式三级。"
+  ]
+}
