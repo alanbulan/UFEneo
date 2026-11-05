@@ -1,0 +1,67 @@
+{
+  "status": "two_headless_real_main_diagnostic_comparisons_passed",
+  "contract": "reports/gomora-builtin/main-chain-20261105/contract-roi-corrected.json",
+  "contract_sha256": "2cc33eb4669f79349a6f32226a3e639a7d55d3433ec966d733dd1fbc9fcb85bd",
+  "diagnostic_fx_hidden": true,
+  "diagnostic_white_flash_hidden": true,
+  "source_files": [
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/diagnostic_run.py",
+      "sha256": "64d5653e74d20626768d3872ae9d100bb0ffb909dd7748c95db5c54df182d2d2"
+    },
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/runtime/diagnostic_entry.gd",
+      "sha256": "ecf7906cbf809edd130cb4fcebfb7852b161dd1e79abf230b7f629842d099e15"
+    },
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/runtime/diagnostic_game.gd",
+      "sha256": "ced04dd3c901173c51db1d2b6bb7b36a30bc06ad03fc66c6e33cd7752bec9d94"
+    }
+  ],
+  "normal_harness_byte_exact_commit": "9918e376bafb4db5f5aeb3d8936cecdcf066b45f",
+  "cases": [
+    {
+      "owner": 0,
+      "trace": "reports/gomora-builtin/main-chain-20261105/diagnostic-check-final/owner0/main-trace.json",
+      "trace_sha256": "011b57ec0e194896219b79560fff06c4a591a429f0d0d455646473d52c508a27",
+      "comparison": "reports/gomora-builtin/main-chain-20261105/diagnostic-check-final/owner0/normal-comparison.json",
+      "observations": 760,
+      "raw20_to32_capture_markers": 13,
+      "visible_fx_suppressed_observations": 333,
+      "normal_camera_zoom_bounds_and_fighter_nodes_equal": true,
+      "view_position_max_serialization_difference": 9.979001030721319e-18,
+      "headless_no_images": true
+    },
+    {
+      "owner": 1,
+      "trace": "reports/gomora-builtin/main-chain-20261105/diagnostic-check-final/owner1/main-trace.json",
+      "trace_sha256": "981dc77381be3748991f9e9a5f3f09bb2ce48b16f751582d5a07ff485ee80406",
+      "comparison": "reports/gomora-builtin/main-chain-20261105/diagnostic-check-final/owner1/normal-comparison.json",
+      "observations": 760,
+      "raw20_to32_capture_markers": 13,
+      "visible_fx_suppressed_observations": 333,
+      "normal_camera_zoom_bounds_and_fighter_nodes_equal": true,
+      "view_position_max_serialization_difference": 9.979001030721319e-18,
+      "headless_no_images": true
+    }
+  ],
+  "implementation": [
+    "新增独立runner/entry/game；默认不开启，必须显式--diagnostic-fx-hidden才进入诊断。",
+    "正常update_view、feedback及模拟继续运行；绘制前隐藏attached_slots/weapon_trails/feedback.particles独立视觉节点。",
+    "白闪不是独立节点，仅诊断渲染前覆盖ShaderMaterial.hit_flash=false，反馈计数及双方精灵可见性/纹理/变换/层级不改。",
+    "下次正式视图计算前恢复FX可见性，不以隐藏节点改变相机取景；两向camera/zoom/bounds/body_node逐观察一致。view_position经诊断JSON二次序列化有小于1e-12的浮点尾差，非逐字节相等。",
+    "raw20–32额外每tick原生截图；requested/actual frame及raw绑定并断言，headless只保存明确no_image标记。"
+  ],
+  "results": "两向760观察与正常主游戏原输入、每tick hash、pre状态、事件、费用、血量、状态退出及动画完全一致。",
+  "limits": [
+    "当前headless检查没有图片，不是图形验收；待显式诊断GUI原生截图。",
+    "隐藏FX只用于看接触与换腿，不替代正常FX画面验收。",
+    "Dummy未验声音，无录屏，无插帧，未安装。"
+  ],
+  "initial_run": {
+    "path": "reports/gomora-builtin/main-chain-20261105/diagnostic-check/owner0",
+    "note": "逻辑对照已过但Fontconfig报告不可写缓存；新runner配置隔离可写XDG缓存后两向重新通过，保留初跑。"
+  },
+  "installed": false,
+  "art_accepted": false
+}
