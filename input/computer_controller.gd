@@ -1,7 +1,7 @@
 class_name UfeComputerController
 extends RefCounted
 ## 只观察模拟并产出设备同款输入。随机状态、反应记忆和指令队列全部属于input层。
-const LEVELS={"easy":{"delay":22,"guard":30,"combo":40,"recover":35},"normal":{"delay":12,"guard":65,"combo":75,"recover":65},"hard":{"delay":6,"guard":90,"combo":95,"recover":90}}
+const LEVELS={"easy":{"delay":22,"guard":30,"combo":40,"recover":35,"counter":20},"normal":{"delay":12,"guard":65,"combo":75,"recover":65,"counter":45},"hard":{"delay":6,"guard":90,"combo":95,"recover":90,"counter":70}}
 var difficulty: String
 var player: int
 var seed_value: int
@@ -25,6 +25,10 @@ var combo_age: int=-1
 var recovery_age: int=-1
 var recovery_decided: bool=false
 var recovery_allowed: bool=false
+var counter_age: int=-1
+var counter_state: String=""
+var counter_decided: bool=false
+var counter_allowed: bool=false
 
 func _init(match_seed: int=20261022,level: String="normal",index: int=1) -> void:
 	seed_value=match_seed;difficulty=level if LEVELS.has(level) else "normal";player=index
@@ -64,6 +68,12 @@ func decide(sim: UfeMatchDirector,seen: Dictionary) -> UfeInputFrame:
 	if direction==0:direction=f.facing
 	var gap:=absi(int(seen.x)-f.x)
 	if sim.finished:return emit()
+	var counter:=guard_counter_input(f)
+	if counter!=null:return counter
+	if f.state in ["blockstun","crouch_blockstun"] and f.move_id.is_empty():
+		# 等待/放弃防反时不能让旧指令或普通攻击策略绕过概率与反应窗。
+		queue.clear()
+		return emit(0,-1 if f.state=="crouch_blockstun" else 0,UfeInputFrame.GUARD)
 	# 受身使用已有GUARD规则，不直接改状态或无敌。每次击飞只掷一次，
 	# 上升期及难度反应窗内不提前输入；hitstop中保持已作出的选择。
 	if f.state=="launch":
@@ -129,3 +139,24 @@ func decide(sim: UfeMatchDirector,seen: Dictionary) -> UfeInputFrame:
 		return tap(UfeInputFrame.LIGHT if choice<45 else UfeInputFrame.HEAVY if choice<85 else UfeInputFrame.CRUSH,0,-1 if choice>=85 else 0)
 	if gap<430 and roll()<18:note("projectile");return tap(UfeInputFrame.RANGED)
 	note("approach");travel_x=direction;return emit(travel_x)
+
+func guard_counter_input(f: UfeFighter) -> UfeInputFrame:
+	# 仅在真实格挡硬直内反击，不把普通站防当作已经挡住攻击。
+	if f.state not in ["blockstun","crouch_blockstun"] or not f.move_id.is_empty():
+		counter_age=-1;counter_state="";counter_decided=false;counter_allowed=false
+		return null
+	if f.state!=counter_state or f.state_tick<counter_age:
+		counter_decided=false;counter_allowed=false
+	counter_state=f.state;counter_age=f.state_tick
+	if f.state_tick<maxi(3,int(LEVELS[difficulty].delay)/2):return null
+	if not counter_decided:
+		counter_decided=true
+		var move: Dictionary=f.definition.moves.get("guard_counter",{})
+		# 以本人现装指令和费用为准，不能给缺动作或不支持蹲防反击者补造能力。
+		var available:=f.definition.command_table.any(func(entry):return str(entry.move)=="guard_counter" and (f.state in entry.states or "*" in entry.states) and int(entry.buttons)==UfeInputFrame.HEAVY and entry.directions.any(func(d):return int(d) in [0,6]) and entry.motion.is_empty() and int(f.stats.energy)>=int(entry.get("min_energy",0)))
+		if move.is_empty() or not available or int(f.stats.energy)<int(move.get("energy_cost",1000)):return null
+		counter_allowed=roll()<int(LEVELS[difficulty].counter)
+		if counter_allowed:note("guard_counter")
+	if not counter_allowed:return null
+	queue.clear()
+	return emit(f.facing,0,UfeInputFrame.GUARD|UfeInputFrame.HEAVY)

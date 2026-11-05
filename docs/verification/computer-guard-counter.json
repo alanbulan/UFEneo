@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-05",
+  "scope": "电脑真实格挡硬直内的主动防御反击决策",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "behavior": [
+    "新增明确防反策略：easy/normal/hard在真实格挡硬直11/6/3帧后，按20/45/70%单次概率发前+重击+防御。",
+    "按本人现装guard_counter动作、command_table支持状态/方向/按钮/最小能量及招式费用判断，不给缺失招式或未开放蹲防反击者添加能力。",
+    "等待、抽签失败或能力不足时清除残留队列并只保持站/蹲防，禁止普通对空等攻击策略旁路触发防反。",
+    "普通站防保留既有策略；此前普通策略可能偶发防反，本轮不是宣称首次具备所有防反输入。",
+    "不改core、角色素材、动作参数、指纹或回放格式。真实模拟负责扣费、起手、命中和反制空间。"
+  ],
+  "tests": [
+    {
+      "name": "computer_ai",
+      "status": "passed",
+      "exit": 0,
+      "log": "reports/verification/runs/ff3c16819c4c/computer_ai.log",
+      "sha256": "ea3a7d57c7acfe92b02700d5de335cee86037ea8ea637e900520ecbf26ca6afd"
+    },
+    {
+      "name": "logic_2d",
+      "status": "passed",
+      "exit": 0,
+      "log": "reports/verification/runs/ff3c16819c4c/logic_2d.log",
+      "sha256": "1731798ba17eab419e2bad3db5ae5adbca0b834ad8b19a46955e107c9a67e413"
+    },
+    {
+      "name": "phase3_reaction",
+      "status": "passed",
+      "exit": 0,
+      "log": "reports/verification/runs/ff3c16819c4c/phase3_reaction.log",
+      "sha256": "b2f4e91083a53169197ebd994a1c36cab181fb3cc789a2311a5f5563acae9c44"
+    }
+  ],
+  "coverage": [
+    "相同100种子下三档防反率递增且都有成功/失败；反应窗口前不抽签，hitstop不重抽，连续格挡重置。",
+    "等待/失败时残留前重击队列与近距离空中目标不能旁路发反击。",
+    "不足能量、缺动作、缺指令、未支持状态及command.min_energy门槛。",
+    "左右真实重击被格挡后，电脑前+重击进入guard_counter，实际扣除1000能量并命中对手。",
+    "双向100tick实际输入存盘加载，在无AI参与的独立模拟中重放hash一致。",
+    "既有三档电脑确定性、空中受身、反应动作与逻辑回归。"
+  ],
+  "development_fixes": [
+    "初测发现JSON方向数字是float，能力检查改用与解析器相同的int规范化，并支持通配方向/状态。",
+    "独立审阅发现旧普通攻击策略可绕过新防反概率，已隔离格挡硬直的失败/等待输入。",
+    "实际成功用例使用首抽成功的固定种子6；概率失败另由100种子矩阵覆盖，不改变概率来强保用例。"
+  ],
+  "limits": [
+    "未在目标Godot4.7验证。",
+    "本轮只做无头逻辑测试，未验双向720/1080人物画面、真人输入或听感，无录屏。",
+    "概率与反应帧为本轮初始设定，尚未真人对战平衡验收。"
+  ]
+}

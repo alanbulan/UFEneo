@@ -4,6 +4,7 @@ func require(value: bool,message: String) -> void:
 	if not value:push_error(message);quit(1)
 func run() -> void:
 	test_air_recovery()
+	test_guard_counter()
 	var a:=UfeContentDatabase.match_for();var b:=UfeContentDatabase.match_for()
 	var ai:=UfeComputerController.new(301,"hard",1);var copy:=UfeComputerController.new(301,"hard",1)
 	var player:=UfeComputerController.new(917,"normal",0)
@@ -138,4 +139,87 @@ func recovery_match(facing: int) -> UfeMatchDirector:
 	sim.fighters[0].x=650 if facing==1 else 725
 	sim.fighters[1].x=725 if facing==1 else 650
 	sim.fighters[0].facing=facing;sim.fighters[1].facing=-facing
+	return sim
+
+func test_guard_counter() -> void:
+	var rates: Array=[]
+	for level in ["easy","normal","hard"]:
+		var sim:=UfeContentDatabase.match_for("ultraman","ultraman")
+		var f:=sim.fighters[1]
+		var successes:=0
+		for seed in range(1,101):
+			var ai:=UfeComputerController.new(seed,level,1)
+			f.enter("blockstun",30);f.stats.energy=1000
+			f.state_tick=maxi(3,int(UfeComputerController.LEVELS[level].delay)/2)-1
+			var before:=ai.rng
+			require(ai.guard_counter_input(f)==null and ai.rng==before,"防反反应时限前不能抽概率或发输入")
+			ai.queue=[[1,0,UfeInputFrame.HEAVY]]
+			var waiting:=ai.decide(sim,{"x":f.x+f.facing*70,"height":50,"move":"heavy","move_start":1,"level":"mid","threat":true})
+			require(waiting.buttons==UfeInputFrame.GUARD and ai.queue.is_empty() and ai.rng==before,"防反等待窗口不能被残留攻击旁路")
+			f.state_tick+=1
+			var chosen:=ai.guard_counter_input(f)
+			var decided:=ai.rng
+			if chosen==null:
+				ai.queue=[[1,0,UfeInputFrame.HEAVY]]
+				var fallback:=ai.decide(sim,{"x":f.x+f.facing*70,"height":50,"move":"heavy","move_start":1,"level":"mid","threat":true})
+				require(fallback.buttons==UfeInputFrame.GUARD and ai.queue.is_empty(),"防反失败不得通过旧前重击队列或普通策略旁路触发")
+			if chosen!=null:
+				successes+=1
+				require(chosen.x==f.facing and chosen.held(UfeInputFrame.HEAVY|UfeInputFrame.GUARD),"防反必须输出前+重击并保留GUARD")
+			for tick in range(10):
+				var repeated:=ai.guard_counter_input(f)
+				require(ai.rng==decided and (repeated==null)==(chosen==null),"格挡停顿中不能重掷防反概率")
+			f.state_tick=0;ai.guard_counter_input(f)
+			require(not ai.counter_decided,"连续格挡新硬直应清除旧决定")
+			f.enter("guard");require(ai.guard_counter_input(f)==null and not ai.counter_decided,"普通站防不能凭空防反")
+		rates.append(successes)
+		require(successes>0 and successes<100,"各档防反须有成功与失败")
+	require(rates[0]<rates[1] and rates[1]<rates[2],"防反概率随难度递增")
+	for variant in ["poor","missing_move","missing_command","wrong_state","command_energy"]:
+		var sim:=UfeContentDatabase.match_for("ultraman","ultraman")
+		var f:=sim.fighters[1]
+		f.enter("crouch_blockstun" if variant=="wrong_state" else "blockstun",30);f.state_tick=25;f.stats.energy=999 if variant=="poor" else 1000
+		if variant=="missing_move":f.definition.moves.erase("guard_counter")
+		if variant=="command_energy":
+			for entry in f.definition.command_table:
+				if entry.move=="guard_counter":entry.min_energy=2000
+		if variant=="missing_command":f.definition.command_table=f.definition.command_table.filter(func(e):return e.move!="guard_counter")
+		var ai:=UfeComputerController.new(6,"hard",1)
+		var before:=ai.rng
+		require(ai.guard_counter_input(f)==null and ai.rng==before,"不满足本人真实费用/动作/指令状态时不能发防反："+variant)
+	for facing in [-1,1]:
+		var sim:=counter_match(facing);var replay_sim:=counter_match(facing)
+		var ai:=UfeComputerController.new(6,"hard",1)
+		var record:=UfeReplayRecorder.new()
+		var blocked:=false;var countered:=false;var hit:=false;var paid:=false
+		for tick in range(100):
+			var first:=UfeInputFrame.make(0,0,UfeInputFrame.HEAVY) if tick==0 else UfeInputFrame.make()
+			var second:=UfeInputFrame.make(0,0,UfeInputFrame.GUARD)
+			if sim.fighters[1].state=="blockstun":
+				var before:=sim.state_hash()
+				second=ai.sample(sim)
+				require(before==sim.state_hash() and ai.sample(sim).pack()==second.pack(),"防反取样只读且同tick一致")
+			var old_energy:=int(sim.fighters[1].stats.energy)
+			var old_move:=sim.fighters[1].move_id
+			var pair: Array=[first,second];sim.step(pair);record.append(pair,sim)
+			blocked=blocked or sim.fighters[1].state=="blockstun"
+			if old_move!="guard_counter" and sim.fighters[1].move_id=="guard_counter":
+				countered=true;paid=int(sim.fighters[1].stats.energy)==old_energy-1000
+			for event in sim.events:
+				if event.kind=="hit" and event.player==1 and event.move=="guard_counter":hit=true
+		require(blocked and countered and paid and hit,"双向真实重击格挡后须付一格并以已有反击命中对手：%s"%str([facing,blocked,countered,paid,hit]))
+		var path:="user://ai-counter-%d.json"%facing;record.save_file(path)
+		var loaded:=UfeReplayRecorder.load_file(path,sim.content_fingerprint)
+		require(loaded!=null,"防反回放应正常加载")
+		if loaded!=null:
+			for pair in loaded.frames:replay_sim.step([UfeInputFrame.unpack(pair[0]),UfeInputFrame.unpack(pair[1])])
+			require(replay_sim.state_hash()==sim.state_hash(),"防反独立原输入回放一致")
+	print("电脑防反：三档概率/延迟、本人动作与费用门槛、双向真实格挡反击命中及回放通过")
+
+func counter_match(facing: int) -> UfeMatchDirector:
+	var sim:=UfeContentDatabase.match_for("ultraman","ultraman")
+	sim.fighters[0].x=650 if facing==1 else 720
+	sim.fighters[1].x=720 if facing==1 else 650
+	sim.fighters[0].facing=facing;sim.fighters[1].facing=-facing
+	sim.fighters[1].stats.energy=1000
 	return sim
