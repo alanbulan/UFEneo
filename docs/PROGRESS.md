@@ -4,7 +4,7 @@
 
 ## 当前成果与证据索引
 
-- 杰顿低蹲硬直两整源已按共同尺度注册为RAM候选：仅新Alpha44/42条受击框与同名clip替换，原4/6比例及正式规则不变。八例180tick真实低/中防、overhead受击、松蹲双向独立回放通过；含hitstop实测两相8/7tick。主游戏headless与图形尚待，大幅后震、近乎回正及后脚缘差保留，不安装。[阶段证据](verification/zetton-crouch-block-session-resume.json)
+- 杰顿低蹲硬直两整源已按共同尺度注册为RAM候选：仅新Alpha44/42条受击框与同名clip替换，原4/6比例及正式规则不变。八例180tick真实低/中防、overhead受击、松蹲双向独立回放通过；含hitstop实测两相8/7tick。正式主游戏16组headless及8对独立回放亦通过，32组图形已交验；大幅后震、近乎回正及后脚缘差保留，不安装。[阶段证据](verification/zetton-crouch-block-session-resume.json)
 
 - 杰顿低蹲硬直第二相回缓方向成立：同尺脸灯由后震x99.64回x145.84，几乎回到原保持x145.27而非半程；两相低髋/深折支撑保留，原后脚缘差仍在。可仅RAM试排原4/6节拍，大幅后震与回正速度需实际画面，不安装。原字节/完整prompt与未知元数据已存。[第二相与试排边界](../art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-01-review.json)
 
