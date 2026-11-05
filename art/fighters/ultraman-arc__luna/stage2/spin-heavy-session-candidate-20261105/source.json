@@ -207,6 +207,31 @@
       "quality": null,
       "usage": null,
       "cost": null
+    },
+    {
+      "id": "entry-attempt-01",
+      "origin": "父会话提供reports/luna-spin-entry.png并声明内置image_gen；本接续仅保存原字节和审阅，无再次生成。",
+      "raw_file": "entry-attempt-01.raw.png",
+      "input_file": "reports/luna-spin-entry.png",
+      "raw_sha256": "51f5607f929546b2e1dc33192674302564b716acae71b9887c56258726a4b252",
+      "prompt": "Create one whole-body 2D arcade pixel-art transition frame of the exact Luna Armor Ultraman Arc between reference 1's two-footed guard and reference 2's turning knee-chamber pose, fixed side view facing right. It is an EARLY weight-shift, not the high chamber yet: keep the foot that supports reference 2 grounded on the same pivot, its heel only beginning to rise, while the other foot slides inward naturally and lifts only a little as its knee starts bending. Hips remain between the two end positions, shoulder and chest start rotating toward reference 2 without suddenly adopting its final turn. Both arms bend to protect head and chest; preserve which wrist belongs to which arm. Use exact character identity, blue armor and chest light, two wrist discs, silver crest, yellow eye and red/silver limbs. Natural coherent bone lengths, exactly two arms/two legs, all crest/fists/feet fully visible with margin. The motion is a grounded pivot, no jumping, no horizontal kick or unknown rear armor. Genuine transparent background, no ground, shadow, glow, text, arrows or other objects. Crisp consistent pixel-art.",
+      "prompt_source": "父会话本次委托逐字原提示词，未直接读取生成日志。",
+      "references": [
+        {
+          "path": "art/fighters/ultraman-arc__luna/model/clean-model-source.png",
+          "sha256": "f07ca34c959008bb1104af55a9d6c5c6a8e7b2d57c510a13cf8c2ed2c2bc4ddf"
+        },
+        {
+          "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/turn-chamber-attempt-03.raw.png",
+          "sha256": "419811794ebc8bd7c3e5ddbb6bb989ed82b6999f1e5f06d29730eec367cd54d3"
+        }
+      ],
+      "reference_note": "实际参考1是clean-model，不是实际运行idle phase00。提示词称two-footed guard，记录实际参考不改写历史请求。",
+      "transparent_background": true,
+      "model": null,
+      "quality": null,
+      "usage": null,
+      "cost": null
     }
   ],
   "limits": "原字节与各次独立来源保留；本接续者仅实际生成第二版，第一/三版由父会话提供。透明请求不等于干净Alpha；未知model/high/usage/费用不猜测，无新增收费客户端请求。",
