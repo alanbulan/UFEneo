@@ -185,5 +185,51 @@
     "首跑修复JSON浮点与整数数组严格相等造成的测试断言；没有改实际命中规则来凑断言。",
     "新source收据只保留固定Forge模块SHA和版本，未提交本机解释器/安装路径。",
     "03/04是开发阶段合同；最终05重封后六组逻辑、主游戏原跑/独立回放均重新通过。"
-  ]
+  ],
+  "capture_pipeline_fix": {
+    "reason": [
+      "实际云桌面曾将CLI窗口尺寸改成1180×812，旧输出不能冒充原生720/1080。",
+      "旧deferred截图可能跨多个physics tick，出现不同相位PNG重复；不能只重命名图片或改报告。"
+    ],
+    "changes": [
+      "新增--window-size显式窗口尺寸，主游戏_ready后禁用处理，在tick0等待窗口/根viewport连续8帧且500ms达到指定尺寸；5秒未达则记录实际观测并退出。",
+      "截图请求所在physics tick立即暂停physics，保存tick/相位/hash/图集区域；frame_post_draw后逐项核对且原生尺寸正确才保存PNG，随后恢复。",
+      "只改变审片入口，不改模拟规则或正式游戏；无头明确captured=false。"
+    ],
+    "contract": {
+      "path": "reports/luna-heavy-resume/contract-06.json",
+      "sha256": "4e520c9fb71770c264e308b7c5c71f78278ec436299fb7369b015d77216d89cd"
+    },
+    "logic": {
+      "path": "reports/luna-heavy-resume/logic-06.json",
+      "sha256": "02d3581eb86ef55c121788cdc432de76afcb4fd84525cec2c1d168e7cb945240"
+    },
+    "main": {
+      "path": "reports/luna-heavy-resume/main-headless-hit-06/main-trace.json",
+      "sha256": "cd7fa44ba4b74b8bb4c03ee980cabbb0cd77ae14d5494503b2b2d041e0cc9474"
+    },
+    "independent_replay": {
+      "path": "reports/luna-heavy-resume/main-headless-replay-06/main-trace.json",
+      "sha256": "cd7fa44ba4b74b8bb4c03ee980cabbb0cd77ae14d5494503b2b2d041e0cc9474"
+    },
+    "window_setup": {
+      "path": "reports/luna-heavy-resume/main-headless-hit-06/window-setup.json",
+      "sha256": "5e1d18a08590d78d8e2c6321a06f2b2facef9fee02f839af4dd3942a2c1a59c0"
+    },
+    "python_tests": {
+      "path": "reports/luna-heavy-resume/python-tests-window-gate.log",
+      "sha256": "83a335e19cd4139cdbfd7872149f2711af8ed1b26b8a608ed2a179463951d28e"
+    },
+    "headless_result": {
+      "cases": 6,
+      "errors": 0,
+      "main_ticks": 120,
+      "independent_replay_ticks": 120,
+      "window_setup_kept_tick_zero": true,
+      "screenshot_gate_requests_observed_same_tick": 9,
+      "every_tick_hash_equal_to_previous_05": true,
+      "actual_graphical_window_verified": false
+    },
+    "remaining": "需用06在真实云桌面重新验证720/1080及七相不同画面；05输出保留问题证据，不回写。"
+  }
 }

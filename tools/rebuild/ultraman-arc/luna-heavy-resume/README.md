@@ -37,3 +37,9 @@ XDG_DATA_HOME="$PWD/reports/luna-heavy-resume/userdata" python tools/godot_lock.
 ```
 
 正式main入口同样传`--contract`和`--out`目录，另可传`--left`、`--kind=hit|block|whiff`；`--tape=<actual-input-tape.json>`进行独立主游戏回放。无头执行只证明主游戏装配/输入/逻辑，不产生或伪造窗口截图。图形执行须使用实际1280×720或1920×1080窗口，保存原尺寸PNG；不要将缩小截图写成720/1080验收。
+
+## 原生窗口与逐相截图门（2026-11-05补充）
+
+实际云桌面验收发现CLI分辨率曾被窗口布局改写，且旧deferred截图可能跨过多个physics tick，不能将旧输出当作相位/分辨率验收。新入口必须使用`--window-size=1280x720`或`--window-size=1920x1080`（默认720）；在主游戏_ready后冻结模拟，显式请求无边框窗口，等待窗口和根viewport至少连续8帧且500ms保持目标尺寸。5秒内未达到就写真实`window-setup.json`并在tick0退出，不重标尺寸。
+
+每次需截图的physics tick立即停止后续physics，记录tick/相位/状态hash/图集区域；等待frame_post_draw后核对这些值未改变，才保存原尺寸PNG并恢复推进。图像仍需实际目视，不把程序相位检查当美术通过。无头入口只检查冻结门和输入/回放，截图明确captured=false。修改入口后必须重封新合同，旧05输出保持原样作为问题证据。
