@@ -26,3 +26,11 @@
 整图归一后，三相本人身份、全身轮廓与抬跟仍可读，支撑股胫比例接近；没有据此判整体比例失败。收膝→屈膝展开→近伸腿提供有用分段。展开脚尖上翘→接触下压可解释为伸膝伴随绷踝，不单凭脚向变化强制否决或补图。
 
 但蓄势的攻击膝在身体左侧，展开转到右侧，肩胸也变角；没有足够的全身路径证据证明同一方向转髋。接触后同向随势、收膝、落脚回架也未建立。故本轮只止于几何诊断，不用旧侧踢、倒放或停帧拼出完整招式去跑真实输入回放。后续若必须展示大面积背甲，仍须可靠本人参考，不能猜造。
+
+## 转髋中相增量v2
+
+`plan-turn-v2.json`在原三相之间加入turn_mid。新相支撑髋被抬腿遮挡，只保存不可精确定位区域，不取区域中心当髋点，也不计算其股长。其整图比例改用可辨膝→踝投影尺，归一到旧三相已归一胫长中位数41.186；这是一把可比较的尺，不是四相真实骨长已精确校准。
+
+    python tools/rebuild/ultraman-arc/luna-spin-heavy-geometry/geometry.py --plan tools/rebuild/ultraman-arc/luna-spin-heavy-geometry/plan-turn-v2.json --out reports/luna-spin-turn-new-review
+
+旧三相采样比例、平移与像素保持不变。四相攻击膝投影x约121→160→189→195，新增相确实提供跨身分段；对齐结果只诊断横向序列，不证明身体骨盆中线或完整3D转向。当前四相仍缺接触后的随势、收膝、落脚回架，没有进入Godot输入/回放，也未安装。详见`docs/verification/luna-spin-heavy-turn-mid-candidate-review.json`。

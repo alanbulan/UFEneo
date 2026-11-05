@@ -1,0 +1,482 @@
+{
+  "date_utc": "2026-11-05",
+  "action": "spin_heavy",
+  "status": "新相补上有用跨身收膝分段；四相同尺诊断完成，完整招式未验收",
+  "source": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/turn-mid-attempt-01.raw.png",
+    "sha256": "5ef4cb93565dc1cab494ca262519e31a05610ac8bb3e03955c14c4dff17354e3",
+    "metadata": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/source.json"
+  },
+  "size": [
+    1199,
+    1312
+  ],
+  "mode": "RGBA",
+  "alpha": {
+    "min_max": [
+      0,
+      255
+    ],
+    "zero_pixels": 1192419,
+    "full255_pixels": 144,
+    "intermediate_pixels": 380525,
+    "threshold_bboxes": {
+      "1": [
+        0,
+        9,
+        1175,
+        1312
+      ],
+      "16": [
+        253,
+        50,
+        873,
+        1229
+      ],
+      "64": [
+        253,
+        51,
+        873,
+        1229
+      ],
+      "128": [
+        253,
+        51,
+        873,
+        1228
+      ],
+      "200": [
+        254,
+        51,
+        872,
+        1228
+      ],
+      "254": [
+        261,
+        133,
+        848,
+        1228
+      ]
+    },
+    "finding": "真实透明且Alpha>=16主体完整留白；低Alpha噪点触左/下画布，边缘仍有杂点。未见蓄势第三版的大片光晕。诊断图是离线Alpha128，不反称原源干净。"
+  },
+  "identity_and_body": "月亮银白后掠头冠、黄眼、蓝青胸肩甲/圆灯、双腕圆甲和红银腿保持。两臂两拳、两腿两鞋与头冠完整，无明显第三腿或裁切；没有新增未知大背甲。",
+  "leg_identity_and_midline": "攻击膝已到身体前方偏右投影，小腿回折跨过支撑腿前方，仍是高收膝未提前伸腿，确有跨身分段价值。可以辨认抬腿与承重腿的连接，未据屏幕左右换名。但髋区遮挡使解剖左右与骨盆中心无法严格点定，不把正好在前掌上方说成正好穿过骨盆真实中线。",
+  "support": "支撑膝微屈、脚跟明显抬高、前掌最低，原图可见。前掌ROI按Alpha取锚，整图平移，不局部挪脚；强制锚重合不证明实游不滑步。",
+  "geometry_method": {
+    "new_source_support_knee": [
+      750,
+      864
+    ],
+    "new_source_support_ankle": [
+      634,
+      1121
+    ],
+    "uncertainty_source_pixels": 18,
+    "occluded_support_hip_region": [
+      565,
+      610,
+      640,
+      690
+    ],
+    "occluded_region_use": "只记录不可定位范围，不取中点，不计算本相股骨或总腿长。",
+    "ruler": "新相可辨支撑胫骨投影长度归一到旧三相已归一胫长中位数41.186，完整图共享一个比例；旧三相依原方案保持不变。",
+    "scale": 0.1460670957233465,
+    "limitation": "参考骨尺为人工投影诊断，含透视与甲遮挡；不能签真实骨长精校准或严格头形比例。"
+  },
+  "continuity": {
+    "projected_attack_knee_x": [
+      121.278,
+      160.439,
+      188.644,
+      194.591
+    ],
+    "finding": "原约67像素跨身端点差被新相拆成约39与28像素两个横向段，膝路从左→前掌附近→右侧更清楚，不能继续笼统说没有任何跨身相。差值来自人工尺与锚，不是实速位移速度或自动接受门。",
+    "upper_body": "新相胸肩较展开版接近，头身未见明显整体突变；蓄势→新相护拳/肩带转位仍需时序观察，不靠静帧认定同向旋转已经连续。",
+    "remaining": "展开→接触的绷踝可解释但未实速验证；接触后同向随势、收腿、落脚回架仍缺，四相不能替完整招式。"
+  },
+  "portable_recipe": {
+    "geometry.py": {
+      "path": "tools/rebuild/ultraman-arc/luna-spin-heavy-geometry/geometry.py",
+      "sha256": "38fb6a8cd7b96c7d20cd2969764045e5eb2207360f568fb3dd6537ea63d42f94"
+    },
+    "plan-turn-v2.json": {
+      "path": "tools/rebuild/ultraman-arc/luna-spin-heavy-geometry/plan-turn-v2.json",
+      "sha256": "97aff947fb9b62bb1808bf3201fa07a6a8368b0e713cde64cec245c6a61c77b3"
+    },
+    "test_geometry.py": {
+      "path": "tools/rebuild/ultraman-arc/luna-spin-heavy-geometry/test_geometry.py",
+      "sha256": "e8f44c2e07c39d4108a72c31157231de836dc146b0aa48befb1f94d275e3af48"
+    },
+    "README.md": {
+      "path": "tools/rebuild/ultraman-arc/luna-spin-heavy-geometry/README.md",
+      "sha256": "1034d5ed3e585aebdb56bf7994a2f7cb647eb98d06a7fd598966d83e338ffdf4"
+    }
+  },
+  "geometry": {
+    "schema": "ufeneo.luna.spin-geometry-result.v1",
+    "plan_sha256": "97aff947fb9b62bb1808bf3201fa07a6a8368b0e713cde64cec245c6a61c77b3",
+    "backend": {
+      "backend": "agent-sprite-forge",
+      "numpy": "2.3.5",
+      "palette_distance": "rgb",
+      "grid": "clean integer only",
+      "files": {
+        "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+        "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+        "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+      }
+    },
+    "frames": [
+      {
+        "key": "chamber",
+        "source": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/turn-chamber-attempt-03.raw.png",
+        "source_sha256": "419811794ebc8bd7c3e5ddbb6bb989ed82b6999f1e5f06d29730eec367cd54d3",
+        "source_size": [
+          1024,
+          1536
+        ],
+        "uniform_scale": 0.12159248977538938,
+        "sample_size": [
+          125,
+          187
+        ],
+        "raster_scale": [
+          0.1220703125,
+          0.12174479166666667
+        ],
+        "raster_rounding_anisotropy": 0.002677145882403133,
+        "scale_ruler": "support_leg_sum",
+        "ruler_target_by_construction": 77.72536894246682,
+        "projected_bone_lengths": {
+          "support_thigh": 36.829,
+          "support_shin": 40.896,
+          "attack_thigh": 29.865,
+          "attack_shin": 28.147
+        },
+        "joint_length_uncertainty_native": 4.377329631914018,
+        "projected_attack_knee_angle_deg": 61.249601789535774,
+        "attack_ankle_to_toe_angle_deg": 106.99082329198617,
+        "source_support_anchor": [
+          609.8710801393728,
+          1414
+        ],
+        "whole_image_translation": [
+          86,
+          108
+        ],
+        "canvas": [
+          320,
+          320
+        ],
+        "alpha_bbox": [
+          108,
+          116,
+          189,
+          280
+        ],
+        "visible_pixels": 5571,
+        "whole_source_preserved_no_crop": true,
+        "native_landmarks": {
+          "support_hip": [
+            151.918,
+            197.726
+          ],
+          "support_knee": [
+            172.06,
+            228.649
+          ],
+          "support_ankle": [
+            154.237,
+            265.538
+          ],
+          "attack_hip": [
+            150.819,
+            191.76
+          ],
+          "attack_knee": [
+            121.278,
+            186.647
+          ],
+          "attack_ankle": [
+            130.434,
+            213.309
+          ],
+          "attack_toe": [
+            126.405,
+            226.458
+          ]
+        },
+        "frame_sha256": "23881ae1330e9b3cfde37bdb0af44fb2a8ea9c1f48d03fdecf446f3adba1167b"
+      },
+      {
+        "key": "turn_mid",
+        "source": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/turn-mid-attempt-01.raw.png",
+        "source_sha256": "5ef4cb93565dc1cab494ca262519e31a05610ac8bb3e03955c14c4dff17354e3",
+        "source_size": [
+          1199,
+          1312
+        ],
+        "uniform_scale": 0.1460670957233465,
+        "sample_size": [
+          175,
+          192
+        ],
+        "raster_scale": [
+          0.14595496246872394,
+          0.14634146341463414
+        ],
+        "raster_rounding_anisotropy": 0.0026460507343983516,
+        "scale_ruler": "support_shin",
+        "ruler_target_by_construction": 41.186,
+        "projected_bone_lengths": {
+          "support_thigh": null,
+          "support_shin": 41.186,
+          "attack_thigh": null,
+          "attack_shin": 33.299
+        },
+        "joint_length_uncertainty_native": 5.258415446040474,
+        "projected_attack_knee_angle_deg": null,
+        "attack_ankle_to_toe_angle_deg": 105.54980416970159,
+        "source_support_anchor": [
+          692.8619718309859,
+          1228
+        ],
+        "whole_image_translation": [
+          59,
+          100
+        ],
+        "canvas": [
+          320,
+          320
+        ],
+        "alpha_bbox": [
+          96,
+          108,
+          187,
+          280
+        ],
+        "visible_pixels": 5930,
+        "whole_source_preserved_no_crop": true,
+        "native_landmarks": {
+          "support_knee": [
+            168.466,
+            226.439
+          ],
+          "support_ankle": [
+            151.535,
+            264.049
+          ],
+          "attack_knee": [
+            160.439,
+            185.317
+          ],
+          "attack_ankle": [
+            135.772,
+            207.707
+          ],
+          "attack_toe": [
+            131.102,
+            224.537
+          ]
+        },
+        "frame_sha256": "b1fa13c5581fc97daf898fcf4b7849f934e61c5b5e6d4241958d36ee3c359964"
+      },
+      {
+        "key": "unfold",
+        "source": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/unfold-attempt-01.raw.png",
+        "source_sha256": "47dcbc087217c985807fcf5f6d168f28fed98d1a035172647e936d7a95ec1fe9",
+        "source_size": [
+          1278,
+          1230
+        ],
+        "uniform_scale": 0.15887196627941083,
+        "sample_size": [
+          203,
+          195
+        ],
+        "raster_scale": [
+          0.15884194053208137,
+          0.15853658536585366
+        ],
+        "raster_rounding_anisotropy": 0.0019220204380845398,
+        "scale_ruler": "support_leg_sum",
+        "ruler_target_by_construction": 77.72536894246682,
+        "projected_bone_lengths": {
+          "support_thigh": 36.54,
+          "support_shin": 41.186,
+          "attack_thigh": 36.777,
+          "attack_shin": 31.807
+        },
+        "joint_length_uncertainty_native": 5.71939078605879,
+        "projected_attack_knee_angle_deg": 124.62618976733648,
+        "attack_ankle_to_toe_angle_deg": -26.81634684428694,
+        "source_support_anchor": [
+          609.3860465116279,
+          1138
+        ],
+        "whole_image_translation": [
+          63,
+          100
+        ],
+        "canvas": [
+          320,
+          320
+        ],
+        "alpha_bbox": [
+          99,
+          108,
+          230,
+          281
+        ],
+        "visible_pixels": 6136,
+        "whole_source_preserved_no_crop": true,
+        "native_landmarks": {
+          "support_hip": [
+            157.67,
+            192.744
+          ],
+          "support_knee": [
+            172.919,
+            225.878
+          ],
+          "support_ankle": [
+            152.746,
+            261.707
+          ],
+          "attack_hip": [
+            153.858,
+            187.829
+          ],
+          "attack_knee": [
+            188.644,
+            175.939
+          ],
+          "attack_ankle": [
+            214.218,
+            194.805
+          ],
+          "attack_toe": [
+            228.672,
+            187.512
+          ]
+        },
+        "frame_sha256": "18c91c52b7eece935f1d10c45c181217f25e6f467409d4d37c53591ffaa82203"
+      },
+      {
+        "key": "contact",
+        "source": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/contact-attempt-01.raw.png",
+        "source_sha256": "ebf2e309235a0996ddfd07a6ed6685004075bfceaa70d37b9ebf5887d84e7e90",
+        "source_size": [
+          1312,
+          1199
+        ],
+        "uniform_scale": 0.1492922649863139,
+        "sample_size": [
+          196,
+          179
+        ],
+        "raster_scale": [
+          0.14939024390243902,
+          0.14929107589658047
+        ],
+        "raster_rounding_anisotropy": 0.0006642541451671157,
+        "scale_ruler": "support_leg_sum",
+        "ruler_target_by_construction": 77.72536894246682,
+        "projected_bone_lengths": {
+          "support_thigh": 36.295,
+          "support_shin": 41.43,
+          "attack_thigh": 41.307,
+          "attack_shin": 35.995
+        },
+        "joint_length_uncertainty_native": 5.374521539507301,
+        "projected_attack_knee_angle_deg": 168.97608419379512,
+        "attack_ankle_to_toe_angle_deg": 24.160915123324298,
+        "source_support_anchor": [
+          600.9659442724458,
+          1131
+        ],
+        "whole_image_translation": [
+          70,
+          111
+        ],
+        "canvas": [
+          320,
+          320
+        ],
+        "alpha_bbox": [
+          87,
+          115,
+          249,
+          280
+        ],
+        "visible_pixels": 6465,
+        "whole_source_preserved_no_crop": true,
+        "native_landmarks": {
+          "support_hip": [
+            156.646,
+            197.141
+          ],
+          "support_knee": [
+            174.424,
+            228.791
+          ],
+          "support_ankle": [
+            152.613,
+            264.023
+          ],
+          "attack_hip": [
+            153.808,
+            190.274
+          ],
+          "attack_knee": [
+            194.591,
+            183.555
+          ],
+          "attack_ankle": [
+            230.595,
+            184.601
+          ],
+          "attack_toe": [
+            246.579,
+            191.766
+          ]
+        },
+        "frame_sha256": "7708b2b5f2ee3afe89a8ff86049bab93fa90b36e3eb18ef0b8537f37192b6502"
+      }
+    ],
+    "installed": false,
+    "playable": false,
+    "runtime_candidate_accepted": false,
+    "physics_run": false,
+    "notes": [
+      "人工投影关节有误差与透视缩短，不作自动解剖硬门。",
+      "支撑股胫总长按构造归一，不把总长相等当独立验证；支撑点也是整图对齐的比较坐标，不证明实游无滑步。",
+      "仅现有关键相，没有idle入招、接触后随势/收腿/回架及合法完整时序，不合成攻击框或伪装成整招。"
+    ],
+    "atlas_sha256": "499860e539115202d00757de27f9cecfbd08dfc32392cf93a7e9caf64a32d363"
+  },
+  "review_images": {
+    "path": "reports/luna-spin-heavy-geometry-turn-v2/review-points.png",
+    "sha256": "fbbc9aa22d68c0bc819bbad8a72771e6d490939ea0c629abb456cdf6689c6ddd",
+    "atlas": "reports/luna-spin-heavy-geometry-turn-v2/atlas.png",
+    "atlas_sha256": "499860e539115202d00757de27f9cecfbd08dfc32392cf93a7e9caf64a32d363"
+  },
+  "validation": {
+    "repeat_build": "三相/四相均两次结果及逐像素一致",
+    "old_three_frames_unchanged_by_insertion": true,
+    "raw_sha_unchanged": true,
+    "alpha_binary_no_crop": true,
+    "raster_and_support_rounding": "栅格长宽舍入相差<1%，支撑末行误差≤1逻辑像素",
+    "python_compile": "通过",
+    "godot_run": false,
+    "real_input_replay": false
+  },
+  "independent_review": "独立审阅者实看新源，确认攻击膝跨身/收膝有效，指出支撑髋不可可靠标点；本轮据此不用猜测髋点算总腿长。",
+  "generation_performed_by_reviewer": false,
+  "installed": false,
+  "playable": false,
+  "art_passed": false,
+  "recording": false,
+  "next_step": "保留有效中相，后续要建立接触后随势/收腿/回架与整体时序；只在完整接续符合时进入真实输入和独立回放，不用倒放、旧侧踢或猜造背甲填链。"
+}
