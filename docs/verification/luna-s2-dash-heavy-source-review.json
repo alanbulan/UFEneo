@@ -1,0 +1,99 @@
+{
+  "date": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "authoritative_plan": {
+    "path": "REBUILD_2D_PLAN.md",
+    "sha256": "c47123e6d22d0d558a9790d8374409b82cb2c48fac1b59400d0c83ec0d7b1cca"
+  },
+  "current_move": {
+    "path": "content/fighters/ultraman-arc/moves/dash_heavy.json",
+    "sha256": "2ee5a643401412f430d90d9cb09f3712aedf46c73f5cfab1b073222f074070e3"
+  },
+  "finding": "现行计划2.5.5与正式数据均为冲刺飞踢；旧profiles膝击不覆盖当前方案。r001抬膝只作备用存在事实，不擅改招。",
+  "selected_sources": [
+    {
+      "phase": 0,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-00/request-002/raw.provider.png",
+        "sha256": "6ee36f82855fcd2ffa8e00a53fa1743f2ff3ba06d7312166eeee93dd394c045e"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-00/request-002/request-state.json",
+        "sha256": "465811fad86460c8b449300d5fd9dbcdcf16eddbc07358964dc23f5cd945e10e"
+      },
+      "original_status": "returned",
+      "original_review_reason": ""
+    },
+    {
+      "phase": 1,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-01/request-002/raw.provider.png",
+        "sha256": "24bbabe5b41e100378b8ad59dbfe109298bba87baac43f11d9f00a39e14f2758"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-01/request-002/request-state.json",
+        "sha256": "8fa96f614ba10aade61d59d8a59649b9e0104eafef33f9614c74fdf896da281b"
+      },
+      "original_status": "returned",
+      "original_review_reason": ""
+    },
+    {
+      "phase": 2,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-02/request-002/raw.provider.png",
+        "sha256": "9c22012e0d6e381a923f80ddd633b7b02c1c6d36c9d33a75d9d03471c7df524e"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-02/request-002/request-state.json",
+        "sha256": "f18a591b644994dabce380e763dda5d38faaafb2ede4462832fed940f606b42a"
+      },
+      "original_status": "returned",
+      "original_review_reason": ""
+    },
+    {
+      "phase": 3,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-03/request-002/raw.provider.png",
+        "sha256": "7cfacafe9286c565d270dca58a6c4c0162a2b93d5fd710bd6396385e5092d1fd"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-03/request-002/request-state.json",
+        "sha256": "805f42afaaaba171e11bcd87327bf1e53fa2b5b2d5ef458ce8b3588c36142d67"
+      },
+      "original_status": "returned_requires_review",
+      "original_review_reason": ""
+    },
+    {
+      "phase": 4,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-04/request-002/raw.provider.png",
+        "sha256": "8cc4c9115cb85ff42e00c21c32ece0eb14d022a8655207dc95b75cdf758c1d53"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-04/request-002/request-state.json",
+        "sha256": "2d2362c02f096eed4d121a6f5a87e81fa9f90e986483f3a3b773ddb1270950c6"
+      },
+      "original_status": "returned",
+      "original_review_reason": ""
+    },
+    {
+      "phase": 5,
+      "source": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-05/request-002/raw.provider.png",
+        "sha256": "8d8205af1fa70c1bd5c2eebcdee285859bf1fdb1196187bf1b3dad02c3063657"
+      },
+      "request_state": {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-05/request-002/request-state.json",
+        "sha256": "e5b2d24a8bf147f107dc655e6f7a1825cebce6328d2e1d9ff506d4abec625ab9"
+      },
+      "original_status": "returned",
+      "original_review_reason": ""
+    }
+  ],
+  "source_stability": "phase03/r002正常raw.png不存在是因为原状态从头指向rejected/raw.png。曾因basename误读提出变动疑问，已撤回；provider与隔离原图SHA均与request-state、HEAD LFS oid一致，无并发删除/回滚证据。",
+  "observed_motion": "r002抬腿蹬起→伸腿→2/3水平飞踢→4/5低身落地；03→04收腿缓冲与05→护架须实际图形检查。",
+  "processing": "同一159/1254完整源缩放、免费Alpha128净化；0/4/5脚底280，空中1–3整图保持y127，不逐相把空中脚拉地，不切肢。",
+  "rule_boundary": "原第1帧索引的velocity[0,4]、finish_on_landing、4/7/11总22tick及费用位移全保留，落地后须继续完成收势。",
+  "installed": false,
+  "playable": false
+}

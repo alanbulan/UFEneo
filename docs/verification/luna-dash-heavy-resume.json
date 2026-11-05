@@ -1,0 +1,202 @@
+{
+  "date": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "status": "正式冲刺飞踢六相候选注册、六案真实双击前接K及main独立回放通过；真实图形待核，未开放装甲。",
+  "source_review": {
+    "path": "docs/verification/luna-s2-dash-heavy-source-review.json",
+    "sha256": "3cf0489dbad747ecc34a30101a72df8e6f93ea7f5e3901fe4efce36c9a642389"
+  },
+  "manifest": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/dash_heavy-registered-20261105-v1/manifest.json",
+    "sha256": "2dc86d76a1f640f5caa041c65ae7cdddb3e51e5d63c5abb70b1760227a940892"
+  },
+  "registration_review": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/dash_heavy-registered-20261105-v1/registration-review.json",
+    "sha256": "1c18f2843d8b1a48ff7bc4f71ac5cf0d80c39e387872794eb707a38fff31abf7"
+  },
+  "contract": {
+    "path": "reports/luna-dash-heavy-resume/main-contract-v2.json",
+    "sha256": "94597b1c3bf8c09dbb5e5ebfb817a4cf09dbdfb8412604571b79d075aca893a5"
+  },
+  "python_tests": {
+    "path": "reports/luna-dash-heavy-resume/python-tests-v2.log",
+    "sha256": "986ed7e0721c4ba024d1c37a4f4116e078b81af36e3717dc05c659a39c1b386f"
+  },
+  "logic": {
+    "path": "reports/luna-dash-heavy-resume/logic-v2.json",
+    "sha256": "57a1af6ce015a1a5a95fa76c2d8c2e2ff7d776d07e7ecb5f7e27000e1f1d9f06"
+  },
+  "main": {
+    "path": "reports/luna-dash-heavy-resume/main-right-hit-v2/main-trace.json",
+    "sha256": "03d4067f223074ef7af4e56de2d6fbf4f74a2390c1378957885d7c221ddbb910"
+  },
+  "independent_replay": {
+    "path": "reports/luna-dash-heavy-resume/replay-right-hit-v2/main-trace.json",
+    "sha256": "03d4067f223074ef7af4e56de2d6fbf4f74a2390c1378957885d7c221ddbb910"
+  },
+  "original_input_tape": {
+    "path": "reports/luna-dash-heavy-resume/main-right-hit-v2/actual-input-tape.json",
+    "sha256": "0106a40d0b688c630eafc4ee254c963256e96b7d83a82aac2c4594df8212f2dd"
+  },
+  "results": {
+    "python_tests": 11,
+    "logic_cases": [
+      {
+        "contact_counts": {
+          "dash_heavy": 1
+        },
+        "contacts": {
+          "dash_heavy": "hit"
+        },
+        "damage": 65,
+        "direction": 1,
+        "final_hash": "f9cba24c5c32e9527af6b2c03c682f9c4ad09d3fb53f070604e4b993974f0f68",
+        "forward_displacement": 103,
+        "initial_gap": 140,
+        "kind": "hit",
+        "moves": [
+          "dash_heavy"
+        ],
+        "replay_errors": [],
+        "target_pushback": 8
+      },
+      {
+        "contact_counts": {
+          "dash_heavy": 1
+        },
+        "contacts": {
+          "dash_heavy": "block"
+        },
+        "damage": 0,
+        "direction": 1,
+        "final_hash": "d0bee3544bf818175641ed203bd1af333e61ffa0c53920bf4ef93a023a50bbc4",
+        "forward_displacement": 103,
+        "initial_gap": 140,
+        "kind": "block",
+        "moves": [
+          "dash_heavy"
+        ],
+        "replay_errors": [],
+        "target_pushback": 0
+      },
+      {
+        "contact_counts": {},
+        "contacts": {},
+        "damage": 0,
+        "direction": 1,
+        "final_hash": "a04a6a39d887e832673347aa911ce6defa91633e9c1c0cef9138d38c6e0ed365",
+        "forward_displacement": 103,
+        "initial_gap": 320,
+        "kind": "whiff",
+        "moves": [
+          "dash_heavy"
+        ],
+        "replay_errors": [],
+        "target_pushback": 0
+      },
+      {
+        "contact_counts": {
+          "dash_heavy": 1
+        },
+        "contacts": {
+          "dash_heavy": "hit"
+        },
+        "damage": 65,
+        "direction": -1,
+        "final_hash": "842e71e97cc0946892c39c879ff728e40fa54d0e2979927ea558607a703d1d52",
+        "forward_displacement": 103,
+        "initial_gap": 140,
+        "kind": "hit",
+        "moves": [
+          "dash_heavy"
+        ],
+        "replay_errors": [],
+        "target_pushback": 8
+      },
+      {
+        "contact_counts": {
+          "dash_heavy": 1
+        },
+        "contacts": {
+          "dash_heavy": "block"
+        },
+        "damage": 0,
+        "direction": -1,
+        "final_hash": "ad2a9c04e37a396f3a23607c1b17a581447c3c77e1e242bd768625a07c892d2c",
+        "forward_displacement": 103,
+        "initial_gap": 140,
+        "kind": "block",
+        "moves": [
+          "dash_heavy"
+        ],
+        "replay_errors": [],
+        "target_pushback": 0
+      },
+      {
+        "contact_counts": {},
+        "contacts": {},
+        "damage": 0,
+        "direction": -1,
+        "final_hash": "67c57ffabd91435db9638b4751f2fa544899cef2e3e75764113f69200f09930a",
+        "forward_displacement": 103,
+        "initial_gap": 320,
+        "kind": "whiff",
+        "moves": [
+          "dash_heavy"
+        ],
+        "replay_errors": [],
+        "target_pushback": 0
+      }
+    ],
+    "errors": 0,
+    "main_ticks": 120,
+    "replay_ticks": 120,
+    "every_tick_input_hash_equal": true,
+    "capture_gate_requests": 16,
+    "headless_captured": false,
+    "max_actual_height": 10,
+    "dash_phases": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "dash_heavy_phase_order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "actual_graphical_review": false
+  },
+  "actual_input": "tick20/22相对前双击，tick34单HEAVY；前移首步2+dash66+本招35=103，近距140/落空320，原velocity[0,4]产生峰值10，落地不截收势。",
+  "validation_history": [
+    {
+      "failed_contract": {
+        "path": "reports/luna-dash-heavy-resume/main-contract-v1.json",
+        "sha256": "87a5cf3d6f79f8e3f0d597df2e7251a7f816e66ba888f07e70c261fd7d5474c3"
+      },
+      "failed_logic": {
+        "path": "reports/luna-dash-heavy-resume/logic-v1.json",
+        "sha256": "d3220f4c1943bd481fd0000e39c2776a5e193fc5866f770055b99b5d97426baa"
+      },
+      "finding": "v1验证器误把前置dash相追加到攻击相顺序，六案因此报错；只修该一行归类，v2仍严格要求0→1→2→3→4→5，不改模拟/素材。"
+    }
+  ],
+  "transition_capture_ticks": {
+    "phase03_last": 50,
+    "phase04_first": 51,
+    "phase05_last": 61,
+    "recovered_guard_first": 62
+  },
+  "limits": [
+    "03伸腿→04低身落地及05→正式护架须实际720/1080双向重点审。",
+    "前置dash只验00–04，不冒称完整九相冲刺通过。",
+    "旧Alpha角点拒绝源免费净化但不回写历史状态；原始SHA/LFS oid一致。",
+    "完整S2/S2–S7、严格比例、本人声音、4.7与真人硬件未整体验收，无录屏。",
+    "正式core/content/assets和开放标志未改。"
+  ]
+}
