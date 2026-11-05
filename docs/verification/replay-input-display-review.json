@@ -1,5 +1,5 @@
 {
-  "status": "逻辑红绿通过，原生画面待验",
+  "status": "逻辑红绿及原生720/1080显示路径通过",
   "reviewer": "root_delegated_by_user",
   "problem": "F4播放只推进模拟，未同步训练输入图标和F1历史；成功加载还残留旧输入、上一招与拒招反馈，误导搓招复盘。",
   "fix": [
@@ -82,8 +82,9 @@
   "limitations": [
     "Godot4.6.3；项目4.7未验。",
     "通过Input.action_press、正式app physics、合成F4/Esc事件及真实按钮信号验收，不冒称物理键盘。",
-    "当前原生720/1080观察进行中，无录屏、音频或实速图形验收结论。",
+    "原生720/1080已独立观察1P D/J/K历史清理与重建，详见图形回执；无精确截图tick、录屏、音频或其它人物/2P输入验收。",
     "回放结束最终hash/暂停状态有检查；未新增暂停中间时段逐tick显示专项，不扩大声称覆盖。",
     "main_shutdown_reentrancy既有baseline-duplicate退出仍有ObjectDB泄漏警告，本次指定normal关闭无警告；未定位或修复旧泄漏。"
-  ]
+  ],
+  "graphical_receipt": "docs/verification/replay-input-display-graphical.json"
 }

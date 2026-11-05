@@ -4,7 +4,7 @@
 
 ## 当前成果与证据索引
 
-- 回放输入复盘：修复F4播放时训练图标/F1历史停在录制末尾，以及成功加载残留旧上一招/反馈。仅成功装配后清显示、每tick沿实际录像输入更新，坏文件拒绝保留显示；不改模拟或录像格式。既有回放测试同一红绿通过，三带字节不变、逐tick模拟hash保持；5项相关回归及normal关闭通过，原生画面待验。[回执](verification/replay-input-display-review.json)
+- 回放输入复盘：修复F4播放时训练图标/F1历史停在录制末尾，以及成功加载残留旧上一招/反馈。仅成功装配后清显示、每tick沿实际录像输入更新，坏文件拒绝保留显示；不改模拟或录像格式。既有回放测试同一红绿通过，三带字节不变、逐tick模拟hash保持；5项相关回归及normal关闭通过；720/1080原生1P D/J/K历史清理/重建已验，19图与实际两带输入核对，不冒称精确截图tick或2P验收。[逻辑回执](verification/replay-input-display-review.json)、[实际画面](verification/replay-input-display-graphical.json)
 
 - 屏障反射持续束：修复归属反转后误查新拥有者招式、下一tick清束的问题；初代真实Q→2H反杰克I，双向t43反射、t44回击65、t49原发射招中断撤束。6组150tick真实输入及独立回放通过，4组未反射束/普通火球对照旧hash保持；新增规则指纹，旧录像拒绝。导入及12项相关回归通过，四组720/1080双向48图实际反射/回击可辨；保留束超视口、白闪遮细节与t49撤束仅trace。图形为居中平移夹具，双反射/KO尾迹仅模型。未改素材/长度/寿命/速度或判定。[逻辑回执](verification/projectile-beam-reflection-review.json)、[实际画面](verification/projectile-beam-reflection-graphical.json)
 
@@ -42,7 +42,7 @@
 
 本轮实际引擎为Godot4.6.3，项目要求的4.7未验。镜头单元746项、相关pixel_ui/ui_facing/phase3_air及本批原输入/独立回放通过；不等于全项目全量或完整美术/声音通过。图形使用真实原生窗口与冻结tick截图，无录屏、无音频及真人硬件输入验收。月亮land→idle收脚、保守缩放、站/低防手位、三级必杀立绘遮普通world等限制仍在。
 
-2026-11-05 07:18 UTC已核验远端checkpoint/full-20261105-0020到10bd14fdb7ab3189aceea0410fd8b5cd89b31f77；远端main仍为99a084d8a03647d7c84546ba36cf0a4617f9c553。最新开发在checkpoint分支，不可只取main冒称最新。此前新增LFS已逐对象远端下载校验SHA/大小通过，GitHub已认证，不沿用早期限流/待登录结论。本次最终回执与文档另随后续检查点保存，以实际远端核验为准。
+2026-11-05 14:09 UTC已核验远端checkpoint/full-20261105-0020到41d3ebfc4847d0d9cf9bff82a70d443cb10e7033；远端main仍为99a084d8a03647d7c84546ba36cf0a4617f9c553。最新开发在checkpoint分支，不可只取main冒称最新。此前新增LFS已逐对象远端下载校验SHA/大小通过，GitHub已认证，不沿用早期限流/待登录结论。本次最终回执与文档另随后续检查点保存，以实际远端核验为准。
 
 ## 2026-11-03 历史清理交接记录
 
