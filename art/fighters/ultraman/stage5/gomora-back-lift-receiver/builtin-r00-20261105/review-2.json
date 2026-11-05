@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "source_sha256": "77cf296b1ab9fbe80a1a3a17badd1edd5375b1d3d74bd041afe0b3362c090ef0",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "alpha": {
+    "zero": 1295604,
+    "partial": 277260,
+    "opaque": 0,
+    "maximum": 254,
+    "below_16_nonzero": 38207
+  },
+  "alpha_findings": "原预览光晕多数来自alpha0区域RGB；真实合成未见宽光晕。主体常为253，无255不能单独判失败。低alpha残留仍保留，不抠图。",
+  "source_points": {
+    "pelvis": [
+      430,
+      855
+    ],
+    "pelvis_radius": 45,
+    "abdomen": [
+      600,
+      760
+    ],
+    "abdomen_range": [
+      [
+        510,
+        820
+      ],
+      [
+        555,
+        790
+      ],
+      [
+        600,
+        760
+      ]
+    ],
+    "head_length_approx": 185
+  },
+  "uniform_whole_size": [
+    146,
+    219
+  ],
+  "local_pelvis": [
+    61,
+    122
+  ],
+  "local_abdomen": [
+    86,
+    108
+  ],
+  "required_world_pelvis": [
+    206,
+    185
+  ],
+  "required_world_abdomen": [
+    241,
+    174
+  ],
+  "pairs": [
+    {
+      "kind": "pelvis_locked",
+      "paste": [
+        145,
+        63
+      ],
+      "pelvis_canvas": [
+        206,
+        185
+      ],
+      "abdomen_canvas": [
+        231,
+        171
+      ]
+    },
+    {
+      "kind": "abdomen_locked",
+      "paste": [
+        155,
+        66
+      ],
+      "pelvis_canvas": [
+        216,
+        188
+      ],
+      "abdomen_canvas": [
+        241,
+        174
+      ]
+    }
+  ],
+  "accepted": false,
+  "installed": false,
+  "geometry_result": "第二版前折和收腿有所增加；取最靠前上腹点仍约短10px，较下腹侧差距更大。误差足以影响剩余间隙，不能宣称数学上绝无解，也不能据名义接点签收。下垂腿与身侧重叠仍需处理。手工点有误差，不能靠移动整帧同时满足名义两点。",
+  "limits": [
+    "只读离线两向两层配对，不是主游戏截图。",
+    "头长和髋点是人工估计，未当精确骨点。",
+    "不局部变形、不切肢、不去背景、不安装。"
+  ]
+}
