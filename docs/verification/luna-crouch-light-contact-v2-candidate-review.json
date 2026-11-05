@@ -1,0 +1,295 @@
+{
+  "schema": "ufeneo.luna.crouch-light-contact-v2-review.v1",
+  "date_utc": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "本轮完成": [
+    "第二版原图字节与实际完整prompt/顺序参考/请求透明已保存，model/quality/usage/cost仍未知。",
+    "独立及父侧实看均确认近侧护拳、远侧出拳，纠正文字没有实现换正确肩臂链。",
+    "实际蹲架→v1→v2→实际蹲架四端点同后胫投影尺重复构建一致；旧三图同配方保持，不注册运行。"
+  ],
+  "怎么看": {
+    "source": {
+      "path": "art/fighters/ultraman-arc__luna/stage2/crouch-light-session-candidate-20261105/contact-attempt-02.source.json",
+      "sha256": "f375b47fd618fc30c3658884e3002a45974e250d0a81ffe7436c7e8f62372a10"
+    },
+    "raw": {
+      "path": "art/fighters/ultraman-arc__luna/stage2/crouch-light-session-candidate-20261105/contact-attempt-02.raw.png",
+      "sha256": "55526315b804426fbb5e67cf1f6f242c928e289162162b84378ff85a238b78f2"
+    },
+    "geometry_plan": {
+      "path": "tools/rebuild/ultraman-arc/luna-crouch-light-geometry/plan-v2.json",
+      "sha256": "008762761ce8c91cae3461c9844ee785285fd02e4dcd895d1a3c99de77b355a4"
+    },
+    "geometry": {
+      "path": "reports/luna-crouch-light-geometry-v2/geometry.json",
+      "sha256": "028b69aa891144a822b709fd720d67ba3eacf0139d47cc4e8dcb9384fd6ca0e5"
+    },
+    "strategy": {
+      "path": "art/fighters/ultraman-arc__luna/stage2/crouch-light-session-candidate-20261105/strategy-after-attempt-02.json",
+      "sha256": "1bd21cbdbba8c4e295f019f1ee803f35c2e001abd94b0f1228f47ea23e5a368e"
+    },
+    "independent_review": {
+      "path": "reports/luna-crouch-light-review/independent-review-v2.json",
+      "sha256": "db4d939336e633c146b2319e4fbea3519233bbaba2b721e424a93f0b55cea236"
+    }
+  },
+  "alpha": {
+    "mode": "RGBA",
+    "size": [
+      1254,
+      1254
+    ],
+    "zero_pixels": 1138477,
+    "full_pixels": 359,
+    "partial_pixels": 433680,
+    "nonzero_bbox": [
+      0,
+      0,
+      1236,
+      1254
+    ],
+    "alpha128_bbox": [
+      199,
+      176,
+      1174,
+      1145
+    ],
+    "corners": [
+      1,
+      0,
+      0,
+      0
+    ]
+  },
+  "actual_visual_review": {
+    "status": "近侧左短拳验收不通过；不安装",
+    "reviewed_images": [
+      "reports/luna-crouch-light-contact-v2.png",
+      "reports/luna-crouch-light-contact.png",
+      "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/crouch/phase-00/request-001/raw.png",
+      "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/light1/phase-02/request-002/rejected/candidate.png"
+    ],
+    "topology": "v2画面左侧大肩甲下的近侧上臂仍向下连接弯肘，再经前层圆盘腕甲连接下颏附近护拳。击出拳从胸甲右边的另一肩臂链向右伸出。相对v1没有改变攻击侧。",
+    "confidence_boundary": "近远关系由完整肩肘腕拳链和前后层共同支持，不单凭明暗或胸甲遮挡；解剖左/右来自brief近侧=左的制作约定，不声称单图能独立证明自然解剖命名。",
+    "other_findings": "身份和完整双脚低蹲可读。v2较v1近侧护拳抬高，远侧拳形清楚。无明显裁断；不等于骨长、足位、连续性通过。",
+    "alpha": {
+      "mode": "RGBA",
+      "size": [
+        1254,
+        1254
+      ],
+      "zero_pixels": 1138477,
+      "alpha_1_pixels": 46104,
+      "most_common_nonzero": 253,
+      "visible_bbox_alpha_gt_10": [
+        197,
+        175,
+        1175,
+        1146
+      ],
+      "verdict": "真实透明，存在低Alpha散点及主体非255 Alpha，不是严格二值透明"
+    },
+    "existing_topology_reference": {
+      "path": "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/light1/phase-02/request-002/rejected/candidate.png",
+      "role": "完整站姿近侧左直拳的肩臂归属正例，不作为蹲架、拳长或画质验收正例",
+      "visual_basis": "出拳上臂从左大肩甲下沿胸甲前层横跨，遮住部分胸灯上沿，肘腕拳连续向右；另一臂在后层弯肘，下颏护拳可辨。",
+      "limitations": "原源在rejected目录，receipt记有原生Alpha拒收与派生例外；不能称其全面合格。站姿出拳长且近伸直，低蹲短拳必须另画。"
+    },
+    "next_step": "停止同一双参考重复。若继续整帧生成，可在现有身份/低蹲两参考外增加上述完整站姿源帧，仅提供正确近侧臂拓扑；明确不复制站姿腿和长拳，不剪贴。生成前先记录新参考角色和差异。v1/v2仅可保留为远侧右拳候选，若另用需独立评审，不覆盖真正左拳缺口。",
+    "changes_performed": "仅本报告；未生成、安装、提交或修改正式资源"
+  },
+  "compared_to_v1": {
+    "finding": "近侧拳抬近下颏、远侧拳型改变和前臂更平，不是攻击肩改变；同尺近拳约(148.2,202.0)→(150.5,195.4)，远拳约(220.0,205.4)→(217.5,203.9)。",
+    "native_metrics": [
+      {
+        "key": "actual_crouch00",
+        "scale": 0.17602067577960165,
+        "bbox": [
+          98,
+          137,
+          197,
+          280
+        ],
+        "landmarks": {
+          "rear_knee": [
+            135.277,
+            236.902
+          ],
+          "rear_ankle": [
+            106.801,
+            267.664
+          ],
+          "front_knee": [
+            182.562,
+            235.848
+          ],
+          "front_ankle": [
+            178.871,
+            263.973
+          ],
+          "ear_proxy": [
+            155.844,
+            159.559
+          ],
+          "chin_proxy": [
+            172.543,
+            171.336
+          ],
+          "near_fist": [
+            157.426,
+            213.523
+          ],
+          "far_fist": [
+            184.848,
+            204.383
+          ]
+        }
+      },
+      {
+        "key": "contact01_wrong_arm_candidate",
+        "scale": 0.13278704583349274,
+        "bbox": [
+          97,
+          157,
+          226,
+          280
+        ],
+        "landmarks": {
+          "rear_knee": [
+            136.655,
+            240.2
+          ],
+          "rear_ankle": [
+            107.356,
+            270.431
+          ],
+          "front_knee": [
+            182.2,
+            238.868
+          ],
+          "front_ankle": [
+            170.348,
+            265.237
+          ],
+          "ear_proxy": [
+            157.829,
+            176.144
+          ],
+          "chin_proxy": [
+            171.546,
+            186.931
+          ],
+          "near_fist": [
+            148.241,
+            201.979
+          ],
+          "far_fist": [
+            220.022,
+            205.442
+          ]
+        }
+      },
+      {
+        "key": "contact02_wrong_arm_candidate",
+        "scale": 0.13104593884016819,
+        "bbox": [
+          97,
+          153,
+          225,
+          280
+        ],
+        "landmarks": {
+          "rear_knee": [
+            134.952,
+            238.156
+          ],
+          "rear_ankle": [
+            107.357,
+            269.675
+          ],
+          "front_knee": [
+            179.418,
+            237.895
+          ],
+          "front_ankle": [
+            170.132,
+            264.574
+          ],
+          "ear_proxy": [
+            155.877,
+            172.766
+          ],
+          "chin_proxy": [
+            170.002,
+            184.405
+          ],
+          "near_fist": [
+            150.515,
+            195.391
+          ],
+          "far_fist": [
+            217.475,
+            203.892
+          ]
+        }
+      },
+      {
+        "key": "return_actual_crouch00",
+        "scale": 0.17602067577960165,
+        "bbox": [
+          98,
+          137,
+          197,
+          280
+        ],
+        "landmarks": {
+          "rear_knee": [
+            135.277,
+            236.902
+          ],
+          "rear_ankle": [
+            106.801,
+            267.664
+          ],
+          "front_knee": [
+            182.562,
+            235.848
+          ],
+          "front_ankle": [
+            178.871,
+            263.973
+          ],
+          "ear_proxy": [
+            155.844,
+            159.559
+          ],
+          "chin_proxy": [
+            172.543,
+            171.336
+          ],
+          "near_fist": [
+            157.426,
+            213.523
+          ],
+          "far_fist": [
+            184.848,
+            204.383
+          ]
+        }
+      }
+    ],
+    "limitations": "后胫归一与前掌强制锚只是比较，不是实际无滑步/骨长通过。手工点±18源像素，不能用小坐标差机械判换侧。左右命名来自原brief制作约定，图像可证近远链而非独立自然解剖名。"
+  },
+  "已知问题": [
+    "明确不符仍是近侧左拳未伸；不通过crouch_light接触验收。",
+    "身份、两脚低蹲及完整性可读，真Alpha有散点；不据这些通过其它必需门。",
+    "未进行真实输入/回放/图形或音频，不自动移用为第二拳，不装资源、不开放装甲。"
+  ],
+  "下一步": [
+    "停止相同双参考盲重试；已找到正确本人近侧肩臂完整源作受限第三参考，但须保留其原生Alpha拒收和站姿长拳限制。",
+    "完整性底线不变：左拳缺口不得被改名/翻图/拼肢抹掉；若不继续生图，明确挂起此缺口。"
+  ],
+  "accepted_as_left_punch": false,
+  "installed": false,
+  "new_generation_called_by_reviewer": false
+}

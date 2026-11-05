@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 蹲左拳第二版仍近侧护颏、远侧出拳，未解决肩臂归属；原源/实际prompt和四端点同尺对照已存，停止双参考盲重试。找到本人既有近侧跨胸整帧可限作第三拓扑参考，保留其原生Alpha拒收/站姿长拳限制；不改名掩盖左拳缺口、不安装。[第二版核验与可行策略](verification/luna-crouch-light-contact-v2-candidate-review.json)
+
 - 蹲左拳新接触原源已保存：真Alpha、双脚低蹲及前伸拳成立，但近侧臂仍护胸，出拳沿远侧肩臂链；按原近侧=左约定实际打反，不通过左拳。三端点同胫尺保留足位/头身差与测点误差，已给整身纠正肩臂归属方案，未运行安装。[原源与核验](verification/luna-crouch-light-contact-candidate-review.json)
 
 - crouch_light已完成单张完整接触brief：以本人定稿＋现用双脚蹲架为最小两图，近侧解剖左拳短促平出、右拳护架；旧低跪/站高护拳不作正例。腰腹目标明确为本轮设计解释，旧链接续仍待；未生成。[可复用brief与参考](../art/fighters/ultraman-arc__luna/stage2/crouch-light-keyframe-brief-20261105-v1/brief.json)
