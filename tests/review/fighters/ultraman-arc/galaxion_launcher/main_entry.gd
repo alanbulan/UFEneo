@@ -78,8 +78,9 @@ func stabilize_window(game: Node, requested: Vector2i, out: String) -> bool:
 			var viewport_size:=root.get_visible_rect().size
 			var matches:=actual==requested and Vector2i(viewport_size)==requested
 			stable=stable+1 if matches else 0
-			record.observations.append({"elapsed_ms":Time.get_ticks_msec()-start,"window":[actual.x,actual.y],"viewport":[viewport_size.x,viewport_size.y]})
-			if stable>=8 and Time.get_ticks_msec()-start>=500:
+			var elapsed_ms:=Time.get_ticks_msec()-start
+			record.observations.append({"elapsed_ms":elapsed_ms,"window":[actual.x,actual.y],"viewport":[viewport_size.x,viewport_size.y]})
+			if stable>=8 and elapsed_ms>=500:
 				success=true
 				break
 		record["stable_frames"]=stable

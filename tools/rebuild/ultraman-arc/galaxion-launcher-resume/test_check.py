@@ -1,5 +1,5 @@
 """合成正负例只验门禁；未运行Godot不构成主游戏通过。"""
-import copy,os,unittest
+import copy,os,re,unittest
 from pathlib import Path
 from unittest.mock import patch
 import main_bundle as B
@@ -82,6 +82,23 @@ class Checks(unittest.TestCase):
             with self.assertRaises(AssertionError):B.validate_move(changed,fists)
         changed=copy.deepcopy(move);changed['frames'][11]['hitboxes']=[fists['2']]
         with self.assertRaises(AssertionError):B.validate_move(changed,fists)
+    def window_gate_expression(self):
+        source=(B.REVIEW/'main_entry.gd').read_text()
+        sample=source.split('await process_frame',1)[1].split('record["stable_frames"]',1)[0]
+        self.assertEqual(sample.count('Time.get_ticks_msec()'),1)
+        self.assertIn('var elapsed_ms:=Time.get_ticks_msec()-start',sample)
+        self.assertIn('"elapsed_ms":elapsed_ms',sample)
+        expression=re.search(r'if (stable>=8 and elapsed_ms>=500):',sample)
+        self.assertIsNotNone(expression)
+        return expression.group(1)
+    def test_window_gate_single_clock_sample(self):self.window_gate_expression()
+    def test_window_gate_rejects_499ms(self):
+        expression=self.window_gate_expression()
+        for stable in [8,1000]:self.assertFalse(eval(expression,{'__builtins__':{}},{'stable':stable,'elapsed_ms':499}))
+    def test_window_gate_accepts_500ms_only_when_stable(self):
+        expression=self.window_gate_expression()
+        for stable,elapsed_ms,expected in [(7,500,False),(7,501,False),(8,500,True),(8,501,True)]:
+            self.assertEqual(eval(expression,{'__builtins__':{}},{'stable':stable,'elapsed_ms':elapsed_ms}),expected)
     def test_rules(self):
         manifest=B.DEFAULT_MANIFEST
         if not manifest.exists():self.skipTest('尚待本人配准素材')

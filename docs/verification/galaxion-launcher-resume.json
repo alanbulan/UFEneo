@@ -133,7 +133,19 @@
     },
     "max_height": 171,
     "contact_height": 134,
-    "graphical_pending": true
+    "graphical_pending": true,
+    "window_wait_fix": {
+      "reason": "v1图形第18组观测499ms而第二次时钟读数已>=500，成功条件与记录时刻不一致。",
+      "fix": "观测和>=500门共享同一次elapsed_ms采样，不放宽8稳定帧或500ms门。",
+      "contract": "reports/galaxion-launcher-resume/contract-v2.json",
+      "sha256": "9c9ecbfbb38f712ae243dff34baa6d0dc4e86ca90ad178b25b1ec73b31ff5cda",
+      "headless_groups": 12,
+      "ticks_each": 180,
+      "separate_logic_cases": 6,
+      "python_tests": 28,
+      "simulation_compared_against_v1": "12组state_hash/simulation_fingerprint/inputs/pair/events/projectiles逐tick完全一致",
+      "old_graphical_failure_preserved": "docs/verification/galaxion-launcher-graphical-review.json"
+    }
   },
   "limits": [
     "只为单次真实6K候选，不代表完整装甲或追击连段。",

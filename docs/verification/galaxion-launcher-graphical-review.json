@@ -1,0 +1,35 @@
+{
+  "fighter": "ultraman-arc__galaxion",
+  "reviewer": "root_delegated_by_user",
+  "status": "incomplete_window_stability_gate_failed",
+  "history": [
+    {
+      "batch": "graphical-v1",
+      "summary": "reports/galaxion-launcher-resume/gui-v1-20261105-technical-summary.json",
+      "contract": "reports/galaxion-launcher-resume/contract-v1.json",
+      "completed_processes": 18,
+      "native_pngs": 324,
+      "replay_pairs": 9,
+      "root_independent_checks": "324PNG实际SHA/尺寸/冻结tick/双方safe bounds及9对180tick模拟字段均通过，但不豁免窗口稳定门。",
+      "actual_failure": "1920x1080-right-whiff-replay最后观测elapsed_ms499，入口同循环稍后第二次时钟读取已到500，runner要求记录>=500故拒绝。",
+      "unstarted": [
+        "1920x1080-left-hit-original",
+        "1920x1080-left-hit-replay",
+        "1920x1080-left-block-original",
+        "1920x1080-left-block-replay",
+        "1920x1080-left-whiff-original",
+        "1920x1080-left-whiff-replay"
+      ],
+      "visual_scope": "worker实际看9原带162张；父审另看720右whiff上挑/降臂及1080右顶点。",
+      "visual_findings": "所看范围未发现阻塞级整身体量硬切，02同臂上挑到03降臂可辨，双方空中及倒地全轮廓避HUD；不能外推未跑1080左。",
+      "limits": [
+        "没有渐伸整帧，原brief腹部蓄力不完全符合。",
+        "白闪遮接点与训练板/飞起引发动态缩放保留。",
+        "tick102起身只有trace，未有专门wake相截图，不称起身动画已实看。",
+        "无实速、录屏、音频、真人硬件验收。"
+      ]
+    }
+  ],
+  "installed": false,
+  "playable": false
+}
