@@ -6,6 +6,7 @@ var rear_stage: String="approach"
 var rear_preparation: Array=[]
 func _init() -> void:
 	super._init() # 保留旧driver的owner/gap/delay参数解析。
+	last_section=0 # 固定唯一section，首帧不触发正式app的再战分支。
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--candidate-case="):
 			kind=arg.trim_prefix("--candidate-case=")

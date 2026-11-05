@@ -51,7 +51,7 @@ def main():
         assert args.trace and args.trace.is_file()
         script='blocked_replay.gd' if args.mode=='blocked-replay' else 'input_replay.gd' if args.mode=='input-replay' else 'replay.gd';display=['--headless']
         user += ['--back-lift-trace='+str(args.trace.resolve()),'--back-lift-replay-output='+str(out/'replay-result.json')]
-    command=[godot_path(),*display,'--path',str(ROOT),'--script','res://'+(HERE/'runtime'/script).relative_to(ROOT).as_posix(),'--',*user]
+    command=[godot_path(),'--audio-driver','Dummy',*display,'--path',str(ROOT),'--script','res://'+(HERE/'runtime'/script).relative_to(ROOT).as_posix(),'--',*user]
     save(out/'command.json',command)
     env=isolated_test_environment(out)
     status='not_started'
@@ -65,7 +65,7 @@ def main():
         log=(out/'engine.log').read_text('utf-8',errors='replace')
         diagnostics=[line for line in log.splitlines() if re.search(r'SCRIPT ERROR:|^ERROR:|Parse Error:',line)]
         save(out/'run-result.json',dict(exit=status,diagnostics=diagnostics,sources_unchanged=before==after,
-             isolated_user_data=True,installed=False,visual_accepted=False))
+             isolated_user_data=True,installed=False,visual_accepted=False,audio_driver='Dummy',audible_audio_validated=False))
     assert status==0 and not diagnostics and before==after
     if args.mode=='search':
         evidence=json.loads((out/'search-result.json').read_text('utf-8'))
