@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 回旋接触关键候选已保存：腰高横展腿、绷脚尖向下、支撑脚抬跟可辨，大片外围光晕较蓄势减少；胸面比蓄势第三版展开且踢腿角跨度大，仍不能直连判回旋连续。原图尺寸不同须按骨长统一整图尺度，低Alpha边噪/解剖左右/后续随势回架待核，未安装。[接触相审阅](verification/luna-spin-heavy-contact-candidate-review.json)
+
 - 回旋下一接触关键相brief已准备：右髋带动右腿腰高横扫、脚背/胫前接触，左前掌抬跟转轴持续；以本人定稿和第三版蓄腿为参考，排除旧侧踹。下一张关键图不等于可直接相邻播放，展开中相与背面随势仍待；必须露大面积背甲时参考不足即阻碍。未生成/收费/运行。[接触相brief](../art/fighters/ultraman-arc__luna/stage2/spin-heavy-keyframe-brief-20261105-v1/contact-brief.json)
 
 - 回旋蓄腿第三版已保留：支撑脚跟明确高于前掌、胸甲缩为斜面，转体比前两版清楚；保留为较优蓄势候选，不再沿用前两版平脚结论。低Alpha光晕/触边、统一骨尺及全链左右腿跟踪仍待核，未配准/安装。[逐版比较](verification/luna-spin-heavy-session-candidates-review.json)
