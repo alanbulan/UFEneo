@@ -1,0 +1,120 @@
+{
+  "fighter": "ultraman-arc__galaxion",
+  "status": "registered_real_input_candidate_graphical_pending",
+  "reviewer": "root_delegated_by_user",
+  "registered_actions": [
+    "idle",
+    "crouch_start",
+    "crouch",
+    "crouch_rise"
+  ],
+  "complete_source_frames": 12,
+  "source_root": "art/fighters/ultraman-arc__galaxion/stage2/ground-codex-20261027",
+  "registered_manifest": "art/fighters/ultraman-arc__galaxion/stage2/crouch-registered-20261105-v1/manifest.json",
+  "root_review": "art/fighters/ultraman-arc__galaxion/stage2/crouch-registered-20261105-v1/root-review.json",
+  "registration_reproduction": "reports/galaxion-crouch-resume/registration-reproduction.json",
+  "registration": {
+    "source_dimensions": [
+      1254,
+      1254
+    ],
+    "sample_sizes": {
+      "idle": 157,
+      "crouch_start": 148,
+      "crouch": 132,
+      "crouch_rise": 153
+    },
+    "canvas": [
+      320,
+      320
+    ],
+    "root": [
+      160,
+      280
+    ],
+    "same_scale_within_action": true,
+    "per_frame_area_normalization": false,
+    "whole_frame_only": true,
+    "independent_source_reconstruction_pixels_equal": 12,
+    "measurement_precision": "人工近似头壳/颈髋尺；误差在registration-plan记录，不能冒称所有模型硬门通过。"
+  },
+  "gameplay": {
+    "main_scene": "app/scenes/main.tscn",
+    "source_identity": "银河本人普通格斗蹲起，不冒称原剧专属技能",
+    "only_states": [
+      "idle",
+      "crouch_start",
+      "crouch",
+      "crouch_rise"
+    ],
+    "real_direction_input_frames": [
+      [
+        24,
+        77
+      ],
+      [
+        102,
+        155
+      ]
+    ],
+    "total_ticks": 240,
+    "crouch_start_ticks": 6,
+    "hold_ticks_per_episode": 48,
+    "rise_ticks": 6,
+    "post_init_sim_mutation": false,
+    "new_attacks": false,
+    "core_changes": false,
+    "playable": false,
+    "implemented": false,
+    "select_visible": false,
+    "transform_enabled": false
+  },
+  "logic_v1": {
+    "directory": "reports/galaxion-crouch-resume/logic-v1",
+    "groups": 4,
+    "ticks_each": 240,
+    "passed": true,
+    "limited_freeze": "只冻结已列资源；静审发现autoload controller_icons与audio漏列，后续合同补齐，不改写v1通过证据。"
+  },
+  "graphic_status": "requested_not_yet_accepted",
+  "source_gaps_not_used": [
+    "银河turn01背身头部有不成立双向眼脸，修复请求仅brief，未有整帧。",
+    "银河前走8相没有明确近远腿交换，不作为完整交替步态安装。",
+    "其余六套装甲当前无可替代本批的完整S2动作源，不借模或改色冒充。"
+  ],
+  "visual_observations": [
+    "idle00护拳高于01–05，04前臂更水平，需要真实循环检查。",
+    "start两相均半蹲，不声称明显逐步下沉。",
+    "rise两相头长约8%差异保留；统一同动作尺度不逐帧掩盖。"
+  ],
+  "limits": [
+    "Godot实际4.6.3，目标4.7未验。",
+    "图形未验；无录屏、实速、音频、真人硬件输入验收。",
+    "候选不代表完整装甲S2–S7完成或开放。"
+  ],
+  "logic_v2": {
+    "directory": "reports/galaxion-crouch-resume/logic-v2",
+    "contract": "reports/galaxion-crouch-resume/contract-v2.json",
+    "contract_sha256": "fb6649a891dae65ef7e74af31f7a1119a08259b30a0b10e4b52d49bc0b1a602c",
+    "groups": 4,
+    "ticks_each": 240,
+    "passed": true,
+    "warnings_or_errors": 0,
+    "check_tests": 21,
+    "includes_actual_trace": true,
+    "independent_replay_fields": [
+      "state_hash",
+      "simulation_fingerprint",
+      "original_inputs",
+      "pair",
+      "events",
+      "projectiles"
+    ],
+    "same_simulation_fields_as_v1": true,
+    "frozen_runtime_files": 8776,
+    "added_freeze": [
+      "addons/controller_icons 810 files",
+      "assets/audio 2248 files"
+    ]
+  }
+}
