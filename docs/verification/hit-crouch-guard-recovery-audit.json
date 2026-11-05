@@ -1,7 +1,7 @@
 {
   "schema": "ufeneo.hit-crouch-guard-recovery-audit.v1",
   "reviewer": "root_delegated_by_user",
-  "status": "core_and_main_candidate_passed_graphical_pending",
+  "status": "core_and_targeted_graphical_verified_with_limits",
   "actual_trace": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-overhead-original/main-trace.json",
   "sequence": {
     "29_to_56": "hit，hit_crouch三个整帧低髋",
@@ -28,7 +28,7 @@
     "所有正式资源及候选美术未安装",
     "原逐tick状态/输入/指令/声音入态时点保持；姿态对应hurtboxes变化需新规则指纹"
   ],
-  "next": "锁释放，overhead双向720/1080原/回放八图形组交验，仅核必要路径，不重复整批。",
+  "next": "本范围完成，不继续扩大；普通蹲/松防返回的较高资产独立保留，新两张blockstun仍仅RAM，未签实速/听感。",
   "rejected_direct_transition": "根明确要求不提前反击/嘲讽/跳跃，故不实施直接hit→guard方案。",
   "selected_fix": "原hit→crouch→guard的状态与state_tick不变，单次恢复上下文仅将显示key/sprite及hurtboxes映射至本人已有低防保持；原frame其它字段保持。松防/离态/起招/再受击清，声音入态仍走原crouch再guard。",
   "baseline_source_refs": [
@@ -198,5 +198,6 @@
       "post-hit-guard-age-2",
       "post-hit-guard-age-3"
     ]
-  }
+  },
+  "graphical": "docs/verification/hit-crouch-guard-recovery-graphical-review.json"
 }
