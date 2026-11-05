@@ -1,0 +1,69 @@
+{
+  "schema": "ufeneo.luna.vertical-jump-resume.v1",
+  "date": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "action": "垂直跳：起跳2相、空中5相、落地2相",
+  "manifest": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/vertical_jump-registered-20261105-v1/manifest.json",
+    "sha256": "55b65e7c384d7bf87191f1af478bcea22e80d817ce216b58194074e96eae08e5"
+  },
+  "registration_review": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/vertical_jump-registered-20261105-v1/root-review.json",
+    "sha256": "86e670af4f27bff94eba8ec7c15bfe36e2231f18d8cd23d3f0938a0ea37c4559"
+  },
+  "contract": {
+    "path": "reports/luna-vertical-jump-resume/candidate-runtime-v4.json",
+    "sha256": "4e2d22c2a9b82085b123d18be47e9a2b724bce59f623d94a9d391ba39f6f3d57"
+  },
+  "changes": [
+    "复用9张本人完整源的159/1024统一整图采样，不生图、不拼肢。",
+    "land01近侧支撑脚整图上移4像素至与idle相同底边，其他8相像素不变；起跳/空中不机械拉靴到地面。",
+    "新合同不依赖旧F盘绝对路径和22项缺失历史冻结文件，保留旧来源记录，不追认旧严格比例审批。",
+    "主游戏自然8输入、真实整数跳跃轨迹、逐tick独立回放，冻结窗口和相位截图；不修改core、正式招式和开放状态。"
+  ],
+  "validation": {
+    "engine": "Godot 4.6.3，未验证目标4.7",
+    "headless": {
+      "path": "reports/luna-vertical-jump-resume/headless-v4/runner-result.json",
+      "sha256": "1dceb428339f17ae2132b158a02b82cf03cc5dcf89b66841d8816fe46800dcf3"
+    },
+    "technical": {
+      "path": "reports/luna-vertical-jump-resume/headless-v4/technical-review.json",
+      "sha256": "fcf51dfb0626861dee1326b72248c605ad3b5f7bf46308ed98a89002a13b34bf"
+    },
+    "python_tests": {
+      "path": "reports/luna-vertical-jump-resume/headless-v4/python-negative-tests.log",
+      "sha256": "60a8cbf7e0896cfec5e9fbafed129981fa3c7ccb948aeba126dfd3aa4cb6afe6"
+    },
+    "runs": 4,
+    "ticks_each": 120,
+    "registered_phases_reached": 9,
+    "height_max": 136,
+    "hp_stamina": 1000,
+    "events_projectiles_empty": true,
+    "independent_replay_inputs_and_hashes_match": true,
+    "positive_negative_tests": 17,
+    "negative_tests_note": "截图元数据解析的mock只用于拒绝错误尺寸/tick/hash，不是实际图形证据。",
+    "registration_idempotence": true,
+    "source_pixels_unchanged_except_whole_land_shift": true
+  },
+  "previous_attempts": {
+    "v1": "Python封存；原源校验中手动停止，未启动Godot",
+    "v2": "正式main启动，缺anchor_y导致SCRIPT ERROR，失败",
+    "v3": "register.py SHA变化被启动前门禁拒绝，未启动Godot",
+    "v4": "已修复clip锚字段，4组headless和17项Python测试通过；图形待专员"
+  },
+  "graphical_status": "待双向720/1080真实窗口原输入及回放；本收据不声称图形通过。",
+  "limits": [
+    "空中根为髋表面粗代理，约±20源像素（±3.1运行像素），未严格骨尺验收。",
+    "起跳、收腿、落地、回架的实际连续性与体量需逐图验收。",
+    "仅垂直跳，不包含前后翻或空中攻击。",
+    "无录屏、音频或真人硬件输入验收；未开放完整装甲。"
+  ],
+  "strict_size_accepted": false,
+  "art_passed": false,
+  "installed": false,
+  "playable": false,
+  "paid_generation": false,
+  "user_codex_used": false
+}
