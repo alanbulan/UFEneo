@@ -13,6 +13,8 @@
 
 ### 已完成与未通过的具体动作
 
+- 哥莫拉背掀第三版中间链：仅内存候选raw27换新完整相、raw28移第二版，捕获/费用/raw32后离背/raw68唯一490伤保持；双向命中、拆投1–4及落空12带原输入/format6回放与生产反馈审计通过。双向720/1080正常及诊断8组372原生PNG技术核验，26张选样已实看，raw26–29正常与诊断逐像素相同，中间双膝后摆分段可辨；不签1tick原速顺滑，旧首承重/近角等边界保留，仍未安装正式三级。无录屏、听感或真人键盘验收。[逻辑](verification/gomora-midlate-v3-20261105-logic.json)、[正常/诊断图形](verification/gomora-midlate-v3-20261105-graphical.json)、[八带主游戏回放](verification/gomora-midlate-v3-20261105-main-replay.json)。正常及诊断八带各760观察/685模拟tick的独立与format6二次回放通过。
+
 - 回放输入复盘：修复F4播放时训练图标/F1历史停在录制末尾，以及成功加载残留旧上一招/反馈。仅成功装配后清显示、每tick沿实际录像输入更新，坏文件拒绝保留显示；不改模拟或录像格式。既有回放测试同一红绿通过，三带字节不变、逐tick模拟hash保持；5项相关回归及normal关闭通过；720/1080原生1P D/J/K历史清理/重建已验，19图与实际两带输入核对，不冒称精确截图tick或2P验收。[逻辑回执](verification/replay-input-display-review.json)、[实际画面](verification/replay-input-display-graphical.json)
 
 - 屏障反射持续束：修复归属反转后误查新拥有者招式、下一tick清束的问题；初代真实Q→2H反杰克I，双向t43反射、t44回击65、t49原发射招中断撤束。6组150tick真实输入及独立回放通过，4组未反射束/普通火球对照旧hash保持；新增规则指纹，旧录像拒绝。导入及12项相关回归通过，四组720/1080双向48图实际反射/回击可辨；保留束超视口、白闪遮细节与t49撤束仅trace。图形为居中平移夹具，双反射/KO尾迹仅模型。未改素材/长度/寿命/速度或判定。[逻辑回执](verification/projectile-beam-reflection-review.json)、[实际画面](verification/projectile-beam-reflection-graphical.json)
