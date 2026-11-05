@@ -1,4 +1,40 @@
-# UFEneo 干净基线交接
+# UFEneo 接续交接
+
+## 2026-11-05 开发接续索引
+
+用户已恢复开发，要求优先已有完整源、真实玩法与验证；不要调用用户Codex，不发收费请求。根AGENTS中的2026-11-03停止状态与本文后面的清理记录是历史，当前明确委托优先。本文和PROGRESS继续是唯一交接位置，不新建备份。
+
+### 当前获取与运行
+
+- 最新开发在私有仓库的checkpoint/full-20261105-0020。2026-11-05 03:38 UTC实际核验到2e2d38537836a281cfbe54d37faec5061dcb456b；main停99a084d8a03647d7c84546ba36cf0a4617f9c553。不要把main当成已含后续月亮与镜头改动。最终回执/本文的上传状态须另核远端，不猜测成功。
+- GitHub已认证；本轮新增LFS远端下载SHA与大小已核验通过。早期限流/认证待回复已不是当前阻塞。云环境实际Godot4.6.3，下面历史Windows4.7.2记录不是本轮验收版本。
+- Godot继续通过tools/godot_lock.py串行导入/运行，隔离XDG目录。未开放的月亮候选必须从已冻结审片入口装配，不修改正式选人开关。旧冻结合同在依赖变动后会按SHA拒绝，不能篡改旧合同假装可重放；需要时按现有工具新建当前合同并保留旧结果。
+- 工作树可能出现已恢复LFS实体造成的大量PNG标M，不能整树暂存。仅按明确文件核SHA和diff提交。没有复制用户凭据或本机环境。
+
+### 已完成与未通过的具体动作
+
+- 月亮轻击三连：现有16整相配准与1/2/3段真实输入候选，[逻辑/主游戏记录](verification/luna-light-chain-resume.json)。候选不等于全套装甲开放。
+- heavy七相、tackle八相、dash_light五相：已做双向720/1080命中/防御/落空图形与回放，见[heavy](verification/luna-heavy-graphical-review.json)、[tackle](verification/luna-tackle-graphical-review.json)、[dash_light](verification/luna-dash-light-graphical-review.json)。保留站防高举手与较低接触点不一致；dash_light只验前置dash五相，未覆盖完整九相；白闪受表现时钟影响，不称跨运行FX确定。
+- sweep七相：真实下段/倒地/蹲防规则已验证，但04→05换脚回弹的收腿过渡未过，蹲防受击切高防素材缺口仍在。[回执](verification/luna-sweep-graphical-review.json)
+- dash_heavy六相：真实输入、空中轨迹与接触回放成立；03腾空→04低伏、05弓步→idle站立两处硬切未过，不通过拉长帧或换顺序伪补。[回执](verification/luna-dash-heavy-graphical-review.json)
+- 垂直跳九相：真实起跳/空中/落地与回放已核，静帧落地屈膝起身可辨；land01→idle脚位一次收窄仍保留，未验实速顺滑。[动作回执](verification/luna-vertical-jump-graphical-review.json)。原对手脚底被HUD覆盖的问题已由本轮全局镜头及候选装配修复，最终结果以[HUD回执](verification/hud-framing-main-review.json)为准，不改写旧失败记录。
+- 前跳八相：真实斜上输入与位移/回放通过；42→43骤收膝、48→49大角跨度、64→65倒置直切站立未过。[回执](verification/luna-forward-jump-graphical-review.json)
+- 后跳、背身/闪避反击与空中攻击：已有后翻缺展开中间帧，背反缺收腿、闪反无实际击肋相；没有合格独立月亮空攻源，不用基础形态/别的装甲或飞踢改名冒充。见[后跳缺口](verification/luna-back-jump-source-gap.json)、[反击缺口](verification/luna-s2-counter-source-review.json)、[空攻缺口](verification/luna-air-attacks-source-gap.json)。
+- 哥莫拉三级背掀仍未安装：已有通用root与显式空接保相代码、离线18+6整帧配准，但受方角臂/离背过渡缺合格整帧，不用整人瞬移规避穿角。见[基础机制](verification/gomora-root-resume.json)、[离背候选拒绝](verification/gomora-departure-candidate.json)、[通用空接](verification/gomora-current-capture.json)。本轮不收费补画。
+
+### 全局镜头修复的范围与验证
+
+正式HUD提供真实布局安全区，考虑上下栏、变身提示和训练板；双方当帧Alpha与仍持握实体合并后只做共同世界缩放/平移。居中/镜像/缩放/旋转的真实Sprite轮廓参与取景，不改单人站位、模拟坐标或判定。单位边界746项及相关回归通过。
+
+实际图形最终20组328PNG：正式far/near各4组、二级持岩4组、月亮垂直跳原带/回放8组。冻结tick/相位/尺寸/SHA和最终HUD安全区逐图核验；真实检查训练板、半血变身提示、长尾倒地/起身/挑空、持石最高位、原1080左向跳跃顶点脚底。Luna与旧v5模拟逐tick相同。[完整回执](verification/hud-framing-main-review.json)
+
+保留三项真实历史：05三级持岩被固定屏幕必杀立绘遮盖，不能以world bounds通过自证可见；Luna hud-v1漏接provider而原遮脚不变；hud-v2漏接绘制前布局回调，首组19PNG被新门拒绝、余七组没跑。hud-v3补齐后才完成8组通过。三级立绘叠层本身未修，离手投射物/刀光/光束不纳人物取景，刻意Ready/Fight等覆盖不作全屏障碍。Luna旧审片入口隐藏训练板导致保守缩放，不能声称理想取景；正式far另保留训练板验过。无录屏、音频、实速或真人输入验收。
+
+### 后续优先级
+
+继续以独立三槽和八装甲完整矩阵为目标，但不要重复把缺合格整帧的候选当成完成品。先复用本索引已有证据，明确需要新增的完整动作/过渡源；未获收费许可不生成。保持受身、爆气和防御反制，不扩判定凑命中。任何新增动作都需真实输入、独立回放、双向720/1080实际画面，逻辑通过与美术通过分开。完整月亮S2–S7、其余装甲、全名册独立三槽/武器/本人声音仍未完成，旧清理交接第6节矩阵继续参考。
+
+## 2026-11-03 历史清理基线交接
 
 交接日期：2026-11-03。本文专门随本轮最后一笔提交交付，接手人先按本文建立可运行环境，再按用户新指令开展工作。
 

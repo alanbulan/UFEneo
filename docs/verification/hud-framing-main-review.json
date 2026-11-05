@@ -2,7 +2,7 @@
   "schema": "ufeneo.hud-framing-main-review.v1",
   "date": "2026-11-05",
   "reviewer": "root_delegated_by_user",
-  "status": "05正式far/near图形通过；三级持岩可辨失败与Luna候选接线遗漏已记录，补充复验中",
+  "status": "正式far/near与二级持岩、月亮hud-v3原遮脚场景最终图形回归通过；历史失败与演出范围限制保留",
   "files": [
     {
       "path": "tests/review/app/hud_framing/main_driver.gd",
@@ -356,7 +356,7 @@
     "comparison": "reports/luna-vertical-jump-resume/hud-v1-gameplay-comparison.json",
     "graphics": "待真实窗口复验，不把旧候选隐藏训练板当成本轮正式训练避让验证。"
   },
-  "graphical_evidence": false,
+  "graphical_evidence": true,
   "recording": false,
   "paid_generation": false,
   "simulation_rules_changed": false,
@@ -410,19 +410,60 @@
     "receipts": [
       {
         "path": "reports/hud-framing/gui-held-rock-06-20261105-technical-summary.json",
-        "sha256": "efc00dc96854d75f64696734bdc15dd9f6e94c2c464db6306ec550d8fa80398d"
+        "sha256": "5a4579fd29f37a63aed595a664c95a4b8017c4d25825e81b50e10cb7be543626"
       },
       {
         "path": "reports/luna-vertical-jump-resume/gui-hud-v2-20261105-technical-summary.json",
-        "sha256": "fdb6046a569aca18d4b7ed4bf11d5fdbad06cedf31de945f48a0c35b2a8c3896"
+        "sha256": "ab1814aa7d886358ce08f8e02b36ed8d06edfe2c84ad7b665f727fb30733eecf"
       }
     ],
     "held_rock_graphics": "06四组68PNG，双向720/1080高位独立持岩实际可辨、双方整帧含尾端脚底不碰HUD；三级叠层旧问题不因此宣称已修。",
     "luna_hud_v3": {
       "contract": "reports/luna-vertical-jump-resume/candidate-runtime-hud-v3.json",
-      "sha256": "5116cf9084fb5176149167fe37e843dd863106e4fc8b5c3d462f197",
+      "sha256": "5116cf9084fb5176149167fe37e843dd863106e4fc8b046e79c8b5c3d462f197",
       "headless": "四组120tick正常退出、原带及独立回放通过。",
-      "graphics": "待实际八组，未通过前不作结论。"
+      "graphics": "八组152PNG实际通过；详见final_graphical_result。"
     }
+  },
+  "final_graphical_result": {
+    "receipts": [
+      {
+        "path": "reports/hud-framing/gui-far-05-20261105-technical-summary.json",
+        "sha256": "d0be8ccf0a76bf23b7c18e29c935f56cbb8c65db1bb144548bf47cf0fc4875cf"
+      },
+      {
+        "path": "reports/hud-framing/gui-near-05-20261105-technical-summary.json",
+        "sha256": "7e3f2fc491e131ae105e85c2e04bcd95e18f8791317187a8b4dcdec870d12590"
+      },
+      {
+        "path": "reports/hud-framing/gui-held-rock-06-20261105-technical-summary.json",
+        "sha256": "5a4579fd29f37a63aed595a664c95a4b8017c4d25825e81b50e10cb7be543626"
+      },
+      {
+        "path": "reports/luna-vertical-jump-resume/gui-hud-v3-20261105-technical-summary.json",
+        "sha256": "40416804d8d98a024622f9b0b77f5107974b4ddfd1919f65520970f8428dc991"
+      }
+    ],
+    "groups": 20,
+    "pngs": 328,
+    "formal_groups": 12,
+    "formal_pngs": 176,
+    "luna_groups": 8,
+    "luna_pngs": 152,
+    "independent_recheck": "逐张重算328PNG SHA/原生尺寸、tick、final_safe==hud_safe与双方/持握实体最终bounds包围关系，均通过。",
+    "actual_visual_checks": [
+      "正式far训练板与变身提示下双方跳跃、尾端和脚底可见；near长尾倒地/起身/挑空及整帧剑已检。",
+      "二级真实持岩四组720/1080双向高位可辨，石顶及双方轮廓与HUD有间隔。",
+      "Luna四original各六关键相实看；精确1920x1080-left n17 tick58原图杰顿脚底与能量槽间有地面间隔，原遮脚回归通过。"
+    ],
+    "simulation": "Luna四对120tick原带/独立回放字段全同，与旧v5输入/hash/指纹/事件/投射物逐tick一致；未改战斗规则。",
+    "limits": [
+      "旧Luna审片入口仍隐藏训练板且共同缩放保守，不称理想取景；正式far已独立保留训练板验收。",
+      "land01到idle脚位收窄、前跳/飞踢/扫腿缺帧、站防/低防手位缺口未修。",
+      "三级必杀固定屏幕立绘遮普通world持物仍在；本轮不声称整个演出复合画面的所有实体可辨。",
+      "不追踪已离手投射物、光束、刀光与拖尾；Ready/Fight等刻意叠层不作为全屏障碍。",
+      "无录屏、音频、实速顺滑或真人硬件输入验收；Godot4.6.3，4.7未验证。"
+    ],
+    "godot_lock_released": true
   }
 }
