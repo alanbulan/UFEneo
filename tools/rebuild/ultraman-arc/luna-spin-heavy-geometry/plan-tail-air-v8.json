@@ -1,0 +1,236 @@
+{
+  "schema": "ufeneo.luna.spin-geometry-plan.v3",
+  "status": "新尾段候选方向检验四相，非已通过动作时序",
+  "canvas": [
+    320,
+    320
+  ],
+  "anchor": [
+    160,
+    280
+  ],
+  "scale_method": "每张完整源只用耳侧→下颌尖投影距离归一到model同段19.5左右逻辑像素，仅对照尺；不是颅顶头长。不可用此强制修正肢体比例。",
+  "model_measurement": {
+    "path": "art/fighters/ultraman-arc__luna/model/measurements.json",
+    "sha256": "2a55b6bc6f5ed8a0fd081bc1fd9b1dfbb7d936c094e978e0a08727ad6429d40c",
+    "bone_reading_quality": "装甲下部分关节点估测，仅作后续骨架参考；不作为自动硬门。尺寸主尺为明确的颅顶站高与整头配准。",
+    "target_support_leg_sum": 77.72536894246682
+  },
+  "manual_marking": "支撑髋膝踝为独立阅源者人工投影估点；攻击髋膝踝和脚尖为主审人工估点。每点保守±18原像素，不冒称精确解剖坐标；头壳顶受冠遮挡，没有可靠头长点，不写虚精确头尺。",
+  "precision_radius_source": {
+    "joint": 18
+  },
+  "support_alignment": "前掌ROI完整整图对齐。idle用右鞋承重映射，entry支持此前层/后层拓扑；低收→着地映射仍待核，不将对齐当支撑稳定证明。",
+  "sources": [
+    {
+      "key": "recover_low",
+      "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/recover-low-attempt-01.raw.png",
+      "sha256": "b3668acd40a61d89da61dfc8475af090db312b1b5d9fae6192e03b04d9d232f8",
+      "scale_ruler": "head_proxy",
+      "target_ruler_length": 19.499720301949875,
+      "landmarks": {
+        "support_knee": [
+          596,
+          811
+        ],
+        "support_ankle": [
+          510,
+          1042
+        ],
+        "attack_knee": [
+          724,
+          621
+        ],
+        "attack_ankle": [
+          676,
+          833
+        ],
+        "attack_toe": [
+          782,
+          891
+        ],
+        "ear_proxy": [
+          498,
+          189
+        ],
+        "chin_proxy": [
+          625,
+          257
+        ]
+      },
+      "support_roi": [
+        575,
+        1070,
+        640,
+        1120
+      ],
+      "joint_uncertainty_source": 18,
+      "head_proxy_uncertainty_source": 12
+    },
+    {
+      "key": "tail_air_attempt",
+      "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/tail-air-attempt-01.raw.png",
+      "sha256": "7a7f67cc1af5c66857b9538dae1dce61b2bb247e6aa1ff41662621cfcb725403",
+      "scale_ruler": "head_proxy",
+      "target_ruler_length": 19.499720301949875,
+      "landmarks": {
+        "ear_proxy": [
+          519,
+          216
+        ],
+        "chin_proxy": [
+          647,
+          297
+        ],
+        "support_knee": [
+          550,
+          901
+        ],
+        "support_ankle": [
+          455,
+          1150
+        ],
+        "attack_knee": [
+          718,
+          757
+        ],
+        "attack_ankle": [
+          814,
+          975
+        ],
+        "attack_toe": [
+          925,
+          1061
+        ]
+      },
+      "support_roi": [
+        530,
+        1180,
+        610,
+        1245
+      ],
+      "joint_uncertainty_source": 18,
+      "leg_assignment": "前层向右下伸腿为原攻击腿、后层向下腿承重，未据配色单独锁定解剖左右。"
+    },
+    {
+      "key": "backstep00_tail_option",
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/backstep/phase-00/request-001/raw.png",
+      "sha256": "dd9d84656d953173fad1c5fd9b4a574a4b23b9bf228d87491601f262f380839b",
+      "scale_ruler": "head_proxy",
+      "target_ruler_length": 19.499720301949875,
+      "landmarks": {
+        "ear_proxy": [
+          518,
+          177
+        ],
+        "chin_proxy": [
+          622,
+          260
+        ],
+        "support_hip": [
+          600,
+          548
+        ],
+        "support_knee": [
+          675,
+          711
+        ],
+        "support_ankle": [
+          658,
+          909
+        ],
+        "attack_hip": [
+          525,
+          554
+        ],
+        "attack_knee": [
+          541,
+          726
+        ],
+        "attack_ankle": [
+          335,
+          876
+        ],
+        "attack_toe": [
+          388,
+          972
+        ]
+      },
+      "support_roi": [
+        730,
+        935,
+        810,
+        995
+      ],
+      "joint_uncertainty_source": 18,
+      "leg_assignment": "按近层向左下腿为原攻击腿、后层右鞋为原承重脚，拓扑与实际idle相容；是待验落脚端点，不是空中相。"
+    },
+    {
+      "key": "idle_return",
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/idle/phase-00/request-001/raw.provider.png",
+      "sha256": "fcbe466ab9489a4ccd5cc8a8a3fdddacfad9d7895b70133624bf5134851a491b",
+      "scale_ruler": "head_proxy",
+      "target_ruler_length": 19.499720301949875,
+      "landmarks": {
+        "support_hip": [
+          674,
+          681
+        ],
+        "support_knee": [
+          831,
+          878
+        ],
+        "support_ankle": [
+          870,
+          1111
+        ],
+        "attack_hip": [
+          611,
+          659
+        ],
+        "attack_knee": [
+          510,
+          893
+        ],
+        "attack_ankle": [
+          350,
+          1122
+        ],
+        "attack_toe": [
+          425,
+          1195
+        ],
+        "ear_proxy": [
+          575,
+          219
+        ],
+        "chin_proxy": [
+          709,
+          285
+        ]
+      },
+      "support_roi": [
+        950,
+        1150,
+        1040,
+        1220
+      ],
+      "joint_uncertainty_source": 18,
+      "leg_assignment": "替代假设：idle画面右脚为原承重脚、左腿卸重抬起，骨盆遮挡支持此可能但不唯一。",
+      "head_proxy_uncertainty_source": 12
+    }
+  ],
+  "installed": false,
+  "playable": false,
+  "runtime_candidate_accepted": false,
+  "forge_files": {
+    "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+    "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+    "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+  },
+  "diagnostic_notes": [
+    "新图有离地伸膝但是否朝左回摆须实看，不能用提示词当实际生成结果。",
+    "统一头代理尺只作比较，误差/透视/髋遮挡不自动判失败。",
+    "不以单肢旋转/平移改成期望方向，不安装。"
+  ]
+}
