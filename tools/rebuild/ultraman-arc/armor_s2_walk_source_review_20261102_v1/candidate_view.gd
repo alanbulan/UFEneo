@@ -4,6 +4,8 @@ var candidate_contract: Dictionary = {}
 var candidate_contract_path: String = ""
 
 func _ready() -> void:
+	# 自建候选资源仍须继承正式绘制前HUD布局刷新。
+	RenderingServer.frame_pre_draw.connect(_refresh_layout_framing)
 	assert(not candidate_contract.is_empty() and not candidate_contract_path.is_empty())
 	assert(bool(candidate_contract.get("root_runtime_ready", false)))
 	assert(simulation.fighters[0].definition.id == "ultraman-arc__luna")

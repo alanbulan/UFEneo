@@ -400,6 +400,29 @@
       "contract_sha256": "297b15999e9aee43f73518c109a164fc68fcb305a378b701e19086b9f70e49bb",
       "passed": "四组190tick，真实special2及独立super2_held；原带/fresh sim/独立进程逐tickhash一致；无bounds或日志失败。",
       "graphics": "待真实可见性验收，不能只凭实体数组计通过。"
+    },
+    "luna_hud_v2_graphics_failure": {
+      "directory": "reports/luna-vertical-jump-resume/graphical-hud-v2/1280x720-right-original",
+      "result": "首组19PNG均触发candidate_hud_provider_not_applied并exit1；后七组未运行，不能计通过。",
+      "cause": "候选candidate_view自定义_ready漏接正式frame_pre_draw回调；隐藏训练板后最终安全区未刷新。",
+      "next": "补同一正式回调连接，重新冻结hud-v3，不放宽门禁。"
+    },
+    "receipts": [
+      {
+        "path": "reports/hud-framing/gui-held-rock-06-20261105-technical-summary.json",
+        "sha256": "efc00dc96854d75f64696734bdc15dd9f6e94c2c464db6306ec550d8fa80398d"
+      },
+      {
+        "path": "reports/luna-vertical-jump-resume/gui-hud-v2-20261105-technical-summary.json",
+        "sha256": "fdb6046a569aca18d4b7ed4bf11d5fdbad06cedf31de945f48a0c35b2a8c3896"
+      }
+    ],
+    "held_rock_graphics": "06四组68PNG，双向720/1080高位独立持岩实际可辨、双方整帧含尾端脚底不碰HUD；三级叠层旧问题不因此宣称已修。",
+    "luna_hud_v3": {
+      "contract": "reports/luna-vertical-jump-resume/candidate-runtime-hud-v3.json",
+      "sha256": "5116cf9084fb5176149167fe37e843dd863106e4fc8b5c3d462f197",
+      "headless": "四组120tick正常退出、原带及独立回放通过。",
+      "graphics": "待实际八组，未通过前不作结论。"
     }
   }
 }
