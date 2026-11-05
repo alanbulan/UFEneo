@@ -1,6 +1,6 @@
 {
   "date_utc": "2026-11-05",
-  "status": "ram_candidate_logic_passed_graphical_pending",
+  "status": "ram_candidate_logic_and_headless_main_passed_graphical_pending",
   "installed": false,
   "art_passed": false,
   "playable": false,
@@ -136,8 +136,219 @@
     },
     "engine_actual": "4.6.3.stable，不冒称目标4.7"
   },
-  "headless_main": "正在串行核12组，尚未作为完成计入本回执",
-  "graphical": "未运行，等待无头完成后交真实云桌面。",
+  "headless_main": {
+    "status": "passed",
+    "runs": 12,
+    "pairs": [
+      {
+        "original": "reports/luna-launcher-resume/headless-v1/1280x720-left-block-original",
+        "replay": "reports/luna-launcher-resume/headless-v1/1280x720-left-block-replay",
+        "ticks": 180,
+        "equal_fields": [
+          "state_hash",
+          "events",
+          "projectiles",
+          "original_inputs",
+          "pair"
+        ],
+        "contacts": [
+          {
+            "tick": 29,
+            "event": {
+              "feedback": {
+                "block_spark": "impact_guard",
+                "blockstop": 3.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "flash": 2.0,
+                "hitstop": 4.0,
+                "shake": 0.0,
+                "spark": "impact_heavy"
+              },
+              "height": 137,
+              "kind": "block",
+              "move": "launcher",
+              "player": 0,
+              "projectile": false,
+              "x": 655
+            }
+          }
+        ],
+        "final_hash": "3f3049fd8bb71e493b80401136166e83b080967feaf374baa966c550dc1c8b7f",
+        "original_trace_sha256": "656929fecff1f8f4f5dc9ffca242a4b674321473d6009dfdbff3ad5eb32c9a1e",
+        "replay_trace_sha256": "656929fecff1f8f4f5dc9ffca242a4b674321473d6009dfdbff3ad5eb32c9a1e"
+      },
+      {
+        "original": "reports/luna-launcher-resume/headless-v1/1280x720-left-hit-original",
+        "replay": "reports/luna-launcher-resume/headless-v1/1280x720-left-hit-replay",
+        "ticks": 180,
+        "equal_fields": [
+          "state_hash",
+          "events",
+          "projectiles",
+          "original_inputs",
+          "pair"
+        ],
+        "contacts": [
+          {
+            "tick": 29,
+            "event": {
+              "feedback": {
+                "block_spark": "impact_guard",
+                "blockstop": 3.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "flash": 2.0,
+                "hitstop": 4.0,
+                "shake": 0.0,
+                "spark": "impact_heavy"
+              },
+              "height": 137,
+              "kind": "hit",
+              "move": "launcher",
+              "player": 0,
+              "projectile": false,
+              "x": 651
+            }
+          }
+        ],
+        "final_hash": "9620597abfc417a0d83cf536a917199fbef31cce6368bac7677dfb67204dc573",
+        "original_trace_sha256": "29daf40ae2d0baab17a8368707958960f7cec7c1fbb248c73b7ef0eac50e962c",
+        "replay_trace_sha256": "29daf40ae2d0baab17a8368707958960f7cec7c1fbb248c73b7ef0eac50e962c"
+      },
+      {
+        "original": "reports/luna-launcher-resume/headless-v1/1280x720-left-whiff-original",
+        "replay": "reports/luna-launcher-resume/headless-v1/1280x720-left-whiff-replay",
+        "ticks": 180,
+        "equal_fields": [
+          "state_hash",
+          "events",
+          "projectiles",
+          "original_inputs",
+          "pair"
+        ],
+        "contacts": [],
+        "final_hash": "0c4a30501706f187746a2c59180fd58c5fd3b86798b701bf4ea563a8ee44b62f",
+        "original_trace_sha256": "27911da33107d4fdb98c70545c5446904e779beb89e2decde9d293a2f751acbe",
+        "replay_trace_sha256": "27911da33107d4fdb98c70545c5446904e779beb89e2decde9d293a2f751acbe"
+      },
+      {
+        "original": "reports/luna-launcher-resume/headless-v1/1280x720-right-block-original",
+        "replay": "reports/luna-launcher-resume/headless-v1/1280x720-right-block-replay",
+        "ticks": 180,
+        "equal_fields": [
+          "state_hash",
+          "events",
+          "projectiles",
+          "original_inputs",
+          "pair"
+        ],
+        "contacts": [
+          {
+            "tick": 29,
+            "event": {
+              "feedback": {
+                "block_spark": "impact_guard",
+                "blockstop": 3.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "flash": 2.0,
+                "hitstop": 4.0,
+                "shake": 0.0,
+                "spark": "impact_heavy"
+              },
+              "height": 137,
+              "kind": "block",
+              "move": "launcher",
+              "player": 0,
+              "projectile": false,
+              "x": 625
+            }
+          }
+        ],
+        "final_hash": "ae8e63489ed6648fafcb60defd46c3507523e8226d7666c34782d65e0b075757",
+        "original_trace_sha256": "a47cc346e9eb50990bcd7ed223c34dcab1cc2762a78d4c3237464e3d953669a9",
+        "replay_trace_sha256": "a47cc346e9eb50990bcd7ed223c34dcab1cc2762a78d4c3237464e3d953669a9"
+      },
+      {
+        "original": "reports/luna-launcher-resume/headless-v1/1280x720-right-hit-original",
+        "replay": "reports/luna-launcher-resume/headless-v1/1280x720-right-hit-replay",
+        "ticks": 180,
+        "equal_fields": [
+          "state_hash",
+          "events",
+          "projectiles",
+          "original_inputs",
+          "pair"
+        ],
+        "contacts": [
+          {
+            "tick": 29,
+            "event": {
+              "feedback": {
+                "block_spark": "impact_guard",
+                "blockstop": 3.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "flash": 2.0,
+                "hitstop": 4.0,
+                "shake": 0.0,
+                "spark": "impact_heavy"
+              },
+              "height": 137,
+              "kind": "hit",
+              "move": "launcher",
+              "player": 0,
+              "projectile": false,
+              "x": 629
+            }
+          }
+        ],
+        "final_hash": "a9cbeaaf62567f726cec0552884a8f35fb15d83d1baec2f76eed35db85d7d2f6",
+        "original_trace_sha256": "bf54de9e7a2d4ea5e9c3ace64173a953190b6ec47e1b0df75a236731fb0a6ed6",
+        "replay_trace_sha256": "bf54de9e7a2d4ea5e9c3ace64173a953190b6ec47e1b0df75a236731fb0a6ed6"
+      },
+      {
+        "original": "reports/luna-launcher-resume/headless-v1/1280x720-right-whiff-original",
+        "replay": "reports/luna-launcher-resume/headless-v1/1280x720-right-whiff-replay",
+        "ticks": 180,
+        "equal_fields": [
+          "state_hash",
+          "events",
+          "projectiles",
+          "original_inputs",
+          "pair"
+        ],
+        "contacts": [],
+        "final_hash": "2b783bf977b62b02846aa1c4a0e189d01c6249329b7455ea9d2c7675ebe688d6",
+        "original_trace_sha256": "cefea41f2d00ec322a1e52d9e3f3152ad73be1c3249608971407cd255fc8d75c",
+        "replay_trace_sha256": "cefea41f2d00ec322a1e52d9e3f3152ad73be1c3249608971407cd255fc8d75c"
+      }
+    ],
+    "runner_result": {
+      "path": "reports/luna-launcher-resume/headless-v1/runner-result.json",
+      "sha256": "bf97d3586e181464ea8612f7b73c0d8ffa78a2c524113cdc6c925b51497b7692"
+    },
+    "actual_screenshots": false,
+    "no_graphical_or_art_acceptance": true
+  },
+  "graphical": "已交云桌面24组原生图形，不作为当前完成结果；冻结合同v1不变。",
   "rules": "候选9/5/9共23tick，phase3拳面12×12、伤75、体力30，初始测试站距70/74/260；不扩大框、不改正式规则/开关。取消窗口不沿用旧动画。",
   "limits": [
     "本人idle为旧候选曾使用源，不是严格美术签收",
