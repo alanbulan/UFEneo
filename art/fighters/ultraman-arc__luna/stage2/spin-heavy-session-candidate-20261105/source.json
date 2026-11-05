@@ -29,8 +29,34 @@
       "quality": null,
       "usage": null,
       "cost": null
+    },
+    {
+      "id": "attempt-03",
+      "origin": "父会话明确委托提供的内置image_gen第三版；本接续者未另发生成请求",
+      "raw_file": "turn-chamber-attempt-03.raw.png",
+      "input_file": "reports/luna-spin-heavy-key-3.png",
+      "raw_sha256": "419811794ebc8bd7c3e5ddbb6bb989ed82b6999f1e5f06d29730eec367cd54d3",
+      "prompt": "A single complete 2D arcade pixel-art frame of the same Luna Armor Ultraman Arc in reference 1, isolated on a truly transparent background. Side-view facing right. This is a turning preparation frame, NOT a static single-knee raise: his planted LEFT support foot is clearly PIVOTING ON THE BALL OF THE FOOT with heel visibly RAISED above the ground, bent left knee and hips over the toe. His RIGHT knee is bent and raised at waist height with the lower leg folded back, still not kicking. The pelvis is visibly rotating toward a three-quarter back view while the chest is turned to a different angle, with only a narrow oblique strip of the chest armor still visible: show shoulder and hip rotation through full-body anatomy, not by rotating a standing sprite. His head looks right, both hands protect face/chest, both wrist disks present and attached. Use the same swept silver crest, yellow eye, cyan chest/shoulder armor, round chest light and red-silver limbs of reference 1; avoid inventing rear armor. Retain complete head, fists, both legs and both feet with generous margins, exactly two anatomically connected arms and legs. Crisp hard pixel edges and cel shading, no background, floor line, aura, glow, shadow, text, opponent or particles. Reference 2 was too frontal and planted the entire support sole; correct both issues.",
+      "prompt_source": "父会话本次委托中的逐字完整提示词；父会话声明透明true、两个参考、元数据未提供。",
+      "references": [
+        {
+          "path": "art/fighters/ultraman-arc__luna/model/clean-model-source.png",
+          "role": "本人身份",
+          "sha256": "f07ca34c959008bb1104af55a9d6c5c6a8e7b2d57c510a13cf8c2ed2c2bc4ddf"
+        },
+        {
+          "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/turn-chamber-attempt-01.raw.png",
+          "role": "待改的第一版动作姿态，不是已通过动作参考",
+          "sha256": "47a526dbd26410c774081bde555bed18bd4d6ff94f16ce692f2ef33fd7ac1a5a"
+        }
+      ],
+      "transparent_background": true,
+      "model": null,
+      "quality": null,
+      "usage": null,
+      "cost": null
     }
   ],
-  "limits": "仅保存实际原字节，不把透明请求当合格Alpha。不声称项目客户端high/模型/usage或费用；未调用收费API客户端、未再生成第三张。",
+  "limits": "原字节与各次独立来源保留；本接续者仅实际生成第二版，第一/三版由父会话提供。透明请求不等于干净Alpha；未知model/high/usage/费用不猜测，无新增收费客户端请求。",
   "reference_sha256": "f07ca34c959008bb1104af55a9d6c5c6a8e7b2d57c510a13cf8c2ed2c2bc4ddf"
 }
