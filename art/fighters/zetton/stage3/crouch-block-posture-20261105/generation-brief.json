@@ -1,0 +1,27 @@
+{
+  "status": "brief_only_no_generation",
+  "scope": "杰顿crouch_blockstun独立完整两相，替换不匹配的高弓步源；不是修改通用防御规则。",
+  "references": [
+    "art/fighters/zetton/stage3/crouch-block-posture-20261105/reference-crouch-guard-hold.png",
+    "assets/fighters/zetton/model-native.png"
+  ],
+  "reference_roles": [
+    "实际低蹲保持/支撑腿与低髋基准",
+    "本人身份，仅造型，不跟随站姿"
+  ],
+  "phase01_optional_reference": "第一相实际审核合格后，可作为第三连续性参考；不能将未验第一相当正确范本。",
+  "prompts": {
+    "phase-00": "Create ONE complete whole-body 2D pixel-art fighting-game animation frame of the exact Zetton shown in the references, fixed side view facing right. Reference 1 is the actual low crouching guard that this frame must continue; reference 2 is identity only and MUST NOT change the pose to standing. Keep the pelvis as low as reference 1, the rear leg deeply folded close to the ground and the front knee bent, with BOTH feet at the same contact positions. Preserve body scale, head size, ground baseline, black alien body, pale segmented arms and thighs, two distinct curved antennae, the narrow vertical orange face light and paired orange chest organs. Both complete arms, hands, legs, feet and antenna tips must remain attached and fully inside the canvas. Keep near/far limbs distinct; no added limbs, human facial features, weapons or armor. Do not stand up, widen the stance, straighten the knees, enlarge the head, compress the entire sprite, or replace the character with a translated copy. Sharp coherent pixel art, isolated genuine transparent background with margins. No opponent, ground, shadow, text, sparks, beams, trails or effects. This is the FIRST moment of low crouching block stun after an incoming attack from the right. The bent forearms brace together in front of the low upper body; the shoulders and torso recoil a SMALL amount backward while the hips stay low and the bent knees and planted feet do not change support. The head remains near its original crouching height, not the higher standing guard. Make a new complete reaction pose, not the unchanged reference guard.",
+    "phase-01": "Create ONE complete whole-body 2D pixel-art fighting-game animation frame of the exact Zetton shown in the references, fixed side view facing right. Reference 1 is the actual low crouching guard that this frame must continue; reference 2 is identity only and MUST NOT change the pose to standing. Keep the pelvis as low as reference 1, the rear leg deeply folded close to the ground and the front knee bent, with BOTH feet at the same contact positions. Preserve body scale, head size, ground baseline, black alien body, pale segmented arms and thighs, two distinct curved antennae, the narrow vertical orange face light and paired orange chest organs. Both complete arms, hands, legs, feet and antenna tips must remain attached and fully inside the canvas. Keep near/far limbs distinct; no added limbs, human facial features, weapons or armor. Do not stand up, widen the stance, straighten the knees, enlarge the head, compress the entire sprite, or replace the character with a translated copy. Sharp coherent pixel art, isolated genuine transparent background with margins. No opponent, ground, shadow, text, sparks, beams, trails or effects. This is the SECOND moment of low crouching block stun, after a brief backward recoil, settling toward the original low crouching guard. Keep the low hips, deeply folded rear leg and both support points unchanged. The bent elbows and shoulders absorb and settle slightly forward from the recoil while BOTH arms remain guarding; the head stays low. Show a distinct but small recovery change, not a standing guard and not a duplicate static frame. The next pose will be the original low crouching guard."
+  },
+  "rule_boundary": "站/蹲状态、低段/中段/overhead规则、硬直duration、4/6动画节拍、伤害/体力/位移/取消均不改。实际新完整轮廓若安装，需同步本人受击框并如实更新内容指纹，不能宣称所有旧回放指纹不变。",
+  "acceptance": [
+    "两相都保持低蹲、完整本人、无断肢与裁切",
+    "真实Alpha，不把RGB棋盘算透明",
+    "同尺头身与近远脚/根点核对，不局部缩放或拼肢",
+    "低蹲保持→阻挡回缩→缓冲→低蹲保持连续",
+    "正式主游戏双向720/1080，低段与中段防御/overhead被击、松蹲/连段控制",
+    "独立回放及旧内容指纹处理"
+  ],
+  "provenance": "尚未生成，model/high/usage/费用均未提供，后续只记录实际工具返回。"
+}

@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 杰顿蹲防硬直站高已定位为实际源姿态缺口：模拟与表现均正确选crouch_blockstun，同动作raw/旧processed/正式两相本来高弓步，无可换回低蹲源；未改正确core或用蹲防保持冒充。新增8组正式低拳/双受方/双向/松蹲独立回放，状态和实际动画选择通过。完整低蹲参考及两相brief已备，未生成、未修复画面。[证据与修复依赖](verification/zetton-crouch-block-posture-review.json)
+
 - 蹲左拳三槽RAM按原3/3/12试排：仅两独立图、65伤/30体力low和原二拳取消字段保留；8逻辑与16主游戏原输入/独立回放通过，站防受击、蹲防格挡、落空均双向一致。新增720/1080双向32组/256原生PNG技术核验、16对180tick五字段一致，16组original逐相静审完成；原批自然结束，无重跑。头肩/前脚换相、接触特效遮挡与受方蹲防硬直较高站姿保留；仅第一拳，二拳/站转蹲未验，无实速/音频/录屏验收，不安装。[运行候选](verification/luna-crouch-light-session-resume.json)、[图形终态与限制](verification/luna-crouch-light-session-graphical-review.json)
 
 - 蹲左拳v3近肩跨胸出拳、远拳护颏已成立；近腕盘完整，远腕甲遮挡不能判缺失。实际蹲架→v3→蹲架同尺重复通过，接触头肩约低14px、前踝约收5.7px及直臂保留实速待核，无静态硬阻塞；可继续RAM试排，未宣称全招或安装。[第三版与候选边界](verification/luna-crouch-light-contact-v3-candidate-review.json)

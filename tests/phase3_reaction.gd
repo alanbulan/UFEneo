@@ -4,6 +4,9 @@ func check(ok: bool,label: String) -> void:
 	if not ok: failures.append(label)
 func _initialize() -> void: call_deferred("run")
 func run() -> void:
+	if "--crouch-block-audit" in OS.get_cmdline_user_args():
+		run_crouch_block_audit()
+		return
 	var driver:=UfePhase3ReactionReview.new()
 	var sim:=UfeContentDatabase.match_for()
 	var twin:=UfeContentDatabase.match_for()
@@ -91,4 +94,63 @@ func run() -> void:
 	var report:=FileAccess.open("res://reports/phase3-reaction-evidence.json",FileAccess.WRITE)
 	report.store_string(JSON.stringify({"failures":failures,"actions":results},"\t"))
 	print("PHASE3_REACTION "+JSON.stringify({"failures":failures,"actions":results.keys()}))
+	quit(0 if failures.is_empty() else 1)
+
+# 只验证真实低段接触后的状态与实际动画选择；不把同名图集视为姿态美术通过。
+func run_crouch_block_audit() -> void:
+	var cases: Array=[]
+	var view:=UfeSideView.new()
+	for target_id in ["zetton","ultraman"]:
+		for target_player in [0,1]:
+			for release in [false,true]:
+				var first: String=target_id if target_player==0 else "ultraman"
+				var second: String="ultraman" if target_player==0 else target_id
+				var sim:=UfeContentDatabase.match_for(first,second)
+				# 仅开局训练站距，之后不摆状态/招式或改坐标。
+				sim.fighters[1].x=535
+				var manifest: Dictionary=UfeContentDatabase.read_json("res://assets/fighters/%s/animations/manifest.json"%target_id)
+				var tape: Array=[]
+				var hashes: Array=[]
+				var trace: Array=[]
+				var contacts:=0
+				var saw_stun:=false
+				var seen_sprites: Array=[]
+				for tick in range(120):
+					var pair: Array=[UfeInputFrame.make(),UfeInputFrame.make()]
+					pair[1-target_player]=UfeInputFrame.make(0,-1,UfeInputFrame.LIGHT if tick==30 else 0)
+					pair[target_player]=UfeInputFrame.make(0,0 if release and saw_stun else -1,UfeInputFrame.GUARD)
+					tape.append([pair[0].pack(),pair[1].pack()])
+					sim.step(pair)
+					var f:=sim.fighters[target_player]
+					var animation: Dictionary=view._animation(f,manifest)
+					for event in sim.events:
+						if event.get("kind")=="block" and event.get("player")==1-target_player:
+							contacts+=1
+							check(f.state=="crouch_blockstun","低段格挡须进入蹲防硬直")
+					if f.state=="crouch_blockstun":
+						saw_stun=true
+						check(f.animation_key()=="crouch_blockstun" and animation.key=="crouch_blockstun","硬直期间不得误选站防动画")
+						check(animation.texture==manifest.clips.crouch_blockstun.texture,"使用本人已装蹲防硬直资源")
+						check(int(animation.index)==int(f.frame().sprite),"硬直真实sprite同步")
+						if not seen_sprites.has(int(animation.index)):seen_sprites.append(int(animation.index))
+					hashes.append(sim.state_hash())
+					trace.append({"tick":sim.tick,"state":f.state,"state_tick":f.state_tick,"duration":f.motion.duration,"animation":animation,"inputs":tape[-1],"hash":hashes[-1]})
+				check(contacts==1 and saw_stun,"真实蹲拳须触发一次格挡/"+target_id+str(target_player)+str(release))
+				check(seen_sprites==[0,1],"两独立硬直相均到达")
+				check(sim.fighters[target_player].state==("guard" if release else "crouch_guard"),"硬直结束按当前输入回防")
+				check(sim.fighters[target_player].stats.hp==1000,"普通格挡不掉血")
+				var replay:=UfeContentDatabase.match_for(first,second)
+				replay.fighters[1].x=535
+				for tick in range(tape.size()):
+					replay.step([UfeInputFrame.unpack(tape[tick][0]),UfeInputFrame.unpack(tape[tick][1])])
+					check(replay.state_hash()==hashes[tick],"低段格挡独立重放/"+str(tick))
+				cases.append({"target":target_id,"target_player":target_player,"release_down_during_stun":release,"contacts":contacts,"stun_sprites":seen_sprites,"final_state":sim.fighters[target_player].state,"trace":trace})
+	view.free()
+	var out:="res://reports/crouch-block-posture/audit.json"
+	for arg in OS.get_cmdline_user_args():
+		if arg.begins_with("--out="):out=arg.trim_prefix("--out=")
+	var file:=FileAccess.open(out,FileAccess.WRITE)
+	file.store_string(JSON.stringify({"failures":failures,"cases":cases,"art_passed":false,"production_changed":false},"\t",true))
+	file.close()
+	print("CROUCH_BLOCK_POSTURE "+JSON.stringify({"failures":failures,"cases":cases.size()}))
 	quit(0 if failures.is_empty() else 1)

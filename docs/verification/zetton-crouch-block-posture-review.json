@@ -1,0 +1,170 @@
+{
+  "date_utc": "2026-11-05",
+  "status": "asset_pose_gap_confirmed_not_fixed",
+  "production_changed": false,
+  "art_passed": false,
+  "finding": "真实蹲防硬直状态与同名资源选择正确，杰顿已装同名两相本身较高弓步，造成低跪防御→较高硬直→低跪回防。不是站防状态误选。",
+  "rule_evidence": {
+    "design": "REBUILD_2D_PLAN.md 2.5.8要求站/蹲防御硬直独立各2相；2.5.9共用例外不包括蹲防保持与蹲防硬直。",
+    "code": [
+      "core/combat/hit_resolver.gd:65–70",
+      "core/states/crouch_blockstun.gd",
+      "core/fighters/fighter.gd:animation_key/frame",
+      "presentation/side_view.gd:_animation"
+    ],
+    "no_code_workaround": "不能将crouch_guard保持帧改名当独立硬直，不下移/压扁高弓步或切肢修复。"
+  },
+  "installed_resources": {
+    "crouch_guard": {
+      "path": "assets/fighters/zetton/animations/crouch_guard/head-calibrated.png",
+      "sha256": "ae36d80f21c5d2c3bcf13911a96aea0b5c81feab497cc847ed42a80822d0ac2f"
+    },
+    "crouch_blockstun": {
+      "path": "assets/fighters/zetton/animations/crouch_blockstun/head-calibrated.png",
+      "sha256": "e357321bcb94abd9e69a3ac4baeea51cdb86fd2048d50c68681c495ccedaf245"
+    },
+    "blockstun": {
+      "path": "assets/fighters/zetton/animations/blockstun/head-calibrated.png",
+      "sha256": "8b2dfba5652577f7ca1edb652b773f4836b1223feb6e158c93a0962f78fa4115"
+    }
+  },
+  "source_chain": {
+    "curation": {
+      "path": "art/fighters/zetton/sources/83349e55fff79ed9f0702c23d06bb43ef13a495fd30c50b50e5528e3ae9592af.json",
+      "sha256": "83349e55fff79ed9f0702c23d06bb43ef13a495fd30c50b50e5528e3ae9592af"
+    },
+    "raw": {
+      "path": "art/fighters/zetton/sources/134233a9933eb193f14dfabdae6aeeb8fc2dcf20a617bc9d82224d20903a8ca3.png",
+      "sha256": "134233a9933eb193f14dfabdae6aeeb8fc2dcf20a617bc9d82224d20903a8ca3"
+    },
+    "observed": "独立只读审查实看原始两帧大图、旧processed与正式图集，均为同一高弓步拓扑，无可直接换回低蹲硬直。历史尺寸批准不覆盖本次新发现接续缺口。"
+  },
+  "alpha_top_diagnostic": {
+    "anchor": [
+      128,
+      248
+    ],
+    "crouch_guard_hold": 120,
+    "crouch_blockstun": [
+      96,
+      113
+    ],
+    "note": "含触角，仅轮廓诊断；实图髋膝/后腿从低跪转高弓步才是姿态证据。"
+  },
+  "targeted_regression": {
+    "test": "tests/phase3_reaction.gd -- --crouch-block-audit",
+    "result": {
+      "path": "reports/crouch-block-posture/audit-v1.json",
+      "sha256": "d9dffc747cd02ddf0d56b6528b11d4406117680a90b29d36a36523acc533a6dd"
+    },
+    "log": {
+      "path": "reports/crouch-block-posture/audit-v1.log",
+      "sha256": "bca356d016e77d48a5def65bee59fb565ef536988a47c82401980b16f4205f30"
+    },
+    "engine": "4.6.3.stable",
+    "cases": [
+      {
+        "contacts": 1,
+        "final_state": "crouch_guard",
+        "release_down_during_stun": false,
+        "stun_sprites": [
+          0,
+          1
+        ],
+        "target": "zetton",
+        "target_player": 0
+      },
+      {
+        "contacts": 1,
+        "final_state": "guard",
+        "release_down_during_stun": true,
+        "stun_sprites": [
+          0,
+          1
+        ],
+        "target": "zetton",
+        "target_player": 0
+      },
+      {
+        "contacts": 1,
+        "final_state": "crouch_guard",
+        "release_down_during_stun": false,
+        "stun_sprites": [
+          0,
+          1
+        ],
+        "target": "zetton",
+        "target_player": 1
+      },
+      {
+        "contacts": 1,
+        "final_state": "guard",
+        "release_down_during_stun": true,
+        "stun_sprites": [
+          0,
+          1
+        ],
+        "target": "zetton",
+        "target_player": 1
+      },
+      {
+        "contacts": 1,
+        "final_state": "crouch_guard",
+        "release_down_during_stun": false,
+        "stun_sprites": [
+          0,
+          1
+        ],
+        "target": "ultraman",
+        "target_player": 0
+      },
+      {
+        "contacts": 1,
+        "final_state": "guard",
+        "release_down_during_stun": true,
+        "stun_sprites": [
+          0,
+          1
+        ],
+        "target": "ultraman",
+        "target_player": 0
+      },
+      {
+        "contacts": 1,
+        "final_state": "crouch_guard",
+        "release_down_during_stun": false,
+        "stun_sprites": [
+          0,
+          1
+        ],
+        "target": "ultraman",
+        "target_player": 1
+      },
+      {
+        "contacts": 1,
+        "final_state": "guard",
+        "release_down_during_stun": true,
+        "stun_sprites": [
+          0,
+          1
+        ],
+        "target": "ultraman",
+        "target_player": 1
+      }
+    ],
+    "frames_each": 120,
+    "independent_replay": true,
+    "failures": [],
+    "scope": "正式初代真实蹲轻拳，初代/杰顿各作1P和2P受方；持续蹲防或硬直中松蹲仍按GUARD。只开局站距470/535；全程不改状态/技能/坐标。两硬直sprite均到达，state和实际side_view动画key/texture一致，独立原输入重放每tick hash相同。",
+    "not_claimed": "未运行所有18角色或真人输入/图形；该测试通过不代表图像姿态合格。"
+  },
+  "generation_brief": {
+    "path": "art/fighters/zetton/stage3/crouch-block-posture-20261105/generation-brief.json",
+    "sha256": "f53bb8f28e5a5af9a4809cb851947724a5eb5488959583c27f9d0cfff2e2cc00"
+  },
+  "reference": {
+    "path": "art/fighters/zetton/stage3/crouch-block-posture-20261105/reference.json",
+    "sha256": "aa58205d1c1d5dbc28c833d5108b2ea999323db780bd6ac7480409daafcb6570"
+  },
+  "next_step": "父任务查看完整低蹲和本人身份参考后，生成独立低蹲受挡两整相候选；本任务未生成。待完整源、尺度/轮廓和真实主游戏验收后才安装。"
+}
