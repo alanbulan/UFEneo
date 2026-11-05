@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- crouch_light已完成单张完整接触brief：以本人定稿＋现用双脚蹲架为最小两图，近侧解剖左拳短促平出、右拳护架；旧低跪/站高护拳不作正例。腰腹目标明确为本轮设计解释，旧链接续仍待；未生成。[可复用brief与参考](../art/fighters/ultraman-arc__luna/stage2/crouch-light-keyframe-brief-20261105-v1/brief.json)
+
 - crush之后去重核查：tackle已有八相共同尺度及历史输入/双向图形回执，31项引用SHA相符，本轮不重复生产或运行。下一明确素材缺口是crouch_light生效相仍护架、未画腰线左短拳；crouch_light2亦缺右拳前探。八原源SHA保持，只读提出最小完整接触相方向，未生成。[下一真实缺口](verification/luna-s2-next-gap-after-crush.json)
 
 - crush七槽已进入主游戏RAM试排：原12/8/15、130伤/30体力不可防，远拳12×11真实Alpha框；逻辑六例与headless十二组通过，六对180tick原输入/独立回放五字段一致，GUARD按原规则同受130伤。正式资源未动；图形24组/384原生PNG及12对180tick通过，12original逐相静审完成。白闪遮接点、起收姿态/共同镜头影响保留，实速/音频/整招美术未验、不安装。[技术回执](verification/luna-crush-session-resume.json)、[图形终态与限制](verification/luna-crush-session-graphical-review.json)
