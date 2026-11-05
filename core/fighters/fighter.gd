@@ -30,6 +30,8 @@ func _init(data: UfeFighterDefinition, start_x: int) -> void:
 	stats.hp = data.max_health
 
 func enter(id: String, duration: int = 0) -> void:
+	# 仅让本次受击后的原crouch→crouch_guard携带恢复姿态；不改变逻辑状态时序。
+	if not (state=="crouch" and id=="crouch_guard"):motion.erase("hit_crouch_guard_resume")
 	if id!="thrown":motion.erase("throw_current_capture")
 	state = id
 	if not chase_allowed(): motion.chase_window = 0
@@ -39,7 +41,20 @@ func enter(id: String, duration: int = 0) -> void:
 func chase_allowed() -> bool:
 	return state in CHASE_ACTIONABLE_STATES
 
+func has_hit_crouch_guard_resume() -> bool:
+	return bool(motion.get("hit_crouch_guard_resume",false)) and height==0 and move_id.is_empty() and state in ["crouch","crouch_guard"] and not definition.state_frames.get("crouch_guard",[]).is_empty()
+
 func frame() -> Dictionary:
+	var original := _unmapped_frame()
+	if not has_hit_crouch_guard_resume():return original
+	# 只同步既有低防保持的图与受击轮廓，保留原状态events/cancel/位移等语义。
+	var hold: Dictionary=definition.state_frames.crouch_guard[-1]
+	var result: Dictionary=original.duplicate(true)
+	result.sprite=hold.sprite
+	result.hurtboxes=hold.hurtboxes.duplicate(true)
+	return result
+
+func _unmapped_frame() -> Dictionary:
 	if CurrentCapture.active(self):return motion.throw_current_capture.frame
 	if state == "captured" and motion.has("capture_victim"):
 		var captured: Dictionary = motion.capture_victim
@@ -49,7 +64,7 @@ func frame() -> Dictionary:
 		var entry: Array = battle_form.get("entry_frames", [])
 		if not entry.is_empty(): return entry[mini(state_tick, entry.size()-1)]
 	if move_id.is_empty():
-		var key := animation_key()
+		var key := _unmapped_animation_key()
 		if state=="thrown" and definition.state_frames.has(key):
 			var poses: Array=definition.state_frames[key]
 			return poses[clampi(int(motion.get("pose_sprite",0)),0,poses.size()-1)]
@@ -79,6 +94,10 @@ func frame() -> Dictionary:
 	return frames[clampi(move_tick, 0, frames.size() - 1)]
 
 func animation_key() -> String:
+	if has_hit_crouch_guard_resume():return "crouch_guard"
+	return _unmapped_animation_key()
+
+func _unmapped_animation_key() -> String:
 	if CurrentCapture.active(self):return str(motion.throw_current_capture.animation)
 	if state == "captured" and motion.has("capture_victim"): return str(motion.capture_victim.animation)
 	if state == "transform": return str(battle_form.get("transform_animation", "transformation"))
@@ -90,6 +109,7 @@ func animation_key() -> String:
 	return state
 
 func clear_move() -> void:
+	motion.erase("hit_crouch_guard_resume")
 	move_id = ""
 	move_tick = 0
 	combat.connected = false

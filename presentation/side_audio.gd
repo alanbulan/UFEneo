@@ -1,6 +1,10 @@
 class_name UfeSideAudio
 extends Node
 const PROJECTILE_EXPIRY = preload("res://presentation/projectile_expiry.gd")
+# 受击恢复只换低姿图与轮廓，原crouch→guard的入态声键/时点不提前。
+static func _state_entry_key(f: UfeFighter) -> String:
+	return "crouch" if f.state=="crouch" and f.has_hit_crouch_guard_resume() else f.animation_key()
+
 ## 只读模拟/动作数据，音效、原剧发声和音乐分别走总线。
 const MIX_HEADROOM_DB: float=-3.0
 var voices: Array[AudioStreamPlayer]=[]
@@ -345,7 +349,7 @@ func sync(sim: UfeMatchDirector,frozen: bool,intro_active: bool=false,result_sou
 			character_states[i]=""
 		if f.move_id!=last_moves[i] and not f.move_id.is_empty():voice(i,f.definition.id,"super" if f.move_id.begins_with("special") or UfeBattleTransform.is_command(f.move_id) or f.move_id=="super_special3" else "attack")
 		if changed:
-			var key: String=f.animation_key()
+			var key: String=_state_entry_key(f)
 			for e in state_sounds.get(f.definition.id,{}).get(key,[]):cue(str(e.id),false,i,key)
 			if f.state in ["down","bounce"]:
 				voice(i,f.definition.id,"down")
