@@ -34,7 +34,12 @@ def build_frames(root=ROOT, plan_path=None):
             p = root / row['path']; assert sha(p) == row['sha256'], str(p)
             raw = Image.open(p).convert('RGBA'); points = row['landmarks']
             ruler = row.get('scale_ruler', 'support_leg_sum')
-            if ruler == 'head_proxy':
+            if ruler == 'head_shin_geomean':
+                head_scale = row['target_head_length']/distance(points['ear_proxy'],points['chin_proxy'])
+                shin_scale = row['target_shin_length']/distance(points['support_knee'],points['support_ankle'])
+                ruler_raw = 1.0
+                ruler_target = math.sqrt(head_scale*shin_scale)
+            elif ruler == 'head_proxy':
                 ruler_raw = distance(points['ear_proxy'],points['chin_proxy'])
                 ruler_target = row['target_ruler_length']
             elif ruler == 'support_shin':

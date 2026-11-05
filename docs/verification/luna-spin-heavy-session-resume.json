@@ -1,0 +1,223 @@
+{
+  "date_utc": "2026-11-05",
+  "status": "logic_and_main_headless_passed_graphical_in_progress",
+  "installed": false,
+  "art_passed": false,
+  "playable": false,
+  "transform_enabled": false,
+  "registration": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/spin_heavy-registered-20261105-v1/manifest.json",
+    "sha256": "1e5c6037a1c268c89b022403e64ad3131215ba5ced18ed77538d17210d6a047b"
+  },
+  "source_review": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/spin_heavy-registered-20261105-v1/registration-review.json",
+    "sha256": "388cc5ebdf7a14e52140d251f2ca1a0ff6d03c852389ae8a35f5b22368372ca3"
+  },
+  "contract": {
+    "path": "reports/luna-spin-heavy-resume/contract-v1.json",
+    "sha256": "bf4572712790fea2bf89d15d743251066d142ab3d4aa6281c1d58607e0ec2652"
+  },
+  "logic": {
+    "result": {
+      "path": "reports/luna-spin-heavy-resume/logic-v1.json",
+      "sha256": "34fa35ec1ef662327d4442ab04fa2607657edd3afd3a9fa9aed5b18164014a64"
+    },
+    "log": {
+      "path": "reports/luna-spin-heavy-resume/logic-v1.log",
+      "sha256": "14823abf013e1234ff2cb3e936c8b746e9a3702b0b67e40a7a3c86cf85225782"
+    },
+    "case_count": 6,
+    "errors": [],
+    "cases": [
+      {
+        "contact_counts": {
+          "spin_heavy": 1
+        },
+        "contacts": {
+          "spin_heavy": "hit"
+        },
+        "damage": 100,
+        "direction": 1,
+        "final_hash": "de927b0bb3c19ce875bf3838aa867a4e22dbf62265d5678677eccc6138d231d2",
+        "initial_gap": 110,
+        "kind": "hit",
+        "moves": [
+          "spin_heavy"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "spin_heavy": 1
+        },
+        "contacts": {
+          "spin_heavy": "block"
+        },
+        "damage": 0,
+        "direction": 1,
+        "final_hash": "edfc0bbc6fbee03cdc8d3a1099f215916a9085b5d9cce9f718ab6ed5032872d9",
+        "initial_gap": 110,
+        "kind": "block",
+        "moves": [
+          "spin_heavy"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {},
+        "contacts": {},
+        "damage": 0,
+        "direction": 1,
+        "final_hash": "53aeab4af946dd6e4ec4ab496ac8289587c6362ed127e53e986f013396d2a5aa",
+        "initial_gap": 260,
+        "kind": "whiff",
+        "moves": [
+          "spin_heavy"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "spin_heavy": 1
+        },
+        "contacts": {
+          "spin_heavy": "hit"
+        },
+        "damage": 100,
+        "direction": -1,
+        "final_hash": "07d57ba55075455a41f8706803d62313913888d7b576454c978f426776643198",
+        "initial_gap": 110,
+        "kind": "hit",
+        "moves": [
+          "spin_heavy"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "spin_heavy": 1
+        },
+        "contacts": {
+          "spin_heavy": "block"
+        },
+        "damage": 0,
+        "direction": -1,
+        "final_hash": "a78598bd8d09987bf7b97218e949544ec5f547472a5d8c2f67b465ffa854ca35",
+        "initial_gap": 110,
+        "kind": "block",
+        "moves": [
+          "spin_heavy"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {},
+        "contacts": {},
+        "damage": 0,
+        "direction": -1,
+        "final_hash": "8eb2249dad7e62d6c4c091df3a2300f4d69ab9a12e1c757be45ba5287138956f",
+        "initial_gap": 260,
+        "kind": "whiff",
+        "moves": [
+          "spin_heavy"
+        ],
+        "replay_errors": []
+      }
+    ]
+  },
+  "scale_decision": {
+    "v10": "单头代理尺目视chamber明显偏大、unfold偏小，未用该版运行",
+    "v11": "全相sqrt(头代理倍率×支撑胫倍率)，同目标/同权重，只整图缩放和平移；目视明显减轻体量跳，独立复核准许试排，不签严格尺度",
+    "plan": {
+      "path": "tools/rebuild/ultraman-arc/luna-spin-heavy-geometry/plan-runtime-balanced-v11.json",
+      "sha256": "c5c62ea9c58d9e6dec71f48496e13d5437aae2c5866780f5cadc20d8fb84e12e"
+    },
+    "geometry": {
+      "path": "art/fighters/ultraman-arc__luna/stage2/spin_heavy-registered-20261105-v1/geometry.json",
+      "sha256": "eb2deb0fbf9bccffecd176ee1aa72e09301dae4812b2e29405753c71738c157c"
+    }
+  },
+  "sequence": [
+    "实际idle00",
+    "卸重entry",
+    "蓄势03",
+    "转髋中相",
+    "展开",
+    "接触",
+    "初收",
+    "低收",
+    "左回摆02",
+    "实际idle00"
+  ],
+  "ticks": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    4,
+    3,
+    4,
+    4,
+    4
+  ],
+  "gameplay": {
+    "startup": 9,
+    "active": 4,
+    "recovery": 15,
+    "damage": 100,
+    "stamina_cost": 30,
+    "contact_phase": 5,
+    "kick_box": [
+      64,
+      80,
+      20,
+      16
+    ],
+    "input": "frame20发送相对后方向+HEAVY，正式解析器命中4K；没有直接写move_id",
+    "hit_and_block_gap": 110,
+    "whiff_gap": 260,
+    "receiver": "命中不升空/倒地，格挡持续GUARD，未扩大判定"
+  },
+  "independent_static": {
+    "worker": "prepare_spin_runtime",
+    "passed": true,
+    "checks": [
+      "两次完整源RAM重建与登记geometry和像素一致",
+      "source/image/atlas SHA与clip/ticks一致",
+      "首尾实际idle逐字节相同",
+      "十槽28tick仅9至12有效判定",
+      "伤害/recovery/launch篡改拒绝",
+      "正式definition/move/command表哈希未改，关闭开关保留"
+    ],
+    "initial_test_issue": "RAM tuple与JSON list比较类型差异，规范化JSON后通过；未修改图像"
+  },
+  "limits": [
+    "单相实际idle00只作首尾对照，不是完整待机循环验收",
+    "双尺折中仍有透视/手工测点误差，不能宣称骨长准确",
+    "低收到左回摆跨身足路、鞋向落地与移重须实速观察",
+    "前掌强制配准不独立证明无滑步，遮挡髋不等于已确认解剖左右",
+    "未安装、未开装甲、未收费、未调用用户Codex",
+    "目前无录屏/声音/真人键盘验收"
+  ],
+  "source_provenance": "沿已有每张source.json真实内置image_gen原源与父传完整提示词，不伪称model/high/usage已返回，本轮没有生成。",
+  "headless": {
+    "runner": {
+      "path": "reports/luna-spin-heavy-resume/headless-v1/runner-result.json",
+      "sha256": "ddb867104af1a77ee0e7adab767f274c075bd2525f96a500339fe61e0ef29eb3"
+    },
+    "groups": 12,
+    "trace_ticks_per_group": 180,
+    "original_replay_pairs": 6,
+    "compared_fields": [
+      "state_hash",
+      "events",
+      "projectiles",
+      "original_inputs",
+      "pair"
+    ],
+    "all_completed": true,
+    "script_input_not_human_keyboard": true,
+    "sources_unchanged_after_run": true
+  }
+}
