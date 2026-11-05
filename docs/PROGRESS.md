@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- crush下降候选已保存并作六端点同尺比较：确有高护双拳外观，但近前臂−77→−18→+36.5度顺转、后段拳腕未再前推，存在可解释下降路径，保留试排而非仅凭护拳读法废图。肩肘提前到接触态、起手及低位随势仍待，未签桥接/整招；原五帧字节保持，不安装。[实际提示词与路径复核](verification/luna-crush-descent-candidate-review.json)
+
 - crush新增双拳下砸接触原源已保存：两拳确实降至肩下胸腹前方、双臂连通。五端点完整整图同左后胫尺重复构建通过，举顶05→新接触前后踝差约2.4/0.8逻辑像素，支持足位相容，不以强制锚证明无滑步。最小待补是约80–96像素拳路的下降中相，旧06只护架不能冒充随势；未运行/安装，保留真实Alpha和未知生成元数据。[来源与候选整合](verification/luna-crush-contact-candidate-review.json)
 
 - 月亮S2下项已按原计划核到crush双臂重砸（O/CRUSH）：旧九相所谓04/05接触仍双拳举顶，06已回护架，缺真正前下砸。已设计一张完整接触相，最小参考为本人定稿+旧05举顶/足位，明确禁复制高举和宽拳距；无生成/收费/运行/安装，spin仍待实速。[旧源核验](verification/luna-crush-existing-source-review.json)、[精确brief](../art/fighters/ultraman-arc__luna/stage2/crush-keyframe-brief-20261105-v1/brief.json)

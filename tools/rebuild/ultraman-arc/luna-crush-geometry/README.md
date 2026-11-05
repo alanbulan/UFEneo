@@ -11,3 +11,7 @@
     python tools/rebuild/ultraman-arc/luna-crush-geometry/geometry.py --out reports/luna-crush-new-check
 
 输出必须新目录。程序重复构建两次，检查像素一致、首尾相同、整图无裁切、源SHA、固定后端和栅格取整误差<1%。结果不是整招连续性验收，真实输入/回放、双向720/1080均尚未运行。
+
+## 下降候选v2
+
+`--plan tools/rebuild/ultraman-arc/luna-crush-geometry/plan-descent-v2.json`只在举顶与接触之间加入新候选。原五帧像素不变，新增近肘/腕投影点供路径比较。其高护拳外观不自动判无效，拳高度处于中间也不自动通过；肩肘提前终态及真实下砸读感仍待。没有新增时序或运行判定。
