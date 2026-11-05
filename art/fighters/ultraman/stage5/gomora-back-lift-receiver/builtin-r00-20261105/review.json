@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "source_sha256": "eac6ed696ecaae249f7bf3a8997b7d8438767d14226e4b5c7521f7283f85d3dd",
+  "size": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "alpha": {
+    "zero": 1311264,
+    "partial": 261600,
+    "opaque": 0,
+    "maximum": 254,
+    "below_16_nonzero": 32053
+  },
+  "alpha_findings": "原预览光晕多数来自alpha0区域RGB；真实合成未见宽光晕。主体常为253，无255不能单独判失败。低alpha残留仍保留，不抠图。",
+  "source_points": {
+    "pelvis": [
+      455,
+      850
+    ],
+    "pelvis_radius": 45,
+    "abdomen": [
+      570,
+      750
+    ],
+    "abdomen_range": [
+      [
+        535,
+        790
+      ],
+      [
+        580,
+        745
+      ]
+    ],
+    "head_length_approx": 180
+  },
+  "uniform_whole_size": [
+    146,
+    219
+  ],
+  "local_pelvis": [
+    65,
+    121
+  ],
+  "local_abdomen": [
+    81,
+    107
+  ],
+  "required_world_pelvis": [
+    206,
+    185
+  ],
+  "required_world_abdomen": [
+    241,
+    174
+  ],
+  "pairs": [
+    {
+      "kind": "pelvis_locked",
+      "paste": [
+        141,
+        64
+      ],
+      "pelvis_canvas": [
+        206,
+        185
+      ],
+      "abdomen_canvas": [
+        222,
+        171
+      ]
+    },
+    {
+      "kind": "abdomen_locked",
+      "paste": [
+        160,
+        67
+      ],
+      "pelvis_canvas": [
+        225,
+        188
+      ],
+      "abdomen_canvas": [
+        241,
+        174
+      ]
+    }
+  ],
+  "accepted": false,
+  "installed": false,
+  "geometry_result": "整图前倾直立、屈膝，未形成足够腹侧前伸。保髋配对腹点距指定背点约19px；腹点对齐则髋约向前19px。手工点有误差，不能靠移动整帧同时满足名义两点。",
+  "limits": [
+    "只读离线两向两层配对，不是主游戏截图。",
+    "头长和髋点是人工估计，未当精确骨点。",
+    "不局部变形、不切肢、不去背景、不安装。"
+  ]
+}
