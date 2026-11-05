@@ -1,7 +1,7 @@
 {
   "date_utc": "2026-11-05T05:56:50.704750+00:00",
   "scope": "训练录制/循环从完整回放及终局切回实时训练；再战和退出录制边界",
-  "status": "logic_passed_graphical_pending",
+  "status": "logic_passed_graphical_partial_nonzero_2p_unverified",
   "engine": "Godot 4.6.3.stable.official.7d41c59c4",
   "files": {
     "app/game_app.gd": "126e90536ed45c34afa0577e3c1e53db669c1830515682e59f2cfdc8ccb29aeb",
@@ -156,7 +156,7 @@
   },
   "limits": [
     "未运行Godot4.7；不等于全量项目验证。",
-    "真实主游戏720/1080菜单操作图形验收正在进行，尚未接受；本逻辑批不证明声音或实速美术。",
+    "真实720/1080菜单仅部分通过：F4播完切录制恢复新训练已观察；非零2P与循环/中途转换未接受。",
     "不同当前选人组合加载旧回放的指纹问题未修改。",
     "未运行修前旧版，不能宣称红灯回归已执行。"
   ],
@@ -184,5 +184,145 @@
     "note": "随后增加F4停止录制断言，最终67checks全部通过。"
   },
   "final_lifecycle_log": "reports/training-lifecycle/logic-20261105/training_lifecycle-final.log",
-  "acceptance": "root_delegated_by_user"
+  "acceptance": "root_delegated_by_user",
+  "graphical_review": {
+    "acceptance": "root_delegated_by_user",
+    "actual_scope": "原生1280×720、1920×1080正式菜单操作，F4播完后进入录制可恢复同人物实时训练与训练板，1P能移动且计时推进。",
+    "source": "reports/training-lifecycle/gui-20261105-technical-summary.json",
+    "independent_review": "复核15原图实际JPEG格式与尺寸；另实看gui720/04-record-live.png及gui1080b/04-record-new-live.png，后者计时81，不冒称开场首tick。文件后缀.png不改变原始JPEG字节属性。",
+    "unresolved": "正式2P默认箭头绑定正确，但真实录制输入对照1378帧2P均为中立，1PD有61非零帧；原因未定位到工具、采样或模式，不擅判产品无问题或工具有问题。",
+    "not_accepted": [
+      "非零2P录制/循环及R重开游标语义",
+      "已有非零磁带F4后切循环",
+      "播放中菜单录制/循环的真实画面路径",
+      "精确75tick开场的实速观察",
+      "音频、录像或战斗美术"
+    ],
+    "evidence_note": "67项逻辑测试覆盖上述状态分支，但不能替代真实输入尚未验证的项目。",
+    "window_closed": "受支持桌面确认窗口消失、终端回提示符，06:16:33锁文件不存在。",
+    "source_sha256": "252a6852df48852e9fd7379f61640bc4e8a6a5ecbde9a2412dca7fd5e8f90665",
+    "screenshots": [
+      {
+        "path": "reports/training-lifecycle/gui1080/01-title-actual-window.png",
+        "width": 1180,
+        "height": 812,
+        "sha256": "dd638abbd2e9ee8a91d1eac8b2bc02fcb5a87a7bfd04f2906f1ca1efa8063943",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui1080b/01-training.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "3a2e0d5fc137480ec4e9b4d95df26eda83f56b3a9ddd197e9a2fa316974807a3",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui1080b/02-replay-ended.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "cb12c876aaa8fc7113e385293887ce1d999453b5e8b38407ebcaf3ca0df7a383",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui1080b/03-training-menu.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "5d7a5d048c53283df1992f79222d661ae8978003a01142d1e1406731ea59dc2f",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui1080b/04-record-new-live.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "506bb5a9e45805624b477c67d75b23068d42bd48c7a43fd2e87b6cebe5de66f9",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui1080b/05-record-live-input.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "8ff75f12138ba97d1544b3c9b98d0ce6eda87bf31e8ddbfbbd12b1cff296945d",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui720/01-training.png",
+        "width": 1280,
+        "height": 720,
+        "sha256": "e39749e6c5ab0b02444a1404742901718f7680fe4ae25b59477dc6adbc7981a9",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui720/02-replay-ended.png",
+        "width": 1280,
+        "height": 720,
+        "sha256": "cb504db8412dcd5f7e45593f2bfb487f01ce37491ce9b8079637e051c1f8c234",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui720/03-training-menu.png",
+        "width": 1280,
+        "height": 720,
+        "sha256": "8079dcb2db9911bbbb0f687e5b94a8fadf01fdaf89913f1da421fa083b6b8491",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui720/04-record-live.png",
+        "width": 1280,
+        "height": 720,
+        "sha256": "f823731b5a78f8abd47731bc6b85a4e8b2755c23e4a22a3c38b1dd4e96c553c4",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui720/05-record-stopped.png",
+        "width": 1280,
+        "height": 720,
+        "sha256": "a22b9e24e897e0a870645568f59545737d70d8ff674aac0090c0bc26fe6df271",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui720/06-loop-playing.png",
+        "width": 1280,
+        "height": 720,
+        "sha256": "527a464cf059496f05269ea09ad4b43c3ec9dcc86586b76a5be5799556f85b31",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui720/07-restart-loop.png",
+        "width": 1280,
+        "height": 720,
+        "sha256": "4be7ccfa77f087039304ad30109d3de28819b13a6a46ebde8f99a024aaeeb9ce",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui720/08-input-comparison.png",
+        "width": 1280,
+        "height": 720,
+        "sha256": "ecda7375273ed28759d56c7e73f81b3f4da05eedaebab08ea4f69f9c208ad979",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      },
+      {
+        "path": "reports/training-lifecycle/gui720/09-player2-bindings.png",
+        "width": 1280,
+        "height": 720,
+        "sha256": "d8c0a94122751819e795471f4ad76ba01d77e5ad13f299991256af624715ed0a",
+        "format": "JPEG",
+        "extension_note": "Historical .png filename; original native screenshot bytes are JPEG. File bytes and SHA256 preserved."
+      }
+    ],
+    "report_correction": "首次图形汇总误按PNG偏移读取实际JPEG导致尺寸数值错误；已以PIL真实解码纠正，15图SHA均与原记录相同，原图未修改。9张720、5张1080、1张1180×812初始标题。"
+  }
 }
