@@ -41,3 +41,24 @@ A06仅上移4至[217,194]也有表面共点，但扩大ROI后第二版半径2仍
 当前状态仍accepted=false、installed=false。已有实际改善，不建议再为小幅静态差异盲目生成。下步应优先解决正常捕获阶段反馈遮挡及原速可辨性，再据真实运动判断26→27是否需要改整帧或时序；本轮未实施这些扩大范围的改动。
 
 八份实际图形trace的独立回放与format6二次回放均通过，每带760观察、685模拟tick；t27实际sprite15、root[-35,35]、anchor[128,288]及名义髋[215,195]配准成立。独立回执docs/verification/gomora-midlate-a-20261105-main-replay.json（acadedc1），不改变以上视觉未验收结论。
+
+## t26→27最新正常实图与已有帧再核
+
+正常反馈/地面锚点修复后，main-midlate-groundfx-20261105/gui/owner0-720/stills/receiver-gomora_back_lift_receiver-13.png和receiver-gomora_back_lift_receiver-15.png可直接看清mid与第二版腿摆。独立审片仍确认抬腿差，但这是短动作中的快速后摆，静帧不足以断定原速观感必须失败，不能把每个单tick姿态差都机械变成生图需求。
+
+已核完整帧的近/远膝相对共用髋中心：mid[-15,+29]/[-26,+21]；第二版[-18,+13]/[-35,0]；首版[-18,+13]/[-28,-5]。首版远膝比第二版更高，插在前面会出现先抬高再下降；early及失败bridge远膝偏前下，插回mid之后会倒摆；late已更晚。没有发现真正同时居于mid与第二版之间的现成双腿姿态。坐标有人工读点误差，不当作精确骨骼。
+
+从点位估计方向，early→mid远腿约51度、mid→第二版近/远腿约27/39度。更早一格本身也有较大方向变化，故只补26→27一张不能保证整链整体顺滑。不能用持帧时长去除空间跨度，也不能因粗略点位半径变化就直接宣判大腿缩短。
+
+不生图的优先路径是先用原速判断现A方案；当前云桌面没有受支持原速录屏，不能虚报这一项已完成。若仍突兀，可以有限比较B方案：保留t27 mid，t28使用第二版及已核A07髋[219,194]，t29 late，t30–31 R02不变。它让mid保持两tick、减少前段改动，但只是推迟主腿姿变化，没有减少空间跨度；A07仍不是已证明的上提发力相。B尚未构建或运行，不能把静态可行支点当动态通过。
+
+若之后原速明确失败，最小新增只需一张真正介于mid与第二版的完整姿态：近膝约[-20,+21]、远膝约[-32,+11]（原生参考尺度，各约±6像素），两条大腿整体向后摆、自然长度，小腿随膝屈曲，不能仅折小腿。保持头抬高、双拳后收、身份与头身比例；上腹要重新与A06实际背脊配对，不能通过抬整个人或换层补假接触。
+
+届时最小参考顺序：
+1. art/fighters/ultraman/stage5/gomora-back-lift-receiver/builtin-r01-r02-mid-20261105/candidate.png。
+2. art/fighters/ultraman/stage5/gomora-back-lift-receiver/builtin-midlate-20261105/candidate-2.png。
+3. reports/gomora-builtin/main-midlate-groundfx-20261105/gui/owner0-720/stills/receiver-gomora_back_lift_receiver-13.png（真实较早支撑）。
+4. reports/gomora-builtin/main-midlate-groundfx-20261105/gui/owner0-720/stills/receiver-gomora_back_lift_receiver-15.png（真实较晚支撑）。
+5. art/fighters/ultraman/model/model-reference-x4.png。
+
+若新帧成立，可用t27插入、第二版移t28并采用A07已核支点、late留t29，消耗原late重复格而不改变t32离背/t68伤害；新t27髋可从[216,197]附近设计，但必须以真实上腹实体/头角/双腿路径重核，不能先定坐标后假造共点。本段仅给有条件的最小缺帧定义，不批准或执行生成。本轮不改源码、合同、时序或素材，不安装。
