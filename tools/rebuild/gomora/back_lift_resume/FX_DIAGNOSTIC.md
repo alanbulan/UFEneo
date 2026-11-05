@@ -51,3 +51,17 @@ raw23→24同时切换A05→A06和R00→R01，受方躯干倾角与腿部显露�
 只读评估：落地专用效果别名复用同一完整图、采用地面锚点（例如y约120），可让最大下缘仅在地面下9像素；须再核实际位置、扩散起点和HUD。此方案尚未实施，不改当前冻结结果，不移动真实伤害事件或镜头来掩盖。当前反馈时机修复有效，但动作跳差、原速录屏/听感未验及落地效果HUD覆盖仍保留，未接受整个动作，未安装正式三级。
 
 八份实际图形trace的独立及format6二次回放已通过；实际impact_nodes再次核捕获impact_light/无爆炸、slam唯一爆炸、tech/whiff全程无爆炸。回执docs/verification/gomora-midlate-feedback-20261105-main-replay.json（2d37689f及限制补记3a1578ec），含182图原尺寸SHA验证。
+
+## 候选落地地面锚点校准结果
+
+后续明确授权后，地面锚点方案已实现为独立内存候选，旧合同与HUD遮盖证据保持不变。新合同reports/gomora-builtin/main-midlate-groundfx-20261105/contract.json，SHA 2a218b6b5e8014850d96444eab25a583f67bb0bad64c45d9f309cfe64463b7a4，逻辑冻结f5d47833。
+
+只新增候选效果别名gomora_candidate_ground_explosion，完整复制原explosion图集、四帧矩形、ticks4、比例1及其他显示字段，仅anchor由[72,72]改为[72,120]。原explosion和其他注册条目逐项不变，真实事件x/height、伤害、招式帧、人物位置和镜头没有因此改变。采用独立ground_fx_entry/game与runner追加内存别名，不改正式注册表或旧harness。
+
+两向命中、tech1–4、真实落空12case和独立format6二次回放通过。真实Feedback审计四相offset[-72,-120]、scale1、rotation0、eventheight0，归一别名后新旧spawn调用与事件坐标相同；保留JSON整数/浮点表示导致的初次审计失败，修正比较方法后重跑通过，不篡改旧日志。逻辑回执docs/verification/gomora-midlate-groundfx-20261105-logic.json。
+
+八组正常主游戏画面198张原生PNG（命中双向720/1080四组各41，tech1双向720各7，whiff双向720各10）已完成。命中组额外逐相捕获ground-fx-0..3，真实age0/4/8/12与actualframe绑定一致。双向720/1080的亮芯、火焰、烟团及最后相下缘均实见与底HUD保有空隙，旧烟火下缘被能量/体力条覆盖的现象在本批指定四相未再现。亮芯仍围绕倒地躯干，效果完整，无裁切或局部缩放。负例没有终结爆炸，受方HP1000；命中仅一次490。图形回执docs/verification/gomora-midlate-groundfx-20261105-graphical.json（67cdae31）。
+
+本项候选地面效果定位改善不代表整体动作验收。原有首髋跳/贴角及单tick腿姿跨度仍保留，无原速录屏和听感验收，候选未安装，正式三级未覆盖。不把旧HUD问题回执改写成当时已经通过。
+
+八份实际带独立及format6二次回放全部通过，198原生图SHA/尺寸、四相实际frame/region/height0/offset[-72,-120]/scale1均核对。与上一候选同输入游戏状态和人物节点一致，仅finish_effect别名变化；独立回执docs/verification/gomora-midlate-groundfx-20261105-main-replay.json（27c3e1a5）。
