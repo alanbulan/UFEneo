@@ -213,6 +213,8 @@ func content_commands() -> UfeCommandPages:
 	return front.content.get_child(0) as UfeCommandPages
 
 func start_match() -> void:
+	dummy_recording=false
+	dummy_cursor=0
 	ko_finish.reset()
 	for child in get_children():
 		remove_child(child)
@@ -313,6 +315,7 @@ func _action(action: String) -> void:
 			dummy_cursor=0
 			hud.toast.show_message("陪练按当前朝向复现，从头播放" if dummy_relative else "陪练按原始左右复现，从头播放")
 		"dummy_record","dummy_playback":
+			if not _prepare_dummy_session():return
 			training=true
 			dummy=4
 			dummy_recording=action=="dummy_record"
@@ -345,6 +348,7 @@ func _action(action: String) -> void:
 	audio.set_context("select" if hud.selection.visible or (front.visible and front.page in ["select","stage","vs"]) else "menu" if front.visible else "paused" if paused else "battle")
 
 func _show_page(page: String) -> void:
+	dummy_recording=false
 	audio.suspend_battle()
 	ko_finish.reset()
 	view.bind_match(simulation)
@@ -375,14 +379,34 @@ func _front_action(action: String) -> void:
 			if review_driver is UfePixelPagesReview:intro=75
 			view.show();hud.show();front.hide()
 
+# 完整回放/终局不能直接接实时输入；先成功装配新局，再提交模式变更。
+func _prepare_dummy_session() -> bool:
+	if replay==null and not simulation.finished:return true
+	var ids: Array=replay.fighter_ids.duplicate() if replay!=null else [simulation.fighters[0].base_definition.id,simulation.fighters[1].base_definition.id]
+	if ids.size()!=2:return false
+	var next_match:=_battle_match(str(ids[0]),str(ids[1]),true)
+	if next_match==null:
+		hud.toast.show_message("无法建立训练对局，陪练录制已保留")
+		return false
+	selected_fighters=ids
+	training=true
+	_install_round(next_match)
+	return true
+
 func reset_round() -> void:
-	audio.suspend_battle()
-	ko_finish.reset()
-	simulation = _battle_match(selected_fighters[0],selected_fighters[1],training)
+	var next_match:=_battle_match(selected_fighters[0],selected_fighters[1],training)
 	if review_driver is UfePhase3SpecialReview or review_driver is UfeUltrasevenFourthReview:
 		var ids: Array=review_driver.matchup()
-		simulation=_battle_match(str(ids[0]),str(ids[1]))
-	review_driver.prepare_match(simulation)
+		next_match=_battle_match(str(ids[0]),str(ids[1]))
+	review_driver.prepare_match(next_match)
+	_install_round(next_match)
+
+func _install_round(next_match: UfeMatchDirector) -> void:
+	audio.suspend_battle()
+	ko_finish.reset()
+	dummy_recording=false
+	dummy_cursor=0
+	simulation=next_match
 	view.bind_match(simulation)
 	recorder = UfeReplayRecorder.new()
 	_reset_computers()
@@ -414,6 +438,8 @@ func play_replay() -> void:
 	simulation = _battle_match(str(value.fighter_ids[0]),str(value.fighter_ids[1]),true)
 	view.bind_match(simulation)
 	replay = value
+	dummy_recording=false
+	dummy_cursor=0
 	audio.configure_battle_music(simulation.fighters.map(func(f):return f.definition.id),view.selected_stage,battle_preferences)
 	audio.next_battle()
 	if view.layered_stage!=null:view.layered_stage.restart()
@@ -576,7 +602,7 @@ func _physics_process(_delta: float) -> void:
 	if auto_quit > 0 and capture_tick >= auto_quit: shutdown()
 
 func _record_dummy_input(frame: UfeInputFrame) -> void:
-	if not dummy_recording or not training or dummy!=4:return
+	if replay!=null or not dummy_recording or not training or dummy!=4:return
 	dummy_tape.append(frame.pack())
 	dummy_facings.append(simulation.fighters[1].facing)
 

@@ -1,0 +1,188 @@
+{
+  "date_utc": "2026-11-05T05:56:50.704750+00:00",
+  "scope": "训练录制/循环从完整回放及终局切回实时训练；再战和退出录制边界",
+  "status": "logic_passed_graphical_pending",
+  "engine": "Godot 4.6.3.stable.official.7d41c59c4",
+  "files": {
+    "app/game_app.gd": "126e90536ed45c34afa0577e3c1e53db669c1830515682e59f2cfdc8ccb29aeb",
+    "tests/training_lifecycle.gd": "d1180449d83bad4716385d9d05cb7a200e48793a12120b5d796a5eea0f92fb83",
+    "tests/training_lifecycle.gd.uid": "a7001e34d790e1e1d5505a3e9fb5c80a23484f25007cd1193ac294f973371910"
+  },
+  "changes": [
+    "先按回放fighter_ids成功建立新局，再修改selected_fighters、training和磁带；失败保留旧局/选人/磁带/游标。",
+    "保留循环模式和逐帧朝向设置，新局归零游标、停止跨局录制。",
+    "完整回放进入时结束录制，录制入口拒绝replay，离开对局停止录制。",
+    "正式75tick开场保持；四组测试完整推进75tick后才送真实2P动作或播放磁带。"
+  ],
+  "test_command_prefix": "XDG_DATA_HOME=/tmp/ufeneo-training-lifecycle-20261105/data XDG_CONFIG_HOME=/tmp/ufeneo-training-lifecycle-20261105/config XDG_CACHE_HOME=/tmp/ufeneo-training-lifecycle-20261105/cache python tools/godot_lock.py -- godot --headless --path . --script",
+  "runs": [
+    {
+      "script": "tests/training_lifecycle.gd",
+      "exit_code": 0,
+      "log_sha256": "53ea79e9cee252a1b0ceafe54ce669d5740e01c3be78e2c9663d994d1e535047",
+      "script_error_count": 0,
+      "output": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org\n\nTRAINING_LIFECYCLE {\"checks\":67,\"errors\":[]}",
+      "checks": 67
+    },
+    {
+      "script": "tests/training_tape.gd",
+      "exit_code": 0,
+      "log_sha256": "0af3ea8f951818b956e29fa0a653376bbf7b4475b0a05acb480fc58ebe4c6a11",
+      "script_error_count": 0,
+      "output": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org\n\nTRAINING_TAPE {\"errors\":[]}",
+      "checks": null
+    },
+    {
+      "script": "tests/pixel_ui.gd",
+      "exit_code": 0,
+      "log_sha256": "40e657d818952907698a2e2e90f2d0526de39267ac26678143f328a604f8681a",
+      "script_error_count": 0,
+      "output": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org\n\n像素HUD资源和菜单状态验证完成",
+      "checks": null
+    },
+    {
+      "script": "tests/pixel_pages.gd",
+      "exit_code": 0,
+      "log_sha256": "6e7aa358bd360db2bb825273dc00368d0505e212c980ef5144843a84a1e38043",
+      "script_error_count": 0,
+      "output": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org\n\n页面目录筛选、虚拟网格、招式分页及真实呈现帧闪白逻辑验证完成",
+      "checks": null
+    },
+    {
+      "script": "tests/main_shutdown_reentrancy.gd",
+      "arguments": [
+        "--shutdown-out=/tmp/ufeneo-training-lifecycle-20261105/shutdown-baseline-duplicate",
+        "--shutdown-case=baseline-duplicate"
+      ],
+      "actual_exit": 0,
+      "expected_exit": 0,
+      "native_exit_verified_by_runner": true,
+      "failures": [],
+      "script_error_count": 0,
+      "log_sha256": "e6d111ae70172f75520ec34cf54d64541a3a7157136ed50f0b2d93f3818da55a",
+      "result": {
+        "case": "baseline-duplicate",
+        "children_after": 0,
+        "children_before": 2,
+        "expected_exit": 0,
+        "failures": [],
+        "input_callback_targets_app": true,
+        "input_reconfigured": true,
+        "main_scene": "res://app/scenes/main.tscn",
+        "native_exit_verified_by_runner": false,
+        "physics_processing_after": false
+      }
+    },
+    {
+      "script": "tests/main_shutdown_reentrancy.gd",
+      "arguments": [
+        "--shutdown-out=/tmp/ufeneo-training-lifecycle-20261105/shutdown-normal",
+        "--shutdown-case=normal"
+      ],
+      "actual_exit": 0,
+      "expected_exit": 0,
+      "native_exit_verified_by_runner": true,
+      "failures": [],
+      "script_error_count": 0,
+      "log_sha256": "08c439c4d041903388bd003f3355c872849e453bc6d48d112065326f790dada4",
+      "result": {
+        "case": "normal",
+        "children_after": 0,
+        "children_before": 2,
+        "expected_exit": 0,
+        "failures": [],
+        "input_callback_targets_app": true,
+        "input_reconfigured": true,
+        "main_scene": "res://app/scenes/main.tscn",
+        "native_exit_verified_by_runner": false,
+        "physics_processing_after": false
+      }
+    },
+    {
+      "script": "tests/main_shutdown_reentrancy.gd",
+      "arguments": [
+        "--shutdown-out=/tmp/ufeneo-training-lifecycle-20261105/shutdown-failure",
+        "--shutdown-case=failure"
+      ],
+      "actual_exit": 7,
+      "expected_exit": 7,
+      "native_exit_verified_by_runner": true,
+      "failures": [],
+      "script_error_count": 0,
+      "log_sha256": "148cc9f576743680647b50a3e2817b4fa192143c98682c89f2cb1723d5ce5669",
+      "result": {
+        "case": "failure",
+        "children_after": 0,
+        "children_before": 2,
+        "expected_exit": 7,
+        "failures": [],
+        "input_callback_targets_app": true,
+        "input_reconfigured": true,
+        "main_scene": "res://app/scenes/main.tscn",
+        "native_exit_verified_by_runner": false,
+        "physics_processing_after": false
+      }
+    },
+    {
+      "script": "tests/main_shutdown_reentrancy.gd",
+      "arguments": [
+        "--shutdown-out=/tmp/ufeneo-training-lifecycle-20261105/shutdown-duplicate",
+        "--shutdown-case=duplicate"
+      ],
+      "actual_exit": 7,
+      "expected_exit": 7,
+      "native_exit_verified_by_runner": true,
+      "failures": [],
+      "script_error_count": 0,
+      "log_sha256": "cc5b17a73737fc30827d94a2d040a7d8738794ba283b662d1d3c77541c3cc839",
+      "result": {
+        "case": "duplicate",
+        "children_after": 0,
+        "children_before": 2,
+        "expected_exit": 7,
+        "failures": [],
+        "input_callback_targets_app": true,
+        "input_reconfigured": true,
+        "main_scene": "res://app/scenes/main.tscn",
+        "native_exit_verified_by_runner": false,
+        "physics_processing_after": false
+      }
+    }
+  ],
+  "pre_fix_evidence": {
+    "kind": "static_code_path_only_not_executed",
+    "source": "app/game_app.gd before patch: dummy_record/dummy_playback cleared tape or enabled mode but did not clear replay; physics replay branch took priority and paused after input exhaustion.",
+    "legacy_failure_not_run": true
+  },
+  "limits": [
+    "未运行Godot4.7；不等于全量项目验证。",
+    "真实主游戏720/1080菜单操作图形验收正在进行，尚未接受；本逻辑批不证明声音或实速美术。",
+    "不同当前选人组合加载旧回放的指纹问题未修改。",
+    "未运行修前旧版，不能宣称红灯回归已执行。"
+  ],
+  "invocation_errors": [
+    {
+      "script": "tests/main_shutdown_reentrancy.gd",
+      "actual_exit": 2,
+      "reason": "首次未传必需--shutdown-out，测试未运行；随后四模式补跑。",
+      "log_sha256": "a9912b85473f126d3f4f63ec824170c828df3473a292f866dde86cafda5b66da"
+    }
+  ],
+  "warnings": [
+    {
+      "log": "shutdown-baseline-duplicate.log",
+      "warning": "ObjectDB instances leaked at exit",
+      "count": 1,
+      "note": "此模式结果failures为空且exit0；其余三个关闭模式及最终训练生命周期未出现此警告。未查明泄漏对象，不宣称修复或既有。"
+    }
+  ],
+  "evidence_directory": "reports/training-lifecycle/logic-20261105",
+  "initial_lifecycle_run": {
+    "log": "reports/training-lifecycle/logic-20261105/training_lifecycle.log",
+    "checks": 62,
+    "errors": [],
+    "note": "随后增加F4停止录制断言，最终67checks全部通过。"
+  },
+  "final_lifecycle_log": "reports/training-lifecycle/logic-20261105/training_lifecycle-final.log",
+  "acceptance": "root_delegated_by_user"
+}

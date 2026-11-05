@@ -18,7 +18,7 @@ CASES = [
     "phase3_standing", "phase3_air", "phase3_reaction", "phase3_zetton",
     "phase3_zetton_air", "phase3_zetton_defense", "phase3_throws",
     "phase3_specials", "phase3_supers", "phase3_fx_audio", "codex_impact_feedback_policy",
-    "catalogue_identity_display", "computer_ai", "training_tape", "pixel_ui", "pixel_pages", "ui_facing",
+    "catalogue_identity_display", "computer_ai", "training_tape", "training_lifecycle", "pixel_ui", "pixel_pages", "ui_facing",
     "main_shutdown_menu_exit", "main_shutdown_reentrancy",
 ]
 
