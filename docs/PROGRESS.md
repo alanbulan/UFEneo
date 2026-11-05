@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 蹲左拳三槽RAM按原3/3/12试排：仅两独立图、65伤/30体力low和原二拳取消字段保留；8逻辑与16主游戏原输入/独立回放通过，站防受击、蹲防格挡、落空均双向一致。仅第一拳，二拳/站转蹲未验；32组图形待核头肩脚位与拳接点，不安装。[运行候选与边界](verification/luna-crouch-light-session-resume.json)
+
 - 蹲左拳v3近肩跨胸出拳、远拳护颏已成立；近腕盘完整，远腕甲遮挡不能判缺失。实际蹲架→v3→蹲架同尺重复通过，接触头肩约低14px、前踝约收5.7px及直臂保留实速待核，无静态硬阻塞；可继续RAM试排，未宣称全招或安装。[第三版与候选边界](verification/luna-crouch-light-contact-v3-candidate-review.json)
 
 - 蹲左拳第二版仍近侧护颏、远侧出拳，未解决肩臂归属；原源/实际prompt和四端点同尺对照已存，停止双参考盲重试。找到本人既有近侧跨胸整帧可限作第三拓扑参考，保留其原生Alpha拒收/站姿长拳限制；不改名掩盖左拳缺口、不安装。[第二版核验与可行策略](verification/luna-crouch-light-contact-v2-candidate-review.json)
