@@ -4,6 +4,8 @@
 
 ## 当前成果与证据索引
 
+- 尾段第二版已补到有效左侧空中回摆位置：前层攻击腿左下伸、鞋离支撑底93源像素；同尺到idle脚尖约横移−2.6/下降16.3逻辑像素，值得优先直连试排，不强插旧backstep00制造反向脚路。拓扑相容不等于遮挡髋唯一证明，跨身时序/脚转向/尺度仍待，未安装。[两版差异与同尺核验](verification/luna-spin-heavy-tail-air2-candidate-review.json)
+
 - 新尾段候选原源已保存：实际是攻击腿向右前下展开、鞋仍在承重脚右侧，未补指定向左回摆；同尺四相脚尖位置与目视相符，不因关节点误差机械否决。可保留下降/护架回位备选，但不插入冒充左回摆、不为用上它延长链，未安装。[来源与用途差异](verification/luna-spin-heavy-tail-air-candidate-review.json)
 
 - 尾段新增可保留的旧源：backstep00近层腿左落脚、后层右承重，比当前landing更相容实际idle；三相同尺下到idle约18px差不作机械失败门。Alpha只证轮廓、不证髋或承重；最低待核是低收攻击腿空中回摆到原落点，已给一张完整过渡设计，未生成/安装。[事实与不确定分层](verification/luna-spin-heavy-tail-tracking-v7.json)
