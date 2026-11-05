@@ -2,6 +2,8 @@
 
 ## 2026-11-05 开发接续索引
 
+- 杰顿低蹲硬直首候选已保存：本人低蹲完整，但姿态仍接近保持，未接受独立受挡动作。灰污背景是低alpha噪声（上方最大24），Alpha128诊断只剩单人物，可离线清理而非仅据背景重生成；原源未处理未安装，model/high/usage/费用未知。[原源、提示词与透明诊断](../art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-00-review.json)
+
 - 杰顿蹲防硬直站高已定位为实际源姿态缺口：模拟与表现均正确选crouch_blockstun，同动作raw/旧processed/正式两相本来高弓步，无可换回低蹲源；未改正确core或用蹲防保持冒充。新增8组正式低拳/双受方/双向/松蹲独立回放，状态和实际动画选择通过。完整低蹲参考及两相brief已备，未生成、未修复画面。[证据与修复依赖](verification/zetton-crouch-block-posture-review.json)
 
 用户已恢复开发，要求优先已有完整源、真实玩法与验证；不要调用用户Codex，不发收费请求。根AGENTS中的2026-11-03停止状态与本文后面的清理记录是历史，当前明确委托优先。本文和PROGRESS继续是唯一交接位置，不新建备份。

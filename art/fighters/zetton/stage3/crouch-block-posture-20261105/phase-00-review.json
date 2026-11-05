@@ -1,0 +1,170 @@
+{
+  "date_utc": "2026-11-05",
+  "status": "raw_candidate_not_accepted_not_installed",
+  "installed": false,
+  "art_passed": false,
+  "source": {
+    "reported_by": "父任务：按phase-00提示词原样、两参考原顺序使用本会话内置图片工具",
+    "transparent_background_requested": true,
+    "model": null,
+    "quality": null,
+    "usage": null,
+    "cost": null,
+    "prompt": "Create ONE complete whole-body 2D pixel-art fighting-game animation frame of the exact Zetton shown in the references, fixed side view facing right. Reference 1 is the actual low crouching guard that this frame must continue; reference 2 is identity only and MUST NOT change the pose to standing. Keep the pelvis as low as reference 1, the rear leg deeply folded close to the ground and the front knee bent, with BOTH feet at the same contact positions. Preserve body scale, head size, ground baseline, black alien body, pale segmented arms and thighs, two distinct curved antennae, the narrow vertical orange face light and paired orange chest organs. Both complete arms, hands, legs, feet and antenna tips must remain attached and fully inside the canvas. Keep near/far limbs distinct; no added limbs, human facial features, weapons or armor. Do not stand up, widen the stance, straighten the knees, enlarge the head, compress the entire sprite, or replace the character with a translated copy. Sharp coherent pixel art, isolated genuine transparent background with margins. No opponent, ground, shadow, text, sparks, beams, trails or effects. This is the FIRST moment of low crouching block stun after an incoming attack from the right. The bent forearms brace together in front of the low upper body; the shoulders and torso recoil a SMALL amount backward while the hips stay low and the bent knees and planted feet do not change support. The head remains near its original crouching height, not the higher standing guard. Make a new complete reaction pose, not the unchanged reference guard.",
+    "references": [
+      {
+        "path": "art/fighters/zetton/stage3/crouch-block-posture-20261105/reference-crouch-guard-hold.png",
+        "sha256": "c59d556ade8c0bb50c016c41a3ac5afceb8fe33b57a3f6d2856ed0cb44ad0620"
+      },
+      {
+        "path": "assets/fighters/zetton/model-native.png",
+        "sha256": "f968b3581fd3e4ff26c74de0930c373da7de5768c3bf356c94b74b52d10ca925"
+      }
+    ],
+    "original_received_path": "reports/zetton-crouch-block-00.png",
+    "original_bytes_preserved": true
+  },
+  "image": {
+    "path": "art/fighters/zetton/stage3/crouch-block-posture-20261105/phase-00.raw.png",
+    "sha256": "a879320967da5baa3431342c786980dacae8275196c7cb5a3e4bfd3ccc3abc85",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_zero": 166847,
+    "alpha_nonzero": 1405669,
+    "alpha_opaque": 64,
+    "alpha_nonzero_bbox": [
+      0,
+      0,
+      1254,
+      1254
+    ],
+    "upper_500_rows": {
+      "max_alpha": 24,
+      "mean_alpha": 6.227189792663477
+    },
+    "threshold_diagnostics": {
+      "1": {
+        "pixels": 1405669,
+        "upper_500_rows_pixels": 627000,
+        "components_4_connected": 3300,
+        "largest_pixels": 1383844,
+        "other_pixels": 21825,
+        "largest_bbox": [
+          0,
+          0,
+          1254,
+          1254
+        ]
+      },
+      "8": {
+        "pixels": 309087,
+        "upper_500_rows_pixels": 135717,
+        "components_4_connected": 3668,
+        "largest_pixels": 172941,
+        "other_pixels": 136146,
+        "largest_bbox": [
+          319,
+          529,
+          900,
+          1162
+        ]
+      },
+      "16": {
+        "pixels": 175049,
+        "upper_500_rows_pixels": 6097,
+        "components_4_connected": 201,
+        "largest_pixels": 168930,
+        "other_pixels": 6119,
+        "largest_bbox": [
+          320,
+          529,
+          900,
+          1162
+        ]
+      },
+      "32": {
+        "pixels": 167556,
+        "upper_500_rows_pixels": 0,
+        "components_4_connected": 1,
+        "largest_pixels": 167556,
+        "other_pixels": 0,
+        "largest_bbox": [
+          320,
+          529,
+          899,
+          1162
+        ]
+      },
+      "64": {
+        "pixels": 166361,
+        "upper_500_rows_pixels": 0,
+        "components_4_connected": 1,
+        "largest_pixels": 166361,
+        "other_pixels": 0,
+        "largest_bbox": [
+          320,
+          529,
+          899,
+          1162
+        ]
+      },
+      "128": {
+        "pixels": 164674,
+        "upper_500_rows_pixels": 0,
+        "components_4_connected": 1,
+        "largest_pixels": 164674,
+        "other_pixels": 0,
+        "largest_bbox": [
+          321,
+          530,
+          899,
+          1161
+        ]
+      },
+      "192": {
+        "pixels": 163175,
+        "upper_500_rows_pixels": 0,
+        "components_4_connected": 1,
+        "largest_pixels": 163175,
+        "other_pixels": 0,
+        "largest_bbox": [
+          321,
+          530,
+          898,
+          1161
+        ]
+      },
+      "250": {
+        "pixels": 149728,
+        "upper_500_rows_pixels": 0,
+        "components_4_connected": 182,
+        "largest_pixels": 149155,
+        "other_pixels": 573,
+        "largest_bbox": [
+          324,
+          533,
+          873,
+          1158
+        ]
+      }
+    }
+  },
+  "review": {
+    "identity": "黑色杰顿、两弯触角、竖橙脸灯、橙胸器官、分节米白四肢可辨，完整低蹲及双脚保留，未变高弓步。",
+    "alpha": "全画布可见大块灰色污噪，但上方500行alpha最大24/均值6.23；>=32已只剩单一完整人物。现行Alpha128可去除此低透明背景，不等于原生干净透明；本次只统计未保存清理图，不能因背景就断言必须重生成。",
+    "action": "姿态仍非常接近原低蹲保持：同样头胸前倾与交叠护臂、后腿低折，没有清楚可辨的独立后震/压臂反应。单帧不足证明受挡动作，可作低蹲身份候选，不能把保持变体当独立硬直两相。",
+    "geometry": "尚未共同尺度配准与逐点头髋/肩肘测量，不宣称精确脚位、头身比例或运动差异已通过。",
+    "prohibited_workaround": "不直接改名安装，不以污噪阈值清理掩盖动作不足，不切肢/旋转局部/整体抖动代替受挡。"
+  },
+  "next_plan": {
+    "status": "只读改进建议，未发新生成请求",
+    "background": "若继续评估当前源可用既有Forge Alpha128清理；保存原源及真实后处理来源，不必为低alpha污噪盲重试。",
+    "pose": "新反应必须有相对于固定低髋的明确上身后撤：头与双肩向后约1/4本人头宽，前臂更紧贴胸前承压、肘部向躯干收拢；后腿深折和双脚支撑保持，头不抬高。第二相再回缓到低蹲。该量是生成设计目标，不是已测量的当前图变化。",
+    "reference": "原低蹲作支撑与本人身份参考，现图仅作姿态未充分变化的负例说明，不作为已验反应正例。",
+    "stop_rule": "先生成/核验单个后震关键相是否真正有差异，成立后才补缓冲相，避免连续重复相同约束和消耗。",
+    "rule_boundary": "站/蹲状态、低段/中段/overhead规则、硬直duration、4/6动画节拍、伤害/体力/位移/取消均不改。实际新完整轮廓若安装，需同步本人受击框并如实更新内容指纹，不能宣称所有旧回放指纹不变。"
+  }
+}
