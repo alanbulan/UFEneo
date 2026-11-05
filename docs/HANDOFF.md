@@ -16,6 +16,11 @@
 
 用户本次明确要求用本会话生图能力；这次仅保留候选，不继承历史客户端的model/high/usage或费用。完整原字节位于art/fighters/ultraman-arc__luna/stage2/launcher-session-candidate-20261105/phase-02.raw.png。向上弯肘拳与月亮身份可辨，但前鞋内收、原01张掌及03水平拳不能接续；真实alpha存在低透明噪点触边。未安装、未开放装甲、未改模拟，未进行游戏/回放/图形验收。后续先解决完整蓄拳与回收链和统一尺度，不以这张图宣布升击完成。[来源与测量](verification/luna-launcher-session-candidate-review.json)。
 
+
+### 升击之后：回旋重击关键相brief（2026-11-05）
+
+按原production-plan的launcher→spin_heavy顺序，下一项为4K回旋重击。已实看本人定稿、旧七相及旧接触骨架：旧源只有侧踢，不能改名复用。只准备一张“左腿承重、右腿收膝、肩髋真实转动”的完整蓄势关键相，固定侧面镜头、本人月亮装甲与解剖腿身份；不把它当接触相或整招完成。完整prompt、6项参考SHA、旧源排除与验收条件统一保存于[brief](../art/fighters/ultraman-arc__luna/stage2/spin-heavy-keyframe-brief-20261105-v1/brief.json)。造型依据为项目当前本人模型，不冒称全部官方尺寸门或用户亲审；动作按游戏改编，不冒称原剧招式复刻。大面积背面随势仍缺可靠本人背甲参考，不自行编造。未生成、未收费、未调用Codex、未改运行资源。
+
 ### 当前获取与运行
 
 - 最新开发在私有仓库的checkpoint/full-20261105-0020。2026-11-05 14:09 UTC实际核验到41d3ebfc4847d0d9cf9bff82a70d443cb10e7033；main停99a084d8a03647d7c84546ba36cf0a4617f9c553。不要把main当成已含后续月亮与镜头改动。最终回执/本文的上传状态须另核远端，不猜测成功。
