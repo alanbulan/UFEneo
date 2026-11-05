@@ -1,0 +1,180 @@
+{
+  "date": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "status": "共同尺度八相候选注册、六组逻辑与正式main独立输入回放通过；真实图形待验收，装甲未开放。",
+  "source_selection": {
+    "path": "docs/verification/luna-s2-next-source-review.json",
+    "sha256": "28780b991fdcf62538f8543f0288742c24c88c11cae29b46701a0394faf998d8"
+  },
+  "manifest": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/manifest.json",
+    "sha256": "e36f13a3396c7d3acf11977abf77522efd8d560a82f5a25b5c190e2e036b75ab"
+  },
+  "registration_review": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/tackle-registered-20261105-v1/registration-review.json",
+    "sha256": "857b31f91b54140207494788c4e1e0457848c5885b5b65c4ff989d24e2306ae4"
+  },
+  "contract": {
+    "path": "reports/luna-tackle-resume/contract-02.json",
+    "sha256": "d1506db51b8cd0bdf33e77d3decee3801238776fb20e9bb7a1f3ea194899b2b8"
+  },
+  "python_tests": {
+    "path": "reports/luna-tackle-resume/python-tests-02.log",
+    "sha256": "b3808040bb349bbf997aeddf8d120128960b4e04aab242022ff7e32bd086e3f6"
+  },
+  "logic": {
+    "path": "reports/luna-tackle-resume/logic-02.json",
+    "sha256": "1c928e1a5851fa0ecbe9371e68bb234ef7b97cbe49ab8077548877d1f3e7557b"
+  },
+  "main": {
+    "path": "reports/luna-tackle-resume/main-headless-hit-02/main-trace.json",
+    "sha256": "5314a0adeb24c3efff5cb61196e852824d4ebb8a96c18d5c5072fc4e7e2aba3c"
+  },
+  "independent_main_replay": {
+    "path": "reports/luna-tackle-resume/main-headless-replay-02/main-trace.json",
+    "sha256": "5314a0adeb24c3efff5cb61196e852824d4ebb8a96c18d5c5072fc4e7e2aba3c"
+  },
+  "original_input_tape": {
+    "path": "reports/luna-tackle-resume/main-headless-hit-02/actual-input-tape.json",
+    "sha256": "5685950b2c0ccd3a20396ebc82f32567bee9b9cd2e025032ec81fc0c2b36dbe5"
+  },
+  "results": {
+    "python_tests": 9,
+    "logic_cases": [
+      {
+        "contact_counts": {
+          "tackle": 1
+        },
+        "contacts": {
+          "tackle": "hit"
+        },
+        "damage": 100,
+        "direction": 1,
+        "final_hash": "d680c8c70b8a9881becfd9d20b480eb249480c863742f5d64dfd0107d68b8442",
+        "forward_displacement": 27,
+        "initial_gap": 70,
+        "kind": "hit",
+        "moves": [
+          "tackle"
+        ],
+        "replay_errors": [],
+        "target_pushback": 8
+      },
+      {
+        "contact_counts": {
+          "tackle": 1
+        },
+        "contacts": {
+          "tackle": "block"
+        },
+        "damage": 0,
+        "direction": 1,
+        "final_hash": "7d80fe5ac7353c1485bb20ae7282818780a0650cc17052a5911d09e91b98ff7d",
+        "forward_displacement": 27,
+        "initial_gap": 70,
+        "kind": "block",
+        "moves": [
+          "tackle"
+        ],
+        "replay_errors": [],
+        "target_pushback": 0
+      },
+      {
+        "contact_counts": {},
+        "contacts": {},
+        "damage": 0,
+        "direction": 1,
+        "final_hash": "d47990350e9ad00a94723a65efc8a3d9f22da946f9db7947d41421a3f17a8a73",
+        "forward_displacement": 27,
+        "initial_gap": 260,
+        "kind": "whiff",
+        "moves": [
+          "tackle"
+        ],
+        "replay_errors": [],
+        "target_pushback": 0
+      },
+      {
+        "contact_counts": {
+          "tackle": 1
+        },
+        "contacts": {
+          "tackle": "hit"
+        },
+        "damage": 100,
+        "direction": -1,
+        "final_hash": "02336914d1b019725bdd00266abc4827572f48c796a424da38b2c9bba1008994",
+        "forward_displacement": 27,
+        "initial_gap": 70,
+        "kind": "hit",
+        "moves": [
+          "tackle"
+        ],
+        "replay_errors": [],
+        "target_pushback": 8
+      },
+      {
+        "contact_counts": {
+          "tackle": 1
+        },
+        "contacts": {
+          "tackle": "block"
+        },
+        "damage": 0,
+        "direction": -1,
+        "final_hash": "956eedeea2e375adc520bbafc750f1761231119962a5cdd486c7b804bbcd7fd9",
+        "forward_displacement": 27,
+        "initial_gap": 70,
+        "kind": "block",
+        "moves": [
+          "tackle"
+        ],
+        "replay_errors": [],
+        "target_pushback": 0
+      },
+      {
+        "contact_counts": {},
+        "contacts": {},
+        "damage": 0,
+        "direction": -1,
+        "final_hash": "73c0f63f89c2519305f4f13766a1e3a96181a261411766a9a5cff2836320ec9b",
+        "forward_displacement": 27,
+        "initial_gap": 260,
+        "kind": "whiff",
+        "moves": [
+          "tackle"
+        ],
+        "replay_errors": [],
+        "target_pushback": 0
+      }
+    ],
+    "errors": 0,
+    "main_ticks": 120,
+    "independent_replay_ticks": 120,
+    "every_tick_input_and_hash_equal": true,
+    "capture_gate_checks_each": 10,
+    "headless_captured": false,
+    "actual_graphical_review": false
+  },
+  "correction_history": {
+    "contract01": {
+      "path": "reports/luna-tackle-resume/contract-01.json",
+      "sha256": "1667fd6dac755582c03632b0b20b1177a8bc9443dfe14c67f3efc226095d21f3"
+    },
+    "failed_logic": {
+      "path": "reports/luna-tackle-resume/logic-01.json",
+      "sha256": "d3344f3672472cc326714af92de1ef02394b208a51edc82b8c0acc2462708326"
+    },
+    "failed_log": {
+      "path": "reports/luna-tackle-resume/logic-01.log",
+      "sha256": "caf2d05e95926655da446643d467d1298dbb4c61a7643a5e0cea7ba8330148c7"
+    },
+    "finding": "初版八相rects却只有七anchors，导致第7相表现越界；补足第8相同根点并新增严格长度检查，新合同02验证通过。未回写旧失败结果，未改像素/战斗规则。"
+  },
+  "limits": [
+    "tackle实际接触部位为护面前臂/腕甲，非裸肩；不扩大攻击框或加无敌。",
+    "严格头身比例、近脚接地与动作接续仍需真实720/1080双向图形验收。",
+    "Godot4.6.3逻辑结果，不冒称目标4.7、声音或真人硬件通过；无录屏。",
+    "launcher/spin_heavy/crush仍有独立动作素材缺口，完整S2和S2–S7装甲均未完成；正式content/assets与开放标志未改。"
+  ]
+}
