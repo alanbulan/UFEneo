@@ -1,0 +1,267 @@
+{
+  "schema": "ufeneo.luna.crush-session-resume.v1",
+  "date_utc": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "本轮完成": [
+    "现有五个独立完整姿态组成七槽主游戏RAM候选；没有生图、切肢、局部缩放、伪装新相或安装。",
+    "七槽时长[3,5,4,8,4,5,6]共35tick，接触相3覆盖12至19；保持原12/8/15与130伤、30体力、不可防、不挑空不击倒。",
+    "独立静态审查确认整图采样重建、根点与全部8771个冻结依赖SHA；逻辑六例和主游戏headless十二组均通过。"
+  ],
+  "怎么看": {
+    "manifest": {
+      "path": "art/fighters/ultraman-arc__luna/stage2/crush-registered-20261105-v1/manifest.json",
+      "sha256": "dcf5999ca1119607d027c97cf94a3bf124a51825cfe7483fedf3c6347bb708d2"
+    },
+    "contract": {
+      "path": "reports/luna-crush-resume/contract-v1.json",
+      "sha256": "c05771d42ae49a1910c19076c48957b7239d3e52d54f4beef2fa99eee1a8d347"
+    },
+    "runtime_summary": {
+      "path": "reports/luna-crush-resume/runtime-summary.json",
+      "sha256": "35c625b2f702598fec655e58cda7efc49b1712ad3a20e91913bf1293738242aa"
+    },
+    "independent_review": {
+      "path": "reports/luna-crush-resume/independent-review.json",
+      "sha256": "b6b36885c7de1ddd56cea6d3ef228ae09246c37ca91d73c14fe94f29c8bffa36"
+    },
+    "logic": {
+      "path": "reports/luna-crush-resume/logic-v1/result.json",
+      "sha256": "bb28267f9d50e6855e3e1fa5a3fff6412c38e586dd755f44df67b1228a5c09a6"
+    },
+    "headless": {
+      "path": "reports/luna-crush-resume/headless-v1/runner-result.json",
+      "sha256": "f52c46a8a40949257b641e34a8d0f7e62f390f575741b5f6dd9445f635117d87"
+    },
+    "static": {
+      "path": "reports/luna-crush-resume/static-check-v1.log",
+      "sha256": "6f3e15d6c24d67f23b8a91ee35fe9b1ca62d0c2efc139528aef6592d01e72fb8"
+    },
+    "tools": "tools/rebuild/ultraman-arc/luna-crush-resume/README.md",
+    "temporary_evidence_note": "reports是本机临时证据，未随提交保存；本回执保存结论、指纹与可复现工具，不能把本机路径冒称远端文件。"
+  },
+  "geometry": {
+    "whole_frame": true,
+    "canvas": [
+      320,
+      320
+    ],
+    "runtime_root": [
+      160,
+      280
+    ],
+    "rear_foot_comparison_anchor": [
+      110,
+      280
+    ],
+    "root_note": "原320整图不为把后脚挪到root而额外平移。比较锚相同不能证明实际无滑步。",
+    "source_order": [
+      "actual_idle00",
+      "old_crush05_raised",
+      "descent01",
+      "contact01",
+      "followthrough01",
+      "descent01_reused_for_return_guard",
+      "actual_idle00"
+    ],
+    "reused_slots": [
+      [
+        0,
+        6
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "hitbox": [
+      45,
+      64,
+      12,
+      11
+    ],
+    "hitbox_origin": "contact远拳前缘画布ROI[205,205,217,216]，只覆盖一拳前缘，不并入腕甲或整条胳膊，不靠扩大框确保命中。",
+    "frame_sidecar_note": "frames.json是基础几何旁表；后加的拳ROI及回护复用注记在权威manifest，旁表缺注记并非源映射不同。"
+  },
+  "input_and_rules": {
+    "input": "仅movie_frame20发送中立InputFrame+CRUSH64，随后中立；非真人硬件键盘，不直接赋move_id。",
+    "command_scope": "原command两条：地面idle/walk/charge/turn和land。候选仅装前条，保持directions[4,5]，本次仅测5；不冒称4或land验收。",
+    "fixtures": {
+      "hit": 85,
+      "block": 85,
+      "whiff": 260
+    },
+    "guard_note": "目录名block沿工具枚举，陪练实际持续GUARD；crush原规则不可防，因此该例必须单次hit扣130而非格挡0伤。",
+    "original_rules_sha": {
+      "path": "content/fighters/ultraman-arc/moves/crush.json",
+      "sha256": "45204172834db03f1a2231bba1532416182bbf56fbaa44f42554f9807cbc132e"
+    },
+    "formal_resource_baseline": {
+      "path": "reports/luna-crush-resume/parent-original-resource-sha.json",
+      "sha256": "5e20e61fc5deae190d08623b5f0060dbf05112fa9723276ed7fee64a5816db78"
+    },
+    "formal_resource_sha_unchanged": true
+  },
+  "logic_result": {
+    "cases": [
+      {
+        "contact_counts": {
+          "crush": 1
+        },
+        "contacts": {
+          "crush": "hit"
+        },
+        "damage": 130,
+        "direction": 1,
+        "final_hash": "b67cff53b4b30eb0efa08bbb8178e1d05fc69da9e321d3fc8bc2c71dda9be6ad",
+        "initial_gap": 85,
+        "kind": "hit",
+        "moves": [
+          "crush"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "crush": 1
+        },
+        "contacts": {
+          "crush": "hit"
+        },
+        "damage": 130,
+        "direction": 1,
+        "final_hash": "fb429afecc1c0ae44fab2f1637c82e4b0a125dc2599133b2a9c7a43029d258a6",
+        "initial_gap": 85,
+        "kind": "block",
+        "moves": [
+          "crush"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {},
+        "contacts": {},
+        "damage": 0,
+        "direction": 1,
+        "final_hash": "8145630fe15a37e75b605f5aefcaf55725adb2e7bdb4df7dcff5e2b3116e96fd",
+        "initial_gap": 260,
+        "kind": "whiff",
+        "moves": [
+          "crush"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "crush": 1
+        },
+        "contacts": {
+          "crush": "hit"
+        },
+        "damage": 130,
+        "direction": -1,
+        "final_hash": "b4f6f029d78bb9788efa6fb411626d8af01c625a123337fa0dd721d7e825df2a",
+        "initial_gap": 85,
+        "kind": "hit",
+        "moves": [
+          "crush"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "crush": 1
+        },
+        "contacts": {
+          "crush": "hit"
+        },
+        "damage": 130,
+        "direction": -1,
+        "final_hash": "642a0e9745ce2308fc5bf60f2ce1bac4229b73c6d8dcd88bd2b2f98dbd6ec34a",
+        "initial_gap": 85,
+        "kind": "block",
+        "moves": [
+          "crush"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {},
+        "contacts": {},
+        "damage": 0,
+        "direction": -1,
+        "final_hash": "0df3d8484ee3acbf7601938e48024a45d2107fbf54f9cc9bcf2a256a254a06bb",
+        "initial_gap": 260,
+        "kind": "whiff",
+        "moves": [
+          "crush"
+        ],
+        "replay_errors": []
+      }
+    ],
+    "errors": [],
+    "original_inputs_replayed": true,
+    "seven_phases_reached": true,
+    "grounded_receiver_verified": true
+  },
+  "headless_result": {
+    "groups": 12,
+    "ticks_each": 180,
+    "pairs": 6,
+    "five_fields": [
+      "state_hash",
+      "events",
+      "projectiles",
+      "original_inputs",
+      "pair"
+    ],
+    "equal": true,
+    "image_review": false,
+    "parent_independent_pair_audit": {
+      "path": "reports/luna-crush-resume/parent-headless-pair-audit.json",
+      "sha256": "21d48e81af0997ff95068199a7987779d74a66c10ad2077b7c89275d316bf444"
+    }
+  },
+  "failed_attempt_and_fix": {
+    "first_import": {
+      "log": {
+        "path": "reports/luna-crush-resume/import-v1.log",
+        "sha256": "2e2358c9d4ce2af09c19c1492d211ca7c281b91cdf0edb826ae8d298c8b14176"
+      },
+      "exit_code": 0,
+      "accepted": false,
+      "reason": "缓存/设置目录不可写及fontconfig缓存错误，不能因exit0当通过。"
+    },
+    "corrected_import": {
+      "log": {
+        "path": "reports/luna-crush-resume/import-v2/engine.log",
+        "sha256": "9572934ad4d57fbab2c09b2c82f3821584fba7ba71d7e1dec5055bc7fa531f3f"
+      },
+      "exit_code": 0,
+      "diagnostics": "No WARNING/ERROR; isolated XDG cache/data/config under reports."
+    },
+    "fix": "仅隔离XDG缓存/配置/数据到reports后重新导入，未改变系统权限或正式源码。"
+  },
+  "graphical_result": {
+    "status": "19:45已交接云桌面并启动24组，尚未计作通过",
+    "groups_planned": 24,
+    "stills_each": 16,
+    "total_planned": 384,
+    "contract_sha256": "c05771d42ae49a1910c19076c48957b7239d3e52d54f4beef2fa99eee1a8d347"
+  },
+  "已知问题": [
+    "单相idle仅首尾对照，不能称六相idle循环已验。",
+    "起手抬双臂、8tick接触停留、随势回高护架及回idle的实速读法尚未验收；静态没有必须先补相的硬矛盾，不因重复护架外观机械判失败。",
+    "没有录屏、实速连续观感、人耳听审或真人键盘验收；运行采用Dummy音频，不能称音效通过。",
+    "没有接受整招美术或严格尺度，没有安装或开放装甲；回旋此前同样保留实速限制。"
+  ],
+  "下一步": [
+    "待双向720/1080共24组主游戏原输入/独立回放冻结截图，核双拳肩肘、前后脚、身体体量和首尾接续。",
+    "结合实际画面保留具体缺口；未有实际失败证据不凭测点误差强制生成新相。"
+  ],
+  "installed": false,
+  "playable": false,
+  "art_passed": false,
+  "real_time_visual_accepted": false,
+  "audio_accepted": false,
+  "recording": false
+}
