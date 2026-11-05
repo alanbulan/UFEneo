@@ -1,0 +1,346 @@
+{
+  "schema": "ufeneo.luna.crouch-sweep-session-resume.v1",
+  "reviewer": "root_delegated_by_user",
+  "status": "technical_logic_and_headless_passed_graphical_pending_art_failed",
+  "本轮完成": "复用既有两拳与旧扫腿整帧，新增真实二拳→扫腿RAM技术连接。104语义、8逻辑、16主游戏headless及8对180tick原回放通过；不混任何新回收图。",
+  "怎么看": "命中gap75/90二拳与扫腿命中前受方仍hit，195伤真连；gap100第二拳落空，扫腿自然后起，受方已恢复4帧中立，仅130伤不是三连。gap75重击按得太晚（50等样点）即使195也有中立窗口。蹲防/落空固定37按均首拳自然收招后起扫，不是取消。",
+  "已知问题": [
+    "旧扫腿04→05回弹及共同尺度未通过，技术通过不解除美术红灯。",
+    "v3冻结内层check_trace曾接受抹事件/伪造HP，真实原数据另审正确；原内门盲点未改，必须外置严格事件/逐tickHP门。",
+    "新run_strict.py强制原runner后调用外门，只有通过才写strict-final-result.json；负例拒绝六种事件/HP变造，编排外门失败不签成功回执。",
+    "无实速/录屏/音频/真人键盘验收；未安装、装甲关闭。"
+  ],
+  "下一步": "专职云桌面按run_strict.py跑32组双向720/1080技术图形，最终必须严格总回执；新晚/早回收图独立审阅，不污染此冻结探针。",
+  "contract": {
+    "path": "reports/luna-crouch-sweep-chain/contract-v3.json",
+    "sha256": "630611e4c4f78f1a2fa1c51d4aa6723063577a939fbe92ac2b09c426994946c8"
+  },
+  "formal_baseline": {
+    "paths": 71,
+    "changed": [],
+    "source": {
+      "path": "reports/luna-crouch-chain-resume/parent-original-resource-sha.json",
+      "sha256": "569ffecb01ec354a224bb91ce19d800d5f329974dbecfe4da7b9228a03aa430f"
+    }
+  },
+  "findings": {
+    "schema": "ufeneo.luna.crouch_sweep_chain-technical-findings.v1",
+    "authority": "root_delegated_by_user",
+    "contract": {
+      "path": "reports/luna-crouch-sweep-chain/contract-v3.json",
+      "sha256": "630611e4c4f78f1a2fa1c51d4aa6723063577a939fbe92ac2b09c426994946c8"
+    },
+    "simulation": "current core; original frame counts, damage 65 per move, stamina 30 per move, low/knockdown and cancel retained",
+    "input": "continuous down; LIGHT 20,27; HEAVY37, zero-based",
+    "findings": [
+      "gap36..90 sampled: 195 damage; second and sweep contact during receiver hit state, no neutral gap",
+      "gap100: second punch misses; heavy buffers until first fighter frame45 natural completion; receiver idle frames47..50 before sweep hits frame50; 130 total, not a combo or cancel",
+      "crouch block: second punch absent; heavy37 buffers to41, sweep blocked46; no confirmed cancel",
+      "whiff: second punch absent; heavy37 buffers to38, no contacts",
+      "gap75 sampled heavy28..46 cancels after confirm and connects in hitstun; heavy50/55/60/70 natural independent sweep and hits idle, not continuous combo",
+      "held heavy37..80 produces one sweep, no repeated press edge"
+    ],
+    "scope_limits": [
+      "block case blocks first punch, does not independently isolate second-punch-only block",
+      "no human keyboard, audio, video, real-speed or graphics acceptance",
+      "old sweep04->05 foot rebound remains art failure; no new source mixed",
+      "common roots are existing registrations, no claim whole-chain visual scale accepted",
+      "v1/v2 superseded source hashes must reject; final v3 preserved"
+    ],
+    "semantics_cases": 104,
+    "semantics_errors": [],
+    "headless_status": "16/16 completed; 8 original/replay pairs, 180 ticks, both directions, hit/standing guard/crouch block/whiff",
+    "graphical_status": "not run; dedicated worker required",
+    "product_install": false,
+    "logic_status": "8/8 passed; full seven sweep phases observed"
+  },
+  "independent_audit": {
+    "schema": "ufeneo.luna.crouch_sweep_chain-independent-audit.v3",
+    "authority": "root_delegated_by_user",
+    "reviewed_at_utc": "2026-11-05T23:28:03.766868+00:00",
+    "contract": {
+      "path": "reports/luna-crouch-sweep-chain/contract-v3.json",
+      "sha256": "630611e4c4f78f1a2fa1c51d4aa6723063577a939fbe92ac2b09c426994946c8"
+    },
+    "verdict": "现存v3技术运行证据可信；原内置check_trace盲点保留，冻结外严格事件/逐tickHP门已复核通过并拒绝四类篡改。仅在外部门成为必跑门的前提下，可交专职图形worker作旧整帧技术观察；美术不通过，不安装或开放。",
+    "method": {
+      "godot_started": false,
+      "frozen_sources_modified": false,
+      "docs_modified": false,
+      "committed": false,
+      "only_written_artifact": "reports/luna-crouch-sweep-chain/independent-audit-v3.json",
+      "negative_test": "仅内存副本；未污染原trace"
+    },
+    "verified": {
+      "bound_resources": 8825,
+      "sha_mismatches": 0,
+      "moves": {
+        "crouch_light": {
+          "frames": 18,
+          "startup_active_recovery": [
+            3,
+            3,
+            12
+          ]
+        },
+        "crouch_light2": {
+          "frames": 18,
+          "startup_active_recovery": [
+            3,
+            7,
+            8
+          ]
+        },
+        "sweep": {
+          "frames": 28,
+          "startup_active_recovery": [
+            6,
+            7,
+            15
+          ]
+        }
+      },
+      "each_damage": 65,
+      "each_stamina_cost": 30,
+      "unchanged_fields": "逐项对原正式move比较：除sprite/hitboxes/hurtboxes、production_source/display_name外保持；cancel、位移、事件、伤害、体力等一致。",
+      "whole_frame_reuse": "左右拳各3槽及sweep7槽逐像素等于既有sample整图平移入320画布，再等于atlas对应格；未混入新晚回收源。",
+      "logic_cases": 8,
+      "semantics_cases": 104,
+      "semantics_errors": [],
+      "headless_parts": 16,
+      "headless_ticks_per_part": 180,
+      "independent_replay_pairs": 8,
+      "replay_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ],
+      "all_headless_process_exit_codes": 0,
+      "all_engine_diagnostics_passed": true,
+      "headless_actual_events_damage_checked": true,
+      "offline_test_check_passed": true,
+      "old_contract_mismatches": {
+        "v1": 5,
+        "v2": 2
+      }
+    },
+    "semantics": {
+      "fixed_input": "持续下方向；LIGHT零基20/27，HEAVY37；真实UfeInputFrame，不是真人键盘。",
+      "gap75": "contacts22/29/42；37由已确认二拳move_tick6取消为sweep；195伤，两段之间受方始终hit。",
+      "gap36_to90": "已核该矩阵所有固定HEAVY37近距案例，两次后续命中前均无受方中立窗口。",
+      "gap100": "二拳落空；45帧从空move自然起sweep，50帧击中idle受方；130伤，不是真连或二拳取消。",
+      "late50_55_60_70": "gap75晚按为自然独立起sweep，接触前受方idle；总伤195不能冒充真连。",
+      "block_whiff": "无二拳确认取消；晚缓存后独立起扫腿。",
+      "held": "37..80按住只起一次sweep。",
+      "scope": "block从第一拳就格挡，未独立隔离二拳仅被挡场景。"
+    },
+    "findings": [
+      {
+        "id": "AUDIT-V3-01",
+        "severity": "medium",
+        "target": "tools/rebuild/ultraman-arc/luna-crouch-sweep-chain/main_bundle.py:check_trace",
+        "reproduction": "复制真实hit-original trace，在内存将所有events清空并将所有受方hp改1000，保留failures空及其余字段；check_trace仍通过。",
+        "cause": "contacts收集后未断言，未独立核damage/contact顺序/次数。",
+        "impact": "本轮实际16份结果经独立核事件和伤害均正确，不是运行造假；但检查器不能拒绝这类损坏回执，严格check_trace未完全达标。",
+        "recommendation": "不要改冻结v3。下一版加入独立事件、伤害、次数断言及负例，再冻结；本轮交付明确披露。",
+        "followup": "外置check_trace_events补事件顺序、逐tick双方HP及击倒状态；独立四类篡改负例全部被拒。原冻结盲点仍保留。"
+      },
+      {
+        "id": "AUDIT-V3-02",
+        "severity": "low",
+        "target": "candidate_factory.gd:verify_case",
+        "cause": "block仅验证0伤及已有contact各一次，未要求必须存在crouch_light和sweep两个block；whiff也未显式拒绝多余block。",
+        "impact": "实际block轨迹均恰有两次block且whiff无contact；测试断言仍存在覆盖缺口。",
+        "followup": "外置门要求block恰有crouch_light与sweep两事件，whiff无事件；漏sweep block负例已拒。"
+      }
+    ],
+    "graphical_handoff": {
+      "status": "尚无本合同图形证据，不能声称720/1080通过",
+      "contract_supports": [
+        "双向1280x720与1920x1080",
+        "原生窗口稳定8帧且500ms",
+        "截图期间暂停模拟并核tick/hash/实际region",
+        "双方完整Alpha及HUD安全区",
+        "独立180tick原输入回放"
+      ],
+      "allowed_purpose": "旧整帧RAM技术/共同取景与接续观察，专职worker经godot_lock串行；不代表动作美术通过。",
+      "art_red_flags": [
+        "旧sweep04落脚后05重新伸腿回弹仍未修",
+        "跨招共同尺度及根点未签收",
+        "新晚回收候选另存，未混入本合同"
+      ],
+      "video": "无录屏",
+      "audio": "无听感验收",
+      "human_keyboard": "未验",
+      "required_entry": "tools/rebuild/ultraman-arc/luna-crouch-sweep-chain/run_strict.py",
+      "required_final_receipt": "strict-final-result.json（不能只看runner-result.json）"
+    },
+    "history": "v1 XDG崩溃及v2错误完整二拳收招预期日志保留；v3要求实际可达二拳0/1相合理，因为输入37在二拳phase1取消，不应要求不存在的完整收招相。",
+    "external_gate_followup": {
+      "path": "tools/rebuild/ultraman-arc/luna-crouch-sweep-chain/test_check.py",
+      "sha256_at_review": "05ff07a3caf98c505c4094ebd9246d59df250b0642ef7eb97847f1cad9011636",
+      "not_in_v3_bound_resources": true,
+      "positive_run": {
+        "passed": true,
+        "parts": 16,
+        "semantics_cases": 104,
+        "logic_cases": 8,
+        "v3_inner_gate_repaired": false,
+        "external_gate_required": true,
+        "art_accepted": false
+      },
+      "negative_tests": {
+        "events_removed": {
+          "rejected": true,
+          "reason": "('contact_sequence', [])"
+        },
+        "hp_forged": {
+          "rejected": true,
+          "reason": ""
+        },
+        "duplicate_contact": {
+          "rejected": true,
+          "reason": "('contact_sequence', [('crouch_light', 'hit'), ('crouch_light', 'hit'), ('crouch_light2', 'hit'), ('sweep', 'hit')])"
+        },
+        "block_sweep_missing": {
+          "rejected": true,
+          "reason": "('contact_sequence', [('crouch_light', 'block')])"
+        }
+      },
+      "mutation_scope": "只在内存复制真实trace；没有改原证据。",
+      "conditions": [
+        "图形外编排必须强制调用本外部门，原runner-result alone不足以视为严格检查通过。",
+        "新checker是额外验收工具，不表示冻结v3内置门已修复。"
+      ],
+      "graphical_orchestration_verified": true,
+      "orchestration_validation": "只读源码复核：run_strict.py在bundle.run完成后无条件gate.check(out)，只有成功且contract/checker/orchestrator SHA仍一致才写strict-final-result.json；未启动图形或Godot。",
+      "orchestrator": {
+        "path": "tools/rebuild/ultraman-arc/luna-crouch-sweep-chain/run_strict.py",
+        "sha256": "6eec54664e96e75f8a722113610d68e083fe0609d03256d14b85d15874a3082f"
+      },
+      "worker_six_negative_cases": "external-gate-negative-v1.json记录六例全拒及8923文件前后摘要一致；本审计另独立执行四类负例。"
+    }
+  },
+  "external_gate_negative": {
+    "schema": "ufeneo.luna.external-gate-negative-tests.v1",
+    "positive": {
+      "passed": true,
+      "parts": 16,
+      "semantics_cases": 104,
+      "logic_cases": 8,
+      "v3_inner_gate_repaired": false,
+      "external_gate_required": true,
+      "art_accepted": false
+    },
+    "negative_cases": [
+      {
+        "name": "clear_events",
+        "rejected": true,
+        "reason": "('contact_sequence', [])"
+      },
+      {
+        "name": "restore_hp_to_1000",
+        "rejected": true,
+        "reason": ""
+      },
+      {
+        "name": "clear_events_and_restore_hp",
+        "rejected": true,
+        "reason": "('contact_sequence', [])"
+      },
+      {
+        "name": "duplicate_contact",
+        "rejected": true,
+        "reason": "('contact_sequence', [('crouch_light', 'hit'), ('crouch_light', 'hit'), ('crouch_light2', 'hit'), ('sweep', 'hit')])"
+      },
+      {
+        "name": "remove_sweep_block",
+        "rejected": true,
+        "reason": "('contact_sequence', [('crouch_light', 'block')])"
+      },
+      {
+        "name": "alter_intermediate_hp",
+        "rejected": true,
+        "reason": "('hp_timeline', 81)"
+      }
+    ],
+    "read_only_baseline": {
+      "file_count": 8923,
+      "before_digest": "09c0b2aee9d350fd587336dbd90dd30f81f37cf699803da437f0bf705ea80a43",
+      "after_digest": "09c0b2aee9d350fd587336dbd90dd30f81f37cf699803da437f0bf705ea80a43",
+      "unchanged": true
+    },
+    "checker_sha256": "05ff07a3caf98c505c4094ebd9246d59df250b0642ef7eb97847f1cad9011636",
+    "test_sha256": "059549da5b27656f638e14e0f75d03e1461c77144474c6488d675f407d669d97",
+    "v3_inner_gate_repaired": false,
+    "godot_started": false
+  },
+  "orchestration_negative": {
+    "passed": true,
+    "calls": [
+      "runner",
+      "gate"
+    ],
+    "external_rejection_propagated": true,
+    "success_receipt_absent": true,
+    "godot_started": false,
+    "scope": "mock orchestration only; not graphical execution",
+    "orchestrator_sha256": "6eec54664e96e75f8a722113610d68e083fe0609d03256d14b85d15874a3082f"
+  },
+  "evidence": [
+    {
+      "path": "reports/luna-crouch-sweep-chain/semantics-v3.json",
+      "sha256": "d6f9cfa427bb7bffa1007c5adc720bd4e4f1847e3ef96d9c0908ad81d08ea4c5"
+    },
+    {
+      "path": "reports/luna-crouch-sweep-chain/logic-v3.json",
+      "sha256": "485cce268cfa23003a106c1aacecb0132c6b203ebee292a04b3f6616c6997333"
+    },
+    {
+      "path": "reports/luna-crouch-sweep-chain/headless-v3/runner-result.json",
+      "sha256": "4fc2645a496758e9b72f5232ffd6c4dfbdc6dfec68779abba57ad45372cd4064"
+    },
+    {
+      "path": "reports/luna-crouch-sweep-chain/offline-strict-v3-final.log",
+      "sha256": "efa01bb6a7b1c49ad4b83d784483a20cffcfa5a6d76d1e588c4de96456aa0474"
+    },
+    {
+      "path": "reports/luna-crouch-sweep-chain/freeze-initial-failure.json",
+      "sha256": "5517bce8ed99ea958fe4227e3a12e6ac462af27a1c637719e4446063fa9dacf1"
+    },
+    {
+      "path": "reports/luna-crouch-sweep-chain/semantics-v1.log",
+      "sha256": "fd2e0ff1f6830d7e317a349653bb6afc5250c9671bc66c3c61ead72e0877ac6a"
+    },
+    {
+      "path": "reports/luna-crouch-sweep-chain/logic-v2.json",
+      "sha256": "c1a538a7a2def2e42d93436c8465cd0884fea9c18411b55a3d92d79450a0b140"
+    }
+  ],
+  "external_tools": [
+    {
+      "path": "tools/rebuild/ultraman-arc/luna-crouch-sweep-chain/run_strict.py",
+      "sha256": "6eec54664e96e75f8a722113610d68e083fe0609d03256d14b85d15874a3082f"
+    },
+    {
+      "path": "tools/rebuild/ultraman-arc/luna-crouch-sweep-chain/test_check.py",
+      "sha256": "05ff07a3caf98c505c4094ebd9246d59df250b0642ef7eb97847f1cad9011636"
+    },
+    {
+      "path": "tools/rebuild/ultraman-arc/luna-crouch-sweep-chain/test_negative_gate.py",
+      "sha256": "059549da5b27656f638e14e0f75d03e1461c77144474c6488d675f407d669d97"
+    },
+    {
+      "path": "tools/rebuild/ultraman-arc/luna-crouch-sweep-chain/test_strict_orchestration.py",
+      "sha256": "15b5ee52491a42595da274dd4b21028a69783f16405574a99c76a07e3693eb8b"
+    }
+  ],
+  "failure_history": [
+    "首次freeze未设既有Forge位置，补环境变量后成功，未下载。",
+    "首次Godot未隔离XDG，写home失败并SIG11；隔离reports后重跑自然完成，原日志保留。",
+    "v2逻辑错误要求已取消的二拳继续播放恢复相；v3只修预期，此输入二拳0/1相，扫腿0..6全相保持。",
+    "v1/v2源码SHA已过时，不绕过冻结验证重跑；中间two-punch-base及first-base不是最终三招合同。"
+  ]
+}
