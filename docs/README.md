@@ -7,7 +7,8 @@
 | [../AGENTS.md](../AGENTS.md) | 唯一执行准则 | 每轮开工前 |
 | [../REBUILD_2D_PLAN.md](../REBUILD_2D_PLAN.md) | 设计目标、招式矩阵、阶段顺序 | 设计或规划招式时 |
 | [PROGRESS.md](PROGRESS.md) | 可玩范围、各角色未完项、验证入口、接续优先级 | 接手或汇报时 |
-| [PROJECT_LAYOUT.md](PROJECT_LAYOUT.md) | 目录归属、分层、数据流、模拟子系统、热点模块 | 找文件或改架构时 |
+| [PROJECT_LAYOUT.md](PROJECT_LAYOUT.md) | 目录归属、分层、依赖方向、数据流、模拟子系统、热点模块 | 找文件或改架构时 |
+| [ENGINE_CHOICE.md](ENGINE_CHOICE.md) | 引擎选型结论、可借鉴的业界做法、分层守卫 | 考虑换引擎或改架构时 |
 | [DATA_FORMATS.md](DATA_FORMATS.md) | 招式 JSON、持续束跟随发射点、独立实体攻击段 | 写招式数据时 |
 | [ART_PIPELINE.md](ART_PIPELINE.md) | 生图流程、源库存储、武器覆盖规范 | 制作美术资源时 |
 | [FORMS.md](FORMS.md) | 战斗形态与变身规则 | 做装甲或形态时 |
