@@ -1,6 +1,6 @@
 # UFEneo 游戏设计与阶段计划
 
-执行准则只在 [AGENTS.md](AGENTS.md)，当前状态在 [PROGRESS](docs/PROGRESS.md)，接手入口在 [HANDOFF](docs/HANDOFF.md)。本文件保留设计目标、完整招式矩阵和阶段顺序，不再重复历史会话指令。
+执行准则只在 [AGENTS.md](AGENTS.md)，当前状态与接续入口在 [PROGRESS](docs/PROGRESS.md)。本文件保留设计目标、完整招式矩阵和阶段顺序，不再重复历史会话指令。
 
 ## 1. 范围和当前优先级
 

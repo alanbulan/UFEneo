@@ -4,8 +4,8 @@
 
 ## 依据与限制
 
-- C1：[简体中文维基固定版本](https://zh.wikipedia.org/w/index.php?oldid=94579908&variant=zh-cn)，本地逐字节溯源与许可在 [节选](../../../art/fighters/ultraman-ace/references/stage4/chinese-wiki-excerpt.json)。资料中的“卫司断头刀”统一显示为“艾斯断头刀”，不凭名称编造动作。
-- P1–P9：[圆谷皮套/剧照与万代官方商品照片](../../../art/fighters/ultraman-ace/references/stage4/sources.json)；[逐条外形与照片定位](../../../art/fighters/ultraman-ace/references/stage4/identity.md)。P3核对菱形弹，P7核对上下分臂，P8核对L形。
+- C1：[简体中文维基固定版本](https://zh.wikipedia.org/w/index.php?oldid=94579908&variant=zh-cn)，本地逐字节溯源与许可在 节选。资料中的“卫司断头刀”统一显示为“艾斯断头刀”，不凭名称编造动作。
+- P1–P9：圆谷皮套/剧照与万代官方商品照片；逐条外形与照片定位。P3核对菱形弹，P7核对上下分臂，P8核对L形。
 - 标志性技用C1简体中文原文，不填写未经核实的话数或时码。普通动作均为游戏编排，明确参考《街头霸王III 三度冲击》或《拳皇98》的同类动作节奏，不虚构原剧专名。
 - 三级为“许可·艾斯断头刀”，保留许可签名，不借四兄弟供能。Space Q的合体条件不能擅自取消。
 - **空中必杀配置为空中梅塔利姆光线（游戏改编）。** 依指挥2026-10-23统一裁定，将C1已核实的梅塔利姆改为空中斜下发射；不声称原剧有此空中发射姿势，不发明新招式名。第六阶段制作独立八帧，本阶段仅定案，普通空中I仍为独立俯射菱形弹。

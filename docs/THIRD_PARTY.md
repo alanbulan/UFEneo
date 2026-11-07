@@ -6,6 +6,7 @@
 | --- | --- | --- |
 | Shoto Fighter | 两个纯逻辑模块，项目类名前缀适配 | https://github.com/aminRX/shoto-fighter-godot ，MIT；third_party/shoto/LICENSE及UPSTREAM.json |
 | Godot UI Components | Tween/过渡适配，固定22d2355690612978e58df559ddd4b6ba50c6887c | https://github.com/MrEliptik/godot_ui_components ，MIT；third_party/godot_ui_components |
+| Godot AI | 编辑器 MCP 插件 4.4.1，开发期场景/节点/运行调试；游戏内 helper 仅在调试器通道激活时工作 | https://github.com/hi-godot/godot-ai ，MIT；addons/godot_ai/LICENSE |
 | Controller Icons | Godot输入图标插件3.1.8 | https://github.com/rsubtil/controller_icons ，MIT；addons/controller_icons/LICENSE |
 | PixelFX | 仅离线烘焙透明像素FX；固定a84159688af3ca37a4be05a0d422b94451b2e24e | https://github.com/patch-gg/pixelfx ，MIT；third_party/pixelfx/LICENSE、NOTICE.md、UPSTREAM.json。包含Patch及Hugo Duprez署名，人物骨架未采用 |
 | Fusion Pixel Font | 正式简中12px单宽字体，最近邻显示 | https://github.com/TakWolf/fusion-pixel-font ，SIL OFL 1.1；assets/ui/fonts/LICENSE-OFL.txt及SOURCE.json |

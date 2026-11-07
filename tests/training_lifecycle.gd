@@ -96,3 +96,4 @@ func run() -> void:
 	check(not app.dummy_recording,"离开对局结束录制边界")
 	print("TRAINING_LIFECYCLE ",JSON.stringify({"checks":checks,"errors":errors}))
 	await app.shutdown(0 if errors.is_empty() else 1)
+	app.free()

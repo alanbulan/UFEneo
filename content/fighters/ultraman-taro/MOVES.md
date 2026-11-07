@@ -2,7 +2,7 @@
 
 范围：普通泰罗。第1–6阶段已经指挥终审；第7阶段登场、胜利、时间到、挑衅已按赛文同名帧数和逐tick时长接入主游戏，等待指挥目视；未登记本阶段通过。超级泰罗不在本阶段范围。逐格下表保留原策划与出处；当前安装/审核状态以 production_plan.json、stage4/status.json 及本阶段审片README为准。
 
-身份/照片：[identity.md](../../../art/fighters/ultraman-taro/references/stage4/identity.md)；逐技能中文原文及空中P取舍：[moves-research.md](../../../art/fighters/ultraman-taro/references/stage4/moves-research.md)。T1–T6/A1均指该文。未核实集数的招式引用中文资料原文，不编造第几话。R1–R7指官方照片，不冒充已取得原剧动作片段。
+身份/照片：identity.md；逐技能中文原文及空中P取舍：moves-research.md。T1–T6/A1均指该文。未核实集数的招式引用中文资料原文，不编造第几话。R1–R7指官方照片，不冒充已取得原剧动作片段。
 
 ## 本次确定的关键内容
 
