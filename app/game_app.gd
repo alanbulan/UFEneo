@@ -510,12 +510,25 @@ func _input(event: InputEvent) -> void:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST: shutdown()
 
-func shutdown(exit_code: int = 0) -> void:
+## quit_tree=false 时只拆解自身资源、不结束进程，供同一进程内的多实例测试收尾。
+func shutdown(exit_code: int = 0, quit_tree: bool = true) -> void:
 	if _shutting_down: return
 	_shutting_down = true
 	if training_input_audit!=null:training_input_audit.close()
 	set_physics_process(false)
 	viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
+	# 停播并断开流引用：播放中的 AudioStreamPlayer 若在音频线程回收前被
+	# free，会留下 AudioStream/Playback 残留。
+	if audio!=null:
+		if audio.music_director!=null:audio.music_director.release_streams()
+		for player in audio.voices+audio.character_players+audio.loops:
+			if is_instance_valid(player):
+				player.stop()
+				player.stream=null
+		if is_instance_valid(audio.music):
+			audio.music.stop()
+			audio.music.stream=null
+		audio.cache.clear()
 	await get_tree().process_frame
 	ko_finish.reset()
 	view.simulation = null
@@ -527,7 +540,7 @@ func shutdown(exit_code: int = 0) -> void:
 	viewport = null
 	image = null
 	hud = null
-	get_tree().quit(exit_code)
+	if quit_tree:get_tree().quit(exit_code)
 
 func _physics_process(_delta: float) -> void:
 	if training_input_audit!=null:training_input_audit.begin_frame(self)

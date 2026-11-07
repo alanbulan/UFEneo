@@ -20,7 +20,7 @@
 
 补充（同日）：`checkpoint/full-20261105-0020` 已 fast-forward 合入 `main`，261 个新增 LFS 对象逐一核对 SHA/大小并本地拉取完整，`git lfs fsck` 通过；两个远端 checkpoint 分支已删除。
 
-Godot AI 编辑器插件（`addons/godot_ai`）注册的 56 个全局类会让进程退出时留下 ObjectDB/Resource 告警。该告警不影响游戏运行，已在 `tools/verify.py` 中单独识别，不参与通过判定；真正的 `SCRIPT ERROR` 和其它 `ERROR` 仍判失败。
+补充（2026-11-07 修复）：`training_input_audit` 与 `training_lifecycle` 曾在进程退出时报 AudioStream/Playback 泄漏。根因是 headless 下帧循环极快，AudioServer 线程来不及按真实时间回收已停止的 playback。已在两处修复：`game_app.shutdown()` 先停播、断开流引用并清空两级音频缓存；两个测试退出前 `OS.delay_msec(120)` 让出真实时间。修复后各连跑 12 次与 4 次均无泄漏，`tools/verify.py` 已恢复严格判据（任何 `SCRIPT ERROR` 或 `ERROR` 都判失败）。
 
 清理前基线（同一环境）：导入 exit 0、`logic_2d` PASS、`repository_audit` passed（33293 文件）。
 

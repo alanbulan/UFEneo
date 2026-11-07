@@ -153,5 +153,11 @@ func stop_all() -> void:
 	for i in range(players.size()):players[i].stop();gains[i]=0.0;targets[i]=0.0;slot_ids[i]=""
 	current_id="";context="";phase="normal";envelope=1.0;envelope_target=1.0
 
+## 退出时停播并释放持有的音乐流，避免音频线程仍引用时留下 AudioStream 泄漏。
+func release_streams() -> void:
+	stop_all()
+	for player in players:player.stream=null
+	music_cache.clear()
+
 func snapshot() -> Dictionary:
 	return {"context":context,"choice":choice,"track":current_id,"dynamic":dynamic_music,"phase":phase,"gains":gains.duplicate(),"targets":targets.duplicate(),"envelope":envelope,"slots":slot_ids.duplicate(),"round":round_index,"positions":players.map(func(player: AudioStreamPlayer):return player.get_playback_position()),"playing":players.map(func(player: AudioStreamPlayer):return player.playing)}

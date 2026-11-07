@@ -221,7 +221,7 @@ def unlock():
     with (FIGHTER/'PROGRESS.md').open('a',encoding='utf-8') as f:
         f.write('\n- 2026-10-23 按用户明确授权解除哥莫拉试制选人锁：训练、对战电脑及本地双人可自由选择；未制作的air_pulse保留禁用。准备检查器按授权与安装状态验证，不再强制已开放角色上锁。\n')
     commit_paths('按授权开放哥莫拉训练与对战自由选人',[path,selection_path,FIGHTER/'PROGRESS.md',Path(__file__),
-        ROOT/'tools/check_stage4_preparation.py',ROOT/'tools/check_stage4_pilot.py',ROOT/'tools/rebuild/gomora/gomora_verify.py'])
+        ROOT/'tools/rebuild/gomora/gomora_verify.py'])
 
 
 if __name__=='__main__':

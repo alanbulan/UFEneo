@@ -36,6 +36,10 @@ func read_lines(path: String) -> Array:
 	return result
 func run() -> void:
 	DirAccess.make_dir_recursive_absolute(out)
+	# 重复运行必须从干净目录开始：Audit 拒绝已存在的日志路径，
+	# 残留旧文件会让观察器变成 null 并让后续 close() 崩溃。
+	for name in DirAccess.get_files_at(out):
+		DirAccess.remove_absolute(out.path_join(name))
 	check(Audit.from_arguments(PackedStringArray())==null,"无显式开关不创建观察器")
 	check(DirAccess.get_files_at(out).is_empty(),"默认没有文件写入")
 	UfeInputRouter.configure_values({})
@@ -90,5 +94,10 @@ func run() -> void:
 	var result:={"checks":checks,"errors":errors,"rows":rows.size(),"physics_samples":second.training_input_audit.physics_sample,"scope":"instrumentation with action samples and constructed InputEventKey; not native hardware input acceptance"}
 	FileAccess.open(out.path_join("result.json"),FileAccess.WRITE).store_string(JSON.stringify(result,"\t"))
 	print("TRAINING_INPUT_AUDIT ",JSON.stringify(result))
+	await first.shutdown(0,false)
 	first.free()
 	await second.shutdown(0 if errors.is_empty() else 1)
+	# AudioServer 在独立线程上按真实时间回收已停止的 playback。headless 下
+	# 帧循环极快，只等 process_frame 不够，必须让出真实时间，否则退出时会报
+	# AudioStream/Playback 泄漏。
+	OS.delay_msec(120)

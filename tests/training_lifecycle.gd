@@ -97,3 +97,6 @@ func run() -> void:
 	print("TRAINING_LIFECYCLE ",JSON.stringify({"checks":checks,"errors":errors}))
 	await app.shutdown(0 if errors.is_empty() else 1)
 	app.free()
+	# AudioServer 在独立线程按真实时间回收 playback；headless 帧循环极快，
+	# 只等帧不够，退出前必须让出真实时间，否则报 AudioStream 泄漏。
+	OS.delay_msec(120)

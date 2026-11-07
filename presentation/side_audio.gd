@@ -442,6 +442,16 @@ func sync(sim: UfeMatchDirector,frozen: bool,intro_active: bool=false,result_sou
 func _exit_tree() -> void:
 	for row in flight_players:
 		if is_instance_valid(row.node):row.node.stop()
+	# 停播并断开所有流的引用，避免音频线程仍持有播放中的 AudioStream。
+	for player in voices+character_players+loops:
+		if is_instance_valid(player):
+			player.stop()
+			player.stream=null
+	if is_instance_valid(music):
+		music.stop()
+		music.stream=null
+	if music_director!=null:music_director.release_streams()
+	cache.clear()
 
 func data_contact_id(sim: UfeMatchDirector,event: Dictionary) -> String:
 	var index:=int(event.get("player",-1))
