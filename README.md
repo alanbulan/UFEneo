@@ -29,6 +29,8 @@ python3 tools/maintenance/repository_audit.py
 python3 tools/godot_lock.py -- python3 tools/verify.py --keep-going
 ```
 
+工具目录按职责分组（`check`、`art`、`audio`、`roster`、`media`、`runtime`、`maintenance`、`rebuild`），顶层只留 `verify.py` 与 `godot_lock.py`；分工见 [tools/README.md](tools/README.md)。
+
 验证输出在 `reports/verification`，测试使用隔离的用户数据目录。导入完成后可用 `tools/verify.py --skip-import --only logic_2d` 跑单项；仍须通过 Godot 锁调用。源图制作是可选工具链，运行游戏不需要 API 密钥或图像生成服务。
 
 ## 阅读入口
