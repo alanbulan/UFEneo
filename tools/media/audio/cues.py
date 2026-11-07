@@ -5,7 +5,7 @@ from __future__ import annotations
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools/maintenance"), str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
+_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
 from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 
 from pathlib import Path
@@ -16,7 +16,7 @@ from media.audio.measure import sample_metrics
 
 
 def cut(spec_path: Path, output: Path):
-    import audio_pipeline as pipeline
+    import audio.pipeline as pipeline
 
     spec = pipeline.read(spec_path)
     if spec.get("kind") != "ufe-audio-cue-recipe" or not spec.get("name"):

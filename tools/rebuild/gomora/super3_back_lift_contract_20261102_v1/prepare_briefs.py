@@ -91,7 +91,7 @@ def main():
             stage=4,action='super3_back_lift_air_throw_independent_v1',display_name='背掀震落（三级·本作编排）',
             official_skill_name=False,frame=phase,phase_name=data['name'],asset_kind='character',
             size='1024x1024',quality='high',background='transparent',model='gpt-image-2.5-sunburst',
-            route='tools/art_pipeline.py.generate_image only; actual route/model recorded after root submit',
+            route='tools/art/pipeline.py.generate_image only; actual route/model recorded after root submit',
             art_source='api_planned_not_submitted',references=[record(p) for p in references],
             reference_provenance=record(ROOT/'reports/review/2026-11-02/gomora-original-sequence-v1/briefs/references/provenance.json'),
             contract=record(REPORT/'new-whole-frame-contract.json'),

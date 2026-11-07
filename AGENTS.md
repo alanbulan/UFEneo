@@ -23,7 +23,9 @@
 - 只在主游戏开发，不建研究场景、测试 .cmd、独立预览网页。入口是 开始游戏.cmd 和 app/scenes/main.tscn，调试用主游戏训练/F1。
 - core 只做整数、60 tick、确定性模拟，不依赖渲染、Input、随机数和系统时间；一个状态一个文件，一个招式一个数据文件。
 - input 转换设备输入；presentation 只读模拟，负责画面/声音/镜头；app 装配流程；content 存数据；UI 共用 ui/kit 和 ui/theme。
+- 依赖方向只允许向下：core 与 input 不依赖任何其它层；presentation 只依赖 core/content；ui 只依赖 presentation/content；app 负责装配。分层细则与自查项见 docs/PROJECT_LAYOUT.md。
 - Godot 导入、验证和录制一律经 python tools/godot_lock.py -- <命令> 串行运行；不删活锁，不关用户进程，不以换引擎冒充修复。
+- 工具按职责放在 tools/check、art、audio、roster、media、runtime、maintenance、rebuild；tools/ 顶层只留 verify.py 与 godot_lock.py。新增工具沿用统一路径引导，模块名全局唯一。见 tools/README.md。
 - 当前本机制作 Python：C:/Users/13080/.codex/venvs/ufeneo/Scripts/python.exe。其它机器用 Python 3.12+ 自建环境并配置 GODOT_PATH，不提交本机配置。
 - 逻辑检查覆盖确定性、回放、输入、资源、命中和取消；不能将测试通过写成美术/听感通过。实际画面须检查两个朝向和 720/1080。
 - 根按用户委托自行验收后继续已授权任务，注明 root_delegated_by_user；不修改历史 user_approved，不冒称用户亲审。
@@ -31,7 +33,7 @@
 ## 美术与资源
 
 - 固定侧视、2D 像素整帧。禁止切肢、骨骼拼片、IK、旋转贴肢和静止人物加 FX 冒充动作；持武器时人物与武器一起生成。
-- 人物仅用 GPT Image high，经 tools/art_pipeline.py 的 generate_image。后处理用免费工具及 tools/rebuild/shared/forge_backend.py；历史颜色兼容用 palette_mode('rgb')。
+- 人物仅用 GPT Image high，经 tools/art/pipeline.py 的 generate_image。后处理用免费工具及 tools/rebuild/shared/forge_backend.py；历史颜色兼容用 palette_mode('rgb')。
 - 请求透明背景并核真实 Alpha；RGB 棋盘格不算透明，离线分离不冒称原生 Alpha。保留现用来源、请求、usage 和资源对应关系。
 - PixelFX 是获准的特效例外：固定 MIT 版本，离线烘焙真透明像素整帧，保留许可和来源；不采用其骨架人物/stock dummy，不引入运行时 JS。
 - 按本人身份、具体形态、版本与原剧依据核动作。实物只参考造型，去掉玩具球关节、轴、插接缝和塑料高光；本人原有装甲/机械结构、皮肤褶皱保留。

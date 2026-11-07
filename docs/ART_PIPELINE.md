@@ -5,11 +5,35 @@
 ## 制作流程
 
 1. 定位本人当前 `model` 和具体动作；旧路径先查 `art/source-index.json`，不能因路径变化重发生图。
-2. 人物使用 `tools/art_pipeline.py` 中的 `generate_image`，官方路由、high、1024 方图、透明背景；凭据及费用账本只读本机配置。
+2. **生图**：经 MCP 生图服务（`magpie-image`）出整帧高分候选。不再通过脚本直连图像 API；
+   `tools/art/pipeline.py` 里的网络层只为历史收据保留，新任务不使用。
 3. 图像返回后实际检查身份、Alpha、完整四肢/武器、身体连续与大小。完整源只保留一份，当前拒收原因写在动作 metadata 中，不复制整个工程作为历史。
-4. 整图处理经 `tools/rebuild/shared/forge_backend.py`。旧颜色兼容 `palette_mode('rgb')`，同一动作统一尺度和根点；禁止拼肢或以静止图加 FX 代替动作。
+4. **像素化后处理**：整图处理经 `tools/rebuild/shared/forge_backend.py`（需外部 sprite-gen 技能）。
+   图鉴静态形象用自带的 `tools/media/art/catalogue_native.py`：软 Alpha 生成图 → 二值 Alpha、
+   32 色硬色阶、384×256 画布、脚底对齐 248。它不依赖外部技能。旧颜色兼容 `palette_mode('rgb')`，
+   同一动作统一尺度和根点；禁止拼肢或以静止图加 FX 代替动作。
 5. PixelFX 脚本在 `tools/rebuild/<id>`，上游固定代码和 MIT 许可在 `third_party/pixelfx`；只离线导出透明整帧。人物不使用库骨架。
 6. 运行资源安装到 `assets`，招式/事件到 `content`。主游戏两个朝向、720/1080、实际输入和独立原 InputFrame 回放分开核验；逻辑检查不替代画面或听感。
+
+### 图鉴静态形象
+
+图鉴（`ui/archive_panel.gd`）读取 `content/roster/catalogue_display.json` 的 `entries[id].image`，
+缺图时显示"像素形象整理中"，不伪造候选。
+
+一张图鉴图从生成到可见，四步：
+
+```bash
+# 1. 出图（MCP，1024 方图，透明背景）
+# 2. 转原生格式
+.venv/bin/python tools/media/art/catalogue_native.py <raw.png> assets/fighters/<id>/catalogue/model-native.png
+# 3. 写 display 条目（catalogue_id / image / image_sha256 / native_canvas / native_root）
+# 4. 校验
+.venv/bin/python tools/godot_lock.py -- godot --headless --path . --script res://tests/catalogue_identity_display.gd
+```
+
+`catalogue_native.py` 的输出必须满足：`binary_alpha: true`、`visible_height: 192`、
+`visible_colors <= 32`、`canvas: [384, 256]`、`native_root: [192, 248]`。
+不满足就不要接线。
 
 现用源库存储：`model` 保留当前人可读入口；`stage` 目录保留正在接续的动作；已装来源去重后在 `sources` 目录，SHA 文件名对应 `art/source-index.json`。冻结 JSON 仍可包含当时原路径；不要为了美化路径改写原始请求与 usage。
 

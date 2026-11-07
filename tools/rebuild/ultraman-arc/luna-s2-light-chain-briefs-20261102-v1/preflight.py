@@ -10,8 +10,8 @@ import sys
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT / "tools"))
-import art_pipeline
-from image_budget import OfficialImageBudget
+import art.pipeline
+from art.image_budget import OfficialImageBudget
 from PIL import Image
 
 PLAN = ROOT / "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/plan.json"
@@ -103,8 +103,8 @@ def main():
         "schema": "ufeneo.arc-luna.s2.light-chain-readonly-budget-preflight.v1",
         "plan": str(PLAN), "plan_sha256": args.expect_plan_sha256, "selected": selected,
         "all_five_briefs_and_references_verified": True,
-        "project_client": {"path": "tools/art_pipeline.py", "sha256": sha(ROOT / "tools/art_pipeline.py")},
-        "project_budget_gate": {"path": "tools/image_budget.py", "sha256": sha(ROOT / "tools/image_budget.py")},
+        "project_client": {"path": "tools/art/pipeline.py", "sha256": sha(ROOT / "tools/art/pipeline.py")},
+        "project_budget_gate": {"path": "tools/art/image_budget.py", "sha256": sha(ROOT / "tools/art/image_budget.py")},
         "root_serial_entry": {"path": "tools/rebuild/shared/root_serial_image_request_20261101.py", "sha256": sha(ROOT / "tools/rebuild/shared/root_serial_image_request_20261101.py")},
         "official_host": url, "machine_ledger_sha256": ledger_before,
         "local_committed_and_held_usd": str(committed), "hard_cap_usd": str(budget.limit),

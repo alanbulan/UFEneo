@@ -44,7 +44,7 @@ def save(path, value):
 
 
 def official():
-    import art_pipeline
+    import art.pipeline
     config = art_pipeline.local_image_config()
     assert art_pipeline.image_route(config) == "api"
     assert config["base_url"].rstrip("/") == "https://api.openai.com/v1"
@@ -94,7 +94,7 @@ def prepare():
     save(ART / "plan.json", dict(
         user_request="大招是不是少了那个背景定格帧？看其他奥特曼大招。",
         authority="root_delegated_by_user", stage=6, fighter="ultraman-omega",
-        art_source="api", route="tools/art_pipeline.py(generate_image), https://api.openai.com/v1",
+        art_source="api", route="tools/art/pipeline.py(generate_image), https://api.openai.com/v1",
         references=references, old_unknown_entry=old,
         committed_before_usd=str(sum(Decimal(item["committed_usd"]) for item in entries)),
         limit_usd="60", serial=True, no_auto_retry=True,

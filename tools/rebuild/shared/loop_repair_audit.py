@@ -4,7 +4,7 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools/maintenance"), str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
+_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
 from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from pathlib import Path
 Path = _LayoutProjectPath
@@ -15,7 +15,7 @@ import numpy as np
 from PIL import Image,ImageDraw
 from head_scale import ROOT,read,save,font,sha
 sys.path.insert(0,str(ROOT/'tools'))
-from check_limb_idle import frame_row
+from check.limb_idle import frame_row
 import loop_qa
 from idle_qa import feature as legacy_feature
 from loop_repair_landmarks import annotation,marked_feature

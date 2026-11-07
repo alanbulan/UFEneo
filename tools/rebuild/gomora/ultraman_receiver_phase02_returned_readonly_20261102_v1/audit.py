@@ -75,8 +75,8 @@ def main():
     assert int(alpha.min())==0 and int(alpha.max())>0
     assert all(int(alpha[y,x])==0 for x,y in [(0,0),(1023,0),(0,1023),(1023,1023)])
     sys.path.insert(0,str(ROOT/'tools'))
-    from image_budget import usage_cost
-    import art_pipeline as client
+    from art.image_budget import usage_cost
+    import art.pipeline as client
     billing=metadata['official_billing']; cost=usage_cost(billing['usage'])
     assert cost==Decimal(billing['estimated_cost_usd'])
     settings=client.local_image_config()['official_budget']; ledger_path=Path(settings['ledger_path'])

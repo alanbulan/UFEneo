@@ -4,7 +4,7 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools/maintenance"), str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
+_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
 from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from pathlib import Path
 Path = _LayoutProjectPath
@@ -22,7 +22,7 @@ import numpy as np
 ROOT = _LayoutProjectPath(_layout_root)
 SKILL = Path.home()/'.codex/skills/sprite-gen'
 sys.path[:0] = [str(ROOT/'tools'), str(SKILL)]
-import art_pipeline as art
+import art.pipeline as art
 from sprite_gen.frames.extract import (detect_pixel_grid, grid_snap_downscale,
     _kcentroid_downscale, build_shared_palette, apply_palette, binarize_alpha)
 

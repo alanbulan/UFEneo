@@ -4,7 +4,8 @@ import argparse
 import os
 import subprocess
 import sys
-from environment import godot_path, ROOT
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from runtime.environment import godot_path, ROOT
 
 
 def main():

@@ -121,7 +121,7 @@ Draw NO GOMORA, no opponent, no support object or silhouette under the abdomen, 
         stage=5, action='gomora_super3_back_lift_receiver_independent_v1', frame=2,
         phase_name='最低胸腹朝下承重母相', asset_kind='character', size='1024x1024',
         quality='high', background='transparent', model='gpt-image-2.5-sunburst',
-        route='仅tools/art_pipeline.py.generate_image；实际官方路由/模型由执行时配置核实',
+        route='仅tools/art/pipeline.py.generate_image；实际官方路由/模型由执行时配置核实',
         art_source='api_planned_not_submitted', references=[rec(identity),rec(original)],
         reference_roles=['本人身份/完整体尺/像素画风；非所求姿态', '原剧完整镜头；负重方向与皮套连续性，不抄摄影/朝向/哥莫拉/地面'],
         frozen_contract=rec(CONTRACT), canon_native=rec(native), source_decision=rec(source_decision),
@@ -143,7 +143,7 @@ Draw NO GOMORA, no opponent, no support object or silhouette under the abdomen, 
         reference_use_is_not_new_generation=True, preview=review,
         preview_resized_for_readability_only=True, preview_is_not_runtime_art=True))
     sys.path.insert(0,str(ROOT/'tools'))
-    import art_pipeline as client
+    import art.pipeline as client
     fields = client.image_fields(brief, None)
     assert fields['model'] == 'gpt-image-2.5-sunburst'
     save('request-fields.json', fields)

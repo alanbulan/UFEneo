@@ -86,8 +86,10 @@ def main():
         if case == "capture_mechanism" and outcomes[-1]["status"] == "passed":
             run("capture_mechanism_replay", command + ["--replay"])
     if args.only is None:
-        run("fx-audio-resources", [sys.executable, str(ROOT / "tools/check_fx_audio.py")])
-        run("pixel-ui-resources", [sys.executable, str(ROOT / "tools/check_pixel_ui.py")])
+        run("layering", [sys.executable, str(ROOT / "tools/check/layering.py")])
+        run("audio-manifest", [sys.executable, str(ROOT / "tools/check/audio_manifest.py")])
+        run("fx-audio-resources", [sys.executable, str(ROOT / "tools/check/fx_audio.py")])
+        run("pixel-ui-resources", [sys.executable, str(ROOT / "tools/check/pixel_ui.py")])
         run("main-startup", [executable, "--headless", "--path", str(ROOT), "--quit-after", "120"])
     if any(row["status"] != "passed" for row in outcomes):
         raise SystemExit(1)

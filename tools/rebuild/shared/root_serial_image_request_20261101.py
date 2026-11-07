@@ -12,7 +12,7 @@ sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[3]
 sys.path[:0]=[str(ROOT/"tools"),str(ROOT/"tools/rebuild/ultraman-omega")]
 from codex_super_cinematic_art import official,read,ref,save,UNKNOWN
-from image_budget import OfficialImageBudget
+from art.image_budget import OfficialImageBudget
 
 
 def main():
@@ -39,7 +39,7 @@ def main():
     save(folder/"before-submit.json",dict(brief=ref(path),old_unknown_entry=old,
          committed_before_usd=str(committed),reserve_usd=str(config["official_budget"]["reserve_usd"]),
          fields_sha256=hashlib.sha256(json.dumps(fields,sort_keys=True).encode()).hexdigest(),
-         no_auto_retry=True,route="tools/art_pipeline.py(generate_image), https://api.openai.com/v1"))
+         no_auto_retry=True,route="tools/art/pipeline.py(generate_image), https://api.openai.com/v1"))
     error=None
     try:
         client.generate_image(SimpleNamespace(model=None,reference=refs,out=folder/"candidate.png",mask=None,

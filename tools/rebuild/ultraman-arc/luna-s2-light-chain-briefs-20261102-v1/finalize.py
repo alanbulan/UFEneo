@@ -103,7 +103,7 @@ light1 00规定近亮左拳起手、远暗右拳护颏和双肩胸髋/双膝共�
 
 初次00预检时本机占额52.815215/60，下一单预占1，五稿保守新增5仍容得下；这不是账户余额。随后01的v2只读快照看到53.815215和新的在途占额，正常退出1禁止追加POST，原报告保全；当前单终态及根实际审源后再做鲜检。旧未知011ff77710ed49c9b441ed80f91733be继续占10、禁止重发。40.94美元仅为用户提供余额，未API核实。
 
-真正生成只能由根调用项目`tools/rebuild/shared/root_serial_image_request_20261101.py`，它再调用`tools/art_pipeline.py(generate_image)`，high/1024/透明、每单1、先占额后POST、不自动重发。每张命令都已离线列出，本席没有执行。
+真正生成只能由根调用项目`tools/rebuild/shared/root_serial_image_request_20261101.py`，它再调用`tools/art/pipeline.py(generate_image)`，high/1024/透明、每单1、先占额后POST、不自动重发。每张命令都已离线列出，本席没有执行。
 
 跳跃族既有冻结材料保持；严尺、轻击实际效果、全S2和正式可玩装甲均未据本合同通过。
 """

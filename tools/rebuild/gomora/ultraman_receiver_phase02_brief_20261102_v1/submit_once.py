@@ -47,7 +47,7 @@ def preflight():
     assert not output.parent.exists(), '固定请求目录已存在；保留原结果/未知记录，不换名重发'
     assert not (REPORT / 'execution/one-attempt.json').exists(), '本入口已消费；未知不重POST'
     sys.path.insert(0, str(ROOT / 'tools'))
-    import art_pipeline as client
+    import art.pipeline as client
     config = client.local_image_config()
     assert client.image_route(config) == 'api'
     configured_url = os.environ.get('UFE_IMAGE_BASE_URL') or config.get('base_url', '')

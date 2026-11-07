@@ -150,7 +150,7 @@ def main():
     OUT.mkdir(parents=True)
     sources=extract_sources({data['frame'] for data in POSES.values()})
     sys.path.insert(0,str(ROOT/'tools'))
-    import art_pipeline as client
+    import art.pipeline as client
     entries=[]
     for phase,data in POSES.items():
         directory=OUT/'phases'/('phase-%02d'%phase)
@@ -162,7 +162,7 @@ def main():
             fighter='ultraman',specific_version='现装初代奥特曼C型；非A/B或其它英雄',stage=5,
             action='gomora_super3_back_lift_receiver_independent_v1',frame=phase,phase_name=data['name'],
             asset_kind='character',size='1024x1024',quality='high',background='transparent',model='gpt-image-2.5-sunburst',
-            route='仅项目tools/art_pipeline.py.generate_image；根逐张审核后串行提交',art_source='api_planned_not_submitted',
+            route='仅项目tools/art/pipeline.py.generate_image；根逐张审核后串行提交',art_source='api_planned_not_submitted',
             references=[rec(p) for p in references],reference_roles=['干净canon本人身份/像素；不是目标姿态','同一个已接受02母相本人身份/解剖尺寸；非编辑底图','本相原剧完整镜头；实际动作边界见source_boundary'],
             accepted_common_mother=rec(mother),mother_root_acceptance=rec(review),
             original_motion_reference=rec(source),source_frame_index=data['frame'],

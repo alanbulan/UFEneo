@@ -46,7 +46,7 @@ def main():
  brief=dict(schema=2,id='zetton_gomora_super3_back_lift_receiver_board4_20261102',fighter='zetton',specific_version='初代1966杰顿',
    stage=5,action='gomora_super3_back_lift_receiver_independent_board4_v1',asset_kind='character',
    size='1024x1024',quality='high',background='transparent',model='gpt-image-2.5-sunburst',
-   route='tools/art_pipeline.py.generate_image only; root owns existing official route/budget/POST',
+   route='tools/art/pipeline.py.generate_image only; root owns existing official route/budget/POST',
    art_source='api_planned_not_submitted',references=[rec(p) for p in refs],prompt=PROMPT,
    reference_attachment_semantics=['附件1：已装256方图整人，仅本人身份/配色/像素风格','附件2：本人干净1024整源，仅同一身份/比例；源内人物是4倍，不照抄站姿或4倍尺寸'],
    contract=rec(CONTRACT),layout=dict(columns=2,rows=2,cell=[512,512],frame_order=['A','B','C','D'],
@@ -99,7 +99,7 @@ def main():
    boundary='仅既有独立整相组合候选。defeat[3]只作完整体量对照，不接入活体受方。若forward→down仍明显跳变则保留未装，不自动改通用down/核心或加吸附。')
  save(REPORT/'existing-landing-bridge-plan.json',landing)
  py='C:/Users/13080/.codex/venvs/ufeneo/Scripts/python.exe'
- dry=[py,'tools/art_pipeline.py','concept','--brief',bp.relative_to(ROOT).as_posix(),'--out',(REQUEST/'candidate.png').relative_to(ROOT).as_posix()]
+ dry=[py,'tools/art/pipeline.py','concept','--brief',bp.relative_to(ROOT).as_posix(),'--out',(REQUEST/'candidate.png').relative_to(ROOT).as_posix()]
  for p in refs:dry+=['--reference',p.relative_to(ROOT).as_posix()]
  dry+=['--dry-run']
  submit=[py,'tools/rebuild/shared/root_serial_image_request_20261101.py',bp.relative_to(ROOT).as_posix(),

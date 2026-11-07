@@ -86,7 +86,7 @@ def segment_lengths(points):
 
 def dry_run(brief_path, label):
     brief = read(brief_path)
-    arguments = [str(PYTHON), str(ROOT / "tools/art_pipeline.py"), "concept", "--brief", str(brief_path), "--out", str(ART / "not-submitted" / (label + ".png")), "--dry-run"]
+    arguments = [str(PYTHON), str(ROOT / "tools/art/pipeline.py"), "concept", "--brief", str(brief_path), "--out", str(ART / "not-submitted" / (label + ".png")), "--dry-run"]
     for attachment in brief["references"]:
         path = ROOT / attachment["path"]
         assert sha(path) == attachment["sha256"], path

@@ -94,8 +94,8 @@ def audit(phase):
     alpha_preserved=bool(np.array_equal(alpha,upstream[...,3])) if same_shape else None
     visible_preserved=bool(np.array_equal(pixels[alpha>0],upstream[alpha>0])) if same_shape and alpha_preserved else None
     sys.path.insert(0,str(ROOT/'tools'))
-    import art_pipeline as client
-    from image_budget import usage_cost
+    import art.pipeline as client
+    from art.image_budget import usage_cost
     actual_alpha=client.alpha_report(image if has_alpha else image.convert('RGB'))
     actual_provider_alpha=client.alpha_report(original if provider_has_alpha else original.convert('RGB'))
     assert actual_alpha==metadata['alpha'] and actual_provider_alpha==metadata['provider_alpha']

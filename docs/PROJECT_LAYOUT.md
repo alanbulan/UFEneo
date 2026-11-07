@@ -19,6 +19,12 @@
 | `art/fighters/<id>/stage<N>/` | 当前未完成动作、请求、候选和有效交接收据 |
 | `art/shared/sources/` | 无法归属单角的当前源材料 |
 | `art/source-index.json` | 现用源 SHA、字节数和旧路径到唯一实体的索引；不是备份 |
+| `tools/`（仅 `verify.py`、`godot_lock.py`、`README.md`） | 验证入口与 Godot 锁 |
+| `tools/check/` | 资源与像素质检门 |
+| `tools/art/` | 生图、后处理、像素化、名册生产 |
+| `tools/audio/` | Kits 客户端、语音转写、混音 |
+| `tools/roster/` | 名册编译、图鉴身份、繁简转换、维基抓取 |
+| `tools/media/` | 媒体证据提取与采样度量 |
 | `tools/runtime/` | 启动、Godot 定位与短临时录制 |
 | `tools/rebuild/shared/`、`tools/rebuild/<id>/` | 复用制作模块、仍需接续的动作处理器、PixelFX 烘焙脚本 |
 | `tools/maintenance/` | 只读仓库审计与冻结路径解析 |
@@ -26,6 +32,8 @@
 | `third_party/`、`addons/` | 实际采用的上游代码与许可 |
 | `docs/` | 当前规范、交接、验证结果摘要 |
 | `reports/` | 新运行产生的日志、截图、回放与临时视频；忽略上传 |
+
+工具目录的分工、依赖与路径引导见 [tools/README](../tools/README.md)。
 
 `art`、`tools`、`reports` 带 `.gdignore`，不进入 Godot 资源导入。二进制源与运行资源使用 Git LFS；Godot 的 `.uid` 和 `.import` 是源文件侧车，必须上传；`.godot` 导入缓存不上传。
 
@@ -48,6 +56,40 @@
 - `assets`：运行时最终资源。
 
 图片不进入模拟指纹。
+
+### 依赖方向（只允许向下）
+
+实测的层间引用，无环：
+
+```
+tests ──→ app ──→ content
+  │        │        ↑
+  │        ↓        │
+  └──→ presentation ─┘
+          │
+          ↓
+        core   ←── input
+```
+
+| 层 | 允许依赖 | 禁止依赖 |
+| --- | --- | --- |
+| `core` | 无（只依赖 `content` 传入的数据） | 渲染、`Input`、`presentation`、`ui`、`app`、随机数、系统时间 |
+| `input` | 无 | 同上 |
+| `presentation` | `core`、`content` | `ui`、`app` |
+| `ui` | `presentation`、`content` | `app` |
+| `app` | `content`、`input`（装配时实例化 `presentation`/`ui`） | — |
+| `content` | 无 | 任何代码层 |
+
+三条硬约束，改动前必须自查：
+
+1. `core/` 里不出现 `randi`/`randf`/`Time.`/`OS.get_ticks`/`Input.`，
+   也不引用 `res://presentation`、`res://ui`、`res://app`。
+2. `presentation/` 只读模拟，不写 `stats`、`state`、`tick`。
+3. 图片、音频和字体不进入 `content_fingerprint` 和 `state_hash`。
+
+这套分层与 Godot 官方推荐的"数据与表现分离"一致，也与 GGPO 的
+"逐 tick 输入 + 可重放状态"模型同构：`core` 是唯一的状态权威，
+`InputFrame` 是唯一的输入形态，回放记录是唯一的复现路径。
 
 ## 模拟子系统
 
