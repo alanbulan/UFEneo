@@ -44,7 +44,8 @@ def main() -> int:
         print(f"校验失败：{error}", file=sys.stderr)
         return 1
 
-    path = CR.reference_path(args.catalogue_id, args.index)
+    # 按真实格式命名：生图 MCP 靠扩展名判断解码器。
+    path = CR.reference_path(args.catalogue_id, args.index, CR.suffix_for(info["format"]))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(data)
     meta = {

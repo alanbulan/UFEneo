@@ -25,9 +25,19 @@ TOY_HINTS = ("figuarts", "sofubi", "ソフビ", "フィギュア", "扭蛋", "�
              "超合金", "chogokin", "gashapon", "ガシャポン", "banpresto", "バンプレスト")
 
 
-def reference_path(catalogue_id: str, index: int = 1) -> Path:
-    """参考图存放位置：art/fighters/<id>/sources/ref-<n>.<ext>。"""
-    return REFERENCE_ROOT / catalogue_id / "sources" / f"ref-{index:02d}.img"
+def reference_path(catalogue_id: str, index: int = 1, suffix: str = ".img") -> Path:
+    """参考图存放位置：art/fighters/<id>/sources/ref-<n><suffix>。
+
+    扩展名必须反映真实格式（.png/.jpg/.webp）：生图 MCP 靠扩展名判断解码器，
+    把 WebP 存成 .img 会让参考图静默失效，退化成纯文生图。
+    """
+    return REFERENCE_ROOT / catalogue_id / "sources" / f"ref-{index:02d}{suffix}"
+
+
+def suffix_for(fmt: str | None) -> str:
+    """把 PIL 的 format 映射成文件扩展名。"""
+    return {"PNG": ".png", "JPEG": ".jpg", "WEBP": ".webp", "GIF": ".gif"}.get(
+        (fmt or "").upper(), ".img")
 
 
 def validate(image_bytes: bytes) -> dict:
@@ -51,9 +61,9 @@ def validate(image_bytes: bytes) -> dict:
 
 
 def save(reference: bytes, catalogue_id: str, index: int = 1) -> Path:
-    """校验后保存参考图；返回路径。"""
+    """校验后按真实格式保存参考图；返回路径。"""
     info = validate(reference)
-    path = reference_path(catalogue_id, index)
+    path = reference_path(catalogue_id, index, suffix_for(info["format"]))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(reference)
     meta = path.with_suffix(".json")
