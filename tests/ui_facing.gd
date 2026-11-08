@@ -37,7 +37,8 @@ func run() -> void:
 			right.face_player(1)
 	front.open("archive")
 	await process_frame
-	var archive_models:=front.content.find_children("*","Sprite2D",true,false).filter(func(n):return n.texture!=null and n.texture.resource_path.contains("model-native"))
+	# 有真帧待机动画的条目放的是 anim-strip，没有的仍是 model-native；两者都算档案形象。
+	var archive_models:=front.content.find_children("*","Sprite2D",true,false).filter(func(n):return n.texture!=null and (n.texture.resource_path.contains("model-native") or n.texture.resource_path.contains("anim-strip")))
 	check(archive_models.size()==1 and not archive_models[0].flip_h,"档案单人保持原生朝右")
 	front.queue_free();await process_frame
 	var hud:=UfeBattleHUD.new();root.add_child(hud);await process_frame

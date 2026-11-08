@@ -9,6 +9,7 @@ var replay_cursor: int = 0
 var viewport: SubViewport
 var view: UfeSideView
 var image: SubViewportContainer
+var frame_holder: Control
 var hud: UfeMatchUI
 var audio: UfeSideAudio
 var paused: bool = false
@@ -51,6 +52,7 @@ func _on_joy_connection_changed(_device: int, _connected: bool) -> void:
 	UfeInputRouter.configure()
 
 func _ready() -> void:
+	_size_window()
 	get_tree().auto_accept_quit = false
 	training_input_audit=TrainingInputAudit.from_arguments(OS.get_cmdline_user_args())
 	UfeInputRouter.configure()
@@ -247,10 +249,17 @@ func start_match() -> void:
 	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	center.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(center)
+	# 外层按缩放后的尺寸参与布局；SubViewportContainer 自己始终是 640×360，
+	# 只靠 scale 放大。这样内部渲染分辨率不变，画面又能铺满窗口。
+	frame_holder = Control.new()
+	frame_holder.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	center.add_child(frame_holder)
 	image = SubViewportContainer.new()
 	image.stretch = true
+	image.stretch_shrink = 1
 	image.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	center.add_child(image)
+	image.size = Vector2(640, 360)
+	frame_holder.add_child(image)
 	image.add_child(viewport)
 	var ui_layer := CanvasLayer.new()
 	viewport.add_child(ui_layer)
@@ -276,12 +285,32 @@ func start_match() -> void:
 	UfePlayerSettings.apply(UfePlayerSettings.values(),false)
 	_fit()
 
+func _size_window() -> void:
+	"""启动时把窗口撑到屏幕放得下的最大整数倍，避免一开就是半屏黑边。"""
+	if DisplayServer.get_name() == "headless": return
+	var window := get_window()
+	if window == null or window.mode != Window.MODE_WINDOWED: return
+	var usable := DisplayServer.screen_get_usable_rect(window.current_screen).size
+	var factor := 1
+	for candidate in [6, 5, 4, 3, 2]:
+		if 640 * candidate <= usable.x and 360 * candidate <= usable.y:
+			factor = candidate
+			break
+	var target := Vector2i(640, 360) * factor
+	if target.x == window.size.x and target.y == window.size.y: return
+	window.size = target
+	window.move_to_center()
+
 func _fit() -> void:
-	if is_instance_valid(image):
-		var factor := maxi(1,floori(minf(size.x/640,size.y/360)))
-		image.custom_minimum_size = Vector2(640,360)*factor
-		image.stretch_shrink = factor
-		image.size = image.custom_minimum_size
+	# 640×360 的原生画面等比铺满窗口。窗口尺寸是 640×360 整数倍时像素仍然整齐；
+	# 其它尺寸允许小数倍，宁可不留黑边——之前只取整数倍，窗口一大就缩成半屏。
+	if not is_instance_valid(image) or not is_instance_valid(frame_holder): return
+	var factor := minf(size.x / 640.0, size.y / 360.0)
+	if factor <= 0.0: factor = 1.0
+	frame_holder.custom_minimum_size = Vector2(640, 360) * factor
+	frame_holder.size = frame_holder.custom_minimum_size
+	image.size = Vector2(640, 360)
+	image.scale = Vector2(factor, factor)
 
 func _action(action: String) -> void:
 	# 回放播完会自动暂停；首次按暂停应显示菜单，避免反复恢复后又立即暂停。

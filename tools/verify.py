@@ -18,7 +18,7 @@ CASES = [
     "phase3_specials", "phase3_supers", "phase3_fx_audio", "codex_impact_feedback_policy",
     "catalogue_identity_display", "computer_ai", "training_tape", "training_lifecycle", "replay_match_loading", "training_input_audit", "pixel_ui", "pixel_pages", "ui_facing",
     "main_shutdown_menu_exit", "main_shutdown_reentrancy", "audio_playback",
-    "catalogue_assets",
+    "catalogue_assets", "catalogue_animation",
 ]
 
 
@@ -89,6 +89,7 @@ def main():
         run("audio-manifest", [sys.executable, str(ROOT / "tools/check/audio_manifest.py")])
         run("fx-audio-resources", [sys.executable, str(ROOT / "tools/check/fx_audio.py")])
         run("pixel-ui-resources", [sys.executable, str(ROOT / "tools/check/pixel_ui.py")])
+        run("catalogue-idle", [sys.executable, str(ROOT / "tools/check/catalogue_idle.py")])
         run("main-startup", [executable, "--headless", "--path", str(ROOT), "--quit-after", "120"])
     if any(row["status"] != "passed" for row in outcomes):
         raise SystemExit(1)

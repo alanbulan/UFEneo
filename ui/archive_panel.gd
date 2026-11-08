@@ -30,11 +30,16 @@ var info_mode := false
 var expanded := false
 var form_links := HFlowContainer.new()
 var buttons: Array = []
+## 图鉴试听：有本人声音的角色放自己的登场声，其余用像素界面提示音。
+var voice := AudioStreamPlayer.new()
+var last_sound_ms := -100000
 
 func _ready() -> void:
 	theme = PixelPanel.NEO_THEME
 	size_flags_vertical = Control.SIZE_EXPAND_FILL
 	add_theme_constant_override("separation", 2)
+	voice.volume_db = PixelCatalogueSound.PICK_VOLUME_DB
+	add_child(voice)
 	add_child(toolbar)
 	search.placeholder_text = "搜索角色或形态"
 	search.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -142,7 +147,7 @@ func filter_characters(keep_selected: bool = true) -> void:
 		label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 		label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		margin.add_child(label)
-		button.pressed.connect(func(): show_character(id))
+		button.pressed.connect(func(): _select(id))
 		button.set_meta("fighter_id", id)
 		buttons.append(button)
 	empty.visible = filtered.is_empty()
@@ -154,6 +159,7 @@ func filter_characters(keep_selected: bool = true) -> void:
 func jump_to(id: String) -> void:
 	id = catalog.canonical_id(id)
 	if catalog.row_for(id).is_empty(): return
+	_play_entry_sound(id)
 	search.set_block_signals(true); search.text = ""; search.set_block_signals(false)
 	category = ""
 	category_choice.select(0)
@@ -161,6 +167,30 @@ func jump_to(id: String) -> void:
 	page = maxi(0, catalog.page_for_id(id, "", ""))
 	selected_id = id
 	filter_characters()
+
+func sound_for(id: String) -> Dictionary:
+	"""该条目该放什么声：有本人登场声就用它，否则用像素界面提示音。"""
+	var row := catalog.row_for(id)
+	var base := ""
+	if not row.is_empty():
+		base = str(row.get("base_character", ""))
+	return PixelCatalogueSound.for_entry(catalog.canonical_id(id), base)
+
+func _play_entry_sound(id: String) -> void:
+	var now := Time.get_ticks_msec()
+	# 连续翻列表时只留最后一声，避免叠成噪音。
+	if now - last_sound_ms < 260: return
+	last_sound_ms = now
+	var picked := sound_for(id)
+	var path := str(picked.path)
+	if not ResourceLoader.exists(path): return
+	voice.stream = load(path)
+	voice.volume_db = float(picked.volume_db)
+	voice.play()
+
+func _select(id: String) -> void:
+	_play_entry_sound(id)
+	show_character(id)
 
 func show_character(id: String) -> void:
 	id = catalog.canonical_id(id)
