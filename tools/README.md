@@ -1,5 +1,7 @@
 # 工具目录
 
+用途：查找或新增验证、美术、音频、名册、媒体、维护工具时读本文件。运行游戏不需要这里的任何东西。
+
 按职责分目录，一个工具只有一个位置。运行游戏**不需要**这里的任何东西；
 这里的工具只服务验证、美术生产、音频制作和仓库维护。
 
@@ -26,6 +28,26 @@
 | `maintenance/` | 只读仓库审计、历史路径解析、源文件定位 | 随时 |
 | `runtime/` | 启动器、Godot 定位、短临时录制 | 需要跑游戏或录制时 |
 | `rebuild/` | 各角色**当前在制动作**的处理脚本与证据 | 继续某个未完成动作时 |
+
+### 帧尺度突变检查
+
+`check/frame_scale_jumps.py` 逐帧测已时装角色各 clip 的人物本体尺度：头骨顶到
+脚底的站高、头宽与头部面积，与同 clip 中位数比较，阈值 ±8%。举起的武器和
+细特效在测量前用 3×3 开运算剔除，不算进人物身高；蹲姿、腾空收腿只影响站高，
+不会被头部指标误判。报告默认写到 `reports/frame-scale-jumps.json`，确定突变与
+待人工复核帧都会非零退出。
+
+```bash
+.venv/bin/python tools/check/frame_scale_jumps.py --fighter ultraman-jack --verbose
+.venv/bin/python tools/check/frame_scale_jumps.py --fighter ultraman-jack --clip motion_214 \
+  --fix --frames 1 2 3          # 只缩回确定的整帧放大帧，脚底 anchor 不动
+```
+
+`--fix` 只接受已判为 `scale_jump` 的帧，最近邻缩放目标帧矩形、保持二值 Alpha，
+其它帧逐字节不变；同步更新 manifest 的 `atlas_sha256`，并把修复前后测量写入
+`reports/frame-scale-jumps/<fighter>-<clip>.json`。同一 clip 分批修复会合并记录，
+保留各帧测量与每批 `passes`。`--force` 跳过 `fix_safe` 连贯性门，只在已看联系表
+确认整帧均匀放大后使用；记录会标 `forced_without_safe_gate`。
 
 `rebuild/` 按角色分子目录，每个子目录是一次具体动作的制作批次
 （请求、候选、审片、安装）。它不是归档：里面仍有要接续的动作。

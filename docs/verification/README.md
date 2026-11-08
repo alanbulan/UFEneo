@@ -4,6 +4,13 @@
 
 本目录保留可以随干净仓库交接的结果摘要；原始测试输出在本机忽略的 `reports/verification`，重新运行会生成自己的输出，不上传整套日志和截图副本。
 
+## 2026-11-08 动画帧尺度突变修复
+
+- 新增 `tools/check/frame_scale_jumps.py`：以头骨顶到脚底站高、头宽和头部面积对同 clip 中位数比较（±8%；头宽与头面积同时偏大且站高也偏大才判确定突变），举起的武器和细特效在测量前用 3×3 开运算剔除；蹲姿、腾空收腿只影响站高，不按头部指标误判。
+- 修复 8 名角色 11 个 clip 共 28 帧整帧放大：杰克 `burst`1、`crouch_light2`2、`motion_214`3（长矛投掷）、`special`6、`special2`7、`special3`3；哥莫拉 `heavy`2、`guard_counter`1；亚刻 `air_tech`1；布莱泽 `guardbreak`1；布莱克王 `vertical_light`1。以该帧脚底 anchor 为不动点做最近邻反向采样，Alpha 保持 0/255；逐帧像素核对只有目标帧变化、帧外 0 像素改动，manifest 只更新 `atlas_sha256`。
+- 修复后复扫，被修帧全部转为 `ok`；导入与 `phase3_standing`、`phase3_air`、`pixel_pages` 通过。证据 JSON 在本机忽略的 `reports/frame-scale-jumps/`。
+- 仍有 103 clip / 111 帧判确定突变、606 clip / 1124 帧待人工复核，多为击飞、翻滚、倒地、抓投、腾空和出场姿势；`gomora/guard_counter#5` 修完 #0 后转为待复核。未做双朝向 720/1080 实机检查，无录屏。
+
 ## 2026-11-08 文档合并与冗余清理
 
 - `docs/` 由 11 份合并为 9 份：`ENGINE_CHOICE` 并入 `PROJECT_LAYOUT`；`AUDIO_API` + `MONSTER_MUSIC` 合并为 `AUDIO`；`FORMS` + `SUPER_MOVE_DIVERSITY` 合并为 `COMBAT_DESIGN`。`docs/README.md` 仍是唯一索引。
