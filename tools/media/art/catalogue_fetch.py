@@ -20,7 +20,9 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
 
 
 def download(url: str, timeout: int = 30) -> bytes:
-    request = urllib.request.Request(url, headers={"User-Agent": UA})
+    # Fandom 的 static.wikia 直链会校验 Referer，缺了返回 403。
+    headers = {"User-Agent": UA, "Referer": "https://ultra.fandom.com/"}
+    request = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(request, timeout=timeout) as response:
         return response.read()
 
