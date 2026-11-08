@@ -1,5 +1,6 @@
 """封5稿的精确新增清单；根随后产生的提交journal/图/usage明确不纳本席owned。"""
 from pathlib import Path
+import sys
 import hashlib
 import json
 
@@ -65,7 +66,7 @@ def main():
         "initial_readonly_preflight_preserved": ref(snapshot_v1),
         "new_inflight_gate_refusal_preserved": ref(snapshot_v2),
         "new_inflight_refusal_is_expected_and_does_not_authorize_retry": True,
-        "preflight_argv_template": ["C:/Users/13080/.codex/venvs/ufeneo/Scripts/python.exe", str(TOOLS / "preflight_v2.py"),
+        "preflight_argv_template": [sys.executable, str(TOOLS / "preflight_v2.py"),
                                     "--expect-plan-sha256", PLAN_SHA, "--only", "<下一张key>", "--out", "<本报告目录内新JSON路径>"],
         "known_phase05_text_correction": plan["old_proposal_text_correction"],
         "root_generated_candidate_journals_usage_are_excluded_from_agent_owned": True,

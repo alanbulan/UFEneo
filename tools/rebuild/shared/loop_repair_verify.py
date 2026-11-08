@@ -34,7 +34,7 @@ def main():
     started=datetime.now(timezone.utc).isoformat()
     before=fingerprints(args.fingerprint_fighters)
     with (OUT/'verify.log').open('w',encoding='utf-8') as log:
-        process=subprocess.Popen(command,cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding='utf-8',errors='replace',creationflags=0x08000000 if sys.platform=='win32' else 0)
+        process=subprocess.Popen(command,cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding='utf-8',errors='replace')
         for line in process.stdout:
             log.write(line);log.flush();print(line,end='',flush=True)
         code=process.wait()

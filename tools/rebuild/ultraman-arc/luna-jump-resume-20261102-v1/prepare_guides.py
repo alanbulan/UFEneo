@@ -13,7 +13,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[4]
 HERE = Path(__file__).resolve().parent
-PYTHON = Path("C:/Users/13080/.codex/venvs/ufeneo/Scripts/python.exe")
+PYTHON = Path(sys.executable)
 OLD = ROOT / "art/fighters/ultraman-arc__luna/stage2/jump-ground-guides-20261102-v2"
 DRAFT = ROOT / "art/fighters/ultraman-arc__luna/stage2/jump-preparation-20261102-v1"
 ART = ROOT / "art/fighters/ultraman-arc__luna/stage2/jump-air-guides-resume-20261102-v1"
@@ -164,7 +164,7 @@ def main():
         rows.append({"action": action, "phase": phase, "title": plan["label"], "brief": ref(brief_path), "guide": ref(guide), "pose_target": ref(target_path), "prompt": ref(prompt_path), "JPEG_preview": preview, "predicted_air_n": visible_indices, "source_table_ticks": ticks[phase], "actual_air_ticks_prediction": len(visible_indices), "returned_source": None, "root_actual_guide_review": False})
     assert len(rows) == 13 and len({read(ROOT / row["brief"]["path"])["prompt"] for row in rows}) == 13
     # 能力检查仅记录本机可用工具；不调用任何媒体路由或生成服务。
-    doctor = Path("C:/Users/13080/.codex/skills/generate2dmedia/scripts/forge_doctor.py")
+    doctor = Path.home() / ".codex/skills/generate2dmedia/scripts/forge_doctor.py"
     doctor_result = subprocess.run([str(PYTHON), str(doctor), "--host-tools", "none", "--save", str(OUT / "forge-doctor.json")], cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding="utf-8", check=False)
     save(OUT / "forge-doctor-receipt.json", {"exit_code": doctor_result.returncode, "stdout": doctor_result.stdout, "stderr": doctor_result.stderr, "no_media_route_called": True})
     assert doctor_result.returncode == 0

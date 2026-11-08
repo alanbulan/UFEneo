@@ -92,9 +92,9 @@ def extract_sources(frames):
 def preview(phase,data,identity,mother,original):
     from PIL import Image,ImageDraw,ImageFont
     page=Image.new('RGB',(744,1110),'#30343d'); draw=ImageDraw.Draw(page)
-    font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',18)
-    small=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',17)
-    title=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',22)
+    font=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',18)
+    small=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',17)
+    title=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',22)
     draw.text((16,10),'初代C型 phase%02d %s / 待根逐张审'%(phase,data['name']),font=title,fill='white')
     draw.text((16,48),'raw%d–%d；单张1024 / high / transparent；未占额、0 POST。'%(20+phase*4,23+phase*4),font=font,fill='#e0e3eb')
     draw.text((16,91),'参考1：干净canon（完整图）',font=font,fill='white')
@@ -223,7 +223,7 @@ def main():
 
 一次入口必须指定单相，默认只读，例如：
 
-`C:/Users/13080/.codex/venvs/ufeneo/Scripts/python.exe -B tools/rebuild/gomora/ultraman_receiver_remaining_briefs_20261102_v1/submit_once.py --phase 00`
+`.venv/bin/python -B tools/rebuild/gomora/ultraman_receiver_remaining_briefs_20261102_v1/submit_once.py --phase 00`
 
 根逐张亲审后，将该相未授权EXAMPLE另存为同目录root-submit-acceptance.json，填写该相精确SHA与true，再加--execute单次调用项目generate_image。没有批量执行或全相自动授权入口。固定request-001目录和独占消费标记避免重复；异常/中断保未知，不重POST或改名，不释放旧未知10美元。实际POST前项目客户端每单预占1美元并按usage结算，本机累计60硬上限保持；准备期不预占。用户40.94是其提供余额，不声称接口核实。
 

@@ -295,11 +295,11 @@ def report():
                     if any(r['name']==name for r in failed):lines.append(f'- {name}：{reason}')
         else:lines+=['','本次verify没有失败项。画面质量仍由用户审片，不把脚本结果等同于审片通过。']
     else:lines+=['','完整verify正在Godot锁中排队，最终结果将在交付前写入本专题。']
-    lines+=['','**复现**','','```powershell',
-        "& 'C:/Users/13080/.codex/skills/sprite-gen/.venv/Scripts/python.exe' tools/rebuild/shared/loop_repair_audit.py export",
-        "& 'C:/Users/13080/.codex/skills/sprite-gen/.venv/Scripts/python.exe' tools/godot_lock.py -- 'C:/Users/13080/.codex/skills/sprite-gen/.venv/Scripts/python.exe' tools/rebuild/shared/loop_repair_verify.py",
-        "& 'C:/Users/13080/.codex/skills/sprite-gen/.venv/Scripts/python.exe' tools/rebuild/shared/loop_repair_audit.py report",'```','',
-        '本轮交付的是正式帧的只读测量材料，不是新录的主游戏演示。开始游戏.cmd → 训练 → 选初代 / 杰顿可查看保持原样的循环动作；测量动图请直接打开上表文件。下一步：停下，等用户指定返工动作。','']
+    lines+=['','**复现**','','```bash',
+        '.venv/bin/python tools/rebuild/shared/loop_repair_audit.py export',
+        '.venv/bin/python tools/godot_lock.py -- .venv/bin/python tools/rebuild/shared/loop_repair_verify.py',
+        '.venv/bin/python tools/rebuild/shared/loop_repair_audit.py report','```','',
+        '本轮交付的是正式帧的只读测量材料，不是新录的主游戏演示。开始游戏.command → 训练 → 选初代 / 杰顿可查看保持原样的循环动作；测量动图请直接打开上表文件。下一步：停下，等用户指定返工动作。','']
     (OUT/'README.md').write_text('\n'.join(lines),'utf-8')
 
 

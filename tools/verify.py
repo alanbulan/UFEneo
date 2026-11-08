@@ -2,8 +2,6 @@
 from __future__ import annotations
 import argparse
 import json
-import os
-from pathlib import Path
 import re
 import subprocess
 import sys
@@ -40,8 +38,7 @@ def main():
     def run(name, command, timeout=240):
         try:
             result = subprocess.run(command, cwd=ROOT, env=env, capture_output=True,
-                                    text=True, encoding="utf-8", errors="replace", timeout=timeout,
-                                    creationflags=0x08000000 if os.name == "nt" else 0)
+                                    text=True, encoding="utf-8", errors="replace", timeout=timeout)
             log = result.stdout + result.stderr
             passed = result.returncode == 0 and not re.search(r"(?:SCRIPT ERROR:|^ERROR:)", log, re.M)
             for line in log.splitlines():

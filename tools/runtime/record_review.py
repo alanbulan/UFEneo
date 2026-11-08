@@ -69,7 +69,7 @@ def main():
     if avi.exists() or mp4.exists(): raise RuntimeError('影片已存在，请使用新名称')
     # 独立运行主游戏不会导入刚安装的PNG；先完成资源导入，避免录到空白纹理。
     with (target/(args.name+'-import.log')).open('w',encoding='utf-8') as log:
-        imported=subprocess.run([godot_path(),'--headless','--path',str(ROOT),'--editor','--import','--quit'],stdout=log,stderr=log,timeout=120,creationflags=0x08000000)
+        imported=subprocess.run([godot_path(),'--headless','--path',str(ROOT),'--editor','--import','--quit'],stdout=log,stderr=log,timeout=120)
     import_text=(target/(args.name+'-import.log')).read_text('utf-8',errors='replace')
     if imported.returncode or re.search(r'(?:SCRIPT ERROR:|^ERROR:)',import_text,re.MULTILINE):raise RuntimeError('主游戏录屏前资源导入失败')
     command = [godot_path(), '--path', str(ROOT), '--write-movie', str(avi),
@@ -117,8 +117,7 @@ def main():
     manifest_path=ROOT/'assets/fighters/zetton/animations/manifest.json'
     manifest_before=hashlib.sha256(manifest_path.read_bytes()).hexdigest() if args.zetton_defense or args.zetton_air else None
     with (target/(args.name+'.log')).open('w', encoding='utf-8') as log:
-        process = subprocess.run(command, stdout=log, stderr=log, timeout=600,
-                                 creationflags=0x08000000)
+        process = subprocess.run(command, stdout=log, stderr=log, timeout=600)
     result = {'godot_exit': process.returncode}
     runtime_log=(target/(args.name+'.log')).read_text('utf-8',errors='replace')
     if re.search(r'(?:SCRIPT ERROR:|^ERROR:)',runtime_log,re.MULTILINE):raise RuntimeError('录屏存在脚本/资源错误，禁止作为合格影片交付；请查看日志')

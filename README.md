@@ -16,9 +16,9 @@ export GODOT_PATH=/Applications/Godot.app/Contents/MacOS/Godot
 .venv/bin/python tools/godot_lock.py -- "$GODOT_PATH" --headless --path . --editor --import --quit
 ```
 
-Windows 用 `.venv\Scripts\python.exe`、`$env:GODOT_PATH` 和 `开始游戏.cmd`。首次克隆不带 `.godot` 缓存，必须先导入。启动器依次使用 `UFENEO_PYTHON`、项目 `.venv`、PATH 中的 Python；本机已有的 Codex Godot 配置也可读取，不需要上传该配置。
+macOS 用 `.venv/bin/python`、`export GODOT_PATH=...` 和 `开始游戏.command`。首次克隆不带 `.godot` 缓存，必须先导入。启动器依次使用 `UFENEO_PYTHON`、项目 `.venv`、PATH 中的 `python3`；本机已有的 Codex Godot 配置也可读取，不需要上传该配置。
 
-启动 **开始游戏.cmd** → 电脑对战/本地双人/训练 → 选人 → 场景与 BGM → 开始。
+启动 **开始游戏.command** → 电脑对战/本地双人/训练 → 选人 → 场景与 BGM → 开始。
 
 1P：W/空格跳，S 蹲，AD 移动，J/K/L/O 攻击，U 防御，I 远程，P 必杀，Q 蓄能，H 方向快捷技能，E 切已开放形态，N 闪避。2P 使用方向键与小键盘。正式设置可重绑和保存。Enter 暂停，F1 判定框，F2 招式表，F3 训练，F4 回放，F5 陪练，R 再战。
 

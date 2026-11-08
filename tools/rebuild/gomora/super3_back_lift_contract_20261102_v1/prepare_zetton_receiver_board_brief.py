@@ -1,5 +1,6 @@
 """准备杰顿四完整相板brief与离线计划；无API调用、预算操作、Godot或产品写入。"""
 from pathlib import Path
+import sys
 import hashlib,json
 from PIL import Image,ImageDraw
 ROOT=Path(__file__).resolve().parents[4]
@@ -98,7 +99,7 @@ def main():
    no_default_down_replaced=True,no_new_image_request_for_landing=True,actual_pairing_accepted=False,
    boundary='仅既有独立整相组合候选。defeat[3]只作完整体量对照，不接入活体受方。若forward→down仍明显跳变则保留未装，不自动改通用down/核心或加吸附。')
  save(REPORT/'existing-landing-bridge-plan.json',landing)
- py='C:/Users/13080/.codex/venvs/ufeneo/Scripts/python.exe'
+ py=sys.executable
  dry=[py,'tools/art/pipeline.py','concept','--brief',bp.relative_to(ROOT).as_posix(),'--out',(REQUEST/'candidate.png').relative_to(ROOT).as_posix()]
  for p in refs:dry+=['--reference',p.relative_to(ROOT).as_posix()]
  dry+=['--dry-run']

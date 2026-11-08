@@ -3,7 +3,6 @@ from pathlib import Path
 import argparse
 import hashlib
 import json
-import os
 import subprocess
 import sys
 
@@ -50,8 +49,7 @@ def main():
                'res://tools/rebuild/gomora/super3_back_lift_contract_20261102_v1/throw_target_step_regression.gd',
                '--', '--throw-target-out=' + str(out), *options]
     with (out / 'engine.log').open('xb') as log:
-        result = subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT,
-                                creationflags=0x08000000 if os.name == 'nt' else 0, timeout=90)
+        result = subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, timeout=90)
     diagnostics = [line for line in (out / 'engine.log').read_text('utf-8', errors='replace').splitlines()
                    if any(token in line for token in ['SCRIPT ERROR:', 'Parse Error:', 'ERROR:', 'WARNING:', 'FAIL '])]
     after = sources()

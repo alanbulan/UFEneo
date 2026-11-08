@@ -34,6 +34,7 @@ def isolated_test_environment(output: Path) -> dict[str, str]:
     env = os.environ.copy()
     data = output / "userdata"
     data.mkdir(parents=True, exist_ok=True)
-    env["APPDATA"] = str(data)
+    # macOS Godot 把用户数据放在 ~/Library/Application Support/Godot/app_userdata。
+    env["HOME"] = str(data)
     env["XDG_DATA_HOME"] = str(data)
     return env

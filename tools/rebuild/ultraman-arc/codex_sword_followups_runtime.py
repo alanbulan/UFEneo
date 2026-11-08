@@ -76,7 +76,7 @@ def run_engine(runtime, label, argv):
     assert not log.exists() and not (runtime / (label + '-exit.json')).exists(), '原运行证据拒绝覆盖'
     with log.open('xb') as output:
         result = subprocess.run([str(godot_path()), '--path', str(ROOT), *argv], cwd=ROOT,
-            stdout=output, stderr=subprocess.STDOUT, creationflags=0x08000000, timeout=180)
+            stdout=output, stderr=subprocess.STDOUT, timeout=180)
     errors = [line for line in log.read_text('utf-8', errors='replace').splitlines()
               if 'SCRIPT ERROR:' in line or 'Parse Error:' in line or line.lstrip().startswith('ERROR:')]
     save(runtime / (label + '-exit.json'), dict(exit_code=result.returncode, errors=errors, generated_videos=0))

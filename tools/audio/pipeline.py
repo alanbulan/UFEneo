@@ -58,8 +58,7 @@ def run_ffmpeg(arguments):
     if not exe:
         raise ValueError("需要开源 FFmpeg；当前 PATH 中未找到")
     result = subprocess.run([exe, "-hide_banner", "-nostdin", "-loglevel", "error", "-n", *arguments],
-                            capture_output=True, timeout=120,
-                            creationflags=0x08000000 if sys.platform == "win32" else 0)
+                            capture_output=True, timeout=120)
     if result.returncode:
         raise ValueError("FFmpeg 处理失败；未覆盖已有文件")
 
@@ -70,8 +69,7 @@ def probe(path):
         raise ValueError("音频文件或 FFprobe 不存在")
     result = subprocess.run([exe, "-v", "error", "-show_entries",
         "format=duration:stream=codec_type,sample_rate,channels", "-of", "json", str(path)],
-        capture_output=True, timeout=30,
-        creationflags=0x08000000 if sys.platform == "win32" else 0)
+        capture_output=True, timeout=30)
     if result.returncode:
         raise ValueError("媒体无法解码")
     data = json.loads(result.stdout)
@@ -88,8 +86,7 @@ def voice_levels(path):
         raise ValueError("人声幅值检查只接受15秒以内片段")
     result = subprocess.run([shutil.which("ffmpeg"), "-hide_banner", "-nostdin", "-loglevel", "error",
         "-i", str(path), "-map", "0:a:0", "-vn", "-ac", "1", "-ar", "48000", "-f", "f32le", "pipe:1"],
-        capture_output=True, timeout=30,
-        creationflags=0x08000000 if sys.platform == "win32" else 0)
+        capture_output=True, timeout=30)
     if result.returncode or not result.stdout:
         raise ValueError("人声幅值解码失败")
     values = array.array("f", result.stdout)

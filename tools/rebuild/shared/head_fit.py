@@ -1,6 +1,6 @@
 """共用整头刚体配准：只读运行资源，结果仅用于人工复核。
 
-Python: C:/Users/13080/.codex/venvs/ufeneo/Scripts/python.exe
+Python: .venv/bin/python
 配置坐标均为 idle 第零格的原生像素；旋转沿用 OpenCV（正值逆时针）。
 不导入、不改写各角色私有配准脚本，不自动批准、缩放或安装任何资源。
 """
@@ -219,7 +219,7 @@ def build_template(cfg, idle=None):
 
 
 def font(size=20):
-    for name in ('C:/Windows/Fonts/msyh.ttc', 'C:/Windows/Fonts/simhei.ttf'):
+    for name in ('/System/Library/Fonts/Hiragino Sans GB.ttc', '/System/Library/Fonts/Hiragino Sans GB.ttc'):
         if Path(name).exists():
             return ImageFont.truetype(name, size)
     return ImageFont.load_default(size=size)
@@ -890,19 +890,19 @@ def write_readme(out, all_results, ranking, origin, strips):
         f'可用读数 {totals["usable"]}，只当辅助 {totals["auxiliary"]}，头不可测 {totals["unmeasurable"]}。'
         f'可用读数中超±8% {totals["over_8_percent"]} 帧，超±12% {totals["over_12_percent"]} 帧。'
         '计数按清单条目，不把共用动画条目去重成素材数。超差是复核/返修候选，不是自动美术拒收结论。', '',
-        '## 怎么用', '', '从项目根目录运行，固定使用项目解释器：', '', '```powershell',
-        "$py = 'C:/Users/13080/.codex/venvs/ufeneo/Scripts/python.exe'",
-        "$out = 'reports/review/YYYY-MM-DD-head-fit-audit-new'",
-        '& $py tools/rebuild/shared/head_fit.py snapshot --out $out',
-        '& $py tools/rebuild/shared/head_fit.py templates --out $out',
-        '& $py tools/rebuild/shared/head_fit.py calibrate --out $out --workers 4',
-        '& $py tools/rebuild/shared/head_fit.py audit --out $out --workers 4',
-        '& $py tools/rebuild/shared/head_fit.py report --out $out', '```', '',
+        '## 怎么用', '', '从项目根目录运行，固定使用项目解释器：', '', '```bash',
+        "py=.venv/bin/python",
+        "out=reports/review/YYYY-MM-DD-head-fit-audit-new",
+        '"$py" tools/rebuild/shared/head_fit.py snapshot --out "$out"',
+        '"$py" tools/rebuild/shared/head_fit.py templates --out "$out"',
+        '"$py" tools/rebuild/shared/head_fit.py calibrate --out "$out" --workers 4',
+        '"$py" tools/rebuild/shared/head_fit.py audit --out "$out" --workers 4',
+        '"$py" tools/rebuild/shared/head_fit.py report --out "$out"', '```', '',
         '`snapshot` 拒绝覆盖已有快照。`calibrate` 在人工变换/确定性校准成功后，仅更新 art/production/head_fit/ 下的专属配置阈值。'
         '`audit` 可从已完成角色续跑；算法或配置指纹变化时拒绝复用旧结果。各命令支持 `--characters <id...>`。'
         '工具不启动Godot；无需占用Godot锁，也不录游戏影片。', '',
         '单帧用法（rect为图集上的x、y、宽、高；center为裁出格子后的原生坐标，可省略）：', '',
-        '```powershell', '& $py tools/rebuild/shared/head_fit.py measure --characters ultraman-leo --image assets/fighters/ultraman-leo/animations/idle/atlas.png --rect 0 0 192 192 --center 100 56', '```', '',
+        '```bash', '"$py" tools/rebuild/shared/head_fit.py measure --characters ultraman-leo --image assets/fighters/ultraman-leo/animations/idle/atlas.png --rect 0 0 192 192 --center 100 56', '```', '',
         '作为库可调用 `measure(character_id, image, center=None, rect=None, full_search=False)`，返回scale、rotation、error、center、grade。'
         '正角度是OpenCV图像坐标中的逆时针；scale=1.15表示头比idle模板大15%，不是建议的资源缩放系数。', '',
         '## 方法与配置', '',

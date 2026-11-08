@@ -24,7 +24,7 @@ def read(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
 def save(p,d):
     p=Path(p);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
-def font(n=24):return ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',n)
+def font(n=24):return ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',n)
 
 # 只选择该招式自己生成的完整帧。删错相位和调整停留沿用用户批准的关键姿势方法。
 SELECT={

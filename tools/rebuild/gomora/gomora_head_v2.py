@@ -130,7 +130,7 @@ def annotated(im, h, title, path):
     sprite = im.convert('RGBA').resize((im.width*scale, im.height*scale), Image.Resampling.NEAREST)
     canvas.paste(sprite, (0, 65), sprite)
     d = ImageDraw.Draw(canvas)
-    font = ImageFont.truetype('C:/Windows/Fonts/msyh.ttc', 21)
+    font = ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc', 21)
     d.text((10, 8), title, font=font, fill='white')
     if h:
         pts = [(p[0]*scale, p[1]*scale+65) for p in [h['eye'], h['nose_tip']]]
@@ -154,7 +154,7 @@ def calibrate():
         old = read(ROOT/clip['head_qa'])['frames'] if clip.get('head_qa') else []
         heads = Image.new('RGB', (len(clip['rects'])*640, 660), '#202632')
         d = ImageDraw.Draw(heads)
-        f = ImageFont.truetype('C:/Windows/Fonts/msyh.ttc', 18)
+        f = ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc', 18)
         for i, (x, y, w, h) in enumerate(clip['rects']):
             im = atlas.crop((x, y, x+w, y+h))
             prior = old[i].get('measurement') if i < len(old) else None

@@ -17,8 +17,8 @@ TIMING = ROOT / "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs
 PALETTE = ROOT / "art/fighters/ultraman-arc__luna/model/palette.json"
 NEW00 = ROOT / "art/fighters/ultraman-arc__luna/stage2/light-chain-whole-briefs-20261102-v1/light1/phase-00/request-002"
 JUMP_RECIPE = ROOT / "tools/rebuild/ultraman-arc/luna-jump-offline-resume-20261102-v1/offline_jump.py"
-FONT = ImageFont.truetype("C:/Windows/Fonts/msyh.ttc", 14)
-SMALL = ImageFont.truetype("C:/Windows/Fonts/msyh.ttc", 12)
+FONT = ImageFont.truetype("/System/Library/Fonts/Hiragino Sans GB.ttc", 14)
+SMALL = ImageFont.truetype("/System/Library/Fonts/Hiragino Sans GB.ttc", 12)
 SIZE = 159
 sys.path.insert(0, str(ROOT / "tools/rebuild/shared"))
 from forge_backend import _kcentroid_downscale, apply_palette, binarize_alpha, palette_mode, backend_info

@@ -25,8 +25,8 @@ TICKS = {"takeoff": [1, 1], "vertical_jump": [8, 7, 3, 8, 7],
          "flip_forward": [8, 8, 8, 9], "flip_back": [8, 8, 8, 9], "land": [2, 2]}
 SIZE, CELL, RUNTIME_ROOT, GUIDE_ROOT = 159, 320, [160, 280], [512, 960]
 SCALE = SIZE / 1024
-FONT = ImageFont.truetype("C:/Windows/Fonts/msyh.ttc", 14)
-SMALL_FONT = ImageFont.truetype("C:/Windows/Fonts/msyh.ttc", 12)
+FONT = ImageFont.truetype("/System/Library/Fonts/Hiragino Sans GB.ttc", 14)
+SMALL_FONT = ImageFont.truetype("/System/Library/Fonts/Hiragino Sans GB.ttc", 12)
 sys.path.insert(0, str(ROOT / "tools/rebuild/shared"))
 from forge_backend import _kcentroid_downscale, apply_palette, binarize_alpha, palette_mode, backend_info
 

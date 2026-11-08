@@ -1,7 +1,6 @@
 """Launch the main game using GODOT_PATH or a locally installed Godot."""
 from pathlib import Path
 import argparse
-import os
 import subprocess
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -22,8 +21,7 @@ def main():
     # Keep the same shared lock throughout the lifetime of the game process.
     command = [sys.executable, str(ROOT / "tools/godot_lock.py"), "--", *command]
     subprocess.Popen(command, cwd=ROOT, stdin=subprocess.DEVNULL,
-                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-                     creationflags=0x08000000 if os.name == "nt" else 0)
+                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
 if __name__ == "__main__":

@@ -20,7 +20,7 @@ OUT = ROOT / 'reports/review/2026-11-02/arc-luna-jump-ground-four-guides-v2'
 MEASURES = OWN / 'model/measurements.json'
 IDENTITY = OWN / 'stage2/walk-forward-repair-20261102-v1/references/identity.png'
 SCALE = 1024 / 159
-FONT = 'C:/Windows/Fonts/msyh.ttc'
+FONT = '/System/Library/Fonts/Hiragino Sans GB.ttc'
 
 PLANS = [
     {'action': 'takeoff', 'phase': 0, 'label': '同脚序压膝，双臂及肩胸髋共同加载', 'hip': [130, 187], 'torso_degrees': 9, 'head_degrees': 4,

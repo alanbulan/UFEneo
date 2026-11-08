@@ -4,7 +4,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import os
 from pathlib import Path
 import re
 import subprocess
@@ -118,8 +117,7 @@ def engine(directory: Path, label: str, options: list[str], frozen: dict[str, st
     exit_code: int | str
     with log.open("xb") as stream:
         try:
-            result = subprocess.run(command, cwd=ROOT, stdout=stream, stderr=subprocess.STDOUT,
-                                    creationflags=0x08000000 if os.name == "nt" else 0, timeout=timeout)
+            result = subprocess.run(command, cwd=ROOT, stdout=stream, stderr=subprocess.STDOUT, timeout=timeout)
             exit_code = result.returncode
         except subprocess.TimeoutExpired:
             exit_code = "timeout"
@@ -137,7 +135,7 @@ def engine(directory: Path, label: str, options: list[str], frozen: dict[str, st
 
 
 def preserve_user_data(target: Path) -> tuple[Path, dict[str, bytes | None]]:
-    user_data = Path(os.environ["APPDATA"]) / "Godot/app_userdata/奥特曼格斗进化Neo"
+    user_data = Path.home() / "Library/Application Support/Godot/app_userdata/奥特曼格斗进化Neo"
     original: dict[str, bytes | None] = {}
     evidence = []
     for name in ["settings.json", "last_replay.json"]:

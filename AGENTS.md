@@ -20,13 +20,13 @@
 
 ## 开发与验证
 
-- 只在主游戏开发，不建研究场景、测试 .cmd、独立预览网页。入口是 开始游戏.cmd 和 app/scenes/main.tscn，调试用主游戏训练/F1。
+- 只在主游戏开发，不建研究场景、测试脚本、独立预览网页。入口是 开始游戏.command 和 app/scenes/main.tscn，调试用主游戏训练/F1。
 - core 只做整数、60 tick、确定性模拟，不依赖渲染、Input、随机数和系统时间；一个状态一个文件，一个招式一个数据文件。
 - input 转换设备输入；presentation 只读模拟，负责画面/声音/镜头；app 装配流程；content 存数据；UI 共用 ui/kit 和 ui/theme。
 - 依赖方向只允许向下：core 与 input 不依赖任何其它层；presentation 只依赖 core/content；ui 只依赖 presentation/content；app 负责装配。分层细则与自查项见 docs/PROJECT_LAYOUT.md。
 - Godot 导入、验证和录制一律经 python tools/godot_lock.py -- <命令> 串行运行；不删活锁，不关用户进程，不以换引擎冒充修复。
 - 工具按职责放在 tools/check、art、audio、roster、media、runtime、maintenance、rebuild；tools/ 顶层只留 verify.py 与 godot_lock.py。新增工具沿用统一路径引导，模块名全局唯一。见 tools/README.md。
-- 当前本机制作 Python：C:/Users/13080/.codex/venvs/ufeneo/Scripts/python.exe。其它机器用 Python 3.12+ 自建环境并配置 GODOT_PATH，不提交本机配置。
+- 当前本机制作 Python：`.venv/bin/python`（macOS，Python 3.12+）。其它机器自建同名环境并配置 GODOT_PATH，不提交本机配置。
 - 逻辑检查覆盖确定性、回放、输入、资源、命中和取消；不能将测试通过写成美术/听感通过。实际画面须检查两个朝向和 720/1080。
 - 根按用户委托自行验收后继续已授权任务，注明 root_delegated_by_user；不修改历史 user_approved，不冒称用户亲审。
 

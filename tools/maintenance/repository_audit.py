@@ -9,7 +9,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[2]
 SKIP = {'.git', '.godot', '.venv', '.tools', '.references', '__pycache__', 'node_modules', 'reports'}
-TEXT = {'.py', '.gd', '.gdshader', '.json', '.md', '.txt', '.toml', '.yaml', '.yml', '.tscn', '.tres', '.cmd', '.mjs', '.js', '.cfg'}
+TEXT = {'.py', '.gd', '.gdshader', '.json', '.md', '.txt', '.toml', '.yaml', '.yml', '.tscn', '.tres', '.command', '.sh', '.mjs', '.js', '.cfg'}
 SECRETS = [
     re.compile(r'\b(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,})\b'),
     re.compile(r'\bsk-(?:proj-|svcacct-)?[A-Za-z0-9_-]{24,}\b'),

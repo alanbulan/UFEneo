@@ -39,7 +39,8 @@ SPRITE_ROOT = Path(os.environ.get("SPRITE_GEN_ROOT", str(Path.home() / ".codex/s
 
 
 IMAGE_CONFIG = Path.home() / ".codex/secrets/ufeneo-image.json"
-IMAGE_SECRET = Path.home() / ".codex/secrets/ufeneo-image.dpapi"
+# 本机纯文本密钥；必须 0600 且只在本机，不复制、不打印、不提交。
+IMAGE_SECRET = Path.home() / ".codex/secrets/ufeneo-image.key"
 
 
 def local_image_config():
@@ -49,30 +50,12 @@ def local_image_config():
     return json.loads(IMAGE_CONFIG.read_text(encoding="utf-8"))
 
 
-def dpapi_text(path):
-    """Decrypt a ConvertFrom-SecureString hex blob for the current Windows user."""
-    import ctypes
-    from ctypes import wintypes
-
-    class Blob(ctypes.Structure):
-        _fields_ = [("length", wintypes.DWORD), ("data", ctypes.POINTER(ctypes.c_ubyte))]
-
-    raw = bytes.fromhex(path.read_text(encoding="ascii").strip())
-    buffer = (ctypes.c_ubyte * len(raw)).from_buffer_copy(raw)
-    source, result = Blob(len(raw), buffer), Blob()
-    crypt = ctypes.WinDLL("crypt32", use_last_error=True)
-    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
-    crypt.CryptUnprotectData.argtypes = [ctypes.POINTER(Blob), ctypes.c_void_p, ctypes.c_void_p,
-                                         ctypes.c_void_p, ctypes.c_void_p, wintypes.DWORD, ctypes.POINTER(Blob)]
-    crypt.CryptUnprotectData.restype = wintypes.BOOL
-    kernel.LocalFree.argtypes = [ctypes.c_void_p]
-    kernel.LocalFree.restype = ctypes.c_void_p
-    if not crypt.CryptUnprotectData(ctypes.byref(source), None, None, None, None, 0, ctypes.byref(result)):
-        raise ValueError("Image credential cannot be decrypted by this Windows user")
-    try:
-        return ctypes.string_at(result.data, result.length).decode("utf-16-le").strip()
-    finally:
-        kernel.LocalFree(result.data)
+def plain_text_secret(path):
+    """Read a 0600 plain-text credential file; refuse group/other-accessible files."""
+    mode = path.stat().st_mode & 0o777
+    if mode & 0o077:
+        raise ValueError("Image credential file permissions are too open; expected 0600")
+    return path.read_text(encoding="utf-8").strip()
 
 
 def credentials():
@@ -83,8 +66,8 @@ def credentials():
         raise ValueError("Frontend session route forbids API key credentials")
     token = os.environ.get("UFE_IMAGE_API_KEY")
     url = os.environ.get("UFE_IMAGE_BASE_URL") or local.get("base_url")
-    if not token and os.name == "nt" and IMAGE_SECRET.is_file():
-        token = dpapi_text(IMAGE_SECRET)
+    if not token and IMAGE_SECRET.is_file():
+        token = plain_text_secret(IMAGE_SECRET)
     token = token or os.environ.get("OPENAI_API_KEY")
     url = url or os.environ.get("OPENAI_BASE_URL")
     config = Path(os.environ.get("CODEX_HOME", str(Path.home() / ".codex"))) / "config.toml"
@@ -187,7 +170,7 @@ def api_transport():
     selected = os.environ.get("UFE_IMAGE_TRANSPORT", "").strip().lower()
     if selected and selected not in {"curl", "urllib"}:
         raise ValueError("UFE_IMAGE_TRANSPORT must be curl or urllib")
-    return selected or ("curl" if os.name == "nt" and shutil.which("curl.exe") else "urllib")
+    return selected or "urllib"
 
 
 def curl_quote(value):
@@ -209,7 +192,7 @@ def image_request_timeout():
 
 
 def request_curl(url, token, endpoint, data, content_type):
-    executable = shutil.which("curl.exe" if os.name == "nt" else "curl")
+    executable = shutil.which("curl")
     if not executable:
         raise ValueError("Configured curl transport is unavailable; no fallback request sent")
     timeout_seconds = image_request_timeout()
@@ -227,8 +210,7 @@ def request_curl(url, token, endpoint, data, content_type):
         try:
             response = subprocess.run([executable, "--disable", "--config", "-"],
                                       input=("\n".join(options) + "\n").encode("utf-8"),
-                                      stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout_seconds + 10,
-                                      creationflags=0x08000000 if os.name == "nt" else 0)
+                                      stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout_seconds + 10)
         except (OSError, subprocess.TimeoutExpired):
             raise ValueError("Image API transport interrupted; remote completion/billing unknown; no automatic retry") from None
     body, marker, status = response.stdout.rpartition(b"\nUFE_HTTP_STATUS:")
@@ -356,29 +338,19 @@ class image_slot:
     @staticmethod
     def _try_lock(handle):
         import errno
+        import fcntl
         try:
-            if os.name == "nt":
-                import msvcrt
-                os.lseek(handle, 0, os.SEEK_SET)
-                msvcrt.locking(handle, msvcrt.LK_NBLCK, 1)
-            else:
-                import fcntl
-                fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
             return True
         except OSError as exc:
-            if exc.errno in (errno.EACCES, errno.EAGAIN, errno.EDEADLK) or getattr(exc, "winerror", None) in (33, 36, 158):
+            if exc.errno in (errno.EACCES, errno.EAGAIN, errno.EDEADLK):
                 return False
             raise
 
     @staticmethod
     def _unlock(handle):
-        if os.name == "nt":
-            import msvcrt
-            os.lseek(handle, 0, os.SEEK_SET)
-            msvcrt.locking(handle, msvcrt.LK_UNLCK, 1)
-        else:
-            import fcntl
-            fcntl.flock(handle, fcntl.LOCK_UN)
+        import fcntl
+        fcntl.flock(handle, fcntl.LOCK_UN)
 
     def __enter__(self):
         local = local_image_config()
@@ -397,7 +369,7 @@ class image_slot:
             for index in range(count):
                 path = SLOT_DIR / f"slot-{index}.lock"
                 try:
-                    handle = os.open(path, os.O_CREAT | os.O_EXCL | os.O_RDWR | getattr(os, "O_BINARY", 0), 0o600)
+                    handle = os.open(path, os.O_CREAT | os.O_EXCL | os.O_RDWR, 0o600)
                     try:
                         if os.write(handle, self._MARKER) != len(self._MARKER):
                             raise OSError("Incomplete image slot marker")
@@ -407,7 +379,7 @@ class image_slot:
                         raise
                 except FileExistsError:
                     try:
-                        handle = os.open(path, os.O_RDWR | getattr(os, "O_BINARY", 0))
+                        handle = os.open(path, os.O_RDWR)
                     except FileNotFoundError:
                         continue
                 try:
@@ -852,7 +824,7 @@ def lock_idle(args):
 
 
 def skill_python():
-    interpreter = SPRITE_ROOT / ".venv" / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+    interpreter = SPRITE_ROOT / ".venv" / "bin/python"
     if not interpreter.exists():
         raise ValueError("sprite-gen venv missing. Run: python tools/art/pipeline.py bootstrap-sprite")
     return interpreter
@@ -957,7 +929,7 @@ def doctor(args):
         status = {"image_route": route, "image_session": "website_bearer_session",
                   "image_model": "frontend profile; not checked",
                   "sprite_gen_skill": (SPRITE_ROOT / "SKILL.md").exists(),
-                  "sprite_gen_venv": (SPRITE_ROOT / ".venv/Scripts/python.exe").exists(),
+                  "sprite_gen_venv": (SPRITE_ROOT / ".venv/bin/python").exists(),
                   "art_generation": "GPT Image only", "postprocessing": "local open-source tools only",
                   "api_transport": "frontend_session_https"}
         if args.check_api:
@@ -979,7 +951,7 @@ def doctor(args):
     url, token = credentials()
     status = {"image_api": "configured" if token else "missing credential", "image_model": endpoint_model("gpt-image-2.5-sunburst"),
               "sprite_gen_skill": (SPRITE_ROOT / "SKILL.md").exists(),
-              "sprite_gen_venv": (SPRITE_ROOT / ".venv/Scripts/python.exe").exists(),
+              "sprite_gen_venv": (SPRITE_ROOT / ".venv/bin/python").exists(),
               "art_generation": "GPT Image only", "postprocessing": "local open-source tools only",
               "api_transport": api_transport()}
     if args.check_api:

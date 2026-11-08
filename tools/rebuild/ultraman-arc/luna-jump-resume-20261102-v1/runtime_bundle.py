@@ -24,7 +24,7 @@ FID = "ultraman-arc__luna"
 TICKS = {"takeoff": [1, 1], "vertical_jump": [8, 7, 3, 8, 7], "flip_forward": [8, 8, 8, 9], "flip_back": [8, 8, 8, 9], "land": [2, 2]}
 STATE_KEYS = {"takeoff": "takeoff", "vertical_jump": "vertical_air", "flip_forward": "diagonal_air", "flip_back": "backward_air", "land": "land"}
 STARTS = [60, 150, 240]
-DEFAULT_ENGINE = Path("F:/Games/Steam/steamapps/common/Godot Engine/godot.windows.opt.tools.64.exe")
+DEFAULT_ENGINE = Path(os.environ.get("GODOT_PATH", "/Applications/Godot.app/Contents/MacOS/Godot"))
 
 
 def safe_report(path):
@@ -191,7 +191,7 @@ def execute(cfg, contract, folder, direction, size, tape=None):
         command.append("--luna-s2-original-tape=" + tape.as_posix())
     started = time.time()
     with stdout.open("x", encoding="utf-8", newline="\n") as stream:
-        result = subprocess.run(command, cwd=ROOT, stdin=subprocess.DEVNULL, stdout=stream, stderr=subprocess.STDOUT, timeout=120, creationflags=0x08000000 if os.name == "nt" else 0)
+        result = subprocess.run(command, cwd=ROOT, stdin=subprocess.DEVNULL, stdout=stream, stderr=subprocess.STDOUT, timeout=120)
     save(folder / "process-exit.json", dict(command=command, exit_code=result.returncode, elapsed_seconds=round(time.time() - started, 3)))
     assert result.returncode == 0 and engine_log.is_file()
     logs = engine_log.read_text("utf-8", errors="replace") + "\n" + stdout.read_text("utf-8", errors="replace")

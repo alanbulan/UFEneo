@@ -24,7 +24,7 @@ def save(p,v):
  import art_phase2
  art_phase2.save(Path(p),v)
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
-def font(n=16):return ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',n)
+def font(n=16):return ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',n)
 
 def measure(im,fighter,hint=None,direction=None,region=None):
  """初代测银色头壳长轴；杰顿测独立脸部发光体长轴。后脑/遮挡必须人工标注。"""

@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import re
+import subprocess
 import sys
 
 sys.dont_write_bytecode = True
@@ -47,45 +48,18 @@ def save_new(path, data):
 
 
 def ancestor_pids():
-    """只读进程树；Windows venv redirector可以位于锁owner和本进程之间。"""
-    if os.name == "nt":
-        import ctypes
-        from ctypes import wintypes
-
-        class Entry(ctypes.Structure):
-            _fields_ = [("dwSize", wintypes.DWORD), ("cntUsage", wintypes.DWORD),
-                        ("th32ProcessID", wintypes.DWORD), ("th32DefaultHeapID", ctypes.c_size_t),
-                        ("th32ModuleID", wintypes.DWORD), ("cntThreads", wintypes.DWORD),
-                        ("th32ParentProcessID", wintypes.DWORD), ("pcPriClassBase", wintypes.LONG),
-                        ("dwFlags", wintypes.DWORD), ("szExeFile", wintypes.WCHAR * 260)]
-
-        kernel = ctypes.WinDLL("kernel32", use_last_error=True)
-        kernel.CreateToolhelp32Snapshot.argtypes = [wintypes.DWORD, wintypes.DWORD]
-        kernel.CreateToolhelp32Snapshot.restype = wintypes.HANDLE
-        kernel.Process32FirstW.argtypes = [wintypes.HANDLE, ctypes.POINTER(Entry)]
-        kernel.Process32NextW.argtypes = [wintypes.HANDLE, ctypes.POINTER(Entry)]
-        kernel.Process32FirstW.restype = kernel.Process32NextW.restype = wintypes.BOOL
-        kernel.CloseHandle.argtypes = [wintypes.HANDLE]
-        handle = kernel.CreateToolhelp32Snapshot(0x00000002, 0)
-        if handle == ctypes.c_void_p(-1).value:
-            raise OSError(ctypes.get_last_error(), "无法只读进程祖先链")
-        parents = {}
+    """只读进程树；venv 启动器可以位于锁 owner 和本进程之间。"""
+    parents = {}
+    current = os.getpid()
+    while current > 1 and current not in parents:
+        result = subprocess.run(["ps", "-o", "ppid=", "-p", str(current)],
+                                capture_output=True, text=True, check=False)
         try:
-            entry = Entry()
-            entry.dwSize = ctypes.sizeof(Entry)
-            valid = kernel.Process32FirstW(handle, ctypes.byref(entry))
-            while valid:
-                parents[int(entry.th32ProcessID)] = int(entry.th32ParentProcessID)
-                valid = kernel.Process32NextW(handle, ctypes.byref(entry))
-        finally:
-            kernel.CloseHandle(handle)
-    else:
-        parents = {}
-        current = os.getpid()
-        while current > 0 and current not in parents:
-            fields = Path(f"/proc/{current}/stat").read_text().rsplit(")", 1)[1].split()
-            parents[current] = int(fields[1])
-            current = parents[current]
+            parent = int(result.stdout.strip())
+        except ValueError:
+            break
+        parents[current] = parent
+        current = parent
     chain, current = set(), os.getpid()
     while current in parents and current not in chain:
         chain.add(current)

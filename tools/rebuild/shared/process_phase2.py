@@ -229,7 +229,7 @@ def process(name,take=None):
     contact=Image.new('RGB',(native_cell*len(frames)*4,native_cell*4+64),(29,35,48))
     contact.paste(atlas.resize((atlas.width*4,native_cell*4),Image.Resampling.NEAREST),(0,64),atlas.resize((atlas.width*4,native_cell*4),Image.Resampling.NEAREST))
     draw=ImageDraw.Draw(contact)
-    font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',24)
+    font=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',24)
     draw.text((16,12),f'{name} | 原生{native_cell}×{native_cell}，4倍最近邻 | '+' / '.join(issues[:2]),font=font,fill=(240,240,240))
     review=ROOT/request.get('review_dir','reports/review/2026-10-21-gate-a')
     review.mkdir(parents=True,exist_ok=True);contact_path=review/f'{name}-contact.png';contact_path.parent.mkdir(parents=True,exist_ok=True);contact.save(contact_path)

@@ -117,7 +117,7 @@ def prepare():
     reference.save(WORK/'model-reference.png')
     poses=[]
     contact=Image.new('RGB',(192*4,232*2),'#202632');draw=ImageDraw.Draw(contact)
-    font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',14)
+    font=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',14)
     for i in range(8):
         p=frame_pose(i);poses.append(p)
         canvas=Image.new('RGB',(1024,1024),'#f1f3f4');canvas.paste(guide(p),(32,32))
@@ -293,7 +293,7 @@ def preview(use_candidate=False):
     review=read(WORK/'candidate/selection.json' if use_candidate else WORK/'review.json');indices=sorted(map(int,review['frames']))
     frames={i:Image.open(ROOT/review['frames'][str(i)]['image']).convert('RGBA') for i in indices}
     contact=Image.new('RGB',(384*4,424*2),'#202632');d=ImageDraw.Draw(contact)
-    font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',18)
+    font=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',18)
     for i,f in frames.items():
         x=i%4*384;y=i//4*424;big=f.resize((384,384),Image.Resampling.NEAREST)
         contact.paste(big,(x,y+36),big);d.text((x+10,y+5),f'帧{i} {PHASES[i]}',font=font,fill='white')
@@ -318,7 +318,7 @@ def preview(use_candidate=False):
 def measure(use_candidate=False):
     review=read(WORK/'candidate/selection.json' if use_candidate else WORK/'review.json');boxes=read(WORK/'foot-boxes.json');rows=[]
     diagnostic=Image.new('RGB',(384*4,424*2),'#202632');draw=ImageDraw.Draw(diagnostic)
-    font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',16)
+    font=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',16)
     for i in range(8):
         f=Image.open(ROOT/review['frames'][str(i)]['image']).convert('RGBA')
         rgba=np.asarray(f);rgb=rgba[:,:,:3].astype(int);visible=rgba[:,:,3]>0

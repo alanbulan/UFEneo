@@ -45,7 +45,7 @@ def sha(path):
 
 
 def font(size=22):
-    return ImageFont.truetype('C:/Windows/Fonts/msyh.ttc', size)
+    return ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc', size)
 
 
 def texture(clip):

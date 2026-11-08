@@ -12,7 +12,6 @@ _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if 
 _layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
 from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 
-import ctypes
 import json; json = _LayoutJson
 import os
 from pathlib import Path
@@ -26,8 +25,7 @@ import uuid
 API = "https://arpeggi.io/api/kits/v1"
 KINDS = {"voice": "voice-conversions", "instrument": "voice-conversions",
          "separate": "vocal-separations", "stems": "stem-splits"}
-SECRET = Path.home() / ".codex/secrets/ufeneo-kits.dpapi"
-# 非 Windows 用纯文本密钥文件；必须 0600 且只在本机，不复制、不打印、不提交。
+# 纯文本密钥文件；必须 0600 且只在本机，不复制、不打印、不提交。
 PLAIN_SECRET = Path.home() / ".codex/secrets/ufeneo-music.key"
 STATE = Path.home() / ".codex/audio/kits"
 
@@ -38,41 +36,15 @@ class KitsError(ValueError):
 
 def credential():
     token = os.environ.get("UFE_KITS_API_KEY", "").strip()
-    if not token and os.name != "nt" and PLAIN_SECRET.is_file():
-        # 非 Windows：读取 0600 纯文本密钥；只在本机，不进仓库。
+    if not token and PLAIN_SECRET.is_file():
+        # 读取 0600 纯文本密钥；只在本机，不进仓库。
         mode = PLAIN_SECRET.stat().st_mode & 0o777
         if mode & 0o077:
             raise KitsError("Kits 密钥文件权限过宽，应为 0600；未发送请求")
         token = PLAIN_SECRET.read_text(encoding="utf-8").strip()
     if not token:
-        if os.name != "nt" or not SECRET.is_file():
-            raise KitsError("未配置 Kits 凭据；使用项目外 Windows 凭据、纯文本密钥或 UFE_KITS_API_KEY")
-        # ConvertFrom-SecureString's default Windows output is a DPAPI hex blob.
-        from ctypes import wintypes
-
-        class Blob(ctypes.Structure):
-            _fields_ = [("length", wintypes.DWORD), ("data", ctypes.POINTER(ctypes.c_ubyte))]
-
-        try:
-            raw = bytes.fromhex(SECRET.read_text(encoding="ascii").strip())
-            buffer = (ctypes.c_ubyte * len(raw)).from_buffer_copy(raw)
-            source, result = Blob(len(raw), buffer), Blob()
-            crypt = ctypes.WinDLL("crypt32", use_last_error=True)
-            kernel = ctypes.WinDLL("kernel32", use_last_error=True)
-            crypt.CryptUnprotectData.argtypes = [ctypes.POINTER(Blob), ctypes.c_void_p,
-                ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, wintypes.DWORD, ctypes.POINTER(Blob)]
-            crypt.CryptUnprotectData.restype = wintypes.BOOL
-            kernel.LocalFree.argtypes = [ctypes.c_void_p]
-            kernel.LocalFree.restype = ctypes.c_void_p
-            if not crypt.CryptUnprotectData(ctypes.byref(source), None, None, None, None, 0, ctypes.byref(result)):
-                raise KitsError("Kits 凭据不能由当前 Windows 用户解密")
-            try:
-                token = ctypes.string_at(result.data, result.length).decode("utf-16-le").strip()
-            finally:
-                kernel.LocalFree(result.data)
-        except (OSError, ValueError, UnicodeError):
-            raise KitsError("无法读取项目外 Kits 凭据；未发送请求") from None
-    if not token or any(c.isspace() for c in token) or len(token) > 512:
+        raise KitsError("未配置 Kits 凭据；使用纯文本密钥或 UFE_KITS_API_KEY")
+    if any(c.isspace() for c in token) or len(token) > 512:
         raise KitsError("Kits 凭据格式无效；未发送请求")
     return token
 

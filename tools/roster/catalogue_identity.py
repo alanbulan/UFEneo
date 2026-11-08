@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import argparse
-import ctypes
 import hashlib
 import json
 import os
@@ -80,14 +79,6 @@ def resolve_alias(identity, aliases):
 def alive(pid):
     if not isinstance(pid, int) or pid <= 0:
         return False
-    if os.name == "nt":
-        handle = ctypes.windll.kernel32.OpenProcess(0x1000, False, pid)
-        if not handle:
-            return False
-        code = ctypes.c_ulong()
-        ok = ctypes.windll.kernel32.GetExitCodeProcess(handle, ctypes.byref(code))
-        ctypes.windll.kernel32.CloseHandle(handle)
-        return bool(ok) and code.value == 259
     try:
         os.kill(pid, 0)
         return True

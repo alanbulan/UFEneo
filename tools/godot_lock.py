@@ -7,7 +7,7 @@ from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
 _layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
 from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
-import ctypes, os, subprocess, sys, time
+import os, subprocess, sys, time
 from pathlib import Path
 Path = _LayoutProjectPath
 
@@ -15,20 +15,11 @@ LOCK = _LayoutProjectPath(_layout_root) / 'art/shared/locks/godot.lock'
 
 
 def alive(pid):
-    if os.name != 'nt':
-        try:
-            os.kill(pid, 0)
-            return True
-        except OSError:
-            return False
-    # Windows 上 os.kill(pid, 0) 会结束进程，只能查询退出码。
-    handle = ctypes.windll.kernel32.OpenProcess(0x1000, False, pid)
-    if not handle:
+    try:
+        os.kill(pid, 0)
+        return True
+    except OSError:
         return False
-    code = ctypes.c_ulong()
-    ok = ctypes.windll.kernel32.GetExitCodeProcess(handle, ctypes.byref(code))
-    ctypes.windll.kernel32.CloseHandle(handle)
-    return bool(ok) and code.value == 259
 
 
 # 先到先得：每个等待者在 QUEUE 里放一张按时间命名的票，只有排在最前的活票才去抢锁。

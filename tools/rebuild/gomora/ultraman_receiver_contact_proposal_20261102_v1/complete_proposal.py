@@ -69,7 +69,7 @@ def scene(actor,receiver,origin,color,marked=False,rpoint=None):
     im=Image.new('RGBA',(640,384),color)
     im.alpha_composite(actor,(64,64));im.alpha_composite(receiver,(64+origin[0],64+origin[1]))
     if marked:
-        d=ImageDraw.Draw(im);font=ImageFont.truetype('C:/Windows/Fonts/consola.ttf',14)
+        d=ImageDraw.Draw(im);font=ImageFont.truetype('/System/Library/Fonts/Menlo.ttc',14)
         x,y=rpoint[0]+64,rpoint[1]+64
         d.ellipse((x-4,y-4,x+4,y+4),outline='#ffdf60',width=1)
         d.text((x+6,y-18),'R pelvis estimate',font=font,fill='#ffdf60',stroke_width=1,stroke_fill='black')
@@ -80,7 +80,7 @@ def scene(actor,receiver,origin,color,marked=False,rpoint=None):
 def scene_page(im,path,text):
     enlarged=im.resize((1280,768),Image.Resampling.NEAREST)
     page=Image.new('RGB',(1280,836),'#30343d');page.paste(enlarged,(0,68))
-    d=ImageDraw.Draw(page);font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',18)
+    d=ImageDraw.Draw(page);font=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',18)
     d.text((12,8),text,font=font,fill='white')
     d.text((12,35),'完整640×384场景精确2倍；仅整图平移、无PNG注册，非正式游戏截图。',font=font,fill='white')
     return p.jpeg(page,path)
@@ -88,7 +88,7 @@ def scene_page(im,path,text):
 
 def continuation_page(prev,next_,path,color,label,marked,rpoint):
     page=Image.new('RGB',(744,1030),'#30343d');d=ImageDraw.Draw(page)
-    font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',17)
+    font=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',17)
     d.text((12,8),'初代05 → 本人现装thrown_back[0] / 完整人物接续提案',font=font,fill='white')
     d.text((12,34),'骨盆R是推定参照；R不跳不代表头/手/背棘遮挡及整人连续性已通过。',font=font,fill='white')
     for top,im,title in [(98,prev,'raw40–43：哥莫拉源10＋初代新05'),(546,next_,'raw44–47：哥莫拉源11＋本人既有倒立0完整格')]:

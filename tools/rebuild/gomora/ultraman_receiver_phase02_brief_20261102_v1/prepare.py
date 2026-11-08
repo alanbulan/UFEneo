@@ -9,7 +9,7 @@ sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[4]
 HERE = Path(__file__).resolve().parent
 OUT = ROOT / 'reports/review/2026-11-02/gomora-back-lift-ultraman-phase02-brief-v1'
-PYTHON = Path('C:/Users/13080/.codex/venvs/ufeneo/Scripts/python.exe')
+PYTHON = Path(sys.executable)
 CONTRACT = ROOT / 'reports/review/2026-11-02/gomora-back-lift-next-receiver-readonly-v1/ultraman-c-whole-frame-contract.json'
 CONTRACT_SHA = '06bdc49b49e7fa7a3a66a237b73664bcac081fe3ae854864332796c37b466771'
 
@@ -34,8 +34,8 @@ def preview(reference, original):
     from PIL import Image, ImageDraw, ImageFont
     page = Image.new('RGB', (744, 1040), '#30343d')
     draw = ImageDraw.Draw(page)
-    font = ImageFont.truetype('C:/Windows/Fonts/msyh.ttc', 18)
-    title = ImageFont.truetype('C:/Windows/Fonts/msyh.ttc', 22)
+    font = ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc', 18)
+    title = ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc', 22)
     draw.text((16, 10), '初代C型 / phase02 最低承重母相 / 待根审', font=title, fill='white')
     draw.text((16, 48), '单张1024×1024 / high / 真透明PNG；当前0 POST、未占额。', font=font, fill='#e0e3eb')
     draw.text((16, 85), '参考1：本人干净整图（身份/像素）', font=font, fill='white')
@@ -92,7 +92,7 @@ def main():
         assert expanded.size == (768,768) and canonical.size == (192,192)
         assert expanded.tobytes() == canonical.resize(expanded.size, Image.Resampling.NEAREST).tobytes()
     OUT.mkdir(parents=True)
-    doctor = Path('C:/Users/13080/.codex/skills/generate2dmedia/scripts/forge_doctor.py')
+    doctor = Path.home() / ".codex/skills/generate2dmedia/scripts/forge_doctor.py"
     result = subprocess.run([str(PYTHON), '-B', str(doctor), '--host-tools','none','--no-exec','--json',
         '--save',str(OUT/'capability/doctor.json')], cwd=ROOT, capture_output=True, timeout=45)
     assert (OUT/'capability/doctor.json').is_file(), result.returncode
@@ -180,7 +180,7 @@ Draw NO GOMORA, no opponent, no support object or silhouette under the abdomen, 
 
 根先看brief/参考/预审页，再将未授权EXAMPLE另存为root-submit-acceptance.json，按实际审过结果填写两个true及精确SHA。一次提交工具默认仅只读预检：
 
-`C:/Users/13080/.codex/venvs/ufeneo/Scripts/python.exe -B tools/rebuild/gomora/ultraman_receiver_phase02_brief_20261102_v1/submit_once.py`
+`.venv/bin/python -B tools/rebuild/gomora/ultraman_receiver_phase02_brief_20261102_v1/submit_once.py`
 
 根审核后才加`--execute`。入口固定输出目录，调用项目generate_image一次；并发1，由该客户端实际POST前预占1美元、按usage结算。例外或中断保留一次消费标记和预算未知，不自动重POST、不换输出目录、不释放旧未知10美元。预检不解密密钥、不访问网络、不写预算。返回候选后仍需根实看身份、全身、像素、真Alpha及实际比例，不能自动安装。
 

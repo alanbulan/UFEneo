@@ -1,6 +1,6 @@
 """仅供根持唯一锁运行；临时main候选，原用户设置/上次回放始终逐字节恢复。"""
 from pathlib import Path
-import argparse, hashlib, json, os, re, subprocess, sys
+import argparse, hashlib, json, re, subprocess, sys
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[4]
 HERE = Path(__file__).resolve().parent
@@ -67,7 +67,7 @@ def main():
     exit_code='not_started';diagnostics=[];exception=None;after={}
     try:
         with (out/'engine.log').open('xb') as log:
-            result=subprocess.run(command,cwd=ROOT,stdout=log,stderr=subprocess.STDOUT,timeout=180 if headless else 240,creationflags=0x08000000 if os.name=='nt' else 0)
+            result=subprocess.run(command,cwd=ROOT,stdout=log,stderr=subprocess.STDOUT,timeout=180 if headless else 240)
             exit_code=result.returncode
     except subprocess.TimeoutExpired:
         exit_code='timeout';exception='Godot进程超时；subprocess已终止本次子进程'

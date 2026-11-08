@@ -94,8 +94,8 @@ def point_page(row,path,points=None,scale_override=None):
     width=max(744,im.width*scale)
     height=im.height*scale+150
     page=Image.new('RGB',(width,height),'#30343d')
-    d=ImageDraw.Draw(page);font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',17)
-    small=ImageFont.truetype('C:/Windows/Fonts/consola.ttf',12)
+    d=ImageDraw.Draw(page);font=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',17)
+    small=ImageFont.truetype('/System/Library/Fonts/Menlo.ttc',12)
     d.text((12,8),f"{row['id']} / 完整画布 / 原生坐标 / 显示{scale}x",font=font,fill='white')
     d.text((12,34),'测点/配对提案；不改变原图，不作为严格骨尺或运行验收。',font=font,fill='white')
     panel=Image.alpha_composite(Image.new('RGBA',im.size,'#252b35'),im).convert('RGB')
@@ -188,7 +188,7 @@ def validate_manual(path,rows):
 def paired_page(actor,receiver,origin,path,index,measure,annotated):
     from PIL import Image,ImageDraw,ImageFont
     page=Image.new('RGB',(744,1030),'#30343d');d=ImageDraw.Draw(page)
-    font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',17)
+    font=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',17)
     d.text((12,8),f'phase{index:02d} / 哥莫拉本人{ACTOR_PHASES[index]:02d} / 完整原生同屏配对提案',font=font,fill='white')
     d.text((12,34),'整图只平移展示；179体尺不变；虚拟192外边距[6,6]，未写注册PNG。',font=font,fill='white')
     for top,color,name in [(98,'#252b35','深底'),(546,'#f1e9df','浅底')]:

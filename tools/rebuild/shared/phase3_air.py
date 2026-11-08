@@ -22,7 +22,7 @@ def read(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
 def save(p,d):
     p=Path(p);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
-def font(n=24):return ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',n)
+def font(n=24):return ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',n)
 def base():return dict(head=(100,52),neck=(98,72),hip=(94,120),shoulder_back=(90,78),shoulder_front=(104,78),elbow_back=(117,98),wrist_back=(128,79),elbow_front=(116,99),wrist_front=(132,80),knee_back=(76,149),ankle_back=(58,181),knee_front=(110,149),ankle_front=(130,181))
 def pose(**kw):p=base();p.update(kw);return p
 def air(**kw):return pose(knee_front=(114,138),ankle_front=(103,164),knee_back=(79,137),ankle_back=(66,160),**kw)

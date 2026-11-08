@@ -26,8 +26,7 @@ def sample_metrics(path: Path, duration_limit_ms=180000):
     # Preserve channel samples; do not hide a clipped channel through downmixing.
     result = subprocess.run([shutil.which("ffmpeg"), "-hide_banner", "-nostdin", "-loglevel", "error",
         "-i", str(path), "-map", "0:a:0", "-vn", "-c:a", "pcm_f32le", "-f", "f32le", "pipe:1"],
-        capture_output=True, timeout=60,
-        creationflags=0x08000000 if sys.platform == "win32" else 0)
+        capture_output=True, timeout=60)
     if result.returncode or not result.stdout:
         raise ValueError("音频采样解码失败")
     values = array.array("f", result.stdout)

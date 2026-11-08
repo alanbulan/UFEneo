@@ -12,7 +12,6 @@ from pathlib import Path
 Path = _LayoutProjectPath
 import shutil
 import subprocess
-import sys
 
 from audio.pipeline import probe, sha, write_new
 
@@ -31,8 +30,7 @@ def main():
     # avoids depending on PyAV's changing metadata_errors argument.
     decoded = subprocess.run([shutil.which("ffmpeg"), "-hide_banner", "-nostdin", "-loglevel", "error",
         "-i", str(args.input), "-map", "0:a:0", "-vn", "-ac", "1", "-ar", "16000", "-f", "f32le", "pipe:1"],
-        capture_output=True, timeout=45,
-        creationflags=0x08000000 if sys.platform == "win32" else 0)
+        capture_output=True, timeout=45)
     if decoded.returncode or not decoded.stdout:
         raise ValueError("FFmpeg未能解码识别样音")
     samples = np.frombuffer(decoded.stdout, dtype=np.float32)

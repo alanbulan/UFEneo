@@ -261,7 +261,7 @@ def process(fighter, take):
 
 def review():
     OUT.mkdir(parents=True,exist_ok=True)
-    font = ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',14)
+    font = ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',14)
     entries = [('ultraman','初代奥特曼'),('zetton','宇宙恐龙杰顿'),('ultraseven','赛文奥特曼（待审）'),('gomora','哥莫拉（待审）')]
     # 同一原生像素倍率与脚底基线，不按透明画布缩放人物。
     contact = Image.new('RGBA',(1536,320),(33,40,53,255));draw=ImageDraw.Draw(contact)

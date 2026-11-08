@@ -1,9 +1,9 @@
 """网站登录会话图片协议；独立于旧 API key 客户端，不自动重发 POST。
 
 工程外配置：{"base_url":"https://l0veyou.com","model":"gpt-image-2-5-full",
-"session_dpapi_path":"C:/outside-project/frontend-session.dpapi"}。
-DPAPI 文件为当前 Windows 用户 ConvertFrom-SecureString 的十六进制输出；
-解密明文为 {"headers":{"Authorization":"Bearer <网页 JWT>","Cookie":"..."}}。
+"session_file_path":"/Users/<user>/.codex/secrets/frontend-session.json"}。
+会话文件为 0600 纯文本 JSON，明文为
+{"headers":{"Authorization":"Bearer <网页 JWT>","Cookie":"..."}}。
 不在命令行传会话，不保存响应正文/会话头/带签名的下载 URL。
 参考图协议来自实际前端：images=[原文件 DataURL]，最多四张、每张不超过 8 MiB。
 """
@@ -11,7 +11,6 @@ from __future__ import annotations
 
 import argparse
 import base64
-import ctypes
 import hashlib
 import json
 import os
@@ -90,32 +89,15 @@ def _write_json(path, value):
     os.replace(temporary, path)
 
 
-def decrypt_session(path):
-    """只解独立 DPAPI 文件；从不回落到环境变量或旧 image 凭据。"""
-    if os.name != "nt":
-        raise FrontendError("dpapi_requires_windows")
-    from ctypes import wintypes
-
-    class Blob(ctypes.Structure):
-        _fields_ = [("length", wintypes.DWORD), ("data", ctypes.POINTER(ctypes.c_ubyte))]
-
+def read_session(path):
+    """只读独立 0600 会话文件；从不回落到环境变量或旧 image 凭据。"""
+    path = Path(path)
     try:
-        raw = bytes.fromhex(Path(path).read_text(encoding="ascii").strip())
-        buffer = (ctypes.c_ubyte * len(raw)).from_buffer_copy(raw)
-        source, result = Blob(len(raw), buffer), Blob()
-        crypt, kernel = ctypes.WinDLL("crypt32", use_last_error=True), ctypes.WinDLL("kernel32", use_last_error=True)
-        crypt.CryptUnprotectData.argtypes = [ctypes.POINTER(Blob), ctypes.c_void_p, ctypes.c_void_p,
-                                            ctypes.c_void_p, ctypes.c_void_p, wintypes.DWORD, ctypes.POINTER(Blob)]
-        crypt.CryptUnprotectData.restype = wintypes.BOOL
-        kernel.LocalFree.argtypes, kernel.LocalFree.restype = [ctypes.c_void_p], ctypes.c_void_p
-        if not crypt.CryptUnprotectData(ctypes.byref(source), None, None, None, None, 0, ctypes.byref(result)):
-            raise ValueError
-        try:
-            return ctypes.string_at(result.data, result.length).decode("utf-16-le").strip()
-        finally:
-            kernel.LocalFree(result.data)
-    except (OSError, ValueError, UnicodeError):
-        raise FrontendError("session_decryption_failed") from None
+        if path.stat().st_mode & 0o077:
+            raise FrontendError("session_file_permissions_must_be_0600")
+        return path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError):
+        raise FrontendError("session_file_unreadable") from None
 
 
 @dataclass(repr=False)
@@ -156,13 +138,13 @@ class HttpsTransport:
 
 
 class FrontendSessionClient:
-    def __init__(self, config_path, *, transport=None, decrypt=None, workspace_root=PROJECT_ROOT):
+    def __init__(self, config_path, *, transport=None, read=None, workspace_root=PROJECT_ROOT):
         config_path = Path(config_path).resolve()
         workspace_root = Path(workspace_root).resolve()
         if config_path.is_relative_to(workspace_root):
             raise FrontendError("config_must_be_outside_project")
         config = _read_json(config_path, "invalid_frontend_config")
-        if set(config) - {"base_url", "model", "session_dpapi_path", "timeout_seconds", "generation_parameters",
+        if set(config) - {"base_url", "model", "session_file_path", "timeout_seconds", "generation_parameters",
                           "one_shot_unresolved_authorization_path", "serial_retained_unknown_authorization_path"}:
             raise FrontendError("unknown_frontend_config_field")
         parsed, self.origin = _url(config.get("base_url"))
@@ -181,7 +163,7 @@ class FrontendSessionClient:
             raise FrontendError("unsupported_generation_parameters")
         # 仅供有记录的能力探测；参数已发送不代表服务端实际支持。
         self.generation_parameters = dict(parameters)
-        value = config.get("session_dpapi_path")
+        value = config.get("session_file_path")
         if not isinstance(value, str) or not value:
             raise FrontendError("independent_session_file_required")
         session_path = (config_path.parent / value).resolve()
@@ -191,7 +173,7 @@ class FrontendSessionClient:
         if type(self.timeout) not in (int, float) or not 0 < self.timeout <= 300:
             raise FrontendError("invalid_timeout")
         try:
-            session = json.loads((decrypt or decrypt_session)(session_path))
+            session = json.loads((read or read_session)(session_path))
             headers = session["headers"]
             if not isinstance(headers, dict):
                 raise ValueError

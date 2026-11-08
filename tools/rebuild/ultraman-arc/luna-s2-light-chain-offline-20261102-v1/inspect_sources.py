@@ -91,8 +91,8 @@ def main():
                           "formal_main_review_exists_for_action": False})
     assert len(rows) == 16
 
-    font = ImageFont.truetype("C:/Windows/Fonts/msyh.ttc", 14)
-    smallfont = ImageFont.truetype("C:/Windows/Fonts/msyh.ttc", 12)
+    font = ImageFont.truetype("/System/Library/Fonts/Hiragino Sans GB.ttc", 14)
+    smallfont = ImageFont.truetype("/System/Library/Fonts/Hiragino Sans GB.ttc", 12)
     pages = []
     for action in ACTIONS:
         count = profiles[action]["count"]

@@ -89,7 +89,7 @@ def one_x(native,candidate,path,index):
     from PIL import Image,ImageDraw,ImageFont
     page=Image.new('RGB',(744,668),'#30343d')
     draw=ImageDraw.Draw(page)
-    font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',18)
+    font=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',18)
     draw.text((12,10),f'初代C型 phase{index:02d} / 精确1x完整画布 / 未注册',font=font,fill='white')
     draw.text((12,40),'左右同一像素单位；各画布仅显示居中，没有按身体或根点对齐。',font=font,fill='white')
     for y,color,name in [(112,'#252b35','深底'),(376,'#f1e9df','浅底')]:
@@ -108,7 +108,7 @@ def four_x(native,candidate,path,index,color,name):
     from PIL import Image,ImageDraw,ImageFont
     page=Image.new('RGB',(768,1680),'#30343d')
     draw=ImageDraw.Draw(page)
-    font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',18)
+    font=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',18)
     draw.text((12,10),f'初代C型 phase{index:02d} / 精确4x最近邻 / {name} / 未注册',font=font,fill='white')
     draw.text((12,42),'现装完整192画布 → 768方；上下同一4x像素尺度。',font=font,fill='white')
     first=native.resize((native.width*4,native.height*4),Image.Resampling.NEAREST)

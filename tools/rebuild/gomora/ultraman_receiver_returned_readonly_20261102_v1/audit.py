@@ -112,7 +112,7 @@ def audit(phase):
     assert Decimal(settings['limit_usd'])==Decimal('60') and total<=Decimal('60')
     out.mkdir(parents=True)
     page=Image.new('RGB',(744,650),'#30343d'); draw=ImageDraw.Draw(page)
-    title=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',22); font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',17)
+    title=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',22); font=ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',17)
     draw.text((12,10),'初代C型 phase%s / %s / 返回完整深浅底'%(phase,brief['phase_name']),font=title,fill='white')
     draw.text((12,48),'真实%d×%d %s；完整画布等比缩略，不裁切、不删分量。'%(*dimensions,mode),font=font,fill='#e0e3eb')
     draw.text((12,76),'Alpha %d–%d；透明 %.2f%%；此页不代表体尺/接触/注册通过。'%(int(alpha.min()),int(alpha.max()),histogram[0]/alpha.size*100),font=font,fill='#e0e3eb')

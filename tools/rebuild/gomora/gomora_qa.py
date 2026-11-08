@@ -24,7 +24,7 @@ def save(p,v):
  p=Path(p);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,ensure_ascii=False,indent=2,default=lambda x:x.item() if hasattr(x,'item') else x.tolist())+'\n','utf-8')
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def rel(p):return Path(p).relative_to(ROOT).as_posix()
-def font(n=20):return ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',n)
+def font(n=20):return ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',n)
 
 def polyline_length(points):return sum(math.dist(a,b) for a,b in zip(points,points[1:]))
 

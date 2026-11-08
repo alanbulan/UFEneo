@@ -1,5 +1,6 @@
 """仅准备月亮轻击三连5张整人缺相brief/来源/时序；不采样、不提交请求。"""
 from pathlib import Path
+import sys
 import hashlib
 import json
 
@@ -12,7 +13,7 @@ OLD = ROOT / "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027"
 IDENTITY = ROOT / "art/fighters/ultraman-arc__luna/stage2/walk-forward-repair-20261102-v1/references/identity.png"
 ROOT_REVIEW = ROOT / "reports/review/2026-11-02/luna-light-chain-root-review-v1/root-source-gap-review.json"
 ROOT_REVIEW_SHA = "6e743a17873cfc5b83a60382b47efe0478c261cb4c3dc53680cd33dffd2fd25f"
-PYTHON = "C:/Users/13080/.codex/venvs/ufeneo/Scripts/python.exe"
+PYTHON = sys.executable
 
 
 def read(path):

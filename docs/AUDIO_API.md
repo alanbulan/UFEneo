@@ -8,10 +8,9 @@
 密钥只在本机，**不进仓库、不打印、不复制**。按优先级：
 
 1. 环境变量 `UFE_KITS_API_KEY`
-2. macOS / Linux：`~/.codex/secrets/ufeneo-music.key`（纯文本，权限必须 `0600`）
-3. Windows：`~/.codex/secrets/ufeneo-kits.dpapi`（DPAPI 加密）
+2. macOS：`~/.codex/secrets/ufeneo-music.key`（纯文本，权限必须 `0600`）
 
-非 Windows 下若密钥文件权限过宽（组或其他用户可读），客户端直接拒绝发送请求。
+密钥文件权限过宽（组或其他用户可读）时，客户端直接拒绝发送请求。
 
 ## 连通性
 
