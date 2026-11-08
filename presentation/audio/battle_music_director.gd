@@ -3,7 +3,6 @@ extends Node
 ## 双声道播放器交叉淡入。只读战斗状态，绝不修改体力、伤害、硬直或模拟时间。
 const SILENCE_DB: float=-80.0
 const FADE_SECONDS: float=0.9
-const THEME_COOLDOWN_TICKS: int=600
 var host: Node
 var players: Array[AudioStreamPlayer]=[]
 var gains: Array[float]=[0.0,0.0]
@@ -17,7 +16,6 @@ var fighters: Array=[]
 var stage_id: String=""
 var current_id: String=""
 var round_index: int=0
-var last_switch_tick: int=-600
 var last_tick: int=-1
 var phase: String="normal"
 var envelope: float=1.0
@@ -72,7 +70,7 @@ func set_context(value: String) -> void:
 	_request(_base_track() if value=="battle" else "select" if value=="select" else "menu",-1,"context:"+value)
 
 func start_round(index: int) -> void:
-	round_index=index;last_tick=-1;last_switch_tick=-THEME_COOLDOWN_TICKS
+	round_index=index;last_tick=-1
 	phase="intro";envelope=0.75;envelope_target=0.75
 	for i in range(players.size()):players[i].stop();gains[i]=0.0;targets[i]=0.0;slot_ids[i]=""
 	current_id="";context="battle"
@@ -127,10 +125,9 @@ func sync(sim: UfeMatchDirector,frozen: bool,intro: bool=false) -> void:
 		if f.move_id.begins_with("special") or f.move_id in ["super_special3","air_special"]:
 			super_owner=i;break
 	if super_owner>=0:
+		# 必杀只压低背景音量突出技能声，不切换曲目：一首对战曲被必杀反复劫持
+		# 会让整场音乐碎片化，也让非本人主题的角色每次必杀都跳曲。
 		phase="super";envelope_target=0.55
-		if choice=="auto" and sim.tick-last_switch_tick>=THEME_COOLDOWN_TICKS:
-			_request(UfeBattleMusicCatalog.for_fighter(str(sim.fighters[super_owner].definition.id),str(sim.fighters[super_owner].form_id)),sim.tick,"fighter_highlight")
-			last_switch_tick=sim.tick
 		return
 	var critical: bool=sim.fighters.any(func(f: UfeFighter):return int(f.stats.hp)>0 and int(f.stats.hp)*4<=f.definition.max_health)
 	var clutch: bool=critical or sim.remaining<=900
