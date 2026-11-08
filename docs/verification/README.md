@@ -1,6 +1,19 @@
 # 验证回执
 
+用途：核对随干净仓库交付的历史验证结论时读本文件。这里只放摘要，原始日志在本机 `reports/verification`。
+
 本目录保留可以随干净仓库交接的结果摘要；原始测试输出在本机忽略的 `reports/verification`，重新运行会生成自己的输出，不上传整套日志和截图副本。
+
+## 2026-11-08 文档合并与冗余清理
+
+- `docs/` 由 11 份合并为 9 份：`ENGINE_CHOICE` 并入 `PROJECT_LAYOUT`；`AUDIO_API` + `MONSTER_MUSIC` 合并为 `AUDIO`；`FORMS` + `SUPER_MOVE_DIVERSITY` 合并为 `COMBAT_DESIGN`。`docs/README.md` 仍是唯一索引。
+- 根目录只保留 `AGENTS.md`、`README.md`、`REBUILD_2D_PLAN.md` 三份 Markdown。
+- 同步更新 `REBUILD_2D_PLAN.md`、`docs/PROGRESS.md`、`content/roster/selection.json`、`content/audio/battle_music.json` 中的文档路径；`REBUILD_2D_PLAN.md` 的输入表按现行规则改为 I 远程/方向技能，不再保留独立 H 技能键。
+- 删除本机过期报告：`reports/music-research`（与旧 `docs/MONSTER_MUSIC.md` 字节相同，内容已并入 `docs/AUDIO.md`）、`reports/gdscript-warnings`（一次性警告清理回执，代码状态已生效）、`reports/windows-removal`（一次性平台迁移回执，改动已落地）、`reports/catalogue-pipeline-pilot`（旧图鉴试点，安装图 SHA 不同且现行流程改走 `reports/catalogue-ref`）、`reports/repository-cleanup` 与 `reports/cleanup-inventory.json`（2026-11-03 原始清理审计，摘要保留在本目录 `repository-cleanup.json`）；均确认无仓库内消费者。
+- 删除 `tools/**/__pycache__` 25 个目录、`reports/godot-warnings` 空目录，以及 `tools/`、`reports/review` 下的空目录；删除无源文件的孤立 `generated-images/` 导入侧车。
+- `tools/` 下一次性脚本经路径/模块名与生产回执核对后未删：日期批次仍被 `art/fighters/*` 回执或在制 README 引用，零导入的顶层脚本是人工入口。重复模块名（`audit.py`、`prepare.py`、`main_bundle.py` 等）违反 tools/README 的全局唯一约定，留待批次合并时处理。
+- `content/fighters/**` 中指向旧 `docs/FORMS.md`、`docs/SUPER_MOVE_DIVERSITY.md` 的字符串已统一改为 `docs/COMBAT_DESIGN.md`，涉及 20 个文件；这些字段不被运行代码读取。
+- `docs/verification/existing-skill-assets-audit.json` 是带 SHA 的历史快照，保留当时的旧路径，不回写。
 
 ## 2026-11-07 文档与结构清理
 
