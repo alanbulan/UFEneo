@@ -43,6 +43,14 @@ func run() -> void:
 	check(Audit.from_arguments(PackedStringArray())==null,"无显式开关不创建观察器")
 	check(DirAccess.get_files_at(out).is_empty(),"默认没有文件写入")
 	UfeInputRouter.configure_values({})
+	# 默认键位一主键只绑一个动作：以前 2P 跳跃和上方向同按 KEY_UP。
+	for owner in range(2):
+		var used: Dictionary={}
+		for name in UfeInputRouter.ACTIONS:
+			var code := int(UfeInputRouter.default_key_binding(owner,name).keycode)
+			if code>0:
+				check(not used.has(code),"默认键位不重复 %dP %s" % [owner+1,name])
+				used[code]=true
 	first=TestApp.new();root.add_child(first);first.set_physics_process(false);first.start_match()
 	second=TestApp.new();root.add_child(second);second.set_physics_process(false);second.start_match()
 	check(first.training_input_audit==null and second.training_input_audit==null,"主游戏默认诊断关闭")

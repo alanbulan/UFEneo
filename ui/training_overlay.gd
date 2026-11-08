@@ -67,7 +67,7 @@ func update_match(sim: UfeMatchDirector) -> void:
 		else:info[i].text+="%s %s\n起手%d 攻击%d 收招%d"%[phase,str(last.get("display_name","")) if f.move_id.is_empty() else str(f.move_tick),int(last.startup),int(last.active),int(last.recovery)]
 		var delay:=int(f.combat.get("stamina_delay",0))
 		var recovery:=UfeStaminaRules.rate(f)
-		info[i].text+="\n体力%d / 1000 · 技%s"%[int(f.stats.stamina),UfeInputRouter.binding_label(i,"skill")]
+		info[i].text+="\n体力%d / 1000 · 远程%s"%[int(f.stats.stamina),UfeInputRouter.binding_label(i,"ranged")]
 		if not f.move_id.is_empty():info[i].text+=" · 本招消耗%d"%int(last.get("stamina_cost",0))
 		if recovery==0:info[i].text+="\n攻防动作中暂停恢复"
 		elif delay>0:info[i].text+="\n恢复等待%.1f秒"%(float(delay)/60.0)

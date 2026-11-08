@@ -1,5 +1,5 @@
 extends SceneTree
-## 正式杰顿Q蓄能→I脸部火球→收招后4H瞬移，初代只保持中立或U。
+## 正式杰顿Q蓄能→I脸部火球→收招后↙I瞬移，初代只保持中立或U。
 ## 只初始化双方站位/朝向；不赋能量、硬直、弹体，不更改任何角色数据。
 ## 回放按相同站位fixture重建，不冒称默认470/750起点的普通录像。
 var out := "user://projectile-contact-direction/"
@@ -64,7 +64,7 @@ func test_case(facing: int, crossing: bool, guard: bool) -> void:
 			pulse_start=sim.tick+1
 			phase="recover"
 		elif phase=="recover" and crossing and a.state=="idle" and a.move_id.is_empty():
-			first=UfeInputFrame.make(-facing,0,UfeInputFrame.SKILL)
+			first=UfeInputFrame.make(-facing,-1,UfeInputFrame.RANGED)
 			jumped_side=true
 			phase="done"
 		var inputs: Array=[first,UfeInputFrame.make(0,0,UfeInputFrame.GUARD if guard else 0)]

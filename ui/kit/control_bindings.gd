@@ -6,7 +6,7 @@ class CapturePopup extends PopupPanel:
 	func _input(event: InputEvent) -> void:
 		if editor!=null and editor.capture_event(event):get_viewport().set_input_as_handled()
 
-const LABELS := {"left":"向左","right":"向右","up":"向上 / 斜向","down":"向下 / 斜向", "light":"轻击", "heavy":"重击", "throw":"投技", "guard":"防御", "charge":"蓄气", "special":"必杀", "crush":"超重击", "ranged":"远程技", "dodge":"闪避", "jump":"独立跳跃", "skill":"快捷技能", "transform":"切换形态"}
+const LABELS := {"left":"向左","right":"向右","up":"向上 / 斜向","down":"向下 / 斜向", "light":"轻击", "heavy":"重击", "throw":"投技", "guard":"防御", "charge":"蓄气", "special":"必杀", "crush":"超重击", "ranged":"远程技", "dodge":"闪避", "jump":"独立跳跃", "transform":"切换形态"}
 const RESERVED_KEYS := [KEY_ESCAPE,KEY_ENTER,KEY_KP_ENTER,KEY_F1,KEY_F2,KEY_F3,KEY_F4,KEY_F5,KEY_F6,KEY_R]
 var player: int=0
 var device_kind: String="keyboard"
@@ -68,7 +68,7 @@ func _build_rows() -> void:
 		var clear:=PixelButton.new("清空");row.add_child(clear);clear.pressed.connect(func():_store(action,{"keycode":0} if device_kind=="keyboard" else {"kind":"none"}))
 		var restore:=PixelButton.new("默认");row.add_child(restore);restore.pressed.connect(func():_store(action,null))
 	var help:=Label.new();help.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-	help.text="默认1P：WASD方向，J/K/L攻投，U防，I远程，O超重，P必杀；Q蓄气、H技能、N闪避、E形态。\nEnter、Esc、F1–F6、R及手柄Start保留给暂停、调试和重开。手柄默认□+△必杀、上方向跳跃。"
+	help.text="默认1P：WASD方向，J/K/L攻投，U防，I远程，O超重，P必杀；Q蓄气、N闪避、E形态。\nI加↖/↑/↗/↘/↙各直出一个原搓招；正中与←/→/↓仍是普通远程。\nEnter、Esc、F1–F6、R及手柄Start保留给暂停、调试和重开。手柄默认□+△必杀、上方向跳跃。"
 	row_list.add_child(help)
 
 func is_capturing() -> bool:return capturing

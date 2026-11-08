@@ -2,9 +2,9 @@ class_name UfeCommandResolver
 extends RefCounted
 const Motion = preload("res://third_party/shoto/motion_parser.gd")
 const INPUT_BUFFER_TICKS := 10
-const RULE_REVISION := 3
+const RULE_REVISION := 4
 const HELD_JUMP_STATES := ["idle","walk","guard","crouch","crouch_start","crouch_rise","crouch_guard","turn","crouch_turn","charge","charge_start","charge_stop"]
-const BUTTON_BITS := [1,2,4,8,16,32,64,128,256,512,1024,2048]
+const BUTTON_BITS := [1,2,4,8,16,32,64,128,256,512,1024]
 var previous: int = 0
 var age: int = 0
 var history: Array = []
@@ -49,15 +49,14 @@ func _select(frame: UfeInputFrame, state: String, table: Array, pressed: int, di
 	for entry in table:
 		if entry.has("min_energy") and available_energy < int(entry.min_energy): continue
 		if bool(entry.get("quick_transform",false)) and not allow_quick_transform: continue
-		# 独立形态键没有条件时不误放技能；原P和正常上跳保持。
-		if bool(entry.get("quick_skill",false)) and (frame.held(UfeInputFrame.TRANSFORM) or frame.held(UfeInputFrame.SPECIAL) or frame.held(UfeInputFrame.LIGHT | UfeInputFrame.HEAVY)): continue
+		# 快捷直出只认远程键单按：同时按形态/必杀/轻重击时不抢招。
+		if bool(entry.get("quick_cast",false)) and (frame.held(UfeInputFrame.TRANSFORM) or frame.held(UfeInputFrame.SPECIAL) or frame.held(UfeInputFrame.LIGHT | UfeInputFrame.HEAVY)): continue
 		if not (state in entry.states or "*" in entry.states): continue
 		if not entry.directions.any(func(d): return int(d) == direction or int(d) == 0): continue
 		var mask := int(entry.buttons)
 		if (pressed & mask) == 0 or not frame.held(mask): continue
 		var simultaneous := true
 		for bit in BUTTON_BITS:
-			if bit == UfeInputFrame.SKILL and bool(entry.get("quick_transform",false)): continue
 			if mask & bit and age - int(press_ticks.get(str(bit), -100)) > 3: simultaneous = false
 		if not simultaneous or not Motion.matches(history, entry.motion, 5): continue
 		if best.is_empty() or int(entry.priority) > int(best.priority): best = entry

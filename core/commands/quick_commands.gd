@@ -1,7 +1,10 @@
 class_name UfeQuickCommands
 extends RefCounted
 ## 原技能的额外输入别名；不复制招式、不开放缺失技能。
-const DIRECTIONS := {"motion_236":[6,7],"motion_623":[3,9],"motion_214":[1,4],"motion_22":[2,8],"motion_41236":[5]}
+## 快捷直出改由远程键承担，不再单独占一个按键。远程键原有的
+## 正中/←/→/↓已经是光弹、前进光弹和低位光弹，快捷层只占用剩下的
+## ↖ ↑ ↗ ↘ ↙，一个方向一招，不覆盖任何原远程招。
+const DIRECTIONS := {"motion_41236":[7],"motion_22":[8],"motion_236":[9],"motion_623":[3],"motion_214":[1]}
 
 static func extend(table: Array, moves: Dictionary = {}) -> Array:
 	var result: Array = table.duplicate(true)
@@ -15,9 +18,9 @@ static func extend(table: Array, moves: Dictionary = {}) -> Array:
 		var entry: Dictionary = source.duplicate(true)
 		entry.directions = DIRECTIONS[id].duplicate()
 		entry.consume_jump = true
-		entry.buttons = UfeInputFrame.SKILL
+		entry.buttons = UfeInputFrame.RANGED
 		entry.motion = []
-		entry.quick_skill = true
+		entry.quick_cast = true
 		if moves.has(id):entry.min_energy=int(moves[id].get("energy_cost",0))
 		entry.original_motion = source.motion.duplicate()
 		entry.original_buttons = int(source.buttons)

@@ -12,7 +12,7 @@ func _initialize() -> void:
 			merged_commands = merged_commands.filter(func(e): return str(e.move) != str(entry.move))
 			merged_commands.append(entry)
 		merged_commands=merged_commands.filter(func(e): return str(e.move) not in data.get("unsupported_moves", []))
-		var original_commands: Array=actual.command_table.filter(func(entry):return not bool(entry.get("quick_skill",false)) and not bool(entry.get("quick_transform",false)))
+		var original_commands: Array=actual.command_table.filter(func(entry):return not bool(entry.get("quick_cast",false)) and not bool(entry.get("quick_transform",false)))
 		check(original_commands==merged_commands, id+"原输入映射精确保留；快捷仅作新增别名")
 		for move in UfeContentDatabase.read_json("res://content/templates/humanoid/move_manifest.json"):
 			var path := "res://content/fighters/%s/moves/%s.json" % [id, move]

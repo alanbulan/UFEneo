@@ -60,8 +60,8 @@ func play(config: Dictionary, saved: Array = []) -> Dictionary:
 				if cast_age < 0 and own.state == "idle": cast_age = age
 				if cast_age >= 0:
 					var elapsed := age-cast_age
-					if str(config.input) == "H" and elapsed == 0:
-						pair[owner] = UfeInputFrame.make(0,0,UfeInputFrame.SKILL)
+					if str(config.input) == "I7" and elapsed == 0:
+						pair[owner] = UfeInputFrame.make(-own.facing,1,UfeInputFrame.RANGED)
 					elif str(config.input) == "41236L":
 						match elapsed:
 							0: pair[owner] = UfeInputFrame.make(-own.facing,0)
@@ -106,7 +106,7 @@ func run() -> void:
 		return
 	if input_source.is_empty():
 		for target in IDS:
-			for owner in [0,1]: records.append(play({"target":target,"owner":owner,"input":"H"}))
+			for owner in [0,1]: records.append(play({"target":target,"owner":owner,"input":"I7"}))
 		for target in ["ultraman-omega","zetton"]:
 			for owner in [0,1]: records.append(play({"target":target,"owner":owner,"input":"41236L"}))
 	else:

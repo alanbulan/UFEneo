@@ -60,6 +60,17 @@ func run() -> void:
 	resolver = UfeCommandResolver.new()
 	result = resolver.resolve(UfeInputFrame.make(-1,0,2),-1,"idle",definition.command_table)
 	check(result.move=="launcher","面向左时的相对前输入")
+	# 快捷直出并入远程键：五个原搓招各占一个方向，且不覆盖任何既有远程出手。
+	var quick := {"motion_236":[1,1],"motion_623":[1,-1],"motion_214":[-1,-1],"motion_41236":[-1,1],"motion_22":[0,1]}
+	for move in quick:
+		var axes: Array = quick[move]
+		resolver = UfeCommandResolver.new()
+		result = resolver.resolve(UfeInputFrame.make(int(axes[0]),int(axes[1]),UfeInputFrame.RANGED),1,"idle",definition.command_table,9999)
+		check(result.move==move,"方向+远程直出 "+str(move))
+	for probe in [["pulse",0,0,"idle"],["ranged_forward",1,0,"idle"],["pulse",-1,0,"idle"],["low_pulse",0,-1,"crouch"]]:
+		resolver = UfeCommandResolver.new()
+		result = resolver.resolve(UfeInputFrame.make(int(probe[1]),int(probe[2]),UfeInputFrame.RANGED),1,str(probe[3]),definition.command_table,9999)
+		check(result.move==probe[0],"远程原招保留 "+str(probe[0]))
 	sim = UfeContentDatabase.match_for()
 	sim.fighters[0].x = 540
 	sim.fighters[1].x = 600

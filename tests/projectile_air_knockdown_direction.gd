@@ -1,6 +1,6 @@
 extends SceneTree
 ## 只用正式角色与原InputFrame。初始站位/朝向fixture外不赋模拟状态。
-## 杰顿Q→I→4H→跳；雷德王N避开瞬移手刀→4H投岩。
+## 杰顿Q→I→↙I→跳；雷德王N避开瞬移手刀→↙I投岩。
 var out := "user://projectile-air-knockdown-direction/"
 var failures: Array = []
 var results: Array = []
@@ -64,29 +64,29 @@ func case_run(direction: int, gap: int, rock_fighter: String, attack_tick: int, 
 			first=UfeInputFrame.make(0,0,UfeInputFrame.RANGED)
 			phase="recover"
 		elif phase == "recover" and a.state == "idle" and a.move_id.is_empty():
-			first=UfeInputFrame.make(-direction,0,UfeInputFrame.SKILL)
+			first=UfeInputFrame.make(-direction,-1,UfeInputFrame.RANGED)
 			phase="done"
 		if jump_tick>0 and t >= jump_tick and t < jump_tick + 3: first=UfeInputFrame.make(direction,1,0)
 		if t == 80: second=UfeInputFrame.make(0,0,UfeInputFrame.DODGE)
-		if t == attack_tick: second=UfeInputFrame.make(-direction,0,UfeInputFrame.SKILL)
+		if t == attack_tick: second=UfeInputFrame.make(-direction,-1,UfeInputFrame.RANGED)
 		var before := observe(sim)
 		var inputs: Array = [first,second]
 		sim.step(inputs)
 		recorder.append(inputs,sim)
 		var after := observe(sim)
 		if first.held(UfeInputFrame.CHARGE):charge_ticks+=1
-		if first.held(UfeInputFrame.RANGED):
+		if first.held(UfeInputFrame.RANGED) and first.x==0:
 			command_evidence.pulse={"tick":sim.tick,"before":before.pair[0],"after":after.pair[0]}
 			check(a.move_id=="pulse",label+"/真实I启动火球")
-		if first.held(UfeInputFrame.SKILL):
+		if first.held(UfeInputFrame.RANGED) and first.x!=0:
 			command_evidence.teleport={"tick":sim.tick,"before":before.pair[0],"after":after.pair[0]}
-			check(a.move_id=="motion_214" and int(before.pair[0].energy)-int(after.pair[0].energy)==100,label+"/真实4H扣100能量")
+			check(a.move_id=="motion_214" and int(before.pair[0].energy)-int(after.pair[0].energy)==100,label+"/真实↙I扣100能量")
 		if second.held(UfeInputFrame.DODGE):
 			command_evidence.dodge={"tick":sim.tick,"after":after.pair[1]}
 			check(sim.fighters[1].state=="dodge",label+"/真实N进入闪避")
-		if second.held(UfeInputFrame.SKILL):
+		if second.held(UfeInputFrame.RANGED) and second.x!=0:
 			command_evidence.rock={"tick":sim.tick,"before":before.pair[1],"after":after.pair[1]}
-			check(sim.fighters[1].move_id=="motion_214" and int(before.pair[1].stamina)-int(after.pair[1].stamina)==50,label+"/真实4H投岩扣50体力")
+			check(sim.fighters[1].move_id=="motion_214" and int(before.pair[1].stamina)-int(after.pair[1].stamina)==50,label+"/真实↙I投岩扣50体力")
 		rows.append(after)
 		for event in sim.events:
 			if event.kind in ["hit","block","teleport","move_denied"]:
@@ -129,7 +129,7 @@ func case_run(direction: int, gap: int, rock_fighter: String, attack_tick: int, 
 	elif jump_tick>0 and int(rock_contacts[0].after.pair[0].height)<=0:failures.append(label+"/真实跳跃未在空中被岩块命中")
 	elif jump_tick==0 and (int(rock_contacts[0].after.pair[0].height)!=0 or str(rock_contacts[0].after.pair[0].state)!="down"):failures.append(label+"/地面对照未正常倒地")
 	check(defects.is_empty(),label+"/空中击倒水平速度必须等于离手岩块方向乘2")
-	check(charge_ticks>0 and command_evidence.size()==4,label+"/Q蓄能与I/4H/N/4H全部真实输入")
+	check(charge_ticks>0 and command_evidence.size()==4,label+"/Q蓄能与I/↙I/N/↙I全部真实输入")
 	var compatibility: Dictionary={}
 	if UfeHitResolver.PROJECTILE_DIRECTION_RULE_REVISION>1:
 		var v1:=revision_one_fingerprint(sim)

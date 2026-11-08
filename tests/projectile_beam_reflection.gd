@@ -64,10 +64,10 @@ func test_case(shooter: int, shield: bool, fireball: bool = false) -> void:
 				phase="shield"
 			else:
 				shield_tick=tick
-				if shield:inputs[1-shooter]=UfeInputFrame.make(0,-1,UfeInputFrame.SKILL)
+				if shield:inputs[1-shooter]=UfeInputFrame.make(0,1,UfeInputFrame.RANGED)
 				phase="fire"
 		elif phase=="shield" and tick==shield_tick:
-			if shield:inputs[1-shooter]=UfeInputFrame.make(0,-1,UfeInputFrame.SKILL)
+			if shield:inputs[1-shooter]=UfeInputFrame.make(0,1,UfeInputFrame.RANGED)
 			phase="done"
 		elif phase=="fire" and tick==shield_tick+8:
 			inputs[shooter]=UfeInputFrame.make(0,0,UfeInputFrame.RANGED)

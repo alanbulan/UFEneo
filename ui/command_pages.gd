@@ -41,7 +41,7 @@ func _init() -> void:
 	for cell in [["输入",132],["招式",220],["起手",40],["攻击",40],["收招",40],["伤害",40]]:
 		var label:=Label.new();label.text=cell[0];label.custom_minimum_size.x=cell[1];headers.add_child(label)
 	rows.custom_minimum_size.y=72;rows.size_flags_vertical=Control.SIZE_EXPAND_FILL;column.add_child(rows)
-	var help:=Label.new();help.text="技能：1P %s / 2P %s；形态：1P %s / 2P %s\n蓄能%s　闪避%s　必杀%s；方向+技能直出，设置可自定义。"%[UfeInputRouter.binding_label(0,"skill"),UfeInputRouter.binding_label(1,"skill"),UfeInputRouter.binding_label(0,"transform"),UfeInputRouter.binding_label(1,"transform"),UfeInputRouter.binding_label(0,"charge"),UfeInputRouter.binding_label(0,"dodge"),UfeInputRouter.binding_label(0,"special")];help.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;column.add_child(help)
+	var help:=Label.new();help.text="方向+远程直出：1P %s / 2P %s；形态：1P %s / 2P %s\n蓄能%s　闪避%s　必杀%s；方向组合见列表，设置可自定义。"%[UfeInputRouter.binding_label(0,"ranged"),UfeInputRouter.binding_label(1,"ranged"),UfeInputRouter.binding_label(0,"transform"),UfeInputRouter.binding_label(1,"transform"),UfeInputRouter.binding_label(0,"charge"),UfeInputRouter.binding_label(0,"dodge"),UfeInputRouter.binding_label(0,"special")];help.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;column.add_child(help)
 static func category(entry: Dictionary) -> int:
 	var id:=str(entry.move)
 	if id.begins_with("special") or id in ["air_special","battle_transform","super_special3"]:return 7
@@ -110,13 +110,13 @@ func show_page(index: int) -> void:
 	for child in rows.rows.get_children():rows.rows.remove_child(child);child.queue_free()
 	if table_headers!=null:table_headers.visible=index!=8
 	if index==8:
-		var current_shortcuts: String="方向+技能（1P %s / 2P %s）直出原搓招；形态单按%s，方向选已开放形态；手柄键位见设置。原输入和全部原招保留。"%[UfeInputRouter.binding_label(0,"skill"),UfeInputRouter.binding_label(1,"skill"),UfeInputRouter.binding_label(0,"transform")]
+		var current_shortcuts: String="方向+远程（1P %s / 2P %s）直出原搓招；形态单按%s，方向选已开放形态；手柄键位见设置。原输入和全部原招保留。"%[UfeInputRouter.binding_label(0,"ranged"),UfeInputRouter.binding_label(1,"ranged"),UfeInputRouter.binding_label(0,"transform")]
 		for value in ["能量：用于必杀与标注能量费用的招式；不足时不能释放。", "体力：1000上限的短时攻防韧性。每招按表消耗，体力不足仍可攻击或释放能量技。", "防御会消耗体力，耗尽会破防约0.6秒，结束恢复至350，避免连续空体破防。", "攻击、防御、受击、闪避中暂停恢复；结束后等待0.3秒，移动每秒回720、站蹲600、蓄能180。", "闪避消耗120体力；足额保留12帧无敌，不足仍可闪避、无敌缩为4帧。", current_shortcuts]:
 			var explanation:=Label.new();explanation.text=value;explanation.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;explanation.size_flags_horizontal=Control.SIZE_EXPAND_FILL;rows.rows.add_child(explanation)
 		return
 	for entry in entries:
 		if category(entry)!=index:continue
-		if bool(entry.get("quick_skill",false)) or bool(entry.get("quick_transform",false)):continue
+		if bool(entry.get("quick_cast",false)) or bool(entry.get("quick_transform",false)):continue
 		var row:=HBoxContainer.new();rows.rows.add_child(row)
 		var input:=InputGlyphs.new();input.custom_minimum_size.x=132
 		var quick := _quick_entry(entry)
@@ -154,7 +154,7 @@ static func move_costs(move: Dictionary) -> String:
 func _quick_entry(entry: Dictionary) -> Dictionary:
 	for candidate in entries:
 		if str(candidate.move)!=str(entry.move):continue
-		if bool(candidate.get("quick_skill",false)) or bool(candidate.get("quick_transform",false)):return candidate
+		if bool(candidate.get("quick_cast",false)) or bool(candidate.get("quick_transform",false)):return candidate
 	return {}
 
 func cycle_fighter(direction: int) -> void:

@@ -1,6 +1,6 @@
 class_name InputGlyphs
 extends HBoxContainer
-const BUTTONS={1:"square",2:"triangle",4:"cross",8:"guard",16:"charge",32:"P",64:"circle",128:"I",256:"evade",1024:"skill",2048:"form"}
+const BUTTONS={1:"square",2:"triangle",4:"cross",8:"guard",16:"charge",32:"P",64:"circle",128:"I",256:"evade",1024:"form"}
 func _init() -> void:
 	theme=PixelPanel.NEO_THEME
 	add_theme_constant_override("separation",1)
@@ -16,6 +16,6 @@ func show_input(direction: int, buttons: int, motion: Array=[], alternatives: bo
 	for mask in BUTTONS:
 		if buttons & int(mask):
 			var key: String=BUTTONS[mask]
-			if key in ["guard","charge","evade","skill","form"]:
-				var label:=Label.new();label.text={"guard":"防","charge":"蓄","evade":"闪","skill":"技","form":"形"}[key];add_child(label)
+			if key in ["guard","charge","evade","form"]:
+				var label:=Label.new();label.text={"guard":"防","charge":"蓄","evade":"闪","form":"形"}[key];add_child(label)
 			else:add_child(PixelArt.new(key,Vector2(16,16)))
