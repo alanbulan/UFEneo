@@ -1,0 +1,625 @@
+{
+  "schema": 1,
+  "subject": "zoffy",
+  "stage": "draft-20261108",
+  "generated_at": "2026-11-08",
+  "provider": "magpie-image MCP",
+  "defaults": {
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "background": "transparent"
+  },
+  "usage": null,
+  "usage_note": "MCP 生成接口未返回 token、费用或配额字段；本记录不编造用量。",
+  "retry_policy": "按需充分重试；保留每轮请求原文、参考图、输出路径与 SHA；只保留被选中的原图，淘汰候选的像素在记录 SHA 后清理。",
+  "attempts": [
+    {
+      "path": "reports/zoffy/raw/catalogue-candidate-01.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": null,
+      "prompt": "Single full-body Zoffy (ゾフィー / 佐菲) from the classic Ultraman series, as a clean 2D pixel-art fighting-game sprite. FIXED RIGHT-SIDE PROFILE VIEW: the character's face, chest and toes point to the right; pure side view, not front view, not three-quarter view. Full body from the top of the head crest to both soles, entire silhouette visible with transparent margin, standing upright in a calm neutral ready stance, both feet flat on an invisible ground line, weight balanced. Transparent background (true alpha, no checkerboard, no floor, no shadow, no text, no frame). Crisp native pixel art: hard 1-pixel dark outline, flat limited palette, no anti-aliasing, no soft gradients, no plastic gloss.\n\nIdentity must be Zoffy, not Ultraman and not Jack: silver head with a tall central vertical crest fin running front-to-back on top of the skull (silver, NOT black), large pale-yellow almond eyes, small mouth slit; red neck; silver torso with a bold red chest/shoulder panel forming a V-shaped upper-chest pattern; a round blue Color Timer set in a silver ring at the center of the chest; six pairs of small round silver Star Mark studs arranged symmetrically on the upper chest around the timer; raised round Ultra Breastar badges on both shoulders (three on each shoulder/upper arm); double silver seam lines on the shoulders, lower chest and thighs; red hips and shorts; silver thighs with red diagonal bands; silver shins with red chevron stripes; complete silver boots. Near arm and far arm both present, near leg and far leg both present, correct anatomy.\n\nNo toy ball joints, no visible action-figure joints or pins, no socket seams, no plastic highlights, no segmented toy limbs. Keep the suit's fabric wrinkles and the body's natural armor-like red/silver panels as on the original suit. Character centered, complete, nothing cropped. Classic Showa Ultraman superhero proportions: about 5 heads tall, long legs, broad shoulders. Output a single isolated character only.",
+      "role": "catalogue",
+      "status": "rejected",
+      "selection_note": "图鉴首轮基准；远侧未压暗、边缘光晕，后续编辑参考。",
+      "sha256": "85ba8c080d338735e1fe54c174a394d764d80e31bf1ab63483712816e4d3297a"
+    },
+    {
+      "path": "reports/zoffy/raw/catalogue-candidate-02.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": null,
+      "prompt": "Single full-body Zoffy (ゾフィー / 佐菲) from the classic Ultraman series, as a clean 2D pixel-art fighting-game sprite in the same fixed side-view style as a Showa Ultraman arcade fighter. The character faces RIGHT: nose, chest and toes point right; body turned mostly to profile but upper chest still readable. Full body from the top of the head crest to both soles, nothing cropped, transparent margin, standing upright in a calm neutral ready stance, both feet flat on an invisible ground line. TRUE TRANSPARENT BACKGROUND: alpha channel only, absolutely no backdrop, no vignette, no glow halo, no floor shadow, no text, no frame. Crisp native pixel art: hard 1-pixel dark outline, flat limited palette, no anti-aliasing, no soft gradients, no glossy plastic.\n\nIDENTITY: Zoffy, not Ultraman, not Jack. Silver head with a tall thin central vertical crest fin running front-to-back (silver, NOT black), one large pale-yellow almond eye visible, small mouth slit, side ear vent. Red neck. Silver torso with a bold red upper-chest and shoulder panel forming a V/butterfly shape; round blue Color Timer in a silver ring at the center of the chest; six pairs of small round silver Star Mark studs around the timer on the upper chest; raised round Ultra Breastar badges on the shoulder (three round studs on the near shoulder); double silver seam lines on shoulder, lower chest and thigh; red hips/shorts; silver thighs with red diagonal bands; silver shins with red chevron stripes; complete silver boots. Both arms and both legs present with correct anatomy.\n\nFAR-SIDE LIMB SHADING (permanent project rule): the far-side arm and far-side leg are drawn one shade darker in both silver and red, kept behind the near-side limbs; the near-side arm and leg stay bright silver/red. Do not swap near/far identity. The head, torso, eyes and blue Color Timer are never darkened.\n\nNo toy ball joints, no action-figure pins or sockets, no visible seams, no plastic highlights. Keep natural suit fabric wrinkles and the original red/silver body panels. Classic Showa Ultra proportions: about 5 heads tall, long legs, broad shoulders. One isolated character only, centered, complete.",
+      "role": "catalogue",
+      "status": "rejected",
+      "selection_note": "图鉴并行候选；加入远侧压暗，后续以03→05→06链为准。",
+      "sha256": "826e67f883a32af1900cb5962f0035e8a84d929c5fa5eb8d474f8a82a901adef"
+    },
+    {
+      "path": "reports/zoffy/raw/catalogue-candidate-03.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": [
+        "reports/zoffy/raw/catalogue-candidate-01.png"
+      ],
+      "prompt": "Edit the supplied Zoffy pixel-art sprite. Keep the exact same pose, proportions, identity, costume details and pixel-art rendering. The character faces right. Change ONLY the far-side arm and far-side leg to one shade darker in both silver and red, so they clearly read as the far limbs behind the bright near-side arm/leg; keep the near-side limbs bright. Also remove the dark red/black glow and vignette around the silhouette and output a clean TRUE TRANSPARENT background with no semi-transparent fringe, no halo, no shadow. Do not add toy joints, seams, plastic highlights or extra characters. Keep the full body, both feet and the head crest inside the frame.",
+      "role": "catalogue",
+      "status": "rejected",
+      "selection_note": "已压深远侧并清背景，但后脑仍有红区；作为04/05编辑源。",
+      "sha256": "2e05a0e337a09f2ded3d52815b4e38207b0f1812b44ef07b537d2b3da2f4e6ba"
+    },
+    {
+      "path": "reports/zoffy/raw/battle-candidate-01.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": [
+        "reports/zoffy/raw/catalogue-candidate-01.png"
+      ],
+      "prompt": "Using the supplied Zoffy pixel-art sprite as the identity and costume reference, redraw ONE full-body Zoffy in a fighting-game battle idle stance, still fixed facing RIGHT and in pure side-view fighting-game style. Wide stable stance, both feet flat and fully visible, knees slightly bent, near arm raised in a compact guard with a clenched fist at upper-chest height, far arm held across the chest, shoulders squared, head and eye looking right. Keep the exact same Zoffy identity: silver head with tall thin central silver crest fin, pale-yellow almond eye, red neck, red chest/shoulder panel, blue round Color Timer in silver ring, six pairs of silver Star Mark studs around the upper chest, round Ultra Breastar studs on the shoulder, double silver seam lines, red hips, silver thighs with red diagonal bands, silver shins with red chevrons, complete silver boots. Keep crisp native pixel art, hard 1-pixel dark outline, flat limited palette, no anti-aliasing. Far-side arm and far-side leg one shade darker silver/red behind the bright near-side limbs; never darken the head, torso, eye or blue timer. TRUE TRANSPARENT background, no glow, no halo, no shadow, no text. No toy ball joints, no action-figure seams or plastic highlights; keep suit wrinkles and natural panels. Entire character from crest top to both soles inside frame, nothing cropped.",
+      "role": "battle",
+      "status": "rejected",
+      "selection_note": "战斗站姿首轮；头部/比例后续调整。",
+      "sha256": "25143a5541a49b3691ab6fb604008f4b0b85d92e142a0b9959993d6d469eeaf5"
+    },
+    {
+      "path": "reports/zoffy/raw/catalogue-candidate-04.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": [
+        "reports/zoffy/raw/catalogue-candidate-03.png"
+      ],
+      "prompt": "Edit the supplied Zoffy pixel-art sprite. Keep the exact same pose, proportions, costume, colors and pixel-art style. Two corrections only: (1) the back of the head above the neck must be SILVER like the face, not red — the red neck should stop at the base of the skull; the tall central head crest stays silver. (2) Make the central head crest fin thinner and more blade-like (a narrow vertical fin running front-to-back), not a broad triangular shark fin. Remove the dark red/black glow and vignette completely: output ONLY the character on clean TRUE TRANSPARENT alpha, no halo, no semi-transparent fringe, no shadow. Do not change the face, chest pattern, blue Color Timer, star marks, shoulder studs, arms, legs or boots otherwise. No toy joints, no seams, no plastic highlights. Full body and both feet inside frame.",
+      "role": "catalogue",
+      "status": "rejected",
+      "selection_note": "后脑改银，但冠鳍被缩成小尖，不可用。",
+      "sha256": "b52cb78e885042ff5cac68494d9ad86829709a5524e31f1dba1c867476641782"
+    },
+    {
+      "path": "reports/zoffy/raw/catalogue-candidate-05.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": [
+        "reports/zoffy/raw/catalogue-candidate-03.png"
+      ],
+      "prompt": "Edit the supplied Zoffy pixel-art sprite. Preserve the pose, proportions, face, chest pattern, blue Color Timer, star marks, shoulder studs, arms, legs, boots and pixel-art style EXACTLY. Preserve the existing tall central head-crest fin with its current silhouette — do NOT shrink, shorten or remove it. The only change: the red area on the back of the head above the neck must become SILVER, matching the rest of the head; red stays only on the neck below the skull base. Remove the dark red/black halo and vignette; output the character alone on clean TRUE TRANSPARENT alpha with no background, no glow, no semi-transparent fringe, no shadow. No new details, no toy joints, no seams, no plastic highlights. Full body and both feet inside frame.",
+      "role": "catalogue",
+      "status": "rejected",
+      "selection_note": "后脑改银且保留高冠鳍；作为06编辑源，头部仍偏小。",
+      "sha256": "f9a9c7a4edd5fe7f81e4ecec1484875908bb1d50db9592423431e32087e5ee1b"
+    },
+    {
+      "path": "reports/zoffy/raw/battle-candidate-02.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": [
+        "reports/zoffy/raw/catalogue-candidate-05.png"
+      ],
+      "prompt": "Using the supplied Zoffy pixel-art sprite as the exact identity and costume reference, redraw ONE full-body Zoffy in a fighting-game battle idle stance, fixed facing RIGHT, pure side-view fighting-game style. Wide stable stance, both feet flat and fully visible, knees slightly bent, near arm raised in a compact guard with a clenched fist at upper-chest height, far arm held across the chest, shoulders squared, head and eye looking right. Match the reference exactly: silver head with silver back of skull and tall central silver crest fin, pale-yellow almond eye, red neck only below the skull, red upper-chest/shoulder panel, blue round Color Timer in silver ring, six pairs of silver Star Mark studs around it, round Ultra Breastar studs on the shoulder, double silver seam lines, red hips, silver thighs with red diagonal bands, silver shins with red chevrons, complete silver boots. Crisp native pixel art, hard 1-pixel dark outline, flat limited palette, no anti-aliasing. Far-side arm and far-side leg one shade darker silver/red behind the bright near-side limbs; never darken head, torso, eye or blue timer. TRUE TRANSPARENT background, no glow, no halo, no shadow, no text. No toy ball joints, no action-figure seams or plastic highlights; keep suit wrinkles and natural panels. Entire character from crest top to both soles inside frame, nothing cropped.",
+      "role": "battle",
+      "status": "rejected",
+      "selection_note": "战斗站姿第二稿；头部偏小，5头身不足。",
+      "sha256": "eaacbebf5b8d1d069629f5aee760c5340c0ae6d9cfdab7a932a5e1db63a49504"
+    },
+    {
+      "path": "reports/zoffy/raw/catalogue-candidate-06.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": [
+        "reports/zoffy/raw/catalogue-candidate-05.png"
+      ],
+      "prompt": "Edit the supplied Zoffy pixel-art sprite. Keep the exact same pose, costume, colors, body, arms, legs and pixel-art style. Change the head proportions only: uniformly enlarge the entire head including the silver crest fin by about 25%, but keep the neck natural and attached, so the character reads as a heroic 5-heads-tall figure instead of a realistic 6.5-head figure. The top of the crest must stay inside the frame and the feet must not move or be cropped. Do not otherwise change the face, chest pattern, blue Color Timer, star marks, shoulder studs, far-side darker limbs, or the clean transparent background. No glow, no halo, no shadow, no toy joints. Full body visible.",
+      "role": "catalogue",
+      "status": "superseded",
+      "selection_note": "头部整体放大25%，站高173；图鉴定稿源。",
+      "sha256": "ddf1e5319c0daeac786952f29abd1fff8d4949ec8e0be4dc778e10e8ce424f7a",
+      "superseded_by_reference_rule": true,
+      "superseded_reason": "未使用官方剧照/皮套照作第一参考图；按官方参考主参考规则重做。旧成品保留对照，不覆盖。"
+    },
+    {
+      "path": "reports/zoffy/raw/battle-candidate-03.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": [
+        "reports/zoffy/raw/battle-candidate-02.png"
+      ],
+      "prompt": "Edit the supplied Zoffy pixel-art sprite. Keep the exact same battle pose, wide stance, raised near guard fist, far arm across the chest, costume, colors, far-side darker limbs, feet placement and pixel-art style. Change the head proportions only: uniformly enlarge the entire head including the silver crest fin by about 25%, keep the neck natural and attached, so the character reads as a heroic 5-heads-tall fighter instead of a realistic 6.5-head figure. The crest top and both soles must stay inside the frame. Do not otherwise change the face, chest pattern, blue Color Timer, star marks, shoulder studs or the clean transparent background. No glow, no halo, no shadow, no toy joints. Full body visible.",
+      "role": "battle",
+      "status": "superseded",
+      "selection_note": "头部放大25%，站高173；战斗站姿定稿源。",
+      "sha256": "9277fafc3e2da0b2d127935363d106afcccd28b3a827948d7f3b1c6bd2726808",
+      "superseded_by_reference_rule": true,
+      "superseded_reason": "未使用官方剧照/皮套照作第一参考图；按官方参考主参考规则重做。旧成品保留对照，不覆盖。"
+    },
+    {
+      "path": "reports/zoffy/raw/m87-pose-candidate-01.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": [
+        "reports/zoffy/raw/battle-candidate-03.png"
+      ],
+      "prompt": "Using the supplied Zoffy pixel-art sprite as the exact identity and costume reference, redraw ONE full-body Zoffy in the M87 Beam Type-A firing stance, fixed facing RIGHT in fighting-game side view. The near/right arm is fully extended straight forward at shoulder height, fist clenched, forearm horizontal, ready to fire from the fist; the far/left arm is bent with the fist held across the chest; feet planted in a stable wide stance, both soles flat and fully visible, knees slightly bent. Keep the exact reference identity: silver head with silver back of skull and tall silver central crest fin, pale-yellow almond eye, red neck below skull, red upper-chest/shoulder panel, blue round Color Timer in silver ring, six pairs of silver Star Mark studs, round Ultra Breastar studs on the shoulder, double silver seam lines, red hips, silver thighs with red diagonal bands, silver shins with red chevrons, complete silver boots. Crisp native pixel art, hard 1-pixel dark outline, flat limited palette, no anti-aliasing. Far-side arm and far-side leg one shade darker silver/red; near arm/leg bright. TRUE TRANSPARENT background, no glow, no halo, no shadow, no text. No toy ball joints, no action-figure seams or plastic highlights. Entire character from crest top to both soles inside frame, nothing cropped; leave clear empty space in front of the extended fist.",
+      "role": "m87_pose",
+      "status": "superseded",
+      "selection_note": "M87 A型右拳前伸，拳面可测；FX对齐源。",
+      "sha256": "2976205ed6134153d2f270fa5e7b26bb1fd762f0f162747a03ecd2372537fa47",
+      "superseded_by": "ed5377322636b5ed01af5dd113f1d42682ebc4dd88ea1f5c8b2d5c04986896d5",
+      "superseded_reason": "M87 A型应为开掌、五指并拢前指、指尖/掌心发射；握拳版动作错误。"
+    },
+    {
+      "path": "art/fighters/zoffy/sources/draft-20261108/fx/beam-full-raw.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1536x1024",
+      "n": null,
+      "reference_images": null,
+      "prompt": "Standalone native pixel-art VFX sprite for a 2D fighting game, isolated on a fully transparent background. A single ultra-long horizontal energy beam pointing right, drawn as one thin strip occupying about 85% of the image width and about 12% of the image height, vertically centered, with generous empty transparent margins above and below. Style: hard-edged 16-bit pixel art, chunky visible square pixels, no anti-aliasing, no smooth airbrush glow, no vector shapes. Zoffy's M87 Beam: white-hot pixel core with a hard 1-pixel bright edge, surrounded by pale ice-cyan inner flame (#BFF4FF), then saturated azure (#3FA9FF), then deep-blue outer tongues (#1746A8); irregular flame tongues and broken particles along the beam, tiny detached sparks, a white-hot muzzle bulb at the left end where the beam originates, slight widening at the muzzle, beam clearly directional to the right. Limited palette: white, pale cyan, azure, deep blue, a few near-black blue outline pixels. Absolutely no character, no arm, no hand, no face, no text, no UI, no border, no background scenery. The beam must be one complete continuous full-length beam with visible layered flames, not a thin line, not an ellipse, not a cone.",
+      "role": "fx",
+      "status": "selected",
+      "selection_note": "主束关键帧源。",
+      "sha256": "c4a5f28742e0d0fa1d3ff6a771e0e38d8d9968d6b694cf124c451af389a90fa0"
+    },
+    {
+      "path": "art/fighters/zoffy/sources/draft-20261108/fx/muzzle-charge-raw.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1024",
+      "n": null,
+      "reference_images": null,
+      "prompt": "Standalone native pixel-art VFX sprite for a 2D fighting game, isolated on a fully transparent background: a tightly gathered blue-white electric energy orb charging at the muzzle of a beam attack, centered in the image, roughly 150 px diameter, circular but with irregular crackling pixel arcs. Style: hard-edged 16-bit pixel art, chunky square pixels, no anti-aliasing, no smooth airbrush gradient, no vector glow. Zoffy's M87 Beam charge: white-hot near-white core, pale ice-cyan (#BFF4FF) inner flame, saturated azure (#3FA9FF) middle, deep-blue (#1746A8) crackling outer arcs, tiny detached pixel sparks. The orb must not be a smooth circle, not a ring, not a simple lens flare; it is a dense pixel energy ball with visible layered flame tongues and 4-8 short lightning arcs. Absolutely no character, no arm, no hand, no face, no beam, no text, no UI, no border, no background scenery.",
+      "role": "fx",
+      "status": "selected",
+      "selection_note": "蓄势关键帧源。",
+      "sha256": "7f2b5300816c03b4ffd03e357327e6f3fc6528a4f4d6413ebfc578a9ca2f657f"
+    },
+    {
+      "path": "art/fighters/zoffy/sources/draft-20261108/fx/muzzle-release-raw.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1024",
+      "n": null,
+      "reference_images": null,
+      "prompt": "Standalone native pixel-art VFX sprite for a 2D fighting game, isolated on a fully transparent background: a blue-white energy release flash at the muzzle of a beam attack, with a short directional jet shooting to the right, drawn horizontally in the left-center of the image. Style: hard-edged 16-bit pixel art, chunky square pixels, no anti-aliasing, no smooth airbrush gradient, no vector shapes. Zoffy's M87 Beam release: a white-hot irregular star-shaped core flash, pale ice-cyan (#BFF4FF) inner flame, saturated azure (#3FA9FF) outer tongues, deep-blue (#1746A8) edge pixels, detached square embers and streak particles flying right. The flash is irregular and spiky, not a ring, not a circle outline, not a smooth lens flare; a short 60-80 px bright jet extends right from the flash. Absolutely no character, no arm, no hand, no face, no long beam, no text, no UI, no border, no background scenery.",
+      "role": "fx",
+      "status": "selected",
+      "selection_note": "出膛关键帧源。",
+      "sha256": "1f68934f30dfcf7b120f943e7c26b0d62c3946d31098f1e112f2e61d200c237a"
+    },
+    {
+      "path": "art/fighters/zoffy/sources/draft-20261108/fx/impact-burst-raw.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1024",
+      "n": null,
+      "reference_images": null,
+      "prompt": "Standalone native pixel-art VFX sprite for a 2D fighting game, isolated on a fully transparent background: a violent energy-beam impact explosion centered in the image, roughly 300 px across, with a white-hot core and radial burst. Style: hard-edged 16-bit pixel art, chunky square pixels, no anti-aliasing, no smooth airbrush gradient, no vector shapes. Zoffy's M87 Beam hit effect: white-hot near-white center, pale ice-cyan (#BFF4FF) inner burst, saturated azure (#3FA9FF) flame tongues, deep-blue (#1746A8) outer fragments, sharp pixel shards and detached square sparks radiating outward, some dark-blue debris silhouette chips. The burst is irregular and asymmetric with layered flames, not a smooth glow ball, not a ring, not a simple lens flare. Absolutely no character, no arm, no hand, no beam entering from a side, no text, no UI, no border, no background scenery.",
+      "role": "fx",
+      "status": "selected",
+      "selection_note": "命中关键帧源。",
+      "sha256": "283c5a05d20573475e6194d9ac7837083b98f1450e7e75a95a1462a0a547fbdd"
+    },
+    {
+      "path": "art/fighters/zoffy/sources/draft-20261108/fx/beam-dissipate-raw.png",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1536x1024",
+      "n": null,
+      "reference_images": null,
+      "prompt": "Standalone native pixel-art VFX sprite for a 2D fighting game, isolated on a fully transparent background: the dissipating tail phase of a horizontal blue-white energy beam pointing right, drawn as a long thin strip across about 85% of the image width and 12% of the image height, vertically centered. The left third is still a solid layered beam with a white-hot core; the middle breaks into separate chunky pixel flame segments with visible gaps; the right third dissolves into drifting square embers and thin wisps. Style: hard-edged 16-bit pixel art, chunky square pixels, no anti-aliasing, no smooth gradient, no vector shapes. Palette: white-hot core, pale ice-cyan (#BFF4FF), saturated azure (#3FA9FF), deep-blue (#1746A8) outline pixels. Irregular broken flame tongues and particles, obvious phase variation. Not a continuous line, not an ellipse, not a cone. Absolutely no character, no arm, no hand, no text, no UI, no border, no background scenery.",
+      "role": "fx",
+      "status": "selected",
+      "selection_note": "消散关键帧源。",
+      "sha256": "6386c1ba3ddaf19994dd88796b9627fa9ea261dad983870eefb58eeef4766d93"
+    },
+    {
+      "path": "art/fighters/zoffy/sources/draft-20261108/m87-pose/raw.png",
+      "from": "/tmp/zoffy-m87-open/candidate.png",
+      "from_note": "临时生成路径；选中raw已保存到 art/fighters/zoffy/sources/draft-20261108/m87-pose/raw.png，临时目录可清。",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": [
+        "art/fighters/zoffy/sources/draft-20261108/m87-pose/raw.png"
+      ],
+      "reference_note": "参考图为本轮前的握拳版 raw（SHA 2976205...），已被本候选覆盖，无副本。",
+      "prompt": "Edit the reference Zoffy sprite. Keep the character identity, body, suit, colors, lighting, stance, full body, transparent background, and right-facing side view unchanged; only correct the hands and forearms. The extended right arm must end in an OPEN right hand: wrist straight, palm flat, all five fingers straight and pressed together pointing forward to the right, thumb alongside the index finger; the silhouette is a flat open blade/palm, NOT a clenched fist, no rounded knuckle ball. The fingertips are the frontmost part; the M87 beam fires from the fingertips/palm. The left arm stays bent; the left hand must be OPEN and relaxed, placed beside the blue round Color Timer at the center of the chest, palm facing the timer or slightly upward. Do NOT clench a fist, do NOT lay a fist across the chest, do NOT cover the timer. Keep the right arm horizontal at chest height and fully extended; keep the left elbow bent. Keep the head crest, pale-yellow eye, red neck, red upper-chest/shoulder panel, blue Color Timer in a silver ring, six pairs of Star Marks, three pairs of Ultra Breastar badges, double silver seam lines, red hips, silver legs with red bands/chevrons, silver boots, far-side limbs darker. No toy joints/seams/plastic gloss. No text, frame, floor, shadow, weapon. Crisp 2D pixel art, hard 1px outline, flat limited palette, no anti-aliasing, true transparent alpha.",
+      "role": "m87_pose_open_hand",
+      "status": "superseded",
+      "selection_note": "右掌开掌、五指并拢前指；左掌开掌靠计时器；替代握拳版。",
+      "sha256": "ed5377322636b5ed01af5dd113f1d42682ebc4dd88ea1f5c8b2d5c04986896d5",
+      "processed": "reports/zoffy/battle/m87-firing-pose-draft-192.png",
+      "processed_sha256": "20b8d61b4e5d54f1bda406919b344f07a0601bc033308114f43b87a650d29c18",
+      "supersedes": "2976205ed6134153d2f270fa5e7b26bb1fd762f0f162747a03ecd2372537fa47",
+      "superseded_by_reference_rule": true,
+      "superseded_reason": "未使用官方剧照/皮套照作第一参考图；按官方参考主参考规则重做。旧成品保留对照，不覆盖。"
+    },
+    {
+      "path": "art/fighters/zoffy/sources/draft-20261108/official-ref/raw/catalogue-raw-01.png",
+      "raw": "art/fighters/zoffy/sources/draft-20261108/official-ref/raw/catalogue-raw-01.png",
+      "sha256": "301a4c93b9733eb54626bdb79ba602b931c6afdd6c84f2efd1504db76b0e8a44",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": [
+        "art/fighters/zoffy/sources/ref-01.webp",
+        "reports/zoffy/catalogue/model-native-draft-v2.png"
+      ],
+      "reference_roles": [
+        "official_still primary identity/design source",
+        "existing catalogue draft secondary composition/palette only"
+      ],
+      "reference_sha256": [
+        "0bcdab23478fb8645c8486ca8cc988df7dda911646b77e8bd6febafeef8fb37f",
+        "8f9ff7b56e8b9b377f850cceda5c75a7cd1796fbb0a2e6a02649a0989e5f564c"
+      ],
+      "reference_note": "Image 1 是官方剧照/皮套照，主参考；Image 2 仅辅助侧视构图与配色。",
+      "prompt": "Create ONE full-body Zoffy character image for a fixed side-view 2D pixel-art fighting game. Image 1 is the OFFICIAL live-action suit reference and the PRIMARY mandatory identity/design source: use its exact silver head with tall central silver crest, pale-yellow almond eye, red neck and red upper-chest/shoulder panel, blue round Color Timer in a silver ring, six pairs of silver Star Mark studs on the chest, three pairs of round Ultra Breastar studs on the shoulders, double silver seam lines, red hips, silver legs with red diagonal bands and red chevrons, complete silver boots, and its sturdy official body proportions. Image 2 is an existing game sprite draft, for side-view composition and pixel-art framing ONLY; do not copy its thin body, deformed crest, glow, or any text. Redraw the character in a clean 90-degree RIGHT-FACING PROFILE side view, standing upright in a neutral full-body pose, both arms relaxed at the sides, both feet planted flat and fully visible, entire character from crest top to both soles inside the frame. Do not make the body thin; keep the official reference's head shape, chest width, and limb proportions. Translate the suit into clean 2D pixel-art-friendly shapes with a hard 1-pixel dark outline and a flat limited palette, no anti-aliasing; the final art will be downsampled to 173 px tall. TRUE TRANSPARENT background, no glow, no halo, no shadow, no floor, no frame, no text, no watermark, no copyright mark. No toy ball joints, no action-figure seams, no plastic highlights; keep the suit's wrinkles and armor/mechanical structure. Near-side limbs bright, far-side limbs one shade darker. No weapons, no energy effects, no extra characters.",
+      "role": "catalogue_officialref",
+      "status": "selected",
+      "selection_note": "官方参考主参考重做；右侧视、全身、透明、站高173；旧稿保留对照。",
+      "processed": "reports/zoffy/catalogue/model-native-officialref-173.png",
+      "processed_sha256": "1ee145e94364ee6cfb357babd9279f6333cde48f4fc52f7ccabaec780b18c514",
+      "processed_palette": "shared32",
+      "supersedes_selected": "8f9ff7b56e8b9b377f850cceda5c75a7cd1796fbb0a2e6a02649a0989e5f564c"
+    },
+    {
+      "path": "art/fighters/zoffy/sources/draft-20261108/official-ref/raw/battle-idle-raw-01.png",
+      "raw": "art/fighters/zoffy/sources/draft-20261108/official-ref/raw/battle-idle-raw-01.png",
+      "sha256": "1a6c330003f0648b41ba25610c335a3a83998ead2334c30ddbd4d8a3528514a1",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": [
+        "art/fighters/zoffy/sources/ref-01.webp",
+        "reports/zoffy/battle/model-native-draft-192.png"
+      ],
+      "reference_roles": [
+        "official_still primary identity/design source",
+        "existing 173 battle idle secondary stance/framing only"
+      ],
+      "reference_sha256": [
+        "0bcdab23478fb8645c8486ca8cc988df7dda911646b77e8bd6febafeef8fb37f",
+        "cc57efc91bda5bde6668ff9115083befe0e0d0e36b7d056c0830bc6e68d31beb"
+      ],
+      "reference_note": "Image 1 是官方剧照/皮套照，主参考；Image 2 仅辅助战斗待机构图。",
+      "prompt": "Create ONE full-body Zoffy character image for a fixed side-view 2D pixel-art fighting game battle idle. Image 1 is the OFFICIAL live-action suit reference and the PRIMARY mandatory identity/design source: use its exact silver head with tall central silver crest, pale-yellow almond eye, red neck and red upper-chest/shoulder panel, blue round Color Timer in a silver ring, six pairs of silver Star Mark studs on the chest, three pairs of round Ultra Breastar studs on the shoulders, double silver seam lines, red hips, silver legs with red diagonal bands and red chevrons, complete silver boots, and its sturdy official body proportions. Image 2 is an existing game battle-idle sprite, for the fighting-game side-view stance and framing ONLY; do not copy its thin body, deformed crest, glow, or any text. Redraw the character in a clean 90-degree RIGHT-FACING PROFILE side view in a battle idle stance: feet planted wide, knees slightly bent, both soles flat and fully visible, both arms bent in a guarded ready position, entire character from crest top to both soles inside the frame. Do not make the body thin; keep the official reference's head shape, chest width, and limb proportions. Translate the suit into clean 2D pixel-art-friendly shapes with a hard 1-pixel dark outline and a flat limited palette, no anti-aliasing; the final art will be downsampled to 154 px tall. TRUE TRANSPARENT background, no glow, no halo, no shadow, no floor, no frame, no text, no watermark, no copyright mark. No toy ball joints, no action-figure seams, no plastic highlights; keep the suit's wrinkles and armor/mechanical structure. Near-side limbs bright, far-side limbs one shade darker. No weapons, no energy effects, no extra characters.",
+      "role": "battle_officialref",
+      "status": "selected",
+      "selection_note": "官方参考主参考重做；战斗待机154、脚底183、cell192/anchor96,184；旧173保留对照。",
+      "processed": "reports/zoffy/battle/model-native-officialref-154.png",
+      "processed_sha256": "1e2669c97a313227e71bbdecb41ce4f3280a4a717265902f27ece22985b3f4e2",
+      "processed_palette": "shared32",
+      "supersedes_selected": "cc57efc91bda5bde6668ff9115083befe0e0d0e36b7d056c0830bc6e68d31beb"
+    },
+    {
+      "path": "art/fighters/zoffy/sources/draft-20261108/official-ref/raw/m87-pose-raw-01.png",
+      "raw": "art/fighters/zoffy/sources/draft-20261108/official-ref/raw/m87-pose-raw-01.png",
+      "sha256": "00777a56977e6f9f24129620b1f52a01de4c34c963566c495770ba420b37ba83",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": null,
+      "reference_images": [
+        "art/fighters/zoffy/sources/ref-01.webp",
+        "reports/zoffy/battle/m87-firing-pose-draft-192.png"
+      ],
+      "reference_roles": [
+        "official_still primary identity/design source",
+        "existing approved open-hand M87 pose secondary action/framing only"
+      ],
+      "reference_sha256": [
+        "0bcdab23478fb8645c8486ca8cc988df7dda911646b77e8bd6febafeef8fb37f",
+        "20b8d61b4e5d54f1bda406919b344f07a0601bc033308114f43b87a650d29c18"
+      ],
+      "reference_note": "Image 1 是官方剧照/皮套照，主参考；Image 2 仅辅助开掌 M87 动作构图。",
+      "prompt": "Create ONE full-body Zoffy character image for a fixed side-view 2D pixel-art fighting game, performing the M87 Beam Type-A firing stance. Image 1 is the OFFICIAL live-action suit reference and the PRIMARY mandatory identity/design source: use its exact silver head with tall central silver crest, pale-yellow almond eye, red neck and red upper-chest/shoulder panel, blue round Color Timer in a silver ring, six pairs of silver Star Mark studs on the chest, three pairs of round Ultra Breastar studs on the shoulders, double silver seam lines, red hips, silver legs with red diagonal bands and red chevrons, complete silver boots, and its sturdy official body proportions. Image 2 is an existing approved game M87 pose sprite, for the action and framing ONLY; do not copy its thin body, deformed crest, glow, or any text. Redraw the character in a clean RIGHT-FACING side view in the M87 Type-A firing stance: the near/right arm fully extended straight forward at chest-to-shoulder height, the right hand OPEN with the palm flat and all five fingers straight and pressed together pointing forward to the right (NOT a clenched fist, no rounded knuckle ball); the far/left arm bent with the left hand OPEN and relaxed beside the blue round Color Timer at the center of the chest (not a fist across the chest, not covering the timer); feet planted wide, both soles flat and fully visible. Entire character from crest top to both soles inside the frame, with clear empty space in front of the extended right hand. Do not make the body thin; keep the official reference's head shape, chest width, and limb proportions. Translate the suit into clean 2D pixel-art-friendly shapes with a hard 1-pixel dark outline and a flat limited palette, no anti-aliasing; the final art will be downsampled to 154 px tall. TRUE TRANSPARENT background, no glow, no halo, no shadow, no floor, no frame, no text, no watermark, no copyright mark. No toy ball joints, no action-figure seams, no plastic highlights; keep the suit's wrinkles and armor/mechanical structure. Near-side limbs bright, far-side limbs one shade darker. No weapons, no beam, no energy effects, no extra characters.",
+      "role": "m87_pose_officialref",
+      "status": "selected",
+      "selection_note": "官方参考主参考重做；保留开掌指尖发射、左掌靠计时器；154版；旧173保留对照。",
+      "processed": "reports/zoffy/battle/m87-firing-pose-officialref-154.png",
+      "processed_sha256": "ae5c5b1596d2479157a6f1e6cb796452be42dd223ebec62cfac3999d04c06564",
+      "processed_palette": "shared32",
+      "supersedes_selected": "20b8d61b4e5d54f1bda406919b344f07a0601bc033308114f43b87a650d29c18"
+    }
+  ],
+  "selected": [
+    {
+      "role": "catalogue",
+      "raw": "art/fighters/zoffy/sources/draft-20261108/catalogue/raw.png",
+      "from": "reports/zoffy/raw/catalogue-candidate-06.png",
+      "processed": "reports/zoffy/catalogue/model-native-draft-v2.png",
+      "processed_sha256": "8f9ff7b56e8b9b377f850cceda5c75a7cd1796fbb0a2e6a02649a0989e5f564c",
+      "processed_palette": "shared32",
+      "reprocess_note": "首版量化丢失蓝计时器；同一raw重新降采样，几何/Alpha/脚底未变。",
+      "from_note": "候选目录已按无备份规则清理；选中raw保留在 art/fighters/zoffy/sources/draft-20261108/。",
+      "status": "comparison_only",
+      "comparison_only": true,
+      "superseded_by_reference_rule": "301a4c93b9733eb54626bdb79ba602b931c6afdd6c84f2efd1504db76b0e8a44",
+      "note": "旧成品保留对照；新选中见对应 officialref 条目。"
+    },
+    {
+      "role": "battle",
+      "raw": "art/fighters/zoffy/sources/draft-20261108/battle/raw.png",
+      "from": "reports/zoffy/raw/battle-candidate-03.png",
+      "processed": "reports/zoffy/battle/model-native-draft-192.png",
+      "processed_sha256": "cc57efc91bda5bde6668ff9115083befe0e0d0e36b7d056c0830bc6e68d31beb",
+      "processed_palette": "shared32",
+      "reprocess_note": "首版量化丢失蓝计时器；同一raw重新降采样，几何/Alpha/脚底未变。",
+      "from_note": "候选目录已按无备份规则清理；选中raw保留在 art/fighters/zoffy/sources/draft-20261108/。",
+      "status": "comparison_only",
+      "comparison_only": true,
+      "superseded_by_reference_rule": "1a6c330003f0648b41ba25610c335a3a83998ead2334c30ddbd4d8a3528514a1",
+      "note": "旧成品保留对照；新选中见对应 officialref 条目。"
+    },
+    {
+      "role": "m87_pose",
+      "raw": "art/fighters/zoffy/sources/draft-20261108/m87-pose/raw.png",
+      "from": "/tmp/zoffy-m87-open/candidate.png",
+      "processed": "reports/zoffy/battle/m87-firing-pose-draft-192.png",
+      "processed_sha256": "20b8d61b4e5d54f1bda406919b344f07a0601bc033308114f43b87a650d29c18",
+      "processed_palette": "shared32",
+      "reprocess_note": "首版量化丢失蓝计时器；随后又按开掌重生成。当前为开掌版，几何/Alpha/站高已验证。",
+      "from_note": "临时生成路径；选中raw已保存到 art/fighters/zoffy/sources/draft-20261108/m87-pose/raw.png。",
+      "raw_sha256": "ed5377322636b5ed01af5dd113f1d42682ebc4dd88ea1f5c8b2d5c04986896d5",
+      "replaces_sha256": "2976205ed6134153d2f270fa5e7b26bb1fd762f0f162747a03ecd2372537fa47",
+      "hand_fix_note": "A型改为开掌指尖发射；旧握拳raw/成品已覆盖，无备份。",
+      "status": "comparison_only",
+      "comparison_only": true,
+      "superseded_by_reference_rule": "00777a56977e6f9f24129620b1f52a01de4c34c963566c495770ba420b37ba83",
+      "note": "旧成品保留对照；新选中见对应 officialref 条目。"
+    },
+    {
+      "role": "catalogue_officialref",
+      "raw": "art/fighters/zoffy/sources/draft-20261108/official-ref/raw/catalogue-raw-01.png",
+      "raw_sha256": "301a4c93b9733eb54626bdb79ba602b931c6afdd6c84f2efd1504db76b0e8a44",
+      "processed": "reports/zoffy/catalogue/model-native-officialref-173.png",
+      "processed_sha256": "1ee145e94364ee6cfb357babd9279f6333cde48f4fc52f7ccabaec780b18c514",
+      "processed_palette": "shared32",
+      "primary_reference": "art/fighters/zoffy/sources/ref-01.webp",
+      "primary_reference_sha256": "0bcdab23478fb8645c8486ca8cc988df7dda911646b77e8bd6febafeef8fb37f",
+      "secondary_reference": "reports/zoffy/catalogue/model-native-draft-v2.png",
+      "secondary_reference_sha256": "8f9ff7b56e8b9b377f850cceda5c75a7cd1796fbb0a2e6a02649a0989e5f564c",
+      "selection_note": "官方参考主参考重做；旧稿保留对照；未安装。",
+      "status": "selected",
+      "reference_images": [
+        "art/fighters/zoffy/sources/ref-01.webp",
+        "reports/zoffy/catalogue/model-native-draft-v2.png"
+      ],
+      "reference_roles": [
+        "official_still primary identity/design source",
+        "existing draft secondary composition/palette only"
+      ]
+    },
+    {
+      "role": "battle_officialref",
+      "raw": "art/fighters/zoffy/sources/draft-20261108/official-ref/raw/battle-idle-raw-01.png",
+      "raw_sha256": "1a6c330003f0648b41ba25610c335a3a83998ead2334c30ddbd4d8a3528514a1",
+      "processed": "reports/zoffy/battle/model-native-officialref-154.png",
+      "processed_sha256": "1e2669c97a313227e71bbdecb41ce4f3280a4a717265902f27ece22985b3f4e2",
+      "processed_palette": "shared32",
+      "primary_reference": "art/fighters/zoffy/sources/ref-01.webp",
+      "primary_reference_sha256": "0bcdab23478fb8645c8486ca8cc988df7dda911646b77e8bd6febafeef8fb37f",
+      "secondary_reference": "reports/zoffy/battle/model-native-draft-192.png",
+      "secondary_reference_sha256": "cc57efc91bda5bde6668ff9115083befe0e0d0e36b7d056c0830bc6e68d31beb",
+      "selection_note": "官方参考主参考重做；154战斗版；旧173保留对照；未安装。",
+      "status": "selected",
+      "reference_images": [
+        "art/fighters/zoffy/sources/ref-01.webp",
+        "reports/zoffy/battle/model-native-draft-192.png"
+      ],
+      "reference_roles": [
+        "official_still primary identity/design source",
+        "existing draft secondary composition/palette only"
+      ]
+    },
+    {
+      "role": "m87_pose_officialref",
+      "raw": "art/fighters/zoffy/sources/draft-20261108/official-ref/raw/m87-pose-raw-01.png",
+      "raw_sha256": "00777a56977e6f9f24129620b1f52a01de4c34c963566c495770ba420b37ba83",
+      "processed": "reports/zoffy/battle/m87-firing-pose-officialref-154.png",
+      "processed_sha256": "ae5c5b1596d2479157a6f1e6cb796452be42dd223ebec62cfac3999d04c06564",
+      "processed_palette": "shared32",
+      "primary_reference": "art/fighters/zoffy/sources/ref-01.webp",
+      "primary_reference_sha256": "0bcdab23478fb8645c8486ca8cc988df7dda911646b77e8bd6febafeef8fb37f",
+      "secondary_reference": "reports/zoffy/battle/m87-firing-pose-draft-192.png",
+      "secondary_reference_sha256": "20b8d61b4e5d54f1bda406919b344f07a0601bc033308114f43b87a650d29c18",
+      "selection_note": "官方参考主参考重做；154开掌版；旧173保留对照；未安装。",
+      "status": "selected",
+      "reference_images": [
+        "art/fighters/zoffy/sources/ref-01.webp",
+        "reports/zoffy/battle/m87-firing-pose-draft-192.png"
+      ],
+      "reference_roles": [
+        "official_still primary identity/design source",
+        "existing draft secondary composition/palette only"
+      ]
+    }
+  ],
+  "fx_selected": [
+    "art/fighters/zoffy/sources/draft-20261108/fx/beam-full-raw.png",
+    "art/fighters/zoffy/sources/draft-20261108/fx/muzzle-charge-raw.png",
+    "art/fighters/zoffy/sources/draft-20261108/fx/muzzle-release-raw.png",
+    "art/fighters/zoffy/sources/draft-20261108/fx/impact-burst-raw.png",
+    "art/fighters/zoffy/sources/draft-20261108/fx/beam-dissipate-raw.png"
+  ],
+  "reprocess": {
+    "reason": "首版32色量化把蓝计时器（原图约0,96,226 / 0,105,202 / 0,113,216）压成灰，眼黄也几乎丢失；属身份色缺陷，不可交付。",
+    "fix": "同一raw重新降采样到192，用共享32色板（保留base蓝0,101,210、dark蓝2,78,150、眼黄253,242,173）；三图统一红色阶。",
+    "geometry_unchanged": true,
+    "final_outputs": {
+      "catalogue": {
+        "path": "reports/zoffy/catalogue/model-native-draft-v2.png",
+        "sha256": "8f9ff7b56e8b9b377f850cceda5c75a7cd1796fbb0a2e6a02649a0989e5f564c",
+        "colors": 27,
+        "blue_px": 6,
+        "eye_px": 28
+      },
+      "battle": {
+        "path": "reports/zoffy/battle/model-native-draft-192.png",
+        "sha256": "cc57efc91bda5bde6668ff9115083befe0e0d0e36b7d056c0830bc6e68d31beb",
+        "colors": 29,
+        "blue_px": 14,
+        "eye_px": 31
+      },
+      "m87_pose": {
+        "path": "reports/zoffy/battle/m87-firing-pose-draft-192.png",
+        "sha256": "20b8d61b4e5d54f1bda406919b344f07a0601bc033308114f43b87a650d29c18",
+        "colors": 30,
+        "blue_px": 12,
+        "eye_px": 30
+      }
+    },
+    "discarded_intermediate": "首版三张无蓝成品已直接覆盖删除，未保留副本。",
+    "fx_frames_changed": false,
+    "hand_fix": {
+      "reason": "M87 A型不是握拳发射：应为手掌绷直、五指并拢前指，伸直右臂从指尖/掌心发射；左手开掌靠彩色计时器。",
+      "fix": "用旧M87 raw作参考重生成，只改双手；共享32色板处理；站高173/脚底183/cell192/anchor96,184不变。",
+      "old_raw_sha256": "2976205ed6134153d2f270fa5e7b26bb1fd762f0f162747a03ecd2372537fa47",
+      "new_raw_sha256": "ed5377322636b5ed01af5dd113f1d42682ebc4dd88ea1f5c8b2d5c04986896d5",
+      "old_processed_sha256": "1ff5b11b44e56d5b2e0bb710826f30dd51cb746f605dada682a96a1d1dc4649c",
+      "new_processed_sha256": "20b8d61b4e5d54f1bda406919b344f07a0601bc033308114f43b87a650d29c18",
+      "emission_cell": [
+        150,
+        57
+      ],
+      "emission_local": [
+        54,
+        127
+      ],
+      "mirror_error_px": 1,
+      "discarded_intermediate": "旧握拳raw与成品已覆盖删除，未保留副本。"
+    },
+    "height_154": {
+      "method": "NEAREST crop-bbox downscale 173→154；不重新生成、不重绘。",
+      "sources": {
+        "idle_173": {
+          "path": "reports/zoffy/battle/model-native-draft-192.png",
+          "sha256": "cc57efc91bda5bde6668ff9115083befe0e0d0e36b7d056c0830bc6e68d31beb"
+        },
+        "pose_173": {
+          "path": "reports/zoffy/battle/m87-firing-pose-draft-192.png",
+          "sha256": "20b8d61b4e5d54f1bda406919b344f07a0601bc033308114f43b87a650d29c18"
+        }
+      },
+      "outputs": {
+        "idle_154": {
+          "path": "reports/zoffy/battle/model-native-draft-192-h154.png",
+          "sha256": "ddd933b99be0b01be1005d82463ca4ca7e14e04c95300d9df1f8807f3ce67a34"
+        },
+        "pose_154": {
+          "path": "reports/zoffy/battle/m87-firing-pose-draft-192-h154.png",
+          "sha256": "f04fffa7a41b69fd3af062a652a9f7c5c13d823c735d8a58b428975b2c874093"
+        }
+      },
+      "emission_154": {
+        "fingertip_front_run_cell": [
+          70,
+          73
+        ],
+        "front_edge_center_y": 71.5,
+        "cell": [
+          144,
+          71
+        ],
+        "local_from_foot_root": [
+          48,
+          113
+        ],
+        "mirror_cell": [
+          48,
+          71
+        ],
+        "mirror_local": [
+          -48,
+          113
+        ],
+        "pixel_mirror_x": 47,
+        "mirror_error_px": 1,
+        "tolerance": 2
+      },
+      "comparison_sheet": {
+        "path": "reports/zoffy/compare/zoffy-height-173-154-vs-peers-native.png",
+        "sha256": "c0030cf4125c43c4ec1c86d713cb3621055c448da231a63b13b13cc360c4629a"
+      },
+      "note": "154仅身高对比，未替换173、未安装、未接运行时；两版都保留。"
+    }
+  },
+  "reference_policy": {
+    "rule": "图鉴、战斗待机、M87 姿势的基础生成必须以官方剧照/皮套照为第一参考图；现有 draft 只能作为第二参考辅助构图/配色。",
+    "official_primary": "art/fighters/zoffy/sources/ref-01.webp",
+    "official_primary_sha256": "0bcdab23478fb8645c8486ca8cc988df7dda911646b77e8bd6febafeef8fb37f",
+    "official_reference_kind": "official_still",
+    "secondary_reference_roles": [
+      "catalogue: 旧 draft-v2",
+      "battle: 旧 173 战斗待机",
+      "m87: 旧 173 开掌姿势"
+    ]
+  },
+  "reference_correction": {
+    "issue": "旧 attempts 0-8 与 15 的 reference_images 为 null 或仅为已生成候选图，未使用官方剧照/皮套照；属于纯文生图或生成图改图，不符合图鉴形象必须以官方剧照/皮套照做图生图的规则。",
+    "official_reference": {
+      "path": "art/fighters/zoffy/sources/ref-01.webp",
+      "sha256": "0bcdab23478fb8645c8486ca8cc988df7dda911646b77e8bd6febafeef8fb37f",
+      "size": [
+        431,
+        900
+      ],
+      "reference_kind": "official_still",
+      "page_url": "https://ultra.fandom.com/wiki/Zoffy",
+      "source_url": "https://static.wikia.nocookie.net/ultra/images/e/eb/Zoffy_Render.png/revision/latest?cb=20190723085443"
+    },
+    "action": "旧 attempts 7/8/15 标记为 superseded，仅保留旧成品作对照；新增 attempts 16/17/18 以官方参考为第一参考图重做 catalogue/battle/M87。",
+    "old_outputs_kept": [
+      "reports/zoffy/catalogue/model-native-draft-v2.png",
+      "reports/zoffy/battle/model-native-draft-192.png",
+      "reports/zoffy/battle/m87-firing-pose-draft-192.png"
+    ],
+    "new_attempts": [
+      16,
+      17,
+      18
+    ]
+  },
+  "reference_redraw_at": "2026-11-08"
+}
