@@ -93,7 +93,10 @@ func run() -> void:
 		check(not UfeMoveData.validate(bad),"畸形入口拒绝/"+field)
 	for field in ["dx","dy","throw_height"]:
 		var moving:=move.duplicate(true)
-		moving.frames[3][field]=[1,2] if field=="throw_height" else 1
+		if field == "throw_height":
+			moving.frames[3][field] = [1, 2]
+		else:
+			moving.frames[3][field] = 1
 		check(not Capture.valid_move(moving),"拒绝保相至entry攻击方位移/"+field)
 	a.height=1;check(not Capture.eligible(a,b,move),"拒绝空中攻击方");a.height=0
 	b.definition.state_frames.grabbed[0].throw_hold_floor_variants=[0]

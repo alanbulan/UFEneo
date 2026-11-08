@@ -286,8 +286,8 @@ func handle_key(key: int) -> bool:
 		for node in content.find_children("*","Button",true,false):
 			if node is PixelButton and node.is_visible_in_tree():focus_buttons.append(node)
 		if key in [KEY_W,KEY_S]:
-			var index:=focus_buttons.find(get_viewport().gui_get_focus_owner())
-			if not focus_buttons.is_empty():focus_buttons[posmod(index+(-1 if key==KEY_W else 1),focus_buttons.size())].grab_focus()
+			var focus_index:=focus_buttons.find(get_viewport().gui_get_focus_owner())
+			if not focus_buttons.is_empty():focus_buttons[posmod(focus_index+(-1 if key==KEY_W else 1),focus_buttons.size())].grab_focus()
 			return true
 		if key==KEY_J:
 			var focused:=get_viewport().gui_get_focus_owner()

@@ -128,12 +128,12 @@ func units() -> void:
 	for present in [false,true]:
 		var data=UfeFighterDefinition.new()
 		if present:data.state_frames.crouch_guard=[]
-		var f=UfeFighter.new(data,0);f.motion.hit_pose="hit_crouch";f.enter("hit",1);f.state_tick=1
-		hit.step(f,UfeInputFrame.make(0,-1,UfeInputFrame.GUARD),{})
-		check(f.state=="crouch" and f.state_tick==0 and not f.motion.has(FLAG),"missing_empty_fallback",{"unit":true,"empty":present})
+		var guarded_fighter=UfeFighter.new(data,0);guarded_fighter.motion.hit_pose="hit_crouch";guarded_fighter.enter("hit",1);guarded_fighter.state_tick=1
+		hit.step(guarded_fighter,UfeInputFrame.make(0,-1,UfeInputFrame.GUARD),{})
+		check(guarded_fighter.state=="crouch" and guarded_fighter.state_tick==0 and not guarded_fighter.motion.has(FLAG),"missing_empty_fallback",{"unit":true,"empty":present})
 	for next_state in ["hit","attack","air","crouch_turn","crouch_rise","idle","crouch_blockstun"]:
-		var f=make_match("zetton",1).fighters[1];f.enter("crouch");f.motion[FLAG]=true
-		f.enter(next_state);check(not f.motion.has(FLAG),"unrelated_enter_clears",{"state":next_state,"unit":true})
+		var entering_fighter=make_match("zetton",1).fighters[1];entering_fighter.enter("crouch");entering_fighter.motion[FLAG]=true
+		entering_fighter.enter(next_state);check(not entering_fighter.motion.has(FLAG),"unrelated_enter_clears",{"state":next_state,"unit":true})
 	var f=make_match("zetton",1).fighters[1];f.enter("crouch");f.motion[FLAG]=true
 	crouch.step(f,UfeInputFrame.make(0,-1),{"jump":false})
 	check(not f.motion.has(FLAG) and f.state=="crouch","release_without_enter_clears",{"unit":true})

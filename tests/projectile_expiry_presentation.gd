@@ -22,9 +22,9 @@ func run() -> void:
 		var observed: Array = sim.projectiles.duplicate()
 		var projectile: Dictionary = observed[0]
 		for age in range(3):
-			var contacts: Array = []
-			UfeProjectileResolver.advance(sim,contacts)
-			check(contacts.is_empty(),"高空自然到期用例不得接触")
+			var age_contacts: Array = []
+			UfeProjectileResolver.advance(sim,age_contacts)
+			check(age_contacts.is_empty(),"高空自然到期用例不得接触")
 			var before := projectile.duplicate(true)
 			var effects := PROJECTILE_EXPIRY.collect(observed,sim.projectiles,bindings,false)
 			check(projectile==before,"呈现读取不能改弹体")

@@ -21,12 +21,12 @@ func _initialize() -> void: call_deferred("run")
 
 func test_conditions_and_fallback() -> void:
 	for missing in ["energy", "health", "once", "form"]:
-		var sim := setup("ultraseven" if missing == "form" else "ultraman-taro")
-		var f := sim.fighters[0]
+		var blocked_sim := setup("ultraseven" if missing == "form" else "ultraman-taro")
+		var f := blocked_sim.fighters[0]
 		if missing == "energy": f.stats.energy = 2000
 		if missing == "health": f.stats.hp = 501
 		if missing == "once": f.transformed_this_round = true
-		transform_input(sim)
+		transform_input(blocked_sim)
 		check(f.state != "transform", "test_conditions_" + missing)
 		check(f.move_id == ("special2" if missing == "energy" else "special3"), "test_fallback_" + missing)
 	var sim := setup()
@@ -78,22 +78,22 @@ func test_invulnerable_and_control() -> void:
 
 func test_super_beam_and_round_reset() -> void:
 	for hit in [true, false]:
-		var sim := setup()
-		transform_input(sim)
-		advance(sim, 60)
-		var f := sim.fighters[0]
+		var super_sim := setup()
+		transform_input(super_sim)
+		advance(super_sim, 60)
+		var f := super_sim.fighters[0]
 		f.stats.energy = 3000
-		if not hit: f.x = 100; sim.fighters[1].x = 1200
-		sim.step([UfeInputFrame.make(0,0,UfeInputFrame.SPECIAL), neutral()])
+		if not hit: f.x = 100; super_sim.fighters[1].x = 1200
+		super_sim.step([UfeInputFrame.make(0,0,UfeInputFrame.SPECIAL), neutral()])
 		check(f.move_id == "super_special3", "test_level3_replaced_" + str(hit))
 		var contact := false
 		for i in range(115):
-			sim.step([neutral(), neutral()])
-			contact = contact or sim.events.any(func(e): return e.kind == "hit" and e.get("move","") == "super_special3")
+			super_sim.step([neutral(), neutral()])
+			contact = contact or super_sim.events.any(func(e): return e.kind == "hit" and e.get("move","") == "super_special3")
 		check(contact == hit, "test_cosmo_hit_or_whiff_" + str(hit))
 		check(f.form_id.is_empty() and f.transformed_this_round, "test_cosmo_always_reverts_" + str(hit))
 		f.stats.energy = 3000
-		transform_input(sim)
+		transform_input(super_sim)
 		check(f.state != "transform" and f.move_id == "special3", "test_no_second_transform_after_cosmo")
 	var sim := setup()
 	transform_input(sim); advance(sim,60)

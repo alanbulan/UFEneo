@@ -104,8 +104,8 @@ func test_projectile() -> void:
 			sim.fighters[0].definition.moves.pulse=sim.fighters[0].definition.moves.pulse.duplicate(true)
 			sim.fighters[0].definition.moves.pulse.unblockable=unblockable
 			UfeProjectileResolver.spawn(sim,0,{"spawn":[50,70],"box":[-5,-5,10,10],"speed":0},"pulse")
-			var contacts: Array=[]
-			UfeProjectileResolver.advance(sim,contacts)
+			var new_contacts: Array=[]
+			UfeProjectileResolver.advance(sim,new_contacts)
 			check(sim.events.any(func(e):return e.kind=="projectile_block")==not unblockable,"新屏遵守不可防弹体/%s/%s"%[facing,unblockable])
 			if not unblockable:
 				check(sim.events[0].guard_effect=="teo_episode12_hex_ripple" and sim.events[0].guard_sound=="teo_hex_shield_guard","弹体防御使用屏专属光声/%s"%facing)
@@ -148,5 +148,5 @@ func run() -> void:
 	test_melee();test_projectile();test_validation()
 	check(completed==["melee","projectile","validation"],"全部测试分支必须执行结束，脚本中途异常不能记为通过")
 	write_json("logic-result.json",{"passed":errors.is_empty(),"errors":errors})
-	print("FRAME_GUARD ","PASS" if errors.is_empty() else errors)
+	print("FRAME_GUARD ","PASS" if errors.is_empty() else str(errors))
 	quit(0 if errors.is_empty() else 1)

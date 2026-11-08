@@ -38,8 +38,8 @@ func run() -> void:
 			sim.tick=t;sim.fighters[0].move_id="sweep";sim.fighters[0].move_tick=t
 			require(guard_ai.sample(sim).pack()==[0,0,0],"反应延迟前不能读取当前攻击决策")
 		var samples:={}
-		for seed in range(1,80):
-			var test:=UfeComputerController.new(seed,level,1)
+		for match_seed in range(1,80):
+			var test:=UfeComputerController.new(match_seed,level,1)
 			var low:=test.decide(sim,{"x":650,"height":0,"move":"sweep","move_start":0,"level":"low","threat":true})
 			if low.held(UfeInputFrame.GUARD):
 				require(low.y==-1,"低攻击必须蹲防");samples.low=true
@@ -77,9 +77,9 @@ func test_air_recovery() -> void:
 	for level in ["easy","normal","hard"]:
 		var accepted:=0
 		var sim:=UfeContentDatabase.match_for()
-		for seed in range(1,101):
+		for match_seed in range(1,101):
 			var f:=sim.fighters[1]
-			var ai:=UfeComputerController.new(seed,level,1)
+			var ai:=UfeComputerController.new(match_seed,level,1)
 			f.enter("launch");f.height=160;f.vy=2;f.state_tick=30
 			ai.queue=[[1,0,UfeInputFrame.HEAVY]]
 			var rng_before:=ai.rng
@@ -149,8 +149,8 @@ func test_guard_counter() -> void:
 		var sim:=UfeContentDatabase.match_for("ultraman","ultraman")
 		var f:=sim.fighters[1]
 		var successes:=0
-		for seed in range(1,101):
-			var ai:=UfeComputerController.new(seed,level,1)
+		for match_seed in range(1,101):
+			var ai:=UfeComputerController.new(match_seed,level,1)
 			f.enter("blockstun",30);f.stats.energy=1000
 			f.state_tick=maxi(3,int(UfeComputerController.LEVELS[level].delay)/2)-1
 			var before:=ai.rng
@@ -232,8 +232,8 @@ func test_burst_escape() -> void:
 		var sim:=UfeContentDatabase.match_for()
 		var f:=sim.fighters[1]
 		var successes:=0
-		for seed in range(1,101):
-			var ai:=UfeComputerController.new(seed,level,1)
+		for match_seed in range(1,101):
+			var ai:=UfeComputerController.new(match_seed,level,1)
 			f.enter("hit",60);f.state_tick=int(UfeComputerController.LEVELS[level].delay)-1
 			f.stats.hp=f.base_definition.max_health/2;f.stats.energy=2000
 			var before:=ai.rng

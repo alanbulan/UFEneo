@@ -187,11 +187,11 @@ func _player_bottom(parent: Node, player: int) -> void:
 	column.add_child(row)
 	text(row,"能量")
 	for i in range(3):
-		var gauge:=PixelGauge.new("energy",player==1)
-		gauge.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		row.add_child(gauge)
-		if player==1:row.move_child(gauge,0)
-		energy[player].append(gauge)
+		var energy_gauge:=PixelGauge.new("energy",player==1)
+		energy_gauge.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		row.add_child(energy_gauge)
+		if player==1:row.move_child(energy_gauge,0)
+		energy[player].append(energy_gauge)
 	var lower:=HBoxContainer.new()
 	ignore(lower)
 	column.add_child(lower)

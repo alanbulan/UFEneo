@@ -59,7 +59,7 @@ func _process(delta: float) -> void:
 	nebula.position=(Vector2(-18+sweep_progress*38,-4)*unit).round()
 	nebula.modulate.a=0.10+sin(sweep_progress*PI)*0.28
 	var settled:=clampf((age-0.25)/0.85,0.0,1.0)
-	var ease:=1.0-pow(1.0-settled,4.0)
+	var ease_value:=1.0-pow(1.0-settled,4.0)
 	# 中央大标题先成形，再收至安全角；群像同步显现。
 	var dock:=clampf((age-1.15)/0.80,0.0,1.0)
 	var dock_ease:=1.0-pow(1.0-dock,4.0)
@@ -67,15 +67,15 @@ func _process(delta: float) -> void:
 		var logo: PixelArt=logo_layers[i]
 		logo.size=Vector2(390,164).lerp(Vector2(195,82),dock_ease).round()
 		var center: Vector2=(size-logo.size)/2.0-Vector2(0,18)
-		logo.position=(center.lerp(Vector2(-4,-7)*unit,dock_ease)-Vector2(0,18*(1.0-ease))).round()
+		logo.position=(center.lerp(Vector2(-4,-7)*unit,dock_ease)-Vector2(0,18*(1.0-ease_value))).round()
 		logo.pivot_offset=logo.size/2.0
 		if i==2:
 			logo.scale=Vector2.ONE
 			logo.modulate.a=clampf((age-0.95)/0.20,0.0,1.0)
 		else:
-			logo.scale=Vector2.ONE*(1.0+(1.0-ease)*(0.12+0.08*i))
-			logo.position.x+=(-1 if i==0 else 1)*roundf((1.0-ease)*22.0)
-			logo.modulate.a=(1.0-ease)*settled*0.48+(0.06+sin(age*0.9)*0.025 if i==0 and age>1.15 else 0.0)
+			logo.scale=Vector2.ONE*(1.0+(1.0-ease_value)*(0.12+0.08*i))
+			logo.position.x+=(-1 if i==0 else 1)*roundf((1.0-ease_value)*22.0)
+			logo.modulate.a=(1.0-ease_value)*settled*0.48+(0.06+sin(age*0.9)*0.025 if i==0 and age>1.15 else 0.0)
 	var title_rect: PixelArt=logo_layers[2]
 	var pixel_scale:=minf(title_rect.size.x/195.0,title_rect.size.y/82.0)
 	var origin:=title_rect.position+(title_rect.size-Vector2(195,82)*pixel_scale)/2.0

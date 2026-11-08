@@ -98,4 +98,4 @@ func run() -> void:
 	test_contact();test_visual();test_validation()
 	check(completed==["contact","visual","validation"],"全部专项分支执行结束")
 	write_json("logic-result.json",{"passed":errors.is_empty(),"errors":errors,"completed":completed})
-	print("GROUND_CLIP ","PASS" if errors.is_empty() else errors);quit(0 if errors.is_empty() else 1)
+	print("GROUND_CLIP ","PASS" if errors.is_empty() else str(errors));quit(0 if errors.is_empty() else 1)

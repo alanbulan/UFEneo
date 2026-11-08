@@ -76,4 +76,7 @@ static func record(f: UfeFighter, group: int, move_id: String, result: String = 
 	if not f.combat.has("hit_groups"): f.combat.hit_groups = {}
 	var dependent: bool = f.definition.moves[move_id].frames.any(func(frame): return frame.has("requires_hit_group"))
 	# 未启用依赖的旧招仍逐位写旧bool值；新招保存明确实际结果进入快照。
-	f.combat.hit_groups[str(group)] = result if dependent else true
+	if dependent:
+		f.combat.hit_groups[str(group)] = result
+	else:
+		f.combat.hit_groups[str(group)] = true

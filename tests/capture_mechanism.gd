@@ -194,8 +194,8 @@ func schema_checks() -> void:
 	var move := capture_move()
 	check(UfeMoveData.validate(move),"完整捕获schema合法")
 	for key in ["flight_tick","success_tick","success_end_tick","miss_recovery_tick","flight_max_ticks","release_ground_tick"]:
-		var invalid := move.duplicate(true); invalid.capture[key] = 2.5
-		check(not UfeMoveData.validate(invalid),"拒绝非整数时钟/"+key)
+		var clock_invalid := move.duplicate(true); clock_invalid.capture[key] = 2.5
+		check(not UfeMoveData.validate(clock_invalid),"拒绝非整数时钟/"+key)
 	var invalid := move.duplicate(true); invalid.capture.flight_max_ticks = 31
 	check(not UfeMoveData.validate(invalid),"捕获飞行不能超过30tick")
 	invalid = move.duplicate(true); invalid.capture.stages[4].victim_frames[0] = {"animation":"","frame":0}

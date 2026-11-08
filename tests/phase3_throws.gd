@@ -22,13 +22,13 @@ func run() -> void:
 		check(sim.state_hash()==twin.state_hash(),"投技逐tick确定性")
 		var pair:=[]
 		for i in range(2):
-			var f:=sim.fighters[i];var a:=view._animation(f,manifests[i]);var clip: String=a.get("key","")
+			var f:=sim.fighters[i];var anim:=view._animation(f,manifests[i]);var clip: String=anim.get("key","")
 			if not clip.is_empty():
 				if not results[key].clips[i].has(clip):results[key].clips[i][clip]=[]
-				if not a.index in results[key].clips[i][clip]:results[key].clips[i][clip].append(a.index)
+				if not anim.index in results[key].clips[i][clip]:results[key].clips[i][clip].append(anim.index)
 			results[key].minimum_height=mini(results[key].minimum_height,f.height)
 			check(f.height>=0,"受投根点不得穿过地面 "+key)
-			pair.append({"fighter":f.definition.id,"x":f.x,"height":f.height,"facing":f.facing,"state":f.state,"move":f.move_id,"move_tick":f.move_tick,"clip":clip,"sprite":a.get("index",0),"hp":f.stats.hp,"data":f.frame().duplicate(true)})
+			pair.append({"fighter":f.definition.id,"x":f.x,"height":f.height,"facing":f.facing,"state":f.state,"move":f.move_id,"move_tick":f.move_tick,"clip":clip,"sprite":anim.get("index",0),"hp":f.stats.hp,"data":f.frame().duplicate(true)})
 		var owner:=driver.active_player;var a:=sim.fighters[owner];var b:=sim.fighters[1-owner]
 		if b.state=="thrown" and a.frame().get("target",{}).get("mode","")=="hold":
 			var grip: Array=a.frame().target.grip;var grab: Array=b.frame().grab_points.waist

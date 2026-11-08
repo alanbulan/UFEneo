@@ -168,6 +168,6 @@ func run() -> void:
 	test_contract();test_clock_and_copy();test_validation();test_replay()
 	check(completed==["contract","clock_copy","validation","replay"],"专项全部分支确实执行结束")
 	write_json("logic-result.json",{"passed":errors.is_empty(),"completed":completed,"errors":errors})
-	print("FRAME_HITBOXES ","PASS" if errors.is_empty() else errors)
+	print("FRAME_HITBOXES ","PASS" if errors.is_empty() else str(errors))
 	quit(0 if errors.is_empty() else 1)
 @warning_ignore_restore("integer_division")

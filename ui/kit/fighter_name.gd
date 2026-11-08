@@ -12,7 +12,10 @@ func _init(font_size: int=12, stacked: bool=false) -> void:
 	theme=PixelPanel.NEO_THEME
 	custom_minimum_size.x=1
 	mouse_filter=Control.MOUSE_FILTER_IGNORE
-	line=VBoxContainer.new() if stacked else HBoxContainer.new()
+	if stacked:
+		line = VBoxContainer.new()
+	else:
+		line = HBoxContainer.new()
 	line.add_theme_constant_override("separation",0 if stacked else 4)
 	line.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	add_child(line)

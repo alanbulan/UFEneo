@@ -35,7 +35,13 @@ func legacy() -> Dictionary:
 	for family in ["supers", "specials", "omega_throws"]:
 		var count := 12 if family == "supers" else 13 if family == "specials" else 40
 		for section in range(count):
-			var driver: RefCounted = UfePhase3SuperReview.new() if family == "supers" else UfePhase3SpecialReview.new() if family == "specials" else ThrowDriver.new()
+			var driver: RefCounted
+			if family == "supers":
+				driver = UfePhase3SuperReview.new()
+			elif family == "specials":
+				driver = UfePhase3SpecialReview.new()
+			else:
+				driver = ThrowDriver.new()
 			var first: int = section * 240 if family == "supers" else int(driver.S_STARTS[section]) if family == "specials" else section * 120
 			var span: int = 240 if family == "supers" else int(driver.S_STARTS[section + 1]) - first if family == "specials" else 120
 			driver.review_frame = first

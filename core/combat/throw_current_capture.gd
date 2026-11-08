@@ -54,7 +54,11 @@ static func valid_move(move: Dictionary) -> bool:
 	if not entry.get("pose",null) is String or str(entry.pose).is_empty():return false
 	if not integer(entry.get("sprite",0),0,2147483647) or not integer(entry.get("facing",-1),-1,1) or int(entry.get("facing",-1))==0:return false
 	for key in ["grip","root"]:
-		var point: Variant=entry.get(key,[0,0] if key=="root" else null)
+		var point: Variant
+		if key == "root":
+			point = entry.get(key, [0, 0])
+		else:
+			point = entry.get(key, null)
 		if not point is Array or point.size()!=2:return false
 		for coordinate in point:
 			if not RootOffsets.integer(coordinate):return false

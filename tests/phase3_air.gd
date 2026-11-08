@@ -71,15 +71,15 @@ func run() -> void:
 			trial.step([UfeInputFrame.make(0,-1 if button==UfeInputFrame.HEAVY else 0,button),neutral()])
 			check((f.move_id==("sweep" if button==UfeInputFrame.HEAVY else "crush"))==(delay<2),"落地2tick边界 delay="+str(delay))
 	# 同一连段第二次不能重新弹地。
-	var trial := UfeContentDatabase.match_for()
-	var f := trial.fighters[0]
-	var b := trial.fighters[1]
-	b.height=100
-	UfeHitResolver.apply(f,b,f.definition.moves.chase_end,false,trial.rules)
-	check(b.state=="bounce" and b.combat.bounced,"第一次空中砸地触发弹地")
-	b.vy=3
-	UfeHitResolver.apply(f,b,f.definition.moves.chase_end,false,trial.rules)
-	check(b.state!="bounce" and b.vy==3,"同连段禁止第二次弹地")
+	var bounce_sim := UfeContentDatabase.match_for()
+	var attacker := bounce_sim.fighters[0]
+	var defender := bounce_sim.fighters[1]
+	defender.height=100
+	UfeHitResolver.apply(attacker,defender,attacker.definition.moves.chase_end,false,bounce_sim.rules)
+	check(defender.state=="bounce" and defender.combat.bounced,"第一次空中砸地触发弹地")
+	defender.vy=3
+	UfeHitResolver.apply(attacker,defender,attacker.definition.moves.chase_end,false,bounce_sim.rules)
+	check(defender.state!="bounce" and defender.vy==3,"同连段禁止第二次弹地")
 	# 俯冲轨迹须独立于普通跳弧；斜下飞行物必须同时改变x和高度。
 	var jump := UfeContentDatabase.match_for()
 	var dive := UfeContentDatabase.match_for()
@@ -87,7 +87,7 @@ func run() -> void:
 		jump.step([UfeInputFrame.make(0,1 if frame==0 else 0),neutral()])
 		dive.step([UfeInputFrame.make(0,1 if frame==0 else -1 if frame==4 else 0,UfeInputFrame.HEAVY if frame==4 else 0),neutral()])
 	check(dive.fighters[0].x>jump.fighters[0].x and dive.fighters[0].height<jump.fighters[0].height,"俯冲未改变落点与竖直轨迹")
-	check(int(f.definition.moves.air_pulse.projectile.vy)<0,"空中光弹缺少斜下速度")
+	check(int(attacker.definition.moves.air_pulse.projectile.vy)<0,"空中光弹缺少斜下速度")
 	view.free()
 	var report := FileAccess.open("res://reports/phase3-air-evidence.json",FileAccess.WRITE)
 	report.store_string(JSON.stringify({"failures":failures,"actions":results,"combo_hits":combo_hits,"bounce_entries":bounce_entries},"\t"))

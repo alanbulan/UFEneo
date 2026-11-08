@@ -113,12 +113,12 @@ func section(frame: int) -> int:
 func sample(frame: int, sim: UfeMatchDirector) -> UfeInputFrame:
 	if profile == "phase3_standing":
 		var id: String = PHASE3_ACTIONS[section(frame)]
-		var age := frame%180
+		var standing_age := frame%180
 		var low := id in ["crouch_light","crouch_light2","sweep","slide","low_pulse"]
 		var button := UfeInputFrame.RANGED if id in ["pulse","ranged_forward","low_pulse"] else UfeInputFrame.CRUSH if id in ["crush","tackle","slide"] else UfeInputFrame.LIGHT if id.begins_with("crouch_light") else UfeInputFrame.HEAVY
 		var horizontal := -1 if id=="spin_heavy" else 1 if id in ["tackle","ranged_forward"] else 0
-		var trigger := age==30 or (id=="crouch_light2" and age==43)
-		return UfeInputFrame.make(horizontal if trigger else 0,-1 if low and age<125 else 0,button if trigger else 0)
+		var trigger := standing_age==30 or (id=="crouch_light2" and standing_age==43)
+		return UfeInputFrame.make(horizontal if trigger else 0,-1 if low and standing_age<125 else 0,button if trigger else 0)
 	if profile == "dash_once": return UfeInputFrame.make(dash_input(frame))
 	if profile == "locomotion_switches": return UfeInputFrame.make(switch_input(frame))
 	if profile == "color_switches": return UfeInputFrame.make(switch_input(frame) if frame<286 else 0,0,UfeInputFrame.LIGHT if frame==320 else 0)
