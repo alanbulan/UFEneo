@@ -68,7 +68,7 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 	if blocked:
 		b.clear_move()
 		b.enter("crouch_blockstun" if crouching else "blockstun", int(move.blockstun))
-		UfeStaminaRules.spend(b, int(move.damage))
+		UfeStaminaRules.spend(b, UfeStaminaRules.block_cost(int(move.damage)))
 		b.stats.hp=maxi(0,int(b.stats.hp)-int(move.get("chip_damage",0)))
 		if b.stats.stamina == 0: b.enter("guardbreak", 35)
 		return "block"
@@ -83,7 +83,9 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 	b.facing = -projectile_facing if projectile_facing!=0 else (1 if a.x>=b.x else -1)
 	b.clear_move()
 	b.stats.hp = maxi(0, int(b.stats.hp) - int(move.damage) * int(a.combat.power))
-	b.stats.stun = mini(rules.stun_threshold, int(b.stats.stun) + int(move.stun))
+	# 眩晕免疫期内不再累积，避免连续命中把对手永久锁在眩晕里。
+	if int(b.stats.get("stun_immune",0)) <= 0:
+		b.stats.stun = mini(rules.stun_threshold, int(b.stats.stun) + int(move.stun))
 	a.stats.energy = mini(3000, int(a.stats.energy) + 90)
 	b.stats.energy = mini(3000, int(b.stats.energy) + 40)
 	a.combat.combo = int(a.combat.combo) + 1
@@ -112,4 +114,5 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 	elif int(b.stats.stun) >= rules.stun_threshold:
 		b.enter("stun", 60)
 		b.stats.stun = 0
+		b.stats.stun_immune = 60 + int(rules.stun_immunity)
 	return "hit"

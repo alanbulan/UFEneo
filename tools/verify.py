@@ -9,7 +9,7 @@ import uuid
 from runtime.environment import ROOT, godot_path, isolated_test_environment
 
 CASES = [
-    "logic_2d", "review_inputs", "armor_transform_routing", "air_only_start", "chase_interrupt",
+    "logic_2d", "stamina_economy", "review_inputs", "armor_transform_routing", "air_only_start", "chase_interrupt",
     "projectile_ground_expiry", "projectile_ground_clip", "projectile_contact_direction", "projectile_air_knockdown_direction", "projectile_move_isolation", "projectile_beam_reflection", "hit_pushback_bounds",
     "throw_hold_point_overrides", "throw_root_overrides", "throw_current_capture", "capture_mechanism",
     "capture_receiver_availability", "ko_finish_presentation", "transform_mechanism",

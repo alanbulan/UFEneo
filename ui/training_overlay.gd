@@ -52,6 +52,10 @@ func update_match(sim: UfeMatchDirector) -> void:
 			var player:=int(event.player)
 			feedback[player]="此对手暂时无法捕获，未消耗资源"
 			feedback_ticks[player]=90
+		elif str(event.get("kind",""))=="move_denied" and str(event.get("reason",""))=="stamina":
+			var player:=int(event.player)
+			feedback[player]="体力不足：需要%d，现有%d"%[int(event.required),int(event.available)]
+			feedback_ticks[player]=90
 	for i in range(2):
 		var f:=sim.fighters[i]
 		var state_name: String=STATE_NAMES.get(f.state,f.state)
@@ -68,7 +72,7 @@ func update_match(sim: UfeMatchDirector) -> void:
 		var delay:=int(f.combat.get("stamina_delay",0))
 		var recovery:=UfeStaminaRules.rate(f)
 		info[i].text+="\n体力%d / 1000 · 远程%s"%[int(f.stats.stamina),UfeInputRouter.binding_label(i,"ranged")]
-		if not f.move_id.is_empty():info[i].text+=" · 本招消耗%d"%int(last.get("stamina_cost",0))
+		if not f.move_id.is_empty() and int(last.get("stamina_cost",0))>0:info[i].text+=" · 本招消耗%d"%int(last.get("stamina_cost",0))
 		if recovery==0:info[i].text+="\n攻防动作中暂停恢复"
 		elif delay>0:info[i].text+="\n恢复等待%.1f秒"%(float(delay)/60.0)
 		else:info[i].text+="\n每秒恢复%d"%(recovery*60)

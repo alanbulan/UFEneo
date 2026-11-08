@@ -1,18 +1,23 @@
 class_name UfeStaminaRules
 extends RefCounted
-## 体力是短时攻防韧性；不足时不禁止攻击或能量技。
+## 体力是发力与防守的预算：普通拳脚、投技和受身不收费，远程、必杀、
+## 闪避和格挡收费；体力不足时这些招式不启动，但角色不会失去基本行动。
 const MAXIMUM := 1000
-const RECOVERY_DELAY := 18
-const MOVE_REGEN := 12
-const REST_REGEN := 10
-const CHARGE_REGEN := 3
+const RECOVERY_DELAY := 30
+const WALK_REGEN := 8
+const REST_REGEN := 8
+const CHARGE_REGEN := 4
 const DODGE_COST := 120
 const TIRED_DODGE_INVULNERABLE := 4
 const GUARD_BREAK_RECOVERY := 350
-const RULE_REVISION := 2
+const RULE_REVISION := 3
 
 static func simulation_data() -> Array:
-	return [MAXIMUM,RECOVERY_DELAY,MOVE_REGEN,REST_REGEN,CHARGE_REGEN,DODGE_COST,TIRED_DODGE_INVULNERABLE,GUARD_BREAK_RECOVERY,RULE_REVISION]
+	return [MAXIMUM,RECOVERY_DELAY,WALK_REGEN,REST_REGEN,CHARGE_REGEN,DODGE_COST,TIRED_DODGE_INVULNERABLE,GUARD_BREAK_RECOVERY,RULE_REVISION]
+
+static func block_cost(damage: int) -> int:
+	@warning_ignore("integer_division") # 体力按伤害的四分之一整数扣除。
+	return maxi(10, damage / 4)
 
 static func finish_guard_break(f: UfeFighter) -> void:
 	f.stats.stamina = maxi(GUARD_BREAK_RECOVERY, int(f.stats.stamina))
@@ -26,7 +31,7 @@ static func spend(f: UfeFighter, amount: int) -> int:
 
 static func rate(f: UfeFighter) -> int:
 	if not f.move_id.is_empty(): return 0
-	if f.state == "walk": return MOVE_REGEN
+	if f.state == "walk": return WALK_REGEN
 	if f.state in ["idle","crouch","crouch_start","crouch_rise","turn","crouch_turn"]: return REST_REGEN
 	if f.state == "charge": return CHARGE_REGEN
 	return 0

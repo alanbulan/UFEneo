@@ -176,6 +176,7 @@ func _advance(index: int, input: UfeInputFrame, command: Dictionary) -> void:
 	for key in ["chase_window", "land_window"]:
 		f.motion[key] = maxi(0, int(f.motion[key]) - 1)
 	f.combat.invulnerable = maxi(0, int(f.combat.invulnerable) - 1)
+	f.stats.stun_immune = maxi(0, int(f.stats.get("stun_immune",0)) - 1)
 	if f.state in ["transform", "form_entry"]:
 		states[f.state].step(f, input, command)
 		return
@@ -315,8 +316,13 @@ func _start(f: UfeFighter, id: String) -> void:
 	if int(f.stats.energy) < cost:
 		events.append({"kind":"move_denied","player":fighters.find(f),"move":id,"reason":"energy","required":cost,"available":int(f.stats.energy)})
 		return
+	var stamina_cost := maxi(0, int(move.stamina_cost))
+	if int(f.stats.stamina) < stamina_cost:
+		f.combat.buffer = ""; f.combat.buffer_ticks = 0
+		events.append({"kind":"move_denied","player":fighters.find(f),"move":id,"reason":"stamina","required":stamina_cost,"available":int(f.stats.stamina)})
+		return
 	f.stats.energy = int(f.stats.energy) - cost
-	UfeStaminaRules.spend(f, int(move.stamina_cost))
+	UfeStaminaRules.spend(f, stamina_cost)
 	# 主动攻击结束侧闪来源的无敌；招式自己逐帧声明的特殊无敌照常读取。
 	if f.state=="dodge":f.combat.invulnerable=0
 	f.clear_move()

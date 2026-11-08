@@ -40,6 +40,12 @@ func roll() -> int:
 	rng=(rng*1103515245+12345)&0x7fffffff
 	return (rng>>8)%100
 func note(action: String) -> void:actions[action]=int(actions.get(action,0))+1
+func stamina_cost(f: UfeFighter, id: String) -> int:return int(f.definition.moves.get(id,{}).get("stamina_cost",0))
+func can_spend(f: UfeFighter, amount: int) -> bool:return int(f.stats.stamina) >= amount
+func special_move_id(f: UfeFighter) -> String:
+	@warning_ignore("integer_division") # 千点能量为一格，整数取档。
+	var level:=clampi(int(f.stats.energy)/1000,1,3)
+	return "special%d"%level if level>1 and f.definition.moves.has("special%d"%level) else "special"
 func emit(x: int=0,y: int=0,buttons: int=0) -> UfeInputFrame:return UfeInputFrame.make(x,y,buttons)
 func tap(buttons: int,x: int=0,y: int=0) -> UfeInputFrame:
 	# 释放键也进入输入流，保证每次按下都有边沿，连段不靠直接设置move_id。
@@ -129,11 +135,13 @@ func decide(sim: UfeMatchDirector,seen: Dictionary) -> UfeInputFrame:
 		note("transform")
 		var transform_input: Array=queue.pop_front()
 		return emit(int(transform_input[0])*f.facing,int(transform_input[1]),int(transform_input[2]))
-	if int(seen.height)>35 and gap<180:note("anti_air");return tap(UfeInputFrame.HEAVY,f.facing)
-	if int(f.stats.energy)>=1000 and gap<460 and roll()<45:note("super");return tap(UfeInputFrame.SPECIAL)
+	if int(seen.height)>35 and gap<180:note("anti_air");return tap(UfeInputFrame.HEAVY if can_spend(f,stamina_cost(f,"heavy")) else UfeInputFrame.LIGHT,f.facing)
+	if int(f.stats.energy)>=1000 and gap<460 and roll()<45 and can_spend(f,stamina_cost(f,special_move_id(f))):note("super");return tap(UfeInputFrame.SPECIAL)
 	if gap<82 and roll()<30:note("throw");return tap(UfeInputFrame.THROW)
+	if gap>240 and int(f.stats.stamina)<160 and sim.projectiles.is_empty() and roll()<40:note("recover");next_decision=sim.tick+30;return emit(0,0,UfeInputFrame.CHARGE)
 	if gap>260 and int(f.stats.energy)<1000 and roll()<35:note("charge");next_decision=sim.tick+42;return emit(0,0,UfeInputFrame.CHARGE)
-	if gap<330 and roll()<22:
+	var motion_cost:=maxi(maxi(stamina_cost(f,"motion_236"),stamina_cost(f,"motion_623")),maxi(stamina_cost(f,"motion_214"),stamina_cost(f,"motion_22")))
+	if gap<330 and roll()<22 and can_spend(f,motion_cost):
 		var specials: Array=[[ [2,3,6],UfeInputFrame.LIGHT ],[ [6,2,3],UfeInputFrame.HEAVY ],[ [2,1,4],UfeInputFrame.RANGED ],[ [2,5,2],UfeInputFrame.CRUSH ]]
 		var chosen: Array=specials[roll()%specials.size()]
 		motion_input(chosen[0],chosen[1]);note("special")
@@ -142,8 +150,9 @@ func decide(sim: UfeMatchDirector,seen: Dictionary) -> UfeInputFrame:
 		if roll()<12:note("retreat");next_decision=sim.tick+12;travel_x=-direction;return emit(travel_x)
 		note("attack")
 		var choice:=roll()
+		if not can_spend(f,stamina_cost(f,"heavy")):return tap(UfeInputFrame.LIGHT)
 		return tap(UfeInputFrame.LIGHT if choice<45 else UfeInputFrame.HEAVY if choice<85 else UfeInputFrame.CRUSH,0,-1 if choice>=85 else 0)
-	if gap<430 and roll()<18:note("projectile");return tap(UfeInputFrame.RANGED)
+	if gap<430 and roll()<18 and can_spend(f,stamina_cost(f,"pulse")):note("projectile");return tap(UfeInputFrame.RANGED)
 	note("approach");travel_x=direction;return emit(travel_x)
 
 func guard_counter_input(f: UfeFighter) -> UfeInputFrame:
@@ -161,7 +170,7 @@ func guard_counter_input(f: UfeFighter) -> UfeInputFrame:
 		var move: Dictionary=f.definition.moves.get("guard_counter",{})
 		# 以本人现装指令和费用为准，不能给缺动作或不支持蹲防反击者补造能力。
 		var available:=f.definition.command_table.any(func(entry):return str(entry.move)=="guard_counter" and (f.state in entry.states or "*" in entry.states) and int(entry.buttons)==UfeInputFrame.HEAVY and entry.directions.any(func(d):return int(d) in [0,6]) and entry.motion.is_empty() and int(f.stats.energy)>=int(entry.get("min_energy",0)))
-		if move.is_empty() or not available or int(f.stats.energy)<int(move.get("energy_cost",1000)):return null
+		if move.is_empty() or not available or int(f.stats.energy)<int(move.get("energy_cost",1000)) or not can_spend(f,int(move.get("stamina_cost",0))):return null
 		counter_allowed=roll()<int(LEVELS[difficulty].counter)
 		if counter_allowed:note("guard_counter")
 	if not counter_allowed:return null
@@ -184,7 +193,7 @@ func burst_input(f: UfeFighter, tick: int) -> UfeInputFrame:
 	var move: Dictionary=f.definition.moves.get("burst",{})
 	var mask:=UfeInputFrame.GUARD|UfeInputFrame.CHARGE
 	var available:=f.definition.command_table.any(func(entry):return str(entry.move)=="burst" and (f.state in entry.states or "*" in entry.states) and int(entry.buttons)==mask and entry.directions.any(func(d):return int(d) in [0,5]) and entry.motion.is_empty() and int(f.stats.energy)>=int(entry.get("min_energy",0)))
-	if move.is_empty() or not available or int(f.stats.energy)<int(move.get("energy_cost",2000)):return null
+	if move.is_empty() or not available or int(f.stats.energy)<int(move.get("energy_cost",2000)) or not can_spend(f,int(move.get("stamina_cost",0))):return null
 	burst_decided=true;burst_next_tick=tick+300
 	burst_allowed=roll()<int(LEVELS[difficulty].burst)
 	if not burst_allowed:return null

@@ -17,7 +17,7 @@ var state: String = "idle"
 var state_tick: int = 0
 var move_id: String = ""
 var move_tick: int = 0
-var stats: Dictionary = {"hp": 1000, "energy": 0, "stamina": 1000, "stun": 0}
+var stats: Dictionary = {"hp": 1000, "energy": 0, "stamina": 1000, "stun": 0, "stun_immune": 0}
 var combat: Dictionary = {"buffer": "", "buffer_ticks": 0, "connected": false, "confirmed": false,
 	"combo": 0, "combo_ticks": 0, "bounced": false, "invulnerable": 0, "thrower": -1, "throw_age": 0, "power": 1}
 var motion: Dictionary = {"jump_kind": "vertical", "direction": 1, "duration": 0, "chase_window": 0, "land_window": 0, "bounce_followup":false}
