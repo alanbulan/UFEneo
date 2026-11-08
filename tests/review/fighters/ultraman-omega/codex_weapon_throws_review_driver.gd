@@ -1,4 +1,5 @@
 extends "res://tests/review/fighters/ultraman-arc/codex_sword_followups_review_driver.gd"
+@warning_ignore_start("integer_division")
 ## 复用完整节点/世界框快照，欧米伽只覆写本次真实输入和分组。
 const CASES: Array = ["hit", "stand_guard", "crouch_guard", "whiff", "baseline"]
 func _init() -> void: profile = "stage6_ultraman_omega_weapon_throws"
@@ -37,3 +38,4 @@ func save_file(path: String) -> void:
         "source": "原主游戏main.tscn训练；双对手双向真实6I/214I；组内只送双方InputFrame，无摆攻击状态、补tick或重置朝向。唯一独立头镖完整整数外飞/回程和真实节点。"}))
     output.close()
     trace_saved = true
+@warning_ignore_restore("integer_division")

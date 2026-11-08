@@ -1,5 +1,6 @@
 class_name UfePhase3ZettonAirReview
 extends UfeReviewDriver
+@warning_ignore_start("integer_division")
 ## 主游戏训练输入：P2逐招，末组P1完整空连验证镜头。
 const ACTIONS := ["vertical_jump","flip_forward","flip_back","takeoff","land","vertical_light","vertical_heavy","diagonal_light","diagonal_heavy","air_crush","dive","air_pulse","chase_takeoff","chase_light1","chase_light2","chase_end","dash_light","dash_heavy","backstep","back_counter","dodge","dodge_counter","full_combo","camera_ultraman"]
 const NAMES := ["杰顿垂直跳","杰顿前跳空翻","杰顿后跳空翻","杰顿起跳","杰顿落地","垂直跳手刀","空中下劈","斜跳膝撞","斜跳重踢","双臂下砸","俯冲踢","斜下脸部火球","杰顿追击跳","追击手刀一段","追击手刀二段","双臂砸地终结","冲刺手刀","冲刺重臂扫","后撤步","后撤反手刀","侧闪","侧闪手刀","杰顿完整空连→落地扫腿","初代完整空连打杰顿·镜头边界"]
@@ -74,3 +75,4 @@ func observe_walk(frame: int,sim: UfeMatchDirector,view: UfeSideView) -> void:
 func save_file(path: String) -> void:
 	var file:=FileAccess.open(path,FileAccess.WRITE)
 	file.store_string(JSON.stringify({"profile":profile,"input_source":"主游戏训练真实InputFrame；仅分组设站位，组内不改状态/坐标/高度；全程F1。末组初代P1攻杰顿P2，其余杰顿P2攻初代P1。","trace":trace},"\t"))
+@warning_ignore_restore("integer_division")

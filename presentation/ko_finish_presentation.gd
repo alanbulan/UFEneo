@@ -133,6 +133,7 @@ func _sync_throw(index: int) -> void:
 	var target: Dictionary=frame.target
 	if frame.has("throw_height"):
 		var fraction: Array=frame.throw_height
+		@warning_ignore("integer_division")
 		a.height=int(a.motion.throw_origin_height)*int(fraction[0])/maxi(1,int(fraction[1]))
 	b.motion.pose=str(target.pose)
 	# 两个几何查询均只读本人现有整相和抓点，不调用投技sync/伤害。
@@ -153,7 +154,9 @@ func _sync_throw(index: int) -> void:
 				b.motion.release_goal_x=UfeThrowResolver.landing_offset(a,b,int(offset[0]))
 			var progress: Array=target.progress
 			var at:=int(progress[0]);var duration:=maxi(1,int(progress[1]))
+			@warning_ignore("integer_division")
 			b.x=a.x+a.facing*(int(b.motion.release_x)+(int(b.motion.release_goal_x)-int(b.motion.release_x))*at/duration)
+			@warning_ignore("integer_division")
 			b.height=maxi(0,int(b.motion.release_height)*(duration-at)/duration+int(offset[1])*at/duration)
 		_:
 			b.x=a.x+a.facing*int(offset[0])
@@ -194,10 +197,13 @@ func _sync_capture(owner: int) -> void:
 		"enclose":target.x=int(relation.origin_x);target.height=int(relation.origin_height)
 		"shrink":
 			target.x=int(relation.origin_x)
+			@warning_ignore("integer_division")
 			target.height=int(relation.origin_height)+int(data.lift_height)*age/maxi(1,int(phase.ticks)-1)
 		"return":
 			var elapsed:=age+1;var duration:=int(phase.ticks)
+			@warning_ignore("integer_division")
 			target.x=(int(relation.origin_x)*(duration-elapsed)+hand_x*elapsed)/duration
+			@warning_ignore("integer_division")
 			target.height=((int(relation.origin_height)+int(data.lift_height))*(duration-elapsed)+hand_height*elapsed)/duration
 		"held":target.x=hand_x;target.height=hand_height
 		"release":
@@ -220,6 +226,7 @@ func _advance_projectiles() -> void:
 		p.age=int(p.age)+1
 		p.life=maxi(1,left) # 移除不冒充模拟自然到期，不产生新的到期/命中事件。
 		var fade:=mini(12 if bool(p.get("beam",false)) else 6,int(row.budget))
+		@warning_ignore("integer_division")
 		p.end_alpha=mini(1000,left*1000/maxi(1,fade))
 		if bool(p.get("beam",false)):
 			var actor:=scene.fighters[int(p.owner)]
@@ -229,6 +236,7 @@ func _advance_projectiles() -> void:
 			else:
 				# 离开发射相后只保留最后能量尾迹，按有界短尾消散，不追到收回的手上。
 				if int(row.detached_at)<0:row.detached_at=slow_age
+				@warning_ignore("integer_division")
 				p.end_alpha=mini(int(p.end_alpha),maxi(0,6-(slow_age-int(row.detached_at)))*1000/6)
 		elif p.has("integer_path"):
 			_advance_returning(p)
@@ -248,7 +256,9 @@ func _advance_returning(p: Dictionary) -> void:
 		var actor:=scene.fighters[int(p.owner)]
 		var anchor: Array=p.get("return_anchor_by_tick",{}).get(str(actor.move_tick),actor.frame().get("weapon_return_anchor",p.get("return_anchor",[42,100])))
 		var duration:=maxi(1,int(p.get("return_ticks",6)));var left:=maxi(0,duration-int(p.return_age))
+		@warning_ignore("integer_division")
 		p.x=(int(p.return_x)*left+(actor.x+actor.facing*int(anchor[0]))*(duration-left))/duration
+		@warning_ignore("integer_division")
 		p.height=(int(p.return_height)*left+(actor.height+int(anchor[1]))*(duration-left))/duration
 		if left==0 and actor.move_tick>=int(p.get("return_not_before_tick",0)):p.end_alpha=0
 	var points: Array=p.get("trail_points",[])

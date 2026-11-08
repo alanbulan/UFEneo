@@ -292,6 +292,7 @@ func _start(f: UfeFighter, id: String) -> void:
 	if id=="special" and f.height>0:return
 	if UfeReturningProjectile.blocks_move(self,f,id):return
 	if id=="special":
+		@warning_ignore("integer_division") # 千点能量为一格，整数取档。
 		var level:=clampi(int(f.stats.energy)/1000,1,3)
 		if level>1 and f.definition.moves.has("special%d"%level):id="special%d"%level
 		if level == 3 and f.form_id == "super-taro": id = "super_special3"
@@ -346,7 +347,9 @@ func _separate() -> void:
 		var second := _push_edges(b)
 		overlap = int(first[1])-int(second[0]) if direction > 0 else int(second[1])-int(first[0])
 	if overlap > 0:
+		@warning_ignore("integer_division") # 重叠整数像素对半分，余数归前一方。
 		a.x = clampi(a.x - direction * ((overlap+1)/2), 28, 1252)
+		@warning_ignore("integer_division") # 重叠整数像素对半分。
 		b.x = clampi(b.x + direction * (overlap/2), 28, 1252)
 
 static func _push_edges(f: UfeFighter) -> Array:

@@ -20,6 +20,7 @@ func render_offset(view: UfeSideView,index: int) -> Vector2:
 	if str(relation.get("phase",""))!="shrink":return Vector2.ZERO
 	var duration:=int(actor.definition.moves[actor.move_id].capture.stages[1].ticks)
 	var remaining:=maxi(0,duration-1-int(relation.phase_age))
+	@warning_ignore("integer_division")
 	return Vector2(0,-int(f.frame().get("capture_center_start",0))*remaining/maxi(1,duration-1))
 
 func attachments_for(view: UfeSideView, index: int) -> Array:

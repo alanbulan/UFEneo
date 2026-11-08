@@ -1,5 +1,6 @@
 class_name UfePhase3SuperReview
 extends UfePhase3SpecialReview
+@warning_ignore_start("integer_division")
 ## 主游戏真实输入；仅在每组开局设置训练能量、距离。
 var feedback_only: bool=false
 func _init() -> void:profile="phase3_supers"
@@ -19,7 +20,7 @@ func prepare_match(sim: UfeMatchDirector) -> void:
 	sim.fighters[1].x=500+gap
 	for f in sim.fighters:f.stats.energy=0
 	if not feedback_only:sim.fighters[active_player].stats.energy=((part%6)/2+1)*1000
-func sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
+func sample(frame: int,_sim: UfeMatchDirector) -> UfeInputFrame:
 	var part:=section(frame)
 	var age:=frame%240
 	var a:=UfeInputFrame.make()
@@ -49,3 +50,4 @@ func observe_walk(frame: int,sim: UfeMatchDirector,view: UfeSideView) -> void:
 		var anim:=view._animation(f,view.manifests[i])
 		pair.append({"fighter":f.definition.id,"x":f.x,"height":f.height,"facing":f.facing,"state":f.state,"move":f.move_id,"move_tick":f.move_tick,"clip":anim.get("key",""),"sprite":anim.get("index",-1),"hp":f.stats.hp,"energy":f.stats.energy,"flash":int(view.feedback.flash[i])})
 	trace.append({"movie_frame":frame,"section":section(frame),"label":label(frame),"tick":sim.tick,"remaining":sim.remaining,"hitstop":sim.hitstop,"pair":pair,"events":sim.events.duplicate(true),"projectiles":sim.projectiles.duplicate(true),"inputs":last_inputs.duplicate(true),"shake":[view.feedback.shake.x,view.feedback.shake.y]})
+@warning_ignore_restore("integer_division")

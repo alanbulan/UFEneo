@@ -122,6 +122,7 @@ func decide(sim: UfeMatchDirector,seen: Dictionary) -> UfeInputFrame:
 	if f.state in ["charge_start","charge"] and gap>230 and int(f.stats.energy)<1100:return emit(0,0,UfeInputFrame.CHARGE)
 	if sim.tick<next_decision:return emit(travel_x)
 	travel_x=0
+	@warning_ignore("integer_division") # AI 决策间隔按tick减半，整数。
 	next_decision=sim.tick+maxi(4,int(LEVELS[difficulty].delay)/2)
 	if UfeBattleTransform.can_transform(f) and f.state in UfeBattleFormCatalog.GROUND_STATES and roll()<35:
 		motion_input([2,5,2],UfeInputFrame.SPECIAL)
@@ -153,6 +154,7 @@ func guard_counter_input(f: UfeFighter) -> UfeInputFrame:
 	if f.state!=counter_state or f.state_tick<counter_age:
 		counter_decided=false;counter_allowed=false
 	counter_state=f.state;counter_age=f.state_tick
+	@warning_ignore("integer_division") # 反击窗口按tick减半，整数。
 	if f.state_tick<maxi(3,int(LEVELS[difficulty].delay)/2):return null
 	if not counter_decided:
 		counter_decided=true

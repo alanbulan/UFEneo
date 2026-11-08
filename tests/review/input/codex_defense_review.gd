@@ -1,4 +1,5 @@
 extends UfePhase3ReactionReview
+@warning_ignore_start("integer_division")
 ## 防御受击共用审片输入；每节只设初始训练条件，节内用双方真实输入。
 const ITEMS := ["guard","crouch_guard","blockstun","crouch_blockstun","guardbreak","guard_counter","hit_high","hit_mid","hit_crouch","hit_air","launch_rise","launch_fall","bounce","down","wake","wake_low","wake_mid","roll_forward","roll_back","stun","defeat"]
 const GROUP := 240
@@ -74,3 +75,4 @@ func observe_walk(frame: int,sim: UfeMatchDirector,view: UfeSideView) -> void:
 
 func save_file(path: String) -> void:
 	FileAccess.open(path,FileAccess.WRITE).store_string(JSON.stringify({"profile":profile,"fighter":fighter_id,"source":"原主游戏训练；节间仅设站位/朝向/临界训练资源，节内真实双方InputFrame，不摆受击/倒地/起身状态，不改轨迹或伤害。","trace":trace}))
+@warning_ignore_restore("integer_division")

@@ -78,7 +78,9 @@ func _unmapped_frame() -> Dictionary:
 			var reaction: Array = definition.state_frames[key]
 			var age := state_tick
 			if state=="launch": age = 18-vy if vy>=0 else -vy-1
-			elif state=="hit": age = state_tick*reaction.size()/maxi(1,int(motion.duration))
+			elif state=="hit":
+				@warning_ignore("integer_division") # 受击帧按硬直tick比例取整。
+				age = state_tick*reaction.size()/maxi(1,int(motion.duration))
 			return reaction[clampi(age,0,reaction.size()-1)]
 		var air_key := str(motion.jump_kind)+"_air"
 		if state == "air" and definition.state_frames.has(air_key):
@@ -87,7 +89,9 @@ func _unmapped_frame() -> Dictionary:
 		if definition.state_frames.has(state):
 			var posture: Array = definition.state_frames[state]
 			var age := state_tick
-			if state in ["blockstun","crouch_blockstun","guardbreak"]: age = state_tick*posture.size()/maxi(1,int(motion.duration))
+			if state in ["blockstun","crouch_blockstun","guardbreak"]:
+				@warning_ignore("integer_division") # 硬直帧按tick比例取整。
+				age = state_tick*posture.size()/maxi(1,int(motion.duration))
 			return posture[age%posture.size() if state in ["idle","crouch","stun","charge"] else mini(age,posture.size()-1)]
 		return {"sprite": 0, "hitboxes": [], "hurtboxes": [[-18, 0, 36, 128]], "cancel": [], "events": [], "dx": 0, "dy": 0}
 	var frames: Array = definition.moves[move_id].frames

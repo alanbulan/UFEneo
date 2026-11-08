@@ -1,5 +1,6 @@
 class_name UfePhase3ReactionReview
 extends UfeReviewDriver
+@warning_ignore_start("integer_division")
 ## 只有分组开局设训练站位/资源；组内用双方真实输入驱动。
 const ACTIONS := ["turn","crouch_turn","guard","crouch_guard","blockstun","crouch_blockstun","guardbreak","stun","hit_high","hit_mid","hit_crouch","hit_air","launch_rise","launch_fall","bounce","down","wake","roll_forward","roll_back","air_tech","wake_low","wake_mid","guard_counter","burst","charge_start","charge","charge_stop","full_chain"]
 const NAMES := ["站立转身","蹲姿转身","站防 U","蹲防 S+U","站防硬直","蹲防硬直","破防（训练低体力）","破绽眩晕（训练临界眩晕）","空中来拳命中头部","站立中段受击","蹲姿受击","空中受击","击飞上升","击飞下落","砸地弹地","倒地","起身","前滚起身","后滚起身","空中受身 U","起身下段 J","起身中段 K","防御反击 D+K / 1格","爆气 U+H / 2格","蓄能起 H","蓄能循环 H","蓄能收 松H","被升击 → 砸地弹地 → 倒地 → 前滚起身"]
@@ -105,3 +106,4 @@ func observe_walk(frame: int,sim: UfeMatchDirector,view: UfeSideView) -> void:
 func save_file(path: String) -> void:
 	var file:=FileAccess.open(path,FileAccess.WRITE)
 	file.store_string(JSON.stringify({"profile":profile,"target_player":target_player,"source":"主游戏训练InputFrame；分组开局设站位；破防/眩晕使用临界资源、防反/爆气使用规定能量；组内不摆状态、不改轨迹，攻击方使用自己已接入招式。","trace":trace},"\t"))
+@warning_ignore_restore("integer_division")

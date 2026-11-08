@@ -1,3 +1,3 @@
 extends UfeState
-func step(f: UfeFighter, input: UfeInputFrame, command: Dictionary) -> void:
+func step(_f: UfeFighter, _input: UfeInputFrame, _command: Dictionary) -> void:
 	pass

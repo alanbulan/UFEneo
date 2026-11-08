@@ -41,7 +41,7 @@ func _ready() -> void:
 	search.custom_minimum_size.x = 80
 	toolbar.add_child(search)
 	category_choice.custom_minimum_size.x = 92
-	for name in ["全部", "奥特战士", "怪兽宇宙人", "黑暗巨人", "形态", "剧情人物"]: category_choice.add_item(name)
+	for category_name in ["全部", "奥特战士", "怪兽宇宙人", "黑暗巨人", "形态", "剧情人物"]: category_choice.add_item(category_name)
 	toolbar.add_child(category_choice)
 	category_choice.item_selected.connect(_category_changed)
 	toolbar.add_child(previous); toolbar.add_child(page_label); toolbar.add_child(next)

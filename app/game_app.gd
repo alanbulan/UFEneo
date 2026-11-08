@@ -268,7 +268,7 @@ func start_match() -> void:
 	front=UfeFrontEnd.new()
 	ui_layer.add_child(front)
 	front.action_requested.connect(_front_action)
-	front.sound_requested.connect(func(id:String,owner:int):audio.cue(id,false,owner))
+	front.sound_requested.connect(func(id:String,owner_index:int):audio.cue(id,false,owner_index))
 	front.hide()
 	audio = UfeSideAudio.new()
 	add_child(audio)
@@ -510,6 +510,16 @@ func _input(event: InputEvent) -> void:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST: shutdown()
 
+## 同步停播并断开音频流引用；任何退出路径（菜单、窗口关闭、--quit-after）都会
+## 经过 _exit_tree。AudioServer 在独立线程按真实时间回收 playback，headless 帧
+## 循环极快，必须让出真实时间，否则退出时报 AudioStream/Playback 泄漏。
+func _release_audio_sync() -> void:
+	if is_instance_valid(audio): audio.release_audio()
+
+func _exit_tree() -> void:
+	_release_audio_sync()
+	OS.delay_msec(120)
+
 ## quit_tree=false 时只拆解自身资源、不结束进程，供同一进程内的多实例测试收尾。
 func shutdown(exit_code: int = 0, quit_tree: bool = true) -> void:
 	if _shutting_down: return
@@ -519,16 +529,7 @@ func shutdown(exit_code: int = 0, quit_tree: bool = true) -> void:
 	viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
 	# 停播并断开流引用：播放中的 AudioStreamPlayer 若在音频线程回收前被
 	# free，会留下 AudioStream/Playback 残留。
-	if audio!=null:
-		if audio.music_director!=null:audio.music_director.release_streams()
-		for player in audio.voices+audio.character_players+audio.loops:
-			if is_instance_valid(player):
-				player.stop()
-				player.stream=null
-		if is_instance_valid(audio.music):
-			audio.music.stop()
-			audio.music.stream=null
-		audio.cache.clear()
+	_release_audio_sync()
 	await get_tree().process_frame
 	ko_finish.reset()
 	view.simulation = null

@@ -46,6 +46,7 @@ func _init(ids: Array=["ultraman","zetton"]) -> void:
 			for index in range(clip.rects.size()):
 				var rect: Array=clip.rects[index]
 				var used:=atlas_image.get_region(Rect2i(rect[0],rect[1],rect[2],rect[3])).get_used_rect()
+				@warning_ignore("integer_division")
 				var anchor: Array=clip.anchors[index] if clip.has("anchors") else clip.get("anchor",[int(rect[2])/2,int(clip.anchor_y)])
 				extents.x=maxf(extents.x,int(anchor[0])-used.position.x)
 				extents.y=maxf(extents.y,used.end.x-int(anchor[0]))
@@ -55,8 +56,8 @@ func _init(ids: Array=["ultraman","zetton"]) -> void:
 	# 长尾角色按实际占宽分配容器；VS放在上方，不遮住头角，也不占横向空间。
 func _ready() -> void:
 	var shared_entry_played:bool=false
-	for owner in range(intro_clips.size()):
-		var clip:Dictionary=intro_clips[owner]
+	for owner_index in range(intro_clips.size()):
+		var clip:Dictionary=intro_clips[owner_index]
 		for event in clip.get("audio_events",[]):
 			if event.get("kind","")!="sound":continue
 			var id:String=str(event.id)
@@ -64,7 +65,7 @@ func _ready() -> void:
 			if id=="entry":
 				if shared_entry_played:continue
 				shared_entry_played=true
-			sound_requested.emit(id,owner)
+			sound_requested.emit(id,owner_index)
 func _process(delta: float) -> void:
 	age+=delta
 	var progress:=clampf(age/0.36,0,1)
@@ -85,9 +86,9 @@ func _process(delta: float) -> void:
 				if tick<int(duration):break
 				tick-=int(duration);index+=1
 			index=mini(index,clip.rects.size()-1)
-			var rect: Array=clip.rects[index]
 			art.texture=frame_atlases[i][index]
 			var cell_width: int=int(clip.cell[0]) if clip.cell is Array else int(clip.cell)
+			@warning_ignore("integer_division")
 			var anchor: Array=clip.anchors[index] if clip.has("anchors") else clip.get("anchor",[cell_width/2,int(clip.anchor_y)])
 			art.set_meta("foot_anchor",Vector2(int(anchor[0]),int(anchor[1])))
 		var slot: Control=art.get_parent()

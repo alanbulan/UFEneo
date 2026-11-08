@@ -40,8 +40,8 @@ func _ready() -> void:
 		var tile:=PixelButton.new("");tile.custom_minimum_size=Vector2(128,76);tile.size_flags_horizontal=Control.SIZE_EXPAND_FILL;tile.tooltip_text=str(stage.name);grid.add_child(tile)
 		var inside:=VBoxContainer.new();inside.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);inside.offset_left=3;inside.offset_top=3;inside.offset_right=-3;inside.offset_bottom=-3;inside.mouse_filter=Control.MOUSE_FILTER_IGNORE;inside.add_theme_constant_override("separation",1);tile.add_child(inside)
 		var picture:=TextureRect.new();picture.texture=load(str(stage.thumbnail));picture.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;picture.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED;picture.custom_minimum_size=Vector2(122,50);picture.mouse_filter=Control.MOUSE_FILTER_IGNORE;inside.add_child(picture)
-		var name:=_label(inside,str(stage.name),10);name.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
-		stage_cards.append(tile);stage_names.append(name)
+		var name_label:=_label(inside,str(stage.name),10);name_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+		stage_cards.append(tile);stage_names.append(name_label)
 		tile.pressed.connect(_choose_stage.bind(str(stage.id)))
 	detail=_label(stages,"",10);detail.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;detail.custom_minimum_size.y=25
 	var music:=VBoxContainer.new();music.custom_minimum_size.x=190;music.add_theme_constant_override("separation",5);body.add_child(music)

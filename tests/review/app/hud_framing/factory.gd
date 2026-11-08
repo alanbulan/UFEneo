@@ -1,4 +1,5 @@
 extends RefCounted
+@warning_ignore_start("integer_division")
 static func read_sealed(path: String) -> Dictionary:
 	var cfg: Dictionary=UfeContentDatabase.read_json(path)
 	assert(cfg.schema=="ufeneo.hud_framing.v1")
@@ -15,3 +16,4 @@ static func make_match(cfg: Dictionary,direction: int) -> UfeMatchDirector:
 		sim.fighters[i].stats.energy=int(cfg.get("initial_energy",[3000,3000])[i])
 		sim.fighters[i].stats.hp=int(cfg.initial_hp[i])
 	return sim
+@warning_ignore_restore("integer_division")

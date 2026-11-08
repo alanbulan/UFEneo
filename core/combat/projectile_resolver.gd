@@ -42,6 +42,7 @@ static func world_hitboxes(projectile: Dictionary) -> Array:
 		boxes.append(UfeMatchDirector.projectile_box(projectile))
 	else:
 		var phases: Array=projectile.frame_hitboxes
+		@warning_ignore("integer_division") # 每4tick一相，整数帧索引。
 		var phase: Array=phases[(int(projectile.age)/4)%phases.size()]
 		for local in phase:
 			var x:=int(projectile.x)+int(local[0]) if int(projectile.facing)>0 else int(projectile.x)-int(local[0])-int(local[2])
@@ -97,6 +98,7 @@ static func advance(sim: UfeMatchDirector, contacts: Array) -> void:
 		if not returning:
 			p.life=int(p.life)-1
 			p.age=int(p.age)+1
+		@warning_ignore("integer_division") # 每4tick一相，整数帧索引。
 		if p.has("frame_boxes"):p.box=p.frame_boxes[(int(p.age)/4)%p.frame_boxes.size()]
 		# 先移动/粘地，再清除越过可见地线的弹体，禁止同tick继续接触。
 		if int(p.height)<int(p.get("expire_below_height",0)):p.life=0

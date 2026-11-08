@@ -24,9 +24,9 @@ func _ready() -> void:
 	beam_clip=effect_clips.beam_loop
 	for i in range(24):
 		var s:=Sprite2D.new()
-		var material:=ShaderMaterial.new()
-		material.shader=preload("res://presentation/effect_palette.gdshader")
-		s.material=material
+		var mat:=ShaderMaterial.new()
+		mat.shader=preload("res://presentation/effect_palette.gdshader")
+		s.material=mat
 		s.region_enabled=true
 		s.centered=false
 		s.z_index=4
@@ -95,11 +95,13 @@ func sync(sim: UfeMatchDirector,camera_x: int,camera_y: int) -> void:
 			s.flip_h=int(p.facing)<0
 			if emission_anchor:
 				# 仅显式启用的发射图集：像素锚随裁片镜像，scale由Sprite2D统一应用。
+				@warning_ignore("integer_division")
 				var pivot:Array=clip.get("anchor",[0,int(r[3])/2])
 				s.offset=Vector2(-int(pivot[0]) if int(p.facing)>0 else int(pivot[0])-width,-int(pivot[1]))
 				s.position=UfeEffectGeometry.beam_position(p,offset,camera_x,camera_y)
 			else:
 				s.offset=Vector2.ZERO
+				@warning_ignore("integer_division")
 				s.position=UfeEffectGeometry.beam_position(p,offset+(0 if int(p.facing)>0 else width),camera_x,camera_y)-Vector2(0,int(r[3])/2)
 			if str(p.effect)=="transform_cosmo_beam": s.position.x-=int(p.facing)*16
 			s.visible=true

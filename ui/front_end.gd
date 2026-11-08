@@ -126,7 +126,7 @@ func _title() -> void:
 	label(content,"WASD / 方向键选择　J / 小键盘1确认　Esc返回").horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
 func _header(title: String) -> void:
 	var row:=HBoxContainer.new();content.add_child(row)
-	var name:=label(row,title);name.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	var heading_label:=label(row,title);heading_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	button(row,"返回",func():action_requested.emit("back"))
 func _select() -> void:
 	category="all";era="all";series="all";model.filter()
@@ -148,7 +148,7 @@ func _select() -> void:
 		var art:=SlidePortrait.new();preview_row.add_child(art);previews.append(art)
 		art.face_player(player)
 		var col:=VBoxContainer.new();col.size_flags_horizontal=Control.SIZE_EXPAND_FILL;col.size_flags_stretch_ratio=1;preview_row.add_child(col)
-		var name:=FighterName.new(12,true);name.size_flags_horizontal=Control.SIZE_EXPAND_FILL;col.add_child(name);names.append(name)
+		var name_view:=FighterName.new(12,true);name_view.size_flags_horizontal=Control.SIZE_EXPAND_FILL;col.add_child(name_view);names.append(name_view)
 		var forms:=PixelChoice.new();col.add_child(forms);form_choices.append(forms)
 		forms.item_selected.connect(func(index):
 			selected_forms[player]=str(forms.get_item_metadata(index));confirmed[player]=false;_preview())
@@ -209,7 +209,14 @@ func _preview() -> void:
 	for player in range(2):
 		var index:=model.index_of(selections[player])
 		if index<0:offscreen+=" %dP在筛选外"%(player+1)
-		elif index/10<grid.scroll_vertical/RosterGrid.ROW_HEIGHT or index/10>(grid.scroll_vertical+grid.size.y)/RosterGrid.ROW_HEIGHT:offscreen+=" %dP在视区外"%(player+1)
+		else:
+			@warning_ignore("integer_division")
+			var player_row:=index/10
+			@warning_ignore("integer_division")
+			var first_row:=grid.scroll_vertical/RosterGrid.ROW_HEIGHT
+			@warning_ignore("integer_division")
+			var last_row:=(grid.scroll_vertical+grid.size.y)/RosterGrid.ROW_HEIGHT
+			if player_row<first_row or player_row>last_row:offscreen+=" %dP在视区外"%(player+1)
 	selection_hint.text="%d个对象 · 鼠标%dP · J / 小键盘1确认%s\nQ/E 或 小键盘7/9：战斗外形态 / 配色；未实装项不可选"%[model.filtered.size(),active_player+1,offscreen]
 
 func _stage() -> void:
@@ -226,13 +233,13 @@ func _stage() -> void:
 func _vs() -> void:
 	_header("即将开战")
 	var versus:=PixelVS.new(selections)
-	versus.sound_requested.connect(func(id,owner):sound_requested.emit(str(id),int(owner)))
+	versus.sound_requested.connect(func(id,owner_index):sound_requested.emit(str(id),int(owner_index)))
 	content.add_child(versus)
 	var row:=HBoxContainer.new();content.add_child(row)
 	for player in range(2):
 		var slot:=HBoxContainer.new();slot.size_flags_horizontal=Control.SIZE_EXPAND_FILL;slot.alignment=BoxContainer.ALIGNMENT_CENTER;row.add_child(slot)
 		var portrait:=PortraitFrame.new();portrait.picture.flip_h=player==1;slot.add_child(portrait);portrait.set_fighter(str(selections[player]),str(selected_forms[player]))
-		var name:=FighterName.new(12,true);slot.add_child(name);name.set_fighter(str(selections[player]),"","",str(selected_forms[player]))
+		var name_view:=FighterName.new(12,true);slot.add_child(name_view);name_view.set_fighter(str(selections[player]),"","",str(selected_forms[player]))
 
 func _archive() -> void:
 	_header("角色图鉴")

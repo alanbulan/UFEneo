@@ -1,5 +1,6 @@
 class_name UfePhase3ThrowReview
 extends UfeReviewDriver
+@warning_ignore_start("integer_division")
 ## 两个攻击方向；只设置训练组的开局距离，组内通过真实InputFrame执行。
 const ACTIONS := ["throw_forward","throw_back","air_throw","dash_throw","tech_simultaneous","tech_tick3"]
 const NAMES := ["前投","后投","空中擒摔","冲刺擒抱","同时投·拆投","被抓后第3tick拆投"]
@@ -57,3 +58,4 @@ func observe_walk(frame: int,sim: UfeMatchDirector,view: UfeSideView) -> void:
 func save_file(path: String) -> void:
 	var file:=FileAccess.open(path,FileAccess.WRITE)
 	file.store_string(JSON.stringify({"profile":profile,"input_source":"主游戏训练真实InputFrame；每组只设开局距离，组内不改状态/坐标/高度；双方抓点与实际帧、拆投事件均来自同一模拟。","trace":trace},"\t"))
+@warning_ignore_restore("integer_division")

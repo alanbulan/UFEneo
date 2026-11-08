@@ -218,10 +218,13 @@ static func sync_victim(sim: UfeMatchDirector, owner: int) -> void:
 			target.x = int(relation.origin_x); target.height = int(relation.origin_height)
 		"shrink":
 			target.x = int(relation.origin_x)
+			@warning_ignore("integer_division") # 逐tick整数像素插值，确定性模拟要求取整。
 			target.height = int(relation.origin_height)+int(data.lift_height)*age/maxi(1,int(phase.ticks)-1)
 		"return":
 			var elapsed := age+1; var duration := int(phase.ticks)
+			@warning_ignore("integer_division") # 整数像素线性插值，按帧取整。
 			target.x = (int(relation.origin_x)*(duration-elapsed)+hand_x*elapsed)/duration
+			@warning_ignore("integer_division") # 整数像素线性插值，按帧取整。
 			target.height = ((int(relation.origin_height)+int(data.lift_height))*(duration-elapsed)+hand_height*elapsed)/duration
 		"held":
 			target.x = hand_x; target.height = hand_height

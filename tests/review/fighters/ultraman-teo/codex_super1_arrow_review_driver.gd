@@ -1,4 +1,5 @@
 extends UfeReviewDriver
+@warning_ignore_start("integer_division")
 ## 正式main入口；组内只送双方InputFrame，不改资源、坐标、状态、费用或时钟。
 const SPAN: int = 320
 const CASES: Array = ["hit_p", "hit_pair", "stand_guard", "crouch_guard", "whiff", "interrupt_startup", "interrupt_volley", "cancel_attempt", "jump_evade", "dodge_escape", "low_energy", "punish_recovery"]
@@ -182,3 +183,4 @@ func save_file(path: String) -> void:
 		"source":"正式main非训练，本人已正式开放；默认满HP满体零能。只在开局设站位/朝向，真实Q恰到1000或费用负例980，完整收气后P/J+K；组内不改模拟。"}))
 	output.close()
 	trace_saved = true
+@warning_ignore_restore("integer_division")

@@ -1,5 +1,6 @@
 class_name UfeReviewDriver
 extends RefCounted
+@warning_ignore_start("integer_division")
 const STARTS := [0,180,480,690,1050,1410]
 const FINAL_STARTS := [0,240,660,1020,1440,1920]
 const LABELS := ["待机","前走 / 后走","冲刺起步 / 跑步关键帧 / 刹停","轻击三连","斜跳重击 / 起跳 / 空翻 / 落地","升击 → 追击跳 → 空中轻击"]
@@ -171,3 +172,4 @@ func save_file(path: String) -> void:
 	elif profile == "phase3_standing":
 		source = "主游戏训练模式真实InputFrame；逐招分组reset_round，近战间距65、远程280；组内不重置坐标/姿势/镜头，F1全程；每招记录命中事件与对手HP。"
 	file.store_string(JSON.stringify({"profile":profile,"input_source":source, "moves":moves_seen.keys(),"states":states_seen.keys(),"chase_jump":launched,"aerial_light":aerial_struck,"trace":trace},"\t"))
+@warning_ignore_restore("integer_division")

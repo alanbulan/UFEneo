@@ -42,9 +42,9 @@ var form_manifests: Dictionary = {}
 
 func _process(_delta: float) -> void:
 	if feedback==null:return
-	var visible:=feedback.advance_flash(false)
+	var flash_visible:=feedback.advance_flash(false)
 	for i in range(fighters.size()):
-		(fighters[i].material as ShaderMaterial).set_shader_parameter("hit_flash",int(visible[i])>0)
+		(fighters[i].material as ShaderMaterial).set_shader_parameter("hit_flash",int(flash_visible[i])>0)
 
 func _ready() -> void:
 	RenderingServer.frame_pre_draw.connect(_refresh_layout_framing)
@@ -126,6 +126,7 @@ func update_view() -> void:
 	if simulation == null: return
 	# EX换定义后复用同一套正式加载路径；普通角色不会触发重读。
 	if loaded_fighter_ids != simulation.fighters.map(func(f): return f.definition.id): bind_match(simulation)
+	@warning_ignore("integer_division")
 	camera_x = (simulation.fighters[0].x + simulation.fighters[1].x)/2
 	camera_y = 0
 	for layer in stage_layers:
@@ -167,6 +168,7 @@ func update_view() -> void:
 			sprite.region_enabled = false
 			var native: bool = bool(view_configs[i].get("native",false))
 			sprite.scale = Vector2.ONE if native else Vector2(0.5,0.5)
+			@warning_ignore("integer_division")
 			sprite.offset = Vector2(-sprite.texture.get_width()/2,-int(view_configs[i].get("anchor_y",sprite.texture.get_height()-24)))
 		sprite.flip_h = f.facing < 0
 		sprite.position = Vector2(f.x-camera_x+320,GROUND-f.height)+capture_view.render_offset(self,i)
@@ -204,6 +206,7 @@ func update_view() -> void:
 		if not textures.has(path): textures[path] = load(path)
 		effect.texture = textures[path]
 		effect.region_enabled = true
+		@warning_ignore("integer_division")
 		var rect: Array = clip.rects[(int(p.age)/int(clip.ticks))%clip.rects.size()]
 		effect.region_rect = Rect2(rect[0],rect[1],rect[2],rect[3])
 		effect.position = Vector2(int(p.x)-camera_x+320,GROUND-int(p.height)+camera_y)
@@ -287,6 +290,7 @@ func _update_weapon_trails() -> void:
 				for peer in simulation.projectiles:
 					if int(peer.owner)!=int(p.owner) or str(peer.move)!=str(p.move) or str(peer.get("weapon_id",""))!=str(p.get("pair_trail_peer_id","")):continue
 					if int(peer.life)<=0 or is_same(peer,p):continue
+					@warning_ignore("integer_division")
 					var point: Array=[(int(p.x)+int(peer.x))/2,(int(p.height)+int(peer.height))/2]
 					entries.append({"key":pair_key,"point":point,"age":int(p.age),"facing":int(p.facing),"color":p.get("color",[1,1,1,1]),"native_anchor":true})
 					break
@@ -319,6 +323,7 @@ func _update_weapon_trails() -> void:
 		sprite.texture=textures[path]
 		sprite.region_enabled=true
 		var phase_index:int=int(e.get("legacy_index",i))
+		@warning_ignore("integer_division")
 		var phase:int=(UfeEffectTimeline.phase(clip,int(e.age))+phase_index)%clip.rects.size() if bool(e.get("native_anchor",false)) else (int(e.age)/int(clip.ticks)+phase_index)%clip.rects.size()
 		var rect: Array=clip.rects[phase]
 		sprite.region_rect=Rect2(rect[0],rect[1],rect[2],rect[3])
@@ -415,6 +420,7 @@ func _animation(f: UfeFighter, manifest: Dictionary) -> Dictionary:
 		if f.state == "takeoff" and f.motion.jump_kind == "chase": key = "chase_takeoff"
 		if f.state == "air":
 			key = "flip_forward" if f.motion.jump_kind == "diagonal" else "flip_back" if f.motion.jump_kind == "backward" else "chase_takeoff" if f.motion.jump_kind == "chase" else "vertical_jump"
+			@warning_ignore("integer_division")
 			tick = clampi((16-f.vy-2)/8,0,3)*8 if key == "flip_back" else clampi((16-f.vy-2)/8,0,3)*3 if key == "flip_forward" else 16-f.vy
 			if bool(manifest.get("clips",{}).get(key,{}).get("trajectory_driven",false)):
 				tick = f.definition.jump_speed-f.vy
@@ -444,6 +450,7 @@ func _animation(f: UfeFighter, manifest: Dictionary) -> Dictionary:
 	if intro_tick<0 and f.state not in ["victory","defeat","timeout"] and (not f.move_id.is_empty() or (f.definition.state_frames.has(key) and f.state!="walk") or (f.state=="dash" and f.definition.state_frames.has("dash")) or (f.state=="air" and key in ["vertical_jump","flip_back"])): index = clampi(int(f.frame().sprite)-int(clip.get("simulation_sprite_offset",0)),0,clip.rects.size()-1)
 	if f.state=="air" and key=="chase_takeoff":index=clip.rects.size()-1
 	if not grounded_pose.is_empty():index=clampi(int(grounded_pose.sprite)-int(clip.get("simulation_sprite_offset",0)),0,clip.rects.size()-1)
+	@warning_ignore("integer_division")
 	var anchor: Array = clip.anchors[index] if clip.has("anchors") else [int(clip.cell)/2,int(clip.anchor_y)]
 	var animation:Dictionary={"key":key,"texture": clip.texture, "index": index,"cell": clip.cell,"anchor_y": clip.anchor_y,"anchor":anchor,"rect":clip.rects[index]}
 	if clip.has("attachments_by_frame"):

@@ -89,42 +89,42 @@ func stream(id: String) -> AudioStream:
 		cache[id]=value
 	return cache[id]
 
-func play_id(id: String,player: AudioStreamPlayer=null,owner: int=-1,owner_state: String="") -> void:
+func play_id(id: String,player: AudioStreamPlayer=null,owner_index: int=-1,owner_state: String="") -> void:
 	var value:=stream(id)
 	if value==null:return
 	var usage: String=str(catalog.sounds[id].get("usage","character_voice" if catalog.sounds[id].get("kind","")=="voice" else "sfx"))
 	if player==null and usage in ["character_voice","state_voice"]:
 		# 旧VS音频接口只传ID；无归属的一次性展示发声按两名展示角色的调用顺序分配。
-		if owner<0 and usage=="character_voice":
-			owner=preview_voice_cursor%character_players.size()
+		if owner_index<0 and usage=="character_voice":
+			owner_index=preview_voice_cursor%character_players.size()
 			preview_voice_cursor+=1
-			voice_cues.erase(owner)
-		if owner<0 or owner>=character_players.size():return
+			voice_cues.erase(owner_index)
+		if owner_index<0 or owner_index>=character_players.size():return
 		if usage=="state_voice" and owner_state.is_empty():return
-		if str(voice_cues.get(owner,""))==id:return
-		voice_cues[owner]=id
-		player=character_players[owner]
-		character_states[owner]=owner_state if usage=="state_voice" else ""
-		ending_voices.erase(owner)
-		intro_voices.erase(owner)
+		if str(voice_cues.get(owner_index,""))==id:return
+		voice_cues[owner_index]=id
+		player=character_players[owner_index]
+		character_states[owner_index]=owner_state if usage=="state_voice" else ""
+		ending_voices.erase(owner_index)
+		intro_voices.erase(owner_index)
 	if player==null:
 		player=voices[cursor%voices.size()]
 		cursor+=1
 	player.stream=value
 	player.volume_db=float(catalog.sounds.get(id,{}).get("gain_db",0))
 	player.play()
-	played.append({"tick":last_tick,"id":id,"bus":player.bus,"player":owner,"usage":usage,"owner_state":owner_state})
+	played.append({"tick":last_tick,"id":id,"bus":player.bus,"player":owner_index,"usage":usage,"owner_state":owner_state})
 
-func cue(id: String,contact: bool=false,owner: int=-1,owner_state: String="") -> void:
+func cue(id: String,contact: bool=false,owner_index: int=-1,owner_state: String="") -> void:
 	var key: String=("guard" if id=="block" else "hit_heavy" if id in ["heavy","special","throw"] else "hit_light") if contact else resolve(id)
-	if key=="charge" and cue_match!=null and owner>=0 and owner<cue_match.fighters.size():
-		if not UfeChargeEffectPolicy.allows_charge(cue_match.fighters[owner]):
-			suppressed.append({"tick":last_tick,"id":key,"player":owner,"reason":"outside_q_charge_or_burst"})
+	if key=="charge" and cue_match!=null and owner_index>=0 and owner_index<cue_match.fighters.size():
+		if not UfeChargeEffectPolicy.allows_charge(cue_match.fighters[owner_index]):
+			suppressed.append({"tick":last_tick,"id":key,"player":owner_index,"reason":"outside_q_charge_or_burst"})
 			return
 		# 通用Q声归属本人循环槽，离开Q当帧即可停止，不能遗留在一次性声池。
-		play_id(key,loops[owner],owner,owner_state)
+		play_id(key,loops[owner_index],owner_index,owner_state)
 		return
-	play_id(key,null,owner,owner_state)
+	play_id(key,null,owner_index,owner_state)
 
 func resolve(id: String) -> String:
 	return id if catalog.sounds.has(id) else str(catalog.aliases.get(id,id))
@@ -187,69 +187,69 @@ func _sync_flights(sim:UfeMatchDirector) -> void:
 		flight_players.append({"projectile":p,"node":player,"id":sound})
 		play_id(sound,player,int(p.owner))
 
-func _remember_intro_voice(owner: int, fighter: String) -> void:
+func _remember_intro_voice(owner_index: int, fighter: String) -> void:
 	var id: String=resolve(str(catalog.voices.get(fighter,{}).get("intro","")))
 	var item: Dictionary=catalog.sounds.get(id,{})
 	var policy: Variant=item.get("intro_tail",{})
 	if not policy is Dictionary or str(policy.get("fighter_id",""))!=fighter:return
 	if str(item.get("usage",""))!="character_voice" or bool(item.get("loop",false)):return
-	var player: AudioStreamPlayer=character_players[owner]
-	if str(voice_cues.get(owner,""))!=id or not player.playing or player.stream!=stream(id):return
+	var player: AudioStreamPlayer=character_players[owner_index]
+	if str(voice_cues.get(owner_index,""))!=id or not player.playing or player.stream!=stream(id):return
 	var seconds: float=player.stream.get_length()
 	if not is_finite(seconds) or seconds<=0:return
-	intro_voices[owner]={"id":id,"stream":player.stream,"fighter":fighter,"ticks":0,"limit":ceili(seconds*60.0)+12,"passive_states":policy.get("passive_states",[])}
+	intro_voices[owner_index]={"id":id,"stream":player.stream,"fighter":fighter,"ticks":0,"limit":ceili(seconds*60.0)+12,"passive_states":policy.get("passive_states",[])}
 
 func _sync_intro_voices(sim: UfeMatchDirector,intro_active: bool,result_source: UfeMatchDirector=null) -> void:
-	for owner in intro_voices.keys():
-		var row: Dictionary=intro_voices[owner]
-		var player: AudioStreamPlayer=character_players[owner]
+	for owner_index in intro_voices.keys():
+		var row: Dictionary=intro_voices[owner_index]
+		var player: AudioStreamPlayer=character_players[owner_index]
 		if player.stream!=row.stream or not player.playing:
-			intro_voices.erase(owner)
+			intro_voices.erase(owner_index)
 			continue
-		var f:=sim.fighters[owner]
+		var f:=sim.fighters[owner_index]
 		var ended: bool=sim.finished or (result_source!=null and result_source.finished)
 		var interrupted: bool=f.definition.id!=str(row.fighter) or ended or (not intro_active and f.state not in row.passive_states)
 		if interrupted:
 			player.stop()
-			intro_voices.erase(owner)
-			stopped.append({"tick":last_tick,"player":owner,"id":row.id,"reason":"intro_voice_interrupted"})
+			intro_voices.erase(owner_index)
+			stopped.append({"tick":last_tick,"player":owner_index,"id":row.id,"reason":"intro_voice_interrupted"})
 			continue
 		row.ticks=int(row.ticks)+1
 		if int(row.ticks)>int(row.limit):
 			player.stop()
-			intro_voices.erase(owner)
-			stopped.append({"tick":last_tick,"player":owner,"id":row.id,"reason":"intro_voice_budget_exceeded"})
+			intro_voices.erase(owner_index)
+			stopped.append({"tick":last_tick,"player":owner_index,"id":row.id,"reason":"intro_voice_budget_exceeded"})
 
-func _remember_ending_voice(owner: int, fighter: String, event: String) -> void:
+func _remember_ending_voice(owner_index: int, fighter: String, event: String) -> void:
 	var id: String=resolve(str(catalog.voices.get(fighter,{}).get(event,"")))
 	var item: Dictionary=catalog.sounds.get(id,{})
 	if str(item.get("usage","")) not in ["character_voice","state_voice"] or bool(item.get("loop",false)):return
-	var player: AudioStreamPlayer=character_players[owner]
+	var player: AudioStreamPlayer=character_players[owner_index]
 	# 同一sync已调度的down会被voice_cues去重，也属于本次实际结算声。
-	if str(voice_cues.get(owner,""))!=id or not player.playing or player.stream!=stream(id):return
+	if str(voice_cues.get(owner_index,""))!=id or not player.playing or player.stream!=stream(id):return
 	var seconds: float=player.stream.get_length()
 	if not is_finite(seconds) or seconds<=0:return
-	ending_voices[owner]={"id":id,"stream":player.stream,"ticks":0,"limit":ceili(seconds*60.0)+12}
+	ending_voices[owner_index]={"id":id,"stream":player.stream,"ticks":0,"limit":ceili(seconds*60.0)+12}
 
 func _sync_ending_voices() -> void:
-	for owner in ending_voices.keys():
-		var row: Dictionary=ending_voices[owner]
-		var player: AudioStreamPlayer=character_players[owner]
+	for owner_index in ending_voices.keys():
+		var row: Dictionary=ending_voices[owner_index]
+		var player: AudioStreamPlayer=character_players[owner_index]
 		if player.stream!=row.stream or not player.playing:
-			ending_voices.erase(owner)
+			ending_voices.erase(owner_index)
 			continue
 		row.ticks=int(row.ticks)+1
 		if int(row.ticks)>int(row.limit):
 			player.stop()
-			ending_voices.erase(owner)
-			stopped.append({"tick":last_tick,"player":owner,"id":row.id,"reason":"ending_voice_budget_exceeded"})
+			ending_voices.erase(owner_index)
+			stopped.append({"tick":last_tick,"player":owner_index,"id":row.id,"reason":"ending_voice_budget_exceeded"})
 
 func has_pending_ending_voice() -> bool:
-	for owner in ending_voices.keys():
-		var player: AudioStreamPlayer=character_players[owner]
+	for owner_index in ending_voices.keys():
+		var player: AudioStreamPlayer=character_players[owner_index]
 		# Godot暂停人物声时playing为false；恢复前仍须保护这条已登记尾声。
-		if player.stream==ending_voices[owner].stream and (player.playing or player.stream_paused):return true
-		ending_voices.erase(owner)
+		if player.stream==ending_voices[owner_index].stream and (player.playing or player.stream_paused):return true
+		ending_voices.erase(owner_index)
 	return false
 
 func begin_finish(original: UfeMatchDirector, display: UfeMatchDirector) -> void:
@@ -354,6 +354,7 @@ func sync(sim: UfeMatchDirector,frozen: bool,intro_active: bool=false,result_sou
 			if f.state in ["down","bounce"]:
 				voice(i,f.definition.id,"down")
 		if f.state=="walk":
+			@warning_ignore("integer_division")
 			var foot: int=f.state_tick/16
 			var foot_sound: String="step"
 			var walk_key: String="walk_forward" if f.resolver.previous_x*f.facing>0 else "walk_back"
@@ -364,6 +365,7 @@ func sync(sim: UfeMatchDirector,frozen: bool,intro_active: bool=false,result_sou
 				var contact: int=0
 				for k in range(steps.contacts.size()):
 					if phase>=int(steps.contacts[k]):contact=k
+				@warning_ignore("integer_division")
 				foot=(f.state_tick/cycle)*steps.contacts.size()+contact
 				foot_sound=str(steps.sounds[contact%steps.sounds.size()])
 			if foot!=int(last_foot[i]):cue(foot_sound,false,i)
@@ -409,39 +411,45 @@ func sync(sim: UfeMatchDirector,frozen: bool,intro_active: bool=false,result_sou
 			if not slam.is_empty() and stream(slam)!=null:custom_slam_victims[1-int(event.player)]=true
 	# 帧内发声在自动起手发声之后调度，精确帧事件拥有最后覆盖权。
 	for event in sim.events:
-		var owner:=int(event.get("player",-1))
-		if str(event.kind).begins_with("capture_"):capture_event(sim,event,owner)
+		var owner_index:=int(event.get("player",-1))
+		if str(event.kind).begins_with("capture_"):capture_event(sim,event,owner_index)
 		if event.kind=="sound":
-			if resolve(str(event.id))=="charge" and owner>=0 and owner<sim.fighters.size() and not UfeChargeEffectPolicy.allows_charge(sim.fighters[owner]):
-				suppressed.append({"tick":last_tick,"id":"charge","player":owner,"reason":"outside_q_charge_or_burst"})
-			elif resolve(str(event.id))=="land" and custom_slam_victims.has(owner):
-				suppressed.append({"tick":last_tick,"id":"land","player":owner,"reason":"custom_throw_slam"})
-			else:cue(str(event.id),false,owner,sim.fighters[owner].animation_key() if owner>=0 and owner<sim.fighters.size() else "")
+			if resolve(str(event.id))=="charge" and owner_index>=0 and owner_index<sim.fighters.size() and not UfeChargeEffectPolicy.allows_charge(sim.fighters[owner_index]):
+				suppressed.append({"tick":last_tick,"id":"charge","player":owner_index,"reason":"outside_q_charge_or_burst"})
+			elif resolve(str(event.id))=="land" and custom_slam_victims.has(owner_index):
+				suppressed.append({"tick":last_tick,"id":"land","player":owner_index,"reason":"custom_throw_slam"})
+			else:cue(str(event.id),false,owner_index,sim.fighters[owner_index].animation_key() if owner_index>=0 and owner_index<sim.fighters.size() else "")
 		if event.kind in ["hit","block"]:
 			var heavy: bool=int(event.get("feedback",{}).get("hitstop",0))>=8
 			var custom:=data_contact_id(sim,event)
-			if event.has("guard_sound"):cue(str(event.guard_sound),false,int(event.get("guarded_by",1-owner)))
-			elif custom.is_empty():cue("block" if event.kind=="block" else "heavy" if heavy else "light",true,owner)
-			else:cue(custom,false,owner)
+			if event.has("guard_sound"):cue(str(event.guard_sound),false,int(event.get("guarded_by",1-owner_index)))
+			elif custom.is_empty():cue("block" if event.kind=="block" else "heavy" if heavy else "light",true,owner_index)
+			else:cue(custom,false,owner_index)
 			if event.kind=="hit":
-				var victim:int=1-owner
+				var victim:int=1-owner_index
 				var victim_id:String=sim.fighters[victim].definition.id
 				var down_id:String=resolve(str(catalog.voices.get(victim_id,{}).get("down","")))
 				# 只保护本次sync确实已调度的倒地声；没有有效down的旧角色仍播hit。
 				if down_id.is_empty() or str(voice_cues.get(victim,""))!=down_id:voice(victim,victim_id,"hit")
 		if event.kind=="throw_slam":
 			var slam:=data_contact_id(sim,event)
-			if not slam.is_empty():cue(slam,false,owner)
+			if not slam.is_empty():cue(slam,false,owner_index)
 		if event.kind in ["throw_tech","projectile_block","projectile_reflect","projectile_absorb"]:
-			if event.has("guard_sound"):cue(str(event.guard_sound),false,owner)
-			else:cue("block",true,owner)
-		if event.kind=="weapon_return" and event.has("sound"):cue(str(event.sound),false,owner)
-		if event.kind=="absorb_counter":cue("pulse",false,owner)
-		if event.kind=="teleport":cue("dodge",false,owner)
+			if event.has("guard_sound"):cue(str(event.guard_sound),false,owner_index)
+			else:cue("block",true,owner_index)
+		if event.kind=="weapon_return" and event.has("sound"):cue(str(event.sound),false,owner_index)
+		if event.kind=="absorb_counter":cue("pulse",false,owner_index)
+		if event.kind=="teleport":cue("dodge",false,owner_index)
 
-func _exit_tree() -> void:
+## 同步停播并断开全部流引用。退出通知里不能 await，所以单独提供此方法；
+## 重复调用无副作用。AudioServer 在独立线程回收 playback，调用方需让出真实时间。
+func release_audio() -> void:
 	for row in flight_players:
-		if is_instance_valid(row.node):row.node.stop()
+		if is_instance_valid(row.node):
+			row.node.stop()
+			row.node.stream=null
+	flight_players.clear()
+	flight_match=null
 	# 停播并断开所有流的引用，避免音频线程仍持有播放中的 AudioStream。
 	for player in voices+character_players+loops:
 		if is_instance_valid(player):
@@ -452,6 +460,11 @@ func _exit_tree() -> void:
 		music.stream=null
 	if music_director!=null:music_director.release_streams()
 	cache.clear()
+	ending_voices.clear()
+	intro_voices.clear()
+
+func _exit_tree() -> void:
+	release_audio()
 
 func data_contact_id(sim: UfeMatchDirector,event: Dictionary) -> String:
 	var index:=int(event.get("player",-1))
@@ -460,9 +473,9 @@ func data_contact_id(sim: UfeMatchDirector,event: Dictionary) -> String:
 	var move: Dictionary=moves.get(str(event.get("move","")),{})
 	return str(move.get("audio",{}).get(str(event.kind),""))
 
-func capture_event(sim: UfeMatchDirector,event: Dictionary,owner: int) -> void:
-	if owner<0 or owner>=sim.fighters.size():return
-	var actor := sim.fighters[owner]
+func capture_event(sim: UfeMatchDirector,event: Dictionary,owner_index: int) -> void:
+	if owner_index<0 or owner_index>=sim.fighters.size():return
+	var actor := sim.fighters[owner_index]
 	var move: Dictionary=actor.definition.moves.get(str(event.get("move","")),{})
 	if not move.has("capture"):return
 	var key := str(event.kind)
@@ -471,4 +484,4 @@ func capture_event(sim: UfeMatchDirector,event: Dictionary,owner: int) -> void:
 		var reason := str(event.reason)
 		key+=":guard" if reason=="guard" or reason in ["projectile_reflect","projectile_absorb","projectile_block"] else ":miss"
 	var id := str(move.get("audio",{}).get(key,""))
-	if not id.is_empty():cue(id,false,owner)
+	if not id.is_empty():cue(id,false,owner_index)

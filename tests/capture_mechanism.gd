@@ -133,9 +133,9 @@ func run_case(config: Dictionary, saved_inputs: Array = []) -> Dictionary:
 
 func events_of(record: Dictionary, kind: String) -> Array:
 	var result: Array = []
-	for sample in record.rows:
-		for event in sample.events:
-			if str(event.kind) == kind: result.append({"tick":sample.tick,"event":event})
+	for sample_row in record.rows:
+		for event in sample_row.events:
+			if str(event.kind) == kind: result.append({"tick":sample_row.tick,"event":event})
 	return result
 
 func check_case(record: Dictionary) -> void:
@@ -164,16 +164,16 @@ func check_case(record: Dictionary) -> void:
 		check(begins.size() == 1 and impacts.size() == 1,label+"实际接触后一次结算")
 		check(int(last.fighters[1][10].hp) == 885,label+"只结算115伤")
 		var durations := {"enclose":0,"shrink":0,"return":0,"held":0,"release":0}
-		for sample in record.rows:
-			var relation: Dictionary = sample.fighters[0][12].get("capture",{})
+		for sample_row in record.rows:
+			var relation: Dictionary = sample_row.fighters[0][12].get("capture",{})
 			var phase := str(relation.get("phase",""))
 			if durations.has(phase): durations[phase] = int(durations[phase])+1
-			if phase in ["enclose","shrink","return","held"]: check(int(sample.fighters[1][10].hp) == 1000,label+"held末之前不扣血")
+			if phase in ["enclose","shrink","return","held"]: check(int(sample_row.fighters[1][10].hp) == 1000,label+"held末之前不扣血")
 			if phase == "release":
-				var victim: Dictionary = sample.fighters[1][12].capture_victim
+				var victim: Dictionary = sample_row.fighters[1][12].capture_victim
 				var age := int(relation.phase_age)
 				check(str(victim.animation) == ("fixture_shrinking" if age < 2 else "fixture_restore"),label+"释放两clip切换")
-				if age >= 2: check(int(sample.fighters[1][2]) == 0,label+"恢复帧在安全地面")
+				if age >= 2: check(int(sample_row.fighters[1][2]) == 0,label+"恢复帧在安全地面")
 		check(durations == {"enclose":8,"shrink":12,"return":12,"held":8,"release":6},label+"五阶段时长")
 		check(record.protection.all(func(p): return p),label+"捕获期间免普通投技及再捕获")
 		check(int(last.fighters[0][1]) >= 28 and int(last.fighters[0][1]) <= 1252 and int(last.fighters[1][1]) >= 28 and int(last.fighters[1][1]) <= 1252,label+"墙边合法落点")

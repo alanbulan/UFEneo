@@ -14,7 +14,7 @@ func section(_frame: int) -> int:return 0
 func boxes(_frame: int) -> bool:return false
 func key(code: int) -> void:
 	for pressed in [true,false]:
-		var event:=InputEventKey.new();event.keycode=code;event.physical_keycode=code;event.pressed=pressed
+		var event:=InputEventKey.new();event.keycode=code as Key;event.physical_keycode=code as Key;event.pressed=pressed
 		app.get_viewport().push_input(event)
 func click_button(text: String) -> void:
 	for node in app.viewport.find_children("*","Button",true,false):
@@ -95,7 +95,7 @@ func drive_controls(frame: int, root: Node) -> void:
 		2650:
 			var file:=FileAccess.open(OUT+"navigation-evidence.json",FileAccess.WRITE)
 			file.store_string(JSON.stringify({"checks":checks,"all_passed":not checks.values().has(false),"screenshots":screenshots,"tape_frames":app.dummy_tape.size()},"\t"))
-func sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
+func sample(frame: int,_sim: UfeMatchDirector) -> UfeInputFrame:
 	var a:=UfeInputFrame.make();passive=UfeInputFrame.make()
 	if frame in [420,434,448]:a=UfeInputFrame.make(0,0,UfeInputFrame.LIGHT)
 	if frame==620:a=UfeInputFrame.make(0,0,UfeInputFrame.SPECIAL)

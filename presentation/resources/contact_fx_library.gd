@@ -1,6 +1,8 @@
 class_name UfeContactFxLibrary
 extends RefCounted
 ## Common contact art is separate from fighter identity, move data and simulation.
+# 目录含 .gdignore，编辑器不注册 class_name；显式 preload 才能在本文件内解析依赖。
+const SpriteLibrary = preload("res://presentation/resources/sprite_library.gd")
 const PATH := "res://content/presentation/contact_effects.json"
 const CACHE_LIMIT := 8
 static var _catalog: Dictionary = {}
@@ -31,7 +33,7 @@ static func for_asset(row: Dictionary) -> Dictionary:
 static func _asset(id: String, source: Dictionary) -> Dictionary:
 	var key := str(source.manifest) + "|" + str(source.review)
 	if not _assets.has(key):
-		var frames := UfeSpriteLibrary.load_frames(str(source.manifest))
+		var frames := SpriteLibrary.load_frames(str(source.manifest))
 		var review: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(str(source.review)))
 		_assets[key] = {"frames": frames, "anchor": Vector2(review.anchor_px[0], review.anchor_px[1])}
 		manifest_loads += 1

@@ -1,4 +1,5 @@
 extends RefCounted
+@warning_ignore_start("integer_division")
 ## 银河本人单直拳；原04护架复用为起手，原00–02接触保持；无三连。
 const ID := "ultraman-arc__galaxion"
 const CLOCKS := [2,2,2,2,12]
@@ -143,3 +144,4 @@ static func equal_numbers(actual: Array, expected: Array) -> bool:
 	for index in range(actual.size()):
 		if float(actual[index]) != float(expected[index]): return false
 	return true
+@warning_ignore_restore("integer_division")

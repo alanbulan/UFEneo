@@ -1,5 +1,6 @@
 class_name UfeUltrasevenAirSpecialReview
 extends UfeReviewDriver
+@warning_ignore_start("integer_division")
 ## 只在训练开局设置站位/能量；跳跃、空中P和之后的全部运动都由InputFrame驱动。
 func _init() -> void:profile="stage4_ultraseven_air_special"
 func section(frame: int) -> int:return mini(frame/240,1)
@@ -23,3 +24,4 @@ func observe_walk(frame: int,sim: UfeMatchDirector,view: UfeSideView) -> void:
 		"inputs":last_inputs.duplicate(true),"projectiles":sim.projectiles.duplicate(true),"events":sim.events.duplicate(true)})
 func save_file(path: String) -> void:
 	FileAccess.open(path,FileAccess.WRITE).store_string(JSON.stringify({"profile":profile,"input_source":"主游戏训练真实InputFrame；不修改运动中的状态/高度/伤害", "trace":trace},"\t"))
+@warning_ignore_restore("integer_division")

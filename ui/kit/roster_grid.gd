@@ -36,6 +36,7 @@ func bind(value: UfeRosterModel) -> void:
 	scroll_vertical=0
 	refresh()
 func _process(_delta: float) -> void:
+	@warning_ignore("integer_division")
 	if model!=null and first_row!=scroll_vertical/ROW_HEIGHT:refresh()
 func make_cell() -> void:
 	var cell:=PixelButton.new()
@@ -65,6 +66,7 @@ func make_cell() -> void:
 	markers.append(cursors_for_cell)
 func refresh() -> void:
 	var total:=ceili(model.filtered.size()/float(COLS))
+	@warning_ignore("integer_division")
 	first_row=clampi(scroll_vertical/ROW_HEIGHT,0,maxi(0,total-1))
 	var count:=mini(maxi(0,total-first_row),ceili(maxf(size.y,80)/ROW_HEIGHT)+1)
 	before.custom_minimum_size.y=first_row*ROW_HEIGHT
@@ -90,8 +92,10 @@ func update_selection() -> void:
 		var id:=str(cells[slot].get_meta("fighter_id"))
 		for player in range(2):markers[slot][player].visible=id==selected_ids[player]
 func reveal(index: int) -> void:
+	@warning_ignore("integer_division")
 	var row:=index/COLS
 	if row*ROW_HEIGHT<scroll_vertical:scroll_vertical=row*ROW_HEIGHT
 	elif (row+1)*ROW_HEIGHT>scroll_vertical+size.y:scroll_vertical=(row+1)*ROW_HEIGHT-int(size.y)
+	@warning_ignore("integer_division")
 	if first_row!=scroll_vertical/ROW_HEIGHT:refresh()
 	else:update_selection()

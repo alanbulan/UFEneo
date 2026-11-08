@@ -1,5 +1,6 @@
 class_name UfePhase3SpecialReview
 extends UfeReviewDriver
+@warning_ignore_start("integer_division")
 ## 每组只设置开局训练参数，动作、命中、KO均使用真实InputFrame。
 const MOVES := ["motion_236","motion_623","motion_214","motion_22"]
 const S_LABELS := ["初代·切割光线","初代·奥特攻击光线","初代·拘束之环","初代·奥特屏障反射","杰顿·连射火球","杰顿·吸收反击","杰顿·瞬移手刀","杰顿·护盾外推","杰顿护盾挡火球·同角色陪练","双方手动挑衅","时间到演出·训练剩余1秒","完整回合·初代胜利/杰顿失败","完整回合·杰顿胜利/初代失败"]
@@ -63,3 +64,4 @@ func observe_walk(frame: int,sim: UfeMatchDirector,view: UfeSideView) -> void:
 		var a:=view._animation(f,view.manifests[i])
 		pair.append({"player":i,"fighter":f.definition.id,"x":f.x,"height":f.height,"facing":f.facing,"state":f.state,"move":f.move_id,"move_tick":f.move_tick,"clip":a.get("key",""),"sprite":a.get("index",-1),"hp":f.stats.hp,"invulnerable":UfeHitResolver.invulnerable(f),"conceal":f.frame().get("conceal",false)})
 	trace.append({"movie_frame":frame,"section":section(frame),"label":S_LABELS[section(frame)],"inputs":last_inputs.duplicate(true),"tick":sim.tick,"pair":pair,"events":sim.events.duplicate(true),"projectiles":sim.projectiles.duplicate(true),"finished":sim.finished,"winner":sim.winner,"intro_tick":view.intro_tick,"ending_tick":view.ending_tick})
+@warning_ignore_restore("integer_division")

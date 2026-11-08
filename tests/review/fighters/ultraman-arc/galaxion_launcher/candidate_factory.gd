@@ -1,4 +1,5 @@
 extends RefCounted
+@warning_ignore_start("integer_division")
 ## 银河本人升拳；保留00–06原序，只有02升拳接触。
 const ID := "ultraman-arc__galaxion"
 const CLOCKS := [3,3,5,3,3,3,3]
@@ -173,3 +174,4 @@ static func verify_launch(trace: Array, kind: String) -> Array:
 	if kind=="hit" and not (launch_seen and airborne and apex and descent and landed and wake_seen and recovered and max_height>0):
 		errors.append({"kind":"incomplete_real_launch_trajectory","launch":launch_seen,"airborne":airborne,"apex":apex,"descent":descent,"landed":landed,"wake":wake_seen,"recovered":recovered,"max_height":max_height})
 	return errors
+@warning_ignore_restore("integer_division")

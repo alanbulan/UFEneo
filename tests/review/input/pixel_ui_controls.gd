@@ -10,8 +10,8 @@ func section(_frame: int) -> int: return 0
 func boxes(_frame: int) -> bool: return show_debug
 func key(app: Node, code: int, down: bool) -> void:
 	var event:=InputEventKey.new()
-	event.keycode=code
-	event.physical_keycode=code
+	event.keycode=code as Key
+	event.physical_keycode=code as Key
 	event.pressed=down
 	app.get_viewport().push_input(event)
 func drive_controls(frame: int, app: Node) -> void:

@@ -1,5 +1,6 @@
 class_name UfeTrainingOverlay
 extends HBoxContainer
+@warning_ignore("unused_signal")
 signal action_requested(action: String)
 var history: Array=[[],[]]
 var info: Array=[]
@@ -53,15 +54,15 @@ func update_match(sim: UfeMatchDirector) -> void:
 			feedback_ticks[player]=90
 	for i in range(2):
 		var f:=sim.fighters[i]
-		var name: String=STATE_NAMES.get(f.state,f.state)
+		var state_name: String=STATE_NAMES.get(f.state,f.state)
 		var phase:="上一招"
 		if not f.move_id.is_empty():
 			var move: Dictionary=f.definition.moves[f.move_id]
 			last_moves[i]=move
-			name=str(move.get("display_name",f.move_id))
+			state_name=str(move.get("display_name",f.move_id))
 			phase="起手" if f.move_tick<int(move.get("startup",0)) else "攻击" if f.move_tick<int(move.get("startup",0))+int(move.get("active",0)) else "收招"
 		var last: Dictionary=last_moves[i]
-		info[i].text="%s · 连段%d\n"%[name,f.combat.combo]
+		info[i].text="%s · 连段%d\n"%[state_name,f.combat.combo]
 		if last.is_empty():info[i].text+="起手 — / 攻击 — / 收招 —"
 		else:info[i].text+="%s %s\n起手%d 攻击%d 收招%d"%[phase,str(last.get("display_name","")) if f.move_id.is_empty() else str(f.move_tick),int(last.startup),int(last.active),int(last.recovery)]
 		var delay:=int(f.combat.get("stamina_delay",0))

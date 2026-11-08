@@ -1,4 +1,5 @@
 extends SceneTree
+@warning_ignore_start("integer_division")
 func _initialize() -> void:
 	call_deferred("run")
 
@@ -13,7 +14,10 @@ func run() -> void:
 			missing.append(id+"图集未入清单")
 			continue
 		var clip: Dictionary = manifest.clips[id]
-		var atlas := Image.load_from_file(clip.texture)
+		# 经导入资源读取图集；Image.load_from_file 直接读 res:// 下的 PNG 在导出后
+		# 不可用，引擎会报黄色警告。
+		var texture := load(str(clip.texture)) as Texture2D
+		var atlas: Image = texture.get_image() if texture != null else null
 		if atlas == null or clip.rects.size() != clip.ticks.size():
 			missing.append(id+"图集或时长清单无效")
 			continue
@@ -149,3 +153,4 @@ func run() -> void:
 				if not final_moves.get(str(part)+"/"+str(half),{}).has(id): missing.append("最终审片第"+str(part)+"组半段"+str(half)+"缺"+id)
 	print("REVIEW_INPUTS "+JSON.stringify({"missing":missing,"moves":driver.moves_seen.keys(),"states":driver.states_seen.keys(),"chase":driver.launched}))
 	quit(0 if missing.is_empty() else 1)
+@warning_ignore_restore("integer_division")

@@ -1,4 +1,5 @@
 extends UfePhase3ZettonAirReview
+@warning_ignore_start("integer_division")
 ## 共用空中审片输入。节内只送真实双方 InputFrame，不调整状态或轨迹。
 const ORDER := ["vertical_jump","flip_forward","flip_back","vertical_light","vertical_heavy","diagonal_light","diagonal_heavy","air_crush","dive","chase_light1","chase_light2","chase_end","full_combo","air_tech"]
 const GROUP := 240
@@ -47,3 +48,4 @@ func target_sample(id: String,age: int,sim: UfeMatchDirector) -> UfeInputFrame:
 
 func save_file(path: String) -> void:
 	FileAccess.open(path,FileAccess.WRITE).store_string(JSON.stringify({"profile":profile,"fighter":fighter_id,"review_order":review_order,"input_source":"原主游戏训练，每节只初始化站位/朝向，节内只送真实双方InputFrame；不改状态/高度/轨迹/伤害。","trace":trace},"\t"))
+@warning_ignore_restore("integer_division")

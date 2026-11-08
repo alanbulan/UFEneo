@@ -66,7 +66,7 @@ static func configure_values(settings: Dictionary) -> void:
 			var binding := get_key_binding(player,action)
 			if int(binding.keycode)>0:
 				var key := InputEventKey.new()
-				key.physical_keycode=int(binding.keycode)
+				key.physical_keycode=int(binding.keycode) as Key
 				key.ctrl_pressed=bool(binding.ctrl);key.alt_pressed=bool(binding.alt)
 				key.shift_pressed=bool(binding.shift);key.meta_pressed=bool(binding.meta)
 				InputMap.action_add_event(name,key)
@@ -74,14 +74,14 @@ static func configure_values(settings: Dictionary) -> void:
 			if str(pad.get("kind","none"))=="button":_add_pad_button(name,device,int(pad.button))
 			elif str(pad.get("kind","none"))=="axis":
 				var axis := InputEventJoypadMotion.new()
-				axis.device=device;axis.axis=int(pad.axis);axis.axis_value=int(pad.value)
+				axis.device=device;axis.axis=int(pad.axis) as JoyAxis;axis.axis_value=int(pad.value)
 				InputMap.action_add_event(name,axis)
 				if pad.has("dpad"):_add_pad_button(name,device,int(pad.dpad))
 	for device in Input.get_connected_joypads():_add_pad_button("pause",device,JOY_BUTTON_START)
 
 static func _add_pad_button(action: String, device: int, button: int) -> void:
 	var event := InputEventJoypadButton.new()
-	event.device=device;event.button_index=button
+	event.device=device;event.button_index=button as JoyButton
 	InputMap.action_add_event(action,event)
 
 static func _keyboard_actions(player: int) -> Dictionary:

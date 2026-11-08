@@ -12,10 +12,10 @@ var shake := Vector2.ZERO
 var projectile_observations:Array=[]
 
 func advance_flash(advance_fx: bool = true) -> Array:
-	var visible:=flash.duplicate()
+	var flash_snapshot:=flash.duplicate()
 	for i in range(2):flash[i]=maxi(0,int(flash[i])-1)
 	if advance_fx:advance_effects(1) # 保留既有离线消费者接口；主游戏显式传false。
-	return visible
+	return flash_snapshot
 
 func advance_effects(ticks: int) -> void:
 	shake_ticks=maxi(0,shake_ticks-maxi(0,ticks))
@@ -43,10 +43,10 @@ func spawn(id: String, x: int, height: int, tint: Array = [1,1,1,1], facing: int
 	UfeEffectGeometry.apply_anchor(s,clip,clip.rects[0],facing)
 	# 新普通火花使用生成的原色；原有专属/防御的材质路径保持。
 	if not bool(clip.get("ordinary_melee_only",false)) or bool(clip.get("color_parameter",true)):
-		var material:=ShaderMaterial.new()
-		material.shader=preload("res://presentation/effect_palette.gdshader")
-		material.set_shader_parameter("palette_tint",Color(float(tint[0]),float(tint[1]),float(tint[2]),float(tint[3])))
-		s.material=material
+		var mat:=ShaderMaterial.new()
+		mat.shader=preload("res://presentation/effect_palette.gdshader")
+		mat.set_shader_parameter("palette_tint",Color(float(tint[0]),float(tint[1]),float(tint[2]),float(tint[3])))
+		s.material=mat
 	add_child(s)
 	particles.append({"id":id,"node":s,"clip":clip,"age":0,"x":x,"height":height})
 

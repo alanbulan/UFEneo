@@ -36,6 +36,11 @@ WARNING_SETTINGS = {
     "shadowed_variable_base_class": 2,
     "shadowed_variable": 2,
     "standalone_expression": 2,
+    # 2026-11-08 补：编辑器里还出现过这三类。
+    "incompatible_ternary": 2,
+    "confusable_local_declaration": 2,
+    "confusable_local_usage": 2,
+    "shadowed_global_identifier": 2,
 }
 
 MESSAGE = re.compile(r"Parse Error: (?P<message>.+?)(?: \(Warning treated as error\))?$")

@@ -1,5 +1,6 @@
 class_name UfeUltrasevenAirReview
 extends UfePhase3ZettonAirReview
+@warning_ignore_start("integer_division")
 ## 主游戏训练：复用已审真实输入驱动，不复制模拟，不在动作中摆坐标。
 func _init() -> void: profile="stage4_ultraseven_air"
 func section(frame: int) -> int: return mini(frame/240,16)
@@ -18,3 +19,4 @@ func prepare_match(sim: UfeMatchDirector) -> void:
 	sim.fighters[1].x=500+distance
 func save_file(path: String) -> void:
 	FileAccess.open(path,FileAccess.WRITE).store_string(JSON.stringify({"profile":profile,"input_source":"主游戏训练InputFrame；赛文P1对杰顿P2。只在各组开局设置站位，动作中不改坐标、状态、伤害或高度。全程F1。","trace":trace},"\t"))
+@warning_ignore_restore("integer_division")

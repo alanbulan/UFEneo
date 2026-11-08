@@ -21,6 +21,7 @@ static func prepare() -> void:
 			stream = stream.duplicate()
 			stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
 			stream.loop_begin = 0
+			@warning_ignore("integer_division")
 			stream.loop_end = stream.data.size() / 2
 		cache[id] = stream
 		loads += 1

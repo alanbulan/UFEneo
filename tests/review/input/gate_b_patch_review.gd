@@ -1,5 +1,6 @@
 class_name UfeGateBPatchReview
 extends UfePhase3ThrowReview
+@warning_ignore_start("integer_division")
 ## 分组训练，仅设置每组的开局距离/能量/生命；之后均为正式输入。
 func _init() -> void:profile="gate_b_patch"
 func section(frame: int) -> int:return mini(frame/180,7)
@@ -44,3 +45,4 @@ func observe_walk(frame: int,sim: UfeMatchDirector,view: UfeSideView) -> void:
 	trace.append({"movie_frame":frame,"section":section(frame),"label":label(frame),"player":active_player,"tick":sim.tick,"pair":pair,"events":sim.events.duplicate(true),"effects":effects,"inputs":last_inputs.duplicate(true)})
 func save_file(path: String) -> void:
 	FileAccess.open(path,FileAccess.WRITE).store_string(JSON.stringify({"profile":profile,"input_source":"主游戏训练InputFrame；分组设置距离/必杀能量与KO测试生命，组内不改坐标、姿势、判定或胜负。","trace":trace},"\t"))
+@warning_ignore_restore("integer_division")

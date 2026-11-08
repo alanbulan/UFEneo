@@ -12,7 +12,7 @@ func run() -> void:
 		driver.prepare_match(sim);driver.prepare_match(twin)
 		if side<0:
 			for s in [sim,twin]:s.fighters[0].x=680;s.fighters[1].x=500;s.fighters[0].facing=-1;s.fighters[1].facing=1
-		var hits:=[];var returned:=0;var poses:={};var path:=[];var starts:=0
+		var hits:=[];var returned:=0;var poses:={};var path:=[];var _starts:=0
 		for age in range(180):
 			var inputs:=[driver.sample(age,sim),driver.second_sample(age)]
 			sim.step(inputs);twin.step(inputs)
@@ -20,7 +20,7 @@ func run() -> void:
 			var f:=sim.fighters[0]
 			if f.move_id=="air_special":
 				poses[str(f.frame().sprite)]=true
-				if int(f.move_tick)==1:starts+=1
+				if int(f.move_tick)==1:_starts+=1
 			for p in sim.projectiles:
 				if p.move!="air_special":continue
 				path.append([age,int(p.x),int(p.height),int(p.age),int(p.hits)])

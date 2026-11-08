@@ -160,6 +160,7 @@ static func victim_sprite(a: UfeFighter, b: UfeFighter, target: Dictionary) -> i
 		var last:=tick
 		while first>0 and same_hold_phase(frames[first-1],target):first-=1
 		while last+1<frames.size() and same_hold_phase(frames[last+1],target):last+=1
+		@warning_ignore("integer_division") # 按阶段帧数映射整数变体索引。
 		var index:=mini(variants.size()-1,(tick-first)*variants.size()/(last-first+1))
 		preferred=clampi(int(variants[index]),0,poses.size()-1)
 	return floor_safe_hold_sprite(a,b,target,preferred,fallback)
@@ -193,6 +194,7 @@ static func sync(sim: UfeMatchDirector) -> void:
 			continue
 		if frame.has("throw_height"):
 			var fraction: Array=frame.throw_height
+			@warning_ignore("integer_division") # 有理数高度缩放，整数像素结果。
 			a.height=int(a.motion.throw_origin_height)*int(fraction[0])/int(fraction[1])
 		b.motion.pose=str(target.pose)
 		b.motion.pose_sprite=victim_sprite(a,b,target)
@@ -218,7 +220,9 @@ static func sync(sim: UfeMatchDirector) -> void:
 			var progress: Array=target.progress
 			var numerator:=int(progress[0])
 			var denominator:=int(progress[1])
+			@warning_ignore("integer_division") # 投掷释放的整数像素线性插值。
 			b.x=a.x+a.facing*(int(b.motion.release_x)+(int(b.motion.release_goal_x)-int(b.motion.release_x))*numerator/denominator)
+			@warning_ignore("integer_division") # 投掷释放的整数像素线性插值。
 			b.height=int(b.motion.release_height)*(denominator-numerator)/denominator+int(offset[1])*numerator/denominator
 		else:
 			b.x=a.x+a.facing*int(offset[0])

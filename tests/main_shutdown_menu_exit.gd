@@ -44,8 +44,8 @@ func _process(_delta: float) -> bool:
 func _key(code: int) -> void:
 	for pressed in [true, false]:
 		var event := InputEventKey.new()
-		event.keycode = code
-		event.physical_keycode = code
+		event.keycode = code as Key
+		event.physical_keycode = code as Key
 		event.pressed = pressed
 		root.push_input(event)
 

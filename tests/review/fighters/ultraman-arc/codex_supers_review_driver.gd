@@ -1,4 +1,5 @@
 extends UfeReviewDriver
+@warning_ignore_start("integer_division")
 const SPAN: int = 320
 const MOVES: Array = ["special", "special2", "special3", "air_special"]
 const CASES: Array = ["hit", "stand_guard", "whiff"]
@@ -165,3 +166,4 @@ func save_file(path: String) -> void:
         "source": "主游戏训练真实H蓄能/charge_stop→P或J+K，空中真实W后P；双对手双向命中/站防/远落空。980拒绝、1980降一级、2980降二级依现有自动档位；仅开局设站位朝向，组内只送双方InputFrame。"}))
     output.close()
     trace_saved = true
+@warning_ignore_restore("integer_division")

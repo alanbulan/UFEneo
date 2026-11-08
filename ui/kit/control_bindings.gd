@@ -60,7 +60,7 @@ func _build_rows() -> void:
 	for action_value in UfeInputRouter.ACTIONS:
 		var action:=str(action_value)
 		var row:=HBoxContainer.new();row_list.add_child(row)
-		var name:=Label.new();name.text=str(LABELS.get(action,action));name.custom_minimum_size.x=94;name.vertical_alignment=VERTICAL_ALIGNMENT_CENTER;row.add_child(name)
+		var action_label:=Label.new();action_label.text=str(LABELS.get(action,action));action_label.custom_minimum_size.x=94;action_label.vertical_alignment=VERTICAL_ALIGNMENT_CENTER;row.add_child(action_label)
 		var value:=PixelButton.new(_binding_text(action));value.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(value)
 		value.pressed.connect(func():begin_capture(action))
 		value.focus_entered.connect(func():row_scroll.ensure_control_visible(value))
@@ -147,22 +147,22 @@ static func _joy_signatures(value: Variant) -> Array:
 	if value.has("dpad"):result.append(["button",int(value.dpad)])
 	return result
 
-func _effective_binding(settings: Dictionary, kind: String, owner: int, action: String) -> Variant:
+func _effective_binding(settings: Dictionary, kind: String, owner_index: int, action: String) -> Variant:
 	var field:="key_bindings" if kind=="keyboard" else "joy_bindings"
 	var bindings: Dictionary=settings.get(field,{})
-	var fallback: Dictionary=UfeInputRouter.default_key_binding(owner,action) if kind=="keyboard" else UfeInputRouter.default_joy_binding(owner,action)
-	return bindings.get("p%d_%s"%[owner+1,action],fallback)
+	var fallback: Dictionary=UfeInputRouter.default_key_binding(owner_index,action) if kind=="keyboard" else UfeInputRouter.default_joy_binding(owner_index,action)
+	return bindings.get("p%d_%s"%[owner_index+1,action],fallback)
 
 func conflict(action: String, value: Variant, proposed: Dictionary={}) -> String:
 	var settings: Dictionary=UfePlayerSettings.values() if proposed.is_empty() else proposed
 	return _mapping_conflict(player,device_kind,action,value,settings)
 
-func _mapping_conflict(owner: int, kind: String, action: String, value: Variant, settings: Dictionary) -> String:
-	var owners: Array=[0,1] if kind=="keyboard" else [owner]
+func _mapping_conflict(owner_index: int, kind: String, action: String, value: Variant, settings: Dictionary) -> String:
+	var owners: Array=[0,1] if kind=="keyboard" else [owner_index]
 	for other_player in owners:
 		for action_value in UfeInputRouter.ACTIONS:
 			var other:=str(action_value)
-			if other_player==owner and other==action:continue
+			if other_player==owner_index and other==action:continue
 			if kind=="keyboard":
 				var incoming:=_key_signature(value)
 				if int(incoming[0])==0:continue
@@ -170,7 +170,7 @@ func _mapping_conflict(owner: int, kind: String, action: String, value: Variant,
 				# 修饰组合也占用主键，避免普通同键在实战中被组合覆盖。
 				if int(incoming[0])!=int(existing[0]):continue
 				# 2P默认的上方向和独立跳跃共用↑，是原有有意重合。
-				if owner==1 and other_player==1 and action in ["up","jump"] and other in ["up","jump"] and incoming==existing and incoming==[KEY_UP,false,false,false,false]:continue
+				if owner_index==1 and other_player==1 and action in ["up","jump"] and other in ["up","jump"] and incoming==existing and incoming==[KEY_UP,false,false,false,false]:continue
 			else:
 				var incoming:=_joy_signatures(value);var existing:=_joy_signatures(_effective_binding(settings,kind,other_player,other))
 				if not incoming.any(func(item):return item in existing):continue
@@ -217,12 +217,12 @@ func reset_bindings(all_groups: bool) -> void:
 	var owners: Array=[0,1] if all_groups else [player]
 	for field in fields:
 		var kind: String="keyboard" if field=="key_bindings" else "joypad"
-		for owner in owners:
+		for owner_index in owners:
 			for action_value in UfeInputRouter.ACTIONS:
 				var action:=str(action_value)
-				var used:=_mapping_conflict(owner,kind,action,_effective_binding(proposed,kind,owner,action),proposed)
+				var used:=_mapping_conflict(owner_index,kind,action,_effective_binding(proposed,kind,owner_index,action),proposed)
 				if not used.is_empty():
-					message.text="未重置：默认%dP %s会与%s冲突。可先调整对方，或恢复全部默认。"%[owner+1,LABELS.get(action,action),used];return
+					message.text="未重置：默认%dP %s会与%s冲突。可先调整对方，或恢复全部默认。"%[owner_index+1,LABELS.get(action,action),used];return
 	var error:=UfePlayerSettings.apply(updates)
 	if error!=OK:message.text="保存失败，未应用重置。";return
 	UfeInputRouter.configure();_build_rows()
@@ -239,12 +239,12 @@ func _binding_text(action: String) -> String:
 	if not value is Dictionary or str(value.get("kind","none"))=="none":return "未绑定（沿组合输入）" if action in ["special","jump"] else "未绑定"
 	if value.kind=="button":return _joy_button_text(int(value.button))
 	var axis:=int(value.get("axis",0));var side:=int(value.get("value",1))
-	var name: String="L2" if axis==JOY_AXIS_TRIGGER_LEFT else "R2" if axis==JOY_AXIS_TRIGGER_RIGHT else "左摇杆" if axis in [JOY_AXIS_LEFT_X,JOY_AXIS_LEFT_Y] else "右摇杆" if axis in [JOY_AXIS_RIGHT_X,JOY_AXIS_RIGHT_Y] else "轴%d"%axis
-	if axis in [JOY_AXIS_LEFT_X,JOY_AXIS_RIGHT_X]:name+="←" if side<0 else "→"
-	elif axis in [JOY_AXIS_LEFT_Y,JOY_AXIS_RIGHT_Y]:name+="↑" if side<0 else "↓"
-	elif axis not in [JOY_AXIS_TRIGGER_LEFT,JOY_AXIS_TRIGGER_RIGHT]:name+="−" if side<0 else "+"
-	if value.has("dpad"):name+=" / "+_joy_button_text(int(value.dpad))
-	return name
+	var axis_name: String="L2" if axis==JOY_AXIS_TRIGGER_LEFT else "R2" if axis==JOY_AXIS_TRIGGER_RIGHT else "左摇杆" if axis in [JOY_AXIS_LEFT_X,JOY_AXIS_LEFT_Y] else "右摇杆" if axis in [JOY_AXIS_RIGHT_X,JOY_AXIS_RIGHT_Y] else "轴%d"%axis
+	if axis in [JOY_AXIS_LEFT_X,JOY_AXIS_RIGHT_X]:axis_name+="←" if side<0 else "→"
+	elif axis in [JOY_AXIS_LEFT_Y,JOY_AXIS_RIGHT_Y]:axis_name+="↑" if side<0 else "↓"
+	elif axis not in [JOY_AXIS_TRIGGER_LEFT,JOY_AXIS_TRIGGER_RIGHT]:axis_name+="−" if side<0 else "+"
+	if value.has("dpad"):axis_name+=" / "+_joy_button_text(int(value.dpad))
+	return axis_name
 
 static func _joy_button_text(index: int) -> String:
 	return str({JOY_BUTTON_X:"□ / X",JOY_BUTTON_Y:"△ / Y",JOY_BUTTON_A:"× / A",JOY_BUTTON_B:"○ / B",JOY_BUTTON_LEFT_SHOULDER:"L1",JOY_BUTTON_RIGHT_SHOULDER:"R1",JOY_BUTTON_LEFT_STICK:"L3",JOY_BUTTON_RIGHT_STICK:"R3",JOY_BUTTON_DPAD_LEFT:"十字左",JOY_BUTTON_DPAD_RIGHT:"十字右",JOY_BUTTON_DPAD_UP:"十字上",JOY_BUTTON_DPAD_DOWN:"十字下",JOY_BUTTON_START:"Start",JOY_BUTTON_BACK:"返回"}.get(index,"按钮%d"%[index+1]))

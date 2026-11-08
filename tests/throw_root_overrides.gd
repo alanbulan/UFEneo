@@ -123,8 +123,8 @@ func input_fixture(facing: int,edge: int,invalid: bool=false) -> UfeMatchDirecto
 	for frame in actor.moves.throw_forward.frames:
 		var target: Dictionary=frame.get("target",{})
 		if target.is_empty():continue
-		var root: Array=target.get("root",[0,0])
-		target.root_overrides={"ultraseven":[int(root[0])+4,int(root[1])+(6 if str(target.get("mode",""))=="hold" else 0)]}
+		var root_rule: Array=target.get("root",[0,0])
+		target.root_overrides={"ultraseven":[int(root_rule[0])+4,int(root_rule[1])+(6 if str(target.get("mode",""))=="hold" else 0)]}
 		if invalid:target.root_overrides.ultraseven=[0,1.25]
 	var sim:=UfeMatchDirector.new(actor,victim,load("res://content/rules/neo.tres"),UfeContentDatabase.states())
 	sim.fighters[0].x=edge;sim.fighters[1].x=edge+52*facing

@@ -1,4 +1,5 @@
 extends SceneTree
+@warning_ignore_start("integer_division")
 ## 可选逐相多矩形的整数接触与旧招逐tick兼容专项。
 const OUT := "res://reports/review/2026-10-28/projectile-frame-hitboxes-core-v1/"
 const CONTRACT := "res://reports/review/2026-10-28/ultraman-teo-s6/air-special-return-v1/beam-collision-contract-v1.json"
@@ -169,3 +170,4 @@ func run() -> void:
 	write_json("logic-result.json",{"passed":errors.is_empty(),"completed":completed,"errors":errors})
 	print("FRAME_HITBOXES ","PASS" if errors.is_empty() else errors)
 	quit(0 if errors.is_empty() else 1)
+@warning_ignore_restore("integer_division")

@@ -1,4 +1,5 @@
 extends SceneTree
+@warning_ignore_start("integer_division")
 func _init() -> void:
 	var driver:=UfeUltrasevenReview.new()
 	var sim: UfeMatchDirector
@@ -46,3 +47,4 @@ func _init() -> void:
 		view.free()
 	print("ULTRASEVEN_FIRST PASS：已安装招式真实输入命中、整帧时长、未制作指令禁用一致。命中：",hits.keys())
 	quit()
+@warning_ignore_restore("integer_division")

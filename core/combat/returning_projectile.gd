@@ -65,7 +65,9 @@ static func advance(sim: UfeMatchDirector, p: Dictionary) -> void:
 		elif int(p.return_age)>=duration:anchor=owner.frame().get("weapon_return_anchor",anchor)
 		var left:=maxi(0,duration-int(p.return_age))
 		# 两个分量都使用整数除法；没有浮点、系统时间、随机数或渲染依赖。
+		@warning_ignore("integer_division") # 回程整数像素线性插值。
 		p.x=(int(p.return_x)*left+(owner.x+owner.facing*int(anchor[0]))*(duration-left))/duration
+		@warning_ignore("integer_division") # 回程整数像素线性插值。
 		p.height=(int(p.return_height)*left+(owner.height+int(anchor[1]))*(duration-left))/duration
 		# 显式最早接回相之前，保留同一实体在当帧腕点；回程/等待始终无伤。
 		# 旧数据无此字段，结束tick、字典及事件保持原样。

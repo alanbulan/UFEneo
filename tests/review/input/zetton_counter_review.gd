@@ -1,5 +1,6 @@
 class_name UfeZettonCounterReview
 extends UfeReviewDriver
+@warning_ignore_start("integer_division")
 ## 仅在分组开始设训练站位；两组均通过真实输入触发侧闪手刀。
 var passive := UfeInputFrame.make()
 func _init() -> void: profile="zetton_counter"
@@ -21,3 +22,4 @@ func observe_walk(frame: int,sim: UfeMatchDirector,view: UfeSideView) -> void:
 func save_file(path: String) -> void:
 	var file:=FileAccess.open(path,FileAccess.WRITE)
 	file.store_string(JSON.stringify({"profile":profile,"input_source":"主游戏训练真实InputFrame；只设分组初始站位；目标始终站姿或下蹲，不跳跃、不改模拟状态。","trace":trace},"\t"))
+@warning_ignore_restore("integer_division")

@@ -1,5 +1,6 @@
 class_name UfeUltrasevenBodyReview
 extends UfeUltrasevenFourthReview
+@warning_ignore_start("integer_division")
 ## 本轮补齐取证，组内仅发送玩家同类InputFrame，不摆状态或改轨迹。
 const BODY_LABELS := ["赛文前投杰顿：前投4连续向前", "赛文前投初代：前投4连续向前", "杰顿前投赛文", "杰顿空投赛文", "杰顿冲刺擒抱赛文", "赛文新蓄能完整循环", "击飞下落 → 倒地 → 起身", "击飞下落 → 倒地 → 前滚起身", "击飞下落 → 倒地 → 后滚起身", "击飞下落 → 倒地 → 起身下段", "击飞下落 → 倒地 → 起身中段", "赛文战败完整演出"]
 var wake_sent := false
@@ -41,3 +42,4 @@ func sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
 			wake_sent=true
 			return UfeInputFrame.make(0,0,UfeInputFrame.LIGHT if part==9 else UfeInputFrame.HEAVY)
 	return UfeInputFrame.make()
+@warning_ignore_restore("integer_division")

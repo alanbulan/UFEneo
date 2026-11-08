@@ -16,6 +16,7 @@ static func melee_point(a: UfeFighter, b: UfeFighter, move: Dictionary) -> Varia
 
 static func block_melee(a: UfeFighter,b: UfeFighter,move: Dictionary) -> void:
 	a.combat.connected=true
+	@warning_ignore("integer_division") # 体力按伤害的四分之一整数扣除。
 	UfeStaminaRules.spend(b, maxi(10,int(move.damage)/4))
 	if int(b.stats.stamina)==0:
 		b.clear_move()

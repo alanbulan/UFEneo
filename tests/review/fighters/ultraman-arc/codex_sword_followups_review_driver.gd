@@ -1,4 +1,5 @@
 extends UfeReviewDriver
+@warning_ignore_start("integer_division")
 const SPAN: int = 120
 const SWORD_CASES: Array = ["hit", "stand_guard", "whiff", "rear_hit"]
 const THROW_CASES: Array = ["hit", "stand_guard", "whiff"]
@@ -146,3 +147,4 @@ func save_file(path: String) -> void:
         "source": "原主游戏main.tscn训练；双对手双向真实214I/6I，214另加背后站位证明首斩。组内只送双方InputFrame，无摆状态/补tick/重置朝向。214两挥刃沿既有单次接触规则；投剑记录完整整数飞行/回程和真实节点。"}))
     output.close()
     trace_saved = true
+@warning_ignore_restore("integer_division")

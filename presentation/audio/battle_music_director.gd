@@ -55,8 +55,8 @@ func _base_track() -> String:
 		return str(options[randi()%options.size()].id) if not options.is_empty() else "battle_1"
 	if choice!="auto":return choice
 	if fighters.is_empty():return str(UfeBattleMusicCatalog.data().get("fallback","battle_1"))
-	var owner: int=maxi(0,round_index-1)%fighters.size()
-	return UfeBattleMusicCatalog.for_fighter(str(fighters[owner]))
+	var owner_index: int=maxi(0,round_index-1)%fighters.size()
+	return UfeBattleMusicCatalog.for_fighter(str(fighters[owner_index]))
 
 func set_context(value: String) -> void:
 	if context==value:return

@@ -1,5 +1,6 @@
 class_name UfePhase3AirReview
 extends UfeReviewDriver
+@warning_ignore_start("integer_division")
 ## 主游戏训练模式逐招输入。只在分组开始设站位，组内不改坐标/状态。
 const ACTIONS := ["spin_heavy","ranged_forward","vertical_jump","flip_back","vertical_light","vertical_heavy","diagonal_light","air_crush","dive","air_pulse","chase_light2","chase_end","dash_light","dash_heavy","backstep","back_counter","dodge","dodge_counter","full_combo"]
 const NAMES := ["回旋后踢 A+K","举掌八分光轮 D+I","垂直跳 W","后跳空翻 A+W","垂直跳轻击 W→J","垂直跳下击 W→K","斜跳膝撞 D+W→J","空中双拳下砸 W→O","俯冲踢 W→S+K","空中光弹 W→I","空轻二段 升击→追击→J→J","空中终结 升击→追击→J→J→K","冲刺拳 D,D→J","冲刺飞踢 D,D→K","后撤步 A,A","后撤反击 A,A→K","闪避 Q","闪避反击 Q→J","完整连段：升击→追击跳→空轻两段→砸地弹地→落地扫腿"]
@@ -74,3 +75,4 @@ func observe_walk(frame: int, sim: UfeMatchDirector, view: UfeSideView) -> void:
 func save_file(path: String) -> void:
 	var file := FileAccess.open(path,FileAccess.WRITE)
 	file.store_string(JSON.stringify({"profile":profile,"input_source":"主游戏训练InputFrame；分组开局reset_round并设置距离，组内不改坐标/状态/姿势；陪练空中组用真实跳跃输入；全程F1。","trace":trace},"\t"))
+@warning_ignore_restore("integer_division")

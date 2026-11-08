@@ -9,7 +9,7 @@ var pressed_before: int=0
 const OUT="res://reports/review/2026-10-22-gate-b/"
 func key(code: int) -> void:
 	for pressed in [true,false]:
-		var event:=InputEventKey.new();event.keycode=code;event.physical_keycode=code;event.pressed=pressed;app.get_viewport().push_input(event)
+		var event:=InputEventKey.new();event.keycode=code as Key;event.physical_keycode=code as Key;event.pressed=pressed;app.get_viewport().push_input(event)
 func click_button(text: String) -> void:
 	for node in app.viewport.find_children("*","Button",true,false):
 		if node.is_visible_in_tree() and node.text==text:

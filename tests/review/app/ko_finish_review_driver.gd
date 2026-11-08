@@ -40,8 +40,8 @@ func prepare_match(sim: UfeMatchDirector) -> void:
 
 func key_event(code: int, pressed: bool) -> void:
 	var event := InputEventKey.new()
-	event.physical_keycode = code
-	event.keycode = code
+	event.physical_keycode = code as Key
+	event.keycode = code as Key
 	event.pressed = pressed
 	Input.parse_input_event(event)
 
@@ -49,9 +49,9 @@ func release_keys() -> void:
 	for code in held_codes: key_event(int(code),false)
 	held_codes.clear()
 
-func send_action(action: String) -> UfeInputFrame:
+func send_action(action_name: String) -> UfeInputFrame:
 	var wanted: Array = []
-	if not action.is_empty(): wanted.append(int(UfeInputRouter.get_key_binding(0,action).keycode))
+	if not action_name.is_empty(): wanted.append(int(UfeInputRouter.get_key_binding(0,action_name).keycode))
 	for code in held_codes:
 		if code not in wanted: key_event(int(code),false)
 	for code in wanted:

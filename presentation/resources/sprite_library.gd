@@ -1,5 +1,8 @@
 class_name UfeSpriteLibrary
 extends RefCounted
+# 目录含 .gdignore，编辑器不注册 class_name；显式 preload 才能在本文件内解析依赖。
+const SpriteGeometry = preload("res://presentation/resources/sprite_geometry.gd")
+const ImageAlpha = preload("res://presentation/resources/image_alpha.gd")
 const MAX_BUNDLES := 8
 static var bundle_cache: Dictionary = {}
 static var bundle_order: Array[String] = []
@@ -72,7 +75,7 @@ static func load_frames(manifest_path: String) -> SpriteFrames:
 			if region != Rect2(Rect2i(region)) or region.size.x <= 0 or region.size.y <= 0 or not Rect2(Vector2.ZERO, atlas.get_size()).encloses(region) or float(durations[i]) <= 0:
 				push_error("Invalid atlas rectangle or duration")
 				return null
-			var geometry := UfeSpriteGeometry.from_manifest(manifest, region.size)
+			var geometry := SpriteGeometry.from_manifest(manifest, region.size)
 			if geometry.is_empty():
 				push_error("Invalid sprite display size, density or ground origin: " + manifest_path)
 				return null
@@ -80,7 +83,7 @@ static func load_frames(manifest_path: String) -> SpriteFrames:
 			if texture_cache.has(key):
 				frames.add_frame(state, texture_cache[key], float(durations[i]))
 				continue
-			if not audited.has(key) and not UfeImageAlpha.accepts_region(atlas_image, Rect2i(region)):
+			if not audited.has(key) and not ImageAlpha.accepts_region(atlas_image, Rect2i(region)):
 				push_error("Sprite frame requires real transparency: %s frame %d" % [state, i])
 				return null
 			var texture := AtlasTexture.new()

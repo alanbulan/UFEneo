@@ -26,18 +26,18 @@ func setup(view: UfeSideView) -> void:
 
 func super_material(i: int) -> ShaderMaterial:
 	if palettes[i] != null: return palettes[i]
-	var material := ShaderMaterial.new()
-	material.shader=preload("res://presentation/super_state_palette.gdshader")
+	var mat := ShaderMaterial.new()
+	mat.shader=preload("res://presentation/super_state_palette.gdshader")
 	var sources := PackedVector3Array(); var targets := PackedVector3Array()
 	for entry in config.palette_mapping:
 		sources.append(Vector3(entry.source[0],entry.source[1],entry.source[2])/255.0)
 		targets.append(Vector3(entry.target[0],entry.target[1],entry.target[2])/255.0)
 	while sources.size()<32: sources.append(Vector3.ZERO); targets.append(Vector3.ZERO)
-	material.set_shader_parameter("mapping_count",config.palette_mapping.size())
-	material.set_shader_parameter("palette_sources",sources)
-	material.set_shader_parameter("palette_targets",targets)
-	palettes[i]=material
-	return material
+	mat.set_shader_parameter("mapping_count",config.palette_mapping.size())
+	mat.set_shader_parameter("palette_sources",sources)
+	mat.set_shader_parameter("palette_targets",targets)
+	palettes[i]=mat
+	return mat
 
 func show_effect(node: Sprite2D, key: String, age: int, root: Vector2, facing: int) -> void:
 	var clip: Dictionary = effects[key]
@@ -56,9 +56,9 @@ func sync(view: UfeSideView) -> void:
 		var active := f.form_id=="super-taro"
 		if active:
 			if ordinary_materials[i]==null: ordinary_materials[i]=sprite.material
-			var material := super_material(i)
-			material.set_shader_parameter("hit_flash",(sprite.material as ShaderMaterial).get_shader_parameter("hit_flash"))
-			sprite.material=material
+			var mat := super_material(i)
+			mat.set_shader_parameter("hit_flash",(sprite.material as ShaderMaterial).get_shader_parameter("hit_flash"))
+			sprite.material=mat
 			var phase := UfeEffectTimeline.phase(effects.super_aura,view.simulation.tick,true)
 			auras[i].texture=aura_renderer.texture_for(sprite,phase)
 			auras[i].position=sprite.position; auras[i].flip_h=f.facing<0

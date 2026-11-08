@@ -74,6 +74,7 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 		return "block"
 	a.combat.confirmed = true
 	var impact_height := 0
+	@warning_ignore("integer_division") # 命中框半高取整，结果为整数像素。
 	for box in a.frame().hitboxes: impact_height=maxi(impact_height,a.height-b.height+int(box[1])+int(box[3])/2)
 	if str(move.kind)=="projectile": impact_height=int(move.get("projectile",{}).get("spawn",[0,75])[1])+a.height-b.height
 	b.motion.hit_pose = "hit_air" if airborne else "hit_crouch" if crouching else "hit_high" if impact_height>=100 else "hit_mid"

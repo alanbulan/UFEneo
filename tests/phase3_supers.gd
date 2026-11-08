@@ -1,4 +1,5 @@
 extends SceneTree
+@warning_ignore_start("integer_division")
 var errors: Array=[]
 func check(ok: bool,text: String) -> void:
 	if not ok:errors.append(text);printerr(text)
@@ -69,3 +70,4 @@ func run() -> void:
 	file.store_string(JSON.stringify({"passed":errors.is_empty(),"errors":errors,"groups":groups},"\t"))
 	print("PHASE3_SUPERS "+("PASS" if errors.is_empty() else str(errors)))
 	quit(0 if errors.is_empty() else 1)
+@warning_ignore_restore("integer_division")

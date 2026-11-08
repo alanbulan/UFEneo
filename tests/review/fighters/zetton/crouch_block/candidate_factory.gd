@@ -1,4 +1,5 @@
 extends RefCounted
+@warning_ignore_start("integer_division")
 ## 只复制正式杰顿定义的单个状态帧表；MatchDirector构造前完成，运行中零模拟写入。
 const ACTION := "crouch_blockstun"
 const CASES := ["low", "mid", "overhead", "release_down"]
@@ -146,3 +147,4 @@ static func verify_trace(cfg: Dictionary,kind: String,trace: Array) -> Array:
 	if int(trace[-1].pair[0].hp)!=1000:errors.append({"kind":"attacker_damaged"})
 	if str(trace[-1].pair[1].state)!=("guard" if kind=="release_down" else "crouch_guard"):errors.append({"kind":"receiver_did_not_naturally_return_to_guard"})
 	return errors
+@warning_ignore_restore("integer_division")

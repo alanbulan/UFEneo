@@ -25,8 +25,8 @@ func run() -> void:
 			pair.append({"fighter":f.definition.id,"x":f.x,"height":f.height,"facing":f.facing,"state":f.state,"clip":clip,"sprite":a.get("index",-1),"data":f.frame().duplicate(true)})
 		var owner:=driver.active_player;var actor:=sim.fighters[owner];var victim:=sim.fighters[1-owner]
 		if victim.state=="thrown" and actor.frame().get("target",{}).get("mode","")=="hold":
-			var target: Dictionary=actor.frame().target;var grip: Array=target.grip;var grab: Array=victim.frame().grab_points.waist;var root: Array=target.get("root",[0,0])
-			var error:=absi(actor.x+actor.facing*(int(grip[0])+int(root[0]))-victim.x-victim.facing*int(grab[0]))+absi(actor.height+int(grip[1])+int(root[1])-victim.height-int(grab[1]))
+			var target: Dictionary=actor.frame().target;var grip: Array=target.grip;var grab: Array=victim.frame().grab_points.waist;var root_rule: Array=target.get("root",[0,0])
+			var error:=absi(actor.x+actor.facing*(int(grip[0])+int(root_rule[0]))-victim.x-victim.facing*int(grab[0]))+absi(actor.height+int(grip[1])+int(root_rule[1])-victim.height-int(grab[1]))
 			check(error==0,"抓握点/被抓点对齐 "+key);results[key].max_grip_error=maxi(results[key].max_grip_error,error)
 		for e in sim.events:
 			if e.kind=="throw_slam":results[key].slams.append(e.move)

@@ -1,5 +1,6 @@
 class_name UfeUltrasevenFourthReview
 extends UfePhase3ThrowReview
+@warning_ignore_start("integer_division")
 ## 三种抓握配对及实际回合演出；仅开局布置训练资源，组内走真实输入。
 const FOURTH_NAMES := ["赛文抓杰顿","杰顿抓赛文","赛文抓初代"]
 const CEREMONIES := ["登场","赛文胜利","赛文战败","时间到","双方挑衅"]
@@ -68,3 +69,4 @@ func observe_walk(frame: int,sim: UfeMatchDirector,view: UfeSideView) -> void:
 	trace.append({"movie_frame":frame,"section":section(frame),"label":label(frame),"available":ready_action(section(frame)),"player":active_player,"inputs":last_inputs.duplicate(true),"pair":pair,"events":sim.events.duplicate(true),"finished":sim.finished,"winner":sim.winner,"intro_tick":view.intro_tick,"ending_tick":view.ending_tick})
 func save_file(path: String) -> void:
 	FileAccess.open(path,FileAccess.WRITE).store_string(JSON.stringify({"profile":profile,"source":"主游戏训练真实InputFrame；仅每组开局设距离、KO组初始体力和时间到组剩余时间；未安装组明确跳过，不冒充演示。","trace":trace},"\t"))
+@warning_ignore_restore("integer_division")

@@ -1,4 +1,5 @@
 extends SceneTree
+@warning_ignore_start("integer_division")
 func _initialize() -> void:call_deferred("run")
 func require(value: bool,message: String) -> void:
 	if not value:push_error(message);quit(1)
@@ -324,3 +325,4 @@ func burst_match(facing: int) -> UfeMatchDirector:
 	sim.fighters[0].facing=facing;sim.fighters[1].facing=-facing
 	sim.fighters[1].stats.energy=2000;sim.fighters[1].stats.hp=sim.fighters[1].base_definition.max_health/2
 	return sim
+@warning_ignore_restore("integer_division")

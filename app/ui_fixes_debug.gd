@@ -108,6 +108,7 @@ func drive(tick: int) -> void:
 	elif mode=="switch":
 		if tick==29:switch_nodes=node_ids()
 		if tick>=30 and tick<150 and (tick-30)%18==0:
+			@warning_ignore("integer_division")
 			app.front.handle_key(KEY_D if ((tick-30)/18)%2==0 else KEY_A)
 	elif mode=="showcase":
 		if tick==30:choose(0,"ultraman-leo");choose(1,"black_king")
@@ -128,6 +129,7 @@ func drive(tick: int) -> void:
 			app.simulation.fighters[1].x=563
 		if tick==780:app._show_page("archive")
 		if tick>=810 and tick<2250 and (tick-810)%120==0:
+			@warning_ignore("integer_division")
 			var id: String=IDS[(tick-810)/120]
 			for button in app.front.archive_view.buttons:
 				if str(button.get_meta("fighter_id"))==id:
