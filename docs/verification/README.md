@@ -4,6 +4,22 @@
 
 本目录保留可以随干净仓库交接的结果摘要；原始测试输出在本机忽略的 `reports/verification`，重新运行会生成自己的输出，不上传整套日志和截图副本。
 
+## 2026-11-08 图鉴重建与佐菲
+
+- 图鉴统一 384×256、根点 [192,248]、3.84 px/m；人类固定 96（原 140）。609 条按官方剧照/皮套照图生图重画并安装，共更新 1010 张图；宽体条目以 376 px 宽度上限取可行站高，不拉伸姿态。旧 `new_art_approved` 与 `approval_evidence` 全部重置，等待实机复核。
+- 参考图补齐到 1686 张并改为仓库相对路径；21 条低清官方源保留原图、标注 `resolution_exception`，不放大、不替代；删除 9 张被替换的重复副本。`catalogue_references` 从 180 条错误降为 0 错误。
+- 名称拆分为 title/主体名/form，17 条重复形态写入 `aliases` 并由 `canonical_id()` 归并；`selection.json` 全部 ID 可解析。
+- 佐菲按圆谷官方页（45 米 / 45,000 吨 / 队长）与官方皮套剧照重做图鉴，站高 173 安装并同步 display；此前误装的 154 px 窄侧视已替换。战斗 154 与 M87 开掌关键帧只测量，未安装。
+- 体力经济改为发力招硬门槛后，`tests/capture_mechanism.gd` 的体力不足用例改为每 tick 固定空体并断言 `move_denied`（reason=stamina）、无启动、无扣能。
+
+| 检查 | 结果 |
+| --- | --- |
+| `tools/verify.py --keep-going` 全量 | 54 项全部通过（含 capture_mechanism 及其独立进程回放） |
+| `catalogue_assets` / `catalogue_animation` / `catalogue_identity_display` | 通过（佐菲安装后复跑） |
+| `catalogue-references` / `catalogue-idle` / `catalogue_facing` | 通过；参考图 1686 张、21 条低清提示；待机真帧 28/1653 |
+
+未做 720/1080 双朝向实机审片，无录屏；图鉴画面只做逐张静审与 contact sheet，不等于美术验收。
+
 ## 2026-11-08 动画帧尺度突变修复
 
 - 新增 `tools/check/frame_scale_jumps.py`：以头骨顶到脚底站高、头宽和头部面积对同 clip 中位数比较（±8%；头宽与头面积同时偏大且站高也偏大才判确定突变），举起的武器和细特效在测量前用 3×3 开运算剔除；蹲姿、腾空收腿只影响站高，不按头部指标误判。
