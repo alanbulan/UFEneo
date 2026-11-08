@@ -84,6 +84,7 @@ def main():
             run("capture_mechanism_replay", command + ["--replay"])
     if args.only is None:
         run("layering", [sys.executable, str(ROOT / "tools/check/layering.py")])
+        run("catalogue-references", [sys.executable, str(ROOT / "tools/check/catalogue_references.py")])
         run("audio-manifest", [sys.executable, str(ROOT / "tools/check/audio_manifest.py")])
         run("fx-audio-resources", [sys.executable, str(ROOT / "tools/check/fx_audio.py")])
         run("pixel-ui-resources", [sys.executable, str(ROOT / "tools/check/pixel_ui.py")])
