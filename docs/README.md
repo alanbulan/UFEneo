@@ -14,6 +14,7 @@
 | [FORMS.md](FORMS.md) | 战斗形态与变身规则 | 做装甲或形态时 |
 | [SUPER_MOVE_DIVERSITY.md](SUPER_MOVE_DIVERSITY.md) | 三个能量必杀槽的技能差异规则 | 设计必杀时 |
 | [AUDIO_API.md](AUDIO_API.md) | 音频接口凭据、连通性、子命令、计费边界 | 制作或核对声音时 |
+| [MONSTER_MUSIC.md](MONSTER_MUSIC.md) | 8 只怪兽原剧主题曲核查与配乐依据 | 分配怪兽音乐时 |
 | [THIRD_PARTY.md](THIRD_PARTY.md) | 上游版本、来源、许可 | 引入或核对第三方时 |
 | [verification/](verification/README.md) | 可随仓库交付的验证结果摘要 | 核对历史验证结论时 |
 
