@@ -27,6 +27,8 @@ API = "https://arpeggi.io/api/kits/v1"
 KINDS = {"voice": "voice-conversions", "instrument": "voice-conversions",
          "separate": "vocal-separations", "stems": "stem-splits"}
 SECRET = Path.home() / ".codex/secrets/ufeneo-kits.dpapi"
+# 非 Windows 用纯文本密钥文件；必须 0600 且只在本机，不复制、不打印、不提交。
+PLAIN_SECRET = Path.home() / ".codex/secrets/ufeneo-music.key"
 STATE = Path.home() / ".codex/audio/kits"
 
 
@@ -36,9 +38,15 @@ class KitsError(ValueError):
 
 def credential():
     token = os.environ.get("UFE_KITS_API_KEY", "").strip()
+    if not token and os.name != "nt" and PLAIN_SECRET.is_file():
+        # 非 Windows：读取 0600 纯文本密钥；只在本机，不进仓库。
+        mode = PLAIN_SECRET.stat().st_mode & 0o777
+        if mode & 0o077:
+            raise KitsError("Kits 密钥文件权限过宽，应为 0600；未发送请求")
+        token = PLAIN_SECRET.read_text(encoding="utf-8").strip()
     if not token:
         if os.name != "nt" or not SECRET.is_file():
-            raise KitsError("未配置 Kits 凭据；使用项目外 Windows 凭据或 UFE_KITS_API_KEY")
+            raise KitsError("未配置 Kits 凭据；使用项目外 Windows 凭据、纯文本密钥或 UFE_KITS_API_KEY")
         # ConvertFrom-SecureString's default Windows output is a DPAPI hex blob.
         from ctypes import wintypes
 
