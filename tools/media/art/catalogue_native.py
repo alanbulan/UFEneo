@@ -24,6 +24,9 @@ ROOT_Y = 248
 TARGET_STANDING_HEIGHT = 192
 PALETTE_SIZE = 32
 ALPHA_CUTOFF = 128
+# 头部优先调色板：上部 26% 的像素加权 6 倍，避免肤色被大面积服装挤掉。
+HEAD_FRACTION = 0.26
+HEAD_WEIGHT = 6
 
 
 def load_raw(path: Path) -> Image.Image:
@@ -69,6 +72,38 @@ def build_palette(image: Image.Image, size: int = PALETTE_SIZE) -> list:
     return [tuple(int(c) for c in values[i]) for i in order]
 
 
+def build_head_weighted_palette(image: Image.Image, size: int = PALETTE_SIZE) -> list:
+    """头部优先调色板。
+
+    纯按频次取色时，大面积高饱和队服/装甲会把面部肤色挤出调色板，脸会
+    变成衣服色。这里把上部 26%（头部）的像素加权 6 倍再中位切分，
+    保证脸和发色一定占名额，其余名额仍按整幅分布。
+    """
+    array = np.array(image)
+    visible = array[:, :, 3] > ALPHA_CUTOFF
+    ys = np.nonzero(visible)[0]
+    if ys.size == 0:
+        return []
+    top, bottom = int(ys.min()), int(ys.max())
+    head_limit = top + int((bottom - top + 1) * HEAD_FRACTION)
+    head = visible.copy()
+    head[head_limit:] = False
+
+    body_pixels = array[:, :, :3][visible].reshape(-1, 3)
+    head_pixels = array[:, :, :3][head].reshape(-1, 3)
+    if head_pixels.size == 0:
+        return build_palette(image, size)
+    stacked = np.concatenate([body_pixels] + [head_pixels] * HEAD_WEIGHT, axis=0)
+    sample = Image.fromarray(stacked.reshape(1, -1, 3), "RGB")
+    quantized = sample.quantize(colors=size, method=Image.MEDIANCUT, dither=Image.Dither.NONE)
+    raw_palette = quantized.getpalette() or []
+    return [
+        tuple(int(c) for c in raw_palette[i * 3 : i * 3 + 3])
+        for i in range(size)
+        if len(raw_palette) >= (i + 1) * 3
+    ]
+
+
 def apply_palette(image: Image.Image, palette: list) -> Image.Image:
     """每个像素映射到调色板最近色（欧氏距离）。"""
     if not palette:
@@ -108,7 +143,7 @@ def place_on_canvas(image: Image.Image) -> tuple[Image.Image, dict]:
 def convert(raw_path: Path, out_path: Path, palette: list | None = None) -> dict:
     source = load_raw(raw_path)
     reduced = downsample(trim(source), TARGET_STANDING_HEIGHT)
-    used = palette if palette is not None else build_palette(reduced)
+    used = palette if palette is not None else build_head_weighted_palette(reduced)
     quantized = apply_palette(reduced, used)
     canvas, placement = place_on_canvas(quantized)
     out_path.parent.mkdir(parents=True, exist_ok=True)
