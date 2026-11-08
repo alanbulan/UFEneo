@@ -90,7 +90,7 @@ func fixture(config: Dictionary) -> UfeMatchDirector:
 func sample(config: Dictionary, age: int, sim: UfeMatchDirector) -> Array:
 	var first := UfeInputFrame.make(); var second := UfeInputFrame.make()
 	var facing := int(config.facing)
-	var start := 0 if str(config.kind) == "insufficient_stamina" else 10
+	var start := 10
 	var elapsed := age-start
 	if elapsed == 0: first = UfeInputFrame.make(-facing,0)
 	if elapsed == 1: first = UfeInputFrame.make(-facing,-1)
@@ -123,6 +123,8 @@ func run_case(config: Dictionary, saved_inputs: Array = []) -> Dictionary:
 	var attacker := UfeFighter.new(UfeContentDatabase.fighter("ultraman"),0)
 	attacker.move_id = "throw_forward"
 	for age in range(150):
+		# 体力不足用例固定为空体，避免行走回复在输入前把体力补够。
+		if str(config.kind) == "insufficient_stamina": sim.fighters[0].stats.stamina = 0
 		mutate(config,sim)
 		var inputs: Array = sample(config,age,sim) if saved_inputs.is_empty() else saved_inputs[age].map(func(p): return UfeInputFrame.unpack(p))
 		sim.step(inputs); rows.append(row(sim,inputs))
@@ -141,22 +143,25 @@ func events_of(record: Dictionary, kind: String) -> Array:
 func check_case(record: Dictionary) -> void:
 	var config: Dictionary = record.config
 	var label := str(config)
-	var success := str(config.kind) in ["success","wall","victim_mash","insufficient_stamina"]
+	var success := str(config.kind) in ["success","wall","victim_mash"]
 	var starts := events_of(record,"capture_start"); var begins := events_of(record,"capture_begin")
 	var impacts := events_of(record,"capture_impact"); var failures := events_of(record,"capture_fail")
 	var last: Dictionary = record.rows.back()
-	if str(config.kind) in ["insufficient_energy","missing_pose"]:
+	if str(config.kind) in ["insufficient_energy","insufficient_stamina","missing_pose"]:
 		check(starts.is_empty() and begins.is_empty() and impacts.is_empty(),label+"资源不足或受方缺相前置拒绝")
 		check(int(last.fighters[0][10].energy) == (499 if str(config.kind)=="insufficient_energy" else 500),label+"前置拒绝无扣能")
+		if str(config.kind) == "insufficient_stamina":
+			var denied := 0
+			for sample_row in record.rows:
+				for event in sample_row.events:
+					if str(event.kind) == "move_denied" and str(event.get("reason","")) == "stamina": denied += 1
+			check(denied > 0,label+"体力不足明确拒绝且不启动")
 	else:
 		check(starts.size() == 1,label+"只启动及付费一次")
 		if not starts.is_empty():
 			check(int(starts[0].event.stamina_cost) == 40 and int(starts[0].event.energy_cost) == 500,label+"实际费用")
 		var expected_energy := 40 if str(config.kind) in ["interrupted","death"] else 0
 		check(int(last.fighters[0][10].energy) == expected_energy,label+"捕获无额外奖励，普通弹体受击奖励保持")
-		if str(config.kind) == "insufficient_stamina":
-			check(record.rows[4].fighters[0][12].has("capture") and int(record.rows[4].fighters[0][10].energy) == 0,label+"现行体力规则允许空体启动并扣能")
-			check(not starts.is_empty() and int(starts[0].tick) == 5,label+"现行体力规则不延迟原输入")
 	check(not last.fighters[0][12].has("capture") and not last.fighters[1][12].has("capture_victim"),label+"最终双方关系清理")
 	check(last.projectiles.all(func(p): return not bool(p.get("capture",false))),label+"最终无捕获弹体")
 	check(str(last.fighters[0][6]) != "capturing" and str(last.fighters[1][6]) != "captured",label+"没有永久不可行动状态")
