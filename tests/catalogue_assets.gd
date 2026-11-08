@@ -15,7 +15,7 @@ func run() -> void:
 	var failures: Array = []
 	var reasons: Dictionary = {}
 	var seen_images: Dictionary = {}
-	var counts := {"image_present": 0, "import_present": 0, "texture_loaded": 0, "pixels_loaded": 0, "canvas_matches": 0, "root_in_bounds": 0, "alpha_present": 0}
+	var counts := {"image_present": 0, "import_present": 0, "texture_loaded": 0, "pixels_loaded": 0, "canvas_matches": 0, "root_in_bounds": 0, "alpha_present": 0, "height_matches": 0, "grounded": 0}
 	var total := 0
 	var parsed = JSON.parse_string(FileAccess.get_file_as_string(CATALOGUE_PATH))
 	if not (parsed is Dictionary) or not (parsed.get("entries") is Dictionary):
@@ -57,21 +57,38 @@ func run() -> void:
 			else:
 				counts.import_present += 1
 			var texture = ResourceLoader.load(image, "Texture2D", ResourceLoader.CACHE_MODE_IGNORE)
+			var root_point = entry.get("native_root", [])
+			if not (root_point is Array) or root_point.size() < 2:
+				root_point = [0.0, 0.0]
 			if not (texture is Texture2D):
 				failure_reasons.append("load_failed")
 			else:
 				counts.texture_loaded += 1
+				var width := int(texture.get_width())
+				var height := int(texture.get_height())
 				var image_data = texture.get_image()
 				if image_data == null:
 					failure_reasons.append("image_pixels_unavailable")
 				else:
 					counts.pixels_loaded += 1
-					if image_data.get_used_rect().size.x <= 0 or image_data.get_used_rect().size.y <= 0:
+					var used: Rect2i = image_data.get_used_rect()
+					if used.size.x <= 0 or used.size.y <= 0:
 						failure_reasons.append("alpha_empty")
 					else:
 						counts.alpha_present += 1
-				var width := int(texture.get_width())
-				var height := int(texture.get_height())
+						# 实际站高必须与声明的设定身高换算值一致：只验可载入会
+						# 漏掉「人物被缩成十几个像素仍能加载」这类损坏。
+						var declared := int(entry.get("visible_height_including_ornaments", 0))
+						if declared > 0 and absi(used.size.y - declared) > 2:
+							failure_reasons.append("height_mismatch:%d!=%d" % [used.size.y, declared])
+						else:
+							counts.height_matches += 1
+						# 脚底要踩在根点地面线上，不能悬空或穿出画布。
+						var ground_gap: int = int(float(root_point[1])) - used.end.y
+						if ground_gap < -2 or ground_gap > 4:
+							failure_reasons.append("ground_gap:%d" % ground_gap)
+						else:
+							counts.grounded += 1
 				var canvas = entry.get("native_canvas", [])
 				if not (canvas is Array) or canvas.size() < 2:
 					failure_reasons.append("native_canvas_invalid")
@@ -82,8 +99,7 @@ func run() -> void:
 						failure_reasons.append("canvas_mismatch:%dx%d!=%dx%d" % [width, height, expected_width, expected_height])
 					else:
 						counts.canvas_matches += 1
-				var root_point = entry.get("native_root", [])
-				if not (root_point is Array) or root_point.size() < 2:
+				if not (entry.get("native_root") is Array) or entry.native_root.size() < 2:
 					failure_reasons.append("native_root_invalid")
 				else:
 					var root_x := float(root_point[0])

@@ -60,13 +60,21 @@ def trim(image: Image.Image) -> Image.Image:
 
 
 def place(image: Image.Image, height: int) -> tuple[Image.Image, dict]:
-    """把已裁好的图按目标高度放到画布上，脚底贴 ROOT_Y，水平居中。"""
+    """按目标站高把人物放到画布上，脚底贴 ROOT_Y，水平居中。
+
+    先裁掉透明边再算比例——之前拿整张 384×256 画布当分母，人物被二次
+    缩小并偏移，最低只剩十几个像素高。
+    """
+    image = trim(image)
     scale = height / image.height
     width = max(1, round(image.width * scale))
     if width > CANVAS_WIDTH - 8:
         shrink = (CANVAS_WIDTH - 8) / width
         width, height = max(1, round(width * shrink)), max(1, round(height * shrink))
-    resized = image.resize((width, height), Image.NEAREST)
+    resized = trim(image.resize((width, height), Image.NEAREST))
+    # 最近邻缩放偶尔丢一行可见像素（216→192 会得到 191）。以裁后实际高度
+    # 落位，脚底仍然贴地，避免把 1 像素误差带进声明值。
+    width, height = resized.size
     canvas = Image.new("RGBA", (CANVAS_WIDTH, CANVAS_HEIGHT), (0, 0, 0, 0))
     left = (CANVAS_WIDTH - width) // 2
     top = max(0, ROOT_Y - height)
@@ -91,7 +99,8 @@ def native_path(catalogue_id: str, display_entry: dict) -> Path:
 
 
 def rescale_one(catalogue_id: str, kind: str, scale: dict,
-                display_entry: dict, dry_run: bool = False) -> dict:
+                display_entry: dict, dry_run: bool = False,
+                force: bool = False) -> dict:
     height, basis = target_height(scale, catalogue_id, kind)
     native = native_path(catalogue_id, display_entry)
     raw = ROOT / f"reports/catalogue-ref/{catalogue_id}/raw.png"
@@ -101,8 +110,13 @@ def rescale_one(catalogue_id: str, kind: str, scale: dict,
     with Image.open(native) as source:
         current = source.convert("RGBA")
     before = trim(current).height
-    if before == height:
-        return {"id": catalogue_id, "status": "unchanged", "height": height, "basis": basis}
+    # 幂等：宽度超限会被再压一次，只认 last_target，避免越跑越小。
+    if int(display_entry.get("scale_target", -1)) == height and not force:
+        return {"id": catalogue_id, "status": "unchanged", "height": before,
+                "target": height, "basis": basis}
+    if before == height and not raw.is_file() and not force:
+        return {"id": catalogue_id, "status": "unchanged", "height": before,
+                "target": height, "basis": basis}
 
     if raw.is_file():
         # 从原始高分图重跑，画质最好。
@@ -118,6 +132,11 @@ def rescale_one(catalogue_id: str, kind: str, scale: dict,
         # 只有像素定稿：最近邻缩放，保持硬边。
         canvas, placement = place(binarize(current), height)
         path = "native"
+
+    # 自检：写盘后重新量一次，实际站高必须等于落位高度，否则宁可报错。
+    actual = trim(canvas).height if not dry_run else placement["subject"][1]
+    if actual != placement["subject"][1]:
+        raise SystemExit(f"{catalogue_id}: 实际站高 {actual} 与落位 {placement['subject'][1]} 不符")
 
     if not dry_run:
         canvas.save(native)
@@ -136,6 +155,7 @@ def rescale_one(catalogue_id: str, kind: str, scale: dict,
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--force", action="store_true", help="忽略 scale_target，强制重算")
     parser.add_argument("--only", nargs="*", help="只处理指定 id")
     parser.add_argument("--report", type=Path, default=ROOT / "reports/catalogue-scale/report.json")
     args = parser.parse_args()
@@ -150,7 +170,7 @@ def main() -> int:
     ]
 
     results = [rescale_one(cid, kind_of.get(cid, ""), scale,
-                            display["entries"].get(cid, {}), args.dry_run)
+                            display["entries"].get(cid, {}), args.dry_run, args.force)
                for cid in targets]
     counts: dict[str, int] = {}
     for row in results:
@@ -159,15 +179,34 @@ def main() -> int:
     # 同步 display 里的 visible_height_including_ornaments 与 native_root
     if not args.dry_run:
         for row in results:
-            if row["status"] != "rescaled":
-                continue
             entry = display["entries"].get(row["id"])
             if entry is None:
+                continue
+            if row["status"] == "unchanged":
+                # 已经对过尺寸的也记下标尺，下一轮直接跳过。
+                if "target" in row:
+                    entry["scale_target"] = row["target"]
+                continue
+            if row["status"] != "rescaled":
                 continue
             entry["visible_height_including_ornaments"] = row["to"]
             entry["native_canvas"] = [CANVAS_WIDTH, CANVAS_HEIGHT]
             entry["native_root"] = [CANVAS_WIDTH // 2, ROOT_Y]
             entry["image_sha256"] = row["sha256"]
+            entry["scale_target"] = row["target"]
+        # 声明高度一律按磁盘实际像素回写，避免图与记录各说各话。
+        for catalogue_id, entry in display["entries"].items():
+            image = str(entry.get("image", "")).removeprefix("res://")
+            if not image:
+                continue
+            candidate = ROOT / image
+            if not candidate.is_file():
+                continue
+            with Image.open(candidate) as handle:
+                box = handle.convert("RGBA").getchannel("A").getbbox()
+            entry["visible_height_including_ornaments"] = (box[3] - box[1]) if box else 0
+            entry["image_sha256"] = hashlib.sha256(candidate.read_bytes()).hexdigest()
+
         DISPLAY_PATH.write_text(
             json.dumps(display, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
