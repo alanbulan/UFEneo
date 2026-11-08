@@ -69,7 +69,8 @@ static func entry(id: String) -> Dictionary:
 
 static func full_name(id: String) -> String:
 	var data:=entry(id)
-	return (title(id)+" "+str(data.name)).strip_edges()
+	var form:=str(data.get("form","")).strip_edges()
+	return (title(id)+" "+str(data.name)+(" · "+form if not form.is_empty() else "")).strip_edges()
 
 static func title(id: String) -> String:
 	var identity:=identity_entry(id)

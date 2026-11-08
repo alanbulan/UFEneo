@@ -87,15 +87,41 @@ def build_strip(catalogue_id: str, clip: dict, target_height: int,
     frame_height = max(1, round(cells[0].height * scale))
     palette = build_palette(trim(cells[0]))
 
+    resized_cells = [
+        apply_palette(harden_alpha(cell.resize((frame_width, frame_height), Image.BOX)), palette)
+        for cell in cells
+    ]
+    anchors_px: list[tuple[int, int]] = []
+    for index in range(len(cells)):
+        anchor_x, anchor_y = anchors[index]
+        anchors_px.append((round(CANVAS_WIDTH / 2.0 - anchor_x * scale),
+                           round(ROOT_Y - anchor_y * scale)))
+
+    # 每帧先落在自己的 384 宽画布里，避免宽于画布的帧渗进相邻帧；再按整条
+    # 可见轮廓（含尾巴/武器）统一水平居中。脚底和缩放不变，帧间相对位移保留。
+    spans = []
+    for resized, (left, _) in zip(resized_cells, anchors_px):
+        box = resized.getchannel("A").getbbox()
+        if box is None:
+            raise ValueError("帧没有可见像素")
+        spans.append((left + box[0], left + box[2]))
+    min_x = min(span[0] for span in spans)
+    max_x = max(span[1] for span in spans)
+    if max_x - min_x > CANVAS_WIDTH - 4:
+        raise ValueError(
+            f"{catalogue_id}: 整条可见宽度 {max_x - min_x} 超过画布可用宽度 {CANVAS_WIDTH - 4}")
+    shift = round(CANVAS_WIDTH / 2.0 - (min_x + max_x) / 2.0)
+    shift = max(shift, 2 - min_x)
+    shift = min(shift, CANVAS_WIDTH - 2 - max_x)
+
     strip = Image.new("RGBA", (CANVAS_WIDTH * len(cells), CANVAS_HEIGHT), (0, 0, 0, 0))
     placed: list[dict] = []
-    for index, cell in enumerate(cells):
-        resized = harden_alpha(cell.resize((frame_width, frame_height), Image.BOX))
-        resized = apply_palette(resized, palette)
-        anchor_x, anchor_y = anchors[index]
-        left = round(CANVAS_WIDTH / 2.0 - anchor_x * scale)
-        top = round(ROOT_Y - anchor_y * scale)
-        strip.alpha_composite(resized, (CANVAS_WIDTH * index + left, top))
+    for index, resized in enumerate(resized_cells):
+        left, top = anchors_px[index]
+        left += shift
+        frame = Image.new("RGBA", (CANVAS_WIDTH, CANVAS_HEIGHT), (0, 0, 0, 0))
+        frame.alpha_composite(resized, (left, top))
+        strip.alpha_composite(frame, (CANVAS_WIDTH * index, 0))
         placed.append({"frame": index, "left": left, "top": top})
 
     out = ROOT / f"assets/fighters/{catalogue_id}/catalogue/anim-strip.png"

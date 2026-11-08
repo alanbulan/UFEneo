@@ -31,6 +31,8 @@ func _refresh_caption() -> void:
 	caption.text=text
 	caption.horizontal_alignment=alignment
 	caption.modulate=Color("8794a6") if disabled else Color.WHITE
+	# 主题的 focus 底图会在文字之后绘制，旧配色会把标题盖住；焦点改成文字描边高亮。
+	caption.add_theme_color_override("font_outline_color", Color("ffd166") if has_focus() and not disabled else Color("101827"))
 	caption.text_overrun_behavior=TextServer.OVERRUN_NO_TRIMMING
 	if not text.is_empty():
 		var margin:=PixelTextBounds.insets(self)

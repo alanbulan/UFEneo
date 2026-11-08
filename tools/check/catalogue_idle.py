@@ -63,6 +63,10 @@ def check_entry(catalogue_id: str, entry: dict) -> list[str]:
             continue
         height = int(rows.max() - rows.min() + 1)
         heights.append(height)
+        # 尾巴/武器横穿画布会被裁成两截：人物整体必须留在画布内。
+        cols = np.nonzero(visible.any(axis=0))[0]
+        if cols.size and (int(cols.min()) == 0 or int(cols.max()) == CANVAS_WIDTH - 1):
+            problems.append(f"{catalogue_id}: 第 {index} 帧横向贴边（{int(cols.min())}..{int(cols.max())}），人物被裁断")
         # 真动画每帧站高本来就会起伏，只要求中位数对得上声明值，且单帧不脱群。
         if declared > 0 and not (0.75 * declared <= height <= 1.25 * declared):
             problems.append(f"{catalogue_id}: 第 {index} 帧站高 {height} 超出声明 {declared} 的合理范围")

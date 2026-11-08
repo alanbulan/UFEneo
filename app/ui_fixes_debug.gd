@@ -104,7 +104,6 @@ func drive(tick: int) -> void:
 			for button in app.front.archive_view.buttons:
 				if str(button.get_meta("fighter_id"))==id:
 					button.pressed.emit()
-					app.front.archive_view.list_scroll.ensure_control_visible(button)
 	elif mode=="switch":
 		if tick==29:switch_nodes=node_ids()
 		if tick>=30 and tick<150 and (tick-30)%18==0:
@@ -134,7 +133,6 @@ func drive(tick: int) -> void:
 			for button in app.front.archive_view.buttons:
 				if str(button.get_meta("fighter_id"))==id:
 					button.pressed.emit()
-					app.front.archive_view.list_scroll.ensure_control_visible(button)
 		if tick in [2290,2370,2450]:
 			app.front.archive_view.category_tabs.tab_changed.emit({2290:1,2370:2,2450:3}[tick])
 		if tick==2520:
@@ -176,7 +174,7 @@ func observe(tick: int) -> void:
 			finish()
 	elif mode=="forms-review":
 		if forms_popup_review and tick==280:
-			checks.archive_forms_public_text=app.front.archive_view.description.text
+			checks.archive_forms_public_text=app.front.archive_view.pager.source
 			snapshot("archive-forms-taro",tick)
 		if tick in [60,120,180]:
 			var choices: Array=[]

@@ -176,8 +176,10 @@ def main() -> int:
     for row in results:
         counts[row["status"]] = counts.get(row["status"], 0) + 1
 
-    # 同步 display 里的 visible_height_including_ornaments 与 native_root
+    # 同步 display 里的 visible_height_including_ornaments 与 native_root。
+    # 逐条经 catalogue_store 的 flock 合并，避免与其它批处理并发时整文件覆盖。
     if not args.dry_run:
+        import catalogue_store
         for row in results:
             entry = display["entries"].get(row["id"])
             if entry is None:
@@ -185,30 +187,27 @@ def main() -> int:
             if row["status"] == "unchanged":
                 # 已经对过尺寸的也记下标尺，下一轮直接跳过。
                 if "target" in row:
-                    entry["scale_target"] = row["target"]
+                    catalogue_store.update_entry(row["id"], {"scale_target": row["target"]})
                 continue
             if row["status"] != "rescaled":
                 continue
-            entry["visible_height_including_ornaments"] = row["to"]
-            entry["native_canvas"] = [CANVAS_WIDTH, CANVAS_HEIGHT]
-            entry["native_root"] = [CANVAS_WIDTH // 2, ROOT_Y]
-            entry["image_sha256"] = row["sha256"]
-            entry["scale_target"] = row["target"]
-        # 声明高度一律按磁盘实际像素回写，避免图与记录各说各话。
-        for catalogue_id, entry in display["entries"].items():
+            # 声明高度一律按磁盘实际像素回写，避免图与记录各说各话。
             image = str(entry.get("image", "")).removeprefix("res://")
-            if not image:
-                continue
             candidate = ROOT / image
-            if not candidate.is_file():
-                continue
-            with Image.open(candidate) as handle:
-                box = handle.convert("RGBA").getchannel("A").getbbox()
-            entry["visible_height_including_ornaments"] = (box[3] - box[1]) if box else 0
-            entry["image_sha256"] = hashlib.sha256(candidate.read_bytes()).hexdigest()
-
-        DISPLAY_PATH.write_text(
-            json.dumps(display, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            actual = row["to"]
+            sha = row["sha256"]
+            if candidate.is_file():
+                with Image.open(candidate) as handle:
+                    box = handle.convert("RGBA").getchannel("A").getbbox()
+                actual = (box[3] - box[1]) if box else 0
+                sha = hashlib.sha256(candidate.read_bytes()).hexdigest()
+            catalogue_store.update_entry(row["id"], {
+                "visible_height_including_ornaments": actual,
+                "native_canvas": [CANVAS_WIDTH, CANVAS_HEIGHT],
+                "native_root": [CANVAS_WIDTH // 2, ROOT_Y],
+                "image_sha256": sha,
+                "scale_target": row["target"],
+            })
 
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(

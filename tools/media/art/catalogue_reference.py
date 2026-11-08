@@ -90,13 +90,24 @@ def image_prompt(name: str, name_jp: str, series: str, appearance: str,
         "the reference. Do not redesign, do not add parts that are not in the reference, "
         "do not swap in another character's features.",
     ]
+    # 去玩具化是无条件条款。用户反馈过一批图像玩具：参考是商品照时旧 prompt 才加
+    # 去塑料化，正常照片里也常混进软胶质感和产品展示姿态，因此每张都强制声明。
+    parts += [
+        "",
+        "MATERIAL TRUTH: this is a photograph of a LIVING BEING (or an in-show suit), never "
+        "merchandise. Reject every toy tell: ball joints, hinge seams, mould parting lines, "
+        "peg holes, stand pegs, stickers, printed product text, plastic gloss, uniform "
+        "specular highlights, airbrushed soft shading, and the stiff arms-out product stance. "
+        "Keep real skin/scute/carapace texture, fabric folds on suits, matte diffuse light, "
+        "and the natural slight asymmetry of a worn suit.",
+    ]
     if toy_reference:
         parts += [
             "",
-            "The reference is a toy or action figure. Reproduce ONLY the creature's shape and "
-            "colours. Do NOT draw ball joints, hinge seams, peg holes, plastic gloss, "
-            "specular highlights, stand pegs, stickers or product text. The result must look "
-            "like a living creature in the show, not merchandise.",
+            "The attached reference is a toy or action figure. Take ONLY the creature's shape "
+            "and colour blocking from it, and re-imagine the details a toy cannot show: "
+            "articulated fingers, creased joints, layered plating, texture in the recesses. "
+            "The result must read as the show's suit, not as the product photo.",
         ]
     parts += [
         "",

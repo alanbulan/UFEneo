@@ -33,17 +33,19 @@ func set_fighter(id: String, prefix: String="", suffix: String="", form_id: Stri
 	id=UfeFighterDisplay.resolved_id(id,form_id)
 	if fighter_id==id and name_label.get_meta("prefix","")==prefix and name_label.get_meta("suffix","")==suffix:return
 	var data:=UfeFighterDisplay.entry(id)
-	set_name_and_title(prefix+str(data.name)+suffix,UfeFighterDisplay.title(id),id)
+	set_name_and_title(prefix+str(data.name)+suffix,UfeFighterDisplay.title(id),id,str(data.get("form","")))
 	name_label.set_meta("prefix",prefix)
 	name_label.set_meta("suffix",suffix)
 	tooltip_text=UfeFighterDisplay.full_name(id)
 
-func set_name_and_title(display_name: String, display_title: String, identity_id: String="") -> void:
+func set_name_and_title(display_name: String, display_title: String, identity_id: String="", display_form: String="") -> void:
 	fighter_id=identity_id
 	name_label.theme_type_variation=UfeFighterDisplay.name_variation(identity_id)
 	title_label.text=UfeDisplayText.text(display_title)
 	title_label.visible=not title_label.text.is_empty()
-	name_label.text=UfeDisplayText.text(display_name)
+	# 形态接在名字后面，与称号分开两格；不额外加 Label，避免节点泄漏。
+	var form:=UfeDisplayText.text(display_form).strip_edges()
+	name_label.text=UfeDisplayText.text(display_name)+(" · "+form if not form.is_empty() else "")
 	var font:=name_label.get_theme_font("font")
 	var width:=font.get_string_size(name_label.text,HORIZONTAL_ALIGNMENT_LEFT,-1,name_label.get_theme_font_size("font_size")).x
 	name_label.custom_minimum_size.x=minf(width,160.0)

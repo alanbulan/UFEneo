@@ -2,7 +2,8 @@ class_name UfeCatalogueDisplayCatalog
 extends RefCounted
 ## 图鉴的静态展示映射；不参与可玩名册或战斗定义。
 const PATH := "res://content/roster/catalogue_display.json"
-const PAGE_SIZE := 24
+## 每页 10 条：640×360 主界面里左侧列表刚好装得下，不需要滚动条。
+const PAGE_SIZE := 10
 var roster := UfeRosterCatalog.new()
 var display: Dictionary = {}
 var supplemental: Array = []
@@ -36,9 +37,24 @@ func canonical_id(id: String) -> String:
 	return id
 
 func _display_row(row: Dictionary) -> Dictionary:
-	var name := str(display.get(str(row.get("id", "")), {}).get("display_name", ""))
+	var entry: Dictionary = display.get(str(row.get("id", "")), {})
+	var name := str(entry.get("display_name", ""))
+	# 旧 display_name 里可能已经拼过 " · 形态"，和三项结构重复时以结构字段为准。
+	# 图鉴可以用 display_form 覆盖形态：初代本体就是 C 型，画面上不再单列 C 型条目。
+	var form_text := UfeDisplayText.text(str(entry.get("display_form", row.get("form", "")))).strip_edges()
+	# 旧数据里间隔符有时带空格有时不带，两种都要剥掉，否则名字里会叠两个形态。
+	if not form_text.is_empty():
+		for separator in [" · ", "·"]:
+			var suffix: String = str(separator) + form_text
+			if name.ends_with(suffix):
+				name = name.substr(0, name.length() - suffix.length()).strip_edges()
+				break
 	var result := row.duplicate(true)
 	result.name = UfeDisplayText.text(name if not name.is_empty() else str(row.get("name", "")))
+	# 三项结构：称号 / 主体名称 / 形态。列表和标题都要能分开取用，形态不能丢进名字里。
+	result.title = UfeDisplayText.text(str(row.get("title", "")))
+	result.form = form_text
+	result.display_name = str(result.name) if str(result.form).is_empty() else str(result.name) + " · " + str(result.form)
 	return result
 
 func row_for(id: String) -> Dictionary:
@@ -61,15 +77,37 @@ func row_for(id: String) -> Dictionary:
 func display_for(id: String) -> Dictionary:
 	return display.get(canonical_id(id), {})
 
+func _redundant_forms() -> Dictionary:
+	"""形态与本体是同一形象时，它只是重复条目，列表里保留本体。
+	两种判定：条目在展示表里显式登记 duplicate_of；或定稿图与本体完全相同。
+	例：初代奥特曼本体与 C 型外观、杰斯提斯本体与标准型。
+	本体 id 不能被替代：别名链与旧 id 定位都以本体为终点。"""
+	var redundant: Dictionary = {}
+	# 重画后同一形象的形态会拿到新图，SHA 不再相同，只能靠登记关系判定。
+	for id in display.keys():
+		var target := str(display[id].get("duplicate_of", "")).strip_edges()
+		if not target.is_empty() and str(id) != target and display.has(target):
+			redundant[str(id)] = target
+	for base in links.keys():
+		var base_image := str(display.get(str(base), {}).get("image_sha256", ""))
+		if base_image.is_empty(): continue
+		for item in links[base]:
+			var form := str(item.get("id", ""))
+			if form != str(base) and str(display.get(form, {}).get("image_sha256", "")) == base_image:
+				redundant[form] = str(base)
+	return redundant
+
 func _matching_rows(query: String, kind: String) -> Array:
 	query = UfeDisplayText.text(query).strip_edges().to_lower()
 	if _has_query and query == _last_query and kind == _last_kind: return _last_rows
 	if _canonical_rows.is_empty():
 		var seen: Dictionary = {}
+		var redundant := _redundant_forms()
 		var originals: Array = []
 		originals.append_array(roster.entries); originals.append_array(supplemental)
 		for original in originals:
 			var id := canonical_id(str(original.id))
+			if redundant.has(id): continue
 			var search := UfeDisplayText.text(str(original.get("name", "")) + " " + str(original.get("search_text", "")) + " " + str(original.id)).to_lower()
 			_search_names[id] = str(_search_names.get(id, "")) + " " + search
 			if seen.has(id): continue
@@ -118,7 +156,7 @@ func forms_for(id: String) -> Array:
 		for relation in mapped.relations_override:
 			var target := canonical_id(str(relation.id))
 			if target == id or seen.has(target) or row_for(target).is_empty(): continue
-			found.append({"id": target, "name": str(row_for(target).get("name", target)), "relation": str(relation.relation)})
+			found.append({"id": target, "name": str(_form_label(target)), "relation": str(relation.relation)})
 			seen[target] = true
 		return found
 	var base := str(row_for(id).get("base_character", ""))
@@ -128,15 +166,21 @@ func forms_for(id: String) -> Array:
 	for item in links.get(id, []):
 		var child := canonical_id(str(item.id))
 		if child == id or seen.has(child) or row_for(child).is_empty(): continue
-		found.append({"id": child, "name": str(row_for(child).get("name", item.get("name", child))), "relation": "形态"})
+		found.append({"id": child, "name": str(_form_label(child)), "relation": "形态"})
 		seen[child] = true
 	if not base.is_empty() and base != id and not row_for(base).is_empty():
 		for item in links.get(base, []):
 			var child := canonical_id(str(item.id))
 			if child == id or seen.has(child) or row_for(child).is_empty(): continue
-			found.append({"id": child, "name": str(row_for(child).get("name", child)), "relation": "形态"})
+			found.append({"id": child, "name": str(_form_label(child)), "relation": "形态"})
 			seen[child] = true
 	return found
+
+func _form_label(id: String) -> String:
+	"""形态链接只显示形态名；没有形态时退回主体名，避免重复整串名字。"""
+	var row := row_for(id)
+	var form := str(row.get("form", "")).strip_edges()
+	return form if not form.is_empty() else str(row.get("name", id))
 
 func profile_for(id: String) -> Dictionary:
 	id = canonical_id(id)
@@ -211,7 +255,10 @@ func title_source_lines(profile: Dictionary) -> String:
 func title_for(id: String) -> String:
 	id = canonical_id(id)
 	var identity := UfeFighterDisplay.identity_entry(id)
-	if identity.has("title"): return UfeDisplayText.text(str(identity.title))
+	if identity.has("title") and not str(identity.title).is_empty(): return UfeDisplayText.text(str(identity.title))
+	# 名册已把称号与名字拆开，登记过的称号直接采用，不再从名称里猜。
+	var structured := UfeDisplayText.text(str(row_for(id).get("title", ""))).strip_edges()
+	if not structured.is_empty(): return structured
 	# 仅本人定义优先；借同一张图片不自动继承另一个身份或形态的称号。
 	for candidate in [id]:
 		if not FileAccess.file_exists("res://content/fighters/%s/definition.json" % candidate): continue

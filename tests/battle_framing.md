@@ -1,5 +1,7 @@
 # HUD安全取景回归
 
+用途：修改镜头取景、HUD 安全区或相关回归时读本文件；记录该测试的边界与入口，不替代 720/1080 实际画面审查。
+
 入口：`python tools/godot_lock.py -- godot --headless --path . --script tests/battle_framing.gd`。
 使用独立 `XDG_DATA_HOME`、`XDG_CONFIG_HOME`、`XDG_CACHE_HOME`，不要污染真实存档。
 

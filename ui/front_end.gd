@@ -242,9 +242,13 @@ func _vs() -> void:
 		var name_view:=FighterName.new(12,true);slot.add_child(name_view);name_view.set_fighter(str(selections[player]),"","",str(selected_forms[player]))
 
 func _archive() -> void:
-	_header("角色图鉴")
+	# 图鉴不套整页底色：用户要求人物背后透明，直接露出星空背景；
+	# 边界由左侧列表底板和图鉴自带顶栏界定，底部不再有掉出画面的边框。
 	archive_view=UfeArchivePanel.new()
 	archive_view.selected_id="zetton" if archive_index==1 else "ultraman"
+	archive_view.back_requested.connect(func():action_requested.emit("back"))
+	archive_view.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	archive_view.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	content.add_child(archive_view)
 
 func _settings() -> void:

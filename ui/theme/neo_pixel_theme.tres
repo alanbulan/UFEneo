@@ -289,6 +289,8 @@ content_margin_top = 6.0
 
 content_margin_bottom = 6.0
 
+[sub_resource type="StyleBoxEmpty" id="box_focus_empty"]
+
 [sub_resource type="StyleBoxTexture" id="box_button_selected"]
 
 texture = ExtResource("button_selected")
@@ -883,7 +885,7 @@ PixelButton/styles/pressed = SubResource("box_button_selected")
 
 PixelButton/styles/disabled = SubResource("box_button_disabled")
 
-PixelButton/styles/focus = SubResource("box_button_selected")
+PixelButton/styles/focus = SubResource("box_focus_empty")
 
 PixelButton/font_sizes/font_size = 12
 
@@ -903,7 +905,7 @@ PixelTab/styles/pressed = SubResource("box_tab_selected")
 
 PixelTab/styles/disabled = SubResource("box_button_disabled")
 
-PixelTab/styles/focus = SubResource("box_button_selected")
+PixelTab/styles/focus = SubResource("box_focus_empty")
 
 PixelTab/font_sizes/font_size = 12
 
@@ -923,7 +925,7 @@ PixelListItem/styles/pressed = SubResource("box_list_selected")
 
 PixelListItem/styles/disabled = SubResource("box_button_disabled")
 
-PixelListItem/styles/focus = SubResource("box_button_selected")
+PixelListItem/styles/focus = SubResource("box_focus_empty")
 
 PixelListItem/font_sizes/font_size = 12
 
@@ -1021,12 +1023,12 @@ NeoKit/icons/wipe3 = ExtResource("pages_wipe3")
 OptionButton/styles/normal = SubResource("box_button_normal")
 OptionButton/styles/hover = SubResource("box_button_hover")
 OptionButton/styles/pressed = SubResource("box_button_pressed")
-OptionButton/styles/focus = SubResource("box_button_selected")
+OptionButton/styles/focus = SubResource("box_focus_empty")
 PixelChoice/base_type = &"Button"
 PixelChoice/styles/normal = SubResource("box_button_normal")
 PixelChoice/styles/hover = SubResource("box_button_hover")
 PixelChoice/styles/pressed = SubResource("box_button_pressed")
-PixelChoice/styles/focus = SubResource("box_button_selected")
+PixelChoice/styles/focus = SubResource("box_focus_empty")
 PopupMenu/styles/panel = SubResource("box_dialog")
 PopupMenu/styles/hover = SubResource("box_list_selected")
 PopupPanel/styles/panel = SubResource("box_dialog")
