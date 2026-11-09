@@ -22,16 +22,25 @@
 图鉴（`ui/archive_panel.gd`）读取 `content/roster/catalogue_display.json` 的 `entries[id].image`，
 缺图时显示"像素形象整理中"，不伪造候选。
 
-一张图鉴图从生成到可见，四步：
+一张图鉴图从生成到可见，五步（2026-11-09 用户确认的流程）：
 
 ```bash
-# 1. 出图（MCP，1024 方图，透明背景）
-# 2. 转原生格式
+# 1. 真实造型底图（MCP 生图，1024×1536，透明背景）：按官方皮套照生成真实照片质感的
+#    整帧人物，严格右侧视、错步战斗架势，头身比按已实机角色复核（头高约占站高 0.20）
+# 2. 像素整帧（MCP 生图）：以第 1 步照片为底图，让图片模型转成像素整帧；只按需微调
+#    个别部位（例如头顶尖角），不重新设计造型
+# 3. 转原生格式
 .venv/bin/python tools/media/art/catalogue_native.py <raw.png> assets/fighters/<id>/catalogue/model-native.png
-# 3. 写 display 条目（catalogue_id / image / image_sha256 / native_canvas / native_root）
-# 4. 校验
+# 4. 写 display 条目（catalogue_id / image / image_sha256 / native_canvas / native_root）
+# 5. 校验
 .venv/bin/python tools/godot_lock.py -- godot --headless --path . --script res://tests/catalogue_identity_display.gd
 ```
+
+第 1、2 步都必须由图片模型完成；不要用程序化滤镜、调色或重采样冒充“像素化”，
+程序只负责第 3 步的确定性降采样与量化。参考图尽量多给几张、给不同角度：本人官方
+皮套照、本人既有来源图，再加 1–2 张已实机安装的同风格成品作画风与头身比基准
+（只借画风与比例，不抄造型）。色调以本人官方参考图为准，饱和度明显高于参考图
+（红/主体色 `sat - refsat > 40`）判为不合格。
 
 `catalogue_native.py` 的输出必须满足：`binary_alpha: true`、`visible_height: 192`、
 `visible_colors <= 32`、`canvas: [384, 256]`、`native_root: [192, 248]`。
