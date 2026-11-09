@@ -20,6 +20,20 @@
 
 未做 720/1080 双朝向实机审片，无录屏；图鉴画面只做逐张静审与 contact sheet，不等于美术验收。
 
+## 2026-11-09 佐菲图鉴与已批准条目恢复
+
+- 佐菲图鉴按用户指定流程重做：图片模型先生成真实皮套剧照（右侧视错步战斗架势，`reports/zoffy/catalogue/photo-side-01.png`，真 Alpha），再以该照片为底用图片模型转像素整帧（只把头顶尖角改矮），最后经 `catalogue_native` 确定性降采样到站高 173、宽 107、32 色、二值 Alpha。安装 SHA `2607b58f...`，已同步 display（`art_source: photo_to_pixel_from_official_suit_reference`）。旧 11-08 官方参考版与 11-09 站姿版保留对照，不覆盖。
+- 恢复 13 条在 2026-11-08 图鉴重建时被覆盖的既有成品：12 条 `new_art_approved_pending_in_game_review` 与 1 条 `pixel_style_user_return_installed_pending_in_game_review`（`red_king__second_generation`、`jamila`、`alien_metron`、`alien_guts`、`sevenger`、`golza`、`twin_tail`、`kaiju_omega_2`、`varallon`、`kanata_asumi`、`wiki_3e1f1565b5c03c`、`kaiju_omega_9`、`wiki_38de959744a664`）。按 `47fe7ec05` 的成品 PNG 逐条恢复并核对 SHA，display 的 state / scale_basis / 审批字段回到原值。
+- 同时确认 18 个已实机安装角色（含 EX 哥莫拉、EX 雷德王、亚刻、布莱泽、欧米伽、泰奥）的图鉴仍指回实机战斗图并带待机真帧条，未被本轮改动。
+
+| 检查 | 结果 |
+| --- | --- |
+| `catalogue_assets` / `catalogue_animation` / `catalogue_identity_display` | 通过（1653 条） |
+| `catalogue_idle` | 通过；待机真帧 46/1653 |
+| `catalogue_references` | 通过；21 条低清提示 |
+
+未做 720/1080 双朝向实机审片，无录屏；本轮结论只到资源与逻辑检查。
+
 ## 2026-11-08 动画帧尺度突变修复
 
 - 新增 `tools/check/frame_scale_jumps.py`：以头骨顶到脚底站高、头宽和头部面积对同 clip 中位数比较（±8%；头宽与头面积同时偏大且站高也偏大才判确定突变），举起的武器和细特效在测量前用 3×3 开运算剔除；蹲姿、腾空收腿只影响站高，不按头部指标误判。
