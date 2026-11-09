@@ -1,16 +1,17 @@
 # 佐菲 画布与根点（draft 2026-11-08）
 
-状态：图鉴 173 已安装到 `assets/fighters/zoffy/catalogue/model-native.png` 并同步 `content/roster/catalogue_display.json`；2026-11-09 按圆谷官方全身皮套照 `ref-02.png` 二次重做，替换 11-08 版。战斗图仍未安装，未接运行时。
+状态：图鉴已安装到 `assets/fighters/zoffy/catalogue/model-native.png` 并同步 `content/roster/catalogue_display.json`。2026-11-09 最终版按用户指定流程重做：先用图片模型生成真实皮套剧照（右侧视战斗架势），再以该照片为底用图片模型转像素整帧，最后经 `catalogue_native` 确定性降采样。战斗图仍未安装，未接运行时。
 
-## 零、官方全身皮套照重做（2026-11-09，当前安装）
+## 零、真实剧照→像素整帧（2026-11-09，当前安装）
 
-- 用户反馈 11-08 官方参考版“体型还是有问题、太丑”，改为以圆谷官方页 `https://tsuburaya-prod.com/heroes/zoffy` 的全身皮套照 `art/fighters/zoffy/sources/ref-02.png`（2400×3607，`reference_kind=official_still`，SHA-256 `a64baa37fa9aba22f20c1c67197e350ee4adc46c122ff00489545e2e9119769e`，图片直链 `https://tsuburaya-prod.com/wp-content/uploads/2021/12/UT_Hero_Zof04.png`）为第一身份/体型参考；ref-01 与旧图鉴只作头部与胸口布局参考。
-- 候选与请求：`art/fighters/zoffy/sources/draft-20261108/brief-catalogue-ref02-20261109.json` 记录选中 prompt 与验收项；`requests.json` 新增 attempts 20–30（a–k），每轮记录参考图、SHA 与淘汰理由，选中 k。
-- 成品：`reports/zoffy/catalogue/candidate-ref02-k.png`（raw）→ `reports/zoffy/catalogue/model-native-ref02k-173.png`（catalogue_native 降采样）。
-  - bbox [170,75,212,247]；站高 173；宽 43；32 色；Alpha [0,255]；右侧视；脚底最后一行 247，基线 248。
-  - 蓝计时器 15px 保留；头盔统一银色，单只淡黄杏仁眼与嘴缝清楚。
-  - SHA-256 `3865589d7a66777daa02b930cc904a88c999c9cf0aa762f1cf1718878184fedc`，已安装。
-- 对比图：`reports/zoffy/catalogue/zoffy-ref02-final-vs-installed.png`（官方剧照 / 旧 173 / 新 173 / 初代图鉴，4× 白底）。
+- 流程（用户指定，不再用程序化滤镜替代图片模型）：
+  1. 图片模型生成真实皮套剧照 `reports/zoffy/catalogue/photo-side-01.png`（1065×1476，真 Alpha，SHA-256 `623dd828916c3ac0e3d59b877a16ac5aa2fc6bdfbe2747dd5257b5e071cf82b6`），严格右侧视、错步战斗架势、头身比与官方剧照一致。
+  2. 以该照片为底，图片模型转像素整帧 `reports/zoffy/catalogue/candidate-sprite-06.png`（SHA-256 `e2013fd4de8b3c1c35b419ad36b5af42d6a943889a54cb155ff5557469ab38a4`）。只按用户要求把头顶尖角改矮，其余不动。
+  3. `catalogue_native` 降采样到 173 并落 384×256 画布：`reports/zoffy/catalogue/model-native-sprite-06-173.png`。
+- 成品：bbox [136,75,243,248]；站高 173；宽 107；32 色；Alpha [0,255]；右侧视；脚底最后一行 247，基线 248；蓝计时器 18px 保留。
+- 安装 SHA-256 `2607b58fd0a8a5d2c582f1cb9d821a6b5cde502189c6b23fd8e5b0f442a79fd8`。
+- 候选与淘汰理由见 `art/fighters/zoffy/sources/draft-20261108/requests.json` attempts 31–50（pose-n…z、photo-side-01、sprite-01…06）。
+- 对比图：`reports/zoffy/catalogue/zoffy-*` 系列；最终版与已装初代/杰克/艾斯/泰罗同高对比见本机 reports（未入库）。
 
 ## 零·补、官方参考版重做（2026-11-08，已被 11-09 版替换）
 

@@ -77,18 +77,14 @@
 - 154 对比版（未替换 173）：`reports/zoffy/battle/m87-firing-pose-draft-192-h154.png`，站高 154，指尖前缘 cell (144,71) / 局部 (48,113)；镜像 cell (48,71) / 局部 (−48,113)，误差 1px；仅用于身高对比，未接运行时。
 - 实测五帧发射核心/束根与锚点误差 0–0.5px，均 ≤2px；见 `reports/zoffy/fx/fx-report.json`。
 
-### 3·补 官方剧照主参考重做（2026-11-08，当前候选）
+### 3·补 图鉴重做记录（2026-11-09，当前安装）
 
-- 官方参考：`art/fighters/zoffy/sources/ref-01.webp`（431×900，`reference_kind=official_still`，SHA-256 `0bcdab23478fb8645c8486ca8cc988df7dda911646b77e8bd6febafeef8fb37f`）。图鉴、战斗待机、M87 基础生成均以它为第一参考；旧 draft 只作第二参考。
-- 图鉴（2026-11-09 二次重做，当前安装）：第一参考改为圆谷官方全身皮套照 `art/fighters/zoffy/sources/ref-02.png`（2400×3607，`reference_kind=official_still`，SHA-256 `a64baa37...`，来源 `https://tsuburaya-prod.com/wp-content/uploads/2021/12/UT_Hero_Zof04.png`，页面 `https://tsuburaya-prod.com/heroes/zoffy`），ref-01 与旧图鉴作头部/胸口布局参考。候选 `reports/zoffy/catalogue/candidate-ref02-k.png` 经 catalogue_native 降采样为 `reports/zoffy/catalogue/model-native-ref02k-173.png`：站高 173、bbox [170,75,212,247]、宽 43、32 色、二值 Alpha、蓝计时器保留 15px；SHA `3865589d...`，已安装到 `assets/fighters/zoffy/catalogue/model-native.png`。
-- 旧版（2026-11-08，已被替换）：`reports/zoffy/catalogue/model-native-officialref-173.png`，站高 173、宽 43、26 色、蓝计时器 15px、眼黄 18px；SHA `1ee145e9...`。用户反馈体型不合格，保留对照不覆盖。
-- 战斗待机：`reports/zoffy/battle/model-native-officialref-154.png`，站高 154、bbox [52,30,141,183]、宽 90、25 色、蓝 5px、眼 20px、头身比 4.97；SHA `1e2669c9...`。
-- M87 姿势：`reports/zoffy/battle/m87-firing-pose-officialref-154.png`，站高 154、bbox [51,30,168,183]、宽 118、21 色、蓝 6px、眼 26px；SHA `ae5c5b15...`。右掌五指并拢前指，左掌开掌靠计时器。
-- 官方参考版发射点：右手指尖前缘中心 cell (168,69)；前缘 y68–70，中心 69.0；局部（脚底根点，x 前/y 上）(72,115)；容差 2px，纵向误差 0。
-- 镜像：按 anchor cell (24,69)；局部 (−72,115)；实际像素镜像 x=23，差 1px，≤2px。
-- 对比图：`reports/zoffy/compare/zoffy-catalogue-officialref-173-vs-peers-native.png`、`.../zoffy-battle-officialref-154-vs-peers-native.png`（各带 `-x2.png`）；待机 vs M87：`.../zoffy-officialref-idle-vs-m87-154-native.png`。
-- 图鉴 173 已安装到 `assets/fighters/zoffy/catalogue/model-native.png`（2026-11-09 为官方全身照版 SHA `3865589d...`，替换 11-08 的 `1ee145e9...`），`catalogue_display.json` 同步为 173、`mcp_image_to_image_from_official_reference`、参考文件 ref-02；战斗图仍未安装、未接运行时。旧 draft-v2 / 旧 173 / 旧 154 及旧发射点保留对照，不覆盖。
-- FX：此前 5 张关键帧保留；7 张未完成帧等人物定稿确认后再继续，不随本轮重做。
+- 用户指定流程：**先生成真实皮套剧照，再用图片模型转像素整帧**，不用程序化滤镜替代图片模型。
+- 真实剧照：`reports/zoffy/catalogue/photo-side-01.png`（1065×1476，真 Alpha，严格右侧视错步战斗架势，SHA-256 `623dd828916c3ac0e3d59b877a16ac5aa2fc6bdfbe2747dd5257b5e071cf82b6`），以圆谷官方全身皮套照 `art/fighters/zoffy/sources/ref-02.png` 与 `ref-01.webp` 为参考。
+- 像素整帧：`reports/zoffy/catalogue/candidate-sprite-06.png`（SHA-256 `e2013fd4de8b3c1c35b419ad36b5af42d6a943889a54cb155ff5557469ab38a4`），沿用照片的姿态与造型，只把头顶尖角改矮。
+- 降采样成品：站高 173、宽 107、32 色、二值 Alpha、蓝计时器 18px；安装 SHA `2607b58f...`，已同步 `catalogue_display.json`（`art_source: photo_to_pixel_from_official_suit_reference`）。
+- 旧版（11-08 官方参考版 `1ee145e9...`、11-09 站姿版 `3865589d...`）保留对照，不覆盖。
+- 战斗待机 154、M87 154 仍为 11-08 官方参考版，未安装、未接线。
 
 ### 4. 命中与消散
 
