@@ -35,17 +35,32 @@ from catalogue_native import apply_palette, build_palette, harden_alpha, trim  #
 import catalogue_rescale  # noqa: E402
 
 
-def idle_clip(catalogue_id: str) -> dict | None:
-    path = ROOT / f"content/fighters/{catalogue_id}/canon.json"
-    if not path.is_file():
-        return None
-    data = json.loads(path.read_text(encoding="utf-8"))
-    clip = data.get("idle")
+def _usable(clip) -> dict | None:
     if not isinstance(clip, dict):
         return None
     if not clip.get("texture") or not clip.get("rects"):
         return None
     return clip
+
+
+def idle_clip(catalogue_id: str) -> dict | None:
+    """可玩角色已有的真实 idle：优先 canon.json，其次战斗动画 manifest。
+
+    canon.json 只有一部分角色有；其余已装到游戏里的角色（EX 哥莫拉、
+    EX 雷德王、亚刻、布莱泽、欧米伽、泰奥等）的 idle 图集与锚点写在
+    assets/fighters/<id>/animations/manifest.json 的 clips.idle 里，
+    同样是实机在用的真帧，直接拿来烘图鉴，不重画。
+    """
+    canon = ROOT / f"content/fighters/{catalogue_id}/canon.json"
+    if canon.is_file():
+        clip = _usable(json.loads(canon.read_text(encoding="utf-8")).get("idle"))
+        if clip is not None:
+            return clip
+    manifest = ROOT / f"assets/fighters/{catalogue_id}/animations/manifest.json"
+    if manifest.is_file():
+        clips = json.loads(manifest.read_text(encoding="utf-8")).get("clips") or {}
+        return _usable(clips.get("idle"))
+    return None
 
 
 def anchor_of(clip: dict, index: int, rect: list) -> tuple[float, float]:
