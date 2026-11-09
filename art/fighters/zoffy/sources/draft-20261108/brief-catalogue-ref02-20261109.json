@@ -1,0 +1,24 @@
+{
+  "status": "generation_in_progress",
+  "scope": "佐菲图鉴重生成（2026-11-09 用户反馈现装 173 体型仍不合格）。第一身份/体型参考改为圆谷官方全身皮套照 ref-02，ref-01 与现装图只作第二参考。仅图鉴静态首图，不是整套动作。",
+  "character_id": "zoffy",
+  "references": [
+    "art/fighters/zoffy/sources/ref-02.png",
+    "art/fighters/zoffy/sources/ref-01.webp"
+  ],
+  "reference_roles": [
+    "圆谷官方全身皮套照（tsuburaya-prod.com/heroes/zoffy）：真实头身比、肩宽、胸廓、腿粗、勋章排布、配色",
+    "同一角色的另一张官方皮套照：只取头部造型——圆滑头盔、头顶中央低矮纵鳍、杏仁眼、小嘴缝"
+  ],
+  "prompt": "Convert the attached official suit photographs of ZOFFY (ゾフィー / 佐菲), from the classic Ultraman series, into ONE complete whole-body 2D pixel-art fighting-game character sprite. Reference 1 is the body and colour authority; reference 2 is the HEAD authority (helmet shape, crest fin, eyes, mouth).\n\nHEAD — read reference 2 carefully and keep it exact: a smooth ROUNDED silver helmet that follows the skull, with a small low vertical crest fin only along the top centre line, tapering into the forehead, NOT a tall blade, NOT a mohawk, NOT a backward-swept fin, NOT an angular faceted plate. Two smooth almond eyes, pale yellow with a dark rim, set into the front of the helmet; a small horizontal mouth slit below; a red neck. The head is SMALL: its height is about one fifth of the whole standing body height. Do not enlarge the head.\n\nBODY TYPE — read reference 1 and keep its real suit proportions: BROAD shoulders, a full deep chest, a solid waist and THICK muscular thighs and calves. A heavy adult heroic suit actor — never slim, never pinched at the waist, never thin-limbed. Do not lengthen the neck, do not narrow the shoulders, do not shrink the chest, do not thin the arms or legs.\n\nMARKINGS: red neck and red upper chest/shoulder area over a silver body, with the silver V-shaped chest opening coming down the torso; a round BLUE colour timer with a silver rim at the centre of the chest; a row of small silver Star Marks across the red chest above the timer and a few below; paired shoulder Ultra Breastar badges on the shoulders/upper arms; red hips; silver legs with red diagonal bands and red chevron markings; silver boots. Far-side limbs in a darker shade of the same hue, separated by a dark outline where they cross; near-side limbs bright.\n\nMATERIAL TRUTH: this is the in-show suit worn by a living giant, never merchandise. Remove every toy tell: ball joints, hinge seams, mould parting lines, peg holes, stand pegs, stickers, printed product text, plastic gloss, uniform specular highlights, airbrushed soft shading and the stiff product stance. Matte suit surface, natural slight asymmetry of a worn suit.\n\nPOSE: fixed SIDE VIEW facing right, strict profile — only the near-side eye visible. Not front view, not three-quarter, not looking at the viewer. Calm NEUTRAL standing stance: torso upright, both arms hanging relaxed at the sides with a slight elbow bend, both legs straight and parallel side by side, both feet flat on the SAME invisible ground line, weight balanced. Not a walking stride, not an action stance, not a wide stance. One complete body, all limbs and feet fully attached.\n\nSTYLE: chunky 16-bit pixel art, hard pixel grid, roughly 32 flat colour steps, dark 1-pixel outline, top-left light source, no smooth gradients, no anti-aliasing, no noise, no realistic metal shading.\n\nCOMPOSITION: whole body centred with generous transparent margin on all sides; feet must not touch the image border; no ground, shadow, scenery, text, UI, glow or effects. Genuine PNG alpha transparency, not a checkerboard or solid backdrop.",
+  "size": "1024x1536",
+  "quality": "high",
+  "acceptance": [
+    "真实 Alpha、二值化后无棋盘格残留",
+    "头身比、肩宽、胸廓、腿粗与 ref-02 皮套照一致，不瘦长",
+    "右侧视、单向，无三分之四或正面",
+    "固定侧视整帧，无断肢、裁切、武器或特效",
+    "降采样到 384×256、站高 173、根点 [192,248] 后逐像素静审"
+  ],
+  "provenance": "本条只记录实际由 tools/art/pipeline.py concept 返回的模型、尺寸、SHA 与 usage；未生成前不填写。"
+}

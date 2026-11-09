@@ -1,8 +1,18 @@
 # 佐菲 画布与根点（draft 2026-11-08）
 
-状态：图鉴 173 已安装到 `assets/fighters/zoffy/catalogue/model-native.png` 并同步 `content/roster/catalogue_display.json`；战斗图仍未安装，未接运行时。
+状态：图鉴 173 已安装到 `assets/fighters/zoffy/catalogue/model-native.png` 并同步 `content/roster/catalogue_display.json`；2026-11-09 按圆谷官方全身皮套照 `ref-02.png` 二次重做，替换 11-08 版。战斗图仍未安装，未接运行时。
 
-## 零、官方剧照主参考重做（2026-11-08，当前候选）
+## 零、官方全身皮套照重做（2026-11-09，当前安装）
+
+- 用户反馈 11-08 官方参考版“体型还是有问题、太丑”，改为以圆谷官方页 `https://tsuburaya-prod.com/heroes/zoffy` 的全身皮套照 `art/fighters/zoffy/sources/ref-02.png`（2400×3607，`reference_kind=official_still`，SHA-256 `a64baa37fa9aba22f20c1c67197e350ee4adc46c122ff00489545e2e9119769e`，图片直链 `https://tsuburaya-prod.com/wp-content/uploads/2021/12/UT_Hero_Zof04.png`）为第一身份/体型参考；ref-01 与旧图鉴只作头部与胸口布局参考。
+- 候选与请求：`art/fighters/zoffy/sources/draft-20261108/brief-catalogue-ref02-20261109.json` 记录选中 prompt 与验收项；`requests.json` 新增 attempts 20–30（a–k），每轮记录参考图、SHA 与淘汰理由，选中 k。
+- 成品：`reports/zoffy/catalogue/candidate-ref02-k.png`（raw）→ `reports/zoffy/catalogue/model-native-ref02k-173.png`（catalogue_native 降采样）。
+  - bbox [170,75,212,247]；站高 173；宽 43；32 色；Alpha [0,255]；右侧视；脚底最后一行 247，基线 248。
+  - 蓝计时器 15px 保留；头盔统一银色，单只淡黄杏仁眼与嘴缝清楚。
+  - SHA-256 `3865589d7a66777daa02b930cc904a88c999c9cf0aa762f1cf1718878184fedc`，已安装。
+- 对比图：`reports/zoffy/catalogue/zoffy-ref02-final-vs-installed.png`（官方剧照 / 旧 173 / 新 173 / 初代图鉴，4× 白底）。
+
+## 零·补、官方参考版重做（2026-11-08，已被 11-09 版替换）
 
 - 规则：图鉴、战斗待机、M87 姿势的基础生成必须以 `art/fighters/zoffy/sources/ref-01.webp` 为第一参考图；该图为官方剧照/皮套照（431×900，`reference_kind=official_still`，SHA-256 `0bcdab23478fb8645c8486ca8cc988df7dda911646b77e8bd6febafeef8fb37f`）。旧 draft-v2、旧 173、旧 154 只作第二参考与对照，不得覆盖。
 - 请求记录：`art/fighters/zoffy/sources/draft-20261108/requests.json` 顶部 `reference_policy` / `reference_correction`；旧 attempts 7/8/15 已标 `superseded`，旧 selected 条目已标 `comparison_only`；新 attempts 16–18 均记录官方参考第一、旧 draft 第二、raw/成品 SHA 与选中理由。
