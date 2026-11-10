@@ -16,6 +16,8 @@ def read(path):return json.loads(path.read_text(encoding='utf-8-sig'))
 def main():
  records=read(ROOT/'content/audio/sources.json')['records'];ids=set();metrics=[]
  for record in records:
+  # 已明确不接入运行时的历史/原创记录不参与运行时音频资源硬门。
+  if record.get('deprecated_for_runtime'):continue
   path=ROOT/record['path'].removeprefix('res://');assert path.is_file(),path
   assert record['id'] not in ids;ids.add(record['id'])
   assert hashlib.sha256(path.read_bytes()).hexdigest()==record['sha256'],path
@@ -29,7 +31,7 @@ def main():
   if 'integrated_lufs' in record:assert math.isfinite(record['integrated_lufs']),path
   assert record['true_peak_dbfs']<=-1.8,path
   assert 20*math.log10(float(np.max(np.abs(data.astype(np.int32))))/32768)<=-1.8,path
-  assert record['source_kind'] in ['original','episode'] and record['license']
+  assert record['source_kind'] in ['original','episode','derivative'] and record['license']
   metrics.append({'id':record['id'],'seconds':seconds,'channels':channels,'integrated_lufs':record.get('integrated_lufs'),'sha256':record['sha256']})
  effects=read(ROOT/'content/presentation/phase3_projectiles.json');fx=[]
  for key in ['beam_loop','zetton_super_fire']:

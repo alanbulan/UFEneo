@@ -2,8 +2,8 @@
 
 检查项：
 - runtime.json / battle_music.json / 动作音效清单引用的路径都存在；
-- 每个文件可读、16 位 PCM、采样率与位深统一；
-- 无静音、无削波、无异常短文件；
+- 清单引用的每个文件可读、16 位 PCM、采样率与位深统一；
+- 清单引用的文件无静音、无削波、无异常短文件；未引用文件只列 orphan，不作为运行时硬门；
 - 同类（sfx/voice/music）内部响度极差不超过阈值；
 - 未被任何清单引用的音频文件单独列出。
 
@@ -162,6 +162,10 @@ def main() -> int:
         data["path"] = path
         metrics.append(data)
         formats[(data["rate"], data["channels"], data["bits"])] += 1
+        # 中间制作源、分离轨和旧未引用文件不在运行时清单内，只列 orphan；
+        # 静音/削波/过短硬门只判清单实际引用的文件，避免把制作中间物冒充运行时缺陷。
+        if path not in wanted:
+            continue
         # OGG 没有解码器，peak/rms 为 None，跳过波形判据。
         if data["peak"] is not None:
             if data["peak"] < SILENT_PEAK:
@@ -198,7 +202,7 @@ def main() -> int:
         "loudness_spread_db": spreads,
         "errors": errors,
         "warnings": warnings,
-        "note": "只核对清单、格式、静音/削波/时长与同类响度离散度；不代替人耳听审。",
+        "note": "只核对清单引用文件、格式、静音/削波/时长与同类响度离散度；未引用制作中间物只列 orphan；不代替人耳听审。",
     }
     output = ROOT / "reports/audio-manifest.json"
     output.parent.mkdir(parents=True, exist_ok=True)
