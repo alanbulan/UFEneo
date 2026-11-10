@@ -1,0 +1,339 @@
+{
+ "id": "air_throw",
+ "display_name": "空投·空中揽肩翻摔",
+ "startup": 1,
+ "active": 2,
+ "recovery": 3,
+ "damage": 65,
+ "hitstun": 20,
+ "blockstun": 12,
+ "pushback": 8,
+ "stun": 65,
+ "stamina_cost": 0,
+ "energy_cost": 0,
+ "kind": "throw",
+ "level": "mid",
+ "unblockable": true,
+ "launch": false,
+ "bounce": false,
+ "knockdown": true,
+ "throw_schema": 2,
+ "feedback": {
+  "spark": "impact_heavy",
+  "block_spark": "impact_guard",
+  "hitstop": 8,
+  "blockstop": 5,
+  "shake": 3,
+  "flash": 2,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "cancel_rule": "完整收势后恢复行动，无招式取消",
+ "audio": {
+  "hit": "hit_heavy",
+  "block": "guard",
+  "throw_slam": "land"
+ },
+ "data_source": "规则沿用已审同体型人形模板与泰罗同类招式；帧数取自 stage1 交付，攻击点与受击框按赛罗整帧像素逐帧量取。",
+ "production_note": "内容数据；美术已交付未安装，未启动 Godot、未提交。",
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     44,
+     123,
+     55,
+     38
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -57,
+     21,
+     108,
+     64
+    ],
+    [
+     -71,
+     83,
+     171,
+     64
+    ],
+    [
+     -69,
+     145,
+     170,
+     65
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "heavy"
+    }
+   ],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "grabbed",
+    "sprite": 0,
+    "facing": -1,
+    "mode": "hold",
+    "grab_point": "waist",
+    "grip": [
+     70,
+     95
+    ],
+    "root": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -82,
+     21,
+     157,
+     56
+    ],
+    [
+     -80,
+     75,
+     158,
+     56
+    ],
+    [
+     -33,
+     129,
+     79,
+     57
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "grabbed",
+    "sprite": 0,
+    "facing": -1,
+    "mode": "hold",
+    "grab_point": "waist",
+    "grip": [
+     40,
+     80
+    ],
+    "root": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -67,
+     21,
+     136,
+     63
+    ],
+    [
+     -68,
+     82,
+     158,
+     64
+    ],
+    [
+     -47,
+     144,
+     140,
+     64
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "grabbed",
+    "sprite": 0,
+    "facing": -1,
+    "mode": "hold",
+    "grab_point": "waist",
+    "grip": [
+     36,
+     86
+    ],
+    "root": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -65,
+     21,
+     164,
+     61
+    ],
+    [
+     -67,
+     80,
+     162,
+     62
+    ],
+    [
+     -53,
+     140,
+     126,
+     62
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "grabbed",
+    "sprite": 0,
+    "facing": -1,
+    "mode": "hold",
+    "grab_point": "waist",
+    "grip": [
+     40,
+     70
+    ],
+    "root": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -66,
+     21,
+     138,
+     74
+    ],
+    [
+     -82,
+     93,
+     173,
+     75
+    ],
+    [
+     -46,
+     166,
+     77,
+     75
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_air",
+    "sprite": 0,
+    "facing": -1,
+    "mode": "release",
+    "grab_point": "waist",
+    "grip": [
+     40,
+     70
+    ],
+    "root": [
+     100,
+     0
+    ],
+    "progress": [
+     1,
+     2
+    ],
+    "ground": true,
+    "impact": false
+   }
+  },
+  {
+   "sprite": 5,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -29,
+     21,
+     64,
+     74
+    ],
+    [
+     -78,
+     93,
+     139,
+     75
+    ],
+    [
+     -92,
+     166,
+     153,
+     75
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_air",
+    "sprite": 1,
+    "facing": -1,
+    "mode": "release",
+    "grab_point": "waist",
+    "grip": [
+     30,
+     80
+    ],
+    "root": [
+     100,
+     0
+    ],
+    "progress": [
+     2,
+     2
+    ],
+    "ground": true,
+    "impact": true
+   }
+  }
+ ]
+}
