@@ -1,0 +1,256 @@
+{
+ "id": "pulse",
+ "display_name": "掌推光弹",
+ "startup": 3,
+ "active": 2,
+ "recovery": 1,
+ "damage": 65,
+ "hitstun": 20,
+ "blockstun": 12,
+ "pushback": 8,
+ "stun": 65,
+ "stamina_cost": 30,
+ "energy_cost": 0,
+ "kind": "projectile",
+ "level": "mid",
+ "unblockable": false,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "feedback": {
+  "spark": "impact_heavy",
+  "block_spark": "impact_guard",
+  "hitstop": 8,
+  "blockstop": 5,
+  "shake": 3,
+  "flash": 2,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "chip_damage": 0,
+ "super_level": 0,
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -48,
+     0,
+     98,
+     53
+    ],
+    [
+     -31,
+     51,
+     65,
+     54
+    ],
+    [
+     -27,
+     103,
+     50,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "heavy"
+    }
+   ],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -49,
+     0,
+     98,
+     53
+    ],
+    [
+     -35,
+     51,
+     75,
+     53
+    ],
+    [
+     -33,
+     102,
+     82,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -49,
+     0,
+     99,
+     53
+    ],
+    [
+     -26,
+     51,
+     66,
+     53
+    ],
+    [
+     -21,
+     102,
+     53,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -48,
+     0,
+     98,
+     53
+    ],
+    [
+     -27,
+     51,
+     62,
+     53
+    ],
+    [
+     -26,
+     102,
+     79,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "shots": [
+    {
+     "effect": "pulse",
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "beam": false,
+     "length": 0,
+     "thickness": 0,
+     "life": 80,
+     "speed": 9,
+     "vy": 0,
+     "box": [
+      -10,
+      -9,
+      20,
+      18
+     ],
+     "spawn": [
+      42,
+      112
+     ],
+     "anchor": [
+      42,
+      112
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -49,
+     0,
+     99,
+     53
+    ],
+    [
+     -30,
+     51,
+     63,
+     53
+    ],
+    [
+     -28,
+     102,
+     59,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 5,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -45,
+     0,
+     97,
+     53
+    ],
+    [
+     -24,
+     51,
+     60,
+     53
+    ],
+    [
+     -22,
+     102,
+     47,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard"
+  }
+ ],
+ "data_source": "游戏编排的掌推光弹，不称原剧专名；近侧单掌由腹前收拢后前推，人物帧只画贴掌光点，飞行弹由运行时 pulse 承载。白色为中性游戏光色，不冒充任何原剧技能色。",
+ "manual_projectiles": true
+}
