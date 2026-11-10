@@ -92,24 +92,7 @@
   "prompt_char_count": 169,
   "usage": "未知（MCP 未返回 usage/费用）"
  },
- "scale_source": {
-  "path": "art/fighters/mother-of-ultra/stage1/idle/frames/pixel-raw-01.png",
-  "sha256": "0d5b6bc69784eb67542265d4243159f01c9faae332b399601d2cb1d3b3e2de3d",
-  "source_bbox_alpha128_inclusive": [
-   62,
-   51,
-   933,
-   1497
-  ],
-  "source_standing_height": 1447,
-  "target_standing": 154,
-  "source_pixel_scale": 0.10642709,
-  "uniform_resampled_size": [
-   93,
-   154
-  ],
-  "note": "由本张待机像素完整源站高1447定154/1447；整图等比缩小，未逐区域变形；全套后续动作必须共用这一比例。"
- },
+ "scale_source": "art/fighters/mother-of-ultra/stage1/idle/frames/pixel-raw-01.png",
  "canvas": [
   192,
   192
@@ -426,36 +409,9 @@
  },
  "flags": [],
  "notes": [
-  "像素参考只有 stance-raw-04.png 一张；请求与实收均 1024×1536 RGBA，Alpha 0–254（255级）；低 Alpha 背景光雾在落格按128阈值剔除，未切人物。",
-  "头高红领同口径32>31一像素（含颈/领4px）；根审裁决采用像素头高标尺28、红领不计入头高；未缩头、未改阈值、未重生成。",
-  "源站高1447（α≥128 bbox y51–1497），单比例154/1447；未按外框逐帧归一；全套后续动作须共用154/1447与这32色板。",
-  "完整forge依赖缺失，未执行网格检测；使用forge_backend._kcentroid_downscale与独立整图最近色映射，不冒称完整forge通过。",
-  "原生格192×192；4×严格最近邻逐像素重复、未加色；联系表仅审阅，不作额外参考。",
-  "未安装、未接运行时、未启动Godot、未提交、无录屏；720/1080、实速、声音未验。",
-  "本候选在根审前记录的约束；2026-11-09 根审已签署，identity_anchor_for_actions 已填入，不再是 null。",
-  "2026-11-09 根审签署：idle-candidate-01 为奥特之母标准型待机身份锚（root_delegated_by_user，非用户亲审）；头高按头顶y30→颈线y58=28px，头壳28px；红领同口径32含颈/领4px不计入头高；不缩头、不改阈值。",
-  "2026-11-09 动作批：idle-01、walk_forward-00、walk_forward-01 已落格；walk_forward-02 连续3张未换腿，按返工刹车停止；walk_forward-03 未生成。",
-  "动作帧只引 pixel-raw-01；固定比例154/1447；同32色板；二值Alpha；非技能帧整帧单连通；未逐帧归一或局部缩头。",
-  "walk_forward-02 三张拒收源图在诊断图完成后删除，SHA/尺寸保留在 action_batch.walk_forward_02_attempts 与本目录 README。",
-  "动作批未安装、未接运行时、未启动Godot、未提交、无录屏；720/1080、实速、声音未验。",
-  "2026-11-10 根审签署 idle-01、walk_forward-00、walk_forward-01；walk_forward-01 身体左移按支撑脚质心对 x=96 的既有口径接受。",
-  "walk_forward-02 连续3张未换腿，根决定保留已签三帧、不再同一思路重生成 walk_02/03，留人工。",
-  "2026-11-10 起继续 light1(3)、light2(3)、light3(4)；同锚、同格、同色板、二值 Alpha。",
-  "2026-11-10 轻击批：light1 3帧、light2 3帧、light3 4帧全部落格并通过子代理门检（32色/二值Alpha/整帧单连通/严格4×）；待根审。",
-  "轻击1/2/3按 REBUILD_2D_PLAN 5□→□→□ 通用轻击链接作；本角色无专属 brief，不命名光线或必杀，不加特效。",
-  "light 批只引 pixel-raw-01；固定比例154/1447；未逐帧归一；未局部缩头。头高自动标尺不稳定，已用眼行头壳28–29与冠顶→眼17（命中18）核对。",
-  "walk_forward-02/03 按根决定留人工，本批未重生成。",
-  "2026-11-10 根审通过并签署 light1/2/3 共10帧（root_delegated_by_user，非用户亲审）；light2-01 勾拳弧线偏直作为已知差异保留，不重生成；继续 heavy(4)。",
-  "2026-11-10 最小集：hit 2/2、block 1/1、getup 2/2、ko 2/2 已落格并通过硬门；down 1/2、win 1/2，down-00 与 win-00 因头部比例门连续3帧未过按返工刹车留红槽。",
-  "2026-11-10 down-01、ko-01 横卧帧改按可见轮廓bbox水平中心对x=96落格，最低轮廓183，比例不变；两张复核图与 down/ko 联系表已重出。",
-  "2026-11-10 根审签署最小集7帧：hit-00/01、block-00、getup-00/01、ko-00/01（root_delegated_by_user，非用户亲审）；down-01、win-01 单帧保留，down/win 组各缺 down-00/win-00，组状态保持 incomplete/pending；getup-00 冠顶→眼18与3帧31色保留为已知差异，不返修；down-00/win-00 不沿用本次思路重生成，留人工。",
-  "2026-11-10 新思路补做：down-00 后仰触地、win-00 单臂举拳+护胸、walk_02 改步幅、walk_03 抬膝抬摆；down/win 组补齐2/2，walk_forward 4/4；四帧按 auto_pass_2026_11_10 自签（root_delegated_by_user，非用户亲审）；walk-02 脚尖触地、walk-03 抬膝偏高为已知差异。",
-  "2026-11-10 walk_back 组4/4：四帧只引 pixel-raw-01，机器门通过并按 auto_pass_2026_11_10 自签（root_delegated_by_user，非用户亲审）；03抬膝偏高、披风未按后退方向飘动、00/02宽步触地为已知差异。",
-  "2026-11-10 dash_start 组2/2：00 raw-01 头壳33/冠眼19拒收，按第一修法 raw-02（30/18）通过；01（28/17）；两帧32色、脚底183、自签。",
-  "2026-11-10 dash 组4/4：00 raw-01 实收1536×1024、人物源高982、落格高105且贴左缘，拒收；修1 raw-02 竖幅高133通过；01/02/03通过；四帧32色、脚底183、自签。",
-  "2026-11-10 takeoff 2/2、air_rise 1/1、land 2/2 自签；air_fall-00 三次头门21/19/28未过，按两种修法上限停止，红色阻塞槽与诊断图保留，废稿SHA/尺寸记录后删除；land-01 修2通过。",
-  "2026-11-10 heavy-00 改走锚派生像素比例导引（heavy00_rework_2026_11_10）：导引 v1 居中裁导致人物按画面占比缩身（落格高130/头壳23）拒收；导引 v2 按锚 raw 占位（1447/1536）放大后一次通过，落格后冠顶→眼16、眼行头壳27、32色、二值Alpha、单连通、脚底183；heavy 组 4/4 自签（root_delegated_by_user，非用户亲审）。",
-  "2026-11-10 heavy-00 补落格并自签后，全部 47 格重出全帧联系表 review-all-47-2026-11-10.png（无阻塞槽），独立脚本重读 47 个 PNG 硬门 0 例外；旧 review-all-46 已删除，不保留历史副本。旧 contact-heavy-2026-11-10.png（heavy-00 红槽）仍被 requests.json 的 heavy 请求收据引用，按请求对应关系保留，不代表当前状态。"
+  "intro-04: 头高 25 偏离参考帧换算的 31 超过 ±8%，须目视核对",
+  "intro-05: 头高 36 偏离参考帧换算的 31 超过 ±8%，须目视核对",
+  "intro-06: 头高 27 偏离参考帧换算的 31 超过 ±8%，须目视核对"
  ],
  "usage": "未知（MCP 未返回 usage/费用）",
  "root_signing": {
@@ -19102,5 +19058,224 @@
   "status": "root_signed_complete_8of8"
  },
  "special3_set_status": "special3_16of16_root_signed_complete",
- "air_special_set_status": "air_special_8of8_root_signed_complete"
+ "air_special_set_status": "air_special_8of8_root_signed_complete",
+ "approved": "assets/fighters/mother-of-ultra/catalogue/model-native.png",
+ "approved_sha256": "a9b7bcae3660003833e60821fbbfee3d310040626429f99e828b066c5ef9330a",
+ "scale": 0.106427,
+ "scale_source_head": 295,
+ "target_standing": 154,
+ "target_head": 31,
+ "cell": 192,
+ "head_tolerance": 0.08,
+ "standing_tolerance": 0.03,
+ "frames": [
+  {
+   "frame": "intro-00-cell",
+   "source": "art/fighters/mother-of-ultra/stage1/intro/frames/intro-00-raw-01.png",
+   "source_sha256": "fc930c00066e80308f6030fe8c05c1d692fbbd602c7914371d743f79ea8a3611",
+   "output": "art/fighters/mother-of-ultra/stage1/cells/intro-00-cell.png",
+   "output_sha256": "e180d47763fe5ec645be321be7bd30366ca2fc162e6c444314b9a3282bed002e",
+   "scale": 0.106427,
+   "bbox": [
+    76,
+    31,
+    117,
+    183
+   ],
+   "height": 153,
+   "width": 42,
+   "head_height": 37,
+   "head_ratio": 0.2418,
+   "colors": 31,
+   "components": 1,
+   "foot_row": 183,
+   "alpha": [
+    0,
+    255
+   ],
+   "standing": true
+  },
+  {
+   "frame": "intro-01-cell",
+   "source": "art/fighters/mother-of-ultra/stage1/intro/frames/intro-01-raw-01.png",
+   "source_sha256": "ff9dc26e3fbe606f730382d63bb7d212602dd55ed01d8d9c00e78a400e8e07da",
+   "output": "art/fighters/mother-of-ultra/stage1/cells/intro-01-cell.png",
+   "output_sha256": "4cca5d4e52044473477a0daa2a16438182537909a9acab789dfcf356589af982",
+   "scale": 0.106427,
+   "bbox": [
+    41,
+    30,
+    138,
+    183
+   ],
+   "height": 154,
+   "width": 98,
+   "head_height": 27,
+   "head_ratio": 0.1753,
+   "colors": 32,
+   "components": 1,
+   "foot_row": 183,
+   "alpha": [
+    0,
+    255
+   ],
+   "standing": true
+  },
+  {
+   "frame": "intro-02-cell",
+   "source": "art/fighters/mother-of-ultra/stage1/intro/frames/intro-02-raw-01.png",
+   "source_sha256": "e7a42e5a086b23444f8a3f5613d5a495a7dd0b7869a462324999bb9f92009761",
+   "output": "art/fighters/mother-of-ultra/stage1/cells/intro-02-cell.png",
+   "output_sha256": "2c42fa5cbfc927447d0a916767115fe390d6a59568e760ed91df834a5cf4e65e",
+   "scale": 0.106427,
+   "bbox": [
+    36,
+    30,
+    138,
+    183
+   ],
+   "height": 154,
+   "width": 103,
+   "head_height": 31,
+   "head_ratio": 0.2013,
+   "colors": 32,
+   "components": 1,
+   "foot_row": 183,
+   "alpha": [
+    0,
+    255
+   ],
+   "standing": true
+  },
+  {
+   "frame": "intro-03-cell",
+   "source": "art/fighters/mother-of-ultra/stage1/intro/frames/intro-03-raw-01.png",
+   "source_sha256": "3771fdbdb93d5f32552cc428e036b20b1d9765cdba4931c465aeafb7dc5905d0",
+   "output": "art/fighters/mother-of-ultra/stage1/cells/intro-03-cell.png",
+   "output_sha256": "3ed6db0e2bce9062f18279beae08c5562401cac29b18c7fcc33693b0cd14f18e",
+   "scale": 0.106427,
+   "bbox": [
+    54,
+    30,
+    146,
+    183
+   ],
+   "height": 154,
+   "width": 93,
+   "head_height": 28,
+   "head_ratio": 0.1818,
+   "colors": 32,
+   "components": 1,
+   "foot_row": 183,
+   "alpha": [
+    0,
+    255
+   ],
+   "standing": true
+  },
+  {
+   "frame": "intro-04-cell",
+   "source": "art/fighters/mother-of-ultra/stage1/intro/frames/intro-04-raw-01.png",
+   "source_sha256": "2215036a1af2947a7872590eeb1986f2b8b44373e5ca913af7ffc2f93dfb7dc4",
+   "output": "art/fighters/mother-of-ultra/stage1/cells/intro-04-cell.png",
+   "output_sha256": "f8cddd8d55d937ff0a859046aba88592789c50525913f45fddd51683dcf6c85d",
+   "scale": 0.106427,
+   "bbox": [
+    52,
+    30,
+    151,
+    183
+   ],
+   "height": 154,
+   "width": 100,
+   "head_height": 25,
+   "head_ratio": 0.1623,
+   "colors": 31,
+   "components": 1,
+   "foot_row": 183,
+   "alpha": [
+    0,
+    255
+   ],
+   "standing": true
+  },
+  {
+   "frame": "intro-05-cell",
+   "source": "art/fighters/mother-of-ultra/stage1/intro/frames/intro-05-raw-01.png",
+   "source_sha256": "f8b276ce63df36f5b187f4c992d8ca4eb552995b5ee63a07c0ce1a263d42b20e",
+   "output": "art/fighters/mother-of-ultra/stage1/cells/intro-05-cell.png",
+   "output_sha256": "f82b16171bfca63f9fbb508623ea7efeea98b4c4eac39a159470beee760ae2db",
+   "scale": 0.106427,
+   "bbox": [
+    53,
+    29,
+    145,
+    183
+   ],
+   "height": 155,
+   "width": 93,
+   "head_height": 36,
+   "head_ratio": 0.2323,
+   "colors": 32,
+   "components": 1,
+   "foot_row": 183,
+   "alpha": [
+    0,
+    255
+   ],
+   "standing": true
+  },
+  {
+   "frame": "intro-06-cell",
+   "source": "art/fighters/mother-of-ultra/stage1/intro/frames/intro-06-raw-01.png",
+   "source_sha256": "578d873d0aa3aff84d48af8ca3c20da05b2d6a66de1ba85b423b076fc2631dc6",
+   "output": "art/fighters/mother-of-ultra/stage1/cells/intro-06-cell.png",
+   "output_sha256": "c2158e1e4d2dfd6ff157f00d0cc061e7ba808466ec1ce7bf66c6f2ca63634db1",
+   "scale": 0.106427,
+   "bbox": [
+    53,
+    30,
+    145,
+    183
+   ],
+   "height": 154,
+   "width": 93,
+   "head_height": 27,
+   "head_ratio": 0.1753,
+   "colors": 32,
+   "components": 1,
+   "foot_row": 183,
+   "alpha": [
+    0,
+    255
+   ],
+   "standing": true
+  },
+  {
+   "frame": "intro-07-cell",
+   "source": "art/fighters/mother-of-ultra/stage1/intro/frames/intro-07-raw-01.png",
+   "source_sha256": "12fd2eaa6d8663c34a00799aa9591ce0c9ee853746a3b09410890febc93cf457",
+   "output": "art/fighters/mother-of-ultra/stage1/cells/intro-07-cell.png",
+   "output_sha256": "d5a26d9f7e792e07b0354f51a8c7a9235c5d56d3ac639d03fd0b2f6ac7a97bd4",
+   "scale": 0.106427,
+   "bbox": [
+    53,
+    30,
+    145,
+    183
+   ],
+   "height": 154,
+   "width": 93,
+   "head_height": 31,
+   "head_ratio": 0.2013,
+   "colors": 31,
+   "components": 1,
+   "foot_row": 183,
+   "alpha": [
+    0,
+    255
+   ],
+   "standing": true
+  }
+ ]
 }

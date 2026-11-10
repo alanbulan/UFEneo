@@ -1,0 +1,182 @@
+{
+ "id": "crouch_light",
+ "display_name": "蹲姿下段直拳",
+ "startup": 1,
+ "active": 2,
+ "recovery": 1,
+ "damage": 65,
+ "hitstun": 20,
+ "blockstun": 12,
+ "pushback": 8,
+ "stun": 65,
+ "stamina_cost": 0,
+ "energy_cost": 0,
+ "kind": "strike",
+ "level": "low",
+ "unblockable": false,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "feedback": {
+  "spark": "impact_light",
+  "block_spark": "impact_guard",
+  "hitstop": 4,
+  "blockstop": 3,
+  "shake": 0,
+  "flash": 2,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "cancel_rule": "完整收势后恢复行动，无招式取消",
+ "audio": {
+  "hit": "hit_light",
+  "block": "guard"
+ },
+ "data_source": "规则沿用已审同体型人形模板与泰罗同类招式；帧数取自 stage1 交付，攻击点与受击框按赛罗整帧像素逐帧量取。",
+ "production_note": "内容数据；美术已交付未安装，未启动 Godot、未提交。",
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -54,
+     0,
+     101,
+     45
+    ],
+    [
+     -37,
+     43,
+     75,
+     46
+    ],
+    [
+     -25,
+     87,
+     61,
+     46
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "light"
+    }
+   ],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     45,
+     72,
+     12,
+     14
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     111,
+     45
+    ],
+    [
+     -48,
+     43,
+     104,
+     45
+    ],
+    [
+     -20,
+     86,
+     49,
+     46
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     33,
+     63,
+     20,
+     11
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     105,
+     43
+    ],
+    [
+     -37,
+     41,
+     101,
+     44
+    ],
+    [
+     -19,
+     83,
+     50,
+     44
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     103,
+     44
+    ],
+    [
+     -40,
+     42,
+     78,
+     44
+    ],
+    [
+     -30,
+     84,
+     47,
+     44
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ ]
+}
