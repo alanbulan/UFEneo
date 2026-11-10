@@ -1,0 +1,544 @@
+{
+ "id": "motion_41236",
+ "display_name": "正义扼制",
+ "startup": 1,
+ "active": 1,
+ "recovery": 8,
+ "damage": 185,
+ "hitstun": 28,
+ "blockstun": 12,
+ "pushback": 9,
+ "stun": 65,
+ "stamina_cost": 45,
+ "energy_cost": 0,
+ "kind": "throw",
+ "level": "mid",
+ "unblockable": true,
+ "launch": false,
+ "bounce": false,
+ "knockdown": true,
+ "feedback": {
+  "spark": "impact_heavy",
+  "block_spark": "impact_guard",
+  "hitstop": 8,
+  "blockstop": 5,
+  "shake": 3,
+  "flash": 2,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "throw_schema": 2,
+ "air_allowed": false,
+ "manual_projectiles": false,
+ "production_note": "人物和挂点已装，待指挥审片；不冒称用户通过。",
+ "cancel_rule": "完整收势后恢复行动，无招式取消",
+ "audio": {
+  "hit": "taro_throw_grab",
+  "throw_slam": "taro_motion_41236_contact",
+  "block": "taro_guard"
+ },
+ "data_source": "已审赛文同类伤害、消耗、命中和取消规则；泰罗MOVES独立手势/掌心/双束、回旋踢、屏障与超级炸弹。双束各半伤，合计同类总伤。",
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     116,
+     50
+    ],
+    [
+     -36,
+     48,
+     93,
+     50
+    ],
+    [
+     -17,
+     96,
+     86,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "taro_motion_41236_charge"
+    }
+   ],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "grabbed",
+    "sprite": 0,
+    "facing": -1,
+    "mode": "hold",
+    "grab_point": "waist",
+    "grip": [
+     41,
+     52
+    ],
+    "root": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     11,
+     33,
+     23,
+     29
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -55,
+     0,
+     108,
+     48
+    ],
+    [
+     -28,
+     46,
+     78,
+     48
+    ],
+    [
+     -15,
+     92,
+     64,
+     48
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "taro_motion_41236_cast"
+    }
+   ],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "grabbed",
+    "sprite": 1,
+    "facing": -1,
+    "mode": "hold",
+    "grab_point": "waist",
+    "grip": [
+     33,
+     64
+    ],
+    "root": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -50,
+     0,
+     94,
+     44
+    ],
+    [
+     -32,
+     42,
+     68,
+     45
+    ],
+    [
+     -32,
+     85,
+     53,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "grabbed",
+    "sprite": 2,
+    "facing": -1,
+    "mode": "hold",
+    "grab_point": "waist",
+    "grip": [
+     24,
+     125
+    ],
+    "root": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     110,
+     54
+    ],
+    [
+     -32,
+     52,
+     64,
+     54
+    ],
+    [
+     -19,
+     104,
+     54,
+     55
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_back",
+    "sprite": 0,
+    "facing": -1,
+    "mode": "hold",
+    "grab_point": "waist",
+    "grip": [
+     -4,
+     160
+    ],
+    "root": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -53,
+     0,
+     103,
+     54
+    ],
+    [
+     -28,
+     52,
+     54,
+     54
+    ],
+    [
+     -23,
+     104,
+     46,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_forward",
+    "sprite": 1,
+    "facing": -1,
+    "mode": "hold",
+    "grab_point": "waist",
+    "grip": [
+     48,
+     111
+    ],
+    "root": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "sprite": 5,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -53,
+     0,
+     99,
+     49
+    ],
+    [
+     -26,
+     47,
+     61,
+     49
+    ],
+    [
+     -18,
+     94,
+     55,
+     50
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_forward",
+    "sprite": 1,
+    "facing": -1,
+    "mode": "release",
+    "grab_point": "waist",
+    "grip": [
+     18,
+     58
+    ],
+    "root": [
+     110,
+     0
+    ],
+    "progress": [
+     1,
+     6
+    ],
+    "ground": true,
+    "impact": false
+   }
+  },
+  {
+   "sprite": 6,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -57,
+     0,
+     112,
+     52
+    ],
+    [
+     -31,
+     50,
+     70,
+     53
+    ],
+    [
+     -12,
+     101,
+     46,
+     53
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_forward",
+    "sprite": 1,
+    "facing": -1,
+    "mode": "release",
+    "grab_point": "waist",
+    "grip": [
+     18,
+     58
+    ],
+    "root": [
+     110,
+     0
+    ],
+    "progress": [
+     5,
+     6
+    ],
+    "ground": true,
+    "impact": false
+   }
+  },
+  {
+   "sprite": 7,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -53,
+     0,
+     103,
+     52
+    ],
+    [
+     -54,
+     50,
+     100,
+     52
+    ],
+    [
+     -28,
+     100,
+     42,
+     52
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_forward",
+    "sprite": 2,
+    "facing": -1,
+    "mode": "release",
+    "grab_point": "waist",
+    "grip": [
+     20,
+     87
+    ],
+    "root": [
+     110,
+     0
+    ],
+    "progress": [
+     1,
+     1
+    ],
+    "ground": true,
+    "impact": true
+   }
+  },
+  {
+   "sprite": 8,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -29,
+     0,
+     60,
+     51
+    ],
+    [
+     -22,
+     49,
+     47,
+     52
+    ],
+    [
+     -19,
+     99,
+     35,
+     52
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_forward",
+    "sprite": 3,
+    "facing": -1,
+    "mode": "release",
+    "grab_point": "waist",
+    "grip": [
+     18,
+     97
+    ],
+    "root": [
+     110,
+     0
+    ],
+    "progress": [
+     1,
+     1
+    ],
+    "ground": true,
+    "impact": true
+   }
+  },
+  {
+   "sprite": 9,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -57,
+     0,
+     110,
+     54
+    ],
+    [
+     -33,
+     52,
+     61,
+     54
+    ],
+    [
+     -23,
+     104,
+     40,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_forward",
+    "sprite": 3,
+    "facing": -1,
+    "mode": "release",
+    "grab_point": "waist",
+    "grip": [
+     18,
+     97
+    ],
+    "root": [
+     110,
+     0
+    ],
+    "progress": [
+     1,
+     1
+    ],
+    "ground": true,
+    "impact": true
+   }
+  }
+ ]
+}

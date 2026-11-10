@@ -1,0 +1,182 @@
+{
+ "id": "vertical_light",
+ "display_name": "垂直跳短拳",
+ "startup": 1,
+ "active": 2,
+ "recovery": 1,
+ "damage": 65,
+ "hitstun": 20,
+ "blockstun": 12,
+ "pushback": 8,
+ "stun": 65,
+ "stamina_cost": 30,
+ "energy_cost": 0,
+ "kind": "strike",
+ "level": "mid",
+ "unblockable": false,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "feedback": {
+  "spark": "impact_light",
+  "block_spark": "impact_guard",
+  "hitstop": 4,
+  "blockstop": 3,
+  "shake": 0,
+  "flash": 2,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "cancel_rule": "完整收势后恢复行动，无招式取消",
+ "audio": {
+  "hit": "hit_light",
+  "block": "guard"
+ },
+ "data_source": "规则沿用已审同体型人形模板与泰罗同类招式；帧数取自 stage1 交付，攻击点与受击框按赛罗整帧像素逐帧量取。",
+ "production_note": "内容数据；美术已交付未安装，未启动 Godot、未提交。",
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -29,
+     22,
+     66,
+     50
+    ],
+    [
+     -50,
+     70,
+     91,
+     50
+    ],
+    [
+     -49,
+     118,
+     70,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "light"
+    }
+   ],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     101,
+     79,
+     22,
+     25
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -13,
+     22,
+     82,
+     58
+    ],
+    [
+     -28,
+     78,
+     152,
+     58
+    ],
+    [
+     -27,
+     134,
+     101,
+     58
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     101,
+     77,
+     22,
+     24
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -27,
+     22,
+     145,
+     59
+    ],
+    [
+     -42,
+     79,
+     166,
+     60
+    ],
+    [
+     -41,
+     137,
+     118,
+     60
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -19,
+     22,
+     59,
+     62
+    ],
+    [
+     -26,
+     82,
+     66,
+     62
+    ],
+    [
+     -26,
+     142,
+     51,
+     63
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ ]
+}

@@ -1,0 +1,326 @@
+{
+ "id": "air_special",
+ "display_name": "空中闪光效应（游戏改编）",
+ "startup": 3,
+ "active": 3,
+ "recovery": 2,
+ "damage": 60,
+ "chip_damage": 6,
+ "hitstun": 18,
+ "blockstun": 12,
+ "pushback": 0,
+ "stun": 25,
+ "stamina_cost": 30,
+ "energy_cost": 1000,
+ "kind": "projectile",
+ "level": "mid",
+ "unblockable": false,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "air_allowed": true,
+ "finish_on_landing": true,
+ "feedback": {
+  "spark": "beam_hit",
+  "block_spark": "impact_guard",
+  "hitstop": 10,
+  "blockstop": 6,
+  "shake": 1,
+  "flash": 2,
+  "color": [
+   1.0,
+   0.72,
+   0.3,
+   1.0
+  ],
+  "block_color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "adaptation": "游戏改编的空中集束射线；人物整帧已烘焙贴手光束，按打击判定收招，不在运行时再生成第二道光束。不声称原剧有此空中发射镜头。",
+ "audio": {
+  "hit": "hit_heavy",
+  "block": "guard"
+ },
+ "data_source": "游戏改编的空中闪光效应：帧内只有贴掌橙光，束体由运行时 beam_loop 承载；伤害/消耗沿用赛罗同体型空中必杀规则。",
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -13,
+     29,
+     55,
+     43
+    ],
+    [
+     -29,
+     70,
+     71,
+     44
+    ],
+    [
+     -28,
+     112,
+     51,
+     44
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "beam_start"
+    }
+   ],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -19,
+     32,
+     56,
+     42
+    ],
+    [
+     -19,
+     72,
+     56,
+     43
+    ],
+    [
+     -17,
+     113,
+     50,
+     43
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "beam_start"
+    }
+   ],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -18,
+     27,
+     54,
+     44
+    ],
+    [
+     -20,
+     69,
+     77,
+     44
+    ],
+    [
+     -17,
+     111,
+     75,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -24,
+     38,
+     57,
+     40
+    ],
+    [
+     -24,
+     76,
+     85,
+     41
+    ],
+    [
+     -22,
+     115,
+     83,
+     41
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "shots": [
+    {
+     "effect": "beam_loop",
+     "color": [
+      1.0,
+      0.72,
+      0.3,
+      1.0
+     ],
+     "beam": true,
+     "length": 420,
+     "thickness": 20,
+     "life": 8,
+     "speed": 0,
+     "spawn": [
+      52,
+      114
+     ],
+     "anchor": [
+      52,
+      114
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -21,
+     29,
+     51,
+     43
+    ],
+    [
+     -40,
+     70,
+     85,
+     44
+    ],
+    [
+     -40,
+     112,
+     87,
+     44
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 5,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -15,
+     26,
+     52,
+     44
+    ],
+    [
+     -16,
+     68,
+     53,
+     45
+    ],
+    [
+     -14,
+     111,
+     45,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 6,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -16,
+     32,
+     52,
+     42
+    ],
+    [
+     -17,
+     72,
+     51,
+     43
+    ],
+    [
+     -14,
+     113,
+     35,
+     43
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 7,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -19,
+     31,
+     56,
+     43
+    ],
+    [
+     -20,
+     72,
+     60,
+     43
+    ],
+    [
+     -11,
+     113,
+     50,
+     43
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ ],
+ "manual_projectiles": true
+}

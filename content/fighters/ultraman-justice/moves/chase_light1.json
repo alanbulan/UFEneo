@@ -1,0 +1,175 @@
+{
+ "id": "chase_light1",
+ "display_name": "追击前刺拳",
+ "startup": 2,
+ "active": 1,
+ "recovery": 1,
+ "damage": 65,
+ "hitstun": 28,
+ "blockstun": 12,
+ "pushback": 0,
+ "stun": 65,
+ "stamina_cost": 0,
+ "energy_cost": 0,
+ "kind": "strike",
+ "level": "mid",
+ "unblockable": false,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "feedback": {
+  "spark": "impact_light",
+  "block_spark": "impact_guard",
+  "hitstop": 4,
+  "blockstop": 3,
+  "shake": 0,
+  "flash": 2,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "cancel_rule": "完整收势后恢复行动，无招式取消",
+ "audio": {
+  "hit": "hit_light",
+  "block": "guard"
+ },
+ "data_source": "规则沿用已审同体型人形模板与泰罗同类招式；帧数取自 stage1 交付，攻击点与受击框按赛罗整帧像素逐帧量取。",
+ "production_note": "内容数据；美术已交付未安装，未启动 Godot、未提交。",
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -24,
+     20,
+     54,
+     42
+    ],
+    [
+     -37,
+     60,
+     70,
+     43
+    ],
+    [
+     -37,
+     101,
+     58,
+     43
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "light"
+    }
+   ],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -12,
+     22,
+     62,
+     42
+    ],
+    [
+     -8,
+     62,
+     98,
+     42
+    ],
+    [
+     1,
+     102,
+     90,
+     42
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     35,
+     109,
+     12,
+     22
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -13,
+     18,
+     52,
+     41
+    ],
+    [
+     -10,
+     57,
+     97,
+     41
+    ],
+    [
+     -3,
+     96,
+     90,
+     42
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -10,
+     20,
+     63,
+     47
+    ],
+    [
+     -7,
+     65,
+     60,
+     47
+    ],
+    [
+     -3,
+     110,
+     41,
+     47
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ ]
+}

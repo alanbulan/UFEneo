@@ -1,0 +1,234 @@
+{
+ "id": "low_pulse",
+ "display_name": "低姿掌弹",
+ "startup": 3,
+ "active": 1,
+ "recovery": 1,
+ "damage": 65,
+ "hitstun": 20,
+ "blockstun": 12,
+ "pushback": 8,
+ "stun": 65,
+ "stamina_cost": 30,
+ "energy_cost": 0,
+ "kind": "projectile",
+ "level": "low",
+ "unblockable": false,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "feedback": {
+  "spark": "impact_heavy",
+  "block_spark": "impact_guard",
+  "hitstop": 7,
+  "blockstop": 3,
+  "shake": 2,
+  "flash": 2,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "manual_projectiles": true,
+ "cancel_rule": "完整收势后恢复行动，无招式取消",
+ "audio": {
+  "hit": "hit_light",
+  "block": "guard"
+ },
+ "data_source": "蹲姿低位掌弹；人物帧只画贴掌光点。",
+ "production_note": "内容数据；美术已交付未安装，未启动 Godot、未提交。",
+ "chip_damage": 0,
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -38,
+     0,
+     77,
+     42
+    ],
+    [
+     -29,
+     40,
+     68,
+     42
+    ],
+    [
+     -11,
+     80,
+     42,
+     43
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "heavy"
+    }
+   ],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -58,
+     0,
+     110,
+     45
+    ],
+    [
+     -44,
+     43,
+     76,
+     45
+    ],
+    [
+     -32,
+     86,
+     55,
+     46
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -62,
+     0,
+     117,
+     44
+    ],
+    [
+     -35,
+     42,
+     96,
+     44
+    ],
+    [
+     -22,
+     84,
+     83,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     113,
+     48
+    ],
+    [
+     -33,
+     46,
+     81,
+     49
+    ],
+    [
+     -12,
+     93,
+     40,
+     49
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "fireball"
+    }
+   ],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "shots": [
+    {
+     "effect": "pulse",
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "length": 0,
+     "thickness": 0,
+     "life": 80,
+     "speed": 9,
+     "box": [
+      -10,
+      -9,
+      20,
+      18
+     ],
+     "spawn": [
+      35,
+      51
+     ],
+     "anchor": [
+      35,
+      51
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -53,
+     0,
+     102,
+     50
+    ],
+    [
+     -32,
+     48,
+     63,
+     50
+    ],
+    [
+     -27,
+     96,
+     42,
+     50
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ ]
+}

@@ -1,0 +1,153 @@
+{
+ "id": "air_special",
+ "display_name": "空中集束射线（游戏改编）",
+ "startup": 2,
+ "active": 1,
+ "recovery": 0,
+ "damage": 60,
+ "chip_damage": 6,
+ "hitstun": 18,
+ "blockstun": 12,
+ "pushback": 0,
+ "stun": 25,
+ "stamina_cost": 30,
+ "energy_cost": 1000,
+ "kind": "strike",
+ "level": "mid",
+ "unblockable": false,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "air_allowed": true,
+ "finish_on_landing": true,
+ "feedback": {
+  "spark": "beam_hit",
+  "block_spark": "impact_guard",
+  "hitstop": 10,
+  "blockstop": 6,
+  "shake": 1,
+  "flash": 2,
+  "color": [
+   0.55,
+   0.9,
+   1.0,
+   1.0
+  ],
+  "block_color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "adaptation": "游戏改编的空中集束射线；人物整帧已烘焙贴手光束，按打击判定收招，不在运行时再生成第二道光束。不声称原剧有此空中发射镜头。",
+ "audio": {
+  "hit": "hit_heavy",
+  "block": "guard"
+ },
+ "data_source": "伤害/消耗/硬直沿用已装机同体型空中必杀规则；攻击点与受击框按赛罗整帧像素逐帧量取，第3帧受击框沿用第2帧身体轮廓以排除已烘焙光束。",
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -21,
+     22,
+     71,
+     55
+    ],
+    [
+     -40,
+     75,
+     93,
+     56
+    ],
+    [
+     -23,
+     129,
+     65,
+     56
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "beam_start"
+    }
+   ],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -13,
+     22,
+     62,
+     54
+    ],
+    [
+     -11,
+     74,
+     71,
+     55
+    ],
+    [
+     -8,
+     127,
+     71,
+     55
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     47,
+     96,
+     71,
+     27
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -15,
+     22,
+     65,
+     53
+    ],
+    [
+     -18,
+     73,
+     137,
+     53
+    ],
+    [
+     -17,
+     124,
+     63,
+     53
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ ]
+}

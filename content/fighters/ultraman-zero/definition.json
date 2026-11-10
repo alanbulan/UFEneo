@@ -1,0 +1,42 @@
+{
+  "id": "ultraman-zero",
+  "display_name": "赛罗奥特曼",
+  "template": "humanoid",
+  "production_status": "stage1_action_frames_installed",
+  "playable": true,
+  "select_visible": true,
+  "selection_visible": true,
+  "max_health": 1000,
+  "walk_speed": 2,
+  "jump_speed": 16,
+  "numeric_status": "占位设计参数，待量产实测；与泰罗/雷欧同档，赛罗站高188，未安装。",
+  "presentation": {
+    "model": "res://assets/fighters/ultraman-zero/model-native.png",
+    "manifest": "res://assets/fighters/ultraman-zero/animations/manifest.json",
+    "native": true,
+    "cell": 256,
+    "anchor": [
+      128,
+      248
+    ],
+    "target_height": 188,
+    "height_basis": "头镖/头冠顶至脚底，赛罗身份锚原生站高188（cells.json target_standing_height 与 retired candidate 一致）",
+    "anchor_y": 248
+  },
+  "forms": [
+    "default"
+  ],
+  "identity_notes": "红银配色，头部两枚赛罗头镖（Zero Slugger）、蓝色额灯、彩色计时器、层叠银色肩胸甲；基础形态无斗篷。身份锚为待机像素整帧，落格256×256、根点[128,248]、站高188。",
+  "reference_file": "content/fighters/ultraman-zero/catalogue_profile.json",
+  "production_stage": 7,
+  "model_review_pending": false,
+  "model_candidate": "art/fighters/ultraman-zero/stage1/idle/frames/identity-idle-pixel.png",
+  "stage2_status": "stage1_action_frames_installed",
+  "pilot_playable": true,
+  "pilot_manual_ready": true,
+  "walks_installed": true,
+  "unsupported_moves": [],
+  "pilot_lock_reason": "",
+  "selection_authorization": "root_delegated_by_user：动作帧与内容数据已签；未安装、未启动 Godot、未提交、无录屏。",
+  "state_frames_note": "判定框为按实际 Alpha 落格整帧量取的三段占位受击框（头/躯干/腿），未实机校准；hitboxes 为空或按 moves/*.json 已有数据，技能帧攻击框见对应 moves 文件。"
+}
