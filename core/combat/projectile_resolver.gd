@@ -15,7 +15,7 @@ static func spawn(sim: UfeMatchDirector, index: int, shot: Dictionary, move_id: 
 		p.life=mini(int(p.life),int(f.definition.moves[move_id].capture.flight_max_ticks))
 	if bool(f.battle_form.get("enabled",false)) and str(f.battle_form.get("mode",""))=="definition":
 		p.source_move=f.definition.moves[move_id].duplicate(true)
-	for key in ["beam","length","thickness","anchor","level","frame_boxes","visual_scale","impact_linger","integer_path","return_ticks","return_anchor","locked_moves","max_hits","hit_interval","trail_effect"]:
+	for key in ["beam","length","thickness","anchor","level","frame_boxes","visual_scale","impact_linger","integer_path","return_ticks","return_anchor","locked_moves","max_hits","hit_interval","trail_effect","no_hit","wall"]:
 		if shot.has(key):p[key]=shot[key]
 	# 仅显式声明的持续束携带独立逐帧原点；旧招式的飞行物字典逐位不变。
 	if shot.has("origin_by_frame"):p.origin_by_frame=shot.origin_by_frame.duplicate(true)
@@ -106,6 +106,8 @@ static func advance(sim: UfeMatchDirector, contacts: Array) -> void:
 			if bool(p.get("capture",false)):UfeCaptureResolver.fail(sim,int(p.source_owner),"projectile_expired")
 			continue
 		if returning and not UfeReturningProjectile.can_contact(p):continue
+		if bool(p.get("no_hit",false)):continue # 自身光环等纯表现弹体不参与任何命中/格挡交互。
+		if bool(p.get("wall",false)):continue # 光壁只拦截对方弹体，不击中人物。
 		if bool(p.get("connected",false)):continue # 已命中的余焰/光束只保留画面，不再交互或二次伤害。
 		var target_index := 1-int(p.owner)
 		var target := sim.fighters[target_index]
@@ -176,4 +178,23 @@ static func advance(sim: UfeMatchDirector, contacts: Array) -> void:
 					p.life=int(p.get("impact_linger",0))
 					p.speed=0
 				break
+	intercept_walls(sim)
 	sim.projectiles=sim.projectiles.filter(func(p):return int(p.life)>0)
+
+static func intercept_walls(sim: UfeMatchDirector) -> void:
+	# 光壁与对方弹体同 tick 相交即消去来弹；不改变人物状态，不吞自己的弹。
+	for wall in sim.projectiles:
+		if not bool(wall.get("wall",false)) or int(wall.life)<=0:continue
+		for p in sim.projectiles:
+			if p==wall or int(p.owner)==int(wall.owner) or bool(p.get("wall",false)):continue
+			if int(p.life)<=0 or bool(p.get("connected",false)):continue
+			var blocked:=false
+			for box in world_hitboxes(wall):
+				for other in world_hitboxes(p):
+					if box.intersects(other):
+						blocked=true
+						break
+				if blocked:break
+			if blocked:
+				p.life=0
+				sim.events.append({"kind":"wall_intercept","player":int(wall.owner),"move":str(wall.move)})

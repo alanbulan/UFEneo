@@ -59,7 +59,13 @@ static func fighter(id: String, allow_pilot: bool=false) -> UfeFighterDefinition
 	for move_id in inherited_moves:
 		var path := "res://content/fighters/%s/moves/%s.json" % [id, move_id]
 		if data.get("production_status","")=="pilot_partial" and str(move_id) in data.get("unsupported_moves",[]):continue
-		result.moves[move_id] = read_json(path if FileAccess.file_exists(path) else inherited_moves[move_id])
+		# 模板清单可列角色专属招式（taunt/special2/special3），模板自身不一定带文件；
+		# 角色未提供本地文件时跳过并告警，不能让整个角色加载失败。
+		var source := path if FileAccess.file_exists(path) else str(inherited_moves[move_id])
+		if not FileAccess.file_exists(source):
+			push_warning("缺少招式文件，已跳过：%s/%s" % [id, move_id])
+			continue
+		result.moves[move_id] = read_json(source)
 	result.command_table = UfeQuickCommands.extend(result.command_table,result.moves)
 	return result
 
