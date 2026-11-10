@@ -1,0 +1,600 @@
+{
+ "id": "special3",
+ "display_name": "母亲淋浴（再生光雨）",
+ "startup": 8,
+ "active": 4,
+ "recovery": 4,
+ "damage": 0,
+ "chip_damage": 0,
+ "hitstun": 28,
+ "blockstun": 20,
+ "pushback": 9,
+ "stun": 55,
+ "stamina_cost": 45,
+ "energy_cost": 3000,
+ "kind": "projectile",
+ "level": "mid",
+ "unblockable": false,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "super_level": 3,
+ "air_allowed": false,
+ "feedback": {
+  "spark": "impact_heavy",
+  "block_spark": "impact_guard",
+  "hitstop": 10,
+  "blockstop": 5,
+  "shake": 4,
+  "flash": 2,
+  "color": [
+   0.6,
+   1.0,
+   0.8,
+   1.0
+  ],
+  "block_color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "cancel_rule": "完整收势后恢复行动，无招式取消",
+ "audio": {
+  "hit": "hit_heavy",
+  "block": "guard"
+ },
+ "data_source": "母亲淋浴：日文维基载明以光雨形式降下再生能量、可使死者复活。本作落成全场再生光雨（发射帧即时回复 200、清眩晕），属游戏改编；原设 600 tick 再生窗口未实现，不写成生效。光色无文字来源，取青绿白为游戏取色。special_spiral 为自身光环表现。",
+ "production_note": "内容数据；美术已交付未安装，未启动 Godot、未提交。",
+ "self_heal": {
+  "frame": 8,
+  "amount": 200,
+  "cleanse": true
+ },
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -46,
+     0,
+     98,
+     53
+    ],
+    [
+     -34,
+     51,
+     83,
+     53
+    ],
+    [
+     -33,
+     102,
+     82,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "beam_start"
+    }
+   ],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "cinematic_stage": "portrait",
+   "pause_clock": true,
+   "freeze_opponent": true
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -45,
+     0,
+     96,
+     55
+    ],
+    [
+     -34,
+     53,
+     67,
+     55
+    ],
+    [
+     -29,
+     106,
+     63,
+     55
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "beam_start"
+    }
+   ],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "cinematic_stage": "portrait",
+   "pause_clock": true,
+   "freeze_opponent": true
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -44,
+     0,
+     93,
+     53
+    ],
+    [
+     -35,
+     51,
+     66,
+     54
+    ],
+    [
+     -43,
+     103,
+     85,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "beam_start"
+    }
+   ],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "cinematic_stage": "portrait",
+   "pause_clock": true,
+   "freeze_opponent": true
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -45,
+     0,
+     97,
+     58
+    ],
+    [
+     -33,
+     56,
+     68,
+     58
+    ],
+    [
+     -43,
+     112,
+     81,
+     59
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "cinematic_stage": "portrait",
+   "pause_clock": true,
+   "freeze_opponent": true
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -45,
+     0,
+     98,
+     53
+    ],
+    [
+     -33,
+     51,
+     71,
+     54
+    ],
+    [
+     -19,
+     103,
+     51,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "cinematic_stage": "beam"
+  },
+  {
+   "sprite": 5,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -46,
+     0,
+     97,
+     53
+    ],
+    [
+     -33,
+     51,
+     69,
+     53
+    ],
+    [
+     -18,
+     102,
+     42,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "cinematic_stage": "beam"
+  },
+  {
+   "sprite": 6,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -47,
+     0,
+     98,
+     54
+    ],
+    [
+     -34,
+     52,
+     69,
+     54
+    ],
+    [
+     -20,
+     104,
+     48,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "cinematic_stage": "beam"
+  },
+  {
+   "sprite": 7,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -45,
+     0,
+     97,
+     53
+    ],
+    [
+     -33,
+     51,
+     70,
+     53
+    ],
+    [
+     -17,
+     102,
+     39,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "cinematic_stage": "beam"
+  },
+  {
+   "sprite": 8,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -48,
+     0,
+     100,
+     53
+    ],
+    [
+     -36,
+     51,
+     72,
+     54
+    ],
+    [
+     -53,
+     103,
+     109,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "shots": [
+    {
+     "effect": "special_spiral",
+     "color": [
+      0.6,
+      1.0,
+      0.8,
+      1.0
+     ],
+     "beam": false,
+     "length": 0,
+     "thickness": 0,
+     "life": 16,
+     "speed": 0,
+     "box": [
+      -70,
+      -70,
+      140,
+      140
+     ],
+     "no_hit": true,
+     "spawn": [
+      43,
+      111
+     ],
+     "anchor": [
+      43,
+      111
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 9,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -47,
+     0,
+     99,
+     53
+    ],
+    [
+     -56,
+     51,
+     112,
+     53
+    ],
+    [
+     -50,
+     102,
+     100,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 10,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -47,
+     0,
+     98,
+     53
+    ],
+    [
+     -50,
+     51,
+     104,
+     54
+    ],
+    [
+     -20,
+     103,
+     45,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 11,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -47,
+     0,
+     99,
+     53
+    ],
+    [
+     -54,
+     51,
+     110,
+     54
+    ],
+    [
+     -21,
+     103,
+     46,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 12,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -42,
+     0,
+     89,
+     53
+    ],
+    [
+     -32,
+     51,
+     63,
+     54
+    ],
+    [
+     -21,
+     103,
+     42,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 13,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -38,
+     0,
+     81,
+     53
+    ],
+    [
+     -32,
+     51,
+     61,
+     54
+    ],
+    [
+     -21,
+     103,
+     46,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 14,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -40,
+     0,
+     86,
+     53
+    ],
+    [
+     -30,
+     51,
+     62,
+     53
+    ],
+    [
+     -21,
+     102,
+     53,
+     53
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 15,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -46,
+     0,
+     97,
+     53
+    ],
+    [
+     -34,
+     51,
+     71,
+     53
+    ],
+    [
+     -18,
+     102,
+     57,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ ],
+ "manual_projectiles": true
+}
