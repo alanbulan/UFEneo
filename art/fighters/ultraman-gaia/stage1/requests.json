@@ -1,0 +1,3917 @@
+{
+ "fighter": "ultraman-gaia",
+ "stage": "stage1",
+ "created": "2026-11-09",
+ "updated": "2026-11-09",
+ "policy": "先由官方皮套照定待机架势与身材，再转像素整帧；通过站姿与身份验收的像素帧才作为此后动作帧的唯一身份锚。像素锚（27×154）不足以让模型读出身材，不再单独使用。",
+ "superseded": "2026-11-09 第一批（只引 4× 像素锚）整批作废并删除，原因见 tools/rebuild/ultraman-gaia/README.md。",
+ "references": {
+  "suit": "art/fighters/ultraman-gaia/sources/ref-01.webp",
+  "suit_sha256": "a8657c4e6c2df00574b64f3ed1141d6e1aea67b9918a3683c1f1db4a8dd514ee",
+  "stance_from_installed": "art/fighters/ultraman-gaia/stage1/idle/references/stance-ref-installed-x4.png",
+  "stance_from_installed_sha256": "ff5b113987797be31bc4e039e561883fa75c2b973c4a09a5ec1fa6eb6101be29",
+  "stance_from_installed_note": "已装机初代 idle 第0帧的 4× 最近邻，只借站姿幅度与像素画风，不抄造型",
+  "suit_neutral_current": "art/fighters/ultraman-gaia/sources/official-pose-20261109-hero/hero_gaia-1.png",
+  "suit_neutral_current_sha256": "9c245f9d736271ce51bc9bbf602b6ac3ea6c6aae6059ebbee80b281feea24cb2",
+  "suit_neutral_current_metadata": "art/fighters/ultraman-gaia/sources/official-pose-20261109-hero/source.json",
+  "suit_neutral_current_note": "圆谷官网本人 V2 正面中立皮套；只锁身份与体量，不冒称已有官方右侧格斗架势。"
+ },
+ "attempts": [
+  {
+   "id": "stance-00",
+   "purpose": "架势",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "size": "1024x1536",
+   "references": [
+    "ref-suit.webp"
+   ],
+   "result": null,
+   "status": "rejected",
+   "reason": "正面偏四分之三，不是固定右侧视；两脚外缘间距 0.50，低于实机中位 0.71"
+  },
+  {
+   "id": "stance-01",
+   "purpose": "架势",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "size": "1024x1536",
+   "references": [
+    "ref-suit.webp"
+   ],
+   "result": null,
+   "status": "rejected",
+   "reason": "朝向已收成侧视，但两脚前后重叠在画面上，脚外缘间距 0.53"
+  },
+  {
+   "id": "stance-02",
+   "purpose": "架势",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "size": "1024x1536",
+   "references": [
+    "ref-suit.webp"
+   ],
+   "result": null,
+   "status": "rejected",
+   "reason": "两腿在前后方向分开、投影仍重叠，底行单段；站姿读不出宽度"
+  },
+  {
+   "id": "stance-03",
+   "purpose": "架势",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "size": "1024x1536",
+   "references": [
+    "ref-suit.webp"
+   ],
+   "result": null,
+   "deleted_result_path": "art/fighters/ultraman-gaia/stage1/idle/frames/stance-raw-03.png",
+   "sha256": "406a6c3bbdb925e70b97bacec2dd330dc151210fba80a77c7d0149fb2e357a6c",
+   "status": "rejected",
+   "reason": "深蹲马步、脸正对镜头，宽/高 0.93；不能作为固定右侧视待机架势基准。"
+  },
+  {
+   "id": "pixel-00",
+   "purpose": "像素整帧",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "size": "1024x1536",
+   "references": [
+    "stance-raw-03.png"
+   ],
+   "result": null,
+   "status": "rejected",
+   "reason": "转像素后仍是深蹲马步，宽/高 0.96，远宽于实机中位 0.71"
+  },
+  {
+   "id": "pixel-01",
+   "purpose": "像素整帧",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "size": "1024x1536",
+   "actual_size": [
+    1027,
+    1531
+   ],
+   "references": [
+    "ref-suit.webp",
+    "stance-ref-installed-x4.png"
+   ],
+   "result": null,
+   "deleted_result_path": "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-01.png",
+   "sha256": "59691c88986cb92368ff23c0b28b5c9c92c3f150239ca27e17c997d55d0f4a52",
+   "status": "rejected",
+   "review_authority": "root_delegated_by_user",
+   "reason": "2026-11-09 接续复测：脚外缘间距/站高为 0.5455，未过 0.65–0.80；两鞋底高差换算约 6.31 原生像素。撤销 selected 与动作身份锚，不继续由此生成动作。",
+   "previous_cell": {
+    "deleted_path": "reports/ultraman-gaia/stage1/idle-00-cell.png",
+    "sha256": "5d30230ceee0cf0141e9e04934536995c1f0b8fadc81472cd3c38673342db3c1",
+    "height": 154,
+    "width": 84,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "note": "落格硬门成立不等于待机姿势合格。"
+   }
+  },
+  {
+   "id": "stance-04-neutral-plane",
+   "purpose": "新中立皮套基准生成右侧待机照，不直接由双图转像素",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/sources/official-pose-20261109-hero/hero_gaia-1.png",
+    "art/fighters/ultraman-gaia/stage1/idle/references/stance-ref-installed-x4.png"
+   ],
+   "prompt": "以图1真实皮套身材摆一张待机照，图2仅借架势，不借造型。镜头水平右侧视，头胸朝右，双拳正常握紧抬至胸前护架，肘自然屈曲。两脚在画面水平方向错开，外缘跨度约头顶至鞋底高度的0.71，后脚在左、前脚在右，不沿景深分脚；两鞋底同一水平线。双膝浅屈、髋在两脚之间，不深蹲马步。四肢粗细与图1一致，拳和靴保持正常体量，胸甲贴身不增厚肩甲。人物四周留白。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "requested_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-gaia/stage1/idle/frames/stance-raw-04-neutral-plane.png",
+   "generation_id": "image-55259-18",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "actual_returned_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-gaia/stage1/idle/frames/stance-raw-04-neutral-plane.png",
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_min": 0,
+   "alpha_max": 254,
+   "sha256": "879f8b1fcd64aadab1bdd46bcbd84eee8d5b5a916d6fdf3fd9d534d8b5ef1a3e",
+   "result": null,
+   "deleted_result_path": "art/fighters/ultraman-gaia/stage1/idle/frames/stance-raw-04-neutral-plane.png",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "rejected",
+   "reason": "新中立身体基准路线照片步实收脚跨度786/站高1390=0.56547，低于0.65–0.80；鞋底差虽降至约1.22原生px，后腿仍接近直线。照片门拒收，未单参考像素化、未生成下游；已提取诊断后核SHA及消费者直接删除原图。",
+   "diagnostic": "art/fighters/ultraman-gaia/stage1/diagnostic/stance-04-gate.json",
+   "review_authority": "subagent_candidate_review"
+  },
+  {
+   "id": "stance-05-explicit-canvas",
+   "purpose": "根准许一次的新构图路线：官方完整主体先置明确宽留白画布，再生成横向分脚待机照",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/references/neutral-v2-wide-canvas-05.png",
+    "art/fighters/ultraman-gaia/stage1/idle/references/stance-ref-installed-x4.png"
+   ],
+   "reference_sha256": [
+    "db80fd68ed225bc72346a9b4dedcbd1883e6a5be12c89468bcccfe5a7dfa7c27",
+    "ff5b113987797be31bc4e039e561883fa75c2b973c4a09a5ec1fa6eb6101be29"
+   ],
+   "prompt": "按图1现有留白构图重摆右侧格斗待机照，不放大撑满。头顶约y310，双鞋底约y1410，站高约1100；两脚在画面水平展开，左后鞋外缘约x130、右前鞋外缘约x900，不沿景深分脚。双膝浅屈、重心在两脚之间，非正面马步；双拳正常握紧抬胸前、肘屈曲护架。四肢粗细与图1一致，胸甲贴身、拳靴正常体量。图2只借站法，不借造型。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "requested_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-gaia/stage1/idle/frames/stance-raw-05-explicit-canvas.png",
+   "generation_id": "image-55259-21",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "actual_returned_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-gaia/stage1/idle/frames/stance-raw-05-explicit-canvas.png",
+   "result": "art/fighters/ultraman-gaia/stage1/idle/frames/stance-raw-05-explicit-canvas.png",
+   "sha256": "e391a1f2bd601291aa64d6f71871cbbb17d4fa337a51b6259a9a440d05f3ef88",
+   "size_bytes": 1304988,
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "photo_candidate_reviewed",
+   "review": {
+    "bbox_alpha128": [
+     131,
+     317,
+     852,
+     1361
+    ],
+    "standing_height": 1045,
+    "foot_band_fraction": 0.12,
+    "foot_outer_span": 722,
+    "foot_span_over_standing_height": 0.6909090909090909,
+    "foot_bottom_rows": [
+     1361,
+     1354
+    ],
+    "foot_bottom_delta_at_native_154": 1.0315789473684212,
+    "identity": "V2黑金胸护纹、青蓝胸灯、金额饰和浅黄眼一致；真人皮套贴身肩部，拳靴正常体量。生成待机照不冒称原剧照。",
+    "pose": "头面向右、躯干略斜，横向分脚与浅屈膝，双闭拳在胸前；不是旧正面马步或景深重叠。后靴略朝镜头形成透视缩短，交根看最终像素整体，不仅凭数字签造型。",
+    "contour": "完整头冠、双拳、双靴，Alpha128人物四周留白。",
+    "conclusion": "照片候选由子代理静审可继续本次获准的唯一单参考像素化；根未审本张，未签动作锚。"
+   },
+   "review_authority": "subagent_candidate_review"
+  },
+  {
+   "id": "pixel-02-explicit-canvas",
+   "purpose": "只引用本轮已静审待机照转一张像素候选，不铺动作",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/stance-raw-05-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "e391a1f2bd601291aa64d6f71871cbbb17d4fa337a51b6259a9a440d05f3ef88"
+   ],
+   "prompt": "把参考待机照原姿态转为主游戏同档的像素整帧，保持现有留白、人物尺度和落脚位置，不重新摆姿或放大。两脚保持画面横向分开、双膝浅屈，双拳胸前护架；四肢粗细与参考完全一致，拳靴正常体量、肩部贴身，不厚甲不大头。清晰原生像素块，左上光源、单像素深轮廓，近侧明亮、远侧整臂整腿较暗，交叠关系连贯；保留原有眼与胸灯识别色。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "requested_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png",
+   "generation_id": "image-55259-23",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "actual_returned_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png",
+   "result": "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png",
+   "sha256": "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e",
+   "size_bytes": 1221133,
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "candidate_pending_root_review",
+   "raw_metrics": {
+    "bbox_alpha128": [
+     126,
+     315,
+     854,
+     1362
+    ],
+    "standing_height": 1048,
+    "foot_band_fraction": 0.12,
+    "foot_outer_span": 729,
+    "foot_span_over_standing_height": 0.6956106870229007,
+    "foot_bottom_rows": [
+     1362,
+     1358
+    ],
+    "foot_bottom_delta_at_native_154": 0.5877862595419847
+   },
+   "cell_record": "art/fighters/ultraman-gaia/stage1/cells/cells.json",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/idle-candidate-05-cell.png",
+    "sha256": "24da22f59292e1bd16ac8aae6231ddceeaa70623161784ac65f616f6de294d00",
+    "size": [
+     192,
+     192
+    ],
+    "standing_height": 154,
+    "width": 107,
+    "foot_span_over_standing_height": 0.6948051948051948,
+    "head_width": 22,
+    "head_ruler_note": "人工稳定头壳ROI30–59行，最大宽在47行；未把颈/肩扩张计入头宽，未改候选像素。",
+    "colors": 32,
+    "alpha": [
+     0,
+     255
+    ],
+    "components": 1,
+    "foot_bottom_rows": [
+     183,
+     182
+    ],
+    "nearest_x4": "art/fighters/ultraman-gaia/stage1/cells/idle-candidate-05-x4.png",
+    "nearest_x4_sha256": "73f1690df4846b7e2b8a281dcc2fbc3fdf013cd12f25e5bb89829b6f08750fe9",
+    "review_sheet": "art/fighters/ultraman-gaia/stage1/cells/idle-candidate-05-review.png",
+    "review_sheet_sha256": "1b54228052440dc1b084adf6165c55b9efaf315da97d1101cc4111fcd0b66106"
+   },
+   "review_authority": "subagent_candidate_review"
+  },
+  {
+   "id": "idle-01",
+   "action": "idle",
+   "frame": 1,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源，保持同一位人物、同一待机护架站姿和同一双脚间距。现在画待机第二相：身体仅轻微下沉，双肩略低，双拳在胸前略回收，膝盖多屈一点点，头部保持朝右，双脚位置不动。不要改变站姿宽窄，不要蹲下，不要换手或转头。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。全身高度、画面留白与像素块大小保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 204,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/idle/frames/idle-01-raw.png",
+   "generation_id": "image-55259-27",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/idle/frames/idle-01-raw.png",
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "580573f932c07ef23764bd91a6326494685fd012453d055a224dcd30ba1f117d",
+   "size_bytes": 1200180,
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/idle-01-cell.png",
+    "sha256": "570bdc02f3e0e6be3107481f3c000cd5a3a9fc73efcca49de3a4ca8a19900433",
+    "size": [
+     192,
+     192
+    ],
+    "height": 152,
+    "width": 107,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_spans": [
+     [
+      37,
+      51
+     ],
+     [
+      120,
+      143
+     ]
+    ],
+    "foot_bottoms": [
+     182,
+     183
+    ],
+    "foot_span_over_standing_height": 0.703947
+   }
+  },
+  {
+   "id": "walk_forward-00-attempt-1",
+   "action": "walk_forward",
+   "frame": 0,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前行走的触地相：固定右侧视，双拳保持胸前护架，上身略前倾。前腿向前伸出、脚跟着地，后腿在身后伸直、前脚掌蹬地，双脚落同一条地面线上，身体降到整步最低点、双膝都屈。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身高度与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "generation_id": "image-55259-31",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/walk_forward/frames/walk_forward-00-raw.png",
+   "sha256": "8e082793509871749b7f6e3ebf0da7c1d47eb05013ac66e11144a2bd31afc388",
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "rejected",
+   "reason": "深弓步：换算原生高135、宽118，比待机154低19px、宽11px；步幅与屈膝过深，不符接触相4–6px起伏。已删除原图与落格。"
+  },
+  {
+   "id": "walk_forward-00",
+   "action": "walk_forward",
+   "frame": 0,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前行走的触地相：固定右侧视，双拳保持胸前护架，上身略前倾。前腿向前迈出半步、脚跟着地，后腿在身后伸直、前脚掌蹬地；步幅不要过大，身体只比站立略低一点，双膝浅屈，双脚落同一条地面线上。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身高度与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 199,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/walk_forward/frames/walk_forward-00-raw.png",
+   "generation_id": "image-55259-32",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/walk_forward/frames/walk_forward-00-raw-2.png",
+   "actual_returned_note": "原请求路径已存在旧候选，服务自动另存为 -raw-2；以实际返回路径为准。",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "6cff993d26cd137ede14f78d1272faa09f331101db3d8207a984551bffeab8c5",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/walk_forward-00-cell.png",
+    "sha256": "9e4d6fe79a3373e142e57063712f5dbfc84fc5bcefa27caceb632b25161b9cfd",
+    "size": [
+     192,
+     192
+    ],
+    "height": 148,
+    "width": 100,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.545,
+    "resampled_size": [
+     100,
+     148
+    ]
+   }
+  },
+  {
+   "id": "walk_forward-01-attempt-1",
+   "action": "walk_forward",
+   "frame": 1,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前行走的交错相：固定右侧视，双拳保持胸前护架，上身略前倾。支撑腿在身体下方伸直、脚掌着地承重，身体升到整步最高点；另一条腿屈膝抬起、从后方摆到身体下方，脚离地。不要屈髋蹲下，不要换手。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身高度与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "generation_id": "image-65174-1",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/walk_forward/frames/walk_forward-01-raw.png",
+   "sha256": "6051139d1b616bd7ad2096490c8f7c72f705b0800144d80af219d23f794d6520",
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "rejected",
+   "reason": "摆动腿抬膝过高，接近高抬腿行军；与触地相的低步幅不接续。已删除原图与落格。"
+  },
+  {
+   "id": "walk_forward-01",
+   "action": "walk_forward",
+   "frame": 1,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前行走的交错相：固定右侧视，双拳保持胸前护架，上身略前倾。支撑腿在身体下方伸直、脚掌着地承重，身体升到整步最高点；另一条腿屈膝、膝盖不要抬得过高，从支撑腿旁经过，脚离地一点。不要屈髋蹲下，不要高抬腿行军。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身高度与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 210,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/walk_forward/frames/walk_forward-01-raw.png",
+   "generation_id": "image-65174-3",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/walk_forward/frames/walk_forward-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "e88354fddec979bf0179f149d89ac806354528a6059310fc569c3f0fa4ad937c",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/walk_forward-01-cell.png",
+    "sha256": "2c48742e64a4e20d7c0b9390949dc525afdbf01616b19f0eae549f38b908a177",
+    "size": [
+     192,
+     192
+    ],
+    "height": 153,
+    "width": 67,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.562,
+    "resampled_size": [
+     67,
+     153
+    ]
+   }
+  },
+  {
+   "id": "walk_forward-02",
+   "action": "walk_forward",
+   "frame": 2,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前行走的第二次触地相：固定右侧视，双拳保持胸前护架，上身略前倾。上一步的支撑腿留在身后伸直、前脚掌蹬地，另一条腿向前迈出半步、脚跟着地；步幅不要过大，身体只比站立略低一点，双膝浅屈，双脚落同一条地面线上。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身高度与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 210,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/walk_forward/frames/walk_forward-02-raw.png",
+   "generation_id": "image-65174-4",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/walk_forward/frames/walk_forward-02-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "eb8a3be7b69e66c39811397d62579dc11bf0b94d314fa062d61e40cf57915148",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/walk_forward-02-cell.png",
+    "sha256": "54aa48f29e353b73f349d63e501af655c74d013dfcbfa377b7827f86fb2b6658",
+    "size": [
+     192,
+     192
+    ],
+    "height": 150,
+    "width": 91,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.178,
+    "resampled_size": [
+     91,
+     150
+    ]
+   }
+  },
+  {
+   "id": "walk_forward-03",
+   "action": "walk_forward",
+   "frame": 3,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前行走的第二次交错相：固定右侧视，双拳保持胸前护架，上身略前倾。另一条腿在身体下方伸直、脚掌着地承重，身体升到整步最高点；原前腿屈膝、膝盖不要抬得过高，从支撑腿旁经过，脚离地一点。不要屈髋蹲下，不要高抬腿行军。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身高度与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 213,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/walk_forward/frames/walk_forward-03-raw.png",
+   "generation_id": "image-65174-6",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/walk_forward/frames/walk_forward-03-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "71f9884135419538fce740dd5dde020572645bf421960360ff9699d6dcecccb8",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/walk_forward-03-cell.png",
+    "sha256": "bc71d7b5fb3ef4cb96689c7cc139f1a59429709017c7c8a7f3bdbfa104151eaf",
+    "size": [
+     192,
+     192
+    ],
+    "height": 149,
+    "width": 61,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.34,
+    "resampled_size": [
+     61,
+     149
+    ]
+   }
+  },
+  {
+   "id": "walk_back-00",
+   "action": "walk_back",
+   "frame": 0,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向后倒退行走的触地相：人物仍固定右侧视、头胸朝右，只向画面左侧倒退。双拳保持胸前护架，上身略后仰。一条腿向身后迈出半步、脚掌着地，另一条腿在身前伸直、脚跟蹬地；步幅不要过大，身体只比站立略低一点，双膝浅屈，双脚落同一条地面线上。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身高度与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 221,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/walk_back/frames/walk_back-00-raw.png",
+   "generation_id": "image-65174-8",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/walk_back/frames/walk_back-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "2f1c2d69935419544bac8b84428c47b1688f3816d5833547b05ac00fee032547",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/walk_back-00-cell.png",
+    "sha256": "05ed0847095b988baf32d394de35e545a154b145d993dea48e4b2d671f8db2e9",
+    "size": [
+     192,
+     192
+    ],
+    "height": 142,
+    "width": 87,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.327,
+    "resampled_size": [
+     87,
+     142
+    ]
+   }
+  },
+  {
+   "id": "walk_back-01",
+   "action": "walk_back",
+   "frame": 1,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向后倒退行走的交错相：人物仍固定右侧视、头胸朝右，只向画面左侧倒退。双拳保持胸前护架，上身略后仰。支撑腿在身体下方伸直、脚掌着地承重，身体升到最高点；另一条腿屈膝、膝盖不要抬得过高，从支撑腿旁向身后摆，脚离地一点。不要屈髋蹲下，不要高抬腿。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身高度与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 227,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/walk_back/frames/walk_back-01-raw.png",
+   "generation_id": "image-65174-10",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/walk_back/frames/walk_back-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "a67df9ae90c8d57d00ff14ef788c011a09cd34955fdf75705220c8e70e98b3dc",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/walk_back-01-cell.png",
+    "sha256": "65d6b8fd54608acb62d12a25fdf8d2c56b913fdf1b957cd04bfca0857555b0a8",
+    "size": [
+     192,
+     192
+    ],
+    "height": 151,
+    "width": 72,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.523,
+    "resampled_size": [
+     72,
+     151
+    ]
+   }
+  },
+  {
+   "id": "walk_back-02",
+   "action": "walk_back",
+   "frame": 2,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向后倒退行走的第二次触地相：人物仍固定右侧视、头胸朝右，只向画面左侧倒退。双拳保持胸前护架，上身略后仰。上一步的支撑腿留在身前伸直、脚跟蹬地，另一条腿向身后迈出半步、脚掌着地；步幅不要过大，身体只比站立略低一点，双膝浅屈，双脚落同一条地面线上。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身高度与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 229,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/walk_back/frames/walk_back-02-raw.png",
+   "generation_id": "image-65174-12",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/walk_back/frames/walk_back-02-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "fc9e70473e2ae9bb26ed32566e2e3eac219dc8306e698e94860fdceb7cf4c494",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/walk_back-02-cell.png",
+    "sha256": "a98f8d84e54cf2f217135a801a65cddf26c13a792dfa4bb99bde732e31ccdde4",
+    "size": [
+     192,
+     192
+    ],
+    "height": 147,
+    "width": 86,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.223,
+    "resampled_size": [
+     86,
+     147
+    ]
+   }
+  },
+  {
+   "id": "walk_back-03",
+   "action": "walk_back",
+   "frame": 3,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向后倒退行走的第二次交错相：人物仍固定右侧视、头胸朝右，只向画面左侧倒退。双拳保持胸前护架，上身略后仰。另一条腿在身体下方伸直、脚掌着地承重，身体升到最高点；原前腿屈膝、膝盖不要抬得过高，从支撑腿旁向身后摆，脚离地一点。不要屈髋蹲下，不要高抬腿。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身高度与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 230,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/walk_back/frames/walk_back-03-raw.png",
+   "generation_id": "image-65174-14",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/walk_back/frames/walk_back-03-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "1528712671bbb9bb574985d23e00117635e35c5afc3a77401abd8d074b8097ab",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/walk_back-03-cell.png",
+    "sha256": "5bebd010cf429699eba0ab225ebb8344ca114b39fa6d8c057aef220518fb47d1",
+    "size": [
+     192,
+     192
+    ],
+    "height": 151,
+    "width": 61,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.824,
+    "resampled_size": [
+     61,
+     151
+    ]
+   }
+  },
+  {
+   "id": "dash_start-00-attempt-1",
+   "action": "dash_start",
+   "frame": 0,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前冲刺的起势相：固定右侧视，头胸朝右，上身明显前倾，双拳收到胸前护架。前腿屈膝承重、后腿在身后屈膝蹬地，身体压低，准备向前弹出；双脚都落在地面上，步幅不要过大。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "generation_id": "image-65174-16",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/dash_start/frames/dash_start-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "4e8c3ea05b12882f85d02fd3361a0771dc2e0fcf76a4b8c76b6ff6dfd9a77a1d",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "rejected",
+   "reason": "过度深蹲折身：换算原生高114，比待机低40px；上身近水平、双拳挤在胸前，冲刺起势不可读。已删除原图与落格。"
+  },
+  {
+   "id": "dash_start-00",
+   "action": "dash_start",
+   "frame": 0,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前冲刺的起势相：固定右侧视，头胸朝右，上身略前倾，双拳收到胸前护架。前腿屈膝、后腿在身后蹬地，身体只比站立略低一点，不要深蹲，上身不要趴下；双脚都落在地面上，步幅不要过大。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 194,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/dash_start/frames/dash_start-00-raw.png",
+   "generation_id": "image-65174-17",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/dash_start/frames/dash_start-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "6eeb13e0e7a698bbc771a482e0dce0ce02d82046dfbcce4037f68a61e93d8462",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/dash_start-00-cell.png",
+    "sha256": "bb298b612559186868a1b27884c92270df4ad6984770f74c8881939b486773ce",
+    "size": [
+     192,
+     192
+    ],
+    "height": 134,
+    "width": 96,
+    "colors": 30,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.262,
+    "resampled_size": [
+     96,
+     134
+    ]
+   }
+  },
+  {
+   "id": "dash_start-01-attempt-1",
+   "action": "dash_start",
+   "frame": 1,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前冲刺的蹬出相：固定右侧视，头胸朝右，上身比上一相更前倾，双拳保持胸前护架。前腿向前伸出、脚掌着地，后腿在身后完全蹬直、脚尖离地；身体向前送，不要蹲下。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "generation_id": "image-65174-20",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/dash_start/frames/dash_start-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "d913f677965f1058be4f542d3b970976487fc3cc49c6d942da66e7237b10db1a",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "rejected",
+   "reason": "后腿水平长蹬、横向135原生像素超出192格：按锚点放置offset x=-15，后脚被左边缘裁切。已删除原图与落格，重生成更紧凑蹬出相。"
+  },
+  {
+   "id": "dash_start-01",
+   "action": "dash_start",
+   "frame": 1,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前冲刺的蹬出相：固定右侧视，头胸朝右，上身比上一相更前倾，双拳保持胸前护架。前腿向前伸出、脚掌着地，后腿在身后蹬直、脚尖离地，但步幅不要过大、后腿不要抬成水平；身体向前送，不要蹲下。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 199,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/dash_start/frames/dash_start-01-raw.png",
+   "generation_id": "image-65174-22",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/dash_start/frames/dash_start-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "e1e45d164f848a6257f79f9ddc1cfeaff6237b11d15cd344f0553b0f5f02d765",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/dash_start-01-cell.png",
+    "sha256": "0ce5115b1816f4dc5a8d73b7f248aae1160b9ac53030757fcc574394cec583d7",
+    "size": [
+     192,
+     192
+    ],
+    "height": 131,
+    "width": 114,
+    "colors": 31,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.446,
+    "resampled_size": [
+     114,
+     131
+    ]
+   }
+  },
+  {
+   "id": "dash-00",
+   "action": "dash",
+   "frame": 0,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前冲刺循环的触地相：固定右侧视，头胸朝右，双拳保持胸前护架，上身明显前倾但不要折身。前腿向前跨出、脚掌着地，后腿在身后蹬直、脚尖离地；步幅略大于走路但不要劈叉，后腿不要抬成水平，双脚落同一条地面线上。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 208,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/dash/frames/dash-00-raw.png",
+   "generation_id": "image-65174-25",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/dash/frames/dash-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "014c876c1d3c0446c6b1b21acbceceeceed04df7466f504faa72c186c27e6069",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/dash-00-cell.png",
+    "sha256": "158c8b92eea407773d2994938c6b70bde76bf4ff42781efc862ddff149004ab4",
+    "size": [
+     192,
+     192
+    ],
+    "height": 130,
+    "width": 123,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.325,
+    "resampled_size": [
+     123,
+     130
+    ]
+   }
+  },
+  {
+   "id": "dash-01",
+   "action": "dash",
+   "frame": 1,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前冲刺循环的交错相：固定右侧视，头胸朝右，双拳保持胸前护架，上身保持明显前倾但不折身。支撑腿在身体下方屈膝承重，身体略低不要深蹲；另一条腿屈膝向前摆、膝盖不要抬得过高，脚离地。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 196,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/dash/frames/dash-01-raw.png",
+   "generation_id": "image-65174-27",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/dash/frames/dash-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "c18ba6467c0a7535763859e48c36b54919dbf296ba4cf6407c3c48f66bc8e133",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/dash-01-cell.png",
+    "sha256": "9cf3de4aca4ee14c9a36f3bca93c813e9856e82817a8c59eb759051bba5ab8a5",
+    "size": [
+     192,
+     192
+    ],
+    "height": 149,
+    "width": 92,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.08,
+    "resampled_size": [
+     92,
+     149
+    ]
+   }
+  },
+  {
+   "id": "dash-02",
+   "action": "dash",
+   "frame": 2,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前冲刺循环的第二次触地相：固定右侧视，头胸朝右，双拳保持胸前护架，上身明显前倾但不要折身。上一步的支撑腿留在身后蹬直、脚尖离地，另一条腿向前跨出、脚掌着地；步幅略大于走路但不要劈叉，后腿不要抬成水平，双脚落同一条地面线上。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 219,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/dash/frames/dash-02-raw.png",
+   "generation_id": "image-65174-29",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/dash/frames/dash-02-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "5fa2f2effe4847313508fd431e28cb3e97633da207227db289767d4ada8a1f3a",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/dash-02-cell.png",
+    "sha256": "7de152fbf8f531ace40f591f705f25b67bf04063aba20b95c61ca456cb906eb0",
+    "size": [
+     192,
+     192
+    ],
+    "height": 128,
+    "width": 117,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.426,
+    "resampled_size": [
+     117,
+     128
+    ]
+   }
+  },
+  {
+   "id": "dash-03",
+   "action": "dash",
+   "frame": 3,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向前冲刺循环的第二次交错相：固定右侧视，头胸朝右，双拳保持胸前护架，上身保持明显前倾但不折身。另一条腿在身体下方屈膝承重，身体略低不要深蹲；原前腿屈膝向前摆、膝盖不要抬得过高，脚离地。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 199,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/dash/frames/dash-03-raw.png",
+   "generation_id": "image-65174-30",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/dash/frames/dash-03-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "8ccbac4dfc91b7ac055fadab000264560009efb676cab74679aed599f2508116",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/dash-03-cell.png",
+    "sha256": "b5f29c98dbfec040942db25a1d190048753fbc52c17637484eafcd1c12160846",
+    "size": [
+     192,
+     192
+    ],
+    "height": 139,
+    "width": 78,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.206,
+    "resampled_size": [
+     78,
+     139
+    ]
+   }
+  },
+  {
+   "id": "takeoff-00",
+   "action": "takeoff",
+   "frame": 0,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向上起跳前的蓄力相：固定右侧视，头胸朝右，双拳保持胸前护架。双膝屈曲、髋部下沉，双脚踩实地面，上身略前倾，准备向上蹬起；不要深蹲折身，不要抬脚。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 179,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/takeoff/frames/takeoff-00-raw.png",
+   "generation_id": "image-65174-32",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/takeoff/frames/takeoff-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "ad08f463918d82413386ed81e8955e1d417d8be87a614216a2442f9b2f3157b4",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/takeoff-00-cell.png",
+    "sha256": "d7174a3d86fc485348014886a02e84f881f99f00a48d51abd89bb6f49f7caafd",
+    "size": [
+     192,
+     192
+    ],
+    "height": 137,
+    "width": 75,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.644,
+    "resampled_size": [
+     75,
+     137
+    ]
+   }
+  },
+  {
+   "id": "takeoff-01",
+   "action": "takeoff",
+   "frame": 1,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向上起跳的离地相：固定右侧视，头胸朝右，双拳保持胸前护架。双腿向下并拢伸直、脚尖绷直并离开地面，身体向上伸展，头向上顶；不要弯腰折身，不要收腿。双脚离地一点点，周围保留透明空白。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 196,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/takeoff/frames/takeoff-01-raw.png",
+   "generation_id": "image-65174-35",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/takeoff/frames/takeoff-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "320ec5be8fd26f02db9717ddf4603c8b1223df5b1ed3e4254c32473a1450d862",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "airborne": true,
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/takeoff-01-cell.png",
+    "sha256": "9a8ba656c830b72ae64a0f2df241c3f679887219391a4cb7daad426336eb68bd",
+    "size": [
+     192,
+     192
+    ],
+    "height": 168,
+    "width": 58,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 174,
+    "requested_foot_row": 174,
+    "foot_center": 96.261,
+    "resampled_size": [
+     58,
+     168
+    ],
+    "note": "腾空帧脚底行174，离地9px；顶部余7px，未裁切。 "
+   }
+  },
+  {
+   "id": "takeoff-01",
+   "action": "takeoff",
+   "frame": 1,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物向上起跳的离地相：固定右侧视，头胸朝右，双拳保持胸前护架。双腿向下并拢伸直、脚尖绷直并离开地面，身体向上伸展，头向上顶；不要弯腰折身，不要收腿。双脚离地一点点，周围保留透明空白。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 196,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/takeoff/frames/takeoff-01-raw.png",
+   "generation_id": "image-65174-35",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/takeoff/frames/takeoff-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "320ec5be8fd26f02db9717ddf4603c8b1223df5b1ed3e4254c32473a1450d862",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "airborne": true,
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/takeoff-01-cell.png",
+    "sha256": "9a8ba656c830b72ae64a0f2df241c3f679887219391a4cb7daad426336eb68bd",
+    "size": [
+     192,
+     192
+    ],
+    "height": 168,
+    "width": 58,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 174,
+    "requested_foot_row": 174,
+    "foot_center": 96.261,
+    "resampled_size": [
+     58,
+     168
+    ],
+    "note": "腾空帧脚底行174，离地9px；顶部余7px，未裁切。"
+   }
+  },
+  {
+   "id": "air_rise-00",
+   "action": "air_rise",
+   "frame": 0,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物起跳后的上升相：固定右侧视，头胸朝右，双拳保持胸前护架。双脚离地，双腿略屈、小腿向后收一点，身体向上伸展但不折身，头朝前上方。不要弯腰，不要抱膝，不要换手。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 185,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/air_rise/frames/air_rise-00-raw.png",
+   "generation_id": "image-65174-39",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/air_rise/frames/air_rise-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "dd413c781d2473b085a1f8e264a54f6ae159bae76f7a7c08bafaad7e130e7fde",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "airborne": true,
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/air_rise-00-cell.png",
+    "sha256": "fc7e56cce2c737e0cf05de29e63486b00673d47b0cbaa25ccdb48520579ad0c4",
+    "size": [
+     192,
+     192
+    ],
+    "height": 155,
+    "width": 69,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 160,
+    "requested_foot_row": 160,
+    "foot_center": 96.459,
+    "resampled_size": [
+     69,
+     155
+    ],
+    "note": "落格前适配检查：top6、左右85–153，未越界；脚底160离地23px。"
+   }
+  },
+  {
+   "id": "air_fall-00",
+   "action": "air_fall",
+   "frame": 0,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物从空中下落的相：固定右侧视，头胸朝右，双拳保持胸前护架。双脚离地，双腿向下伸、膝盖略弯，脚尖朝下，身体保持直立不折，头朝前。不要收腿抱膝，不要弯腰。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 181,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/air_fall/frames/air_fall-00-raw.png",
+   "generation_id": "image-65174-41",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/air_fall/frames/air_fall-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "94bacb40ad8b51839024fe2c31ddb0e9f9aa4e4f838a33edbd36ef6cc53755f8",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "airborne": true,
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/air_fall-00-cell.png",
+    "sha256": "02bcff361075aa0bdcca3510ec53411b5e27140bd71c939228887c32fe4676d3",
+    "size": [
+     192,
+     192
+    ],
+    "height": 162,
+    "width": 53,
+    "colors": 31,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 174,
+    "requested_foot_row": 174,
+    "foot_center": 96.37,
+    "resampled_size": [
+     53,
+     162
+    ],
+    "note": "落格前适配检查：top13、左右74–126未越界；脚底174离地9px，低于air_rise的160，表现下落。"
+   }
+  },
+  {
+   "id": "land-00",
+   "action": "land",
+   "frame": 0,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物从空中落地触地的第一相：固定右侧视，头胸朝右，双拳保持胸前护架。双脚同时落到地面、脚掌踩实，双膝微屈，身体保持直立不折，头朝前。不要深蹲，不要弯腰，不要抬脚。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 186,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/land/frames/land-00-raw.png",
+   "generation_id": "image-65174-43",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/land/frames/land-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "0a9707820b3ebfebfff61ed19cd8d88eb362927fc3d2a1ac0eef1c53e0d4c472",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/land-00-cell.png",
+    "sha256": "db5c6644d8e518705addd78b0733c3da70ad721f031066990d7110e6041c9546",
+    "size": [
+     192,
+     192
+    ],
+    "height": 151,
+    "width": 61,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.685,
+    "resampled_size": [
+     61,
+     151
+    ]
+   }
+  },
+  {
+   "id": "land-01",
+   "action": "land",
+   "frame": 1,
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物落地后的屈膝缓冲相：固定右侧视，头胸朝右，双拳保持胸前护架。双脚仍踩实地面，双膝屈曲、髋部略下沉吸收冲击，身体略低但不要深蹲折身，头朝前。不要弯腰趴下，不要抬脚。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 188,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/land/frames/land-01-raw.png",
+   "generation_id": "image-65174-44",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/land/frames/land-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "b7e1710ad01bd283aa7fde46075b4f84b00772942e117f1309aa808895e4a5cd",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/land-01-cell.png",
+    "sha256": "d76c9c0f3a44f80dd33707d094817063ab58fc1c4cbf5e6dc9beb8ff1853eaa5",
+    "size": [
+     192,
+     192
+    ],
+    "height": 145,
+    "width": 71,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.441,
+    "resampled_size": [
+     71,
+     145
+    ]
+   }
+  },
+  {
+   "id": "light1-00",
+   "action": "light1",
+   "frame": 0,
+   "phase": "起手",
+   "move": "头部光子冰刀（Photon Edge）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物发动头部光线前的起手相：固定右侧视，头胸朝右，双腿分开微屈站稳。右臂抬到头侧、手掌靠近额前金色头冠但不遮挡脸，左拳收在胸前护架；上身略前倾，眼睛朝前。不要发射光效。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 189,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light1/frames/light1-00-raw.png",
+   "generation_id": "image-65174-46",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light1/frames/light1-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "acfeeeec8e9073cc1918be615cd71b95d6a71eff1d669f2c430b42013e2d618c",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/light1-00-cell.png",
+    "sha256": "a6b2272498f169c06ed2eefea7c6554767201f3ffde9229483241730ac2c6009",
+    "size": [
+     192,
+     192
+    ],
+    "height": 153,
+    "width": 107,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.913,
+    "resampled_size": [
+     107,
+     153
+    ]
+   }
+  },
+  {
+   "id": "light1-01",
+   "action": "light1",
+   "frame": 1,
+   "phase": "蓄光",
+   "move": "头部光子冰刀（Photon Edge）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物蓄积头部光线的相：固定右侧视，头胸朝右，右掌停在额前金色头冠旁，左拳收在胸前护架，双膝微屈站稳。额前金冠处聚起一小团明亮像素光点，带青白亮芯和细碎颗粒向冠前收拢，光团不遮眼睛、不盖脸和胸灯。身体不折，手臂保持姿势。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。人物全身比例与画面留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 214,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light1/frames/light1-01-raw.png",
+   "generation_id": "image-65174-47",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light1/frames/light1-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "599803ebb4247cc676e9d741c76ca205b05b4fe208bd8eb67bbcd8c5d5b54780",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/light1-01-cell.png",
+    "sha256": "91c97ddb03ca2c1651bd28bc13d5d19d04c7b46e0818e5e179eefd972fcb5932",
+    "size": [
+     192,
+     192
+    ],
+    "height": 154,
+    "width": 107,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.763,
+    "resampled_size": [
+     107,
+     154
+    ]
+   }
+  },
+  {
+   "id": "light1-02",
+   "action": "light1",
+   "frame": 2,
+   "phase": "发射",
+   "attempt": 1,
+   "move": "头部光子冰刀（Photon Edge）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "generation_id": "image-65174-49",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light1/frames/light1-02-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light1/frames/light1-02-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "3c9824228456d3bacf1ec3f88ce6eb14ebd202725bb87fc3ee4c4d4e0a39d59f",
+   "status": "rejected",
+   "reason": "复核修正：外围暗色RGB均位于alpha=0的全透明区，背景实为真透明，此前按暗像素数量误判为不透明底；本帧实际拒收原因是光刃过大过平滑（约3个头宽、连续弧面、像素相变与颗粒不足），落格会超宽且不符合像素FX要求。",
+   "cell": null
+  },
+  {
+   "id": "light1-02",
+   "action": "light1",
+   "frame": 2,
+   "phase": "发射",
+   "attempt": 2,
+   "move": "头部光子冰刀（Photon Edge）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物从额前金色头冠尖端发射光子冰刀：头胸朝右，右掌在头侧，左拳收在胸前护架，双膝微屈。金冠尖端前方射出一道较短的向右弯月光刃，根部紧贴金冠，不从眼睛发出；光刃由青白像素亮芯、浅蓝外焰和飞散颗粒组成，外形有相位变化，不是连续椭圆或细直线，不超过两头宽。光刃不得遮住脸、胸灯和身体。人物之外必须透明，不要暗色光晕、渐变背景或地面阴影。四肢粗细必须和参考完全一致，手臂粗壮、大腿饱满、小腿有厚度。全身比例与留白同参考。固定右侧视，完整不裁切，透明背景，无地面文字边框。",
+   "prompt_char_count": 249,
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light1/frames/light1-02-raw.png",
+   "generation_id": "image-65174-51",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light1/frames/light1-02-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "e26a9bf5afaff9defde262705f93aca4a38fa698d57d9d4b124f052db1af6dec",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP未提供usage或费用，不估算。",
+   "status": "selected",
+   "emission": {
+    "gold_cell": [
+     101,
+     38
+    ],
+    "beam_root_cell": [
+     101,
+     37
+    ],
+    "nearest_distance_px": 1.0,
+    "note": "光刃根部贴额前金冠前缘，双向误差≤2px。"
+   },
+   "fx": {
+    "bright_core": true,
+    "outer_flame": true,
+    "particles": true,
+    "phase_variation": true,
+    "body_occlusion": false
+   },
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/light1-02-cell.png",
+    "sha256": "7f4b32368a3b53670f0528cf3de8fc93d5fff42a08beabb02b546ee66ad0e29e",
+    "size": [
+     192,
+     192
+    ],
+    "height": 159,
+    "width": 108,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.735,
+    "resampled_size": [
+     110,
+     162
+    ],
+    "postprocess": "11个4邻接孤立颗粒像素整体最小平移并入主光刃，以满足单连通硬门；颗粒颜色与像素数不变，人物未改。"
+   },
+   "note": "发射相；光刃不遮脸/胸灯，人物完整。"
+  },
+  {
+   "id": "light1-02",
+   "action": "light1",
+   "frame": 2,
+   "phase": "发射",
+   "attempt": 3,
+   "move": "头部光子冰刀（Photon Edge）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "generation_id": "image-65174-54",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light1/frames/light1-02-raw-2.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light1/frames/light1-02-raw-2.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "d404a58dc76ab0bae6d1868c2eaef6dbc3dc63c058631c7d4eea34ff3990a381",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物从额前金色头冠尖端发射光子冰刀：头胸朝右，右掌在头侧，左拳收在胸前护架，双膝微屈。金冠尖端前方射出一道较短的向右弯月光刃，根部紧贴金冠，不从眼睛发出；光刃由青白像素亮芯、浅蓝外焰和相连的拖尾颗粒组成，不出现孤立亮点，不是连续椭圆或细直线，不超过两头宽。光刃不得遮住脸、胸灯和身体。人物之外必须透明，不要暗色光晕、渐变背景或地面阴影。四肢粗细必须和参考完全一致，手臂粗壮、大腿饱满、小腿有厚度。固定右侧视，完整不裁切，透明背景，无地面文字边框。",
+   "prompt_char_count": 241,
+   "status": "rejected",
+   "reason": "光刃为连续平滑弯月，缺少可见飞散颗粒与相位变化，不符合像素FX硬芯/外焰/颗粒要求；虽单连通但FX不达标，故拒收。",
+   "cell": {
+    "path": "/tmp/light1-02-attempt3-cell.png（临时审阅关）",
+    "size": [
+     192,
+     192
+    ],
+    "height": 155,
+    "width": 111,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "offset": [
+     35,
+     29
+    ]
+   }
+  },
+  {
+   "id": "light2-02",
+   "action": "light2",
+   "frame": 2,
+   "phase": "发射",
+   "attempt": 1,
+   "move": "量子流线（Quantum Stream）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "generation_id": "image-65174-62",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light2/frames/light2-02-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light2/frames/light2-02-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "d9776758288fb91de5c2d2f975263eed708137bd0254c7da23b64a57974143cf",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物量子流线的L字发射：固定右侧视，头胸朝右。右臂向前平伸，右前臂向上竖起成L字，左拳贴住右腕关节；右腕前方射出一道较短的赤红高热光束，根部贴住右腕；光束有白亮芯、赤红外焰和飞散颗粒，外形有相位变化，不是连续椭圆或细直线，长度不超过两个头宽。光束不得遮住脸、胸灯和身体。人物之外必须透明，不要暗色光晕、渐变背景或地面阴影。四肢粗细必须和参考完全一致，手臂粗壮、大腿饱满、小腿有厚度。固定右侧视，完整不裁切，透明背景，无地面文字边框。",
+   "prompt_char_count": 234,
+   "status": "rejected",
+   "reason": "光效是细rays星芒、无外焰与连续高热束的相位变化；左手张开成停手状，未按左拳贴右腕，L字发射不成立。背景为alpha=0真透明，非背景问题。",
+   "cell": null
+  },
+  {
+   "id": "light2-00",
+   "action": "light2",
+   "frame": 0,
+   "phase": "蓄能",
+   "move": "量子流线（Quantum Stream）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "generation_id": "image-65174-57",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light2/frames/light2-00-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light2/frames/light2-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "a3c295402803e2d6f810d26afb095a1a17f197c7b8f443810538b885330df04a",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物量子流线的起手蓄能：固定右侧视，头胸朝右。右臂向右水平伸出，左臂弯曲、左拳朝右肘内侧收拢，成T字形交叉，双拳在胸前高度，双膝微屈站稳。双臂交叉处聚起一小团赤红像素光点，带白亮芯和细碎颗粒，不遮脸、胸灯和身体。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框。",
+   "prompt_char_count": 206,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/light2-00-cell.png",
+    "sha256": "6340cdd2803454cbb34b0fd2d04a1590019a78a705185ad467403405d2a9315e",
+    "size": [
+     192,
+     192
+    ],
+    "height": 154,
+    "width": 113,
+    "colors": 32,
+    "components": 1,
+    "body_components": 1,
+    "particle_components": 0,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.753,
+    "resampled_size": [
+     113,
+     154
+    ],
+    "emission": "叉臂处赤红光点，主体单连通。"
+   }
+  },
+  {
+   "id": "light2-01",
+   "action": "light2",
+   "frame": 1,
+   "phase": "过头转换",
+   "move": "量子流线（Quantum Stream）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "generation_id": "image-65174-60",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light2/frames/light2-01-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light2/frames/light2-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "209110fb3fa5fa654eca6d278b863058f832381e04af8ae5a8a55d277ce9c8d2",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物量子流线的过头转换：固定右侧视，头胸朝右。左拳搭在右腕上，双臂一起抬到头部前上方，右腕在前、左拳贴腕，双膝微屈站稳。右腕处聚起赤红像素能量团，白亮芯、赤红外焰和细碎颗粒，能量不散成大片、不遮眼睛和胸灯。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框。",
+   "prompt_char_count": 203,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/light2-01-cell.png",
+    "sha256": "50ce8e83ab7109a672714b297503d9728dadaf216dea9c856263beae6ef8ac8e",
+    "size": [
+     192,
+     192
+    ],
+    "height": 167,
+    "width": 107,
+    "colors": 32,
+    "components": 5,
+    "body_components": 1,
+    "particle_components": 4,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.056,
+    "resampled_size": [
+     107,
+     167
+    ],
+    "emission": "能量团贴右腕，主体单连通；4个独立颗粒允许。"
+   }
+  },
+  {
+   "id": "light2-02",
+   "action": "light2",
+   "frame": 2,
+   "phase": "发射",
+   "move": "量子流线（Quantum Stream）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "generation_id": "image-65174-63",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light2/frames/light2-02-raw-2.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light2/frames/light2-02-raw-2.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "2481cd130194343848b8131d1f54b25c8580b20be69d27b92eaa016f789850d7",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物量子流线的L字发射：固定右侧视，头胸朝右。右臂向前平伸，左前臂竖起、左拳握紧贴在右腕关节上，形成L字；不要张开手掌。右腕前方射出一道较粗的赤红高热光束，根部紧贴右腕，向右延伸约一个半头宽；光束有白热亮芯、赤红外焰和飞散颗粒，外形有相位变化，不是星芒、细直线或连续椭圆。光束不得遮住脸、胸灯和身体。人物之外必须透明，不要暗色光晕、渐变背景或地面阴影。四肢粗细必须和参考完全一致，手臂粗壮、大腿饱满、小腿有厚度。固定右侧视，完整不裁切，透明背景，无地面文字边框。",
+   "prompt_char_count": 249,
+   "status": "rejected",
+   "reason": "左拳停在胸口而非贴在右腕，L字发射不成立；光效本身合格。按原作姿势要求拒收。",
+   "attempt": 2
+  },
+  {
+   "id": "light2-02",
+   "action": "light2",
+   "frame": 2,
+   "phase": "发射",
+   "move": "量子流线（Quantum Stream）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "generation_id": "image-65174-64",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light2/frames/light2-02-raw-3.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light2/frames/light2-02-raw-3.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "c9a4d7414505fb6c515a0842bad0c107e3cac630a02985b36a02840a43de3b39",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物量子流线的L字发射：固定右侧视，头胸朝右。右臂水平向前伸直，右拳握紧；左前臂竖直立起，左拳贴在右腕上，两臂成L字，左拳不要放在胸口。右拳前方喷出一道粗短赤红高热束，根部紧贴右拳，向右延伸约一个半头宽；白热亮芯、赤红外焰、飞散颗粒，有相位变化，不是星芒或细直线。光束不遮脸、胸灯和身体。人物之外必须透明，不要暗色光晕或阴影。四肢粗细和参考完全一致，手臂粗壮、大腿饱满、小腿有厚度。固定右侧视，完整不裁切，透明背景，无地面文字边框。",
+   "prompt_char_count": 234,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/light2-02-cell.png",
+    "sha256": "a10082799c3de93842f7cb061e392dd1b656d15bdbdf59654094b9f2845ddea3",
+    "size": [
+     192,
+     192
+    ],
+    "height": 155,
+    "width": 130,
+    "colors": 32,
+    "components": 7,
+    "body_components": 1,
+    "particle_components": 6,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.786,
+    "resampled_size": [
+     132,
+     155
+    ],
+    "emission": "光束根部与右拳同一主体连通块（0px），发射部为右臂/右拳。",
+    "note": "L字发射；左拳贴右腕，赤红高热束白亮芯/红外焰/飞散颗粒，不遮脸/胸灯，不裁切。"
+   },
+   "attempt": 3
+  },
+  {
+   "id": "light3-00",
+   "action": "light3",
+   "frame": 0,
+   "phase": "蓄冷",
+   "move": "盖亚暴风雪（Gaia Blizzard）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "generation_id": "image-65174-68",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light3/frames/light3-00-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light3/frames/light3-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "fdf1f16dfa562282b2b14e37fb4fcb4b0badd9d78d926de89f6181ff0e92df4e",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚暴风雪的蓄冷起手：固定右侧视，头胸朝右。双臂屈肘收在胸前，双掌张开朝前，指尖朝上，双膝微屈站稳。双掌掌心各聚起一小团冰蓝白光点，带白亮芯和细碎冰晶颗粒，光点不遮脸、胸灯和身体。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框。",
+   "prompt_char_count": 192,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/light3-00-cell.png",
+    "sha256": "7f8b4959f3500b279a76e9dc3adf04f75fa20246e2146ddcae28fbb993ed0284",
+    "size": [
+     192,
+     192
+    ],
+    "height": 154,
+    "width": 107,
+    "colors": 32,
+    "components": 5,
+    "body_components": 1,
+    "particle_components": 4,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.223,
+    "resampled_size": [
+     107,
+     154
+    ]
+   },
+   "move_note": "原作姿势为双臂聚能后双手前伸发射超低温气态光束，可冰封怪兽/灭火；冷冻系冰蓝白色，检索资料未明确原剧颜色，按冷冻系表现。实际效果定位为冷冻/限制，不与前两槽光束同型。"
+  },
+  {
+   "id": "light3-01",
+   "action": "light3",
+   "frame": 1,
+   "phase": "双掌前推",
+   "move": "盖亚暴风雪（Gaia Blizzard）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "generation_id": "image-65174-69",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light3/frames/light3-01-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light3/frames/light3-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "56b8db8f760421543aab57b151678b01c5653a1b96ecaf6d01ada9122d8e31cc",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚暴风雪的双掌前推：固定右侧视，头胸朝右。双臂向前伸出，双掌张开、指尖朝右，掌心正对前方，双膝微屈站稳。双掌前方喷出一小股冰蓝白冷冻气流，紧贴双掌，带白亮芯、浅蓝外雾和细碎冰晶颗粒，气流不遮脸和胸灯。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框。",
+   "prompt_char_count": 203,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/light3-01-cell.png",
+    "sha256": "8bdf7e60907a61d1749d9883fcbbdd054839560ca565836b086b8e3b010d749b",
+    "size": [
+     192,
+     192
+    ],
+    "height": 156,
+    "width": 125,
+    "colors": 32,
+    "components": 2,
+    "body_components": 1,
+    "particle_components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.0,
+    "resampled_size": [
+     125,
+     156
+    ]
+   },
+   "move_note": "原作姿势为双臂聚能后双手前伸发射超低温气态光束，可冰封怪兽/灭火；冷冻系冰蓝白色，检索资料未明确原剧颜色，按冷冻系表现。实际效果定位为冷冻/限制，不与前两槽光束同型。"
+  },
+  {
+   "id": "light3-02",
+   "action": "light3",
+   "frame": 2,
+   "phase": "暴风雪展开",
+   "move": "盖亚暴风雪（Gaia Blizzard）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "generation_id": "image-65174-70",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light3/frames/light3-02-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light3/frames/light3-02-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "5447378412de2da0cfd992bb18451436f79b31948b70d1557817458ce12396ea",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚暴风雪的展开：固定右侧视，头胸朝右。双臂向前伸出，双掌张开朝右，双膝微屈站稳。双掌前方喷出扇形冰蓝白冷冻气流，亮芯贴掌，外雾分多层、带冰晶和雪粒，扇形有相位变化，不是连续椭圆或简单矢量线；范围不超过两个半头宽，不越出画面。气流不遮脸、胸灯和身体。人物之外必须透明，不要暗色光晕、渐变背景或地面阴影。四肢粗细必须和参考完全一致，手臂粗壮、大腿饱满、小腿有厚度。固定右侧视，完整不裁切，透明背景，无地面文字边框。",
+   "prompt_char_count": 226,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/light3-02-cell.png",
+    "sha256": "5409adf04fb5d0a47c5a9527a62e9fcf547f885b8c9234b63c2da76d8f5f2161",
+    "size": [
+     192,
+     192
+    ],
+    "height": 152,
+    "width": 142,
+    "colors": 32,
+    "components": 3,
+    "body_components": 1,
+    "particle_components": 2,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.232,
+    "resampled_size": [
+     142,
+     152
+    ],
+    "emission": "冷冻扇根贴双掌，主体连通块1；独立冰晶/雪粒为附加连通块。"
+   },
+   "move_note": "原作姿势为双臂聚能后双手前伸发射超低温气态光束，可冰封怪兽/灭火；冷冻系冰蓝白色，检索资料未明确原剧颜色，按冷冻系表现。实际效果定位为冷冻/限制，不与前两槽光束同型。"
+  },
+  {
+   "id": "light3-03",
+   "action": "light3",
+   "frame": 3,
+   "phase": "峰值持续",
+   "move": "盖亚暴风雪（Gaia Blizzard）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它角色或角度。",
+   "generation_id": "image-65174-77",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/light3/frames/light3-03-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/light3/frames/light3-03-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "079c0f76dc361b83ff0d263d5f5311e03aee3806c1ce81f6e6488238c8ebae0a",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚暴风雪的峰值持续：固定右侧视，头胸朝右。双臂保持前伸，双掌张开朝右，双膝微屈站稳。双掌前方冷冻扇保持张开，冰蓝白外雾翻卷、冰晶和霜块在扇缘成形，亮芯仍贴双掌；扇形有相位变化，不是连续椭圆或简单矢量线；范围不超过两个头宽，不越出画面。气流不遮脸、胸灯和身体。人物之外必须透明，不要暗色光晕、渐变背景或地面阴影。四肢粗细必须和参考完全一致，手臂粗壮、大腿饱满、小腿有厚度。固定右侧视，完整不裁切，透明背景，无地面文字边框。",
+   "prompt_char_count": 231,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/light3-03-cell.png",
+    "sha256": "05d90d416394942bef8d6e3fa3269005e2dd5b4b00238bb698ca1f4c90a6b6cd",
+    "size": [
+     192,
+     192
+    ],
+    "height": 158,
+    "width": 140,
+    "colors": 32,
+    "components": 12,
+    "body_components": 1,
+    "particle_components": 11,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.269,
+    "resampled_size": [
+     140,
+     158
+    ],
+    "emission": "冷冻扇根贴双掌，主体连通块1；11个独立冰晶/雪粒为附加连通块。"
+   },
+   "move_note": "补第4相峰值持续；前3帧不重做。原作动作/冷冻效果沿用 light3 前3帧依据。"
+  },
+  {
+   "id": "heavy-00",
+   "action": "heavy",
+   "frame": 0,
+   "phase": "起手蓄力",
+   "move": "盖亚拳（Gaia Punch）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "generation_id": "image-65174-79",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/heavy/frames/heavy-00-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/heavy/frames/heavy-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "4fcd2d6833a718354af308753ff44e4ad2e60ae1975293cbc9f2d06d11226ad4",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚拳的起手蓄力：固定右侧视，头胸朝右。右拳收在右腰侧，拳心朝内，左拳抬在胸前护架；双膝下沉，右脚在后蹬地，上身略向右后拧转。右拳周围聚起一小圈白金色像素能量，带亮芯和细碎颗粒，不遮脸和胸灯。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 200,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/heavy-00-cell.png",
+    "sha256": "52d90e7bb813fcd6edc725872905f59547720e7bff7b67ab5eb201e22ba9abf1",
+    "size": [
+     192,
+     192
+    ],
+    "height": 145,
+    "width": 110,
+    "colors": 32,
+    "components": 3,
+    "body_components": 1,
+    "particle_components": 2,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.226,
+    "resampled_size": [
+     110,
+     145
+    ],
+    "bbox_inclusive": [
+     36,
+     39,
+     145,
+     183
+    ],
+    "emission": "聚能螺旋贴右拳，主体连通块1；2个独立颗粒为附加连通块。"
+   },
+   "move_note": "盖亚拳起手蓄力；身份与动作依据沿用盖亚近战重拳，不靠FX凑动作。"
+  },
+  {
+   "id": "heavy-01",
+   "action": "heavy",
+   "frame": 1,
+   "phase": "进步冲拳",
+   "move": "盖亚拳（Gaia Punch）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "generation_id": "image-65174-80",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/heavy/frames/heavy-01-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/heavy/frames/heavy-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "704b2c778aed3734f7c883110d489595cdebedc7c768daaccdcb840a988bbd53",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚拳的进步冲拳：固定右侧视，头胸朝右。右拳向正前方打出、手臂尚未完全伸直，左拳收在胸前护架；右脚向前跨出、左脚在后蹬地，双膝弯曲，上身随拳向前压。右拳前方带一小段白金色像素拖尾和细碎颗粒，不遮脸和胸灯。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 206,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/heavy-01-cell.png",
+    "sha256": "cced72528a98fd5aa49048192fbe715d1936808cc0363b546bec95876514f1f3",
+    "size": [
+     192,
+     192
+    ],
+    "height": 134,
+    "width": 130,
+    "colors": 32,
+    "components": 3,
+    "body_components": 1,
+    "particle_components": 2,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.758,
+    "resampled_size": [
+     130,
+     134
+    ],
+    "bbox_inclusive": [
+     39,
+     50,
+     168,
+     183
+    ],
+    "emission": "拖尾根贴右拳，主体连通块1；2个独立颗粒为附加连通块。"
+   },
+   "move_note": "盖亚拳进步冲拳；同一比例与色板，承 heavy-00 的蓄力。"
+  },
+  {
+   "id": "heavy-02",
+   "action": "heavy",
+   "frame": 2,
+   "phase": "命中",
+   "move": "盖亚拳（Gaia Punch）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "generation_id": "image-65174-82",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/heavy/frames/heavy-02-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/heavy/frames/heavy-02-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "8b86de50bf1900851e26f955b741139ebd1d32137523b3ed56b34169721ad5fa",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚拳的命中：固定右侧视，头胸朝右。右臂完全向前伸直，右拳打在前方击中点，左拳收在胸前护架；前腿屈膝、后腿蹬直，腰胯前送，身体压向拳锋。右拳击中处炸开白金色像素冲击：白热亮芯、赤金外焰和飞散颗粒，有相位变化，不是连续椭圆或简单矢量线；冲击不遮脸、胸灯和身体。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框。",
+   "prompt_char_count": 214,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/heavy-02-cell.png",
+    "sha256": "427da17397c43ff57940539bb74478377e85d0b4ca85f053cb2ae9f21957c004",
+    "size": [
+     192,
+     192
+    ],
+    "height": 140,
+    "width": 142,
+    "colors": 32,
+    "components": 46,
+    "body_components": 1,
+    "particle_components": 45,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.013,
+    "resampled_size": [
+     142,
+     140
+    ],
+    "bbox_inclusive": [
+     42,
+     44,
+     182,
+     183
+    ],
+    "emission": "冲击根贴右拳，主体连通块1；45个独立火星/碎屑为附加连通块。"
+   },
+   "move_note": "盖亚拳命中；冲击仅局部，不遮身体；右缘实际182在格内。"
+  },
+  {
+   "id": "heavy-03",
+   "action": "heavy",
+   "frame": 3,
+   "phase": "收势",
+   "move": "盖亚拳（Gaia Punch）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "generation_id": "image-65174-83",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/heavy/frames/heavy-03-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/heavy/frames/heavy-03-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "b4ad5af29a01bf58166d8ff57053b837fafd570e0273bb9b63833eb29219300f",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚拳的收势：固定右侧视，头胸朝右。右拳从前方向回收到胸前，左拳保持护架，双膝回弹、双脚站稳，上身转回正面。右拳边只剩几点白金色余烬和细碎颗粒，正在消散，不遮脸和胸灯。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 188,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/heavy-03-cell.png",
+    "sha256": "2c23f81d5ad423ec7bebfed3ea9c0cb16d8c1ef244cde0362b9c174194ce3018",
+    "size": [
+     192,
+     192
+    ],
+    "height": 154,
+    "width": 107,
+    "colors": 31,
+    "components": 2,
+    "body_components": 1,
+    "particle_components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.509,
+    "resampled_size": [
+     107,
+     154
+    ],
+    "bbox_inclusive": [
+     36,
+     30,
+     142,
+     183
+    ],
+    "emission": "余烬在右拳附近，主体连通块1；1个独立像素为附加连通块。"
+   },
+   "move_note": "盖亚拳收势；回到护架，衔接待机。"
+  },
+  {
+   "id": "hit-00",
+   "action": "hit",
+   "frame": 0,
+   "phase": "受击后仰",
+   "move": "受击反应（hit）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "attempt": 1,
+   "generation_id": "image-65174-88",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/hit/frames/hit-00-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/hit/frames/hit-00-raw.png",
+   "sha256": "f79cf1f7ba99eaafa778f3ece5671aad8b5804fe6af58f1afaabf7dcb36b4729",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚受击后仰：固定右侧视，头胸仍朝右，不翻转。上身向后仰，头略后甩，胸口受击后收；双臂护架被打开，两拳分开停在胸侧外，肘部弯曲；双脚保持前后站距、后脚撑地，膝盖微屈。胸肩前有几点白金色小火花和短促冲击，不遮脸和胸灯。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 212,
+   "status": "rejected",
+   "reason": "上身与胸甲转成正面，偏离固定右侧视；护架未打开，受击读法不足；胸口星芒是直线放射并压到胸灯边缘。背景为alpha=0真透明，非背景问题。",
+   "cell": null
+  },
+  {
+   "id": "hit-00",
+   "action": "hit",
+   "frame": 0,
+   "phase": "受击后仰",
+   "move": "受击反应（hit）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "attempt": 2,
+   "generation_id": "image-65174-89",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/hit/frames/hit-00-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/hit/frames/hit-00-raw.png",
+   "sha256": "21072652e4ee277dd240e6cc7c5ebd2fe980ce16bccbe98374d48984b80b2a19",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚受击后仰：固定右侧视，身体侧对镜头，头胸仍朝右，不翻转，保持参考图的侧身体态与胸甲朝向。上身后仰，肩背向后收、下巴抬起；护架被打开，右拳甩到胸侧外、左拳向后张开，双臂弯曲不贴身；双脚保持前后站距，后脚撑地、膝盖微屈。胸肩外侧有几点白金色小火花和短促冲击，形状不规整，不碰胸灯、不遮脸。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 248,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/hit-00-cell.png",
+    "sha256": "2193013caef91804d6bb3d2b1d59d7475be4e8bfcde0dee57ac5e49d534f81cb",
+    "size": [
+     192,
+     192
+    ],
+    "height": 150,
+    "width": 107,
+    "colors": 32,
+    "components": 1,
+    "body_components": 1,
+    "particle_components": 0,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.618,
+    "resampled_size": [
+     107,
+     150
+    ],
+    "bbox_inclusive": [
+     37,
+     34,
+     143,
+     183
+    ],
+    "emission": "贴体火花保留并入主体；7个独立火花颗粒已按非技能帧整帧单连通从落格图删除，整帧1连通块。",
+    "note": "受击后仰：上身后弓、下巴抬起，护架被打开（右拳甩到胸侧外、左拳向后张开）；胸肩外侧白金色小火花，白热芯/金颗粒，不碰胸灯；整帧1连通块（贴体火花保留，7个独立火花颗粒已删）；双脚接地，不裁切。"
+   },
+   "move_note": "受击后仰；只引正式身份锚，保持右侧视。",
+   "edit_note": "只清理落格图：按非技能帧整帧单连通，删除7个独立火花颗粒（尺寸10,5,5,2,1,1,1），保留贴体火花；raw未重生成，动作与身份未变。"
+  },
+  {
+   "id": "hit-01",
+   "action": "hit",
+   "frame": 1,
+   "phase": "退步",
+   "move": "受击反应（hit）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "attempt": 1,
+   "generation_id": "image-65174-90",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/hit/frames/hit-01-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/hit/frames/hit-01-raw.png",
+   "sha256": "196b6766419fed28fad8b76be339ccc20b2ea7dead4de3838d812f690b9fa8b0",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚受击后退步：固定右侧视，身体侧对镜头，头胸仍朝右，不翻转，保持参考图的侧身体态与胸甲朝向。上身后仰未止，右脚向后撤一步、脚掌落地，前脚随之后拖、膝盖弯曲；护架自然散开，右拳抬在胸侧外，左拳向后张开。胸肩外侧只剩几点白金色火星正在消散，不碰胸灯、不遮脸。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 232,
+   "status": "rejected",
+   "reason": "双脚均落地、站距与受击帧过近，退步动作不明确；其余姿势与侧视可读。",
+   "cell": null
+  },
+  {
+   "id": "hit-01",
+   "action": "hit",
+   "frame": 1,
+   "phase": "退步",
+   "move": "受击反应（hit）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "attempt": 2,
+   "generation_id": "image-65174-91",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/hit/frames/hit-01-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/hit/frames/hit-01-raw.png",
+   "sha256": "2cbcfb54214377efd1c325d32e75316bb1c417e851fa6d28480599f6c389202c",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚受击后退步：固定右侧视，身体侧对镜头，头胸仍朝右，不翻转，保持参考图的侧身体态与胸甲朝向。上身后仰，重心后移；前脚撑地、膝盖弯曲，后脚离地向后撤、脚尖朝下，正在退步。护架自然散开，右拳抬在胸侧外，左拳向后张开。胸肩外侧只剩几点白金色火星正在消散，不碰胸灯、不遮脸。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 238,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/hit-01-cell.png",
+    "sha256": "f5e919c08fd711fcd8962b2a57878855bbf90e45a9a6eccf20faf4011f71faa3",
+    "size": [
+     192,
+     192
+    ],
+    "height": 142,
+    "width": 104,
+    "colors": 32,
+    "components": 1,
+    "body_components": 1,
+    "particle_components": 0,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.609,
+    "resampled_size": [
+     104,
+     142
+    ],
+    "bbox_inclusive": [
+     7,
+     42,
+     110,
+     183
+    ],
+    "emission": "肩侧余烬贴体并入主体连通块，无独立颗粒。",
+    "note": "退步：后脚离地向后撤、脚尖朝下，前脚撑地屈膝，重心后移；护架自然散开；肩侧余烬并入主体，无独立颗粒；朝向保持右侧不翻转，不裁切。"
+   },
+   "move_note": "受击退步；后脚离地后撤，前脚撑地，承 hit-00。"
+  },
+  {
+   "id": "block-00",
+   "action": "block",
+   "frame": 0,
+   "phase": "格挡",
+   "attempt": 1,
+   "move": "格挡（block）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "generation_id": "image-65174-92",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/block/frames/block-00-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/block/frames/block-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "924b2898eb1dbfa292b8cd19783f2959dc6605edaca83496dfd17eb5fe90e28b",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚的格挡：固定右侧视，头胸朝右，身体略侧，不翻转也不转成正面，保持参考图的侧身体态与胸甲朝向。双前臂在胸前与脸前竖起交叉成护架，两拳收在臂内，肘部夹紧；双膝下沉，后脚撑地、前脚略收。脸和胸灯从臂间露出，不被完全遮住。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 213,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/block-00-cell.png",
+    "sha256": "cf67018c3f772a61b2a845ad2f75359d2cb4fe47721e012a6246d82f6d2ccebc",
+    "size": [
+     192,
+     192
+    ],
+    "height": 154,
+    "width": 85,
+    "colors": 32,
+    "components": 1,
+    "body_components": 1,
+    "particle_components": 0,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.642,
+    "resampled_size": [
+     85,
+     154
+    ],
+    "bbox_inclusive": [
+     53,
+     30,
+     137,
+     183
+    ],
+    "emission": "无FX；整帧1连通块（非技能帧整帧单连通）。",
+    "note": "格挡：双前臂在胸前与脸前竖起交叉，双拳护头，胸灯从臂间可见；身体略侧、屈膝、后脚撑地；朝向右侧不翻转，无裁切；非技能帧整帧单连通（1连通块），无独立颗粒。"
+   },
+   "move_note": "格挡单帧：双前臂胸前/脸前护架，屈膝后脚撑地；只引正式身份锚。"
+  },
+  {
+   "id": "down-00",
+   "action": "down",
+   "frame": 0,
+   "phase": "失衡后倒",
+   "attempt": 1,
+   "move": "倒地（down）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/down/frames/down-00-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/down/frames/down-00-raw.png",
+   "mode": "RGBA",
+   "sha256": "378c664ef7f1dad89efcc29a926bd39244324b2125d12738a29cce8c1ecff012",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚失衡后倒：固定右侧视，头胸仍朝右，不翻转。上身后仰失衡，重心已过脚跟，双臂向两侧张开找平衡，两拳松开；前脚离地抬起、后脚脚跟撑地，膝盖弯曲。脸和胸灯可见。人物之外必须透明，不要光晕、地面阴影或特效。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 205,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/down-00-cell.png",
+    "sha256": "73eae2047a0c64552c7e3e269f79ac1567450ee86324df36c07e3d77284bbdde",
+    "size": [
+     192,
+     192
+    ],
+    "height": 144,
+    "width": 126,
+    "colors": 32,
+    "components": 1,
+    "body_components": 1,
+    "particle_components": 0,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.391,
+    "resampled_size": [
+     126,
+     144
+    ],
+    "bbox_inclusive": [
+     48,
+     40,
+     173,
+     183
+    ],
+    "emission": "无FX；整帧1连通块（非技能帧整帧单连通）。",
+    "note": "失衡后倒：上身后仰、重心过脚跟，双臂张开找平衡，前脚离地、后脚撑地，膝盖弯曲；脸与胸灯可见；整帧1连通块，无独立颗粒；不裁切。",
+    "scale": 0.14694656
+   },
+   "move_note": "失衡后倒；只引正式身份锚，保持右侧视。",
+   "generation_id": "image-65174-96",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ]
+  },
+  {
+   "id": "down-01",
+   "action": "down",
+   "frame": 1,
+   "phase": "倒地",
+   "attempt": 1,
+   "move": "倒地（down）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/down/frames/down-01-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/down/frames/down-01-raw.png",
+   "mode": "RGBA",
+   "sha256": "e47e69a3f01ca7b9c72a92d7f957810cc409d7a49e83a04d42ba66a711379ce3",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚倒地：固定右侧视，平视侧拍，不从上方俯拍，头胸仍朝右，不翻转。整个人仰面躺在地面，头在左、脚在右，身体沿水平方向展开；双膝半屈，两臂自然摊在身侧，胸口朝上。全身最低点贴地，人物完整。人物之外必须透明，不要光晕、地面阴影或特效。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 219,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/down-01-cell.png",
+    "sha256": "9276b8b9849f99725b32318926071910c52691a98ae75d36c6ee35416bffc47a",
+    "size": [
+     192,
+     192
+    ],
+    "height": 43,
+    "width": 165,
+    "colors": 29,
+    "components": 1,
+    "body_components": 1,
+    "particle_components": 0,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 101.554,
+    "resampled_size": [
+     165,
+     43
+    ],
+    "bbox_inclusive": [
+     14,
+     141,
+     178,
+     183
+    ],
+    "emission": "无FX；整帧1连通块（非技能帧整帧单连通）。",
+    "note": "倒地：仰面侧躺，头左脚右，双膝半屈，两臂摊在身侧；最低点贴183，横向居中于根点x=96；整帧1连通块，无独立颗粒；29色为共用色板子集，未新增色；不裁切。",
+    "scale": 0.083227,
+    "scale_note": "源图实收2172×724（请求1024×1536），角色绘制比例约为锚源1.766×；按头部原生尺寸归一（锚头高225/宽146，倒地头长400/厚256），落格比例0.083227，最终头高约33px与锚一致；未直接套154/1048，避免人物放大并越格。",
+    "placement_note": "最低点贴183，横向居中于根点x=96；根点仍记[96,184]，不强求站立脚底；整帧1连通块。",
+    "foot_center_note": "101.554为倒地底部接触面质心，非站立脚底。"
+   },
+   "move_note": "倒地；源图2172×724按头部尺寸归一，最终角色尺寸与锚一致；只清理落格尺度，不重生成。",
+   "generation_id": "image-65174-97",
+   "actual_size": [
+    2172,
+    724
+   ],
+   "alpha_values_count": 256,
+   "alpha_range": [
+    0,
+    255
+   ],
+   "size_note": "请求1024×1536，实收2172×724；四角Alpha=0，alpha=0占61.62%，真透明；按头部尺度归一落格。"
+  },
+  {
+   "id": "getup-00",
+   "action": "getup",
+   "frame": 0,
+   "phase": "仰卧撑起",
+   "attempt": 1,
+   "move": "起身（getup）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "generation_id": "image-65174-107",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/getup/frames/getup-00-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/getup/frames/getup-00-raw.png",
+   "actual_size": [
+    1536,
+    1024
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "195517a61f55e850c9921d6eea67874d94662f1f65726a4f4c8cbdc766a2e40b",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚从仰卧撑起：固定右侧视，平视侧拍，不从上方俯拍，头胸仍朝右，不翻转；只看到身体侧面，不要画出胸口正面。仰面躺地，双肘撑在身后地面，上身前抬离地，头抬起；双膝弯曲收拢，脚掌踩地，腰腹发力。全身最低点贴地，人物完整。人物之外必须透明，不要光晕、地面阴影或特效。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 234,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/getup-00-cell.png",
+    "sha256": "03146057c3e112a502268181b7a859edb7985b10e58917ef277a894eb89328ad",
+    "size": [
+     192,
+     192
+    ],
+    "height": 84,
+    "width": 113,
+    "colors": 32,
+    "components": 1,
+    "body_components": 1,
+    "particle_components": 0,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 95.775,
+    "resampled_size": [
+     113,
+     84
+    ],
+    "bbox_inclusive": [
+     40,
+     100,
+     152,
+     183
+    ],
+    "emission": "无FX；整帧1连通块（非技能帧整帧单连通）。",
+    "note": "仰卧撑起：上身前抬离地、头抬起，单臂在身后撑地，双膝弯曲收拢、脚掌踩地；最低点贴183，横向居中于根点x=96；整帧1连通块，无独立颗粒；不裁切。",
+    "scale": 0.108647,
+    "scale_note": "实收1536×1024（请求1024×1536）；角色绘制约1.3525×锚源（头部尺寸：锚头高225/宽146，起身头高285/宽210，取平均比）；落格比例0.108647，最终头约31×23px，与锚头33×22px差≤2px。",
+    "placement_note": "最低点贴183，横向居中于根点x=96；根点仍记[96,184]；非技能帧整帧1连通块。",
+    "foot_center_note": "95.775为底部接触面质心（手+臀+脚），非单脚站立。"
+   },
+   "move_note": "仰卧撑起；实收横向图按头部尺寸归一，不按外框拉高。",
+   "size_note": "请求1024×1536，实收1536×1024；四角Alpha=0；按头部尺寸归一落格。"
+  },
+  {
+   "id": "getup-01",
+   "action": "getup",
+   "frame": 1,
+   "phase": "起身屈膝护架",
+   "attempt": 1,
+   "move": "起身（getup）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "generation_id": "image-65174-111",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/getup/frames/getup-01-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/getup/frames/getup-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "3c9d62fc2e3f87033534f0c9b8352d8bcba37b916cb13495cc6942372659330f",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚起身成屈膝护架：固定右侧视，头胸朝右，不翻转，保持参考图的侧身体态与胸甲朝向。双膝弯曲半蹲，前脚踩实、后脚撑地，身体略前倾；双拳抬到胸前护架，肘部收拢，脸和胸灯可见。人物之外必须透明，不要光晕、地面阴影或特效。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 211,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/getup-01-cell.png",
+    "sha256": "1cf65f9b6c7cf2ae49409cc2dfba555e499a1499d09dd16b22f5b63963af57c9",
+    "size": [
+     192,
+     192
+    ],
+    "height": 137,
+    "width": 82,
+    "colors": 32,
+    "components": 1,
+    "body_components": 1,
+    "particle_components": 0,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.466,
+    "resampled_size": [
+     82,
+     137
+    ],
+    "bbox_inclusive": [
+     55,
+     47,
+     136,
+     183
+    ],
+    "emission": "无FX；整帧1连通块（非技能帧整帧单连通）。",
+    "note": "起身屈膝护架：双膝半蹲、前脚踩实、后脚撑地、身体略前倾，双拳抬到胸前护架；脚底183、脚心96.466；头胸朝右不翻转；整帧1连通块，无独立颗粒；不裁切。",
+    "scale": 0.14694656,
+    "scale_note": "实收1024×1536（与请求一致），沿用全套154/1048；头宽约22.6px与锚22px一致，头高受头冠角度略短。"
+   },
+   "move_note": "起身屈膝护架；承 getup-00，接 idle/block。",
+   "size_note": "实收1024×1536，与请求一致；沿用全套154/1048。"
+  },
+  {
+   "id": "win-00",
+   "action": "win",
+   "frame": 0,
+   "phase": "站直收势",
+   "attempt": 1,
+   "move": "胜利（win）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "generation_id": "image-65174-115",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/win/frames/win-00-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/win/frames/win-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "d2c08646d34d5b159731bdc7814bb5027e4cb6d248714afe4ed0e10a45f65690",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚战后的站直收势：固定右侧视，头胸朝右，不翻转，保持参考图的侧身体态与胸甲朝向。双脚分开站稳、双膝自然伸直，身体站直、肩背放松；双臂自然垂在身侧，拳头半松，不再抬护架；脸和胸灯可见。人物之外必须透明，不要光晕、地面阴影或特效。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 218,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/win-00-cell.png",
+    "sha256": "bd293284a19dfa8a8d573f29da23361663c8cf9a8ef223e01fa5e64da98c0a4b",
+    "size": [
+     192,
+     192
+    ],
+    "height": 156,
+    "width": 64,
+    "colors": 32,
+    "components": 1,
+    "body_components": 1,
+    "particle_components": 0,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.292,
+    "resampled_size": [
+     64,
+     156
+    ],
+    "bbox_inclusive": [
+     64,
+     28,
+     127,
+     183
+    ],
+    "emission": "无FX；整帧1连通块（非技能帧整帧单连通）。",
+    "note": "站直收势：双脚分开站稳、双膝自然伸直，双臂垂在身侧、拳头半松，不再抬护架；脚底183、脚心96.292；头胸朝右不翻转；整帧1连通块，无独立颗粒；不裁切。",
+    "scale": 0.14694656,
+    "scale_note": "实收1024×1536（与请求一致），沿用全套154/1048；头宽约22px与锚22px一致。"
+   },
+   "move_note": "胜利站直收势；承 heavy/getup，接 idle。",
+   "size_note": "实收1024×1536，与请求一致；沿用全套154/1048。"
+  },
+  {
+   "id": "win-01",
+   "action": "win",
+   "frame": 1,
+   "phase": "胜利定格抬拳挺胸",
+   "attempt": 1,
+   "move": "胜利（win）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "generation_id": "image-65174-116",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/win/frames/win-01-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/win/frames/win-01-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "106be2adac615d6fabe76b9924c468edf608eed14170d544cdb7661ce4ebc0ce",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚的胜利定格：固定右侧视，头胸朝右，不翻转，保持参考图的侧身体态与胸甲朝向。双脚分开站稳，身体挺直、胸口前挺、头抬起；右拳举到头侧上方、拳不挡脸，肘部弯曲，左拳收在腰侧；脸和胸灯可见。人物之外必须透明，不要光晕、地面阴影或特效。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 219,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/win-01-cell.png",
+    "sha256": "777ab6d635d6b339a67926d0b50782ae25f78fc849064afad19c67e197ac0092",
+    "size": [
+     192,
+     192
+    ],
+    "height": 157,
+    "width": 107,
+    "colors": 32,
+    "components": 1,
+    "body_components": 1,
+    "particle_components": 0,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.102,
+    "resampled_size": [
+     107,
+     157
+    ],
+    "bbox_inclusive": [
+     37,
+     27,
+     143,
+     183
+    ],
+    "emission": "无FX；整帧1连通块（非技能帧整帧单连通）。",
+    "note": "胜利定格：双脚分开站稳，身体挺直、胸口前挺、头抬起，右拳举到头侧上方、拳不挡脸，左拳收在腰侧；脚底183、脚心96.102；头胸朝右不翻转；整帧1连通块，无独立颗粒；不裁切。",
+    "scale": 0.14694656,
+    "scale_note": "实收1024×1536（与请求一致），沿用全套154/1048；头宽约22px与锚22px一致。"
+   },
+   "move_note": "胜利定格（抬拳/挺胸）；承 win-00。",
+   "size_note": "实收1024×1536，与请求一致；沿用全套154/1048。"
+  },
+  {
+   "id": "ko-00",
+   "action": "ko",
+   "frame": 0,
+   "phase": "受击屈膝失衡踉跄",
+   "attempt": 1,
+   "move": "倒地不起（ko）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "generation_id": "image-65174-125",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/ko/frames/ko-00-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/ko/frames/ko-00-raw.png",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 255,
+   "alpha_range": [
+    0,
+    254
+   ],
+   "sha256": "30454c78549e39e3ec6c383e1b20dfd801adc8d086289f1cb3d3809eb2f09624",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚受重击后的踉跄：固定右侧视，头胸朝右，不翻转，保持参考图的侧身体态与胸甲朝向。双膝弯软下沉，上身后仰、重心向左后方，后脚退半步、前脚虚点；双臂下垂并向两侧张开找平衡，头微仰，脸和胸灯可见。人物之外必须透明，不要光晕、地面阴影或特效。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 222,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/ko-00-cell.png",
+    "sha256": "07f0e14e95f25474a552fdfeee5e9d112661fd87c4ce62e156cbb1183c5d7e1d",
+    "size": [
+     192,
+     192
+    ],
+    "height": 137,
+    "width": 108,
+    "colors": 32,
+    "components": 1,
+    "body_components": 1,
+    "particle_components": 0,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 96.054,
+    "resampled_size": [
+     108,
+     137
+    ],
+    "bbox_inclusive": [
+     44,
+     47,
+     151,
+     183
+    ],
+    "emission": "无FX；整帧1连通块（非技能帧整帧单连通）。",
+    "note": "受击屈膝失衡踉跄：双膝弯软下沉、上身后仰，重心向左后方，双臂下垂向两侧张开找平衡，后脚承重、前脚虚点；脚底183、脚心96.054；头胸朝右不翻转；整帧1连通块，无独立颗粒；不裁切。",
+    "scale": 0.14694656,
+    "scale_note": "实收1024×1536（与请求一致），沿用全套154/1048；头宽约22px与锚22px一致。"
+   },
+   "move_note": "受击屈膝失衡踉跄；承接 hit，接 ko-01。",
+   "size_note": "实收1024×1536，与请求一致；沿用全套154/1048。"
+  },
+  {
+   "id": "ko-01",
+   "action": "ko",
+   "frame": 1,
+   "phase": "倒地不起",
+   "attempt": 1,
+   "move": "倒地不起（ko）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "generation_id": "image-65174-126",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/ko/frames/ko-01-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/ko/frames/ko-01-raw.png",
+   "actual_size": [
+    2172,
+    724
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 256,
+   "alpha_range": [
+    0,
+    255
+   ],
+   "sha256": "513550b4c9e19051b614cd17e43e3c8c84b37839e9037c37a2bf63da3500d2bf",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚倒地不起：固定右侧视，人物仰面横躺，头朝画面左侧、脚朝右侧，身体沿画面横向展开、完整落在画面内；双膝微屈、两臂松垂在身侧，头后仰，脸和胸灯可见。人物之外必须透明，不要光晕、地面阴影或特效。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。人物全身比例与留白保持和参考一致。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 200,
+   "status": "rejected",
+   "reason": "头部相对身体偏小：头约328×232、躯干总长2021（头/体0.162，低于down-01的0.202）；按头部归一S约0.0965，最终身体宽约195px，超出192，须缩头或增大格才能装下，角色尺寸与已通过down-01不一致。raw已删除，保留SHA。",
+   "cell": null
+  },
+  {
+   "id": "ko-01",
+   "action": "ko",
+   "frame": 1,
+   "phase": "倒地不起",
+   "attempt": 2,
+   "move": "倒地不起（ko）",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "references": [
+    "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png"
+   ],
+   "reference_sha256": [
+    "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e"
+   ],
+   "reference_note": "只引用正式身份锚的同一1024×1536像素源；未追加其它参考。",
+   "generation_id": "image-65174-128",
+   "requested_path": "art/fighters/ultraman-gaia/stage1/ko/frames/ko-01-raw.png",
+   "actual_returned_path": "art/fighters/ultraman-gaia/stage1/ko/frames/ko-01-raw.png",
+   "actual_size": [
+    1774,
+    887
+   ],
+   "mode": "RGBA",
+   "alpha_values_count": 256,
+   "alpha_range": [
+    0,
+    255
+   ],
+   "sha256": "4b7b2df51f4ae13e8aa22ca79e5b82ffe33f88330d30c7d0360c69e6c53e7f57",
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物盖亚倒地不起：固定右侧视，人物仰面横躺，头朝画面左侧、脚朝右侧，身体沿画面横向展开、完整落在画面内；双膝微屈、两臂松垂在身侧，头后仰，脸和胸灯可见。头部不要画小，头长、头高与头身比例必须和参考一致，躯干和腿不要拉长。人物之外必须透明，不要光晕、地面阴影或特效。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。",
+   "prompt_char_count": 217,
+   "status": "selected",
+   "cell": {
+    "path": "art/fighters/ultraman-gaia/stage1/cells/ko-01-cell.png",
+    "sha256": "02528ecebfce15083c394b4ead7fee878a303c577db1b09eb534a63d128064c5",
+    "size": [
+     192,
+     192
+    ],
+    "height": 44,
+    "width": 168,
+    "colors": 30,
+    "components": 1,
+    "body_components": 1,
+    "particle_components": 0,
+    "alpha": [
+     0,
+     255
+    ],
+    "foot_row": 183,
+    "foot_center": 102.403,
+    "resampled_size": [
+     168,
+     44
+    ],
+    "bbox_inclusive": [
+     12,
+     140,
+     179,
+     183
+    ],
+    "emission": "无FX；整帧1连通块（非技能帧整帧单连通）。",
+    "note": "倒地不起：仰面横躺，头左脚右，身体沿画面横向展开，双膝微屈、两臂松垂在身侧；最低点贴183、横向居中于根点x=96，完整在格内；整帧1连通块，无独立颗粒；30色为共用色板子集，未新增色；不裁切。",
+    "scale": 0.096795,
+    "scale_note": "实收1774×887（请求1024×1536）；按头部尺寸归一（锚头高225/宽146，ko-01头长约321/厚约235，平均比1.518128），落格比例0.096795，最终头约31×23px、身体宽168px，与down-01的165px相差3px；未按外框拉高，未超192。",
+    "placement_note": "最低点贴183，横向居中于根点x=96；根点仍记[96,184]，不强求站立脚底；整帧1连通块。",
+    "foot_center_note": "102.403为倒地底部接触面质心，非站立脚底。"
+   },
+   "move_note": "倒地不起（头左、脚右）；承 ko-00。",
+   "size_note": "实收1774×887，与请求1024×1536不同；按头部尺寸归一，未按外框拉高。"
+  }
+ ],
+ "review_restart": {
+  "authorization": "本次指定盖亚逐角色制作；根明确允许新中立V2皮套→生成右侧待机照→单参考像素链。不是对旧图的批准。",
+  "existing_consecutive_stance_rejections": 3,
+  "existing_failed_routes": 2,
+  "counters_reset": false,
+  "new_method": "替换旧斜透视弓步源为官方中立本人身体基准；在照片步先锁画面平面横向分脚与同鞋底线，审后转像素且不重新摆姿。旧路线为斜照反复扭相机及深蹲马步/双参考直接像素化。",
+  "brake": "仅执行这一条新链；任何硬姿态失败即停止该项并诊断，不沿旧路线重跑。根复审前不生成下游。",
+  "added_stance_rejections_this_round": 1,
+  "consecutive_stance_rejections_after_round": 4,
+  "new_method_attempts_this_round": 1,
+  "paused_after_photo_gate_failure": true,
+  "review_authority": "subagent_candidate_review"
+ },
+ "composition_restart": {
+  "authorization": "根已实际复核stance-04诊断、不签锚；明确准许一次改变输入占画布比例的新构图照片。失败即停，通过后仅单参考转一张像素候选交根，不铺动作。",
+  "preserved_consecutive_stance_rejections": 4,
+  "existing_failed_routes": 2,
+  "previous_neutral_plane_method_failed": true,
+  "counters_reset": false,
+  "new_method": "不恢复已删拒收源；从现用官网V2原图完整Alpha主体统一缩放并置透明留白画布，让输入先明确主体高度1100而非继续1390高撑满。仅MCP负责改变姿态。",
+  "input": {
+   "source": "art/fighters/ultraman-gaia/sources/official-pose-20261109-hero/hero_gaia-1.png",
+   "source_sha256": "9c245f9d736271ce51bc9bbf602b6ac3ea6c6aae6059ebbee80b281feea24cb2",
+   "path": "art/fighters/ultraman-gaia/stage1/idle/references/neutral-v2-wide-canvas-05.png",
+   "sha256": "db80fd68ed225bc72346a9b4dedcbd1883e6a5be12c89468bcccfe5a7dfa7c27",
+   "canvas": [
+    1024,
+    1536
+   ],
+   "source_bbox_alpha_positive": [
+    0,
+    0,
+    420,
+    913
+   ],
+   "uniform_scale": 1.2048192771084338,
+   "resampled_full_body_size": [
+    506,
+    1100
+   ],
+   "offset": [
+    259,
+    311
+   ],
+   "actual_bbox_alpha128": [
+    259,
+    311,
+    764,
+    1410
+   ],
+   "actual_subject_height": 1100,
+   "foot_row": 1410,
+   "alpha_values_count": 256,
+   "alpha_range": [
+    0,
+    255
+   ],
+   "policy": "仅统一整图比例与平移，保留中立皮套姿势；未切肢、拼片、缩头、局部重涂或拉宽。"
+  },
+  "photo_requests_this_round": 1,
+  "pixel_requests_this_round": 1,
+  "generation_ids_this_round": [
+   "image-55259-21",
+   "image-55259-23"
+  ],
+  "added_stance_rejections_this_round": 0,
+  "preserved_rejection_count_after_round": 4,
+  "status": "candidate_pending_root_review",
+  "review_authority": "subagent_candidate_review"
+ },
+ "identity_anchor_for_actions": {
+  "path": "art/fighters/ultraman-gaia/stage1/idle/frames/identity-idle-pixel.png",
+  "sha256": "24da22f59292e1bd16ac8aae6231ddceeaa70623161784ac65f616f6de294d00",
+  "size": [
+   192,
+   192
+  ],
+  "mode": "RGBA",
+  "bbox_inclusive": [
+   37,
+   30,
+   143,
+   183
+  ],
+  "standing_height": 154,
+  "width": 107,
+  "colors": 32,
+  "alpha": [
+   0,
+   255
+  ],
+  "components": 1,
+  "foot_bottom_rows": [
+   183,
+   182
+  ],
+  "foot_outer_span": 107,
+  "foot_span_over_standing_height": 0.6948051948051948,
+  "pixel_identical_to": "art/fighters/ultraman-gaia/stage1/cells/idle-candidate-05-cell.png",
+  "pixel_identical": true,
+  "x4": {
+   "path": "art/fighters/ultraman-gaia/stage1/idle/frames/identity-idle-pixel-x4.png",
+   "sha256": "73f1690df4846b7e2b8a281dcc2fbc3fdf013cd12f25e5bb89829b6f08750fe9",
+   "size": [
+    768,
+    768
+   ],
+   "exact_pixel_repeat_verified": true,
+   "pixel_identical_to": "art/fighters/ultraman-gaia/stage1/cells/idle-candidate-05-x4.png",
+   "pixel_identical_result": true
+  },
+  "production_reference": {
+   "path": "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png",
+   "sha256": "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e",
+   "note": "正式身份锚的1024×1536像素源，同一待机帧与同一姿态；动作帧唯一参考使用此源分辨率版本，不追加其它角色或角度。"
+  },
+  "review_authority": "root_delegated_by_user",
+  "review": "根已实际复审候选05原生格、严格4×与联系表并通过造型；本清版逐像素等于候选05。"
+ },
+ "proposed_identity_anchor_for_actions": {
+  "path": "art/fighters/ultraman-gaia/stage1/cells/idle-candidate-05-x4.png",
+  "sha256": "73f1690df4846b7e2b8a281dcc2fbc3fdf013cd12f25e5bb89829b6f08750fe9",
+  "native_subject_width": 107,
+  "status": "approved_root_delegated_by_user",
+  "review_authority": "root_delegated_by_user",
+  "note": "根已复审并通过造型；正式清版见 identity_anchor_for_actions。"
+ },
+ "cells": {
+  "record": "art/fighters/ultraman-gaia/stage1/cells/cells.json",
+  "record_sha256": "82118e2b4cc323a291928b8a4cda8945890b7691ff4df9d0087d6b2584ebd99f",
+  "source_pixel_scale": 0.14694656488549618,
+  "target_standing": 154,
+  "palette_size": 32,
+  "native": "art/fighters/ultraman-gaia/stage1/cells/idle-candidate-05-cell.png",
+  "native_sha256": "24da22f59292e1bd16ac8aae6231ddceeaa70623161784ac65f616f6de294d00",
+  "nearest_x4": "art/fighters/ultraman-gaia/stage1/cells/idle-candidate-05-x4.png",
+  "nearest_x4_sha256": "73f1690df4846b7e2b8a281dcc2fbc3fdf013cd12f25e5bb89829b6f08750fe9",
+  "review_sheet": "art/fighters/ultraman-gaia/stage1/cells/idle-candidate-05-review.png",
+  "review_sheet_sha256": "1b54228052440dc1b084adf6165c55b9efaf315da97d1101cc4111fcd0b66106",
+  "status": "identity_anchor_approved_root_delegated_by_user",
+  "review_authority": "root_delegated_by_user"
+ },
+ "diagnostic": {
+  "image": "art/fighters/ultraman-gaia/stage1/diagnostic/stance-gate.png",
+  "image_sha256": "19aa1f34e4eb799d566c70a955c20666d3f6e6d3312e8b2315b7f429782f078c",
+  "record": "art/fighters/ultraman-gaia/stage1/diagnostic/stance-gate.json"
+ },
+ "previous_diagnostic": {
+  "image": "art/fighters/ultraman-gaia/stage1/diagnostic/stance-04-gate.png",
+  "image_sha256": "2a44dcf5f0794ec2612cb4511e0527c953eed688ee806973fe2f83564e35348a",
+  "record": "art/fighters/ultraman-gaia/stage1/diagnostic/stance-04-gate.json",
+  "native": "art/fighters/ultraman-gaia/stage1/diagnostic/stance-04-native-diagnostic.png",
+  "native_sha256": "f609758153489a599bbcddf02555d19198a7b9702ebfba462e47e565a4c229c6",
+  "nearest_x4": "art/fighters/ultraman-gaia/stage1/diagnostic/stance-04-native-diagnostic-x4.png",
+  "nearest_x4_sha256": "48cd7e7cc1809f44b6656a7f49b6d562e702c6dfa2d972a5de6cf5320088448c",
+  "review_authority": "subagent_candidate_review",
+  "note": "仅拒收照片的姿势诊断，不是待机像素候选；不能作后续动作参考。旧诊断另保留，不改历史审核。"
+ },
+ "state": "阶段A完成：正式身份锚已按根授权签署（root_delegated_by_user），原生 identity-idle-pixel.png SHA 24da22f59292e1bd16ac8aae6231ddceeaa70623161784ac65f616f6de294d00，严格4× SHA 73f1690df4846b7e2b8a281dcc2fbc3fdf013cd12f25e5bb89829b6f08750fe9，二者与候选05逐像素一致。全套共用比例154/1048、32色板、192格根点[96,184]。阶段B基础动作集开始按阶段推进；未安装、未启动Godot、无录屏。",
+ "status": "identity_anchor_approved_root_delegated_by_user",
+ "review_authority": "root_delegated_by_user",
+ "identity_anchor_signoff": {
+  "authority": "root_delegated_by_user",
+  "date": "2026-11-09",
+  "basis": "根实际复审候选05原生格、严格4×与联系表并通过造型。",
+  "formal_anchor": {
+   "path": "art/fighters/ultraman-gaia/stage1/idle/frames/identity-idle-pixel.png",
+   "sha256": "24da22f59292e1bd16ac8aae6231ddceeaa70623161784ac65f616f6de294d00",
+   "size": [
+    192,
+    192
+   ],
+   "mode": "RGBA",
+   "bbox_inclusive": [
+    37,
+    30,
+    143,
+    183
+   ],
+   "standing_height": 154,
+   "width": 107,
+   "colors": 32,
+   "alpha": [
+    0,
+    255
+   ],
+   "components": 1,
+   "foot_bottom_rows": [
+    183,
+    182
+   ],
+   "foot_outer_span": 107,
+   "foot_span_over_standing_height": 0.6948051948051948,
+   "pixel_identical_to": "art/fighters/ultraman-gaia/stage1/cells/idle-candidate-05-cell.png",
+   "pixel_identical": true,
+   "x4": {
+    "path": "art/fighters/ultraman-gaia/stage1/idle/frames/identity-idle-pixel-x4.png",
+    "sha256": "73f1690df4846b7e2b8a281dcc2fbc3fdf013cd12f25e5bb89829b6f08750fe9",
+    "size": [
+     768,
+     768
+    ],
+    "exact_pixel_repeat_verified": true,
+    "pixel_identical_to": "art/fighters/ultraman-gaia/stage1/cells/idle-candidate-05-x4.png",
+    "pixel_identical_result": true
+   },
+   "production_reference": {
+    "path": "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-02-explicit-canvas.png",
+    "sha256": "d509c66381d5b3ede392b65f406bfe04d652a841be28019218e0851ec874fb7e",
+    "note": "正式身份锚的1024×1536像素源，同一待机帧与同一姿态；动作帧唯一参考使用此源分辨率版本，不追加其它角色或角度。"
+   },
+   "review_authority": "root_delegated_by_user",
+   "review": "根已实际复审候选05原生格、严格4×与联系表并通过造型；本清版逐像素等于候选05。"
+  },
+  "pixel_equality_check": "identity-idle-pixel.png 与 idle-candidate-05-cell.png 逐像素相等；identity-idle-pixel-x4.png 与 idle-candidate-05-x4.png 逐像素相等。",
+  "restriction": "此后动作帧只引用该锚一张；不追加其它角色、角度或旧4×被拒锚。"
+ },
+ "delivered_cells": {
+  "idle-01": {
+   "path": "art/fighters/ultraman-gaia/stage1/cells/idle-01-cell.png",
+   "sha256": "570bdc02f3e0e6be3107481f3c000cd5a3a9fc73efcca49de3a4ca8a19900433"
+  }
+ }
+}

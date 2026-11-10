@@ -1,0 +1,71 @@
+{
+ "date": "2026-11-10",
+ "issue": "动作帧raw画幅占比与身份锚raw不一致，统一比例落格后站高不足",
+ "anchor_raw": {
+  "path": "art/fighters/astra/stage1/idle/frames/pixel-raw-03.png",
+  "note": "原始solid_bbox按阈值读取受半透明边缘影响；以trim后的实心站高1231为准",
+  "standing": 1231,
+  "occupancy": 0.8014,
+  "scale_used": 0.125101543
+ },
+ "rejected": [
+  {
+   "attempt": "idle-01-a",
+   "generation_id": "image-65174-810",
+   "raw_sha256": "bd834f51c9963a102aea166ba23df17810ed95875bda8229a7ad9e71628e279d",
+   "trim_height": 993,
+   "occupancy": 0.6465,
+   "landed_standing": 124,
+   "reason": "站高124≠154；胸甲与蓝灯正对镜头，非严格右侧视"
+  },
+  {
+   "attempt": "idle-01-b",
+   "generation_id": "image-65174-816",
+   "raw_sha256": "cf5ba78807629af8349b939c93312d55a2eb18f38c85202dbc97a11c46c7a56d",
+   "trim_height": 1019,
+   "occupancy": 0.6634,
+   "landed_standing": 127,
+   "reason": "站高127≠154；朝向已回侧视"
+  },
+  {
+   "attempt": "idle-01-c",
+   "generation_id": "image-65174-823",
+   "raw_sha256": "e251a29605feee2f7c4140c3a28e9388f64c8444a395687de0a943106186a4c0",
+   "trim_height": 1022,
+   "occupancy": 0.6654,
+   "landed_standing": 128,
+   "reason": "站高128≠154；提示词已明确画幅占比仍不改变"
+  }
+ ],
+ "diagnosis": "身份锚raw站高占画幅80.1%，三次动作生成稳定在66.5%左右（993–1022），差异不是提示词措辞能改变的。192×192的锚图作参考时模型按自己的默认占比重绘，未继承画幅占比。固定比例154/1231=0.125102下，raw 1022只能落128，且站距/头宽随人物缩小同比例偏小，不符合统一比例与锚体量。",
+ "fix": {
+  "method": "不再改提示词；把同一张身份锚裁剪到实心轮廓后8×最近邻放大，脚底对齐y=1475居中放入1024×1536透明画布，作为唯一参考输入",
+  "path": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+  "sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+  "bbox": [
+   108,
+   244,
+   915,
+   1475
+  ],
+  "standing": 1232,
+  "occupancy": 0.8021,
+  "is_asset": false,
+  "note": "只是同一身份锚的放大展示，不含新信息、不新增角色/角度、不进游戏资源；用于让模型看到锚的画幅占比。",
+  "naming": "改名后 SHA 不变（ec9cc677…）；文件名不再用下划线前缀。"
+ },
+ "not_done": [
+  "未逐帧缩放",
+  "未改阈值",
+  "未缩头",
+  "未重采样落格"
+ ],
+ "result": {
+  "attempt": "idle-01",
+  "generation_id": "image-65174-829",
+  "actual_returned_path": "art/fighters/astra/stage1/actions/raw/idle-01-raw-2.png",
+  "trim_height": 1229,
+  "landed_standing": 154,
+  "conclusion": "画幅占比修复：同一锚的8×展示让模型继承80.2%占幅，raw 1229→落格154，通过。"
+ }
+}

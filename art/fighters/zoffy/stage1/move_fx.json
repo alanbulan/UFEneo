@@ -1,0 +1,620 @@
+{
+ "schema": 1,
+ "fighter": "zoffy",
+ "language": "zh-CN",
+ "note": "佐菲 stage1 招式特效与逐帧节奏配置；由 tools/art/derive_fighter_data.py 读取。本文件只配内容与派生参数，不代表美术已生成或已安装。根点 [96,184]、站高 154、脚底 183；shot.frame 与 active_frames 均按 MOVES.md 设计帧数，必须小于该招帧数。",
+ "root": [
+  96,
+  184
+ ],
+ "cells": {
+  "cell": 192,
+  "baseline": 184,
+  "standing_height": 154,
+  "identity_anchor": "art/fighters/zoffy/stage1/cells/idle-00-cell.png"
+ },
+ "moves": {
+  "special": {
+   "display_name": "Z光线",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 180,
+   "super_level": 1,
+   "knockdown": false,
+   "feedback_color": [
+    0.65,
+    0.9,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "shot": {
+    "frame": 6,
+    "effect": "beam_loop",
+    "color": [
+     0.65,
+     0.9,
+     1.0,
+     1.0
+    ],
+    "beam": true,
+    "length": 280,
+    "thickness": 18,
+    "life": 8,
+    "speed": 0
+   },
+   "source_note": "Z光线：双掌在胸前合拢后一并前推，从双掌前缘发出短程电流束，光色蓝白；射程与持续短于M87，命中造成电流短硬直。原剧技能名与电流型描述见 MOVES.md 原剧考证 §1.4；帧序、射程、判定与颜色为游戏编排。",
+   "energy_cost": 1000,
+   "chip_damage": 18,
+   "hand_y": [
+    95,
+    120
+   ]
+  },
+  "special2": {
+   "display_name": "超级冻霜",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 300,
+   "super_level": 2,
+   "knockdown": false,
+   "feedback_color": [
+    0.7,
+    0.95,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "shot": {
+    "frame": 6,
+    "effect": "special_rings",
+    "color": [
+     0.7,
+     0.95,
+     1.0,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 36,
+    "speed": 6,
+    "vy": 0,
+    "box": [
+     -20,
+     -28,
+     40,
+     56
+    ]
+   },
+   "source_note": "超级冻霜：双掌前推的冷冻锥/场，淡青白光；原剧技能见 MOVES.md §1.4。锥体尺寸、300 伤害/30 削气为游戏编排；减速/冻结尚未在 core 实现，当前只按普通受击结算，不冒充已生效。",
+   "energy_cost": 2000,
+   "chip_damage": 30,
+   "hand_y": [
+    95,
+    120
+   ]
+  },
+  "special3": {
+   "display_name": "M87光线 A型",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 480,
+   "super_level": 3,
+   "knockdown": true,
+   "feedback_color": [
+    0.6,
+    0.85,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "shot": {
+    "frame": 8,
+    "effect": "beam_loop",
+    "color": [
+     0.6,
+     0.85,
+     1.0,
+     1.0
+    ],
+    "beam": true,
+    "length": 560,
+    "thickness": 30,
+    "life": 12,
+    "speed": 0
+   },
+   "source_note": "M87光线 A型：右掌五指并拢前指，左掌开掌靠彩色计时器，从右指尖/掌心发出蓝白主束。原剧考证与旧实测见 MOVES.md §1.3、§4；16帧正式节奏、射程与判定为游戏编排。手高窗口按旧154版右指尖局部高度113取105–125，正式整帧落格后须复测。",
+   "energy_cost": 3000,
+   "chip_damage": 48,
+   "hand_y": [
+    105,
+    125
+   ],
+   "cinematic": {
+    "portrait": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "beam": [
+     4,
+     5,
+     6,
+     7
+    ]
+   }
+  },
+  "air_special": {
+   "display_name": "空中Z光线（游戏改编）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 60,
+   "super_level": 1,
+   "knockdown": false,
+   "feedback_color": [
+    0.65,
+    0.9,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    2,
+    3,
+    4
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "beam_loop",
+    "color": [
+     0.65,
+     0.9,
+     1.0,
+     1.0
+    ],
+    "beam": true,
+    "length": 260,
+    "thickness": 18,
+    "life": 8,
+    "speed": 0
+   },
+   "source_note": "以已核实的Z光线为基础改空中前下短束；原剧无佐菲空中发射依据，不冒充原剧。帧序、空中用法与伤害为游戏改编，斜下角度与落点待实机校准。",
+   "energy_cost": 1000,
+   "chip_damage": 6,
+   "hand_y": [
+    55,
+    110
+   ]
+  },
+  "pulse": {
+   "display_name": "掌推光弹",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "active_frames": [
+    3,
+    4
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 80,
+    "speed": 9,
+    "vy": 0,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "游戏编排的掌推光弹，不称原剧专名；近侧单掌由腹前收拢后前推，人物帧只画贴掌光点，飞行弹由运行时 pulse 承载。白色为中性游戏光色，不冒充任何原剧技能色。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    85,
+    120
+   ]
+  },
+  "low_pulse": {
+   "display_name": "低姿掌弹",
+   "kind": "projectile",
+   "level": "low",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "active_frames": [
+    2,
+    3
+   ],
+   "shot": {
+    "frame": 2,
+    "effect": "pulse",
+    "color": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 80,
+    "speed": 9,
+    "vy": 0,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "游戏编排的低姿掌弹，不称原剧专名；单膝低蹲、掌心收至髋侧后贴膝前推，人物帧只画贴掌光点。白色为中性游戏光色，不冒充原剧技能色。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    20,
+    50
+   ]
+  },
+  "air_pulse": {
+   "display_name": "空中掌弹",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "active_frames": [
+    2,
+    3
+   ],
+   "shot": {
+    "frame": 2,
+    "effect": "pulse",
+    "color": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 90,
+    "speed": 9,
+    "vy": -7,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "游戏编排的空中斜下掌弹，不称原剧专名；侧身收膝、近掌伸向斜下发射，人物帧只画贴掌光点。白色为中性游戏光色，不冒充原剧技能色。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    55,
+    100
+   ]
+  },
+  "ranged_forward": {
+   "display_name": "斯派修姆光线",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 95,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    0.65,
+    0.9,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5,
+    6
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "beam_loop",
+    "color": [
+     0.65,
+     0.9,
+     1.0,
+     1.0
+    ],
+    "beam": true,
+    "length": 340,
+    "thickness": 20,
+    "life": 8,
+    "speed": 0
+   },
+   "source_note": "斯派修姆光线：与初代/杰克同型，双臂十字交叉后从右手刀缘发射。原剧技能名见 MOVES.md 原剧考证 §1.4；蓝白为同型游戏定色，未逐帧核原剧色值；帧序、射程与判定为游戏编排。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    95,
+    125
+   ]
+  },
+  "motion_236": {
+   "display_name": "光路突袭",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 95,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    0.8,
+    0.95,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    3,
+    4,
+    5
+   ],
+   "source_note": "原剧能力超级光路（越过宇宙空间传送物体，见 MOVES.md 原剧考证 §1.4）；本招把传送改为短距近身掌/肘突袭，属游戏改编，不称原剧攻击技。位移不带无敌，残影为游戏表现；距离与判定待实机校准。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    85,
+    125
+   ],
+   "hit_y": [
+    80,
+    130
+   ]
+  },
+  "motion_623": {
+   "display_name": "队长升掌",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 90,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "active_frames": [
+    4,
+    5,
+    6
+   ],
+   "source_note": "游戏改编的对空迎击：深屈膝、双掌由髋前并行上冲，不以光线冒充。佐菲无已核实的对空专属招名；本招不称原剧招式，浮空追击窗口沿用升击规则，判定待实机校准。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    105,
+    145
+   ],
+   "hit_y": [
+    100,
+    150
+   ]
+  },
+  "motion_214": {
+   "display_name": "超级充能·崩掌",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 75,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    0.8,
+    0.95,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5,
+    6
+   ],
+   "source_note": "原剧能力超级充能（提取能量后发射、为奥特战士补能，见 MOVES.md 原剧考证 §1.4）；本招把充能改为掌根崩击，属游戏改编，不回复能量、不冒充原剧攻击技。蓄能光只在掌前，帧序与削气待实机校准。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    80,
+    120
+   ],
+   "hit_y": [
+    75,
+    125
+   ]
+  },
+  "motion_22": {
+   "display_name": "充能护壁",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 0,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    0.7,
+    0.9,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5,
+    6
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_barrier",
+    "color": [
+     0.7,
+     0.9,
+     1.0,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 14,
+    "speed": 0,
+    "vy": 0,
+    "box": [
+     0,
+     -70,
+     92,
+     140
+    ],
+    "wall": true
+   },
+   "source_note": "游戏改编的充能护壁：双掌收于胸前再向前张开，光壁由运行时 special_barrier 承载，人物帧只画掌前贴体光。原剧无佐菲“屏障”专名，不冒充原剧技能；拦截判定、尺寸与持续14 tick 待实机校准，不扩判定。",
+   "energy_cost": 300,
+   "chip_damage": 0,
+   "hand_y": [
+    80,
+    120
+   ]
+  },
+  "motion_41236": {
+   "display_name": "队长过顶摔",
+   "kind": "throw",
+   "level": "mid",
+   "damage": 185,
+   "super_level": 0,
+   "knockdown": true,
+   "unblockable": true,
+   "feedback_color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "active_frames": [
+    2,
+    3,
+    4
+   ],
+   "source_note": "游戏改编的半圈强投：双臂下探扣腰、屈膝提髋过顶后沿前上弧抛出；独立于前投/后投，不借用其人物帧。佐菲无已核实原剧半圈投技；伤害185、抓点与抛出弧线沿用同体型投技档，待实机校准。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    80,
+    125
+   ]
+  },
+  "burst": {
+   "display_name": "爆气脱离",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 30,
+   "super_level": 0,
+   "knockdown": false,
+   "unblockable": true,
+   "feedback_color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "active_frames": [
+    1,
+    2,
+    3
+   ],
+   "burst_box": [
+    -90,
+    12,
+    180,
+    128
+   ],
+   "source_note": "游戏编排的对称爆气圈，用于受击/击飞/防御硬直中挣脱；冲击为运行时独立效果，不是原剧招式，也不是Q蓄气圈。攻击框按模板对称形状保留，超出人物Alpha轮廓属已登记例外；消耗2000能量。",
+   "energy_cost": 2000,
+   "chip_damage": 0,
+   "hand_y": [
+    60,
+    130
+   ]
+  },
+  "taunt": {
+   "display_name": "队长招手",
+   "kind": "gesture",
+   "level": "mid",
+   "damage": 0,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "active_frames": [],
+   "source_note": "游戏改编的挑衅：远拳护脸、近手张掌前伸并向内招两次，回护架；无攻击判定、无伤害，不称原剧招式。active_frames 留空以避免派生工具生成攻击框。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    90,
+    135
+   ]
+  }
+ },
+ "state_effects": {
+  "default": {
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ }
+}

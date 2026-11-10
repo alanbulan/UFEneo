@@ -1,0 +1,128 @@
+{
+ "fighter": "ultraman-justice",
+ "form": "标准型（Standard Mode）",
+ "stage": "stage1",
+ "date": "2026-11-09",
+ "review_authority": "subagent_candidate_review",
+ "scope": "阶段C：按根指定固定三参考（official-standard-01、UGF真右侧视头颈裁图、Gaia已装机站姿）生成一张右侧视格斗待机照片；任何一门不过即拒收并停止，不连续重生成、不缩头、不改阈值",
+ "reference_policy": "固定三张，不增不减；不加 official-02，不用 official-03 头裁图。official-01 定全身体量/头身比/肩宽/四肢粗细；UGF 头颈裁图只定头冠前缘/尖端/后缘转折、面罩口部板、下颌、侧面进气口轮廓与安装位置；Gaia 已装机帧只借右侧视站姿与画风。未引用照片05–09、像素03或其它候选；Gaia共享参考只读未改。head-chest 版因上胸约20–30度转向会把整身拉回3/4，已按SHA删除，见 sources/side-search-2026-11-09/source.json。",
+ "sources": {
+  "side_head_record": "art/fighters/ultraman-justice/sources/side-search-2026-11-09/source.json",
+  "side_head_original": {
+   "file": "art/fighters/ultraman-justice/sources/side-search-2026-11-09/justice-standard-ugf-tac-group-right-profile-01.jpg",
+   "sha256": "99562412d2203bf29525b450105f3eac3a008ff961af4c7c6e9a1bb5ac37c6a4",
+   "size": [5679, 3189],
+   "page_url": "https://animageplus.jp/articles/detail/34533/2/1/1",
+   "identification": "官方剧照（©TSUBURAYA PRODUCTIONS 水印，UGF相关）；左位杰斯提斯标准型头部近纯右侧视，身体略转20–30度；只用于头部结构"
+  },
+  "reference_images": [
+   {
+    "path": "art/fighters/ultraman-justice/sources/tsuburaya-justice-2019/official-standard-01.png",
+    "sha256": "012ebe3db95dee8f3baf32d2d520b125b45a069c0261ed17dc42792ee5759814",
+    "role": "全身体量/头身比/肩宽/四肢粗细主参照"
+   },
+   {
+    "path": "art/fighters/ultraman-justice/stage1/idle/references/justice-side-head-ugf-head-neck.png",
+    "sha256": "01742fc9ff59ff458a7884aa7a30483014adf23ffd0558c208133833ea2e4073",
+    "size": [710, 830],
+    "box_exclusive": [950, 420, 1660, 1250],
+    "role": "原图原分辨率裁头、颈与近侧肩连接处，未缩放未改色；只定头冠前缘/尖端/后缘转折、面罩口部板、下颌、侧面进气口轮廓与安装位置；眼过曝、金色侧饰与蓝额灯不可读，不能据此取色"
+   },
+   {
+    "path": "art/fighters/ultraman-gaia/stage1/idle/references/stance-ref-installed-x4.png",
+    "sha256": "ff5b113987797be31bc4e039e561883fa75c2b973c4a09a5ec1fa6eb6101be29",
+    "role": "唯一一张已装机成品，只借右侧视站姿与画风；共享参考只读未改"
+   }
+  ]
+ },
+ "photo_attempt": {
+  "id": "stance-10",
+  "tool": "magpie-image.generate_image",
+  "model": "codex/gpt-image-2",
+  "quality": "high",
+  "background": "transparent",
+  "size": "1024x1536",
+  "n": 1,
+  "generation_id": "image-65174-94",
+  "prompt": "第一图锁定杰斯提斯标准型全身体量、头身比、肩宽与四肢粗细；第二图只定头冠前缘、尖端、后缘转折、面罩口部板、下颌与侧面进气口的轮廓和安装位置，不照其色调与光效；第三图只借右侧视站姿与画风。画固定右侧视格斗待机整帧：两脚前后分开，脚外缘间距约站高0.70，前后膝屈曲下沉，双鞋底踩同一水平线，双拳抬到胸前护架，脸朝右，不得出现正面或四分之三转体。头部大小、头冠高度与后掠、面罩轮廓照第二图，肩宽与四肢粗细与第一图一致，不得放大头壳、肩甲或头冠。完整全身不裁切，透明背景，无地面文字边框特效。",
+  "prompt_characters": 243,
+  "requested_path": "art/fighters/ultraman-justice/stage1/idle/frames/stance-raw-10.png",
+  "actual_response_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-justice/stage1/idle/frames/stance-raw-10.png",
+  "actual_size": [1024, 1536],
+  "actual_mode": "RGBA",
+  "alpha_range": [0, 254],
+  "alpha_levels": 255,
+  "sha256": "3c81c6f3b76deb0862b4d898f91bc7f55c881c243a2c1182472a4902dc56a43d",
+  "usage": null,
+  "usage_note": "MCP未返回usage或费用，不推测。",
+  "status": "rejected",
+  "measurements": {
+   "bbox_alpha128_inclusive": [82, 138, 940, 1424],
+   "standing_height": 1287,
+   "width": 859,
+   "foot_band_fraction": 0.12,
+   "foot_outer_x": [82, 940],
+   "foot_outer_span_pixels": 859,
+   "foot_outer_span_over_height": 0.6674017094017094,
+   "required_stance_range": [0.65, 0.8],
+   "stance_pass": true,
+   "alpha_threshold_stance": "Alpha≥64/128/200 三档站距0.6669/0.6674/0.6672，均高于0.65。",
+   "sole_y_back_front": [1424, 1417],
+   "sole_delta_pixels": 7,
+   "sole_delta_native_154": 0.8376068376068376,
+   "sole_gate_native_154_max": 1.0,
+   "sole_pass": true,
+   "head_shell_bbox_inclusive": [414, 138, 625, 426],
+   "head_shell_width": 212,
+   "head_shell_height": 289,
+   "head_shell_width_over_standing": 0.16472416472416473,
+   "head_shell_height_over_standing": 0.22455322455322455,
+   "head_width_native_154": 25.37,
+   "head_height_native_154": 34.58,
+   "head_width_target_max": 0.1543,
+   "head_width_target_pass": false,
+   "head_width_vs_catalogue": 0.15307,
+   "head_height_target_max": 0.2,
+   "head_height_target_pass": false,
+   "head_height_vs_official01": 0.20468,
+   "head_height_vs_catalogue": 0.15274,
+   "head_measure_sensitivity": "Alpha≥64/128/200 头高/站高0.2246/0.2246/0.2238，宽/站高0.1655/0.1647/0.1647；银色容差55/65、亮度110/120等变体头高/站高0.2238–0.2246，均在0.20门之上。不是量测口径造成。",
+   "components_alpha128": 1,
+   "largest_component_pixels": 318836,
+   "orientation_check": "头部近纯右侧视、面朝右；上身胸甲与蓝菱形计时器正面完整可见，约20–30度转向镜头，仍有3/4上身可读性（与Gaia已装机帧的轻微转动相似）。头部门明确要求固定右侧视，此处不视为纯侧视通过项。"
+  },
+  "crest_face_check": {
+   "result": "头冠前缘、尖端、后缘转折、面罩口部板、下颌与侧面进气口同 official-03 及 UGF 头颈裁图逐项对应，安装位置一致，未发现错形、断肢或裁切。头冠整体高度与头壳体量仍偏大，与头高/站高0.2246一致。",
+   "status": "structure_recognizable_head_oversized"
+  },
+  "rejection_reasons": [
+   "头壳宽/站高212/1287=0.1647，高于0.1543目标（图鉴22px+8%）；折154站高约25.4px，目标≤约23.8px；对图鉴22/154超约15.3%。",
+   "头高/站高289/1287=0.2246，高于0.20门；折154站高约34.6px，门30.8px；对官方01的0.1864高约20.5%，对图鉴0.1948高约15.3%。四组阈值变体均0.2238以上。",
+   "上身仍有约20–30度转向、计时器正面完整可见；未达到根门要求的固定右侧视，头部门不按纯侧视通过项处理。",
+   "站距0.6674在0.65–0.80内，双鞋底高差7源px≈0.84原生px（≤1）通过；姿势其余部分成立，但头宽、头高与朝向三项不过门。",
+   "按根指令任何一门不过即拒收；本轮只此一张，不再生成、不出像素、不缩头、不改阈值。"
+  ]
+ },
+ "pixel_candidate": null,
+ "new_pixel_candidate_generated": false,
+ "pixel_conversion_blocked_by": "photo10_head_width_height_and_orientation_gate_not_passed",
+ "diagnostics": {
+  "full_body_sheet": {
+   "path": "art/fighters/ultraman-justice/stage1/diagnostic/stage-c-photo10-2026-11-09.png",
+   "sha256": "cde13a3c14564addf774473c85fcd10d70388c4c778cb539707dd591d1f6ca30",
+   "note": "official-01、official-03、照片10、Gaia已装机帧、图鉴同站高并排"
+  },
+  "head_sheet": {
+   "path": "art/fighters/ultraman-justice/stage1/diagnostic/stage-c-head10-2026-11-09.png",
+   "sha256": "f328c6fb2bb33b61682722f36a949b58662d183ac9cf0b74f483dbb51ad475a4",
+   "note": "official-01头、official-03侧头、UGF头颈裁图（手动紧裁显示）、照片10头同高并排"
+  }
+ },
+ "old_records_preserved": {
+  "candidate03_sha256": "bd694f0c988e0b4211e0ef03c3922aee34de5f1a0edd4e63bd92936888da2dd1",
+  "candidate02_24_vs_22": "+9.09% preserved",
+  "photo05_06_07_08_09": "rejected records preserved; not used as references"
+ },
+ "not_verified": ["待机像素新候选", "待机循环", "动作集", "安装", "主游戏双向720/1080", "实速", "声音"],
+ "next": "照片10因头宽/头高与上身朝向不过门拒收；未出像素、未签锚。阶段C单轮到此停止，等根换路线或留人工。未获新指令不再生成，不局部缩头、不改ROI/阈值、不落格凑门、不铺动作。"
+}

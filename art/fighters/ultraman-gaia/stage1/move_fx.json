@@ -1,0 +1,561 @@
+{
+ "schema": 1,
+ "fighter": "ultraman-gaia",
+ "language": "zh-CN",
+ "note": "招式特效与逐帧节奏草案，只描述设计，不表示动作帧已生成或已安装。active_frames 与 shot.frame 均为 0 基索引，必须落在该招模板帧数内。当前皮套为 V2；光子流线（Photon Stream）属 SV，未用于本文件三槽。",
+ "root": [
+  96,
+  184
+ ],
+ "cells": {
+  "cell": 192,
+  "baseline": 184
+ },
+ "moves": {
+  "special": {
+   "display_name": "光子冰刀",
+   "kind": "strike",
+   "level": "overhead",
+   "damage": 180,
+   "super_level": 1,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.45,
+    0.62,
+    1.0
+   ],
+   "active_frames": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "hit_y": [
+    80,
+    155
+   ],
+   "source_note": "光子冰刀（Photon Edge）：圆谷官方页载明头部聚能成光刃、以鞭击攻击；日文维基载明由头部发射的超高热刃、V1/V2 可用。本作做成贴头延伸的光刃打击，不脱手；粉红/红色取自次级资料，未逐帧核影片。180 伤害、削气 18 沿用同体型一级档。",
+   "energy_cost": 1000,
+   "chip_damage": 18,
+   "hand_y": [
+    125,
+    170
+   ]
+  },
+  "special2": {
+   "display_name": "量子流线",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 300,
+   "super_level": 2,
+   "knockdown": true,
+   "feedback_color": [
+    0.95,
+    0.25,
+    0.2,
+    1.0
+   ],
+   "active_frames": [
+    7,
+    8,
+    9,
+    10
+   ],
+   "shot": {
+    "frame": 7,
+    "effect": "beam_loop",
+    "color": [
+     0.95,
+     0.25,
+     0.2,
+     1.0
+    ],
+    "beam": true,
+    "length": 560,
+    "thickness": 22,
+    "life": 10,
+    "speed": 0
+   },
+   "source_note": "量子流线（Quantum Stream）：圆谷官方页载明交叉左右手臂后发射；日文维基载明由手臂 T 字转 L 字、超高热光线、V2 威力 2 倍。红色取自次级资料，未逐帧核影片。300 伤害、削气 30、击倒沿用同体型二级档；与 S3 的头部发射、蓄能动作不同。",
+   "energy_cost": 2000,
+   "chip_damage": 30,
+   "hand_y": [
+    70,
+    135
+   ]
+  },
+  "special3": {
+   "display_name": "光子粉碎机",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 480,
+   "super_level": 3,
+   "knockdown": true,
+   "feedback_color": [
+    1.0,
+    0.72,
+    0.3,
+    1.0
+   ],
+   "active_frames": [
+    8,
+    9,
+    10,
+    11
+   ],
+   "shot": {
+    "frame": 8,
+    "effect": "beam_loop",
+    "color": [
+     1.0,
+     0.72,
+     0.3,
+     1.0
+    ],
+    "beam": true,
+    "length": 680,
+    "thickness": 34,
+    "life": 12,
+    "speed": 0
+   },
+   "source_note": "光子粉碎机（フォトンクラッシャー / Photon Crusher）：日文维基列为 V2 继承自阿古茹的头部必杀光线；中文摘要称 V2 版带红色光与三段蓄能。当前皮套为 V2，故用于第三槽；480 伤害、削气 48、击倒沿用同体型三级档。光子流线（Photon Stream）属 SV，不拿来凑槽。",
+   "energy_cost": 3000,
+   "chip_damage": 48,
+   "hand_y": [
+    125,
+    170
+   ],
+   "cinematic": {
+    "portrait": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "beam": [
+     4,
+     5,
+     6,
+     7
+    ]
+   }
+  },
+  "air_special": {
+   "display_name": "空中量子流线（游戏改编）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 60,
+   "super_level": 1,
+   "knockdown": false,
+   "feedback_color": [
+    0.95,
+    0.3,
+    0.22,
+    1.0
+   ],
+   "active_frames": [
+    3,
+    4,
+    5
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "beam_loop",
+    "color": [
+     0.95,
+     0.3,
+     0.22,
+     1.0
+    ],
+    "beam": true,
+    "length": 420,
+    "thickness": 20,
+    "life": 8,
+    "speed": 0,
+    "vy": -4
+   },
+   "source_note": "空中量子流线为游戏改编：以已核实的量子流线为基础，原剧无空中向下发射依据；60 伤害、削气 6、1 格能量沿用同体型空中必杀档，不冒称原剧。",
+   "energy_cost": 1000,
+   "chip_damage": 6,
+   "hand_y": [
+    60,
+    130
+   ]
+  },
+  "motion_214": {
+   "display_name": "盖亚切割",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 95,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    0.95,
+    0.35,
+    0.25,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_arrow",
+    "color": [
+     0.95,
+     0.35,
+     0.25,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 60,
+    "speed": 11,
+    "box": [
+     -12,
+     -10,
+     24,
+     20
+    ]
+   },
+   "source_note": "盖亚切割（ガイアスラッシュ / Gaia Slash）：日文维基列为 V1/V2 的三日月形连射飞镖光刃，V2 为红色三日月状光球；本作由右臂发出单枚红色光刃，动作与帧序为游戏编排。95 伤害、削气 10 沿用同体型指令技档。",
+   "energy_cost": 0,
+   "chip_damage": 10,
+   "hand_y": [
+    70,
+    140
+   ]
+  },
+  "motion_22": {
+   "display_name": "奥特屏障",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 0,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    0.6,
+    0.85,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_barrier",
+    "color": [
+     0.6,
+     0.85,
+     1.0,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 12,
+    "speed": 0,
+    "box": [
+     0,
+     -65,
+     88,
+     130
+    ],
+    "wall": true
+   },
+   "source_note": "奥特屏障（Ultra Barrier）：日文维基列 V1 巨大屏障、V2 圆形屏障；本作取双臂前推的圆形屏障，墙形与 life 为游戏编排。special_barrier/wall 沿用已审屏障写法，拦截逻辑未在本轮验证。",
+   "energy_cost": 300,
+   "chip_damage": 0,
+   "hand_y": [
+    40,
+    130
+   ]
+  },
+  "ranged_forward": {
+   "display_name": "清算者",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 95,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.3,
+    0.25,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_spiral",
+    "color": [
+     1.0,
+     0.3,
+     0.25,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 60,
+    "speed": 8,
+    "box": [
+     -14,
+     -14,
+     28,
+     28
+    ]
+   },
+   "source_note": "清算者（リキデイター / Liquidator）：日文维基列为 V2 从阿古茹继承的双手红色破坏光球；萌娘摘要称初期蓝、与海洋之光融合后转红。本作由双手聚成红色光球投射，pose 与帧序为游戏编排。95 伤害、削气 10 沿用同体型专属远程档。",
+   "energy_cost": 0,
+   "chip_damage": 10,
+   "hand_y": [
+    55,
+    135
+   ]
+  },
+  "pulse": {
+   "display_name": "掌推光弹（游戏编排）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.75,
+    0.65,
+    1.0
+   ],
+   "active_frames": [
+    3
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     1.0,
+     0.75,
+     0.65,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 80,
+    "speed": 9,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "掌推光弹：以盖亚的手部放能为游戏远程，属游戏编排，不称原剧专名；暖白红为游戏取色。65 伤害沿用同体型通用光弹档。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    55,
+    135
+   ]
+  },
+  "low_pulse": {
+   "display_name": "低姿掌推光弹（游戏编排）",
+   "kind": "projectile",
+   "level": "low",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.75,
+    0.65,
+    1.0
+   ],
+   "active_frames": [
+    3
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     1.0,
+     0.75,
+     0.65,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 80,
+    "speed": 9,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "低姿掌推光弹：蹲姿低位的游戏改编，不称原剧低姿专名；暖白红为游戏取色。65 伤害沿用同体型通用光弹档。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    25,
+    95
+   ]
+  },
+  "air_pulse": {
+   "display_name": "空中斜下掌推光弹（游戏编排）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.75,
+    0.65,
+    1.0
+   ],
+   "active_frames": [
+    3
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     1.0,
+     0.75,
+     0.65,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 90,
+    "speed": 9,
+    "vy": -7,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "空中斜下掌推光弹：空中方向改编，原剧无该空中发射镜头，不冒称原剧；暖白红为游戏取色。65 伤害沿用同体型通用光弹档。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    25,
+    95
+   ]
+  },
+  "burst": {
+   "display_name": "爆气脱离",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 30,
+   "super_level": 0,
+   "knockdown": false,
+   "unblockable": true,
+   "feedback_color": [
+    1.0,
+    0.75,
+    0.65,
+    1.0
+   ],
+   "active_frames": [
+    1,
+    2,
+    3
+   ],
+   "burst_box": [
+    -90,
+    12,
+    180,
+    128
+   ],
+   "source_note": "对称爆气圈，冲击为运行时独立效果；攻击框按模板对称形状保留，超出人物 Alpha 属已登记例外。消耗 2 格能量，30 伤害、不可格挡沿用同体型爆气档。",
+   "energy_cost": 2000,
+   "chip_damage": 0,
+   "hand_y": [
+    40,
+    120
+   ]
+  },
+  "motion_236": {
+   "display_name": "双掌连推（游戏编排）",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 95,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.8,
+    0.7,
+    1.0
+   ],
+   "active_frames": [
+    3,
+    4,
+    5
+   ],
+   "hit_y": [
+    70,
+    135
+   ],
+   "source_note": "双掌连推：236□ 近身连击为游戏编排，不称原剧招式；双掌先后推出后收步，移动端只给一次中段命中。95 伤害沿用同体型指令技档。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    55,
+    135
+   ]
+  },
+  "motion_623": {
+   "display_name": "升膝迎击（游戏编排）",
+   "kind": "strike",
+   "level": "overhead",
+   "damage": 90,
+   "super_level": 0,
+   "knockdown": true,
+   "feedback_color": [
+    1.0,
+    0.8,
+    0.65,
+    1.0
+   ],
+   "active_frames": [
+    3,
+    4,
+    5
+   ],
+   "hit_y": [
+    70,
+    150
+   ],
+   "source_note": "升膝迎击：623△ 对空上挑为游戏编排，不称原剧招式；命中击倒沿用模板对空节奏，击倒由 move_fx 的 knockdown 覆盖。90 伤害沿用泰罗对空上挑档。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    70,
+    140
+   ]
+  }
+ },
+ "state_effects": {
+  "default": {
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ }
+}

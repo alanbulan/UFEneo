@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-09",
+  "fighter": "ultraman-zero",
+  "user_feedback": "赛罗的头标好像不对，你最好再重新看一下官方的剧照。",
+  "review_authority": "root_delegated_by_user",
+  "diagnostic": "art/fighters/ultraman-zero/stage1/diagnostic/zero-sluggers-official-review.png",
+  "sha256": "0659b72bafea6977d7b2bb2468d3a1cbb79c3bae6decc91084c3efb38a96ee49",
+  "sources": [
+    {
+      "source": "art/fighters/ultraman-zero/sources/tsuburaya-zero/hero-zero.png",
+      "source_sha256": "3e4d7b7be52094c388ef97a91e9be4fc8e1aeac1ad4bc18ed8fff005d6eba4c1",
+      "crop_exclusive_for_diagnostic": [
+        109,
+        0,
+        280,
+        190
+      ]
+    },
+    {
+      "source": "art/fighters/ultraman-zero/sources/tsuburaya-still-02/official-scene.jpg",
+      "source_sha256": "6a9018b57e85695440190e357c6417064586b9596bb28114d0a321e69fa86963",
+      "crop_exclusive_for_diagnostic": [
+        190,
+        73,
+        324,
+        213
+      ]
+    },
+    {
+      "source_sha256": "7b76657e3aec947dc6a7855d6798f7f7f6135efcd207ea015694741e12429626",
+      "crop_exclusive_for_diagnostic": [
+        406,
+        293,
+        651,
+        562
+      ],
+      "deleted_source_path": "art/fighters/ultraman-zero/stage1/idle/frames/stance-raw-00.png"
+    },
+    {
+      "source_sha256": "c0561c998d92e6fdc8a51fdd4eb314a95f2174dc5ef49f51270767e9de1846bd",
+      "crop_exclusive_for_diagnostic": [
+        400,
+        294,
+        650,
+        566
+      ],
+      "deleted_source_path": "art/fighters/ultraman-zero/stage1/idle/frames/pixel-raw-00.png"
+    }
+  ],
+  "finding": "第一步生成待机照已将两枚额侧弯刃简化成长直角状轮廓，刃缘转折、凹口及贴头壳的真实基座失真；像素化沿用了该错误。不是只偏大，也不能单缩头修复。",
+  "disposition": "撤销待机照用于像素转换的当前接受状态，像素候选保持拒收；无下游动作可恢复。仅从现用官方完整皮套重新定全身待机，先核头镖造型再转像素。 2026-11-09 第二次否决后，01链亦全部拒收删除；当前无候选、无身份锚。",
+  "recording": null,
+  "retired_generation_chain": [
+    {
+      "deleted_path": "art/fighters/ultraman-zero/stage1/idle/frames/stance-raw-00.png",
+      "sha256": "7b76657e3aec947dc6a7855d6798f7f7f6135efcd207ea015694741e12429626"
+    },
+    {
+      "deleted_path": "art/fighters/ultraman-zero/stage1/idle/frames/stance-clean-00.png",
+      "sha256": "57771ee3c3cfcee6ffc5d493eb36f1d1c9c9f8eb2ef67c11d7e3ff725595a0aa"
+    },
+    {
+      "deleted_path": "art/fighters/ultraman-zero/stage1/idle/frames/pixel-raw-00.png",
+      "sha256": "c0561c998d92e6fdc8a51fdd4eb314a95f2174dc5ef49f51270767e9de1846bd"
+    },
+    {
+      "deleted_path": "art/fighters/ultraman-zero/stage1/idle/frames/identity-pixel-00.png",
+      "sha256": "9dcad6412f8a0400f0c16f6fdb15c83bf3849c355780fef07f9cac72fbf46171"
+    },
+    {
+      "deleted_path": "art/fighters/ultraman-zero/stage1/cells/idle-00-cell.png",
+      "sha256": "32bfbc5b9f98ac557ea1a141afd69fc352cf8bce50b43943b34707b7e4583300"
+    },
+    {
+      "deleted_path": "art/fighters/ultraman-zero/stage1/cells/idle-00-x4.png",
+      "sha256": "937687b5f9d7f2639bfb906a4fc34be217e69d03001ca1fed3b298cdfbae5212"
+    }
+  ],
+  "retirement_checks": "诊断已输出后核实际消费者、绝对范围和SHA；只删除本轮错形00链，未删官方源、共享初代姿态或返工01材料。",
+  "second_user_review": {
+    "authority": "user",
+    "user_text": "赛罗的头还是不对呀，你直接找一个侧视图。",
+    "finding": "01返工照片与像素候选的头镖侧面结构仍未过关；用户否定从正面图猜侧面的路线，要求真实侧视来源。",
+    "disposition": "01链照片、清图、像素源、落格与4倍图全部拒收并删除，无备份；当前不生成新照片/像素/动作，等待真实侧视原图或可访问来源。",
+    "date": "2026-11-09"
+  }
+}

@@ -1,0 +1,562 @@
+{
+ "fighter": "ultraman-80",
+ "stage": "stage1",
+ "updated": "2026-11-10",
+ "policy": "官方皮套照 → 格斗待机架势照片 → 待机像素整帧（身份锚） → 单帧动作 → 落格。本批只做第一、二步的照片候选；照片门全过才转像素，未过不得签锚。返工刹车：同一项检查连续拒收 3 个不同帧即停下出诊断图；同一问题最多 2 种修法。",
+ "generated_images": 3,
+ "result": "photo_gate_blocked",
+ "identity_anchor": null,
+ "identity_anchor_status": "未签出。照片门未全过（站距项连续 3 帧 0.5650 / 0.9417 / 0.4157，均在 0.65–0.80 外），按刹车停止，未进入像素阶段；未生成待机像素整帧，无 cells.json，未落格。",
+ "cell_plan_not_applied": {
+  "cell": 192,
+  "anchor": [
+   96,
+   184
+  ],
+  "foot_row": 183,
+  "note": "stage_cells.py 默认值；本批未运行，未产出 cells/。若下轮原生体量容不下，按角色统一增大格与根点并登记。"
+ },
+ "toy_assisted": true,
+ "user_authorization": {
+  "date": "2026-11-10",
+  "authorized_by": "user",
+  "decision": "评审自动通过，不再逐项等用户；根按 root_delegated_by_user 签署并继续。本批因刹车未签身份锚，故无签署动作。",
+  "review_authority": "root_delegated_by_user",
+  "user_reviewed": false
+ },
+ "metric_definition": {
+  "standing": "Alpha>=128 bbox 顶行 → 最低鞋底行，站高 = bottom - top + 1",
+  "stance": "底部 25% 带拆左右两脚连通块，各脚取自身底部 6% 站高带的外缘 x；站距 = 前脚外缘 − 后脚外缘 + 1；门限 0.65–0.80",
+  "sole_line": "两脚各自最低行差（照片 px） × 192 ÷ 照片站高 ≤ 1.0 原生 px",
+  "head_height": "冠顶（红冠最高点）→ 下颌最低行；侧视下颌 = 面部前缘突然后撤前的最后一行；比值 = 头高 ÷ 站高",
+  "head_width": "冠顶→下颌区间内头部连通段的最大整行宽度 ÷ 站高",
+  "head_gate": "对已批准图鉴定稿同视角（90° 侧视）同口径逐字比较：头高 41/192 = 0.2135 ±8% → 0.1965–0.2306；头宽 31/192 = 0.1615 ±8% → 0.1485–0.1744（双向）",
+  "head_baseline_note": "官方真实皮套 90° 全身侧视源缺失：ref-03 只有面具、无站高；ref-02 是官方软胶玩具侧视，头身比失真（约 0.12），只作冠形/视角结构参考，不作比例门限。正面 render 的 0.192 与玩具比例不得混作侧视基准（2026-11-10 奥王同视角口径教训）。定稿本身为 90° 侧视，与本批候选同视角；故 ±8% 基准取定稿。",
+  "halo": "主体 = alpha≥200 最大连通块，外扩 3 px；主体外 alpha≥16 ≤100 px、alpha≥200 必须为 0；alpha 1–15 尘点只登记",
+  "alpha": "真 Alpha：四角 = 0",
+  "margins": "四边 ≥8 px，全身不裁切",
+  "direction": "严格 90° 右侧视，人物朝右（眼列 x 大于头段中线判朝右）",
+  "head_width_marginal_note": "v01 头宽 0.1479 比下界 0.1485 低 0.0006（-8.42%），按不过记录，不四舍五入放宽为通过。"
+ },
+ "catalogue_baseline": {
+  "sha256": "b308acd0a9aee79da35cf23aabfdd78c2abfa7e494c57e6a06ee2d41a00e42da",
+  "standing": 192,
+  "crown_y": 56,
+  "jaw_y": 96,
+  "head_px": 41,
+  "head_ratio": 0.2135,
+  "head_width_px": 31,
+  "head_width_y": 78,
+  "head_width_ratio": 0.1615,
+  "gate_head_pm8": [
+   0.1965,
+   0.2306
+  ],
+  "gate_width_pm8": [
+   0.1485,
+   0.1744
+  ]
+ },
+ "references": [
+  {
+   "id": "ref-01",
+   "path": "art/fighters/ultraman-80/sources/ref-01.webp",
+   "sha256": "e91d89ea235c95a8eaf96999395ef359a837e716cd6a7012012c7f3802368be5",
+   "size": [
+    704,
+    1399
+   ],
+   "mode": "RGBA WEBP",
+   "source": "https://ultra.fandom.com/wiki/Ultraman_80_(character)",
+   "acquired": "prior",
+   "role": "身份、配色、四肢体量主依据（官方现代皮套 3/4 正面渲染）",
+   "limit": "3/4 正面，不是侧视；冠脊前后朝向不得据此猜"
+  },
+  {
+   "id": "ref-02-source",
+   "path": "art/fighters/ultraman-80/sources/ref-02-source-uhs15.jpg",
+   "sha256": "1573259613dcbd6f83430d0f71b23423becf41eab083f239f06753b5a138c473",
+   "size": [
+    924,
+    720
+   ],
+   "mode": "RGB JPEG",
+   "source": "https://minkara.carview.co.jp/userid/424833/blog/48029943/",
+   "acquired": "2026-11-10",
+   "role": "万代 UHS No.15 爱迪官方软胶实物（第三方拍摄）；核侧身轮廓、冠形、前后错步站姿",
+   "limit": "玩具：球关节、接缝、塑料高光不用；头身比失真，不作门限"
+  },
+  {
+   "id": "ref-02",
+   "path": "art/fighters/ultraman-80/sources/ref-02-side-right.png",
+   "sha256": "b0ed1a617802f66435b15e76bb2b2699e03e20d7b9c78c19f8be788168ca36c7",
+   "size": [
+    462,
+    720
+   ],
+   "mode": "RGB PNG",
+   "derived": "ref-02-source-uhs15.jpg 右半无损裁切",
+   "acquired": "2026-11-10",
+   "role": "生图引用图2：90° 侧视（人物朝左）",
+   "limit": "只借视角；参考朝向会被继承——v03 朝左即此风险（AGENTS 2026-11-10 奥王 v16 同机制）"
+  },
+  {
+   "id": "ref-03",
+   "path": "art/fighters/ultraman-80/sources/ref-03-mask-side-dna.jpg",
+   "sha256": "05cfbe550c360a2882bd25850d3edd2809917e9953aee08032630e07f7c5ec9a",
+   "size": [
+    960,
+    1280
+   ],
+   "mode": "RGB JPEG",
+   "source": "https://blog.livedoor.jp/jef_godzilla/archives/1078343757.html",
+   "acquired": "2026-11-10",
+   "role": "真实皮套面具侧视；核冠脊走向、面罩/眼形结构",
+   "limit": "只有头，无站高，不能算头身比"
+  },
+  {
+   "id": "ref-04",
+   "path": "art/fighters/ultraman-80/sources/ref-04-mask-threequarter-dna.jpg",
+   "sha256": "b218be77631ec1b53755be34ecf53a5a555c6a4296a72570ca79b28606748e8f",
+   "size": [
+    960,
+    1280
+   ],
+   "mode": "RGB JPEG",
+   "source": "https://blog.livedoor.jp/jef_godzilla/archives/1078343757.html",
+   "acquired": "2026-11-10",
+   "role": "3/4 面具补充核结构",
+   "limit": "3/4 视角，不作侧视门限"
+  }
+ ],
+ "attempts": [
+  {
+   "id": "photo-v01-20261110",
+   "purpose": "90°右侧视格斗待机照片候选 1（提示词直接写站距 0.72）",
+   "tool": "magpie-image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "n": 1,
+   "requested_size": "1024x1536",
+   "actual_size": "1024x1536",
+   "mode": "RGBA",
+   "size_bytes": 1703086,
+   "generation_id": "image-65174-1206",
+   "requested_path": "art/fighters/ultraman-80/stage1/idle/photo/idle-photo-v01-20261110.png",
+   "actual_response_path": "art/fighters/ultraman-80/stage1/idle/photo/idle-photo-v01-20261110.png",
+   "prompt": "参考图1为爱迪官方皮套正面，定身份、配色与四肢体量；参考图2为同款90°侧面全身，只借视角与前后屈膝站姿，忽略玩具关节、接缝、塑料高光，不照抄其头身比。画一张严格90°右侧视（人物朝右）、全身不裁切的格斗待机照片：前脚迈出、后脚后撤，两脚前后错开，脚外缘间距约站高0.72；双膝屈，双拳抬到胸前护架。保留银色头壳、前额红冠尖脊、黄椭圆眼、蓝胸灯、腹部菱形勋章、红银胸腹纹、红腕套、小腿红斜纹银靴；头高约站高0.21；四肢粗细与参考图1一致，不放大头。真实皮套材质，透明背景，无辉光、文字、边框，四周留白。",
+   "prompt_chars": 252,
+   "references": [
+    {
+     "path": "art/fighters/ultraman-80/sources/ref-01.webp",
+     "sha256": "e91d89ea235c95a8eaf96999395ef359a837e716cd6a7012012c7f3802368be5",
+     "role": "身份/配色/四肢体量主依据（官方 3/4 正面渲染）"
+    },
+    {
+     "path": "art/fighters/ultraman-80/sources/ref-02-side-right.png",
+     "sha256": "b0ed1a617802f66435b15e76bb2b2699e03e20d7b9c78c19f8be788168ca36c7",
+     "role": "视角参考（官方软胶玩具右半侧视，人物朝左）；朝向随参考继承"
+    }
+   ],
+   "result_path": null,
+   "deleted_result_path": "art/fighters/ultraman-80/stage1/idle/photo/idle-photo-v01-20261110.png",
+   "sha256": "4deb785baaaf241e8c26a0c7c98be6b23b7aa1ae2cfb624743a65248ac2efdd9",
+   "status": "rejected",
+   "reason": "站距 0.5650（<0.65）；鞋底差 42 照片px = 5.35 原生px（>1）；头宽 223/1508=0.1479，比定稿同口径 0.1615 低 8.42%，低于 ±8% 下界 0.1485。头高、朝向、辉光、Alpha、留白通过。拒收并按 SHA 记录后删除，无备份。",
+   "measurements": {
+    "definition": "站高=Alpha>=128 bbox 顶→最低鞋底；站距=底部25%带两脚连通块各取自身底部6%站高带外缘；下颌行按面部前缘突然后撤前的最后一行人工确认",
+    "alpha": {
+     "min": 0,
+     "max": 254,
+     "levels": 255,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "bbox_alpha128": [
+     79,
+     14,
+     930,
+     1521
+    ],
+    "standing_height": 1508,
+    "margins_TLBR": [
+     14,
+     79,
+     14,
+     93
+    ],
+    "stance": {
+     "outer_span": 852,
+     "ratio": 0.565,
+     "feet": [
+      {
+       "x_outer": [
+        79,
+        251
+       ],
+       "sole_row": 1521
+      },
+      {
+       "x_outer": [
+        686,
+        930
+       ],
+       "sole_row": 1479
+      }
+     ]
+    },
+    "sole": {
+     "rows": [
+      1521,
+      1479
+     ],
+     "delta_photo_px": 42,
+     "delta_native_192": 5.347
+    },
+    "eye_centroid": [
+     590.4,
+     249.5
+    ],
+    "facing": "right",
+    "head": {
+     "crown_y": 14,
+     "jaw_y": 336,
+     "height_px": 323,
+     "ratio": 0.2142,
+     "max_width_px": 223,
+     "max_width_y": 199,
+     "width_ratio": 0.1479,
+     "vs_baseline_pct": 0.33,
+     "width_vs_baseline_pct": -8.42
+    },
+    "halo": {
+     "outside_alpha16": 0,
+     "outside_alpha200": 0,
+     "alpha1_15_dust": 11690
+    }
+   },
+   "gate_results": {
+    "transparent_alpha": "pass",
+    "margins_8px": "pass",
+    "stance": "fail",
+    "sole_line": "fail",
+    "head_height": "pass",
+    "head_width": "fail",
+    "facing_right": "pass",
+    "halo": "pass"
+   },
+   "diagnostic": "art/fighters/ultraman-80/stage1/diagnostics/photo-stance-diagnostic-20261110.png"
+  },
+  {
+   "id": "photo-v02-20261110",
+   "purpose": "90°右侧视格斗待机照片候选 2（改“大幅前迈后撤/两鞋底同线”）",
+   "tool": "magpie-image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "n": 1,
+   "requested_size": "1024x1536",
+   "actual_size": "1203x1308",
+   "mode": "RGBA",
+   "size_bytes": 710298,
+   "generation_id": "image-65174-1208",
+   "requested_path": "art/fighters/ultraman-80/stage1/idle/photo/idle-photo-v02-20261110.png",
+   "actual_response_path": "art/fighters/ultraman-80/stage1/idle/photo/idle-photo-v02-20261110.png",
+   "prompt": "参考图1为爱迪官方皮套正面，定身份、配色与四肢体量；参考图2为同款90°侧面全身，只借视角，忽略玩具关节与塑料高光。画一张严格90°右侧视、全身不裁切的格斗待机照片：头肩胸髋几乎重叠，只见一只眼；前脚大幅前迈、后脚大幅后撤，脚外缘间距约站高0.72；双膝深屈，两鞋底落在同一水平线上；双拳抬到胸前护架。保留银色头壳、前额红冠尖脊、黄椭圆眼、蓝胸灯、腹部菱形勋章、红银胸腹纹、红腕套、小腿红斜纹银靴；头高约站高0.21；四肢粗细与参考图1一致，不放大头。真实皮套材质，透明背景，无辉光、文字、边框，四周留白。",
+   "prompt_chars": 253,
+   "references": [
+    {
+     "path": "art/fighters/ultraman-80/sources/ref-01.webp",
+     "sha256": "e91d89ea235c95a8eaf96999395ef359a837e716cd6a7012012c7f3802368be5",
+     "role": "身份/配色/四肢体量主依据（官方 3/4 正面渲染）"
+    },
+    {
+     "path": "art/fighters/ultraman-80/sources/ref-02-side-right.png",
+     "sha256": "b0ed1a617802f66435b15e76bb2b2699e03e20d7b9c78c19f8be788168ca36c7",
+     "role": "视角参考（官方软胶玩具右半侧视，人物朝左）；朝向随参考继承"
+    }
+   ],
+   "result_path": null,
+   "deleted_result_path": "art/fighters/ultraman-80/stage1/idle/photo/idle-photo-v02-20261110.png",
+   "sha256": "b0584b28f0ae6b4284b8f830861c6263036a008a365139da63fb3a63ea711bc9",
+   "status": "rejected",
+   "reason": "站距 0.9417（>0.80，接近一字马）；实收 1203×1308 与请求 1024×1536 不符（已按实收记录，未把请求尺寸当实收）。鞋底差、头高、头宽、朝向、辉光、Alpha、留白通过。拒收并按 SHA 记录后删除，无备份。",
+   "measurements": {
+    "definition": "站高=Alpha>=128 bbox 顶→最低鞋底；站距=底部25%带两脚连通块各取自身底部6%站高带外缘；下颌行按面部前缘突然后撤前的最后一行人工确认",
+    "alpha": {
+     "min": 0,
+     "max": 255,
+     "levels": 256,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "bbox_alpha128": [
+     56,
+     71,
+     1153,
+     1236
+    ],
+    "standing_height": 1166,
+    "margins_TLBR": [
+     71,
+     56,
+     71,
+     49
+    ],
+    "stance": {
+     "outer_span": 1098,
+     "ratio": 0.9417,
+     "feet": [
+      {
+       "x_outer": [
+        56,
+        230
+       ],
+       "sole_row": 1235
+      },
+      {
+       "x_outer": [
+        941,
+        1153
+       ],
+       "sole_row": 1236
+      }
+     ]
+    },
+    "sole": {
+     "rows": [
+      1235,
+      1236
+     ],
+     "delta_photo_px": 1,
+     "delta_native_192": 0.165
+    },
+    "eye_centroid": [
+     714.3,
+     254.7
+    ],
+    "facing": "right",
+    "head": {
+     "crown_y": 71,
+     "jaw_y": 337,
+     "height_px": 267,
+     "ratio": 0.229,
+     "max_width_px": 180,
+     "max_width_y": 216,
+     "width_ratio": 0.1544,
+     "vs_baseline_pct": 7.26,
+     "width_vs_baseline_pct": -4.4
+    },
+    "halo": {
+     "outside_alpha16": 0,
+     "outside_alpha200": 0,
+     "alpha1_15_dust": 12722
+    }
+   },
+   "gate_results": {
+    "transparent_alpha": "pass",
+    "margins_8px": "pass",
+    "stance": "fail",
+    "sole_line": "pass",
+    "head_height": "pass",
+    "head_width": "pass",
+    "facing_right": "pass",
+    "halo": "pass"
+   },
+   "diagnostic": "art/fighters/ultraman-80/stage1/diagnostics/photo-stance-diagnostic-20261110.png"
+  },
+  {
+   "id": "photo-v03-20261110",
+   "purpose": "90°右侧视格斗待机照片候选 3（改“前后错开约一个脚长”）",
+   "tool": "magpie-image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "n": 1,
+   "requested_size": "1024x1536",
+   "actual_size": "1024x1536",
+   "mode": "RGBA",
+   "size_bytes": 1547297,
+   "generation_id": "image-65174-1213",
+   "requested_path": "art/fighters/ultraman-80/stage1/idle/photo/idle-photo-v03-20261110.png",
+   "actual_response_path": "art/fighters/ultraman-80/stage1/idle/photo/idle-photo-v03-20261110.png",
+   "prompt": "参考图1为爱迪官方皮套正面，定身份、配色与四肢体量；参考图2为同款90°侧面全身，只借视角，忽略玩具关节与塑料高光。画一张严格90°右侧视、全身不裁切的格斗待机照片：头肩胸髋几乎重叠，只见一只眼；前脚在前、后脚在后，前后错开约一个脚长，脚外缘间距约站高0.72；两膝都屈；两鞋底同高；双拳抬到胸前护架。保留银色头壳、前额红冠尖脊、黄椭圆眼、蓝胸灯、腹部菱形勋章、红银胸腹纹、红腕套、小腿红斜纹银靴；头含红冠约为站高五分之一，不放大头；四肢粗细与参考图1一致。真实皮套材质，透明背景，无辉光、文字、边框，四周留白。",
+   "prompt_chars": 256,
+   "references": [
+    {
+     "path": "art/fighters/ultraman-80/sources/ref-01.webp",
+     "sha256": "e91d89ea235c95a8eaf96999395ef359a837e716cd6a7012012c7f3802368be5",
+     "role": "身份/配色/四肢体量主依据（官方 3/4 正面渲染）"
+    },
+    {
+     "path": "art/fighters/ultraman-80/sources/ref-02-side-right.png",
+     "sha256": "b0ed1a617802f66435b15e76bb2b2699e03e20d7b9c78c19f8be788168ca36c7",
+     "role": "视角参考（官方软胶玩具右半侧视，人物朝左）；朝向随参考继承"
+    }
+   ],
+   "result_path": null,
+   "deleted_result_path": "art/fighters/ultraman-80/stage1/idle/photo/idle-photo-v03-20261110.png",
+   "sha256": "9fe0e367413c762c6f0a9c257aea2cede9f3ebb68d2442684eeb5ac555063920",
+   "status": "rejected",
+   "reason": "人物朝左（要求朝右，与参考图2朝向一致、随参考继承）；站距 0.4157；鞋底差 43 照片px = 5.78 原生px；头宽 207/1429=0.1449（-10.28%）。头高、辉光、Alpha、留白通过。拒收并按 SHA 记录后删除，无备份。",
+   "measurements": {
+    "definition": "站高=Alpha>=128 bbox 顶→最低鞋底；站距=底部25%带两脚连通块各取自身底部6%站高带外缘；下颌行按面部前缘突然后撤前的最后一行人工确认",
+    "alpha": {
+     "min": 0,
+     "max": 254,
+     "levels": 255,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "bbox_alpha128": [
+     184,
+     56,
+     777,
+     1484
+    ],
+    "standing_height": 1429,
+    "margins_TLBR": [
+     56,
+     184,
+     51,
+     246
+    ],
+    "stance": {
+     "outer_span": 594,
+     "ratio": 0.4157,
+     "feet": [
+      {
+       "x_outer": [
+        184,
+        399
+       ],
+       "sole_row": 1441
+      },
+      {
+       "x_outer": [
+        567,
+        777
+       ],
+       "sole_row": 1484
+      }
+     ]
+    },
+    "sole": {
+     "rows": [
+      1441,
+      1484
+     ],
+     "delta_photo_px": 43,
+     "delta_native_192": 5.777
+    },
+    "eye_centroid": [
+     441.6,
+     239.4
+    ],
+    "facing": "left",
+    "head": {
+     "crown_y": 56,
+     "jaw_y": 343,
+     "height_px": 288,
+     "ratio": 0.2015,
+     "max_width_px": 207,
+     "max_width_y": 218,
+     "width_ratio": 0.1449,
+     "vs_baseline_pct": -5.62,
+     "width_vs_baseline_pct": -10.28
+    },
+    "halo": {
+     "outside_alpha16": 16,
+     "outside_alpha200": 0,
+     "alpha1_15_dust": 11398
+    }
+   },
+   "gate_results": {
+    "transparent_alpha": "pass",
+    "margins_8px": "pass",
+    "stance": "fail",
+    "sole_line": "fail",
+    "head_height": "pass",
+    "head_width": "fail",
+    "facing_right": "fail",
+    "halo": "pass"
+   },
+   "diagnostic": "art/fighters/ultraman-80/stage1/diagnostics/photo-stance-diagnostic-20261110.png"
+  }
+ ],
+ "brake": {
+  "check": "stance 脚外缘间距 ÷ 站高",
+  "gate": "0.65–0.80",
+  "rejected_frames": [
+   "idle-photo-v01-20261110.png",
+   "idle-photo-v02-20261110.png",
+   "idle-photo-v03-20261110.png"
+  ],
+  "values": [
+   0.565,
+   0.9417,
+   0.4157
+  ],
+  "fix_methods_used": [
+   "v01：提示词直接写“脚外缘间距约站高0.72、前脚迈出后脚后撤”",
+   "v02：改“大幅前迈、大幅后撤”“两鞋底同高”“头肩胸髋几乎重叠只见一只眼”",
+   "v03：改“前后错开约一个脚长”“两膝都屈”“头含红冠约为站高五分之一”"
+  ],
+  "rule": "AGENTS 返工刹车：同一项检查连续拒收 3 个不同帧即暂停该项、先出诊断图；同一问题最多 2 种修法，仍不过就换思路或留待人工，不无限重生成。",
+  "diagnostic": "art/fighters/ultraman-80/stage1/diagnostics/photo-stance-diagnostic-20261110.png",
+  "diagnostic_sha256": "03562fa7dd3bf502b845c16277bc9659eafd883ae5b31ab73ac6001508458705",
+  "diagnostic_size": [
+   2148,
+   812
+  ],
+  "diagnosis": "画布几何受限（假设，附证据）：竖版 1024 宽、站高 1400–1500 px 时，0.65–0.80 站距光双脚横跨就要 910–1200 px，再加躯干与护架拳的前后厚度，超过 1024 可用宽度。v01/v03 在 1024 宽画布里收成 0.42–0.57；v02 实收 1203 宽画布后反而画成 0.94 大分腿。三帧站距不是提示词能稳定控制的量，继续加形容词属于第 3 种修法，按规则停。",
+  "next_method_suggestion": "下轮换思路（本轮不做）：1）改横版画布（如 1536×1024）或把站高控制在画布内约 1000 px，给站距留足横向空间；2）按 AGENTS 2026-11-10 奥王 v16 教训，把目标站距直接画进参考人物的本体轮廓（导引人物本身前后错步、屈膝、双拳护架），并先镜像到朝右，不靠空白处的洋红/青线条；3）站距导引与“只许加 1 张已装机同风格成品”的规矩一并登记。"
+ },
+ "diagnostics": [
+  {
+   "path": "art/fighters/ultraman-80/stage1/diagnostics/photo-stance-diagnostic-20261110.png",
+   "sha256": "03562fa7dd3bf502b845c16277bc9659eafd883ae5b31ab73ac6001508458705",
+   "size": [
+    2148,
+    812
+   ],
+   "shows": "三张被拒照片原尺寸等比缩略；品红=实测脚外缘，青/橙=两鞋底行，绿/红=冠顶/下颌；逐张标注站距、鞋底差、头高/头宽、朝向、辉光、Alpha、留白与过/不过；页脚为刹车原因。",
+   "note": "诊断图含被拒帧的缩略合成，是刹车规则要求的诊断产物，不是候选副本。"
+  }
+ ],
+ "deleted_rejects": [
+  {
+   "path": "art/fighters/ultraman-80/stage1/idle/photo/idle-photo-v01-20261110.png",
+   "sha256": "4deb785baaaf241e8c26a0c7c98be6b23b7aa1ae2cfb624743a65248ac2efdd9",
+   "deleted": true
+  },
+  {
+   "path": "art/fighters/ultraman-80/stage1/idle/photo/idle-photo-v02-20261110.png",
+   "sha256": "b0584b28f0ae6b4284b8f830861c6263036a008a365139da63fb3a63ea711bc9",
+   "deleted": true
+  },
+  {
+   "path": "art/fighters/ultraman-80/stage1/idle/photo/idle-photo-v03-20261110.png",
+   "sha256": "9fe0e367413c762c6f0a9c257aea2cede9f3ebb68d2442684eeb5ac555063920",
+   "deleted": true
+  }
+ ],
+ "not_done": [
+  "未生成待机像素整帧（身份锚），未签署",
+  "未运行 stage_cells.py，未生成 cells.json，未落格",
+  "未安装到 assets/、未改 content/roster/、未接运行时、未启动 Godot、未提交/推送、无录屏"
+ ]
+}

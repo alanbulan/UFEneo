@@ -1,0 +1,3399 @@
+{
+ "fighter": "ultraman-king",
+ "batch": "base-actions-2026-11-10",
+ "policy": {
+  "model": "codex/gpt-image-2",
+  "quality": "high",
+  "background": "transparent",
+  "requested_size": "1024x1536",
+  "prompt_chars": "150-250",
+  "reference": "仅身份锚一张；固定右侧视、完整不裁切、透明背景、无地面文字边框特效",
+  "landing": "tools/art/stage_cells.py --scale-source 身份锚 --target-standing 223 --cell 256 --anchor-x 128 --baseline 248 --foot-band 0.30",
+  "hard_gates": {
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "colors_max": 32
+  }
+ },
+ "identity_anchor": {
+  "path": "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png",
+  "sha256": "1c577cf1ecca3161e263f0991624a8d96cc92aba1f4697d727b7c08e1f20c7d4"
+ },
+ "frames": [
+  {
+   "frame": "air_apex-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1590",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/air_apex/frames/air_apex-00-raw-01.png",
+   "source_sha256": "70680c9ff78f8f2862d55ebc9ae0518487cb612866757d4b16f7f719c967e352",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视腾空最高点，双膝收在身前、身体蜷起，双拳护胸，披风在身后展开，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/air_apex-00-cell.png",
+   "cell_sha256": "0c627494e6aac461ebfa1999d7faabb16d23ca496e2d206260e3e25845fda4a3",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     69,
+     32,
+     191,
+     185
+    ],
+    "height": 154,
+    "width": 123,
+    "head_height": 12,
+    "head_ratio": 0.0779,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 185,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "air_fall-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1621",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/air_fall/frames/air_fall-00-raw-01.png",
+   "source_sha256": "fa2fa856a62ec007365706cb10ad3b680c209307ee9bd369a42cff42b238b675",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视下落，双腿向下伸出、双脚朝地，双臂向两侧张开保持平衡，披风向上翻卷，视线朝右下。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/air_fall-00-cell.png",
+   "cell_sha256": "7e01e7b688a72815ead685e61048caed2a10d6ad7e55498996c51abd5e726559",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     49,
+     15,
+     191,
+     230
+    ],
+    "height": 216,
+    "width": 143,
+    "head_height": 85,
+    "head_ratio": 0.3935,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 230,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "air_rise-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1585",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/air_rise/frames/air_rise-00-raw-01.png",
+   "source_sha256": "ceeeac39ee932628eaed0621a6394104d90037a858916f667779a002d934bb97",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视腾空上升，双膝向上收起、双脚离地，身体略向前倾；双拳收在胸前，披风向上翻卷，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/air_rise-00-cell.png",
+   "cell_sha256": "13694a16c87c2021c9475864ed6cb9e3752e956e3c40741b2d34d76317e673d0",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     57,
+     18,
+     177,
+     210
+    ],
+    "height": 193,
+    "width": 121,
+    "head_height": 15,
+    "head_ratio": 0.0777,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 210,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "crouch-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1358",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/crouch/frames/crouch-00-raw-01.png",
+   "source_sha256": "f0859326b30e26e6b51956a914cb155ff7ce000584ba39e7680a49b6eea5bd44",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视深蹲格斗架势，双脚前后分开、双膝深屈，重心落在两脚之间；双拳抬在胸前护架，上身略前倾，披风垂到脚后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/crouch-00-cell.png",
+   "cell_sha256": "8dcd1f5fe0ac84b8d80501fdfc8e2979ec8766400f2f8a472363d58dd3c2f174",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     66,
+     69,
+     215,
+     247
+    ],
+    "height": 179,
+    "width": 150,
+    "head_height": 38,
+    "head_ratio": 0.2123,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "crouch-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1372",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/crouch/frames/crouch-01-raw-01.png",
+   "source_sha256": "90070fb0beae5dd9280a4e37e26acb610b3ca9e6a6d3cc7c567717480d63fb2c",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视深蹲格斗架势，双脚前后分开、双膝深屈；双拳护在胸前，身体比前一帧略微下沉，肩部放松，披风垂到脚后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/crouch-01-cell.png",
+   "cell_sha256": "8d9c39432e9392230148f195c9acee618b6e8ad521b7a59420b97c2de6dccfe2",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     63,
+     69,
+     215,
+     247
+    ],
+    "height": 179,
+    "width": 153,
+    "head_height": 41,
+    "head_ratio": 0.2291,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "crouch_guard-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1404",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/crouch_guard/frames/crouch_guard-00-raw-02.png",
+   "source_sha256": "98654670bcdaa0c974884b89559c3f22725631e98822bb7d86dc859866350cc4",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视深蹲，双脚前后分开、双膝深屈，臀部下沉但不要坐到脚后跟上；双前臂在胸前交叉、双拳护住脸，肘部收紧，上身压低，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/crouch_guard-00-cell.png",
+   "cell_sha256": "3502d48a3bdda7e4fcf79219a23da628b137de19121cd2d7c9dccabc429b88aa",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     66,
+     80,
+     216,
+     247
+    ],
+    "height": 168,
+    "width": 151,
+    "head_height": 13,
+    "head_ratio": 0.0774,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "crouch_guard-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1382",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/crouch_guard/frames/crouch_guard-01-raw-01.png",
+   "source_sha256": "0de92116fae4a2b883da7fd70fc7eca0caff3108dd56e09d5d9e2f6648f453e5",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视深蹲，双脚前后分开、双膝深屈；双前臂继续交叉护在胸前，双拳护脸，身体略微下沉保持稳定，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/crouch_guard-01-cell.png",
+   "cell_sha256": "55efcb583da255bb96a88fd1efeb4b5315a2ac25d93c4d251bbe4d23821ef066",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     68,
+     62,
+     204,
+     247
+    ],
+    "height": 186,
+    "width": 137,
+    "head_height": 16,
+    "head_ratio": 0.086,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "crouch_rise-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1386",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/crouch_rise/frames/crouch_rise-00-raw-01.png",
+   "source_sha256": "318a27f8b069e2c330cc9b218448f29937aaeeee7209f20e3238607d8bc3fe59",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，从深蹲开始起身，双脚前后分开，双膝仍弯但臀部已抬起一半，双拳护在胸前，上身逐渐直起，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/crouch_rise-00-cell.png",
+   "cell_sha256": "422ce91725eb2da6e95fa0a425d8859969b0826b2f40b2e2d48f905c729977a7",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     76,
+     45,
+     198,
+     247
+    ],
+    "height": 203,
+    "width": 123,
+    "head_height": 42,
+    "head_ratio": 0.2069,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "crouch_rise-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1391",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/crouch_rise/frames/crouch_rise-01-raw-01.png",
+   "source_sha256": "37331e62f2db764fbb93fc94e10ad1d2f94066e3599cb7e92455aaa44b692a26",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视格斗站姿，双脚前后分开、双膝微屈；双拳回到胸前护架，上身直立，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/crouch_rise-01-cell.png",
+   "cell_sha256": "2bf4ad9246cef9aadeb19551b5148af8ee46ea18f60627b261a4165afecd0021",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     73,
+     25,
+     206,
+     247
+    ],
+    "height": 223,
+    "width": 134,
+    "head_height": 43,
+    "head_ratio": 0.1928,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "crouch_start-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1350",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/crouch_start/frames/crouch_start-00-raw-01.png",
+   "source_sha256": "359d84a76bcad97bf11f63515b29fee0616ac01550524fc892a6c3b93a7b3219",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视格斗站姿，双脚前后分开；双膝开始弯曲下沉，臀部向后坐，上身略前倾，双拳收在胸前，准备进入蹲姿，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/crouch_start-00-cell.png",
+   "cell_sha256": "56d963bf7bfed4af45ea5d5b7f29e4e49598e6e22649f029ac5abb2478489aa4",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     65,
+     53,
+     217,
+     247
+    ],
+    "height": 195,
+    "width": 153,
+    "head_height": 22,
+    "head_ratio": 0.1128,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "crouch_start-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1354",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/crouch_start/frames/crouch_start-01-raw-01.png",
+   "source_sha256": "b08447b6257e9a007b43ff6b4454eb476cc6328f46d83544e9a030b7dfcc842c",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视深蹲，双脚前后分开、脚掌全着地；臀部下沉到大腿接近水平，双膝深屈，上身略前倾，双拳护在胸前，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/crouch_start-01-cell.png",
+   "cell_sha256": "519854f2cb14e739c4d8196efc2556de11d95961550a548ea4aa82c2349fa379",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     66,
+     63,
+     208,
+     247
+    ],
+    "height": 185,
+    "width": 143,
+    "head_height": 46,
+    "head_ratio": 0.2486,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "dash-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1499",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/dash/frames/dash-00-raw-01.png",
+   "source_sha256": "1e30c7604b9d5128e16bf60079c622c2c05972bc79fab0e2495ef7e580ebb2ae",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视向前奔跑，右脚在前踏地、屈膝承重，左腿在后蹬直；上身前倾，右拳向前摆、左拳向后收，披风向后飘，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/dash-00-cell.png",
+   "cell_sha256": "a4918dfd231c11a6b5e0f5450688df9ed878c32ced65b064950107f399a9be79",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     46,
+     79,
+     213,
+     247
+    ],
+    "height": 169,
+    "width": 168,
+    "head_height": 13,
+    "head_ratio": 0.0769,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "dash-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1504",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/dash/frames/dash-01-raw-01.png",
+   "source_sha256": "c5814fd176286daecc62adb800d4258616eac83f691e90d387a9f8c5f71b5b63",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视向前奔跑，右脚支撑、膝微屈，左膝向前抬起，左脚离地；上身前倾，双拳在身体两侧摆动，披风向后飘，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/dash-01-cell.png",
+   "cell_sha256": "5aded6cc7d27a1816aece11c5bae4bf36a1354b71c9beba54600a8816d1af7f8",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     68,
+     48,
+     214,
+     247
+    ],
+    "height": 200,
+    "width": 147,
+    "head_height": 35,
+    "head_ratio": 0.175,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "dash-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1512",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/dash/frames/dash-02-raw-01.png",
+   "source_sha256": "b7c5573dc31a959f3fc9ccc60088b8f3f916e9052246666695dc02a0b1a73684",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视向前奔跑，左脚向前踏地、屈膝承重，右腿在后蹬直；上身前倾，左拳向前摆、右拳向后收，披风向后飘，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/dash-02-cell.png",
+   "cell_sha256": "5ada52e4a10c370e09fb607ff5d7b7c9b3169bc193af93d834d1f4eb8bed8fb7",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     50,
+     72,
+     213,
+     247
+    ],
+    "height": 176,
+    "width": 164,
+    "head_height": 16,
+    "head_ratio": 0.0909,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "dash-03-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1519",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/dash/frames/dash-03-raw-01.png",
+   "source_sha256": "235f8e8fed5f680915b8c47371a5d8c02edcb075e7cc66d96a90faaf8cb40fa8",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视向前奔跑，左脚支撑、膝微屈，右膝向前抬起，右脚离地；上身前倾，双拳在身体两侧摆动，披风向后飘，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/dash-03-cell.png",
+   "cell_sha256": "b4260867639fcff966a3f90242ad541cf1e421009a594d3f9a0f61676e7beb24",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     64,
+     51,
+     209,
+     247
+    ],
+    "height": 197,
+    "width": 146,
+    "head_height": 16,
+    "head_ratio": 0.0812,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "dash_start-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1468",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/dash_start/frames/dash_start-00-raw-01.png",
+   "source_sha256": "3cb28a64afa6ff6b933af2a0d29a3cb1a188ab1ee33fe6ec041710474ec9a5b1",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，屈膝压低身体，右脚在前、左脚在后，重心落在后脚；双拳收在胸前，上身向前倾，准备向前冲刺，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/dash_start-00-cell.png",
+   "cell_sha256": "5f255c9c09379bb7850274614a80f81fa2dec227a8219f84518fd785d8027098",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     70,
+     82,
+     219,
+     247
+    ],
+    "height": 166,
+    "width": 150,
+    "head_height": 20,
+    "head_ratio": 0.1205,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "dash_start-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1492",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/dash_start/frames/dash_start-01-raw-02.png",
+   "source_sha256": "4386f9fe8c580cb6613cf739bb60a6735d6ede4d5267d7f078cb2cfa6e09c3ef",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，右脚向前跨出、屈膝承重，左腿在后蹬直；上身向前倾但保持抬头，胸部朝前，双拳一前一后摆开，披风向后扬起，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/dash_start-01-cell.png",
+   "cell_sha256": "090147fc327d08f27a9691d1fcb8af794c9c9351a59cd8fe40b1966033d1cf4c",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     43,
+     42,
+     203,
+     247
+    ],
+    "height": 206,
+    "width": 161,
+    "head_height": 23,
+    "head_ratio": 0.1117,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "dash_stop-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1524",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/dash_stop/frames/dash_stop-00-raw-01.png",
+   "source_sha256": "a50c01c05b4c8b5a50cc1883b84ee0b54b8e542d367ba6320add1fad6e44df8d",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视急停，右脚向前伸出、脚跟着地，左腿在后深屈支撑；上身后仰，双臂向两侧张开保持平衡，披风向前甩，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/dash_stop-00-cell.png",
+   "cell_sha256": "f7458b1adc0078abd38aca77261985260505647171371def24451fc4f0a7a4f4",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     43,
+     49,
+     203,
+     247
+    ],
+    "height": 199,
+    "width": 161,
+    "head_height": 45,
+    "head_ratio": 0.2261,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "dash_stop-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1560",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/dash_stop/frames/dash_stop-01-raw-01.png",
+   "source_sha256": "2c46064cdd544583ad2f02623a864729df628ed6f8c067357fca229ed7af11ec",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视急停滑步，双脚前后分开、双膝深屈；臀部下沉，上身略前倾，双拳收回胸前，披风向前落下，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/dash_stop-01-cell.png",
+   "cell_sha256": "9d29837758536251708d4c347c405c6d36e1fde7d28b4782cf6f61bca6d7199f",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     51,
+     59,
+     205,
+     247
+    ],
+    "height": 189,
+    "width": 155,
+    "head_height": 24,
+    "head_ratio": 0.127,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "dash_stop-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1566",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/dash_stop/frames/dash_stop-02-raw-01.png",
+   "source_sha256": "f4a9d9ec2f7ef7bca27120e182cc43f8fe55f5b8d5ae57c8910fe49919b9def3",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视格斗站姿，双脚前后分开、双膝微屈；双拳回到胸前护架，上身直立，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/dash_stop-02-cell.png",
+   "cell_sha256": "8f6061d7d6ae7e63da93e3716b3d993ce8af7df5dcb44c0009412456f41c581a",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     76,
+     25,
+     201,
+     247
+    ],
+    "height": 223,
+    "width": 126,
+    "head_height": 44,
+    "head_ratio": 0.1973,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "flip_back-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1961",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/flip_back/frames/flip_back-00-raw-01.png",
+   "source_sha256": "aa58207581a9aaba8a56c5a15501778f187bfeeea8dab800c848a7ebc9ffbc9c",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视向后空翻起始，双膝深屈、上身前倾，双臂向后摆，准备起跳，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/flip_back-00-cell.png",
+   "cell_sha256": "1a7112a4328c069443c106997fc2be0e618865668cc1ec97792eac4b9046abce",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     77,
+     72,
+     218,
+     247
+    ],
+    "height": 176,
+    "width": 142,
+    "head_height": 15,
+    "head_ratio": 0.0852,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "flip_back-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1968",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/flip_back/frames/flip_back-01-raw-01.png",
+   "source_sha256": "25aa0b6dd926766685e2db895af596144b7f5f3db571f244bad337d5cb7aebcc",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视向后空翻，身体离开地面并向后仰，膝盖收向胸口，头后仰，双臂抱膝，披风向上翻卷，视线朝上。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/flip_back-01-cell.png",
+   "cell_sha256": "b056c332379721412f731027ff9ec8a5be161ef89cfac31795872bb95edad069",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     54,
+     64,
+     192,
+     215
+    ],
+    "height": 152,
+    "width": 139,
+    "head_height": 12,
+    "head_ratio": 0.0789,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 215,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "flip_back-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1978",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/flip_back/frames/flip_back-02-raw-01.png",
+   "source_sha256": "c0ca2f1bf7d8afeaac07a8edf941172d6b5a6a1b840226a0aa0c297491dfa0c5",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视向后空翻到倒立相位，身体倒转、双腿向上伸，头朝下，双臂收在身侧，披风向上翻卷，视线朝下。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/flip_back-02-cell.png",
+   "cell_sha256": "f552b048e16a14da3f84f68c3bf77ca01f727da8c663f80aa795a6a9ccfbd803",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     54,
+     0,
+     163,
+     190
+    ],
+    "height": 191,
+    "width": 110,
+    "head_height": 15,
+    "head_ratio": 0.0785,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 190,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "flip_back-03-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1988",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/flip_back/frames/flip_back-03-raw-01.png",
+   "source_sha256": "6230e59802b1caed7086fbe4a937f642ac6135cab7fdbde59b8e1c82c51284a2",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视空翻落地，双脚向下伸、膝盖弯曲准备着地，上身转回直立，双臂张开保持平衡，披风向上翻卷，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/flip_back-03-cell.png",
+   "cell_sha256": "bb99941c5e0728fc4a8d69d3840d68ffa1401ca82432e9ef7437f64e514d995a",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     37,
+     11,
+     187,
+     230
+    ],
+    "height": 220,
+    "width": 151,
+    "head_height": 17,
+    "head_ratio": 0.0773,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 230,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "flip_forward-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1906",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/flip_forward/frames/flip_forward-00-raw-01.png",
+   "source_sha256": "7b6e468a0232a0634ae34ff43d8d9164ffb840afb836a3d06761c5203d25f969",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视向前空翻的起始，双膝深屈、上身前俯，双臂向后下方摆，准备起跳，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/flip_forward-00-cell.png",
+   "cell_sha256": "3410c4fa09873cedbc04ab79b12144c91dbc7a1d706d0c57bcdf83a22c1359e4",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     83,
+     86,
+     218,
+     247
+    ],
+    "height": 162,
+    "width": 136,
+    "head_height": 22,
+    "head_ratio": 0.1358,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "flip_forward-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1918",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/flip_forward/frames/flip_forward-01-raw-01.png",
+   "source_sha256": "31922ad14a72fc0823417aa3387489c521091cbb3715867f27da880aa8ca1a16",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视向前空翻，身体离开地面、膝盖收在胸前，头收向胸口，双臂抱膝，披风向后拖，身体开始旋转，视线朝下。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/flip_forward-01-cell.png",
+   "cell_sha256": "b234356b3216b7f1d8f80d7cb017eb7172db76b355845f63de301510d4184cd8",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     64,
+     97,
+     221,
+     215
+    ],
+    "height": 119,
+    "width": 158,
+    "head_height": 9,
+    "head_ratio": 0.0756,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 215,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "flip_forward-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1927",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/flip_forward/frames/flip_forward-02-raw-01.png",
+   "source_sha256": "06c3925958b91ef24e90234912bc5c0a527916915ef583b2a83e566d331018ed",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视向前空翻到倒立相位，身体倒转、双腿向上伸，头朝下，双臂收在身侧，披风向上翻卷，视线朝下。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/flip_forward-02-cell.png",
+   "cell_sha256": "9831bc94b9f4b5ad4d952510f3435a2d4d6fc8c946eb74e93175567e0429e0a2",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     62,
+     0,
+     158,
+     190
+    ],
+    "height": 191,
+    "width": 97,
+    "head_height": 73,
+    "head_ratio": 0.3822,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 190,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "flip_forward-03-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1937",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/flip_forward/frames/flip_forward-03-raw-01.png",
+   "source_sha256": "8bfe6c780c953fa61afbc7eddbff89d8eb3aeefac530e7d4e583347d7e66ce3d",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视空翻落地，双脚向下伸、膝盖弯曲准备着地，上身转回直立，双臂张开保持平衡，披风向上翻卷，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/flip_forward-03-cell.png",
+   "cell_sha256": "510a04e6a0136e3de6c6d21d7c70f5fdb00bc43dc14b476661f42d63dbe9ecfa",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     38,
+     12,
+     198,
+     230
+    ],
+    "height": 219,
+    "width": 161,
+    "head_height": 29,
+    "head_ratio": 0.1324,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 230,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "guard-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1326",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/guard/frames/guard-00-raw-01.png",
+   "source_sha256": "4b2e163d0317912d8dcb252f19720867658157e9c876ba59bd736cba6cfd40ad",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视格斗站姿，双脚前后分开、双膝屈；双前臂在胸前交叉抬起，双拳护住脸和胸口，肘部收紧，上身略前倾，视线从拳上方向右看。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/guard-00-cell.png",
+   "cell_sha256": "0930ada240828ee28c0e0a7a04c80a617b712ffdf1f0a265008cc3abfd331162",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     65,
+     44,
+     220,
+     247
+    ],
+    "height": 204,
+    "width": 156,
+    "head_height": 17,
+    "head_ratio": 0.0833,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "guard-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1345",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/guard/frames/guard-01-raw-01.png",
+   "source_sha256": "b5723de6e3847dc1d7797cc612f69cc33d263a3ebd65fb744384b5cd98ef32f9",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视格斗站姿，双脚前后分开、双膝再屈低一点；双前臂仍交叉护在胸前，双拳护脸，肩部略沉，身体保持稳定，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/guard-01-cell.png",
+   "cell_sha256": "a6adaddcb45c6343e5a5d6dd5bad7042586e36e6299a21e6cae3ceffe5cda05e",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     64,
+     52,
+     219,
+     247
+    ],
+    "height": 196,
+    "width": 156,
+    "head_height": 17,
+    "head_ratio": 0.0867,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "heavy-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1309",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/heavy/frames/heavy-00-raw-01.png",
+   "source_sha256": "1b20b1d97c60ec71761d31f06826aada1f9f7ab1f7631d9e91ccdf13255ec14f",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视格斗站姿，左脚在后、右脚在前，双膝深屈；右掌收到胸前、掌心朝前，左掌护在脸前，肩部下沉蓄力，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/heavy-00-cell.png",
+   "cell_sha256": "db92ed079705d0eecd323845ab73170bcfdb38d6705389772fee7276600e2c12",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     64,
+     76,
+     216,
+     247
+    ],
+    "height": 172,
+    "width": 153,
+    "head_height": 13,
+    "head_ratio": 0.0756,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "heavy-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1314",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/heavy/frames/heavy-01-raw-01.png",
+   "source_sha256": "5361fdebe2153bfb057b0241aa81f6e29750acbfcaad5190725d96601d232083",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，右脚向前踏出一步、屈膝承重，左脚在后蹬地；上身随踏步前倾，右掌从胸前向前推出到一半，左掌仍护脸，披风向后展开，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/heavy-01-cell.png",
+   "cell_sha256": "e021659536bab2e310921ccd9414181bb9da76b1173703dbbf24a72da4a9c20a",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     48,
+     47,
+     208,
+     247
+    ],
+    "height": 201,
+    "width": 161,
+    "head_height": 41,
+    "head_ratio": 0.204,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "heavy-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1340",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/heavy/frames/heavy-02-raw-02.png",
+   "source_sha256": "2c0f8ede17f2f9fcebc0d8298c82ad0d7102698507f6aa07c925cafae23db2a8",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，右脚在前屈膝、左脚在后蹬地；上身略向前倾但保持抬头，右掌向正前方完全推出、手臂接近伸直、掌心朝前、与胸口同高，左掌收在肋侧，披风甩向身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/heavy-02-cell.png",
+   "cell_sha256": "76ba0ab945bede62dd98b3c2754e4b9ac022963f2746f2de4a33d5ee9aab5627",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     49,
+     52,
+     214,
+     247
+    ],
+    "height": 196,
+    "width": 166,
+    "head_height": 55,
+    "head_ratio": 0.2806,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "heavy-03-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1322",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/heavy/frames/heavy-03-raw-01.png",
+   "source_sha256": "8fc67c1c92aceceea920c279a84449711de9031ff6d91ad9aaea2ad475ceee28",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视格斗站姿，右脚在前、左脚在后，双膝微屈；右掌收回胸前握拳，左拳回到脸前护架，上身直起，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/heavy-03-cell.png",
+   "cell_sha256": "36dc1a85c7fc070dce7047f70ba539b1fcce50b5550c6326ab40d4ded25ab617",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     78,
+     25,
+     199,
+     247
+    ],
+    "height": 223,
+    "width": 122,
+    "head_height": 43,
+    "head_ratio": 0.1928,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "hit-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1407",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/hit/frames/hit-00-raw-01.png",
+   "source_sha256": "a29bfd046626e309aa342e24c79878bbff5d41ec37cd6cee9b82069c7e9647cf",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，双脚前后分开站立；头部和上身被正面击中后向后仰，胸口后缩，双臂被震开、拳头松开，前脚掌仍着地，披风向后甩，视线朝右上方。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/hit-00-cell.png",
+   "cell_sha256": "a9fc181a2644bcd2647ff708dec587cfa7066d5897f5519542bbf7a6f838996f",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     51,
+     27,
+     207,
+     247
+    ],
+    "height": 221,
+    "width": 157,
+    "head_height": 17,
+    "head_ratio": 0.0769,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "hit-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1413",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/hit/frames/hit-01-raw-01.png",
+   "source_sha256": "03c3f024c81c2280fede662f2346ec3734fe2340c6966134accd64e50bf2a6b2",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，双脚站稳；上身从后仰恢复一半，头部回正，双拳重新收到胸前护架，膝盖微屈，披风落回身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/hit-01-cell.png",
+   "cell_sha256": "5fde9bc7337f02967cef5b7d8a63c17499e7d798925eead72b42b42d8c5c07ed",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     79,
+     30,
+     194,
+     247
+    ],
+    "height": 218,
+    "width": 116,
+    "head_height": 42,
+    "head_ratio": 0.1927,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "hit_high-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1420",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/hit_high/frames/hit_high-00-raw-01.png",
+   "source_sha256": "945c75545b581043987198bf2517d096ed646de0c951e86b1fa48094031efd37",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，双脚前后分开；头部被高位击中后猛地向后仰，下巴抬起，上身随之后弓，双臂向两侧张开，披风向后甩，视线朝上。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/hit_high-00-cell.png",
+   "cell_sha256": "224e47c4d242c9a980d904c58eda7ba2e15dbf08ceb221c28005d1fcf6456686",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     44,
+     39,
+     211,
+     247
+    ],
+    "height": 209,
+    "width": 168,
+    "head_height": 16,
+    "head_ratio": 0.0766,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "hit_high-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1428",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/hit_high/frames/hit_high-01-raw-01.png",
+   "source_sha256": "d7f8b7638e7dda6a596730e0341997603782f85dda8636a0e01847a736d0e34a",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，后脚向后踉跄半步、屈膝；上身仍后仰，头部偏后，双臂半举失去护架，披风扬起，视线朝右上方。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/hit_high-01-cell.png",
+   "cell_sha256": "27dbe2951fd2326903d41c168804a2379a865a4b614fc0409eeb087689f45a43",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     40,
+     40,
+     181,
+     247
+    ],
+    "height": 208,
+    "width": 142,
+    "head_height": 16,
+    "head_ratio": 0.0769,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "hit_high-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1436",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/hit_high/frames/hit_high-02-raw-01.png",
+   "source_sha256": "4157063c0c4fdd45f2b6eba0d12091bfd67177bedb115e0475c6c0506d708f72",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，双脚重新站稳、双膝微屈；头部回正，双拳收回胸前护架，上身直起，披风落回身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/hit_high-02-cell.png",
+   "cell_sha256": "3b0edd93a7d78b280528abb35d985daeaf8a77bfd435a585fbcfea6cba0a6818",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     83,
+     27,
+     187,
+     247
+    ],
+    "height": 221,
+    "width": 105,
+    "head_height": 44,
+    "head_ratio": 0.1991,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "hit_mid-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1449",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/hit_mid/frames/hit_mid-00-raw-01.png",
+   "source_sha256": "4db60a6f4359f2dbe2070c7fb01ede06620735730396f2b2a53358157a4fc98a",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，双脚前后分开；腹部被正面击中，上身向前弓起、肩膀内收，双拳收到腹前，头部低下，膝盖弯曲，披风向前垂，视线朝下前方。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/hit_mid-00-cell.png",
+   "cell_sha256": "1b98df28c3492385162f3155fd6c0366e04e7a575b782bbb2c5e7ad14c7df894",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     62,
+     72,
+     203,
+     247
+    ],
+    "height": 176,
+    "width": 142,
+    "head_height": 44,
+    "head_ratio": 0.25,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "hit_mid-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1453",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/hit_mid/frames/hit_mid-01-raw-01.png",
+   "source_sha256": "e7136284f809a1a540a25db0b398f1a0a8ec81c7c44bfc22ef7fdecba8d0b36d",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，后脚向后踉跄半步、屈膝；上身仍前弓，一只手按住腹部，另一只手半举，头部抬起看向右方，披风摆动，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/hit_mid-01-cell.png",
+   "cell_sha256": "33560cc0c0d6785ffe5c73aaf0ac3a475860936ab893efdb8b6c5541810cc0c2",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     55,
+     47,
+     218,
+     247
+    ],
+    "height": 201,
+    "width": 164,
+    "head_height": 16,
+    "head_ratio": 0.0796,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "hit_mid-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1460",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/hit_mid/frames/hit_mid-02-raw-01.png",
+   "source_sha256": "debca082caf48120ce0a41fe0f1861069ac12c03f424ce83ae5a9573d02f7e08",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，双脚站稳、双膝微屈；上身直起，双拳回到胸前护架，披风落回身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/hit_mid-02-cell.png",
+   "cell_sha256": "284f3880dd33935b8b685398287f5ea4a644bdb1011472c742a03e2ce664c624",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     80,
+     27,
+     184,
+     247
+    ],
+    "height": 221,
+    "width": 105,
+    "head_height": 51,
+    "head_ratio": 0.2308,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "land-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1627",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/land/frames/land-00-raw-01.png",
+   "source_sha256": "623741eee94393f11f03161efd615cd3ed8da2aa2ce164586f55bcee82d4bfbb",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视落地缓冲，双脚前后分开、双膝深屈，臀部下沉；双拳收到胸前，上身略前倾，披风向下落，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/land-00-cell.png",
+   "cell_sha256": "e39197073d67cdb5eee350341aa7cb2452552841fbb05d3a17b10524f2726673",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     63,
+     65,
+     211,
+     247
+    ],
+    "height": 183,
+    "width": 149,
+    "head_height": 14,
+    "head_ratio": 0.0765,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "land-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1636",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/land/frames/land-01-raw-01.png",
+   "source_sha256": "2d631e28f520e854885148f747ce8ceba58daef97d51a7e5cf272a6e46afa9e7",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视从落地缓冲起身，双脚前后分开、双膝仍弯；上身直起一半，双拳抬在胸前护架，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/land-01-cell.png",
+   "cell_sha256": "f628f5a4ea3f15168ff41ad146f7bd56318b0add2d1923b31d4ad26a7c91d45a",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     66,
+     41,
+     210,
+     247
+    ],
+    "height": 207,
+    "width": 145,
+    "head_height": 42,
+    "head_ratio": 0.2029,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "launch_fall-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1855",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1536,
+    1024
+   ],
+   "source": "art/fighters/ultraman-king/stage1/launch_fall/frames/launch_fall-00-raw-01.png",
+   "source_sha256": "5c47c43a0d403416e7800e9e8073a8a01839e73affabf1ebe9876d914b4f0629",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视从空中下落，身体横着、背部朝下，双腿屈膝上抬，双臂张开，披风向上翻卷，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/launch_fall-00-cell.png",
+   "cell_sha256": "08c5503abb6af6e9aa8e91cd1c88fbaa10f0c3ea4503b4f4b8efb0861520138f",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     6,
+     49,
+     231,
+     195
+    ],
+    "height": 147,
+    "width": 226,
+    "head_height": 32,
+    "head_ratio": 0.2177,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 195,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "launch_fall-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1862",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1672,
+    941
+   ],
+   "source": "art/fighters/ultraman-king/stage1/launch_fall/frames/launch_fall-01-raw-01.png",
+   "source_sha256": "e7f7a7105f90228a1f3f9d27b6c39af49dea90cf6e31db1328ef1118bbc8b0bc",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视继续下落，身体接近水平、头部朝右，双腿向上收、膝盖弯曲，双臂伸开，披风向上翻卷，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/launch_fall-01-cell.png",
+   "cell_sha256": "0ff7b88108380194d399ec7f3b5bf5807702c51892fc78052cd4361ca0054d51",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     48,
+     88,
+     244,
+     220
+    ],
+    "height": 133,
+    "width": 197,
+    "head_height": 10,
+    "head_ratio": 0.0752,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 220,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "launch_fall-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1870",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/launch_fall/frames/launch_fall-02-raw-01.png",
+   "source_sha256": "f5f5e3e1712aff87f2fabc4b38c8bafa2a8660a6267022a16ab2dbe2a0cf7c10",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视即将落地，身体后仰、背部朝下，双腿向下伸、脚朝地，双臂向两侧张开，披风向上翻卷，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/launch_fall-02-cell.png",
+   "cell_sha256": "aabb33ced598ca2598e4eb231732c78f2dd7ed25476be220e2a08ff5fd8ff9b6",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     1,
+     21,
+     162,
+     240
+    ],
+    "height": 220,
+    "width": 162,
+    "head_height": 20,
+    "head_ratio": 0.0909,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 240,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "launch_rise-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1830",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/launch_rise/frames/launch_rise-00-raw-01.png",
+   "source_sha256": "b65c5a6f0c6759ed7aaaeebd3e7e64075c62450b264600eecac175913ebec550",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视被击中后身体向上弹起，双脚刚离地，上身弯曲、头部后仰，双臂向两侧甩开，披风向下拖，视线朝上。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/launch_rise-00-cell.png",
+   "cell_sha256": "22614e47dc3171b52eb223c36eeb6a739876b38bed3d3cd91e59048c5653a78b",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     74,
+     41,
+     202,
+     247
+    ],
+    "height": 207,
+    "width": 129,
+    "head_height": 16,
+    "head_ratio": 0.0773,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "launch_rise-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1839",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/launch_rise/frames/launch_rise-01-raw-01.png",
+   "source_sha256": "6319e1ea37a00ededf362a870a31a26fa83865d986a3fa1c8e0c59479e8733e6",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视腾空上升，身体向后弓起、胸口朝上，双腿向下垂、膝盖弯曲，双臂向后甩，披风向上翻卷，视线朝上。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/launch_rise-01-cell.png",
+   "cell_sha256": "06e478a6f356ea7d4a0532009d5d66ee958039cea6b12f0adf950f3b3c9c769f",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     24,
+     15,
+     165,
+     220
+    ],
+    "height": 206,
+    "width": 142,
+    "head_height": 16,
+    "head_ratio": 0.0777,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 220,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "launch_rise-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1848",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1438,
+    1094
+   ],
+   "source": "art/fighters/ultraman-king/stage1/launch_rise/frames/launch_rise-02-raw-01.png",
+   "source_sha256": "b759fe76e6df3037639b50c8de71e79e9762d553fd71d19c9eeb666bc243eefe",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视继续上升并向后翻转，身体横在空中、双腿收屈，双臂张开，披风在身下翻卷，视线朝右上。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/launch_rise-02-cell.png",
+   "cell_sha256": "24d23a43f8f09f30d4e191f94505557d818f520f7318e24aca96a3cc6825ff7b",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     24,
+     31,
+     212,
+     195
+    ],
+    "height": 165,
+    "width": 189,
+    "head_height": 13,
+    "head_ratio": 0.0788,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 195,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "light1-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1231",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/light1/frames/light1-00-raw-02.png",
+   "source_sha256": "69cd13b92e45bb72e1354f0e494be3ae2f19c9798507da901e30cbb5c546b6dc",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致，头顶接近画布上缘。画这一帧：右侧视格斗站姿，右脚在前、左脚在后，双膝弯曲；上身略向右转，右拳收到腰侧、肘部向后拉，左拳抬到脸前护住，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/light1-00-cell.png",
+   "cell_sha256": "8ea8077c2476b72bc77f03cd822ab71bc80d9c55cb507797f79e6a8054582726",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     61,
+     26,
+     221,
+     247
+    ],
+    "height": 222,
+    "width": 161,
+    "head_height": 18,
+    "head_ratio": 0.0811,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "light1-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1234",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/light1/frames/light1-01-raw-01.png",
+   "source_sha256": "3cc29443bd14d3b26b253fde1d576c09644fd09284804f524a05bea0cf1c3511",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视格斗站姿，右脚在前蹬直、左脚在后撑地；右臂向正前方完全打出直拳，拳头与胸口同高、手臂接近伸直，左拳仍护在脸前，上身随出拳前倾，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/light1-01-cell.png",
+   "cell_sha256": "9da281678a82d50a58828974a6cf77b58e18167643684b73454a08659fb05484",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     66,
+     42,
+     228,
+     247
+    ],
+    "height": 206,
+    "width": 163,
+    "head_height": 17,
+    "head_ratio": 0.0825,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "light1-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1239",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/light1/frames/light1-02-raw-01.png",
+   "source_sha256": "409da1cc0f3ed079fe04223b88de4748352645671f94b26fad3f5c83ab6d6e52",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视格斗站姿，右脚在前左脚在后，双膝微屈；右臂收回胸前、拳心朝内，左拳抬在脸前，上身回到直立护架，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/light1-02-cell.png",
+   "cell_sha256": "c21325708f86137f345f78efde3b85d319a3b35a07807d54eaf361c0c2f97f8d",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     72,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 131,
+    "head_height": 44,
+    "head_ratio": 0.1973,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "light2-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1255",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/light2/frames/light2-00-raw-01.png",
+   "source_sha256": "ee140fa865d2e50e8a10f6430ed5560f6348df8492898e51ef24341b26da064f",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视格斗站姿，左脚单腿支撑、膝微屈；右膝向前抬到腰高，右脚收在膝下，双拳护在胸前，上身略后仰保持平衡，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/light2-00-cell.png",
+   "cell_sha256": "5ebdf17e2ad8b033fb288a899e613ea0cb928a277f3bc4c729f3ee1fbdbeca7d",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     84,
+     27,
+     204,
+     247
+    ],
+    "height": 221,
+    "width": 121,
+    "head_height": 43,
+    "head_ratio": 0.1946,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "light2-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1260",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/light2/frames/light2-01-raw-01.png",
+   "source_sha256": "122bef6b574c3aedf022c96f7f28f366ab29ccd2fa737a482eae6e89803a130c",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，左脚支撑、膝微屈；右腿向正前方踢出、接近伸直，脚掌朝前、脚尖上翘，踢腿高度与腰齐平，双拳收在胸前，上身略后仰，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/light2-01-cell.png",
+   "cell_sha256": "1ee0a5799165a52c3ed277dd794396b5e2dc67d377f8fc8e82aad386fcbe3a34",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     85,
+     27,
+     247,
+     247
+    ],
+    "height": 221,
+    "width": 163,
+    "head_height": 43,
+    "head_ratio": 0.1946,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "light2-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1280",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/light2/frames/light2-02-raw-02.png",
+   "source_sha256": "46704ebc39ee0d3c7ad912e2bc6245b9354203d6da955e78c1b4c9359ff3444f",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视格斗站姿，右脚向前落到地面、左脚在后，双脚都着地、双膝微屈；双拳收回胸前护架，上身直立，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/light2-02-cell.png",
+   "cell_sha256": "d79402c6e901d86b467a3852401c7a2f12991efde0a1413ce24b4c643f79355e",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     71,
+     25,
+     204,
+     247
+    ],
+    "height": 223,
+    "width": 134,
+    "head_height": 45,
+    "head_ratio": 0.2018,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "light3-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1285",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/light3/frames/light3-00-raw-01.png",
+   "source_sha256": "e89133c60cf0780ead7ffcf3e9e5ab10b54b4b2429731477503bb431796a30a5",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视格斗站姿，双脚前后分开、屈膝；上身向右后方拧转，右拳拉到肩侧、肘部弯曲，左拳抬在脸前，视线仍朝右前方。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/light3-00-cell.png",
+   "cell_sha256": "e33200762ea26849fb592b2020c7c251778524ae2a14f89da4755854fd5faf20",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     65,
+     31,
+     222,
+     247
+    ],
+    "height": 217,
+    "width": 158,
+    "head_height": 17,
+    "head_ratio": 0.0783,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "light3-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1290",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/light3/frames/light3-01-raw-01.png",
+   "source_sha256": "af95a4348cddfab66806be09003cfff40ad5d2c16fb66501e168cf21ddcfec9f",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，右脚前跨、屈膝，左脚后蹬；上身向左拧转，右臂从肩侧向正前方横向摆出、拳头与胸口同高、肘部微屈，左拳收在胸前，披风随转身向身后扬起，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/light3-01-cell.png",
+   "cell_sha256": "a9f050831a738d7825954387181be9e23825f18946a772988e9c0f1d84ac58f6",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     43,
+     52,
+     209,
+     247
+    ],
+    "height": 196,
+    "width": 167,
+    "head_height": 40,
+    "head_ratio": 0.2041,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "light3-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1293",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/light3/frames/light3-02-raw-01.png",
+   "source_sha256": "73727e2cea98a8e86f7357d0af8547ea23ec41dc8dd99214a13734321b960fd1",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，右脚在前承担重心、膝微屈；上身继续向左转，右臂横摆到身体左前方、拳头停在胸前高度，左拳收在肋侧，披风甩向身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/light3-02-cell.png",
+   "cell_sha256": "507c18a803309cb19e93a5e34d00fd8c9b1021107b5498512320e4c8a7c90635",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     42,
+     25,
+     197,
+     247
+    ],
+    "height": 223,
+    "width": 156,
+    "head_height": 43,
+    "head_ratio": 0.1928,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "light3-03-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1297",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/light3/frames/light3-03-raw-01.png",
+   "source_sha256": "8bcc2231b25f2d552700524e5bbde9166586dd65943e28ecffa5f90807cacf33",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视格斗站姿，双脚前后分开、双膝微屈；双拳收回胸前护架，上身转回正面朝右，披风落回身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/light3-03-cell.png",
+   "cell_sha256": "48bd5d314b5ce436dce7c211336838e06a79e4d2ee1183153b987b44a9282211",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     61,
+     25,
+     213,
+     247
+    ],
+    "height": 223,
+    "width": 153,
+    "head_height": 45,
+    "head_ratio": 0.2018,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "roll_back-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1721",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/roll_back/frames/roll_back-00-raw-01.png",
+   "source_sha256": "f58d342c6efb7362f3c14e0a0b45f287fcde21af69d21aa0123907612727f6d1",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视向后翻滚起始，双脚屈膝下蹲，上身前俯，双拳收在胸前，臀部向后坐，披风垂到身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/roll_back-00-cell.png",
+   "cell_sha256": "d2c9ca8a076b7e50c88434b24490afc4a6e5fbc5fa595e91f4c88246ae8e0889",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     76,
+     63,
+     223,
+     247
+    ],
+    "height": 185,
+    "width": 148,
+    "head_height": 24,
+    "head_ratio": 0.1297,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "roll_back-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1727",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/roll_back/frames/roll_back-01-raw-01.png",
+   "source_sha256": "9a519b0987df5dc433e2017fdf26ed12438456f30de36ea228a78f6dae8a79cd",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视向后翻滚，臀部坐向地面，双手在身后撑地，双膝收在身前，头部内收，身体团起，披风垫在身后，视线朝下。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/roll_back-01-cell.png",
+   "cell_sha256": "afe465c9d4a896606c71f1dfca3f328f1c0156664865fe6ca6c38b861a58c2a9",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     54,
+     117,
+     206,
+     247
+    ],
+    "height": 131,
+    "width": 153,
+    "head_height": 25,
+    "head_ratio": 0.1908,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "roll_back-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1733",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/roll_back/frames/roll_back-02-raw-01.png",
+   "source_sha256": "9c452009e8be0de647aab5cf724b49bda7458e80e16b8179512401177e1592e8",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视向后翻滚成团，背部着地、双膝收在胸前，头低下，双臂抱膝，披风卷在身侧，身体呈圆形，视线朝下。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/roll_back-02-cell.png",
+   "cell_sha256": "17759ae78e658969fc105baa25cf23838d89ec704d6d94e3491985605e5160b8",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     61,
+     88,
+     191,
+     247
+    ],
+    "height": 160,
+    "width": 131,
+    "head_height": 29,
+    "head_ratio": 0.1812,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "roll_back-03-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1741",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1536,
+    1024
+   ],
+   "source": "art/fighters/ultraman-king/stage1/roll_back/frames/roll_back-03-raw-01.png",
+   "source_sha256": "8c71525d56887511ac9834d6b4d6e3f10be9f8b0ec61b05784a5a0e47a28ebf5",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视翻滚结束，双膝跪地、一手撑地，身体低伏，头部抬起看向右方，披风落在身后。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/roll_back-03-cell.png",
+   "cell_sha256": "0e33b200b387de44ab5afc58308807b31314aed37cbcb1b76bcc2ae8e82e592a",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     24,
+     111,
+     235,
+     247
+    ],
+    "height": 137,
+    "width": 212,
+    "head_height": 32,
+    "head_ratio": 0.2336,
+    "colors": 30,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "roll_back-04-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1749",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/roll_back/frames/roll_back-04-raw-01.png",
+   "source_sha256": "261419152cf34668664c1f08504cf9f466885291274a25e5f6fd2ae4cd9355c5",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视从翻滚中站起，双脚前后分开、双膝微屈；双拳回到胸前护架，上身直起，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/roll_back-04-cell.png",
+   "cell_sha256": "12428af4f35acd596109b36a12fc46e59dfb1a40d1414af22fd1dc358eb7b425",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     77,
+     25,
+     197,
+     247
+    ],
+    "height": 223,
+    "width": 121,
+    "head_height": 43,
+    "head_ratio": 0.1928,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "roll_forward-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1676",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/roll_forward/frames/roll_forward-00-raw-01.png",
+   "source_sha256": "8d06ab3a2267a8b444d4fa90825410c807a9597a7b5769e225acfb98e9e512ce",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视向前翻滚的起始，双脚屈膝下蹲，上身前俯、头低下，双拳收在胸前，身体团起，披风垂到身后，视线朝右下。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/roll_forward-00-cell.png",
+   "cell_sha256": "a5af02e93115803be5fe44b648af87271904e3eef0735a11ed79a21bf47e28ac",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     77,
+     84,
+     225,
+     247
+    ],
+    "height": 164,
+    "width": 149,
+    "head_height": 13,
+    "head_ratio": 0.0793,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "roll_forward-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1714",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1312,
+    1199
+   ],
+   "source": "art/fighters/ultraman-king/stage1/roll_forward/frames/roll_forward-01-raw-02.png",
+   "source_sha256": "3747004ff007adc04a11ac6569aaa4d500ef741a0f8670b835457c32007987d6",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视向前翻滚，身体向前下方倾倒并紧紧团起，肩部接近地面、头收在胸前，双膝收向胸口，双臂抱住小腿，整个人收成紧凑的一团，披风贴在身后，视线朝下。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/roll_forward-01-cell.png",
+   "cell_sha256": "987f5e09bf6d64b85fdeb6c9204404bb291f3a59b63fe79447f53567e1ae4145",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     63,
+     95,
+     219,
+     247
+    ],
+    "height": 153,
+    "width": 157,
+    "head_height": 12,
+    "head_ratio": 0.0784,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "roll_forward-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1687",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1287,
+    1222
+   ],
+   "source": "art/fighters/ultraman-king/stage1/roll_forward/frames/roll_forward-02-raw-01.png",
+   "source_sha256": "6525fd4b6244933828de78f9108658fb99cc286d50d28bcecb74406a5cb56c8d",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视向前翻滚成团，背部接近地面、膝盖收在胸前，头深深低下，双臂抱住小腿，披风卷在身侧，身体呈圆形，视线朝下。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/roll_forward-02-cell.png",
+   "cell_sha256": "308ccba6c847a02ca126357de9cec6bdb81f56a5c770afaa6653f9c79418374f",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     50,
+     83,
+     205,
+     247
+    ],
+    "height": 165,
+    "width": 156,
+    "head_height": 13,
+    "head_ratio": 0.0788,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "roll_forward-03-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1692",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/roll_forward/frames/roll_forward-03-raw-01.png",
+   "source_sha256": "4a2fe7f969bf5d50af61da8ac477fc5b57758d71f155e20321b3f2d6ab07d786",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视翻滚起身，单膝跪地、另一脚踩地，身体低伏，一手撑地，头部抬起看向右方，披风落在身后。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/roll_forward-03-cell.png",
+   "cell_sha256": "de15a2e2974c02ed2ced0ea6c42ed70e81223eef0adf3d6cb5eeaa45678689b9",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     50,
+     98,
+     217,
+     247
+    ],
+    "height": 150,
+    "width": 168,
+    "head_height": 12,
+    "head_ratio": 0.08,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "roll_forward-04-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1695",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/roll_forward/frames/roll_forward-04-raw-01.png",
+   "source_sha256": "e8445cd0e68173e05bc256f4130c546096b58344e15e7953fc38378bf2e8cc9f",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视从翻滚中站起，双脚前后分开、双膝微屈；双拳回到胸前护架，上身直起，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/roll_forward-04-cell.png",
+   "cell_sha256": "8b506896dbecfece206aff28ab594a4f0efa68ee25350924773ea28c905bdccc",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     72,
+     25,
+     203,
+     247
+    ],
+    "height": 223,
+    "width": 132,
+    "head_height": 44,
+    "head_ratio": 0.1973,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "takeoff-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1572",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/takeoff/frames/takeoff-00-raw-01.png",
+   "source_sha256": "945ca188921dce3c939c3f0d0a1ea071485dab1d133f47ecb1dfc11a852829bc",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，双脚前后分开、双膝深屈，臀部下沉；双臂向后摆到身体两侧，上身向前倾，准备起跳，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/takeoff-00-cell.png",
+   "cell_sha256": "e7f25f3f9468167e0937cf77faf690e544e946c3de9635da0fee3833231e2f43",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     73,
+     72,
+     213,
+     247
+    ],
+    "height": 176,
+    "width": 141,
+    "head_height": 15,
+    "head_ratio": 0.0852,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "takeoff-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1579",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/takeoff/frames/takeoff-01-raw-01.png",
+   "source_sha256": "c2d7eb6febe711f0c6656ab95fe752ea0e125e803b9013e65809fceef1c8c57e",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视起跳瞬间，双脚刚离开地面、双腿向下伸直，身体向上伸展；双臂向上摆到肩高，披风向下拖，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/takeoff-01-cell.png",
+   "cell_sha256": "972396b06ec7f48d82bb8fd41c48cb9b042a7425397196ff89a100989563db6f",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     99,
+     35,
+     186,
+     247
+    ],
+    "height": 213,
+    "width": 88,
+    "head_height": 41,
+    "head_ratio": 0.1925,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "wake-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1821",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1536,
+    1024
+   ],
+   "source": "art/fighters/ultraman-king/stage1/wake/frames/wake-00-raw-02.png",
+   "source_sha256": "e264384f4df30204f761d3f3b28328f11bf77ff69ec80fb72f79207c25405632",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视侧躺在地面，身体向胸口蜷起，双膝收在身前，一只手肘撑地抬起上半身，头部抬起看向右方，披风收拢在身后，整个人保持紧凑。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/wake-00-cell.png",
+   "cell_sha256": "e98cf50a1b850e436dc8bcb621468ae505784f39f9610a3eedca61a77722de13",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     47,
+     103,
+     221,
+     247
+    ],
+    "height": 145,
+    "width": 175,
+    "head_height": 11,
+    "head_ratio": 0.0759,
+    "colors": 31,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "wake-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1781",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1536,
+    1024
+   ],
+   "source": "art/fighters/ultraman-king/stage1/wake/frames/wake-01-raw-01.png",
+   "source_sha256": "d587d76886557af3fae15ed6ee02a93fb026033048c44fc22b27dc5f6d3f05fe",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视从地面坐起，双腿屈膝、脚掌着地，一只手撑在身后，上身抬起，头部看向右方，披风落在身后。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/wake-01-cell.png",
+   "cell_sha256": "fb8e262d0d22e965fb0036361a350b5c21ed4bd0562a0258fa296233f7e16a79",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     30,
+     97,
+     222,
+     247
+    ],
+    "height": 151,
+    "width": 193,
+    "head_height": 12,
+    "head_ratio": 0.0795,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "wake-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1789",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/wake/frames/wake-02-raw-01.png",
+   "source_sha256": "825130ec7f31cee1a48e1e3fb2f964b61ec506f89fa10e76fcd0c57fcc3ab778",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视单膝跪地，一只脚踩地、另一膝着地，一只手撑在膝盖上，上身抬起，头部看向右方，披风垂在身后。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/wake-02-cell.png",
+   "cell_sha256": "2b455e1d6ba79a2008338363d0fd47ed6c7396935aad66e73c8b061616fcf1a7",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     54,
+     53,
+     209,
+     247
+    ],
+    "height": 195,
+    "width": 156,
+    "head_height": 57,
+    "head_ratio": 0.2923,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "wake-03-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1796",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/wake/frames/wake-03-raw-01.png",
+   "source_sha256": "725337f1d80b32cba1f459f0b9b90f75d7253ee1be5df96f7f69bbc5b0b9eb3f",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视从单膝跪地起身，双脚前后分开、双膝仍弯，上身前倾，双拳收到胸前，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/wake-03-cell.png",
+   "cell_sha256": "4d55b5ad188893a1ef1648da40f2c1dfd9285e60b03ff959e7003777e6ec121d",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     64,
+     66,
+     209,
+     247
+    ],
+    "height": 182,
+    "width": 146,
+    "head_height": 16,
+    "head_ratio": 0.0879,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "wake-04-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1804",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/wake/frames/wake-04-raw-01.png",
+   "source_sha256": "c4ac6ce7123246131e5b3a31bca8ba658ba74e0c44a4026cee88f6d89b012c37",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视格斗站姿，双脚前后分开、双膝微屈；双拳回到胸前护架，上身直立，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/wake-04-cell.png",
+   "cell_sha256": "165331678c49c03d01bd7e529a5b53c4795a7724a6c808bc5c550cefc2f8b1a2",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     75,
+     25,
+     206,
+     247
+    ],
+    "height": 223,
+    "width": 132,
+    "head_height": 45,
+    "head_ratio": 0.2018,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": false
+   }
+  },
+  {
+   "frame": "walk_back-00-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1645",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/walk_back/frames/walk_back-00-raw-01.png",
+   "source_sha256": "f19849d22505cd24a78ab2db6f697208727f015fd86155e567e4a490d1da45f1",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视向后移动，右脚在前支撑、膝微屈，左脚向后方抬起、膝盖弯曲；上身略后仰，双拳护在胸前，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/walk_back-00-cell.png",
+   "cell_sha256": "ffc6e478f5c7ddf821332d20a698825e996b1fa928d9cc3592465533e4c55dea",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     78,
+     28,
+     187,
+     247
+    ],
+    "height": 220,
+    "width": 110,
+    "head_height": 53,
+    "head_ratio": 0.2409,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "walk_back-01-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1654",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/walk_back/frames/walk_back-01-raw-01.png",
+   "source_sha256": "e9618563565aa34e455d3c82b7cf892bd9e133ed5b1e84d64470a44da677f458",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视向后移动，左脚向后落地、屈膝承重，右脚在前脚掌着地；重心移到后脚，上身略后仰，双拳护胸，披风摆动，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/walk_back-01-cell.png",
+   "cell_sha256": "bcc1a3961745719bd1e73c9200859b06865b2220075b279edc410173e38eddb5",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     53,
+     43,
+     209,
+     247
+    ],
+    "height": 205,
+    "width": 157,
+    "head_height": 45,
+    "head_ratio": 0.2195,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "walk_back-02-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1661",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/walk_back/frames/walk_back-02-raw-01.png",
+   "source_sha256": "32b66f1f541a2793c0747a447a44fddb85ed74bf9d047f9d2f9b3b0af3e283df",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视向后移动，左脚在后支撑、膝微屈，右脚抬起向后方收、膝盖弯曲；上身直立，双拳护胸，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/walk_back-02-cell.png",
+   "cell_sha256": "61b0820a3e923fef3c5832efad4716df75df245243651bc58c3446cae83efdd8",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     84,
+     25,
+     176,
+     247
+    ],
+    "height": 223,
+    "width": 93,
+    "head_height": 45,
+    "head_ratio": 0.2018,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  },
+  {
+   "frame": "walk_back-03-cell",
+   "status": "accepted",
+   "generation_id": "image-65174-1665",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "received_size": [
+    1094,
+    1438
+   ],
+   "source": "art/fighters/ultraman-king/stage1/walk_back/frames/walk_back-03-raw-01.png",
+   "source_sha256": "59b1cc774a96361a68e9afc049def6baeaeebcaf557c7aedc618b06694098e0a",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视向后移动，右脚向后落地、屈膝，双脚前后分开；重心回到两脚之间，双拳护胸，身体直立，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reference_images": [
+    "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png"
+   ],
+   "cell": "art/fighters/ultraman-king/stage1/cells/walk_back-03-cell.png",
+   "cell_sha256": "97a50f1c961b44571bc689466a3499e1d3b1540d154b0af137732572183c4d1f",
+   "landing": {
+    "scale": 0.158044,
+    "bbox": [
+     82,
+     26,
+     191,
+     247
+    ],
+    "height": 222,
+    "width": 110,
+    "head_height": 44,
+    "head_ratio": 0.1982,
+    "colors": 32,
+    "components": 1,
+    "foot_row": 247,
+    "alpha": [
+     0,
+     255
+    ],
+    "standing": true
+   }
+  }
+ ],
+ "rejected": [
+  {
+   "status": "rejected",
+   "generation_id": "image-65174-1377",
+   "path": "art/fighters/ultraman-king/stage1/crouch_guard/frames/crouch_guard-00-raw-01.png",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视深蹲，双脚前后分开、双膝深屈；双前臂在胸前交叉、双拳护住脸，肘部收紧，上身压低，披风垂在身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reason": "蹲防过低（站高 157），与 01 帧不接续"
+  },
+  {
+   "status": "rejected",
+   "generation_id": "image-65174-1473",
+   "path": "art/fighters/ultraman-king/stage1/dash_start/frames/dash_start-01-raw-01.png",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，右脚向前用力蹬出，左腿在后伸直，身体大幅前倾；双拳一前一后摆开，披风向后扬起，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reason": "前冲过度、身体失衡（站高 141）"
+  },
+  {
+   "status": "rejected",
+   "generation_id": "image-65174-1319",
+   "path": "art/fighters/ultraman-king/stage1/heavy/frames/heavy-02-raw-01.png",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，右脚在前屈膝、左脚在后蹬直；上身大幅前倾，右掌向正前方完全推出、手臂接近伸直、掌心朝前，左掌收在肋侧，披风甩向身后，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reason": "压得过低、姿势别扭（站高 153）"
+  },
+  {
+   "status": "rejected",
+   "generation_id": "image-65174-1226",
+   "path": "art/fighters/ultraman-king/stage1/light1/frames/light1-00-raw-01.png",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视格斗站姿，右脚在前左脚在后，双膝微屈；上身前倾，右拳收回到腰侧蓄力，左拳抬在胸前护脸，视线朝右前方。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reason": "站高仅 202（目标 223），整身过矮"
+  },
+  {
+   "status": "rejected",
+   "generation_id": "image-65174-1265",
+   "path": "art/fighters/ultraman-king/stage1/light2/frames/light2-02-raw-01.png",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。人物在画面中的高度与留白和参考图一致。画这一帧：右侧视，左脚支撑；右腿收回、膝盖抬在身前，右脚朝下准备落地，双拳护在胸前，上身回到直立，视线朝右。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reason": "收势仍抬膝，改为前脚落地的站姿"
+  },
+  {
+   "status": "rejected",
+   "generation_id": "image-65174-1682",
+   "path": "art/fighters/ultraman-king/stage1/roll_forward/frames/roll_forward-01-raw-01.png",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视向前翻滚，身体向前下方倾倒，肩部接近地面，头收在胸前，双腿屈膝蹬地，双臂收拢护住身体，披风向后拖，视线朝下。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reason": "右缘 x=255 裁切"
+  },
+  {
+   "status": "rejected",
+   "generation_id": "image-65174-1773",
+   "path": "art/fighters/ultraman-king/stage1/wake/frames/wake-00-raw-01.png",
+   "prompt": "保持参考图的像素画风、身份、配色、体型与披风，冠球在额前、冠刃向后，不得画反。画这一帧：右侧视倒在地面，侧身躺着，一只手撑起上半身，双腿屈膝，头部抬起看向右方，披风铺在身后。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整人物不裁切，透明背景，无地面、文字、边框、特效。",
+   "reason": "右缘 x=255 裁切"
+  }
+ ]
+}

@@ -1,0 +1,503 @@
+{
+ "fighter": "ultraman-joneus",
+ "display_name": "乔尼亚斯·奥特曼",
+ "stage": "stage1_idle_photo_candidate",
+ "date": "2026-11-10",
+ "policy": "官方皮套照/设定侧视→严格90°右侧视格斗待机照片→待机像素整帧。照片门全过才做像素；像素过机检与造型验收后才作为动作身份锚。本轮只做待机候选，不安装 assets、不改 content/roster、不接运行时、不启动 Godot、不提交、不录屏。拒收候选记录 SHA/尺寸/实测后删除原图，不留副本。",
+ "identity_anchor_reference": {
+  "path": "art/fighters/ultraman-joneus/model/identity-anchor-x4.png",
+  "sha256": "89415d82ee1c24187c38eff15fa908c766ddba215af7d3a650d5963d453b1da5",
+  "size": [
+   220,
+   992
+  ],
+  "native_size": [
+   55,
+   248
+  ],
+  "note": "原生宽度 55<60 px，模型读不出肩宽与四肢粗细，不得单独作动作参考；只作颜色与像素块大小核验。动作身份锚必须由本轮待机像素整帧建立。"
+ },
+ "catalogue": {
+  "path": "assets/fighters/ultraman-joneus/catalogue/model-native.png",
+  "sha256": "b4ef4fe4c755b8289dbabb923ecae8144c0048c63cb4dae59c51c481cdb57917",
+  "size": [
+   384,
+   256
+  ],
+  "visible_height_including_ornaments": 248,
+  "visible_height_verified": 248,
+  "palette_note": "图鉴 32 色只有红/银/深褐，缺额前星与胸前星形计时器的绿色/深绿及黄眼；像素阶段不得直接套图鉴色板，须从现用待机整图重定 ≤32 色并保留完整色板。"
+ },
+ "same_view_baselines": {
+  "official_design_art": {
+   "path": "art/fighters/ultraman-joneus/sources/design-side-figure-right-20261110.png",
+   "source_record": "art/fighters/ultraman-joneus/sources/design-side-figure-right-20261110.json",
+   "source_kind": "official_design_art",
+   "view": "严格90°右侧视（原图朝左，已镜像为朝右）",
+   "landmarks": "冠顶→下颌；站高＝冠顶→最低鞋底；头宽＝眼/耳行头部最大前后深",
+   "standing_px": 1516,
+   "head_height_px": 226,
+   "head_height_ratio": 0.1491,
+   "head_depth_px": 168,
+   "head_depth_ratio": 0.1108,
+   "gate_window_8pct": {
+    "head_height_ratio": [
+     0.1372,
+     0.161
+    ],
+    "head_depth_ratio": [
+     0.1019,
+     0.1197
+    ]
+   }
+  },
+  "licensed_product_photo": {
+   "path": "art/fighters/ultraman-joneus/sources/side-figure-bigonecraft-imgn3109-right-20261110.png",
+   "sha256": "dc9f29a07c90320eb401756041b2bf2d3cc28c93891698a552c9a445af1ee3a0",
+   "source_kind": "licensed_product_photo",
+   "toy_assisted": true,
+   "view": "严格90°右侧视（已镜像）",
+   "standing_px": 849,
+   "head_height_px": 131,
+   "head_height_ratio": 0.1543,
+   "head_depth_px": 140,
+   "head_depth_ratio": 0.1649,
+   "note": "手办头壳偏圆、无耳部菱形且省略皮套细节，只作轮廓/体量旁证，不作头宽主基准；头宽主基准用官方设定侧视图。"
+  }
+ },
+ "references": [
+  {
+   "role": "身份、配色与正面结构主依据",
+   "path": "art/fighters/ultraman-joneus/sources/ref-01.webp",
+   "sha256": "8da13188682d2bb814552c254388dcd9784ccb14191bd06d1027b2e2a1d9902e",
+   "size": [
+    1123,
+    3576
+   ],
+   "note": "3/4 正面官方图，不作90°侧视比例基准。"
+  },
+  {
+   "role": "90°侧视头冠、额前星、耳部菱形、下颌与头壳深度结构",
+   "path": "art/fighters/ultraman-joneus/sources/design-side-figure-right-20261110.png",
+   "sha256": "6b630e649cd33fc59dfea208bdded0cae0028cbbba9a4bd3cc38e8010ae8ac15"
+  },
+  {
+   "role": "90°侧视真实实物轮廓与四肢体量旁证",
+   "path": "art/fighters/ultraman-joneus/sources/side-figure-bigonecraft-imgn3109-right-20261110.png",
+   "sha256": "dc9f29a07c90320eb401756041b2bf2d3cc28c93891698a552c9a445af1ee3a0"
+  },
+  {
+   "role": "90°侧视头部结构专核（官方设定侧视头部裁图，朝右）",
+   "path": "art/fighters/ultraman-joneus/stage1/idle/references/design-side-head-right-20261110.png",
+   "sha256": "d297ff05d5bffcebc9e2b72bbeb838642ef2f81a874a136672202e4d31dd93c5",
+   "size": [
+    230,
+    265
+   ],
+   "derived_from": "art/fighters/ultraman-joneus/sources/design-side-figure-right-20261110.png crop (100,25,330,290)"
+  },
+  {
+   "role": "已装机同风格站姿参考（只借站姿与画风，不抄造型/配色）",
+   "path": "art/fighters/ultraman-joneus/stage1/idle/references/stance-ref-ultraman-jack-x4.png",
+   "sha256": "03f21efe5107840f5aeba0f6ca9a9ca959ab4f571521e912821915a183011c09",
+   "size": [
+    400,
+    560
+   ],
+   "derived_from": "assets/fighters/ultraman-jack/animations/idle/atlas.png frame0 bbox(46,44,146,184), 4x nearest",
+   "atlas_sha256": "eb35aec5fa4ac68b3baaf864455d34e815e38d460c3030bdbedc7b3672fbb2d7"
+  }
+ ],
+ "generation": {
+  "service": "magpie-image",
+  "model": "codex/gpt-image-2",
+  "quality": "high",
+  "background": "transparent",
+  "requested_size": "1024x1536",
+  "n": 1
+ },
+ "target_standing_px": 248,
+ "target_stance_range": [
+  0.65,
+  0.8
+ ],
+ "target_stance": 0.72,
+ "attempts": [
+  {
+   "attempt": "stance-raw-01",
+   "date": "2026-11-10",
+   "outcome": "rejected",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "requested_size": "1024x1536",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "reference_paths": [
+    "art/fighters/ultraman-joneus/sources/ref-01.webp",
+    "art/fighters/ultraman-joneus/sources/design-side-figure-20261110.png",
+    "art/fighters/ultraman-joneus/sources/side-figure-bigonecraft-imgn3109-right-20261110.png"
+   ],
+   "reference_note": "设计侧视图此时仍朝左，未先镜像；下一张改用朝右镜像件。",
+   "prompt": "严格 90° 右侧视（人物朝右）的奥特曼乔尼亚斯格斗待机全身照。参考图的红银配色、头冠、额部星徽、黄色眼、胸腹星形计时器与四肢体量必须一致，不要放大头，手臂粗壮、大腿饱满、小腿有厚度。摆格斗架势：两脚前后错步，脚外缘间距约为站高的 0.72，前后膝屈下沉，上身略前倾，双拳抬到胸前护架，视线朝前。真实皮套质感，去掉球关节、接缝、分模线与塑料高光。全身完整不裁切，四周留白，纯透明背景，无地面、无文字、无边框、无光效。",
+   "requested_path": "art/fighters/ultraman-joneus/stage1/idle/frames/stance-raw-01.png",
+   "actual_response_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-joneus/stage1/idle/frames/stance-raw-01.png",
+   "generation_id": "image-65174-1218",
+   "bytes": 1781985,
+   "sha256": "745752edafce574033770bdf4c58a595f4d276e496f76cbb35be05adf449d7d9",
+   "alpha": {
+    "range": [
+     0,
+     254
+    ],
+    "levels": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "note": "真透明背景；RGB 无棋盘格。"
+   },
+   "alpha_bbox_ge128": [
+    55,
+    87,
+    935,
+    1470
+   ],
+   "margins_px": {
+    "left": 55,
+    "top": 87,
+    "right": 88,
+    "bottom": 65
+   },
+   "measurements": {
+    "standing_height_px": 1384,
+    "foot_outer_span_px": 881,
+    "foot_outer_span_over_height": 0.6366,
+    "stance_pass": false,
+    "rear_foot_bottom_row": 1470,
+    "front_foot_bottom_row": 1416,
+    "soles_diff_source_px": 54,
+    "native_px_scale_248_over_1384": 0.179191,
+    "soles_diff_native_px": 9.68,
+    "soles_pass": false,
+    "head_top_row": 87,
+    "chin_row": 357,
+    "head_height_px": 270,
+    "head_height_ratio": 0.1951,
+    "head_max_depth_px": 206,
+    "head_max_depth_row": 220,
+    "head_depth_ratio": 0.1488,
+    "head_height_vs_design": 0.309,
+    "head_depth_vs_design": 0.343,
+    "glow_gate": {
+     "subject_px": 398074,
+     "subject_definition": "alpha≥200 最大连通块（本图 alpha≥200 全部为该连通块）",
+     "dilate_px": 3,
+     "outside_alpha_ge16_px": 0,
+     "outside_alpha_ge200_px": 0,
+     "outside_alpha_1_15_px": 5493,
+     "pass": true,
+     "note": "alpha 1–15 尘点只登记，不计入门限。"
+    }
+   },
+   "gates": {
+    "strict_right_side_view": "pass（面部、肩线、髋线与鞋尖均朝右，双肩前后重叠）",
+    "full_body_uncropped_margins_ge8": "pass（左55/上87/右88/下65）",
+    "true_alpha_corners_zero": "pass",
+    "stance_width_0_65_to_0_80": "fail（0.6366）",
+    "soles_diff_le_1_native_px": "fail（54 源px＝9.68 原生px）",
+    "glow_gate": "pass",
+    "head_height_within_8pct_same_view_official": "fail（0.1951 vs 0.1491，+30.9%）",
+    "head_width_within_8pct_same_view_official": "fail（0.1488 vs 0.1108，+34.3%）"
+   },
+   "visual_review": {
+    "identity_features": "红银配色、黄眼、胸前星形计时器可辨；右侧视成立。",
+    "structure_failures": [
+     "额前五角星被画在侧脑/太阳穴上方，侧视时应在额正面近前缘，官方设定侧视几乎看不见完整星形。",
+     "头部过大过长：头顶到下颌 0.1951，头前后深 0.1488，均超出官方侧视 ±8% 门；下颌被拉长。",
+     "脸被画成人脸：有鼻梁、嘴唇与长下巴；官方是白色面具，眼下仅窄竖向嘴部通气口和小下巴。",
+     "头冠红褐带过宽，耳部菱形框过大；官方为细窄脊线与窄菱框。"
+    ],
+    "limbs": "手臂、大腿、小腿有厚度，未见细长四肢；该项目视过。",
+    "pass": false
+   },
+   "verdict": "reject：站距不足、双鞋底不同高、头部超门且发型结构/面具结构不符，不进入像素阶段。",
+   "deletion": "记录 SHA 与实测后删除原图；/tmp 诊断裁图不属仓库副本，不随交付保留。"
+  },
+  {
+   "attempt": "stance-raw-02",
+   "date": "2026-11-10",
+   "outcome": "rejected",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "requested_size": "1024x1536",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "reference_paths": [
+    "art/fighters/ultraman-joneus/sources/ref-01.webp",
+    "art/fighters/ultraman-joneus/sources/design-side-figure-right-20261110.png",
+    "art/fighters/ultraman-joneus/sources/side-figure-bigonecraft-imgn3109-right-20261110.png"
+   ],
+   "reference_note": "侧视设定图已先镜像为朝右再作参考。",
+   "prompt": "90°右侧视（人物朝右）乔尼亚斯格斗待机全身照。红银配色、细窄头冠、额前星、黄眼、星形计时器照第一张；头壳紧凑，头顶到下颌约站高0.15，头前后深约0.11，不要放大头或拉长下颌。脸为白面具：无鼻梁嘴唇，眼下仅窄竖嘴部通气口和小下巴；额前星只在前额正面，不要画到太阳穴。两脚前后错步，脚外缘间距约站高0.72，双膝屈，双拳抬到胸前护架，两鞋底最低点同高。四肢粗细与参考一致，手臂粗壮、大腿饱满、小腿有厚度。真实皮套质感，去掉球关节、接缝与塑料高光。完整不裁切，纯透明背景，无地面、文字、边框、光效。",
+   "prompt_chars": 249,
+   "requested_path": "art/fighters/ultraman-joneus/stage1/idle/frames/stance-raw-02.png",
+   "actual_response_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-joneus/stage1/idle/frames/stance-raw-02.png",
+   "generation_id": "image-65174-1220",
+   "bytes": 1733077,
+   "sha256": "ad22cfc9588e72e2656d0a5643c6726123ac987bad8260a5fb1df762f3cc2e5d",
+   "alpha": {
+    "range": [
+     0,
+     254
+    ],
+    "levels": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "note": "真透明背景。"
+   },
+   "alpha_bbox_ge128": [
+    57,
+    71,
+    956,
+    1468
+   ],
+   "margins_px": {
+    "left": 57,
+    "top": 71,
+    "right": 67,
+    "bottom": 67
+   },
+   "measurements": {
+    "standing_height_px": 1398,
+    "foot_outer_span_px": 900,
+    "foot_outer_span_over_height": 0.6438,
+    "stance_pass": false,
+    "rear_foot_bottom_row": 1468,
+    "front_foot_bottom_row": 1460,
+    "soles_diff_source_px": 8,
+    "native_px_scale_248_over_1398": 0.177396,
+    "soles_diff_native_px": 1.42,
+    "soles_pass": false,
+    "head_top_row": 71,
+    "chin_row": 308,
+    "head_height_px": 237,
+    "head_height_ratio": 0.1695,
+    "head_max_depth_px": 183,
+    "head_max_depth_row": 200,
+    "head_depth_ratio": 0.1309,
+    "head_height_vs_design": 0.137,
+    "head_depth_vs_design": 0.181,
+    "glow_gate": {
+     "subject_px": 370259,
+     "subject_definition": "alpha≥200 最大连通块（本图 alpha≥200 全部为该连通块）",
+     "dilate_px": 3,
+     "outside_alpha_ge16_px": 0,
+     "outside_alpha_ge200_px": 0,
+     "outside_alpha_1_15_px": 18828,
+     "pass": true,
+     "note": "alpha 1–15 尘点只登记，不计入门限。"
+    }
+   },
+   "gates": {
+    "strict_right_side_view": "pass",
+    "full_body_uncropped_margins_ge8": "pass（左57/上71/右67/下67）",
+    "true_alpha_corners_zero": "pass",
+    "stance_width_0_65_to_0_80": "fail（0.6438，差 0.0062）",
+    "soles_diff_le_1_native_px": "fail（8 源px＝1.42 原生px）",
+    "glow_gate": "pass",
+    "head_height_within_8pct_same_view_official": "fail（0.1695 vs 0.1491，+13.7%）",
+    "head_width_within_8pct_same_view_official": "fail（0.1309 vs 0.1108，+18.1%）"
+   },
+   "visual_review": {
+    "improved": "脸改为白面具，无鼻梁嘴唇；头冠脊线与耳部菱形变细，接近官方侧视；头顶到下颌比上一张缩短。",
+    "structure_failures": [
+     "额前星仍画成完整的五角星贴在侧脑前上方；官方设定侧视几乎不露星形，只应在前额前缘露窄边。",
+     "头高与头深仍超同视角官方门。",
+     "四肢明显变细：上臂、前臂、大腿、小腿体量小于 ref-01 的壮硕体型，身体被拉长成瘦长型。"
+    ],
+    "limbs": "fail（细长化）",
+    "pass": false
+   },
+   "verdict": "reject：站距与鞋底仍不过，头部仍超门，额前星位置与四肢体量不符，不进入像素阶段。",
+   "deletion": "记录 SHA 与实测后删除原图。"
+  },
+  {
+   "attempt": "stance-raw-03",
+   "date": "2026-11-10",
+   "outcome": "rejected",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "requested_size": "1024x1536",
+   "actual_size": [
+    1199,
+    1312
+   ],
+   "size_note": "MCP 实收 1199×1312，与请求 1024×1536 不同；按实收尺寸计量。",
+   "reference_paths": [
+    "art/fighters/ultraman-joneus/sources/ref-01.webp",
+    "art/fighters/ultraman-joneus/stage1/idle/references/design-side-head-right-20261110.png",
+    "art/fighters/ultraman-joneus/sources/side-figure-bigonecraft-imgn3109-right-20261110.png",
+    "art/fighters/ultraman-joneus/stage1/idle/references/stance-ref-ultraman-jack-x4.png"
+   ],
+   "prompt": "90°右侧视（人物朝右）乔尼亚斯格斗待机全身照。红银配色、黄眼、星形计时器照第一张；肩宽、胸厚、手臂、大腿、小腿的粗细与第一张一致，保持壮硕，不要瘦长。头部结构照第二张：头壳紧凑，头顶到下颌约站高0.15，头前后深约0.11；白面具无鼻梁嘴唇；额前星只在前额正面，侧视不画完整星形。站姿只照第四张：两脚前后错步，脚外缘间距约站高0.72，双膝屈，双拳胸前护架，两鞋底最低点同线；不要抄第四张的造型和配色。真实皮套质感，去掉球关节、接缝与塑料高光。完整不裁切，纯透明背景，无地面、文字、边框、光效。",
+   "prompt_chars": 248,
+   "requested_path": "art/fighters/ultraman-joneus/stage1/idle/frames/stance-raw-03.png",
+   "actual_response_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-joneus/stage1/idle/frames/stance-raw-03.png",
+   "generation_id": "image-65174-1222",
+   "bytes": 851676,
+   "sha256": "00954f42e56a0a6f78cce7703f69187aba1817efb19eb4230d939b671d8fb12a",
+   "alpha": {
+    "range": [
+     0,
+     255
+    ],
+    "levels": 256,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "note": "真透明背景。"
+   },
+   "alpha_bbox_ge128": [
+    149,
+    16,
+    1013,
+    1285
+   ],
+   "margins_px": {
+    "left": 149,
+    "top": 16,
+    "right": 185,
+    "bottom": 26
+   },
+   "measurements": {
+    "standing_height_px": 1270,
+    "foot_outer_span_px": 865,
+    "foot_outer_span_over_height": 0.6811,
+    "stance_pass": true,
+    "rear_foot_bottom_row": 1285,
+    "front_foot_bottom_row": 1264,
+    "soles_diff_source_px": 21,
+    "native_px_scale_248_over_1270": 0.195276,
+    "soles_diff_native_px": 4.1,
+    "soles_pass": false,
+    "head_top_row": 16,
+    "chin_row": 256,
+    "head_height_px": 240,
+    "head_height_ratio": 0.189,
+    "head_max_depth_px": 188,
+    "head_max_depth_row": 125,
+    "head_depth_ratio": 0.148,
+    "head_height_vs_design": 0.268,
+    "head_depth_vs_design": 0.336,
+    "glow_gate": {
+     "subject_px": 344003,
+     "subject_definition": "alpha≥200 最大连通块（本图 alpha≥200 全部为该连通块）",
+     "dilate_px": 3,
+     "outside_alpha_ge16_px": 0,
+     "outside_alpha_ge200_px": 0,
+     "outside_alpha_1_15_px": 20348,
+     "pass": true,
+     "note": "alpha 1–15 尘点只登记，不计入门限。"
+    }
+   },
+   "gates": {
+    "strict_right_side_view": "pass",
+    "full_body_uncropped_margins_ge8": "pass（左149/上16/右185/下26）",
+    "true_alpha_corners_zero": "pass",
+    "stance_width_0_65_to_0_80": "pass（0.6811）",
+    "soles_diff_le_1_native_px": "fail（21 源px＝4.10 原生px）",
+    "glow_gate": "pass",
+    "head_height_within_8pct_same_view_official": "fail（0.1890 vs 0.1491，+26.8%）",
+    "head_width_within_8pct_same_view_official": "fail（0.1480 vs 0.1108，+33.6%；对手办同视角 0.1649 为 −10.2%，手办只作旁证，不作主基准）"
+   },
+   "visual_review": {
+    "improved": "站距 0.6811 过门；肩胸体量明显增厚；脸为白面具无鼻梁嘴唇；头冠脊线与耳部菱形细窄；额前星按官方侧视与图鉴侧视不露完整星形（侧视本应几乎不可见）。",
+    "structure_notes": [
+     "头高仍偏大：0.1890，比官方设定侧视 0.1491 高 26.8%。",
+     "双鞋底不同高：后脚低 4.10 原生px。",
+     "前臂与小腿仍比 ref-01 略细，壮硕度未完全达到第一张体量。"
+    ],
+    "limbs": "接近但仍偏瘦，未达 ref-01 完全一致。",
+    "pass": false
+   },
+   "verdict": "reject：照片门未全过，按返工刹车停止；不进像素、不签身份锚。",
+   "deletion": "记录 SHA 与实测后删除原图。"
+  }
+ ],
+ "current_status": "blocked_photo_gate_after_three_attempts; all three raw photos rejected and deleted; diagnostic written; no pixel anchor, no cell/root.",
+ "review_authority": "root_delegated_by_user",
+ "user_reviewed": false,
+ "photo_gate_block": {
+  "date": "2026-11-10",
+  "status": "blocked_photo_gate_after_three_attempts",
+  "failed_checks": [
+   "head_height",
+   "head_depth",
+   "soles_level"
+  ],
+  "consecutive_rejections": 3,
+  "fix_methods_used": {
+   "head_height": [
+    "提示词写明头顶到下颌约站高0.15（照片1、2）",
+    "加官方侧视头部特写参考（照片3）"
+   ],
+   "soles_level": [
+    "提示词写明两鞋底最低点同线（照片1、2）",
+    "加已装机 Jack 待机参考（照片3）"
+   ]
+  },
+  "measured": {
+   "head_height_ratio_attempts": [
+    0.1951,
+    0.1695,
+    0.189
+   ],
+   "head_depth_ratio_attempts": [
+    0.1488,
+    0.1309,
+    0.148
+   ],
+   "soles_native_px_attempts": [
+    9.68,
+    1.42,
+    4.1
+   ],
+   "gate": {
+    "head_height_ratio": [
+     0.1372,
+     0.161
+    ],
+    "head_depth_ratio": [
+     0.1019,
+     0.1197
+    ],
+    "soles_native_px_max": 1
+   }
+  },
+  "diagnostic": {
+   "path": "art/fighters/ultraman-joneus/stage1/diagnostic/idle-photo-gate-diagnostic-20261110.png",
+   "sha256": "339ce26830186f3fde24922b7ff09ed564802909bfe8ac2bc6ec803a8aba68fb",
+   "size": [
+    1800,
+    1300
+   ]
+  },
+  "next": "暂停头高/鞋底两项；待人工或新思路。照片门不过，不做像素、不签身份锚、不安装、不改 roster。"
+ }
+}

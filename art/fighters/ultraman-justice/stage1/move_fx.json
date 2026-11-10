@@ -1,0 +1,458 @@
+{
+ "schema": 1,
+ "fighter": "ultraman-justice",
+ "language": "zh-CN",
+ "note": "招式特效与逐帧节奏配置；由 tools/art/derive_fighter_data.py 读取，用来把已签整帧转成内容招式数据。发射帧号按实际整帧的数，不按请求特征。",
+ "root": [
+  96,
+  184
+ ],
+ "cells": {
+  "cell": 192,
+  "baseline": 184
+ },
+ "moves": {
+  "special": {
+   "display_name": "闪光效应",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 180,
+   "super_level": 1,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.72,
+    0.3,
+    1.0
+   ],
+   "active_frames": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "shot": {
+    "frame": 2,
+    "effect": "beam_loop",
+    "color": [
+     1.0,
+     0.72,
+     0.3,
+     1.0
+    ],
+    "beam": true,
+    "length": 360,
+    "thickness": 26,
+    "life": 8,
+    "speed": 0
+   },
+   "source_note": "双掌前缘发射橙色宽束；整帧只画贴掌光，束体由运行时 beam_loop 按光色承载。",
+   "energy_cost": 1000,
+   "chip_damage": 18,
+   "hand_y": [
+    55,
+    135
+   ]
+  },
+  "special2": {
+   "display_name": "杰斯提斯粉碎",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 300,
+   "super_level": 2,
+   "knockdown": true,
+   "feedback_color": [
+    0.62,
+    1.0,
+    0.82,
+    1.0
+   ],
+   "active_frames": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "shot": {
+    "frame": 5,
+    "effect": "beam_loop",
+    "color": [
+     0.62,
+     1.0,
+     0.82,
+     1.0
+    ],
+    "beam": true,
+    "length": 520,
+    "thickness": 18,
+    "life": 10,
+    "speed": 0
+   },
+   "source_note": "右掌前缘单臂破坏光线，青绿色；可破屏障按原设定，运行时沿用光束对屏障的既有交互。",
+   "energy_cost": 2000,
+   "chip_damage": 30,
+   "hand_y": [
+    55,
+    135
+   ]
+  },
+  "special3": {
+   "display_name": "比库托流姆光线",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 480,
+   "super_level": 3,
+   "knockdown": true,
+   "feedback_color": [
+    0.78,
+    0.98,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    8,
+    9
+   ],
+   "shot": {
+    "frame": 8,
+    "effect": "beam_loop",
+    "color": [
+     0.78,
+     0.98,
+     1.0,
+     1.0
+    ],
+    "beam": true,
+    "length": 640,
+    "thickness": 34,
+    "life": 12,
+    "speed": 0
+   },
+   "source_note": "双手过顶经头部水晶聚能后由双掌前缘发射的粗光线；整帧含头顶聚能光，束体由运行时承载。",
+   "energy_cost": 3000,
+   "chip_damage": 48,
+   "hand_y": [
+    45,
+    130
+   ],
+   "cinematic": {
+    "portrait": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "beam": [
+     4,
+     5,
+     6,
+     7
+    ]
+   }
+  },
+  "motion_214": {
+   "display_name": "突击光箭",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 95,
+   "knockdown": false,
+   "feedback_color": [
+    0.55,
+    1.0,
+    0.92,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_arrow",
+    "color": [
+     0.55,
+     1.0,
+     0.92,
+     1.0
+    ],
+    "length": 0,
+    "thickness": 0,
+    "life": 60,
+    "speed": 11,
+    "box": [
+     -12,
+     -10,
+     24,
+     20
+    ]
+   },
+   "source_note": "右手指尖光箭离手；整帧画到贴手箭尖，飞行箭体用共享 arrow 特效并按青绿色调制。",
+   "energy_cost": 0,
+   "chip_damage": 10,
+   "hand_y": [
+    85,
+    150
+   ]
+  },
+  "motion_22": {
+   "display_name": "杰斯提斯屏障",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 0,
+   "knockdown": false,
+   "feedback_color": [
+    0.55,
+    1.0,
+    0.92,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_barrier",
+    "color": [
+     0.55,
+     1.0,
+     0.92,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 12,
+    "speed": 0,
+    "box": [
+     0,
+     -65,
+     88,
+     130
+    ],
+    "wall": true
+   },
+   "source_note": "双层前臂前方圆形屏障；整帧已画屏障，运行时补 wall 弹体承担拦截，不与人物帧重复画同一光效。",
+   "energy_cost": 300,
+   "chip_damage": 0,
+   "hand_y": [
+    40,
+    130
+   ]
+  },
+  "ranged_forward": {
+   "display_name": "正义刀刃",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 95,
+   "knockdown": false,
+   "feedback_color": [
+    0.55,
+    1.0,
+    0.92,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5,
+    6
+   ],
+   "source_note": "前臂聚能成弧的贴体光刃，按整帧已画刃形用打击判定，不另发飞行弹。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    70,
+    140
+   ],
+   "hit_y": [
+    95,
+    140
+   ]
+  },
+  "pulse": {
+   "display_name": "前掌光弹",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 65,
+   "knockdown": false,
+   "active_frames": [
+    3
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "length": 0,
+    "thickness": 0,
+    "life": 80,
+    "speed": 9,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "掌根前推的通用光弹；人物帧只画贴掌光点。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    55,
+    135
+   ]
+  },
+  "low_pulse": {
+   "display_name": "低姿掌弹",
+   "kind": "projectile",
+   "level": "low",
+   "damage": 65,
+   "knockdown": false,
+   "active_frames": [
+    3
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "length": 0,
+    "thickness": 0,
+    "life": 80,
+    "speed": 9,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "蹲姿低位掌弹；人物帧只画贴掌光点。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    25,
+    95
+   ]
+  },
+  "air_pulse": {
+   "display_name": "空中掌弹",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 65,
+   "knockdown": false,
+   "active_frames": [
+    3
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "length": 0,
+    "thickness": 0,
+    "life": 90,
+    "speed": 9,
+    "vy": -7,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "空中斜下掌弹；人物帧只画贴掌光点。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    25,
+    95
+   ]
+  },
+  "burst": {
+   "display_name": "爆气",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 30,
+   "knockdown": false,
+   "unblockable": true,
+   "feedback_color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "active_frames": [
+    1,
+    2,
+    3
+   ],
+   "burst_box": [
+    -90,
+    12,
+    180,
+    128
+   ],
+   "source_note": "对称爆气圈，冲击为运行时独立效果；攻击框按模板对称形状保留，超出人物 Alpha 属已登记例外。",
+   "energy_cost": 2000,
+   "chip_damage": 0
+  },
+  "air_special": {
+   "display_name": "空中闪光效应（游戏改编）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 60,
+   "chip_damage": 6,
+   "energy_cost": 1000,
+   "active_frames": [
+    3,
+    4,
+    5
+   ],
+   "hand_y": [
+    70,
+    120
+   ],
+   "feedback_color": [
+    1.0,
+    0.72,
+    0.3,
+    1.0
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "beam_loop",
+    "color": [
+     1.0,
+     0.72,
+     0.3,
+     1.0
+    ],
+    "beam": true,
+    "length": 420,
+    "thickness": 20,
+    "life": 8,
+    "speed": 0
+   },
+   "source_note": "游戏改编的空中闪光效应：帧内只有贴掌橙光，束体由运行时 beam_loop 承载；伤害/消耗沿用赛罗同体型空中必杀规则。"
+  }
+ },
+ "state_effects": {
+  "default": {
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ }
+}

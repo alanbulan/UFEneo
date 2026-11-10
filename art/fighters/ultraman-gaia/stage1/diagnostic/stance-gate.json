@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-09",
+  "review_authority": "root_delegated_by_user",
+  "status": "rejected_stance_gate_paused",
+  "image": "art/fighters/ultraman-gaia/stage1/diagnostic/stance-gate.png",
+  "image_sha256": "19aa1f34e4eb799d566c70a955c20666d3f6e6d3312e8b2315b7f429782f078c",
+  "pixel_candidate_metrics": {
+    "actual_size": [
+      1027,
+      1531
+    ],
+    "alpha_bbox_threshold_128": [
+      78,
+      47,
+      863,
+      1487
+    ],
+    "standing_height_source_px": 1441,
+    "foot_band_fraction": 0.12,
+    "foot_outer_span_source_px": 786,
+    "foot_outer_span_over_height": 0.5455,
+    "foot_bottom_source_y": [
+      1487,
+      1428
+    ],
+    "foot_bottom_delta_at_native_scale": 6.3053,
+    "target_standing": 154,
+    "required_stance_range": [
+      0.65,
+      0.8
+    ]
+  },
+  "sources_before_rejection": [
+    {
+      "path": "art/fighters/ultraman-gaia/stage1/idle/frames/stance-raw-03.png",
+      "sha256": "406a6c3bbdb925e70b97bacec2dd330dc151210fba80a77c7d0149fb2e357a6c",
+      "size_bytes": 1008585
+    },
+    {
+      "path": "art/fighters/ultraman-gaia/stage1/idle/frames/pixel-raw-01.png",
+      "sha256": "59691c88986cb92368ff23c0b28b5c9c92c3f150239ca27e17c997d55d0f4a52",
+      "size_bytes": 679529
+    },
+    {
+      "path": "reports/ultraman-gaia/stage1/idle-00-cell.png",
+      "sha256": "5d30230ceee0cf0141e9e04934536995c1f0b8fadc81472cd3c38673342db3c1",
+      "size_bytes": 9100
+    },
+    {
+      "path": "art/fighters/ultraman-gaia/stage1/idle/references/ref-suit.webp",
+      "sha256": "a8657c4e6c2df00574b64f3ed1141d6e1aea67b9918a3683c1f1db4a8dd514ee",
+      "size_bytes": 57058
+    },
+    {
+      "path": "art/fighters/ultraman-gaia/sources/ref-01.webp",
+      "sha256": "a8657c4e6c2df00574b64f3ed1141d6e1aea67b9918a3683c1f1db4a8dd514ee",
+      "size_bytes": 57058
+    }
+  ],
+  "notes": [
+    "原始 Alpha 为 256 级；落格后二值 Alpha 与色板成立，不代表姿势合格。",
+    "脚距复测 0.5455，纠正旧记录近似值 0.53；仍低于硬门。",
+    "此前同一站距问题已有连续三张拒收，且已换过两种路线；本轮只诊断，不继续重生成。",
+    "无主游戏实机、双向 720/1080、实速或录屏验收。"
+  ]
+}

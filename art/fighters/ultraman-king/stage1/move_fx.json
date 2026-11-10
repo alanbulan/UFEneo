@@ -1,0 +1,536 @@
+{
+ "schema": 1,
+ "fighter": "ultraman-king",
+ "language": "zh-CN",
+ "note": "招式特效与逐帧节奏配置草案；未生成图片、未安装。由 tools/art/derive_fighter_data.py 读取。active_frames 从 0 开始且必须小于该招帧数；hand_y 只是脚底根点向上的世界高度窗口，发射点须在整帧落格后按实际 Alpha 实测。披风、白须、银冠不作为任何招式的发光源。",
+ "root": [
+  128,
+  248
+ ],
+ "cells": {
+  "cell": 256,
+  "baseline": 248,
+  "standing_height": 223,
+  "identity_anchor": "art/fighters/ultraman-king/stage1/cells/idle-candidate-v18-cell.png"
+ },
+ "moves": {
+  "special": {
+   "display_name": "王者闪光",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 180,
+   "super_level": 1,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.22,
+    0.16,
+    1.0
+   ],
+   "active_frames": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "shot": {
+    "frame": 7,
+    "effect": "beam_loop",
+    "color": [
+     1.0,
+     0.22,
+     0.16,
+     1.0
+    ],
+    "beam": true,
+    "length": 420,
+    "thickness": 24,
+    "life": 8,
+    "speed": 0
+   },
+   "source_note": "王者闪光（King Flasher）：双臂水平前伸，红色玛瑙状破坏光线；雷欧第26话与雷欧光线同时使用，UGF 与塔尔塔洛斯对波。雷欧时期资料译作黄色、UGF 作红色，本作取红色并登记冲突；帧序、伤害与判定为游戏编排。",
+   "energy_cost": 1000,
+   "chip_damage": 18,
+   "hand_y": [
+    90,
+    180
+   ]
+  },
+  "special2": {
+   "display_name": "洗礼光线",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 300,
+   "super_level": 2,
+   "knockdown": true,
+   "feedback_color": [
+    1.0,
+    0.3,
+    0.3,
+    1.0
+   ],
+   "active_frames": [
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "shot": {
+    "frame": 8,
+    "effect": "special_arrow",
+    "color": [
+     1.0,
+     0.3,
+     0.3,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 55,
+    "speed": 11,
+    "box": [
+     -11,
+     -9,
+     22,
+     18
+    ],
+    "vy": 0
+   },
+   "source_note": "洗礼光线（洗礼光線）：胸前红宝玉聚能后向斜上张臂，发出红色能量箭；雷欧第39话识破巴巴尔星人伪装的阿斯特拉。原剧为识破/净化，本作多段、高削气与识破为游戏改编；运行时先以单支代表弹承载，多箭齐发待扩展。",
+   "energy_cost": 2000,
+   "chip_damage": 30,
+   "hand_y": [
+    100,
+    195
+   ]
+  },
+  "special3": {
+   "display_name": "王者再生光线",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 480,
+   "super_level": 3,
+   "knockdown": true,
+   "feedback_color": [
+    0.35,
+    0.78,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "shot": {
+    "frame": 9,
+    "effect": "beam_loop",
+    "color": [
+     0.35,
+     0.78,
+     1.0,
+     1.0
+    ],
+    "beam": true,
+    "length": 620,
+    "thickness": 34,
+    "life": 12,
+    "speed": 0
+   },
+   "source_note": "王者再生光线（キング再生光線/King Beam）：全身泛蓝光，双臂在脸前交叉后发射蓝色再生光线；雷欧第50话复活被布纽星人分解的雷欧。原剧用于复活，本作改为攻击性终结为游戏改编；长距离、高伤与击倒为游戏编排。",
+   "energy_cost": 3000,
+   "chip_damage": 48,
+   "hand_y": [
+    110,
+    205
+   ],
+   "cinematic": {
+    "portrait": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "beam": [
+     4,
+     5,
+     6,
+     7
+    ]
+   }
+  },
+  "air_special": {
+   "display_name": "空中王者闪光（游戏改编）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 60,
+   "super_level": 1,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.3,
+    0.2,
+    1.0
+   ],
+   "active_frames": [
+    2,
+    3,
+    4
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "beam_loop",
+    "color": [
+     1.0,
+     0.3,
+     0.2,
+     1.0
+    ],
+    "beam": true,
+    "length": 280,
+    "thickness": 18,
+    "life": 8,
+    "speed": 0
+   },
+   "source_note": "以已核实的王者闪光为基础改空中前下短束；原剧无空中发射依据，不冒充原剧。帧序、伤害与空中用法为游戏改编。",
+   "energy_cost": 1000,
+   "chip_damage": 6,
+   "hand_y": [
+    50,
+    155
+   ]
+  },
+  "motion_214": {
+   "display_name": "王者光轮",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 95,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.86,
+    0.45,
+    1.0
+   ],
+   "active_frames": [
+    3,
+    4,
+    5
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_rings",
+    "color": [
+     1.0,
+     0.86,
+     0.45,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 60,
+    "speed": 8,
+    "box": [
+     -14,
+     -12,
+     28,
+     24
+    ],
+    "vy": 0
+   },
+   "source_note": "游戏编排的近身转体光轮；不称原剧专名。金色光轮为运行时共享 rings 特效，人物帧只画贴掌光；披风、白须、银冠不发光。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    85,
+    175
+   ]
+  },
+  "motion_22": {
+   "display_name": "王者光壁（游戏改编）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 0,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.86,
+    0.45,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5,
+    6
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_barrier",
+    "color": [
+     1.0,
+     0.86,
+     0.45,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 14,
+    "speed": 0,
+    "box": [
+     0,
+     -72,
+     96,
+     150
+    ],
+    "vy": 0,
+    "wall": true
+   },
+   "source_note": "原剧未见“王者之盾”专名；本作按奥特之王的念力/防护表现作游戏改编，不冒充原剧技能。光壁由运行时 special_barrier 承载，人物帧只画掌前贴体光；披风不作为屏障光源。",
+   "energy_cost": 300,
+   "chip_damage": 0,
+   "hand_y": [
+    70,
+    180
+   ]
+  },
+  "ranged_forward": {
+   "display_name": "王者火花",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 95,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.96,
+    0.55,
+    1.0
+   ],
+   "active_frames": [
+    3,
+    4,
+    5
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_spiral",
+    "color": [
+     1.0,
+     0.96,
+     0.55,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 50,
+    "speed": 10,
+    "box": [
+     -11,
+     -10,
+     22,
+     20
+    ],
+    "vy": 0
+   },
+   "source_note": "王者火花（King Spark）：Ultra Wiki 载为电击状光线，曾击落假阿斯特拉的奥特钥匙；本作以黄白螺旋电束的共享特效承载，投射形式、帧序与伤害为游戏改编。电光只从指尖发出，不画到披风或须发上。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    95,
+    185
+   ]
+  },
+  "pulse": {
+   "display_name": "王者掌弹",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.88,
+    0.55,
+    1.0
+   ],
+   "active_frames": [
+    3,
+    4
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     1.0,
+     0.88,
+     0.55,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 80,
+    "speed": 9,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ],
+    "vy": 0
+   },
+   "source_note": "游戏编排的掌推光弹；不称原剧专名。人物帧只画贴掌光点，飞行弹由运行时 pulse 承载；披风不发光。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    85,
+    175
+   ]
+  },
+  "low_pulse": {
+   "display_name": "低姿掌弹",
+   "kind": "projectile",
+   "level": "low",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.88,
+    0.55,
+    1.0
+   ],
+   "active_frames": [
+    2,
+    3
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     1.0,
+     0.88,
+     0.55,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 80,
+    "speed": 9,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ],
+    "vy": 0
+   },
+   "source_note": "游戏编排的低姿掌弹；不称原剧专名。人物帧只画贴掌光点；披风与白须不发光。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    25,
+    110
+   ]
+  },
+  "air_pulse": {
+   "display_name": "空中掌弹",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.88,
+    0.55,
+    1.0
+   ],
+   "active_frames": [
+    2,
+    3
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     1.0,
+     0.88,
+     0.55,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 90,
+    "speed": 9,
+    "vy": -7,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "游戏编排的空中斜下掌弹；不称原剧专名。人物帧只画贴掌光点，飞行弹由运行时 pulse 承载；披风不发光。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    40,
+    140
+   ]
+  },
+  "burst": {
+   "display_name": "王者爆气",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 30,
+   "super_level": 0,
+   "knockdown": false,
+   "unblockable": true,
+   "feedback_color": [
+    0.95,
+    0.85,
+    0.55,
+    1.0
+   ],
+   "active_frames": [
+    1,
+    2,
+    3
+   ],
+   "burst_box": [
+    -110,
+    15,
+    220,
+    170
+   ],
+   "source_note": "游戏编排的对称爆气圈；冲击为运行时独立效果，不是原剧招式。攻击框按模板对称形状保留，超出该帧人物 Alpha 属已登记例外。",
+   "energy_cost": 2000,
+   "chip_damage": 0,
+   "hand_y": [
+    55,
+    185
+   ]
+  }
+ },
+ "state_effects": {
+  "default": {
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ }
+}

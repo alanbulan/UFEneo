@@ -1,0 +1,122 @@
+{
+  "fighter": "ultraman-gaia",
+  "date": "2026-11-09",
+  "review_authority": "subagent_candidate_review",
+  "status": "rejected_stance_gate_paused",
+  "identity_anchor_for_actions": null,
+  "generation_receipt": {
+    "id": "image-55259-18",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "background": "transparent",
+    "requested_size": "1024x1536",
+    "actual_size": [1024, 1536],
+    "actual_returned_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-gaia/stage1/idle/frames/stance-raw-04-neutral-plane.png",
+    "sha256": "879f8b1fcd64aadab1bdd46bcbd84eee8d5b5a916d6fdf3fd9d534d8b5ef1a3e",
+    "size_bytes": 1520590,
+    "mode": "RGBA",
+    "alpha_values_count": 255,
+    "alpha_min": 0,
+    "alpha_max": 254,
+    "fully_transparent_pixels": 1163559,
+    "usage": null,
+    "cost": null,
+    "usage_note": "MCP 未提供 usage 或费用，不估算。",
+    "result_disposition": "硬姿态失败后已直接删除原图；保留有明确诊断用途的缩略联系表、原生格及严格最近邻图，不备份淘汰源。",
+    "references": [
+      {
+        "path": "art/fighters/ultraman-gaia/sources/official-pose-20261109-hero/hero_gaia-1.png",
+        "sha256": "9c245f9d736271ce51bc9bbf602b6ac3ea6c6aae6059ebbee80b281feea24cb2",
+        "role": "圆谷官网本人 V2 中立皮套，只锁身份与正常身体体量，不冒称官方右侧护架"
+      },
+      {
+        "path": "art/fighters/ultraman-gaia/stage1/idle/references/stance-ref-installed-x4.png",
+        "sha256": "ff5b113987797be31bc4e039e561883fa75c2b973c4a09a5ec1fa6eb6101be29",
+        "role": "已装机初代，只借格斗站法和画风，不借造型"
+      }
+    ],
+    "prompt": "以图1真实皮套身材摆一张待机照，图2仅借架势，不借造型。镜头水平右侧视，头胸朝右，双拳正常握紧抬至胸前护架，肘自然屈曲。两脚在画面水平方向错开，外缘跨度约头顶至鞋底高度的0.71，后脚在左、前脚在右，不沿景深分脚；两鞋底同一水平线。双膝浅屈、髋在两脚之间，不深蹲马步。四肢粗细与图1一致，拳和靴保持正常体量，胸甲贴身不增厚肩甲。人物四周留白。固定右侧视，完整不裁切，透明背景，无地面文字边框特效。"
+  },
+  "raw_pose_metrics": {
+    "alpha_threshold": 128,
+    "bbox_inclusive": [122, 70, 907, 1459],
+    "standing_height_source_px": 1390,
+    "foot_band_fraction": 0.12,
+    "foot_band_top_source_y": 1293,
+    "foot_outer_span_source_px": 786,
+    "foot_span_over_standing_height": 0.5654676258992806,
+    "feet": [
+      {"span": [122, 288], "bottom": 1459},
+      {"span": [694, 907], "bottom": 1448}
+    ],
+    "foot_bottom_delta_at_native_154": 1.218705035971223,
+    "required_stance_range": [0.65, 0.8],
+    "stance_gate_passed": false,
+    "comparison_to_previous": "旧 pixel-01 为 0.5455 / 鞋底差6.31原生px；本轮鞋底线明显改善，但站距仍不足，不能以改善替代通过。"
+  },
+  "native_diagnostic": {
+    "purpose": "照片姿势的统一比例诊断，不是模型生成的像素待机，不作动作身份锚",
+    "path": "art/fighters/ultraman-gaia/stage1/diagnostic/stance-04-native-diagnostic.png",
+    "sha256": "f609758153489a599bbcddf02555d19198a7b9702ebfba462e47e565a4c229c6",
+    "size": [192, 192],
+    "bbox_inclusive": [53, 30, 139, 183],
+    "height": 154,
+    "width": 87,
+    "foot_outer_span": 87,
+    "foot_span_over_standing_height": 0.564935064935065,
+    "foot_bottom_rows": [183, 182],
+    "foot_bottom_delta": 1,
+    "foot_row": 183,
+    "anchor": [96, 184],
+    "source_pixel_scale": 0.11079136690647481,
+    "scale_policy": "仅由本张完整待机照站高1390定154/1390，不逐身体部位变形；不是已冻结的生产尺度。",
+    "alpha": [0, 255],
+    "visible_colors": 32,
+    "components": 1,
+    "postprocess": "forge_backend 独立 _kcentroid_downscale；固定Alpha128；Pillow整图可见像素MEDIANCUT32，未做局部换色、切肢、拼片、缩头、拉宽或阈值改门。",
+    "grid_detection": "完整forge依赖缺失，未执行网格检测，不宣称网格检测通过。",
+    "recognition_color_limit": "实收照片保有青蓝胸灯与浅黄眼；通用32色照片诊断缩小版吞掉这两种小面积色，不能作为像素身份锚或后续统一色板。",
+    "nearest_x4": {
+      "path": "art/fighters/ultraman-gaia/stage1/diagnostic/stance-04-native-diagnostic-x4.png",
+      "sha256": "48cd7e7cc1809f44b6656a7f49b6d562e702c6dfa2d972a5de6cf5320088448c",
+      "size": [768, 768],
+      "exact_repeat_verified": true,
+      "added_colors": 0
+    }
+  },
+  "diagnostic_sheet": {
+    "path": "art/fighters/ultraman-gaia/stage1/diagnostic/stance-04-gate.png",
+    "sha256": "2a44dcf5f0794ec2612cb4511e0527c953eed688ee806973fe2f83564e35348a",
+    "size": [1300, 990],
+    "content": "本轮照片缩略、192原生格、严格4倍图及站距拒收文字；不是动作条带。"
+  },
+  "visual_review": {
+    "identity_and_form": "实收照片保持本人 V2 黑金胸护纹、青蓝三角胸灯、金色额饰、浅黄眼与红银身体；未混用V1或至高型。",
+    "head_and_body": "诊断头部最宽行21px，对旧本人定稿22px约-4.55%；未单独缩头。全身腿长与躯干正常，没有明显大头、小身或肥大拳靴，但这不是最终像素造型验收。",
+    "shoulders_and_limbs": "肩部为贴身银色皮套弧面，未增加厚重肩甲；两臂与双腿完整，拳靴体量较正常，无开放缝、断肢。",
+    "guard": "面向右，躯干略斜，两只闭拳在胸前；不是正面马步。前腿屈膝清楚，后腿接近直线，不能确认双膝浅屈门成立。",
+    "ground_and_contour": "两鞋底差缩至约1.22原生px，原生诊断为1px；Alpha128人物四周完整留白，不裁头冠、双拳或靴。",
+    "style": "仅生成照片步，尚未调用单参考像素化。离线照片缩小诊断不冒称项目像素画风通过。",
+    "overall": "站距0.5655硬失败，照片门不通过，停止像素化及全部下游。"
+  },
+  "brake": {
+    "existing_consecutive_stance_rejections": 3,
+    "added_rejections_this_round": 1,
+    "consecutive_stance_rejections_after_round": 4,
+    "existing_failed_routes": 2,
+    "new_neutral_plane_route_attempts": 1,
+    "counters_reset": false,
+    "paused": true,
+    "new_method_difference": "换官方中立本人身材基准，在照片步先锁画面横向分脚及同鞋底线，再计划单参考像素；没有重跑旧斜透视弓步及双参考直接像素路线。",
+    "minimum_next_step": "根先看本轮诊断。若仍授权新方法，最小可执行方案是改为1536×1024横向透明画布，对同一官方V2中立身体基准整帧生成一张照片，明确双脚沿画面横向、双膝浅屈；先过照片门，才可单参考转像素。本代理当前不执行，也不靠横向拉伸、拼腿或换阈值修现图。必要时转人工选本人可靠完整姿态源。"
+  },
+  "source_discovery_deleted": [
+    {"path": "art/fighters/ultraman-gaia/sources/official-pose-20261109-character/16_Ultraman-Gaia.png", "sha256": "b43abf09cfdcecb01567ddf1bf43b44fb381d78dcbaf680e4b5bcc449323a400", "reason": "官网标题logo，不是皮套人物图"},
+    {"path": "art/fighters/ultraman-gaia/sources/official-pose-20261109-scene/art_gaia_2-1.jpg", "sha256": "9da475ecf38e96e994ed9880b35f22e19a70bb3bce7ef3810bfa7497512dda31", "reason": "原剧动作照腿脚裁切且胸型局部遮挡，不作为可靠完整V2姿态基准；不凭文件名或速读签形态"},
+    {"path": "art/fighters/ultraman-gaia/sources/official-pose-20261109-scene1/art_gaia_1-1.jpg", "sha256": "b3adc447ed8f46c6414cb534ecd3d181ee3837f9b028324bfd8ddcfce1e21a1d", "reason": "原剧动作照腿脚裁切且胸型局部遮挡，不作为可靠完整V2姿态基准；不凭文件名或速读签形态"},
+    {"path": "art/fighters/ultraman-gaia/sources/official-pose-20261109-scene3/art_gaia_3-1.jpg", "sha256": "e6e194b6ec7e6b889e5b1b6ce4c7ec78d36f6bf5103fe203cc9109bf42447592", "reason": "原剧动作照腿脚被建筑遮挡，不作为可靠完整V2姿态基准；不凭速读签形态"}
+  ],
+  "deletion_checks": "仅删除本角色本轮新下载的四个无用文件及一张拒收MCP照；删除前核无实际消费者、绝对路径属于授权角色和SHA，不递归删除其它材料。旧官方ref-01、旧身份锚、旧诊断和原装机姿态参考均保留。",
+  "installation": "未安装、未接运行时；未启动Godot，没有双向720/1080、实速、声音或录屏验收。",
+  "recording": "无录屏"
+}
