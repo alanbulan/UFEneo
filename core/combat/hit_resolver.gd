@@ -86,6 +86,12 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 	# 眩晕免疫期内不再累积，避免连续命中把对手永久锁在眩晕里。
 	if int(b.stats.get("stun_immune",0)) <= 0:
 		b.stats.stun = mini(rules.stun_threshold, int(b.stats.stun) + int(move.stun))
+	# 减速只改受方移动速度，不改招式时序；未过期的减速取更强档并延长到较长剩余。
+	if move.has("chill"):
+		var chill: Dictionary = move.chill
+		var chilled := int(b.stats.get("chill_ticks", 0)) > 0
+		b.stats.chill_ticks = maxi(int(b.stats.get("chill_ticks", 0)), int(chill.ticks))
+		b.stats.chill_percent = mini(int(b.stats.get("chill_percent", 100)), int(chill.speed_percent)) if chilled else int(chill.speed_percent)
 	a.stats.energy = mini(3000, int(a.stats.energy) + 90)
 	b.stats.energy = mini(3000, int(b.stats.energy) + 40)
 	a.combat.combo = int(a.combat.combo) + 1

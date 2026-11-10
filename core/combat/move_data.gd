@@ -14,6 +14,10 @@ static func validate(move: Dictionary) -> bool:
 		if not move.air_only is bool:return false
 		if move.air_only and (not move.get("air_allowed",false) is bool or not bool(move.get("air_allowed",false))):return false
 	if move.has("stamina_regen") and not valid_stamina_regen(move.stamina_regen):return false
+	if move.has("self_heal"):
+		if not valid_self_heal(move.self_heal):return false
+		if int(move.self_heal.frame)>=move.frames.size():return false
+	if move.has("chill") and not valid_chill(move.chill):return false
 	for frame in move.frames:
 		for key in ["sprite", "dx", "dy", "hitboxes", "hurtboxes", "cancel", "events"]:
 			if not frame.has(key): return false
@@ -45,6 +49,27 @@ static func valid_stamina_regen(value: Variant) -> bool:
 	if not (value is int or value is float):return false
 	return is_finite(float(value)) and value==int(value) and int(value)>=0 and int(value)<=4
 
+static func valid_self_heal(value: Variant) -> bool:
+	if not value is Dictionary:return false
+	for key in value:
+		if key not in ["frame", "amount", "cleanse"]:return false
+	for key in ["frame", "amount"]:
+		if not value.has(key):return false
+		var number: Variant=value[key]
+		if not (number is int or number is float) or not is_finite(float(number)) or number!=int(number) or int(number)<0:return false
+	if value.has("cleanse") and not value.cleanse is bool:return false
+	return true
+
+static func valid_chill(value: Variant) -> bool:
+	if not value is Dictionary:return false
+	for key in value:
+		if key not in ["ticks", "speed_percent"]:return false
+	for key in ["ticks", "speed_percent"]:
+		if not value.has(key):return false
+		var number: Variant=value[key]
+		if not (number is int or number is float) or not is_finite(float(number)) or number!=int(number):return false
+	return int(value.ticks)>0 and int(value.speed_percent)>=1 and int(value.speed_percent)<=99
+
 static func valid_guard_box(box: Variant) -> bool:
 	if not box is Array or box.size()!=4:return false
 	for value in box:
@@ -53,6 +78,8 @@ static func valid_guard_box(box: Variant) -> bool:
 
 static func valid_projectile(shot: Dictionary, frame_count: int) -> bool:
 	if shot.has("capture") and not shot.capture is bool:return false
+	if shot.has("no_hit") and not shot.no_hit is bool:return false
+	if shot.has("wall") and not shot.wall is bool:return false
 	if shot.has("clip_below_ground"):
 		if not shot.clip_below_ground is bool:return false
 		if shot.clip_below_ground and not bool(shot.get("beam",false)):return false

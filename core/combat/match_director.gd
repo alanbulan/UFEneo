@@ -177,6 +177,7 @@ func _advance(index: int, input: UfeInputFrame, command: Dictionary) -> void:
 		f.motion[key] = maxi(0, int(f.motion[key]) - 1)
 	f.combat.invulnerable = maxi(0, int(f.combat.invulnerable) - 1)
 	f.stats.stun_immune = maxi(0, int(f.stats.get("stun_immune",0)) - 1)
+	f.stats.chill_ticks = maxi(0, int(f.stats.get("chill_ticks",0)) - 1)
 	if f.state in ["transform", "form_entry"]:
 		states[f.state].step(f, input, command)
 		return
@@ -249,6 +250,17 @@ func _advance(index: int, input: UfeInputFrame, command: Dictionary) -> void:
 		f.height = maxi(0, f.height + int(frame.dy))
 		for event in frame.events:
 			events.append({"kind": event.kind, "id": event.id, "player": index})
+		# 自身回复：只在招式声明的帧结算一次，整数、无随机；不清对手状态。
+		var heal: Dictionary = f.definition.moves[f.move_id].get("self_heal", {})
+		if not heal.is_empty() and f.move_tick == int(heal.get("frame", 0)):
+			var amount := maxi(0, int(heal.get("amount", 0)))
+			var healed := mini(int(f.definition.max_health), int(f.stats.hp) + amount) - int(f.stats.hp)
+			f.stats.hp = int(f.stats.hp) + healed
+			if bool(heal.get("cleanse", false)):
+				f.stats.stun = 0
+				f.stats.stun_immune = maxi(int(f.stats.stun_immune), 10)
+			events.append({"kind":"self_heal","player":index,"move":f.move_id,
+				"amount":healed,"cleanse":bool(heal.get("cleanse", false))})
 		f.move_tick += 1
 		UfeBattleTransform.after_move_tick(f)
 		var capture_handled := UfeCaptureResolver.after_move_tick(self,index,input)
