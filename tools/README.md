@@ -98,8 +98,9 @@ baseline-1、水平按脚底段重心对到 anchor x。
 然后删除该批次目录。
 
 `rebuild/body-rescale/` 是跨角色的体型重落格批次（2026-11-11）：按円谷
-官方身高设定重推七名新装角色的 scale 并重落全部已装 stage1 战斗格，
-见该目录 README.md。
+官方身高设定重推七名新装角色的 scale 并重落全部已装 stage1 战斗格；
+配套 `recalc_hurtboxes.py` 按重落图集重算 state_frames 受击框并保留节奏
+展开条目，见该目录 README.md。
 
 ## 依赖
 

@@ -69,17 +69,17 @@ FIGHTERS = {
     },
     "ultraman-justice": {
         "official_m": 46, "measured": 154, "old_scale": 0.15493,
-        "old_cell": 192, "new_cell": 256, "anchor": [128, 248],
+        "old_cell": 192, "new_cell": 256, "anchor": [128, 248], "old_anchor": [96, 184],
         "foot_band": 0.08, "backend": "k",
     },
     "zoffy": {
         "official_m": 45, "measured": 154, "old_scale": 0.099419,
-        "old_cell": 192, "new_cell": 256, "anchor": [128, 248],
+        "old_cell": 192, "new_cell": 256, "anchor": [128, 248], "old_anchor": [96, 184],
         "foot_band": 0.08, "backend": "box",
     },
     "ultraman-gaia": {
         "official_m": 50, "measured": 152, "old_scale": 0.146947,
-        "old_cell": 192, "new_cell": 256, "anchor": [128, 248],
+        "old_cell": 192, "new_cell": 256, "anchor": [128, 248], "old_anchor": [96, 184],
         "foot_band": 0.08, "backend": "box",
     },
     "mother-of-ultra": {
@@ -97,6 +97,7 @@ SKILL_GROUPS = {
 }
 IOU_SOLID = 0.97
 IOU_NEAR = 0.90
+REPO_AS_POSIX = "/Users/wurulan/Developer/Projects/Game/ultraman-neo"
 
 
 def cell_stem(path: Path) -> str:
@@ -191,6 +192,9 @@ def find_source(fighter: str, stem: str, old_arr: np.ndarray, cfg: dict,
         p = Path(src)
         if not p.is_absolute():
             p = REPO / src
+        elif REPO_AS_POSIX in p.as_posix():
+            # json 记录的主仓库绝对路径映射到本仓库根（内容一致，SHA 校验兜底）
+            p = REPO / p.as_posix()[len(REPO_AS_POSIX):].lstrip("/")
         if p.is_file():
             data = p.read_bytes()
             sha_now = hashlib.sha256(data).hexdigest()
@@ -353,6 +357,48 @@ def drop_specks(canvas: Image.Image, max_px: int = 2) -> Image.Image:
     return Image.fromarray(arr.astype(np.uint8), "RGBA")
 
 
+def rescale_canvas_from_old(old_arr: np.ndarray, ratio: float, palette: list,
+                            cell: int, ax: int, baseline: int,
+                            old_ax: int, old_baseline: int) -> tuple[Image.Image, dict]:
+    """无源帧：把旧 cell 可见内容本身按 ratio 绕根点等比变换到新格。
+
+    与 rescale_frame 同一放置公式，仅输入从源帧换为旧 cell 可见内容
+    （trim 后按最近邻缩放，色板重映射用同一冻结色板无损）。
+    """
+    oys, oxs = np.where(old_arr[:, :, 3] > 0)
+    old_foot = int(oys.max())
+    old_center = (float(oxs.min()) + float(oxs.max())) / 2.0
+    old_top = int(oys.min())
+    gap = max(0, (old_baseline - 1) - old_foot)
+    tw = max(1, round((int(oxs.max()) - int(oxs.min()) + 1) * ratio))
+    th = max(1, round((int(oys.max()) - old_top + 1) * ratio))
+    ocrop = old_arr[int(oys.min()):int(oys.max()) + 1,
+                    int(oxs.min()):int(oxs.max()) + 1]
+    solid = Image.fromarray(ocrop.astype(np.uint8), "RGBA")
+    scaled = solid.resize((tw, th), Image.NEAREST)
+    scaled = apply_palette(harden_alpha(scaled), palette)
+    new_center = ax + ratio * (old_center - old_ax)
+    new_foot = baseline - 1 - round(gap * ratio)
+    new_foot = max(0, min(new_foot, baseline - 1))
+    paste_y = new_foot + 1 - th
+    paste_x = round(new_center - scaled.width / 2.0)
+    canvas = Image.new("RGBA", (cell, cell), (0, 0, 0, 0))
+    canvas.alpha_composite(scaled, (paste_x, paste_y))
+    arr = np.array(canvas)
+    vis = arr[:, :, 3] > 0
+    ys, xs = np.where(vis)
+    info = {
+        "bbox": [int(xs.min()), int(ys.min()), int(xs.max()), int(ys.max())] if len(ys) else [],
+        "height": int(ys.max() - ys.min() + 1) if len(ys) else 0,
+        "width": int(xs.max() - xs.min() + 1) if len(xs) else 0,
+        "foot_row": int(ys.max()) if len(ys) else None,
+        "colors": int(len(np.unique(arr[:, :, :3][vis].reshape(-1, 3), axis=0))) if len(ys) else 0,
+        "gap_old": gap,
+        "gap_new": (baseline - 1) - (int(ys.max()) if len(ys) else 0),
+    }
+    return canvas, info
+
+
 def extra_pixels(mask: np.ndarray) -> int:
     """主体（最大连通块）之外的可见像素数。"""
     from collections import deque
@@ -392,7 +438,7 @@ def oracle(fighter: str, cfg: dict, cells: list[Path], sources: dict,
     ns = sum(1 for _ in cells)
     ok = miss = dim_diff = 0
     samples: list[str] = []
-    old_baseline = cfg["anchor"][1]
+    old_ax, old_baseline = cfg.get("old_anchor", cfg["anchor"])
     for p in cells:
         stem = cell_stem(p)
         old_arr = np.array(Image.open(p).convert("RGBA"))
@@ -409,8 +455,8 @@ def oracle(fighter: str, cfg: dict, cells: list[Path], sources: dict,
             # oracle 只承认 json 级源；反查源做 IoU 级比对
             pass
         canvas, info = rescale_frame(raw, old_arr, cfg["old_scale"], 1.0, palette,
-                                     cfg["old_cell"], cfg["anchor"][0], old_baseline,
-                                     cfg["anchor"][0], old_baseline, cfg["backend"])
+                                     cfg["old_cell"], old_ax, old_baseline,
+                                     old_ax, old_baseline, cfg["backend"])
         oh = int(oys.max() - oys.min() + 1)
         ow = int(oxs.max() - oxs.min() + 1)
         if abs(info["height"] - oh) <= 1 and abs(info["width"] - ow) <= 1 \
@@ -437,7 +483,7 @@ def run(fighter: str, dry: bool) -> int:
     sources = scan_json_sources(fighter)
     ns = new_scale(cfg)
     gap_ratio = ns / cfg["old_scale"]
-    old_baseline = cfg["anchor"][1]
+    old_ax, old_baseline = cfg.get("old_anchor", cfg["anchor"])
     cell, (ax, baseline) = cfg["new_cell"], cfg["anchor"]
 
     report = {
@@ -479,14 +525,22 @@ def run(fighter: str, dry: bool) -> int:
             report["skipped"].append({"frame": stem, "reason": "empty-cell"})
             continue
         raw, via = find_source(fighter, stem, old_arr, cfg, sources)
-        if raw is None:
-            kept += 1
-            report["skipped"].append({"frame": stem, "reason": via})
-            continue
         parsed = parse_stem(stem)
         clip = parsed[0].replace("-", "_") if parsed else stem
+        if raw is None:
+            # 无源帧：对旧 cell 可见内容本身做绕根点等比变换（保留帧不参与
+            # 源缩放与孤点清理，色板映射用同一冻结色板无损）。192→256 升格时
+            # 避免 build_atlas 把旧 192 格拉伸错位。
+            if cfg["old_cell"] != cell:
+                canvas, info = rescale_canvas_from_old(
+                    old_arr, gap_ratio, palette, cell, ax, baseline,
+                    old_ax, old_baseline)
+            else:
+                kept += 1
+                report["skipped"].append({"frame": stem, "reason": via})
+                continue
         canvas, info = rescale_frame(raw, old_arr, ns, gap_ratio, palette, cell,
-                                     ax, baseline, cfg["anchor"][0], old_baseline,
+                                     ax, baseline, old_ax, old_baseline,
                                      cfg["backend"])
         if not (parsed[0].replace("-", "_") in SKILL_GROUPS if (parsed := parse_stem(stem)) else False):
             canvas = drop_specks(canvas)
@@ -498,7 +552,10 @@ def run(fighter: str, dry: bool) -> int:
                     or info["bbox"][2] == cell - 1 or info["bbox"][3] == cell - 1)
         entry = {
             "frame": stem,
-            "source": raw.relative_to(REPO).as_posix(),
+            "source": (raw.relative_to(REPO).as_posix()
+                       if raw is not None and raw.is_relative_to(REPO)
+                       else (str(raw) if raw is not None
+                             else "旧cell内容变换（无源保留）")),
             "source_via": via,
             "clip": clip,
             "height": info["height"], "width": info["width"],
