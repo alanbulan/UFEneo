@@ -350,10 +350,59 @@ def drop_specks(canvas: Image.Image, max_px: int = 2) -> Image.Image:
                         if 0 <= ny < h and 0 <= nx < w and mask[ny, nx] and not seen[ny, nx]:
                             seen[ny, nx] = True
                             queue.append((ny, nx))
-                            comp.append((cy, cx))
+                            comp.append((ny, nx))
                 if len(comp) <= max_px:
                     for cy, cx in comp:
                         arr[cy, cx, 3] = 0
+    return Image.fromarray(arr.astype(np.uint8), "RGBA")
+
+
+def drop_new_noise(canvas: Image.Image, old_arr: np.ndarray, ratio: float,
+                   ax: int, baseline: int, old_ax: int, old_baseline: int) -> Image.Image:
+    """删除旧 cell 对应区域本无像素的缩放新噪声块（非技能帧用）。
+
+    缩放后与主体断连的小块，按放置变换反查回旧 cell 坐标；该区域旧 cell
+    无任何可见像素 → 判定为源帧噪点/新残粒，删除。旧 cell 本来就有像素的
+    碎块（旧批次多连通帧）原样保留，不改变既有画面。"""
+    arr = np.array(canvas)
+    mask = arr[:, :, 3] > 0
+    from collections import deque
+    seen = np.zeros_like(mask, bool)
+    old_mask = old_arr[:, :, 3] > 0
+    oh, ow = old_mask.shape
+    h, w = mask.shape
+    comps = []
+    for y in range(h):
+        for x in range(w):
+            if mask[y, x] and not seen[y, x]:
+                queue = deque([(y, x)])
+                seen[y, x] = True
+                comp = [(y, x)]
+                while queue:
+                    cy, cx = queue.popleft()
+                    for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                        ny, nx = cy + dy, cx + dx
+                        if 0 <= ny < h and 0 <= nx < w and mask[ny, nx] and not seen[ny, nx]:
+                            seen[ny, nx] = True
+                            queue.append((ny, nx))
+                            comp.append((ny, nx))
+                comps.append(comp)
+    if len(comps) <= 1:
+        return canvas
+    comps.sort(key=len, reverse=True)
+    for comp in comps[1:]:
+        ys = [y for y, _ in comp]
+        xs = [x for _, x in comp]
+        ox0 = round(old_ax + (min(xs) - ax) / ratio)
+        ox1 = round(old_ax + (max(xs) - ax) / ratio)
+        oy0 = round((old_baseline - 1) - (baseline - 1 - min(ys)) / ratio)
+        oy1 = round((old_baseline - 1) - (baseline - 1 - max(ys)) / ratio)
+        ox0, ox1 = max(0, min(ox0, ox1)), min(ow - 1, max(ox0, ox1))
+        oy0, oy1 = max(0, min(oy0, oy1)), min(oh - 1, max(oy0, oy1))
+        region_has = old_mask[oy0:oy1 + 1, ox0:ox1 + 1].any()
+        if not region_has:
+            for cy, cx in comp:
+                arr[cy, cx, 3] = 0
     return Image.fromarray(arr.astype(np.uint8), "RGBA")
 
 
@@ -438,10 +487,13 @@ def oracle(fighter: str, cfg: dict, cells: list[Path], sources: dict,
     ns = sum(1 for _ in cells)
     ok = miss = dim_diff = 0
     samples: list[str] = []
-    old_ax, old_baseline = cfg.get("old_anchor", cfg["anchor"])
     for p in cells:
         stem = cell_stem(p)
         old_arr = np.array(Image.open(p).convert("RGBA"))
+        # 旧格尺寸按帧实测（混合格批次如 gaia motion_623 的 8 帧是 256 格），
+        # 旧锚同口径取 [w//2, h-8]：192→[96,184]、256→[128,248]。
+        oh_px, ow_px = old_arr.shape[:2]
+        old_ax, old_baseline = ow_px // 2, oh_px - 8
         oys, oxs = np.where(old_arr[:, :, 3] > 0)
         if not len(oys):
             miss += 1
@@ -455,7 +507,8 @@ def oracle(fighter: str, cfg: dict, cells: list[Path], sources: dict,
             # oracle 只承认 json 级源；反查源做 IoU 级比对
             pass
         canvas, info = rescale_frame(raw, old_arr, cfg["old_scale"], 1.0, palette,
-                                     cfg["old_cell"], old_ax, old_baseline,
+                                     ow_px if ow_px == oh_px else cfg["old_cell"],
+                                     old_ax, old_baseline,
                                      old_ax, old_baseline, cfg["backend"])
         oh = int(oys.max() - oys.min() + 1)
         ow = int(oxs.max() - oxs.min() + 1)
@@ -524,6 +577,8 @@ def run(fighter: str, dry: bool) -> int:
         if not len(oys):
             report["skipped"].append({"frame": stem, "reason": "empty-cell"})
             continue
+        oh_px, ow_px = old_arr.shape[:2]
+        frame_old_ax, frame_old_baseline = ow_px // 2, oh_px - 8
         raw, via = find_source(fighter, stem, old_arr, cfg, sources)
         parsed = parse_stem(stem)
         clip = parsed[0].replace("-", "_") if parsed else stem
@@ -531,19 +586,21 @@ def run(fighter: str, dry: bool) -> int:
             # 无源帧：对旧 cell 可见内容本身做绕根点等比变换（保留帧不参与
             # 源缩放与孤点清理，色板映射用同一冻结色板无损）。192→256 升格时
             # 避免 build_atlas 把旧 192 格拉伸错位。
-            if cfg["old_cell"] != cell:
-                canvas, info = rescale_canvas_from_old(
-                    old_arr, gap_ratio, palette, cell, ax, baseline,
-                    old_ax, old_baseline)
-            else:
+            if ow_px == cell:
                 kept += 1
                 report["skipped"].append({"frame": stem, "reason": via})
                 continue
-        canvas, info = rescale_frame(raw, old_arr, ns, gap_ratio, palette, cell,
-                                     ax, baseline, old_ax, old_baseline,
-                                     cfg["backend"])
+            canvas, info = rescale_canvas_from_old(
+                old_arr, gap_ratio, palette, cell, ax, baseline,
+                frame_old_ax, frame_old_baseline)
+        else:
+            canvas, info = rescale_frame(raw, old_arr, ns, gap_ratio, palette, cell,
+                                         ax, baseline, frame_old_ax, frame_old_baseline,
+                                         cfg["backend"])
         if not (parsed[0].replace("-", "_") in SKILL_GROUPS if (parsed := parse_stem(stem)) else False):
             canvas = drop_specks(canvas)
+            canvas = drop_new_noise(canvas, old_arr, gap_ratio, ax, baseline,
+                                    frame_old_ax, frame_old_baseline)
         vis = np.array(canvas)[:, :, 3] > 0
         ncomp = components(vis)
         extra = extra_pixels(vis)

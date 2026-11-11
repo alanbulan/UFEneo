@@ -69,7 +69,7 @@
   1363
  ],
  "source_standing_height": 1048,
- "target_standing": 154,
+ "target_standing": 175,
  "source_pixel_scale": 0.14694656488549618,
  "uniform_resampled_size": [
   107,
@@ -84,8 +84,8 @@
   192
  ],
  "anchor": [
-  96,
-  184
+  128,
+  248
  ],
  "scale_policy": "由本张待机像素完整源站高1048定154/1048；整图等比缩小，未逐区域变形。根签待机后，全套后续动作必须共用这一个源像素比例，不按每帧外框归一身高。",
  "backend": {
@@ -8461,10 +8461,10 @@
  },
  "approved": "art/fighters/ultraman-gaia/stage1/idle/frames/identity-idle-pixel.png",
  "approved_sha256": "24da22f59292e1bd16ac8aae6231ddceeaa70623161784ac65f616f6de294d00",
- "scale": 0.146947,
+ "scale": 0.169182401,
  "scale_source_head": 174,
  "target_head": 26,
- "cell": 192,
+ "cell": 256,
  "head_tolerance": 0.08,
  "standing_tolerance": 0.03,
  "basic_attack_frames_20261110": {
@@ -17574,5 +17574,14 @@
    }
   ],
   "notes": ""
+ },
+ "rescale_2026_11_11": {
+  "task": "按円谷官方身高设定重推 scale 重落全部已装战斗格",
+  "old_scale": 0.146947,
+  "new_scale": 0.169182401,
+  "measured_standing_old": 152,
+  "target_standing": 175,
+  "official_m": 50,
+  "report": "tools/rebuild/body-rescale/ultraman-gaia-rescale.json"
  }
 }
