@@ -19705,6 +19705,801 @@
     ]
    },
    {
+    "clip": "idle",
+    "index": 1,
+    "name": "idle-01",
+    "source": "art/fighters/father-of-ultra/stage1/idle/frames/idle-01-raw.png",
+    "source_sha256": "70895ab0ca21354474ecd9e441cdba57146141aac1f367e2be41d5c3a372424c",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-553",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "以参考图中的奥特之父为唯一身份与画风来源，保持同一位人物、同一格斗待机架势、同一双脚间距与画面留白。现在画待机呼吸第二相：身体轻微下沉一次呼吸，双肩略低，双拳在胸前略微回收，膝盖多屈一点点，头部保持朝右，双脚位置和鞋底不移动。不要改变站姿宽窄，不要蹲下，不要换手、转头或转身。四肢粗细、头肩比例、双角与白须结构必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。像素块大小与配色同参考。横向画幅、人物居中留白。固定右侧视、完整人物不裁切、透明背景、无地面文字边框特效、无光效。",
+    "prompt_char_count": 249,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 21124,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      405,
+      29,
+      1045,
+      988
+     ],
+     "subject_bbox_alpha200": [
+      406,
+      30,
+      1045,
+      987
+     ],
+     "subject_pixels_alpha200": 264790,
+     "halo_outside_alpha16": 5347,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      406,
+      30,
+      1045,
+      987
+     ],
+     "alpha128_pixels": 266530
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 21124,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      406,
+      30,
+      1045,
+      987
+     ],
+     "keep_bbox": [
+      406,
+      30,
+      1045,
+      987
+     ],
+     "keep_pixels": 266514,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 3628,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/idle-01-cell.png",
+     "output_sha256": "f95eea3a9fad472e1d0da43cffc1b9ab50d566791e43df7b60a601ec7a4a43b7",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      39,
+      12,
+      153,
+      183
+     ],
+     "height": 172,
+     "width": 115,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      39,
+      12
+     ],
+     "scaled_size": [
+      115,
+      172
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      39,
+      153
+     ],
+     "component_pixels": [
+      8615
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 42,
+     "eye_center_x": 110,
+     "head_band_x": [
+      84,
+      136
+     ],
+     "crown_top_y": 12,
+     "overall_top_y": 12,
+     "head_width_eye_row_px": 32,
+     "beard_bottom_y": 51,
+     "head_height_px": 40,
+     "head_height_delta_vs_idle_pct": 5.26,
+     "head_width_delta_vs_idle_pct": 0.0,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 5347 px 超门，落格前按主体+1px 清理，清理后 3628 px 被移除"
+    ]
+   },
+   {
+    "clip": "idle",
+    "index": 2,
+    "name": "idle-02",
+    "source": "art/fighters/father-of-ultra/stage1/idle/frames/idle-02-raw.png",
+    "source_sha256": "a1e1808637044badf3b4897ba8109519fc7d8c6f3a2efa750ed6ff410c741b0a",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-554",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "以参考图中的奥特之父为唯一身份与画风来源，保持同一位人物、同一格斗待机架势、同一双脚间距与画面留白。现在画待机呼吸第三相：身体从下沉回升到最高点，双肩放平，胸口略挺，双拳在胸前略微抬回原位，膝盖回到浅屈，头部保持朝右，双脚位置和鞋底不移动。不要改变站姿宽窄，不要挺腹，不要换手、转头或转身。四肢粗细、头肩比例、双角与白须结构必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。像素块大小与配色同参考。横向画幅、人物居中留白。固定右侧视、完整人物不裁切、透明背景、无地面文字边框特效、无光效。",
+    "prompt_char_count": 256,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 19149,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      405,
+      21,
+      1046,
+      988
+     ],
+     "subject_bbox_alpha200": [
+      406,
+      22,
+      1045,
+      987
+     ],
+     "subject_pixels_alpha200": 261860,
+     "halo_outside_alpha16": 4758,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      406,
+      22,
+      1045,
+      987
+     ],
+     "alpha128_pixels": 263496
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 19149,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      406,
+      22,
+      1045,
+      987
+     ],
+     "keep_bbox": [
+      406,
+      22,
+      1045,
+      987
+     ],
+     "keep_pixels": 263491,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 3129,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/idle-02-cell.png",
+     "output_sha256": "0143f093503630ae53a76d3fb66b64636b1b1cd7a97d10b88d5ccc7b17149500",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      38,
+      11,
+      152,
+      183
+     ],
+     "height": 173,
+     "width": 115,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      38,
+      11
+     ],
+     "scaled_size": [
+      115,
+      173
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      38,
+      152
+     ],
+     "component_pixels": [
+      8503
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 40,
+     "eye_center_x": 110,
+     "head_band_x": [
+      84,
+      136
+     ],
+     "crown_top_y": 11,
+     "overall_top_y": 11,
+     "head_width_eye_row_px": 31,
+     "beard_bottom_y": 49,
+     "head_height_px": 39,
+     "head_height_delta_vs_idle_pct": 2.63,
+     "head_width_delta_vs_idle_pct": -3.12,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 4758 px 超门，落格前按主体+1px 清理，清理后 3129 px 被移除"
+    ]
+   },
+   {
+    "clip": "idle",
+    "index": 3,
+    "name": "idle-03",
+    "source": "art/fighters/father-of-ultra/stage1/idle/frames/idle-03-raw.png",
+    "source_sha256": "d710fc6b992039bf9c9d6b279bc309f1d91e0a099c26dcba97ee8708b2c84368",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-555",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "以参考图中的奥特之父为唯一身份与画风来源，保持同一位人物、同一格斗待机架势、同一双脚间距与画面留白。现在画待机呼吸第四相：身体第二次轻微下沉，比上一相更深一点，双肩再略沉，双拳在胸前略微下沉，双膝屈得稍多，头部保持朝右，双脚位置和鞋底不移动。不要改变站姿宽窄，不要蹲死，不要换手、转头或转身。四肢粗细、头肩比例、双角与白须结构必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。像素块大小与配色同参考。横向画幅、人物居中留白。固定右侧视、完整人物不裁切、透明背景、无地面文字边框特效、无光效。",
+    "prompt_char_count": 257,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 23079,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      403,
+      30,
+      1046,
+      989
+     ],
+     "subject_bbox_alpha200": [
+      404,
+      31,
+      1045,
+      988
+     ],
+     "subject_pixels_alpha200": 266340,
+     "halo_outside_alpha16": 5137,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      404,
+      31,
+      1046,
+      988
+     ],
+     "alpha128_pixels": 268098
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 23079,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      404,
+      31,
+      1045,
+      988
+     ],
+     "keep_bbox": [
+      404,
+      31,
+      1046,
+      988
+     ],
+     "keep_pixels": 268085,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 3398,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/idle-03-cell.png",
+     "output_sha256": "444fd85b0e11e5d706ab98b1b01cc4b8cb9ae8dc1e5ffe72bb292d2b25dc01fc",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      39,
+      12,
+      153,
+      183
+     ],
+     "height": 172,
+     "width": 115,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      39,
+      12
+     ],
+     "scaled_size": [
+      115,
+      172
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      39,
+      153
+     ],
+     "component_pixels": [
+      8610
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 42,
+     "eye_center_x": 111,
+     "head_band_x": [
+      85,
+      137
+     ],
+     "crown_top_y": 12,
+     "overall_top_y": 12,
+     "head_width_eye_row_px": 31,
+     "beard_bottom_y": 52,
+     "head_height_px": 41,
+     "head_height_delta_vs_idle_pct": 7.89,
+     "head_width_delta_vs_idle_pct": -3.12,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 5137 px 超门，落格前按主体+1px 清理，清理后 3398 px 被移除"
+    ]
+   },
+   {
+    "clip": "idle",
+    "index": 4,
+    "name": "idle-04",
+    "source": "art/fighters/father-of-ultra/stage1/idle/frames/idle-04-raw.png",
+    "source_sha256": "7f51d909d5162727c1b6dac21cc36c5a144824a2699249c78578771ed105f6fe",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-556",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "以参考图中的奥特之父为唯一身份与画风来源，保持同一位人物、同一格斗待机架势、同一双脚间距与画面留白。现在画待机呼吸第五相：身体从下沉再次回升，双肩放平，双拳在胸前回到标准护架位，双膝回到浅屈，头部保持朝右，双脚位置和鞋底不移动。与第一相姿态接近但肩膀和拳头比第一相略高一线。不要改变站姿宽窄，不要换手、转头或转身。四肢粗细、头肩比例、双角与白须结构必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。像素块大小与配色同参考。横向画幅、人物居中留白。固定右侧视、完整人物不裁切、透明背景、无地面文字边框特效、无光效。",
+    "prompt_char_count": 268,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 33164,
+     "despeckled_alpha200_pixels": 2,
+     "bbox_alpha0": [
+      404,
+      21,
+      1046,
+      988
+     ],
+     "subject_bbox_alpha200": [
+      406,
+      22,
+      1045,
+      987
+     ],
+     "subject_pixels_alpha200": 265904,
+     "halo_outside_alpha16": 4702,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      406,
+      22,
+      1046,
+      987
+     ],
+     "alpha128_pixels": 267338
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 33164,
+     "despeckled_alpha200_pixels": 2,
+     "subject_bbox_alpha200": [
+      406,
+      22,
+      1045,
+      987
+     ],
+     "keep_bbox": [
+      406,
+      22,
+      1046,
+      987
+     ],
+     "keep_pixels": 267327,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 3286,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/idle-04-cell.png",
+     "output_sha256": "a4dfa2dcd0b83ca43a1df0707946133848f8bfb81ea188efaad29fd91ffbf3fa",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      38,
+      11,
+      152,
+      183
+     ],
+     "height": 173,
+     "width": 115,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      38,
+      11
+     ],
+     "scaled_size": [
+      115,
+      173
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      38,
+      152
+     ],
+     "component_pixels": [
+      8608
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 40,
+     "eye_center_x": 109,
+     "head_band_x": [
+      83,
+      135
+     ],
+     "crown_top_y": 11,
+     "overall_top_y": 11,
+     "head_width_eye_row_px": 31,
+     "beard_bottom_y": 50,
+     "head_height_px": 40,
+     "head_height_delta_vs_idle_pct": 5.26,
+     "head_width_delta_vs_idle_pct": -3.12,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 4702 px 超门，落格前按主体+1px 清理，清理后 3286 px 被移除"
+    ]
+   },
+   {
+    "clip": "idle",
+    "index": 5,
+    "name": "idle-05",
+    "source": "art/fighters/father-of-ultra/stage1/idle/frames/idle-05-raw.png",
+    "source_sha256": "02ff6d16a9cc7aa4660d6e2eced75f906f7356886d7d636a7ed964fee0ebf655",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-557",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "以参考图中的奥特之父为唯一身份与画风来源，保持同一位人物、同一格斗待机架势、同一双脚间距与画面留白。现在画待机呼吸收势相：身体回到标准格斗待机，双肩放平，双拳在胸前收回到与参考图相同的护架位，双膝浅屈，头部保持朝右，双脚位置和鞋底不移动，整体姿态与参考图基本一致，仅呼吸带来的极轻微起伏。不要改变站姿宽窄，不要换手、转头或转身。四肢粗细、头肩比例、双角与白须结构必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。像素块大小与配色同参考。横向画幅、人物居中留白。固定右侧视、完整人物不裁切、透明背景、无地面文字边框特效、无光效。",
+    "prompt_char_count": 275,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 26787,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      404,
+      21,
+      1046,
+      989
+     ],
+     "subject_bbox_alpha200": [
+      405,
+      23,
+      1046,
+      987
+     ],
+     "subject_pixels_alpha200": 266965,
+     "halo_outside_alpha16": 4888,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      405,
+      22,
+      1046,
+      988
+     ],
+     "alpha128_pixels": 268695
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 26787,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      405,
+      23,
+      1046,
+      987
+     ],
+     "keep_bbox": [
+      405,
+      22,
+      1046,
+      988
+     ],
+     "keep_pixels": 268689,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 3167,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/idle-05-cell.png",
+     "output_sha256": "95d3e46fecb529b25025b196cda217b9acaf637d32fde4db2e99280ed3a63bd8",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      38,
+      11,
+      152,
+      183
+     ],
+     "height": 173,
+     "width": 115,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      38,
+      11
+     ],
+     "scaled_size": [
+      115,
+      173
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      38,
+      152
+     ],
+     "component_pixels": [
+      8628
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 38,
+     "eye_center_x": 106,
+     "head_band_x": [
+      80,
+      132
+     ],
+     "crown_top_y": 11,
+     "overall_top_y": 11,
+     "head_width_eye_row_px": 32,
+     "beard_bottom_y": 50,
+     "head_height_px": 40,
+     "head_height_delta_vs_idle_pct": 5.26,
+     "head_width_delta_vs_idle_pct": 0.0,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 4888 px 超门，落格前按主体+1px 清理，清理后 3167 px 被移除"
+    ]
+   },
+   {
     "clip": "land",
     "index": 0,
     "name": "land-00",
@@ -35691,6 +36486,324 @@
     ]
    },
    {
+    "clip": "turn",
+    "index": 1,
+    "name": "turn-01",
+    "source": "art/fighters/father-of-ultra/stage1/turn/frames/turn-01-raw.png",
+    "source_sha256": "0d3143e503fddc0775e17e49cbf35eb45ab894e34eaca0bd103fa44dc8a4271b",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-568",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "原地转身第一相：双脚分开踩地，重心移前脚，上身与头向左转开始背对来向，双拳仍护架，披风摆起一角；不完全背对、双脚不离地",
+    "prompt_char_count": 59,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 24145,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      345,
+      21,
+      1029,
+      988
+     ],
+     "subject_bbox_alpha200": [
+      346,
+      22,
+      1028,
+      987
+     ],
+     "subject_pixels_alpha200": 258622,
+     "halo_outside_alpha16": 5323,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      346,
+      22,
+      1028,
+      987
+     ],
+     "alpha128_pixels": 260378
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 24145,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      346,
+      22,
+      1028,
+      987
+     ],
+     "keep_bbox": [
+      346,
+      22,
+      1028,
+      987
+     ],
+     "keep_pixels": 260352,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 3594,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/turn-01-cell.png",
+     "output_sha256": "4f6403799956f9212d8b9e1f89a8e190b752bc94adaba2cb37bbf44ac2f6282a",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      29,
+      11,
+      150,
+      183
+     ],
+     "height": 173,
+     "width": 122,
+     "colors": 31,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      29,
+      11
+     ],
+     "scaled_size": [
+      122,
+      173
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      29,
+      150
+     ],
+     "component_pixels": [
+      8344
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 38,
+     "eye_center_x": 110,
+     "head_band_x": [
+      84,
+      136
+     ],
+     "crown_top_y": 11,
+     "overall_top_y": 11,
+     "head_width_eye_row_px": 31,
+     "beard_bottom_y": 50,
+     "head_height_px": 40,
+     "head_height_delta_vs_idle_pct": 5.26,
+     "head_width_delta_vs_idle_pct": -3.12,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 5323 px 超门，落格前按主体+1px 清理，清理后 3594 px 被移除"
+    ]
+   },
+   {
+    "clip": "turn",
+    "index": 2,
+    "name": "turn-02",
+    "source": "art/fighters/father-of-ultra/stage1/turn/frames/turn-02-raw.png",
+    "source_sha256": "b15d737a9c83d7b0bed2d127c9f2ae4f44e68309b62f49470318a5552e511ae7",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-572",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "原地转身最后一相：转身过半双脚碾转踩稳，上身头部转回朝右前格斗架势，双拳收回护架，披风落下贴背带余势",
+    "prompt_char_count": 50,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 21170,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      462,
+      22,
+      987,
+      989
+     ],
+     "subject_bbox_alpha200": [
+      463,
+      23,
+      986,
+      987
+     ],
+     "subject_pixels_alpha200": 254800,
+     "halo_outside_alpha16": 5552,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      462,
+      23,
+      986,
+      988
+     ],
+     "alpha128_pixels": 256711
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 21170,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      463,
+      23,
+      986,
+      987
+     ],
+     "keep_bbox": [
+      462,
+      23,
+      986,
+      988
+     ],
+     "keep_pixels": 256672,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 3694,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/turn-02-cell.png",
+     "output_sha256": "41aff07bb6c9a500c9a69403d54ce3bb3ec5437fc57f86522d9475c8f2ce3697",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      43,
+      11,
+      136,
+      183
+     ],
+     "height": 173,
+     "width": 94,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      43,
+      11
+     ],
+     "scaled_size": [
+      94,
+      173
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      43,
+      136
+     ],
+     "component_pixels": [
+      8261
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 42,
+     "eye_center_x": 99,
+     "head_band_x": [
+      73,
+      125
+     ],
+     "crown_top_y": 11,
+     "overall_top_y": 11,
+     "head_width_eye_row_px": 31,
+     "beard_bottom_y": 51,
+     "head_height_px": 41,
+     "head_height_delta_vs_idle_pct": 7.89,
+     "head_width_delta_vs_idle_pct": -3.12,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 5552 px 超门，落格前按主体+1px 清理，清理后 3694 px 被移除"
+    ]
+   },
+   {
     "clip": "vertical_heavy",
     "index": 0,
     "name": "vertical_heavy-00",
@@ -38522,6 +39635,644 @@
     ]
    },
    {
+    "clip": "walk_back",
+    "index": 4,
+    "name": "walk_back-04",
+    "source": "art/fighters/father-of-ultra/stage1/walk_back/frames/walk_back-04-raw.png",
+    "source_sha256": "46ab71ead17d2a3f6eb605d3207b1ec4e2dec0e7a6d162379ee645ec3d9b2189",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-567",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "以参考图中的奥特之父为唯一身份与画风来源，画同一位人物向后退走、重心后移中间相：后脚向左后方撤一大步前掌落地承重，前脚即将离地脚跟抬起，身体居中，双拳护架，披风微飘：朝右，双拳保持胸前护架，上身略后坐但不弯腰。不要转身背对镜头，不要双脚腾空，不要换手。四肢粗细、头肩比例、双角与白须结构必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。像素块大小与配色同参考。固定右侧视、完整人物不裁切、透明背景；背景不得有任何光晕、渐变、投影、文字或边框特效。",
+    "prompt_char_count": 235,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 30068,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      274,
+      20,
+      981,
+      978
+     ],
+     "subject_bbox_alpha200": [
+      275,
+      21,
+      980,
+      978
+     ],
+     "subject_pixels_alpha200": 277909,
+     "halo_outside_alpha16": 5753,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      275,
+      21,
+      980,
+      978
+     ],
+     "alpha128_pixels": 280012
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 30068,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      275,
+      21,
+      980,
+      978
+     ],
+     "keep_bbox": [
+      275,
+      21,
+      980,
+      978
+     ],
+     "keep_pixels": 279984,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 3681,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/walk_back-04-cell.png",
+     "output_sha256": "1fed3908fb7550f7176a73d405b092a4d945b5ee422067c3cd4d53aea3c2681a",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      45,
+      12,
+      170,
+      183
+     ],
+     "height": 172,
+     "width": 126,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      45,
+      12
+     ],
+     "scaled_size": [
+      126,
+      172
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      45,
+      170
+     ],
+     "component_pixels": [
+      9000
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 41,
+     "eye_center_x": 130,
+     "head_band_x": [
+      104,
+      156
+     ],
+     "crown_top_y": 12,
+     "overall_top_y": 12,
+     "head_width_eye_row_px": 32,
+     "beard_bottom_y": 51,
+     "head_height_px": 40,
+     "head_height_delta_vs_idle_pct": 5.26,
+     "head_width_delta_vs_idle_pct": 0.0,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 5753 px 超门，落格前按主体+1px 清理，清理后 3681 px 被移除"
+    ]
+   },
+   {
+    "clip": "walk_back",
+    "index": 5,
+    "name": "walk_back-05",
+    "source": "art/fighters/father-of-ultra/stage1/walk_back/frames/walk_back-05-raw.png",
+    "source_sha256": "1c45697f42a2845732cd6d02ec5c6b8631d62c4fdc953095adba7ceba545db1f",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-568",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "以参考图中的奥特之父为唯一身份与画风来源，画同一位人物向后退走、前脚收离地相：后脚踩实承重膝盖弯曲，前脚从右前方屈膝离地向后摆，身体略降，披风贴背：朝右，双拳保持胸前护架，上身略后坐但不弯腰。不要转身背对镜头，不要双脚腾空，不要换手。四肢粗细、头肩比例、双角与白须结构必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。像素块大小与配色同参考。固定右侧视、完整人物不裁切、透明背景；背景不得有任何光晕、渐变、投影、文字或边框特效。",
+    "prompt_char_count": 226,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 23178,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      400,
+      35,
+      857,
+      988
+     ],
+     "subject_bbox_alpha200": [
+      401,
+      36,
+      856,
+      987
+     ],
+     "subject_pixels_alpha200": 233578,
+     "halo_outside_alpha16": 4314,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      401,
+      35,
+      856,
+      987
+     ],
+     "alpha128_pixels": 235009
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 23178,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      401,
+      36,
+      856,
+      987
+     ],
+     "keep_bbox": [
+      401,
+      35,
+      856,
+      987
+     ],
+     "keep_pixels": 235003,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 2889,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/walk_back-05-cell.png",
+     "output_sha256": "e24dd47d754cd5cc99b23af923c66ebf77aa07791a56a1a317d56c8624576425",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      82,
+      13,
+      163,
+      183
+     ],
+     "height": 171,
+     "width": 82,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      82,
+      13
+     ],
+     "scaled_size": [
+      82,
+      171
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      82,
+      163
+     ],
+     "component_pixels": [
+      7618
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 45,
+     "eye_center_x": 142,
+     "head_band_x": [
+      116,
+      168
+     ],
+     "crown_top_y": 13,
+     "overall_top_y": 13,
+     "head_width_eye_row_px": 31,
+     "beard_bottom_y": 54,
+     "head_height_px": 42,
+     "head_height_delta_vs_idle_pct": 10.53,
+     "head_width_delta_vs_idle_pct": -3.12,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 4314 px 超门，落格前按主体+1px 清理，清理后 2889 px 被移除",
+     "头高 42 偏离待机 38 的 ±8%，需目视核对"
+    ]
+   },
+   {
+    "clip": "walk_back",
+    "index": 6,
+    "name": "walk_back-06",
+    "source": "art/fighters/father-of-ultra/stage1/walk_back/frames/walk_back-06-raw.png",
+    "source_sha256": "7369b2821e0ffd63b94b2b8cbe05a423eb48919abafa1ffd36cc3b595ea576e2",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-571",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "以参考图中的奥特之父为唯一身份与画风来源，画同一位人物向后退走、双脚交错错步相：后脚踩实承重膝盖前顶，前脚在身体正下方交错屈膝提起脚尖离地约脚掌厚度，身体略降，披风收拢：朝右，双拳保持胸前护架，上身略后坐但不弯腰。不要转身背对镜头，不要双脚腾空，不要换手。四肢粗细、头肩比例、双角与白须结构必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。像素块大小与配色同参考。固定右侧视、完整人物不裁切、透明背景；背景不得有任何光晕、渐变、投影、文字或边框特效。",
+    "prompt_char_count": 237,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 21055,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      457,
+      21,
+      921,
+      986
+     ],
+     "subject_bbox_alpha200": [
+      457,
+      22,
+      920,
+      984
+     ],
+     "subject_pixels_alpha200": 244168,
+     "halo_outside_alpha16": 4810,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      457,
+      22,
+      920,
+      985
+     ],
+     "alpha128_pixels": 245873
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 21055,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      457,
+      22,
+      920,
+      984
+     ],
+     "keep_bbox": [
+      457,
+      22,
+      920,
+      985
+     ],
+     "keep_pixels": 245863,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 3115,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/walk_back-06-cell.png",
+     "output_sha256": "f97736000594487aed21bc4a2b9b498c08dbb7dbcbe8bb5f45e7a758e6d16ffc",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      65,
+      11,
+      147,
+      183
+     ],
+     "height": 173,
+     "width": 83,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      65,
+      11
+     ],
+     "scaled_size": [
+      83,
+      173
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      65,
+      147
+     ],
+     "component_pixels": [
+      7912
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 38,
+     "eye_center_x": 121,
+     "head_band_x": [
+      95,
+      147
+     ],
+     "crown_top_y": 11,
+     "overall_top_y": 11,
+     "head_width_eye_row_px": 32,
+     "beard_bottom_y": 50,
+     "head_height_px": 40,
+     "head_height_delta_vs_idle_pct": 5.26,
+     "head_width_delta_vs_idle_pct": 0.0,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 4810 px 超门，落格前按主体+1px 清理，清理后 3115 px 被移除"
+    ]
+   },
+   {
+    "clip": "walk_back",
+    "index": 7,
+    "name": "walk_back-07",
+    "source": "art/fighters/father-of-ultra/stage1/walk_back/frames/walk_back-07-raw.png",
+    "source_sha256": "76e14b8e77003a60c70ec63c6a21965adcec3c01d7b5ca6982cc68f3c63b5ca3",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-570",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "以参考图中的奥特之父为唯一身份与画风来源，画同一位人物向后退走、前脚重新踩地收步相：前脚右前方重新踩地前掌先着地膝盖微屈，后脚承重膝盖弯曲，身体居中，披风贴背：朝右，双拳保持胸前护架，上身略后坐但不弯腰。不要转身背对镜头，不要双脚腾空，不要换手。四肢粗细、头肩比例、双角与白须结构必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。像素块大小与配色同参考。固定右侧视、完整人物不裁切、透明背景；背景不得有任何光晕、渐变、投影、文字或边框特效。",
+    "prompt_char_count": 232,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 28355,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      447,
+      23,
+      1073,
+      985
+     ],
+     "subject_bbox_alpha200": [
+      448,
+      24,
+      1072,
+      984
+     ],
+     "subject_pixels_alpha200": 256089,
+     "halo_outside_alpha16": 5091,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      447,
+      24,
+      1073,
+      984
+     ],
+     "alpha128_pixels": 257860
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 28355,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      448,
+      24,
+      1072,
+      984
+     ],
+     "keep_bbox": [
+      447,
+      24,
+      1073,
+      984
+     ],
+     "keep_pixels": 257837,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 3358,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/walk_back-07-cell.png",
+     "output_sha256": "1063c1c3e86d7628cdc682c0febde87540ca99aff29cfa762fd845b7bfaf9143",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      44,
+      12,
+      155,
+      183
+     ],
+     "height": 172,
+     "width": 112,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      44,
+      12
+     ],
+     "scaled_size": [
+      112,
+      172
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      44,
+      155
+     ],
+     "component_pixels": [
+      8246
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 44,
+     "eye_center_x": 102,
+     "head_band_x": [
+      76,
+      128
+     ],
+     "crown_top_y": 12,
+     "overall_top_y": 12,
+     "head_width_eye_row_px": 32,
+     "beard_bottom_y": 54,
+     "head_height_px": 43,
+     "head_height_delta_vs_idle_pct": 13.16,
+     "head_width_delta_vs_idle_pct": 0.0,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 5091 px 超门，落格前按主体+1px 清理，清理后 3358 px 被移除",
+     "头高 43 偏离待机 38 的 ±8%，需目视核对"
+    ]
+   },
+   {
     "clip": "walk_forward",
     "index": 0,
     "name": "walk_forward-00",
@@ -39107,9 +40858,647 @@
      "原始 alpha>=16 辉光 7712 px 超门，落格前按主体+1px 清理，清理后 5131 px 被移除",
      "头高 44 偏离待机 38 的 ±8%，需目视核对"
     ]
+   },
+   {
+    "clip": "walk_forward",
+    "index": 4,
+    "name": "walk_forward-04",
+    "source": "art/fighters/father-of-ultra/stage1/walk_forward/frames/walk_forward-04-raw.png",
+    "source_sha256": "7ab0392b913c2a437974e927df3b27ccc0dbbd039f6f7a8a63af1a1426dcc295",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-563",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "以参考图中的奥特之父为唯一身份与画风来源，画同一位人物向前行走、重心前移中间相：前脚踩实承重膝盖前顶，后脚蹬伸前掌点地，身体居中，双拳护架，披风随身体前摆：朝右，双拳保持胸前护架，上身略前倾。不要高抬膝成正步，不要双脚腾空，不要换手或转身。四肢粗细、头肩比例、双角与白须结构必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。像素块大小与配色同参考。固定右侧视、完整人物不裁切、透明背景；背景不得有任何光晕、渐变、投影、文字或边框特效。",
+    "prompt_char_count": 229,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 31238,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      360,
+      34,
+      1051,
+      970
+     ],
+     "subject_bbox_alpha200": [
+      360,
+      35,
+      1051,
+      968
+     ],
+     "subject_pixels_alpha200": 270752,
+     "halo_outside_alpha16": 5509,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      360,
+      35,
+      1051,
+      969
+     ],
+     "alpha128_pixels": 272696
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 31238,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      360,
+      35,
+      1051,
+      968
+     ],
+     "keep_bbox": [
+      360,
+      35,
+      1051,
+      969
+     ],
+     "keep_pixels": 272666,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 3598,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/walk_forward-04-cell.png",
+     "output_sha256": "3e3a077ccf25fe5f8c75bea53ff726bb30c020d1d9aca2bd8c6c8ed2621ac457",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      22,
+      17,
+      145,
+      183
+     ],
+     "height": 167,
+     "width": 124,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      22,
+      17
+     ],
+     "scaled_size": [
+      124,
+      167
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      22,
+      145
+     ],
+     "component_pixels": [
+      8735
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 49,
+     "eye_center_x": 120,
+     "head_band_x": [
+      94,
+      146
+     ],
+     "crown_top_y": 17,
+     "overall_top_y": 17,
+     "head_width_eye_row_px": 32,
+     "beard_bottom_y": 59,
+     "head_height_px": 43,
+     "head_height_delta_vs_idle_pct": 13.16,
+     "head_width_delta_vs_idle_pct": 0.0,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 5509 px 超门，落格前按主体+1px 清理，清理后 3598 px 被移除",
+     "头高 43 偏离待机 38 的 ±8%，需目视核对"
+    ]
+   },
+   {
+    "clip": "walk_forward",
+    "index": 5,
+    "name": "walk_forward-05",
+    "source": "art/fighters/father-of-ultra/stage1/walk_forward/frames/walk_forward-05-raw.png",
+    "source_sha256": "97d68a810e55b911460d1be8bf317240af8bd9de59fffe486c3a2f4e134aee2b",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-564",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "以参考图中的奥特之父为唯一身份与画风来源，画同一位人物向前行走、后脚蹬离地推进相：后脚蹬伸脚尖离地，身体升到整步最高点，前腿伸直脚将落地，双拳护架，披风微展：朝右，双拳保持胸前护架，上身略前倾。不要高抬膝成正步，不要双脚腾空，不要换手或转身。四肢粗细、头肩比例、双角与白须结构必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。像素块大小与配色同参考。固定右侧视、完整人物不裁切、透明背景；背景不得有任何光晕、渐变、投影、文字或边框特效。",
+    "prompt_char_count": 230,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 26168,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      302,
+      20,
+      1095,
+      982
+     ],
+     "subject_bbox_alpha200": [
+      302,
+      21,
+      1094,
+      981
+     ],
+     "subject_pixels_alpha200": 266870,
+     "halo_outside_alpha16": 6491,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      302,
+      21,
+      1095,
+      982
+     ],
+     "alpha128_pixels": 269158
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 26168,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      302,
+      21,
+      1094,
+      981
+     ],
+     "keep_bbox": [
+      302,
+      21,
+      1095,
+      982
+     ],
+     "keep_pixels": 269094,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 4305,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/walk_forward-05-cell.png",
+     "output_sha256": "30d6760061ae6a753299ccea4aaf08363c00d187741ceb7575356289e4113e86",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      1,
+      12,
+      142,
+      183
+     ],
+     "height": 172,
+     "width": 142,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      1,
+      12
+     ],
+     "scaled_size": [
+      142,
+      172
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      1,
+      142
+     ],
+     "component_pixels": [
+      8631
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 42,
+     "eye_center_x": 101,
+     "head_band_x": [
+      75,
+      127
+     ],
+     "crown_top_y": 12,
+     "overall_top_y": 12,
+     "head_width_eye_row_px": 31,
+     "beard_bottom_y": 51,
+     "head_height_px": 40,
+     "head_height_delta_vs_idle_pct": 5.26,
+     "head_width_delta_vs_idle_pct": -3.12,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 6491 px 超门，落格前按主体+1px 清理，清理后 4305 px 被移除"
+    ]
+   },
+   {
+    "clip": "walk_forward",
+    "index": 6,
+    "name": "walk_forward-06",
+    "source": "art/fighters/father-of-ultra/stage1/walk_forward/frames/walk_forward-06-raw.png",
+    "source_sha256": "09882bb4d6580f04c2c40fd8b5be4d27a972aad553aa7e78f61d879e5476a1ce",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-565",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "以参考图中的奥特之父为唯一身份与画风来源，画同一位人物向前行走、前脚刚落地承重相：前脚全掌着地接住身体膝盖缓冲，后腿屈膝收拢脚已离地正前摆，身体略降，披风收拢：朝右，双拳保持胸前护架，上身略前倾。不要高抬膝成正步，不要双脚腾空，不要换手或转身。四肢粗细、头肩比例、双角与白须结构必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。像素块大小与配色同参考。固定右侧视、完整人物不裁切、透明背景；背景不得有任何光晕、渐变、投影、文字或边框特效。",
+    "prompt_char_count": 231,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 20612,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      442,
+      28,
+      1013,
+      988
+     ],
+     "subject_bbox_alpha200": [
+      443,
+      29,
+      1012,
+      987
+     ],
+     "subject_pixels_alpha200": 231774,
+     "halo_outside_alpha16": 5594,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      443,
+      29,
+      1013,
+      987
+     ],
+     "alpha128_pixels": 233759
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 20612,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      443,
+      29,
+      1012,
+      987
+     ],
+     "keep_bbox": [
+      443,
+      29,
+      1013,
+      987
+     ],
+     "keep_pixels": 233715,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 3692,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/walk_forward-06-cell.png",
+     "output_sha256": "d07d5afcc2ef80c322657f27f5282deb16aa54f422a7bf3116cac8e1e9381a7e",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      13,
+      12,
+      114,
+      183
+     ],
+     "height": 172,
+     "width": 102,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      13,
+      12
+     ],
+     "scaled_size": [
+      102,
+      172
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      13,
+      114
+     ],
+     "component_pixels": [
+      7487
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 46,
+     "eye_center_x": 89,
+     "head_band_x": [
+      63,
+      115
+     ],
+     "crown_top_y": 12,
+     "overall_top_y": 12,
+     "head_width_eye_row_px": 32,
+     "beard_bottom_y": 56,
+     "head_height_px": 45,
+     "head_height_delta_vs_idle_pct": 18.42,
+     "head_width_delta_vs_idle_pct": 0.0,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 5594 px 超门，落格前按主体+1px 清理，清理后 3692 px 被移除",
+     "头高 45 偏离待机 38 的 ±8%，需目视核对"
+    ]
+   },
+   {
+    "clip": "walk_forward",
+    "index": 7,
+    "name": "walk_forward-07",
+    "source": "art/fighters/father-of-ultra/stage1/walk_forward/frames/walk_forward-07-raw.png",
+    "source_sha256": "556100d33282045fd2ebd1f925018ba62b53a621202c3039e2265ef6925c963b",
+    "source_actual_size": [
+     1536,
+     1024
+    ],
+    "source_mode": "RGBA",
+    "generation_id": "image-35600-566",
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "requested_size": "1024x1536",
+    "prompt": "以参考图中的奥特之父为唯一身份与画风来源，画同一位人物向前行走、后腿前收过渡相：前脚踩实承重膝盖微屈，后腿屈膝从身后收摆到身体侧下方脚离地不高，身体居中，披风贴背：朝右，双拳保持胸前护架，上身略前倾。不要高抬膝成正步，不要双脚腾空，不要换手或转身。四肢粗细、头肩比例、双角与白须结构必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。像素块大小与配色同参考。固定右侧视、完整人物不裁切、透明背景；背景不得有任何光晕、渐变、投影、文字或边框特效。",
+    "prompt_char_count": 233,
+    "reference": "art/fighters/father-of-ultra/stage1/idle/references/pixel-raw-02-clean-alpha.png",
+    "air": false,
+    "head_gate": true,
+    "foot_mode": "ground",
+    "raw": {
+     "size": [
+      1536,
+      1024
+     ],
+     "mode": "RGBA",
+     "alpha_range": [
+      0,
+      254
+     ],
+     "alpha_levels": 240,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "dust_alpha_1_15_pixels": 17041,
+     "despeckled_alpha200_pixels": 0,
+     "bbox_alpha0": [
+      501,
+      27,
+      940,
+      981
+     ],
+     "subject_bbox_alpha200": [
+      503,
+      28,
+      939,
+      980
+     ],
+     "subject_pixels_alpha200": 218903,
+     "halo_outside_alpha16": 4150,
+     "halo_outside_alpha200": 0,
+     "alpha128_bbox": [
+      502,
+      27,
+      940,
+      980
+     ],
+     "alpha128_pixels": 220279
+    },
+    "cleanup": {
+     "method": "alpha 1–15 尘点与 alpha>=200 孤立尘点(<8px)先移除；主体最大块外扩1px 内取 alpha>=128 最大连通块；其余 alpha 置0",
+     "dust_alpha_1_15_pixels": 17041,
+     "despeckled_alpha200_pixels": 0,
+     "subject_bbox_alpha200": [
+      503,
+      28,
+      939,
+      980
+     ],
+     "keep_bbox": [
+      502,
+      27,
+      940,
+      980
+     ],
+     "keep_pixels": 220266,
+     "keep_components_after_cut": 1,
+     "candidate_components": 1,
+     "removed_alpha16_pixels": 2790,
+     "removed_alpha200_pixels": 0,
+     "corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "landing": {
+     "output": "art/fighters/father-of-ultra/stage1/cells/walk_forward-07-cell.png",
+     "output_sha256": "61c3e1f22be9f749c05a737bbbeff06390cbe4080b5e567469cce9011557ff68",
+     "scale": 0.179089027,
+     "bbox_inclusive": [
+      37,
+      13,
+      115,
+      183
+     ],
+     "height": 171,
+     "width": 79,
+     "colors": 32,
+     "components": 1,
+     "alpha": [
+      0,
+      255
+     ],
+     "foot_row": 183,
+     "placement": [
+      37,
+      13
+     ],
+     "scaled_size": [
+      79,
+      171
+     ],
+     "foot_band_used": 0.08,
+     "horizontal_fit": [
+      37,
+      115
+     ],
+     "component_pixels": [
+      7117
+     ]
+    },
+    "head": {
+     "eye_source": "gold_eyes_topmost",
+     "eye_row_y": 42,
+     "eye_center_x": 93,
+     "head_band_x": [
+      67,
+      119
+     ],
+     "crown_top_y": 13,
+     "overall_top_y": 13,
+     "head_width_eye_row_px": 31,
+     "beard_bottom_y": 52,
+     "head_height_px": 40,
+     "head_height_delta_vs_idle_pct": 5.26,
+     "head_width_delta_vs_idle_pct": -3.12,
+     "above_head_structure": false
+    },
+    "hard_gates": {
+     "components_1": true,
+     "alpha_binary": true,
+     "colors_le_32": true,
+     "head_width_within_12pct": true,
+     "raw_halo200_zero": true,
+     "raw_corners_zero": true,
+     "fits_cell": true
+    },
+    "rejects": [],
+    "status": "accepted",
+    "notes": [
+     "原始 alpha>=16 辉光 4150 px 超门，落格前按主体+1px 清理，清理后 2790 px 被移除"
+    ]
    }
   ],
-  "accepted_count": 244,
+  "accepted_count": 259,
   "rejected_count": 1,
   "flags": [
    "dash_heavy-02: fits_cell"
