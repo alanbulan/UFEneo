@@ -97,6 +97,10 @@ baseline-1、水平按脚底段重心对到 anchor x。
 已完成的批次应把结果落到 `content/`、`assets/`、`docs/verification/`，
 然后删除该批次目录。
 
+`rebuild/body-rescale/` 是跨角色的体型重落格批次（2026-11-11）：按円谷
+官方身高设定重推七名新装角色的 scale 并重落全部已装 stage1 战斗格，
+见该目录 README.md。
+
 ## 依赖
 
 ```bash
