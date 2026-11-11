@@ -41506,7 +41506,48 @@
   "notes": [
    "全部动作帧统一使用本文件 palette 的 32 色与 scale；不按单帧外框归一身高。",
    "动作帧只引待机像素源的洁净派生版一张；未追加其它角色、正面或 3/4 参考。",
-   "头部比例按头部列带（眼列 ±26px）量冠顶，不用整帧最高行；白须底取面部正下方窄窗。"
-  ]
+   "头部比例按头部列带（眼列 ±26px）量冠顶，不用整帧最高行；白须底取面部正下方窄窗。",
+   "2026-11-11 待返工登记：用户裁定奥特之父无胡子（本项目口径，见根会话记忆 father-of-ultra-no-mustache）。本批 idle 6 图 / walk_forward 8 图 / walk_back 8 图 / turn 3 帧已装机帧的嘴部白色八字胡连通块实测 16-67 px（远超历史豁免的 2-3 px），整组不合格；等无胡新待机锚验收后按新锚整批重做，本轮不重掷。检测口径：alpha>0 且 RGB 全>185，面部正下方窄窗（头部 30% 高度带底部起 22 px、头列带 25-75 分位 ±4 px）内最大 8 向连通块。"
+  ],
+  "mustache_rework_2026_11_11": {
+   "date": "2026-11-11",
+   "authority": "user_ruling_via_root_session",
+   "ruling": "奥特之父无胡子；白胡块不合格",
+   "scope": [
+    "idle 6",
+    "walk_forward 8",
+    "walk_back 8",
+    "turn 3"
+   ],
+   "white_component_px": {
+    "idle-0": 46,
+    "idle-1": 32,
+    "idle-2": 67,
+    "idle-3": 34,
+    "idle-4": 54,
+    "idle-5": 49,
+    "walk_forward-0": 36,
+    "walk_forward-1": 46,
+    "walk_forward-2": 42,
+    "walk_forward-3": 41,
+    "walk_forward-4": 25,
+    "walk_forward-5": 46,
+    "walk_forward-6": 16,
+    "walk_forward-7": 40,
+    "walk_back-0": 38,
+    "walk_back-1": 49,
+    "walk_back-2": 41,
+    "walk_back-3": 39,
+    "walk_back-4": 47,
+    "walk_back-5": 37,
+    "walk_back-6": 45,
+    "walk_back-7": 39,
+    "turn-0": 28,
+    "turn-1": 25,
+    "turn-2": 21
+   },
+   "detection": "alpha>0 & RGB>185 各分量；面部正下方窄窗（头带底起22px、头列带25-75分位±4px）最大8向连通块",
+   "status": "awaiting_new_no_mustache_anchor"
+  }
  }
 }
