@@ -290,19 +290,23 @@ function drawArrow(p, i, n, box, C, seed) {
   const midY = y;
   const headLen = Math.max(6, Math.min(14, Math.round(box.w * 0.26)));
   const shaftH = Math.max(1, Math.round(box.h * 0.2));
-  // 箭杆
+  // 箭杆：1px 白芯 + 主色杆身 + 暗边
   for (let x = x0 + 2; x <= x1 - headLen + 2; x++) {
     for (let d = -shaftH; d <= shaftH; d++) {
-      p.dot(x, midY + d, Math.abs(d) < shaftH ? C[6] : C[4], Math.abs(d) <= shaftH ? 1 : 0.5);
+      const ad = Math.abs(d);
+      const lvl = ad === 0 ? 7 : ad < shaftH ? 5 : 3;
+      p.dot(x, midY + d, C[lvl], ad < shaftH ? 1 : 0.7);
     }
   }
-  // 箭头
+  // 箭头：窄白芯，主色箭面，暗色外缘
   const tip = x1 - 1;
   for (let t = 0; t <= headLen; t++) {
     const x = tip - t;
     const half = Math.max(1, Math.round((t / headLen) * box.h * 0.42));
     for (let d = -half; d <= half; d++) {
-      p.dot(x, midY + d, Math.abs(d) < half * 0.45 ? C[7] : Math.abs(d) < half * 0.8 ? C[6] : C[5], 1);
+      const q = Math.abs(d) / Math.max(1, half);
+      const lvl = q < 0.28 ? 7 : q < 0.58 ? 6 : q < 0.82 ? 5 : 3;
+      p.dot(x, midY + d, C[lvl], 1);
     }
   }
   // 尾羽
