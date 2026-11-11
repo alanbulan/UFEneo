@@ -271,7 +271,7 @@ def scale_fields(donor: dict, n: int, cfg: dict) -> dict:
     d["id"] = cfg.get("id", d.get("id", ""))
     d["display_name"] = cfg.get("display_name", DISPLAY_NAMES.get(d["id"], d.get("display_name", d["id"])))
     for key in ("damage", "chip_damage", "energy_cost", "kind", "level",
-                "knockdown", "unblockable", "super_level", "self_heal"):
+                "knockdown", "unblockable", "super_level", "self_heal", "chill"):
         if key in cfg:
             d[key] = cfg[key]
     if cfg.get("feedback_color"):
