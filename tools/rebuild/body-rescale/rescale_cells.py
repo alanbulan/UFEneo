@@ -326,6 +326,33 @@ def components(mask: np.ndarray) -> int:
     return count
 
 
+def drop_specks(canvas: Image.Image, max_px: int = 2) -> Image.Image:
+    """非技能帧清理缩放产生的 <3px 孤点（与主体断连的残粒）。"""
+    arr = np.array(canvas)
+    mask = arr[:, :, 3] > 0
+    from collections import deque
+    seen = np.zeros_like(mask, bool)
+    h, w = mask.shape
+    for y in range(h):
+        for x in range(w):
+            if mask[y, x] and not seen[y, x]:
+                queue = deque([(y, x)])
+                seen[y, x] = True
+                comp = [(y, x)]
+                while queue:
+                    cy, cx = queue.popleft()
+                    for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                        ny, nx = cy + dy, cx + dx
+                        if 0 <= ny < h and 0 <= nx < w and mask[ny, nx] and not seen[ny, nx]:
+                            seen[ny, nx] = True
+                            queue.append((ny, nx))
+                            comp.append((cy, cx))
+                if len(comp) <= max_px:
+                    for cy, cx in comp:
+                        arr[cy, cx, 3] = 0
+    return Image.fromarray(arr.astype(np.uint8), "RGBA")
+
+
 def extra_pixels(mask: np.ndarray) -> int:
     """主体（最大连通块）之外的可见像素数。"""
     from collections import deque
@@ -461,6 +488,8 @@ def run(fighter: str, dry: bool) -> int:
         canvas, info = rescale_frame(raw, old_arr, ns, gap_ratio, palette, cell,
                                      ax, baseline, cfg["anchor"][0], old_baseline,
                                      cfg["backend"])
+        if not (parsed[0].replace("-", "_") in SKILL_GROUPS if (parsed := parse_stem(stem)) else False):
+            canvas = drop_specks(canvas)
         vis = np.array(canvas)[:, :, 3] > 0
         ncomp = components(vis)
         extra = extra_pixels(vis)
