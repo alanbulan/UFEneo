@@ -21,7 +21,7 @@
  "super_level": 1,
  "air_allowed": false,
  "feedback": {
-  "spark": "jack_specium1_hit",
+  "spark": "mother_fx_heal_hit",
   "block_spark": "impact_guard",
   "hitstop": 0,
   "blockstop": 5,
@@ -46,7 +46,7 @@
   "block": "guard"
  },
  "data_source": "母亲光线：日文维基与 Fandom 载明由左腕母亲之蓝取能、右臂发射、用于治疗；光色无文字来源，本作取蓝白为游戏取色。回复 120、清眩晕在发射帧由 core 的 self_heal 结算（游戏编排）；special_rings 为自身光环表现。",
- "production_note": "特效弹链: 蓄力 attach jack_specium1_start + jack_specium1_beam 蓝白治疗束(360px, no_hit 纯表现), self_heal 治疗机制保持; 对齐原剧母亲光线由左腕取能右臂发射。",
+ "production_note": "特效自制弹链: 蓄力 attach mother_fx_ray_start(前段小光)→mother_fx_heal_start(后段凝聚), 发射 mother_fx_heal_beam 蓝白治疗束, 命中 mother_fx_heal_hit; PixelFX 离线烘焙, self_heal 机制保持。",
  "self_heal": {
   "frame": 4,
   "amount": 120,
@@ -89,7 +89,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_ray_start",
      "anchor": [
       36,
       98
@@ -135,7 +135,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_ray_start",
      "anchor": [
       36,
       98
@@ -181,7 +181,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_ray_start",
      "anchor": [
       36,
       98
@@ -227,7 +227,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_ray_start",
      "anchor": [
       36,
       98
@@ -273,7 +273,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_ray_start",
      "anchor": [
       36,
       98
@@ -319,7 +319,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_ray_start",
      "anchor": [
       36,
       98
@@ -365,7 +365,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_ray_start",
      "anchor": [
       36,
       98
@@ -411,7 +411,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_ray_start",
      "anchor": [
       36,
       98
@@ -457,7 +457,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_ray_start",
      "anchor": [
       36,
       98
@@ -503,7 +503,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_ray_start",
      "anchor": [
       36,
       98
@@ -549,7 +549,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_heal_start",
      "anchor": [
       36,
       98
@@ -595,7 +595,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_heal_start",
      "anchor": [
       36,
       98
@@ -641,7 +641,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_heal_start",
      "anchor": [
       36,
       98
@@ -687,7 +687,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_heal_start",
      "anchor": [
       36,
       98
@@ -733,7 +733,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_heal_start",
      "anchor": [
       36,
       98
@@ -779,7 +779,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_heal_start",
      "anchor": [
       36,
       98
@@ -825,7 +825,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_heal_start",
      "anchor": [
       36,
       98
@@ -871,7 +871,7 @@
    "block_effect": "impact_guard",
    "attachments": [
     {
-     "effect": "jack_specium1_start",
+     "effect": "mother_fx_heal_start",
      "anchor": [
       36,
       98
@@ -915,22 +915,7 @@
    "events": [],
    "impact_effect": "impact_light",
    "block_effect": "impact_guard",
-   "attachments": [
-    {
-     "effect": "jack_specium1_start",
-     "anchor": [
-      36,
-      98
-     ],
-     "sprite": 3,
-     "color": [
-      1,
-      1,
-      1,
-      1
-     ]
-    }
-   ]
+   "attachments": []
   },
   {
    "sprite": 3,
@@ -961,12 +946,13 @@
    "events": [],
    "impact_effect": "impact_light",
    "block_effect": "impact_guard",
+   "attachments": [],
    "shots": [
     {
-     "effect": "jack_specium1_beam",
+     "effect": "mother_fx_heal_beam",
      "spawn": [
-      50,
-      80
+      36,
+      98
      ],
      "anchor": [
       36,
@@ -1022,7 +1008,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 4,
@@ -1052,7 +1039,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 4,
@@ -1082,7 +1070,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 4,
@@ -1112,7 +1101,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 4,
@@ -1142,7 +1132,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 5,
@@ -1172,7 +1163,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 5,
@@ -1202,7 +1194,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 5,
@@ -1232,7 +1225,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 5,
@@ -1262,7 +1256,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 5,
@@ -1292,7 +1287,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 6,
@@ -1322,7 +1318,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 6,
@@ -1352,7 +1349,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 6,
@@ -1382,7 +1380,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 6,
@@ -1412,7 +1411,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 6,
@@ -1442,7 +1442,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 7,
@@ -1472,7 +1473,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 7,
@@ -1502,7 +1504,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 7,
@@ -1532,7 +1535,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 7,
@@ -1562,7 +1566,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 7,
@@ -1592,7 +1597,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 8,
@@ -1622,7 +1628,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 8,
@@ -1652,7 +1659,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 8,
@@ -1682,7 +1690,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 8,
@@ -1712,7 +1721,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 9,
@@ -1742,7 +1752,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 9,
@@ -1772,7 +1783,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 9,
@@ -1802,7 +1814,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 9,
@@ -1832,7 +1845,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 10,
@@ -1862,7 +1876,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 10,
@@ -1892,7 +1907,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 10,
@@ -1922,7 +1938,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 10,
@@ -1952,7 +1969,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 11,
@@ -1982,7 +2000,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 11,
@@ -2012,7 +2031,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 11,
@@ -2042,7 +2062,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 11,
@@ -2072,7 +2093,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 12,
@@ -2102,7 +2124,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 12,
@@ -2132,7 +2155,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 12,
@@ -2162,7 +2186,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 12,
@@ -2192,7 +2217,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 13,
@@ -2222,7 +2248,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 13,
@@ -2252,7 +2279,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 13,
@@ -2282,7 +2310,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 13,
@@ -2312,7 +2341,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 14,
@@ -2342,7 +2372,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 14,
@@ -2372,7 +2403,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 14,
@@ -2402,7 +2434,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 14,
@@ -2432,7 +2465,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 15,
@@ -2462,7 +2496,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 15,
@@ -2492,7 +2527,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 15,
@@ -2522,7 +2558,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   },
   {
    "sprite": 15,
@@ -2552,7 +2589,8 @@
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": []
   }
  ],
  "manual_projectiles": true
