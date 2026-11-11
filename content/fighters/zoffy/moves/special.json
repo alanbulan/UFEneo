@@ -21,17 +21,17 @@
   "super_level": 1,
   "air_allowed": false,
   "feedback": {
-    "spark": "beam_hit",
+    "spark": "jack_short_hit",
     "block_spark": "impact_guard",
     "hitstop": 10,
     "blockstop": 5,
     "shake": 4,
     "flash": 2,
     "color": [
-      0.65,
-      0.9,
-      1.0,
-      1.0
+      1,
+      1,
+      1,
+      1
     ],
     "block_color": [
       1,
@@ -46,7 +46,7 @@
     "block": "guard"
   },
   "data_source": "Z光线：双掌在胸前合拢后一并前推，从双掌前缘发出短程电流束，光色蓝白；射程与持续短于M87，命中造成电流短硬直。原剧技能名与电流型描述见 MOVES.md 原剧考证 §1.4；帧序、射程、判定与颜色为游戏编排。",
-  "production_note": "内容数据；美术已交付未安装，未启动 Godot、未提交。",
+  "production_note": "特效弹链: 蓄力 attach jack_short_start + jack_short_beam 蓝白电流短束(360px), 命中 jack_short_hit; 家族取自杰克短程 specium 段, 对齐原剧 Z光线双掌合拢短程电流束。",
   "frames": [
     {
       "sprite": 0,
@@ -81,7 +81,23 @@
         }
       ],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 0,
@@ -111,7 +127,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 0,
@@ -141,7 +173,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 0,
@@ -171,7 +219,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 0,
@@ -201,7 +265,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 1,
@@ -231,7 +311,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 1,
@@ -261,7 +357,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 1,
@@ -291,7 +403,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 1,
@@ -321,7 +449,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 1,
@@ -351,7 +495,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 2,
@@ -381,7 +541,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 2,
@@ -411,7 +587,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 2,
@@ -441,7 +633,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 2,
@@ -471,7 +679,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 2,
@@ -501,7 +725,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 3,
@@ -531,7 +771,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 3,
@@ -561,7 +817,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 3,
@@ -591,7 +863,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 3,
@@ -621,7 +909,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 3,
@@ -651,7 +955,115 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -47,
+          0,
+          96,
+          49
+        ],
+        [
+          -26,
+          47,
+          66,
+          50
+        ],
+        [
+          -20,
+          95,
+          61,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "impact_light",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 4,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -47,
+          0,
+          96,
+          49
+        ],
+        [
+          -26,
+          47,
+          66,
+          50
+        ],
+        [
+          -20,
+          95,
+          61,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "impact_light",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "jack_short_start",
+          "anchor": [
+            40,
+            108
+          ],
+          "sprite": 4,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 4,
@@ -735,186 +1147,6 @@
           -20,
           95,
           61,
-          50
-        ]
-      ],
-      "cancel": [],
-      "events": [],
-      "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
-    },
-    {
-      "sprite": 4,
-      "dx": 0,
-      "dy": 0,
-      "hitboxes": [],
-      "hurtboxes": [
-        [
-          -47,
-          0,
-          96,
-          49
-        ],
-        [
-          -26,
-          47,
-          66,
-          50
-        ],
-        [
-          -20,
-          95,
-          61,
-          50
-        ]
-      ],
-      "cancel": [],
-      "events": [],
-      "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
-    },
-    {
-      "sprite": 4,
-      "dx": 0,
-      "dy": 0,
-      "hitboxes": [],
-      "hurtboxes": [
-        [
-          -47,
-          0,
-          96,
-          49
-        ],
-        [
-          -26,
-          47,
-          66,
-          50
-        ],
-        [
-          -20,
-          95,
-          61,
-          50
-        ]
-      ],
-      "cancel": [],
-      "events": [],
-      "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
-    },
-    {
-      "sprite": 5,
-      "dx": 0,
-      "dy": 0,
-      "hitboxes": [],
-      "hurtboxes": [
-        [
-          -49,
-          0,
-          95,
-          49
-        ],
-        [
-          -29,
-          47,
-          66,
-          49
-        ],
-        [
-          -21,
-          94,
-          70,
-          50
-        ]
-      ],
-      "cancel": [],
-      "events": [],
-      "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
-    },
-    {
-      "sprite": 5,
-      "dx": 0,
-      "dy": 0,
-      "hitboxes": [],
-      "hurtboxes": [
-        [
-          -49,
-          0,
-          95,
-          49
-        ],
-        [
-          -29,
-          47,
-          66,
-          49
-        ],
-        [
-          -21,
-          94,
-          70,
-          50
-        ]
-      ],
-      "cancel": [],
-      "events": [],
-      "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
-    },
-    {
-      "sprite": 5,
-      "dx": 0,
-      "dy": 0,
-      "hitboxes": [],
-      "hurtboxes": [
-        [
-          -49,
-          0,
-          95,
-          49
-        ],
-        [
-          -29,
-          47,
-          66,
-          49
-        ],
-        [
-          -21,
-          94,
-          70,
-          50
-        ]
-      ],
-      "cancel": [],
-      "events": [],
-      "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
-    },
-    {
-      "sprite": 5,
-      "dx": 0,
-      "dy": 0,
-      "hitboxes": [],
-      "hurtboxes": [
-        [
-          -49,
-          0,
-          95,
-          49
-        ],
-        [
-          -29,
-          47,
-          66,
-          49
-        ],
-        [
-          -21,
-          94,
-          70,
           50
         ]
       ],
@@ -924,28 +1156,155 @@
       "block_effect": "impact_guard",
       "shots": [
         {
-          "effect": "beam_loop",
-          "color": [
-            0.65,
-            0.9,
-            1.0,
-            1.0
-          ],
-          "beam": true,
-          "length": 280,
-          "thickness": 18,
-          "life": 8,
-          "speed": 0,
+          "effect": "jack_short_beam",
           "spawn": [
-            44,
-            111
+            40,
+            108
           ],
           "anchor": [
-            44,
-            111
-          ]
+            40,
+            108
+          ],
+          "speed": 0,
+          "life": 26,
+          "box": [
+            0,
+            -16,
+            360,
+            32
+          ],
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "beam": true,
+          "length": 360,
+          "thickness": 24,
+          "level": 1
         }
       ]
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -49,
+          0,
+          95,
+          49
+        ],
+        [
+          -29,
+          47,
+          66,
+          49
+        ],
+        [
+          -21,
+          94,
+          70,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "impact_light",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -49,
+          0,
+          95,
+          49
+        ],
+        [
+          -29,
+          47,
+          66,
+          49
+        ],
+        [
+          -21,
+          94,
+          70,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "impact_light",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -49,
+          0,
+          95,
+          49
+        ],
+        [
+          -29,
+          47,
+          66,
+          49
+        ],
+        [
+          -21,
+          94,
+          70,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "impact_light",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 5,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -49,
+          0,
+          95,
+          49
+        ],
+        [
+          -29,
+          47,
+          66,
+          49
+        ],
+        [
+          -21,
+          94,
+          70,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "impact_light",
+      "block_effect": "impact_guard"
     },
     {
       "sprite": 5,

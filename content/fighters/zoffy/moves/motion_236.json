@@ -18,17 +18,17 @@
   "bounce": false,
   "knockdown": false,
   "feedback": {
-    "spark": "impact_heavy",
+    "spark": "ace_diamond_hit",
     "block_spark": "impact_guard",
     "hitstop": 8,
     "blockstop": 5,
     "shake": 3,
     "flash": 2,
     "color": [
-      0.8,
-      0.95,
-      1.0,
-      1.0
+      1,
+      1,
+      1,
+      1
     ]
   },
   "chip_damage": 0,
@@ -490,25 +490,26 @@
       "block_effect": "impact_guard",
       "shots": [
         {
-          "effect": "special_arrow",
+          "effect": "ace_diamond_flight",
           "spawn": [
-            64,
+            58,
             100
           ],
           "box": [
-            -24,
-            -8,
-            48,
-            16
+            -14,
+            -10,
+            28,
+            20
           ],
-          "speed": 9,
-          "life": 110,
+          "speed": 8,
+          "life": 50,
           "color": [
-            0.65,
-            0.9,
-            1.0,
-            1.0
-          ]
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "ace_diamond_trail"
         }
       ]
     },
@@ -1264,5 +1265,6 @@
     }
   ],
   "data_source": "原剧能力超级光路（越过宇宙空间传送物体，见 MOVES.md 原剧考证 §1.4）；本招把传送改为短距近身掌/肘突袭，属游戏改编，不称原剧攻击技。位移不带无敌，残影为游戏表现；距离与判定待实机校准。",
-  "manual_projectiles": true
+  "manual_projectiles": true,
+  "production_note": " 命中特效 neronga_electric_hit 电流掌击。"
 }

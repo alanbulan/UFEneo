@@ -21,17 +21,17 @@
   "super_level": 2,
   "air_allowed": false,
   "feedback": {
-    "spark": "beam_hit",
+    "spark": "ace_diamond_hit",
     "block_spark": "impact_guard",
     "hitstop": 10,
     "blockstop": 5,
     "shake": 4,
     "flash": 2,
     "color": [
-      0.7,
-      0.95,
-      1.0,
-      1.0
+      1,
+      1,
+      1,
+      1
     ],
     "block_color": [
       1,
@@ -46,7 +46,7 @@
     "block": "guard"
   },
   "data_source": "超级冻霜：双掌前推的冷冻锥/场，淡青白光；原剧技能见 MOVES.md §1.4。锥体尺寸、300 伤害/30 削气为游戏编排；命中附带 120 tick 移动减速至 50%（walk/dash/backstep 位移，不改变出招、受击与硬直时序），减速数值为游戏编排。",
-  "production_note": "内容数据；美术已交付未安装，未启动 Godot、未提交。",
+  "production_note": "特效弹链: 蓄力 attach ace_diamond_start + ace_diamond_flight 蓝白钻石锥弹(带 trail 拖尾), 命中 ace_diamond_hit; 对齐原剧超级冻霜淡青白冷冻锥。chill 冻结机制保持。",
   "chill": {
     "ticks": 120,
     "speed_percent": 50
@@ -85,7 +85,23 @@
         }
       ],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 0,
@@ -115,7 +131,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 0,
@@ -145,7 +177,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 0,
@@ -175,7 +223,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 0,
@@ -205,7 +269,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 1,
@@ -235,7 +315,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 1,
@@ -265,7 +361,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 1,
@@ -295,7 +407,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 1,
@@ -325,7 +453,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 1,
@@ -355,7 +499,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 2,
@@ -385,7 +545,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 2,
@@ -415,7 +591,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 2,
@@ -445,7 +637,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 2,
@@ -475,7 +683,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 2,
@@ -505,7 +729,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 3,
@@ -535,7 +775,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 3,
@@ -565,7 +821,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 3,
@@ -595,7 +867,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 3,
@@ -625,7 +913,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 3,
@@ -655,7 +959,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 4,
@@ -685,7 +1005,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 4,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 4,
@@ -715,7 +1051,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 4,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 4,
@@ -745,7 +1097,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 4,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 4,
@@ -775,7 +1143,23 @@
       "cancel": [],
       "events": [],
       "impact_effect": "impact_light",
-      "block_effect": "impact_guard"
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "ace_diamond_start",
+          "anchor": [
+            46,
+            106
+          ],
+          "sprite": 4,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
     },
     {
       "sprite": 4,
@@ -1048,33 +1432,26 @@
       "block_effect": "impact_guard",
       "shots": [
         {
-          "effect": "special_rings",
-          "color": [
-            0.7,
-            0.95,
-            1.0,
-            1.0
-          ],
-          "beam": false,
-          "length": 0,
-          "thickness": 0,
-          "life": 36,
-          "speed": 6,
-          "vy": 0,
-          "box": [
-            -20,
-            -28,
-            40,
-            56
-          ],
+          "effect": "ace_diamond_flight",
           "spawn": [
-            5,
-            106
+            52,
+            100
           ],
-          "anchor": [
-            5,
-            106
-          ]
+          "box": [
+            -14,
+            -10,
+            28,
+            20
+          ],
+          "speed": 6,
+          "life": 46,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "ace_diamond_trail"
         }
       ]
     },
