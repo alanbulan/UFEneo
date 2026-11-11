@@ -252,29 +252,35 @@ function drawBolt(p, i, n, box, C, seed) {
   }
 }
 
-// ---- 竖立光刃：竖向新月，锋缘在右，帧间摆动
+// ---- 竖立光刃：细长新月，锋缘在右，内缘凹进，帧间摆动
 function drawBlade(p, i, n, box, C, seed) {
   const cx = box.x + box.w / 2, cy = box.y + box.h / 2;
   const hw = box.w / 2 - 1, hh = box.h / 2 - 1;
-  const lean = (i - (n - 1) / 2) * 0.55;
+  const lean = (i - (n - 1) / 2) * 0.6;
   for (let y = -Math.floor(hh); y <= Math.floor(hh); y++) {
     const t = (y + hh) / (2 * hh);
-    const prof = Math.pow(Math.sin(Math.PI * t), 0.55);
-    const xc = lean + (t - 0.5) * 2.2;
-    const left = xc - hw * prof * 0.45;
-    const right = xc + hw * prof * 0.72;
+    const prof = Math.pow(Math.sin(Math.PI * t), 0.72);
+    const xc = lean * (t - 0.5) * 2;
+    const right = xc + hw * prof * 0.78;
+    const left = xc - hw * prof * 0.18 - 1.6 * Math.sin(Math.PI * t);
     for (let x = Math.floor(left); x <= Math.ceil(right); x++) {
       const q = (x - left) / Math.max(0.6, right - left);
-      p.dot(cx + x, cy + y, q > 0.82 ? C[7] : q > 0.58 ? C[6] : q > 0.3 ? C[5] : C[3], 1);
+      const lvl = q > 0.9 ? 7 : q > 0.68 ? 6 : q > 0.4 ? 5 : q > 0.18 ? 4 : 3;
+      p.dot(cx + x, cy + y, C[lvl], 1);
     }
-    // 锋缘光屑
-    if (y % 2 === 0 && hash01(y + i * 13, seed + 9) < 0.55) {
+    // 锋缘亮线与光屑
+    p.dot(cx + Math.round(right), cy + y, C[7], 1);
+    if (y % 3 === 0 && hash01(y + i * 13, seed + 9) < 0.5) {
       const len = 1 + Math.floor(hash01(y + i, seed + 11) * 3);
-      p.line(cx + right, cy + y, cx + right + len, cy + y + 1, C[6], 0.8);
+      p.line(cx + right, cy + y, cx + right + len, cy + y + 1, C[5], 0.75);
     }
   }
-  // 两端收尖的亮核
-  p.line(cx + lean * 0.2, cy - hh * 0.7, cx - lean * 0.2, cy + hh * 0.7, C[6], 0.7);
+  // 中段一道被刃身包住的亮线
+  for (let y = -Math.floor(hh * 0.55); y <= Math.floor(hh * 0.55); y++) {
+    const t = (y + hh) / (2 * hh);
+    const x = Math.round(lean * (t - 0.5) * 2 + (box.w / 2 - 1) * Math.pow(Math.sin(Math.PI * t), 0.72) * 0.42);
+    p.dot(cx + x, cy + y, C[6], 0.8);
+  }
 }
 
 // ---- 光箭：三角箭头 + 亮芯箭杆 + 尾部能量羽
@@ -425,7 +431,7 @@ const DRAWERS = {
   arrow: (p, f, i, n, C, seed) => drawArrow(p, i, n, f.boxes[i], C, seed),
   trail: (p, f, i, n, C, seed) => drawTrail(p, i, n, f.boxes[i], C, seed, 0),
   trail_diag: (p, f, i, n, C, seed) => drawTrail(p, i, n, f.boxes[i], C, seed, 1),
-  hit: (p, f, i, n, C, seed) => drawHit(p, i, n, f.boxes[i], C, seed),
+  hit: (p, f, i, n, C, seed) => drawHit(p, i, n, f.hitBox, C, seed),
 };
 
 // ---- 烘焙
@@ -440,7 +446,9 @@ for (const fam of spec.families) {
   const boxes = fam.frames.map((f) => ({ x: f.art[0], y: f.art[1], w: f.art[2], h: f.art[3] }));
   const maxR = Math.max(...boxes.map((b) => Math.max(b.w, b.h) / 2));
   const R = Math.max(6, Math.min(maxR, Math.min(W, H) / 2 - 2));
-  const ctx = { boxes, R, oneshot: !!fam.oneshot, fan: !!fam.fan };
+  // 命中用最大一帧的固定外框，避免播放中末帧反而缩小。
+  const hitBox = boxes.reduce((a, b) => (b.w * b.h > a.w * a.h ? b : a), boxes[0]);
+  const ctx = { boxes, hitBox, R, oneshot: !!fam.oneshot, fan: !!fam.fan };
   const dir = join(OUT, fam.out);
   mkdirSync(dir, { recursive: true });
   // 画布尺寸取 rects 的外接范围，帧按原始 rect 坐标贴回。
