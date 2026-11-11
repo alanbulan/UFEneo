@@ -1,154 +1,154 @@
 {
- "id": "special",
- "display_name": "闪光效应",
- "startup": 2,
- "active": 1,
- "recovery": 0,
- "damage": 180,
- "chip_damage": 18,
- "hitstun": 28,
- "blockstun": 20,
- "pushback": 4,
- "stun": 27,
- "stamina_cost": 45,
- "energy_cost": 1000,
- "kind": "strike",
- "level": "mid",
- "unblockable": false,
- "launch": false,
- "bounce": false,
- "knockdown": false,
- "super_level": 1,
- "air_allowed": false,
- "feedback": {
-  "spark": "beam_hit",
-  "block_spark": "impact_guard",
-  "hitstop": 10,
-  "blockstop": 5,
-  "shake": 4,
-  "flash": 2,
-  "color": [
-   0.55,
-   0.9,
-   1.0,
-   1.0
-  ],
-  "block_color": [
-   1,
-   1,
-   1,
-   1
-  ]
- },
- "cancel_rule": "完整收势后恢复行动，无招式取消",
- "audio": {
-  "hit": "hit_heavy",
-  "block": "guard"
- },
- "data_source": "规则沿用已审同体型人形模板与泰罗同类招式；帧数取自 stage1 交付，攻击点与受击框按赛罗整帧像素逐帧量取。",
- "production_note": "内容数据；美术已交付未安装，未启动 Godot、未提交。",
- "frames": [
-  {
-   "sprite": 0,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -76,
-     0,
-     137,
-     58
+  "id": "special",
+  "display_name": "赛罗集束射线（Wide Zero Shot）",
+  "startup": 2,
+  "active": 1,
+  "recovery": 0,
+  "damage": 180,
+  "chip_damage": 18,
+  "hitstun": 28,
+  "blockstun": 20,
+  "pushback": 4,
+  "stun": 27,
+  "stamina_cost": 45,
+  "energy_cost": 1000,
+  "kind": "strike",
+  "level": "mid",
+  "unblockable": false,
+  "launch": false,
+  "bounce": false,
+  "knockdown": false,
+  "super_level": 1,
+  "air_allowed": false,
+  "feedback": {
+    "spark": "beam_hit",
+    "block_spark": "impact_guard",
+    "hitstop": 10,
+    "blockstop": 5,
+    "shake": 4,
+    "flash": 2,
+    "color": [
+      0.55,
+      0.9,
+      1.0,
+      1.0
     ],
-    [
-     -85,
-     56,
-     115,
-     58
-    ],
-    [
-     -84,
-     112,
-     115,
-     59
+    "block_color": [
+      1,
+      1,
+      1,
+      1
     ]
-   ],
-   "cancel": [],
-   "events": [
+  },
+  "cancel_rule": "完整收势后恢复行动，无招式取消",
+  "audio": {
+    "hit": "hit_heavy",
+    "block": "guard"
+  },
+  "data_source": "规则沿用已审同体型人形模板与泰罗同类招式；帧数取自 stage1 交付，攻击点与受击框按赛罗整帧像素逐帧量取。",
+  "production_note": "内容数据；美术已交付未安装，未启动 Godot、未提交。",
+  "frames": [
     {
-     "kind": "sound",
-     "id": "beam_start"
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -76,
+          0,
+          137,
+          58
+        ],
+        [
+          -85,
+          56,
+          115,
+          58
+        ],
+        [
+          -84,
+          112,
+          115,
+          59
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "beam_start"
+        }
+      ],
+      "impact_effect": "impact_light",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -75,
+          0,
+          133,
+          64
+        ],
+        [
+          -49,
+          62,
+          80,
+          64
+        ],
+        [
+          -37,
+          124,
+          74,
+          65
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "impact_light",
+      "block_effect": "impact_guard"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          15,
+          111,
+          63,
+          33
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -72,
+          0,
+          135,
+          64
+        ],
+        [
+          -45,
+          62,
+          138,
+          65
+        ],
+        [
+          -39,
+          125,
+          134,
+          65
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "impact_light",
+      "block_effect": "impact_guard"
     }
-   ],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
-  },
-  {
-   "sprite": 1,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -75,
-     0,
-     133,
-     64
-    ],
-    [
-     -49,
-     62,
-     80,
-     64
-    ],
-    [
-     -37,
-     124,
-     74,
-     65
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
-  },
-  {
-   "sprite": 2,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [
-    [
-     15,
-     111,
-     63,
-     33
-    ]
-   ],
-   "hurtboxes": [
-    [
-     -72,
-     0,
-     135,
-     64
-    ],
-    [
-     -45,
-     62,
-     138,
-     65
-    ],
-    [
-     -39,
-     125,
-     134,
-     65
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
-  }
- ]
+  ]
 }

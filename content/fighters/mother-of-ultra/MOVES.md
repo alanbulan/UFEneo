@@ -153,6 +153,13 @@
 
 所有 `effect` 都是 `content/presentation/phase3_projectiles.json` 的顶层键；所有 `active_frames` 与 `shot.frame` 都小于对应招式的模板帧数。没有把恢复/复活写成已实现。
 
+## 五点五、治疗系 damage=0 依据（2026-11-11 登记总检 #14）
+
+- `special` 母亲光线（治疗）与 `special3` 母亲淋浴：damage=0、hitstun/blockstun 保留、`no_hit: true` shots，是**设计意图**——奥母三槽在原剧定位为治愈/辅助（奥特曼之母在《奥特物语》治愈泰罗），非攻击光线。
+- 三槽「不同技能、独立动作与实际效果」原则对奥母按**治疗 vs 攻击 vs 光雨**区分成立，不以同束改伤害凑槽。
+- `special2` 母亲破坏光线是攻击招（damage=300），与 `special/special3` 形成「治疗/攻击/光雨」三实际效果。
+- 若后续要真实回复量/清眩晕/限时复活字段，须先扩 core 数据模型再接线；当前 damage=0 只是「不造成伤害」的登记，不冒称已实现回复。
+
 ## 六、未做 / 未核
 
 - 未生成这批动作帧；未写 `content/fighters/mother-of-ultra/moves/*.json`；未安装；未运行 Godot；未实机；无录屏。
