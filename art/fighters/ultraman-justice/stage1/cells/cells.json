@@ -2,15 +2,15 @@
  "fighter": "ultraman-justice",
  "approved": "assets/fighters/ultraman-justice/catalogue/model-native.png",
  "approved_sha256": "924c2aab9395217364600579ffdd23f44fc262f2865f3ec44ef2ebe539991989",
- "scale": 0.15493,
+ "scale": 0.161972273,
  "scale_source": "art/fighters/ultraman-justice/stage1/idle/frames/idle-01-raw.png",
  "scale_source_head": 221,
- "target_standing": 154,
+ "target_standing": 161,
  "target_head": 34,
- "cell": 192,
+ "cell": 256,
  "anchor": [
-  96,
-  184
+  128,
+  248
  ],
  "head_tolerance": 0.08,
  "standing_tolerance": 0.03,
@@ -343,5 +343,14 @@
   "air_tech-02: 非直立帧，头高 35、站高 172 仅供参考，需目视核对比例",
   "air_tech-03: 头高 10 偏离参考帧换算的 34 超过 ±8%，须目视核对",
   "air_tech-03: 站高 126 偏离目标 154 达 18%，若为屈膝压低可保留，否则须目视核对"
- ]
+ ],
+ "rescale_2026_11_11": {
+  "task": "按円谷官方身高设定重推 scale 重落全部已装战斗格",
+  "old_scale": 0.15493,
+  "new_scale": 0.161972273,
+  "measured_standing_old": 154,
+  "target_standing": 161,
+  "official_m": 46,
+  "report": "tools/rebuild/body-rescale/ultraman-justice-rescale.json"
+ }
 }
