@@ -1,9 +1,9 @@
 {
  "id": "chase_light1",
  "display_name": "追击前刺拳",
- "startup": 2,
- "active": 1,
- "recovery": 1,
+ "startup": 5,
+ "active": 3,
+ "recovery": 12,
  "damage": 65,
  "hitstun": 28,
  "blockstun": 12,
@@ -70,9 +70,35 @@
      "kind": "sound",
      "id": "light"
     }
+   ]
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -18,
+     22,
+     68,
+     48
+    ],
+    [
+     -34,
+     68,
+     85,
+     48
+    ],
+    [
+     -18,
+     114,
+     62,
+     48
+    ]
    ],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "cancel": [],
+   "events": []
   },
   {
    "sprite": 1,
@@ -100,9 +126,63 @@
     ]
    ],
    "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -20,
+     22,
+     67,
+     52
+    ],
+    [
+     -28,
+     72,
+     76,
+     52
+    ],
+    [
+     -18,
+     122,
+     89,
+     53
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -20,
+     22,
+     67,
+     52
+    ],
+    [
+     -28,
+     72,
+     76,
+     52
+    ],
+    [
+     -18,
+     122,
+     89,
+     53
+    ]
+   ],
+   "cancel": [],
+   "events": []
   },
   {
    "sprite": 2,
@@ -110,10 +190,10 @@
    "dy": 0,
    "hitboxes": [
     [
-     83,
-     149,
-     8,
-     8
+     47,
+     69,
+     28,
+     29
     ]
    ],
    "hurtboxes": [
@@ -136,10 +216,149 @@
      62
     ]
    ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     47,
+     69,
+     28,
+     29
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -12,
+     22,
+     99,
+     61
+    ],
+    [
+     16,
+     81,
+     82,
+     62
+    ],
+    [
+     21,
+     141,
+     105,
+     62
+    ]
+   ],
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     47,
+     69,
+     28,
+     29
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -12,
+     22,
+     99,
+     61
+    ],
+    [
+     16,
+     81,
+     82,
+     62
+    ],
+    [
+     21,
+     141,
+     105,
+     62
+    ]
+   ],
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -12,
+     22,
+     99,
+     61
+    ],
+    [
+     16,
+     81,
+     82,
+     62
+    ],
+    [
+     21,
+     141,
+     105,
+     62
+    ]
+   ],
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -12,
+     22,
+     99,
+     61
+    ],
+    [
+     16,
+     81,
+     82,
+     62
+    ],
+    [
+     21,
+     141,
+     105,
+     62
+    ]
+   ],
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
   },
   {
    "sprite": 3,
@@ -166,10 +385,290 @@
      51
     ]
    ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -17,
+     22,
+     62,
+     50
+    ],
+    [
+     -41,
+     70,
+     89,
+     50
+    ],
+    [
+     -31,
+     118,
+     69,
+     51
+    ]
+   ],
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -17,
+     22,
+     62,
+     50
+    ],
+    [
+     -41,
+     70,
+     89,
+     50
+    ],
+    [
+     -31,
+     118,
+     69,
+     51
+    ]
+   ],
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -17,
+     22,
+     62,
+     50
+    ],
+    [
+     -41,
+     70,
+     89,
+     50
+    ],
+    [
+     -31,
+     118,
+     69,
+     51
+    ]
+   ],
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -17,
+     22,
+     62,
+     50
+    ],
+    [
+     -41,
+     70,
+     89,
+     50
+    ],
+    [
+     -31,
+     118,
+     69,
+     51
+    ]
+   ],
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -17,
+     22,
+     62,
+     50
+    ],
+    [
+     -41,
+     70,
+     89,
+     50
+    ],
+    [
+     -31,
+     118,
+     69,
+     51
+    ]
+   ],
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -17,
+     22,
+     62,
+     50
+    ],
+    [
+     -41,
+     70,
+     89,
+     50
+    ],
+    [
+     -31,
+     118,
+     69,
+     51
+    ]
+   ],
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -17,
+     22,
+     62,
+     50
+    ],
+    [
+     -41,
+     70,
+     89,
+     50
+    ],
+    [
+     -31,
+     118,
+     69,
+     51
+    ]
+   ],
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -17,
+     22,
+     62,
+     50
+    ],
+    [
+     -41,
+     70,
+     89,
+     50
+    ],
+    [
+     -31,
+     118,
+     69,
+     51
+    ]
+   ],
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -17,
+     22,
+     62,
+     50
+    ],
+    [
+     -41,
+     70,
+     89,
+     50
+    ],
+    [
+     -31,
+     118,
+     69,
+     51
+    ]
+   ],
+   "cancel": [
+    "chase_light2",
+    "chase_end"
+   ],
+   "events": []
   }
  ]
 }
