@@ -3,7 +3,7 @@ extends SceneTree
 ## 帧 sprite 不越出 clip 帧数，状态 clip 都有 state_frames 条目。
 ## 只做数据自洽检查，不代表美术/听感通过。
 var failures: Array[String] = []
-var fighters := ["zoffy", "mother-of-ultra", "ultraman-gaia", "father-of-ultra", "ultraman-king", "ultraman-zero"]
+var fighters := ["zoffy", "mother-of-ultra", "ultraman-gaia", "father-of-ultra", "ultraman-king", "ultraman-zero", "ultraman-justice"]
 # 运行时可能读取的状态键（fighter.gd / side_view.gd 的 animation_key 与分派）。
 const RUNTIME_STATE_KEYS := [
 	"idle", "walk_forward", "walk_back", "crouch", "crouch_start", "crouch_rise", "crouch_turn",
@@ -51,7 +51,9 @@ func run() -> void:
 				check(overflow == 0, "%s/%s 帧 sprite 在 %d 帧内" % [id, move_id, frames])
 		for move_id in local:
 			check(definition.moves.has(move_id), "%s/%s 本地招式已加载" % [id, move_id])
-			check(required_moves.has(move_id), "%s/%s 属通用招式清单" % [id, move_id])
+			var local_json := "res://content/fighters/%s/moves/%s.json" % [id, move_id]
+			check(required_moves.has(move_id) or FileAccess.file_exists(local_json),
+				"%s/%s 属通用招式清单或有本地招式文件" % [id, move_id])
 		for clip_id in clips:
 			if required_moves.has(clip_id):
 				continue
