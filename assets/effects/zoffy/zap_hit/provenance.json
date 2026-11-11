@@ -1,18 +1,101 @@
 {
-  "request": "zoffy 专属特效家族自制：保留源形状，按招式表光色重着色",
-  "source": "assets/effects/ultraman-jack/short_hit/atlas.png",
-  "source_sha256": "10f2b2c1c13058793be388e41512bfa7b99a77731fa593f05081b8d6ef4d5ed3",
-  "output_sha256": "a2bdf30094f6c0a01e9e12edf07c61d30f6437f2e2fe3d22925a17e81313e607",
-  "source_entry": "jack_short_hit",
-  "method": "tools/rebuild/shared/phase3_family_recolor.py OKLab 亮度分层重着色",
-  "target_palette": [
-    "#ffffff",
-    "#eef6ff",
-    "#bfe0ff",
+  "request": "zoffy 专属特效家族自绘：不沿用借用图集形状，按招式光色原创像素形状",
+  "character": "zoffy",
+  "family": "zoffy_fx_zap_hit",
+  "kind": "hit",
+  "shape_source": "原创绘制函数 tools/rebuild/shared/fx_family_bake.mjs",
+  "reused_source_atlas_shape": false,
+  "source_kind": "pixelfx_code_baked",
+  "route": "offline",
+  "upstream": "https://github.com/patch-gg/pixelfx",
+  "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+  "license": "MIT",
+  "license_sha256": "0a77565a50c3462831244452f129c38d2adc4fd07897cbeba8adc943f958604e",
+  "authoring_source": "res://tools/rebuild/zoffy/phase3_family_redraw.py",
+  "bake_module": "res://tools/rebuild/shared/fx_family_bake.mjs",
+  "seed": 302284,
+  "palette": [
+    "#081226",
+    "#102650",
+    "#2456b8",
     "#6a9fe8",
-    "#2456b8"
+    "#bfe0ff",
+    "#eef6ff",
+    "#ffffff"
   ],
-  "art_source": "recolor",
+  "canvas": [
+    512,
+    128
+  ],
+  "frame_size": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    64
+  ],
+  "rects": [
+    [
+      0,
+      0,
+      128,
+      128
+    ],
+    [
+      128,
+      0,
+      128,
+      128
+    ],
+    [
+      256,
+      0,
+      128,
+      128
+    ],
+    [
+      384,
+      0,
+      128,
+      128
+    ]
+  ],
+  "art_boxes": [
+    [
+      -58,
+      -42,
+      116,
+      83
+    ],
+    [
+      -60,
+      -44,
+      120,
+      89
+    ],
+    [
+      -59,
+      -43,
+      118,
+      85
+    ],
+    [
+      -53,
+      -33,
+      106,
+      65
+    ]
+  ],
+  "ticks": 4,
+  "frame_sha256": [
+    "856ebd3941aaf0361441b76893ffbc81f4b88a2dd70678f56361e3ee1fe239c2",
+    "1d7b24e42bee3680e425a2d7ddb2daeb9bc5dd39d0ebc38fffc76ddb63f36521",
+    "e1b4b51935fb3ef3c54e40a03f7ad15c23d58e93fbd5a2b2f9fabf48fff2fd04",
+    "df197a0ed3a312fa433a18a105005acc97d9e03f7a0915ad04f5ab61655861f9"
+  ],
+  "atlas_sha256": "ed629245ecf0994334d811e3cbe202d981361a1878dbea63bd3af5cdd488c713",
+  "frame_boxes_kept": true,
   "character_frames_modified": false,
-  "review_status": "待指挥目视终审"
+  "review_status": "2026-11-11 自绘原创像素特效（PixelFX 离线烘焙），待指挥目视终审"
 }
