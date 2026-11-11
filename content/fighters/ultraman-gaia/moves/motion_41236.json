@@ -1,0 +1,443 @@
+{
+ "id": "motion_41236",
+ "display_name": "正义扼制",
+ "startup": 1,
+ "active": 1,
+ "recovery": 6,
+ "damage": 185,
+ "hitstun": 28,
+ "blockstun": 12,
+ "pushback": 9,
+ "stun": 65,
+ "stamina_cost": 45,
+ "energy_cost": 0,
+ "kind": "throw",
+ "level": "mid",
+ "unblockable": true,
+ "launch": false,
+ "bounce": false,
+ "knockdown": true,
+ "feedback": {
+  "spark": "impact_heavy",
+  "block_spark": "impact_guard",
+  "hitstop": 8,
+  "blockstop": 5,
+  "shake": 3,
+  "flash": 2,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "throw_schema": 2,
+ "air_allowed": false,
+ "manual_projectiles": false,
+ "production_note": "人物和挂点已装，待指挥审片；不冒称用户通过。",
+ "cancel_rule": "完整收势后恢复行动，无招式取消",
+ "audio": {
+  "hit": "taro_throw_grab",
+  "throw_slam": "taro_motion_41236_contact",
+  "block": "taro_guard"
+ },
+ "data_source": "已审赛文同类伤害、消耗、命中和取消规则；泰罗MOVES独立手势/掌心/双束、回旋踢、屏障与超级炸弹。双束各半伤，合计同类总伤。",
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -55,
+     0,
+     103,
+     51
+    ],
+    [
+     -33,
+     49,
+     99,
+     51
+    ],
+    [
+     -17,
+     98,
+     50,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "taro_motion_41236_charge"
+    }
+   ],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "grabbed",
+    "sprite": 0,
+    "facing": -1,
+    "mode": "hold",
+    "grab_point": "waist",
+    "grip": [
+     41,
+     52
+    ],
+    "root": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     7,
+     22,
+     29,
+     40
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -49,
+     0,
+     93,
+     43
+    ],
+    [
+     -33,
+     41,
+     91,
+     44
+    ],
+    [
+     -13,
+     83,
+     55,
+     44
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "grabbed",
+    "sprite": 1,
+    "facing": -1,
+    "mode": "hold",
+    "grab_point": "waist",
+    "grip": [
+     33,
+     64
+    ],
+    "root": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -66,
+     0,
+     117,
+     57
+    ],
+    [
+     -39,
+     55,
+     65,
+     57
+    ],
+    [
+     -21,
+     110,
+     65,
+     57
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "grabbed",
+    "sprite": 2,
+    "facing": -1,
+    "mode": "hold",
+    "grab_point": "waist",
+    "grip": [
+     24,
+     125
+    ],
+    "root": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     111,
+     61
+    ],
+    [
+     -32,
+     59,
+     57,
+     61
+    ],
+    [
+     -27,
+     118,
+     44,
+     62
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_forward",
+    "sprite": 1,
+    "facing": -1,
+    "mode": "hold",
+    "grab_point": "waist",
+    "grip": [
+     48,
+     111
+    ],
+    "root": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     111,
+     52
+    ],
+    [
+     -37,
+     50,
+     67,
+     53
+    ],
+    [
+     -18,
+     101,
+     81,
+     53
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_forward",
+    "sprite": 1,
+    "facing": -1,
+    "mode": "release",
+    "grab_point": "waist",
+    "grip": [
+     18,
+     58
+    ],
+    "root": [
+     110,
+     0
+    ],
+    "progress": [
+     1,
+     6
+    ],
+    "ground": true,
+    "impact": false
+   }
+  },
+  {
+   "sprite": 5,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     111,
+     53
+    ],
+    [
+     -30,
+     51,
+     95,
+     53
+    ],
+    [
+     -18,
+     102,
+     89,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_forward",
+    "sprite": 2,
+    "facing": -1,
+    "mode": "release",
+    "grab_point": "waist",
+    "grip": [
+     20,
+     87
+    ],
+    "root": [
+     110,
+     0
+    ],
+    "progress": [
+     1,
+     1
+    ],
+    "ground": true,
+    "impact": true
+   }
+  },
+  {
+   "sprite": 6,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -35,
+     0,
+     68,
+     54
+    ],
+    [
+     -31,
+     52,
+     57,
+     54
+    ],
+    [
+     -28,
+     104,
+     46,
+     54
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_forward",
+    "sprite": 2,
+    "facing": -1,
+    "mode": "release",
+    "grab_point": "waist",
+    "grip": [
+     20,
+     87
+    ],
+    "root": [
+     110,
+     0
+    ],
+    "progress": [
+     1,
+     1
+    ],
+    "ground": true,
+    "impact": true
+   }
+  },
+  {
+   "sprite": 7,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -62,
+     0,
+     112,
+     53
+    ],
+    [
+     -38,
+     51,
+     70,
+     53
+    ],
+    [
+     -35,
+     102,
+     62,
+     53
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard",
+   "target": {
+    "pose": "thrown_forward",
+    "sprite": 3,
+    "facing": -1,
+    "mode": "release",
+    "grab_point": "waist",
+    "grip": [
+     18,
+     97
+    ],
+    "root": [
+     110,
+     0
+    ],
+    "progress": [
+     1,
+     1
+    ],
+    "ground": true,
+    "impact": true
+   }
+  }
+ ]
+}
