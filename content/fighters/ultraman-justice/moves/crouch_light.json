@@ -1,9 +1,9 @@
 {
  "id": "crouch_light",
  "display_name": "蹲姿下段直拳",
- "startup": 1,
- "active": 2,
- "recovery": 1,
+ "startup": 6,
+ "active": 4,
+ "recovery": 8,
  "damage": 65,
  "hitstun": 20,
  "blockstun": 12,
@@ -70,22 +70,69 @@
      "kind": "sound",
      "id": "light"
     }
+   ]
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -38,
+     0,
+     83,
+     39
+    ],
+    [
+     -29,
+     37,
+     74,
+     40
+    ],
+    [
+     -16,
+     75,
+     45,
+     40
+    ]
    ],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -38,
+     0,
+     83,
+     39
+    ],
+    [
+     -29,
+     37,
+     74,
+     40
+    ],
+    [
+     -16,
+     75,
+     45,
+     40
+    ]
+   ],
+   "cancel": [],
+   "events": []
   },
   {
    "sprite": 1,
    "dx": 0,
    "dy": 0,
-   "hitboxes": [
-    [
-     25,
-     28,
-     12,
-     22
-    ]
-   ],
+   "hitboxes": [],
    "hurtboxes": [
     [
      -59,
@@ -107,9 +154,63 @@
     ]
    ],
    "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -59,
+     0,
+     112,
+     47
+    ],
+    [
+     -41,
+     45,
+     75,
+     47
+    ],
+    [
+     -41,
+     90,
+     73,
+     48
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -59,
+     0,
+     112,
+     47
+    ],
+    [
+     -41,
+     45,
+     75,
+     47
+    ],
+    [
+     -41,
+     90,
+     73,
+     48
+    ]
+   ],
+   "cancel": [],
+   "events": []
   },
   {
    "sprite": 2,
@@ -117,10 +218,10 @@
    "dy": 0,
    "hitboxes": [
     [
-     34,
-     58,
-     12,
-     12
+     39,
+     21,
+     22,
+     22
     ]
    ],
    "hurtboxes": [
@@ -143,10 +244,121 @@
      45
     ]
    ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "cancel": [
+    "crouch_light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     39,
+     21,
+     22,
+     22
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     107,
+     44
+    ],
+    [
+     -33,
+     42,
+     91,
+     44
+    ],
+    [
+     -24,
+     84,
+     59,
+     45
+    ]
+   ],
+   "cancel": [
+    "crouch_light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     39,
+     21,
+     22,
+     22
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     107,
+     44
+    ],
+    [
+     -33,
+     42,
+     91,
+     44
+    ],
+    [
+     -24,
+     84,
+     59,
+     45
+    ]
+   ],
+   "cancel": [
+    "crouch_light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     39,
+     21,
+     22,
+     22
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     107,
+     44
+    ],
+    [
+     -33,
+     42,
+     91,
+     44
+    ],
+    [
+     -24,
+     84,
+     59,
+     45
+    ]
+   ],
+   "cancel": [
+    "crouch_light2"
+   ],
+   "events": []
   },
   {
    "sprite": 3,
@@ -173,10 +385,220 @@
      50
     ]
    ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "cancel": [
+    "crouch_light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -47,
+     0,
+     94,
+     49
+    ],
+    [
+     -26,
+     47,
+     63,
+     49
+    ],
+    [
+     -20,
+     94,
+     41,
+     50
+    ]
+   ],
+   "cancel": [
+    "crouch_light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -47,
+     0,
+     94,
+     49
+    ],
+    [
+     -26,
+     47,
+     63,
+     49
+    ],
+    [
+     -20,
+     94,
+     41,
+     50
+    ]
+   ],
+   "cancel": [
+    "crouch_light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -47,
+     0,
+     94,
+     49
+    ],
+    [
+     -26,
+     47,
+     63,
+     49
+    ],
+    [
+     -20,
+     94,
+     41,
+     50
+    ]
+   ],
+   "cancel": [
+    "crouch_light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -47,
+     0,
+     94,
+     49
+    ],
+    [
+     -26,
+     47,
+     63,
+     49
+    ],
+    [
+     -20,
+     94,
+     41,
+     50
+    ]
+   ],
+   "cancel": [
+    "crouch_light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -47,
+     0,
+     94,
+     49
+    ],
+    [
+     -26,
+     47,
+     63,
+     49
+    ],
+    [
+     -20,
+     94,
+     41,
+     50
+    ]
+   ],
+   "cancel": [
+    "crouch_light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -47,
+     0,
+     94,
+     49
+    ],
+    [
+     -26,
+     47,
+     63,
+     49
+    ],
+    [
+     -20,
+     94,
+     41,
+     50
+    ]
+   ],
+   "cancel": [
+    "crouch_light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -47,
+     0,
+     94,
+     49
+    ],
+    [
+     -26,
+     47,
+     63,
+     49
+    ],
+    [
+     -20,
+     94,
+     41,
+     50
+    ]
+   ],
+   "cancel": [
+    "crouch_light2"
+   ],
+   "events": []
   }
  ]
 }
