@@ -195,6 +195,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="制作格边长；默认 192，原生体量容不下时按角色统一增大")
     parser.add_argument("--foot-band", type=float, default=0.08,
                         help="横向对位用的底部带宽（占站高比例）；迈步/前跨角色连同锚一起用 0.20")
+    parser.add_argument("--scale", type=float, default=0.0,
+                        help="显式源→原生比例；默认按参考帧站高与目标站高换算")
     args = parser.parse_args(argv)
 
     reference_path = Path(args.scale_source)
@@ -205,7 +207,7 @@ def main(argv: list[str] | None = None) -> int:
     reference_head = head_height(reference_mask)
     if not reference_head:
         raise SystemExit(f"参考帧头部无法测量：{reference_path}")
-    scale = args.target_standing / reference.height
+    scale = args.scale or (args.target_standing / reference.height)
 
     approved = solid_source(approved_path(args.fighter))
     palette = build_palette(approved, PALETTE_SIZE)
@@ -279,10 +281,15 @@ def main(argv: list[str] | None = None) -> int:
         if isinstance(existing, dict):
             merged = dict(existing)
             merged.update({k: v for k, v in report.items() if k != "frames"})
-            by_name = {str(row.get("frame")): row for row in existing.get("frames", [])
+            # 既有记录有的批次用 frame、有的用 name 作键；只认 frame 会把
+            # 全部 name 行压成同一个 "None" 并吞掉历史。两种键都保留。
+            def row_key(row: dict) -> str:
+                return str(row.get("frame") or row.get("name") or "")
+
+            by_name = {row_key(row): row for row in existing.get("frames", [])
                        if isinstance(row, dict)}
             for row in report["frames"]:
-                by_name[str(row.get("frame"))] = row
+                by_name[row_key(row)] = row
             merged["frames"] = list(by_name.values())
             report = merged
     (out_dir / "cells.json").write_text(
