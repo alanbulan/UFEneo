@@ -1,0 +1,221 @@
+{
+ "id": "burst",
+ "display_name": "父亲爆气",
+ "startup": 1,
+ "active": 3,
+ "recovery": 1,
+ "damage": 30,
+ "hitstun": 24,
+ "blockstun": 12,
+ "pushback": 45,
+ "stun": 0,
+ "stamina_cost": 0,
+ "energy_cost": 2000,
+ "kind": "strike",
+ "level": "mid",
+ "unblockable": true,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "feedback": {
+  "spark": "impact_heavy",
+  "block_spark": "impact_guard",
+  "hitstop": 6,
+  "blockstop": 3,
+  "shake": 3,
+  "flash": 2,
+  "color": [
+   1.0,
+   0.72,
+   0.55,
+   1.0
+  ]
+ },
+ "cancel_rule": "完整收势后恢复行动，无招式取消",
+ "audio": {
+  "hit": "hit_heavy",
+  "block": "guard"
+ },
+ "data_source": "游戏编排的对称爆气圈；冲击为运行时独立效果，不是原剧招式。攻击框按模板对称形状保留，超出该人物 Alpha 属已登记例外。",
+ "production_note": "内容数据；美术已交付未安装，未启动 Godot、未提交。",
+ "chip_damage": 0,
+ "super_level": 0,
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     117,
+     54
+    ],
+    [
+     -54,
+     52,
+     120,
+     54
+    ],
+    [
+     -26,
+     104,
+     77,
+     55
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "heavy"
+    }
+   ],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     -90,
+     12,
+     180,
+     128
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -68,
+     0,
+     129,
+     60
+    ],
+    [
+     -72,
+     58,
+     143,
+     61
+    ],
+    [
+     -43,
+     117,
+     73,
+     61
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     -90,
+     12,
+     180,
+     128
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -80,
+     0,
+     148,
+     61
+    ],
+    [
+     -64,
+     59,
+     112,
+     61
+    ],
+    [
+     -78,
+     118,
+     132,
+     61
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     -90,
+     12,
+     180,
+     128
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -71,
+     0,
+     125,
+     57
+    ],
+    [
+     -61,
+     55,
+     124,
+     57
+    ],
+    [
+     -29,
+     110,
+     77,
+     58
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -70,
+     0,
+     128,
+     62
+    ],
+    [
+     -58,
+     60,
+     96,
+     62
+    ],
+    [
+     -34,
+     120,
+     72,
+     62
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_heavy",
+   "block_effect": "impact_guard"
+  }
+ ]
+}
