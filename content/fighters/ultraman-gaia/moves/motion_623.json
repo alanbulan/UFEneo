@@ -18,17 +18,17 @@
   "bounce": false,
   "knockdown": true,
   "feedback": {
-    "spark": "impact_heavy",
+    "spark": "jack_air_ray_hit",
     "block_spark": "impact_guard",
     "hitstop": 8,
     "blockstop": 5,
     "shake": 3,
     "flash": 2,
     "color": [
-      1.0,
-      0.8,
-      0.65,
-      1.0
+      1,
+      1,
+      1,
+      1
     ]
   },
   "chip_damage": 0,
@@ -490,25 +490,27 @@
       "block_effect": "impact_guard",
       "shots": [
         {
-          "effect": "special_arrow",
+          "effect": "jack_air_ray_flight",
           "spawn": [
-            64,
-            85
+            54,
+            95
           ],
           "box": [
-            -24,
-            -8,
-            48,
-            16
+            -12,
+            -12,
+            24,
+            24
           ],
-          "speed": 9,
-          "life": 110,
+          "speed": 7,
+          "life": 55,
           "color": [
-            0.7,
-            0.85,
-            1.0,
-            1.0
-          ]
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "jack_air_ray_trail",
+          "vy": -6
         }
       ]
     },
