@@ -371,6 +371,8 @@ def main() -> None:
         clip = clips[move_id]
         im = Image.open(ROOT / clip["texture"].replace("res://", "")).convert("RGBA")
         masks = [largest_component(load_mask(im, r)) for r in clip["rects"]]
+        # 加大格的 clip 有自己的根点（如 256 格 [128,248]），量框必须用该 clip 的根点。
+        cax, cay = clip.get("anchor", [ax, ay])
         if donor is None:
             # 模板没有该招（如 special2/special3）：规则字段由 move_fx 全量给出，
             # 帧只保留本角色实测的受击框与配置的发射/攻击窗口。
@@ -380,7 +382,7 @@ def main() -> None:
         cfg = dict(move_cfg.get(move_id, {}))
         cfg["id"] = move_id
         data = scale_fields(donor, len(masks), cfg)
-        data["frames"] = build_frames(donor, masks, ax, ay, scale, cfg)
+        data["frames"] = build_frames(donor, masks, cax, cay, scale, cfg)
         if cfg.get("source_note"):
             data["data_source"] = cfg["source_note"]
         if move_id in THROW_IDS:
@@ -401,11 +403,13 @@ def main() -> None:
         clip = clips[clip_id]
         im = Image.open(ROOT / clip["texture"].replace("res://", "")).convert("RGBA")
         masks = [largest_component(load_mask(im, r)) for r in clip["rects"]]
+        # 加大格的 clip 有自己的根点（如 256 格 [128,248]），量框必须用该 clip 的根点。
+        sax, say = clip.get("anchor", [ax, ay])
         entries = []
         for i, mask in enumerate(masks):
             entries.append({
                 "sprite": i, "dx": 0, "dy": 0, "hitboxes": [],
-                "hurtboxes": band_boxes(mask, ax, ay), "cancel": [], "events": [],
+                "hurtboxes": band_boxes(mask, sax, say), "cancel": [], "events": [],
                 "impact_effect": "impact_light", "block_effect": "impact_guard",
             })
         states[clip_id] = entries
