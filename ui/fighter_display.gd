@@ -173,4 +173,5 @@ static func select_forms(id: String) -> Array:
 	return forms(id).filter(func(form):return str(form.get("switch","select"))=="select" and bool(form.get("select_visible",true)))
 
 static func battle_forms(id: String) -> Array:
-	return forms(id).filter(func(form):return str(form.get("switch","select"))=="battle")
+	# 既可在选人界面选出场、也可在战斗中按E切换的形态，两处都要列出。
+	return forms(id).filter(func(form):return str(form.get("switch","select"))=="battle" or bool(form.get("battle_switch",false)))

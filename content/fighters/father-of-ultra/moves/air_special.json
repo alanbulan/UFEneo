@@ -21,7 +21,7 @@
  "air_allowed": true,
  "finish_on_landing": true,
  "feedback": {
-  "spark": "beam_hit",
+  "spark": "father_fx_beam_hit",
   "block_spark": "impact_guard",
   "hitstop": 10,
   "blockstop": 6,
@@ -38,9 +38,12 @@
    1,
    1,
    1
-  ]
+  ],
+  "projectile_impacts": {
+   "father_fx_beam": "father_fx_beam_hit"
+  }
  },
- "adaptation": "游戏改编的空中集束射线；人物整帧已烘焙贴手光束，按打击判定收招，不在运行时再生成第二道光束。不声称原剧有此空中发射镜头。",
+ "adaptation": "游戏改编的空中父亲射击；人物帧只画身体，束体与命中由运行时 father_fx_beam / father_fx_beam_hit 承载，不在人物帧烘焙光束。不声称原剧有此空中发射镜头。",
  "audio": {
   "hit": "hit_heavy",
   "block": "guard"
@@ -390,7 +393,7 @@
    "block_effect": "impact_guard",
    "shots": [
     {
-     "effect": "beam_loop",
+     "effect": "father_fx_beam",
      "color": [
       1.0,
       0.86,

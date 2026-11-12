@@ -29,7 +29,10 @@ static func can_hit(attacker: UfeFighter, target: UfeFighter) -> bool:
 	return false
 
 static func invulnerable(f: UfeFighter) -> bool:
-	return f.state in ["transform", "form_entry", "captured"] or int(f.combat.invulnerable)>0 or bool(f.frame().get("invulnerable",false))
+	# 免费形态切换是主动换装，不是必杀演出：不给无敌，避免靠按E白嫖闪避。
+	var free_switch := f.state == "transform" and bool(f.battle_form.get("free_switch", false))
+	return (not free_switch and f.state in ["transform", "form_entry"]) or f.state == "captured" \
+		or int(f.combat.invulnerable)>0 or bool(f.frame().get("invulnerable",false))
 
 static func is_blocked(target: UfeFighter, move: Dictionary, defending: bool) -> bool:
 	var crouching := target.state in ["crouch","crouch_start","crouch_guard","crouch_blockstun"]

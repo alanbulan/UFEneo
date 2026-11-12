@@ -102,19 +102,19 @@
 
 | move | 帧数 | 发射/生效帧 | 弹体/效果 | hand_y 窗口 | 依据 |
 |---|---:|---:|---|---|---|
-| `special` | 16 | 7 | `beam_loop`，暖白主束，length 420 / thickness 22 | [55,140] | 右臂 L 字发射；光色为游戏定色 |
-| `special2` | 16 | 8 | `beam_loop`，金色角部光束，length 480 / thickness 26 | [120,175] | 双角发射；光色为游戏定色；唯一角部发光招 |
+| `special` | 16 | 7 | `father_fx_beam`，暖白主束，length 420 / thickness 22；命中 `father_fx_beam_hit` | [55,140] | 右臂 L 字发射；光色为游戏定色 |
+| `special2` | 16 | 8 | `father_fx_beam`，金色角部光束，length 480 / thickness 26；命中 `father_fx_beam_hit` | [120,175] | 双角发射；光色为游戏定色；唯一角部发光招 |
 | `special3` | 16 | 7–10 | `burst_box`，金色周身冲击波 | [65,150] | 彩色计时器释放能源；回复待运行时接入 |
-| `air_special` | 8 | 3 | `beam_loop`，暖白短束，length 280 / thickness 18 | [30,110] | 游戏改编空中版 |
-| `motion_214` | 8 | 4 | `special_rings`，金色光轮，speed 8 / life 60 | [60,145] | 游戏编排 |
-| `motion_22` | 8 | 4 | `special_barrier`，暖白光壁，wall / life 14 | [45,135] | 奥特屏障有据，帧序与尺寸为游戏改编 |
-| `ranged_forward` | 8 | 4 | `special_arrow`，淡金月牙弹，speed 10 / life 55 | [55,145] | 月牙射击名称有据，弹形与光色为游戏改编 |
-| `pulse` | 6 | 3 | `pulse`，暖白掌弹，speed 9 / life 80 | [50,135] | 游戏编排 |
-| `low_pulse` | 5 | 3 | `pulse`，暖白低弹，speed 9 / life 80 | [15,85] | 游戏编排 |
-| `air_pulse` | 5 | 3 | `pulse`，暖白斜下弹，speed 9 / vy -7 / life 90 | [20,95] | 游戏编排 |
+| `air_special` | 8 | 3 | `father_fx_beam`，暖白短束，length 280 / thickness 18；命中 `father_fx_beam_hit` | [30,110] | 游戏改编空中版 |
+| `motion_214` | 8 | 4 | `father_fx_rings`，金色光轮，speed 8 / life 60；命中 `father_fx_rings_hit`；成形环 `father_fx_catch_back/front` | [60,145] | 游戏编排 |
+| `motion_22` | 8 | 4 | `father_fx_barrier`，暖白光壁，wall / life 14 | [45,135] | 奥特屏障有据，帧序与尺寸为游戏改编 |
+| `ranged_forward` | 8 | 4 | `father_fx_arrow_flight`，淡金月牙弹，speed 10 / life 55；命中 `father_fx_arrow_hit` | [55,145] | 月牙射击名称有据，弹形与光色为游戏改编 |
+| `pulse` | 6 | 3 | `father_fx_pulse_flight`，暖白掌弹，speed 9 / life 80；命中 `father_fx_pulse_hit` | [50,135] | 游戏编排 |
+| `low_pulse` | 5 | 3 | `father_fx_pulse_flight`，暖白低弹，speed 9 / life 80；命中 `father_fx_pulse_hit` | [15,85] | 游戏编排 |
+| `air_pulse` | 5 | 3 | `father_fx_pulse_flight`，暖白斜下弹，speed 9 / vy -7 / life 90；命中 `father_fx_pulse_hit` | [20,95] | 游戏编排 |
 | `burst` | 5 | 1–3 | `burst_box`，对称爆气圈 | [40,140] | 游戏编排；命中框超出人物轮廓属已登记例外 |
 
-FX 分层：人物整帧只画身体、贴体光焰和贴掌光点；飞行弹体、光束、光壁、光轮和命中特效由运行时共享特效承载。双角只在 S2 的发射帧画贴角聚能光；其余招式不把光效画到角、须或腰带上。月牙射击的弹体不烘焙进人物帧，避免与运行时 `special_arrow` 重复。
+FX 分层：人物整帧只画身体；飞行弹体、光束、光壁、光轮和命中特效由本角色专属运行时特效家族（`father_fx_*`）承载。双角只在 S2 的发射帧画贴角聚能光；其余招式不把光效画到角、须或腰带上。Q 蓄气三态用 `father_fx_q_charge_start/charge/stop`，只在真实 Q 起势、保持、收势出现。
 
 ## 六、数值口径
 

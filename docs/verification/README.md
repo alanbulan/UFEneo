@@ -23,6 +23,27 @@
 - 新增 AGENTS 规则：招式/反馈/蓄气引用的每个 effect id 必须在 phase3 有条目，换贴图后补登记并核 SHA。
 - 锁内全量 `tools/verify.py` 57 项 PASS。未实机、未听审、无录屏；赛罗基础光弹仍用通用 `pulse` 弹体。
 
+### 2026-11-12 补：三套专属特效家族并入与 4 连通口径
+
+- 奥父 16 段、杰斯提斯 9 段、赛罗基础光弹 2 段（`father_fx_*` / `justice_fx_*` / `zero_fx_pulse_*`）并入 `phase3_projectiles.json` 共 27 条，并接线对应招式；奥父、杰斯提斯的 Q 三态落点并入 `charge_overlay_policy.json`，同时 `UfeChargeEffectPolicy.filter` 在“只有落点、没有受限附件”时注入落点，不再要求每个角色先挂占位附件。
+- 根独立复核发现赛罗 `zero_fx_pulse_hit` 的构建脚本用 **8 邻域**取最大连通块，三帧主体外仍有 2–6 px `alpha≥200`；按项目统一的 **4 邻域**门应为 0。已把 `tools/rebuild/ultraman-zero/basic-pulse-fx-20261112/build.py` 改为 4 邻域并重烘，atlas/effect/provenance/entries/build-report 的 SHA 同步更新。27 段逐段复核尺寸、SHA、二值 Alpha、4 连通主体与主体外 `alpha≥16 ≤100 / ≥200 = 0` 全部通过。
+- `tests/effect_registration.gd` 增加逐帧 `attachments` 扫描，并覆盖赛罗/奥父/杰斯提斯三态蓄气注入与离开 Q 不遗留；`effect_registration`、`phase3_specials`、`phase3_air`、`phase3_supers`、`roster_data_integrity` 与全量 `tools/verify.py`（含 `main-startup`）全部 PASS。
+- 奥父 Q 三态首版是红色竖条笼/门框、24 帧变化约 1.5%，已打回重做：改为椭圆火焰环（橙白亮芯、分层火身、外缘火舌、上升火星），相邻帧变化 start 32%–51%、charge 20%–29%、stop 42%–52%，94 帧主体外门限仍全为 0，8 色硬 Alpha，id/尺寸/锚点不变；重登记后 `effect_registration` 与 phase3 相关测试 PASS。未实机、未听审、无录屏。
+
+### 2026-11-12 补：状态帧挂件漏登记与两道形态门
+
+- 扫全部已实装角色的 `state_frames.json` 挂件时发现艾雷王 `air_special` 12 帧仍引用 `eleking_air_lightning`，共享表只有 `eleking_air_lightning_v2`（招式文件早已用 v2），空中放电挂件整段静默不显示。已把 12 处引用改为 v2。
+- `tests/effect_registration.gd` 增加状态帧挂件登记检查。首版用 `DirAccess.get_files_at` 拿角色目录，返回为空，门实际什么都没扫；第二版逐份解析 state_frames 又超时 240 s。最终改为 `get_directories_at` + 只从原文提取 `"effect"` 字段，实测还原旧 id 会 FAIL、修正后 PASS。
+- 新增复用硬门：不同角色/形态的专属特效不得共用同一图集 SHA（当前全仓 0 例外）。`tests/form_selection_consistency.gd` 增加：任何 `playable=true` 的形态定义不得把 `presentation.model` 指向 `/catalogue/`，招式里不得出现 `"pending_"` 特效 id。
+- 预审发现光辉形态 8 段特效是基础赛罗图集逐字节副本、超限形态 Q 三态 252 级 Alpha 未做硬量化，均已退回重做；强壮日冕特效仍为空提案。未实机、未听审、无录屏。
+
+### 2026-11-12 补：形态切换帧冻结与切换帧推进门
+
+- 按 E 切换赛罗形态时人物整段不动。根因在 `content/catalogs/battle_form_rules/zero_form_switch.json`：60 帧的 `sprite` 全填 0，而目标 `form_switch` 片段有 6 张内容不同的帧（相邻帧剪影差分 37%–73%）。时间轴才是实际显示帧来源，片段帧数对得上、时长 60 tick 也对，唯独没有任何一帧指向第 1–5 张。已改为每 10 tick 推进一帧（0–5），其余字段未动。
+- 门禁盲区同前次：`form_selection_consistency` 原只核对「切换动画总时长 == 时间轴帧数」，不核 `sprite` 取值与推进。更糟的是它跳过选人表里的 `default` 项（`if id == "default": continue`），而默认形态正是出问题的那一项，等于整条规则对默认形态从未生效。现把 `default` 纳入登记，并新增两条硬门：切换帧 `sprite` 必须落在目标片段帧数内、必须逐帧推进到全部帧。实测把修复回退后 FAIL（`ultraman-zero/default 切换帧逐帧推进（1/6）`），恢复后 PASS。
+- 全表复核：泰罗 60 tick/10 帧、EX哥莫拉与 EX雷德王 72 tick/12 帧、赛罗 60 tick/6 帧，`sprite` 均覆盖全帧无越界；五个新形态目录尚无 manifest，未纳入。
+- 未实机、未听审、无录屏。
+
 ## 2026-11-11 减速规则与事件语音接入
 
 - core 新增招式字段 `chill`（`ticks` 正整数、`speed_percent` 1–99），由 `UfeMoveData.validate` 校验；只在未防住的命中由 `UfeHitResolver.apply` 写入受方 `stats.chill_ticks/chill_percent`，`UfeMatchDirector._advance` 每 tick 递减；`UfeState.move_speed` 对 walk/dash/backstep 位移按 `(base*percent+50)/100` 整数取整，最低 1 px。出招帧、硬直、受击状态与判定时序不变。content fingerprint 已包含 moves，旧回放不会混跑新数据。

@@ -3,6 +3,8 @@ extends RefCounted
 const FORMAT := 6
 var fingerprint: String = ""
 var fighter_ids: Array = []
+# 出场形态（选人界面选定）；基础ID仍在fighter_ids，旧回放缺省为default。
+var forms: Array = []
 var frames: Array = []
 var final_hash: String = ""
 var match_seed: int=20261022
@@ -13,6 +15,8 @@ func append(inputs: Array, simulation: UfeMatchDirector) -> void:
 	if frames.is_empty():
 		fingerprint = simulation.content_fingerprint
 		fighter_ids = [simulation.fighters[0].base_definition.id, simulation.fighters[1].base_definition.id]
+		forms = [str(simulation.fighters[0].form_id) if not simulation.fighters[0].form_id.is_empty() else "default",
+			str(simulation.fighters[1].form_id) if not simulation.fighters[1].form_id.is_empty() else "default"]
 	frames.append([inputs[0].pack(), inputs[1].pack()])
 	final_hash = simulation.state_hash()
 
@@ -20,7 +24,7 @@ func save_file(path: String) -> Error:
 	var file := FileAccess.open(path, FileAccess.WRITE)
 	if file == null: return FileAccess.get_open_error()
 	file.store_string(JSON.stringify({"format": FORMAT, "tick_rate": 60, "rules": "neo", "fighters": fighter_ids,
-		"content": fingerprint, "frames": frames, "final_hash": final_hash,"match_seed":match_seed,"ai_difficulty":ai_difficulty}))
+		"forms": forms, "content": fingerprint, "frames": frames, "final_hash": final_hash,"match_seed":match_seed,"ai_difficulty":ai_difficulty}))
 	return OK
 
 # 原严格接口保留；结构解析不能替代内容兼容性校验。
@@ -62,6 +66,12 @@ static func read_candidate(path: String) -> UfeReplayRecorder:
 	identifier.compile("^[a-z0-9][a-z0-9_-]*$")
 	for id in data.fighters:
 		if not id is String or id.length()>128 or identifier.search(id)==null:return _reject("回放角色数据无效：角色ID不合法")
+	# 旧格式6回放没有forms字段：按双方基础形态复原。
+	var forms_data=data.get("forms",["default","default"])
+	if not forms_data is Array or forms_data.size()!=2:return _reject("回放形态数据无效：需要双方出场形态")
+	for form_id in forms_data:
+		if not form_id is String or form_id.length()>128:return _reject("回放形态数据无效：形态ID不合法")
+		if not form_id.is_empty() and identifier.search(form_id)==null:return _reject("回放形态数据无效：形态ID不合法")
 	if not data.get("frames") is Array or data.frames.is_empty() or data.frames.size()>36000:return _reject("回放输入数据无效：帧数错误")
 	for pair in data.frames:
 		if not pair is Array or pair.size()!=2:return _reject("回放输入数据无效：需要双方输入")
@@ -75,6 +85,7 @@ static func read_candidate(path: String) -> UfeReplayRecorder:
 	var replay:=UfeReplayRecorder.new()
 	replay.fingerprint=data.content
 	replay.fighter_ids=data.fighters
+	replay.forms=forms_data.duplicate()
 	replay.frames=data.frames
 	replay.final_hash=data.get("final_hash","")
 	replay.match_seed=int(data.get("match_seed",20261022))
