@@ -1,0 +1,330 @@
+{
+ "fighter": "astra",
+ "stage": "stage1",
+ "batch": "05",
+ "date": "2026-11-10",
+ "authority": "root_delegated_by_user",
+ "approval_note": "根按用户2026-11-10委托自动评审签署；非user_approved，不冒称用户亲审。",
+ "identity_anchor": {
+  "path": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+  "sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e"
+ },
+ "cell": {
+  "size": 192,
+  "anchor": [
+   96,
+   184
+  ],
+  "foot_row": 183,
+  "colors_max": 32,
+  "alpha": "binary"
+ },
+ "scale": {
+  "policy": "统一源像素比例 154/1231=0.125102，BOX 重采样，上半身（自顶50%高度）重心对齐 x=97.72",
+  "value": 0.125101543
+ },
+ "palette": {
+  "source": "身份锚 32 色，冻结",
+  "mapping": "整图统一最近邻映射"
+ },
+ "process_change": {
+  "name": "识别色引导图（第三种工序）",
+  "reason": "同一识别色问题已用尽两种修法（消失0px / 放大31px），按返工刹车换工序。",
+  "guide": {
+   "sha256": "0befa80311944e5183d47d1f97f1c3c209a613a147037ac31139270986f1eeed",
+   "size": [
+    1024,
+    1536
+   ],
+   "mode": "RGBA",
+   "colors": 32,
+   "alpha": [
+    0,
+    255
+   ],
+   "bbox": [
+    104,
+    240,
+    911,
+    1471
+   ],
+   "height": 1232,
+   "width": 808,
+   "green_px": 192,
+   "green_bbox": [
+    616,
+    336,
+    623,
+    359
+   ],
+   "green_wh": [
+    8,
+    24
+   ],
+   "derivation": "身份锚 192×192 整画布 NEAREST 8× → 1536×1536，水平居中裁到 1024×1536；不新增第二张参考。",
+   "relation_to_existing": "裁去留白后的像素内容与既有 anchor-presentation-8x.png 逐字节相同（仅画布内偏移 4px，bbox x 104–911 对 108–915），即它仍是同一身份锚的放大，不是新造型输入；本轮实际变化是画布居中使绿额灯落在可读位置，并在提示词里点名额灯尺寸与禁止照抄待机姿势。",
+   "kept": false,
+   "usage_note": "一次性生图输入，不落格、不进游戏资源。",
+   "deleted": true,
+   "deleted_note": "一次性生图输入；裁去留白后与既有 anchor-presentation-8x.png 逐像素相同，属重复副本，按仓库纪律验收后删除，仅留 SHA 与派生说明。"
+  },
+  "prompt_rule": "提示词只写该帧动作，显式要求四肢粗细与参考一致、绿色额灯大小与参考一致，并禁止照抄待机姿势；尾串固定右侧视、完整不裁切、透明背景、无地面文字边框特效。"
+ },
+ "review": {
+  "path": "art/fighters/astra/stage1/actions/review/batch-05-dash03-getup01-2026-11-10.png",
+  "sha256": "6fc2e71a6978c5979166b9a06b34e150afd74a20f130949724e96292115aa57b",
+  "size": [
+   1968,
+   814
+  ],
+  "content": "本轮两帧：原生192（1×）与严格4×；另见 diagnostic/dash03-getup01-resume-2026-11-10.png（含锚与相邻帧对照、头部16×、脚部10×、dash顺序）。"
+ },
+ "frames": [
+  {
+   "status": "accepted",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1536",
+   "size_actual": [
+    1024,
+    1536
+   ],
+   "identity_anchor": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+   "identity_anchor_sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP 未返回 usage 或费用，不估算。",
+   "name": "dash-03",
+   "animation": "dash",
+   "index": 3,
+   "generation_id": "image-65174-1053",
+   "prompt": "只画阿斯特拉一人，像素整帧。向前冲刺的最后一步：身体前倾，前脚全掌踩地，后腿蹬直向后伸展，双臂一前一后摆动，双拳握紧。脸保持朝右，头抬起，绿色额灯完整可见，大小与参考完全一致，不要省略、不要加粗放大。四肢粗细、肩宽、头肩比例、银色头壳轮廓、身体花纹和像素块大小都与参考一致，不得改变身材。不要照抄参考的待机姿势，只借身份、比例与画风，按上述动作重画。固定右侧视，人物完整不裁切，透明背景，无地面、文字、边框、特效。",
+   "raw": "art/fighters/astra/stage1/actions/raw/dash-03-raw.png",
+   "raw_sha256": "01b00d3f628f707128667d1224b029a4a265a3e46c3d2f5d24250899754d0024",
+   "raw_alpha": [
+    0,
+    254
+   ],
+   "raw_alpha_levels": 255,
+   "raw_solid_bbox": [
+    33,
+    382,
+    952,
+    1322
+   ],
+   "raw_standing_height": 941,
+   "raw_green_wh": [
+    14,
+    23
+   ],
+   "cell": "art/fighters/astra/stage1/actions/cells/dash-03-cell.png",
+   "cell_sha256": "4d355977284a06367e591a2c8ad1bda06a1b27876473d0d3f57a643e0d3bc23e",
+   "x4": "art/fighters/astra/stage1/actions/cells/dash-03-x4.png",
+   "x4_sha256": "8e4ccf120d68b4efa30eb240d964b371163b25ed7b4b5e01f178587651aa0778",
+   "bbox": [
+    22,
+    66,
+    136,
+    183
+   ],
+   "standing_height": 118,
+   "width": 115,
+   "foot_row": 183,
+   "lift": 0,
+   "foot_bottoms": [
+    183,
+    183
+   ],
+   "foot_outer_span": 105,
+   "foot_span_over_height": 0.8898,
+   "colors": 31,
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "head_bright": [
+    97,
+    67,
+    21,
+    24
+   ],
+   "head_full": [
+    97,
+    66,
+    24,
+    28
+   ],
+   "recognition": {
+    "green": 2,
+    "yellow": 11,
+    "blue": 3
+   },
+   "green_bbox": [
+    119,
+    76,
+    119,
+    77
+   ],
+   "ground_runs": [
+    [
+     23,
+     25
+    ],
+    [
+     104,
+     125
+    ]
+   ],
+   "ground_px": 25,
+   "note": "冲刺第四相：前脚全掌承重、后腿蹬直后伸、躯干前倾，双拳一前一后；亮银头 21×24 为头略前俯的投影，仍在接受区间（20–25 宽、24–27 高），按姿态记录。",
+   "reference_used": "art/fighters/astra/stage1/actions/raw/anchor-recognition-guide-8x-1024x1536.png",
+   "reference_used_sha256": "0befa80311944e5183d47d1f97f1c3c209a613a147037ac31139270986f1eeed",
+   "reference_used_deleted": true,
+   "equivalent_kept": {
+    "path": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+    "sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+    "note": "裁去留白后与所用引导图逐字节相同（仅画布内偏移 4px）；同一身份锚的放大，不是第二参考。"
+   }
+  },
+  {
+   "status": "accepted",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1536",
+   "size_actual": [
+    1024,
+    1536
+   ],
+   "identity_anchor": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+   "identity_anchor_sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e",
+   "usage": null,
+   "cost": null,
+   "usage_note": "MCP 未返回 usage 或费用，不估算。",
+   "name": "getup-01",
+   "animation": "getup",
+   "index": 1,
+   "generation_id": "image-65174-1054",
+   "prompt": "只画阿斯特拉一人，像素整帧。起身动作的第二帧：从单膝跪地撑起，前脚全掌踩地、后腿膝盖刚离地，躯干抬起并略微前倾，双臂收回身前护架，头抬起朝右，绿色额灯完整可见，大小与参考完全一致，不要省略、不要加粗放大。四肢粗细、肩宽、头肩比例、银色头壳轮廓、身体花纹和像素块大小都与参考一致，不得改变身材。不要照抄参考的待机姿势，只借身份、比例与画风，按上述动作重画。固定右侧视，人物完整不裁切，透明背景，无地面、文字、边框、特效。",
+   "raw": "art/fighters/astra/stage1/actions/raw/getup-01-raw.png",
+   "raw_sha256": "39d1e282a336156e9cfc46b340d7a13c362de039513a31c860ffbae91a7058b3",
+   "raw_alpha": [
+    0,
+    255
+   ],
+   "raw_alpha_levels": 256,
+   "raw_solid_bbox": [
+    107,
+    275,
+    874,
+    1431
+   ],
+   "raw_standing_height": 1157,
+   "raw_green_wh": [
+    18,
+    27
+   ],
+   "cell": "art/fighters/astra/stage1/actions/cells/getup-01-cell.png",
+   "cell_sha256": "d3017021bfcc4b43fb1f66e4c8668fd3a321c1be0f5bdb549713a6e39a57cb40",
+   "x4": "art/fighters/astra/stage1/actions/cells/getup-01-x4.png",
+   "x4_sha256": "443f728693718063e653ff4b9e7cc192f7318b314a60fc5c59dd703afdc4e003",
+   "bbox": [
+    41,
+    39,
+    136,
+    183
+   ],
+   "standing_height": 145,
+   "width": 96,
+   "foot_row": 183,
+   "lift": 0,
+   "foot_bottoms": [
+    181,
+    183
+   ],
+   "foot_outer_span": 87,
+   "foot_span_over_height": 0.6,
+   "colors": 31,
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "head_bright": [
+    90,
+    39,
+    23,
+    24
+   ],
+   "head_full": [
+    90,
+    39,
+    25,
+    29
+   ],
+   "recognition": {
+    "green": 3,
+    "yellow": 11,
+    "blue": 2
+   },
+   "green_bbox": [
+    114,
+    49,
+    114,
+    51
+   ],
+   "ground_runs": [
+    [
+     111,
+     118
+    ],
+    [
+     122,
+     135
+    ]
+   ],
+   "ground_px": 22,
+   "note": "起身第二相：前脚全掌承重（183）、后腿刚离地（181），躯干抬起前倾、双臂收护架；站高145介于 getup-00 的96与站立154之间。",
+   "reference_used": "art/fighters/astra/stage1/actions/raw/anchor-recognition-guide-8x-1024x1536.png",
+   "reference_used_sha256": "0befa80311944e5183d47d1f97f1c3c209a613a147037ac31139270986f1eeed",
+   "reference_used_deleted": true,
+   "equivalent_kept": {
+    "path": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+    "sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+    "note": "裁去留白后与所用引导图逐字节相同（仅画布内偏移 4px）；同一身份锚的放大，不是第二参考。"
+   }
+  }
+ ],
+ "occlusion_verdict": {
+  "conclusion": "两帧均为模型漏画，不是姿态遮挡；未重涂、未为露出额灯改动作。",
+  "evidence": [
+   "dash-03：严格右侧视，黄眼 11px 可见、亮银头 21×24 完整；额灯在头部前缘 [119,76–77]，与锚 [109,42–44] 同构（银壳与绿色块之间同样隔 1px 暗色前缘）。相邻 dash-02 同为侧视，green 3px。旧 raw 绿条过窄，落格消失。",
+   "getup-01：头抬起朝右，黄眼 11px 可见、亮银头 23×24；额灯 [114,49–51] 1×3，尺寸与锚完全相同。相邻 getup-00 跪姿同样露灯 4px。旧 raw 绿条仅 6px 宽，落格消失。"
+  ],
+  "not_done": [
+   "未局部重涂",
+   "未改阈值",
+   "未缩头",
+   "未重采样",
+   "未为露灯扭曲动作"
+  ]
+ },
+ "on_brake": [],
+ "rejected_this_batch": [],
+ "notes": [
+  "两帧 192×192、二值 Alpha、31 色、单连通、脚底 183、lift 0、统一比例 0.125102、沿用锚冻结 32 色。",
+  "识别色：dash-03 green 2（与已接受的 dash-start-00 同为 2px）/ yellow 11 / blue 3；getup-01 green 3（与锚同）/ yellow 11 / blue 2。均在已接受区间内。",
+  "亮银头：dash-03 21×24、getup-01 23×24，均在接受区间（20–25 宽、24–27 高）；dash-03 头略前俯按姿态记录，未缩头。",
+  "本轮无拒收 raw；上一轮 3 次拒收（dash-03 a/b、getup-01-a）的 SHA 与诊断保留在 batch-02/04 与 diagnostic/dash-03-recognition-green-2026-11-10.json。",
+  "未安装、未启动 Godot、未提交、未改 content/audio、无录屏。"
+ ],
+ "next": "dash 与 getup 各 4 帧/2 帧的最小集已齐；下一步做双侧朝向与 720/1080 实机验证（本阶段未做，不冒充完成）。",
+ "flags": [
+  {
+   "frame": "getup-01",
+   "flag": "蓝胸灯 2px（已接受帧 3px 起）；侧视菱形只露侧缘，作标记，不局部重涂"
+  }
+ ]
+}

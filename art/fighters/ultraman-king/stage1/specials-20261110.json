@@ -1,0 +1,4062 @@
+{
+ "fighter": "ultraman-king",
+ "batch": "specials-20261110",
+ "date": "2026-11-10",
+ "policy": "动作帧只引用一张身份锚；magpie-image codex/gpt-image-2 quality high n=1；每帧不带光束/气浪/粒子/贴体光焰，发射相最多紧贴掌心的光点；落格固定 scale 0.158044、256 格、根点 [128,248]、脚底 247；不安装 assets、不改 content、不运行 Godot、不提交。",
+ "reference": {
+  "path": "art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png",
+  "sha256": "1c577cf1ecca3161e263f0991624a8d96cc92aba1f4697d727b7c08e1f20c7d4",
+  "note": "同一身份锚的待机像素整帧原生图（cells.json 的 scale_source，同一 SHA）。x4 版为同帧 4× 最近邻；MCP 对 x4 方图输出 1254×1254，按固定比例落格只能得到约 164–166 px，低于 223 的目标站高，故动作帧使用该锚原生竖幅图作唯一参考，不追加任何其它图。"
+ },
+ "landing": {
+  "command": "tools/art/stage_cells.py --fighter ultraman-king --scale-source art/fighters/ultraman-king/stage1/idle/frames/pixel-raw-01-v18.png --target-standing 223 --cell 256 --anchor-x 128 --baseline 248",
+  "scale": 0.158044,
+  "cell": 256,
+  "anchor": [
+   128,
+   248
+  ],
+  "baseline": 248,
+  "out_dir": "art/fighters/ultraman-king/stage1/cells"
+ },
+ "frames": [
+  {
+   "clip": "special",
+   "index": 0,
+   "frame": "special-00",
+   "prompt": "保持参考图的人物身份与像素整帧风格。从格斗护架开始，双掌收回胸前，双肘内收，重心下沉，双膝弯曲，双脚位置不变，红披风自然垂落。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 212,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-00.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 790088,
+   "raw_sha256": "a1cf033d0bbae03a162af267f072ca7d4e7e785a10f7fd1c3de02ba2df9d0a0a",
+   "raw_visible_bbox": [
+    62,
+    77,
+    1031,
+    1421
+   ],
+   "raw_char_height": 1345,
+   "raw_char_width": 970,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-00-cell.png",
+   "output_sha256": "9214348906de1b5de6868b3024685b80a5345f7d9ebf37c0b1a505de348b0e7c",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     56,
+     35,
+     208,
+     247
+    ],
+    "height": 213,
+    "width": 153,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     56,
+     47,
+     35,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 1,
+   "frame": "special-01",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌继续收拢到胸前，双掌相叠，双肘夹紧，肩部下沉，上身前倾，双膝弯曲加深，红披风贴背垂落。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 212,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-01.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 717372,
+   "raw_sha256": "8ad74f0aa288ba94241cf4f26c41cef789f3b25a70be2ee0e2ecc99d8182e209",
+   "raw_visible_bbox": [
+    148,
+    165,
+    947,
+    1415
+   ],
+   "raw_char_height": 1251,
+   "raw_char_width": 800,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-01-cell.png",
+   "output_sha256": "ee1c6d530f1bff8a72142768cfa787480d551540d66520e277db6be78ca0abb1",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     68,
+     50,
+     193,
+     247
+    ],
+    "height": 198,
+    "width": 126,
+    "foot_row": 247,
+    "head_height_auto": 15,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     68,
+     62,
+     50,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 2,
+   "frame": "special-02",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌合于胸前蓄势，掌心相对，双肘内收，双膝明显弯曲、臀部向下坐，重心落在两脚之间，后脚蹬地，白须自然下垂。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 220,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-02.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 832691,
+   "raw_sha256": "2668514729f29299c87a8d55f8010fd36e5f1552e05138870caac929f1c0b0b6",
+   "raw_visible_bbox": [
+    62,
+    201,
+    963,
+    1409
+   ],
+   "raw_char_height": 1209,
+   "raw_char_width": 902,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-02-cell.png",
+   "output_sha256": "b3ec082aad93d972f1e18e205a44742d32a0f3babda5d1540d53bb22a35b02f4",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     54,
+     57,
+     196,
+     247
+    ],
+    "height": 191,
+    "width": 143,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     54,
+     59,
+     57,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 3,
+   "frame": "special-03",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌仍收在胸前，双肩打开，双肘开始向身体前后两侧分开，掌心转向下；双膝保持明显弯曲、臀部下沉，准备水平展开。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 221,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-03.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 827281,
+   "raw_sha256": "bbe2b99f12bd92fba34f30e52952f26d8407adb145db81c9fc27f160ce3c6522",
+   "raw_visible_bbox": [
+    54,
+    137,
+    1031,
+    1420
+   ],
+   "raw_char_height": 1284,
+   "raw_char_width": 978,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-03-cell.png",
+   "output_sha256": "27f3feeb5c56acce1c9d0cb18354e2fa82aff5c8259799b0c45ac3513f947bba",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     50,
+     45,
+     204,
+     247
+    ],
+    "height": 203,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 46,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     50,
+     51,
+     45,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 4,
+   "frame": "special-04",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双肘抬到胸高，双臂沿身体前后方向展开到一半，近臂向前、远臂向后，双掌平伸，掌心朝下。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 209,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-04.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 864559,
+   "raw_sha256": "738fc041841ca79501e8eab6c3437aa4e26bf49852b4e2b2734467cb060ec04c",
+   "raw_visible_bbox": [
+    55,
+    9,
+    1035,
+    1420
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 981,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-04-cell.png",
+   "output_sha256": "26da1b405248f9bbc30208b4e50e2d8ec164a84db87e7e74ce3cc49637221ec3",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     48,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     48,
+     53,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 5,
+   "frame": "special-05",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双臂继续沿前后方向展开到接近水平，肘部将直未直，双掌平伸，掌心朝下，红披风在身后轻摆。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 210,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-05.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 945338,
+   "raw_sha256": "780a380824aae272e883c28cfdeb1192e7a04cfbb151bf2d9848a6e8e8d98af3",
+   "raw_visible_bbox": [
+    18,
+    9,
+    1069,
+    1421
+   ],
+   "raw_char_height": 1413,
+   "raw_char_width": 1052,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-05-cell.png",
+   "output_sha256": "683c5511e8dc17ae46f40e29bf459f75db8e5f8cd4d3ceeb98cdf6c5fc92c963",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     42,
+     25,
+     207,
+     247
+    ],
+    "height": 223,
+    "width": 166,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     42,
+     48,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 6,
+   "frame": "special-06",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双臂向身体前后方向伸直，接近水平、略低于肩；双肘不要弯曲，双掌在臂端竖立，掌前缘转向右，白须与红披风保持静止，双膝微屈。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 227,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-06.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 992282,
+   "raw_sha256": "cc97093e36759634457f19e5c5d1fa3dbfb8be642d17fca8b9907a45125b18a5",
+   "raw_visible_bbox": [
+    37,
+    10,
+    1033,
+    1420
+   ],
+   "raw_char_height": 1411,
+   "raw_char_width": 997,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-06-cell.png",
+   "output_sha256": "cd48f2baba9e135e1d4c06148792b09b00514d977488b4faa412108a8d4217b0",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     45,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 158,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     45,
+     53,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 7,
+   "frame": "special-07",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双臂沿身体前后方向完全水平展开，与肩同高；近臂向前、远臂向后伸直，双掌前缘朝右，掌心仅一层紧贴手掌的红光，不外扩、不成束、不离开手掌；红披风向后压，双膝微屈、双脚站稳。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 222,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-07.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 794361,
+   "raw_sha256": "83df9e5f2e56acba4ba721bd2aa782967d9628b963c1489815153569b11f1f66",
+   "raw_visible_bbox": [
+    89,
+    8,
+    979,
+    1417
+   ],
+   "raw_char_height": 1410,
+   "raw_char_width": 891,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-07-cell.png",
+   "output_sha256": "e0514b6a39d35d41fac2ddf7d9ed32ee9b7fba095c16b37f0f5b1c066c67435a",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     58,
+     25,
+     198,
+     247
+    ],
+    "height": 223,
+    "width": 141,
+    "foot_row": 247,
+    "head_height_auto": 53,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     58,
+     57,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 8,
+   "frame": "special-08",
+   "prompt": "保持参考图的人物身份与像素整帧风格。保持双臂在身体前后两侧水平伸直，近臂向前、远臂向后，与肩同高；不要双臂同时向前。双掌略微向前送，双掌前缘朝右；掌心仅一层紧贴手掌的红光，不外扩、不成束、不离开手掌。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 220,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-08.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 908137,
+   "raw_sha256": "64eb46df5e30421ce2bc18468f833dfdfb9e8a1c8c210f961e8dbe58820bc44d",
+   "raw_visible_bbox": [
+    55,
+    9,
+    1032,
+    1421
+   ],
+   "raw_char_height": 1413,
+   "raw_char_width": 978,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-08-cell.png",
+   "output_sha256": "d498c705f0331d368677541920f300c58a9d29a70143eea6e98313e866232497",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     48,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 45,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     48,
+     53,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 9,
+   "frame": "special-09",
+   "prompt": "保持参考图的人物身份与像素整帧风格。保持双臂在身体前后两侧水平伸直，近臂向前、远臂向后，与肩同高；不要双臂同时向前。肩部略放松，双掌前缘朝右；掌心仅一层紧贴手掌的红光，不外扩、不成束。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 212,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-09.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 901879,
+   "raw_sha256": "4d7c1abc4cc0739edafe31bdcdadd4c18cf22af68da660502ae9d1a5700f2bc4",
+   "raw_visible_bbox": [
+    47,
+    10,
+    1036,
+    1420
+   ],
+   "raw_char_height": 1411,
+   "raw_char_width": 990,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-09-cell.png",
+   "output_sha256": "4dfd2ad11ec84bcc0a9c6155988dd94803acbd8b050bd267e4999df978edc3e6",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     46,
+     25,
+     201,
+     247
+    ],
+    "height": 223,
+    "width": 156,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     46,
+     54,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 10,
+   "frame": "special-10",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双臂向身体前后两侧完全伸直并连成一条水平直线，一条手臂朝右、一条手臂朝左，肘部不要弯曲；双掌竖立，掌前缘朝右；掌心红光只紧贴掌心，不外扩、不成束。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 211,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-10.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 934658,
+   "raw_sha256": "4219dccc6885d1112220db03179ed2346b65bdd4b3ae59134c9dadfd300b4587",
+   "raw_visible_bbox": [
+    36,
+    7,
+    1044,
+    1420
+   ],
+   "raw_char_height": 1414,
+   "raw_char_width": 1009,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-10-cell.png",
+   "output_sha256": "11d007b91f27c7e3ed895dd3d7459c9370bfcbe2f6a11a00532f306a0654d96e",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     45,
+     25,
+     203,
+     247
+    ],
+    "height": 223,
+    "width": 159,
+    "foot_row": 247,
+    "head_height_auto": 45,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     45,
+     52,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 11,
+   "frame": "special-11",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双臂从水平位置向下回收，双肘弯曲，双掌收向胸前，掌心向内，红披风回落。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 202,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-11.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 789221,
+   "raw_sha256": "0afb3dce6e2840bb65de9890800736de49181b48eb072ab0b8fe588e47b322ca",
+   "raw_visible_bbox": [
+    62,
+    10,
+    1035,
+    1421
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 974,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-11-cell.png",
+   "output_sha256": "7abfc13e34fec1358cdd34ccb53f65e2109740865f9f8957932f5baf6150b899",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     53,
+     25,
+     206,
+     247
+    ],
+    "height": 223,
+    "width": 154,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     53,
+     49,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 12,
+   "frame": "special-12",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌回到胸前护住胸口，双肘内收，重心开始回升，双肩放松，红披风垂落。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 201,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-12.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 780880,
+   "raw_sha256": "e952f9ccf42cf192c4a24ac3130f94cd1de5f85518929f06df3ace1ffe18a78b",
+   "raw_visible_bbox": [
+    63,
+    10,
+    1036,
+    1421
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 974,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-12-cell.png",
+   "output_sha256": "3f367cc74a04115eb167baee37304c2f70918c3d20a6bd6824ecc1abe94a4ee4",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     52,
+     25,
+     205,
+     247
+    ],
+    "height": 223,
+    "width": 154,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     52,
+     50,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 13,
+   "frame": "special-13",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌收到护架位置，双拳半握，肘部下沉，肩部放松，双膝保持微屈。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 198,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-13.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 834132,
+   "raw_sha256": "d39bfb9a4e0443940c1b1cc61ba527b2bbb2a0142e969001b0856daff1dc1ed7",
+   "raw_visible_bbox": [
+    57,
+    7,
+    1034,
+    1421
+   ],
+   "raw_char_height": 1415,
+   "raw_char_width": 978,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-13-cell.png",
+   "output_sha256": "2cfe976d35b814719430cb22dd5f1d9ee9ebbe569b67fe09b0b3a04a9aac2d45",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     48,
+     24,
+     202,
+     247
+    ],
+    "height": 224,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 45,
+    "head_target": 44,
+    "colors": 31,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     48,
+     53,
+     24,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 14,
+   "frame": "special-14",
+   "prompt": "保持参考图的人物身份与像素整帧风格。恢复格斗护架，双拳抬到胸前，前后脚站稳，双膝微屈，红披风自然垂落。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 200,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-14.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 882073,
+   "raw_sha256": "fb8762a1a27fbdcf97c3558fe03d9999189b187da49639e6ff6cb8d32f53588c",
+   "raw_visible_bbox": [
+    135,
+    10,
+    921,
+    1407
+   ],
+   "raw_char_height": 1398,
+   "raw_char_width": 787,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-14-cell.png",
+   "output_sha256": "4358915b973ff46adbb479b7ebc8ebf6a8adbf391f0fc162a11c1e7191fa1a73",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     62,
+     27,
+     185,
+     247
+    ],
+    "height": 221,
+    "width": 124,
+    "foot_row": 247,
+    "head_height_auto": 43,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     62,
+     70,
+     27,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special",
+   "index": 15,
+   "frame": "special-15",
+   "prompt": "保持参考图的人物身份与像素整帧风格。回到与待机一致的格斗护架站姿，双拳护在胸前，双脚分开站稳，呼吸平稳，红披风自然下垂。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 209,
+   "raw": "art/fighters/ultraman-king/stage1/special/frames/raw-15.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 843872,
+   "raw_sha256": "2a5e7b23b6e0cb9b02a2a98c48510dd0185ed74cd02759b73cb063b8558f616c",
+   "raw_visible_bbox": [
+    146,
+    9,
+    905,
+    1418
+   ],
+   "raw_char_height": 1410,
+   "raw_char_width": 760,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special-15-cell.png",
+   "output_sha256": "8a6f02e46b20eea81c44773c836aa34d71b2157c2edd31022a861b0b4534ba26",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     62,
+     25,
+     181,
+     247
+    ],
+    "height": 223,
+    "width": 120,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     62,
+     74,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 0,
+   "frame": "special2-00",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌从格斗护架收向胸前，掌心相向，双肘内收，重心微微下沉，红披风自然垂落。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 204,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-00.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 824485,
+   "raw_sha256": "15997890a4ddae9a60eac45f60b7f6f703fe24a0ccb3d855cbc9bf9ba63bf719",
+   "raw_visible_bbox": [
+    62,
+    25,
+    1030,
+    1421
+   ],
+   "raw_char_height": 1397,
+   "raw_char_width": 969,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-00-cell.png",
+   "output_sha256": "54348693cee927d5da5aaedd6a86c52b932b596a2f9265c8640cdb404cf3f284",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     52,
+     27,
+     204,
+     247
+    ],
+    "height": 221,
+    "width": 153,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     52,
+     51,
+     27,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 1,
+   "frame": "special2-01",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌合于胸前，指尖相对，双肘夹紧，肩部下沉，上身前倾，双膝弯曲。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 199,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-01.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 845898,
+   "raw_sha256": "a84942e1948e7e69e45dc206439233d0aba5b9c3dc336d90db878b8af22c352c",
+   "raw_visible_bbox": [
+    53,
+    171,
+    960,
+    1408
+   ],
+   "raw_char_height": 1238,
+   "raw_char_width": 908,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-01-cell.png",
+   "output_sha256": "6c0d21a4d3d6fd95e34de2ce58ae75a3974d22f68b92dd15f62662697724f8f3",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     50,
+     52,
+     193,
+     247
+    ],
+    "height": 196,
+    "width": 144,
+    "foot_row": 247,
+    "head_height_auto": 28,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     50,
+     62,
+     52,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 2,
+   "frame": "special2-02",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌覆在胸前红宝玉上，指尖相对，掌心贴住胸口，重心下沉，双肩内收。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 200,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-02.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 823499,
+   "raw_sha256": "d49dc6b545d6147b706b326c007d4e4f9779355e2b8ca3532b71d0d0f93a0a0b",
+   "raw_visible_bbox": [
+    57,
+    73,
+    1032,
+    1420
+   ],
+   "raw_char_height": 1348,
+   "raw_char_width": 976,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-02-cell.png",
+   "output_sha256": "e05568befb525b9713123b2ebe04539df2aea79db7e48dc86525a774fd9bf191",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     49,
+     35,
+     202,
+     247
+    ],
+    "height": 213,
+    "width": 154,
+    "foot_row": 247,
+    "head_height_auto": 29,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     49,
+     53,
+     35,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 3,
+   "frame": "special2-03",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌继续覆住胸前红宝玉，手背微微隆起，上身前倾蓄势，双膝弯曲，白须垂在掌前。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 205,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-03.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 864782,
+   "raw_sha256": "da128f1dd327c837fd5eb2b1051433b5345357004f03d36104ba46f4fa43d1fd",
+   "raw_visible_bbox": [
+    38,
+    117,
+    1029,
+    1421
+   ],
+   "raw_char_height": 1305,
+   "raw_char_width": 992,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-03-cell.png",
+   "output_sha256": "1d4d4562d2383d5d84699a9441fe669cce00b7c3318a63c9be56f7277f8c293f",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     45,
+     42,
+     201,
+     247
+    ],
+    "height": 206,
+    "width": 157,
+    "foot_row": 247,
+    "head_height_auto": 18,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     45,
+     54,
+     42,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 4,
+   "frame": "special2-04",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌覆住红宝玉保持蓄势，双肘略向身体前后张开，胸口抬起，屈膝站稳。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 200,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-04.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 843899,
+   "raw_sha256": "6a2f8987925aaebf4368056da9bd858df99b59025c68ac1657bb7d5f527aca24",
+   "raw_visible_bbox": [
+    55,
+    6,
+    1035,
+    1420
+   ],
+   "raw_char_height": 1415,
+   "raw_char_width": 981,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-04-cell.png",
+   "output_sha256": "8d5724177764c43bd17e9445abfaede8756bbef92ad78a83afe3dc4160f0283b",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     48,
+     24,
+     202,
+     247
+    ],
+    "height": 224,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     48,
+     53,
+     24,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 5,
+   "frame": "special2-05",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双手仍覆在红宝玉上，胸口开始上抬，双肩打开，双肘抬起，准备向斜上方展开。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 203,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-05.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 907475,
+   "raw_sha256": "f369e9f3971005dd11100ab31d75a754209b04e8f3d6255fbc2af5572a1713f1",
+   "raw_visible_bbox": [
+    51,
+    9,
+    1033,
+    1420
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 983,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-05-cell.png",
+   "output_sha256": "30f9a27f2704bf063bc9c0259b241ee7520f4c416a6c392b39e75db43ca08c70",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     48,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 18,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     48,
+     53,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 6,
+   "frame": "special2-06",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌离开红宝玉少许，双臂沿身体前后方向向斜上方展开到一半，掌心相对，胸口转向右前方。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 209,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-06.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 895171,
+   "raw_sha256": "435769d8d688327c5b35f46bcc61ddb52b2040a940524f790f55807338fd5168",
+   "raw_visible_bbox": [
+    50,
+    10,
+    1034,
+    1421
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 985,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-06-cell.png",
+   "output_sha256": "18120a496034529851221071b23c7e2688b03e9a7d64b2802f5407fa2951767a",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     47,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 156,
+    "foot_row": 247,
+    "head_height_auto": 17,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     47,
+     53,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 7,
+   "frame": "special2-07",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双臂沿前后方向向斜上方展开，胸口朝右前方，红宝玉表面只有一层紧贴的红光，不外扩、不成束、不飞出；红披风向后垂落。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 194,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-07.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 922574,
+   "raw_sha256": "369b25faa206f2567adbc06ee92e310dbf3d16b16aeb2a6b4978a7ac96b91466",
+   "raw_visible_bbox": [
+    51,
+    10,
+    1033,
+    1421
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 983,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-07-cell.png",
+   "output_sha256": "75dfa9a49e752f443eea2187ecb9f9a8b45d3d8b2af1e4542806861ddd5c9198",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     47,
+     25,
+     201,
+     247
+    ],
+    "height": 223,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 17,
+    "head_target": 44,
+    "colors": 31,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     47,
+     54,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 8,
+   "frame": "special2-08",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双臂向斜上方展开到位，胸口完全朝右前方，红宝玉表面仅一层紧贴的红光，不外扩、不成束。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 180,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-08.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 1019094,
+   "raw_sha256": "94ea226192c4a769ef2373b5db132bba97ab06a2108fea95c3168040b76a32ff",
+   "raw_visible_bbox": [
+    54,
+    10,
+    1034,
+    1421
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 981,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-08-cell.png",
+   "output_sha256": "4172cc07697d893a9318c7d24d3b9006de6ae5ceceb0b279ac9a24f831ec4d9b",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     48,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 17,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     48,
+     53,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 9,
+   "frame": "special2-09",
+   "prompt": "保持参考图的人物身份与像素整帧风格。保持双臂斜上展开与胸口朝前的姿势，肩部略松，红宝玉表面红光紧贴，不外扩、不成束。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 178,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-09.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 1025923,
+   "raw_sha256": "c4bcebdf58173c4356d08090ef12f86e76f70649f8967573b4ed42e9b446d024",
+   "raw_visible_bbox": [
+    26,
+    9,
+    1036,
+    1420
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 1011,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-09-cell.png",
+   "output_sha256": "f2b78cfbd22d5c810cca2ead8516702f5f092c0f1ed7adddeb402851021a78b6",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     43,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 160,
+    "foot_row": 247,
+    "head_height_auto": 17,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     43,
+     53,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 10,
+   "frame": "special2-10",
+   "prompt": "保持参考图的人物身份与像素整帧风格。保持双臂斜上方展开，手臂不要下落，双掌张开，胸口朝右前方；红宝玉表面红光紧贴，不外扩、不成束；红披风不遮脸。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 192,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-10.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 1083639,
+   "raw_sha256": "309dc6edac51acb664a4643715b7f312cc8d537749f627a7b49d34d49b0b3c5b",
+   "raw_visible_bbox": [
+    49,
+    10,
+    1057,
+    1420
+   ],
+   "raw_char_height": 1411,
+   "raw_char_width": 1009,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-10-cell.png",
+   "output_sha256": "22a8ff2098cff3e65223474133c6b012a8b732ae1ca961132e7fbdf0a2ebd300",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     47,
+     25,
+     205,
+     247
+    ],
+    "height": 223,
+    "width": 159,
+    "foot_row": 247,
+    "head_height_auto": 17,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     47,
+     50,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 11,
+   "frame": "special2-11",
+   "prompt": "保持参考图的人物身份与像素整帧风格。保持双臂斜上方展开，肩部略松，双掌张开；红宝玉表面红光仍紧贴，不外扩、不成束；红披风不遮脸。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 184,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-11.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 981793,
+   "raw_sha256": "e8818ae4d9a9e51fc0897aba6547244b517a58d00aa85794dba0a46b1c4b1eb0",
+   "raw_visible_bbox": [
+    53,
+    7,
+    1033,
+    1421
+   ],
+   "raw_char_height": 1415,
+   "raw_char_width": 981,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-11-cell.png",
+   "output_sha256": "ddb789c9c5aec957efbff8f68f8a4240ccd2ae01e8b0da6928ed7ad87858e863",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     48,
+     24,
+     202,
+     247
+    ],
+    "height": 224,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 18,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     48,
+     53,
+     24,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 12,
+   "frame": "special2-12",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌回到胸前，双臂屈肘护住胸口，红披风落在肩后不遮脸。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 194,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-12.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 825048,
+   "raw_sha256": "c4825f403562584563ac347177045a3c244e19db07c927cebd3e5145f816f199",
+   "raw_visible_bbox": [
+    63,
+    10,
+    1036,
+    1421
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 974,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-12-cell.png",
+   "output_sha256": "4cb5d35043f701b279a32ab3c475ef271b02a514847a52fd2bdd9d51df9999cb",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     49,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 154,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     49,
+     53,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 13,
+   "frame": "special2-13",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌收拢到护架位置，双拳半握，身体回正，重心回升。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 192,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-13.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 839717,
+   "raw_sha256": "c0c5dd00927675db58674992f0510be35678f386236a69fb4e769b8cd229aa3e",
+   "raw_visible_bbox": [
+    139,
+    6,
+    802,
+    1417
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 664,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-13-cell.png",
+   "output_sha256": "3c8b34518185716e973792f5911067528bcf76bbf3a380b8ddf2d7c77b426b50",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     65,
+     25,
+     169,
+     247
+    ],
+    "height": 223,
+    "width": 105,
+    "foot_row": 247,
+    "head_height_auto": 43,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     65,
+     86,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 14,
+   "frame": "special2-14",
+   "prompt": "保持参考图的人物身份与像素整帧风格。恢复格斗护架，双拳抬到胸前，双膝微屈，红披风自然垂落。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 194,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-14.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 853731,
+   "raw_sha256": "bf0e0ebd2ae656656f11faed833a508162e29f26d9ae9171f422a62de25999fc",
+   "raw_visible_bbox": [
+    145,
+    9,
+    948,
+    1420
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 804,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-14-cell.png",
+   "output_sha256": "fcca14fa139cdfbee924de7de91d6f946eca28a082fc783fd1fd1f35fe5fbf12",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     63,
+     25,
+     189,
+     247
+    ],
+    "height": 223,
+    "width": 127,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     63,
+     66,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special2",
+   "index": 15,
+   "frame": "special2-15",
+   "prompt": "保持参考图的人物身份与像素整帧风格。回到与待机一致的护架站姿，双拳胸前，白须与红披风自然下垂。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 196,
+   "raw": "art/fighters/ultraman-king/stage1/special2/frames/raw-15.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 790679,
+   "raw_sha256": "19d4f72f50ba01d3b67e76f3dd90cc661e94e520b797e459c763286a4b42304e",
+   "raw_visible_bbox": [
+    162,
+    6,
+    798,
+    1405
+   ],
+   "raw_char_height": 1400,
+   "raw_char_width": 637,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special2-15-cell.png",
+   "output_sha256": "aefd6e4fe843c85fe60ad5c334f7cd2d3dfa6dde3664438a1d3d7714daa32b99",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     73,
+     27,
+     173,
+     247
+    ],
+    "height": 221,
+    "width": 101,
+    "foot_row": 247,
+    "head_height_auto": 42,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     73,
+     82,
+     27,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 0,
+   "frame": "special3-00",
+   "prompt": "保持参考图的人物身份与像素整帧风格。全身下沉，双膝深屈，双臂开始收向胸前，双肘弯曲，红披风垂到靴后。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 199,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-00.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 750365,
+   "raw_sha256": "b6428441c9a286e502b86977a75670af5c84039090e12e6d790126a3c2c85ca3",
+   "raw_visible_bbox": [
+    50,
+    225,
+    848,
+    1378
+   ],
+   "raw_char_height": 1154,
+   "raw_char_width": 799,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-00-cell.png",
+   "output_sha256": "7a0ef009e01b1266bc7071b2778418372f64ee337214003f56934fcd4d359cd0",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     71,
+     66,
+     196,
+     247
+    ],
+    "height": 182,
+    "width": 126,
+    "foot_row": 247,
+    "head_height_auto": 42,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     71,
+     59,
+     66,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 1,
+   "frame": "special3-01",
+   "prompt": "保持参考图的人物身份与像素整帧风格。屈膝下沉，双臂收拢到胸前，双掌半握，肩部内收，上身前倾。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 195,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-01.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 908804,
+   "raw_sha256": "561c2c2004cab73de8435b026fa8f68b110609c013181de45c3b05d0cffa5680",
+   "raw_visible_bbox": [
+    58,
+    209,
+    930,
+    1385
+   ],
+   "raw_char_height": 1177,
+   "raw_char_width": 873,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-01-cell.png",
+   "output_sha256": "24dfcfbe58182d48956eedcf720a4730fc2459aa88154f6fc3c3ab85dadc89b1",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     61,
+     62,
+     198,
+     247
+    ],
+    "height": 186,
+    "width": 138,
+    "foot_row": 247,
+    "head_height_auto": 16,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     61,
+     57,
+     62,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 2,
+   "frame": "special3-02",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双膝深屈、臀部下沉，双臂在胸前交叉，右前臂叠在左前臂上，双掌贴住对侧上臂，双肩内收，不要站直。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 214,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-02.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 871548,
+   "raw_sha256": "b3439e9bd2cd1d4777e3e72dbfecb4ddc2cb2d9bb266c5de0d4accffb208039f",
+   "raw_visible_bbox": [
+    48,
+    186,
+    981,
+    1396
+   ],
+   "raw_char_height": 1211,
+   "raw_char_width": 934,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-02-cell.png",
+   "output_sha256": "f42aae9227dcfd3a35a35964f1a9c475154a6020a4f9a07e03ed91dcd933e143",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     49,
+     57,
+     196,
+     247
+    ],
+    "height": 191,
+    "width": 148,
+    "foot_row": 247,
+    "head_height_auto": 20,
+    "head_target": 44,
+    "colors": 31,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     49,
+     59,
+     57,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 3,
+   "frame": "special3-03",
+   "prompt": "保持参考图的人物身份与像素整帧风格。胸前交叉的双臂收紧，双掌贴住对侧上臂，头略低，重心继续下沉，白须垂落。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 202,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-03.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 860159,
+   "raw_sha256": "fd59ab1e90972481ba29b9b5ee6637be0897b2f721016568ac388b1c6ef1a97c",
+   "raw_visible_bbox": [
+    55,
+    172,
+    1036,
+    1420
+   ],
+   "raw_char_height": 1249,
+   "raw_char_width": 982,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-03-cell.png",
+   "output_sha256": "133945be49a6ac5fee03b1ef7a5559448f7f995075d529b980efddc981768426",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     49,
+     51,
+     203,
+     247
+    ],
+    "height": 197,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 24,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     49,
+     52,
+     51,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 4,
+   "frame": "special3-04",
+   "prompt": "保持参考图的人物身份与像素整帧风格。保持深屈膝与胸前交叉，双肘贴近胸口，上身前倾，红披风落在身后。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 198,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-04.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 799787,
+   "raw_sha256": "c536ae80704def7011927be07045da4c1186800b003cd7b84cf5d1cf65adf5a3",
+   "raw_visible_bbox": [
+    55,
+    191,
+    1032,
+    1421
+   ],
+   "raw_char_height": 1231,
+   "raw_char_width": 978,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-04-cell.png",
+   "output_sha256": "85e2632814586cc4dafdd71472ced00a84109d1aba1831f907e1cfa03c598e8d",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     48,
+     53,
+     202,
+     247
+    ],
+    "height": 195,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 19,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     48,
+     53,
+     53,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 5,
+   "frame": "special3-05",
+   "prompt": "保持参考图的人物身份与像素整帧风格。交叉的双掌开始抬向脸前，双肘上提，身体略微直起，双膝仍屈。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 196,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-05.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 858213,
+   "raw_sha256": "840458ecb955350a9318701e91dad98b8da97ba5f7b279841c0266afeaae3b07",
+   "raw_visible_bbox": [
+    54,
+    8,
+    1030,
+    1421
+   ],
+   "raw_char_height": 1414,
+   "raw_char_width": 977,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-05-cell.png",
+   "output_sha256": "dab6ab2abe4628826631a9c3da80a75eb72fe3e770aa1c34714be9ef09fac949",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     48,
+     25,
+     201,
+     247
+    ],
+    "height": 223,
+    "width": 154,
+    "foot_row": 247,
+    "head_height_auto": 17,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     48,
+     54,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 6,
+   "frame": "special3-06",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌抬到下巴前交叉，前臂挡住部分白须，双肘抬起，肩部放松。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 196,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-06.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 832504,
+   "raw_sha256": "eede9458ca00fbb55a4ea9c24401b849bb0a32c86b4f689ecf1b9a8baf30ef85",
+   "raw_visible_bbox": [
+    55,
+    9,
+    1033,
+    1421
+   ],
+   "raw_char_height": 1413,
+   "raw_char_width": 979,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-06-cell.png",
+   "output_sha256": "8dc84bf78d4f119a0cf620a4fc42b3cac73120d85ce3d940b64d2a7d7c143c12",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     48,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 17,
+    "head_target": 44,
+    "colors": 31,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     48,
+     53,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 7,
+   "frame": "special3-07",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌抬到脸前交叉，掌心相向，双肘抬起，双前臂横在面前，双膝保持弯曲。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 201,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-07.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 847987,
+   "raw_sha256": "17d2fd94421fc2f5616a6197d02898e0e8b7a79ca82a01c9a8b499a46779dc6b",
+   "raw_visible_bbox": [
+    55,
+    9,
+    1036,
+    1421
+   ],
+   "raw_char_height": 1413,
+   "raw_char_width": 982,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-07-cell.png",
+   "output_sha256": "ba8498f299d76afb8ee6a07cc0a0f7d078d307af0d217a6057d7daa2d60dfdb2",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     48,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 22,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     48,
+     53,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 8,
+   "frame": "special3-08",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌从脸前向前推出，双臂前伸，前臂前缘朝右；双掌与两条前臂只有一层紧贴皮肤的蓝光，不外扩、不成束、不离开身体；上身略前倾，双膝保持弯曲，红披风在身后垂落。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 215,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-08.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 887993,
+   "raw_sha256": "8c03c3e383067b1407c9451289ee92867985bba1e9bcf3bec149e278621b54da",
+   "raw_visible_bbox": [
+    53,
+    106,
+    1027,
+    1421
+   ],
+   "raw_char_height": 1316,
+   "raw_char_width": 975,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-08-cell.png",
+   "output_sha256": "be8badcc74afb956c456b4b9f67ed07cf04178c78256ad99ad5f7968ff8a7469",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     47,
+     40,
+     200,
+     247
+    ],
+    "height": 208,
+    "width": 154,
+    "foot_row": 247,
+    "head_height_auto": 49,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     47,
+     55,
+     40,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 9,
+   "frame": "special3-09",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双臂向前推出到位，双前臂平行朝右，前臂前缘朝右；双掌与前臂只有一层紧贴皮肤的蓝光，不外扩、不成束、不离开身体。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 193,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-09.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 885810,
+   "raw_sha256": "b791a52c8aaf57b4c6ed35d8a40e037b42e6daf10abb9ad124158a693752c6dd",
+   "raw_visible_bbox": [
+    54,
+    11,
+    1036,
+    1421
+   ],
+   "raw_char_height": 1411,
+   "raw_char_width": 983,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-09-cell.png",
+   "output_sha256": "259e91960eacb53b8975eebf1f9037d61335b3b812284887c53f22fc491e6e54",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     48,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 41,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     48,
+     53,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 10,
+   "frame": "special3-10",
+   "prompt": "保持参考图的人物身份与像素整帧风格。保持前推姿势，双前臂平行朝右，肩部略松；本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 187,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-10.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 882804,
+   "raw_sha256": "6906cf85fa44a9e5068937c94c6525ae0d666999318c3420f7bec10cee92abdf",
+   "raw_visible_bbox": [
+    54,
+    9,
+    1035,
+    1421
+   ],
+   "raw_char_height": 1413,
+   "raw_char_width": 982,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-10-cell.png",
+   "output_sha256": "2c0629d7e71a53071010a09cbe9573541918836bad4599e92a3e175d9a89913e",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     48,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 155,
+    "foot_row": 247,
+    "head_height_auto": 41,
+    "head_target": 44,
+    "colors": 31,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     48,
+     53,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 11,
+   "frame": "special3-11",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双臂开始回收，双肘弯曲，双掌收向胸前分开，蓝光收敛，红披风回落。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 199,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-11.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 785567,
+   "raw_sha256": "90a52e124141d81fb416078ea1712715ffabc6935cc4b6ab167deab54eff6919",
+   "raw_visible_bbox": [
+    63,
+    10,
+    1035,
+    1421
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 973,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-11-cell.png",
+   "output_sha256": "3560af9804530741232dae6f45547a517e1ad30bd146c54a86b01769b0dd67b8",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     49,
+     25,
+     202,
+     247
+    ],
+    "height": 223,
+    "width": 154,
+    "foot_row": 247,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     49,
+     53,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 12,
+   "frame": "special3-12",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双臂收回胸前，双掌分开护住胸口，重心回升，双肩放松。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 193,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-12.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 876590,
+   "raw_sha256": "c34f1331060d349956624862faede86d1d81afaf43b21e676a5f461cc14ba8f4",
+   "raw_visible_bbox": [
+    81,
+    8,
+    926,
+    1419
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 846,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-12-cell.png",
+   "output_sha256": "bfdf211412e5c7c776cb5f4cb5893897a8b60582d7b59e68093c14af54d2f3f0",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     52,
+     25,
+     185,
+     247
+    ],
+    "height": 223,
+    "width": 134,
+    "foot_row": 247,
+    "head_height_auto": 53,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     52,
+     70,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 13,
+   "frame": "special3-13",
+   "prompt": "保持参考图的人物身份与像素整帧风格。双掌回到护架位置，双拳半握，双膝保持微屈，身体回正。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 193,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-13.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 911387,
+   "raw_sha256": "d356ebc3deff176fd79cf3b7b568b695f9db71f82a2c46835660a140d934fe5a",
+   "raw_visible_bbox": [
+    119,
+    9,
+    908,
+    1420
+   ],
+   "raw_char_height": 1412,
+   "raw_char_width": 790,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-13-cell.png",
+   "output_sha256": "2057c3d81befc9ee210286f76a2dd898cd2353179bc08d0b75f8750ae4bf7028",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     58,
+     25,
+     182,
+     247
+    ],
+    "height": 223,
+    "width": 125,
+    "foot_row": 247,
+    "head_height_auto": 43,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     58,
+     73,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 14,
+   "frame": "special3-14",
+   "prompt": "保持参考图的人物身份与像素整帧风格。恢复格斗护架，双拳抬到胸前，前后脚站稳，红披风自然垂落。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 195,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-14.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 897273,
+   "raw_sha256": "b2203ed7199df48ffe6fec156c6a93eb53f1fbec551a748af75fb175d611385d",
+   "raw_visible_bbox": [
+    159,
+    8,
+    924,
+    1408
+   ],
+   "raw_char_height": 1401,
+   "raw_char_width": 766,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-14-cell.png",
+   "output_sha256": "610e691aa5142bbb8458f6de219147cb4b869a40e11eaa339a83aabd752e275b",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     67,
+     27,
+     187,
+     247
+    ],
+    "height": 221,
+    "width": 121,
+    "foot_row": 247,
+    "head_height_auto": 45,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     67,
+     68,
+     27,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "special3",
+   "index": 15,
+   "frame": "special3-15",
+   "prompt": "保持参考图的人物身份与像素整帧风格。回到与待机一致的护架站姿，双拳胸前，白须与红披风自然下垂。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 196,
+   "raw": "art/fighters/ultraman-king/stage1/special3/frames/raw-15.png",
+   "status": "accepted",
+   "air": false,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 769818,
+   "raw_sha256": "dc138fcf459d0a25d666119b97358116c10ca4875e0ea8c5062f376f5f74e15f",
+   "raw_visible_bbox": [
+    196,
+    10,
+    776,
+    1420
+   ],
+   "raw_char_height": 1411,
+   "raw_char_width": 581,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     1,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/special3-15-cell.png",
+   "output_sha256": "56adc803a93de77e84ec97266fd53e9a8fc92aa6444a74fb6cf53d201cf83f5e",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     77,
+     25,
+     168,
+     247
+    ],
+    "height": 223,
+    "width": 92,
+    "foot_row": 247,
+    "head_height_auto": 43,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     77,
+     87,
+     25,
+     8
+    ]
+   },
+   "pose_note": "地面帧，脚底行 247"
+  },
+  {
+   "clip": "air_special",
+   "index": 0,
+   "frame": "air_special-00",
+   "prompt": "保持参考图的人物身份与像素整帧风格。腾空收腿，双膝上提，双掌收在胸前，双肘内收，红披风在身后展开，身体略微前倾。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 205,
+   "raw": "art/fighters/ultraman-king/stage1/air_special/frames/raw-00.png",
+   "status": "accepted",
+   "air": true,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 848835,
+   "raw_sha256": "b84675c4e41c877cfe96265c1e073dac9b861c3ddda87d0e8fae002d5e660638",
+   "raw_visible_bbox": [
+    30,
+    61,
+    903,
+    1165
+   ],
+   "raw_char_height": 1105,
+   "raw_char_width": 874,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/air_special-00-cell.png",
+   "output_sha256": "c7fa5c297fc9994f1f14c841219bac423dbc38b0ab7e07fbba352359daafc814",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     55,
+     60,
+     192,
+     234
+    ],
+    "height": 175,
+    "width": 138,
+    "foot_row": 234,
+    "head_height_auto": 14,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     55,
+     63,
+     60,
+     21
+    ]
+   },
+   "pose_note": "腾空，脚底行 234（地面行 247 上方 13 px）"
+  },
+  {
+   "clip": "air_special",
+   "index": 1,
+   "frame": "air_special-01",
+   "prompt": "保持参考图的人物身份与像素整帧风格。空中保持收腿，双掌合于胸前蓄势，掌心相对，双肩内收，红披风在身后展开。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 202,
+   "raw": "art/fighters/ultraman-king/stage1/air_special/frames/raw-01.png",
+   "status": "accepted",
+   "air": true,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 946387,
+   "raw_sha256": "80e7297b812fe4b3a02c8e32c2ff6ea63fcaa9652ceb33d82d75261c91bbd702",
+   "raw_visible_bbox": [
+    9,
+    11,
+    878,
+    1284
+   ],
+   "raw_char_height": 1274,
+   "raw_char_width": 870,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/air_special-01-cell.png",
+   "output_sha256": "42b4d65a74cac4deb8b9857e51148e5f0e7cd0816e0a5b4e527d2e9a19c7cb57",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     41,
+     34,
+     177,
+     234
+    ],
+    "height": 201,
+    "width": 137,
+    "foot_row": 234,
+    "head_height_auto": 48,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     41,
+     78,
+     34,
+     21
+    ]
+   },
+   "pose_note": "腾空，脚底行 234（地面行 247 上方 13 px）"
+  },
+  {
+   "clip": "air_special",
+   "index": 2,
+   "frame": "air_special-02",
+   "prompt": "保持参考图的人物身份与像素整帧风格。空中保持收腿，双掌收胸，双肩打开，双肘抬起，准备向前伸出。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 196,
+   "raw": "art/fighters/ultraman-king/stage1/air_special/frames/raw-02.png",
+   "status": "accepted",
+   "air": true,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 840836,
+   "raw_sha256": "a824675c1078e50fe035d9cb2a0f79ab3f94bc94895887fad4e3ce52fb593792",
+   "raw_visible_bbox": [
+    42,
+    9,
+    857,
+    1307
+   ],
+   "raw_char_height": 1299,
+   "raw_char_width": 816,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     1,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/air_special-02-cell.png",
+   "output_sha256": "b0621d0d388363fe20138897bd5f3bce863ef931a88b336461fe8105a9087d46",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     88,
+     30,
+     216,
+     234
+    ],
+    "height": 205,
+    "width": 129,
+    "foot_row": 234,
+    "head_height_auto": 45,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     88,
+     39,
+     30,
+     21
+    ]
+   },
+   "pose_note": "腾空，脚底行 234（地面行 247 上方 13 px）"
+  },
+  {
+   "clip": "air_special",
+   "index": 3,
+   "frame": "air_special-03",
+   "prompt": "保持参考图的人物身份与像素整帧风格。空中双臂向身体前方水平伸出，双掌前缘朝右；掌心仅一层紧贴手掌的红光，不外扩、不成束、不离开手掌；双腿收起，红披风向后展开。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 199,
+   "raw": "art/fighters/ultraman-king/stage1/air_special/frames/raw-03.png",
+   "status": "accepted",
+   "air": true,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 845544,
+   "raw_sha256": "929af026d7201f1819149b9d5fb42a4a5fb53c6ce9c09e2940c3f91a20aea1fd",
+   "raw_visible_bbox": [
+    12,
+    11,
+    956,
+    1233
+   ],
+   "raw_char_height": 1223,
+   "raw_char_width": 945,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/air_special-03-cell.png",
+   "output_sha256": "771414a96fe260be0944af2d78984967dccf4ba9f9044f47ddc3d2cf04bd19ce",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     50,
+     42,
+     198,
+     234
+    ],
+    "height": 193,
+    "width": 149,
+    "foot_row": 234,
+    "head_height_auto": 42,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     50,
+     57,
+     42,
+     21
+    ]
+   },
+   "pose_note": "腾空，脚底行 234（地面行 247 上方 13 px）"
+  },
+  {
+   "clip": "air_special",
+   "index": 4,
+   "frame": "air_special-04",
+   "prompt": "保持参考图的人物身份与像素整帧风格。空中双臂向前水平伸直到位，双掌前缘朝右；掌心仅一层紧贴手掌的红光，不外扩、不成束；双腿收起，红披风后展。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 190,
+   "raw": "art/fighters/ultraman-king/stage1/air_special/frames/raw-04.png",
+   "status": "accepted",
+   "air": true,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 850829,
+   "raw_sha256": "e9e99041992b31380ddad86c92eac9ce0439c03ca4cdd22581ce0e42c1b275b9",
+   "raw_visible_bbox": [
+    16,
+    11,
+    1029,
+    1254
+   ],
+   "raw_char_height": 1244,
+   "raw_char_width": 1014,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/air_special-04-cell.png",
+   "output_sha256": "6569e1d297ab400e944df334fddaf35fddb41eaa5d77e82651e858fee5dc9637",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     57,
+     38,
+     216,
+     234
+    ],
+    "height": 197,
+    "width": 160,
+    "foot_row": 234,
+    "head_height_auto": 54,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     57,
+     39,
+     38,
+     21
+    ]
+   },
+   "pose_note": "腾空，脚底行 234（地面行 247 上方 13 px）"
+  },
+  {
+   "clip": "air_special",
+   "index": 5,
+   "frame": "air_special-05",
+   "prompt": "保持参考图的人物身份与像素整帧风格。保持空中前伸姿势，双掌略向前送，双掌前缘朝右；掌心红光紧贴，不外扩、不成束。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 176,
+   "raw": "art/fighters/ultraman-king/stage1/air_special/frames/raw-05.png",
+   "status": "accepted",
+   "air": true,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 890825,
+   "raw_sha256": "b7f0e8fab3bdda3c38d57cba16c6ccbe8a6a850a8d5fbe5d12c677bb4c82202b",
+   "raw_visible_bbox": [
+    11,
+    7,
+    980,
+    1420
+   ],
+   "raw_char_height": 1414,
+   "raw_char_width": 970,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/air_special-05-cell.png",
+   "output_sha256": "eef11106e400e4418392a40296dc8b4c63fb53570c9ceef67fc4f26457cc547e",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     88,
+     12,
+     240,
+     234
+    ],
+    "height": 223,
+    "width": 153,
+    "foot_row": 234,
+    "head_height_auto": 17,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     88,
+     15,
+     12,
+     21
+    ],
+    "foot_band": 0.2,
+    "note": "空中组统一用 --foot-band 0.20 对位；初次 0.08 对位时 05/06 右手触右缘，已重落并留边"
+   },
+   "pose_note": "腾空，脚底行 234（地面行 247 上方 13 px）"
+  },
+  {
+   "clip": "air_special",
+   "index": 6,
+   "frame": "air_special-06",
+   "prompt": "保持参考图的人物身份与像素整帧风格。保持空中前伸姿势，双肩略松，双肘略弯，双掌收在身体右前方，掌心红光收敛但仍紧贴手掌，不外扩、不成束；双腿收起，红披风在身后展开。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 202,
+   "raw": "art/fighters/ultraman-king/stage1/air_special/frames/raw-06.png",
+   "status": "accepted",
+   "air": true,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 962430,
+   "raw_sha256": "24f4e59cadd5ac27020bd3b9dd7b1b19f6407efa40278c1b3926d0e3d12f9dbd",
+   "raw_visible_bbox": [
+    15,
+    42,
+    1049,
+    1258
+   ],
+   "raw_char_height": 1217,
+   "raw_char_width": 1035,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/air_special-06-cell.png",
+   "output_sha256": "2862ccda6559411b2ebf319482fa4ff0232d3829720cb894fe4639406caf1d9d",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     65,
+     43,
+     228,
+     234
+    ],
+    "height": 192,
+    "width": 164,
+    "foot_row": 234,
+    "head_height_auto": 15,
+    "head_target": 44,
+    "colors": 32,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     65,
+     27,
+     43,
+     21
+    ],
+    "foot_band": 0.2,
+    "note": "空中组统一用 --foot-band 0.20 对位；初次 0.08 对位时 05/06 右手触右缘，已重落并留边"
+   },
+   "pose_note": "腾空，脚底行 234（地面行 247 上方 13 px）"
+  },
+  {
+   "clip": "air_special",
+   "index": 7,
+   "frame": "air_special-07",
+   "prompt": "保持参考图的人物身份与像素整帧风格。空中收臂回胸，双掌护在胸前，双腿仍收起准备下落，红披风在身后展开。本帧无光效，掌心不发光，不出现光束、气浪、粒子或贴体光焰。保留冠球在前额上方、冠刃向后掠的银冠，单只红眼、白色长须、金肩甲、紫臂紫腿、红披风和银靴；固定右侧视，人物完整全身不裁切，透明背景，无地面、文字、边框、特效。四肢粗细必须与参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。",
+   "prompt_chars": 200,
+   "raw": "art/fighters/ultraman-king/stage1/air_special/frames/raw-07.png",
+   "status": "accepted",
+   "air": true,
+   "raw_size": [
+    1094,
+    1438
+   ],
+   "raw_bytes": 901869,
+   "raw_sha256": "b7b0cc150008e54df4c83dab7601f39c46e95f42a1f0c072972a898724d4bc85",
+   "raw_visible_bbox": [
+    19,
+    12,
+    855,
+    1304
+   ],
+   "raw_char_height": 1293,
+   "raw_char_width": 837,
+   "raw_alpha": {
+    "unique": 256,
+    "min": 0,
+    "max": 255,
+    "corners": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "raw_components_alpha128": 1,
+   "output": "art/fighters/ultraman-king/stage1/cells/air_special-07-cell.png",
+   "output_sha256": "6f90d5ae017c5388e6c6f048b9f4d1b6e7f2192f14f7fe6798f573d92e3a8bda",
+   "landing": {
+    "scale": 0.158044,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "bbox": [
+     66,
+     31,
+     197,
+     234
+    ],
+    "height": 204,
+    "width": 132,
+    "foot_row": 234,
+    "head_height_auto": 44,
+    "head_target": 44,
+    "colors": 31,
+    "components": 1,
+    "alpha": [
+     0,
+     255
+    ],
+    "margins": [
+     66,
+     58,
+     31,
+     21
+    ]
+   },
+   "pose_note": "腾空，脚底行 234（地面行 247 上方 13 px）"
+  }
+ ],
+ "rejected_attempts": [
+  {
+   "frame": "special-00",
+   "sha256": "87e334ac181879bbed10be3f6270c8096a1d31d8eb1a5629dbe5c428e59db2af",
+   "bytes": 544890,
+   "size": [
+    1254,
+    1254
+   ],
+   "reason": "方形画布，人物仅 1035 px 高；按固定比例落格约 164 px，低于 223 目标，淘汰删除"
+  },
+  {
+   "frame": "special-00",
+   "sha256": "ad0f938af0d3ff64d95ba9e3d0c9ed5b5eb931d5bbe0b61a7c50f18d7fb6bb67",
+   "bytes": 526367,
+   "size": [
+    1254,
+    1254
+   ],
+   "reason": "改用 2:3 仍返回方形，人物 1048 px，落格不可用，淘汰删除"
+  },
+  {
+   "frame": "special-02",
+   "sha256": "9cb5722952aca1a381d8c4626b1b0685a87f51244d3ebdf1fc43aa67f8d0452f",
+   "reason": "蓄势段站直 1412 px，与 00/01 的下沉不连续，删除重出"
+  },
+  {
+   "frame": "special-03",
+   "sha256": "314bcfc47a555079c85f47122e188329e348bf6ccb885c42a56ca1ace569372f",
+   "reason": "蓄势段站直 1411 px，破坏 0–3 下沉，删除"
+  },
+  {
+   "frame": "special-03",
+   "sha256": "f3bd9cd5eb8aeb6d0bdee3825dc6665d61c9fc8704fd1b1a4ce843b6e11a026a",
+   "reason": "再次站直 1411 px，第二次修法仍不过，换“保持深蹲、不要站直”后通过"
+  },
+  {
+   "frame": "special-06",
+   "sha256": "2304fe5157e4782059816f1c185a01cbc411c60f48d1981ee8fb8eb96d8149ef",
+   "reason": "双臂屈肘回举，破坏 04→05→07 水平展开线，删除重出"
+  },
+  {
+   "frame": "special-08",
+   "sha256": "e5cf8434808241ebf1bd3061181c2f7f308495a969c5cf392fe6aa8e4e8d9a7f",
+   "reason": "双臂同时前伸，非前后两侧展开；删除重出"
+  },
+  {
+   "frame": "special-09",
+   "sha256": "ec3277245892a9107bdb3f29f210ce5657a050bb3c2296e15eae8e6168c7d3b6",
+   "reason": "双臂同时前伸，非前后两侧展开；删除重出"
+  },
+  {
+   "frame": "special-10",
+   "sha256": "4cbaf1237f90b215e0aec68851e07abc6c4e39b7e21bc380d0ae66d82aa4ac5c",
+   "reason": "双臂同时前伸；删除重出"
+  },
+  {
+   "frame": "special-10",
+   "sha256": "221949f797fec9ce75c470e5a7d411ddd1cd8bfcc1822e018cff576b9a26bbab",
+   "reason": "方向修正但双臂提前下落，非保持；删除重出"
+  },
+  {
+   "frame": "special-10",
+   "sha256": "fdccee52d88a01f7a938acffc0909c1da1c60994e6bf7bb92ba8f0357f0b0aab",
+   "reason": "双臂仍下落；改用“前后连成一条水平直线、肘不弯”后通过"
+  },
+  {
+   "frame": "special2-10",
+   "sha256": "afbab66461a9f123b8d334a1a1d1b3e1300836651465eed89e81f89c33f6f935",
+   "reason": "提前收臂，未保持斜上展开；删除重出"
+  },
+  {
+   "frame": "special2-11",
+   "sha256": "570ff99b4a453e899029f1dc50af70843d14bfbea580b15cf2bfbe663511c29e",
+   "reason": "提前收臂到拳；删除重出"
+  },
+  {
+   "frame": "special3-02",
+   "sha256": "770fff1340d770487b5b1cff2e8fdbdac59fbf3c12c0b8bea0950b7717026daa",
+   "reason": "交叉臂帧站直 1412 px，破坏 0–4 蹲势；删除重出"
+  },
+  {
+   "frame": "special3-10",
+   "sha256": "1cb95f64d69db3d2f32d016ed428d3ba3251c9c930e15853f2018843c3e08e75",
+   "reason": "前臂整段蓝光过强，超出“掌心紧贴光点”的允许范围；改为无光效重出"
+  },
+  {
+   "frame": "air_special-06",
+   "sha256": "1b6bb1bd1ba75f93263f06b2bcf8a6f64d6c75ce81280ead7b4f44b9e48e165c",
+   "reason": "落格后右掌触右缘（bbox 到 255），裁切硬门；删除重出并整组改 0.20 对位"
+  }
+ ],
+ "review": {
+  "authority": "root_delegated_by_user",
+  "user_reviewed": false,
+  "method": "逐帧看 2× 全身联系表与 4× 头部联系表；核银冠球位置/冠刃方向、红眼、白须、金肩甲、紫臂、红披风、四肢粗细、相邻帧接续与腾空",
+  "contact_sheets": [
+   "art/fighters/ultraman-king/stage1/diagnostics/special-landed-2x.png",
+   "art/fighters/ultraman-king/stage1/diagnostics/special-landed-head4x.png",
+   "art/fighters/ultraman-king/stage1/diagnostics/special2-landed-2x.png",
+   "art/fighters/ultraman-king/stage1/diagnostics/special2-landed-head4x.png",
+   "art/fighters/ultraman-king/stage1/diagnostics/special3-landed-2x.png",
+   "art/fighters/ultraman-king/stage1/diagnostics/special3-landed-head4x.png",
+   "art/fighters/ultraman-king/stage1/diagnostics/air_special-landed-2x.png",
+   "art/fighters/ultraman-king/stage1/diagnostics/air_special-landed-head4x.png"
+  ],
+  "diagnostics": [
+   "art/fighters/ultraman-king/stage1/diagnostics/special-arm-spread-20261110.png",
+   "art/fighters/ultraman-king/stage1/diagnostics/air_special-05-x4-check.png",
+   "art/fighters/ultraman-king/stage1/diagnostics/air_special-06-x4-check.png"
+  ],
+  "auto_head_note": "stage_cells 的 head_height 为颈部启发式；举臂、披风、低头会让值偏小或偏大（15–54），按 AGENTS 只报数；联系表目视头身比例一致，未缩头凑门。",
+  "standing_note": "非直立/蹲姿帧的站高低于 223 属姿势压低；直立帧 04–15、05–15 等站高在 223±1% 内。"
+ }
+}

@@ -1,0 +1,2633 @@
+{
+ "id": "special",
+ "display_name": "光子冰刀",
+ "startup": 24,
+ "active": 32,
+ "recovery": 16,
+ "damage": 180,
+ "chip_damage": 18,
+ "hitstun": 28,
+ "blockstun": 20,
+ "pushback": 4,
+ "stun": 27,
+ "stamina_cost": 45,
+ "energy_cost": 1000,
+ "kind": "strike",
+ "level": "overhead",
+ "unblockable": false,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "super_level": 1,
+ "air_allowed": false,
+ "feedback": {
+  "spark": "gaia_fx_edge_hit",
+  "block_spark": "impact_guard",
+  "hitstop": 10,
+  "blockstop": 5,
+  "shake": 4,
+  "flash": 2,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "block_color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "cancel_rule": "完整收势后恢复行动，无招式取消",
+ "audio": {
+  "hit": "hit_heavy",
+  "block": "guard"
+ },
+ "data_source": "光子冰刀（Photon Edge）：圆谷官方页载明头部聚能成光刃、以鞭击攻击；日文维基载明由头部发射的超高热刃、V1/V2 可用。本作做成贴头延伸的光刃打击，不脱手；粉红/红色取自次级资料，未逐帧核影片。180 伤害、削气 18 沿用同体型一级档。",
+ "production_note": "特效: 蓄力 attach gaia_fx_edge_start(帧0-23 头部聚能渐进) + 命中段挂 gaia_fx_edge_blade 贴头延伸光刃 + 命中 gaia_fx_edge_hit; 近战 hitboxes 保持; 对齐原剧 Photon Edge 头部聚能超高热刃鞭击。全部引自制家族。",
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     108,
+     51
+    ],
+    [
+     -36,
+     49,
+     64,
+     51
+    ],
+    [
+     -27,
+     98,
+     53,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "beam_start"
+    }
+   ],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 0,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     108,
+     51
+    ],
+    [
+     -36,
+     49,
+     64,
+     51
+    ],
+    [
+     -27,
+     98,
+     53,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 0,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     108,
+     51
+    ],
+    [
+     -36,
+     49,
+     64,
+     51
+    ],
+    [
+     -27,
+     98,
+     53,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 0,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     108,
+     51
+    ],
+    [
+     -36,
+     49,
+     64,
+     51
+    ],
+    [
+     -27,
+     98,
+     53,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 0,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     108,
+     51
+    ],
+    [
+     -36,
+     49,
+     64,
+     51
+    ],
+    [
+     -27,
+     98,
+     53,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 0,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     105,
+     44
+    ],
+    [
+     -39,
+     42,
+     71,
+     44
+    ],
+    [
+     -34,
+     84,
+     64,
+     44
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 1,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     105,
+     44
+    ],
+    [
+     -39,
+     42,
+     71,
+     44
+    ],
+    [
+     -34,
+     84,
+     64,
+     44
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 1,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     105,
+     44
+    ],
+    [
+     -39,
+     42,
+     71,
+     44
+    ],
+    [
+     -34,
+     84,
+     64,
+     44
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 1,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     105,
+     44
+    ],
+    [
+     -39,
+     42,
+     71,
+     44
+    ],
+    [
+     -34,
+     84,
+     64,
+     44
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 1,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     105,
+     44
+    ],
+    [
+     -39,
+     42,
+     71,
+     44
+    ],
+    [
+     -34,
+     84,
+     64,
+     44
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 1,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     112,
+     38
+    ],
+    [
+     -44,
+     36,
+     78,
+     38
+    ],
+    [
+     -33,
+     72,
+     59,
+     39
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 2,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     112,
+     38
+    ],
+    [
+     -44,
+     36,
+     78,
+     38
+    ],
+    [
+     -33,
+     72,
+     59,
+     39
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 2,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     112,
+     38
+    ],
+    [
+     -44,
+     36,
+     78,
+     38
+    ],
+    [
+     -33,
+     72,
+     59,
+     39
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 2,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     112,
+     38
+    ],
+    [
+     -44,
+     36,
+     78,
+     38
+    ],
+    [
+     -33,
+     72,
+     59,
+     39
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 2,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     112,
+     38
+    ],
+    [
+     -44,
+     36,
+     78,
+     38
+    ],
+    [
+     -33,
+     72,
+     59,
+     39
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 2,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     111,
+     46
+    ],
+    [
+     -41,
+     44,
+     72,
+     46
+    ],
+    [
+     -30,
+     88,
+     44,
+     47
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 3,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     111,
+     46
+    ],
+    [
+     -41,
+     44,
+     72,
+     46
+    ],
+    [
+     -30,
+     88,
+     44,
+     47
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 3,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     111,
+     46
+    ],
+    [
+     -41,
+     44,
+     72,
+     46
+    ],
+    [
+     -30,
+     88,
+     44,
+     47
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 3,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     111,
+     46
+    ],
+    [
+     -41,
+     44,
+     72,
+     46
+    ],
+    [
+     -30,
+     88,
+     44,
+     47
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 3,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     111,
+     46
+    ],
+    [
+     -41,
+     44,
+     72,
+     46
+    ],
+    [
+     -30,
+     88,
+     44,
+     47
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 3,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     105,
+     45
+    ],
+    [
+     -39,
+     43,
+     75,
+     45
+    ],
+    [
+     -28,
+     86,
+     42,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 4,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     105,
+     45
+    ],
+    [
+     -39,
+     43,
+     75,
+     45
+    ],
+    [
+     -28,
+     86,
+     42,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 4,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     105,
+     45
+    ],
+    [
+     -39,
+     43,
+     75,
+     45
+    ],
+    [
+     -28,
+     86,
+     42,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 4,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     105,
+     45
+    ],
+    [
+     -39,
+     43,
+     75,
+     45
+    ],
+    [
+     -28,
+     86,
+     42,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "gaia_fx_edge_charge_start",
+     "anchor": [
+      52,
+      78
+     ],
+     "sprite": 4,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     28,
+     81,
+     22,
+     64
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -60,
+     0,
+     105,
+     45
+    ],
+    [
+     -39,
+     43,
+     75,
+     45
+    ],
+    [
+     -28,
+     86,
+     42,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": []
+  },
+  {
+   "sprite": 5,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     28,
+     81,
+     22,
+     64
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     109,
+     50
+    ],
+    [
+     -41,
+     48,
+     73,
+     50
+    ],
+    [
+     -16,
+     96,
+     67,
+     50
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": []
+  },
+  {
+   "sprite": 5,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     28,
+     81,
+     22,
+     64
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     109,
+     50
+    ],
+    [
+     -41,
+     48,
+     73,
+     50
+    ],
+    [
+     -16,
+     96,
+     67,
+     50
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": []
+  },
+  {
+   "sprite": 5,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     28,
+     81,
+     22,
+     64
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     109,
+     50
+    ],
+    [
+     -41,
+     48,
+     73,
+     50
+    ],
+    [
+     -16,
+     96,
+     67,
+     50
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": []
+  },
+  {
+   "sprite": 5,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     109,
+     50
+    ],
+    [
+     -41,
+     48,
+     73,
+     50
+    ],
+    [
+     -16,
+     96,
+     67,
+     50
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 5,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     109,
+     50
+    ],
+    [
+     -41,
+     48,
+     73,
+     50
+    ],
+    [
+     -16,
+     96,
+     67,
+     50
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 6,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     112,
+     41
+    ],
+    [
+     -40,
+     39,
+     75,
+     41
+    ],
+    [
+     -28,
+     78,
+     96,
+     42
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 6,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     112,
+     41
+    ],
+    [
+     -40,
+     39,
+     75,
+     41
+    ],
+    [
+     -28,
+     78,
+     96,
+     42
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 6,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     112,
+     41
+    ],
+    [
+     -40,
+     39,
+     75,
+     41
+    ],
+    [
+     -28,
+     78,
+     96,
+     42
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 6,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     112,
+     41
+    ],
+    [
+     -40,
+     39,
+     75,
+     41
+    ],
+    [
+     -28,
+     78,
+     96,
+     42
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 6,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     112,
+     41
+    ],
+    [
+     -40,
+     39,
+     75,
+     41
+    ],
+    [
+     -28,
+     78,
+     96,
+     42
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 7,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     107,
+     40
+    ],
+    [
+     -37,
+     38,
+     104,
+     40
+    ],
+    [
+     -30,
+     76,
+     92,
+     41
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 7,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     107,
+     40
+    ],
+    [
+     -37,
+     38,
+     104,
+     40
+    ],
+    [
+     -30,
+     76,
+     92,
+     41
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 7,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     107,
+     40
+    ],
+    [
+     -37,
+     38,
+     104,
+     40
+    ],
+    [
+     -30,
+     76,
+     92,
+     41
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 7,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     107,
+     40
+    ],
+    [
+     -37,
+     38,
+     104,
+     40
+    ],
+    [
+     -30,
+     76,
+     92,
+     41
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 7,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     107,
+     40
+    ],
+    [
+     -37,
+     38,
+     104,
+     40
+    ],
+    [
+     -30,
+     76,
+     92,
+     41
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 8,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -57,
+     0,
+     100,
+     37
+    ],
+    [
+     -31,
+     35,
+     121,
+     37
+    ],
+    [
+     -36,
+     70,
+     91,
+     37
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 8,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -57,
+     0,
+     100,
+     37
+    ],
+    [
+     -31,
+     35,
+     121,
+     37
+    ],
+    [
+     -36,
+     70,
+     91,
+     37
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 8,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -57,
+     0,
+     100,
+     37
+    ],
+    [
+     -31,
+     35,
+     121,
+     37
+    ],
+    [
+     -36,
+     70,
+     91,
+     37
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 8,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -57,
+     0,
+     100,
+     37
+    ],
+    [
+     -31,
+     35,
+     121,
+     37
+    ],
+    [
+     -36,
+     70,
+     91,
+     37
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 9,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     100,
+     45
+    ],
+    [
+     -36,
+     43,
+     81,
+     46
+    ],
+    [
+     -25,
+     87,
+     79,
+     46
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 9,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     100,
+     45
+    ],
+    [
+     -36,
+     43,
+     81,
+     46
+    ],
+    [
+     -25,
+     87,
+     79,
+     46
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 9,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     100,
+     45
+    ],
+    [
+     -36,
+     43,
+     81,
+     46
+    ],
+    [
+     -25,
+     87,
+     79,
+     46
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 9,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     100,
+     45
+    ],
+    [
+     -36,
+     43,
+     81,
+     46
+    ],
+    [
+     -25,
+     87,
+     79,
+     46
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 10,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     108,
+     42
+    ],
+    [
+     -40,
+     40,
+     77,
+     42
+    ],
+    [
+     -29,
+     80,
+     66,
+     42
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 10,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     108,
+     42
+    ],
+    [
+     -40,
+     40,
+     77,
+     42
+    ],
+    [
+     -29,
+     80,
+     66,
+     42
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 10,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     108,
+     42
+    ],
+    [
+     -40,
+     40,
+     77,
+     42
+    ],
+    [
+     -29,
+     80,
+     66,
+     42
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 10,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -61,
+     0,
+     108,
+     42
+    ],
+    [
+     -40,
+     40,
+     77,
+     42
+    ],
+    [
+     -29,
+     80,
+     66,
+     42
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 11,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     111,
+     44
+    ],
+    [
+     -44,
+     42,
+     75,
+     45
+    ],
+    [
+     -35,
+     85,
+     45,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 11,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     111,
+     44
+    ],
+    [
+     -44,
+     42,
+     75,
+     45
+    ],
+    [
+     -35,
+     85,
+     45,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 11,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     111,
+     44
+    ],
+    [
+     -44,
+     42,
+     75,
+     45
+    ],
+    [
+     -35,
+     85,
+     45,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 11,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     0,
+     111,
+     44
+    ],
+    [
+     -44,
+     42,
+     75,
+     45
+    ],
+    [
+     -35,
+     85,
+     45,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 12,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -62,
+     0,
+     107,
+     51
+    ],
+    [
+     -37,
+     49,
+     60,
+     52
+    ],
+    [
+     -34,
+     99,
+     52,
+     52
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 12,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -62,
+     0,
+     107,
+     51
+    ],
+    [
+     -37,
+     49,
+     60,
+     52
+    ],
+    [
+     -34,
+     99,
+     52,
+     52
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 12,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -62,
+     0,
+     107,
+     51
+    ],
+    [
+     -37,
+     49,
+     60,
+     52
+    ],
+    [
+     -34,
+     99,
+     52,
+     52
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 12,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -62,
+     0,
+     107,
+     51
+    ],
+    [
+     -37,
+     49,
+     60,
+     52
+    ],
+    [
+     -34,
+     99,
+     52,
+     52
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 13,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -32,
+     0,
+     62,
+     53
+    ],
+    [
+     -30,
+     51,
+     56,
+     53
+    ],
+    [
+     -28,
+     102,
+     56,
+     53
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 13,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -32,
+     0,
+     62,
+     53
+    ],
+    [
+     -30,
+     51,
+     56,
+     53
+    ],
+    [
+     -28,
+     102,
+     56,
+     53
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 13,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -32,
+     0,
+     62,
+     53
+    ],
+    [
+     -30,
+     51,
+     56,
+     53
+    ],
+    [
+     -28,
+     102,
+     56,
+     53
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 13,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -32,
+     0,
+     62,
+     53
+    ],
+    [
+     -30,
+     51,
+     56,
+     53
+    ],
+    [
+     -28,
+     102,
+     56,
+     53
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 14,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -45,
+     0,
+     87,
+     48
+    ],
+    [
+     -30,
+     46,
+     60,
+     49
+    ],
+    [
+     -28,
+     93,
+     59,
+     49
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 14,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -45,
+     0,
+     87,
+     48
+    ],
+    [
+     -30,
+     46,
+     60,
+     49
+    ],
+    [
+     -28,
+     93,
+     59,
+     49
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 14,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -45,
+     0,
+     87,
+     48
+    ],
+    [
+     -30,
+     46,
+     60,
+     49
+    ],
+    [
+     -28,
+     93,
+     59,
+     49
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 14,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -45,
+     0,
+     87,
+     48
+    ],
+    [
+     -30,
+     46,
+     60,
+     49
+    ],
+    [
+     -28,
+     93,
+     59,
+     49
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 15,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     103,
+     51
+    ],
+    [
+     -36,
+     49,
+     65,
+     51
+    ],
+    [
+     -34,
+     98,
+     67,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 15,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     103,
+     51
+    ],
+    [
+     -36,
+     49,
+     65,
+     51
+    ],
+    [
+     -34,
+     98,
+     67,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 15,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     103,
+     51
+    ],
+    [
+     -36,
+     49,
+     65,
+     51
+    ],
+    [
+     -34,
+     98,
+     67,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  },
+  {
+   "sprite": 15,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     103,
+     51
+    ],
+    [
+     -36,
+     49,
+     65,
+     51
+    ],
+    [
+     -34,
+     98,
+     67,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "attempt": "pixel-02",
+ "date": "2026-11-10",
+ "route": "2-new-pixel-composition",
+ "status": "rejected",
+ "reason": "Head shell 24x30: width passes <=25, height 30 not in 24-27. All other hard gates pass. Route 2 fixed width and stance but the model still elongated the helmet vertically; per brake stop, no local shrink, no threshold change, no resampling, no same-source regeneration.",
+ "generation_id": "image-65174-748",
+ "raw": {
+  "path": "art/fighters/astra/stage1/idle/frames/pixel-raw-02.png",
+  "sha256": "79e358ecb1391fddcb2f855a9d45d26a19d5a62302fd01a2b554eb0abb5295a5",
+  "size": [
+   1024,
+   1536
+  ],
+  "mode": "RGBA",
+  "alpha_min": 0,
+  "alpha_max": 254,
+  "alpha_levels": 255,
+  "solid_bbox": [
+   112,
+   238,
+   942,
+   1473
+  ],
+  "standing": 1236,
+  "foot_outer_span": 817,
+  "stance": 0.661,
+  "sole_bottoms": [
+   1473,
+   1472
+  ],
+  "components": 1
+ },
+ "guide": {
+  "path": "art/fighters/astra/stage1/idle/references/idle-guide-grid-1024x1536.png",
+  "sha256": "8acd42605fdaff0d2cb4ff479aeae5fb769c84e97b5b105ad7048137066572e6",
+  "deleted": true,
+  "method": "stance-04 uniform BOX downscale to standing 154, 8x nearest, 8 px grid, orange baseline at row 183"
+ },
+ "cell": {
+  "size": [
+   192,
+   192
+  ],
+  "bbox": [
+   44,
+   30,
+   147,
+   183
+  ],
+  "standing": 154,
+  "width": 104,
+  "foot_row": 183,
+  "foot_bottoms": [
+   183,
+   183
+  ],
+  "foot_outer_span": 104,
+  "stance": 0.6753,
+  "colors": 32,
+  "components": 1,
+  "alpha": [
+   0,
+   255
+  ],
+  "head_shell_bbox": [
+   86,
+   31,
+   24,
+   30
+  ],
+  "head_max_row_width": 22,
+  "head_height": 30,
+  "head_width": 24,
+  "head_outline_bbox": [
+   85,
+   30,
+   110,
+   61
+  ],
+  "head_silhouette_max_width": 27,
+  "recognition_pixels": {
+   "green": 2,
+   "yellow": 19,
+   "blue": 4
+  },
+  "head_outline_height": 32
+ },
+ "gates": {
+  "standing_154": true,
+  "foot_183": true,
+  "anchor_96_184": true,
+  "stance_0.65_0.80": true,
+  "soles_183_183": true,
+  "colors_le_32": true,
+  "alpha_binary": true,
+  "components_1": true,
+  "recognition_colors": true,
+  "head_width_le_25": true,
+  "head_height_24_27": false
+ },
+ "diagnostic_image": "art/fighters/astra/stage1/diagnostic/pixel-02-head-gate-2026-11-10.png",
+ "artifacts_deleted": [
+  "art/fighters/astra/stage1/idle/frames/pixel-raw-02.png",
+  "art/fighters/astra/stage1/idle/references/idle-guide-grid-1024x1536.png"
+ ],
+ "diagnostic_image_sha256": "b1583389a1aaa88bb934f00ea09b64f539930cfd053bfee6542cfb9789970fed"
+}

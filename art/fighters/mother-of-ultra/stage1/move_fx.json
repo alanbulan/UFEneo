@@ -1,0 +1,580 @@
+{
+ "schema": 1,
+ "fighter": "mother-of-ultra",
+ "language": "zh-CN",
+ "note": "招式特效与逐帧节奏草案，只描述设计，不表示动作帧已生成或已安装。active_frames 与 shot.frame 均为 0 基索引，必须落在该招模板帧数内。恢复、清眩晕与复活字段尚无运行时支持，只作设计目标。",
+ "root": [
+  96,
+  184
+ ],
+ "cells": {
+  "cell": 192,
+  "baseline": 184
+ },
+ "moves": {
+  "special": {
+   "display_name": "母亲光线（治疗）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 0,
+   "super_level": 1,
+   "knockdown": false,
+   "feedback_color": [
+    0.55,
+    0.85,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_rings",
+    "color": [
+     0.55,
+     0.85,
+     1.0,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 8,
+    "speed": 0,
+    "box": [
+     -24,
+     -24,
+     48,
+     48
+    ],
+    "no_hit": true
+   },
+   "source_note": "母亲光线：日文维基与 Fandom 载明由左腕母亲之蓝取能、右臂发射、用于治疗；光色无文字来源，本作取蓝白为游戏取色。回复 120、清眩晕在发射帧由 core 的 self_heal 结算（游戏编排）；special_rings 为自身光环表现。",
+   "energy_cost": 1000,
+   "chip_damage": 0,
+   "hand_y": [
+    55,
+    135
+   ],
+   "self_heal": {
+    "frame": 4,
+    "amount": 120,
+    "cleanse": true
+   }
+  },
+  "special2": {
+   "display_name": "母亲破坏光线",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 300,
+   "super_level": 2,
+   "knockdown": true,
+   "feedback_color": [
+    1.0,
+    0.55,
+    0.42,
+    1.0
+   ],
+   "active_frames": [
+    7,
+    8,
+    9,
+    10
+   ],
+   "shot": {
+    "frame": 7,
+    "effect": "beam_loop",
+    "color": [
+     1.0,
+     0.55,
+     0.42,
+     1.0
+    ],
+    "beam": true,
+    "length": 520,
+    "thickness": 24,
+    "life": 10,
+    "speed": 0
+   },
+   "source_note": "母亲破坏光线：日文维基载明为母亲光线的破坏型变体，由右臂发射，威力与泰罗的斯特利姆光线同级；光色无文字来源，本作取红金为游戏取色。300 伤害、削气 30、击倒沿用同体型已审二级档，不称原剧逐帧。",
+   "energy_cost": 2000,
+   "chip_damage": 30,
+   "hand_y": [
+    80,
+    145
+   ]
+  },
+  "special3": {
+   "display_name": "母亲淋浴（再生光雨）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 0,
+   "super_level": 3,
+   "knockdown": false,
+   "feedback_color": [
+    0.6,
+    1.0,
+    0.8,
+    1.0
+   ],
+   "active_frames": [
+    8,
+    9,
+    10,
+    11
+   ],
+   "shot": {
+    "frame": 8,
+    "effect": "special_spiral",
+    "color": [
+     0.6,
+     1.0,
+     0.8,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 16,
+    "speed": 0,
+    "box": [
+     -70,
+     -70,
+     140,
+     140
+    ],
+    "no_hit": true
+   },
+   "source_note": "母亲淋浴：日文维基载明以光雨形式降下再生能量、可使死者复活。本作落成全场再生光雨（发射帧即时回复 200、清眩晕），属游戏改编；原设 600 tick 再生窗口未实现，不写成生效。光色无文字来源，取青绿白为游戏取色。special_spiral 为自身光环表现。",
+   "energy_cost": 3000,
+   "chip_damage": 0,
+   "hand_y": [
+    100,
+    170
+   ],
+   "self_heal": {
+    "frame": 8,
+    "amount": 200,
+    "cleanse": true
+   },
+   "cinematic": {
+    "portrait": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "beam": [
+     4,
+     5,
+     6,
+     7
+    ]
+   }
+  },
+  "air_special": {
+   "display_name": "空中母亲破坏光线（游戏改编）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 60,
+   "super_level": 1,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.62,
+    0.45,
+    1.0
+   ],
+   "active_frames": [
+    3,
+    4,
+    5
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "beam_loop",
+    "color": [
+     1.0,
+     0.62,
+     0.45,
+     1.0
+    ],
+    "beam": true,
+    "length": 420,
+    "thickness": 20,
+    "life": 8,
+    "speed": 0,
+    "vy": -4
+   },
+   "source_note": "空中版母亲破坏光线为游戏改编：以已核实的右臂破坏光线为基础，原剧无空中发射依据；60 伤害、削气 6、1 格能量沿用同体型空中必杀档，不冒称原剧。",
+   "energy_cost": 1000,
+   "chip_damage": 6,
+   "hand_y": [
+    40,
+    120
+   ]
+  },
+  "motion_214": {
+   "display_name": "奥特耳光（游戏原创）",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 95,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.85,
+    0.75,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5
+   ],
+   "hit_y": [
+    80,
+    140
+   ],
+   "source_note": "奥特耳光：日文维基把ウルトラスラップ列为游戏原创、本篇未使用；本作采用其游戏技能名与耳光动作，属游戏改编，不称原剧招式。95 伤害沿用同体型指令技档。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    70,
+    140
+   ]
+  },
+  "motion_22": {
+   "display_name": "母亲守护（游戏编排）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 0,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    0.6,
+    0.9,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_barrier",
+    "color": [
+     0.6,
+     0.9,
+     1.0,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 12,
+    "speed": 0,
+    "box": [
+     0,
+     -65,
+     88,
+     130
+    ],
+    "wall": true
+   },
+   "source_note": "母亲守护：以母亲淋浴的再生光为基础，圆形守护场为游戏编排；原剧没有核实到奥特之母专用屏障名，因此不称原剧屏障。special_barrier/wall 沿用已审屏障写法，拦截逻辑未在本轮验证。",
+   "energy_cost": 300,
+   "chip_damage": 0,
+   "hand_y": [
+    40,
+    130
+   ]
+  },
+  "ranged_forward": {
+   "display_name": "银十字光线（攻击化改编）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 95,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    0.8,
+    0.9,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5,
+    6
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_arrow",
+    "color": [
+     0.8,
+     0.9,
+     1.0,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 60,
+    "speed": 11,
+    "box": [
+     -12,
+     -10,
+     24,
+     20
+    ]
+   },
+   "source_note": "银十字光线：日文维基把銀十字光線列为设定技、本篇未使用（瞬间治愈儿童伤势）；本作把它攻击化为短程光箭，属游戏改编，光色银蓝为游戏取色。95 伤害、削气 10 沿用同体型专属远程档。",
+   "energy_cost": 0,
+   "chip_damage": 10,
+   "hand_y": [
+    55,
+    135
+   ]
+  },
+  "pulse": {
+   "display_name": "掌推光弹（游戏编排）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    0.7,
+    0.9,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    3
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     0.7,
+     0.9,
+     1.0,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 80,
+    "speed": 9,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "掌推光弹：以奥特之母的手部放能为游戏远程，属游戏编排，不称原剧专名；蓝白光为游戏取色。65 伤害沿用同体型通用光弹档。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    55,
+    135
+   ]
+  },
+  "low_pulse": {
+   "display_name": "低姿掌推光弹（游戏编排）",
+   "kind": "projectile",
+   "level": "low",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    0.7,
+    0.9,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    3
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     0.7,
+     0.9,
+     1.0,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 80,
+    "speed": 9,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "低姿掌推光弹：蹲姿低位的游戏改编，不称原剧低姿专名；蓝白光为游戏取色。65 伤害沿用同体型通用光弹档。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    25,
+    95
+   ]
+  },
+  "air_pulse": {
+   "display_name": "空中斜下掌推光弹（游戏编排）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    0.7,
+    0.9,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    3
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     0.7,
+     0.9,
+     1.0,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 90,
+    "speed": 9,
+    "vy": -7,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "空中斜下掌推光弹：空中方向改编，原剧无该空中发射镜头，不冒称原剧；蓝白光为游戏取色。65 伤害沿用同体型通用光弹档。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    25,
+    95
+   ]
+  },
+  "burst": {
+   "display_name": "爆气脱离",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 30,
+   "super_level": 0,
+   "knockdown": false,
+   "unblockable": true,
+   "feedback_color": [
+    0.7,
+    0.9,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    1,
+    2,
+    3
+   ],
+   "burst_box": [
+    -90,
+    12,
+    180,
+    128
+   ],
+   "source_note": "对称爆气圈，冲击为运行时独立效果；攻击框按模板对称形状保留，超出人物 Alpha 属已登记例外。消耗 2 格能量，30 伤害、不可格挡沿用同体型爆气档。",
+   "energy_cost": 2000,
+   "chip_damage": 0,
+   "hand_y": [
+    40,
+    120
+   ]
+  },
+  "motion_236": {
+   "display_name": "双掌连推（游戏编排）",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 95,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    0.85,
+    0.95,
+    1.0,
+    1.0
+   ],
+   "active_frames": [
+    3,
+    4,
+    5
+   ],
+   "hit_y": [
+    70,
+    135
+   ],
+   "source_note": "双掌连推：236□ 近身连击为游戏编排，不称原剧招式；双掌先后推出后收步，移动端只给一次中段命中。95 伤害沿用同体型指令技档。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    55,
+    135
+   ]
+  },
+  "motion_623": {
+   "display_name": "升掌迎击（游戏编排）",
+   "kind": "strike",
+   "level": "overhead",
+   "damage": 90,
+   "super_level": 0,
+   "knockdown": true,
+   "feedback_color": [
+    1.0,
+    0.85,
+    0.7,
+    1.0
+   ],
+   "active_frames": [
+    3,
+    4,
+    5
+   ],
+   "hit_y": [
+    80,
+    160
+   ],
+   "source_note": "升掌迎击：623△ 对空上挑为游戏编排，不称原剧招式；命中击倒沿用模板对空节奏，击倒由 move_fx 的 knockdown 覆盖。90 伤害沿用泰罗对空上挑档。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    80,
+    150
+   ]
+  }
+ },
+ "state_effects": {
+  "default": {
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ }
+}

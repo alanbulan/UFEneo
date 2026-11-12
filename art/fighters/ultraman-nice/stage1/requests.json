@@ -1,0 +1,48 @@
+{
+  "fighter": "ultraman-nice",
+  "stage": "stage1",
+  "created": "2026-11-09",
+  "policy": "单帧生成：每次只引用已批准图鉴定稿裁到 bbox 后的 4× 最近邻身份锚一张，提示词只描述该帧动作并显式要求四肢粗细与参考一致；不批量拼图、不加火柴人姿势条。",
+  "identity_anchor": {
+    "path": "art/fighters/ultraman-nice/model/identity-anchor-x4.png",
+    "source": "assets/fighters/ultraman-nice/catalogue/model-native.png",
+    "source_sha256": "f122437c1ca71ce1fbd470e7f1894eacd694c476e513a02c5cd3f8de49a9f87f",
+    "note": "严格 4× 最近邻（零插值）、二值 Alpha、32 色，已审核通过"
+  },
+  "postprocess": {
+    "tool": "tools/art/stage_cells.py",
+    "scale_source": "art/fighters/ultraman-nice/stage1/idle/frames/raw-00.png",
+    "target_standing": 150,
+    "cell": "192×192，anchor x=96，脚底贴 183",
+    "rule": "全套共用一个源像素比例，不按姿势外框归一身高",
+    "status": "待用户目视核对造型与比例"
+  },
+  "attempts": [
+    {
+      "id": "idle-00",
+      "action": "idle",
+      "frame": 0,
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "references": ["identity-anchor-x4.png"],
+      "prompt": "参考图是同一位纳伊斯奥特曼的已定稿像素形象，是唯一身份与画风来源。请绘制他的待机站姿：格斗护架，双脚错步站稳。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。保持同样的头部造型、红银配色、胸灯和像素块大小。固定右侧视，完整人物不裁切，透明背景，角色以外全部透明，无地面、文字、边框、特效。",
+      "result": "art/fighters/ultraman-nice/stage1/idle/frames/raw-00.png",
+      "sha256": "5b0a2bc41df90d45b3c4bdfaeb39dc48b92b1b3ab1c1d4ec7d05b8a7e6f6c6ba",
+      "status": "candidate",
+      "cell": "reports/ultraman-nice/stage1/idle-00-cell.png",
+      "cell_sha256": "f848581b04c49ceab32e8d75b8232efa0b244ac3d50cf7b5973899646ac4fdc8"
+    }
+  ],
+  "cells": {
+    "scale": 0.084175,
+    "target_head": 34,
+    "height": 150,
+    "head_height": 32,
+    "colors": 29,
+    "components": 1,
+    "alpha": [0, 255],
+    "flags": []
+  }
+}

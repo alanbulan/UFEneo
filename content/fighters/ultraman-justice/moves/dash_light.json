@@ -1,0 +1,668 @@
+{
+ "id": "dash_light",
+ "display_name": "冲刺直拳",
+ "startup": 4,
+ "active": 4,
+ "recovery": 12,
+ "damage": 65,
+ "hitstun": 20,
+ "blockstun": 12,
+ "pushback": 8,
+ "stun": 65,
+ "stamina_cost": 30,
+ "energy_cost": 0,
+ "kind": "strike",
+ "level": "mid",
+ "unblockable": false,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "feedback": {
+  "spark": "impact_light",
+  "block_spark": "impact_guard",
+  "hitstop": 4,
+  "blockstop": 3,
+  "shake": 0,
+  "flash": 2,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "cancel_rule": "命中后按取消窗口接续",
+ "audio": {
+  "hit": "hit_light",
+  "block": "guard"
+ },
+ "data_source": "规则沿用已审同体型人形模板与泰罗同类招式；帧数取自 stage1 交付，攻击点与受击框按赛罗整帧像素逐帧量取。",
+ "production_note": "内容数据；美术已交付未安装，未启动 Godot、未提交。",
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     110,
+     44
+    ],
+    [
+     -20,
+     42,
+     74,
+     45
+    ],
+    [
+     3,
+     85,
+     48,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "light"
+    }
+   ]
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     110,
+     44
+    ],
+    [
+     -20,
+     42,
+     74,
+     45
+    ],
+    [
+     3,
+     85,
+     48,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 4,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     108,
+     44
+    ],
+    [
+     -24,
+     42,
+     70,
+     45
+    ],
+    [
+     -21,
+     85,
+     74,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 4,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -56,
+     0,
+     108,
+     44
+    ],
+    [
+     -24,
+     42,
+     70,
+     45
+    ],
+    [
+     -21,
+     85,
+     74,
+     45
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 4,
+   "dy": 0,
+   "hitboxes": [
+    [
+     55,
+     66,
+     23,
+     24
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -55,
+     0,
+     109,
+     44
+    ],
+    [
+     -20,
+     42,
+     103,
+     44
+    ],
+    [
+     -2,
+     84,
+     87,
+     44
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 4,
+   "dy": 0,
+   "hitboxes": [
+    [
+     55,
+     66,
+     23,
+     24
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -55,
+     0,
+     109,
+     44
+    ],
+    [
+     -20,
+     42,
+     103,
+     44
+    ],
+    [
+     -2,
+     84,
+     87,
+     44
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 4,
+   "dy": 0,
+   "hitboxes": [
+    [
+     55,
+     66,
+     23,
+     24
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -55,
+     0,
+     109,
+     44
+    ],
+    [
+     -20,
+     42,
+     103,
+     44
+    ],
+    [
+     -2,
+     84,
+     87,
+     44
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 4,
+   "dy": 0,
+   "hitboxes": [
+    [
+     55,
+     66,
+     23,
+     24
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -55,
+     0,
+     109,
+     44
+    ],
+    [
+     -20,
+     42,
+     103,
+     44
+    ],
+    [
+     -2,
+     84,
+     87,
+     44
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -37,
+     0,
+     75,
+     52
+    ],
+    [
+     -20,
+     50,
+     55,
+     52
+    ],
+    [
+     -14,
+     100,
+     46,
+     53
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -37,
+     0,
+     75,
+     52
+    ],
+    [
+     -20,
+     50,
+     55,
+     52
+    ],
+    [
+     -14,
+     100,
+     46,
+     53
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -37,
+     0,
+     75,
+     52
+    ],
+    [
+     -20,
+     50,
+     55,
+     52
+    ],
+    [
+     -14,
+     100,
+     46,
+     53
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -37,
+     0,
+     75,
+     52
+    ],
+    [
+     -20,
+     50,
+     55,
+     52
+    ],
+    [
+     -14,
+     100,
+     46,
+     53
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -36,
+     0,
+     73,
+     49
+    ],
+    [
+     -24,
+     47,
+     54,
+     50
+    ],
+    [
+     -21,
+     95,
+     47,
+     50
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -36,
+     0,
+     73,
+     49
+    ],
+    [
+     -24,
+     47,
+     54,
+     50
+    ],
+    [
+     -21,
+     95,
+     47,
+     50
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -36,
+     0,
+     73,
+     49
+    ],
+    [
+     -24,
+     47,
+     54,
+     50
+    ],
+    [
+     -21,
+     95,
+     47,
+     50
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -36,
+     0,
+     73,
+     49
+    ],
+    [
+     -24,
+     47,
+     54,
+     50
+    ],
+    [
+     -21,
+     95,
+     47,
+     50
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -36,
+     0,
+     73,
+     49
+    ],
+    [
+     -24,
+     47,
+     54,
+     50
+    ],
+    [
+     -21,
+     95,
+     47,
+     50
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -36,
+     0,
+     73,
+     49
+    ],
+    [
+     -24,
+     47,
+     54,
+     50
+    ],
+    [
+     -21,
+     95,
+     47,
+     50
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -36,
+     0,
+     73,
+     49
+    ],
+    [
+     -24,
+     47,
+     54,
+     50
+    ],
+    [
+     -21,
+     95,
+     47,
+     50
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -36,
+     0,
+     73,
+     49
+    ],
+    [
+     -24,
+     47,
+     54,
+     50
+    ],
+    [
+     -21,
+     95,
+     47,
+     50
+    ]
+   ],
+   "cancel": [
+    "light2"
+   ],
+   "events": []
+  }
+ ]
+}

@@ -21,7 +21,7 @@
 | `art/fighters/<id>/stage<N>/` | 当前未完成动作、请求、候选和有效交接收据 |
 | `art/shared/sources/` | 无法归属单角的当前源材料 |
 | `art/source-index.json` | 现用源 SHA、字节数和旧路径到唯一实体的索引；不是备份 |
-| `tools/`（仅 `verify.py`、`godot_lock.py`、`README.md`） | 验证入口与 Godot 锁 |
+| `tools/`（可执行入口只有 `verify.py`、`godot_lock.py`；另有 `README.md` 与 requirements 文本） | 验证入口与 Godot 锁 |
 | `tools/check/` | 资源与像素质检门 |
 | `tools/art/` | 生图、后处理、像素化、名册生产 |
 | `tools/audio/` | Kits 客户端、语音转写、混音 |

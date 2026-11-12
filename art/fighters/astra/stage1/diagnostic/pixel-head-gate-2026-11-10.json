@@ -1,0 +1,61 @@
+{
+ "fighter": "astra",
+ "stage": "stage1",
+ "date": "2026-11-10",
+ "issue": "pixel-00/01 head shell over gate; freeform photo-to-pixel conversion inflates head and narrows stance",
+ "photo": {
+  "path": "art/fighters/astra/stage1/idle/frames/stance-raw-04.png",
+  "sha256": "1e33417c9c8a74ba32e3fbf5158435cc0a76696ca43db684423e7f5d5374c2a7",
+  "standing": 1431,
+  "helmet_silver_bbox": [
+   410,
+   39,
+   228,
+   260
+  ],
+  "head_width_at_154": 24.54,
+  "head_chin_height_at_154": 25.94,
+  "stance": 0.6688
+ },
+ "pixel_01": {
+  "path": "art/fighters/astra/stage1/idle/frames/pixel-raw-01.png",
+  "sha256": "8fd0d88a7f4e5db17b3ddc76d344a31b652dc058d978899927e1f9790741457a",
+  "raw_standing": 1370,
+  "helmet_shell_at_154": [
+   25.74,
+   31.93
+  ],
+  "cell_helmet": [
+   26,
+   32
+  ],
+  "cell_stance": 0.6234,
+  "head_height_bias_pct": 23.1,
+  "stance_bias_pct": -6.8
+ },
+ "route": "2-new-pixel-composition",
+ "route_reason": "A new photo source cannot absorb the observed +23% head-height bias: to land <=27 px after the same bias photo head height would need <=22 px, below the 24.5-25.5 photo gate. The failure is in the freeform photo-to-pixel conversion, not the photo source.",
+ "guide": {
+  "path": "art/fighters/astra/stage1/idle/references/idle-guide-grid-1024x1536.png",
+  "sha256": "8acd42605fdaff0d2cb4ff479aeae5fb769c84e97b5b105ad7048137066572e6",
+  "size": [
+   1024,
+   1536
+  ],
+  "cell_native": 192,
+  "upscale": 8,
+  "grid_px": 8,
+  "source_only": "stance-raw-04.png",
+  "native_helmet_silver_bbox": [
+   88,
+   30,
+   24,
+   28
+  ],
+  "native_standing": 154,
+  "native_foot_row": 183,
+  "native_anchor_x": 96,
+  "native_stance": 0.6688
+ },
+ "diagnostic_image": "art/fighters/astra/stage1/diagnostic/pixel-head-gate-2026-11-10.png"
+}

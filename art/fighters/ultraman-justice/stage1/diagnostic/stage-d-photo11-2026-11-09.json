@@ -1,0 +1,110 @@
+{
+ "fighter": "ultraman-justice",
+ "form": "标准型（Standard Mode）",
+ "stage": "stage1",
+ "date": "2026-11-09",
+ "review_authority": "subagent_candidate_review",
+ "scope": "阶段D：返工刹车后的最后一次换思路，只此一张照片；参考只留 official-standard-01 + Gaia已装机站姿，提示词写死头高/头壳宽比例与固定右侧视；任何一门不过即拒收、记录、停止",
+ "reference_policy": "只用两张参考，不增不减：official-standard-01 定全身体量/头身比/肩宽/四肢粗细；Gaia 已装机帧只借右侧视站姿与画风。不加 official-02，不加任何头部裁图。未引用照片05–10、像素03或其它候选；Gaia共享参考只读未改。",
+ "reference_images": [
+  {
+   "path": "art/fighters/ultraman-justice/sources/tsuburaya-justice-2019/official-standard-01.png",
+   "sha256": "012ebe3db95dee8f3baf32d2d520b125b45a069c0261ed17dc42792ee5759814",
+   "role": "全身体量/头身比/肩宽/四肢粗细主参照"
+  },
+  {
+   "path": "art/fighters/ultraman-gaia/stage1/idle/references/stance-ref-installed-x4.png",
+   "sha256": "ff5b113987797be31bc4e039e561883fa75c2b973c4a09a5ec1fa6eb6101be29",
+   "role": "唯一一张已装机成品，只借右侧视站姿与画风；共享参考只读未改"
+  }
+ ],
+ "photo_attempt": {
+  "id": "stance-11",
+  "tool": "magpie-image.generate_image",
+  "model": "codex/gpt-image-2",
+  "quality": "high",
+  "background": "transparent",
+  "size": "1024x1536",
+  "n": 1,
+  "generation_id": "image-65174-102",
+  "prompt": "参考一锁定杰斯提斯标准型全身造型，肩宽与四肢粗细必须与其一致，不得增肌或放大手脚；参考二只借右侧视站姿与画风。只画固定右侧视格斗待机：头部严格右侧视，上胸侧向，蓝色菱形计时器只能露出侧缘，不能看到完整正面；双肩前后重叠，不能同时看到两个肩甲正面。头高含头冠约为站高的18.6%，银色头壳宽约为站高的13%，头冠从额顶到尖端的长度照参考一，不得拉高。两脚前后分开，脚外缘间距约站高0.70，双膝下沉，双拳抬到胸前护架，双鞋底踩同一水平线。脸朝右，完整全身不裁切，透明背景，无地面文字边框特效。",
+  "prompt_characters": 245,
+  "requested_path": "art/fighters/ultraman-justice/stage1/idle/frames/stance-raw-11.png",
+  "actual_response_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-justice/stage1/idle/frames/stance-raw-11.png",
+  "actual_size": [1024, 1536],
+  "actual_mode": "RGBA",
+  "alpha_range": [0, 254],
+  "alpha_levels": 255,
+  "sha256": "217b24a7b1063bc076be8a814cbf1bc9eac14a2931c4d07b61394b2d872522fa",
+  "usage": null,
+  "usage_note": "MCP未返回usage或费用，不推测。",
+  "status": "rejected",
+  "measurements": {
+   "bbox_alpha128_inclusive": [76, 137, 947, 1417],
+   "standing_height": 1281,
+   "width": 872,
+   "foot_band_fraction": 0.12,
+   "foot_outer_x": [76, 947],
+   "foot_outer_span_pixels": 872,
+   "foot_outer_span_over_height": 0.68071818891491,
+   "required_stance_range": [0.65, 0.8],
+   "stance_pass": true,
+   "alpha_threshold_stance": "Alpha≥64/128/200 三档站距0.6802/0.6807/0.6799，均高于0.65。",
+   "sole_y_back_front": [1417, 1415],
+   "sole_delta_pixels": 2,
+   "sole_delta_native_154": 0.24043715846994534,
+   "sole_gate_native_154_max": 1.0,
+   "sole_pass": true,
+   "head_shell_bbox_inclusive": [401, 137, 581, 403],
+   "head_shell_width": 181,
+   "head_shell_height": 267,
+   "head_shell_width_over_standing": 0.14129586260733802,
+   "head_shell_height_over_standing": 0.20843091334894613,
+   "head_width_native_154": 21.76,
+   "head_height_native_154": 32.1,
+   "head_width_target_max": 0.1543,
+   "head_width_target_pass": true,
+   "head_width_vs_catalogue": -0.01093,
+   "head_width_vs_official01": 0.0886,
+   "head_height_target_max": 0.2,
+   "head_height_target_pass": false,
+   "head_height_vs_official01": 0.11819,
+   "head_height_vs_catalogue": 0.06998,
+   "head_measure_sensitivity": "Alpha≥64为181×269（头高/站高0.2100）；Alpha≥128与≥200为181×267（0.2084）。三档均高于0.20门；差距不是软边或阈值造成。顶部y=137起为实心头冠尖（Alpha≥128，8像素，Alpha242），底部y=1417为后脚鞋跟实心像素，站高未被辉光撑大。",
+   "components_alpha128": 1,
+   "largest_component_pixels": 279276,
+   "orientation_check": "固定右侧视成立：头部严格右侧视；上胸侧向，蓝色菱形计时器只露侧缘，未看到完整正面；双肩前后重叠，未同时看到两个肩甲正面。"
+  },
+  "crest_face_check": {
+   "result": "头冠基座、前缘、尖端、后缘转折、面罩口部板、下颌与侧面进气口同 official-01 及 official-03 逐项对应，安装位置一致，未发现错形、断肢或裁切；金色侧饰与蓝额灯位置对应。头冠未单独拉高，头壳整体相对站高仍约大7–12%。",
+   "status": "structure_recognizable_head_uniformly_slightly_large"
+  },
+  "rejection_reasons": [
+   "头高/站高267/1281=0.2084，高于0.20门；折154站高约32.1原生px，门30.8px；对 official-01 的0.1864高约11.8%，对图鉴0.1948高约7.0%。Alpha≥64/128/200 三档0.2100/0.2084/0.2084，均不过。",
+   "其余门通过：站距0.6807在0.65–0.80内；双鞋底高差2源px≈0.24原生px≤1；头壳宽/站高0.1413≤0.1543；固定右侧视成立（计时器只露侧缘、双肩前后重叠）。",
+   "按根指令任何一门不过即拒收；本轮只此一张，不再生成、不出像素、不缩头、不改阈值。"
+  ]
+ },
+ "pixel_candidate": null,
+ "new_pixel_candidate_generated": false,
+ "pixel_conversion_blocked_by": "photo11_head_height_gate_not_passed",
+ "diagnostics": {
+  "full_body_sheet": {
+   "path": "art/fighters/ultraman-justice/stage1/diagnostic/stage-d-photo11-2026-11-09.png",
+   "sha256": "7600a835455f044e0a6a48c856cd63f913cfca907cc24a396ae8dbe691f6374f",
+   "note": "official-01、official-03、照片11、Gaia已装机帧、图鉴同站高并排"
+  },
+  "head_sheet": {
+   "path": "art/fighters/ultraman-justice/stage1/diagnostic/stage-d-head11-2026-11-09.png",
+   "sha256": "4fba324f5d4a6aac230c337e5708df47664a987c36be436aabdc4a3495c68079",
+   "note": "official-01头、official-03侧头、照片11头同高并排"
+  }
+ },
+ "old_records_preserved": {
+  "candidate03_sha256": "bd694f0c988e0b4211e0ef03c3922aee34de5f1a0edd4e63bd92936888da2dd1",
+  "candidate02_24_vs_22": "+9.09% preserved",
+  "photo05_06_07_08_09_10": "rejected records preserved; not used as references"
+ },
+ "not_verified": ["待机像素新候选", "待机循环", "动作集", "安装", "主游戏双向720/1080", "实速", "声音"],
+ "next": "照片11仅头高/站高0.2084不过0.20门，其余门通过；按根指令拒收并停止，未出像素、未签锚。等根换路线或留人工。未获新指令不再生成，不局部缩头、不改ROI/阈值、不落格凑门、不铺动作。"
+}

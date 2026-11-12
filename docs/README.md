@@ -27,7 +27,7 @@
 | 文件 | 内容 |
 | --- | --- |
 | [../art/STYLE.md](../art/STYLE.md) | 像素风格、尺寸校验、远侧肢体、待机与走路 |
-| `content/fighters/<id>/MOVES.md` | 单角色招式与原剧依据（19 份） |
+| `content/fighters/<id>/MOVES.md` | 单角色招式与原剧依据 |
 | `content/fighters/<id>/SOUNDS.md` | 单角色声音台账 |
 | `content/fighters/<id>/CANVAS.md` | 单角色画布与根点 |
 | `art/fighters/<id>/model/CANVAS.md` | 定稿画布方案，被 `art/source-index.json` 记录 SHA |

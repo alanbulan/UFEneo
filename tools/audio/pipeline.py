@@ -116,6 +116,11 @@ def source_reference(spec):
     kind = spec.get("asset_kind")
     if kind not in {"voice", "music", "effect"}:
         raise ValueError("音频用途必须是 voice、effect 或 music")
+    source_kind = spec.get("source_kind")
+    if source_kind is not None and source_kind not in {"original", "episode", "derivative"}:
+        raise ValueError("音频来源类型只能是 original、episode 或 derivative")
+    if source_kind == "episode" and not isinstance(spec.get("reprint"), bool):
+        raise ValueError("原剧或官方音源转载必须注明 reprint 布尔值")
     if kind == "effect" and (not spec.get("effect_id") or not spec.get("visual_reference")):
         raise ValueError("技能音效必须注明技能与实际画面证据；不能冒充角色语音")
     if kind == "voice":

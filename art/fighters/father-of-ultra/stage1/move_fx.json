@@ -1,0 +1,519 @@
+{
+ "schema": 1,
+ "fighter": "father-of-ultra",
+ "language": "zh-CN",
+ "note": "招式特效与逐帧节奏配置草案；未生成图片、未安装。由 tools/art/derive_fighter_data.py 读取。active_frames 从 0 开始且必须小于该招帧数；hand_y 只是脚底根点向上的世界高度窗口，发射点须在整帧落格后按实际 Alpha 实测。双角只在 special2 作为原剧能量器官发光；其余招式不从角、须发光。",
+ "root": [
+  96,
+  184
+ ],
+ "cells": {
+  "cell": 192,
+  "baseline": 184,
+  "standing_height": 173,
+  "identity_anchor": "art/fighters/father-of-ultra/stage1/cells/idle-candidate-01-cell.png"
+ },
+ "moves": {
+  "special": {
+   "display_name": "父亲射击",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 180,
+   "super_level": 1,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.86,
+    0.72,
+    1.0
+   ],
+   "active_frames": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "shot": {
+    "frame": 7,
+    "effect": "beam_loop",
+    "color": [
+     1.0,
+     0.86,
+     0.72,
+     1.0
+    ],
+    "beam": true,
+    "length": 420,
+    "thickness": 22,
+    "life": 8,
+    "speed": 0
+   },
+   "source_note": "父亲射击（Father Shot）：双臂 L 字，右臂垂直，将体内光能转为火花能量后从右臂发射；艾斯第38话击破纳玛哈盖，梦比优斯第37话击碎伽休莱因回旋镖，圆谷官方页列为特殊技。原剧光色无可靠记载，本作取暖白主束为游戏定色，不冒充原剧色值；帧序、伤害为游戏编排。",
+   "energy_cost": 1000,
+   "chip_damage": 18,
+   "hand_y": [
+    55,
+    140
+   ]
+  },
+  "special2": {
+   "display_name": "奥特之角·力量光束",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 300,
+   "super_level": 2,
+   "knockdown": true,
+   "feedback_color": [
+    1.0,
+    0.82,
+    0.35,
+    1.0
+   ],
+   "active_frames": [
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "shot": {
+    "frame": 8,
+    "effect": "beam_loop",
+    "color": [
+     1.0,
+     0.82,
+     0.35,
+     1.0
+    ],
+    "beam": true,
+    "length": 480,
+    "thickness": 26,
+    "life": 10,
+    "speed": 0
+   },
+   "source_note": "奥特之角（Ultra Horns）是奥特一族一次操纵大量能量的器官，力量光束（Power Beam）自双角发射；泰罗继承角的能量控制。原剧光色无可靠记载，本作取金色为游戏定色。本招是全套动作中唯一以双角为特效发射部位的招式，且有来源；其余招式不从角、须发光。帧序、伤害为游戏编排。",
+   "energy_cost": 2000,
+   "chip_damage": 30,
+   "hand_y": [
+    120,
+    175
+   ]
+  },
+  "special3": {
+   "display_name": "能量充填",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 120,
+   "super_level": 3,
+   "knockdown": true,
+   "unblockable": true,
+   "feedback_color": [
+    1.0,
+    0.88,
+    0.45,
+    1.0
+   ],
+   "active_frames": [
+    7,
+    8,
+    9,
+    10
+   ],
+   "burst_box": [
+    -105,
+    0,
+    210,
+    175
+   ],
+   "source_note": "能量充填（Ultra Charge/Energy Beam）：从彩色计时器或右手释放能源，为奥特战士补充能量；艾斯第38话右手红色能量光线治愈艾斯。本作改编为自身蓄能后向周身释放金色能源、震开近身对手，并计划回复自身150体力；原剧不是攻击技，回复与判定为游戏改编，回复字段需运行时另接。",
+   "energy_cost": 3000,
+   "chip_damage": 0,
+   "hand_y": [
+    65,
+    150
+   ],
+   "cinematic": {
+    "portrait": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "beam": [
+     4,
+     5,
+     6,
+     7
+    ]
+   }
+  },
+  "air_special": {
+   "display_name": "空中父亲射击（游戏改编）",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 60,
+   "super_level": 1,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.86,
+    0.72,
+    1.0
+   ],
+   "active_frames": [
+    2,
+    3,
+    4
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "beam_loop",
+    "color": [
+     1.0,
+     0.86,
+     0.72,
+     1.0
+    ],
+    "beam": true,
+    "length": 280,
+    "thickness": 18,
+    "life": 8,
+    "speed": 0
+   },
+   "source_note": "以已核实的父亲射击为基础改空中前下短束；原剧无空中发射依据，不冒充原剧。帧序、伤害为游戏改编。",
+   "energy_cost": 1000,
+   "chip_damage": 6,
+   "hand_y": [
+    30,
+    110
+   ]
+  },
+  "motion_214": {
+   "display_name": "父亲光轮",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 95,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.86,
+    0.6,
+    1.0
+   ],
+   "active_frames": [
+    3,
+    4,
+    5
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_rings",
+    "color": [
+     1.0,
+     0.86,
+     0.6,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 60,
+    "speed": 8,
+    "box": [
+     -14,
+     -12,
+     28,
+     24
+    ],
+    "vy": 0
+   },
+   "source_note": "游戏编排的转体光轮；不称原剧专名。金色光轮为运行时共享 rings 特效，人物帧只画贴掌光；白须与双角不发光。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    60,
+    145
+   ]
+  },
+  "motion_22": {
+   "display_name": "奥特屏障",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 0,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.9,
+    0.7,
+    1.0
+   ],
+   "active_frames": [
+    4,
+    5,
+    6
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_barrier",
+    "color": [
+     1.0,
+     0.9,
+     0.7,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 14,
+    "speed": 0,
+    "box": [
+     0,
+     -65,
+     88,
+     135
+    ],
+    "vy": 0,
+    "wall": true
+   },
+   "source_note": "奥特屏障（Ultra Barrier）：以自身能量造出光之壁抵挡攻击；本作帧序、尺寸与拦截为游戏改编。光壁由运行时 special_barrier 承载，人物帧只画掌前贴体光；不把白须或双角当屏障光源。",
+   "energy_cost": 300,
+   "chip_damage": 0,
+   "hand_y": [
+    45,
+    135
+   ]
+  },
+  "ranged_forward": {
+   "display_name": "月牙射击",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 95,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.9,
+    0.65,
+    1.0
+   ],
+   "active_frames": [
+    3,
+    4,
+    5
+   ],
+   "shot": {
+    "frame": 4,
+    "effect": "special_arrow",
+    "color": [
+     1.0,
+     0.9,
+     0.65,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 55,
+    "speed": 10,
+    "box": [
+     -12,
+     -10,
+     24,
+     20
+    ],
+    "vy": 0
+   },
+   "source_note": "月牙射击（Crescent Shot）：从指尖/手掌发出三日月状光弹，对希波利特星人造成伤害；本作以共享 arrow 特效染成淡金色承载，弹形、帧序与伤害为游戏改编。原剧光色未见可靠记载。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    55,
+    145
+   ]
+  },
+  "pulse": {
+   "display_name": "父亲掌弹",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.86,
+    0.72,
+    1.0
+   ],
+   "active_frames": [
+    3,
+    4
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     1.0,
+     0.86,
+     0.72,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 80,
+    "speed": 9,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ],
+    "vy": 0
+   },
+   "source_note": "游戏编排的掌推光弹；不称原剧专名。人物帧只画贴掌光点，飞行弹由运行时 pulse 承载；双角与白须不发光。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    50,
+    135
+   ]
+  },
+  "low_pulse": {
+   "display_name": "低姿掌弹",
+   "kind": "projectile",
+   "level": "low",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.86,
+    0.72,
+    1.0
+   ],
+   "active_frames": [
+    2,
+    3
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     1.0,
+     0.86,
+     0.72,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 80,
+    "speed": 9,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ],
+    "vy": 0
+   },
+   "source_note": "游戏编排的低姿掌弹；不称原剧专名。人物帧只画贴掌光点；双角与白须不发光。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    15,
+    85
+   ]
+  },
+  "air_pulse": {
+   "display_name": "空中掌弹",
+   "kind": "projectile",
+   "level": "mid",
+   "damage": 65,
+   "super_level": 0,
+   "knockdown": false,
+   "feedback_color": [
+    1.0,
+    0.86,
+    0.72,
+    1.0
+   ],
+   "active_frames": [
+    2,
+    3
+   ],
+   "shot": {
+    "frame": 3,
+    "effect": "pulse",
+    "color": [
+     1.0,
+     0.86,
+     0.72,
+     1.0
+    ],
+    "beam": false,
+    "length": 0,
+    "thickness": 0,
+    "life": 90,
+    "speed": 9,
+    "vy": -7,
+    "box": [
+     -10,
+     -9,
+     20,
+     18
+    ]
+   },
+   "source_note": "游戏编排的空中斜下掌弹；不称原剧专名。人物帧只画贴掌光点，飞行弹由运行时 pulse 承载；双角与白须不发光。",
+   "energy_cost": 0,
+   "chip_damage": 0,
+   "hand_y": [
+    20,
+    95
+   ]
+  },
+  "burst": {
+   "display_name": "父亲爆气",
+   "kind": "strike",
+   "level": "mid",
+   "damage": 30,
+   "super_level": 0,
+   "knockdown": false,
+   "unblockable": true,
+   "feedback_color": [
+    1.0,
+    0.72,
+    0.55,
+    1.0
+   ],
+   "active_frames": [
+    1,
+    2,
+    3
+   ],
+   "burst_box": [
+    -90,
+    12,
+    180,
+    128
+   ],
+   "source_note": "游戏编排的对称爆气圈；冲击为运行时独立效果，不是原剧招式。攻击框按模板对称形状保留，超出该人物 Alpha 属已登记例外。",
+   "energy_cost": 2000,
+   "chip_damage": 0,
+   "hand_y": [
+    40,
+    140
+   ]
+  }
+ },
+ "state_effects": {
+  "default": {
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard"
+  }
+ }
+}

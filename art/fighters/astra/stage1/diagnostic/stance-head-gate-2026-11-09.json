@@ -1,0 +1,433 @@
+{
+ "fighter": "astra",
+ "stage": "stage1",
+ "date": "2026-11-09",
+ "issue": "待机照片门（头冠/朝向/站距/鞋底）",
+ "references": {
+  "suit": "art/fighters/astra/sources/ref-01.webp",
+  "suit_sha256": "7bc7bbd8ed051895af83358695f42ee86952dc4a3cda0b096afc78219762fcf1",
+  "official_side_head": "art/fighters/astra/sources/official-ugf2-20261109/astra-ugf2-side-head.png",
+  "official_side_head_sha256": "fa89e83b6210df1bfa3277dbe374136098e83bffb41a382e7ec5d73c788de16c",
+  "official_side_source_url": "https://tsuburaya-prod.com/wp-content/uploads/2021/12/UL_DSG_sel06-1_ast.jpg",
+  "official_side_source_page": "https://tsuburaya-prod.com/heroes/astra",
+  "official_hero_portrait_url": "https://tsuburaya-prod.com/wp-content/uploads/2019/05/UL_Hero_at05.png",
+  "official_hero_portrait_sha256": "d033be336fb83c86ae15850ef36c89b03d0638887e596b019b8992664fc58141",
+  "gaia_stance": "art/fighters/ultraman-gaia/stage1/idle/references/stance-ref-installed-x4.png",
+  "gaia_stance_sha256": "ff5b113987797be31bc4e039e561883fa75c2b973c4a09a5ec1fa6eb6101be29"
+ },
+ "catalogue_baseline": {
+  "path": "art/fighters/astra/model/identity-anchor-x4.png",
+  "sha256": "d9f136947ecd11f6c901582bbc8066468d9f7c7583ad288d1299235bdab7c617",
+  "standing_height_native": 154,
+  "head_width_native": 23,
+  "head_width_over_height": 0.14935,
+  "head_height_native": 31,
+  "head_height_over_height": 0.2013,
+  "note": "头宽取 x4 像素锚上半身最大水平跨度（含头冠侧翼）；头高取冠顶到下巴。"
+ },
+ "official_side_note": "官方UGF2剧照近侧脸可见近侧冠面、短后掠冠与后缘台阶；不是纯90度侧视，不能给全身体量作参考。官方正面立像头高/站高约0.167，图鉴约0.2013，两者本身不一致；本轮按根口径，像素头高目标24–27px（官方比例），图鉴31px作为异常口径记录。",
+ "attempts": [
+  {
+   "id": "stance-00",
+   "status": "rejected",
+   "actual_size": [
+    1082,
+    1454
+   ],
+   "sha256": "e1e36ffae02ab71bb933a1d0cffe87038221b418e83616d75573efbf72a9259f",
+   "stance_ratio": 0.7392,
+   "sole_diff_native_px": 0.787,
+   "head_width_native_at_154": 26.3,
+   "head_width_delta_pct": 14.5,
+   "reason": "头冠被拉成长而尖的后掠鳍，官方短冠台阶/缺口未保持；头冠最宽超门。"
+  },
+  {
+   "id": "stance-01",
+   "status": "rejected_by_root",
+   "actual_size": [
+    1077,
+    1461
+   ],
+   "sha256": "684f2cc6d74c491a260081c4d81b73289cd8e3dafca4783ae72561a592da9749",
+   "stance_ratio": 0.7399,
+   "sole_diff_native_px": 0.888,
+   "head_width_native_at_154": 25.85,
+   "head_width_delta_pct": 12.4,
+   "reason": "头冠更接近官方短冠，但侧脸仍露远侧冠翼，头冠总宽超 +8% 门 1.01px。"
+  },
+  {
+   "id": "stance-02",
+   "status": "rejected",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "sha256": "f3a989e1802dc4ddc1d385a4c50226d50de881132267d18dc550921891115bd7",
+   "references": [
+    "ref-01.webp",
+    "stance-ref-installed-x4.png"
+   ],
+   "excluded_reference": "UGF2 side head crop (verification only)",
+   "stance_ratio": 0.6222,
+   "stance_pass": false,
+   "sole_diff_native_px": 0.519,
+   "head_width_native_at_154": 23.33,
+   "head_width_pass": true,
+   "orientation": "strict right side view; upper chest sideways; timer side edge only; shoulders overlap; pass",
+   "crest_structure": "single short crown; near-side crown face; rear step; no far-side wing; pass",
+   "reason": "站距0.6222低于0.65–0.80门；其余通过。按根单张不过即停拒收。"
+  },
+  {
+   "id": "stance-03",
+   "status": "rejected",
+   "actual_size": [
+    1024,
+    1536
+   ],
+   "sha256": "ce81481904723bbc972dbdcd9762498f177124cce96f0170ff32daddc957ba91",
+   "references": [
+    "ref-01.webp",
+    "stance-ref-installed-x4.png"
+   ],
+   "excluded_reference": "UGF2 side head crop (verification only)",
+   "stance_ratio": 0.682,
+   "stance_gate": [
+    0.6,
+    0.8
+   ],
+   "stance_pass": true,
+   "sole_bottoms": [
+    1489,
+    1471
+   ],
+   "sole_diff_source_px": 18,
+   "sole_diff_native_px": 1.908,
+   "sole_gate_max_native_px": 1.0,
+   "sole_pass": false,
+   "head_width_native_at_154": 23.43,
+   "head_bbox_width_native_at_154": 23.53,
+   "head_width_pass": true,
+   "head_height_native_at_154": 24.16,
+   "head_height_gate": [
+    24,
+    27
+   ],
+   "head_height_pass": true,
+   "head_height_note": "冠顶 y=37 到前下巴 y=264；银色头壳后下缘 y=300 为颈侧壳缘，不计入下巴。",
+   "orientation": "strict right side view; upper chest sideways; timer side edge only; shoulders overlap; pass",
+   "crest_structure": "single short crown; near-side crown face; rear step; no far-side wing; pass",
+   "full_body": "solid alpha bbox 16..1006/37..1489; not cropped; pass",
+   "reason": "站距0.6820过新门；朝向/头冠宽23.43–23.53≤24.84/头高24.16在24–27/全身/透明均过；双鞋底差1.91原生px超≤1门，按根任一门不过拒收、记录、停。"
+  },
+  {
+   "id": "stance-04",
+   "status": "photo_gate_passed",
+   "actual_size": [
+    1027,
+    1531
+   ],
+   "sha256": "1e33417c9c8a74ba32e3fbf5158435cc0a76696ca43db684423e7f5d5374c2a7",
+   "path": "art/fighters/astra/stage1/idle/frames/stance-raw-04.png",
+   "references": [
+    "ref-01.webp",
+    "stance-ref-installed-x4.png"
+   ],
+   "excluded_reference": "UGF2 side head crop (verification only)",
+   "stance_ratio": 0.6688,
+   "stance_gate": [
+    0.65,
+    0.8
+   ],
+   "stance_pass": true,
+   "sole_bottoms": [
+    1469,
+    1464
+   ],
+   "sole_diff_source_px": 5,
+   "sole_diff_native_px": 0.538,
+   "sole_gate_max_native_px": 1.0,
+   "sole_pass": true,
+   "head_width_native_at_154": 24.54,
+   "head_width_gate": 24.84,
+   "head_width_pass": true,
+   "head_width_alpha_note": "alpha>8/32 为 25.15/25.06，alpha>64/128 为 24.63/24.54；主口径 solid alpha>128 为 24.54，未改阈值。",
+   "head_height_native_at_154": 25.94,
+   "head_height_shell_native_at_154": 26.58,
+   "head_height_gate": [
+    24,
+    27
+   ],
+   "head_height_pass": true,
+   "head_height_note": "冠顶 y=39 到前下巴 y=279；整体头壳后下缘 y=285 为 26.58，也在门内。",
+   "orientation": "strict right side view; upper chest sideways; timer side edge only; shoulders overlap; pass",
+   "crest_structure": "single short crown; near-side crown face; rear step; no far-side wing; pass",
+   "full_body": "solid alpha bbox [30,39,986,1469]; margins 30/39/40/61; not cropped; pass",
+   "alpha": "0–255, 256 levels; transparent background; pass",
+   "reason": "根指定定向重拍；站距0.6688/双鞋底差0.538/头冠宽24.54/头高25.94/右侧视/全身/透明均过，保留作像素整帧参考。"
+  },
+  {
+   "id": "pixel-00",
+   "status": "rejected",
+   "actual_size": [
+    1027,
+    1532
+   ],
+   "sha256": "aeebe05c7f7f9fd0867108d0f7bb4bc9c139f613bc8e55a94c3f0f85980c1235",
+   "path": "art/fighters/astra/stage1/idle/frames/pixel-raw-00.png",
+   "reference": "stance-raw-04.png",
+   "raw_bbox": [
+    33,
+    31,
+    991,
+    1480
+   ],
+   "raw_standing_height": 1450,
+   "raw_stance_ratio": 0.6614,
+   "raw_sole_diff_native_px": 0.212,
+   "raw_components": 1,
+   "cell": "art/fighters/astra/stage1/cells/idle-candidate-00-cell.png",
+   "cell_sha256": "f17cd193d8555d57a85235622d0d8772344e5c0889db8b163f42cde542e1be54",
+   "cell_size": [
+    192,
+    192
+   ],
+   "cell_bbox": [
+    45,
+    30,
+    146,
+    183
+   ],
+   "cell_height": 154,
+   "cell_width": 102,
+   "cell_foot_row": 183,
+   "cell_foot_bottoms": [
+    183,
+    183
+   ],
+   "cell_stance_ratio": 0.6623,
+   "cell_colors": 32,
+   "cell_components": 1,
+   "cell_alpha": [
+    0,
+    255
+   ],
+   "palette_recognition": {
+    "green": [
+     20,
+     153,
+     35
+    ],
+    "yellow": [
+     249,
+     196,
+     18
+    ],
+    "blue": [
+     4,
+     91,
+     213
+    ]
+   },
+   "recognition_pixels": {
+    "green": 3,
+    "yellow": 12,
+    "blue": 4
+   },
+   "head_shell_width": 26,
+   "head_shell_height": 31,
+   "head_chin_height": 31,
+   "head_alpha_silhouette_max_width": 29,
+   "head_height_heuristic": 33,
+   "head_width_gate": 25,
+   "head_height_gate": [
+    24,
+    27
+   ],
+   "head_pass": false,
+   "x4": "art/fighters/astra/stage1/cells/idle-candidate-00-x4.png",
+   "x4_sha256": "abb0e9e2c39ec2cdbc2a9dd5f60d1458080e59a0ae6f527f4d6395d801f52b24",
+   "review_sheet": "art/fighters/astra/stage1/cells/idle-candidate-00-review.png",
+   "review_sheet_sha256": "aadeea00b1af6501a1c8098536a8943e5b26a294ad345c742a46e7bc6a6ff5e4",
+   "reason": "192格机械硬门、站距、双鞋底、32色、单连通、二值Alpha与识别色均过；银头壳26×31超像素头部比例门（≤25 / 24–27），按根指令停，不局部缩头、不改阈值、不再重生成。",
+   "artifacts_deleted": true,
+   "artifacts_deleted_note": "根审拒收后按淘汰候选规则删除 raw/原生格/4×/联系表；仅保留记录。"
+  },
+  {
+   "id": "pixel-01",
+   "status": "rejected",
+   "actual_size": [
+    1022,
+    1539
+   ],
+   "mode": "RGBA",
+   "alpha": [
+    0,
+    255
+   ],
+   "alpha_levels": 256,
+   "sha256": "8fd0d88a7f4e5db17b3ddc76d344a31b652dc058d978899927e1f9790741457a",
+   "path": "art/fighters/astra/stage1/idle/frames/pixel-raw-01.png",
+   "reference": "stance-raw-04.png",
+   "catalogue_body_reference": false,
+   "raw_metrics": {
+    "solid_bbox": [
+     81,
+     96,
+     937,
+     1466
+    ],
+    "standing_height": 1370,
+    "foot_outer_span": 856,
+    "foot_span_over_height": 0.6248,
+    "components": 1,
+    "head_shell_bbox_trim": [
+     305,
+     7,
+     533,
+     290
+    ],
+    "head_shell_width": 229,
+    "head_shell_height": 284,
+    "head_shell_width_at_154": 25.74,
+    "head_shell_height_at_154": 31.93
+   },
+   "cell": "art/fighters/astra/stage1/cells/idle-candidate-01-cell.png",
+   "cell_sha256": "1c4341aa70bbb3c30ae59cffa3399ad6f8e394752dfa956b2bfe7ab3b1aac11a",
+   "cell_size": [
+    192,
+    192
+   ],
+   "cell_bbox": [
+    48,
+    30,
+    143,
+    183
+   ],
+   "cell_height": 154,
+   "cell_width": 96,
+   "cell_foot_row": 183,
+   "cell_foot_bottoms": [
+    183,
+    183
+   ],
+   "cell_stance_ratio": 0.6234,
+   "cell_colors": 32,
+   "cell_components": 1,
+   "cell_alpha": [
+    0,
+    255
+   ],
+   "head_shell_width": 26,
+   "head_shell_height": 32,
+   "head_shell_max_row_width": 25,
+   "head_alpha_silhouette_max_width_in_head_rows": 28,
+   "head_height_heuristic": 29,
+   "recognition_pixels": {
+    "green": 2,
+    "yellow": 19,
+    "blue": 9
+   },
+   "head_width_gate": 25,
+   "head_height_gate": [
+    24,
+    27
+   ],
+   "head_pass": false,
+   "x4": "art/fighters/astra/stage1/cells/idle-candidate-01-x4.png",
+   "x4_sha256": "a0f04b5808b6b27f8b877ff4b4de95d1a1b8cdac99105d1e9b4dbf06453f99c7",
+   "review_sheet": "art/fighters/astra/stage1/cells/idle-candidate-01-review.png",
+   "review_sheet_sha256": "7e1bb47adb4cd6e6b5bc847ea59a6a3673073e41255ced50224a8039a3eee37c",
+   "reason": "新构图单张；192格硬门、双鞋底、32色、单连通、二值Alpha与识别色均过；银头壳26×32超头部比例门（≤25 / 24–27），站距0.623低于0.65门；按根刹车停，不再重生成。"
+  }
+ ],
+ "conclusion": "stance-04照片门全过；pixel-00已拒收并删除产物；pixel-01新构图落192格后，站高154/脚底183/根点[96,184]/双鞋底183·183/32色/单连通/二值Alpha与识别色均过，但银头壳26×32仍超像素头部比例门（≤25 / 24–27），站距0.623也低于0.65门；按根刹车停，不再重生成，留人工。",
+ "next": "pixel-01因银头壳26×32与站距0.623未过门；按根指令停止，不再重生成，不缩头、不改阈值、不局部重涂；未签动作身份锚、未安装、未启动Godot、未提交、无录屏。等根或人工处理。",
+ "root_stance_gate_2026_11_09": {
+  "authority": "root",
+  "date": "2026-11-09",
+  "stance_gate": [
+   0.6,
+   0.8
+  ],
+  "target": 0.7,
+  "sole_gate_max_native_px": 1.0,
+  "head_height_gate_native_px": [
+   24,
+   27
+  ],
+  "reason": "stance-02站距0.6222在已装机实测0.50–0.98内，佐菲锚0.618已接受；按“约为”调整站距门。",
+  "note": "stance-02原图已按单张规则删除；用同一参考组与提示词只改站姿一句重出stance-03，仍单张，不过即停。"
+ },
+ "stance_03_diagnostic": {
+  "image": "art/fighters/astra/stage1/diagnostic/stance-03-sole-gate-2026-11-09.png",
+  "sha256": "d2325abfc4ec3b79df74f7a4038e5b900ec890d7534c93eff59bc44527ccf8e6"
+ },
+ "root_stance_04_directive_2026_11_09": {
+  "authority": "root",
+  "date": "2026-11-09",
+  "stance_gate": [
+   0.65,
+   0.8
+  ],
+  "sole_gate": "双脚平踩同一地面，双鞋底最低点同高，后脚不得低于前脚；差≤1原生px",
+  "head_gate": {
+   "width_max_native_px": 25,
+   "height_native_px": [
+    24,
+    27
+   ]
+  },
+  "note": "stance-03只差鞋底1.91原生px；同两张参考、同提示词，只加双脚平踩同一地面、双鞋底最低点同高、后脚不得低于前脚；站距保持0.65–0.80。过门后只做一张像素待机候选，原生格+严格4×+联系表后停；仍不过则停并记录，不再重生成。"
+ },
+ "pixel_00_diagnostic": {
+  "image": "art/fighters/astra/stage1/cells/idle-candidate-00-review.png",
+  "sha256": "aadeea00b1af6501a1c8098536a8943e5b26a294ad345c742a46e7bc6a6ff5e4",
+  "artifacts_deleted": true,
+  "note": "银头壳26×31超像素头部比例门；根审拒收后按淘汰候选规则删除 raw/原生格/4×/联系表，仅保留记录与SHA。"
+ },
+ "root_rejection_stance_01": {
+  "date": "2026-11-09",
+  "verdict": "rejected_by_root",
+  "reason": "上胸与蓝菱形计时器正面完整可见、双肩同时可见，身体3/4而非固定右侧视，与杰斯提斯照片10同类；不得接受。",
+  "note": "头冠+12.4%与远侧冠翼之外，朝向本身亦不过；根明确不得接受。"
+ },
+ "root_pixel_01_directive_2026_11_09": {
+  "authority": "root",
+  "date": "2026-11-09",
+  "references": [
+   "art/fighters/astra/stage1/idle/frames/stance-raw-04.png"
+  ],
+  "excluded": "图鉴4×不作身体参考；若使用只取色板。",
+  "targets": {
+   "head_shell_width_px": [
+    24,
+    25
+   ],
+   "head_height_px": [
+    25,
+    26
+   ],
+   "heads": 6,
+   "stance": 0.66,
+   "standing": 154
+  },
+  "cell": {
+   "size": 192,
+   "anchor": [
+    96,
+    184
+   ],
+   "foot_row": 183,
+   "colors_max": 32,
+   "alpha": "binary",
+   "components": 1
+  },
+  "stop_rule": "头壳>25或头高不在24–27即刹车停，不再重生成，留人工；不缩头、不改阈值、不局部重涂。",
+  "note": "新构图像素只做一张；原生格+严格4×+联系表后停。"
+ },
+ "pixel_01_diagnostic": {
+  "image": "art/fighters/astra/stage1/cells/idle-candidate-01-review.png",
+  "sha256": "7e1bb47adb4cd6e6b5bc847ea59a6a3673073e41255ced50224a8039a3eee37c",
+  "note": "银头壳26×32（门≤25 / 24–27），站距0.623（门0.65–0.80）；192格其余硬门通过。"
+ }
+}

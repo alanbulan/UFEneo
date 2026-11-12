@@ -1,0 +1,62 @@
+{
+ "date": "2026-11-10",
+ "scope": "dash-03 绿色额灯（识别色）落格一致性",
+ "target": {
+  "anchor_cell_green_px": 3,
+  "anchor_cell_bbox": [
+   109,
+   42,
+   109,
+   44
+  ],
+  "anchor_raw_green_wh": [
+   12,
+   22
+  ],
+  "native_green_wh": [
+   1.5,
+   2.75
+  ],
+  "observed_accepted_range": "已接受帧 green 2–8 px（dash-start-00 2；多数 3–7）"
+ },
+ "rejected": [
+  {
+   "attempt": "dash-03-a",
+   "generation_id": "image-65174-902",
+   "raw_sha256": "afe4e437261144ddb7375198e5ac48b26b23da9327a6d7bffb45c32c678cd4a2",
+   "green_px": 0,
+   "reason": "落格后绿色额灯消失"
+  },
+  {
+   "attempt": "dash-03-b",
+   "generation_id": "image-65174-906",
+   "raw_sha256": "f83e4cf929d07ff2209e843044ce634abf23aa8058eb5cd25c9e6ba39e24d272",
+   "green_px": 31,
+   "reason": "额灯被放大成 31px 大块，远超锚 3px 与已接受帧 2–8px 区间；属另一处身份偏离"
+  },
+  {
+   "attempt": "getup-01",
+   "generation_id": "image-65174-969",
+   "raw_sha256": "e09e3bdc4f0c57b4cd889ed5a2ed02434c1cab2f3b7268c129c0d5757676da81",
+   "raw_green_wh": [
+    6,
+    27
+   ],
+   "green_px": 0,
+   "reason": "raw 额灯仅 6px 宽，统一比例缩到原生不足 1px，落格后 green 0"
+  }
+ ],
+ "diagnosis": "同一张参考下，模型对绿色额灯的呈现是二值的：要么完全省掉，要么画成大色块。第一次失败在“太小消失”，第二种修法（要求更粗更饱和）直接导致“太大”。两次都不在锚的 1.5×2.75 原生尺寸附近，说明这不是靠提示词形容词能收窄的；继续同一思路只会在这两端之间摆动。",
+ "brake": "同一识别色问题累计 3 帧拒收（dash-03 a/b、getup-01），按 AGENTS.md 返工刹车停止重试；getup-01 留待识别色工序或人工。",
+ "resume_options": [
+  "改在落格后按锚的绿色像素数与位置做“识别色对齐”单独一道工序（不改人物造型、只把绿像素归位到额灯轮廓内），需先确认该工序不违反“整图统一映射、不按区域局部重涂”。",
+  "或换一种输入表达：在参考图同一锚上标注额灯位置与像素尺寸的示意（不新增造型信息），让模型按尺寸画。"
+ ],
+ "not_done": [
+  "未局部重涂",
+  "未改阈值",
+  "未缩头",
+  "未把大色块当通过"
+ ],
+ "accepted_with_green": "本批其余帧 green 1–8px（light2-01 为 1px，已单独标记）。"
+}

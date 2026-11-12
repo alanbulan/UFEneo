@@ -10,15 +10,15 @@ from runtime.environment import ROOT, godot_path, isolated_test_environment
 
 CASES = [
     "logic_2d", "stamina_economy", "review_inputs", "armor_transform_routing", "air_only_start", "chase_interrupt",
-    "projectile_ground_expiry", "projectile_ground_clip", "projectile_contact_direction", "projectile_air_knockdown_direction", "projectile_move_isolation", "projectile_beam_reflection", "hit_pushback_bounds",
+    "projectile_ground_expiry", "projectile_ground_clip", "projectile_contact_direction", "projectile_air_knockdown_direction", "projectile_move_isolation", "projectile_beam_reflection", "self_heal_and_wall", "chill_effect", "hit_pushback_bounds",
     "throw_hold_point_overrides", "throw_root_overrides", "throw_current_capture", "capture_mechanism",
     "capture_receiver_availability", "ko_finish_presentation", "transform_mechanism",
     "phase3_standing", "phase3_air", "phase3_reaction", "phase3_zetton",
     "phase3_zetton_air", "phase3_zetton_defense", "phase3_throws",
-    "phase3_specials", "phase3_supers", "phase3_fx_audio", "codex_impact_feedback_policy",
+    "phase3_specials", "phase3_supers", "phase3_fx_audio", "effect_registration", "codex_impact_feedback_policy",
     "catalogue_identity_display", "computer_ai", "training_tape", "training_lifecycle", "replay_match_loading", "training_input_audit", "pixel_ui", "pixel_pages", "ui_facing",
     "main_shutdown_menu_exit", "main_shutdown_reentrancy", "audio_playback",
-    "catalogue_assets", "catalogue_animation",
+    "catalogue_assets", "catalogue_animation", "roster_data_integrity", "form_selection_consistency",
 ]
 
 
@@ -70,7 +70,7 @@ def main():
             command.append("--headless")
         command += ["--path", str(ROOT), "--script", "res://tests/" + case + ".gd"]
         case_output = run_output / case
-        if case in ("hit_pushback_bounds", "chase_interrupt", "projectile_contact_direction", "projectile_air_knockdown_direction", "projectile_move_isolation", "projectile_beam_reflection", "capture_mechanism", "frame_guard", "phase3_specials", "phase3_zetton"):
+        if case in ("hit_pushback_bounds", "chase_interrupt", "projectile_contact_direction", "projectile_air_knockdown_direction", "projectile_move_isolation", "projectile_beam_reflection", "self_heal_and_wall", "capture_mechanism", "frame_guard", "phase3_specials", "phase3_zetton"):
             command += ["--", "--test-out=" + str(case_output)]
         elif case == "replay_match_loading":
             command += ["--", "--replay-test-out=" + str(case_output)]

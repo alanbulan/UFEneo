@@ -18,7 +18,7 @@ var content_fingerprint: String
 # 终局清理前只读副本；不加入内容指纹、输入、事件或state_hash。
 var terminal_view: Dictionary = {}
 
-func _init(first: UfeFighterDefinition, second: UfeFighterDefinition, rule: UfeRuleSet, registry: Dictionary, battle_forms: Dictionary = {}) -> void:
+func _init(first: UfeFighterDefinition, second: UfeFighterDefinition, rule: UfeRuleSet, registry: Dictionary, battle_forms: Dictionary = {}, start_forms: Dictionary = {}) -> void:
 	rules = rule
 	states = registry.duplicate()
 	states["transform"] = preload("res://core/states/transform.gd").new()
@@ -28,11 +28,23 @@ func _init(first: UfeFighterDefinition, second: UfeFighterDefinition, rule: UfeR
 	remaining = rules.round_ticks
 	fighters = [UfeFighter.new(first, 470), UfeFighter.new(second, 750)]
 	fighters[1].facing = -1
+	var start_data: Array = []
+	for i in range(2):
+		var start: UfeFighterDefinition = start_forms.get(i)
+		if start != null and start.id != fighters[i].definition.id:
+			# 选人界面选定的出场形态：定义即出场定义，基础ID留在base_definition供回放/名册复原。
+			fighters[i].definition = start
+			fighters[i].form_id = start.id
+		start_data.append([fighters[i].form_id, fighters[i].definition.simulation_data()])
 	var form_rules: Array = []
 	for f in fighters:
-		f.battle_form = battle_forms.get(f.definition.id, {})
+		f.battle_form = battle_forms.get(f.base_definition.id, {})
+		var choices = f.battle_form.get("choices", {})
+		f.battle_form_choices = choices if choices is Dictionary else {}
 		form_rules.append(UfeBattleTransform.simulation_data(f.battle_form))
 	var fingerprint_data: Array = [6, 60, rule.simulation_data(), first.simulation_data(), second.simulation_data(), form_rules, ["round_end_identity", 1], ["move_start_conditions", MOVE_START_RULE_REVISION], ["hit_pushback_bounds", UfeHitResolver.PUSHBACK_BOUNDARY_REVISION], ["throw_target_air", UfeHitResolver.THROW_TARGET_RULE_REVISION], ["chase_interrupt", CHASE_INTERRUPT_RULE_REVISION], ["projectile_contact_direction", UfeHitResolver.PROJECTILE_DIRECTION_RULE_REVISION], ["projectile_move_isolation", UfeHitResolver.PROJECTILE_MOVE_ISOLATION_RULE_REVISION], ["projectile_beam_reflection", UfeProjectileResolver.BEAM_REFLECTION_RULE_REVISION]]
+	if start_data.any(func(row: Array): return not str(row[0]).is_empty()):
+		fingerprint_data.append(["start_forms", start_data])
 	# 恢复姿态影响state_tick和实际受击框；旧格式6仍可解析，但旧内容指纹不可重放。
 	fingerprint_data.append(["crouch_guard_resume_hold", CROUCH_GUARD_RESUME_RULE_REVISION])
 	fingerprint_data.append(["hit_crouch_guard_resume_pose", HIT_CROUCH_GUARD_RESUME_RULE_REVISION])
@@ -65,7 +77,7 @@ func step(inputs: Array) -> void:
 		var fallback := ""
 		if f.height == 0 and f.state not in ["transform","form_entry","captured","thrown","intro","victory","defeat","timeout","takeoff"]:
 			fallback = "crouch" if inputs[i].y < 0 else "idle"
-		var command := f.resolver.resolve(inputs[i], f.facing, context, f.definition.command_table, int(f.stats.energy), UfeBattleTransform.can_transform(f), fallback)
+		var command := f.resolver.resolve(inputs[i], f.facing, context, f.definition.command_table, int(f.stats.energy), UfeBattleTransform.can_transform(f, ""), fallback)
 		if UfeCaptureResolver.locked(f):
 			command.move = ""; command.jump = false
 		if context == "land" and int(f.motion.land_window)<=0: command.move = ""
@@ -177,6 +189,7 @@ func _advance(index: int, input: UfeInputFrame, command: Dictionary) -> void:
 		f.motion[key] = maxi(0, int(f.motion[key]) - 1)
 	f.combat.invulnerable = maxi(0, int(f.combat.invulnerable) - 1)
 	f.stats.stun_immune = maxi(0, int(f.stats.get("stun_immune",0)) - 1)
+	f.stats.chill_ticks = maxi(0, int(f.stats.get("chill_ticks",0)) - 1)
 	if f.state in ["transform", "form_entry"]:
 		states[f.state].step(f, input, command)
 		return
@@ -249,6 +262,17 @@ func _advance(index: int, input: UfeInputFrame, command: Dictionary) -> void:
 		f.height = maxi(0, f.height + int(frame.dy))
 		for event in frame.events:
 			events.append({"kind": event.kind, "id": event.id, "player": index})
+		# 自身回复：只在招式声明的帧结算一次，整数、无随机；不清对手状态。
+		var heal: Dictionary = f.definition.moves[f.move_id].get("self_heal", {})
+		if not heal.is_empty() and f.move_tick == int(heal.get("frame", 0)):
+			var amount := maxi(0, int(heal.get("amount", 0)))
+			var healed := mini(int(f.definition.max_health), int(f.stats.hp) + amount) - int(f.stats.hp)
+			f.stats.hp = int(f.stats.hp) + healed
+			if bool(heal.get("cleanse", false)):
+				f.stats.stun = 0
+				f.stats.stun_immune = maxi(int(f.stats.stun_immune), 10)
+			events.append({"kind":"self_heal","player":index,"move":f.move_id,
+				"amount":healed,"cleanse":bool(heal.get("cleanse", false))})
 		f.move_tick += 1
 		UfeBattleTransform.after_move_tick(f)
 		var capture_handled := UfeCaptureResolver.after_move_tick(self,index,input)

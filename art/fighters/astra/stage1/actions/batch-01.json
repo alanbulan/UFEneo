@@ -1,0 +1,885 @@
+{
+ "fighter": "astra",
+ "stage": "stage1",
+ "batch": "01",
+ "date": "2026-11-10",
+ "authority": "root_delegated_by_user",
+ "identity_anchor": {
+  "path": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+  "sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e"
+ },
+ "cell": {
+  "size": 192,
+  "anchor": [
+   96,
+   184
+  ],
+  "foot_row": 183,
+  "colors_max": 32,
+  "alpha": "binary"
+ },
+ "scale": {
+  "policy": "全套统一源像素比例 154/1231=0.125102，来自身份锚 raw；不按每帧外框归一。",
+  "value": 0.125101543,
+  "resample": "BOX 重采样后二值化 Alpha，与身份锚落格同法（复现锚逐像素 99.4%）",
+  "horizontal_alignment": "上半身（自顶 50% 高度）重心对到 x=97.72，与身份锚同法；腿部摆动不带动躯干横移",
+  "vertical_alignment": "接地相最低点=183；腾空相按姿态整体抬高并在 lift 登记"
+ },
+ "palette": {
+  "source": "身份锚 32 色，冻结",
+  "mapping": "整图统一最近邻映射，不按区域重涂"
+ },
+ "review": "art/fighters/astra/stage1/actions/review/batch-01-idle-walk-dash.png",
+ "review_sha256": "a4fdc941e7642961a9d68b9e300b737155630cec7d08330e828d6431b47ea0d4",
+ "frames": [
+  {
+   "name": "idle-01",
+   "animation": "idle",
+   "index": 0,
+   "status": "accepted",
+   "reference": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+   "reference_sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+   "identity_anchor": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+   "identity_anchor_sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e",
+   "generation_id": "image-65174-829",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1536",
+   "prompt": "参考图为锚的8×展示。只改呼吸相位：胸腔抬一格、肩线微抬，双拳仍胸前护架，双脚与脚底不动；同画幅同比例、像素块同参考；严格右侧视、蓝灯只露侧缘；四肢粗细同参考；绿额灯/黄眼/蓝胸灯/银头甲保留；完整不裁切、透明、无地面文字边框。",
+   "raw": "art/fighters/astra/stage1/actions/raw/idle-01-raw.png",
+   "raw_sha256": "d139f3732a11d3882e11e1c95d071c9d831098dd269ef0947a9de020cd9b2cd2",
+   "cell": "art/fighters/astra/stage1/actions/cells/idle-01-cell.png",
+   "cell_sha256": "274d852670383e2dbb8fa7086f8656c3dc1ade2dfccd1db78e1311ed93863c59",
+   "x4": "art/fighters/astra/stage1/actions/cells/idle-01-x4.png",
+   "x4_sha256": "515900ffd4f45f9672153152947c7fbbe6b00e4cb0eb2a9425f27c8693e62f31",
+   "bbox": [
+    40,
+    30,
+    140,
+    183
+   ],
+   "standing_height": 154,
+   "width": 101,
+   "foot_row": 183,
+   "lift": 0,
+   "foot_bottoms": [
+    183,
+    183
+   ],
+   "foot_outer_span": 101,
+   "foot_span_over_height": 0.6558,
+   "colors": 31,
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "head_bright": [
+    81,
+    30,
+    23,
+    27
+   ],
+   "head_full": [
+    81,
+    30,
+    24,
+    30
+   ],
+   "recognition": {
+    "green": 3,
+    "yellow": 14,
+    "blue": 4
+   },
+   "ground_runs": [
+    [
+     40,
+     46
+    ],
+    [
+     49,
+     62
+    ],
+    [
+     115,
+     121
+    ],
+    [
+     126,
+     140
+    ]
+   ],
+   "ground_px": 43,
+   "note": "idle 第 2 帧，呼吸相位；本批第一张因画幅占比不足被拒，改用锚的 8× 展示作输入后通过。"
+  },
+  {
+   "name": "walk-f00",
+   "animation": "walk_forward",
+   "index": 0,
+   "status": "accepted",
+   "reference": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+   "reference_sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+   "identity_anchor": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+   "identity_anchor_sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e",
+   "generation_id": "image-65174-847",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1536",
+   "prompt": "前走第一步支撑相：上身右侧视略前倾，前腿向右前方踏出、全掌踩地承重，后腿屈膝脚掌离地，两臂前后摆、拳头半握；绿额灯同参考粗细不得省；四肢粗细同参考；固定右侧视、完整、透明、无特效。",
+   "raw": "art/fighters/astra/stage1/actions/raw/walk-f00-raw.png",
+   "raw_sha256": "e876a93bcd19b8d34c14658318619c75edcd0d6094613a0b959f76c076b44998",
+   "cell": "art/fighters/astra/stage1/actions/cells/walk-f00-cell.png",
+   "cell_sha256": "ddf643c1cd2b4f5eb404cb2077c0bf0f5972b45337b12339a961d0417310237d",
+   "x4": "art/fighters/astra/stage1/actions/cells/walk-f00-x4.png",
+   "x4_sha256": "8b91f5123427a61575202f4d4956a89a1f0d4a43b879a9b9363c7ebc30b6aaae",
+   "bbox": [
+    54,
+    31,
+    138,
+    183
+   ],
+   "standing_height": 153,
+   "width": 85,
+   "foot_row": 183,
+   "lift": 0,
+   "foot_bottoms": [
+    183,
+    183
+   ],
+   "foot_outer_span": 26,
+   "foot_span_over_height": 0.1699,
+   "colors": 31,
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "head_bright": [
+    89,
+    32,
+    22,
+    25
+   ],
+   "head_full": [
+    88,
+    31,
+    24,
+    30
+   ],
+   "recognition": {
+    "green": 3,
+    "yellow": 9,
+    "blue": 4
+   },
+   "ground_runs": [
+    [
+     114,
+     137
+    ]
+   ],
+   "ground_px": 24,
+   "note": "walk_forward 第 1 帧。前两次候选拒收：第一次绿额灯丢失且腾空跃步，第二次绿额灯 7px 宽落格不足 1px；第三次明确额灯粗细与支撑相后通过。"
+  },
+  {
+   "name": "walk-f01",
+   "animation": "walk_forward",
+   "index": 1,
+   "status": "accepted",
+   "reference": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+   "reference_sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+   "identity_anchor": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+   "identity_anchor_sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e",
+   "generation_id": "image-65174-852",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1536",
+   "prompt": "前走过渡相：前腿承重屈膝、全掌仍踩地，后腿离地向前收、膝盖抬到身前，两臂摆到中位；绿额灯同参考粗细；四肢粗细同参考；固定右侧视、完整、透明、无特效。",
+   "raw": "art/fighters/astra/stage1/actions/raw/walk-f01-raw.png",
+   "raw_sha256": "9b838cd77cc6cd531fb7d1e609b609ddda692e4914e2f4cb9cb49324bf3a98a0",
+   "cell": "art/fighters/astra/stage1/actions/cells/walk-f01-cell.png",
+   "cell_sha256": "2dd7c9c3d57abe1fe87c2be27ed528ee22d21483a3e4edbd451c6cf98aaf8572",
+   "x4": "art/fighters/astra/stage1/actions/cells/walk-f01-x4.png",
+   "x4_sha256": "ca6ed22157e43474c8c24a7ef2270686142b13043f09a6c72d98ad5c98e0f619",
+   "bbox": [
+    63,
+    30,
+    129,
+    183
+   ],
+   "standing_height": 154,
+   "width": 67,
+   "foot_row": 183,
+   "lift": 0,
+   "foot_bottoms": [
+    183,
+    183
+   ],
+   "foot_outer_span": 25,
+   "foot_span_over_height": 0.1623,
+   "colors": 31,
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "head_bright": [
+    87,
+    31,
+    23,
+    26
+   ],
+   "head_full": [
+    87,
+    31,
+    23,
+    29
+   ],
+   "recognition": {
+    "green": 5,
+    "yellow": 12,
+    "blue": 6
+   },
+   "ground_runs": [
+    [
+     64,
+     69
+    ],
+    [
+     73,
+     86
+    ]
+   ],
+   "ground_px": 20,
+   "note": "walk_forward 第 2 帧。"
+  },
+  {
+   "name": "walk-f02",
+   "animation": "walk_forward",
+   "index": 2,
+   "status": "accepted",
+   "reference": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+   "reference_sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+   "identity_anchor": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+   "identity_anchor_sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e",
+   "generation_id": "image-65174-856",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1536",
+   "prompt": "前走第二次触地相：另一腿向右前方踏出、全掌踩地承重，原支撑腿在后屈膝脚掌离地后蹬，两臂反向摆动；绿额灯同参考粗细；四肢粗细同参考；固定右侧视、完整、透明、无特效。",
+   "raw": "art/fighters/astra/stage1/actions/raw/walk-f02-raw.png",
+   "raw_sha256": "bf21a6b13936adfa6bd952038f5d7d03b466a539dbab74c2be3dfd9d087819ca",
+   "cell": "art/fighters/astra/stage1/actions/cells/walk-f02-cell.png",
+   "cell_sha256": "3ef7eed65ee8bcb2643eb56c56461ab2f8725408d8c5d4c9ee88c6706bc8763e",
+   "x4": "art/fighters/astra/stage1/actions/cells/walk-f02-x4.png",
+   "x4_sha256": "aeba43f4bff70ae881bf3cc839bfc5b0403b25cf6a5b392a09bb5d58d7b1d9ca",
+   "bbox": [
+    47,
+    30,
+    145,
+    183
+   ],
+   "standing_height": 154,
+   "width": 99,
+   "foot_row": 183,
+   "lift": 0,
+   "foot_bottoms": [
+    183,
+    183
+   ],
+   "foot_outer_span": 28,
+   "foot_span_over_height": 0.1818,
+   "colors": 32,
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "head_bright": [
+    87,
+    31,
+    23,
+    25
+   ],
+   "head_full": [
+    87,
+    31,
+    23,
+    29
+   ],
+   "recognition": {
+    "green": 8,
+    "yellow": 12,
+    "blue": 8
+   },
+   "ground_runs": [
+    [
+     119,
+     144
+    ]
+   ],
+   "ground_px": 26,
+   "note": "walk_forward 第 3 帧。"
+  },
+  {
+   "name": "walk-f03",
+   "animation": "walk_forward",
+   "index": 3,
+   "status": "accepted",
+   "reference": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+   "reference_sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+   "identity_anchor": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+   "identity_anchor_sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e",
+   "generation_id": "image-65174-859",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1536",
+   "prompt": "前走收步过渡相：前腿承重屈膝、全掌踩地，后腿离地向前收、膝盖抬到身前，两臂摆回中位，上身直立；绿额灯同参考粗细；四肢粗细同参考；固定右侧视、完整、透明、无特效。",
+   "raw": "art/fighters/astra/stage1/actions/raw/walk-f03-raw.png",
+   "raw_sha256": "5963297d7f5f02a3048c4547ae0e22d65d53d8711d9eab37caffc9fe175f326a",
+   "cell": "art/fighters/astra/stage1/actions/cells/walk-f03-cell.png",
+   "cell_sha256": "1e0436f4b3e305f60af7bb539522a9b2084ca9e1f8919dac60c2726cde6af369",
+   "x4": "art/fighters/astra/stage1/actions/cells/walk-f03-x4.png",
+   "x4_sha256": "587c9912580408385f07e2b7682193414db277fa36ff1045c3c5434915808b03",
+   "bbox": [
+    72,
+    30,
+    122,
+    183
+   ],
+   "standing_height": 154,
+   "width": 51,
+   "foot_row": 183,
+   "lift": 0,
+   "foot_bottoms": [
+    183,
+    183
+   ],
+   "foot_outer_span": 25,
+   "foot_span_over_height": 0.1623,
+   "colors": 32,
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "head_bright": [
+    85,
+    31,
+    23,
+    25
+   ],
+   "head_full": [
+    85,
+    30,
+    23,
+    30
+   ],
+   "recognition": {
+    "green": 6,
+    "yellow": 12,
+    "blue": 5
+   },
+   "ground_runs": [
+    [
+     73,
+     78
+    ],
+    [
+     81,
+     95
+    ]
+   ],
+   "ground_px": 21,
+   "note": "walk_forward 第 4 帧。"
+  },
+  {
+   "name": "walk-b00",
+   "animation": "walk_back",
+   "index": 0,
+   "status": "accepted",
+   "reference": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+   "reference_sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+   "identity_anchor": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+   "identity_anchor_sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e",
+   "generation_id": "image-65174-863",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1536",
+   "prompt": "后退第一步支撑相：仍右侧视朝右，前脚全掌踩地后蹬，另一腿向后撤步、脚尖先着地承重，上身略后仰，两臂小幅摆动；绿额灯同参考粗细；四肢粗细同参考；固定右侧视、完整、透明、无特效。",
+   "raw": "art/fighters/astra/stage1/actions/raw/walk-b00-raw.png",
+   "raw_sha256": "a27887e9a21dfdb1d1b30049e41091e4f7dc32f9e3ec8e7d6cdd68b4c0c9c603",
+   "cell": "art/fighters/astra/stage1/actions/cells/walk-b00-cell.png",
+   "cell_sha256": "8341d7c19ede8b9d6fe9956ffd33e404c3ead8034da7bc2c7b269d5d09a251bb",
+   "x4": "art/fighters/astra/stage1/actions/cells/walk-b00-x4.png",
+   "x4_sha256": "fe7a86deae195d9be702c98856f44f183ed6034dce67be4f03a6e2a86b114f23",
+   "bbox": [
+    46,
+    31,
+    144,
+    183
+   ],
+   "standing_height": 153,
+   "width": 99,
+   "foot_row": 183,
+   "lift": 0,
+   "foot_bottoms": [
+    183,
+    183
+   ],
+   "foot_outer_span": 92,
+   "foot_span_over_height": 0.6013,
+   "colors": 30,
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "head_bright": [
+    85,
+    32,
+    24,
+    25
+   ],
+   "head_full": [
+    85,
+    32,
+    24,
+    29
+   ],
+   "recognition": {
+    "green": 7,
+    "yellow": 12,
+    "blue": 5
+   },
+   "ground_runs": [
+    [
+     56,
+     63
+    ],
+    [
+     119,
+     143
+    ]
+   ],
+   "ground_px": 33,
+   "note": "walk_back 第 1 帧。"
+  },
+  {
+   "name": "walk-b01",
+   "animation": "walk_back",
+   "index": 1,
+   "status": "accepted",
+   "reference": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+   "reference_sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+   "identity_anchor": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+   "identity_anchor_sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e",
+   "generation_id": "image-65174-868",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1536",
+   "prompt": "后退过渡相：后撤腿承重屈膝、全掌踩地，另一腿离地向后收、膝弯曲，上身略前倾，两臂小幅摆动；绿额灯同参考粗细；四肢粗细同参考；固定右侧视、完整、透明、无特效。",
+   "raw": "art/fighters/astra/stage1/actions/raw/walk-b01-raw.png",
+   "raw_sha256": "bfc9724025a08e64edaa2233ec482752de6061dfc4314a8e990662ff0b409b51",
+   "cell": "art/fighters/astra/stage1/actions/cells/walk-b01-cell.png",
+   "cell_sha256": "5ec07fb95d1e78fc51a044721a31ac8477a1a5b92d22bea989bc38015a4d902c",
+   "x4": "art/fighters/astra/stage1/actions/cells/walk-b01-x4.png",
+   "x4_sha256": "604e7936ceb567176924ca18a803754f78ee71f9bbf5ad059d6bf09f23ddf703",
+   "bbox": [
+    53,
+    36,
+    125,
+    183
+   ],
+   "standing_height": 148,
+   "width": 73,
+   "foot_row": 183,
+   "lift": 0,
+   "foot_bottoms": [
+    183,
+    183
+   ],
+   "foot_outer_span": 25,
+   "foot_span_over_height": 0.1689,
+   "colors": 30,
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "head_bright": [
+    88,
+    37,
+    24,
+    25
+   ],
+   "head_full": [
+    88,
+    37,
+    24,
+    29
+   ],
+   "recognition": {
+    "green": 5,
+    "yellow": 13,
+    "blue": 5
+   },
+   "ground_runs": [
+    [
+     95,
+     117
+    ]
+   ],
+   "ground_px": 23,
+   "note": "walk_back 第 2 帧。"
+  },
+  {
+   "name": "walk-b02",
+   "animation": "walk_back",
+   "index": 2,
+   "status": "accepted",
+   "reference": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+   "reference_sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+   "identity_anchor": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+   "identity_anchor_sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e",
+   "generation_id": "image-65174-871",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1536",
+   "prompt": "后退第二步触地相：后撤腿向后落地、全掌踩地承重，另一腿在前屈膝、脚跟略离地，上身略后仰，两臂反向小幅摆动；绿额灯同参考粗细；四肢粗细同参考；固定右侧视、完整、透明、无特效。",
+   "raw": "art/fighters/astra/stage1/actions/raw/walk-b02-raw.png",
+   "raw_sha256": "e21e948ad255713ba32c2ecb890eab2a10775682881e2d15ab0c7d0724d6853d",
+   "cell": "art/fighters/astra/stage1/actions/cells/walk-b02-cell.png",
+   "cell_sha256": "8b8db718206fde0e6ae5ed46c76c9a5999971496918903e9233323c1c8e3e470",
+   "x4": "art/fighters/astra/stage1/actions/cells/walk-b02-x4.png",
+   "x4_sha256": "6acd948b6b4bf7286937f685f1a228b4b3488d8c59b8000ee36543c32ea95c61",
+   "bbox": [
+    51,
+    31,
+    133,
+    183
+   ],
+   "standing_height": 153,
+   "width": 83,
+   "foot_row": 183,
+   "lift": 0,
+   "foot_bottoms": [
+    183,
+    182
+   ],
+   "foot_outer_span": 79,
+   "foot_span_over_height": 0.5163,
+   "colors": 30,
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "head_bright": [
+    85,
+    32,
+    24,
+    26
+   ],
+   "head_full": [
+    85,
+    32,
+    24,
+    29
+   ],
+   "recognition": {
+    "green": 4,
+    "yellow": 15,
+    "blue": 8
+   },
+   "ground_runs": [
+    [
+     52,
+     74
+    ]
+   ],
+   "ground_px": 23,
+   "note": "walk_back 第 3 帧。"
+  },
+  {
+   "name": "walk-b03",
+   "animation": "walk_back",
+   "index": 3,
+   "status": "accepted",
+   "reference": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+   "reference_sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+   "identity_anchor": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+   "identity_anchor_sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e",
+   "generation_id": "image-65174-876",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1536",
+   "prompt": "后退收步相：后撤腿承重屈膝、全掌踩地，另一腿离地向前收回、膝微抬，上身回直立，两臂回中位；绿额灯同参考粗细；四肢粗细同参考；固定右侧视、完整、透明、无特效。",
+   "raw": "art/fighters/astra/stage1/actions/raw/walk-b03-raw.png",
+   "raw_sha256": "e114bc8e8216c152d8f2cd865ae120aa554b649a006463930ae321f059d029ed",
+   "cell": "art/fighters/astra/stage1/actions/cells/walk-b03-cell.png",
+   "cell_sha256": "277240ff4d5e4b01740c3ac0d627cd629f03f0ff3a908fa3f815be1d56b394b9",
+   "x4": "art/fighters/astra/stage1/actions/cells/walk-b03-x4.png",
+   "x4_sha256": "1e634bd312350e8aacdd554350996a599a20e3efe22d97f02254e631124af947",
+   "bbox": [
+    70,
+    30,
+    121,
+    183
+   ],
+   "standing_height": 154,
+   "width": 52,
+   "foot_row": 183,
+   "lift": 0,
+   "foot_bottoms": [
+    183,
+    183
+   ],
+   "foot_outer_span": 24,
+   "foot_span_over_height": 0.1558,
+   "colors": 32,
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "head_bright": [
+    82,
+    31,
+    23,
+    26
+   ],
+   "head_full": [
+    82,
+    30,
+    24,
+    30
+   ],
+   "recognition": {
+    "green": 7,
+    "yellow": 11,
+    "blue": 4
+   },
+   "ground_runs": [
+    [
+     71,
+     77
+    ],
+    [
+     79,
+     92
+    ]
+   ],
+   "ground_px": 21,
+   "note": "walk_back 第 4 帧。"
+  },
+  {
+   "name": "dash-start-00",
+   "animation": "dash_start",
+   "index": 0,
+   "status": "accepted",
+   "reference": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+   "reference_sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+   "identity_anchor": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+   "identity_anchor_sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e",
+   "generation_id": "image-65174-889",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1536",
+   "prompt": "冲刺起动蹬地相：右侧视重心前压，前脚全掌踩地，后腿在后蹬直、脚跟抬起，双臂前后大幅摆动、前臂抬到胸前；两脚前后跨度不超过待机站距；头宽不放大；绿额灯同参考粗细不得变细；四肢粗细同参考；固定右侧视、完整、透明、无特效。",
+   "raw": "art/fighters/astra/stage1/actions/raw/dash-start-00-raw.png",
+   "raw_sha256": "eaee25bb5df8737fca2cf4cf6f264c0365ce49a5fc84b204a4d8f265b2d52e82",
+   "cell": "art/fighters/astra/stage1/actions/cells/dash-start-00-cell.png",
+   "cell_sha256": "a3c576097c126d5f55f46feb0e020c7bd1d55fbf455d256d8a30471d1221f2d8",
+   "x4": "art/fighters/astra/stage1/actions/cells/dash-start-00-x4.png",
+   "x4_sha256": "c0cbe9c509087249fc45e41c55453f75d75a4be7f6d9decbfac2bb267a51412b",
+   "bbox": [
+    37,
+    38,
+    141,
+    183
+   ],
+   "standing_height": 146,
+   "width": 105,
+   "foot_row": 183,
+   "lift": 0,
+   "foot_bottoms": [
+    183,
+    183
+   ],
+   "foot_outer_span": 100,
+   "foot_span_over_height": 0.6849,
+   "colors": 31,
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "head_bright": [
+    99,
+    38,
+    24,
+    27
+   ],
+   "head_full": [
+    99,
+    38,
+    24,
+    31
+   ],
+   "recognition": {
+    "green": 2,
+    "yellow": 12,
+    "blue": 5
+   },
+   "ground_runs": [
+    [
+     44,
+     52
+    ],
+    [
+     116,
+     140
+    ]
+   ],
+   "ground_px": 34,
+   "note": "dash_start 第 1 帧。前两次候选拒收：第一次亮银头宽 26 超门；第二次绿额灯 6px 宽落格消失且站距 0.812 超 0.80；第三次通过。"
+  },
+  {
+   "name": "dash-start-01",
+   "animation": "dash_start",
+   "index": 1,
+   "status": "accepted",
+   "reference": "art/fighters/astra/stage1/actions/raw/anchor-presentation-8x.png",
+   "reference_sha256": "ec9cc677779e0d6ad81237d2086fd4da8f10db182dcb921dd192bdc87aa06b9f",
+   "identity_anchor": "art/fighters/astra/stage1/idle/frames/identity-idle-pixel.png",
+   "identity_anchor_sha256": "0d0ea0b664957985f8a53f5693e6b9d3c5e88434045018063b411f073f79911e",
+   "generation_id": "image-65174-892",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1536",
+   "prompt": "冲刺起动离地相：右侧视前倾明显，前腿屈膝抬离地面、脚尖向下，后腿刚离地蹬直，双臂前后大幅摆动；两脚跨度不超过待机站距；头宽不放大；绿额灯同参考粗细；四肢粗细同参考；固定右侧视、完整、透明、无特效。",
+   "raw": "art/fighters/astra/stage1/actions/raw/dash-start-01-raw.png",
+   "raw_sha256": "a4c17a453ffcd01e3ae405dfab6bc7e403b2fcf33dafbf49ca43ba4c39ec2766",
+   "cell": "art/fighters/astra/stage1/actions/cells/dash-start-01-cell.png",
+   "cell_sha256": "5d78eaa647ee1da3e9b377395f0e97634209516f5b509580906122085d10cdb4",
+   "x4": "art/fighters/astra/stage1/actions/cells/dash-start-01-x4.png",
+   "x4_sha256": "ef7aa4f8c3aeeacf45ab9e9565a4281def8d0be4bc44e81efffd144c2d4b0f83",
+   "bbox": [
+    43,
+    33,
+    139,
+    175
+   ],
+   "standing_height": 143,
+   "width": 97,
+   "foot_row": 175,
+   "lift": 8,
+   "foot_bottoms": [
+    175,
+    175
+   ],
+   "foot_outer_span": 5,
+   "foot_span_over_height": 0.035,
+   "colors": 30,
+   "components": 1,
+   "alpha": [
+    0,
+    255
+   ],
+   "head_bright": [
+    97,
+    34,
+    23,
+    26
+   ],
+   "head_full": [
+    97,
+    34,
+    24,
+    30
+   ],
+   "recognition": {
+    "green": 3,
+    "yellow": 12,
+    "blue": 5
+   },
+   "ground_runs": [],
+   "ground_px": 0,
+   "note": "dash_start 第 2 帧，离地相，整体抬高 8px 落格。"
+  }
+ ],
+ "rejected_this_batch": [
+  {
+   "attempt": "idle-01-a",
+   "generation_id": "image-65174-810",
+   "raw_sha256": "bd834f51c9963a102aea166ba23df17810ed95875bda8229a7ad9e71628e279d",
+   "reason": "raw 站高 993，统一比例落 124≠154；胸甲与蓝灯正对镜头，非严格右侧视",
+   "deleted": true
+  },
+  {
+   "attempt": "idle-01-b",
+   "generation_id": "image-65174-816",
+   "raw_sha256": "cf5ba78807629af8349b939c93312d55a2eb18f38c85202dbc97a11c46c7a56d",
+   "reason": "raw 站高 1019，落 127≠154",
+   "deleted": true
+  },
+  {
+   "attempt": "idle-01-c",
+   "generation_id": "image-65174-823",
+   "raw_sha256": "e251a29605feee2f7c4140c3a28e9388f64c8444a395687de0a943106186a4c0",
+   "reason": "raw 站高 1022，落 128≠154；提示词已明确画幅占比仍不改变",
+   "deleted": true
+  },
+  {
+   "attempt": "walk-f00-a",
+   "generation_id": "image-65174-839",
+   "raw_sha256": "ae785204db02d15fd0e8362bcc499f80382186ab805a290c95ac618bf84ee02d",
+   "reason": "绿色额灯落格消失(green 0)；姿态为腾空跃步而非支撑相",
+   "deleted": true
+  },
+  {
+   "attempt": "walk-f00-b",
+   "generation_id": "image-65174-842",
+   "raw_sha256": "50f955dfd3baca50209b9937a57d4b66526959be07b7a8033a30e00dfd0aedd3",
+   "reason": "绿色额灯 raw 仅 7px 宽，落格不足 1px 而消失(green 0)",
+   "deleted": true
+  },
+  {
+   "attempt": "dash-start-00-a",
+   "generation_id": "image-65174-881",
+   "raw_sha256": "14795ac140f0f19f200cc9baad2becf8b69be53c77f9df1411689719f047b68f",
+   "reason": "亮银头宽 26 > 25",
+   "deleted": true
+  },
+  {
+   "attempt": "dash-start-00-b",
+   "generation_id": "image-65174-886",
+   "raw_sha256": "5ea654fe5c0e74b6d597c31f210e7570a7ebf647145dbeb7dfb91c61dc39777a",
+   "reason": "绿额灯 raw 6px 宽落格消失(green 0)；站距 0.812 超 0.80",
+   "deleted": true
+  }
+ ],
+ "diagnostics": [
+  "art/fighters/astra/stage1/diagnostic/action-frame-scale-2026-11-10.png",
+  "art/fighters/astra/stage1/diagnostic/action-frame-scale-2026-11-10.json"
+ ],
+ "notes": [
+  "每帧只引同一身份锚；本批把锚裁剪到实心轮廓后 8× 最近邻、脚底对齐 1475、居中放入 1024×1536 作为输入展示（SHA ec9cc677779e）。该图不含新信息、不新增角色/角度、不是资产。",
+  "落格统一比例 0.125102、BOX 重采样、上半身重心对齐 x=97.72，与身份锚同法；未逐帧缩放。",
+  "接地相最低点=183；dash-start-01 为离地相，整体抬高 8px，最低点 175，已在 lift 登记。",
+  "本批每帧 30–32 色、单连通、二值 Alpha；亮银头壳 22–24 宽、25–27 高，均在 24–27/≤25 门内。",
+  "未安装、未启动 Godot、未提交、未改 content/audio、无录屏。"
+ ],
+ "next": "batch 02：dash 4、takeoff 2、air_rise 1、air_fall 1、land 2。"
+}

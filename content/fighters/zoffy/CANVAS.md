@@ -1,4 +1,4 @@
-# 佐菲 画布与根点（draft 2026-11-08）
+# 佐菲 画布与根点
 
 状态：图鉴已安装到 `assets/fighters/zoffy/catalogue/model-native.png` 并同步 `content/roster/catalogue_display.json`。2026-11-09 最终版按用户指定流程重做：先用图片模型生成真实皮套剧照（右侧视战斗架势），再以该照片为底用图片模型转像素整帧，最后经 `catalogue_native` 确定性降采样。战斗图仍未安装，未接运行时。
 
@@ -8,14 +8,15 @@
   1. 图片模型生成真实皮套剧照 `reports/zoffy/catalogue/photo-side-01.png`（1065×1476，真 Alpha，SHA-256 `623dd828916c3ac0e3d59b877a16ac5aa2fc6bdfbe2747dd5257b5e071cf82b6`），严格右侧视、错步战斗架势、头身比与官方剧照一致。
   2. 以该照片为底，图片模型转像素整帧 `reports/zoffy/catalogue/candidate-sprite-06.png`（SHA-256 `e2013fd4de8b3c1c35b419ad36b5af42d6a943889a54cb155ff5557469ab38a4`）。只按用户要求把头顶尖角改矮，其余不动。
   3. `catalogue_native` 降采样到 173 并落 384×256 画布：`reports/zoffy/catalogue/model-native-sprite-06-173.png`。
-- 成品：bbox [136,75,243,248]；站高 173；宽 107；32 色；Alpha [0,255]；右侧视；脚底最后一行 247，基线 248；蓝计时器 18px 保留。
+- 成品（HEAD 安装版）：bbox [136,75,243,248]；站高 173；宽 107；32 色；Alpha [0,255]；右侧视；脚底最后一行 247，基线 248；蓝计时器 18px 保留。
 - 安装 SHA-256 `2607b58fd0a8a5d2c582f1cb9d821a6b5cde502189c6b23fd8e5b0f442a79fd8`。
+- 工作树另有 1.5× 块化版：bbox [137,75,247,248]、宽 110、站高 173、32 色、二值 Alpha，SHA `addd0bcea67e5b7735f560b561bf028bf8e835662e22473f66fe17cd2eb6d9e4`，display 已指向它但尚未提交。提交前须先定用哪一版。
 - 候选与淘汰理由见 `art/fighters/zoffy/sources/draft-20261108/requests.json` attempts 31–50（pose-n…z、photo-side-01、sprite-01…06）。
 - 对比图：`reports/zoffy/catalogue/zoffy-*` 系列；最终版与已装初代/杰克/艾斯/泰罗同高对比见本机 reports（未入库）。
 
 ## 零·补、官方参考版重做（2026-11-08，已被 11-09 版替换）
 
-- 规则：图鉴、战斗待机、M87 姿势的基础生成必须以 `art/fighters/zoffy/sources/ref-01.webp` 为第一参考图；该图为官方剧照/皮套照（431×900，`reference_kind=official_still`，SHA-256 `0bcdab23478fb8645c8486ca8cc988df7dda911646b77e8bd6febafeef8fb37f`）。旧 draft-v2、旧 173、旧 154 只作第二参考与对照，不得覆盖。
+- 规则（11-08 版，已被 11-09 版取代，仅存档对照）：图鉴、战斗待机、M87 姿势的基础生成必须以 `art/fighters/zoffy/sources/ref-01.webp` 为第一参考图；该图为官方剧照/皮套照（431×900，`reference_kind=official_still`，SHA-256 `0bcdab23478fb8645c8486ca8cc988df7dda911646b77e8bd6febafeef8fb37f`）。旧 draft-v2、旧 173、旧 154 只作第二参考与对照，不得覆盖。
 - 请求记录：`art/fighters/zoffy/sources/draft-20261108/requests.json` 顶部 `reference_policy` / `reference_correction`；旧 attempts 7/8/15 已标 `superseded`，旧 selected 条目已标 `comparison_only`；新 attempts 16–18 均记录官方参考第一、旧 draft 第二、raw/成品 SHA 与选中理由。
 
 ### 1. 图鉴（官方参考版）
@@ -70,7 +71,7 @@
   - 蓝计时器 6px（0,101,210 + 2,78,150）；淡黄眼 28px（253,242,173）。
   - 水平：bbox 中心 191.5，根点 192；脚底 247，差 1px 为基线留边。
   - SHA-256：`8f9ff7b56e8b9b377f850cceda5c75a7cd1796fbb0a2e6a02649a0989e5f564c`。
-- 处理链：MCP 原图 → `tools/media/art/catalogue_native.py` 出 192 原生 → 按 `content/roster/catalogue_scale.json` 的 45m→173 重新落位。
+- 处理链：MCP 原图 → `tools/media/art/catalogue_native.py` 出 192 原生 → `tools/media/art/catalogue_rescale.py` 按 `content/roster/catalogue_scale.json` 的 45m→173 重新落位。
   - 不是拿整张 384 画布当分母；先用 Alpha 轮廓裁切，再按目标站高 NEAREST 缩放，脚底贴 248。
   - `catalogue_native.py` 默认 192 只是中间态；最终定稿以 173 为准。
   - 首版量化丢失蓝计时器；修正版从同一 raw 重新降采样，用共享 32 色板保留蓝/眼黄，几何与 Alpha 未变。

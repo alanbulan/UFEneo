@@ -29,7 +29,10 @@ static func can_hit(attacker: UfeFighter, target: UfeFighter) -> bool:
 	return false
 
 static func invulnerable(f: UfeFighter) -> bool:
-	return f.state in ["transform", "form_entry", "captured"] or int(f.combat.invulnerable)>0 or bool(f.frame().get("invulnerable",false))
+	# 免费形态切换是主动换装，不是必杀演出：不给无敌，避免靠按E白嫖闪避。
+	var free_switch := f.state == "transform" and bool(f.battle_form.get("free_switch", false))
+	return (not free_switch and f.state in ["transform", "form_entry"]) or f.state == "captured" \
+		or int(f.combat.invulnerable)>0 or bool(f.frame().get("invulnerable",false))
 
 static func is_blocked(target: UfeFighter, move: Dictionary, defending: bool) -> bool:
 	var crouching := target.state in ["crouch","crouch_start","crouch_guard","crouch_blockstun"]
@@ -86,6 +89,12 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 	# 眩晕免疫期内不再累积，避免连续命中把对手永久锁在眩晕里。
 	if int(b.stats.get("stun_immune",0)) <= 0:
 		b.stats.stun = mini(rules.stun_threshold, int(b.stats.stun) + int(move.stun))
+	# 减速只改受方移动速度，不改招式时序；未过期的减速取更强档并延长到较长剩余。
+	if move.has("chill"):
+		var chill: Dictionary = move.chill
+		var chilled := int(b.stats.get("chill_ticks", 0)) > 0
+		b.stats.chill_ticks = maxi(int(b.stats.get("chill_ticks", 0)), int(chill.ticks))
+		b.stats.chill_percent = mini(int(b.stats.get("chill_percent", 100)), int(chill.speed_percent)) if chilled else int(chill.speed_percent)
 	a.stats.energy = mini(3000, int(a.stats.energy) + 90)
 	b.stats.energy = mini(3000, int(b.stats.energy) + 40)
 	a.combat.combo = int(a.combat.combo) + 1

@@ -49,13 +49,59 @@
 
 ### 不在这个接口范围内
 
-Kits 是**语音转换与分离**服务，不是文生音效或文生音乐。项目里
-`content/audio/sources.json` 的 `source_kind` 只有 `original` 和 `episode`，
-不声称任何音效是文本生成的。
+Kits 是**语音转换与分离**服务，不是文生音效或文生音乐。项目不声称任何音效是文本生成的。
+
+`content/audio/sources.json` 的 `source_kind` 现有三类：
+
+- `original`：项目自制（合成、录音或自制编曲）。
+- `episode`：原剧/官方音源。公开转载的副本必须同时写 `reprint: true`，并登记 `platform`、`uploader`、`source_url`、`source_timecode`、`raw_sha256`、`captured_utc`；不得把转载写成官方发布。
+- `derivative`：二创、翻奏、MAD 等；不得冒充原剧原声。
+
+只接受公开可访问的副本；需要登录、付费或返回 403 的不绕过，换公开副本。旧记录不改写，缺失 `source_kind` 的历史参考仍可读；新参考若写 `source_kind`，`tools/audio/pipeline.py` 会校验取值，`episode` 必须带布尔 `reprint`。
+
+### 2026-11-10 四角色首轮公开副本
+
+四名角色各取 1 条 BGM/角色曲和 1 条非语言战吼，均为 B 站公开转载/合集，登记为 `source_kind=episode`、`reprint=true`；剪辑在 `assets/audio/production/v3/<角色>/clips/v002/`，完整 SHA、上传者与采集时间见 `content/audio/sources.json` 的 `*-reprint-20261110` 记录。
+
+| 角色 | 用途 | B 站 BV / 时间码 | 片段 |
+| --- | --- | --- | --- |
+| 佐菲 | 角色歌器乐 | BV1hd4y1o796 / 00:02:30.000–00:03:00.000 | `zoffy-bgm.wav` |
+| 佐菲 | 非语言战吼 | BV1b44y1w7g6 / 00:00:02.500–00:00:04.300 | `zoffy-roar.wav` |
+| 赛罗 | 主题纯音乐 | BV1sa411K7ij / 00:00:10.000–00:00:40.000 | `zero-bgm.wav` |
+| 赛罗 | 非语言战吼 | BV1BdC3YjEGq / 00:00:02.000–00:00:05.000 | `zero-roar.wav` |
+| 盖亚 | OST「激闘」M-38 | BV1Kt9ZYEEnK / 00:01:00.000–00:01:30.000 | `gaia-bgm.wav` |
+| 盖亚 | 非语言战吼（第2P） | BV1GRFSeJEFd?p=2 / 00:00:06.600–00:00:08.300 | `gaia-roar.wav` |
+| 杰斯提斯 | 剧场版 OST「コスモス&ジャスティス」 | BV1YnxXe8EQi / 00:01:35.000–00:02:05.000 | `justice-bgm.wav` |
+| 杰斯提斯 | 非语言战吼 | BV15hE964E6u / 00:00:09.000–00:00:12.500 | `justice-roar.wav` |
+
+这些片段只完成来源、时间码、哈希和峰值检查；首轮完成时未做听审、未做循环、未接入运行时。
+
+2026-11-10 已完成 Kits 首轮：4 条 BGM 以 `stem-splits` 分离后做 30.000s 循环，4 条战吼以 `vocal-separations` 清理并静态归一；输出在 `assets/audio/production/v3/<角色>/kits/`，台账见 `reports/audio-kits-ledger-20261110.json`。首轮完成时所有输出 `runtime_approved=false`、`listening_reviewed=false`；Kits job detail 未返回 `usage` 与内部模型标识。仍未听审。当前接入状态见下节。
+
+同一批源 WAV 已切出每角色 attack/special/hit/win 各 1 条，共 16 条事件候选；只做裁剪、淡入淡出与静态归一，未做 voice conversion。登记见 `content/audio/sources.json` 的 `*_voice_*_20261110` 记录（与运行时声音 ID 相同），听审清单见 `reports/audio-events-first-listen-20261110.md`；全部未听审。当前接入状态见下节。
+
+### 2026-11-10 自动评审与运行时接入
+
+用户 2026-11-10 委托自动批准首轮 24 条（4 BGM 循环、4 战吼、16 事件）接入运行时。记录已标 `runtime_approved=true`，统一写 `runtime_approval_basis=user_delegated_auto_approve_2026-11-10`；`listening_reviewed` 全部保持 `false`。这只表示准予接入，不表示听审通过，也不把 B 站转载写成官方发布。
+
+4 条 30.000s 循环已转为运行时 OGG（48kHz 双声道、Vorbis），放在 `assets/audio/music/stage-bgm/v003/`；`battle_music.json` 新增 `zoffy-battle`、`ultraman-zero-battle`、`ultraman-gaia-battle`、`ultraman-justice-battle` 四条 track，并映射 `zoffy`、`ultraman-zero`、`ultraman-gaia`、`ultraman-justice`。运行时 `UfeBattleMusicDirector` 对 OGG 设置 `loop=true`。转换台账见 `reports/audio-runtime-conversion-20261110.json`。
+
+`runtime.json` 已新增 20 条 `character_voice` 记录和 4 个 `voices` 条目：`attack`/`super`/`hit`/`victory` 分别接事件攻击/special/hit/win，`intro` 接清理后的非语言战吼；`down`/`timeout` 没有已核片段，保持未映射，不拿 hit/win 冒充。事件槽位仍是按合集区段的时长、峰值与 RMS 候选分配，不是逐场原剧核对。
+
+24 个已安装运行时文件的路径、SHA、格式与导入命令见 `reports/audio-runtime-import-20261110.md`；`.import` 侧车已就位。20 条事件/战吼来源记录的 `runtime_status=installed`，4 条 reprint BGM、4 条 reprint 战吼与 4 条 loop30 记录标 `runtime_status=pending_install`，暂不写入 `sounds`。2026-11-10 在 Godot 锁内复跑 `audio_playback` 与 `phase3_fx_audio` 均 PASS；本轮无听审、无实机试听、无录屏。
+
+### 2026-11-11 事件语音补齐（7 角色 × down/heavy/taunt/timeout）
+
+从既有公开转载合集继续切出 7 名角色（佐菲、赛罗、盖亚、杰斯提斯、奥王、奥母、奥父）各 4 条事件声：`down` / `heavy` / `taunt` / `timeout`，共 28 条。逐条上传者、平台、URL、作品与集数、时间码、SHA、取得日期见 `art/audio/voices-events-20261111.json`，批次说明见 `art/audio/VOICES_EVENTS_REPORT.md`。
+
+- 接入：`runtime.json` 新增 28 条 `character_voice` 与对应 `voices` 键，`heavy`/`taunt` 在有对应 clip 的角色上登记 `frame_sounds` 帧 0；`sources.json` 28 条记录 `runtime_status=installed`、`runtime_approved=true`、`runtime_approval_basis=root_delegated_by_user 2026-11-11`；`listening_reviewed=false`，未听审。
+- 峰值口径：`fx_audio` 门要求 true_peak ≤ −1.8 dBFS，既有 v3 事件声约 −9.96 dBFS。新批首轮按 −1.2 dBFS 归一被门拒绝，统一重采样到 −10.0 dBFS 峰值并重算 SHA/true_peak/sample_peak/rms/integrated_lufs，`fx-audio-resources`、`audio-manifest` 均 PASS。
+- 未实机试听、无录屏；只到资源与逻辑检查。
 
 ### 当前声音缺口
 
 见 [PROGRESS](PROGRESS.md) 的"后续优先级"：teo/arc/blazar/omega 缺通用状态音与语音表。
+佐菲、赛罗、盖亚、杰斯提斯、奥王、奥母、奥父自 2026-11-11 起已有 attack/super/hit/victory/intro/down/heavy/taunt/timeout 本人声音（新增 28 条事件声，未听审）；语音仍按合集区段分配，不是逐场原剧核对。
 补齐需要新录音或新分离轨，属收费操作，须用户明确授权后才能做。
 
 ## 二、怪兽主题曲核查

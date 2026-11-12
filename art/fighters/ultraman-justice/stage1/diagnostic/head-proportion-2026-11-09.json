@@ -1,0 +1,154 @@
+{
+ "fighter": "ultraman-justice",
+ "form": "标准型",
+ "stage": "stage1",
+ "date": "2026-11-09",
+ "review_authority": "subagent_candidate_review",
+ "scope": "阶段A头身比诊断；只判断头宽偏大来自照片阶段还是像素阶段，不签动作锚、不安装、不铺动作",
+ "question": "头壳宽/站高偏大是照片阶段整体比例造成，还是仅像素阶段概括造成",
+ "method": {
+  "head_definition": "照片：Alpha≥128 的银色头壳连通域（含头冠与面罩）；像素格另按既有完整头壳ROI bbox（含深色外轮廓）复核，不改变旧测量口径",
+  "standing_definition": "Alpha≥128 主体 bbox 高度；像素格为原生格站高",
+  "note": "照片为正面偏三分之四或侧向视图，头壳左右宽与侧视前后宽不可直接互换；头冠顶到下巴的头高/站高是本次跨视角主比较量。"
+ },
+ "measurements": {
+  "official_ref_01": {
+   "path": "art/fighters/ultraman-justice/sources/ref-01.webp",
+   "sha256": "1e59c68df13af789b40beff3b4382703997186ca91a488dfa761653b35779e65",
+   "image_size": [324, 899],
+   "view": "官方皮套照，正面偏三分之四",
+   "standing_height": 899,
+   "head_shell_bbox_inclusive": [63, 0, 173, 156],
+   "head_shell_width": 111,
+   "head_shell_height": 157,
+   "head_width_over_standing": 0.1235,
+   "head_height_over_standing": 0.1746,
+   "heads_tall": 5.73,
+   "note": "宽度111是正视图左右宽，不能当作侧视前后宽；头高/站高作为主标尺。"
+  },
+  "catalogue_154": {
+   "path": "assets/fighters/ultraman-justice/catalogue/model-native.png",
+   "sha256": "924c2aab9395217364600579ffdd23f44fc262f2865f3ec44ef2ebe539991989",
+   "image_size": [384, 256],
+   "view": "旧图鉴侧视整帧",
+   "standing_height": 154,
+   "head_shell_bbox_inclusive": [179, 95, 200, 124],
+   "head_shell_width": 22,
+   "head_shell_height": 30,
+   "head_width_over_standing": 0.1429,
+   "head_height_over_standing": 0.1948,
+   "heads_tall": 5.13,
+   "note": "8%头宽门的22px基准；同ROI轮廓口径不变。"
+  },
+  "photo05": {
+   "path": "art/fighters/ultraman-justice/stage1/idle/frames/stance-05-clean.png",
+   "sha256": "492f1c2a589a7f60c71465afa35f413d74de5f89efcc85547ea96c8d68f73da5",
+   "image_size": [1024, 1536],
+   "standing_height": 1051,
+   "head_shell_bbox_inclusive": [441, 318, 600, 561],
+   "head_shell_width": 160,
+   "head_shell_height": 244,
+   "head_width_over_standing": 0.1522,
+   "head_height_over_standing": 0.2321,
+   "heads_tall": 4.31,
+   "note": "上一轮已接受为转像素照片；本表只作照片阶段比例对照。"
+  },
+  "photo06": {
+   "path": "art/fighters/ultraman-justice/stage1/idle/frames/stance-raw-06.png",
+   "sha256": "62e70c27c90a9d77aa2b539863bdf397c555f35358ff38c3af3adc3d309985d5",
+   "image_size": [1210, 1300],
+   "standing_height": 1094,
+   "head_shell_bbox_inclusive": [512, 104, 675, 339],
+   "head_shell_width": 164,
+   "head_shell_height": 236,
+   "head_width_over_standing": 0.1499,
+   "head_height_over_standing": 0.2157,
+   "heads_tall": 4.64,
+   "foot_outer_span_over_height": 0.6892,
+   "sole_y_back_front": [1197, 1158],
+   "sole_delta_native_154": 5.49,
+   "components_alpha128": 1,
+   "artifact": "人物外仍有不透明红色涂块并与主体连通；整图Alpha≥128不能去除。",
+   "verdict": "rejected：双鞋底差约5.49原生像素，违反同一水平线；不透明红色涂块；头身比仍偏大。"
+  },
+  "photo07": {
+   "path": "art/fighters/ultraman-justice/stage1/idle/frames/stance-raw-07.png",
+   "sha256": "77cbfb183ba4e56c09be9b047cc5c6025115c29fe04e1a58b05ac607882581db",
+   "image_size": [1210, 1300],
+   "standing_height": 1049,
+   "head_shell_bbox_inclusive": [510, 156, 689, 381],
+   "head_shell_width": 180,
+   "head_shell_height": 226,
+   "head_width_over_standing": 0.1716,
+   "head_height_over_standing": 0.2154,
+   "heads_tall": 4.64,
+   "foot_outer_span_over_height": 0.7302,
+   "sole_y_back_front": [1204, 1198],
+   "sole_delta_native_154": 0.88,
+   "components_alpha128": 1,
+   "artifact": "仅见低Alpha小噪点（抽样Alpha=1），Alpha≥128清理可去除，无成片涂块。",
+   "pose_gate": "pass：站距0.65–0.80、双鞋底同一水平线、双膝屈、双拳胸前护架、固定右侧视",
+   "proportion_gate": "fail：侧视头壳宽/站高0.1716 对图鉴0.1429 约+20.1%；头高/站高0.2154 对图鉴0.1948 约+10.6%",
+   "verdict": "pose_pass_proportion_reject：不转像素；照片阶段头身比未过，不用局部缩头或落格缩放凑门。"
+  },
+  "pixel03_cell": {
+   "path": "art/fighters/ultraman-justice/stage1/cells/idle-candidate-03-cell.png",
+   "sha256": "bd694f0c988e0b4211e0ef03c3922aee34de5f1a0edd4e63bd92936888da2dd1",
+   "canvas": [192, 192],
+   "standing_height": 154,
+   "established_head_roi_exclusive": [65, 30, 110, 63],
+   "established_head_bbox_inclusive": [78, 30, 102, 62],
+   "established_head_width": 25,
+   "catalogue_head_width": 22,
+   "head_width_difference": 0.13636363636363646,
+   "head_width_over_standing": 0.1623,
+   "head_height_over_standing": 0.2143,
+   "silver_component_bbox_inclusive": [79, 31, 101, 65],
+   "silver_component_width": 23,
+   "silver_component_height": 35,
+   "silver_head_width_over_height": 0.657,
+   "note": "既有完整头壳ROI bbox仍为25×33；银色连通域为23×35，差2px是两侧单像素深色外轮廓。完整轮廓口径不改为23，25/22=+13.64%仍是真实失败。"
+  }
+ },
+ "pixel_stage_preservation": {
+  "photo05_silver_head_width_over_height": 0.656,
+  "pixel03_silver_head_width_over_height": 0.657,
+  "interpretation": "像素03把照片05的银色头壳宽/高比从0.656保留到0.657；落格没有单独放大头。ROI完整轮廓25px比银色23px多出的2px来自深色外轮廓，是唯一由像素化增加的宽度。"
+ },
+ "conclusion": "头宽偏大主要来自照片阶段的整体头身比，不是像素阶段概括单独造成。官方头高/站高0.1746、图鉴0.1948；照片05/06/07分别为0.2321/0.2157/0.2154，均比官方高约23%–33%。像素03头高/站高0.2143、银色宽/高0.657，与照片05的0.656基本一致，说明落格忠实保留了照片比例，仅深色轮廓再增加约2px。全身同比重定的两张新照片仍未把头身比降到官方/图鉴档：06姿势另有脚底差5.49原生像素与不透明涂块，直接拒收；07姿势过门但头壳宽/站高0.1716、头高/站高0.2154，不转像素。8%头宽门与官方证据没有冲突：官方头比例甚至小于图鉴基准；问题在生成照片持续把头画大，必须继续从照片阶段解决，不能局部缩头或落格缩放掩盖。",
+ "gate_8pct_evidence": {
+  "established_measurement_unchanged": true,
+  "pixel03_25_vs_22": "+13.64%",
+  "old_candidate02_24_vs_22": "+9.09%",
+  "official_head_height_over_standing": 0.1746,
+  "catalogue_head_height_over_standing": 0.1948,
+  "note": "官方头高比例小于图鉴，未发现8%门与本人真实造型冲突；不要求改门，也不以银色连通域23px主张通过。"
+ },
+ "decisions": {
+  "new_pixel_candidate_generated": false,
+  "pixel_conversion_blocked_by": "photo_stage_head_proportion_not_passed",
+  "rework_brake": {
+   "head_proportion_rejected_frames": ["photo05", "photo06", "photo07"],
+   "count": 3,
+   "methods": [
+    "历史局部缩头：用户否决，禁止复用",
+    "官方皮套全身同比重定待机照片：本轮两次（06、07），仍未过"
+   ],
+   "action": "停止生成，出诊断，交根决定；不局部缩头、不改ROI/阈值、不落格凑门、不铺动作"
+  },
+  "kept": "候选03及全部旧拒收/连续计数保留，不清零",
+  "not_done": ["待机像素新候选", "待机循环", "动作集", "安装", "720/1080", "实速", "声音"]
+ },
+ "files": {
+  "full_body_proportion_sheet": {
+   "path": "art/fighters/ultraman-justice/stage1/diagnostic/head-proportion-2026-11-09.png",
+   "sha256": "c665d4eed5926211e33c823d7af2e65840e46d443038c4bb5641f5c0327e885c",
+   "note": "官方、图鉴、照片05/06/07、像素03按同一站高并排"
+  },
+  "head_shell_closeup_sheet": {
+   "path": "art/fighters/ultraman-justice/stage1/diagnostic/head-shell-closeup-2026-11-09.png",
+   "sha256": "efb920afe1471b005293a22fe583c2a925154df3b18645bdaf35124a3bc42996",
+   "note": "同一高度并排头壳，核头冠、面罩与头肩关系"
+  }
+ }
+}

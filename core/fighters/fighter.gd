@@ -6,6 +6,8 @@ const CHASE_ACTIONABLE_STATES := ["idle","walk","dash","backstep","dodge","crouc
 var definition: UfeFighterDefinition
 var base_definition: UfeFighterDefinition
 var battle_form: Dictionary = {}
+# 多形态选择表的根；battle_form 切到某个子形态后仍从这里继续切换。
+var battle_form_choices: Dictionary = {}
 var form_id: String = ""
 var transformed_this_round: bool = false
 var x: int = 0
@@ -17,7 +19,8 @@ var state: String = "idle"
 var state_tick: int = 0
 var move_id: String = ""
 var move_tick: int = 0
-var stats: Dictionary = {"hp": 1000, "energy": 0, "stamina": 1000, "stun": 0, "stun_immune": 0}
+var stats: Dictionary = {"hp": 1000, "energy": 0, "stamina": 1000, "stun": 0, "stun_immune": 0,
+	"chill_ticks": 0, "chill_percent": 100}
 var combat: Dictionary = {"buffer": "", "buffer_ticks": 0, "connected": false, "confirmed": false,
 	"combo": 0, "combo_ticks": 0, "bounced": false, "invulnerable": 0, "thrower": -1, "throw_age": 0, "power": 1}
 var motion: Dictionary = {"jump_kind": "vertical", "direction": 1, "duration": 0, "chase_window": 0, "land_window": 0, "bounce_followup":false}
