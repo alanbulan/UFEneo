@@ -28,7 +28,7 @@
 
 - 技能段：`zero_fx_wide_beam` / `zero_fx_wide_hit`、`zero_fx_emerium_beam` / `zero_fx_emerium_hit`、`zero_fx_slugger_flight` / `_trail` / `_hit` / `_catch`。硬 Alpha、≤8 色板，亮芯 + 外焰/刃波 + 颗粒相位。
 - Q 蓄气：`zero_fx_q_charge_start`（9 帧）/ `zero_fx_q_charge`（24 帧）/ `zero_fx_q_charge_stop`（9 帧），已在 `content/presentation/charge_overlay_policy.json` 登记；只在真实 Q 起势/保持/收势出现，招式期间不出现周身蓄气圈。
-- 基础光弹 `pulse` / `low_pulse` / `air_pulse` / `ranged_forward` 仍用运行时通用 `pulse` 弹体（与已装机角色同一通用池），不是他人角色专属家族。
+- 基础光弹：`zero_fx_pulse_flight`（4 帧飞行）/ `zero_fx_pulse_hit`（4 帧命中）已接到 `pulse` / `low_pulse` / `air_pulse` / `ranged_forward`，银白亮芯、蓝白内层、深蓝环与绯红外焰，不再用通用 `pulse` 弹体。
 
 ## 方向快捷与投技
 
@@ -99,4 +99,4 @@
 
 - 真正机 720/1080、双朝向画面检查未做；听审未做；无录屏。不能把逻辑检查当成画面或听感通过。
 - 赛罗其它形态（超限、月神奇迹、光辉、强壮日冕、究极）仍未实现：选人界面 `implemented=false`，无独立整帧、招式与声音；默认形态不受影响。
-- 基础光弹仍用通用 `pulse` 弹体；赛罗专属基础弹家族未另建。三格终结与 Q 蓄气已用专属家族。
+- 基础光弹已换 `zero_fx_pulse_flight` / `zero_fx_pulse_hit`；三格终结与 Q 蓄气已用专属家族。四招的实机飞行/命中朝向与 720/1080 目视未做。
