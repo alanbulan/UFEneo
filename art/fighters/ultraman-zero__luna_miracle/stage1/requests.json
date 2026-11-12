@@ -1,0 +1,131 @@
+{
+ "fighter": "ultraman-zero__luna_miracle",
+ "form": "月神奇迹型（Luna-Miracle）",
+ "stage": "stage1",
+ "created": "2026-11-12",
+ "review_authority": "root_delegated_by_user",
+ "policy": "官方侧视结构 + 官方皮套照定右侧格斗待机照片；照片通过后单参考转像素；原生格与 4× 造型核过才作动作身份锚。未过不铺动作。",
+ "sources": [
+  {
+   "path": "art/fighters/ultraman-zero__luna_miracle/sources/ref-01.webp",
+   "metadata": "art/fighters/ultraman-zero__luna_miracle/sources/ref-01.json",
+   "sha256": "ab6df739c3b3e6e8a9bb1c84b0303db39ca480f000d1d9ec194b5ad3b14414a4",
+   "role": "正面造型与配色辅助核验"
+  },
+  {
+   "path": "art/fighters/ultraman-zero__luna_miracle/sources/ref-02-side-official.png",
+   "metadata": "art/fighters/ultraman-zero__luna_miracle/sources/ref-02-side-official.json",
+   "sha256": "69928357e684dab36d72d1d3e2a3a848c8d62e1d544f8bd2f8ce86c21f086098",
+   "role": "头部冠鳍侧面结构主来源（左后 3/4、脚被裁，不冒称全身侧视）"
+  },
+  {
+   "path": "art/fighters/ultraman-zero__luna_miracle/sources/ref-03-suit-official.jpg",
+   "metadata": "art/fighters/ultraman-zero__luna_miracle/sources/ref-03-suit-official.json",
+   "sha256": "507d96bd5c75f562615e7ac02b4cf9c127f0677c1cb12c6aa3515df174a9cc82",
+   "role": "本人皮套造型、配色、体量与胸肩甲主来源"
+  }
+ ],
+ "reference_preparation": {
+  "suit_wide_canvas": {
+   "path": "art/fighters/ultraman-zero__luna_miracle/stage1/idle/references/suit-wide-canvas.png",
+   "sha256": "4439f44f2e8b9d5ccfe62c8f12b1771318866b18c0d9ff9a47df4f54b9f44139",
+   "operation": "ref-03 裁除顶部标题条、白底连通分离、只留最大主体、统一缩放到 368×1100 并放于 1024×1536 透明画布，鞋底 1410；未改人体、未摆姿。"
+  },
+  "side_head": {
+   "path": "art/fighters/ultraman-zero__luna_miracle/stage1/idle/references/luna-side-head-official.png",
+   "sha256": "a161d8f549b0dfc7f08502752cdad4d6b52bbc42cd563184ba9ffda26a79c15a",
+   "operation": "ref-02 裁 (200,150)-(580,470) 并 2× 放大；裁掉水印，未改头部像素。"
+  },
+  "stance_reference": {
+   "path": "art/fighters/ultraman-zero/stage1/idle/frames/identity-idle-pixel.png",
+   "sha256": "c36397a86bff3f6e1469e7efd611dad20ff4938bec30b03c703c9095c0e5df0f",
+   "note": "已装同风格成品，仅 1 张；只借右侧视角度、站姿与画风，不借身份红蓝配色。"
+  }
+ },
+ "attempts": [
+  {
+   "id": "stance-00",
+   "purpose": "官方皮套照锁身份、侧脸锁头、已装侧视待机锁站姿",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__luna_miracle/stage1/idle/references/suit-wide-canvas.png",
+    "art/fighters/ultraman-zero__luna_miracle/stage1/idle/references/luna-side-head-official.png",
+    "art/fighters/ultraman-zero/stage1/idle/frames/identity-idle-pixel.png"
+   ],
+   "prompt": "第一图锁月神奇迹赛罗的皮套造型、配色与体量：深蓝四肢、蓝拳套蓝靴、银色层叠胸肩甲、蓝色椭圆胸计时器、白/银X纹；四肢粗细照第一图，不增肌不加厚。第二图只锁头部：双蓝冠鳍根部在额侧太阳穴上方、贴头壳向后上方掠起、尖端在后脑上方，近侧遮远侧，不得向前弯或加第三根冠；银中央冠脊、青绿额灯、黄眼、银面罩照第二图。第三图只借右侧格斗站姿与画风，不借身份配色。人物朝右，纯右侧视90°，只见一只眼，双肩前后重叠，不转成3/4。后脚在画面左、前脚在右，鞋外缘间距约0.72站高；双膝屈、髋下沉，双拳抬到胸前护架，肩肘腕自然连接。站高约1100，完整不裁切，透明背景，无地面文字边框特效。",
+   "requested_path": "art/fighters/ultraman-zero__luna_miracle/stage1/idle/frames/stance-raw-00.png",
+   "generation_id": "image-3954-1121",
+   "actual_size": [1210, 1300],
+   "actual_mode": "RGBA",
+   "alpha_levels": 256,
+   "sha256": "bcdb569e94ba2f80ded49ee97cf6708b1bb99468ccdac183982c829602390c41",
+   "bbox": [0, 21, 1173, 1299],
+   "status": "rejected_not_90_side",
+   "rejection": "3/4 正面：胸甲 X 纹正面展开、双肩双胸可见；主体触左/下画布边。"
+  },
+  {
+   "id": "stance-01",
+   "purpose": "强调镜头与肩线垂直、远侧肩髋全遮、胸计时器只露侧边",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__luna_miracle/stage1/idle/references/suit-wide-canvas.png",
+    "art/fighters/ultraman-zero__luna_miracle/stage1/idle/references/luna-side-head-official.png",
+    "art/fighters/ultraman-zero/stage1/idle/frames/identity-idle-pixel.png"
+   ],
+   "prompt": "第一图只锁配色、胸肩甲、四肢粗细与体量，不锁身体朝向；第三图锁右侧视角度与格斗站姿。第二图只锁头部：双蓝冠鳍根在额侧太阳穴上方、贴头壳向后上掠、尖端在后脑上方，近遮远，不向前弯、不加第三根冠；银冠脊、青绿额灯、黄眼照第二图。镜头在本人右侧、与肩线垂直：只见一只眼与面部侧轮廓，近侧右肩右髋在前，远侧左肩左髋完全被遮；胸计时器只露侧面窄边，不出现完整椭圆，胸甲V纹不正面展开。人物朝右，后脚在左、前脚在右，鞋外缘间距约0.72站高；双膝屈、髋下沉，双拳胸前护架。站高约1100，四周留白、四肢完整不裁切，透明背景，无地面文字边框特效。",
+   "requested_path": "art/fighters/ultraman-zero__luna_miracle/stage1/idle/frames/stance-raw-01.png",
+   "generation_id": "image-3954-1123",
+   "actual_size": [1210, 1300],
+   "actual_mode": "RGBA",
+   "alpha_levels": 256,
+   "sha256": "ecb9f560a8904d03e3f00d2bafd54a523c64c768a22873c0d1641fa40db23312",
+   "bbox": [0, 9, 1185, 1299],
+   "status": "rejected_not_90_side",
+   "rejection": "仍 3/4：胸甲 X 纹与双胸可见，远侧臂完整可见；主体触左/下画布边。"
+  },
+  {
+   "id": "stance-02",
+   "purpose": "把已装侧视待机放第一参考重绘，皮套照只供材质与配色",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero/stage1/idle/frames/identity-idle-pixel.png",
+    "art/fighters/ultraman-zero__luna_miracle/stage1/idle/references/suit-wide-canvas.png",
+    "art/fighters/ultraman-zero__luna_miracle/stage1/idle/references/luna-side-head-official.png"
+   ],
+   "prompt": "以第一图的角度与站姿为准：人物朝右，纯右侧视90°，只见一只眼与面部侧轮廓，近侧右肩右髋在前，远侧完全被遮；后脚在左、前脚在右，鞋外缘间距约0.72站高，双膝屈、髋下沉，双拳胸前护架；把第一图像素姿势重绘为真实皮套照片，不是像素画。第二图只取月神奇迹配色、银色胸肩甲、蓝拳套蓝靴、蓝胸计时器与白/银X纹，四肢粗细照第二图，不增肌不加厚，不保留第一图红蓝配色与红靴。第三图只锁头部：双蓝冠鳍根在额侧太阳穴上方、贴头壳向后上掠、尖端在后脑上方，近遮远，不向前弯、不加第三根冠；银冠脊、青绿额灯、黄眼照第三图。站高约1100，四周留白、完整不裁切，透明背景，无地面文字边框特效。",
+   "requested_path": "art/fighters/ultraman-zero__luna_miracle/stage1/idle/frames/stance-raw-02.png",
+   "generation_id": "image-3954-1124",
+   "actual_size": [1210, 1300],
+   "actual_mode": "RGBA",
+   "alpha_levels": 256,
+   "sha256": "625e816bb05bd7311fe25d5f1483ce431671c13784ba5db7b825c4aef38cd742",
+   "bbox": [0, 3, 1189, 1299],
+   "status": "rejected_not_90_side",
+   "rejection": "仍 3/4：胸甲 X 纹正面展开、双肩双胸可见；主体触左/下画布边。"
+  }
+ ],
+ "stop": {
+  "gate": "待机照纯右侧视 90°",
+  "consecutive_rejections": 3,
+  "methods_tried": 2,
+  "authority": "root_delegated_by_user",
+  "diagnostic": "art/fighters/ultraman-zero__luna_miracle/stage1/diagnostic/stance-view-angle-contact.png",
+  "record": "art/fighters/ultraman-zero__luna_miracle/stage1/diagnostic/stance-view-angle.json",
+  "decision": "按返工刹车停止同参考重生成；像素锚与动作帧未开始。下一步换真实 90° 侧视身体来源或人工侧视底稿。"
+ }
+}
