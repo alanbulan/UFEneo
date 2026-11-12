@@ -241,6 +241,36 @@ function chargeAura(t,env){
  for(let i=0;i<rgba.length;i+=4)if(rgba[i+3]<4)rgba.fill(0,i,i+4);
  return rgba;
 }
+function keepLargest(mask,w,h){
+ const labels=new Int32Array(w*h).fill(-1);
+ let bestId=-1,bestSize=0,id=0;
+ const q=new Int32Array(w*h);
+ for(let i=0;i<w*h;i++){
+  if(!mask[i]||labels[i]>=0)continue;
+  let head=0,tail=0,size=0;q[tail++]=i;labels[i]=id;
+  while(head<tail){
+   const p=q[head++],x=p%w,y=(p/w)|0;size++;
+   if(x>0){const n=p-1;if(mask[n]&&labels[n]<0){labels[n]=id;q[tail++]=n;}}
+   if(x+1<w){const n=p+1;if(mask[n]&&labels[n]<0){labels[n]=id;q[tail++]=n;}}
+   if(y>0){const n=p-w;if(mask[n]&&labels[n]<0){labels[n]=id;q[tail++]=n;}}
+   if(y+1<h){const n=p+w;if(mask[n]&&labels[n]<0){labels[n]=id;q[tail++]=n;}}
+  }
+  if(size>bestSize){bestSize=size;bestId=id;}id++;
+ }
+ if(bestId<0)return mask;
+ const out=new Uint8Array(w*h);
+ for(let i=0;i<w*h;i++)if(labels[i]===bestId)out[i]=1;
+ return out;
+}
+function quantizeToPal(r,g,b,pal){
+ let best=0,bestD=1e9;
+ for(let k=0;k<pal.length;k++){
+  const c=pal[k],pr=c&255,pg=(c>>>8)&255,pb=(c>>>16)&255;
+  const dr=r-pr,dg=g-pg,db=b-pb,d=dr*dr+dg*dg+db*db;
+  if(d<bestD){bestD=d;best=k;}
+ }
+ return pal[best];
+}
 
 // ---------- 段规格 ----------
 const SPECS={
@@ -295,7 +325,18 @@ for(const [state,count] of [['charge_start',9],['charge',24],['charge_stop',9]])
  const cols=6,rows=Math.ceil(count/cols),atlas=new Uint8ClampedArray(QW*cols*QH*rows*4),rects=[],hashes=[];
  for(let i=0;i<count;i++){
   const env=state==='charge_start'?(i+1)/count:state==='charge_stop'?Math.max(0.08,(count-1-i)/(count-1)):1;
-  const rgba=chargeAura(i+(state==='charge'?9:state==='charge_stop'?33:0),env),x=i%cols*QW,y=Math.floor(i/cols)*QH;
+  const rgba=chargeAura(i+(state==='charge'?9:state==='charge_stop'?33:0),env);
+  // Q 蓄气入库门：硬 Alpha + ≤16 色本角色色板量化 + 4 连通主体外剔除（alpha>=200 判 1）
+  let mask=new Uint8Array(QW*QH);
+  for(let p=0;p<QW*QH;p++)if(rgba[p*4+3]>=200)mask[p]=1;
+  mask=keepLargest(mask,QW,QH);
+  for(let p=0;p<QW*QH;p++){
+   const o=p*4;
+   if(!mask[p]){rgba[o]=rgba[o+1]=rgba[o+2]=rgba[o+3]=0;continue;}
+   const c=quantizeToPal(rgba[o],rgba[o+1],rgba[o+2],CYAN);
+   rgba[o]=c&255;rgba[o+1]=(c>>>8)&255;rgba[o+2]=(c>>>16)&255;rgba[o+3]=255;
+  }
+  const x=i%cols*QW,y=Math.floor(i/cols)*QH;
   for(let row=0;row<QH;row++)atlas.set(rgba.subarray(row*QW*4,(row+1)*QW*4),((y+row)*QW*cols+x)*4);
   const png=encodePNG(QW,QH,rgba);writeFileSync(join(folder,String(i).padStart(2,'0')+'.png'),png);hashes.push(SHA(png));rects.push([x,y,QW,QH]);
  }
