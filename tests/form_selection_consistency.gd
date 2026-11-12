@@ -47,5 +47,19 @@ func run() -> void:
 		var base := str(key).get_slice("/", 0)
 		if not registry.has(base) or not registry[base].has("choices"): continue
 		check(registry[base].choices.any(func(raw): return str(raw.get("id","")) == str(key).get_slice("/",1)), "%s 已登记在战斗表" % key)
+	# 任何自称可玩的形态定义都不能指向图鉴静态图或留着 pending_ 特效id；半成品提前打开会让运行时静默缺图缺弹。
+	for row in selection.entries:
+		for form in row.get("forms", []):
+			var path := "res://content/fighters/%s/definition.json" % str(form.get("id", ""))
+			if not FileAccess.file_exists(path): continue
+			var definition: Dictionary = UfeContentDatabase.read_json(path)
+			if not bool(definition.get("playable", false)): continue
+			var model := str(definition.get("presentation", {}).get("model", ""))
+			check(FileAccess.file_exists(model) and not model.contains("/catalogue/"), "%s 可玩形态模型为动作整图" % str(form.id))
+			var pending: Array[String] = []
+			for move_id in definition.get("moves", {}):
+				var text := JSON.stringify(definition.moves[move_id])
+				if text.contains("\"pending_"): pending.append(str(move_id))
+			check(pending.is_empty(), "%s 可玩形态无pending特效id %s" % [str(form.id), str(pending)])
 	print("FORM_SELECTION_CONSISTENCY " + ("PASS" if failures.is_empty() else str(failures)))
 	quit(0 if failures.is_empty() else 1)
