@@ -3,7 +3,7 @@
 流程：
   1. 读 art/fighters/ultraman-zero/basic-pulse-fx-20261112/raw/*.png（MCP 实收原图）
   2. 按 2×2 分格，核每格 Alpha 边界与真透明
-  3. 统一比例块主色缩放，硬 Alpha、16 色赛罗银红蓝板、只保留最大连通块
+  3. 统一比例块主色缩放，硬 Alpha、16 色赛罗银红蓝板、只保留最大 4 邻域连通块
   4. 写 assets/effects/ultraman-zero/basic-pulse-fx-20261112/<段>/atlas.png
   5. 生成 phase3_entries.json 与 build-report.json（不写共享 phase3_projectiles.json）
 """
@@ -117,7 +117,7 @@ def edge_touch(mask: np.ndarray) -> bool:
 
 
 def components(mask: np.ndarray) -> list[np.ndarray]:
-    """8 邻域连通块像素坐标列表，按像素数降序。"""
+    """4 邻域连通块像素坐标列表，按像素数降序。"""
     h, w = mask.shape
     seen = np.zeros_like(mask, dtype=bool)
     out = []
@@ -131,12 +131,11 @@ def components(mask: np.ndarray) -> list[np.ndarray]:
             while stack:
                 y, x = stack.pop()
                 pts.append((y, x))
-                for dy in (-1, 0, 1):
-                    for dx in (-1, 0, 1):
-                        yy, xx = y + dy, x + dx
-                        if 0 <= yy < h and 0 <= xx < w and mask[yy, xx] and not seen[yy, xx]:
-                            seen[yy, xx] = True
-                            stack.append((yy, xx))
+                for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    yy, xx = y + dy, x + dx
+                    if 0 <= yy < h and 0 <= xx < w and mask[yy, xx] and not seen[yy, xx]:
+                        seen[yy, xx] = True
+                        stack.append((yy, xx))
             out.append(np.array(pts, dtype=np.int32))
     out.sort(key=len, reverse=True)
     return out
@@ -380,7 +379,7 @@ def main() -> None:
             "operations": [
                 "Alpha≥128 二值化，按格取主体外框",
                 "全段统一比例块多数 Alpha + 逐通道中位色缩放",
-                "只保留最大 8 邻域连通块，其余可见像素清零",
+                "只保留最大 4 邻域连通块，其余可见像素清零",
                 "16 色赛罗银红蓝板最近邻量化，硬 Alpha 255",
             ],
             "atlas_sha256": sha(atlas_path),
