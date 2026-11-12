@@ -4,6 +4,25 @@
 
 本目录保留可以随干净仓库交接的结果摘要；原始测试输出在本机忽略的 `reports/verification`，重新运行会生成自己的输出，不上传整套日志和截图副本。
 
+## 2026-11-12 七角色整帧落格、招式重映射与全量验证
+
+- 本轮把七角色（赛罗、杰斯提斯、盖亚、奥王、佐菲、奥父、奥母）已生成的纯人物整帧落格、装机并重映射招式数据。落格共用身份锚与全套固定比例：赛罗 0.158767/172、杰斯提斯 0.161972/161、盖亚 0.169182/175、奥王方形批次 0.185897/203、佐菲 0.102001312/158、奥父 0.163561/158、奥母 0.098674/140；根点与脚底行按各角色已装口径，逐 clip 记录在各自 `stage1/cells/cells.json`。
+- 空中必杀等斜下前伸臂超宽的 clip 改用 288×288 格（赛罗/杰斯提斯/盖亚 air_special、奥父 light2），根点随格中心；其余保持 256/192。运行时按 clip 的 `cell`/`anchor`/`rects` 取图，未改渲染口径。
+- 招式按已装机基线重映射：special 72（24/32/16）、special2 80（32/32/16）、special3 96（32/48/16）、air_special 24（10/1/13）；奥父基础招 light1/2/3 20（5/3/12）、heavy 28（9/4/15）、dash_heavy 12（4/3/5）、dash_throw 24（2/4/18）。重映射后命中 tick 只保留在声明的 active 窗口内，伤害/判定值与原数据一致；hurtboxes 全部按新图集重算。
+- `tools/art/install_cells.py` 修复两类隐患：①单 clip 重装时沿用该 clip 的根点，不再回落到 `cells.json` 旧顶层值（曾把 256 格人物整体上移 64 px）；②同一批可含多种格宽，格尺寸按 clip 取，不再用第一组尺寸缩放其余组；根点优先按 `cells.json` 落格记录（直立帧脚底行 +1、x 取格中心）。`tools/art/remap_move_sprites.py` 与 `recalc_move_hurtboxes.py` 为展开后首 tick 补齐空 `events/cancel/hitboxes` 键，避免校验拒收整招。
+- 门值复核（已落格图集重测）：本轮改动的 clip 均 26–32 色、二值 Alpha、主体单连通、四边留白、无裁切；相邻剪影差分 0.10 以上（例外：奥王 motion_22 06→07 为旧帧 0.085，已登记待返工）。腾空/深蹲帧高度变化按 AGENTS 姿态例外登记，未逐帧改比例。
+- 锁内全量 `tools/verify.py` **57 项全部 PASS**，含 `roster_data_integrity`、`catalogue_animation`、`catalogue_assets`、`main-startup`、`audio_playback`。
+- 未做：双朝向 720/1080 实机逐动作画面检查、人耳听审、硬件键盘逐键测试；无录屏。赛罗/杰斯提斯/奥父仍用 pending/共享特效 id（未接本角色特效家族），奥父 dash_throw 仍为旧人物帧。
+
+### 2026-11-12 补：蓄气未登记、赛罗特效家族与发射点（同日续）
+
+- 根因：`charge_overlay_policy.json` 已把盖亚/奥王/佐菲/奥母的 Q 蓄气替换为各自 `q-outline` 批次的 effect id，但 `phase3_projectiles.json` 没有对应条目；`presentation/side_view.gd` 查不到 clip 就静默跳过，Q 起势/保持/收势整段不可见，逻辑检查也不会报错。新增 `tools/rebuild/shared/q_charge_registry.py`：只从 policy 取 id、在角色目录找已核 atlas、按批次 provenance 的 W/H/AX/AY/count 生成逐帧 rects，SHA 不符拒绝登记；补登记 12 条（4 角色 × 3 态），未改像素。
+- 赛罗三招原引用 `pending_*` effect id，同样因未登记而无束体/飞刃。新建 `tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/`，PixelFX 离线烘焙 11 段自绘原创像素（wide beam/hit、emerium beam/hit、slugger flight/trail/hit/catch、Q 三态），硬 Alpha、≤8 色、逐段 provenance 与 atlas SHA；phase3 登记 11 条并接线 special/special2/special3/air_special 与 charge policy。人物帧未改、帧内无烘焙特效。
+- 发射点复核发现 special3 双镖 [57,151]/[57,113] 距当帧手部 11.05/6.32 px，基础光弹 pulse/low_pulse/air_pulse/ranged_forward 距手 8.49/21.84/41.87/3.61 px。全部按当帧手部像素重取后九处距离 0.00 px。
+- special3 另有数据缺陷：`integer_path` 只有 `[[0,0]]`，实体镖不会飞出；`return_anchor_by_tick` 只有 `"0"`，而运行时按 `owner.move_tick` 逐 tick 取锚，回收首 tick 查不到即以 `missing_current_return_anchor` 清除，接刃闪光永不出现。改为 31 点外飞折线（30 tick、双镖上下分开 ±8 px）+ `return_anchor` [12,118]/[0,120] + tick 32–95 逐 tick 双手锚，24 tick 回收。
+- 新增 AGENTS 规则：招式/反馈/蓄气引用的每个 effect id 必须在 phase3 有条目，换贴图后补登记并核 SHA。
+- 锁内全量 `tools/verify.py` 57 项 PASS。未实机、未听审、无录屏；赛罗基础光弹仍用通用 `pulse` 弹体。
+
 ## 2026-11-11 减速规则与事件语音接入
 
 - core 新增招式字段 `chill`（`ticks` 正整数、`speed_percent` 1–99），由 `UfeMoveData.validate` 校验；只在未防住的命中由 `UfeHitResolver.apply` 写入受方 `stats.chill_ticks/chill_percent`，`UfeMatchDirector._advance` 每 tick 递减；`UfeState.move_speed` 对 walk/dash/backstep 位移按 `(base*percent+50)/100` 整数取整，最低 1 px。出招帧、硬直、受击状态与判定时序不变。content fingerprint 已包含 moves，旧回放不会混跑新数据。

@@ -123,4 +123,10 @@
   逐帧原图、原生格、严格 4× 与联系表路径见 `cells.json` 同目录。
 - **未验项**：720/1080 双向、实速、循环接续、声音、主游戏实机；无录屏。
 
+## 2026-11-12 air_special/heavy/light3 落格与重映射
 
+- air_special 8 帧 288×288、根点 [128,248]、腾空脚底 239、比例 0.169182；heavy 7 帧、light3 6 帧，256 格、接地脚底 247、同一比例。逐帧记录见 `stage1/cells/cells.json`。
+- 落格实测：air 高 163–188、heavy 168–177、light3 168–187；32 色、二值 Alpha、单连通、四边留白、无裁切。
+- 招式：heavy 4→7 sprite，保持 28 tick 与 18/4/6，命中 tick 18–21 落在新连续直拳帧（sprite 3），判定框/伤害不动；light3 4→6 sprite，保持 20 tick 与 13/3/4，命中 13–15 落在上勾拳最高帧（sprite 4）。重映射后逐 tick 修剪越出 active 窗口的重复判定，只保留声明的命中 tick。
+- 安装 `--only heavy,light3` 与 `--only air_special` 两次合成，clip 数与 SHA 见 manifest。hurtboxes 按图集重算。
+- 全量 `tools/verify.py` 57 项 PASS。root_delegated_by_user；无录屏，720/1080 双向实机未验。

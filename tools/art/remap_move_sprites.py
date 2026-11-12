@@ -61,10 +61,46 @@ def parse_ints(text: str, sep: str = ",") -> list[int]:
     return [int(x) for x in text.replace(sep, ",").split(",") if x.strip()]
 
 
+def _merge_unique(target: list, extra: list) -> None:
+    seen = {json.dumps(item, sort_keys=True, ensure_ascii=False) for item in target}
+    for item in extra:
+        key = json.dumps(item, sort_keys=True, ensure_ascii=False)
+        if key not in seen:
+            seen.add(key)
+            target.append(copy.deepcopy(item))
+
+
 def old_entries(move: dict) -> dict[int, dict]:
+    """每个 sprite 的逐帧数据。
+
+    同一 sprite 常连续保持多 tick：发射/判定/事件只落在其中一 tick，不能只取
+    该 sprite 的第一帧（奥母 special2 的发射在 sprite 3 的第 6 个 tick，只取首帧
+    会把 shots 丢光）。attachments/events 取首个非空组；shots/hitboxes 全量并集
+    并去重。
+    """
     out: dict[int, dict] = {}
     for frame in move.get("frames", []):
-        out.setdefault(int(frame["sprite"]), frame)
+        sprite = int(frame["sprite"])
+        if sprite not in out:
+            copied = copy.deepcopy(frame)
+            for key in ("attachments", "events"):
+                if not copied.get(key):
+                    copied.pop(key, None)
+            out[sprite] = copied
+            continue
+        entry = out[sprite]
+        for key in ("attachments", "events"):
+            if frame.get(key) and not entry.get(key):
+                entry[key] = copy.deepcopy(frame[key])
+        for key in ("shots", "hitboxes"):
+            if frame.get(key):
+                entry.setdefault(key, [])
+                _merge_unique(entry[key], frame[key])
+        if frame.get("beam_origin") and not entry.get("beam_origin"):
+            entry["beam_origin"] = copy.deepcopy(frame["beam_origin"])
+        for key in ("cinematic_stage", "pause_clock", "freeze_opponent"):
+            if key in frame and key not in entry:
+                entry[key] = frame[key]
     return out
 
 
@@ -96,10 +132,15 @@ def build_frames(move: dict, mapping: dict[int, int], sprites: int,
         source["sprite"] = new_index
         target = frames[new_index]
         if target.get("_filled"):
-            for key in ("events", "shots", "hitboxes"):
+            for key in ("events", "attachments", "shots", "hitboxes"):
                 if source.get(key):
                     target.setdefault(key, [])
-                    target[key].extend(source[key])
+                    _merge_unique(target[key], source[key])
+            if source.get("beam_origin") and not target.get("beam_origin"):
+                target["beam_origin"] = copy.deepcopy(source["beam_origin"])
+            for key in ("cinematic_stage", "pause_clock", "freeze_opponent"):
+                if key in source and key not in target:
+                    target[key] = source[key]
             continue
         frames[new_index] = source
         source["_filled"] = True
@@ -118,6 +159,12 @@ def build_frames(move: dict, mapping: dict[int, int], sprites: int,
 
     for frame in frames:
         frame.pop("_filled", None)
+        # 旧帧可能没有空 events/cancel 键；展开后首 tick 不会补，校验会拒收。
+        frame.setdefault("events", [])
+        frame.setdefault("cancel", [])
+        frame.setdefault("hitboxes", [])
+        frame.setdefault("dx", 0)
+        frame.setdefault("dy", 0)
     return frames
 
 
