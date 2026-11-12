@@ -21,7 +21,7 @@
  "super_level": 1,
  "air_allowed": false,
  "feedback": {
-  "spark": "beam_hit",
+  "spark": "father_fx_beam_hit",
   "block_spark": "impact_guard",
   "hitstop": 10,
   "blockstop": 5,
@@ -38,14 +38,17 @@
    1,
    1,
    1
-  ]
+  ],
+  "projectile_impacts": {
+   "father_fx_beam": "father_fx_beam_hit"
+  }
  },
  "cancel_rule": "完整收势后恢复行动，无招式取消",
  "audio": {
   "hit": "hit_heavy",
   "block": "guard"
  },
- "data_source": "父亲射击（Father Shot）：双臂 L 字，右臂垂直，将体内光能转为火花能量后从右臂发射；艾斯第38话击破纳玛哈盖，梦比优斯第37话击碎伽休莱因回旋镖，圆谷官方页列为特殊技。原剧光色无可靠记载，本作取暖白主束为游戏定色，不冒充原剧色值；帧序、伤害为游戏编排。",
+ "data_source": "父亲射击（Father Shot）：双臂 L 字，右臂垂直，将体内光能转为火花能量后从右臂发射；艾斯第38话击破纳玛哈盖，梦比优斯第37话击碎伽休莱因回旋镖，圆谷官方页列为特殊技。原剧光色无可靠记载，本作取暖白主束为游戏定色，不冒充原剧色值；帧序、伤害为游戏编排。人物帧只画身体，束体与命中由奥父专属 father_fx_beam / father_fx_beam_hit 承载。",
  "production_note": "内容数据；美术已交付未安装，未启动 Godot、未提交。",
  "frames": [
   {
@@ -1149,7 +1152,7 @@
    "block_effect": "impact_guard",
    "shots": [
     {
-     "effect": "beam_loop",
+     "effect": "father_fx_beam",
      "color": [
       1.0,
       0.86,

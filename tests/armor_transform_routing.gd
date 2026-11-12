@@ -104,6 +104,62 @@ func test_routing_and_lifecycle() -> void:
 			routing_evidence.append({"facing":facing,"direction":direction,"selector":selector,"move":selected_move,"target":target.id,"transform_ticks":transform_ticks,"entry_ticks":entry_ticks})
 	check(not fixture().fighters[0].transformed_this_round, "new_round_clears_usage")
 
+func free_source() -> Dictionary:
+	var choices: Array = []
+	for row in [["neutral",[2,5],"ex_red_king"], ["forward",[3,6],"ex_gomora"], ["backward",[1,4],"ex_red_king"]]:
+		var choice: Dictionary = UfeBattleFormCatalog.registry()["gomora" if row[2] == "ex_gomora" else "red_king"].duplicate(true)
+		choice.id = "free-" + str(row[0]); choice.enabled = true
+		choice.directions = row[1]; choice.default = row[0] == "neutral"
+		choice.display_name = str(row[0]) + "免费切换"
+		choice.free_switch = true; choice.energy_cost = 0
+		choices.append(choice)
+	return {"id":"fixture-free-forms", "enabled":true, "choices":choices}
+
+# E独立切已开放形态：不耗气、每局不限次数，但切到当前形态不重播。
+func test_free_switch_choices() -> void:
+	var sim := fixture(1, free_source())
+	var f := sim.fighters[0]
+	f.stats.energy = 0
+	check(UfeBattleTransform.can_transform(f, ""), "free_switch_any_choice_available")
+	drive(sim,6)
+	check(f.state == "transform" and int(f.stats.energy) == 0, "free_switch_no_energy_cost")
+	check(not f.transformed_this_round, "free_switch_not_once_per_round")
+	var ticks: int = f.definition.moves[f.move_id].frames.size() + f.battle_form.entry_frames.size()
+	advance(sim,ticks)
+	check(f.state == "idle" and f.definition.id == "ex_gomora", "free_switch_first_target")
+	check(UfeBattleTransform.can_transform(f, ""), "free_switch_repeat_available")
+	drive(sim,2)
+	check(f.state == "transform" and int(f.stats.energy) == 0, "free_switch_repeat_no_cost")
+	ticks = f.definition.moves[f.move_id].frames.size() + f.battle_form.entry_frames.size()
+	advance(sim,ticks)
+	check(f.definition.id == "ex_red_king", "free_switch_second_target")
+	drive(sim,2)
+	check(f.state != "transform" and f.definition.id == "ex_red_king", "free_switch_same_form_not_replayed")
+
+# 选人界面出场形态：开局definition直接是形态定义，基础ID留在base_definition供回放复原。
+func test_start_definition() -> void:
+	var a := UfeBattleFormCatalog.assemble(UfeContentDatabase.fighter("ultraman", true), free_source())
+	var base := UfeContentDatabase.fighter("ultraseven", true)
+	var free_choice: Dictionary = a.form.choices["battle_transform__free-forward"]
+	var target: UfeFighterDefinition = free_choice.target_definition
+	var sim := UfeMatchDirector.new(a.definition, base, load("res://content/rules/neo.tres"), UfeContentDatabase.states(), {"ultraman":a.form}, {0:target})
+	var f := sim.fighters[0]
+	check(f.definition == target and f.base_definition.id == "ultraman", "start_form_definition_without_base_swap")
+	check(f.form_id == "ex_gomora", "start_form_id_kept")
+	var plain := UfeMatchDirector.new(a.definition, base, load("res://content/rules/neo.tres"), UfeContentDatabase.states(), {"ultraman":a.form})
+	check(plain.content_fingerprint != sim.content_fingerprint, "start_form_changes_fingerprint")
+	# 回放必须记住出场形态，重放才能装回同一开局定义。
+	var recorder := UfeReplayRecorder.new()
+	recorder.append([UfeInputFrame.make(), UfeInputFrame.make()], UfeMatchDirector.new(a.definition, base, load("res://content/rules/neo.tres"), UfeContentDatabase.states(), {"ultraman":a.form}, {0:target}))
+	check(recorder.forms == ["ex_gomora", "default"], "start_form_recorded_in_replay")
+	check(f.battle_form_choices.size() == 3, "start_form_keeps_all_choices")
+	f.stats.energy = 0
+	drive(sim,2)
+	check(f.state == "transform", "start_form_can_switch_to_default")
+	var ticks: int = f.definition.moves[f.move_id].frames.size() + f.battle_form.entry_frames.size()
+	advance(sim,ticks)
+	check(f.definition.id == "ex_red_king" and int(f.stats.energy) == 0, "start_form_switch_target_and_cost")
+
 func test_buffer_fallback_and_jump() -> void:
 	var buffered := fixture()
 	buffered.hitstop = 7
@@ -205,6 +261,8 @@ func run() -> void:
 			# JSON读取的数值均为float；两边同样解码，避免事件整数的序列化假差异。
 			check(original == JSON.parse_string(JSON.stringify(data)), "legacy_all_ticks_events_and_fingerprints_unchanged")
 		test_routing_and_lifecycle()
+		test_free_switch_choices()
+		test_start_definition()
 		test_buffer_fallback_and_jump()
 		test_configuration_and_fingerprint()
 		test_replay(run_out)
