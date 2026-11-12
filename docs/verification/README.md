@@ -23,6 +23,13 @@
 - 新增 AGENTS 规则：招式/反馈/蓄气引用的每个 effect id 必须在 phase3 有条目，换贴图后补登记并核 SHA。
 - 锁内全量 `tools/verify.py` 57 项 PASS。未实机、未听审、无录屏；赛罗基础光弹仍用通用 `pulse` 弹体。
 
+### 2026-11-12 补：三套专属特效家族并入与 4 连通口径
+
+- 奥父 16 段、杰斯提斯 9 段、赛罗基础光弹 2 段（`father_fx_*` / `justice_fx_*` / `zero_fx_pulse_*`）并入 `phase3_projectiles.json` 共 27 条，并接线对应招式；奥父、杰斯提斯的 Q 三态落点并入 `charge_overlay_policy.json`，同时 `UfeChargeEffectPolicy.filter` 在“只有落点、没有受限附件”时注入落点，不再要求每个角色先挂占位附件。
+- 根独立复核发现赛罗 `zero_fx_pulse_hit` 的构建脚本用 **8 邻域**取最大连通块，三帧主体外仍有 2–6 px `alpha≥200`；按项目统一的 **4 邻域**门应为 0。已把 `tools/rebuild/ultraman-zero/basic-pulse-fx-20261112/build.py` 改为 4 邻域并重烘，atlas/effect/provenance/entries/build-report 的 SHA 同步更新。27 段逐段复核尺寸、SHA、二值 Alpha、4 连通主体与主体外 `alpha≥16 ≤100 / ≥200 = 0` 全部通过。
+- `tests/effect_registration.gd` 增加逐帧 `attachments` 扫描，并覆盖赛罗/奥父/杰斯提斯三态蓄气注入与离开 Q 不遗留；`effect_registration`、`phase3_specials`、`phase3_air`、`phase3_supers`、`roster_data_integrity` 与全量 `tools/verify.py`（含 `main-startup`）全部 PASS。
+- 奥父 Q 三态首版仍是红色竖条笼/门框、24 帧变化约 1.5%，已打回重做，未计入通过。未实机、未听审、无录屏。
+
 ## 2026-11-11 减速规则与事件语音接入
 
 - core 新增招式字段 `chill`（`ticks` 正整数、`speed_percent` 1–99），由 `UfeMoveData.validate` 校验；只在未防住的命中由 `UfeHitResolver.apply` 写入受方 `stats.chill_ticks/chill_percent`，`UfeMatchDirector._advance` 每 tick 递减；`UfeState.move_speed` 对 walk/dash/backstep 位移按 `(base*percent+50)/100` 整数取整，最低 1 px。出招帧、硬直、受击状态与判定时序不变。content fingerprint 已包含 moves，旧回放不会混跑新数据。
