@@ -37,3 +37,30 @@
 - `definition.json` 如实标为 `stage1_identity_anchor_only`、`playable=false`、`select_visible=false`，`unsupported_moves` 列 47 项：本形态尚无任何状态帧、招式帧或 `form_switch`，不能冒充可开局。动作帧仍须逐段从本形态待机锚生成、装格、`recalc_move_hurtboxes` 重算受击框后才能置可玩。
 - `state_frames.json` 的逐帧受击框是基础赛罗占位，已写入 `definition.state_frames_note`，安装本形态帧后必须重算。
 - 未复制的历史文件：基础赛罗的 `production_plan.json`、`MOVES.md`、`SOUNDS.md` 不作为本形态正式内容；音频 id 暂沿用赛罗同角色条目。
+
+## 2026-11-12 阶段 3：form_switch 六帧与运行特效家族
+
+### form_switch 六帧（纯人物，无光效）
+
+- 唯一动作参考仍是 `stage1/idle/frames/pixel-raw-04-official-side-anchor.png`（SHA `6816181d…c19057`），六帧逐帧生成，提示词只写本帧姿势，固定尾串要求右侧视、完整、透明、只画人物本体、无光束/光晕/颗粒/蓄气圈/贴掌光/飞行物。
+- 姿势序列：深屈膝蓄势（00）→ 后腿再屈、双拳前收（01）→ 髋先转、左臂横胸（02）→ 躯干继续拧转、双臂随肩摆（03）→ 双脚落回、双拳抬护架（04）→ 与待机锚一致的护架落定（05）。相邻帧手/臂/腿均有可见位移；05 与锚同姿势属落定帧，不是复制凑帧。
+- 00 首版（`switch-00-raw` v1，SHA `da5ade6b…7a2531`）姿势成立但提示词身份约束较弱；按同一姿势重生成 v2（SHA `bc89a8a6…2612ae`），头部结构与锚一致后采用。v1 已删除，SHA 留档。
+- 最终 raw（1024×1536，实体站高 972/1049/1098/1094/1096/1100，SHA 依次 `bc89a8a6…`/`2fe1ab4e…`/`e24f5c75…`/`28a67215…`/`f6ca8688…`/`acebdf5b…`）。
+- 头部原生像素对比 `stage1/form_switch/heads-raw.png`（SHA `6387e7e2…18bfaf`）：眼行脸宽 锚 203、00 203、01 208、02 209、03 221、04 214、05 203 px；03 为转身相、读数 +8.9% 属转头与前倾，按同一眼行口径登记，不做缩头。双镖根前尖后上、刃间凹口、蓝额灯/蓝眼/侧脸轮廓一致，没有单根高羽冠。
+- 落格：`land_clip.py`，固定源比例 `188/1100=0.170909091`、256 格、根点 [128,248]、脚底 247、`cells.json` 冻结 32 色板。六帧实体高 166/179/188/187/187/188 px；00 为深蓄势蹲姿（−11.6%，登记不返修），01 −4.6%，02–05 在 ±0.5% 内；相邻站高变化最大 7.8%（00→01，蓄势起身），其余 ≤5.0%。逐帧 32 色、二值 Alpha、单连通 1、bbox 均在格内，脚底全部 247。
+- 产出：`stage1/form_switch/cells/form_switch-00-cell.png`…`05-cell.png`（SHA `0e423396…`/`dc8a8074…`/`484e00f5…`/`22a7348a…`/`7e5d46dc…`/`0ef836ab…`），逐帧记录 `stage1/form_switch/cells/cells.json`（SHA `a55f37c7…`），联系表 `stage1/form_switch/contact-cells.png`（SHA `2518ba31…`）。
+- **未装 assets**：本形态仍未完成全部 113 段动作，按硬点不得只装 form_switch 就切换 `presentation.model`；六帧留在 art，待全量动作装格时随 manifest 一起安装。
+
+### 运行特效家族（15 个 pending id）
+
+- 目录：`assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/`；提案 `tools/rebuild/ultraman-zero__shining/fx-proposal.json`（SHA `a33680a0…`），Q 三态提案 `charge_policy.json`（SHA `5c4538bc…`），逐帧核验 `fx-report.json`，联系表 `fx-contact.png`（SHA `94ad8fb8…`）。
+- 8 个招式/命中段（wide_beam/wide_hit/emerium_beam/emerium_hit/slugger_flight/slugger_trail/slugger_hit/slugger_catch）：复制同角色基础赛罗 PixelFX 自绘图集，像素未改，只改路径与归属；每段 provenance 记录 `reused_from` 与原 atlas SHA。飞行 `slugger_flight` 与命中 `slugger_hit` 分开；`special3.feedback.projectile_impacts` 为 `{pending_shining_slugger_flight: pending_shining_slugger_hit}`。
+- 4 个通用段（pulse/impact_light/impact_guard/impact_heavy）：复制项目共享图集到本形态目录，保留原 rects/ticks/anchor，不改共享文件。
+- 3 个 Q 蓄气段：`bake_qcharge_hard.mjs` 沿用基础家族 `chargeAura` 形状，PixelFX 离线重烘为二值 Alpha（cutoff 32）并量化到青蓝 8 色；9/24/9 帧，384×256，anchor [192,246]，起势/收势首末帧加地面种子火花保证非空；亮芯、外焰、颗粒与相位变化保留。
+- 15 段逐帧核验：真透明、Alpha 二值、色数 3–21（Q 7）、atlas SHA 与提案一致、rects 均在图内、Q 帧盒 9/24/9 与 policy 帧数一致。命中/头镖等多连通块是特效颗粒/分段，按 AGENTS“独立颗粒另行核”记录；二值 Alpha 已无半透明晕边。共享 `phase3_projectiles.json` 与 `charge_overlay_policy.json` 未修改。
+
+### 未完与卡点（本轮如实记录）
+
+- 动作本体仍缺 497 个唯一帧：基础 manifest 113 段共 498 帧（47 招 285 帧 + 66 个状态段 213 帧），idle 单帧由已签身份锚承担，form_switch 6 帧另计并已完成。
+- 每帧须单独调用 MCP 生成并目视核；6 路并行实测约 5 分钟/6 帧（含一次重生成），497 帧按此约 7 小时并需 25–50 万 token 量级的提示与结果，单会话放不下。项目禁止复制姿势凑帧，也禁止拼图多姿势输出（基础赛罗历史已拒收 4×4 拼图），帧数不能压缩。
+- 已试两种修法：①加强身份约束提示词（switch-00 v2）——身份通过，帧数不变；②6 路并行 MCP 批生成——可运行，但吞吐与上下文仍不足以在本轮完成。下一步须按 clip 分组分多轮续产，不能把阶段 2/3 当完成态。

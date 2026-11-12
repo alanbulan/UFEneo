@@ -1,114 +1,1574 @@
 {
- "schema": 1,
- "fighter": "ultraman-zero__shining",
- "form": "光辉赛罗 / Shining Ultraman Zero",
- "note": "共享 phase3_projectiles.json 与 charge_overlay_policy.json 未修改；以下 id 需由主会话登记后才可见。",
- "effects": [
-  {
-   "id": "pending_shining_emerium_beam",
-   "source_id": "zero_fx_emerium_beam",
-   "role": "beam",
-   "status": "pending_register",
-   "note": "人物动作帧只含人物本体；光效由运行时特效层承载。"
-  },
-  {
-   "id": "pending_shining_emerium_hit",
-   "source_id": "zero_fx_emerium_hit",
-   "role": "hit_spark",
-   "status": "pending_register",
-   "note": "人物动作帧只含人物本体；光效由运行时特效层承载。"
-  },
-  {
-   "id": "pending_shining_impact_guard",
-   "source_id": "impact_guard",
-   "role": "block_spark",
-   "status": "pending_register",
-   "note": "人物动作帧只含人物本体；光效由运行时特效层承载。"
-  },
-  {
-   "id": "pending_shining_impact_heavy",
-   "source_id": "impact_heavy",
-   "role": "hit_spark",
-   "status": "pending_register",
-   "note": "人物动作帧只含人物本体；光效由运行时特效层承载。"
-  },
-  {
-   "id": "pending_shining_impact_light",
-   "source_id": "impact_light",
-   "role": "hit_spark",
-   "status": "pending_register",
-   "note": "人物动作帧只含人物本体；光效由运行时特效层承载。"
-  },
-  {
-   "id": "pending_shining_pulse",
-   "source_id": "pulse",
-   "role": "projectile",
-   "status": "pending_register",
-   "note": "人物动作帧只含人物本体；光效由运行时特效层承载。"
-  },
-  {
-   "id": "pending_shining_slugger_catch",
-   "source_id": "zero_fx_slugger_catch",
-   "role": "return",
-   "status": "pending_register",
-   "note": "人物动作帧只含人物本体；光效由运行时特效层承载。"
-  },
-  {
-   "id": "pending_shining_slugger_flight",
-   "source_id": "zero_fx_slugger_flight",
-   "role": "projectile",
-   "status": "pending_register",
-   "note": "人物动作帧只含人物本体；光效由运行时特效层承载。"
-  },
-  {
-   "id": "pending_shining_slugger_hit",
-   "source_id": "zero_fx_slugger_hit",
-   "role": "hit_spark",
-   "status": "pending_register",
-   "note": "人物动作帧只含人物本体；光效由运行时特效层承载。"
-  },
-  {
-   "id": "pending_shining_slugger_trail",
-   "source_id": "zero_fx_slugger_trail",
-   "role": "trail",
-   "status": "pending_register",
-   "note": "人物动作帧只含人物本体；光效由运行时特效层承载。"
-  },
-  {
-   "id": "pending_shining_wide_beam",
-   "source_id": "zero_fx_wide_beam",
-   "role": "beam",
-   "status": "pending_register",
-   "note": "人物动作帧只含人物本体；光效由运行时特效层承载。"
-  },
-  {
-   "id": "pending_shining_wide_hit",
-   "source_id": "zero_fx_wide_hit",
-   "role": "hit_spark",
-   "status": "pending_register",
-   "note": "人物动作帧只含人物本体；光效由运行时特效层承载。"
-  },
-  {
-   "id": "pending_shining_q_charge_start",
-   "source_id": "zero_fx_q_charge_start",
-   "role": "charge_overlay",
-   "status": "pending_register",
-   "note": "真实 Q 起势局部蓄气，非周身蓄气圈；由 charge_overlay_policy 提案登记。"
-  },
-  {
-   "id": "pending_shining_q_charge",
-   "source_id": "zero_fx_q_charge",
-   "role": "charge_overlay",
-   "status": "pending_register",
-   "note": "真实 Q 保持段；循环 24 帧。"
-  },
-  {
-   "id": "pending_shining_q_charge_stop",
-   "source_id": "zero_fx_q_charge_stop",
-   "role": "charge_overlay",
-   "status": "pending_register",
-   "note": "真实 Q 收势段；9 帧。"
-  }
- ],
- "charge_policy_proposal": "tools/rebuild/ultraman-zero__shining/charge_policy.json"
+  "schema": 1,
+  "fighter": "ultraman-zero__shining",
+  "form": "光辉赛罗 / Shining Ultraman Zero",
+  "note": "共享 phase3_projectiles.json 与 charge_overlay_policy.json 未修改；以下 id 与图集需由主会话登记后生效。",
+  "family": "assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1",
+  "license": "MIT (PixelFX)，来源与 SHA 见各段 provenance.json",
+  "effects": [
+    {
+      "id": "pending_shining_emerium_beam",
+      "source_id": "zero_fx_emerium_beam",
+      "role": "beam",
+      "status": "pending_register",
+      "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/emerium_beam",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/emerium_beam/atlas.png",
+        "rects": [
+          [
+            0,
+            0,
+            420,
+            72
+          ],
+          [
+            420,
+            0,
+            420,
+            72
+          ],
+          [
+            840,
+            0,
+            420,
+            72
+          ],
+          [
+            1260,
+            0,
+            420,
+            72
+          ]
+        ],
+        "anchor": [
+          0,
+          36
+        ],
+        "ticks": 4,
+        "display_scale": [
+          1,
+          1
+        ],
+        "behind_fighter": false,
+        "frame_boxes": [
+          [
+            0,
+            -36,
+            420,
+            72
+          ],
+          [
+            0,
+            -36,
+            420,
+            72
+          ],
+          [
+            0,
+            -36,
+            420,
+            72
+          ],
+          [
+            0,
+            -36,
+            420,
+            72
+          ]
+        ],
+        "loop": true,
+        "color_parameter": true,
+        "alpha_binary": true,
+        "orientation": "authored",
+        "native_fan": false,
+        "atlas_sha256": "ff684c480f510ad4242bb7550f54309ec37c10c87553caac3f267e1c7ae47745",
+        "colors": 5,
+        "source_kind": "pixelfx_code_baked",
+        "art_source": "pixelfx_code_baked",
+        "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+        "license": "MIT",
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/emerium_beam/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "authoring_source": "res://tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs",
+        "layer": "beam",
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记",
+        "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/emerium_beam",
+        "reuse_note": "同一角色光辉形态复用基础赛罗 PixelFX 自绘图集；像素未改，只改路径与归属。"
+      }
+    },
+    {
+      "id": "pending_shining_emerium_hit",
+      "source_id": "zero_fx_emerium_hit",
+      "role": "hit_spark",
+      "status": "pending_register",
+      "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/emerium_hit",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/emerium_hit/atlas.png",
+        "rects": [
+          [
+            0,
+            0,
+            120,
+            120
+          ],
+          [
+            120,
+            0,
+            120,
+            120
+          ],
+          [
+            240,
+            0,
+            120,
+            120
+          ],
+          [
+            360,
+            0,
+            120,
+            120
+          ]
+        ],
+        "anchor": [
+          60,
+          60
+        ],
+        "ticks": 4,
+        "display_scale": [
+          1,
+          1
+        ],
+        "behind_fighter": false,
+        "frame_boxes": [
+          [
+            -13,
+            -13,
+            26,
+            26
+          ],
+          [
+            -30,
+            -54,
+            60,
+            83
+          ],
+          [
+            -27,
+            -35,
+            56,
+            74
+          ],
+          [
+            -42,
+            -20,
+            80,
+            39
+          ]
+        ],
+        "loop": false,
+        "color_parameter": false,
+        "alpha_binary": true,
+        "orientation": "authored",
+        "native_fan": false,
+        "atlas_sha256": "af4943a33503f07493947aabe742319be0eacc46d16ea1a54012cc4001539843",
+        "colors": 3,
+        "source_kind": "pixelfx_code_baked",
+        "art_source": "pixelfx_code_baked",
+        "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+        "license": "MIT",
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/emerium_hit/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "authoring_source": "res://tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs",
+        "layer": "impact",
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记",
+        "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/emerium_hit",
+        "reuse_note": "同一角色光辉形态复用基础赛罗 PixelFX 自绘图集；像素未改，只改路径与归属。"
+      }
+    },
+    {
+      "id": "pending_shining_impact_guard",
+      "source_id": "impact_guard",
+      "role": "block_spark",
+      "status": "pending_register",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/impact_guard/guard.png",
+        "rects": [
+          [
+            0,
+            128,
+            128,
+            128
+          ],
+          [
+            128,
+            128,
+            128,
+            128
+          ],
+          [
+            256,
+            128,
+            128,
+            128
+          ]
+        ],
+        "ticks": 2,
+        "anchor": [
+          64,
+          64
+        ],
+        "loop": false,
+        "color_parameter": true,
+        "display_scale": [
+          1,
+          1
+        ],
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/impact_guard/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "atlas_sha256": "2041c35900ada117aee877a71740696f46339ea1f2dbec10dbd592a1b64977f2",
+        "colors": 17,
+        "alpha_binary": true,
+        "source_kind": "shared_effect_reuse",
+        "reused_from": "assets/effects/shared/impact_light/variants/guard.png",
+        "reuse_note": "项目共享通用特效图集；本形态独立副本，不改共享文件。",
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记"
+      }
+    },
+    {
+      "id": "pending_shining_impact_heavy",
+      "source_id": "impact_heavy",
+      "role": "hit_spark",
+      "status": "pending_register",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/impact_heavy/sprite-sheet-alpha.png",
+        "rects": [
+          [
+            0,
+            128,
+            128,
+            128
+          ],
+          [
+            128,
+            128,
+            128,
+            128
+          ],
+          [
+            256,
+            128,
+            128,
+            128
+          ]
+        ],
+        "ticks": 2,
+        "anchor": [
+          64,
+          64
+        ],
+        "loop": false,
+        "color_parameter": true,
+        "display_scale": [
+          1,
+          1
+        ],
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/impact_heavy/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "atlas_sha256": "78137b76ef51f960211ae4257efaadea34168c35120da5b5080ced128adf4932",
+        "colors": 26,
+        "alpha_binary": true,
+        "source_kind": "shared_effect_reuse",
+        "reused_from": "assets/effects/shared/impact_heavy/sprite-sheet-alpha.png",
+        "reuse_note": "项目共享通用特效图集；本形态独立副本，不改共享文件。",
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记"
+      }
+    },
+    {
+      "id": "pending_shining_impact_light",
+      "source_id": "impact_light",
+      "role": "hit_spark",
+      "status": "pending_register",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/impact_light/sprite-sheet-alpha.png",
+        "rects": [
+          [
+            0,
+            128,
+            128,
+            128
+          ],
+          [
+            128,
+            128,
+            128,
+            128
+          ],
+          [
+            256,
+            128,
+            128,
+            128
+          ]
+        ],
+        "ticks": 2,
+        "anchor": [
+          64,
+          64
+        ],
+        "loop": false,
+        "color_parameter": true,
+        "display_scale": [
+          1,
+          1
+        ],
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/impact_light/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "atlas_sha256": "98d7cf3d6816d14d1b8ef5f8d4d26f9c311aabc5a98da1a623efecaec9236b42",
+        "colors": 23,
+        "alpha_binary": true,
+        "source_kind": "shared_effect_reuse",
+        "reused_from": "assets/effects/shared/impact_light/sprite-sheet-alpha.png",
+        "reuse_note": "项目共享通用特效图集；本形态独立副本，不改共享文件。",
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记"
+      }
+    },
+    {
+      "id": "pending_shining_pulse",
+      "source_id": "pulse",
+      "role": "projectile",
+      "status": "pending_register",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/pulse/atlas.png",
+        "rects": [
+          [
+            0,
+            0,
+            64,
+            64
+          ],
+          [
+            64,
+            0,
+            64,
+            64
+          ],
+          [
+            128,
+            0,
+            64,
+            64
+          ],
+          [
+            192,
+            0,
+            64,
+            64
+          ]
+        ],
+        "ticks": 3,
+        "source": "art/fighters/ultraman/stage2/generation/fx_pulse/02/raw.png",
+        "source_sha256": "d9cfdb8643631a2362ab022cb2ba9b27e97f6a9f19e0cd3367c40095a105f87c",
+        "atlas_sha256": "5a1eeee896ad08038d53c8e1d875706c4c32513be828c1ae6f14ab216da1b154",
+        "colors": 16,
+        "alpha_binary": true,
+        "display_scale": [
+          1,
+          1
+        ],
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/pulse/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "source_kind": "shared_effect_reuse",
+        "reused_from": "assets/effects/pulse/atlas.png",
+        "reuse_note": "项目共享通用特效图集；本形态独立副本，不改共享文件。",
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记"
+      }
+    },
+    {
+      "id": "pending_shining_q_charge",
+      "source_id": "zero_fx_q_charge",
+      "role": "charge_overlay",
+      "status": "pending_register",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/q_charge/atlas.png",
+        "rects": [
+          [
+            0,
+            0,
+            384,
+            256
+          ],
+          [
+            384,
+            0,
+            384,
+            256
+          ],
+          [
+            768,
+            0,
+            384,
+            256
+          ],
+          [
+            1152,
+            0,
+            384,
+            256
+          ],
+          [
+            1536,
+            0,
+            384,
+            256
+          ],
+          [
+            1920,
+            0,
+            384,
+            256
+          ],
+          [
+            0,
+            256,
+            384,
+            256
+          ],
+          [
+            384,
+            256,
+            384,
+            256
+          ],
+          [
+            768,
+            256,
+            384,
+            256
+          ],
+          [
+            1152,
+            256,
+            384,
+            256
+          ],
+          [
+            1536,
+            256,
+            384,
+            256
+          ],
+          [
+            1920,
+            256,
+            384,
+            256
+          ],
+          [
+            0,
+            512,
+            384,
+            256
+          ],
+          [
+            384,
+            512,
+            384,
+            256
+          ],
+          [
+            768,
+            512,
+            384,
+            256
+          ],
+          [
+            1152,
+            512,
+            384,
+            256
+          ],
+          [
+            1536,
+            512,
+            384,
+            256
+          ],
+          [
+            1920,
+            512,
+            384,
+            256
+          ],
+          [
+            0,
+            768,
+            384,
+            256
+          ],
+          [
+            384,
+            768,
+            384,
+            256
+          ],
+          [
+            768,
+            768,
+            384,
+            256
+          ],
+          [
+            1152,
+            768,
+            384,
+            256
+          ],
+          [
+            1536,
+            768,
+            384,
+            256
+          ],
+          [
+            1920,
+            768,
+            384,
+            256
+          ]
+        ],
+        "anchor": [
+          192,
+          246
+        ],
+        "ticks": 1,
+        "display_scale": [
+          1,
+          1
+        ],
+        "behind_fighter": true,
+        "frame_boxes": [
+          [
+            -88,
+            -192,
+            173,
+            202
+          ],
+          [
+            -89,
+            -192,
+            174,
+            202
+          ],
+          [
+            -89,
+            -192,
+            174,
+            202
+          ],
+          [
+            -90,
+            -192,
+            174,
+            202
+          ],
+          [
+            -90,
+            -192,
+            175,
+            202
+          ],
+          [
+            -89,
+            -192,
+            174,
+            202
+          ],
+          [
+            -89,
+            -192,
+            174,
+            202
+          ],
+          [
+            -89,
+            -192,
+            174,
+            202
+          ],
+          [
+            -89,
+            -192,
+            174,
+            202
+          ],
+          [
+            -89,
+            -192,
+            174,
+            202
+          ],
+          [
+            -89,
+            -192,
+            174,
+            202
+          ],
+          [
+            -88,
+            -192,
+            173,
+            202
+          ],
+          [
+            -88,
+            -192,
+            173,
+            202
+          ],
+          [
+            -87,
+            -192,
+            172,
+            202
+          ],
+          [
+            -86,
+            -192,
+            171,
+            202
+          ],
+          [
+            -86,
+            -192,
+            171,
+            202
+          ],
+          [
+            -85,
+            -192,
+            169,
+            202
+          ],
+          [
+            -85,
+            -192,
+            169,
+            202
+          ],
+          [
+            -85,
+            -192,
+            170,
+            202
+          ],
+          [
+            -85,
+            -192,
+            170,
+            202
+          ],
+          [
+            -85,
+            -192,
+            169,
+            202
+          ],
+          [
+            -85,
+            -192,
+            169,
+            202
+          ],
+          [
+            -85,
+            -192,
+            169,
+            202
+          ],
+          [
+            -85,
+            -192,
+            168,
+            202
+          ]
+        ],
+        "loop": true,
+        "color_parameter": false,
+        "alpha_binary": true,
+        "orientation": "authored",
+        "native_fan": false,
+        "atlas_sha256": "90b45412ea1c75a83462f4dfeeaaf89ec5ac613ea48e2535dba5fc188fbb680d",
+        "colors": 7,
+        "source_kind": "pixelfx_code_baked",
+        "art_source": "pixelfx_code_baked",
+        "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+        "license": "MIT",
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/q_charge/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "authoring_source": "res://tools/rebuild/ultraman-zero__shining/bake_qcharge_hard.mjs",
+        "layer": "charge",
+        "full_frame": true,
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记",
+        "reused_from": "tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs chargeAura",
+        "reuse_note": "沿用基础家族 chargeAura 形状，离线重烘为二值 Alpha 并量化到青蓝 8 色板。"
+      }
+    },
+    {
+      "id": "pending_shining_q_charge_start",
+      "source_id": "zero_fx_q_charge_start",
+      "role": "charge_overlay",
+      "status": "pending_register",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/q_charge_start/atlas.png",
+        "rects": [
+          [
+            0,
+            0,
+            384,
+            256
+          ],
+          [
+            384,
+            0,
+            384,
+            256
+          ],
+          [
+            768,
+            0,
+            384,
+            256
+          ],
+          [
+            1152,
+            0,
+            384,
+            256
+          ],
+          [
+            1536,
+            0,
+            384,
+            256
+          ],
+          [
+            1920,
+            0,
+            384,
+            256
+          ],
+          [
+            0,
+            256,
+            384,
+            256
+          ],
+          [
+            384,
+            256,
+            384,
+            256
+          ],
+          [
+            768,
+            256,
+            384,
+            256
+          ]
+        ],
+        "anchor": [
+          192,
+          246
+        ],
+        "ticks": 1,
+        "display_scale": [
+          1,
+          1
+        ],
+        "behind_fighter": true,
+        "frame_boxes": [
+          [
+            -2,
+            -13,
+            31,
+            10
+          ],
+          [
+            -83,
+            -175,
+            162,
+            185
+          ],
+          [
+            -84,
+            -188,
+            166,
+            198
+          ],
+          [
+            -84,
+            -192,
+            167,
+            202
+          ],
+          [
+            -85,
+            -192,
+            168,
+            202
+          ],
+          [
+            -85,
+            -192,
+            168,
+            202
+          ],
+          [
+            -85,
+            -192,
+            169,
+            202
+          ],
+          [
+            -85,
+            -192,
+            169,
+            202
+          ],
+          [
+            -88,
+            -192,
+            173,
+            202
+          ]
+        ],
+        "loop": false,
+        "color_parameter": false,
+        "alpha_binary": true,
+        "orientation": "authored",
+        "native_fan": false,
+        "atlas_sha256": "5641eabfc424b5eae0648b3ad5bfb741f82f8484da792247f892bfa6339b6836",
+        "colors": 7,
+        "source_kind": "pixelfx_code_baked",
+        "art_source": "pixelfx_code_baked",
+        "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+        "license": "MIT",
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/q_charge_start/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "authoring_source": "res://tools/rebuild/ultraman-zero__shining/bake_qcharge_hard.mjs",
+        "layer": "charge",
+        "full_frame": true,
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记",
+        "reused_from": "tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs chargeAura",
+        "reuse_note": "沿用基础家族 chargeAura 形状，离线重烘为二值 Alpha 并量化到青蓝 8 色板。"
+      }
+    },
+    {
+      "id": "pending_shining_q_charge_stop",
+      "source_id": "zero_fx_q_charge_stop",
+      "role": "charge_overlay",
+      "status": "pending_register",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/q_charge_stop/atlas.png",
+        "rects": [
+          [
+            0,
+            0,
+            384,
+            256
+          ],
+          [
+            384,
+            0,
+            384,
+            256
+          ],
+          [
+            768,
+            0,
+            384,
+            256
+          ],
+          [
+            1152,
+            0,
+            384,
+            256
+          ],
+          [
+            1536,
+            0,
+            384,
+            256
+          ],
+          [
+            1920,
+            0,
+            384,
+            256
+          ],
+          [
+            0,
+            256,
+            384,
+            256
+          ],
+          [
+            384,
+            256,
+            384,
+            256
+          ],
+          [
+            768,
+            256,
+            384,
+            256
+          ]
+        ],
+        "anchor": [
+          192,
+          246
+        ],
+        "ticks": 1,
+        "display_scale": [
+          1,
+          1
+        ],
+        "behind_fighter": true,
+        "frame_boxes": [
+          [
+            -85,
+            -192,
+            168,
+            202
+          ],
+          [
+            -85,
+            -192,
+            168,
+            202
+          ],
+          [
+            -84,
+            -192,
+            166,
+            202
+          ],
+          [
+            -84,
+            -192,
+            166,
+            202
+          ],
+          [
+            -83,
+            -192,
+            164,
+            202
+          ],
+          [
+            -80,
+            -189,
+            161,
+            195
+          ],
+          [
+            -74,
+            -185,
+            154,
+            182
+          ],
+          [
+            -55,
+            -131,
+            105,
+            128
+          ],
+          [
+            -2,
+            -7,
+            4,
+            4
+          ]
+        ],
+        "loop": false,
+        "color_parameter": false,
+        "alpha_binary": true,
+        "orientation": "authored",
+        "native_fan": false,
+        "atlas_sha256": "f6efb3120e1da05d0c82e6f93078acfef7bf2eb080afd2fea921b789db58fcb9",
+        "colors": 7,
+        "source_kind": "pixelfx_code_baked",
+        "art_source": "pixelfx_code_baked",
+        "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+        "license": "MIT",
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/q_charge_stop/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "authoring_source": "res://tools/rebuild/ultraman-zero__shining/bake_qcharge_hard.mjs",
+        "layer": "charge",
+        "full_frame": true,
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记",
+        "reused_from": "tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs chargeAura",
+        "reuse_note": "沿用基础家族 chargeAura 形状，离线重烘为二值 Alpha 并量化到青蓝 8 色板。"
+      }
+    },
+    {
+      "id": "pending_shining_slugger_catch",
+      "source_id": "zero_fx_slugger_catch",
+      "role": "return",
+      "status": "pending_register",
+      "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/slugger_catch",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/slugger_catch/atlas.png",
+        "rects": [
+          [
+            0,
+            0,
+            80,
+            80
+          ],
+          [
+            80,
+            0,
+            80,
+            80
+          ],
+          [
+            160,
+            0,
+            80,
+            80
+          ],
+          [
+            240,
+            0,
+            80,
+            80
+          ]
+        ],
+        "anchor": [
+          40,
+          40
+        ],
+        "ticks": 4,
+        "display_scale": [
+          1,
+          1
+        ],
+        "behind_fighter": false,
+        "frame_boxes": [
+          [
+            -29,
+            -29,
+            58,
+            58
+          ],
+          [
+            -26,
+            -26,
+            52,
+            52
+          ],
+          [
+            -22,
+            -22,
+            43,
+            43
+          ],
+          [
+            -6,
+            -5,
+            10,
+            10
+          ]
+        ],
+        "loop": false,
+        "color_parameter": false,
+        "alpha_binary": true,
+        "orientation": "authored",
+        "native_fan": false,
+        "atlas_sha256": "51032a76a0ba4673a622c36c7dbb14115adb3c6d57d28f512ac1ddc29b2eefe1",
+        "colors": 3,
+        "source_kind": "pixelfx_code_baked",
+        "art_source": "pixelfx_code_baked",
+        "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+        "license": "MIT",
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/slugger_catch/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "authoring_source": "res://tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs",
+        "layer": "impact",
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记",
+        "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/slugger_catch",
+        "reuse_note": "同一角色光辉形态复用基础赛罗 PixelFX 自绘图集；像素未改，只改路径与归属。"
+      }
+    },
+    {
+      "id": "pending_shining_slugger_flight",
+      "source_id": "zero_fx_slugger_flight",
+      "role": "projectile",
+      "status": "pending_register",
+      "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/slugger_flight",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/slugger_flight/atlas.png",
+        "rects": [
+          [
+            0,
+            0,
+            64,
+            48
+          ],
+          [
+            64,
+            0,
+            64,
+            48
+          ],
+          [
+            128,
+            0,
+            64,
+            48
+          ],
+          [
+            192,
+            0,
+            64,
+            48
+          ]
+        ],
+        "anchor": [
+          44,
+          24
+        ],
+        "ticks": 4,
+        "display_scale": [
+          1,
+          1
+        ],
+        "behind_fighter": false,
+        "frame_boxes": [
+          [
+            -14,
+            -15,
+            29,
+            29
+          ],
+          [
+            -14,
+            -13,
+            29,
+            28
+          ],
+          [
+            -14,
+            -6,
+            29,
+            21
+          ],
+          [
+            -15,
+            -6,
+            29,
+            21
+          ]
+        ],
+        "loop": true,
+        "color_parameter": false,
+        "alpha_binary": true,
+        "orientation": "authored",
+        "native_fan": false,
+        "atlas_sha256": "cf5af4878dab7e8d5d1177f3815c7634d8da90ba74ffb3fb61737f86b381d7e1",
+        "colors": 6,
+        "source_kind": "pixelfx_code_baked",
+        "art_source": "pixelfx_code_baked",
+        "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+        "license": "MIT",
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/slugger_flight/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "authoring_source": "res://tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs",
+        "layer": "flight",
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记",
+        "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/slugger_flight",
+        "reuse_note": "同一角色光辉形态复用基础赛罗 PixelFX 自绘图集；像素未改，只改路径与归属。"
+      }
+    },
+    {
+      "id": "pending_shining_slugger_hit",
+      "source_id": "zero_fx_slugger_hit",
+      "role": "hit_spark",
+      "status": "pending_register",
+      "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/slugger_hit",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/slugger_hit/atlas.png",
+        "rects": [
+          [
+            0,
+            0,
+            104,
+            104
+          ],
+          [
+            104,
+            0,
+            104,
+            104
+          ],
+          [
+            208,
+            0,
+            104,
+            104
+          ],
+          [
+            312,
+            0,
+            104,
+            104
+          ]
+        ],
+        "anchor": [
+          52,
+          52
+        ],
+        "ticks": 4,
+        "display_scale": [
+          1,
+          1
+        ],
+        "behind_fighter": false,
+        "frame_boxes": [
+          [
+            -11,
+            -11,
+            22,
+            22
+          ],
+          [
+            -25,
+            -44,
+            53,
+            68
+          ],
+          [
+            -22,
+            -28,
+            42,
+            60
+          ],
+          [
+            -34,
+            -20,
+            66,
+            36
+          ]
+        ],
+        "loop": false,
+        "color_parameter": false,
+        "alpha_binary": true,
+        "orientation": "authored",
+        "native_fan": false,
+        "atlas_sha256": "f70ece413ccff16480bbc7864b3323cf6f0c17bf3388a61d23ec66e251cb7301",
+        "colors": 3,
+        "source_kind": "pixelfx_code_baked",
+        "art_source": "pixelfx_code_baked",
+        "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+        "license": "MIT",
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/slugger_hit/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "authoring_source": "res://tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs",
+        "layer": "impact",
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记",
+        "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/slugger_hit",
+        "reuse_note": "同一角色光辉形态复用基础赛罗 PixelFX 自绘图集；像素未改，只改路径与归属。"
+      }
+    },
+    {
+      "id": "pending_shining_slugger_trail",
+      "source_id": "zero_fx_slugger_trail",
+      "role": "trail",
+      "status": "pending_register",
+      "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/slugger_trail",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/slugger_trail/atlas.png",
+        "rects": [
+          [
+            0,
+            0,
+            160,
+            48
+          ],
+          [
+            160,
+            0,
+            160,
+            48
+          ],
+          [
+            320,
+            0,
+            160,
+            48
+          ],
+          [
+            480,
+            0,
+            160,
+            48
+          ]
+        ],
+        "anchor": [
+          128,
+          24
+        ],
+        "ticks": 4,
+        "display_scale": [
+          1,
+          1
+        ],
+        "behind_fighter": false,
+        "frame_boxes": [
+          [
+            -127,
+            -4,
+            130,
+            9
+          ],
+          [
+            -128,
+            -4,
+            131,
+            8
+          ],
+          [
+            -128,
+            -4,
+            131,
+            8
+          ],
+          [
+            -127,
+            -4,
+            130,
+            8
+          ]
+        ],
+        "loop": true,
+        "color_parameter": false,
+        "alpha_binary": true,
+        "orientation": "authored",
+        "native_fan": false,
+        "atlas_sha256": "bad2bff5c1c0d8e29017fa55ae550520ec28a48ed70720be2b2868f6951132c1",
+        "colors": 6,
+        "source_kind": "pixelfx_code_baked",
+        "art_source": "pixelfx_code_baked",
+        "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+        "license": "MIT",
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/slugger_trail/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "authoring_source": "res://tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs",
+        "layer": "trail",
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记",
+        "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/slugger_trail",
+        "reuse_note": "同一角色光辉形态复用基础赛罗 PixelFX 自绘图集；像素未改，只改路径与归属。"
+      }
+    },
+    {
+      "id": "pending_shining_wide_beam",
+      "source_id": "zero_fx_wide_beam",
+      "role": "beam",
+      "status": "pending_register",
+      "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/wide_beam",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/wide_beam/atlas.png",
+        "rects": [
+          [
+            0,
+            0,
+            420,
+            96
+          ],
+          [
+            420,
+            0,
+            420,
+            96
+          ],
+          [
+            840,
+            0,
+            420,
+            96
+          ],
+          [
+            1260,
+            0,
+            420,
+            96
+          ]
+        ],
+        "anchor": [
+          0,
+          48
+        ],
+        "ticks": 4,
+        "display_scale": [
+          1,
+          1
+        ],
+        "behind_fighter": false,
+        "frame_boxes": [
+          [
+            0,
+            -34,
+            420,
+            68
+          ],
+          [
+            0,
+            -34,
+            420,
+            68
+          ],
+          [
+            0,
+            -34,
+            420,
+            68
+          ],
+          [
+            0,
+            -34,
+            420,
+            68
+          ]
+        ],
+        "loop": true,
+        "color_parameter": true,
+        "alpha_binary": true,
+        "orientation": "authored",
+        "native_fan": false,
+        "atlas_sha256": "7db5a8ef2f47b9d3c24e19a607ba2b62df4eb58243d1ac19cc56bd2508aefb4f",
+        "colors": 6,
+        "source_kind": "pixelfx_code_baked",
+        "art_source": "pixelfx_code_baked",
+        "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+        "license": "MIT",
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/wide_beam/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "authoring_source": "res://tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs",
+        "layer": "beam",
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记",
+        "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/wide_beam",
+        "reuse_note": "同一角色光辉形态复用基础赛罗 PixelFX 自绘图集；像素未改，只改路径与归属。"
+      }
+    },
+    {
+      "id": "pending_shining_wide_hit",
+      "source_id": "zero_fx_wide_hit",
+      "role": "hit_spark",
+      "status": "pending_register",
+      "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/wide_hit",
+      "effect": {
+        "texture": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/wide_hit/atlas.png",
+        "rects": [
+          [
+            0,
+            0,
+            128,
+            128
+          ],
+          [
+            128,
+            0,
+            128,
+            128
+          ],
+          [
+            256,
+            0,
+            128,
+            128
+          ],
+          [
+            384,
+            0,
+            128,
+            128
+          ]
+        ],
+        "anchor": [
+          64,
+          64
+        ],
+        "ticks": 4,
+        "display_scale": [
+          1,
+          1
+        ],
+        "behind_fighter": false,
+        "frame_boxes": [
+          [
+            -14,
+            -14,
+            28,
+            28
+          ],
+          [
+            -31,
+            -54,
+            64,
+            79
+          ],
+          [
+            -29,
+            -37,
+            60,
+            80
+          ],
+          [
+            -44,
+            -24,
+            86,
+            44
+          ]
+        ],
+        "loop": false,
+        "color_parameter": false,
+        "alpha_binary": true,
+        "orientation": "authored",
+        "native_fan": false,
+        "atlas_sha256": "8680a7831bed7050fe630fbe3e082a51aa6ab64c0e0813eecd5a374633dbeacc",
+        "colors": 3,
+        "source_kind": "pixelfx_code_baked",
+        "art_source": "pixelfx_code_baked",
+        "upstream_commit": "a84159688af3ca37a4be05a0d422b94451b2e24e",
+        "license": "MIT",
+        "provenance": "res://assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/wide_hit/provenance.json",
+        "dedicated_to": "ultraman-zero__shining",
+        "authoring_source": "res://tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs",
+        "layer": "impact",
+        "user_approved": false,
+        "review_status": "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记",
+        "reused_from": "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/wide_hit",
+        "reuse_note": "同一角色光辉形态复用基础赛罗 PixelFX 自绘图集；像素未改，只改路径与归属。"
+      }
+    }
+  ],
+  "charge_policy_proposal": "tools/rebuild/ultraman-zero__shining/charge_policy.json"
 }
