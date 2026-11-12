@@ -39,7 +39,11 @@ static func filter(f: UfeFighter, manifest: Dictionary, attachments: Array, hold
 	attachments=attachments.filter(func(item):return holding_opponent or str(item.get("effect","")) not in gated)
 	if not is_charging(f):
 		return attachments.filter(func(item):return not restricted.has(str(item.get("effect",""))))
-	var layout: Dictionary=data().get("placements",{}).get(f.definition.id,{}).get(f.state,{})
+	var placements: Dictionary=data().get("placements",{})
+	var layout: Dictionary=placements.get(f.definition.id,{}).get(f.state,{})
+	# 形态没有单独蓄气落点时沿用本人基础形态，同一个人不因换形态丢失Q蓄气定位。
+	if layout.is_empty() and f.definition.id!=f.base_definition.id:
+		layout=placements.get(f.base_definition.id,{}).get(f.state,{})
 	if layout.is_empty():return attachments
 	# 仅替换表现副本，保持原Q动作、输入、能量增长与音效。
 	var result: Array=[]

@@ -6,16 +6,45 @@ const ENERGY_COST := 3000
 static func is_command(id: String) -> bool:
 	return id == "battle_transform" or id.begins_with("battle_transform__")
 
+static func _choices(f: UfeFighter) -> Dictionary:
+	if not f.battle_form_choices.is_empty(): return f.battle_form_choices
+	# 关闭/非法配置的原表仍带Array型choices，不能当选择表。
+	var choices = f.battle_form.get("choices", {})
+	return choices if choices is Dictionary else {}
+
+# 传入空 move_id 表示“任选一个已开放形态”；单形态角色沿用原 battle_transform 判定。
 static func can_transform(f: UfeFighter, move_id: String = "battle_transform") -> bool:
-	return bool(f.battle_form.get("enabled", false)) and not f.transformed_this_round \
-		and (f.battle_form.choices.has(move_id) if f.battle_form.has("choices") else move_id == "battle_transform") \
-		and int(f.stats.energy) >= ENERGY_COST and int(f.stats.hp) > 0 \
+	var root := _choices(f)
+	if move_id.is_empty():
+		if root.is_empty(): return _can_transform(f, root, "battle_transform")
+		var keys: Array = root.keys(); keys.sort()
+		for key in keys:
+			if _can_transform(f, root, str(key)): return true
+		return false
+	return _can_transform(f, root, move_id)
+
+static func _can_transform(f: UfeFighter, root: Dictionary, move_id: String) -> bool:
+	if not bool(f.battle_form.get("enabled", false)) or int(f.stats.hp) <= 0: return false
+	if root.is_empty():
+		return move_id == "battle_transform" and not f.transformed_this_round \
+			and int(f.stats.energy) >= ENERGY_COST \
+			and int(f.stats.hp) * 2 <= f.base_definition.max_health
+	if not root.has(move_id): return false
+	var target: Dictionary = root[move_id]
+	if bool(target.get("free_switch", false)):
+		# E 独立切已开放形态：不耗气、每局不限次数，但切到当前形态不重播。
+		var target_definition: UfeFighterDefinition = target.get("target_definition")
+		return target_definition == null or target_definition.id != f.definition.id
+	return not f.transformed_this_round \
+		and int(f.stats.energy) >= ENERGY_COST \
 		and int(f.stats.hp) * 2 <= f.base_definition.max_health
 
 static func begin(f: UfeFighter, move_id: String = "battle_transform") -> void:
-	if f.battle_form.has("choices"): f.battle_form = f.battle_form.choices[move_id]
-	f.stats.energy = int(f.stats.energy) - ENERGY_COST
-	f.transformed_this_round = true
+	var root := _choices(f)
+	if root.has(move_id): f.battle_form = root[move_id]
+	if not bool(f.battle_form.get("free_switch", false)):
+		f.stats.energy = int(f.stats.energy) - ENERGY_COST
+		f.transformed_this_round = true
 	f.clear_move()
 	f.combat.buffer = ""
 	f.combat.buffer_ticks = 0
@@ -62,6 +91,9 @@ static func simulation_data(form: Dictionary) -> Array:
 	var data := [form.id, true, form.mode, ENERGY_COST, 1, 2, 1,
 		form.get("palette_switch_tick", 0), form.get("revert_tick", 0), form.get("entry_frames", []),
 		target.simulation_data() if target != null else []]
+	# 仅显式声明的免费切换形态扩充指纹；旧单形态数组保持原样。
+	if form.has("free_switch"):
+		data.append(bool(form.free_switch))
 	if form.has("choices"):
 		var choices: Array = []
 		var keys: Array = form.choices.keys(); keys.sort()

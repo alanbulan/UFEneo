@@ -26,6 +26,12 @@ func _initialize() -> void:
 	call_deferred("run")
 
 func run() -> void:
+	# 已实装形态各自有独立定义与动作清单，必须与本体的七角色同口径核对。
+	for row in UfeContentDatabase.read_json("res://content/roster/selection.json").entries:
+		for form in row.get("forms",[]):
+			if not bool(form.get("implemented",false)) or str(form.get("id","")) in fighters:continue
+			if not FileAccess.file_exists("res://content/fighters/%s/definition.json"%str(form.id)):continue
+			fighters.append(str(form.id))
 	var required_moves: Array = UfeContentDatabase.read_json("res://content/templates/humanoid/move_manifest.json")
 	for id in fighters:
 		var definition := UfeContentDatabase.fighter(id, true)
