@@ -18,7 +18,7 @@ CASES = [
     "phase3_specials", "phase3_supers", "phase3_fx_audio", "effect_registration", "codex_impact_feedback_policy",
     "catalogue_identity_display", "computer_ai", "training_tape", "training_lifecycle", "replay_match_loading", "training_input_audit", "pixel_ui", "pixel_pages", "ui_facing",
     "main_shutdown_menu_exit", "main_shutdown_reentrancy", "audio_playback",
-    "catalogue_assets", "catalogue_animation", "roster_data_integrity",
+    "catalogue_assets", "catalogue_animation", "roster_data_integrity", "form_selection_consistency",
 ]
 
 
