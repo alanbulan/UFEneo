@@ -148,6 +148,10 @@ func test_start_definition() -> void:
 	check(f.form_id == "ex_gomora", "start_form_id_kept")
 	var plain := UfeMatchDirector.new(a.definition, base, load("res://content/rules/neo.tres"), UfeContentDatabase.states(), {"ultraman":a.form})
 	check(plain.content_fingerprint != sim.content_fingerprint, "start_form_changes_fingerprint")
+	# 回放必须记住出场形态，重放才能装回同一开局定义。
+	var recorder := UfeReplayRecorder.new()
+	recorder.append([UfeInputFrame.make(), UfeInputFrame.make()], UfeMatchDirector.new(a.definition, base, load("res://content/rules/neo.tres"), UfeContentDatabase.states(), {"ultraman":a.form}, {0:target}))
+	check(recorder.forms == ["ex_gomora", "default"], "start_form_recorded_in_replay")
 	check(f.battle_form_choices.size() == 3, "start_form_keeps_all_choices")
 	f.stats.energy = 0
 	drive(sim,2)

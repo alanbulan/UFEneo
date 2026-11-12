@@ -33,6 +33,12 @@ func run() -> void:
 			if not FileAccess.file_exists("res://content/fighters/%s/definition.json"%str(form.id)):continue
 			fighters.append(str(form.id))
 	var required_moves: Array = UfeContentDatabase.read_json("res://content/templates/humanoid/move_manifest.json")
+	# 变身/形态切换动画是招式片段，不是状态帧。
+	var transform_clips: Dictionary = {}
+	for source in UfeBattleFormCatalog.registry().values():
+		for row in [source] + source.get("choices", []):
+			var key := str(row.get("transform_animation", ""))
+			if not key.is_empty(): transform_clips[key] = true
 	for id in fighters:
 		var definition := UfeContentDatabase.fighter(id, true)
 		var manifest: Dictionary = UfeContentDatabase.read_json(
@@ -63,7 +69,7 @@ func run() -> void:
 		for clip_id in clips:
 			if required_moves.has(clip_id):
 				continue
-			if local.has(clip_id):
+			if local.has(clip_id) or transform_clips.has(clip_id):
 				continue
 			check(definition.state_frames.has(clip_id), "%s/%s 状态帧已登记" % [id, clip_id])
 		for move_id in definition.moves:
