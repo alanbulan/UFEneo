@@ -28,7 +28,7 @@
 - 奥父 16 段、杰斯提斯 9 段、赛罗基础光弹 2 段（`father_fx_*` / `justice_fx_*` / `zero_fx_pulse_*`）并入 `phase3_projectiles.json` 共 27 条，并接线对应招式；奥父、杰斯提斯的 Q 三态落点并入 `charge_overlay_policy.json`，同时 `UfeChargeEffectPolicy.filter` 在“只有落点、没有受限附件”时注入落点，不再要求每个角色先挂占位附件。
 - 根独立复核发现赛罗 `zero_fx_pulse_hit` 的构建脚本用 **8 邻域**取最大连通块，三帧主体外仍有 2–6 px `alpha≥200`；按项目统一的 **4 邻域**门应为 0。已把 `tools/rebuild/ultraman-zero/basic-pulse-fx-20261112/build.py` 改为 4 邻域并重烘，atlas/effect/provenance/entries/build-report 的 SHA 同步更新。27 段逐段复核尺寸、SHA、二值 Alpha、4 连通主体与主体外 `alpha≥16 ≤100 / ≥200 = 0` 全部通过。
 - `tests/effect_registration.gd` 增加逐帧 `attachments` 扫描，并覆盖赛罗/奥父/杰斯提斯三态蓄气注入与离开 Q 不遗留；`effect_registration`、`phase3_specials`、`phase3_air`、`phase3_supers`、`roster_data_integrity` 与全量 `tools/verify.py`（含 `main-startup`）全部 PASS。
-- 奥父 Q 三态首版仍是红色竖条笼/门框、24 帧变化约 1.5%，已打回重做，未计入通过。未实机、未听审、无录屏。
+- 奥父 Q 三态首版是红色竖条笼/门框、24 帧变化约 1.5%，已打回重做：改为椭圆火焰环（橙白亮芯、分层火身、外缘火舌、上升火星），相邻帧变化 start 32%–51%、charge 20%–29%、stop 42%–52%，94 帧主体外门限仍全为 0，8 色硬 Alpha，id/尺寸/锚点不变；重登记后 `effect_registration` 与 phase3 相关测试 PASS。未实机、未听审、无录屏。
 
 ## 2026-11-11 减速规则与事件语音接入
 
