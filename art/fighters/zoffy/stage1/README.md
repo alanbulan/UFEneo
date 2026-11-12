@@ -120,3 +120,10 @@
 - 上一轮落格临时目录 `reports/zoffy/stage1-tmp`（12 个位移前原生格 + 工具 `cells.json`，共 13 个文件）已记录 SHA 后删除；最终位移格 SHA 见 `requests.json` 的 `cells` 与 `cells/cells.json`。
 - 本轮 walk_back/dash_start 的 7 个临时文件（未位移/未采用格 + 工具 `cells.json`）与 4 个淘汰 raw（walk_back-03 v1/v2、dash-start-01 v1/v2）已记录 SHA 后删除；最终格与严格 4× 保留。
 - `tools/rebuild/zoffy/stage1_cells.py` 只写已删的 reports 路径且当前未使用，列入待根定，未删。
+
+## 2026-11-12 air_special v2 落格与装机
+
+- air_special 8 帧纯人物源（`air_special/frames/air-v2-00..07.png`）落格：比例 0.102001312、目标站高 158、256 格、根点 [128,248]、腾空脚底 237。
+- 落格高 116–145（空中收腿/前伸，非直立），31–32 色、二值 Alpha、主体单连通、四边留白、无裁切；逐帧 bbox/SHA 见 `cells/cells.json`。
+- 招式 24 tick（10/1/13）不变，发射 tick 10 落在新版前伸臂帧 sprite 03；hurtboxes 整招重算。安装 `--only air_special` 合成，manifest 108 clip，clip 根点保持 [128,248]（安装器曾回落到旧顶层 [96,184]，已修正后重装）。
+- 全量 `tools/verify.py` 57 项 PASS。root_delegated_by_user；无录屏，720/1080 双向实机未验。

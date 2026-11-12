@@ -317,3 +317,9 @@
 - 目视：idle→walk→dash→takeoff→air→land→light→heavy→受击/倒地/起身/胜负/KO 的头壳宽、肩宽、四肢粗细无逐帧漂移；`heavy-00` 与 heavy-01…03 接续（起手沉身→蓄势→命中→收招），脚底同为 183。
 - 保留的已知差异（不返修）：`takeoff-01` 前倾大、`land-00` 冠顶→眼 18、`land-01` 头壳 30 与深蹲站高 123、`air_rise-00` 单臂上举不对称、`idle-candidate-01` 站距 0.5649、`heavy-00` 冠顶→眼 16。
 - 未做：实机双朝向、720/1080、实速接续、声音；安装、Godot 启动、提交/推送、录屏均未做。
+
+## 2026-11-12 special2 落格与招式重算
+
+- special2 16 帧沿用身份锚比例 0.098674、目标站高 140、192 格、根点 [96,184]、接地脚底 183；落格高 133–144、32 色、二值 Alpha、单连通、无裁切。逐帧 bbox/SHA 见 `stage1/cells/cells.json`。
+- special2 招式保持 80 tick（32/32/16），按新图集重算 hurtboxes 并补齐重映射后缺失的空键；伤害、判定、发射 tick 不动。
+- 全量 `tools/verify.py` 57 项 PASS（含此前修复的 mother/special2 规则校验）。root_delegated_by_user；无录屏，720/1080 双向实机未验。

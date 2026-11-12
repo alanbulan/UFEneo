@@ -2534,3 +2534,12 @@ special3：00 `9fecb2e0…`、01 `904be35b…`、02 `16eb6eab…`、03 `e5df4692
 记录中写清 optional_if_unsupported，不冒充 air_special。power_up 不是矩阵格，已按 command_39 burst 承接。
 
 2026-11-10 用户指示评审自动通过：此后每批机器门通过后直接按 root_delegated_by_user 签署并继续，不再逐批停等；同一检查连续3帧不过仍按刹车出诊断停。投技受方六组与专属/必杀十格（command_40–46、special_1/2/3，共72帧）已齐，MOVES.md 2.5.7 定案已落。剩余仅 air_tech、chase_takeoff 两格刹车停，待定案或换思路后再动；未安装、未启动Godot、未提交。
+
+## 2026-11-12 纯人物整帧落格与招式帧序对齐（本机批次）
+
+- 范围：special（14 帧）/ special2 / special3（各 16 帧）/ air_special（8 帧）四组落格、装机与招式重映射；比例 0.161972、目标站高 161、256 格、根点 [128,248]、接地脚底 247、air 腾空脚底 207。
+- air_special 前伸臂超宽，单独 288×288 格、根点 [128,248]；其余 256。只按 clip 安装，未整包重落。
+- 落格实测：special 高 149–173、special2 137–168、special3 141–192、air 115–167；28–32 色、二值 Alpha、单连通、无裁切。逐帧 bbox/SHA 见 `stage1/cells/cells.json`。
+- 招式：special 14→72 tick（24/32/16，tick 24）、special2 16→80（32/32/16，tick 32）、special3 16→96（32/48/16，tick 32）、air_special 8→24（10/1/13，tick 10）；air 由旧 8 tick 重排到基线三段。伤害/判定值原样保留。
+- 光束仍走共享 `beam_loop` 占位，未接本角色特效家族；不复用他角色形状为后续项。
+- 安装 `assets/fighters/ultraman-justice/animations/` 108 clip；hurtboxes 整招重算。全量 `tools/verify.py` 57 项 PASS。root_delegated_by_user；无录屏，720/1080 双向实机未验。

@@ -117,6 +117,27 @@ def anchor_for(fighter, cell_w, cell_h, cells_json):
     return [cell_w // 2, cell_h - 8]
 
 
+def anchor_from_records(clip: str, cells_json):
+    """按 cells.json 该 clip 的落格记录推根点：x 取格中心，y 取脚底行 +1。
+
+    stage_cells 落格时把每帧 bbox/foot_row 写进 cells.json（如父奥 256 格
+    的脚底行仍是 183，而非 256 格默认的 248）。cells.json 顶层 anchor 只
+    对应最后一次落格的格尺寸，不能拿来装别的格宽；按记录取才随 clip 走。
+    """
+    if not isinstance(cells_json, dict) or not isinstance(cells_json.get("frames"), list):
+        return None
+    foot_rows = []
+    for rec in cells_json["frames"]:
+        name = str(rec.get("frame", ""))
+        if (name.startswith(clip + "-") and rec.get("standing") is True
+                and isinstance(rec.get("foot_row"), int)):
+            foot_rows.append(int(rec["foot_row"]))
+    if not foot_rows:
+        # 全腾空/全蹲姿势没有直立帧：脚底行不是根点基线，交给上层回退。
+        return None
+    return None, max(foot_rows) + 1
+
+
 def build_atlas(frames, cell_w, cell_h):
     from PIL import Image
     atlas = Image.new("RGBA", (cell_w * len(frames), cell_h))
@@ -155,23 +176,51 @@ def main():
     anchor = anchor_for(fighter, cw, ch, cells_json)
 
     anim_root = FIGHTER_ASSETS / fighter / "animations"
+    # 已有 manifest 的每个 clip 自带根点（赛罗/杰斯等按格改过 [128,248]，
+    # cells.json 顶层仍是旧 [96,184]）；重装单个 clip 时必须沿用该 clip 的
+    # 根点，否则 256 格人物整体上移 64 px。新 clip 才用 cells.json 的值。
+    prior_clips = {}
+    prior_path = anim_root / "manifest.json"
+    if prior_path.is_file():
+        try:
+            prior_clips = json.loads(prior_path.read_text(encoding="utf-8")).get("clips", {})
+        except Exception:
+            prior_clips = {}
     print(f"{fighter}: {len(groups)} clips, cell {cw}x{ch}, anchor {anchor}")
 
     clips = OrderedDict()
     total_frames = 0
     for clip in sorted(groups):
         frames = [p for (_, p) in groups[clip]]
+        clip_cw, clip_ch = cell_size(frames[0])
+        # 同一角色可有多种格宽（父奥基础招 256/288，其余 192）：格尺寸跟
+        # clip 走，不能拿本批第一组的尺寸去缩放其余组，否则人物被压扁。
         total_frames += len(frames)
-        atlas = build_atlas(frames, cw, ch)
+        atlas = build_atlas(frames, clip_cw, clip_ch)
         clip_dir = anim_root / clip
         atlas_path = clip_dir / "atlas.png"
-        rects = [[cw * i, 0, cw, ch] for i in range(len(frames))]
-        anchors = [list(anchor) for _ in frames]
+        rects = [[clip_cw * i, 0, clip_cw, clip_ch] for i in range(len(frames))]
+        record_anchor = anchor_from_records(clip, cells_json)
+        prior = prior_clips.get(clip) or {}
+        prior_anchor = prior.get("anchor")
+        prior_cell = prior.get("cell")
+        if isinstance(prior_cell, int):
+            prior_cell = [prior_cell, prior_cell]
+        clip_anchor = list(anchor)
+        if record_anchor is not None:
+            clip_anchor = [clip_cw // 2, int(record_anchor[1])]
+        elif (isinstance(prior_anchor, (list, tuple)) and len(prior_anchor) == 2
+              and isinstance(prior_cell, (list, tuple)) and len(prior_cell) == 2
+              and [int(prior_cell[0]), int(prior_cell[1])] == [clip_cw, clip_ch]):
+            clip_anchor = [int(prior_anchor[0]), int(prior_anchor[1])]
+        else:
+            clip_anchor = [clip_cw // 2, clip_ch - 8]
+        anchors = [list(clip_anchor) for _ in frames]
         entry = {
             "texture": f"res://assets/fighters/{fighter}/animations/{clip}/atlas.png",
-            "cell": cw if cw == ch else [cw, ch],
-            "anchor": list(anchor),
-            "anchor_y": anchor[1],
+            "cell": clip_cw if clip_cw == clip_ch else [clip_cw, clip_ch],
+            "anchor": list(clip_anchor),
+            "anchor_y": clip_anchor[1],
             "anchors": anchors,
             "rects": rects,
             "ticks": [args.ticks] * len(frames),

@@ -211,3 +211,12 @@ usage/费用：MCP 未返回，记未知，不推测。
 1. 以 `pixel-raw-02` 为唯一身份锚恢复单帧动作生产；不再改锚，除非用户否决。
 2. 若用户要求把站距推到 0.70–0.72：先按新目标重出待机照片并重新过照片门，再重做像素与落格；不要只拉宽格内人物。
 3. 动作帧沿用本文件 `cells.json` 的 32 色板与 192 格/[96,184]/脚底 183。
+
+## 2026-11-12 基础招/空中必杀落格、招式对齐基线与 dash_throw 节奏
+
+- 纯人物帧来源与门值见各动作 `generation-log-20261111-anchorv2.md` / `generation-log-20261111-purebody.md`；本轮只做落格、装机、招式重映射，未改像素。比例 0.163561、目标站高 158、根点 y 184、接地脚底 183、空中必杀脚底 174。
+- light1/light2 5 帧、light3 6 帧、heavy 7 帧、dash_heavy 6 帧落格。256 格时 light2 大披风完全伸展帧左缘触 0（原始 57 px，未裁但无余量），light2 整组改用 288×288、根点 [144,184]；其余 256、根点 [128,184]。air_special 8 帧仍 192 格、根点 [96,184]。
+- 落格实测（高/色）：light1 163–164/32、light2 152–164/29–32、light3 140–164/29–32、heavy 140–164/29–32、dash_heavy 128–164/26–32、air 155–161/27–32。低值为屈膝蓄力、深前压与腾空相，按姿势例外登记；全部单连通、二值 Alpha、四边留白、无裁切。逐帧 bbox/SHA 见 `stage1/cells/cells.json`。
+- 招式：light1/light2/light3 各重映射到 20 tick（5/3/12），heavy 28（9/4/15），dash_heavy 12（4/3/5）；命中帧分别对齐新直拳/上勾/重拳/飞踢接触帧，映射后仅保留 active 窗口内命中 tick。dash_throw 6→24 tick（2/4/18，模板 ultraman），保留 hold/release 三段进度与 impact 帧，修剪启动段重复判定。
+- 新增 `tools/art/recalc_move_hurtboxes.py`；本批 hurtboxes 全招按装机图集重算。`state_frames.json` 同步按新格重算（403 处变更），不增删状态帧。
+- 全量 `tools/verify.py` 57 项 PASS。dash_throw 仍是旧人物帧（无 v2 源），仅节奏对齐；登记待整组重画。root_delegated_by_user；无录屏，720/1080 双向实机未验。

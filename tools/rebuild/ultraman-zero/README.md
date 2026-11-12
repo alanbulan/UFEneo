@@ -256,3 +256,22 @@
 - 已写入 `cells.json` 与 `requests.json` 的 `special_check`（三槽 pass、空中必杀 pass、专属技 blocked_missing_data），并为既有 light1/2/3 帧补签 `root_delegated_by_user`；未改图。
 - 未安装、未启动Godot、未提交、无录屏；720/1080、实速、声音、实机均未验。content 与声音未改。
 - 下一步：赛罗矩阵动作已全部补齐；剩余为 content 侧专属技依据、MOVES/SOUNDS/moves/production_plan 缺口与原剧声音任务，以及实机验证。需用户或内容侧补齐后再继续。
+
+## 2026-11-12 纯人物整帧落格与招式帧序对齐（本机批次）
+
+- 范围：special / special2 / special3 / air_special 四组纯人物整帧落格、装机并重映射招式；沿用身份锚 `stage1/idle/frames/pixel-raw-02-official-side-anchor.png`，比例 0.158767、目标站高 172、256 格、根点 [128,248]、接地脚底 247、air_special 腾空脚底 225。
+- air_special 斜下前伸臂超宽，单独用 288×288 格、根点 [128,248]（其余仍 256）；重装只走 `--only air_special --merge`，避免 288 格被其它组 256 格压回。
+- 落格实测：special 16 帧高 164–175、special2 16 帧 174–178、special3 16 帧 160–174、air 8 帧 151–183；全部 32 色、二值 Alpha、主体单连通、四边留白、无裁切。逐帧 bbox/SHA 见 `stage1/cells/cells.json` 的 frames 记录。
+- 招式：special 16→72 tick（24/32/16，发射 tick 24 sprite 08）、special2 16→80（32/32/16，tick 32）、special3 16→96（32/48/16，tick 32）、air 8→24（10/1/13，命中 tick 10 sprite 03）；sprite 映射与事件/判定保留，镜头/暂停键照旧。超杀三槽仍用 pending FX id，待本角色特效家族接替，未复用他角色特效。
+- 安装：`assets/fighters/ultraman-zero/animations/` 113 clip；四组 atlas SHA 见 manifest。hurtboxes 按新图集整招重算（`tools/art/recalc_move_hurtboxes.py`）。
+- 验证：锁内 `tools/verify.py` 全量 57 项 PASS（含 roster_data_integrity、catalogue_animation、main-startup）。签署 root_delegated_by_user，不是用户亲审；无录屏，720/1080 双向实机画面未验。
+
+## 2026-11-12 赛罗专属特效家族、Q 蓄气与发射点对齐
+
+- 新建 `fx-family-pixelfx-20261112-v1/bake.mjs` + `install.py`：PixelFX 离线烘焙 11 段自绘原创像素，不读他人特效图集；上游 `third_party/pixelfx` 固定 commit `a8415968`、MIT，许可复制到 `assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1/PIXELFX-LICENSE.txt`。每段写 `provenance.json`（请求、形状来源、上游 commit、逐帧 PNG SHA、atlas SHA）与 `effect.json`。
+- 技能段：`zero_fx_wide_beam`（420×96 亮白芯+青蓝层+刃状锯边+周期十字闪+枪口/束端星芒）、`zero_fx_wide_hit`；`zero_fx_emerium_beam`（420×72 青绿细束+四道新月刃波）、`zero_fx_emerium_hit`；`zero_fx_slugger_flight`（64×48 旋翼新月刃）、`zero_fx_slugger_trail`、`zero_fx_slugger_hit`、`zero_fx_slugger_catch`（收束环+双刃亮闪）。全部硬 Alpha（alpha<128→0）、≤8 色板、相位逐帧变化。
+- Q 蓄气三态：`zero_fx_q_charge_start` 9 帧、`zero_fx_q_charge` 24 帧、`zero_fx_q_charge_stop` 9 帧，384×256、锚 [192,246]；两侧上升流带+头镖形短竖刃光+三道横向断弧+环顶汇聚，只在真实 Q 起势/保持/收势出现；已写入 `charge_overlay_policy.json` 的 `placements.ultraman-zero` 并加入 `charge_only_effects`。
+- 三招接线：special→`zero_fx_wide_beam`、special2→`zero_fx_emerium_beam`、special3→`zero_fx_slugger_flight`+`_trail`+`_catch`+`_hit`、air_special 从不可见 strike 判定改为 projectile 运行时束体（spawn [126,162]、life 8）；名称改为赛罗集束射线/艾梅利姆切割/赛罗头镖/空中集束射线（游戏改编）。人物帧未改，帧内无烘焙特效。
+- 发射点按当帧手部像素重核，九处全部 0.00 px：special [18,138]、special2 [22,158]、air_special [126,162] 原已贴手；special3 双镖 [57,151]/[57,113]→[59,132]/[33,133]；pulse [60,143]→[54,130]、low_pulse [82,91]→[58,81]、air_pulse [123,110]→[87,78]、ranged_forward [62,143]→[65,132]。
+- special3 实体镖修复：原 `integer_path` 只有 `[[0,0]]`，实体镖实际不飞出；`return_anchor_by_tick` 只有 `"0"`，运行时按 `owner.move_tick` 取锚，回收首 tick 查不到即 `missing_current_return_anchor` 清除。改为 31 点外飞折线（30 tick 飞 330 px，双镖上下分开 ±8 px）、`return_anchor` [12,118]/[0,120]、tick 32–95 逐 tick 双手锚（按各精灵帧实手位），24 tick 回收，接刃闪光落在手上。
+- 锁内全量 `tools/verify.py` 57 项 PASS（含 roster_data_integrity、catalogue_animation、main-startup）。未实机、未听审、无录屏；720/1080 双朝向未验。基础光弹仍用运行时通用 `pulse` 弹体，不是他角色专属家族。
