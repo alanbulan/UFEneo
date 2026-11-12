@@ -28,6 +28,14 @@ func run() -> void:
 			if runtime:
 				var form_id := str(raw.get("target", ""))
 				check(not form_id.is_empty() and FileAccess.file_exists("res://content/fighters/%s/definition.json" % form_id), "%s 形态定义存在" % key)
+				# 切换动作读目标形态清单里的片段，缺片段会让人物隐形；时长必须与共用时间轴一致。
+				var timeline: Dictionary = UfeContentDatabase.read_json(str(raw.get("transform", "")))
+				var manifest: Dictionary = UfeContentDatabase.read_json("res://assets/fighters/%s/animations/manifest.json" % form_id)
+				var animation := str(raw.get("transform_animation", source.get("transform_animation", "")))
+				var clip: Dictionary = manifest.get("clips", {}).get(animation, {})
+				var ticks := 0
+				for value in clip.get("ticks", []): ticks += int(value)
+				check(not clip.is_empty() and ticks == timeline.get("frames", []).size(), "%s 切换动画时长与时间轴一致" % key)
 	for key in listed:
 		# 多形态表里的选项必须与选人界面一一对应；单形态变身表沿用旧规则不在此列。
 		var base := str(key).get_slice("/", 0)
