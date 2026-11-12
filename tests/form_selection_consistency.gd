@@ -27,7 +27,13 @@ func run() -> void:
 			check(runtime == bool(listed[key]), "%s 选人/战斗形态开关一致" % key)
 			if runtime:
 				var form_id := str(raw.get("target", ""))
-				check(not form_id.is_empty() and FileAccess.file_exists("res://content/fighters/%s/definition.json" % form_id), "%s 形态定义存在" % key)
+				var definition_path := "res://content/fighters/%s/definition.json" % form_id
+				check(not form_id.is_empty() and FileAccess.file_exists(definition_path), "%s 形态定义存在" % key)
+				if FileAccess.file_exists(definition_path):
+					var definition: Dictionary = UfeContentDatabase.read_json(definition_path)
+					var model := str(definition.get("presentation", {}).get("model", ""))
+					# 运行时必须指向动作整图；图鉴静态图放进 presentation 会让动作帧与rects对不上。
+					check(bool(definition.get("playable", false)) and FileAccess.file_exists(model) and not model.contains("/catalogue/"), "%s 运行时模型为可玩动作整图" % key)
 				# 切换动作读目标形态清单里的片段，缺片段会让人物隐形；时长必须与共用时间轴一致。
 				var timeline: Dictionary = UfeContentDatabase.read_json(str(raw.get("transform", "")))
 				var manifest: Dictionary = UfeContentDatabase.read_json("res://assets/fighters/%s/animations/manifest.json" % form_id)
