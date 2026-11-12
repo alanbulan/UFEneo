@@ -1,6 +1,6 @@
 """从基础赛罗内容派生光辉赛罗的招式与内容数据。
 
-只改：角色 id / 显示名 / 说明文字 / 特效 id（全部改为 pending_shining_*）。
+只改：角色 id / 显示名 / 说明文字 / 特效 id（全部改为正式 zero_shining_fx_*）。
 帧数、启动-持续-收招、伤害、能量、受击框与判定数据保持原样，不复制任何人物帧。
 不改共享 phase3/charge policy，不改基础赛罗内容。
 """
@@ -22,13 +22,15 @@ EFFECT_KEYS = {
 GENERIC = {'pulse', 'impact_light', 'impact_heavy', 'impact_guard'}
 
 
-def pending_id(value: str) -> str:
-    if value.startswith('pending_shining_'):
+def final_id(value: str) -> str:
+    if value.startswith('zero_shining_fx_'):
         return value
+    if value.startswith('pending_shining_'):
+        return 'zero_shining_fx_' + value[len('pending_shining_'):]
     if value.startswith('zero_fx_'):
-        return 'pending_shining_' + value[len('zero_fx_'):]
+        return 'zero_shining_fx_' + value[len('zero_fx_'):]
     if value in GENERIC:
-        return 'pending_shining_' + value
+        return 'zero_shining_fx_' + value
     return value
 
 
@@ -37,7 +39,7 @@ def walk_effects(node, found: dict) -> None:
         for key in list(node):
             new_key = key
             if key.startswith('zero_fx_'):
-                new_key = 'pending_shining_' + key[len('zero_fx_'):]
+                new_key = 'zero_shining_fx_' + key[len('zero_fx_'):]
             value = node[key]
             if new_key != key:
                 found.setdefault(new_key, set()).add(key)
@@ -45,13 +47,13 @@ def walk_effects(node, found: dict) -> None:
                 node[new_key] = value
                 key = new_key
             if key in EFFECT_KEYS and isinstance(value, str):
-                new = pending_id(value)
+                new = final_id(value)
                 if new != value:
                     found.setdefault(new, set()).add(value)
                 node[key] = new
             elif isinstance(value, str):
                 if 'zero_fx_' in value:
-                    node[key] = value.replace('zero_fx_', 'pending_shining_')
+                    node[key] = value.replace('zero_fx_', 'zero_shining_fx_')
             else:
                 walk_effects(value, found)
     elif isinstance(node, list):
@@ -74,7 +76,7 @@ def main() -> int:
             '本形态动作帧待按光辉赛罗身份锚重新生成，当前未安装。'
         )
         move['production_note'] = (
-            '未安装：本形态动作帧未生成；特效 id 已改为 pending_shining_*，'
+            '未安装：本形态动作帧未生成；特效 id 已定为正式 zero_shining_fx_*，'
             '须由主会话在 content/presentation/phase3_projectiles.json 登记后可见。'
         )
         (DEST / 'moves' / path.name).write_text(
@@ -97,10 +99,10 @@ def main() -> int:
     definition['selection_visible'] = False
     definition['numeric_status'] = (
         '占位设计参数，沿用基础赛罗；光辉赛罗站高 188、256 格、根点 [128,248]，'
-        '动作帧未生成、未安装。'
+        '状态帧与 47 招动作帧尚未生成/安装；form_switch 六帧已完成待随全量动作安装。'
     )
     definition['presentation'] = {
-        'model': 'res://assets/fighters/ultraman-zero__shining/catalogue/model-native.png',
+        'model': 'res://assets/fighters/ultraman-zero__shining/model-native.png',
         'manifest': 'res://assets/fighters/ultraman-zero__shining/animations/manifest.json',
         'native': True,
         'cell': 256,
@@ -124,15 +126,18 @@ def main() -> int:
     definition['walks_installed'] = False
     definition['unsupported_moves'] = move_ids
     definition['pilot_lock_reason'] = (
-        '状态片段、47 招、form_switch 与特效均未生成/安装；不得在选人界面开放。'
+        '状态片段与 47 招动作帧尚未生成/安装；form_switch 六帧与 15 段运行特效已就绪但未随全量动作安装，'
+        '不得在选人界面开放。'
     )
     definition['selection_authorization'] = (
-        'root_delegated_by_user：仅身份锚已签；待机/移动/受击等状态帧与招式帧尚未制作，暂不开放选择。'
+        'root_delegated_by_user：仅身份锚、form_switch 与特效家族已签；待机/移动/受击等状态帧与招式帧尚未制作，'
+        '暂不开放选择。'
     )
     definition['state_frames_note'] = (
-        definition.get('state_frames_note', '')
-        + ' 光辉赛罗当前未生成动作帧；state_frames.json 的逐帧受击框沿用基础赛罗占位，'
-          '安装本形态帧后须用 recalc_move_hurtboxes 重算。'
+        '判定框为按实际 Alpha 落格整帧量取的三段占位受击框（头/躯干/腿），未实机校准；'
+        'hitboxes 为空或按 moves/*.json 已有数据，技能帧攻击框见对应 moves 文件。'
+        ' 光辉赛罗当前未生成动作帧；state_frames.json 的逐帧受击框沿用基础赛罗占位，'
+        '安装本形态帧后须用 recalc_move_hurtboxes 重算。'
     )
     (DEST / 'definition.json').write_text(
         json.dumps(definition, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
@@ -144,7 +149,7 @@ def main() -> int:
         '银白底衣配金色胸甲、肩甲、前臂甲与腿部金纹，蓝眼、蓝色额灯与蓝色五角胸核，'
         '完整双头镖；无披风。\n\n范围：仅光辉赛罗本形态，其它版本与形态待补。\n身高：未知。体重：未知。'
     )
-    profile['model'] = 'res://assets/fighters/ultraman-zero__shining/catalogue/model-native.png'
+    profile['model'] = 'res://assets/fighters/ultraman-zero__shining/model-native.png'
     profile['profile_source'] = (
         'catalogue_profile.json 与身份锚记录；称号与简介只描述已核外观，不新增设定。'
     )
@@ -166,7 +171,7 @@ def main() -> int:
         'slugger_trail': 'trail', 'slugger_catch': 'return', 'pulse': 'projectile',
     }
     for new_id in sorted(found):
-        short = new_id[len('pending_shining_'):]
+        short = new_id[len('zero_shining_fx_'):]
         fx['effects'].append({
             'id': new_id,
             'source_id': sorted(found[new_id])[0] if found[new_id] else '',
@@ -180,7 +185,7 @@ def main() -> int:
         ('q_charge_stop', '真实 Q 收势段；9 帧。'),
     ):
         fx['effects'].append({
-            'id': 'pending_shining_' + short,
+            'id': 'zero_shining_fx_' + short,
             'source_id': 'zero_fx_' + short,
             'role': 'charge_overlay',
             'status': 'pending_register',
@@ -195,11 +200,11 @@ def main() -> int:
         'note': '提案：共享 content/presentation/charge_overlay_policy.json 未修改；主会话登记后生效。',
         'placements': {
             FIGHTER: {
-                'charge_start': {'effect': 'pending_shining_q_charge_start', 'anchor': [0, 0],
+                'charge_start': {'effect': 'zero_shining_fx_q_charge_start', 'anchor': [0, 0],
                                  'color': [1, 1, 1, 1], 'behind_fighter': True, 'frames': 9, 'loop': False},
-                'charge': {'effect': 'pending_shining_q_charge', 'anchor': [0, 0],
+                'charge': {'effect': 'zero_shining_fx_q_charge', 'anchor': [0, 0],
                            'color': [1, 1, 1, 1], 'behind_fighter': True, 'frames': 24, 'loop': True},
-                'charge_stop': {'effect': 'pending_shining_q_charge_stop', 'anchor': [0, 0],
+                'charge_stop': {'effect': 'zero_shining_fx_q_charge_stop', 'anchor': [0, 0],
                                 'color': [1, 1, 1, 1], 'behind_fighter': True, 'frames': 9, 'loop': False},
             }
         },

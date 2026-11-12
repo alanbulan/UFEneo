@@ -9,9 +9,9 @@
  "max_health": 1000,
  "walk_speed": 2,
  "jump_speed": 16,
- "numeric_status": "占位设计参数，沿用基础赛罗；光辉赛罗站高 188、256 格、根点 [128,248]，动作帧未生成、未安装。",
+ "numeric_status": "占位设计参数，沿用基础赛罗；光辉赛罗站高 188、256 格、根点 [128,248]，状态帧与 47 招动作帧尚未生成/安装；form_switch 六帧已完成待随全量动作安装。",
  "presentation": {
-  "model": "res://assets/fighters/ultraman-zero__shining/catalogue/model-native.png",
+  "model": "res://assets/fighters/ultraman-zero__shining/model-native.png",
   "manifest": "res://assets/fighters/ultraman-zero__shining/animations/manifest.json",
   "native": true,
   "cell": 256,
@@ -84,7 +84,7 @@
   "wake_low",
   "wake_mid"
  ],
- "pilot_lock_reason": "状态片段、47 招、form_switch 与特效均未生成/安装；不得在选人界面开放。",
- "selection_authorization": "root_delegated_by_user：仅身份锚已签；待机/移动/受击等状态帧与招式帧尚未制作，暂不开放选择。",
+ "pilot_lock_reason": "状态片段与 47 招动作帧尚未生成/安装；form_switch 六帧与 15 段运行特效已就绪但未随全量动作安装，不得在选人界面开放。",
+ "selection_authorization": "root_delegated_by_user：仅身份锚、form_switch 与特效家族已签；待机/移动/受击等状态帧与招式帧尚未制作，暂不开放选择。",
  "state_frames_note": "判定框为按实际 Alpha 落格整帧量取的三段占位受击框（头/躯干/腿），未实机校准；hitboxes 为空或按 moves/*.json 已有数据，技能帧攻击框见对应 moves 文件。 光辉赛罗当前未生成动作帧；state_frames.json 的逐帧受击框沿用基础赛罗占位，安装本形态帧后须用 recalc_move_hurtboxes 重算。"
 }

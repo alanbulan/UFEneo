@@ -21,8 +21,8 @@
  "super_level": 1,
  "air_allowed": false,
  "feedback": {
-  "spark": "pending_shining_wide_hit",
-  "block_spark": "pending_shining_impact_guard",
+  "spark": "zero_shining_fx_wide_hit",
+  "block_spark": "zero_shining_fx_impact_guard",
   "hitstop": 10,
   "blockstop": 5,
   "shake": 4,
@@ -45,7 +45,7 @@
   "block": "guard"
  },
  "data_source": "沿用基础赛罗同名招式的帧数、启动/持续/收招、伤害、能量与判定；本形态动作帧待按光辉赛罗身份锚重新生成，当前未安装。",
- "production_note": "未安装：本形态动作帧未生成；特效 id 已改为 pending_shining_*，须由主会话在 content/presentation/phase3_projectiles.json 登记后可见。",
+ "production_note": "未安装：本形态动作帧未生成；特效 id 已定为正式 zero_shining_fx_*，须由主会话在 content/presentation/phase3_projectiles.json 登记后可见。",
  "frames": [
   {
    "sprite": 0,
@@ -758,7 +758,7 @@
    "cancel": [],
    "shots": [
     {
-     "effect": "pending_shining_wide_beam",
+     "effect": "zero_shining_fx_wide_beam",
      "spawn": [
       18,
       138
@@ -2155,5 +2155,5 @@
   }
  ],
  "manual_projectiles": true,
- "adaptation": "游戏改编的赛罗集束射线（Wide Zero Shot）：双臂前伸聚能后发射宽幅青蓝光束；人物帧不含光束，束体由运行时 pending_shining_wide_beam 承载。"
+ "adaptation": "游戏改编的赛罗集束射线（Wide Zero Shot）：双臂前伸聚能后发射宽幅青蓝光束；人物帧不含光束，束体由运行时 zero_shining_fx_wide_beam 承载。"
 }

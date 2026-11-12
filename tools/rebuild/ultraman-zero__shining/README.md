@@ -33,7 +33,7 @@
 ## 2026-11-12 阶段 2：内容数据派生（动作帧未制作）
 
 - `tools/rebuild/ultraman-zero__shining/build_content.py` 从基础赛罗派生本形态内容：47 个招式文件、`command_table.json`、`move_manifest.json`、`state_frames.json`、`definition.json`、`profile.json`。逐招核对：帧数、启动/持续/收招、伤害、能量、受击框与判定数据与基础赛罗完全一致；只改 `data_source`、`production_note`、角色显示名与特效 id。
-- 特效 id 全部改为 `pending_shining_*`：12 个招式/反馈 id + 3 个 Q 蓄气 id，清单在 `tools/rebuild/ultraman-zero__shining/fx-proposal.json`；Q 三态提案在 `tools/rebuild/ultraman-zero__shining/charge_policy.json`。共享 `content/presentation/phase3_projectiles.json` 与 `charge_overlay_policy.json` **未修改**，主会话登记前这些光效不可见。
+- 特效 id 全部改为 `zero_shining_fx_*`：12 个招式/反馈 id + 3 个 Q 蓄气 id，清单在 `tools/rebuild/ultraman-zero__shining/fx-proposal.json`；Q 三态提案在 `tools/rebuild/ultraman-zero__shining/charge_policy.json`。共享 `content/presentation/phase3_projectiles.json` 与 `charge_overlay_policy.json` **未修改**，主会话登记前这些光效不可见。
 - `definition.json` 如实标为 `stage1_identity_anchor_only`、`playable=false`、`select_visible=false`，`unsupported_moves` 列 47 项：本形态尚无任何状态帧、招式帧或 `form_switch`，不能冒充可开局。动作帧仍须逐段从本形态待机锚生成、装格、`recalc_move_hurtboxes` 重算受击框后才能置可玩。
 - `state_frames.json` 的逐帧受击框是基础赛罗占位，已写入 `definition.state_frames_note`，安装本形态帧后必须重算。
 - 未复制的历史文件：基础赛罗的 `production_plan.json`、`MOVES.md`、`SOUNDS.md` 不作为本形态正式内容；音频 id 暂沿用赛罗同角色条目。
@@ -54,7 +54,7 @@
 ### 运行特效家族（15 个 pending id）
 
 - 目录：`assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/`；提案 `tools/rebuild/ultraman-zero__shining/fx-proposal.json`（SHA `a33680a0…`），Q 三态提案 `charge_policy.json`（SHA `5c4538bc…`），逐帧核验 `fx-report.json`，联系表 `fx-contact.png`（SHA `94ad8fb8…`）。
-- 8 个招式/命中段（wide_beam/wide_hit/emerium_beam/emerium_hit/slugger_flight/slugger_trail/slugger_hit/slugger_catch）：复制同角色基础赛罗 PixelFX 自绘图集，像素未改，只改路径与归属；每段 provenance 记录 `reused_from` 与原 atlas SHA。飞行 `slugger_flight` 与命中 `slugger_hit` 分开；`special3.feedback.projectile_impacts` 为 `{pending_shining_slugger_flight: pending_shining_slugger_hit}`。
+- 8 个招式/命中段（wide_beam/wide_hit/emerium_beam/emerium_hit/slugger_flight/slugger_trail/slugger_hit/slugger_catch）：复制同角色基础赛罗 PixelFX 自绘图集，像素未改，只改路径与归属；每段 provenance 记录 `reused_from` 与原 atlas SHA。飞行 `slugger_flight` 与命中 `slugger_hit` 分开；`special3.feedback.projectile_impacts` 为 `{zero_shining_fx_slugger_flight: zero_shining_fx_slugger_hit}`。
 - 4 个通用段（pulse/impact_light/impact_guard/impact_heavy）：复制项目共享图集到本形态目录，保留原 rects/ticks/anchor，不改共享文件。
 - 3 个 Q 蓄气段：`bake_qcharge_hard.mjs` 沿用基础家族 `chargeAura` 形状，PixelFX 离线重烘为二值 Alpha（cutoff 32）并量化到青蓝 8 色；9/24/9 帧，384×256，anchor [192,246]，起势/收势首末帧加地面种子火花保证非空；亮芯、外焰、颗粒与相位变化保留。
 - 15 段逐帧核验：真透明、Alpha 二值、色数 3–21（Q 7）、atlas SHA 与提案一致、rects 均在图内、Q 帧盒 9/24/9 与 policy 帧数一致。命中/头镖等多连通块是特效颗粒/分段，按 AGENTS“独立颗粒另行核”记录；二值 Alpha 已无半透明晕边。共享 `phase3_projectiles.json` 与 `charge_overlay_policy.json` 未修改。

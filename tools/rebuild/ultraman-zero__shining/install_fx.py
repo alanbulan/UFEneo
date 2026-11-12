@@ -1,9 +1,9 @@
-"""光辉赛罗运行特效家族：15 个 pending_shining_* id 的图集、规格与提案。
+"""光辉赛罗运行特效家族：15 个 zero_shining_fx_* 正式 id 的图集、规格与提案。
 
 来源：
-- 8 个招式/命中段：复用同一角色的基础赛罗 PixelFX 自绘图集（不改图，只换路径与归属）；
-- 3 个 Q 蓄气段：由 bake_qcharge_hard.mjs 按同一 chargeAura 形状重烘为硬 Alpha；
-- 4 个通用段（pulse/impact_*）：复制项目共享图集到本形态目录。
+- 8 个招式/命中段：光辉赛罗专属 PixelFX 重绘（金白主体、蓝白亮芯、放射光晕与金色星屑），不复用基础赛罗/其他角色或形态图集；
+- 3 个 Q 蓄气段：沿用 chargeAura 形状重烘为硬 Alpha，蓝白亮芯 + 金色辉光/星屑（光辉形态身份）；
+- 4 个通用段（pulse/impact_*）：复制项目共享图集到本形态目录（共享通用段）。
 
 不改 content/presentation/phase3_projectiles.json 与 charge_overlay_policy.json。
 产出：assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/**、
@@ -23,7 +23,8 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[3]
 BASE = ROOT / "assets/effects/ultraman-zero/fx-family-pixelfx-20261112-v1"
 DEST = ROOT / "assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1"
-STAGING_Q = ROOT / "tools/rebuild/ultraman-zero__shining/fx-staging-qcharge-v3"
+STAGING_MOVE = ROOT / "tools/rebuild/ultraman-zero__shining/fx-staging-move-shining-v1"
+STAGING_Q = ROOT / "tools/rebuild/ultraman-zero__shining/fx-staging-qcharge-shining-v1"
 PHASE3 = ROOT / "content/presentation/phase3_projectiles.json"
 REPORT = ROOT / "tools/rebuild/ultraman-zero__shining/fx-report.json"
 PROPOSAL = ROOT / "tools/rebuild/ultraman-zero__shining/fx-proposal.json"
@@ -31,27 +32,27 @@ POLICY = ROOT / "tools/rebuild/ultraman-zero__shining/charge_policy.json"
 FAMILY = "fx-family-pixelfx-20261112-v1"
 
 MOVE_FX = [
-    ("wide_beam", "pending_shining_wide_beam", "zero_fx_wide_beam", "beam"),
-    ("wide_hit", "pending_shining_wide_hit", "zero_fx_wide_hit", "hit_spark"),
-    ("emerium_beam", "pending_shining_emerium_beam", "zero_fx_emerium_beam", "beam"),
-    ("emerium_hit", "pending_shining_emerium_hit", "zero_fx_emerium_hit", "hit_spark"),
-    ("slugger_flight", "pending_shining_slugger_flight", "zero_fx_slugger_flight", "projectile"),
-    ("slugger_trail", "pending_shining_slugger_trail", "zero_fx_slugger_trail", "trail"),
-    ("slugger_hit", "pending_shining_slugger_hit", "zero_fx_slugger_hit", "hit_spark"),
-    ("slugger_catch", "pending_shining_slugger_catch", "zero_fx_slugger_catch", "return"),
+    ("wide_beam", "zero_shining_fx_wide_beam", "zero_fx_wide_beam", "beam"),
+    ("wide_hit", "zero_shining_fx_wide_hit", "zero_fx_wide_hit", "hit_spark"),
+    ("emerium_beam", "zero_shining_fx_emerium_beam", "zero_fx_emerium_beam", "beam"),
+    ("emerium_hit", "zero_shining_fx_emerium_hit", "zero_fx_emerium_hit", "hit_spark"),
+    ("slugger_flight", "zero_shining_fx_slugger_flight", "zero_fx_slugger_flight", "projectile"),
+    ("slugger_trail", "zero_shining_fx_slugger_trail", "zero_fx_slugger_trail", "trail"),
+    ("slugger_hit", "zero_shining_fx_slugger_hit", "zero_fx_slugger_hit", "hit_spark"),
+    ("slugger_catch", "zero_shining_fx_slugger_catch", "zero_fx_slugger_catch", "return"),
 ]
 Q_STATES = [
-    ("q_charge_start", "pending_shining_q_charge_start", 9, False),
-    ("q_charge", "pending_shining_q_charge", 24, True),
-    ("q_charge_stop", "pending_shining_q_charge_stop", 9, False),
+    ("q_charge_start", "zero_shining_fx_q_charge_start", 9, False),
+    ("q_charge", "zero_shining_fx_q_charge", 24, True),
+    ("q_charge_stop", "zero_shining_fx_q_charge_stop", 9, False),
 ]
 GENERIC = [
-    ("pulse", "pending_shining_pulse", "pulse", "projectile", ROOT / "assets/effects/pulse/atlas.png"),
-    ("impact_light", "pending_shining_impact_light", "impact_light", "hit_spark",
+    ("pulse", "zero_shining_fx_pulse", "pulse", "projectile", ROOT / "assets/effects/pulse/atlas.png"),
+    ("impact_light", "zero_shining_fx_impact_light", "impact_light", "hit_spark",
      ROOT / "assets/effects/shared/impact_light/sprite-sheet-alpha.png"),
-    ("impact_guard", "pending_shining_impact_guard", "impact_guard", "block_spark",
+    ("impact_guard", "zero_shining_fx_impact_guard", "impact_guard", "block_spark",
      ROOT / "assets/effects/shared/impact_light/variants/guard.png"),
-    ("impact_heavy", "pending_shining_impact_heavy", "impact_heavy", "hit_spark",
+    ("impact_heavy", "zero_shining_fx_impact_heavy", "impact_heavy", "hit_spark",
      ROOT / "assets/effects/shared/impact_heavy/sprite-sheet-alpha.png"),
 ]
 
@@ -177,72 +178,97 @@ def write_provenance(dest_dir: Path, data: dict) -> None:
 
 
 def main() -> int:
+    if not (STAGING_MOVE / "provenance.json").exists():
+        subprocess.run([
+            "node", str(ROOT / "tools/rebuild/ultraman-zero__shining/bake_move_fx_shining.mjs"),
+            "--out", str(STAGING_MOVE.relative_to(ROOT)),
+        ], cwd=ROOT, check=True)
     if not (STAGING_Q / "provenance.json").exists():
         subprocess.run([
-            "node", str(ROOT / "tools/rebuild/ultraman-zero__shining/bake_qcharge_hard.mjs"),
+            "node", str(ROOT / "tools/rebuild/ultraman-zero__shining/bake_qcharge_shining.mjs"),
             "--out", str(STAGING_Q.relative_to(ROOT)), "--cutoff", "32",
         ], cwd=ROOT, check=True)
     phase3 = load(PHASE3)
-    source_family_prov = load(BASE / "emerium_beam/provenance.json")
     license_src = BASE / "PIXELFX-LICENSE.txt"
     license_sha = sha(license_src)
-    review = "2026-11-12 光辉赛罗特效家族（基础赛罗 PixelFX 自绘段复用；Q 蓄气硬 Alpha 重烘），root_delegated_by_user，待主会话登记"
+    review = "2026-11-12 光辉赛罗专属特效家族：招式8段+Q三态按光辉身份独立重绘（金白主体、蓝白亮芯、放射光晕、金色星屑），root_delegated_by_user，待主会话登记"
     entries = {}
 
-    # 1) 基础家族 8 段：复制图集，改路径与归属
+    # 1) 招式 8 段：光辉赛罗专属重绘（非复用基础赛罗/其他角色或形态图集像素）
+    move_prov = load(STAGING_MOVE / "provenance.json")
+    move_exports = {e["id"]: e for e in move_prov["exports"]}
     for short, pending, source_id, role in MOVE_FX:
-        src_dir = BASE / short
         dst_dir = DEST / short
         dst_dir.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(src_dir / "atlas.png", dst_dir / "atlas.png")
-        spec = load(src_dir / "effect.json")
+        export = move_exports[pending]
+        src_atlas = STAGING_MOVE / pending / "atlas.png"
+        shutil.copyfile(src_atlas, dst_dir / "atlas.png")
         atlas_path = dst_dir / "atlas.png"
-        entry = dict(spec)
-        entry.update({
+        rects = export["rects"]
+        entry = {
             "texture": "res://" + str(atlas_path.relative_to(ROOT)),
+            "rects": rects,
+            "anchor": [export["AX"], export["AY"]],
+            "ticks": export["n"],
+            "display_scale": [1, 1],
+            "behind_fighter": False,
+            "frame_boxes": frame_boxes(atlas_path, rects, [export["AX"], export["AY"]]),
+            "loop": export.get("loop", False),
+            "color_parameter": export.get("color_parameter", False),
+            "alpha_binary": True,
+            "orientation": "authored",
+            "native_fan": False,
+            "atlas_sha256": sha(atlas_path),
+            "colors": color_count(atlas_path),
+            "source_kind": "pixelfx_code_baked",
+            "art_source": "pixelfx_code_baked",
+            "upstream_commit": move_prov["upstream_commit"],
+            "license": "MIT",
             "provenance": "res://" + str((dst_dir / "provenance.json").relative_to(ROOT)),
             "dedicated_to": "ultraman-zero__shining",
-            "authoring_source": "res://tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs",
-            "atlas_sha256": sha(atlas_path),
+            "authoring_source": "res://tools/rebuild/ultraman-zero__shining/bake_move_fx_shining.mjs",
+            "layer": export.get("kind", role),
             "user_approved": False,
             "review_status": review,
-            "reused_from": f"assets/effects/ultraman-zero/{FAMILY}/{short}",
-            "reuse_note": "同一角色光辉形态复用基础赛罗 PixelFX 自绘图集；像素未改，只改路径与归属。",
-        })
+        }
         save(dst_dir / "effect.json", entry)
+        rows = (export["n"] + export["cols"] - 1) // export["cols"]
         write_provenance(dst_dir, {
-            "request": "光辉赛罗运行特效：复用基础赛罗同角色 PixelFX 自绘段",
+            "request": "光辉赛罗专属运行特效：金白主体、蓝白亮芯、放射光晕与金色星屑（不复用其他角色/形态特效）",
             "character": "ultraman-zero__shining",
             "family": pending,
             "source_id": source_id,
-            "kind": entry.get("layer"),
-            "shape_source": "tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs",
-            "reused_from": f"assets/effects/ultraman-zero/{FAMILY}/{short}",
-            "reused_atlas_sha256": sha(BASE / short / "atlas.png"),
-            "reused_source_atlas_shape": True,
+            "kind": export.get("kind", role),
+            "shape_source": "tools/rebuild/ultraman-zero__shining/bake_move_fx_shining.mjs",
+            "authoring_source": "tools/rebuild/ultraman-zero__shining/bake_move_fx_shining.mjs",
             "source_kind": "pixelfx_code_baked",
             "route": "offline",
-            "upstream": source_family_prov.get("upstream"),
-            "upstream_commit": source_family_prov.get("upstream_commit"),
+            "upstream": move_prov["upstream"],
+            "upstream_commit": move_prov["upstream_commit"],
             "license": "MIT",
-            "license_sha256": license_sha,
+            "license_sha256": move_prov["license_sha256"],
+            "seed": move_prov.get("seed"),
+            "identity": move_prov.get("identity"),
+            "canvas": [export["W"] * export["cols"], export["H"] * rows],
+            "anchor": [export["AX"], export["AY"]],
+            "rects": rects,
+            "phase_png_sha256": export["phase_png_sha256"],
             "atlas_sha256": sha(atlas_path),
             "character_frames_modified": False,
             "review_status": review,
         })
         entries[pending] = {
             "id": pending, "source_id": source_id, "role": role,
-            "status": "pending_register", "reused_from": entry["reused_from"],
-            "effect": entry,
+            "status": "pending_register", "effect": entry,
         }
 
-    # 2) Q 蓄气三态：硬 Alpha 重烘
+    # 2) Q 蓄气三态：沿用 chargeAura 形状，蓝白亮芯 + 金色辉光/星屑，硬 Alpha 重烘
     q_prov = load(STAGING_Q / "provenance.json")
-    q_exports = {e["id"]: e for e in q_prov["exports"]}
-    for state, pending, frames, loop in Q_STATES:
-        export = q_exports[f"pending_shining_{state}"]
+    q_exports = {e["state"]: e for e in q_prov["exports"]}
+    for short, pending, frames, loop in Q_STATES:
+        export = q_exports[short.removeprefix("q_")]
         src_atlas = STAGING_Q / export["id"] / "atlas.png"
-        dst_dir = DEST / state
+        dst_dir = DEST / short
         dst_dir.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(src_atlas, dst_dir / "atlas.png")
         entry = {
@@ -266,30 +292,31 @@ def main() -> int:
             "license": "MIT",
             "provenance": "res://" + str((dst_dir / "provenance.json").relative_to(ROOT)),
             "dedicated_to": "ultraman-zero__shining",
-            "authoring_source": "res://tools/rebuild/ultraman-zero__shining/bake_qcharge_hard.mjs",
+            "authoring_source": "res://tools/rebuild/ultraman-zero__shining/bake_qcharge_shining.mjs",
             "layer": "charge",
             "full_frame": True,
             "user_approved": False,
             "review_status": review,
             "reused_from": "tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs chargeAura",
-            "reuse_note": "沿用基础家族 chargeAura 形状，离线重烘为二值 Alpha 并量化到青蓝 8 色板。",
+            "reuse_note": "沿用基础家族 chargeAura 形状，按光辉形态重绘为蓝白亮芯+金色辉光/星屑并硬 Alpha 量化。",
         }
         save(dst_dir / "effect.json", entry)
         write_provenance(dst_dir, {
-            "request": "光辉赛罗 Q 蓄气三态：硬 Alpha 像素环，亮芯/外焰/颗粒/相位变化",
+            "request": "光辉赛罗 Q 蓄气三态：蓝白亮芯、金色辉光与星屑，硬 Alpha 像素环",
             "character": "ultraman-zero__shining",
             "family": pending,
-            "source_id": f"zero_fx_{state}",
+            "source_id": f"zero_fx_{short}",
             "kind": "charge",
             "shape_source": "tools/rebuild/ultraman-zero/fx-family-pixelfx-20261112-v1/bake.mjs",
-            "authoring_source": "tools/rebuild/ultraman-zero__shining/bake_qcharge_hard.mjs",
+            "authoring_source": "tools/rebuild/ultraman-zero__shining/bake_qcharge_shining.mjs",
             "source_kind": "pixelfx_code_baked",
             "route": "offline",
             "upstream": q_prov["upstream"],
             "upstream_commit": q_prov["upstream_commit"],
             "license": "MIT",
             "license_sha256": q_prov["license_sha256"],
-            "seed": q_prov["seed"],
+            "seed": q_prov.get("seed"),
+            "identity": q_prov.get("identity"),
             "hard_alpha_cutoff": q_prov["hard_alpha_cutoff"],
             "canvas": [export["W"] * export["cols"], export["H"]],
             "anchor": [export["AX"], export["AY"]],
@@ -300,7 +327,7 @@ def main() -> int:
             "review_status": review,
         })
         entries[pending] = {
-            "id": pending, "source_id": f"zero_fx_{state}", "role": "charge_overlay",
+            "id": pending, "source_id": f"zero_fx_{short}", "role": "charge_overlay",
             "status": "pending_register", "effect": entry,
         }
 
@@ -387,6 +414,11 @@ def main() -> int:
 
     policy = load(POLICY)
     policy["note"] = "提案：共享 content/presentation/charge_overlay_policy.json 未修改；图集见 assets/effects/ultraman-zero__shining/fx-family-pixelfx-20261112-v1/，主会话登记后生效。"
+    charge_only = policy.setdefault("charge_only_effects", [])
+    for pending in ("zero_shining_fx_q_charge_start", "zero_shining_fx_q_charge",
+                    "zero_shining_fx_q_charge_stop"):
+        if pending not in charge_only:
+            charge_only.append(pending)
     policy["placements"]["ultraman-zero__shining"] = {
         state: {
             "effect": pending,
@@ -397,9 +429,9 @@ def main() -> int:
             "loop": loop,
         }
         for state, pending, frames, loop in (
-            ("charge_start", "pending_shining_q_charge_start", 9, False),
-            ("charge", "pending_shining_q_charge", 24, True),
-            ("charge_stop", "pending_shining_q_charge_stop", 9, False),
+            ("charge_start", "zero_shining_fx_q_charge_start", 9, False),
+            ("charge", "zero_shining_fx_q_charge", 24, True),
+            ("charge_stop", "zero_shining_fx_q_charge_stop", 9, False),
         )
     }
     save(POLICY, policy)

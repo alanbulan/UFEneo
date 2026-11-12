@@ -101,7 +101,7 @@ function harden(rgba){
 
 const exports=[];
 for(const [state,count] of [['charge_start',9],['charge',24],['charge_stop',9]]){
- const id=`pending_shining_q_${state}`,folder=join(OUT,id);mkdirSync(folder);
+ const id=`zero_shining_fx_q_${state}`,folder=join(OUT,id);mkdirSync(folder);
  const cols=6,rows=Math.ceil(count/cols),atlas=new Uint8ClampedArray(QW*cols*QH*rows*4),rects=[],hashes=[];
  for(let i=0;i<count;i++){
   const env=state==='charge_start'?(i+1)/count:state==='charge_stop'?Math.max(0.08,(count-1-i)/(count-1)):1;
