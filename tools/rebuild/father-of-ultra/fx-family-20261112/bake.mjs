@@ -307,70 +307,118 @@ function catchRing(p,ph,part){
  }
 }
 
-// ---------- Q 蓄气：披风焰上升环（9/24/9 帧） ----------
+// ---------- Q 蓄气：周身椭圆火焰环（9/24/9 帧） ----------
 const QW=384,QH=256,QAX=192,QAY=246;
-function pointOnPolyline(pts,u){
- let total=0;const lens=[];
- for(let i=1;i<pts.length;i++){const d=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);lens.push(d);total+=d;}
- let at=u*total;
- for(let i=1;i<pts.length;i++){
-  if(at<=lens[i-1]||i===pts.length-1){const t=lens[i-1]?Math.min(1,at/lens[i-1]):0;return[pts[i-1][0]+(pts[i][0]-pts[i-1][0])*t,pts[i-1][1]+(pts[i][1]-pts[i-1][1])*t];}
-  at-=lens[i-1];
- }
- return pts[pts.length-1];
-}
-function chargeAura(t,env){
- const frame=createFrame(QW,QH),p=painterFor(frame).place(QAX,QAY),P=RED,time=t/60;
- const rx=60,ry=10;
- let prev=null;
- // 只画地线以上半环，避免帧底裁切；下半环留在脚下无意义。
- for(let i=0;i<=64;i++){
-  const a=Math.PI+i/64*Math.PI,x=Math.cos(a)*rx,y=Math.sin(a)*ry;
-  if(prev)p.beam(prev[0],prev[1],x,y,5,()=>(Math.sin(a*3+time*3)>0?P[5]:P[3]));
-  prev=[x,y];
- }
- // 披风片：从脚环展开的暗红整片，外缘亮红边，全部连到脚环。
- for(const side of [-1,1]){
-  const sway=Math.sin(time*2.2+side)*3;
-  p.poly([[side*8,-3],[side*20,-66*env],[side*(44+sway),-96*env],[side*56,-36*env],[side*40,-6]],P[2]);
-  const edge=[[side*20,-66*env],[side*(44+sway),-96*env],[side*56,-36*env],[side*40,-6]];
-  thickPolyline(p,edge,3,P[4]);
- }
- const tops=[];
- for(const side of [-1,1]){
-  for(let k=0;k<3;k++){
-   const bx=side*(26+k*14),h=152+26*env-k*8,pts=[];
-   for(let u=0;u<=1.001;u+=0.035){
-    const y=-u*h;
-    const x=bx+side*12*Math.sin(u*3.0+time*2.4+k*1.3)*u+(k-1)*2;
-    pts.push([x,y]);
-   }
-   thickPolyline(p,pts,9,P[2]);
-   thickPolyline(p,pts.map(([x,y])=>[x+side*3,y]),3,P[3]);
-   for(let j=0;j<5;j++){
-    const u=Math.min(0.96,((j+0.5)/5+time*0.12+k*0.07)%1);
-    const pt=pointOnPolyline(pts,u);
-    p.beam(pt[0],pt[1],pt[0]+side*(5+2*Math.sin(time*4+j)),pt[1],2,(uu)=>uu<0.4?P[7]:P[5]);
-   }
-   tops.push(pts[pts.length-1]);
+// 蓄气专用火焰色板：深红→朱红→橙→橙白→白；外焰只取低段，亮芯与火星取高段。
+const QFIRE=fit(['#120304','#38070c','#681018','#9a1c26','#cc3030','#f25a34','#ff9a2e','#ffe6a0','#ffffff'],9);
+function chargeFlame(ph,env){
+ const frame=createFrame(QW,QH),p=painterFor(frame).place(QAX,QAY),F=QFIRE;
+ const cx=0,cy=-92,rx=10+62*env,ry=12+72*env,TAU2=TAU;
+ const wob=(a,k)=>1+k*(0.035*Math.sin(a*5+ph*TAU2*2)+0.022*Math.sin(a*9-ph*TAU2*3)+0.012*Math.sin(a*15+ph*TAU2*4));
+ const at=(a,r)=>{const w=wob(a,1);return [cx+Math.cos(a)*rx*w*r,cy+Math.sin(a)*ry*w*r];};
+ // 宽火舌：填成水滴形，底宽顶尖，带卷曲与内侧亮纹。
+ const tongue=(bx,by,dx,dy,L,wb,deep,mid,bright,curl,seed)=>{
+  const dn=Math.hypot(dx,dy);dx/=dn;dy/=dn;
+  const tx=-dy,ty=dx,cs=[];
+  for(let s=0;s<=1.0001;s+=0.1){
+   const bend=(curl*Math.sin(s*Math.PI*0.9)+0.9*Math.sin(s*Math.PI*2+seed))*s*L*0.45;
+   cs.push([bx+dx*L*s+tx*bend,by+dy*L*s+ty*bend]);
+  }
+  const edge=[];
+  for(let j=0;j<cs.length;j++){
+   const s=j/(cs.length-1),w=Math.max(1.2,wb*Math.pow(1-s,0.62)*(1+0.16*Math.sin(s*7.3+seed*2.1)));
+   edge.push([cs[j][0]+tx*w,cs[j][1]+ty*w]);
+  }
+  for(let j=cs.length-1;j>=0;j--){
+   const s=j/(cs.length-1),w=Math.max(1.2,wb*Math.pow(1-s,0.62)*(1+0.16*Math.sin(s*7.3+seed*2.1)));
+   edge.push([cs[j][0]-tx*w,cs[j][1]-ty*w]);
+  }
+  p.poly(edge,deep);
+  // 沿中轴再落一道实心笔画，保证根部到尖端连续，避免薄多边形落空产生游离块。
+  thickPolyline(p,cs,Math.max(2,Math.round(wb*1.1)),deep);
+  const inner=cs.slice(1,Math.max(2,Math.round(cs.length*0.62)));
+  thickPolyline(p,inner,Math.max(1,Math.round(wb*0.34)),(u)=>u<0.5?mid:bright);
+  p.circle(cs[cs.length-1][0],cs[cs.length-1][1],Math.max(1,wb*0.2),(d)=>d<0.6?bright:mid);
+ };
+ // 火焰轮廓：外缘叠加多个尖峰，形成向上偏的环状火舌剪影，而不是等宽圆环。
+ const TIPS=11;
+ const spike=(a)=>{
+  let h=0;
+  for(let k=0;k<TIPS;k++){
+   const ak=TAU2*k/TIPS+0.13*Math.sin(ph*TAU2*2+k*1.7);
+   let d=a-ak;d=Math.atan2(Math.sin(d),Math.cos(d));
+   const w=0.065+0.025*Math.abs(Math.sin(k*2.3+ph*TAU2*3));
+   const amp=(0.26+0.28*Math.abs(Math.sin(ph*TAU2*2+k*2.1)))*Math.pow((1-Math.sin(a))/2,0.85);
+   const t=Math.max(0,1-Math.abs(d)/w);
+   h=Math.max(h,amp*Math.pow(t,1.7));
+  }
+  return h*env;
+ };
+ const rOutAt=(a)=>1.0+spike(a);
+ const rInAt=(a)=>0.66+0.03*Math.sin(a*3+ph*TAU2*2)+0.02*Math.sin(a*7-ph*TAU2*3);
+ // 1) 环状火身：径向分层（内橙→朱红→深红），外缘为尖峰火舌剪影。
+ const BANDS=[[0,0.34,F[6]],[0.34,0.62,F[5]],[0.62,0.86,F[4]],[0.86,1,F[3]]];
+ for(let i=0;i<192;i++){
+  const a0=TAU2*i/192,a1=TAU2*(i+1)/192;
+  const r0=rInAt(a0),r1=rInAt(a1),ro0=rOutAt(a0),ro1=rOutAt(a1);
+  for(const[lo,hi,color]of BANDS){
+   const k0=r0+(ro0-r0)*lo,k1=r1+(ro1-r1)*lo,k2=r0+(ro0-r0)*hi,k3=r1+(ro1-r1)*hi;
+   const[ix,iy]=at(a0,k0),[jx,jy]=at(a1,k1),[ox,oy]=at(a0,k2),[px,py]=at(a1,k3);
+   const tone=lo>=0.78&&(i%9<3)?F[1]:color;
+   p.poly([[ix,iy],[ox,oy],[px,py],[jx,jy]],tone);
   }
  }
- tops.sort((a,b)=>a[0]-b[0]);
- thickPolyline(p,tops,6,P[3]);
- thickPolyline(p,tops.map(([x,y])=>[x,y+2]),2,P[5]);
- for(let k=0;k<5;k++){
-  const pt=pointOnPolyline(tops,(k+0.5)/5);
-  p.beam(pt[0],pt[1],pt[0]+Math.sin(time*3+k*1.7)*4,pt[1]-(15+9*Math.abs(Math.sin(time*3+k)))*env,4,(uu)=>uu<0.38?P[7]:P[5]);
+ // 1b) 尖峰火舌尖端：在每处峰顶补一条向上偏的亮红外焰，尖端橙点。
+ for(let k=0;k<TIPS;k++){
+  const ak=TAU2*k/TIPS+0.13*Math.sin(ph*TAU2*2+k*1.7);
+  const amp=spike(ak);
+  if(amp<0.05)continue;
+  const[bx,by]=at(ak,0.95);
+  const L=amp*ry*0.9;
+  tongue(bx,by,Math.cos(ak),Math.sin(ak)-0.5,L,4+2.5*Math.abs(Math.sin(ph*TAU2*2+k*2.1)),F[2],F[4],F[5],(k%2?1:-1)*0.45,k*1.9);
  }
- // 两侧亮芯柱：从脚环起，顶端白芯，给蓄气一个可读的能量中心。
- for(const side of [-1,1]){
-  const topX=side*(22+4*Math.sin(time*3+side)),topY=-104*env;
-  const pts=[[side*16,-2],[side*(18+3*Math.sin(time*2.6)),topY*0.45],[topX,topY]];
-  thickPolyline(p,pts,6,P[3]);
-  thickPolyline(p,[[side*(18+3*Math.sin(time*2.6)),topY*0.45],[topX,topY]],3,P[5]);
-  p.circle(topX,topY,3.2,(d)=>d<0.5?P[7]:P[6]);
+ // 2) 内缘火舌：短而宽的橙色火舌从火环内缘朝中心卷出，环内保持通透。
+ for(let i=0;i<8;i++){
+  const a=TAU2*i/8+0.13*Math.sin(ph*TAU2*2+i*1.5);
+  const L=(9+13*Math.abs(Math.sin(ph*TAU2*3+i*1.8)))*env;
+  const[bx,by]=at(a,0.68);
+  tongue(bx,by,-Math.cos(a),-Math.sin(a)+0.4,L,3+2*Math.abs(Math.sin(i*1.7+ph*TAU2*2)),F[4],F[4],F[5],(i%2?1:-1)*0.7,i*2.3);
  }
- return composite(frame,new Uint8ClampedArray(QW*QH*4),null);
+ // 4) 橙白亮芯：中心火团、宽短焰与白色核点。
+ const cr=Math.max(5,(9+16*env+5*Math.sin(ph*TAU2*3))*Math.min(1,env+0.45));
+ p.circle(cx,cy,cr,(d)=>d<0.26?F[8]:d<0.46?F[7]:d<0.66?F[6]:d<0.86?F[5]:F[4]);
+ for(let i=0;i<7;i++){
+  const a=TAU2*i/7+ph*0.9,L=cr*(1.25+0.8*Math.abs(Math.sin(ph*TAU2*3+i*1.7)));
+  tongue(cx+Math.cos(a)*cr*0.5,cy+Math.sin(a)*cr*0.5,Math.cos(a),Math.sin(a),L,3.2+1.6*Math.abs(Math.sin(i+ph*TAU2*2)),F[5],F[6],F[7],0.6,i*1.3);
+ }
+ p.circle(cx+1.6*Math.sin(ph*TAU2*5),cy+1.2*Math.cos(ph*TAU2*4),Math.max(1.4,cr*0.26),F[8]);
+ // 5) 芯到火环的宽火柱：六条填实火舌从芯伸到火环内缘，把主体连成一块。
+ for(let i=0;i<6;i++){
+  const a=TAU2*i/6+0.35+ph*TAU2*0.22;
+  const[ex,ey]=at(a,0.72);
+  const sxp=cx+Math.cos(a)*cr*0.6,syp=cy+Math.sin(a)*cr*0.6;
+  const reach=0.55+0.45*Math.abs(Math.sin(ph*TAU2*2+i*1.6));
+  tongue(sxp,syp,(ex-sxp)*reach,(ey-syp)*reach,Math.hypot(ex-sxp,ey-syp)*reach,3.6+1.6*Math.sin(ph*TAU2*2+i*2.2),F[2],F[4],F[5],0.5,i*0.9);
+ }
+ // 6) 向上升腾的火星：S 形卷曲火线连回火环上缘，头部橙白，随相位上行。
+ const SP=5;
+ for(let k=0;k<SP;k++){
+  const a=-Math.PI/2+(k-(SP-1)/2)*0.3+0.06*Math.sin(ph*TAU2*2+k*1.3);
+  const[bx0,by0]=at(a,0.96);
+  const u=(k/SP+ph*2)%1,rise=(8+30*u)*env;
+  const drift=Math.sin(ph*TAU2*3+k*2.2)*5+(k-(SP-1)/2)*10;
+  const hx=bx0+drift,hy=by0-rise;
+  const pts=[];
+  for(let s=0;s<=1.001;s+=0.2){
+   const swing=Math.sin(s*Math.PI*1.6+ph*TAU2*4+k*1.7)*4*s;
+   pts.push([bx0+(hx-bx0)*s+swing,by0+(hy-by0)*s]);
+  }
+  thickPolyline(p,pts,2,(uu)=>uu<0.55?F[3]:F[5]);
+  p.circle(hx,hy,2.4,(d)=>d<0.4?F[8]:d<0.7?F[7]:F[6]);
+  p.px(hx+1,hy-2,F[6]);
+ }
+ const bridged=bridgeComponents(frame,F[4]);
+ return [composite(frame,new Uint8ClampedArray(QW*QH*4),null),bridged];
 }
 
 // ---------- 段规格 ----------
@@ -418,8 +466,12 @@ for(const[state,count]of[['charge_start',9],['charge',24],['charge_stop',9]]){
  const id=`father_fx_q_${state}`,folder=join(OUT,id);mkdirSync(folder);
  const cols=6,rows=Math.ceil(count/cols),atlas=new Uint8ClampedArray(QW*cols*QH*rows*4),rects=[],hashes=[];let bridged=0;
  for(let i=0;i<count;i++){
-  const env=state==='charge_start'?(i+1)/count:state==='charge_stop'?Math.max(0.12,(count-1-i)/(count-1)):1;
-  const rgba=chargeAura(i+(state==='charge'?9:state==='charge_stop'?33:0),env);
+  let env,ph;
+  if(state==='charge_start'){const e=(i+1)/count;env=0.16+0.84*e*e;ph=i/count;}
+  else if(state==='charge_stop'){const e=count>1?i/(count-1):1;env=0.12+0.88*Math.pow(1-e,1.15);ph=e;}
+  else{ph=i/count;env=0.92+0.08*Math.sin(ph*TAU*2);}
+  const[rgba,bridgeN]=chargeFlame(ph,env);
+  bridged+=bridgeN;
   const x=i%cols*QW,y=Math.floor(i/cols)*QH;
   for(let row=0;row<QH;row++)atlas.set(rgba.subarray(row*QW*4,(row+1)*QW*4),((y+row)*QW*cols+x)*4);
   const png=encodePNG(QW,QH,rgba);writeFileSync(join(folder,String(i).padStart(2,'0')+'.png'),png);hashes.push(SHA(png));rects.push([x,y,QW,QH]);
