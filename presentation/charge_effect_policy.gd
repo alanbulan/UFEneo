@@ -47,6 +47,7 @@ static func filter(f: UfeFighter, manifest: Dictionary, attachments: Array, hold
 	if layout.is_empty():return attachments
 	# 仅替换表现副本，保持原Q动作、输入、能量增长与音效。
 	var result: Array=[]
+	var replaced:=false
 	for item in attachments:
 		if not restricted.has(str(item.get("effect",""))):
 			result.append(item)
@@ -56,4 +57,12 @@ static func filter(f: UfeFighter, manifest: Dictionary, attachments: Array, hold
 		replacement.sprite=posmod(f.state_tick,count) if bool(replacement.loop) else clampi(f.state_tick,0,count-1)
 		replacement.erase("frames");replacement.erase("loop")
 		result.append(replacement)
+		replaced=true
+	# 只登记了蓄气落点、状态帧没有占位附件的角色也要显示；仍只在真实Q起势/保持/收势内。
+	if not replaced:
+		var injected: Dictionary=layout.duplicate(true)
+		var injected_frames: int=int(injected.frames)
+		injected.sprite=posmod(f.state_tick,injected_frames) if bool(injected.loop) else clampi(f.state_tick,0,injected_frames-1)
+		injected.erase("frames");injected.erase("loop")
+		result.append(injected)
 	return result

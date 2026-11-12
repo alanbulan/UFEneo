@@ -50,6 +50,14 @@ func run() -> void:
 			_scan_move(definition.moves[move_id], ids)
 		for move_id in ids:
 			check(effects.has(move_id), "%s/%s 特效已登记" % [id, move_id])
+	# 只有落点、没有状态帧占位附件的角色也必须真的显示Q蓄气；离开Q不能遗留。
+	var charged := UfeFighter.new(UfeContentDatabase.fighter("ultraman-zero", true), 470)
+	charged.enter("charge")
+	var aura := UfeChargeEffectPolicy.filter(charged, {}, [], false)
+	var expected := str(UfeChargeEffectPolicy.data().placements["ultraman-zero"].charge.effect)
+	check(aura.any(func(item): return str(item.get("effect", "")) == expected), "q_charge_injected_without_attachments")
+	charged.enter("idle")
+	check(UfeChargeEffectPolicy.filter(charged, {}, [], false).is_empty(), "q_charge_absent_outside_charge")
 	var placements: Dictionary = UfeContentDatabase.read_json("res://content/presentation/charge_overlay_policy.json").get("placements", {})
 	for id in placements:
 		for state in placements[id]:
