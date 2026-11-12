@@ -26,6 +26,8 @@ func _scan_move(move: Dictionary, ids: Dictionary) -> void:
 	for frame in move.get("frames", []):
 		for shot in frame.get("shots", []): _scan_shot(shot, ids)
 		_scan_shot(frame.get("counter_shot", {}), ids)
+		for attachment in frame.get("attachments", []):
+			_add(attachment.get("effect", ""), ids)
 	var feedback: Dictionary = move.get("feedback", {})
 	for key in ["spark", "block_spark"]:
 		_add(feedback.get(key, ""), ids)
