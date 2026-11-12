@@ -37,6 +37,13 @@
 - 新增复用硬门：不同角色/形态的专属特效不得共用同一图集 SHA（当前全仓 0 例外）。`tests/form_selection_consistency.gd` 增加：任何 `playable=true` 的形态定义不得把 `presentation.model` 指向 `/catalogue/`，招式里不得出现 `"pending_"` 特效 id。
 - 预审发现光辉形态 8 段特效是基础赛罗图集逐字节副本、超限形态 Q 三态 252 级 Alpha 未做硬量化，均已退回重做；强壮日冕特效仍为空提案。未实机、未听审、无录屏。
 
+### 2026-11-12 补：形态切换帧冻结与切换帧推进门
+
+- 按 E 切换赛罗形态时人物整段不动。根因在 `content/catalogs/battle_form_rules/zero_form_switch.json`：60 帧的 `sprite` 全填 0，而目标 `form_switch` 片段有 6 张内容不同的帧（相邻帧剪影差分 37%–73%）。时间轴才是实际显示帧来源，片段帧数对得上、时长 60 tick 也对，唯独没有任何一帧指向第 1–5 张。已改为每 10 tick 推进一帧（0–5），其余字段未动。
+- 门禁盲区同前次：`form_selection_consistency` 原只核对「切换动画总时长 == 时间轴帧数」，不核 `sprite` 取值与推进。更糟的是它跳过选人表里的 `default` 项（`if id == "default": continue`），而默认形态正是出问题的那一项，等于整条规则对默认形态从未生效。现把 `default` 纳入登记，并新增两条硬门：切换帧 `sprite` 必须落在目标片段帧数内、必须逐帧推进到全部帧。实测把修复回退后 FAIL（`ultraman-zero/default 切换帧逐帧推进（1/6）`），恢复后 PASS。
+- 全表复核：泰罗 60 tick/10 帧、EX哥莫拉与 EX雷德王 72 tick/12 帧、赛罗 60 tick/6 帧，`sprite` 均覆盖全帧无越界；五个新形态目录尚无 manifest，未纳入。
+- 未实机、未听审、无录屏。
+
 ## 2026-11-11 减速规则与事件语音接入
 
 - core 新增招式字段 `chill`（`ticks` 正整数、`speed_percent` 1–99），由 `UfeMoveData.validate` 校验；只在未防住的命中由 `UfeHitResolver.apply` 写入受方 `stats.chill_ticks/chill_percent`，`UfeMatchDirector._advance` 每 tick 递减；`UfeState.move_speed` 对 walk/dash/backstep 位移按 `(base*percent+50)/100` 整数取整，最低 1 px。出招帧、硬直、受击状态与判定时序不变。content fingerprint 已包含 moves，旧回放不会混跑新数据。
