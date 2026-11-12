@@ -87,6 +87,28 @@ func run() -> void:
 	var charged := UfeFighter.new(UfeContentDatabase.fighter("ultraman-zero", true), 470)
 	charged.enter("idle")
 	check(UfeChargeEffectPolicy.filter(charged, {}, [], false).is_empty(), "q_charge_absent_outside_charge")
+	# 状态帧挂件同样经 presentation 渲染，id 不在表里就整段不显示；扫全部已实装角色，不只本批七人。
+	# state_frames.json 单份可达数万行，逐份解析会超时；只从原文取 effect 字段。
+	for id in DirAccess.get_directories_at("res://content/fighters"):
+		var posture := "res://content/fighters/%s/state_frames.json" % id
+		var definition_path := "res://content/fighters/%s/definition.json" % id
+		if not FileAccess.file_exists(posture) or not FileAccess.file_exists(definition_path): continue
+		if not bool(UfeContentDatabase.read_json(definition_path).get("playable", false)): continue
+		var text := FileAccess.get_file_as_string(posture)
+		var cursor := 0
+		while true:
+			var at := text.find("\"effect\"", cursor)
+			if at < 0: break
+			cursor = at + 8
+			var colon := text.find(":", cursor)
+			var quote := text.find("\"", colon + 1)
+			if colon < 0 or quote < 0: break
+			var end := text.find("\"", quote + 1)
+			if end < 0: break
+			var effect := text.substr(quote + 1, end - quote - 1)
+			cursor = end + 1
+			if effect.is_empty() or effect.contains("/") or effect.length() > 64: continue
+			check(effects.has(effect), "%s 状态挂件已登记 %s" % [id, effect])
 	var placements: Dictionary = UfeContentDatabase.read_json("res://content/presentation/charge_overlay_policy.json").get("placements", {})
 	for id in placements:
 		for state in placements[id]:

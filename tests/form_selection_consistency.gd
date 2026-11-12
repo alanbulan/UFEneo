@@ -16,8 +16,8 @@ func run() -> void:
 	var listed: Dictionary = {}
 	for row in selection.entries:
 		for form in row.get("forms", []):
-			if str(form.get("id", "")) == "default": continue
-			listed[str(row.id) + "/" + str(form.id)] = bool(form.get("implemented", false))
+			# 默认形态同样登记，否则默认项与切换表脱钩时无人发现（切换片段冻结在首帧即由此漏过）。
+			listed[str(row.id) + "/" + str(form.get("id", ""))] = bool(form.get("implemented", false))
 	for base in registry:
 		var source: Dictionary = registry[base]
 		for raw in source.get("choices", []):
@@ -42,6 +42,19 @@ func run() -> void:
 				var ticks := 0
 				for value in clip.get("ticks", []): ticks += int(value)
 				check(not clip.is_empty() and ticks == timeline.get("frames", []).size(), "%s 切换动画时长与时间轴一致" % key)
+				# 时间轴的 sprite 才是实际显示帧；全填 0 会让人物在整段切换里冻结在首帧。
+				var frames: Array = timeline.get("frames", [])
+				var rects: int = clip.get("rects", []).size()
+				var sprites: Array = []
+				var overflow := 0
+				for frame in frames:
+					var sprite := int(frame.get("sprite", 0))
+					sprites.append(sprite)
+					if sprite < 0 or sprite >= rects: overflow += 1
+				var distinct := {}
+				for sprite in sprites: distinct[sprite] = true
+				check(overflow == 0, "%s 切换帧 sprite 在 %d 帧内" % [key, rects])
+				check(distinct.size() == mini(rects, frames.size()), "%s 切换帧逐帧推进（%d/%d）" % [key, distinct.size(), rects])
 	for key in listed:
 		# 多形态表里的选项必须与选人界面一一对应；单形态变身表沿用旧规则不在此列。
 		var base := str(key).get_slice("/", 0)

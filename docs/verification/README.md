@@ -30,6 +30,13 @@
 - `tests/effect_registration.gd` 增加逐帧 `attachments` 扫描，并覆盖赛罗/奥父/杰斯提斯三态蓄气注入与离开 Q 不遗留；`effect_registration`、`phase3_specials`、`phase3_air`、`phase3_supers`、`roster_data_integrity` 与全量 `tools/verify.py`（含 `main-startup`）全部 PASS。
 - 奥父 Q 三态首版是红色竖条笼/门框、24 帧变化约 1.5%，已打回重做：改为椭圆火焰环（橙白亮芯、分层火身、外缘火舌、上升火星），相邻帧变化 start 32%–51%、charge 20%–29%、stop 42%–52%，94 帧主体外门限仍全为 0，8 色硬 Alpha，id/尺寸/锚点不变；重登记后 `effect_registration` 与 phase3 相关测试 PASS。未实机、未听审、无录屏。
 
+### 2026-11-12 补：状态帧挂件漏登记与两道形态门
+
+- 扫全部已实装角色的 `state_frames.json` 挂件时发现艾雷王 `air_special` 12 帧仍引用 `eleking_air_lightning`，共享表只有 `eleking_air_lightning_v2`（招式文件早已用 v2），空中放电挂件整段静默不显示。已把 12 处引用改为 v2。
+- `tests/effect_registration.gd` 增加状态帧挂件登记检查。首版用 `DirAccess.get_files_at` 拿角色目录，返回为空，门实际什么都没扫；第二版逐份解析 state_frames 又超时 240 s。最终改为 `get_directories_at` + 只从原文提取 `"effect"` 字段，实测还原旧 id 会 FAIL、修正后 PASS。
+- 新增复用硬门：不同角色/形态的专属特效不得共用同一图集 SHA（当前全仓 0 例外）。`tests/form_selection_consistency.gd` 增加：任何 `playable=true` 的形态定义不得把 `presentation.model` 指向 `/catalogue/`，招式里不得出现 `"pending_"` 特效 id。
+- 预审发现光辉形态 8 段特效是基础赛罗图集逐字节副本、超限形态 Q 三态 252 级 Alpha 未做硬量化，均已退回重做；强壮日冕特效仍为空提案。未实机、未听审、无录屏。
+
 ## 2026-11-11 减速规则与事件语音接入
 
 - core 新增招式字段 `chill`（`ticks` 正整数、`speed_percent` 1–99），由 `UfeMoveData.validate` 校验；只在未防住的命中由 `UfeHitResolver.apply` 写入受方 `stats.chill_ticks/chill_percent`，`UfeMatchDirector._advance` 每 tick 递减；`UfeState.move_speed` 对 walk/dash/backstep 位移按 `(base*percent+50)/100` 整数取整，最低 1 px。出招帧、硬直、受击状态与判定时序不变。content fingerprint 已包含 moves，旧回放不会混跑新数据。
