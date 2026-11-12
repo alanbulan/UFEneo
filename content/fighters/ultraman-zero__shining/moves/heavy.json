@@ -1,0 +1,936 @@
+{
+ "id": "heavy",
+ "display_name": "踏步重拳",
+ "startup": 9,
+ "active": 4,
+ "recovery": 15,
+ "damage": 100,
+ "hitstun": 20,
+ "blockstun": 12,
+ "pushback": 8,
+ "stun": 65,
+ "stamina_cost": 30,
+ "energy_cost": 0,
+ "kind": "strike",
+ "level": "mid",
+ "unblockable": false,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "feedback": {
+  "spark": "pending_shining_impact_heavy",
+  "block_spark": "pending_shining_impact_guard",
+  "hitstop": 7,
+  "blockstop": 3,
+  "shake": 2,
+  "flash": 2,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "cancel_rule": "完整收势后恢复行动，无招式取消",
+ "audio": {
+  "hit": "hit_heavy",
+  "block": "guard"
+ },
+ "data_source": "沿用基础赛罗同名招式的帧数、启动/持续/收招、伤害、能量与判定；本形态动作帧待按光辉赛罗身份锚重新生成，当前未安装。",
+ "production_note": "未安装：本形态动作帧未生成；特效 id 已改为 pending_shining_*，须由主会话在 content/presentation/phase3_projectiles.json 登记后可见。",
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     119,
+     49
+    ],
+    [
+     -49,
+     47,
+     96,
+     49
+    ],
+    [
+     -46,
+     94,
+     91,
+     49
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "heavy"
+    }
+   ]
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     119,
+     49
+    ],
+    [
+     -49,
+     47,
+     96,
+     49
+    ],
+    [
+     -46,
+     94,
+     91,
+     49
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     119,
+     49
+    ],
+    [
+     -49,
+     47,
+     96,
+     49
+    ],
+    [
+     -46,
+     94,
+     91,
+     49
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     119,
+     49
+    ],
+    [
+     -49,
+     47,
+     96,
+     49
+    ],
+    [
+     -46,
+     94,
+     91,
+     49
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     119,
+     49
+    ],
+    [
+     -49,
+     47,
+     96,
+     49
+    ],
+    [
+     -46,
+     94,
+     91,
+     49
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     119,
+     49
+    ],
+    [
+     -49,
+     47,
+     96,
+     49
+    ],
+    [
+     -46,
+     94,
+     91,
+     49
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -7,
+     19,
+     91,
+     61
+    ],
+    [
+     -7,
+     78,
+     103,
+     61
+    ],
+    [
+     2,
+     137,
+     91,
+     62
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -7,
+     19,
+     91,
+     61
+    ],
+    [
+     -7,
+     78,
+     103,
+     61
+    ],
+    [
+     2,
+     137,
+     91,
+     62
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -7,
+     19,
+     91,
+     61
+    ],
+    [
+     -7,
+     78,
+     103,
+     61
+    ],
+    [
+     2,
+     137,
+     91,
+     62
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     53,
+     86,
+     28,
+     28
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -7,
+     19,
+     91,
+     61
+    ],
+    [
+     -7,
+     78,
+     103,
+     61
+    ],
+    [
+     2,
+     137,
+     91,
+     62
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     53,
+     86,
+     28,
+     28
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -7,
+     19,
+     91,
+     61
+    ],
+    [
+     -7,
+     78,
+     103,
+     61
+    ],
+    [
+     2,
+     137,
+     91,
+     62
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     53,
+     86,
+     28,
+     28
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -7,
+     19,
+     91,
+     61
+    ],
+    [
+     -7,
+     78,
+     103,
+     61
+    ],
+    [
+     2,
+     137,
+     91,
+     62
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     53,
+     86,
+     28,
+     28
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -7,
+     19,
+     91,
+     61
+    ],
+    [
+     -7,
+     78,
+     103,
+     61
+    ],
+    [
+     2,
+     137,
+     91,
+     62
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     37,
+     111,
+     48
+    ],
+    [
+     -65,
+     83,
+     173,
+     48
+    ],
+    [
+     -25,
+     129,
+     100,
+     48
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     37,
+     111,
+     48
+    ],
+    [
+     -65,
+     83,
+     173,
+     48
+    ],
+    [
+     -25,
+     129,
+     100,
+     48
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     37,
+     111,
+     48
+    ],
+    [
+     -65,
+     83,
+     173,
+     48
+    ],
+    [
+     -25,
+     129,
+     100,
+     48
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     37,
+     111,
+     48
+    ],
+    [
+     -65,
+     83,
+     173,
+     48
+    ],
+    [
+     -25,
+     129,
+     100,
+     48
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     37,
+     111,
+     48
+    ],
+    [
+     -65,
+     83,
+     173,
+     48
+    ],
+    [
+     -25,
+     129,
+     100,
+     48
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     37,
+     111,
+     48
+    ],
+    [
+     -65,
+     83,
+     173,
+     48
+    ],
+    [
+     -25,
+     129,
+     100,
+     48
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     37,
+     111,
+     48
+    ],
+    [
+     -65,
+     83,
+     173,
+     48
+    ],
+    [
+     -25,
+     129,
+     100,
+     48
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     37,
+     111,
+     48
+    ],
+    [
+     -65,
+     83,
+     173,
+     48
+    ],
+    [
+     -25,
+     129,
+     100,
+     48
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -64,
+     37,
+     111,
+     48
+    ],
+    [
+     -65,
+     83,
+     173,
+     48
+    ],
+    [
+     -25,
+     129,
+     100,
+     48
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -55,
+     0,
+     108,
+     58
+    ],
+    [
+     -33,
+     56,
+     74,
+     58
+    ],
+    [
+     -27,
+     112,
+     68,
+     58
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -55,
+     0,
+     108,
+     58
+    ],
+    [
+     -33,
+     56,
+     74,
+     58
+    ],
+    [
+     -27,
+     112,
+     68,
+     58
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -55,
+     0,
+     108,
+     58
+    ],
+    [
+     -33,
+     56,
+     74,
+     58
+    ],
+    [
+     -27,
+     112,
+     68,
+     58
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -55,
+     0,
+     108,
+     58
+    ],
+    [
+     -33,
+     56,
+     74,
+     58
+    ],
+    [
+     -27,
+     112,
+     68,
+     58
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -55,
+     0,
+     108,
+     58
+    ],
+    [
+     -33,
+     56,
+     74,
+     58
+    ],
+    [
+     -27,
+     112,
+     68,
+     58
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -55,
+     0,
+     108,
+     58
+    ],
+    [
+     -33,
+     56,
+     74,
+     58
+    ],
+    [
+     -27,
+     112,
+     68,
+     58
+    ]
+   ],
+   "cancel": [
+    "motion_236",
+    "motion_623",
+    "special"
+   ],
+   "events": []
+  }
+ ]
+}

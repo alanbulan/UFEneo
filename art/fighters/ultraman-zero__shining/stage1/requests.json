@@ -1,0 +1,271 @@
+{
+  "fighter": "ultraman-zero__shining",
+  "form": "光辉赛罗 / Shining Ultraman Zero",
+  "stage": "stage1",
+  "created": "2026-11-12",
+  "review_authority": "root_delegated_by_user",
+  "user_request": "制作赛罗形态 ultraman-zero__shining（光辉赛罗）；官方银底金甲、固定右侧视、格斗待机锚、动作帧只引本形态身份锚。",
+  "policy": "官方皮套照定右侧格斗待机 → 清图 → 单参考转像素整帧 → 确定性落 256 格；原生格与严格4×看过本人造型、画风、头肩比例与手脚体量后才作为动作唯一参考。",
+  "sources": [
+    {
+      "path": "art/fighters/ultraman-zero__shining/sources/ref-02-official-front.jpg",
+      "sha256": "2a7604e412f5f04e5b992a3e3dd0508220a48c3e430c69993d2495e01573874c",
+      "metadata": "art/fighters/ultraman-zero__shining/sources/ref-02-official-front.json",
+      "page_url": "https://tamashiiweb.com/item/13298/",
+      "image_url": "https://tamashiiweb.com/storage/images/products/imported/item_0000013298_uaTmq9Z3_03.jpg",
+      "size": [857, 1140],
+      "source_kind": "official_product_photo",
+      "toy_reference": true
+    },
+    {
+      "path": "art/fighters/ultraman-zero__shining/sources/ref-03-official-softvinyl-side.jpg",
+      "sha256": "bb18a591c9c02ab434c2f94da9ecfb03a3ce6ef6fd5505129a8397ddec126bab",
+      "metadata": "art/fighters/ultraman-zero__shining/sources/ref-03-official-softvinyl-side.json",
+      "page_url": "https://hobbyspirit.com/product/ultra-hero-series-31-shining-ultraman-zero-ultraman-ginga-bandai-japan",
+      "image_url": "https://hobbyspirit.com/hs/wp-content/uploads/2018/07/IMG_1897.jpg",
+      "size": [1920, 1920],
+      "source_kind": "official_softvinyl_side_photo",
+      "toy_reference": true
+    }
+  ],
+  "reference_preparation": {
+    "head_orientation_spec": "90°右侧视，人物朝右；中央冠脊从额前蓝灯上方起向后掠过头顶、低伏贴壳；双头镖贴在耳上方头壳，刃根在前、刃尖向后上方，近侧镖压住远侧，刃背有凹口，镖尖止于后脑附近；禁止一整片高羽冠、三根大尖角、向前伸的角。",
+    "derived_references": {
+      "official-side-full.png": "28a39c45150122e1ca640989eeb284ea58dc3ca169f9ec2d0d4b1ec6b72f7441",
+      "official-side-head.png": "71d2f544add0e1c24cc5da4c9231c6f3487e8b6ff28a9e2feaf2b46b255cadbb",
+      "official-front-full.png": "6973bd20f52560c31381b4f82b04db53038ea800209ddaf16900e8fcd937a150",
+      "official-front-torso.png": "9d643737191f956e8c34f5abf4f48d3b8ce56c64a180f638de8737e714dd78dd",
+      "stance-ref-installed-zero-idle-x4.png": "fb5f5687dace8024638d258282c734d58325d54fc07e8143375d6d3a28803ebc"
+    },
+    "deleted_after_rejection": {
+      "stance-guide-official-side-head-on-installed-body.png": "7478a324e2ea2abfe8ed89b00cc35c69f94fe41b9acfbfd7f2ab386496820e34",
+      "stance-ref-installed-zero-body-only.png": "195ea19b9d411753ed8f701dda519d5fcbf4c5530ef1cfc8b2863a6cc3d17325",
+      "stance-raw-03-official-side-anchor.png": "a49af0e480e02283ba4b9d143be15bde9da333b86e3b2edaa999204e87c4ca3b"
+    },
+    "stance_ref_note": "stance-ref-installed-zero-idle-x4.png 与 art/fighters/ultraman-zero/stage1/idle/frames/identity-idle-pixel-x4.png 同 SHA；保留为本次请求的精确输入。"
+  },
+  "attempts": [
+    {
+      "id": "stance-raw-00-official-side-anchor",
+      "purpose": "官方正面全身＋官方软胶侧视全身＋已装机待机定右侧格斗待机照片（第一轮）",
+      "tool": "magpie-image.generate_image",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": 1,
+      "reference_images": [
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/official-front-full.png",
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/official-side-full.png",
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/stance-ref-installed-zero-idle-x4.png"
+      ],
+      "reference_sha256": [
+        "6973bd20f52560c31381b4f82b04db53038ea800209ddaf16900e8fcd937a150",
+        "28a39c45150122e1ca640989eeb284ea58dc3ca169f9ec2d0d4b1ec6b72f7441",
+        "fb5f5687dace8024638d258282c734d58325d54fc07e8143375d6d3a28803ebc"
+      ],
+      "prompt": "第一图锁本角色光辉赛罗的正面身份、银白躯体、金色胸肩甲与四肢金纹、蓝眼、蓝色额灯与蓝色五角胸核，体型和四肢粗细照第一图，不套基础赛罗的红蓝配色；不画玩具关节缝、支架、标签、背景或商品文字。第二图只锁头部与全身右侧轮廓：固定90°右侧视，中央冠脊从额前蓝灯上方起向后掠过头顶，双头镖贴在耳上方头壳、刃根在前、刃尖向后上方，近侧镖压住远侧，不得画成向前伸的角、羽片或第三根头冠，胸甲前后位置照第二图。第三图只借格斗站姿与画风，不借造型和配色。人物朝右，前后脚错开，脚外缘间距约0.72站高，双膝屈、髋下沉，双拳抬到胸前护架，肩肘腕自然连接；成年人头身比，不放大头。保持银白底衣与金色甲片，不做黑色躯体，不烘焙金色光晕。固定右侧视，完整人物不裁切，透明背景，无地面文字边框特效。",
+      "requested_path": "art/fighters/ultraman-zero__shining/stage1/idle/frames/stance-raw-00-official-side-anchor.png",
+      "generation_id": "image-3954-1095",
+      "actual_response_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/.claude/worktrees/agent-a17ad18a3d7b133bd/art/fighters/ultraman-zero__shining/stage1/idle/frames/stance-raw-00-official-side-anchor.png",
+      "actual_size": [1477, 1065],
+      "actual_mode": "RGBA",
+      "sha256": "84e62b1ae61737253e76cad8189ff1cdc45ef585b8050b0cbf8b529ee57293ba",
+      "usage": "未返回（MCP 不提供 usage/费用）",
+      "status": "rejected",
+      "rejection": "冠脊与双镖断成三叉高角，头部结构错；原始帧已删除。"
+    },
+    {
+      "id": "stance-raw-01-official-side-anchor",
+      "purpose": "改用官方正面全身＋官方侧头＋已装机站姿，锁双头镖结构（第二轮）",
+      "tool": "magpie-image.generate_image",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": 1,
+      "reference_images": [
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/official-front-full.png",
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/official-side-head.png",
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/stance-ref-installed-zero-idle-x4.png"
+      ],
+      "reference_sha256": [
+        "6973bd20f52560c31381b4f82b04db53038ea800209ddaf16900e8fcd937a150",
+        "71d2f544add0e1c24cc5da4c9231c6f3487e8b6ff28a9e2feaf2b46b255cadbb",
+        "fb5f5687dace8024638d258282c734d58325d54fc07e8143375d6d3a28803ebc"
+      ],
+      "prompt": "只画单个完整人物，不拼多视图、不画网格。第一图锁本角色光辉赛罗的正面身份与配色：银白底衣，宽厚的金色胸甲、肩甲、前臂甲与腿部金纹，蓝眼、蓝色额灯、蓝色五角胸核，体型与四肢粗细照第一图，不套基础赛罗红蓝配色；不画玩具关节缝、支架、标签、背景或商品文字。第二图只锁头部结构：固定90°右侧视，头冠与双头镖紧贴头壳、体量紧凑；中央冠脊低伏，从额前蓝灯上方起向后掠过头顶；双头镖根在耳上侧，短弯刃贴头向后上方，近侧镖压住远侧，镖尖只到后脑边缘，不得高耸成羽冠、不得伸出后脑太远、不得画成向前伸的角或第三根头冠；头部不得比第一图放大。第三图只借格斗站姿与画风，不借造型和配色。人物朝右，前后脚错开，脚外缘间距约0.72站高，双膝屈、髋下沉，双拳抬到胸前护架，肩肘腕自然连接；成年人头身比。保持银白底衣与成块金色甲片，不做黑色躯体，不烘焙金色光晕。固定右侧视，完整人物不裁切，透明背景，无地面文字边框特效。",
+      "requested_path": "art/fighters/ultraman-zero__shining/stage1/idle/frames/stance-raw-01-official-side-anchor.png",
+      "generation_id": "image-3954-1096",
+      "actual_response_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/.claude/worktrees/agent-a17ad18a3d7b133bd/art/fighters/ultraman-zero__shining/stage1/idle/frames/stance-raw-01-official-side-anchor.png",
+      "actual_size": [1199, 1312],
+      "actual_mode": "RGBA",
+      "sha256": "44f57943a82421369a4cc5cf95e5ebb2f03e73649aca278a7a3524c8b04df77f",
+      "usage": "未返回（MCP 不提供 usage/费用）",
+      "status": "rejected",
+      "rejection": "冠脊与双镖根部连成一片高鳍，头部结构错；原始帧已删除。"
+    },
+    {
+      "id": "stance-raw-02-official-side-anchor",
+      "purpose": "去正面头部，只用官方侧头与已装机身体导引（第三轮）",
+      "tool": "magpie-image.generate_image",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": 1,
+      "reference_images": [
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/official-front-torso.png",
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/official-side-head.png",
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/stance-ref-installed-zero-body-only.png"
+      ],
+      "reference_sha256": [
+        "9d643737191f956e8c34f5abf4f48d3b8ce56c64a180f638de8737e714dd78dd",
+        "71d2f544add0e1c24cc5da4c9231c6f3487e8b6ff28a9e2feaf2b46b255cadbb",
+        "195ea19b9d411753ed8f701dda519d5fcbf4c5530ef1cfc8b2863a6cc3d17325"
+      ],
+      "prompt": "只画单个完整人物，不拼多视图、不画网格。第一图只锁身体：银白底衣，宽厚的金色胸甲、肩甲、前臂甲与腿部金纹，蓝色五角胸核，体型与四肢粗细照第一图，不套基础赛罗红蓝配色；第一图没有头，头部不得从第一图补画。第二图是唯一头部来源：固定90°右侧视，头壳圆钝低平，中央冠脊贴着头壳、不高耸；双头镖是两片独立短弯刃，分别贴在左右耳上侧，近侧镖压住远侧，刃根在眼后上方、刃身贴着后脑向后上方收尖，镖尖只到后脑边缘，刃背有明显凹口，远侧只露一小截；蓝色额灯在冠脊前端，蓝眼窄长。不得画成一整片高羽冠、三根大尖角或向前伸的角，头冠不得高过后脑顶弧太多，头部不得放大。第三图只借格斗站姿与身体轮廓，头部、造型和配色都不借。人物朝右，前后脚错开，脚外缘间距约0.72站高，双膝屈、髋下沉，双拳抬到胸前护架，肩肘腕自然连接；成年人头身比。保持银白底衣与成块金色甲片，不做黑色躯体，不烘焙金色光晕。固定右侧视，完整人物不裁切，透明背景，无地面文字边框特效。",
+      "requested_path": "art/fighters/ultraman-zero__shining/stage1/idle/frames/stance-raw-02-official-side-anchor.png",
+      "generation_id": "image-3954-1097",
+      "actual_response_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/.claude/worktrees/agent-a17ad18a3d7b133bd/art/fighters/ultraman-zero__shining/stage1/idle/frames/stance-raw-02-official-side-anchor.png",
+      "actual_size": [1263, 1246],
+      "actual_mode": "RGBA",
+      "sha256": "e320e6cba9b714b8fe8c93b6c7c8195db8252153cc19c6d561141409cc17c372",
+      "usage": "未返回（MCP 不提供 usage/费用）",
+      "status": "rejected",
+      "rejection": "站距 953/1136=0.839 超出 0.65–0.80，头部过小；原始帧已删除。"
+    },
+    {
+      "id": "stance-raw-03-official-side-anchor",
+      "purpose": "加入头身比导引图（第四轮）",
+      "tool": "magpie-image.generate_image",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": 1,
+      "reference_images": [
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/official-front-full.png",
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/official-side-head.png",
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/stance-guide-official-side-head-on-installed-body.png"
+      ],
+      "reference_sha256": [
+        "6973bd20f52560c31381b4f82b04db53038ea800209ddaf16900e8fcd937a150",
+        "71d2f544add0e1c24cc5da4c9231c6f3487e8b6ff28a9e2feaf2b46b255cadbb",
+        "7478a324e2ea2abfe8ed89b00cc35c69f94fe41b9acfbfd7f2ab386496820e34"
+      ],
+      "prompt": "只画单个完整人物，不拼多视图、不画网格。第一图锁身份与配色：银白底衣，宽厚的金色胸甲、肩甲、前臂甲与腿部金纹，蓝眼、蓝色额灯、蓝色五角胸核；体型、头身比和头部大小照第一图，不套基础赛罗红蓝配色；不画玩具关节缝、支架、标签、背景或商品文字。第二图只锁头部轮廓与安装：固定90°右侧视，头壳圆钝低平，中央冠脊贴着头壳、不高耸；双头镖是两片独立短弯刃，分别贴在左右耳上侧，近侧镖压住远侧，刃根在眼后上方、刃身贴着后脑向后上方收尖，镖尖只到后脑边缘，刃背有明显凹口；蓝色额灯在冠脊前端，蓝眼窄长；不得画成一整片高羽冠、三根大尖角或向前伸的角，头部不得比第一图缩小。第三图是站姿与头身比导引：灰色身体只提供两脚前后错步、屈膝下沉、双拳胸前护架的姿势和头身比，头部只提供大小与安装位置；不要照灰色配色，也不要照第三图的画风，配色和甲片照第一图。人物朝右，脚外缘间距约0.70站高、不超过0.75，双膝明显弯曲、髋下沉，双拳抬到胸前护架，肩肘腕自然连接；成年人头身比。保持银白底衣与成块金色甲片，不做黑色躯体，不烘焙金色光晕。固定右侧视，完整人物不裁切，透明背景，无地面文字边框特效。",
+      "requested_path": "art/fighters/ultraman-zero__shining/stage1/idle/frames/stance-raw-03-official-side-anchor.png",
+      "generation_id": "image-3954-1102",
+      "actual_response_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/.claude/worktrees/agent-a17ad18a3d7b133bd/art/fighters/ultraman-zero__shining/stage1/idle/frames/stance-raw-03-official-side-anchor.png",
+      "actual_size": [1192, 1320],
+      "actual_mode": "RGBA",
+      "sha256": "a49af0e480e02283ba4b9d143be15bde9da333b86e3b2edaa999204e87c4ca3b",
+      "usage": "未返回（MCP 不提供 usage/费用）",
+      "status": "rejected",
+      "rejection": "头形已接近官方（近镖凹口、远镖、低冠可辨），但冠顶→下颌 219/1203=0.182，比基础赛罗已装机 0.207 小约 12%；肩胸偏厚、躯干偏 3/4。诊断见 tools/rebuild/ultraman-zero__shining/diagnostic-idle-20261112.png；原始帧已在该记录后删除。"
+    },
+    {
+      "id": "stance-raw-04-official-side-anchor",
+      "purpose": "换策略：基础赛罗全身只借站姿/画风/头身比，官方侧头定头冠与双镖结构，官方正身定银底金甲；不再写“成年人头身比”",
+      "tool": "magpie-image.generate_image",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": 1,
+      "reference_images": [
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/stance-ref-installed-zero-idle-x4.png",
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/official-side-head.png",
+        "art/fighters/ultraman-zero__shining/stage1/idle/references/official-front-torso.png"
+      ],
+      "reference_sha256": [
+        "fb5f5687dace8024638d258282c734d58325d54fc07e8143375d6d3a28803ebc",
+        "71d2f544add0e1c24cc5da4c9231c6f3487e8b6ff28a9e2feaf2b46b255cadbb",
+        "9d643737191f956e8c34f5abf4f48d3b8ce56c64a180f638de8737e714dd78dd"
+      ],
+      "prompt": "只画单个完整人物，不拼多视图、不画网格。第一图只借格斗站姿、画风、头身比和四肢粗细：头高（冠顶到下颌）约站高的五分之一，头部必须和第一图一样大，不得缩小头部，也不得加厚肩胸与四肢；不借第一图的红蓝配色、头冠造型与胸甲。第二图只锁头部结构：固定90°右侧视，头壳圆钝低平，中央冠脊低伏贴壳向后，双头镖贴在耳上侧，刃根在前、刃尖向后上方，近镖压住远镖，刃背有明显凹口；蓝色额灯在冠脊前端，蓝眼窄长；不得画成一整片高羽冠或向前伸的角。第三图只锁身体配色与甲片：银白底衣，成块的金色胸甲、肩甲、前臂甲与腿部金纹，蓝色五角胸核；不画玩具关节缝、支架、标签与塑料高光。人物朝右，前后脚错开，脚外缘间距约0.72站高，双膝屈、髋下沉，双拳抬到胸前护架，肩肘腕自然连接。固定右侧视，完整人物不裁切，透明背景，无地面文字边框特效，不烘焙金色光晕。",
+      "requested_path": "art/fighters/ultraman-zero__shining/stage1/idle/frames/stance-raw-04-official-side-anchor.png",
+      "generation_id": "image-3954-1115",
+      "actual_response_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/.claude/worktrees/agent-a17ad18a3d7b133bd/art/fighters/ultraman-zero__shining/stage1/idle/frames/stance-raw-04-official-side-anchor.png",
+      "actual_size": [1024, 1536],
+      "actual_mode": "RGBA",
+      "sha256": "2ea1545269da7af999543efefc100601420dac184b61a6916570f77f54b35898",
+      "usage": "未返回（MCP 不提供 usage/费用）",
+      "status": "accepted_photo_for_pixelization",
+      "review": {
+        "authority": "root_delegated_by_user",
+        "metrics": "alpha bbox [89,215,917,1402]，站高 1188，冠顶→下颌 260（0.219），基础赛罗已装机 0.207（+5.5% 在 8% 内）；站距 829/1188=0.698；主体外 alpha≥16/≥200 = 0/0；alpha 1–15 尘点 23,545 不计；整帧 alpha≥128 单连通；四边留白 89/106/215/133。",
+        "note": "头部结构为项目已装机的赛罗侧视风格化：蓝色额灯在冠脊前端，双镖根前尖后上、近远双刃与凹口可辨；银白底衣、金色甲片、蓝眼与蓝色五角胸核照官方。未切肢、未拼片、未烘焙光效。"
+      }
+    },
+    {
+      "id": "stance-clean-04-official-side-anchor",
+      "purpose": "像素化单参考清图：Alpha128 硬化、裁到主体、缩到站高 1100 并置于 1024×1536 透明画布",
+      "tool": "local_python",
+      "script": "tools/rebuild/ultraman-zero__shining/clean_stance.py",
+      "input": "art/fighters/ultraman-zero__shining/stage1/idle/frames/stance-raw-04-official-side-anchor.png",
+      "output": "art/fighters/ultraman-zero__shining/stage1/idle/frames/stance-clean-04-official-side-anchor.png",
+      "output_sha256": "434a8153e0d864e1d77d1998e038d8c4e0a13d33331b0e90198bc7abbac52bb6",
+      "actual_size": [1024, 1536],
+      "bbox": [128, 311, 895, 1410],
+      "foot_row": 1410,
+      "standing": 1100,
+      "status": "accepted_single_reference"
+    },
+    {
+      "id": "pixel-raw-04-official-side-anchor",
+      "purpose": "单参考清图转像素整帧（待机身份锚源）",
+      "tool": "magpie-image.generate_image",
+      "model": "codex/gpt-image-2",
+      "quality": "high",
+      "background": "transparent",
+      "size": "1024x1536",
+      "n": 1,
+      "reference_images": [
+        "art/fighters/ultraman-zero__shining/stage1/idle/frames/stance-clean-04-official-side-anchor.png"
+      ],
+      "reference_sha256": [
+        "PENDING"
+      ],
+      "prompt": "把这张完整待机照逐像素概括为16位像素整帧，保持整体体量、屈膝错步、双拳护架和肩髋关系。四肢粗细与参考完全一致，拳靴和肩胸甲不增厚，不缩小头部。头部保持银白，蓝色额灯在冠脊前端、蓝眼窄长；中央冠脊低伏贴头壳，双头镖根在前、刃尖向后上方，近镖压住远镖，刃背有凹口，不得合成一整片高羽冠或向前伸的角。银白底衣配成块金色胸甲、肩甲、前臂甲与腿部金纹，蓝色五角胸核；不做黑色躯体，不套红蓝配色。按原生站高188设计，硬色阶、单像素深色外轮廓，甲纹用简洁像素块。固定右侧视，完整不裁切，透明背景，无地面文字边框特效，不烘焙光晕。",
+      "requested_path": "art/fighters/ultraman-zero__shining/stage1/idle/frames/pixel-raw-04-official-side-anchor.png",
+      "generation_id": "image-3954-1119",
+      "actual_response_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/.claude/worktrees/agent-a17ad18a3d7b133bd/art/fighters/ultraman-zero__shining/stage1/idle/frames/pixel-raw-04-official-side-anchor.png",
+      "actual_size": [1024, 1536],
+      "actual_mode": "RGBA",
+      "sha256": "6816181d337a2f61088645f95a35e23861b1b348c7040ed7482e585976c19057",
+      "metrics": "alpha bbox [123,311,896,1410]，站高 1100，站距 0.7036，alpha 0–254，主体外 alpha≥16/≥200 = 0/0，alpha 1–15 尘点 49,210 不计，整帧 alpha≥128 单连通。",
+      "cell": "art/fighters/ultraman-zero__shining/stage1/cells/idle-00-cell.png",
+      "cell_sha256": "b981076746bd06b9e02603caaa1a608d0643f1b3d51c0829143e02d5e158f423",
+      "x4": "art/fighters/ultraman-zero__shining/stage1/cells/idle-00-x4.png",
+      "x4_sha256": "1ea775d5c871bb88f2af7bb9341873dada3ba9b4b96958bb24c2f7e0ecc6c5da",
+      "usage": "未返回（MCP 不提供 usage/费用）",
+      "status": "accepted_as_identity_source",
+      "review": {
+        "authority": "root_delegated_by_user",
+        "note": "像素化后仍保持清图的站姿、屈膝错步、双拳护架与四肢粗细；头部蓝额灯在前、双镖根前尖后上、近远双刃与凹口可辨；银白底衣、金色甲片、蓝眼与蓝色五角胸核保留；无烘焙光效。"
+      }
+    },
+    {
+      "id": "idle-00-cell-build",
+      "purpose": "身份格确定性落格：256×256、站高 188、根点 [128,248]、脚底 247、32 色、二值 Alpha、单连通",
+      "tool": "local_python",
+      "script": "tools/rebuild/ultraman-zero__shining/build_idle_anchor.py",
+      "input": "art/fighters/ultraman-zero__shining/stage1/idle/frames/pixel-raw-04-official-side-anchor.png",
+      "input_sha256": "6816181d337a2f61088645f95a35e23861b1b348c7040ed7482e585976c19057",
+      "output": "art/fighters/ultraman-zero__shining/stage1/cells/idle-00-cell.png",
+      "output_sha256": "b981076746bd06b9e02603caaa1a608d0643f1b3d51c0829143e02d5e158f423",
+      "x4": "art/fighters/ultraman-zero__shining/stage1/cells/idle-00-x4.png",
+      "x4_sha256": "1ea775d5c871bb88f2af7bb9341873dada3ba9b4b96958bb24c2f7e0ecc6c5da",
+      "metrics": "bbox [54,60,185,247]，站高 188，宽 132，头高启发式 36/188=0.1915（基础赛罗 39/188=0.2074，-7.7%，在 ±8% 内），站距 132/188=0.7021，色数 32，Alpha [0,255]，连通块 1，脚底 247。",
+      "palette_method": "本机未安装 agent-sprite-forge，forge_backend 报 ImportError；按项目记录的“最远色种子＋频次加权Lloyd32，最多16轮，整图最近色映射”同法自实现，色板取自本形态待机像素整帧。",
+      "status": "accepted_identity_anchor",
+      "review": {
+        "authority": "root_delegated_by_user",
+        "note": "已看原生 256 格与严格 4× 最近邻；头肩比例、手脚体量、站姿、双镖朝向与银金蓝识别色符合本形态，作为动作帧唯一参考。未做实机、未录屏。"
+      }
+    }
+  ],
+  "recording": null
+}
