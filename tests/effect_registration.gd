@@ -52,6 +52,29 @@ func run() -> void:
 			_scan_move(definition.moves[move_id], ids)
 		for move_id in ids:
 			check(effects.has(move_id), "%s/%s 特效已登记" % [id, move_id])
+	# 专属特效不能只是别的角色/形态图集的副本；换 id 照抄等于复用他人特效。
+	var seen_atlas: Dictionary = {}
+	for id in fighters:
+		var definition := UfeContentDatabase.fighter(id, true)
+		var ids: Dictionary = {}
+		for move_id in definition.moves:
+			_scan_move(definition.moves[move_id], ids)
+		for move_id in ids:
+			var entry: Dictionary = effects.get(move_id, {})
+			var dedicated := str(entry.get("dedicated_to", ""))
+			var texture := str(entry.get("texture", ""))
+			if dedicated.is_empty() or texture.is_empty() or dedicated == id: continue
+			check(dedicated == id, "%s/%s 特效属于%s而非%s" % [id, move_id, dedicated, id])
+	for move_id in effects:
+		var entry: Dictionary = effects[move_id]
+		var dedicated := str(entry.get("dedicated_to", ""))
+		var texture := str(entry.get("texture", ""))
+		if dedicated.is_empty() or texture.is_empty(): continue
+		# 路径不同、内容相同的副本也算复用；按图集 SHA 归并。
+		var key := str(entry.get("atlas_sha256", texture))
+		if seen_atlas.has(key) and seen_atlas[key] != dedicated:
+			check(false, "%s 与 %s 共用同一图集" % [dedicated, seen_atlas[key]])
+		seen_atlas[key] = dedicated
 	# 只有落点、没有状态帧占位附件的角色也必须真的显示Q蓄气；离开Q不能遗留。
 	for id in ["ultraman-zero", "father-of-ultra", "ultraman-justice"]:
 		var layout: Dictionary = UfeChargeEffectPolicy.data().placements[id]
