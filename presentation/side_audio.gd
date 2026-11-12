@@ -31,6 +31,7 @@ var preview_voice_cursor: int=0
 var stopped: Array=[]
 var suppressed: Array=[]
 var projectile_audio:Dictionary={}
+var fighter_audio_keys:Dictionary={}
 var flight_players:Array=[]
 var flight_match:UfeMatchDirector
 var flight_move_cache:Dictionary={}
@@ -129,6 +130,21 @@ func cue(id: String,contact: bool=false,owner_index: int=-1,owner_state: String=
 func resolve(id: String) -> String:
 	return id if catalog.sounds.has(id) else str(catalog.aliases.get(id,id))
 
+# 形态与本尊是同一个人：形态ID没有独立音频登记时沿用基础ID，切换后不断声。
+func fighter_key(f: UfeFighter) -> String:
+	var cache_key: String=str(f.definition.id)+"|"+str(f.base_definition.id)
+	if fighter_audio_keys.has(cache_key):return str(fighter_audio_keys[cache_key])
+	var id: String=str(f.definition.id)
+	var base: String=str(f.base_definition.id)
+	var result: String=id if id==base or _has_fighter_audio(id) else base
+	fighter_audio_keys[cache_key]=result
+	return result
+
+func _has_fighter_audio(id: String) -> bool:
+	# 只有真正独立登记音频的角色才用自己的ID；形态ID沿用本人声音。
+	if catalog.get("voices",{}).has(id): return true
+	return catalog.get("footsteps",{}).has(id) and catalog.get("frame_sounds",{}).has(id) and state_sounds.has(id)
+
 func flight_sound(p:Dictionary) -> String:
 	var binding:Variant=projectile_audio.get(str(p.get("effect","")),{})
 	if binding is String:return binding
@@ -208,7 +224,7 @@ func _sync_intro_voices(sim: UfeMatchDirector,intro_active: bool,result_source: 
 			continue
 		var f:=sim.fighters[owner_index]
 		var ended: bool=sim.finished or (result_source!=null and result_source.finished)
-		var interrupted: bool=f.definition.id!=str(row.fighter) or ended or (not intro_active and f.state not in row.passive_states)
+		var interrupted: bool=fighter_key(f)!=str(row.fighter) or ended or (not intro_active and f.state not in row.passive_states)
 		if interrupted:
 			player.stop()
 			intro_voices.erase(owner_index)
@@ -316,13 +332,13 @@ func ceremony(sim: UfeMatchDirector,intro: int,_ending_tick: int) -> void:
 		if value=="intro":
 			cue("entry")
 			for i in range(2):
-				var fighter: String=sim.fighters[i].definition.id
+				var fighter: String=fighter_key(sim.fighters[i])
 				voice(i,fighter,"intro" if catalog.voices.get(fighter,{}).has("intro") else "attack")
 				_remember_intro_voice(i,fighter)
 		elif value=="ending":
 			ending_voices.clear()
 			for i in range(2):
-				var fighter: String=sim.fighters[i].definition.id
+				var fighter: String=fighter_key(sim.fighters[i])
 				var event: String="timeout" if sim.remaining<=0 else "victory" if i==sim.winner else "down"
 				voice(i,fighter,event)
 				_remember_ending_voice(i,fighter,event)
@@ -347,18 +363,18 @@ func sync(sim: UfeMatchDirector,frozen: bool,intro_active: bool=false,result_sou
 			character_players[i].stop()
 			stopped.append({"tick":last_tick,"player":i,"state":character_states[i],"reason":"state_exit"})
 			character_states[i]=""
-		if f.move_id!=last_moves[i] and not f.move_id.is_empty():voice(i,f.definition.id,"super" if f.move_id.begins_with("special") or UfeBattleTransform.is_command(f.move_id) or f.move_id=="super_special3" else "attack")
+		if f.move_id!=last_moves[i] and not f.move_id.is_empty():voice(i,fighter_key(f),"super" if f.move_id.begins_with("special") or UfeBattleTransform.is_command(f.move_id) or f.move_id=="super_special3" else "attack")
 		if changed:
 			var key: String=_state_entry_key(f)
-			for e in state_sounds.get(f.definition.id,{}).get(key,[]):cue(str(e.id),false,i,key)
+			for e in state_sounds.get(fighter_key(f),{}).get(key,[]):cue(str(e.id),false,i,key)
 			if f.state in ["down","bounce"]:
-				voice(i,f.definition.id,"down")
+				voice(i,fighter_key(f),"down")
 		if f.state=="walk":
 			@warning_ignore("integer_division")
 			var foot: int=f.state_tick/16
 			var foot_sound: String="step"
 			var walk_key: String="walk_forward" if f.resolver.previous_x*f.facing>0 else "walk_back"
-			var steps: Dictionary=catalog.get("footsteps",{}).get(f.definition.id,{}).get(walk_key,{})
+			var steps: Dictionary=catalog.get("footsteps",{}).get(fighter_key(f),{}).get(walk_key,{})
 			if not steps.is_empty():
 				var cycle: int=int(steps.cycle_ticks)
 				var phase: int=f.state_tick%cycle
@@ -373,7 +389,7 @@ func sync(sim: UfeMatchDirector,frozen: bool,intro_active: bool=false,result_sou
 		else:last_foot[i]=-1
 		var frame_key: String=f.animation_key()+":"+str(int(f.frame().get("sprite",-1)))
 		if frame_key!=str(last_frames[i]):
-			var cues: Array=catalog.get("frame_sounds",{}).get(f.definition.id,{}).get(f.animation_key(),{}).get(str(int(f.frame().get("sprite",-1))),[])
+			var cues: Array=catalog.get("frame_sounds",{}).get(fighter_key(f),{}).get(f.animation_key(),{}).get(str(int(f.frame().get("sprite",-1))),[])
 			for e in cues:cue(str(e.id),false,i,f.animation_key())
 			# 数据声明的提拉声只在真实抓中后播放；空抓仍走动作，但不能发出抱起声。
 			var move_audio: Dictionary=f.definition.moves.get(f.move_id,{}).get("audio",{})
@@ -395,9 +411,9 @@ func sync(sim: UfeMatchDirector,frozen: bool,intro_active: bool=false,result_sou
 		last_states[i]=f.state
 		last_moves[i]=f.move_id
 		if int(f.stats.hp)>0 and int(f.stats.hp)<=300 and sim.tick%60==0:
-			var profile_key: String="audio_profile:"+f.definition.id
+			var profile_key: String="audio_profile:"+fighter_key(f)
 			if not catalog.has(profile_key):
-				var profile_path: String="res://content/fighters/%s/profile.json"%f.definition.id
+				var profile_path: String="res://content/fighters/%s/profile.json"%fighter_key(f)
 				catalog[profile_key]=UfeContentDatabase.read_json(profile_path) if FileAccess.file_exists(profile_path) else {}
 			var profile: Dictionary=catalog[profile_key]
 			# 旧档案没有音频标志时沿用其已有的彩色计时器说明；不改其它角色档案。
@@ -427,7 +443,7 @@ func sync(sim: UfeMatchDirector,frozen: bool,intro_active: bool=false,result_sou
 			else:cue(custom,false,owner_index)
 			if event.kind=="hit":
 				var victim:int=1-owner_index
-				var victim_id:String=sim.fighters[victim].definition.id
+				var victim_id:String=fighter_key(sim.fighters[victim])
 				var down_id:String=resolve(str(catalog.voices.get(victim_id,{}).get("down","")))
 				# 只保护本次sync确实已调度的倒地声；没有有效down的旧角色仍播hit。
 				if down_id.is_empty() or str(voice_cues.get(victim,""))!=down_id:voice(victim,victim_id,"hit")

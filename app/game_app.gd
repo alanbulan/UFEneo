@@ -32,6 +32,10 @@ var review_capture_frames: int = 0
 var ending_tick: int = 0
 var ko_finish := UfeKoFinishPresentation.new()
 var selected_fighters: Array=["ultraman","zetton"]
+# 选人界面选定的出场形态；"default"为基础形态。回放按录像内形态复原。
+var selected_forms: Array=["default","default"]
+# 最近一次_battle_match要用的出场形态（子类重写签名保持三参数）。
+var match_start_forms: Array=["default","default"]
 var battle_preferences: Dictionary={}
 var capture_ui: String=""
 var front: UfeFrontEnd
@@ -224,6 +228,7 @@ func start_match() -> void:
 	for child in get_children():
 		remove_child(child)
 		child.queue_free()
+	match_start_forms = selected_forms.duplicate()
 	simulation = _battle_match(selected_fighters[0],selected_fighters[1],training)
 	if review_driver is UfePhase3SpecialReview or review_driver is UfeUltrasevenFourthReview:
 		var ids: Array=review_driver.matchup()
@@ -403,6 +408,7 @@ func _front_action(action: String) -> void:
 		"back":_show_page("select" if front.page=="stage" else "title")
 		"begin_match":
 			selected_fighters=front.selections.duplicate()
+			selected_forms=front.selected_forms.duplicate()
 			battle_preferences=front.stage_options.duplicate(true) if not front.stage_options.is_empty() else UfePlayerSettings.values()
 			view.set_stage(str(battle_preferences.get("battle_stage",UfeBattleStageCatalog.default_id())))
 			training=front.mode=="training"
@@ -416,6 +422,7 @@ func _prepare_dummy_session() -> bool:
 	if replay==null and not simulation.finished:return true
 	var ids: Array=replay.fighter_ids.duplicate() if replay!=null else [simulation.fighters[0].base_definition.id,simulation.fighters[1].base_definition.id]
 	if ids.size()!=2:return false
+	match_start_forms = selected_forms.duplicate()
 	var next_match:=_battle_match(str(ids[0]),str(ids[1]),true)
 	if next_match==null:
 		hud.toast.show_message("无法建立训练对局，陪练录制已保留")
@@ -426,6 +433,7 @@ func _prepare_dummy_session() -> bool:
 	return true
 
 func reset_round() -> void:
+	match_start_forms = selected_forms.duplicate()
 	var next_match:=_battle_match(selected_fighters[0],selected_fighters[1],training)
 	if review_driver is UfePhase3SpecialReview or review_driver is UfeUltrasevenFourthReview:
 		var ids: Array=review_driver.matchup()
@@ -471,6 +479,7 @@ func play_replay() -> void:
 			UfeReplayRecorder.last_error="回放角色不存在或尚不可用："+id
 			message=UfeReplayRecorder.last_error
 			return
+	match_start_forms = value.forms.duplicate() if value.forms.size()==2 else ["default","default"]
 	var next_match:=_battle_match(value.fighter_ids[0],value.fighter_ids[1],true)
 	if next_match==null:
 		UfeReplayRecorder.last_error="无法建立回放对局"
@@ -483,6 +492,7 @@ func play_replay() -> void:
 	ko_finish.reset()
 	simulation = next_match
 	selected_fighters=value.fighter_ids.duplicate()
+	selected_forms=value.forms.duplicate() if value.forms.size()==2 else ["default","default"]
 	message=""
 	view.bind_match(simulation)
 	# 验证并成功装配后才清显示；失败加载不能破坏当前输入与上一招。
@@ -706,4 +716,5 @@ func _capture() -> void:
 
 
 func _battle_match(first: String, second: String, allow_pilot: bool = false) -> UfeMatchDirector:
-	return UfeBattleFormCatalog.match_for(first, second, allow_pilot)
+	# 用成员传出场形态，保持测试子类对_battle_match的重写签名不变。
+	return UfeBattleFormCatalog.match_for(first, second, allow_pilot, {}, match_start_forms)

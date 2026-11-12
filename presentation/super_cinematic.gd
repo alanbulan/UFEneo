@@ -38,14 +38,17 @@ func sync(sim: UfeMatchDirector,camera_x: int,camera_y: int) -> void:
 	active=false
 	for s in beam_parts:s.visible=false
 	for f in sim.fighters:
-		if f.move_id not in ["special3","super_special3"] or not config.has(f.definition.id):continue
-		background.texture=load(config[f.definition.id].background)
-		background.z_index=int(config[f.definition.id].get("background_z_index",1))
+		# 形态共用本人必杀演出；形态没有单独登记时回落到基础形态。
+		var key:=f.definition.id
+		if not config.has(key):key=f.base_definition.id
+		if f.move_id not in ["special3","super_special3"] or not config.has(key):continue
+		background.texture=load(config[key].background)
+		background.z_index=int(config[key].get("background_z_index",1))
 		background.visible=true
 		active=true
 		var stage:=str(f.frame().get("cinematic_stage",""))
 		if stage=="portrait":
-			portrait.texture=load(config[f.definition.id].portrait)
+			portrait.texture=load(config[key].portrait)
 			if f.move_id=="super_special3": portrait.texture=load("res://assets/effects/ultraman-taro/super_portrait/atlas.png")
 			portrait.position=Vector2(148 if f.facing>0 else 492,158)
 			portrait.flip_h=f.facing<0
@@ -57,8 +60,11 @@ func sync(sim: UfeMatchDirector,camera_x: int,camera_y: int) -> void:
 		var source: Dictionary=effect_clips.get(str(p.get("effect","beam_loop")),beam_clip)
 		# 本人/原生跨度/档位的显式表现绑定；共享缺省和其它长度继续原资源。
 		if p.has("owner"):
-			var owner_id: String=sim.fighters[int(p.owner)].definition.id
-			source=source.get("beam_fighter_variants",{}).get(owner_id,{}).get("%d:%d" % [int(p.length),int(p.get("level",1))],source)
+			var owner_f: UfeFighter=sim.fighters[int(p.owner)]
+			var variants: Dictionary=source.get("beam_fighter_variants",{})
+			var owner_id: String=owner_f.definition.id
+			if not variants.has(owner_id):owner_id=owner_f.base_definition.id
+			source=variants.get(owner_id,{}).get("%d:%d" % [int(p.length),int(p.get("level",1))],source)
 		var clip:=UfeEffectGeometry.variant(source,int(p.get("level",1)))
 		var emission_anchor:bool=bool(source.get("emission_anchor",false))
 		var phase:=UfeEffectTimeline.phase(clip,int(p.age),bool(clip.get("loop",true)))

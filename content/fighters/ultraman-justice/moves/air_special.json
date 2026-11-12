@@ -21,26 +21,29 @@
  "air_allowed": true,
  "finish_on_landing": true,
  "feedback": {
-  "spark": "beam_hit",
+  "spark": "justice_fx_beam_hit",
   "block_spark": "impact_guard",
   "hitstop": 10,
   "blockstop": 6,
   "shake": 1,
   "flash": 2,
   "color": [
-   1.0,
-   0.72,
-   0.3,
-   1.0
+   1,
+   1,
+   1,
+   1
   ],
   "block_color": [
    1,
    1,
    1,
    1
-  ]
+  ],
+  "projectile_impacts": {
+   "justice_fx_beam": "justice_fx_beam_hit"
+  }
  },
- "adaptation": "游戏改编的空中集束射线；人物整帧已烘焙贴手光束，按打击判定收招，不在运行时再生成第二道光束。不声称原剧有此空中发射镜头。",
+ "adaptation": "游戏改编的空中闪光效应：人物整帧只画空中发射动作，光束由运行时 justice_fx_beam 承载，不在人物帧内烘焙。不声称原剧有此空中发射镜头。",
  "audio": {
   "hit": "hit_heavy",
   "block": "guard"
@@ -387,12 +390,12 @@
    "block_effect": "impact_guard",
    "shots": [
     {
-     "effect": "beam_loop",
+     "effect": "justice_fx_beam",
      "color": [
-      1.0,
-      0.72,
-      0.3,
-      1.0
+      1,
+      1,
+      1,
+      1
      ],
      "beam": true,
      "length": 420,

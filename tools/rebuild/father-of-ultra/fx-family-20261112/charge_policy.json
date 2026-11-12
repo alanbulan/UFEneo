@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "status": "proposal_for_root_merge",
+  "character": "father-of-ultra",
+  "merge_into": "content/presentation/charge_overlay_policy.json",
+  "placements": {
+    "father-of-ultra": {
+      "charge_start": {
+        "effect": "father_fx_q_charge_start",
+        "anchor": [
+          0,
+          0
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "behind_fighter": true,
+        "frames": 9,
+        "loop": false
+      },
+      "charge": {
+        "effect": "father_fx_q_charge",
+        "anchor": [
+          0,
+          0
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "behind_fighter": true,
+        "frames": 24,
+        "loop": true
+      },
+      "charge_stop": {
+        "effect": "father_fx_q_charge_stop",
+        "anchor": [
+          0,
+          0
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "behind_fighter": true,
+        "frames": 9,
+        "loop": false
+      }
+    }
+  },
+  "charge_only_effects": [
+    "father_fx_q_charge_start",
+    "father_fx_q_charge",
+    "father_fx_q_charge_stop"
+  ],
+  "effects_already_registered_by_root": false,
+  "integration_note": "现 father-of-ultra 的 charge_start/charge/charge_stop 状态帧没有 attachments。UfeChargeEffectPolicy.filter 只替换已存在的受限附件，因此根会话除了合并本 placements，还需在三个蓄气状态帧各挂一个 charge_aura（sprite 0，anchor [0,-96]，颜色自定，与 zoffy/gaia 等已装角色同口径）才能让本家族蓄气图显示；本次任务只允许改 moves/*.json，故未改 state_frames。",
+  "basis": "不使用通用 charge_aura 形状：三态为本角色独立红银披风焰整帧（9/24/9，384×256，脚底锚 [192,246]），只在真实 Q 起势/保持/收势出现，符合专项特效家族要求。"
+}

@@ -6,6 +6,8 @@ const CHASE_ACTIONABLE_STATES := ["idle","walk","dash","backstep","dodge","crouc
 var definition: UfeFighterDefinition
 var base_definition: UfeFighterDefinition
 var battle_form: Dictionary = {}
+# 多形态选择表的根；battle_form 切到某个子形态后仍从这里继续切换。
+var battle_form_choices: Dictionary = {}
 var form_id: String = ""
 var transformed_this_round: bool = false
 var x: int = 0
