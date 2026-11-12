@@ -22,7 +22,9 @@
 
 - 真透明 RGBA，Alpha 只有 `0/255`（硬 Alpha）。
 - 主体＝`alpha>=200` 最大 4 连通块；**主体外 `alpha>=16` 与 `alpha>=200` 全部为 0**（门限分别是 ≤100 与 =0）。
-- 每段相邻帧可见像素变化率最低 1.4%，均非复制凑帧；亮芯、外焰/披风锯齿、颗粒状短焰随相位推进。
+- 每段相邻帧可见像素变化率最低 22.7%（Q 蓄气循环段），均非复制凑帧；亮芯、外焰/披风锯齿、颗粒状短焰随相位推进。
+
+Q 蓄气三态（2026-11-12 根审拒收后重做）为以身体为中心的椭圆环状红银火焰：径向分层火身（橙白内缘→朱红→深红）、外缘 11 处尖峰火舌、内缘短火舌、橙白亮芯与 7 条宽短焰、5 条 S 形上升火星。start 由小到大（env 0.16→1.0，9 帧），charge 24 帧持续起伏循环，stop 收束（env 1.0→0.12，9 帧）。原「红色竖条笼/门框」造型已全部移除，无矩形或等宽竖条结构。
 
 | effect id | atlas | 尺寸 | 帧 | 色数 | SHA256 |
 | --- | --- | --- | --- | --- | --- |
@@ -39,9 +41,9 @@
 | `father_fx_barrier` | `assets/effects/father-of-ultra/fx-family-20261112-v1/barrier/atlas.png` | 640×160 | 4 | 5 | `912ff2d8ecff8256be88fd9c7bb4515a719744e1b813805564a492efdfdff6fc` |
 | `father_fx_catch_back` | `assets/effects/father-of-ultra/fx-family-20261112-v1/catch_back/atlas.png` | 512×128 | 4 | 4 | `631a0ae83baace1d92b0d816a6bdea60eb35132f0a2d1135637a498c0c16fdb7` |
 | `father_fx_catch_front` | `assets/effects/father-of-ultra/fx-family-20261112-v1/catch_front/atlas.png` | 512×128 | 4 | 4 | `c831006bf32af5d80670655996bd9c94bc810b27a1b9ed783037db4aa7f45f3c` |
-| `father_fx_q_charge_start` | `assets/effects/father-of-ultra/fx-family-20261112-v1/q_charge_start/atlas.png` | 2304×512 | 9 | 6 | `aa812db33e5bd55d1db37c485a11602a7992d564a58bbc66082bdba4205a4c3f` |
-| `father_fx_q_charge` | `assets/effects/father-of-ultra/fx-family-20261112-v1/q_charge/atlas.png` | 2304×1024 | 24 | 6 | `e69f0a4aa9f8654b55d70694bb5a0257a92c4175268e751de830b19de8ab3817` |
-| `father_fx_q_charge_stop` | `assets/effects/father-of-ultra/fx-family-20261112-v1/q_charge_stop/atlas.png` | 2304×512 | 9 | 6 | `928f811d65d4d0bb845f590e67bc393998be5ac31ea57a6734987c9d9ca70718` |
+| `father_fx_q_charge_start` | `assets/effects/father-of-ultra/fx-family-20261112-v1/q_charge_start/atlas.png` | 2304×512 | 9 | 8 | `1ac698681d2d514e962bcf602dd6b0cacb5c71fcc31256d87edeffe19a2f73a8` |
+| `father_fx_q_charge` | `assets/effects/father-of-ultra/fx-family-20261112-v1/q_charge/atlas.png` | 2304×1024 | 24 | 8 | `181824066fe6e92ce7093e7fc633ffd2e14e0a05d9db60a6a9212a5187c8db4c` |
+| `father_fx_q_charge_stop` | `assets/effects/father-of-ultra/fx-family-20261112-v1/q_charge_stop/atlas.png` | 2304×512 | 9 | 8 | `3b1b26697ee58c6cf80c05bf48b69c5d27f3a741977c1a0c49e437649264353a` |
 
 每段另有 `effect.json`（完整 phase3 clip 对象）与 `provenance.json`（逐帧数值、形状来源、上游、许可）。全套色板按本人红银（深红→朱红→暖白）与金色角部光束；载入图集为硬边像素整帧，不含人物。
 
