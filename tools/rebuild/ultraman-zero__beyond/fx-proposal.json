@@ -1,0 +1,118 @@
+{
+ "schema": 1,
+ "fighter": "ultraman-zero__beyond",
+ "status": "pending",
+ "rule": "招式只引用 pending_beyond_*；不引用基础赛罗 zero_fx_*。共享 phase3/policy 未改，等待主会话合并。",
+ "atlas_root": "assets/effects/ultraman-zero__beyond/fx-pending-20261112-v1",
+ "effects": {
+  "pending_beyond_wide_beam": {
+   "atlas": "res://assets/effects/ultraman-zero__beyond/fx-pending-20261112-v1/pending_beyond_wide_beam/atlas.png",
+   "sha256": "7db5a8ef2f47b9d3c24e19a607ba2b62df4eb58243d1ac19cc56bd2508aefb4f",
+   "layer": "beam",
+   "ticks": 4,
+   "loop": true,
+   "dedicated_to": "ultraman-zero__beyond"
+  },
+  "pending_beyond_wide_hit": {
+   "atlas": "res://assets/effects/ultraman-zero__beyond/fx-pending-20261112-v1/pending_beyond_wide_hit/atlas.png",
+   "sha256": "cc6f920ea11fc1bd152bc0c424b79edabfdd4a9f18659f36c86d65d33720f22f",
+   "layer": "impact",
+   "ticks": 4,
+   "loop": false,
+   "dedicated_to": "ultraman-zero__beyond"
+  },
+  "pending_beyond_emerium_beam": {
+   "atlas": "res://assets/effects/ultraman-zero__beyond/fx-pending-20261112-v1/pending_beyond_emerium_beam/atlas.png",
+   "sha256": "ff684c480f510ad4242bb7550f54309ec37c10c87553caac3f267e1c7ae47745",
+   "layer": "beam",
+   "ticks": 4,
+   "loop": true,
+   "dedicated_to": "ultraman-zero__beyond"
+  },
+  "pending_beyond_emerium_hit": {
+   "atlas": "res://assets/effects/ultraman-zero__beyond/fx-pending-20261112-v1/pending_beyond_emerium_hit/atlas.png",
+   "sha256": "e69766f40518941b0f9e7be0180546834b9bba2de2e03c50d1cb8495156de282",
+   "layer": "impact",
+   "ticks": 4,
+   "loop": false,
+   "dedicated_to": "ultraman-zero__beyond"
+  },
+  "pending_beyond_slugger_flight": {
+   "atlas": "res://assets/effects/ultraman-zero__beyond/fx-pending-20261112-v1/pending_beyond_slugger_flight/atlas.png",
+   "sha256": "cf5af4878dab7e8d5d1177f3815c7634d8da90ba74ffb3fb61737f86b381d7e1",
+   "layer": "flight",
+   "ticks": 4,
+   "loop": true,
+   "dedicated_to": "ultraman-zero__beyond"
+  },
+  "pending_beyond_slugger_trail": {
+   "atlas": "res://assets/effects/ultraman-zero__beyond/fx-pending-20261112-v1/pending_beyond_slugger_trail/atlas.png",
+   "sha256": "bad2bff5c1c0d8e29017fa55ae550520ec28a48ed70720be2b2868f6951132c1",
+   "layer": "trail",
+   "ticks": 4,
+   "loop": true,
+   "dedicated_to": "ultraman-zero__beyond"
+  },
+  "pending_beyond_slugger_hit": {
+   "atlas": "res://assets/effects/ultraman-zero__beyond/fx-pending-20261112-v1/pending_beyond_slugger_hit/atlas.png",
+   "sha256": "a98104ce378c6261e760bd84afed2100ba816ab7a196e8348f15064657f696c4",
+   "layer": "impact",
+   "ticks": 4,
+   "loop": false,
+   "dedicated_to": "ultraman-zero__beyond"
+  },
+  "pending_beyond_slugger_catch": {
+   "atlas": "res://assets/effects/ultraman-zero__beyond/fx-pending-20261112-v1/pending_beyond_slugger_catch/atlas.png",
+   "sha256": "51032a76a0ba4673a622c36c7dbb14115adb3c6d57d28f512ac1ddc29b2eefe1",
+   "layer": "impact",
+   "ticks": 4,
+   "loop": false,
+   "dedicated_to": "ultraman-zero__beyond"
+  },
+  "pending_beyond_q_charge_start": {
+   "atlas": "res://assets/effects/ultraman-zero__beyond/fx-pending-20261112-v1/pending_beyond_q_charge_start/atlas.png",
+   "sha256": "a854870c44b4393fec39bcb4b216ff52e30fc196a9ee52d7f6f0d4847aa56ab7",
+   "layer": "charge",
+   "ticks": 1,
+   "loop": false,
+   "dedicated_to": "ultraman-zero__beyond"
+  },
+  "pending_beyond_q_charge": {
+   "atlas": "res://assets/effects/ultraman-zero__beyond/fx-pending-20261112-v1/pending_beyond_q_charge/atlas.png",
+   "sha256": "c0c11b4cccf75d5a60f5dc1cafaad20120094626db360c5f2fd59b7918fb1a9a",
+   "layer": "charge",
+   "ticks": 1,
+   "loop": true,
+   "dedicated_to": "ultraman-zero__beyond"
+  },
+  "pending_beyond_q_charge_stop": {
+   "atlas": "res://assets/effects/ultraman-zero__beyond/fx-pending-20261112-v1/pending_beyond_q_charge_stop/atlas.png",
+   "sha256": "bf4b10924f838a3fb170c902d7768cb345caff6082b87986e7a73f042bcc67e9",
+   "layer": "charge",
+   "ticks": 1,
+   "loop": false,
+   "dedicated_to": "ultraman-zero__beyond"
+  }
+ },
+ "move_usage": {
+  "air_special": [
+   "pending_beyond_wide_beam",
+   "pending_beyond_wide_hit"
+  ],
+  "special": [
+   "pending_beyond_wide_beam",
+   "pending_beyond_wide_hit"
+  ],
+  "special2": [
+   "pending_beyond_emerium_beam",
+   "pending_beyond_emerium_hit"
+  ],
+  "special3": [
+   "pending_beyond_slugger_catch",
+   "pending_beyond_slugger_flight",
+   "pending_beyond_slugger_hit",
+   "pending_beyond_slugger_trail"
+  ]
+ },
+ "not_produced": "动作帧与 form_switch 仍待生成；本提案只解决特效运行时图集与登记模板。"
+}

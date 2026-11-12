@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "date": "2026-11-12",
+  "fighter": "ultraman-zero__beyond",
+  "stage": "idle stance photo gate",
+  "brake": "同一项检查（待机照片头部/视角）连续拒收 3 帧，暂停盲重生成，先出诊断",
+  "rejected": [
+    {
+      "file": "art/fighters/ultraman-zero__beyond/stage1/idle/references/stance-raw-00.png",
+      "sha256": "f2d0b917213d5b399edf766726bb58dafa8ca0d87f4af2bbd4f5bb69135e3138",
+      "size": [1478, 1064],
+      "bbox_alpha128": [337, 13, 1126, 1047],
+      "height": 1035,
+      "width": 790,
+      "foot_span": 790,
+      "foot_span_over_height": 0.7633,
+      "yellow_eye_blobs": 1,
+      "head_blue_blobs": 2,
+      "direction": "朝右（眼 cx 803 < 额灯 cx 836）",
+      "reject_reasons": [
+        "视角：躯干为 3/4，胸前中央水晶与两侧胸肌水晶全见、双肩甲刃左右对称可见，不是纯 90° 侧视",
+        "头冠：多枚细薄尖刺，读成头发/羽毛；官方为宽厚金属片、刃根粗、面大",
+        "体量：上臂/大腿偏细，肩宽不足"
+      ]
+    },
+    {
+      "file": "art/fighters/ultraman-zero__beyond/stage1/idle/references/stance-raw-01.png",
+      "sha256": "506ef2322abe74fbd6d016ef58737308214ab0b541360467898d9259143a21de",
+      "size": [1316, 1195],
+      "bbox_alpha128": [213, 7, 1123, 1172],
+      "height": 1166,
+      "width": 911,
+      "foot_span": 910,
+      "foot_span_over_height": 0.7804,
+      "yellow_eye_blobs": 1,
+      "head_blue_blobs": 2,
+      "direction": "朝右（眼 cx 744 < 额灯 cx 783）",
+      "reject_reasons": [
+        "视角：仍为 3/4，胸甲正面与双肩甲全见",
+        "头冠：细薄尖刺多发，无宽厚片状冠脊与清晰刃根"
+      ]
+    },
+    {
+      "file": "art/fighters/ultraman-zero__beyond/stage1/idle/references/stance-raw-02.png",
+      "sha256": "d2991fafead54f59ae5bcec5d3737c36a54ee0333062e181d5e45e70d33d7808",
+      "size": [1313, 1198],
+      "bbox_alpha128": [215, 13, 1091, 1172],
+      "height": 1160,
+      "width": 877,
+      "foot_span": 877,
+      "foot_span_over_height": 0.756,
+      "yellow_eye_blobs": 1,
+      "head_blue_blobs": 2,
+      "direction": "朝右（眼 cx 723 < 额灯 cx 750）",
+      "reject_reasons": [
+        "视角：仍为 3/4，胸甲正面、双侧胸水晶与双肩甲全见",
+        "头冠：细薄尖刺，官方宽厚片状结构不足"
+      ]
+    }
+  ],
+  "measured_correction": "复测显示三帧均只有 1 个黄眼块、均有竖向额灯与鬓部蓝宝，朝向均朝右；此前口述的“缺额灯/头后蓝晶/朝左”不成立，不作为拒收依据。拒收只保留可复测项：躯干 3/4 与头冠细薄发丝状。",
+  "stance_ratio": "三帧脚外缘/站高 0.7560–0.7804，均在 0.65–0.80 内；站姿分脚、屈膝、双拳护架成立，非本次拒收项",
+  "official_structure": {
+    "forehead": "前额正中竖向蓝色菱形额灯，双眼之间上方；两侧各一枚蓝色泪滴形鬓宝",
+    "crest": "中央宽冠脊 + 左右后掠长银片 + 最外侧宽大侧翼；刃根粗、片宽、面平，尖端收束，不呈发丝",
+    "sluggers": "四枚 Zero Slugger 贴头壳，近侧遮远侧；刃根在耳上，刃缘有转折与凹口，刃尖向后上方",
+    "back": "背面可见对称展开的宽刃尖扇与中央脊柱脊"
+  },
+  "root_cause": [
+    "参考图角度主导：官方正面/3-4 全身照把整身拉成 3/4，与 AGENTS 已记录的机制一致",
+    "侧视像素头部仅约 40×45 原生像素，4× 后模型读不出头冠片形与刃根，正面照片主导了头部生成",
+    "仅靠提示词两次加强“宽厚金属片、不是头发”无效，说明不是措辞问题"
+  ],
+  "next_approach": {
+    "id": "approach-2-head-crop-anchor",
+    "difference": "照基础赛罗已被用户认可的配方：官方正面全身（配色/纹样/体量）+ 大的真实右侧头部参考（本形态无官方侧头照，用已批准侧视像素头部放大裁图，真正的右侧视）+ 1 张已装机同风格成品（基础赛罗 idle，仅借站姿/画风）。不加入任何 3/4 官方照。",
+    "references": [
+      "art/fighters/ultraman-zero__beyond/sources/ref-02-official-figure-front.jpg",
+      "art/fighters/ultraman-zero__beyond/stage1/idle/references/side-head-mirrored-right-x12.png",
+      "art/fighters/ultraman-zero__beyond/stage1/idle/references/stance-ref-zero-idle-x4.png"
+    ],
+    "post_rule": "若整图仅左右反向则整图镜像到朝右并记录；3/4 视角不算左右反向，不得用镜像掩盖。若本方案仍不过，按刹车停在此处，交人工或换真实官方侧视来源。",
+    "gate": "纯 90° 侧视（只近侧眼、胸甲只见侧缘、双肩甲不左右对称全见）、头冠宽厚片状、四头镖可读、脚外缘/站高 0.65–0.80、全身不裁切、透明背景"
+  }
+}

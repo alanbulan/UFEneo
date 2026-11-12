@@ -1,0 +1,548 @@
+{
+ "id": "chase_light2",
+ "display_name": "追击横肘",
+ "startup": 4,
+ "active": 4,
+ "recovery": 8,
+ "damage": 65,
+ "hitstun": 28,
+ "blockstun": 12,
+ "pushback": 0,
+ "stun": 65,
+ "stamina_cost": 0,
+ "energy_cost": 0,
+ "kind": "strike",
+ "level": "mid",
+ "unblockable": false,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "feedback": {
+  "spark": "impact_light",
+  "block_spark": "impact_guard",
+  "hitstop": 4,
+  "blockstop": 3,
+  "shake": 0,
+  "flash": 2,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "cancel_rule": "完整收势后恢复行动，无招式取消",
+ "audio": {
+  "hit": "hit_light",
+  "block": "guard"
+ },
+ "data_source": "规则沿用已审同体型人形模板与泰罗同类招式；帧数取自 stage1 交付，攻击点与受击框按赛罗整帧像素逐帧量取。 本形态（超限赛罗）沿用基础赛罗 2026-11-12 已审的 47 招数据：帧数、起手/持续/收招、伤害、能量与命中 tick 均不改；人物帧待本形态用同一待机锚重产，受击框按新帧重算。",
+ "production_note": "超限赛罗形态：招式数据与基础赛罗同口径；动作帧与特效待产，特效 id 统一为 pending_beyond_*，不使用基础赛罗的已装特效 id。",
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -21,
+     22,
+     69,
+     51
+    ],
+    [
+     -50,
+     71,
+     102,
+     51
+    ],
+    [
+     -48,
+     120,
+     89,
+     52
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "light"
+    }
+   ]
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -8,
+     22,
+     103,
+     61
+    ],
+    [
+     24,
+     81,
+     80,
+     61
+    ],
+    [
+     28,
+     140,
+     88,
+     61
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -8,
+     22,
+     103,
+     61
+    ],
+    [
+     24,
+     81,
+     80,
+     61
+    ],
+    [
+     28,
+     140,
+     88,
+     61
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -8,
+     22,
+     103,
+     61
+    ],
+    [
+     24,
+     81,
+     80,
+     61
+    ],
+    [
+     28,
+     140,
+     88,
+     61
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     45,
+     68,
+     26,
+     44
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -8,
+     22,
+     90,
+     58
+    ],
+    [
+     11,
+     78,
+     79,
+     58
+    ],
+    [
+     15,
+     134,
+     74,
+     58
+    ]
+   ],
+   "cancel": [
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     45,
+     68,
+     26,
+     44
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -8,
+     22,
+     90,
+     58
+    ],
+    [
+     11,
+     78,
+     79,
+     58
+    ],
+    [
+     15,
+     134,
+     74,
+     58
+    ]
+   ],
+   "cancel": [
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     45,
+     68,
+     26,
+     44
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -8,
+     22,
+     90,
+     58
+    ],
+    [
+     11,
+     78,
+     79,
+     58
+    ],
+    [
+     15,
+     134,
+     74,
+     58
+    ]
+   ],
+   "cancel": [
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     45,
+     68,
+     26,
+     44
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -8,
+     22,
+     90,
+     58
+    ],
+    [
+     11,
+     78,
+     79,
+     58
+    ],
+    [
+     15,
+     134,
+     74,
+     58
+    ]
+   ],
+   "cancel": [
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -24,
+     22,
+     68,
+     52
+    ],
+    [
+     -33,
+     72,
+     85,
+     53
+    ],
+    [
+     -22,
+     123,
+     75,
+     53
+    ]
+   ],
+   "cancel": [
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -24,
+     22,
+     68,
+     52
+    ],
+    [
+     -33,
+     72,
+     85,
+     53
+    ],
+    [
+     -22,
+     123,
+     75,
+     53
+    ]
+   ],
+   "cancel": [
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -24,
+     22,
+     68,
+     52
+    ],
+    [
+     -33,
+     72,
+     85,
+     53
+    ],
+    [
+     -22,
+     123,
+     75,
+     53
+    ]
+   ],
+   "cancel": [
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -24,
+     22,
+     68,
+     52
+    ],
+    [
+     -33,
+     72,
+     85,
+     53
+    ],
+    [
+     -22,
+     123,
+     75,
+     53
+    ]
+   ],
+   "cancel": [
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -24,
+     22,
+     68,
+     52
+    ],
+    [
+     -33,
+     72,
+     85,
+     53
+    ],
+    [
+     -22,
+     123,
+     75,
+     53
+    ]
+   ],
+   "cancel": [
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -24,
+     22,
+     68,
+     52
+    ],
+    [
+     -33,
+     72,
+     85,
+     53
+    ],
+    [
+     -22,
+     123,
+     75,
+     53
+    ]
+   ],
+   "cancel": [
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -24,
+     22,
+     68,
+     52
+    ],
+    [
+     -33,
+     72,
+     85,
+     53
+    ],
+    [
+     -22,
+     123,
+     75,
+     53
+    ]
+   ],
+   "cancel": [
+    "chase_end"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -24,
+     22,
+     68,
+     52
+    ],
+    [
+     -33,
+     72,
+     85,
+     53
+    ],
+    [
+     -22,
+     123,
+     75,
+     53
+    ]
+   ],
+   "cancel": [
+    "chase_end"
+   ],
+   "events": []
+  }
+ ]
+}

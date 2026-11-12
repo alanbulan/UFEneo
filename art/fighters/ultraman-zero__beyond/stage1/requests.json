@@ -1,0 +1,109 @@
+{
+ "schema": 1,
+ "fighter": "ultraman-zero__beyond",
+ "requests": [
+  {
+   "id": "stance-raw-03",
+   "step": "idle stance photo, approach-2-head-crop-anchor",
+   "date": "2026-11-12",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "background": "transparent",
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/references/side-head-mirrored-right-x12.png",
+    "art/fighters/ultraman-zero__beyond/sources/ref-02-official-figure-front.jpg",
+    "art/fighters/ultraman-zero/stage1/cells/idle-00-cell.png"
+   ],
+   "prompt": "参考图①（真实右侧头部结构与朝向）、②（官方正面配色/胸甲/紫纹/体量）、③（已装机同风格格斗站姿与画风，只借站姿，不抄其头冠造型）。画超限赛罗全身人物照：纯右侧视90°，人物朝画面右，只见近侧一只黄眼，远眼被鼻梁挡住；从冠顶到鞋底完整不裁切。头部必须是硬质银色金属：前额正中竖向蓝菱形额灯，眼上两侧各一枚蓝色鬓宝；中央一条宽冠脊向后仰，左右各一条宽长银片向后上方，最外侧一对宽大侧翼；四枚头镖是宽厚弯刃，刃根在耳上、贴头壳、刃缘有转折和凹口、刃尖向后上方折起，近侧遮远侧；禁止头发、羽毛、细长尖刺、许多碎尖。肩后一对银色肩甲刃向后上方展开；胸中央浅蓝椭圆水晶、两侧青蓝胸水晶；前臂外侧与小腿前外侧青蓝水晶；银色拳；深紫火焰条纹按参考图②。格斗待机：两脚前后分开，脚外缘间距约站高0.72，前后脚屈膝下沉，双拳抬到胸前护架。四肢粗细和肩宽与参考图②一致：上臂、大腿饱满，小腿有厚度，不细长手脚、不缩头不放大头。高清皮套渲染，不是像素画。透明背景，无光束光晕颗粒、无地面文字边框，只画单帧完整人物，不拼网格。",
+   "result": {
+    "path": "art/fighters/ultraman-zero__beyond/stage1/idle/references/stance-raw-03.png",
+    "sha256": "8074b27276b8cf3608aa8eda42437ea793c201bfe828cd276a8f5195415f01f7",
+    "size": [
+     1199,
+     1312
+    ],
+    "alpha": {
+     "min": 0,
+     "max": 255,
+     "unique": 256,
+     "background_corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "figure_bbox_alpha128": [
+     132,
+     3,
+     1072,
+     1289
+    ],
+    "height": 1287,
+    "width": 941,
+    "foot_span": 941,
+    "foot_span_over_height": 0.7312,
+    "yellow_eye_blobs": 1,
+    "head_blue_blobs": 4,
+    "direction": "朝右（眼 cx 677 < 额灯 cx 717）",
+    "verdict": "照片门通过（造型门按本人官方结构目视）：纯右侧视只近侧眼、只见近侧胸水晶与近侧肩甲刃；额灯/鬓宝/宽厚头冠片/肩甲刃/胸水晶/前臂/小腿水晶/紫纹可读；脚外缘0.7312；全身未裁切；透明背景；无FX/地面/文字。",
+    "known_simplification": "头冠仍为火焰状宽片扇，四枚头镖未逐枚分开，按侧视与188原生格的读法与已批准图鉴侧视像素同构；像素门继续核头宽/头高与结构。",
+    "usage": "MCP 未返回费用；未知。"
+   }
+  },
+  {
+   "id": "pixel-raw-03",
+   "step": "idle pixel whole-frame from accepted stance photo",
+   "date": "2026-11-12",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "background": "transparent",
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/stance-raw-03-canvas-1024x1536.png"
+   ],
+   "prompt": "把参考图整帧转成 2D 像素艺术整帧：严格保持同一人物、同一纯右侧视格斗待机姿势、同一朝向、同一身体比例与结构，不改姿势、不缩头、不改四肢粗细，不增删部件。像素画风，清晰硬边像素块，透明背景。主体单块连通，四边留白、不裁切。最多32色：银白、灰、深紫、青蓝水晶、黄眼、蓝色额灯，保持额灯/胸水晶/计时器识别色。Alpha 只有全透明与全不透明两档。无光束、光晕、颗粒、地面、文字、边框、网格。",
+   "result": {
+    "path": "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png",
+    "sha256": "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628",
+    "size": [
+     1024,
+     1536
+    ],
+    "alpha_unique": 255,
+    "figure_bbox_alpha128": [
+     108,
+     305,
+     915,
+     1410
+    ],
+    "height": 1106,
+    "width": 808,
+    "foot_span_over_height": 0.7306,
+    "colors_before_quantize": 52393,
+    "note": "模型返回为抗锯齿像素风原图；落格由 stage_cells 统一量化到图鉴32色并二值化 Alpha。"
+   },
+   "landed": {
+    "path": "art/fighters/ultraman-zero__beyond/stage1/cells/idle-00-cell.png",
+    "sha256": "96ed30ed996939e8693b20e58b78edb189fa618c01fa26482b2ff1225da46fd2",
+    "x4": "art/fighters/ultraman-zero__beyond/stage1/cells/idle-00-cell-x4.png",
+    "x4_sha256": "964f1d13fdaad6b46646302d47de1e123ebe241d6064e7e7bee33031ea9e8cef",
+    "scale": 0.169982,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "standing": 188,
+    "foot_row": 247,
+    "foot_span_over_height": 0.7287,
+    "colors": 32,
+    "components": 1,
+    "binary_alpha": true
+   },
+   "signed_by": "root_delegated_by_user",
+   "usage": "MCP 未返回费用；未知。"
+  }
+ ]
+}
