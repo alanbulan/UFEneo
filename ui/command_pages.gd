@@ -58,20 +58,22 @@ static func category(entry: Dictionary) -> int:
 func set_match_fighters(fighters: Array) -> void:
 	match_fighters.clear()
 	for fighter in fighters:
-		match_fighters.append({"definition":fighter.definition,"form_id":fighter.form_id})
+		match_fighters.append({"definition":fighter.definition,"form_id":fighter.form_id,"base_id":fighter.base_definition.id})
 	match_choices.visible=match_fighters.size()==2
 	if match_choices.visible:select_match_player(0)
 
 func select_match_player(player: int) -> void:
 	if player<0 or player>=match_fighters.size():return
 	var selected: Dictionary=match_fighters[player]
-	set_fighter(selected.definition,str(selected.form_id))
+	set_fighter(selected.definition,str(selected.form_id),str(selected.get("base_id","")))
 	title.text="招式表 · %dP当前 · F2关闭"%[player+1]
 
-func set_fighter(data: UfeFighterDefinition, form_id: String="") -> void:
+func set_fighter(data: UfeFighterDefinition, form_id: String="", base_id: String="") -> void:
 	title.text="招式表 · F2关闭"
-	if UfeBattleFormCatalog.battle_playable(data.id) and not data.moves.has("battle_transform"):
-		data = UfeBattleFormCatalog.prepare(data.id,true).definition
+	# 形态定义以本人基础ID读切换表；招式与动画仍取当前形态自己的数据。
+	var registry_id: String=base_id if not base_id.is_empty() else data.id
+	if UfeBattleFormCatalog.battle_playable(registry_id) and not data.moves.has("battle_transform"):
+		data = UfeBattleFormCatalog.prepare(registry_id,true).definition
 	fighter_data=data;entries=data.command_table.duplicate(true)
 	# P按现有能量格数选择等级；表中的每个等级读取自己的数据，不用一级数值代表全部必杀。
 	for entry in data.command_table:
@@ -83,25 +85,38 @@ func set_fighter(data: UfeFighterDefinition, form_id: String="") -> void:
 		if data.moves.has("super_special3"):
 			var super_entry: Dictionary=entry.duplicate(true); super_entry.move="super_special3"; entries.append(super_entry)
 	clips=UfeContentDatabase.read_json("res://assets/fighters/%s/animations/manifest.json"%data.id).clips
+	var enabled_form: Dictionary=UfeBattleFormCatalog.registry().get(registry_id,{})
 	if data.moves.has("battle_transform"):
-		var form: Dictionary=UfeBattleFormCatalog.registry().get(data.id,{})
+		var form: Dictionary=enabled_form
 		var transform_clips: Dictionary=clips
-		if str(form.get("mode",""))=="definition":
+		if form.has("choices"):
+			# 多形态共用一段切换动作；预览取基础形态清单里的 form_switch。
+			transform_clips=clips
+		elif str(form.get("mode",""))=="definition":
 			transform_clips=UfeContentDatabase.read_json("res://assets/fighters/%s/animations/manifest.json"%str(form.target)).clips
 		clips.battle_transform=transform_clips.get(str(form.get("transform_animation","super_transform")),{})
 	fighter_choice.set_fighter(data.id,"","",form_id)
 	var notes: PackedStringArray=[]
-	var enabled_form: Dictionary=UfeBattleFormCatalog.registry().get(data.id,{})
-	for form in UfeFighterDisplay.battle_forms(data.id):
-		var identity:=UfeFighterDisplay.resolved_id(data.id,str(form.id))
-		var registered_identity:=UfeFighterDisplay.resolved_id(data.id,str(enabled_form.get("id","")))
+	for form in UfeFighterDisplay.battle_forms(registry_id):
+		var identity:=UfeFighterDisplay.resolved_id(registry_id,str(form.id))
 		var implemented: bool=bool(form.get("implemented",false))
-		if not enabled_form.is_empty():implemented=bool(enabled_form.get("enabled",false)) and identity==registered_identity
+		if enabled_form.has("choices"):
+			implemented=false
+			for raw in enabled_form.choices:
+				if str(raw.get("id",""))==str(form.id):
+					implemented=bool(raw.get("enabled",false)) and bool(raw.get("implemented",true))
+					break
+		elif not enabled_form.is_empty():
+			var registered_identity:=UfeFighterDisplay.resolved_id(registry_id,str(enabled_form.get("id","")))
+			implemented=bool(enabled_form.get("enabled",false)) and identity==registered_identity
 		var color:=UfeFighterDisplay.name_color(identity).to_html(false)
 		notes.append("[color=#"+color+"]"+str(form.name).replace("[","[lb]")+"[/color] · 战斗中切换"+("" if implemented else "（未实装）"))
 	if data.moves.has("battle_transform"):
-		var suffix: String="宇宙奇迹光线后恢复普通泰罗。" if data.id=="ultraman-taro" else "EX形态持续至本局结束。"
-		notes.append("形态键%s（手柄键位见设置，原↓↓+P）：满3格且生命≤一半，本局一次；演出无敌。"%UfeInputRouter.binding_label(0,"transform")+suffix)
+		if enabled_form.has("choices"):
+			notes.append("形态键%s（手柄键位见设置）：单按回标准形态，加方向切换其它已开放形态；不耗气、不限次数、切换中不无敌。"%UfeInputRouter.binding_label(0,"transform"))
+		else:
+			var suffix: String="宇宙奇迹光线后恢复普通泰罗。" if data.id=="ultraman-taro" else "EX形态持续至本局结束。"
+			notes.append("形态键%s（手柄键位见设置，原↓↓+P）：满3格且生命≤一半，本局一次；演出无敌。"%UfeInputRouter.binding_label(0,"transform")+suffix)
 	form_note.text="\n".join(notes);form_note.visible=not notes.is_empty()
 	show_page(page)
 func show_page(index: int) -> void:

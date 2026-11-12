@@ -279,7 +279,7 @@ func update_match(sim: UfeMatchDirector, message: String, intro: int, training: 
 			primary_display_id=f.definition.id
 			primary_display_form=f.form_id
 		portraits[i].set_fighter(f.definition.id,f.form_id)
-		transform_hints[i].visible=UfeBattleTransform.can_transform(f) and not sim.finished
+		transform_hints[i].visible=UfeBattleTransform.can_transform(f, "") and not sim.finished
 		health[i].update_value(float(f.stats.hp)/f.definition.max_health,1.0/60,sim.tick)
 		stamina[i].update_value(float(f.stats.stamina)/1000,1.0/60,sim.tick)
 		for j in range(3): energy[i][j].update_value((float(f.stats.energy)-j*1000)/1000,1.0/60,sim.tick)
