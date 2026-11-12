@@ -1,0 +1,608 @@
+[
+ {
+  "move": "light1",
+  "states": [
+   "idle",
+   "walk",
+   "charge",
+   "turn"
+  ],
+  "directions": [
+   4,
+   5,
+   6
+  ],
+  "buttons": 1,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·前手短直拳"
+ },
+ {
+  "move": "light2",
+  "states": [
+   "light1",
+   "dash_light"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 1,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·后手直拳"
+ },
+ {
+  "move": "light3",
+  "states": [
+   "light2"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 1,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·进身上勾拳"
+ },
+ {
+  "move": "heavy",
+  "states": [
+   "idle",
+   "walk",
+   "charge",
+   "turn"
+  ],
+  "directions": [
+   5
+  ],
+  "buttons": 2,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·踏步重拳"
+ },
+ {
+  "move": "launcher",
+  "states": [
+   "idle",
+   "walk",
+   "charge",
+   "turn"
+  ],
+  "directions": [
+   6
+  ],
+  "buttons": 2,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·升龙上勾拳"
+ },
+ {
+  "move": "spin_heavy",
+  "states": [
+   "idle",
+   "walk",
+   "charge",
+   "turn"
+  ],
+  "directions": [
+   4
+  ],
+  "buttons": 2,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·回身横扫肘"
+ },
+ {
+  "move": "crush",
+  "states": [
+   "idle",
+   "walk",
+   "charge",
+   "turn"
+  ],
+  "directions": [
+   4,
+   5
+  ],
+  "buttons": 64,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·双拳破甲砸击"
+ },
+ {
+  "move": "tackle",
+  "states": [
+   "idle",
+   "walk",
+   "charge",
+   "turn"
+  ],
+  "directions": [
+   6
+  ],
+  "buttons": 64,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·沉肩突进"
+ },
+ {
+  "move": "crouch_light",
+  "states": [
+   "crouch"
+  ],
+  "directions": [
+   1,
+   2,
+   3
+  ],
+  "buttons": 1,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·蹲姿下段直拳"
+ },
+ {
+  "move": "sweep",
+  "states": [
+   "crouch"
+  ],
+  "directions": [
+   1,
+   2,
+   3
+  ],
+  "buttons": 2,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·低扫脚跟"
+ },
+ {
+  "move": "slide",
+  "states": [
+   "crouch"
+  ],
+  "directions": [
+   1,
+   2,
+   3
+  ],
+  "buttons": 64,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·低身滑铲"
+ },
+ {
+  "move": "vertical_light",
+  "states": [
+   "vertical_air"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 1,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·垂直跳短拳"
+ },
+ {
+  "move": "vertical_heavy",
+  "states": [
+   "vertical_air"
+  ],
+  "directions": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "buttons": 2,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·垂直跳下砸拳"
+ },
+ {
+  "move": "diagonal_light",
+  "states": [
+   "diagonal_air"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 1,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·斜跳膝撞"
+ },
+ {
+  "move": "diagonal_heavy",
+  "states": [
+   "diagonal_air"
+  ],
+  "directions": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "buttons": 2,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·斜跳飞踢"
+ },
+ {
+  "move": "air_crush",
+  "states": [
+   "vertical_air",
+   "diagonal_air",
+   "chase_air",
+   "air_tech"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 64,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·空中双拳下砸"
+ },
+ {
+  "move": "dive",
+  "states": [
+   "vertical_air",
+   "diagonal_air",
+   "chase_air",
+   "air_tech"
+  ],
+  "directions": [
+   1,
+   2,
+   3
+  ],
+  "buttons": 2,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·俯冲脚跟踢"
+ },
+ {
+  "move": "chase_light1",
+  "states": [
+   "chase_air"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 1,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·追击前刺拳"
+ },
+ {
+  "move": "chase_light2",
+  "states": [
+   "chase_light1"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 1,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·追击横肘"
+ },
+ {
+  "move": "chase_end",
+  "states": [
+   "chase_light2",
+   "chase_air"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 2,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·追击双掌砸地"
+ },
+ {
+  "move": "sweep",
+  "states": [
+   "land"
+  ],
+  "directions": [
+   1,
+   2,
+   3
+  ],
+  "buttons": 2,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·弹地追击低扫"
+ },
+ {
+  "move": "crush",
+  "states": [
+   "land"
+  ],
+  "directions": [
+   5
+  ],
+  "buttons": 64,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·弹地追击双拳砸"
+ },
+ {
+  "move": "dash_light",
+  "states": [
+   "dash"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 1,
+  "priority": 40,
+  "motion": [],
+  "display_name": "强壮日冕·冲刺直拳"
+ },
+ {
+  "move": "dash_heavy",
+  "states": [
+   "dash"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 2,
+  "priority": 40,
+  "motion": [],
+  "display_name": "强壮日冕·冲刺飞踢"
+ },
+ {
+  "move": "dash_throw",
+  "states": [
+   "dash"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 4,
+  "priority": 40,
+  "motion": [],
+  "display_name": "强壮日冕·冲刺擒抱"
+ },
+ {
+  "move": "back_counter",
+  "states": [
+   "backstep"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 2,
+  "priority": 40,
+  "motion": [],
+  "display_name": "强壮日冕·后撤前蹬"
+ },
+ {
+  "move": "dodge_counter",
+  "states": [
+   "dodge"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 1,
+  "priority": 40,
+  "motion": [],
+  "display_name": "强壮日冕·闪避掌击"
+ },
+ {
+  "move": "wake_low",
+  "states": [
+   "wake"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 1,
+  "priority": 40,
+  "motion": [],
+  "display_name": "强壮日冕·起身低扫"
+ },
+ {
+  "move": "wake_mid",
+  "states": [
+   "wake"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 2,
+  "priority": 40,
+  "motion": [],
+  "display_name": "强壮日冕·起身中段踢"
+ },
+ {
+  "move": "guard_counter",
+  "states": [
+   "guard",
+   "blockstun"
+  ],
+  "directions": [
+   6
+  ],
+  "buttons": 2,
+  "priority": 40,
+  "motion": [],
+  "display_name": "强壮日冕·格挡推肘"
+ },
+ {
+  "move": "throw_forward",
+  "states": [
+   "idle",
+   "walk",
+   "charge",
+   "turn"
+  ],
+  "directions": [
+   5,
+   6
+  ],
+  "buttons": 4,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·前投·扣臂过肩摔"
+ },
+ {
+  "move": "throw_back",
+  "states": [
+   "idle",
+   "walk",
+   "charge",
+   "turn"
+  ],
+  "directions": [
+   4
+  ],
+  "buttons": 4,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·后投·抱腰回身摔"
+ },
+ {
+  "move": "air_throw",
+  "states": [
+   "vertical_air",
+   "diagonal_air",
+   "chase_air",
+   "air_tech"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 4,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·空投·空中揽肩翻摔"
+ },
+ {
+  "move": "low_pulse",
+  "states": [
+   "crouch"
+  ],
+  "directions": [
+   1,
+   2,
+   3
+  ],
+  "buttons": 128,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·低姿光弹"
+ },
+ {
+  "move": "air_pulse",
+  "states": [
+   "vertical_air",
+   "diagonal_air",
+   "chase_air",
+   "air_tech"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 128,
+  "priority": 10,
+  "motion": [],
+  "display_name": "强壮日冕·空中斜下光弹"
+ },
+ {
+  "move": "burst",
+  "states": [
+   "hit",
+   "launch",
+   "blockstun"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 24,
+  "priority": 40,
+  "motion": [],
+  "display_name": "强壮日冕·爆气脱离"
+ },
+ {
+  "move": "special",
+  "states": [
+   "idle",
+   "walk",
+   "charge",
+   "turn",
+   "crouch",
+   "light1",
+   "heavy"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 32,
+  "priority": 100,
+  "motion": [],
+  "display_name": "强壮日冕·能量终结（按能量格切换集束射线/艾梅利姆切割/赛罗头镖）"
+ },
+ {
+  "move": "special",
+  "states": [
+   "idle",
+   "walk",
+   "charge",
+   "turn",
+   "crouch",
+   "light1",
+   "heavy"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 3,
+  "priority": 100,
+  "motion": [],
+  "display_name": "强壮日冕·能量终结（按能量格切换集束射线/艾梅利姆切割/赛罗头镖）"
+ },
+ {
+  "move": "air_special",
+  "states": [
+   "vertical_air",
+   "diagonal_air",
+   "chase_air",
+   "air_tech"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 32,
+  "priority": 100,
+  "motion": [],
+  "display_name": "强壮日冕·空中集束射线（游戏改编）"
+ },
+ {
+  "key": "taunt",
+  "move": "taunt",
+  "display_name": "强壮日冕·挑衅（防御+投技）",
+  "states": [
+   "idle",
+   "walk",
+   "guard",
+   "turn"
+  ],
+  "directions": [
+   0
+  ],
+  "buttons": 12,
+  "priority": 90,
+  "motion": []
+ }
+]
