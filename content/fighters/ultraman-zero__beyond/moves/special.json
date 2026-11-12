@@ -21,7 +21,7 @@
  "super_level": 1,
  "air_allowed": false,
  "feedback": {
-  "spark": "pending_beyond_wide_hit",
+  "spark": "zero_beyond_fx_wide_hit",
   "block_spark": "impact_guard",
   "hitstop": 10,
   "blockstop": 5,
@@ -45,7 +45,7 @@
   "block": "guard"
  },
  "data_source": "伤害/消耗/硬直沿用已装机同体型必杀规则；发射根点取 special-11 手部中心，命中与光束为赛罗专属 PixelFX 自绘段。 本形态（超限赛罗）沿用基础赛罗 2026-11-12 已审的 47 招数据：帧数、起手/持续/收招、伤害、能量与命中 tick 均不改；人物帧待本形态用同一待机锚重产，受击框按新帧重算。",
- "production_note": "超限赛罗形态：招式数据与基础赛罗同口径；动作帧与特效待产，特效 id 统一为 pending_beyond_*，不使用基础赛罗的已装特效 id。",
+ "production_note": "超限赛罗形态：招式数据与基础赛罗同口径；动作帧与特效待产，特效 id 统一为 zero_beyond_fx_*，不使用基础赛罗的已装特效 id。",
  "frames": [
   {
    "sprite": 0,
@@ -758,7 +758,7 @@
    "cancel": [],
    "shots": [
     {
-     "effect": "pending_beyond_wide_beam",
+     "effect": "zero_beyond_fx_wide_beam",
      "spawn": [
       18,
       138
@@ -2155,5 +2155,5 @@
   }
  ],
  "manual_projectiles": true,
- "adaptation": "游戏改编的赛罗集束射线（Wide Zero Shot）：双臂前伸聚能后发射宽幅青蓝光束；人物帧不含光束，束体由运行时 pending_beyond_wide_beam 承载。"
+ "adaptation": "游戏改编的赛罗集束射线（Wide Zero Shot）：双臂前伸聚能后发射宽幅青蓝光束；人物帧不含光束，束体由运行时 zero_beyond_fx_wide_beam 承载。"
 }

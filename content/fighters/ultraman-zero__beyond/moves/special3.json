@@ -21,7 +21,7 @@
  "super_level": 3,
  "air_allowed": false,
  "feedback": {
-  "spark": "pending_beyond_slugger_hit",
+  "spark": "zero_beyond_fx_slugger_hit",
   "block_spark": "impact_guard",
   "hitstop": 10,
   "blockstop": 5,
@@ -40,7 +40,7 @@
    1
   ],
   "projectile_impacts": {
-   "pending_beyond_slugger_flight": "pending_beyond_slugger_hit"
+   "zero_beyond_fx_slugger_flight": "zero_beyond_fx_slugger_hit"
   }
  },
  "audio": {
@@ -48,7 +48,7 @@
   "block": "guard"
  },
  "data_source": "伤害/消耗/硬直沿用已装机同体型必杀规则；双镖发射点按 special3-8 双手位置分别量取，飞行与回收为赛罗专属 PixelFX 自绘段。 本形态（超限赛罗）沿用基础赛罗 2026-11-12 已审的 47 招数据：帧数、起手/持续/收招、伤害、能量与命中 tick 均不改；人物帧待本形态用同一待机锚重产，受击框按新帧重算。",
- "production_note": "超限赛罗形态：招式数据与基础赛罗同口径；动作帧与特效待产，特效 id 统一为 pending_beyond_*，不使用基础赛罗的已装特效 id。",
+ "production_note": "超限赛罗形态：招式数据与基础赛罗同口径；动作帧与特效待产，特效 id 统一为 zero_beyond_fx_*，不使用基础赛罗的已装特效 id。",
  "frames": [
   {
    "sprite": 0,
@@ -991,7 +991,7 @@
    "cancel": [],
    "shots": [
     {
-     "effect": "pending_beyond_slugger_flight",
+     "effect": "zero_beyond_fx_slugger_flight",
      "spawn": [
       59,
       132
@@ -1406,14 +1406,14 @@
        118
       ]
      },
-     "return_effect": "pending_beyond_slugger_catch",
+     "return_effect": "zero_beyond_fx_slugger_catch",
      "return_sound": "slugger_catch",
      "max_hits": 2,
      "hit_interval": 20,
-     "trail_effect": "pending_beyond_slugger_trail"
+     "trail_effect": "zero_beyond_fx_slugger_trail"
     },
     {
-     "effect": "pending_beyond_slugger_flight",
+     "effect": "zero_beyond_fx_slugger_flight",
      "spawn": [
       33,
       133
@@ -1828,11 +1828,11 @@
        120
       ]
      },
-     "return_effect": "pending_beyond_slugger_catch",
+     "return_effect": "zero_beyond_fx_slugger_catch",
      "return_sound": "slugger_catch",
      "max_hits": 2,
      "hit_interval": 20,
-     "trail_effect": "pending_beyond_slugger_trail"
+     "trail_effect": "zero_beyond_fx_slugger_trail"
     }
    ],
    "cinematic_stage": "beam",
