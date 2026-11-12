@@ -1,0 +1,60 @@
+extends SceneTree
+## 招式/反馈/蓄气引用的effect id必须在运行时特效表有条目。
+## presentation查不到时会静默跳过，弹体与蓄气整段不可见而逻辑测试仍通过，故单列此门。
+var failures: Array[String] = []
+var fighters := ["zoffy", "mother-of-ultra", "ultraman-gaia", "father-of-ultra", "ultraman-king", "ultraman-zero", "ultraman-justice"]
+var effects: Dictionary = {}
+
+func _initialize() -> void:
+	call_deferred("run")
+
+func check(ok: bool, label: String) -> void:
+	if not ok:
+		failures.append(label)
+		printerr("FAIL " + label)
+
+func _add(value: Variant, ids: Dictionary) -> void:
+	if value is String and not str(value).is_empty(): ids[str(value)] = true
+
+func _scan_shot(shot: Variant, ids: Dictionary) -> void:
+	if not shot is Dictionary: return
+	for key in ["effect", "return_effect", "trail_effect"]:
+		_add(shot.get(key, ""), ids)
+
+func _scan_move(move: Dictionary, ids: Dictionary) -> void:
+	_scan_shot(move.get("projectile", {}), ids)
+	for frame in move.get("frames", []):
+		for shot in frame.get("shots", []): _scan_shot(shot, ids)
+		_scan_shot(frame.get("counter_shot", {}), ids)
+	var feedback: Dictionary = move.get("feedback", {})
+	for key in ["spark", "block_spark"]:
+		_add(feedback.get(key, ""), ids)
+	var impacts: Variant = feedback.get("projectile_impacts", {})
+	if impacts is Dictionary:
+		for key in impacts:
+			_add(key, ids)
+			_add(impacts[key], ids)
+
+func run() -> void:
+	effects = UfeContentDatabase.read_json("res://content/presentation/phase3_projectiles.json")
+	# 已实装形态各自有独立招式表，与本体同口径核对。
+	for row in UfeContentDatabase.read_json("res://content/roster/selection.json").entries:
+		for form in row.get("forms", []):
+			if not bool(form.get("implemented", false)) or str(form.get("id", "")) in fighters: continue
+			if FileAccess.file_exists("res://content/fighters/%s/definition.json" % str(form.id)):
+				fighters.append(str(form.id))
+	for id in fighters:
+		var definition := UfeContentDatabase.fighter(id, true)
+		var ids: Dictionary = {}
+		for move_id in definition.moves:
+			_scan_move(definition.moves[move_id], ids)
+		for move_id in ids:
+			check(effects.has(move_id), "%s/%s 特效已登记" % [id, move_id])
+	var placements: Dictionary = UfeContentDatabase.read_json("res://content/presentation/charge_overlay_policy.json").get("placements", {})
+	for id in placements:
+		for state in placements[id]:
+			var effect := str(placements[id][state].get("effect", ""))
+			if not effect.is_empty():
+				check(effects.has(effect), "%s/%s Q蓄气特效已登记" % [id, effect])
+	print("EFFECT_REGISTRATION " + ("PASS" if failures.is_empty() else str(failures)))
+	quit(0 if failures.is_empty() else 1)

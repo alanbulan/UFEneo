@@ -15,7 +15,7 @@ CASES = [
     "capture_receiver_availability", "ko_finish_presentation", "transform_mechanism",
     "phase3_standing", "phase3_air", "phase3_reaction", "phase3_zetton",
     "phase3_zetton_air", "phase3_zetton_defense", "phase3_throws",
-    "phase3_specials", "phase3_supers", "phase3_fx_audio", "codex_impact_feedback_policy",
+    "phase3_specials", "phase3_supers", "phase3_fx_audio", "effect_registration", "codex_impact_feedback_policy",
     "catalogue_identity_display", "computer_ai", "training_tape", "training_lifecycle", "replay_match_loading", "training_input_audit", "pixel_ui", "pixel_pages", "ui_facing",
     "main_shutdown_menu_exit", "main_shutdown_reentrancy", "audio_playback",
     "catalogue_assets", "catalogue_animation", "roster_data_integrity",
