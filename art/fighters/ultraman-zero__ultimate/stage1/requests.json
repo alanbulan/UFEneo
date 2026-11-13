@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "id": "ultraman-zero__ultimate",
+  "policy": {
+    "model": "codex/gpt-image-2",
+    "quality": "high",
+    "background": "transparent",
+    "requested_size": "1024x1536",
+    "source_kind": "figure_photo",
+    "references": {
+      "side": "art/fighters/ultraman-zero__ultimate/sources/side-right-90-figuarts-review.jpg",
+      "stance_style": "art/fighters/ultraman-zero/stage1/idle/frames/identity-idle-pixel.png（只借格斗站姿与画风，不抄无甲造型）"
+    },
+    "direction_spec": "tools/rebuild/ultraman-zero__ultimate/README.md 的 2026-11-12 朝向规格"
+  },
+  "attempts": [
+    {
+      "id": "idle-photo-raw-01",
+      "stage": "idle_photo",
+      "status": "rejected",
+      "created": "2026-11-12",
+      "requested_size": "1024x1536",
+      "actual_size": [1484, 1060],
+      "mode": "RGBA",
+      "alpha": [0, 255],
+      "alpha_unique": 256,
+      "sha256": "9992adddbf3e60432952985f4802b812caa07ec653b1565453898bb4cc6dfb35",
+      "path": "art/fighters/ultraman-zero__ultimate/stage1/idle/references/idle-photo-raw-01.png",
+      "reject_reasons": [
+        "肩后右背刃刃尖触到画面上缘（alpha≥200 bbox top=1），未做到完整不裁切",
+        "前脚鞋底 y≈980、后脚鞋底 y≈1036，两脚不在同一地面线，前脚悬空约 5% 站高",
+        "右前臂长刃缩成横在胸前的短板，未沿前臂朝前下方伸出",
+        "站距 747/923≈0.81，超过 0.65–0.80 门限；后腿近直，未做到前后脚都屈膝",
+        "肩甲主翼被画成圆润肩垫，缺少官方侧视的高大三角尖翼与后下尖角"
+      ]
+    },
+    {
+      "id": "idle-photo-raw-02",
+      "stage": "idle_photo",
+      "status": "rejected",
+      "created": "2026-11-12",
+      "requested_size": "1024x1536",
+      "actual_size": [1199, 1312],
+      "mode": "RGBA",
+      "alpha": [0, 255],
+      "alpha_unique": 256,
+      "sha256": "c226b44069a55f3c7efdc97a0f83a15d5f537dd407270f4fd3f9056ccd8562bf",
+      "path": "art/fighters/ultraman-zero__ultimate/stage1/idle/references/idle-photo-raw-02.png",
+      "measurements": {
+        "alpha200_bbox": [179, 12, 969, 1267],
+        "foot_outer_span_px": 767,
+        "back_foot_bottom_y": 1268,
+        "front_foot_bottom_y": 1265,
+        "ground_diff_px": 3,
+        "head_top_in_eye_band_y": 184,
+        "standing_height_px": 1084,
+        "stance_ratio": 0.7076,
+        "eye_center": [648, 312]
+      },
+      "reject_reasons": [
+        "纯侧视失败：肩后两片薄刃并排画成两片、两枚蓝宝石同时完整可见（x≈367–440 与 440–540），远侧刃没有被近侧刃遮住；真正 90° 侧视应沿视线前后重叠，只见近侧一片。",
+        "背刃过高过大：最高刃尖 y≈12，高出头顶 172 px，占站高 15.9%；侧视来源只有约 9.6%，且刃身应窄。",
+        "近侧拳被星形护手与长刃遮住，不能清楚辨认；头与远侧拳可见。",
+        "站距 767/1084≈0.708、两脚地面差 3 px、双拳高度与整体造型可过；仅上述背刃与近手问题退回。"
+      ]
+    },
+    {
+      "id": "idle-photo-raw-03",
+      "stage": "idle_photo",
+      "status": "accepted",
+      "created": "2026-11-12",
+      "requested_size": "1024x1536",
+      "actual_size": [1312, 1199],
+      "mode": "RGBA",
+      "alpha": [0, 255],
+      "alpha_unique": 256,
+      "sha256": "fff4a53cfbe215a11b6429506e591898e1e31f0bb8f04ca5c922f08d359f83a2",
+      "path": "art/fighters/ultraman-zero__ultimate/stage1/idle/references/idle-photo-raw-03.png",
+      "prompt": "纯 90° 右侧视全身格斗待机，朝右。究极赛罗：额前小尖角朝前上，近侧头镖贴头壳后掠，远侧被遮；肩甲主翼高大三角，翼尖在眼后、头顶下，前缘斜到胸前。肩后双薄刃沿视线重叠，只见近侧窄刃，远侧全遮，不得并排或露双宝石，刃尖高出头顶不超站高一成。胸前银甲蓝灯可见；右前臂长刃沿臂朝前下伸，星形护手在腕，拳露出。两脚前后开，脚外缘间距为站高 0.72，双膝屈沉，双拳胸前护架且清楚可见。人物完整不裁，四边留白；无光束光晕颗粒、无地面文字边框；透明背景。四肢粗细同参考；银甲、红蓝银身、黄眼、绿额灯、蓝宝、红靴。",
+      "references": [
+        "art/fighters/ultraman-zero__ultimate/sources/side-right-90-figuarts-review.jpg",
+        "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-zero/stage1/idle/frames/identity-idle-pixel.png"
+      ],
+      "measurements": {
+        "alpha200_bbox": [306, 96, 979, 1093],
+        "alpha16_bbox": [304, 94, 980, 1094],
+        "foot_outer_span_px": 675,
+        "back_foot_bottom_y": 1094,
+        "front_foot_bottom_y": 1087,
+        "ground_diff_px": 7,
+        "head_top_in_eye_band_y": 208,
+        "standing_height_px": 886,
+        "stance_ratio": 0.7619,
+        "eye_center": [692, 324],
+        "back_blade_tip": [518, 95],
+        "back_blade_above_head_px": 113,
+        "back_blade_above_head_ratio": 0.1275,
+        "alpha_component_count": 1,
+        "alpha_component_px": 190711,
+        "fixed_landmarks": "近侧背刃单刃可见、远侧被遮；肩甲主翼三角、翼尖在眼后头顶下；胸甲蓝灯可见；右前臂刃朝前下、星形护手在腕、双拳可见；两脚屈膝，站距 0.762。"
+      },
+      "acceptance": "照片门通过：纯右侧视 90°、全身不裁切、无 FX/地面/文字/边框；站距 675/886≈0.762（0.65–0.80）；两脚鞋底差 7 px（0.8% 站高）、双膝屈沉；双拳清楚可见；背刃单刃薄片、远侧被遮；主翼、胸甲、前臂刃朝向与安装位置符合规格。局部偏差登记：背刃尖高出头顶 12.75%（来源约 9.6%）、前脚比后脚高 0.8% 站高、头冠后掠略长；在像素锚原生格再核，若原生格明显失真再退回。",
+      "signed": "root_delegated_by_user 2026-11-12"
+    }
+  ]
+}
