@@ -1,0 +1,3873 @@
+{
+  "fighter": "ultraman-gaia",
+  "scope": "plan_only",
+  "tick_hz": 60,
+  "replay": "InputFrame",
+  "source_files": {
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/air_crush.json": "ff23d7e8554d46403f6ff76c01ec4297d58b6395370e2eb23361d482bfcc1799",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/air_pulse.json": "9434ecd12570682a8f8429e27fa0664528e08b0b0e7947108dbe97f48860cd18",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/air_special.json": "67f268184d2331d7f75ade80fcb353f881eeb485198ab4191079f1c631fb4a5a",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/air_throw.json": "fb9db541a8618fddd841144274a2ceabcb5f2c5f169dbd588dd1d1b08adeec2b",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/back_counter.json": "7c4cb9bac74ed4fe7aec75cd45e875fb168c0d344a87456c73e9e8cd18c8193e",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/burst.json": "94650b264dc21367ff1ffef0621d149da2cd00d2ba0120c8be30f5e1ddccc047",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/chase_end.json": "2725ecfc95374785dc44f6b3d437a7feaf091995eaa4de2615ec8d5793627b36",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/chase_light1.json": "c7ab2973550abaf3e390f5e17f326136e1b5a66d94186964a53d242e07338bf7",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/chase_light2.json": "acbcb0c035a795d2bb9cd3ddfa3f812faa029d1d97996108496f295b51598bf1",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/crouch_light.json": "2dd9fb0f70a83bc319ec6a9585d0204b4c4025e632697f8fc36b9101a1fa2ea2",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/crouch_light2.json": "ec4a85162e2057f4de0daf69e81437ee95fab5f777b26b14c1b9f708f2bcc9b8",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/crush.json": "40962a1b1fe64d42d4165639ce8e78d6534b62506bb045a99c91c3eca80261f8",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/dash_heavy.json": "ec6384521fa3e853059ed01e4877ddf22028d10114dce024faca30c9aef1d540",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/dash_light.json": "fcd3e52f3caf7a479869320914f1533aeb735ad0dbabe40317ab383507417a17",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/dash_throw.json": "4fc03d3f414337daa33607da77706e6751b87f66bde2f9d70f3350871277fa82",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/diagonal_heavy.json": "dc29231f8ba19302e1ccf6c480b302cd96f8d674875d47c035a52a4bfaa22666",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/diagonal_light.json": "325cc24ee02a2a8fcce2d707c18a036bb06c3b1b87d04eb5ad1b8d57c8911657",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/dive.json": "8855c69a450f0d540d3fb0ad58fd8a7790a487280b4bbb56e571ba0801f6c6f1",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/dodge_counter.json": "6b471c08576c9748147ec4d141212f2dc020ae1361e3e71d48fa0c21e796ddf8",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/guard_counter.json": "9a8fb88e87eddde8498e63d0b6a5e06b9bfb90f48e1210b2249ff893ab60e4a0",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/heavy.json": "d17d558168115a740d8707b4a933cbb98e4c5ea076ecf7f08e8bbae62b1c3fda",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/launcher.json": "1fe2b54a78d1c773e7160555f7226cce9324c0202008916d599341c7c7ffee37",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/light1.json": "d60d18d5d4102d42878d17591a4df22bffb6ce995cce7f38e30d571dda118fc8",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/light2.json": "486aa8124f9d5976eddd48c6ba1fb99a5ad78be7d6ba88d9a59a505455308f8c",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/light3.json": "6130c12a9d70b02f1145a9681b200cad28389f664796fa01b41b1416aca2d5d2",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/low_pulse.json": "e75c1a17408db2887c3994182e483921904575cadf8cfd4d18a30539569e391e",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/motion_214.json": "fe3152d53b6a63b384b9d889809b9a2fa83fd91fe0edb1bc536b208bd02f5113",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/motion_22.json": "9b1e2d1b686b17f811b356457fa9807c9f3f19b113d6be07883df237cc8084eb",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/motion_236.json": "1719fad0dc24c6e61de56730d7496dcf81aa975cade136bbf3096bdf3d65c3e9",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/motion_41236.json": "bbeff74a4ae097074f27a1bd3ec2e0f776f1e127598aa1f5b72edd173e28841d",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/motion_623.json": "197353ddbaeeb5e60a9fcdf657524f48571ef39ca6d320bdd794f6e0e369e2c4",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/pulse.json": "df645bfcf1f106655f2839142689da0cb1e7087dd90c6250b6e223d87d041434",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/ranged_forward.json": "d75dd02e8a68af62785fb6fe696c406757a24ca621c04b56d562ac637563584d",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/slide.json": "bd6008b7d017de5140a7032355a1952baa8efac04fd63a51116436f959c18d70",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/special.json": "5d9307a4e7891bca484dca8154dc99c8a8551df867dd9c5b19b449c9a8e29ff4",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/special2.json": "cc47893bf420eea5b8cc2f0119a003cf4b9308494fbc5cbb920d6f72770e1f76",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/special3.json": "a821feb216d7a42a6ad8c4c25535d687c912ea50ed55bc7ca5b2e2bfae81b022",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/spin_heavy.json": "f029ac8bab25553ddb152989e89e83380e31e491aa1efaf50ac0648b6817bf09",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/sweep.json": "3f8b7260bae571e38a85db6fc9b40faf92144eb5e50098ee5093b42ace4ad2eb",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/tackle.json": "212d313e56c0842419cc21f91ae5b2488406232e2e8738daa6eb90068c5d15bc",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/taunt.json": "fbe223fb33934e254b34c140cccb1faf228145718725914bbc2f57a0201deb34",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/throw_back.json": "61ddf7553693de935fa9080d9538eb34ef022a2b5c4c874a65b544e9388948ed",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/throw_forward.json": "7dcf7b07fb5d2b09776e0850a4e668beed040551b20ca384473d2c89635e0a28",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/vertical_heavy.json": "0042e8292cd7cceaae6137176b72e7f5a9acbeba2c80fd0bb50b32e34459506b",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/vertical_light.json": "db6250bb59ea0864aca723dc6688f667436cf3e31840b251d2f073589a2e3896",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/wake_low.json": "d7f28880f336fabd61a8cce170e3fa37f9aa42784ed00f6f1cc2d98a9f9b3e15",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/moves/wake_mid.json": "613398674524d3088c6b1a8baa4aeb8e774bec8f0cb1215ce33f057d64f2d1d2",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/state_frames.json": "0db613fc677c2b29f3d54ba694f85801e98ee91bd8bb70f115f06b5fb095aadc",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/definition.json": "b6182a456a0f72033fac6a8b073a81d61ce437adf97a9872e4706958d57621f1",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/presentation/phase3_projectiles.json": "8ddce6876986cb1177ecb3d4608ede0ed2cee0c3122926cad6b34f00d7f030f2",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/presentation/charge_overlay_policy.json": "e466bed4dc536cf603d47e3d1ec74a0c4d41f37351a1411f5114ae8ad3b75c02",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/tools/rebuild/shared/q_charge_registry.py": "acc29fe416227c346f9305e0a6470990ba35a23236a48437e2f2a287926825f1",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-gaia/stage1/rework-20261112/asset_baseline.json": "c948fb8eafb00d29b59a867ed0ba18224c1003dc26a86f0cdcf181b11f4368b9",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-gaia/stage1/rework-20261112/clip_diagnosis.json": "bfc882398fc7d30b8b2800519e3a093c7bc2e013c1899720c26a63ba7d3f79a9",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-gaia/MOVES.md": "9edb839575d0e73f92ddb715d6f559e805472297ac9f1dd9b1be5dc28a3b6ccd"
+  },
+  "manual_basis_table": [
+    {
+      "body_part": "掌",
+      "basis": "按当帧本人实际掌心/拳面，朝右与朝左分别核，双向原生误差 ≤2 px；不悬空、不穿体"
+    },
+    {
+      "body_part": "角",
+      "basis": "按当帧角尖/头镖刃根，先判朝向再核前后"
+    },
+    {
+      "body_part": "胸灯",
+      "basis": "按当帧计时器/胸灯中心"
+    },
+    {
+      "body_part": "额灯",
+      "basis": "按当帧额灯/光束发出部位"
+    }
+  ],
+  "emission_entries": [
+    {
+      "move": "air_pulse",
+      "tick": 14,
+      "source_sprite": 3,
+      "field": "shots[0].spawn",
+      "effect_id": "pulse",
+      "clip": "air_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_pulse.json 的运行时发射字段；空中斜下掌推，按当帧斜下前伸掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "air_pulse",
+      "tick": 14,
+      "source_sprite": 3,
+      "field": "shots[0].anchor",
+      "effect_id": "pulse",
+      "clip": "air_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_pulse.json 的运行时发射字段；空中斜下掌推，按当帧斜下前伸掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "air_special",
+      "tick": 10,
+      "source_sprite": 4,
+      "field": "shots[0].spawn",
+      "effect_id": "beam_loop",
+      "clip": "air_special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_special.json 的运行时发射字段；空中前下短束，按当帧前伸掌/手臂前缘",
+      "current_cell": [
+        288,
+        288
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "air_special",
+      "tick": 10,
+      "source_sprite": 4,
+      "field": "shots[0].anchor",
+      "effect_id": "beam_loop",
+      "clip": "air_special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_special.json 的运行时发射字段；空中前下短束，按当帧前伸掌/手臂前缘",
+      "current_cell": [
+        288,
+        288
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "low_pulse",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "shots[0].spawn",
+      "effect_id": "pulse",
+      "clip": "low_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/low_pulse.json 的运行时发射字段；蹲姿低位掌推，按当帧低位掌/拳面",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "low_pulse",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "shots[0].anchor",
+      "effect_id": "pulse",
+      "clip": "low_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/low_pulse.json 的运行时发射字段；蹲姿低位掌推，按当帧低位掌/拳面",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 4,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_slash_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：盖亚切割由右臂发出单枚光刃；蓄力挂件 gaia_fx_slash_charge_start 为右臂弧光渐亮",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 5,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_slash_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：盖亚切割由右臂发出单枚光刃；蓄力挂件 gaia_fx_slash_charge_start 为右臂弧光渐亮",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 6,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_slash_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：盖亚切割由右臂发出单枚光刃；蓄力挂件 gaia_fx_slash_charge_start 为右臂弧光渐亮",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 7,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_slash_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：盖亚切割由右臂发出单枚光刃；蓄力挂件 gaia_fx_slash_charge_start 为右臂弧光渐亮",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 8,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_slash_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：盖亚切割由右臂发出单枚光刃；蓄力挂件 gaia_fx_slash_charge_start 为右臂弧光渐亮",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 9,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_slash_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：盖亚切割由右臂发出单枚光刃；蓄力挂件 gaia_fx_slash_charge_start 为右臂弧光渐亮",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 10,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_slash_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：盖亚切割由右臂发出单枚光刃；蓄力挂件 gaia_fx_slash_charge_start 为右臂弧光渐亮",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 11,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_slash_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：盖亚切割由右臂发出单枚光刃；蓄力挂件 gaia_fx_slash_charge_start 为右臂弧光渐亮",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 12,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_slash_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：盖亚切割由右臂发出单枚光刃；蓄力挂件 gaia_fx_slash_charge_start 为右臂弧光渐亮",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 13,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_slash_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：盖亚切割由右臂发出单枚光刃；蓄力挂件 gaia_fx_slash_charge_start 为右臂弧光渐亮",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "shots[0].spawn",
+      "effect_id": "gaia_fx_slash_flight",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：盖亚切割由右臂发出单枚光刃；蓄力挂件 gaia_fx_slash_charge_start 为右臂弧光渐亮",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_22",
+      "tick": 22,
+      "source_sprite": 4,
+      "field": "shots[0].spawn",
+      "effect_id": "special_barrier",
+      "clip": "motion_22",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_22.json data_source：双臂前推的圆形屏障",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_22",
+      "tick": 22,
+      "source_sprite": 4,
+      "field": "shots[0].anchor",
+      "effect_id": "special_barrier",
+      "clip": "motion_22",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_22.json data_source：双臂前推的圆形屏障",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_236",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "shots[0].spawn",
+      "effect_id": "gaia_fx_palm_ray_flight",
+      "clip": "motion_236",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_236.json 的运行时发射字段；双掌连推，按当帧前推掌心/拳面",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_623",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "shots[0].spawn",
+      "effect_id": "gaia_fx_palm_ray_flight",
+      "clip": "motion_623",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_623.json 的运行时发射字段；升掌/升膝迎击，按当帧上冲掌心/拳面",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "pulse",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "shots[0].spawn",
+      "effect_id": "pulse",
+      "clip": "pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/pulse.json 的运行时发射字段；掌根/掌心前推，投射类只核手部动作与运行时发射层",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "pulse",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "shots[0].anchor",
+      "effect_id": "pulse",
+      "clip": "pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/pulse.json 的运行时发射字段；掌根/掌心前推，投射类只核手部动作与运行时发射层",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "ranged_forward",
+      "tick": 18,
+      "source_sprite": 4,
+      "field": "shots[0].spawn",
+      "effect_id": "special_spiral",
+      "clip": "ranged_forward",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/ranged_forward.json data_source：清算者由双手聚成红色光球投射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "ranged_forward",
+      "tick": 18,
+      "source_sprite": 4,
+      "field": "shots[0].anchor",
+      "effect_id": "special_spiral",
+      "clip": "ranged_forward",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/ranged_forward.json data_source：清算者由双手聚成红色光球投射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 1,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 2,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 3,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 4,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 5,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 6,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 7,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 8,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 9,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 10,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 11,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 12,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 13,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 15,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 17,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 18,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 19,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 20,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 21,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 22,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 23,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_edge_charge_start",
+      "clip": "special",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special.json data_source：光子冰刀头部聚能成光刃、由头部发射；挂件 gaia_fx_edge_charge_start 为头部聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 1,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 2,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 3,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 4,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 5,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 6,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 7,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 8,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 9,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 10,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 11,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 12,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 13,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 15,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 17,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 18,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 19,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 20,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 21,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 22,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 23,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 24,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 25,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 26,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 27,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 28,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 29,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 30,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 31,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 32,
+      "source_sprite": 6,
+      "field": "shots[0].spawn",
+      "effect_id": "gaia_fx_stream_beam",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 32,
+      "source_sprite": 6,
+      "field": "shots[0].anchor",
+      "effect_id": "gaia_fx_stream_beam",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 32,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 33,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 34,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 35,
+      "source_sprite": 7,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 36,
+      "source_sprite": 7,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_stream_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：量子流线交叉左右手臂后由手臂 T 字转 L 字发射；挂件 gaia_fx_stream_charge_start 为交叉臂聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 1,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 2,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 3,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 4,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 5,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 6,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 7,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 8,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 9,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 10,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 11,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 12,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 13,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 15,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 16,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 17,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 18,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 19,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 20,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 21,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 22,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 23,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 24,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 25,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 26,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 27,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 28,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 29,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 30,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 31,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 5,
+      "field": "shots[0].spawn",
+      "effect_id": "gaia_fx_crusher_beam",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 5,
+      "field": "shots[0].anchor",
+      "effect_id": "gaia_fx_crusher_beam",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 33,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 34,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 35,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 36,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 37,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 38,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 39,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 40,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 41,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 42,
+      "source_sprite": 7,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 43,
+      "source_sprite": 7,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 44,
+      "source_sprite": 7,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 45,
+      "source_sprite": 7,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 46,
+      "source_sprite": 7,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 47,
+      "source_sprite": 7,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 48,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 49,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 50,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "gaia_fx_crusher_charge_start",
+      "clip": "special3",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：moves/special3.json data_source：光子粉碎机 V2 头部必杀光线；挂件 gaia_fx_crusher_charge_start 为三段头部蓄能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_start",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "charge_overlay_policy.placements.ultraman-gaia.charge_start.anchor",
+      "effect_id": "ultraman_gaia_fx_q_charge_start",
+      "clip": "charge_start",
+      "body_part": "其它（Q 周身蓄气圈身体构图锚点，按真实 Q 起势/保持/收势核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 周身蓄气圈身体构图锚点）+ 按真实 Q 起势/保持/收势与当帧身体构图核；依据：content/presentation/charge_overlay_policy.json 三态 placement 与 tools/rebuild/shared/q_charge_registry.py 口径",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_start",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_start",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-gaia/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_start",
+      "tick": 1,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_start",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-gaia/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_start",
+      "tick": 2,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_start",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-gaia/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "charge_overlay_policy.placements.ultraman-gaia.charge.anchor",
+      "effect_id": "ultraman_gaia_fx_q_charge",
+      "clip": "charge",
+      "body_part": "其它（Q 周身蓄气圈身体构图锚点，按真实 Q 起势/保持/收势核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 周身蓄气圈身体构图锚点）+ 按真实 Q 起势/保持/收势与当帧身体构图核；依据：content/presentation/charge_overlay_policy.json 三态 placement 与 tools/rebuild/shared/q_charge_registry.py 口径",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-gaia/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 1,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-gaia/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 2,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-gaia/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 3,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-gaia/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_stop",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "charge_overlay_policy.placements.ultraman-gaia.charge_stop.anchor",
+      "effect_id": "ultraman_gaia_fx_q_charge_stop",
+      "clip": "charge_stop",
+      "body_part": "其它（Q 周身蓄气圈身体构图锚点，按真实 Q 起势/保持/收势核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 周身蓄气圈身体构图锚点）+ 按真实 Q 起势/保持/收势与当帧身体构图核；依据：content/presentation/charge_overlay_policy.json 三态 placement 与 tools/rebuild/shared/q_charge_registry.py 口径",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_stop",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_stop",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-gaia/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_stop",
+      "tick": 1,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_stop",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-gaia/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    }
+  ],
+  "phase3": {
+    "absolute_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/presentation/phase3_projectiles.json",
+    "sha256": "8ddce6876986cb1177ecb3d4608ede0ed2cee0c3122926cad6b34f00d7f030f2",
+    "entry_count": 722,
+    "q_effect_ids": [
+      "father_fx_q_charge",
+      "father_fx_q_charge_start",
+      "father_fx_q_charge_stop",
+      "justice_fx_q_charge",
+      "justice_fx_q_charge_start",
+      "justice_fx_q_charge_stop",
+      "mother_of_ultra_fx_q_charge",
+      "mother_of_ultra_fx_q_charge_start",
+      "mother_of_ultra_fx_q_charge_stop",
+      "ultraman_gaia_fx_q_charge",
+      "ultraman_gaia_fx_q_charge_start",
+      "ultraman_gaia_fx_q_charge_stop",
+      "ultraman_king_fx_q_charge",
+      "ultraman_king_fx_q_charge_start",
+      "ultraman_king_fx_q_charge_stop",
+      "zero_fx_q_charge",
+      "zero_fx_q_charge_start",
+      "zero_fx_q_charge_stop",
+      "zoffy_fx_q_charge",
+      "zoffy_fx_q_charge_start",
+      "zoffy_fx_q_charge_stop"
+    ],
+    "q_effect_id_count": 21,
+    "seven_fighter_referenced_effect_ids": [
+      "beam_hit",
+      "beam_loop",
+      "charge_aura",
+      "father_fx_arrow_flight",
+      "father_fx_arrow_hit",
+      "father_fx_barrier",
+      "father_fx_beam",
+      "father_fx_beam_hit",
+      "father_fx_catch_back",
+      "father_fx_catch_front",
+      "father_fx_pulse_flight",
+      "father_fx_pulse_hit",
+      "father_fx_q_charge",
+      "father_fx_q_charge_start",
+      "father_fx_q_charge_stop",
+      "father_fx_rings",
+      "father_fx_rings_hit",
+      "father_fx_spiral",
+      "father_fx_spiral_hit",
+      "gaia_fx_crusher_beam",
+      "gaia_fx_crusher_charge_start",
+      "gaia_fx_crusher_hit",
+      "gaia_fx_edge_charge_start",
+      "gaia_fx_edge_hit",
+      "gaia_fx_palm_ray_flight",
+      "gaia_fx_palm_ray_hit",
+      "gaia_fx_palm_ray_trail",
+      "gaia_fx_slash_charge_start",
+      "gaia_fx_slash_flight",
+      "gaia_fx_slash_hit",
+      "gaia_fx_slash_trail",
+      "gaia_fx_stream_beam",
+      "gaia_fx_stream_charge_start",
+      "gaia_fx_stream_hit",
+      "impact_guard",
+      "impact_heavy",
+      "impact_light",
+      "justice_fx_arrow_flight",
+      "justice_fx_arrow_hit",
+      "justice_fx_beam",
+      "justice_fx_beam_hit",
+      "justice_fx_pulse_flight",
+      "justice_fx_pulse_hit",
+      "justice_fx_q_charge",
+      "justice_fx_q_charge_start",
+      "justice_fx_q_charge_stop",
+      "king_fx_baptism_arrow_flight",
+      "king_fx_baptism_arrow_hit",
+      "king_fx_baptism_arrow_start",
+      "king_fx_baptism_arrow_trail",
+      "king_fx_flasher_beam",
+      "king_fx_flasher_charge_start",
+      "king_fx_flasher_hit",
+      "king_fx_palm_arrow_flight",
+      "king_fx_palm_arrow_hit",
+      "king_fx_palm_arrow_trail",
+      "king_fx_rebirth_beam",
+      "king_fx_rebirth_charge_start",
+      "king_fx_rebirth_hit",
+      "king_fx_ring_form_back",
+      "king_fx_ring_form_front",
+      "mother_fx_buster_beam",
+      "mother_fx_buster_hit",
+      "mother_fx_palm_ray_flight",
+      "mother_fx_palm_ray_hit",
+      "mother_fx_palm_ray_trail",
+      "mother_fx_ray_beam",
+      "mother_fx_ray_charge_start",
+      "mother_fx_ray_hit",
+      "mother_fx_shower_charge_start",
+      "mother_fx_slap_charge_start",
+      "mother_fx_slap_orb_flight",
+      "mother_fx_slap_orb_hit",
+      "mother_fx_slap_orb_trail",
+      "mother_of_ultra_fx_q_charge",
+      "mother_of_ultra_fx_q_charge_start",
+      "mother_of_ultra_fx_q_charge_stop",
+      "pulse",
+      "special_arrow",
+      "special_barrier",
+      "special_rings",
+      "special_spiral",
+      "ultraman_gaia_fx_q_charge",
+      "ultraman_gaia_fx_q_charge_start",
+      "ultraman_gaia_fx_q_charge_stop",
+      "ultraman_king_fx_q_charge",
+      "ultraman_king_fx_q_charge_start",
+      "ultraman_king_fx_q_charge_stop",
+      "zero_fx_emerium_beam",
+      "zero_fx_emerium_hit",
+      "zero_fx_pulse_flight",
+      "zero_fx_pulse_hit",
+      "zero_fx_q_charge",
+      "zero_fx_q_charge_start",
+      "zero_fx_q_charge_stop",
+      "zero_fx_slugger_catch",
+      "zero_fx_slugger_flight",
+      "zero_fx_slugger_hit",
+      "zero_fx_slugger_trail",
+      "zero_fx_wide_beam",
+      "zero_fx_wide_hit",
+      "zoffy_fx_frost_charge_start",
+      "zoffy_fx_frost_flight",
+      "zoffy_fx_frost_hit",
+      "zoffy_fx_frost_trail",
+      "zoffy_fx_m87_beam",
+      "zoffy_fx_m87_charge_start",
+      "zoffy_fx_m87_hit",
+      "zoffy_fx_orb_flight",
+      "zoffy_fx_orb_hit",
+      "zoffy_fx_orb_trail",
+      "zoffy_fx_q_charge",
+      "zoffy_fx_q_charge_start",
+      "zoffy_fx_q_charge_stop",
+      "zoffy_fx_rise_ray_flight",
+      "zoffy_fx_rise_ray_hit",
+      "zoffy_fx_rise_ray_trail",
+      "zoffy_fx_zap_beam",
+      "zoffy_fx_zap_charge_start",
+      "zoffy_fx_zap_hit"
+    ],
+    "referenced_effect_id_count": 120,
+    "registration_status": "all_registered",
+    "atlas_sha256_status": "已记录字段的条目全部与字节相符；6 个共享旧式 id 未记录该字段，按现状保留",
+    "legacy_ids_without_atlas_sha256": [
+      "beam_hit",
+      "impact_guard",
+      "impact_heavy",
+      "impact_light",
+      "king_fx_ring_form_back",
+      "king_fx_ring_form_front"
+    ],
+    "do_not_duplicate_registration": true,
+    "sha_reregistration_plan": {
+      "trigger": "仅在新增或改换贴图后",
+      "steps": [
+        "核新 atlas 尺寸/真 Alpha/主体",
+        "计算 atlas SHA",
+        "按 tools/rebuild/shared/q_charge_registry.py 口径补 phase3 条目",
+        "核 charge_overlay_policy.json 三态 placement 与 effect id 1:1",
+        "双向实机可见性复核"
+      ],
+      "current_action": "无"
+    }
+  },
+  "effect_id_scope": {
+    "shots": [
+      "beam_loop",
+      "gaia_fx_crusher_beam",
+      "gaia_fx_crusher_charge_start",
+      "gaia_fx_edge_charge_start",
+      "gaia_fx_palm_ray_flight",
+      "gaia_fx_palm_ray_trail",
+      "gaia_fx_slash_charge_start",
+      "gaia_fx_slash_flight",
+      "gaia_fx_slash_trail",
+      "gaia_fx_stream_beam",
+      "gaia_fx_stream_charge_start",
+      "pulse",
+      "special_barrier",
+      "special_spiral"
+    ],
+    "feedback_spark": [
+      "beam_hit",
+      "gaia_fx_crusher_hit",
+      "gaia_fx_edge_hit",
+      "gaia_fx_palm_ray_hit",
+      "gaia_fx_slash_hit",
+      "gaia_fx_stream_hit",
+      "impact_heavy",
+      "impact_light"
+    ],
+    "feedback_block_spark": [
+      "impact_guard"
+    ],
+    "projectile_impacts": [],
+    "frame_impact_effect": [
+      "impact_heavy",
+      "impact_light"
+    ],
+    "frame_block_effect": [
+      "impact_guard"
+    ],
+    "state_frame_impact_effect": [
+      "impact_light"
+    ],
+    "state_frame_block_effect": [
+      "impact_guard"
+    ],
+    "state_frame_attachments": [
+      "charge_aura"
+    ],
+    "charge_overlay_policy_three_states": [
+      "ultraman_gaia_fx_q_charge_start",
+      "ultraman_gaia_fx_q_charge",
+      "ultraman_gaia_fx_q_charge_stop"
+    ],
+    "all_referenced_effect_ids": [
+      "beam_hit",
+      "beam_loop",
+      "charge_aura",
+      "gaia_fx_crusher_beam",
+      "gaia_fx_crusher_charge_start",
+      "gaia_fx_crusher_hit",
+      "gaia_fx_edge_charge_start",
+      "gaia_fx_edge_hit",
+      "gaia_fx_palm_ray_flight",
+      "gaia_fx_palm_ray_hit",
+      "gaia_fx_palm_ray_trail",
+      "gaia_fx_slash_charge_start",
+      "gaia_fx_slash_flight",
+      "gaia_fx_slash_hit",
+      "gaia_fx_slash_trail",
+      "gaia_fx_stream_beam",
+      "gaia_fx_stream_charge_start",
+      "gaia_fx_stream_hit",
+      "impact_guard",
+      "impact_heavy",
+      "impact_light",
+      "pulse",
+      "special_barrier",
+      "special_spiral",
+      "ultraman_gaia_fx_q_charge",
+      "ultraman_gaia_fx_q_charge_start",
+      "ultraman_gaia_fx_q_charge_stop"
+    ],
+    "missing_ids": [],
+    "pending_ids": [],
+    "unregistered_ids": [],
+    "scope_note": "missing_ids 指空/缺字段引用；pending_ids 指 pending_ 前缀或含 pending 的 id；unregistered_ids 指 phase3 查不到条目导致表现层静默跳过的 id。三者本轮均为空。"
+  },
+  "plan_notes": [
+    "本文件只写接线计划，未改 content/、core/、input/、presentation/、ui/、assets/；未跑 Godot、verify，未动锁，未 commit。",
+    "没有新帧：全部 emission_entries 为 pending_cell，point_right/point_left 为 null；双向原生误差 ≤2 px 是重画帧落格后的验收标准，不是本轮已通过结论。",
+    "投射类 pulse、low_pulse、air_pulse、ranged_forward 只核手部/身体动作与运行时发射层；人物帧不得画能量球、光刃、飞行物，运行时 move_fx 已生成投射物，不双重特效。特效光色只在运行时规格定义，不写进人物帧计划。",
+    "Q 蓄气三态 placement 按 tools/rebuild/shared/q_charge_registry.py 口径；只登记落点时也要保证真实 Q 起势/保持/收势可见；技能帧不写周身蓄气圈例外。",
+    "current_cell/current_anchor 逐 clip 取自 asset_baseline.json 的 clips[move].rects 与 anchors；已核七角色每个 clip 内 rect 尺寸与 anchors 一致。不使用 definition.json 的 presentation 顶层旧值或 cells.json 顶层旧 anchor。",
+    "source_files 含只读 MOVES.md（仅作 body_part 依据，未把其中数值写成本计划坐标）；未读或依赖 W1 的 state_frames_plan/moves_plan。",
+    "Q placement 条目对应 charge_overlay_policy.json 三态 anchor；将来落 emission_points.json 时按 state:<状态> 的 attachments[].anchor 口径另建人工依据表。",
+    "moves/special.json 为 strike 且无 shots，只有 gaia_fx_edge_charge_start 头部聚能挂件；该挂件落点按当帧头部/额灯核，不虚构射线坐标。"
+  ],
+  "blockers": []
+}

@@ -18,7 +18,7 @@
 | `assets/{fighters,effects,audio,ui,stages,app,fx}/` | 已装资源、动态路径使用的资源、来源和许可；`fx` 是仍被当前注册表引用的旧接口目录 |
 | `art/fighters/<id>/model/` | 当前定稿与测量，不重复存历史定稿 |
 | `art/fighters/<id>/sources/` | 已装资源仍有用的唯一源文件，SHA 文件名；用途由 source-index 和原始 metadata 说明 |
-| `art/fighters/<id>/stage<N>/` | 当前未完成动作、请求、候选和有效交接收据 |
+| `art/fighters/<id>/stage<N>/` | 当前未完成动作、请求、候选、帧规格和有效交接收据；只存数据，不存脚本 |
 | `art/shared/sources/` | 无法归属单角的当前源材料 |
 | `art/source-index.json` | 现用源 SHA、字节数和旧路径到唯一实体的索引；不是备份 |
 | `tools/`（可执行入口只有 `verify.py`、`godot_lock.py`；另有 `README.md` 与 requirements 文本） | 验证入口与 Godot 锁 |
@@ -28,7 +28,7 @@
 | `tools/roster/` | 名册编译、图鉴身份、繁简转换、维基抓取 |
 | `tools/media/` | 媒体证据提取与采样度量 |
 | `tools/runtime/` | 启动、Godot 定位与短临时录制 |
-| `tools/rebuild/shared/`、`tools/rebuild/<id>/` | 复用制作模块、仍需接续的动作处理器、PixelFX 烘焙脚本 |
+| `tools/rebuild/shared/`、`tools/rebuild/<id>/`、跨角色批次目录 | 复用制作模块、仍需接续的动作处理器、PixelFX 烘焙脚本与在制诊断生成器；跨角色批次附 `README.md` 说明唯一入口 |
 | `tools/maintenance/` | 只读仓库审计与冻结路径解析 |
 | `tests/`、`tests/fixtures/`、`tests/review/` | 功能回归、必要输入夹具、主游戏内审片驱动 |
 | `third_party/`、`addons/` | 实际采用的上游代码与许可 |

@@ -1,0 +1,4212 @@
+{
+  "fighter": "ultraman-zero",
+  "scope": "plan_only",
+  "tick_hz": 60,
+  "replay": "InputFrame",
+  "source_files": {
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/air_crush.json": "5256862941007d47b23923ca796f5c689ff43e1c0a4ca36eb29b02acbf11c9ea",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/air_pulse.json": "5ae678b7804b6deb2d4ca234e1a96a30c697657616328f16c4799b90af35c39b",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/air_special.json": "b2f909ee9ea72a6480bebdf7e889366eff9069e55660bc7eb09607d9c711f4ad",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/air_throw.json": "f46dabb4985b0a3d32ca65d02a8d2fa8793a66a65a267d5e866eae24b4e738bb",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/back_counter.json": "a8b8afaede18044dafe510fe6eaa6d341797d95d55ce706312d66393e35456fc",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/burst.json": "62bba475f05cdceb7d1eca6b244542910b6f1fef67f097c8dc3dffbf6623c80a",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/chase_end.json": "136aeb2cde43271e031230a672b82df913832157936d0606d492af54d140c851",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/chase_light1.json": "1dd4b88ce3ffc4cca6061ae3721ff3964747b72118781a923f45f9602956f119",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/chase_light2.json": "f9d43895f89af6fa175aa11d2d00b6ce1a16251e226c747b61bf341f9febcc82",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/crouch_light.json": "478843501efc9030cb4dbf1a61a8076a9354f838e67c8e229a6821e5ca31fe8c",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/crouch_light2.json": "30b3e61257abd04397234ae51af165f050670ecadadca3d902775fc0cdf8b39f",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/crush.json": "e8bc55a6f40aa2450e2e7ab9652ed0d3a0456326b414110300ce4aa03728b35b",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/dash_heavy.json": "27d31daf74a3eb7dc548061d1ad2dfd73b35bec9d946cd3ea39ed36ae0cd7688",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/dash_light.json": "c901d4c04acb05ddcce66d8c51bf9e4baac6af438de1f00c1fa7e3fcb1722187",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/dash_throw.json": "37910801caf73b586d560dc2a84b10148da0276666e9cdbe12def7c4277add40",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/diagonal_heavy.json": "42c097d02db1d9c4cb81aca4e87b99402cd771ad765053665c0b0235f026e582",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/diagonal_light.json": "7b231b13a6af1958472c435dccd95894fdfff6416f70135fd82e90ba444c2888",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/dive.json": "8aaf242e5338b0cfa403f1dea82f4537f7b9a086abac9183d337c6483a708280",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/dodge_counter.json": "c4429dd01168f49809db40d8811c3e6461fbbc484303df227c7b092f998ff783",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/guard_counter.json": "aad7a939c10872f3548781dad0e0d43ca65b1cbaf6a29b1921842237be90184b",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/heavy.json": "d7fbc7f06f640063a6ab5901c3b87568e848a6b702ca22e04d229de5d87750b1",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/launcher.json": "24cabc3b6895d279eba6019ba17c05af8ed318776f9526fcc582ae3c4d6c5b50",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/light1.json": "1da0716a3f6a5c5328573435236abd7c1393009d47694475d4e1c4acf54765e3",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/light2.json": "6495c05845d308d64e225b07bfda2347e6a7891f1ac09854625fb1f730f007b4",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/light3.json": "734eed95af0ddba9c86bf83db3a24e8fb279a07ae9a344e18a73e706cd1f16fe",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/low_pulse.json": "5feb88728fadd6b06a52723a2a3ed0bae33e01f527b6ccf72d446c56c2700008",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/motion_214.json": "f7d47956e68c3101c9841123bb2696e8f5ff2fd3782dffc7b50c479f543d08b2",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/motion_22.json": "75589f57db5893fcbdff9efddf83e52ff1a8cbf254d62eea3ee3caf49b794b18",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/motion_236.json": "cde5ce8c5d6adb8a4c94e20878eb0c2ba23225180d426e08844988a173d601a2",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/motion_41236.json": "90069bf164f5a41d9dd2d55ffc756900b89c10479247f47e856f39f686224a93",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/motion_623.json": "275cd04f1baf19c0fd3f04742c507c72945f7bfe10f823a9f9057c55abecb81c",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/pulse.json": "b7fad222f178a4e27b0c8fecac25dcdf127db0dfcbafc97612e3574fef31136d",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/ranged_forward.json": "458130dd2985b052ffbaad15693d65e6b3ecc25dab5726665b51871519ee7269",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/slide.json": "f2c287798431024f8f62f10d1ca5a69bdd0a75670e1383e336ee0c6b6e084a26",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/special.json": "f200f56d2dca0ab1875be0ad6891666a291d77239018a698a707709690fc4f12",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/special2.json": "84447ae138c175078d72f2d5749bb0558901f110b9299e5512173da413029952",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/special3.json": "a7349a330ef256c9b54b20745b69b98d333ab50d55726815575ebb58356fe4bd",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/spin_heavy.json": "dd7d7224af41e0c8fe9d1daed8a4ce252d01111d1e9a042cf6a511e45148e9e0",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/sweep.json": "66b2a0007f6923779dc7f82287e7763f22f470a27e87574af104f5c92a4bcbd1",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/tackle.json": "3ef6067448258d45bbf5ab8410e1e12768de2f3bb8f0a770d2e2fa3047339e10",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/taunt.json": "130e51cf9c712af10a161d5aff71c2e1d7e74b0fe383118df3095b59c80e27b2",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/throw_back.json": "87d0743aefd5f73e75c5d35990f7e5003f48438e286fe3418f606029616030b1",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/throw_forward.json": "0652e7701480bdc6cc5c7a6f8bc8c65d92f8ae2909b90aca2e4053ef502c3915",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/vertical_heavy.json": "7d8c6212573854998c1f6185fd7bb0ddd5e48215fe8829168de5e445833a639e",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/vertical_light.json": "d6704630af738a85ccc38295e527ef58a97a6f3a10e3a8571e631ae2de564661",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/wake_low.json": "37140c5fa9ee175fcc1c08bb43980b66426c939baf97e27c3f580697c891e4d2",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/moves/wake_mid.json": "e8d9fdf1c45d4476fd25894626df91a533722cf6bc035b54e2af361188157588",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/state_frames.json": "d5b37aef341c1a057e722a7d1d3f88495688a37d5843632232a525108371040a",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/definition.json": "56ca210c5875a76255db13b495f979461f90e9598f4b050f6207f9bc69ac2ff3",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/presentation/phase3_projectiles.json": "8ddce6876986cb1177ecb3d4608ede0ed2cee0c3122926cad6b34f00d7f030f2",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/presentation/charge_overlay_policy.json": "e466bed4dc536cf603d47e3d1ec74a0c4d41f37351a1411f5114ae8ad3b75c02",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/tools/rebuild/shared/q_charge_registry.py": "acc29fe416227c346f9305e0a6470990ba35a23236a48437e2f2a287926825f1",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-zero/stage1/rework-20261112/asset_baseline.json": "f73797986f2d7f14c03343c7840966971bd1d18637a8a22c59d3a80b410d0234",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-zero/stage1/rework-20261112/clip_diagnosis.json": "6d0ed17818e97b2617db080b6f391bf0a8aadc0379defa8eef680fb6eaadcdab",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-zero/MOVES.md": "60d0882fa42967f9b068285c775286cfc44c67c3418337f71588df5896e296ce"
+  },
+  "manual_basis_table": [
+    {
+      "body_part": "掌",
+      "basis": "按当帧本人实际掌心/拳面，朝右与朝左分别核，双向原生误差 ≤2 px；不悬空、不穿体"
+    },
+    {
+      "body_part": "角",
+      "basis": "按当帧角尖/头镖刃根，先判朝向再核前后"
+    },
+    {
+      "body_part": "胸灯",
+      "basis": "按当帧计时器/胸灯中心"
+    },
+    {
+      "body_part": "额灯",
+      "basis": "按当帧额灯/光束发出部位"
+    }
+  ],
+  "emission_entries": [
+    {
+      "move": "air_pulse",
+      "tick": 6,
+      "source_sprite": 2,
+      "field": "projectile.spawn",
+      "effect_id": "zero_fx_pulse_flight",
+      "clip": "air_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_pulse.json 的运行时发射字段；空中斜下掌推，按当帧斜下前伸掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "air_special",
+      "tick": 10,
+      "source_sprite": 3,
+      "field": "shots[0].spawn",
+      "effect_id": "zero_fx_wide_beam",
+      "clip": "air_special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_special.json data_source：发射根点按 air_special-03 手部中心量取",
+      "current_cell": [
+        288,
+        288
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "air_special",
+      "tick": 10,
+      "source_sprite": 3,
+      "field": "shots[0].anchor",
+      "effect_id": "zero_fx_wide_beam",
+      "clip": "air_special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_special.json data_source：发射根点按 air_special-03 手部中心量取",
+      "current_cell": [
+        288,
+        288
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "low_pulse",
+      "tick": 7,
+      "source_sprite": 2,
+      "field": "projectile.spawn",
+      "effect_id": "zero_fx_pulse_flight",
+      "clip": "low_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/low_pulse.json 的运行时发射字段；蹲姿低位掌推，按当帧低位掌/拳面",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "pulse",
+      "tick": 7,
+      "source_sprite": 2,
+      "field": "projectile.spawn",
+      "effect_id": "zero_fx_pulse_flight",
+      "clip": "pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/pulse.json 的运行时发射字段；掌根/掌心前推，投射类只核手部动作与运行时发射层",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "ranged_forward",
+      "tick": 14,
+      "source_sprite": 4,
+      "field": "projectile.spawn",
+      "effect_id": "zero_fx_pulse_flight",
+      "clip": "ranged_forward",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/ranged_forward.json 的运行时发射字段；按当帧前伸掌/指尖",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 24,
+      "source_sprite": 11,
+      "field": "shots[0].spawn",
+      "effect_id": "zero_fx_wide_beam",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：发射根点取 special-11 手部中心；content/fighters/ultraman-zero/MOVES.md 三槽表记贴右前臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 24,
+      "source_sprite": 11,
+      "field": "shots[0].anchor",
+      "effect_id": "zero_fx_wide_beam",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：发射根点取 special-11 手部中心；content/fighters/ultraman-zero/MOVES.md 三槽表记贴右前臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 24,
+      "source_sprite": 11,
+      "field": "beam_origin",
+      "effect_id": "zero_fx_wide_beam",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：发射根点取 special-11 手部中心；content/fighters/ultraman-zero/MOVES.md 三槽表记贴右前臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 25,
+      "source_sprite": 11,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：发射根点取 special-11 手部中心；content/fighters/ultraman-zero/MOVES.md 三槽表记贴右前臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 26,
+      "source_sprite": 11,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：发射根点取 special-11 手部中心；content/fighters/ultraman-zero/MOVES.md 三槽表记贴右前臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 27,
+      "source_sprite": 11,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：发射根点取 special-11 手部中心；content/fighters/ultraman-zero/MOVES.md 三槽表记贴右前臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 28,
+      "source_sprite": 11,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：发射根点取 special-11 手部中心；content/fighters/ultraman-zero/MOVES.md 三槽表记贴右前臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 29,
+      "source_sprite": 11,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：发射根点取 special-11 手部中心；content/fighters/ultraman-zero/MOVES.md 三槽表记贴右前臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 30,
+      "source_sprite": 11,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：发射根点取 special-11 手部中心；content/fighters/ultraman-zero/MOVES.md 三槽表记贴右前臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 31,
+      "source_sprite": 11,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：发射根点取 special-11 手部中心；content/fighters/ultraman-zero/MOVES.md 三槽表记贴右前臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 32,
+      "source_sprite": 10,
+      "field": "shots[0].spawn",
+      "effect_id": "zero_fx_emerium_beam",
+      "clip": "special2",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：content/fighters/ultraman-zero/MOVES.md 三槽表：艾梅利姆切割贴额灯右缘；现装 data_source 记 special2-10 手部中心，重画帧后按本人额灯复核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 32,
+      "source_sprite": 10,
+      "field": "shots[0].anchor",
+      "effect_id": "zero_fx_emerium_beam",
+      "clip": "special2",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：content/fighters/ultraman-zero/MOVES.md 三槽表：艾梅利姆切割贴额灯右缘；现装 data_source 记 special2-10 手部中心，重画帧后按本人额灯复核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 32,
+      "source_sprite": 10,
+      "field": "beam_origin",
+      "effect_id": "zero_fx_emerium_beam",
+      "clip": "special2",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：content/fighters/ultraman-zero/MOVES.md 三槽表：艾梅利姆切割贴额灯右缘；现装 data_source 记 special2-10 手部中心，重画帧后按本人额灯复核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 33,
+      "source_sprite": 10,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special2",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：content/fighters/ultraman-zero/MOVES.md 三槽表：艾梅利姆切割贴额灯右缘；现装 data_source 记 special2-10 手部中心，重画帧后按本人额灯复核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 34,
+      "source_sprite": 10,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special2",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：content/fighters/ultraman-zero/MOVES.md 三槽表：艾梅利姆切割贴额灯右缘；现装 data_source 记 special2-10 手部中心，重画帧后按本人额灯复核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 35,
+      "source_sprite": 10,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special2",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：content/fighters/ultraman-zero/MOVES.md 三槽表：艾梅利姆切割贴额灯右缘；现装 data_source 记 special2-10 手部中心，重画帧后按本人额灯复核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 36,
+      "source_sprite": 10,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special2",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：content/fighters/ultraman-zero/MOVES.md 三槽表：艾梅利姆切割贴额灯右缘；现装 data_source 记 special2-10 手部中心，重画帧后按本人额灯复核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 37,
+      "source_sprite": 10,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special2",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：content/fighters/ultraman-zero/MOVES.md 三槽表：艾梅利姆切割贴额灯右缘；现装 data_source 记 special2-10 手部中心，重画帧后按本人额灯复核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 38,
+      "source_sprite": 10,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special2",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：content/fighters/ultraman-zero/MOVES.md 三槽表：艾梅利姆切割贴额灯右缘；现装 data_source 记 special2-10 手部中心，重画帧后按本人额灯复核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 39,
+      "source_sprite": 10,
+      "field": "beam_origin",
+      "effect_id": "",
+      "clip": "special2",
+      "body_part": "额灯",
+      "basis": "人工依据表条目「额」+ 当帧额灯；依据：content/fighters/ultraman-zero/MOVES.md 三槽表：艾梅利姆切割贴额灯右缘；现装 data_source 记 special2-10 手部中心，重画帧后按本人额灯复核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 8,
+      "field": "shots[0].spawn",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 8,
+      "field": "shots[0].anchor",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 8,
+      "field": "shots[0].return_anchor",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 8,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 32
+    },
+    {
+      "move": "special3",
+      "tick": 33,
+      "source_sprite": 8,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 33
+    },
+    {
+      "move": "special3",
+      "tick": 34,
+      "source_sprite": 8,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 34
+    },
+    {
+      "move": "special3",
+      "tick": 35,
+      "source_sprite": 8,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 35
+    },
+    {
+      "move": "special3",
+      "tick": 36,
+      "source_sprite": 8,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 36
+    },
+    {
+      "move": "special3",
+      "tick": 37,
+      "source_sprite": 8,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 37
+    },
+    {
+      "move": "special3",
+      "tick": 38,
+      "source_sprite": 8,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 38
+    },
+    {
+      "move": "special3",
+      "tick": 39,
+      "source_sprite": 8,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 39
+    },
+    {
+      "move": "special3",
+      "tick": 40,
+      "source_sprite": 9,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 40
+    },
+    {
+      "move": "special3",
+      "tick": 41,
+      "source_sprite": 9,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 41
+    },
+    {
+      "move": "special3",
+      "tick": 42,
+      "source_sprite": 9,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 42
+    },
+    {
+      "move": "special3",
+      "tick": 43,
+      "source_sprite": 9,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 43
+    },
+    {
+      "move": "special3",
+      "tick": 44,
+      "source_sprite": 9,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 44
+    },
+    {
+      "move": "special3",
+      "tick": 45,
+      "source_sprite": 9,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 45
+    },
+    {
+      "move": "special3",
+      "tick": 46,
+      "source_sprite": 9,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 46
+    },
+    {
+      "move": "special3",
+      "tick": 47,
+      "source_sprite": 9,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 47
+    },
+    {
+      "move": "special3",
+      "tick": 48,
+      "source_sprite": 10,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 48
+    },
+    {
+      "move": "special3",
+      "tick": 49,
+      "source_sprite": 10,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 49
+    },
+    {
+      "move": "special3",
+      "tick": 50,
+      "source_sprite": 10,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 50
+    },
+    {
+      "move": "special3",
+      "tick": 51,
+      "source_sprite": 10,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 51
+    },
+    {
+      "move": "special3",
+      "tick": 52,
+      "source_sprite": 10,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 52
+    },
+    {
+      "move": "special3",
+      "tick": 53,
+      "source_sprite": 10,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 53
+    },
+    {
+      "move": "special3",
+      "tick": 54,
+      "source_sprite": 10,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 54
+    },
+    {
+      "move": "special3",
+      "tick": 55,
+      "source_sprite": 10,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 55
+    },
+    {
+      "move": "special3",
+      "tick": 56,
+      "source_sprite": 11,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 56
+    },
+    {
+      "move": "special3",
+      "tick": 57,
+      "source_sprite": 11,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 57
+    },
+    {
+      "move": "special3",
+      "tick": 58,
+      "source_sprite": 11,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 58
+    },
+    {
+      "move": "special3",
+      "tick": 59,
+      "source_sprite": 11,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 59
+    },
+    {
+      "move": "special3",
+      "tick": 60,
+      "source_sprite": 11,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 60
+    },
+    {
+      "move": "special3",
+      "tick": 61,
+      "source_sprite": 11,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 61
+    },
+    {
+      "move": "special3",
+      "tick": 62,
+      "source_sprite": 11,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 62
+    },
+    {
+      "move": "special3",
+      "tick": 63,
+      "source_sprite": 11,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 63
+    },
+    {
+      "move": "special3",
+      "tick": 64,
+      "source_sprite": 12,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 64
+    },
+    {
+      "move": "special3",
+      "tick": 65,
+      "source_sprite": 12,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 65
+    },
+    {
+      "move": "special3",
+      "tick": 66,
+      "source_sprite": 12,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 66
+    },
+    {
+      "move": "special3",
+      "tick": 67,
+      "source_sprite": 12,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 67
+    },
+    {
+      "move": "special3",
+      "tick": 68,
+      "source_sprite": 12,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 68
+    },
+    {
+      "move": "special3",
+      "tick": 69,
+      "source_sprite": 12,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 69
+    },
+    {
+      "move": "special3",
+      "tick": 70,
+      "source_sprite": 12,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 70
+    },
+    {
+      "move": "special3",
+      "tick": 71,
+      "source_sprite": 12,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 71
+    },
+    {
+      "move": "special3",
+      "tick": 72,
+      "source_sprite": 13,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 72
+    },
+    {
+      "move": "special3",
+      "tick": 73,
+      "source_sprite": 13,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 73
+    },
+    {
+      "move": "special3",
+      "tick": 74,
+      "source_sprite": 13,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 74
+    },
+    {
+      "move": "special3",
+      "tick": 75,
+      "source_sprite": 13,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 75
+    },
+    {
+      "move": "special3",
+      "tick": 76,
+      "source_sprite": 13,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 76
+    },
+    {
+      "move": "special3",
+      "tick": 77,
+      "source_sprite": 13,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 77
+    },
+    {
+      "move": "special3",
+      "tick": 78,
+      "source_sprite": 13,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 78
+    },
+    {
+      "move": "special3",
+      "tick": 79,
+      "source_sprite": 13,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 79
+    },
+    {
+      "move": "special3",
+      "tick": 80,
+      "source_sprite": 14,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 80
+    },
+    {
+      "move": "special3",
+      "tick": 81,
+      "source_sprite": 14,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 81
+    },
+    {
+      "move": "special3",
+      "tick": 82,
+      "source_sprite": 14,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 82
+    },
+    {
+      "move": "special3",
+      "tick": 83,
+      "source_sprite": 14,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 83
+    },
+    {
+      "move": "special3",
+      "tick": 84,
+      "source_sprite": 14,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 84
+    },
+    {
+      "move": "special3",
+      "tick": 85,
+      "source_sprite": 14,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 85
+    },
+    {
+      "move": "special3",
+      "tick": 86,
+      "source_sprite": 14,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 86
+    },
+    {
+      "move": "special3",
+      "tick": 87,
+      "source_sprite": 14,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 87
+    },
+    {
+      "move": "special3",
+      "tick": 88,
+      "source_sprite": 15,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 88
+    },
+    {
+      "move": "special3",
+      "tick": 89,
+      "source_sprite": 15,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 89
+    },
+    {
+      "move": "special3",
+      "tick": 90,
+      "source_sprite": 15,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 90
+    },
+    {
+      "move": "special3",
+      "tick": 91,
+      "source_sprite": 15,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 91
+    },
+    {
+      "move": "special3",
+      "tick": 92,
+      "source_sprite": 15,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 92
+    },
+    {
+      "move": "special3",
+      "tick": 93,
+      "source_sprite": 15,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 93
+    },
+    {
+      "move": "special3",
+      "tick": 94,
+      "source_sprite": 15,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 94
+    },
+    {
+      "move": "special3",
+      "tick": 95,
+      "source_sprite": 15,
+      "field": "shots[0].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 95
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 8,
+      "field": "shots[1].spawn",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 8,
+      "field": "shots[1].anchor",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 8,
+      "field": "shots[1].return_anchor",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 8,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 32
+    },
+    {
+      "move": "special3",
+      "tick": 33,
+      "source_sprite": 8,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 33
+    },
+    {
+      "move": "special3",
+      "tick": 34,
+      "source_sprite": 8,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 34
+    },
+    {
+      "move": "special3",
+      "tick": 35,
+      "source_sprite": 8,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 35
+    },
+    {
+      "move": "special3",
+      "tick": 36,
+      "source_sprite": 8,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 36
+    },
+    {
+      "move": "special3",
+      "tick": 37,
+      "source_sprite": 8,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 37
+    },
+    {
+      "move": "special3",
+      "tick": 38,
+      "source_sprite": 8,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 38
+    },
+    {
+      "move": "special3",
+      "tick": 39,
+      "source_sprite": 8,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 39
+    },
+    {
+      "move": "special3",
+      "tick": 40,
+      "source_sprite": 9,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 40
+    },
+    {
+      "move": "special3",
+      "tick": 41,
+      "source_sprite": 9,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 41
+    },
+    {
+      "move": "special3",
+      "tick": 42,
+      "source_sprite": 9,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 42
+    },
+    {
+      "move": "special3",
+      "tick": 43,
+      "source_sprite": 9,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 43
+    },
+    {
+      "move": "special3",
+      "tick": 44,
+      "source_sprite": 9,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 44
+    },
+    {
+      "move": "special3",
+      "tick": 45,
+      "source_sprite": 9,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 45
+    },
+    {
+      "move": "special3",
+      "tick": 46,
+      "source_sprite": 9,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 46
+    },
+    {
+      "move": "special3",
+      "tick": 47,
+      "source_sprite": 9,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 47
+    },
+    {
+      "move": "special3",
+      "tick": 48,
+      "source_sprite": 10,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 48
+    },
+    {
+      "move": "special3",
+      "tick": 49,
+      "source_sprite": 10,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 49
+    },
+    {
+      "move": "special3",
+      "tick": 50,
+      "source_sprite": 10,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 50
+    },
+    {
+      "move": "special3",
+      "tick": 51,
+      "source_sprite": 10,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 51
+    },
+    {
+      "move": "special3",
+      "tick": 52,
+      "source_sprite": 10,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 52
+    },
+    {
+      "move": "special3",
+      "tick": 53,
+      "source_sprite": 10,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 53
+    },
+    {
+      "move": "special3",
+      "tick": 54,
+      "source_sprite": 10,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 54
+    },
+    {
+      "move": "special3",
+      "tick": 55,
+      "source_sprite": 10,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 55
+    },
+    {
+      "move": "special3",
+      "tick": 56,
+      "source_sprite": 11,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 56
+    },
+    {
+      "move": "special3",
+      "tick": 57,
+      "source_sprite": 11,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 57
+    },
+    {
+      "move": "special3",
+      "tick": 58,
+      "source_sprite": 11,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 58
+    },
+    {
+      "move": "special3",
+      "tick": 59,
+      "source_sprite": 11,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 59
+    },
+    {
+      "move": "special3",
+      "tick": 60,
+      "source_sprite": 11,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 60
+    },
+    {
+      "move": "special3",
+      "tick": 61,
+      "source_sprite": 11,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 61
+    },
+    {
+      "move": "special3",
+      "tick": 62,
+      "source_sprite": 11,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 62
+    },
+    {
+      "move": "special3",
+      "tick": 63,
+      "source_sprite": 11,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 63
+    },
+    {
+      "move": "special3",
+      "tick": 64,
+      "source_sprite": 12,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 64
+    },
+    {
+      "move": "special3",
+      "tick": 65,
+      "source_sprite": 12,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 65
+    },
+    {
+      "move": "special3",
+      "tick": 66,
+      "source_sprite": 12,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 66
+    },
+    {
+      "move": "special3",
+      "tick": 67,
+      "source_sprite": 12,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 67
+    },
+    {
+      "move": "special3",
+      "tick": 68,
+      "source_sprite": 12,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 68
+    },
+    {
+      "move": "special3",
+      "tick": 69,
+      "source_sprite": 12,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 69
+    },
+    {
+      "move": "special3",
+      "tick": 70,
+      "source_sprite": 12,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 70
+    },
+    {
+      "move": "special3",
+      "tick": 71,
+      "source_sprite": 12,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 71
+    },
+    {
+      "move": "special3",
+      "tick": 72,
+      "source_sprite": 13,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 72
+    },
+    {
+      "move": "special3",
+      "tick": 73,
+      "source_sprite": 13,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 73
+    },
+    {
+      "move": "special3",
+      "tick": 74,
+      "source_sprite": 13,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 74
+    },
+    {
+      "move": "special3",
+      "tick": 75,
+      "source_sprite": 13,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 75
+    },
+    {
+      "move": "special3",
+      "tick": 76,
+      "source_sprite": 13,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 76
+    },
+    {
+      "move": "special3",
+      "tick": 77,
+      "source_sprite": 13,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 77
+    },
+    {
+      "move": "special3",
+      "tick": 78,
+      "source_sprite": 13,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 78
+    },
+    {
+      "move": "special3",
+      "tick": 79,
+      "source_sprite": 13,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 79
+    },
+    {
+      "move": "special3",
+      "tick": 80,
+      "source_sprite": 14,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 80
+    },
+    {
+      "move": "special3",
+      "tick": 81,
+      "source_sprite": 14,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 81
+    },
+    {
+      "move": "special3",
+      "tick": 82,
+      "source_sprite": 14,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 82
+    },
+    {
+      "move": "special3",
+      "tick": 83,
+      "source_sprite": 14,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 83
+    },
+    {
+      "move": "special3",
+      "tick": 84,
+      "source_sprite": 14,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 84
+    },
+    {
+      "move": "special3",
+      "tick": 85,
+      "source_sprite": 14,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 85
+    },
+    {
+      "move": "special3",
+      "tick": 86,
+      "source_sprite": 14,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 86
+    },
+    {
+      "move": "special3",
+      "tick": 87,
+      "source_sprite": 14,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 87
+    },
+    {
+      "move": "special3",
+      "tick": 88,
+      "source_sprite": 15,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 88
+    },
+    {
+      "move": "special3",
+      "tick": 89,
+      "source_sprite": 15,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 89
+    },
+    {
+      "move": "special3",
+      "tick": 90,
+      "source_sprite": 15,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 90
+    },
+    {
+      "move": "special3",
+      "tick": 91,
+      "source_sprite": 15,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 91
+    },
+    {
+      "move": "special3",
+      "tick": 92,
+      "source_sprite": 15,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 92
+    },
+    {
+      "move": "special3",
+      "tick": 93,
+      "source_sprite": 15,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 93
+    },
+    {
+      "move": "special3",
+      "tick": 94,
+      "source_sprite": 15,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 94
+    },
+    {
+      "move": "special3",
+      "tick": 95,
+      "source_sprite": 15,
+      "field": "shots[1].return_anchor_by_tick",
+      "effect_id": "zero_fx_slugger_flight",
+      "clip": "special3",
+      "body_part": "角",
+      "basis": "人工依据表条目「角」+ 当帧角；依据：content/fighters/ultraman-zero/MOVES.md 三槽表与 moves/special3.json data_source：赛罗双头镖按 special3-8 双手位置分别量取，回收锚逐 tick 跟双手；按角尖/头镖刃根先判朝向再核前后；回收锚按当帧双手/头镖刃根，逐 tick 跟手核",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px",
+      "return_tick": 95
+    },
+    {
+      "move": "state:charge_start",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "charge_overlay_policy.placements.ultraman-zero.charge_start.anchor",
+      "effect_id": "zero_fx_q_charge_start",
+      "clip": "charge_start",
+      "body_part": "其它（Q 周身蓄气圈身体构图锚点，按真实 Q 起势/保持/收势核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 周身蓄气圈身体构图锚点）+ 按真实 Q 起势/保持/收势与当帧身体构图核；依据：content/presentation/charge_overlay_policy.json 三态 placement 与 tools/rebuild/shared/q_charge_registry.py 口径",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "charge_overlay_policy.placements.ultraman-zero.charge.anchor",
+      "effect_id": "zero_fx_q_charge",
+      "clip": "charge",
+      "body_part": "其它（Q 周身蓄气圈身体构图锚点，按真实 Q 起势/保持/收势核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 周身蓄气圈身体构图锚点）+ 按真实 Q 起势/保持/收势与当帧身体构图核；依据：content/presentation/charge_overlay_policy.json 三态 placement 与 tools/rebuild/shared/q_charge_registry.py 口径",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_stop",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "charge_overlay_policy.placements.ultraman-zero.charge_stop.anchor",
+      "effect_id": "zero_fx_q_charge_stop",
+      "clip": "charge_stop",
+      "body_part": "其它（Q 周身蓄气圈身体构图锚点，按真实 Q 起势/保持/收势核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 周身蓄气圈身体构图锚点）+ 按真实 Q 起势/保持/收势与当帧身体构图核；依据：content/presentation/charge_overlay_policy.json 三态 placement 与 tools/rebuild/shared/q_charge_registry.py 口径",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    }
+  ],
+  "phase3": {
+    "absolute_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/presentation/phase3_projectiles.json",
+    "sha256": "8ddce6876986cb1177ecb3d4608ede0ed2cee0c3122926cad6b34f00d7f030f2",
+    "entry_count": 722,
+    "q_effect_ids": [
+      "father_fx_q_charge",
+      "father_fx_q_charge_start",
+      "father_fx_q_charge_stop",
+      "justice_fx_q_charge",
+      "justice_fx_q_charge_start",
+      "justice_fx_q_charge_stop",
+      "mother_of_ultra_fx_q_charge",
+      "mother_of_ultra_fx_q_charge_start",
+      "mother_of_ultra_fx_q_charge_stop",
+      "ultraman_gaia_fx_q_charge",
+      "ultraman_gaia_fx_q_charge_start",
+      "ultraman_gaia_fx_q_charge_stop",
+      "ultraman_king_fx_q_charge",
+      "ultraman_king_fx_q_charge_start",
+      "ultraman_king_fx_q_charge_stop",
+      "zero_fx_q_charge",
+      "zero_fx_q_charge_start",
+      "zero_fx_q_charge_stop",
+      "zoffy_fx_q_charge",
+      "zoffy_fx_q_charge_start",
+      "zoffy_fx_q_charge_stop"
+    ],
+    "q_effect_id_count": 21,
+    "seven_fighter_referenced_effect_ids": [
+      "beam_hit",
+      "beam_loop",
+      "charge_aura",
+      "father_fx_arrow_flight",
+      "father_fx_arrow_hit",
+      "father_fx_barrier",
+      "father_fx_beam",
+      "father_fx_beam_hit",
+      "father_fx_catch_back",
+      "father_fx_catch_front",
+      "father_fx_pulse_flight",
+      "father_fx_pulse_hit",
+      "father_fx_q_charge",
+      "father_fx_q_charge_start",
+      "father_fx_q_charge_stop",
+      "father_fx_rings",
+      "father_fx_rings_hit",
+      "father_fx_spiral",
+      "father_fx_spiral_hit",
+      "gaia_fx_crusher_beam",
+      "gaia_fx_crusher_charge_start",
+      "gaia_fx_crusher_hit",
+      "gaia_fx_edge_charge_start",
+      "gaia_fx_edge_hit",
+      "gaia_fx_palm_ray_flight",
+      "gaia_fx_palm_ray_hit",
+      "gaia_fx_palm_ray_trail",
+      "gaia_fx_slash_charge_start",
+      "gaia_fx_slash_flight",
+      "gaia_fx_slash_hit",
+      "gaia_fx_slash_trail",
+      "gaia_fx_stream_beam",
+      "gaia_fx_stream_charge_start",
+      "gaia_fx_stream_hit",
+      "impact_guard",
+      "impact_heavy",
+      "impact_light",
+      "justice_fx_arrow_flight",
+      "justice_fx_arrow_hit",
+      "justice_fx_beam",
+      "justice_fx_beam_hit",
+      "justice_fx_pulse_flight",
+      "justice_fx_pulse_hit",
+      "justice_fx_q_charge",
+      "justice_fx_q_charge_start",
+      "justice_fx_q_charge_stop",
+      "king_fx_baptism_arrow_flight",
+      "king_fx_baptism_arrow_hit",
+      "king_fx_baptism_arrow_start",
+      "king_fx_baptism_arrow_trail",
+      "king_fx_flasher_beam",
+      "king_fx_flasher_charge_start",
+      "king_fx_flasher_hit",
+      "king_fx_palm_arrow_flight",
+      "king_fx_palm_arrow_hit",
+      "king_fx_palm_arrow_trail",
+      "king_fx_rebirth_beam",
+      "king_fx_rebirth_charge_start",
+      "king_fx_rebirth_hit",
+      "king_fx_ring_form_back",
+      "king_fx_ring_form_front",
+      "mother_fx_buster_beam",
+      "mother_fx_buster_hit",
+      "mother_fx_palm_ray_flight",
+      "mother_fx_palm_ray_hit",
+      "mother_fx_palm_ray_trail",
+      "mother_fx_ray_beam",
+      "mother_fx_ray_charge_start",
+      "mother_fx_ray_hit",
+      "mother_fx_shower_charge_start",
+      "mother_fx_slap_charge_start",
+      "mother_fx_slap_orb_flight",
+      "mother_fx_slap_orb_hit",
+      "mother_fx_slap_orb_trail",
+      "mother_of_ultra_fx_q_charge",
+      "mother_of_ultra_fx_q_charge_start",
+      "mother_of_ultra_fx_q_charge_stop",
+      "pulse",
+      "special_arrow",
+      "special_barrier",
+      "special_rings",
+      "special_spiral",
+      "ultraman_gaia_fx_q_charge",
+      "ultraman_gaia_fx_q_charge_start",
+      "ultraman_gaia_fx_q_charge_stop",
+      "ultraman_king_fx_q_charge",
+      "ultraman_king_fx_q_charge_start",
+      "ultraman_king_fx_q_charge_stop",
+      "zero_fx_emerium_beam",
+      "zero_fx_emerium_hit",
+      "zero_fx_pulse_flight",
+      "zero_fx_pulse_hit",
+      "zero_fx_q_charge",
+      "zero_fx_q_charge_start",
+      "zero_fx_q_charge_stop",
+      "zero_fx_slugger_catch",
+      "zero_fx_slugger_flight",
+      "zero_fx_slugger_hit",
+      "zero_fx_slugger_trail",
+      "zero_fx_wide_beam",
+      "zero_fx_wide_hit",
+      "zoffy_fx_frost_charge_start",
+      "zoffy_fx_frost_flight",
+      "zoffy_fx_frost_hit",
+      "zoffy_fx_frost_trail",
+      "zoffy_fx_m87_beam",
+      "zoffy_fx_m87_charge_start",
+      "zoffy_fx_m87_hit",
+      "zoffy_fx_orb_flight",
+      "zoffy_fx_orb_hit",
+      "zoffy_fx_orb_trail",
+      "zoffy_fx_q_charge",
+      "zoffy_fx_q_charge_start",
+      "zoffy_fx_q_charge_stop",
+      "zoffy_fx_rise_ray_flight",
+      "zoffy_fx_rise_ray_hit",
+      "zoffy_fx_rise_ray_trail",
+      "zoffy_fx_zap_beam",
+      "zoffy_fx_zap_charge_start",
+      "zoffy_fx_zap_hit"
+    ],
+    "referenced_effect_id_count": 120,
+    "registration_status": "all_registered",
+    "atlas_sha256_status": "已记录字段的条目全部与字节相符；6 个共享旧式 id 未记录该字段，按现状保留",
+    "legacy_ids_without_atlas_sha256": [
+      "beam_hit",
+      "impact_guard",
+      "impact_heavy",
+      "impact_light",
+      "king_fx_ring_form_back",
+      "king_fx_ring_form_front"
+    ],
+    "do_not_duplicate_registration": true,
+    "sha_reregistration_plan": {
+      "trigger": "仅在新增或改换贴图后",
+      "steps": [
+        "核新 atlas 尺寸/真 Alpha/主体",
+        "计算 atlas SHA",
+        "按 tools/rebuild/shared/q_charge_registry.py 口径补 phase3 条目",
+        "核 charge_overlay_policy.json 三态 placement 与 effect id 1:1",
+        "双向实机可见性复核"
+      ],
+      "current_action": "无"
+    }
+  },
+  "effect_id_scope": {
+    "shots": [
+      "zero_fx_emerium_beam",
+      "zero_fx_pulse_flight",
+      "zero_fx_slugger_catch",
+      "zero_fx_slugger_flight",
+      "zero_fx_slugger_trail",
+      "zero_fx_wide_beam"
+    ],
+    "feedback_spark": [
+      "impact_heavy",
+      "impact_light",
+      "zero_fx_emerium_hit",
+      "zero_fx_slugger_hit",
+      "zero_fx_wide_hit"
+    ],
+    "feedback_block_spark": [
+      "impact_guard"
+    ],
+    "projectile_impacts": [
+      "zero_fx_pulse_flight",
+      "zero_fx_pulse_hit",
+      "zero_fx_slugger_flight",
+      "zero_fx_slugger_hit"
+    ],
+    "frame_impact_effect": [
+      "impact_light"
+    ],
+    "frame_block_effect": [
+      "impact_guard"
+    ],
+    "state_frame_impact_effect": [
+      "impact_light"
+    ],
+    "state_frame_block_effect": [
+      "impact_guard"
+    ],
+    "state_frame_attachments": [],
+    "charge_overlay_policy_three_states": [
+      "zero_fx_q_charge_start",
+      "zero_fx_q_charge",
+      "zero_fx_q_charge_stop"
+    ],
+    "all_referenced_effect_ids": [
+      "impact_guard",
+      "impact_heavy",
+      "impact_light",
+      "zero_fx_emerium_beam",
+      "zero_fx_emerium_hit",
+      "zero_fx_pulse_flight",
+      "zero_fx_pulse_hit",
+      "zero_fx_q_charge",
+      "zero_fx_q_charge_start",
+      "zero_fx_q_charge_stop",
+      "zero_fx_slugger_catch",
+      "zero_fx_slugger_flight",
+      "zero_fx_slugger_hit",
+      "zero_fx_slugger_trail",
+      "zero_fx_wide_beam",
+      "zero_fx_wide_hit"
+    ],
+    "missing_ids": [],
+    "pending_ids": [],
+    "unregistered_ids": [],
+    "scope_note": "missing_ids 指空/缺字段引用；pending_ids 指 pending_ 前缀或含 pending 的 id；unregistered_ids 指 phase3 查不到条目导致表现层静默跳过的 id。三者本轮均为空。"
+  },
+  "plan_notes": [
+    "本文件只写接线计划，未改 content/、core/、input/、presentation/、ui/、assets/；未跑 Godot、verify，未动锁，未 commit。",
+    "没有新帧：全部 emission_entries 为 pending_cell，point_right/point_left 为 null；双向原生误差 ≤2 px 是重画帧落格后的验收标准，不是本轮已通过结论。",
+    "投射类 pulse、low_pulse、air_pulse、ranged_forward 只核手部/身体动作与运行时发射层；人物帧不得画能量球、光刃、飞行物，运行时 move_fx 已生成投射物，不双重特效。特效光色只在运行时规格定义，不写进人物帧计划。",
+    "Q 蓄气三态 placement 按 tools/rebuild/shared/q_charge_registry.py 口径；只登记落点时也要保证真实 Q 起势/保持/收势可见；技能帧不写周身蓄气圈例外。",
+    "current_cell/current_anchor 逐 clip 取自 asset_baseline.json 的 clips[move].rects 与 anchors；已核七角色每个 clip 内 rect 尺寸与 anchors 一致。不使用 definition.json 的 presentation 顶层旧值或 cells.json 顶层旧 anchor。",
+    "source_files 含只读 MOVES.md（仅作 body_part 依据，未把其中数值写成本计划坐标）；未读或依赖 W1 的 state_frames_plan/moves_plan。",
+    "Q placement 条目对应 charge_overlay_policy.json 三态 anchor；将来落 emission_points.json 时按 state:<状态> 的 attachments[].anchor 口径另建人工依据表。",
+    "content/fighters/ultraman-zero/MOVES.md 三槽表把 special2 记为贴额灯右缘，moves/special2.json data_source 记为 special2-10 手部中心；本计划按额灯登记 body_part，重画帧后按本人额灯与当帧姿势复核，不写死坐标。",
+    "moves/special3.json 的两枚头镖含 return_anchor 与 tick 32–95 的 return_anchor_by_tick；逐 tick 回收锚按 follow_frame 口径逐条列为待标点。"
+  ],
+  "blockers": []
+}

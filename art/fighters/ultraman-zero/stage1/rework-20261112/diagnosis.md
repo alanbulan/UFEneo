@@ -49,7 +49,7 @@ P2（修尺度/姿态/身份、补逐帧骨长证据）：见 `clip_diagnosis.js
 所有 Godot 导入/验证/录制经 `.venv/bin/python tools/godot_lock.py -- <命令>` 串行；不删活锁、不关用户进程。
 - 阶段 A：核 `identity_card.json` 的锚 SHA、真实侧视来源、标志结构前后判据、唯一 scale、≤32 色板识别色、逐 clip cell/anchor；造型须看原生格与严格 4×，站距/色数/Alpha 不代替造型。
 - 阶段 B：核 `storyboard.md` 每帧支撑脚/髋/肩/双拳/头/本人部件/位移/起手发力收势/相邻差分/循环；技能依据必须来自本人 MOVES.md 与 moves/*.json，无集数/时码标内容缺口。
-- 复算证据：`.venv/bin/python art/fighters/ultraman-zero/stage1/rework-20261112/ufeneo_rework_diag_v1.py`（只读 assets/content/reports，重写三份 measurement_evidence.json）；另跑 `.venv/bin/python tools/check/frame_scale_jumps.py --fighter <id> --clip <clip> --verbose`。
+- 复算证据：`.venv/bin/python tools/rebuild/seven-character-rework-20261112/ufeneo_rework_diag_v1.py`（只读 assets/content/reports，重写三份 measurement_evidence.json）；另跑 `.venv/bin/python tools/check/frame_scale_jumps.py --fighter <id> --clip <clip> --verbose`。
 - 阶段 D 硬门：主体 alpha≥128；4 邻域连通块=1、8 邻域辅助；二值 Alpha；≤32 色整图映射；四边不裁；站姿类高度偏差 ≤8%、相邻跳变 ≤10%；相邻剪影 XOR/Union ≥0.10；循环首尾目视可接（辅助门 <0.20）；姿态例外登记高度与骨长。
 - 阶段 D 待机/走路：待机头纵幅 ≤4 px、相邻含首尾 ≤2 px、横漂 ≤2 px、一次下沉再回升；走路按 8 相骨长/引导核（不要求装机 8 帧）、眼纵幅 ≤8 px、相邻 ≤4 px、支撑点世界坐标偏差 ≤8 px。
 - 阶段 D 特效分离：人物帧单连通，主体外 alpha≥16 ≤100 px、主体外 alpha≥200=0（外扩 3 px 口径），alpha 1–15 尘点只登记；独立颗粒/飞行物硬门另判；PixelFX 运行时层硬 Alpha、≤8 色、亮芯/外焰/颗粒/相位变化。

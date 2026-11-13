@@ -4,6 +4,15 @@
 
 本目录保留可以随干净仓库交接的结果摘要；原始测试输出在本机忽略的 `reports/verification`，重新运行会生成自己的输出，不上传整套日志和截图副本。
 
+## 2026-11-13 仓库清洗、工具归位与文档入口收口
+
+- 本机删除 4 个已无消费者的盖亚 attacks 临时脚本、6 个 `__pycache__` / 10 个 `.pyc`、5 个旧 Godot shader `.cache`、5,037 份过期本机日志、241 个未被回执点名的历史验证 run 与 12 个空目录；删除前核绝对路径、消费者、动态路径、SHA 与回执点名的 run id，未建备份或镜像。保留 `.venv`、`.godot`、`.tools/audio/jobs/`、两批返工审片证据、51 个未跟踪 `.import`、七角色在制分镜与回执数据、以及 `latest-run.json` / `repository-audit.json`。
+- 保留此前的全量 run `a092f9e2e135` 与 `cleanup-regression.json` 点名的 `2e157d320c68`、`e7b83f29987a`；后两个 run 的日志与结果摘要留在本机，引用它们的冻结回执未改。当前全量验证另生成 `0d9b633154df`，不把历史 run 删除写成逻辑验证通过。
+- `art/source-index.json` 修正 14 条当前资源的 bytes/SHA，保留原 CRLF 字节布局；核 SHA 后删除无引用、无文档的 `tools/audio-requirements.txt`，并在 `tools/README.md` 登记 `audio/transcribe.py` 的 `faster-whisper` 是未安装到项目 requirements 的可选本机依赖，不在顶层补第二份 requirements 文本。
+- 七角色在制的 4 个诊断生成器从 `art/fighters/<id>/stage1/rework-20261112/` 归位到 `tools/rebuild/seven-character-rework-20261112/`，统一路径引导，补批次 README；同步 4 份 `diagnosis.md`、3 份 `asset_baseline.json` 和 2 处生成文案。冻结任务书 `SEVEN_CHARACTER_REWORK_BRIEF.md` 与硬门脚本 SHA 均未变；14 份 wiring 回执仍逐字一致。
+- 根 `REBUILD_2D_PLAN.md` 删除 2026-11-03 暂停口径，改为指向 `AGENTS.md` / `docs/PROGRESS.md`；`docs/README.md`、`tools/README.md` 补齐工具、在制批次、依赖与文档索引。`docs/verification/*.json` 仍是可交付历史回执，未因未被顶层索引逐一点名而删除。
+- 锁内 `.venv/bin/python tools/godot_lock.py -- .venv/bin/python tools/verify.py --keep-going` 本轮 59 项全部 PASS；`repository_audit.py` 复核通过见本机 `reports/verification/repository-audit.json`。逻辑 PASS 不等于美术/听感通过；本轮无录屏、未听审、未用户亲审。
+
 ## 2026-11-13 赛罗/盖亚 idle 返工、720/1080 实机与截窗参数
 
 - 两角色上一批 11 张独立生成待机 raw 因近/远脚中心横向跨 12.5–36.1 px、冠顶行跨 34–45 px 拒收；11 帧 SHA 记录在 `reports/review/2026-11-13/seven-character-rework/rejected-idle-raws-20261112.json` 后删除，不备份。

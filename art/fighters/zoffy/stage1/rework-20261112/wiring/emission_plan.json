@@ -1,0 +1,3390 @@
+{
+  "fighter": "zoffy",
+  "scope": "plan_only",
+  "tick_hz": 60,
+  "replay": "InputFrame",
+  "source_files": {
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/air_crush.json": "7b7682c19bcd9f83308181280b636fc6822de07ecd2f201e0ce68b8a6519a365",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/air_pulse.json": "cd68701b7e67a4c159bd082e4f84915408e05509535f9bf0350d1a7ee12f00cf",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/air_special.json": "fc4cea871d336641409e9b2acb6a47777891dd40bb030f252458e0d34f2d159f",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/air_throw.json": "97763351a2652353590717dff99684cda7570c843c45b17ff34215e62b3db92b",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/back_counter.json": "2eceaa3f99cd4cdbdbb4c954431d7496bb18303ddf3b9a308bcec2b56c24959f",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/burst.json": "d87cce6b53cadaf0d0ec1357226c6f091e0d3420cd1a0eead9ab5b22073867c5",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/chase_end.json": "e94e10efb50c6e3abeda9ff74285ff8b906dcb1d40b73b3ac64318bd189d167f",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/chase_light1.json": "b42180cde386f5d6b665aa7c69732cf07341cf83a549d436710031caf458707f",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/chase_light2.json": "274453547cb2b88be243bd0ee3280300298bb96ffabc2be3d2da815570b824f0",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/crouch_light.json": "9ebc469864ca7663e78c7560136799912b726016422b44d1fd8b91e17556fa26",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/crouch_light2.json": "6d025b7a0e3875f4cbf4a2c3b2010d7cfd55cdd56a8b01762f70e56f06002e56",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/crush.json": "611b6b0ecc90bffeeb4cdca774ac29b3d51fe7979f3d9f50afd2dcdb64670166",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/dash_heavy.json": "9667704ed509f23b20c6b77fe2794312c3e6ba994c4ee4a9afe44e7d338a4fe5",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/dash_light.json": "cebfb56c4fb7ac166da023809e1ebef2230ae369b5b1f14ba0ade1e6c9820d23",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/dash_throw.json": "9d09760514a274be9176e124546edeb08efdea40fb01f1bd7dba348e11467048",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/diagonal_heavy.json": "fd8d7acaa7cee4711f5e9ddbe6880f7e5e5e813a6a4e420a20f65df2518e5988",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/diagonal_light.json": "65a1fe938f40057a7c58355be15c3928335405a30719e6f34d4beb7fcf27d8f5",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/dive.json": "07b6d5f65583c411d7be8350abaa8b48c1940d5464ede22bebc5104dd0cfcf15",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/dodge_counter.json": "74ba7b472831a08ea1cdc36dbc933b10ead2740036f6563b5923c8b5b2d9ec42",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/guard_counter.json": "7df5f6b588892680bb99d8179808a49a8efbe202a5742260dce5df6ed02df9d2",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/heavy.json": "a569d2b74a76cdd26c4e8d6a2a3110d12065426280ecb1b1cd5ad1cd60deb08e",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/launcher.json": "fcf508c05b4015820fffcc971c319fb6289bcedd2df8a30bad000767dbf609c2",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/light1.json": "62caa89d79704054ce0252103c49f02080e68eaa8ff8253f8deaa7a6a054c8cc",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/light2.json": "75ef4eb6adfe9c8e162c015f5a011249fe1d4a8b61d0f3ded7ffa1d632d2b94d",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/light3.json": "fdd0a38e8283c42b23da50dc3f2682b2f8d60567e3375de6198671a372835cbf",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/low_pulse.json": "f9dc5cd52bbd51683901f1034cda82a856b84568e86aaa5c5c5119861c3d2d55",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/motion_214.json": "86220138ba09da362f059b641c4cbdebe9847f12874266e650aaa477760b5d86",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/motion_22.json": "cad7efb1406b5e1dd263fff1b85d0cbae489fdc59470f1af450b68addee4de1b",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/motion_236.json": "5239fe973f4066f898d4396ffe8fab7150ca6d677d1dfe68e73b36a98cedc41f",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/motion_41236.json": "243b35a8946974278dbcb01ed6754cad29e07692035b292a172a1411fdbca833",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/motion_623.json": "774f204889c3880c82a54f2bafbef1ddc517c67193ab7a069bcd881f560090eb",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/pulse.json": "9ed7f1fc6f08c40f00f2430cd3bace7588990a41378e4a227a1ce4c21edcd778",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/ranged_forward.json": "5ccfc760017effefe73fdbfbc3543e66bdc93dca9bae84c036f9e95dc08696f5",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/slide.json": "fc8dd36f5aa78e8130a72b506bed22e5c31a5f4c1a814428682e6e2ad593afe0",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/special.json": "06c7ddf053b2d94b009406bbcf2e04756d1352fddabc0ce0b4d64607897ec28f",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/special2.json": "7bdfb048d50e7d7b1bd43958aa4fc2c6d1498668564b9f6387234f8f3857e0b8",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/special3.json": "a4d9e6bf7b58143c8aeeca7568d1779cfa838b3a5df3ebba1c94d5a865f8abca",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/spin_heavy.json": "6a2ed0cca6f6ea0aa220eb55a7f84a5870fe7bca522a4ac9a3cf058969f50275",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/sweep.json": "2ffffc085337ac2ac72257e7708c273cc4792a77005b6b010a497c741f684faf",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/tackle.json": "76819d8b0bcbdf680d95e2f761fe41b9153c7d04655e0122c9e2cee1aeebb7bf",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/taunt.json": "02e1a7271988408e6e10368f49fa365f5d00302a8449ee1f47d66ac68984042c",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/throw_back.json": "394432095d228e662f28bb55bd0c72bde848ff9defe4f3cae63bcb6ddb4958bd",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/throw_forward.json": "8e2f6855c0f5a9625c40c47bcecd7e6f8ecdf16d54df1e817966e256c7307702",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/vertical_heavy.json": "f6b1632df537bf5c587dba8e5ad9489fb4227de48f3d42fff6cc51d5581a6e70",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/vertical_light.json": "4992ac6b186e7e69e0570543e78c11b24ce62e68696add592e0d6f81bcc768b7",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/wake_low.json": "af87523551c19b1ecd799eee1cfaddc7987a75ee2a0b5df27338562385712017",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/moves/wake_mid.json": "6418576db9a8875d2514f99029904478e90b9c3272521b7a6976f54921666201",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/state_frames.json": "ccab57943f3f11903f542312384d6c8b5241623a39084e6aa84e1f09b4531cc7",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/definition.json": "5c8d042e52135f6c5b4b062ee3d9475e078e76645e420fcd5acea3338042d859",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/presentation/phase3_projectiles.json": "8ddce6876986cb1177ecb3d4608ede0ed2cee0c3122926cad6b34f00d7f030f2",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/presentation/charge_overlay_policy.json": "e466bed4dc536cf603d47e3d1ec74a0c4d41f37351a1411f5114ae8ad3b75c02",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/tools/rebuild/shared/q_charge_registry.py": "acc29fe416227c346f9305e0a6470990ba35a23236a48437e2f2a287926825f1",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/zoffy/stage1/rework-20261112/asset_baseline.json": "db711c10399783980ea43219384ffbc74f9bb3cfc857e37fbecdb86b01894638",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/zoffy/stage1/rework-20261112/clip_diagnosis.json": "c487d9e5e1edddb044776457e192dc2cf13166e2f261434a7605e26fe2103f90",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/zoffy/MOVES.md": "a6320bd9fa480c3ba3cb179b7c1b6407cc3146cdd1bb6a6acad3a80e2eb1ebdc"
+  },
+  "manual_basis_table": [
+    {
+      "body_part": "掌",
+      "basis": "按当帧本人实际掌心/拳面，朝右与朝左分别核，双向原生误差 ≤2 px；不悬空、不穿体"
+    },
+    {
+      "body_part": "角",
+      "basis": "按当帧角尖/头镖刃根，先判朝向再核前后"
+    },
+    {
+      "body_part": "胸灯",
+      "basis": "按当帧计时器/胸灯中心"
+    },
+    {
+      "body_part": "额灯",
+      "basis": "按当帧额灯/光束发出部位"
+    }
+  ],
+  "emission_entries": [
+    {
+      "move": "air_pulse",
+      "tick": 10,
+      "source_sprite": 2,
+      "field": "shots[0].spawn",
+      "effect_id": "pulse",
+      "clip": "air_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_pulse.json 的运行时发射字段；空中斜下掌推，按当帧斜下前伸掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "air_pulse",
+      "tick": 10,
+      "source_sprite": 2,
+      "field": "shots[0].anchor",
+      "effect_id": "pulse",
+      "clip": "air_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_pulse.json 的运行时发射字段；空中斜下掌推，按当帧斜下前伸掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "air_special",
+      "tick": 10,
+      "source_sprite": 3,
+      "field": "shots[0].spawn",
+      "effect_id": "beam_loop",
+      "clip": "air_special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_special.json 的运行时发射字段；空中前下短束，按当帧前伸掌/手臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "air_special",
+      "tick": 10,
+      "source_sprite": 3,
+      "field": "shots[0].anchor",
+      "effect_id": "beam_loop",
+      "clip": "air_special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_special.json 的运行时发射字段；空中前下短束，按当帧前伸掌/手臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "low_pulse",
+      "tick": 11,
+      "source_sprite": 2,
+      "field": "shots[0].spawn",
+      "effect_id": "pulse",
+      "clip": "low_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/low_pulse.json 的运行时发射字段；蹲姿低位掌推，按当帧低位掌/拳面",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "low_pulse",
+      "tick": 11,
+      "source_sprite": 2,
+      "field": "shots[0].anchor",
+      "effect_id": "pulse",
+      "clip": "low_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/low_pulse.json 的运行时发射字段；蹲姿低位掌推，按当帧低位掌/拳面",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 1,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 2,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 3,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 4,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 5,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 6,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 7,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 8,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 9,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 10,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 11,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 12,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 13,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "shots[0].spawn",
+      "effect_id": "zoffy_fx_orb_flight",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：超级充能游戏改编掌根崩击，蓄能光只在掌前",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_22",
+      "tick": 22,
+      "source_sprite": 4,
+      "field": "shots[0].spawn",
+      "effect_id": "special_barrier",
+      "clip": "motion_22",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_22.json data_source：双掌收于胸前再向前张开",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_22",
+      "tick": 22,
+      "source_sprite": 4,
+      "field": "shots[0].anchor",
+      "effect_id": "special_barrier",
+      "clip": "motion_22",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_22.json data_source：双掌收于胸前再向前张开",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_236",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "shots[0].spawn",
+      "effect_id": "zoffy_fx_orb_flight",
+      "clip": "motion_236",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_236.json data_source：短距近身掌/肘突袭",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_623",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "shots[0].spawn",
+      "effect_id": "zoffy_fx_rise_ray_flight",
+      "clip": "motion_623",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_623.json data_source：双掌由髋前并行上冲",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "pulse",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "shots[0].spawn",
+      "effect_id": "pulse",
+      "clip": "pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/pulse.json 的运行时发射字段；掌根/掌心前推，投射类只核手部动作与运行时发射层",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "pulse",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "shots[0].anchor",
+      "effect_id": "pulse",
+      "clip": "pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/pulse.json 的运行时发射字段；掌根/掌心前推，投射类只核手部动作与运行时发射层",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "ranged_forward",
+      "tick": 18,
+      "source_sprite": 4,
+      "field": "shots[0].spawn",
+      "effect_id": "beam_loop",
+      "clip": "ranged_forward",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/ranged_forward.json data_source：斯派修姆光线双臂十字交叉后从右手刀缘发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "ranged_forward",
+      "tick": 18,
+      "source_sprite": 4,
+      "field": "shots[0].anchor",
+      "effect_id": "beam_loop",
+      "clip": "ranged_forward",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/ranged_forward.json data_source：斯派修姆光线双臂十字交叉后从右手刀缘发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 1,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 2,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 3,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 4,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 5,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 6,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 7,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 8,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 9,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 10,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 11,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 12,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 13,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 15,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 17,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 18,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 19,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 20,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 21,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_zap_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 24,
+      "source_sprite": 4,
+      "field": "shots[0].spawn",
+      "effect_id": "zoffy_fx_zap_beam",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 24,
+      "source_sprite": 4,
+      "field": "shots[0].anchor",
+      "effect_id": "zoffy_fx_zap_beam",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：Z 光线双掌在胸前合拢后从双掌前缘发出",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 1,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 2,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 3,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 4,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 5,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 6,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 7,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 8,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 9,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 10,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 11,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 12,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 13,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 15,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 17,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 18,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 19,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 20,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 21,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 22,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 23,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_frost_charge_start",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 32,
+      "source_sprite": 6,
+      "field": "shots[0].spawn",
+      "effect_id": "zoffy_fx_frost_flight",
+      "clip": "special2",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special2.json data_source：超级冻霜双掌前推的冷冻锥",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 1,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 2,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 3,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 4,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 5,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 6,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 7,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 8,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 9,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 10,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 11,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 12,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 13,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 15,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 16,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 17,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 18,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 19,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 20,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 21,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 22,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 23,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 24,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 25,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 26,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 27,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 28,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 29,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 30,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 31,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 33,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 34,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 35,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 36,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 37,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 38,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 39,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "zoffy_fx_m87_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 46,
+      "source_sprite": 7,
+      "field": "shots[0].spawn",
+      "effect_id": "zoffy_fx_m87_beam",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 46,
+      "source_sprite": 7,
+      "field": "shots[0].anchor",
+      "effect_id": "zoffy_fx_m87_beam",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：M87 光线 A 型从右指尖/掌心发出、左掌靠彩色计时器；发射点取右指尖/掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_start",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "charge_overlay_policy.placements.zoffy.charge_start.anchor",
+      "effect_id": "zoffy_fx_q_charge_start",
+      "clip": "charge_start",
+      "body_part": "其它（Q 周身蓄气圈身体构图锚点，按真实 Q 起势/保持/收势核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 周身蓄气圈身体构图锚点）+ 按真实 Q 起势/保持/收势与当帧身体构图核；依据：content/presentation/charge_overlay_policy.json 三态 placement 与 tools/rebuild/shared/q_charge_registry.py 口径",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_start",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_start",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/zoffy/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_start",
+      "tick": 1,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_start",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/zoffy/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_start",
+      "tick": 2,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_start",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/zoffy/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "charge_overlay_policy.placements.zoffy.charge.anchor",
+      "effect_id": "zoffy_fx_q_charge",
+      "clip": "charge",
+      "body_part": "其它（Q 周身蓄气圈身体构图锚点，按真实 Q 起势/保持/收势核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 周身蓄气圈身体构图锚点）+ 按真实 Q 起势/保持/收势与当帧身体构图核；依据：content/presentation/charge_overlay_policy.json 三态 placement 与 tools/rebuild/shared/q_charge_registry.py 口径",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/zoffy/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 1,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/zoffy/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 2,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/zoffy/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 3,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/zoffy/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_stop",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "charge_overlay_policy.placements.zoffy.charge_stop.anchor",
+      "effect_id": "zoffy_fx_q_charge_stop",
+      "clip": "charge_stop",
+      "body_part": "其它（Q 周身蓄气圈身体构图锚点，按真实 Q 起势/保持/收势核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 周身蓄气圈身体构图锚点）+ 按真实 Q 起势/保持/收势与当帧身体构图核；依据：content/presentation/charge_overlay_policy.json 三态 placement 与 tools/rebuild/shared/q_charge_registry.py 口径",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_stop",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_stop",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/zoffy/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_stop",
+      "tick": 1,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_stop",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/zoffy/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    }
+  ],
+  "phase3": {
+    "absolute_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/presentation/phase3_projectiles.json",
+    "sha256": "8ddce6876986cb1177ecb3d4608ede0ed2cee0c3122926cad6b34f00d7f030f2",
+    "entry_count": 722,
+    "q_effect_ids": [
+      "father_fx_q_charge",
+      "father_fx_q_charge_start",
+      "father_fx_q_charge_stop",
+      "justice_fx_q_charge",
+      "justice_fx_q_charge_start",
+      "justice_fx_q_charge_stop",
+      "mother_of_ultra_fx_q_charge",
+      "mother_of_ultra_fx_q_charge_start",
+      "mother_of_ultra_fx_q_charge_stop",
+      "ultraman_gaia_fx_q_charge",
+      "ultraman_gaia_fx_q_charge_start",
+      "ultraman_gaia_fx_q_charge_stop",
+      "ultraman_king_fx_q_charge",
+      "ultraman_king_fx_q_charge_start",
+      "ultraman_king_fx_q_charge_stop",
+      "zero_fx_q_charge",
+      "zero_fx_q_charge_start",
+      "zero_fx_q_charge_stop",
+      "zoffy_fx_q_charge",
+      "zoffy_fx_q_charge_start",
+      "zoffy_fx_q_charge_stop"
+    ],
+    "q_effect_id_count": 21,
+    "seven_fighter_referenced_effect_ids": [
+      "beam_hit",
+      "beam_loop",
+      "charge_aura",
+      "father_fx_arrow_flight",
+      "father_fx_arrow_hit",
+      "father_fx_barrier",
+      "father_fx_beam",
+      "father_fx_beam_hit",
+      "father_fx_catch_back",
+      "father_fx_catch_front",
+      "father_fx_pulse_flight",
+      "father_fx_pulse_hit",
+      "father_fx_q_charge",
+      "father_fx_q_charge_start",
+      "father_fx_q_charge_stop",
+      "father_fx_rings",
+      "father_fx_rings_hit",
+      "father_fx_spiral",
+      "father_fx_spiral_hit",
+      "gaia_fx_crusher_beam",
+      "gaia_fx_crusher_charge_start",
+      "gaia_fx_crusher_hit",
+      "gaia_fx_edge_charge_start",
+      "gaia_fx_edge_hit",
+      "gaia_fx_palm_ray_flight",
+      "gaia_fx_palm_ray_hit",
+      "gaia_fx_palm_ray_trail",
+      "gaia_fx_slash_charge_start",
+      "gaia_fx_slash_flight",
+      "gaia_fx_slash_hit",
+      "gaia_fx_slash_trail",
+      "gaia_fx_stream_beam",
+      "gaia_fx_stream_charge_start",
+      "gaia_fx_stream_hit",
+      "impact_guard",
+      "impact_heavy",
+      "impact_light",
+      "justice_fx_arrow_flight",
+      "justice_fx_arrow_hit",
+      "justice_fx_beam",
+      "justice_fx_beam_hit",
+      "justice_fx_pulse_flight",
+      "justice_fx_pulse_hit",
+      "justice_fx_q_charge",
+      "justice_fx_q_charge_start",
+      "justice_fx_q_charge_stop",
+      "king_fx_baptism_arrow_flight",
+      "king_fx_baptism_arrow_hit",
+      "king_fx_baptism_arrow_start",
+      "king_fx_baptism_arrow_trail",
+      "king_fx_flasher_beam",
+      "king_fx_flasher_charge_start",
+      "king_fx_flasher_hit",
+      "king_fx_palm_arrow_flight",
+      "king_fx_palm_arrow_hit",
+      "king_fx_palm_arrow_trail",
+      "king_fx_rebirth_beam",
+      "king_fx_rebirth_charge_start",
+      "king_fx_rebirth_hit",
+      "king_fx_ring_form_back",
+      "king_fx_ring_form_front",
+      "mother_fx_buster_beam",
+      "mother_fx_buster_hit",
+      "mother_fx_palm_ray_flight",
+      "mother_fx_palm_ray_hit",
+      "mother_fx_palm_ray_trail",
+      "mother_fx_ray_beam",
+      "mother_fx_ray_charge_start",
+      "mother_fx_ray_hit",
+      "mother_fx_shower_charge_start",
+      "mother_fx_slap_charge_start",
+      "mother_fx_slap_orb_flight",
+      "mother_fx_slap_orb_hit",
+      "mother_fx_slap_orb_trail",
+      "mother_of_ultra_fx_q_charge",
+      "mother_of_ultra_fx_q_charge_start",
+      "mother_of_ultra_fx_q_charge_stop",
+      "pulse",
+      "special_arrow",
+      "special_barrier",
+      "special_rings",
+      "special_spiral",
+      "ultraman_gaia_fx_q_charge",
+      "ultraman_gaia_fx_q_charge_start",
+      "ultraman_gaia_fx_q_charge_stop",
+      "ultraman_king_fx_q_charge",
+      "ultraman_king_fx_q_charge_start",
+      "ultraman_king_fx_q_charge_stop",
+      "zero_fx_emerium_beam",
+      "zero_fx_emerium_hit",
+      "zero_fx_pulse_flight",
+      "zero_fx_pulse_hit",
+      "zero_fx_q_charge",
+      "zero_fx_q_charge_start",
+      "zero_fx_q_charge_stop",
+      "zero_fx_slugger_catch",
+      "zero_fx_slugger_flight",
+      "zero_fx_slugger_hit",
+      "zero_fx_slugger_trail",
+      "zero_fx_wide_beam",
+      "zero_fx_wide_hit",
+      "zoffy_fx_frost_charge_start",
+      "zoffy_fx_frost_flight",
+      "zoffy_fx_frost_hit",
+      "zoffy_fx_frost_trail",
+      "zoffy_fx_m87_beam",
+      "zoffy_fx_m87_charge_start",
+      "zoffy_fx_m87_hit",
+      "zoffy_fx_orb_flight",
+      "zoffy_fx_orb_hit",
+      "zoffy_fx_orb_trail",
+      "zoffy_fx_q_charge",
+      "zoffy_fx_q_charge_start",
+      "zoffy_fx_q_charge_stop",
+      "zoffy_fx_rise_ray_flight",
+      "zoffy_fx_rise_ray_hit",
+      "zoffy_fx_rise_ray_trail",
+      "zoffy_fx_zap_beam",
+      "zoffy_fx_zap_charge_start",
+      "zoffy_fx_zap_hit"
+    ],
+    "referenced_effect_id_count": 120,
+    "registration_status": "all_registered",
+    "atlas_sha256_status": "已记录字段的条目全部与字节相符；6 个共享旧式 id 未记录该字段，按现状保留",
+    "legacy_ids_without_atlas_sha256": [
+      "beam_hit",
+      "impact_guard",
+      "impact_heavy",
+      "impact_light",
+      "king_fx_ring_form_back",
+      "king_fx_ring_form_front"
+    ],
+    "do_not_duplicate_registration": true,
+    "sha_reregistration_plan": {
+      "trigger": "仅在新增或改换贴图后",
+      "steps": [
+        "核新 atlas 尺寸/真 Alpha/主体",
+        "计算 atlas SHA",
+        "按 tools/rebuild/shared/q_charge_registry.py 口径补 phase3 条目",
+        "核 charge_overlay_policy.json 三态 placement 与 effect id 1:1",
+        "双向实机可见性复核"
+      ],
+      "current_action": "无"
+    }
+  },
+  "effect_id_scope": {
+    "shots": [
+      "beam_loop",
+      "pulse",
+      "special_barrier",
+      "zoffy_fx_frost_charge_start",
+      "zoffy_fx_frost_flight",
+      "zoffy_fx_frost_trail",
+      "zoffy_fx_m87_beam",
+      "zoffy_fx_m87_charge_start",
+      "zoffy_fx_orb_flight",
+      "zoffy_fx_orb_trail",
+      "zoffy_fx_rise_ray_flight",
+      "zoffy_fx_rise_ray_trail",
+      "zoffy_fx_zap_beam",
+      "zoffy_fx_zap_charge_start"
+    ],
+    "feedback_spark": [
+      "beam_hit",
+      "impact_heavy",
+      "impact_light",
+      "zoffy_fx_frost_hit",
+      "zoffy_fx_m87_hit",
+      "zoffy_fx_orb_hit",
+      "zoffy_fx_rise_ray_hit",
+      "zoffy_fx_zap_hit"
+    ],
+    "feedback_block_spark": [
+      "impact_guard"
+    ],
+    "projectile_impacts": [],
+    "frame_impact_effect": [
+      "impact_heavy",
+      "impact_light"
+    ],
+    "frame_block_effect": [
+      "impact_guard"
+    ],
+    "state_frame_impact_effect": [
+      "impact_light"
+    ],
+    "state_frame_block_effect": [
+      "impact_guard"
+    ],
+    "state_frame_attachments": [
+      "charge_aura"
+    ],
+    "charge_overlay_policy_three_states": [
+      "zoffy_fx_q_charge_start",
+      "zoffy_fx_q_charge",
+      "zoffy_fx_q_charge_stop"
+    ],
+    "all_referenced_effect_ids": [
+      "beam_hit",
+      "beam_loop",
+      "charge_aura",
+      "impact_guard",
+      "impact_heavy",
+      "impact_light",
+      "pulse",
+      "special_barrier",
+      "zoffy_fx_frost_charge_start",
+      "zoffy_fx_frost_flight",
+      "zoffy_fx_frost_hit",
+      "zoffy_fx_frost_trail",
+      "zoffy_fx_m87_beam",
+      "zoffy_fx_m87_charge_start",
+      "zoffy_fx_m87_hit",
+      "zoffy_fx_orb_flight",
+      "zoffy_fx_orb_hit",
+      "zoffy_fx_orb_trail",
+      "zoffy_fx_q_charge",
+      "zoffy_fx_q_charge_start",
+      "zoffy_fx_q_charge_stop",
+      "zoffy_fx_rise_ray_flight",
+      "zoffy_fx_rise_ray_hit",
+      "zoffy_fx_rise_ray_trail",
+      "zoffy_fx_zap_beam",
+      "zoffy_fx_zap_charge_start",
+      "zoffy_fx_zap_hit"
+    ],
+    "missing_ids": [],
+    "pending_ids": [],
+    "unregistered_ids": [],
+    "scope_note": "missing_ids 指空/缺字段引用；pending_ids 指 pending_ 前缀或含 pending 的 id；unregistered_ids 指 phase3 查不到条目导致表现层静默跳过的 id。三者本轮均为空。"
+  },
+  "plan_notes": [
+    "本文件只写接线计划，未改 content/、core/、input/、presentation/、ui/、assets/；未跑 Godot、verify，未动锁，未 commit。",
+    "没有新帧：全部 emission_entries 为 pending_cell，point_right/point_left 为 null；双向原生误差 ≤2 px 是重画帧落格后的验收标准，不是本轮已通过结论。",
+    "投射类 pulse、low_pulse、air_pulse、ranged_forward 只核手部/身体动作与运行时发射层；人物帧不得画能量球、光刃、飞行物，运行时 move_fx 已生成投射物，不双重特效。特效光色只在运行时规格定义，不写进人物帧计划。",
+    "Q 蓄气三态 placement 按 tools/rebuild/shared/q_charge_registry.py 口径；只登记落点时也要保证真实 Q 起势/保持/收势可见；技能帧不写周身蓄气圈例外。",
+    "current_cell/current_anchor 逐 clip 取自 asset_baseline.json 的 clips[move].rects 与 anchors；已核七角色每个 clip 内 rect 尺寸与 anchors 一致。不使用 definition.json 的 presentation 顶层旧值或 cells.json 顶层旧 anchor。",
+    "source_files 含只读 MOVES.md（仅作 body_part 依据，未把其中数值写成本计划坐标）；未读或依赖 W1 的 state_frames_plan/moves_plan。",
+    "Q placement 条目对应 charge_overlay_policy.json 三态 anchor；将来落 emission_points.json 时按 state:<状态> 的 attachments[].anchor 口径另建人工依据表。",
+    "moves/motion_214.json 起的 zoffy_fx_m87_charge_start 挂件与 special3 同名，按各自当帧掌部聚能落点分别核，不互相套用坐标。"
+  ],
+  "blockers": []
+}

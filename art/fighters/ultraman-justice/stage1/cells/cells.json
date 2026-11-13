@@ -2,11 +2,11 @@
  "fighter": "ultraman-justice",
  "approved": "assets/fighters/ultraman-justice/catalogue/model-native.png",
  "approved_sha256": "924c2aab9395217364600579ffdd23f44fc262f2865f3ec44ef2ebe539991989",
- "scale": 0.161972,
- "scale_source": "art/fighters/ultraman-justice/stage1/cells/idle-candidate-04-x4.png",
- "scale_source_head": 132,
+ "scale": 0.205619,
+ "scale_source": "art/fighters/ultraman-justice/stage1/rework-20261112/raw/idle-base-00.png",
+ "scale_source_head": 171,
  "target_standing": 161,
- "target_head": 21,
+ "target_head": 35,
  "cell": 256,
  "anchor": [
   128,
@@ -1522,19 +1522,36 @@
     255
    ],
    "standing": true
+  },
+  {
+   "frame": "idle-00-cell",
+   "source": "art/fighters/ultraman-justice/stage1/rework-20261112/raw/idle-base-00.png",
+   "source_sha256": "1b1954f5af4583acefb00551f25f62e76cc48f96befddffd396ed0ce94b522fe",
+   "output": "art/fighters/ultraman-justice/stage1/cells/idle-00-cell.png",
+   "output_sha256": "33ba4db019cdc5df8a433208d704bfdc958001717134ce80ca1d32bbade30eae",
+   "scale": 0.205619,
+   "bbox": [
+    70,
+    87,
+    178,
+    247
+   ],
+   "height": 161,
+   "width": 109,
+   "head_height": 35,
+   "head_ratio": 0.2174,
+   "colors": 28,
+   "components": 1,
+   "foot_row": 247,
+   "alpha": [
+    0,
+    255
+   ],
+   "standing": true
   }
  ],
  "flags": [],
- "notes": [
-  "air_special-00: 非直立帧，头高 9、站高 115 仅供参考，需目视核对比例",
-  "air_special-01: 非直立帧，头高 9、站高 121 仅供参考，需目视核对比例",
-  "air_special-02: 非直立帧，头高 11、站高 145 仅供参考，需目视核对比例",
-  "air_special-03: 非直立帧，头高 10、站高 130 仅供参考，需目视核对比例",
-  "air_special-04: 非直立帧，头高 37、站高 135 仅供参考，需目视核对比例",
-  "air_special-05: 非直立帧，头高 38、站高 156 仅供参考，需目视核对比例",
-  "air_special-06: 非直立帧，头高 10、站高 132 仅供参考，需目视核对比例",
-  "air_special-07: 非直立帧，头高 33、站高 167 仅供参考，需目视核对比例"
- ],
+ "notes": [],
  "rescale_2026_11_11": {
   "task": "按円谷官方身高设定重推 scale 重落全部已装战斗格",
   "old_scale": 0.15493,
@@ -1544,5 +1561,14 @@
   "official_m": 46,
   "report": "tools/rebuild/body-rescale/ultraman-justice-rescale.json"
  },
- "cell_note": "air_special 因斜下前伸臂超宽单独使用 288×288 格，根点同 [128,248]；其余招式为 256×256。"
+ "cell_note": "air_special 因斜下前伸臂超宽单独使用 288×288 格，根点同 [128,248]；其余招式为 256×256。",
+ "catalogue_input": "assets/fighters/ultraman-justice/catalogue/model-native.png",
+ "catalogue_input_sha256": "924c2aab9395217364600579ffdd23f44fc262f2865f3ec44ef2ebe539991989",
+ "palette": {
+  "palette_source": "frozen_palette_json",
+  "palette_path": "art/fighters/ultraman-justice/stage1/rework-20261112/frozen_palette.json",
+  "palette_sha256": "df4e0e591bebae777462d54c077c6a24935450575ef39fc4283266be56fea030",
+  "palette_size": 32,
+  "palette_rgb_sha256": "c39dabb678d601f7546bc636216b29d188637f2bed8da9a7d5fbfbe8902598ab"
+ }
 }

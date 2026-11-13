@@ -60,9 +60,11 @@ kCentroid 兼容实现仍可用于确定性整图还原，不冒称网格检测�
 [本批cells.json](../../../art/fighters/ultraman-justice/stage1/cells/cells.json)。
 `stage_cells.py` 的默认 BOX/图鉴色板未改，本批没有调用该默认落格路线。
 
-[原生候选](../../../art/fighters/ultraman-justice/stage1/cells/idle-candidate-02-cell.png)
-与同目录4×最近邻图已静审：站高154、宽113，分脚护架与全身体量较自然；
-**头壳宽24，对旧定稿22偏大9.09%，略超现有8%门，仍不签动作锚。**
+原生候选 `idle-candidate-02-cell.png` 与同目录4×最近邻图曾静审：站高154、
+宽113，分脚护架与全身体量较自然；**头壳宽24，对旧定稿22偏大9.09%，
+略超现有8%门，仍不签动作锚。**该候选已按 SHA 记录在
+`art/fighters/ultraman-justice/stage1/requests.json` 后删除，不留备份；
+本节是拒收回执，不是可打开的当前图片路径。
 本轮到一张新待机候选为止，不再单独缩头、不生成下游动作、不安装。
 
 已用完的窄站照片和透明留白编辑输入按SHA直接删除，删除清单写回requests；

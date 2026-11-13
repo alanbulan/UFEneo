@@ -1,0 +1,4388 @@
+{
+  "summary": {
+    "fighter": "ultraman-justice",
+    "date": "2026-11-12",
+    "scope": "installed clips from assets/fighters/ultraman-justice/animations/manifest.json",
+    "evidence_mode": "workspace_existing_only_no_new_generation",
+    "manifest_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/manifest.json",
+    "manifest_reviewed": false,
+    "manifest_identity_revision": "root_delegated_by_user_2026-11-10",
+    "manifest_global_cell": [
+      288,
+      288
+    ],
+    "manifest_global_anchor": [
+      128,
+      248
+    ],
+    "clip_count": 108,
+    "counts": {
+      "atlas_missing": 0,
+      "manifest_sha_mismatch": 0,
+      "rects_out_of_bounds": 0,
+      "alpha_not_binary": 0,
+      "missing_teal_identity_pixels": 104,
+      "legacy_192_grid_anchor_96_184": 4,
+      "teal_present_sparse": 4
+    },
+    "grid_groups": {
+      "cell=192 anchor=[96, 184] rect=[[192, 192]]": [
+        "chase_takeoff",
+        "defeat",
+        "vertical_jump",
+        "victory"
+      ],
+      "cell=256 anchor=[128, 248] rect=[[256, 256]]": [
+        "air_apex",
+        "air_crush",
+        "air_fall",
+        "air_pulse",
+        "air_rise",
+        "air_tech",
+        "air_throw",
+        "back_counter",
+        "backstep",
+        "block",
+        "blockstun",
+        "bounce",
+        "bounce_crush",
+        "bounce_sweep",
+        "burst",
+        "charge",
+        "charge_start",
+        "charge_stop",
+        "chase_end",
+        "chase_light1",
+        "chase_light2",
+        "crouch",
+        "crouch_blockstun",
+        "crouch_guard",
+        "crouch_light",
+        "crouch_light2",
+        "crouch_rise",
+        "crouch_start",
+        "crouch_sweep",
+        "crouch_turn",
+        "crush",
+        "dash",
+        "dash_heavy",
+        "dash_light",
+        "dash_start",
+        "dash_stop",
+        "dash_throw",
+        "diagonal_heavy",
+        "diagonal_light",
+        "dive",
+        "dodge",
+        "dodge_counter",
+        "down",
+        "flip_back",
+        "flip_forward",
+        "getup",
+        "grabbed",
+        "guard",
+        "guard_counter",
+        "guardbreak",
+        "heavy",
+        "hit",
+        "hit_air",
+        "hit_crouch",
+        "hit_high",
+        "hit_mid",
+        "idle",
+        "intro",
+        "ko",
+        "land",
+        "launch_fall",
+        "launch_rise",
+        "launcher",
+        "light1",
+        "light2",
+        "light3",
+        "low_pulse",
+        "motion_214",
+        "motion_22",
+        "motion_236",
+        "motion_41236",
+        "motion_623",
+        "pulse",
+        "ranged_forward",
+        "roll_back",
+        "roll_forward",
+        "slide",
+        "special",
+        "special2",
+        "special3",
+        "spin_heavy",
+        "stun",
+        "sweep",
+        "tackle",
+        "takeoff",
+        "taunt",
+        "throw_back",
+        "throw_forward",
+        "throw_tech",
+        "thrown_air",
+        "thrown_back",
+        "thrown_dash",
+        "thrown_forward",
+        "timeout",
+        "turn",
+        "vertical_heavy",
+        "vertical_light",
+        "wake",
+        "wake_low",
+        "wake_mid",
+        "walk_back",
+        "walk_forward",
+        "win"
+      ],
+      "cell=288 anchor=[128, 248] rect=[[288, 288]]": [
+        "air_special"
+      ]
+    },
+    "notes": [
+      "All 108 installed atlases exist, hashes match manifest, rects in-bounds, alpha binary.",
+      "Only 4 clips contain teal-hue pixels (chase_takeoff, defeat, vertical_jump, victory); 104 lack canonical teal identity accents seen in signed anchor/4x.",
+      "Four clips still use legacy 192-cell anchor [96,184]: air_throw, back_dash, throw_tech, victory.",
+      "air_special is the only 288-cell clip by manifest field; global manifest cell/anchor differs from most per-clip entries.",
+      "No runtime recording, no in-game screenshot, no user/hearing approval in this audit; verdicts are asset/workspace evidence only."
+    ]
+  },
+  "clips": [
+    {
+      "clip": "air_apex",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/air_apex/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/air_apex/atlas.png",
+      "atlas_sha_manifest": "3ed5344645a9124774e0a26ce530520331326f383ef0c8f3bc3a0d53100ca583",
+      "atlas_sha_actual": "3ed5344645a9124774e0a26ce530520331326f383ef0c8f3bc3a0d53100ca583",
+      "atlas_bytes": 5441,
+      "atlas_size": [
+        256,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 1,
+      "tick_count": 1,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 30,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "air_crush",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/air_crush/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/air_crush/atlas.png",
+      "atlas_sha_manifest": "fb31d6b7acb0ac97de468e6544140f6cd6d50d5b5a96faf6d9257f71eb62f7a5",
+      "atlas_sha_actual": "fb31d6b7acb0ac97de468e6544140f6cd6d50d5b5a96faf6d9257f71eb62f7a5",
+      "atlas_bytes": 34303,
+      "atlas_size": [
+        1536,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 6,
+      "tick_count": 6,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "air_fall",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/air_fall/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/air_fall/atlas.png",
+      "atlas_sha_manifest": "b1818570de3e4b8cfb661d4cc38e480079d3b8bd837aa6d893f38d4db7206a17",
+      "atlas_sha_actual": "b1818570de3e4b8cfb661d4cc38e480079d3b8bd837aa6d893f38d4db7206a17",
+      "atlas_bytes": 5845,
+      "atlas_size": [
+        256,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 1,
+      "tick_count": 1,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 28,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "air_pulse",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/air_pulse/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/air_pulse/atlas.png",
+      "atlas_sha_manifest": "27e190de30c07b2d823995ed0b9c9595683d0eb5c0c5439227a279c466e6b8c2",
+      "atlas_sha_actual": "27e190de30c07b2d823995ed0b9c9595683d0eb5c0c5439227a279c466e6b8c2",
+      "atlas_bytes": 26441,
+      "atlas_size": [
+        1280,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 5,
+      "tick_count": 5,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "air_rise",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/air_rise/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/air_rise/atlas.png",
+      "atlas_sha_manifest": "7a3c5a7c41d88040fae1693230094e66a3726d283eec60ef67c926a2bba80cdd",
+      "atlas_sha_actual": "7a3c5a7c41d88040fae1693230094e66a3726d283eec60ef67c926a2bba80cdd",
+      "atlas_bytes": 5803,
+      "atlas_size": [
+        256,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 1,
+      "tick_count": 1,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "air_special",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/air_special/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/air_special/atlas.png",
+      "atlas_sha_manifest": "b87921f3b33cd3a309361df6007b6c31d2c5385055fc18ec446bcfa71de1237f",
+      "atlas_sha_actual": "b87921f3b33cd3a309361df6007b6c31d2c5385055fc18ec446bcfa71de1237f",
+      "atlas_bytes": 59393,
+      "atlas_size": [
+        2304,
+        288
+      ],
+      "manifest_cell": 288,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 8,
+      "tick_count": 8,
+      "loop": false,
+      "rect_sizes": [
+        [
+          288,
+          288
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "288_special_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "air_tech",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/air_tech/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/air_tech/atlas.png",
+      "atlas_sha_manifest": "b4e47e740e03dec8b17f61f864f7291a7530762b4255b2ca714b5b3118046e33",
+      "atlas_sha_actual": "b4e47e740e03dec8b17f61f864f7291a7530762b4255b2ca714b5b3118046e33",
+      "atlas_bytes": 26517,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "air_throw",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/air_throw/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/air_throw/atlas.png",
+      "atlas_sha_manifest": "f12a9a242539a74f1ae8a8dfcf1c2a6a6399c98c9cd0452852ded46150aa8c8d",
+      "atlas_sha_actual": "f12a9a242539a74f1ae8a8dfcf1c2a6a6399c98c9cd0452852ded46150aa8c8d",
+      "atlas_bytes": 31365,
+      "atlas_size": [
+        1536,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 6,
+      "tick_count": 6,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "back_counter",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/back_counter/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/back_counter/atlas.png",
+      "atlas_sha_manifest": "c41148c1aa1c0f65c25d99864cc6bb27649d483333e4b48856ccd2b1c3779d3d",
+      "atlas_sha_actual": "c41148c1aa1c0f65c25d99864cc6bb27649d483333e4b48856ccd2b1c3779d3d",
+      "atlas_bytes": 32685,
+      "atlas_size": [
+        1536,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 6,
+      "tick_count": 6,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "backstep",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/backstep/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/backstep/atlas.png",
+      "atlas_sha_manifest": "1921ab07e3c5d1fb89dbd6ab9e570f7a05ba44bbfaa14941fc69f295740c7961",
+      "atlas_sha_actual": "1921ab07e3c5d1fb89dbd6ab9e570f7a05ba44bbfaa14941fc69f295740c7961",
+      "atlas_bytes": 28941,
+      "atlas_size": [
+        1280,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 5,
+      "tick_count": 5,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "block",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/block/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/block/atlas.png",
+      "atlas_sha_manifest": "6e1d134c37312770b0692edda3ab4a1b312c23a58a0ef3430a75f41623a4546a",
+      "atlas_sha_actual": "6e1d134c37312770b0692edda3ab4a1b312c23a58a0ef3430a75f41623a4546a",
+      "atlas_bytes": 5890,
+      "atlas_size": [
+        256,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 1,
+      "tick_count": 1,
+      "loop": true,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "blockstun",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/blockstun/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/blockstun/atlas.png",
+      "atlas_sha_manifest": "ba6299e68f21ef9c1fc91d56ce3b0efb0aeca8bcef962f821894ad70860f5162",
+      "atlas_sha_actual": "ba6299e68f21ef9c1fc91d56ce3b0efb0aeca8bcef962f821894ad70860f5162",
+      "atlas_bytes": 10821,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "bounce",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/bounce/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/bounce/atlas.png",
+      "atlas_sha_manifest": "0ee62183bf58ca9674c2ae533a5d8961bc5a9720e3da862baff57c81d724c471",
+      "atlas_sha_actual": "0ee62183bf58ca9674c2ae533a5d8961bc5a9720e3da862baff57c81d724c471",
+      "atlas_bytes": 17243,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "bounce_crush",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/bounce_crush/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/bounce_crush/atlas.png",
+      "atlas_sha_manifest": "70987543fe99103566694c6634c07f92313fe0ae2077aaa4c58c44156e2b2a1e",
+      "atlas_sha_actual": "70987543fe99103566694c6634c07f92313fe0ae2077aaa4c58c44156e2b2a1e",
+      "atlas_bytes": 53728,
+      "atlas_size": [
+        2304,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 9,
+      "tick_count": 9,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "bounce_sweep",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/bounce_sweep/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/bounce_sweep/atlas.png",
+      "atlas_sha_manifest": "78932c087591831cbe75b18489ab5f50db2f5142992668363869f1e34504f05d",
+      "atlas_sha_actual": "78932c087591831cbe75b18489ab5f50db2f5142992668363869f1e34504f05d",
+      "atlas_bytes": 40573,
+      "atlas_size": [
+        1792,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 7,
+      "tick_count": 7,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "burst",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/burst/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/burst/atlas.png",
+      "atlas_sha_manifest": "e2d7b73277c81fb443f8304aa63bf27f00c387133c43f322340c5c6f5b15fe56",
+      "atlas_sha_actual": "e2d7b73277c81fb443f8304aa63bf27f00c387133c43f322340c5c6f5b15fe56",
+      "atlas_bytes": 29775,
+      "atlas_size": [
+        1280,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 5,
+      "tick_count": 5,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "charge",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/charge/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/charge/atlas.png",
+      "atlas_sha_manifest": "94cc0dc54366e4481a3a8008503faa5c6a7792b4d510664af41d158bfc4b0130",
+      "atlas_sha_actual": "94cc0dc54366e4481a3a8008503faa5c6a7792b4d510664af41d158bfc4b0130",
+      "atlas_bytes": 22922,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": true,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "charge_start",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/charge_start/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/charge_start/atlas.png",
+      "atlas_sha_manifest": "b31709ddfb25c30ce9a0c8587fdaccd82a2c4a5ea7a81f4eb6238f7e856a2b97",
+      "atlas_sha_actual": "b31709ddfb25c30ce9a0c8587fdaccd82a2c4a5ea7a81f4eb6238f7e856a2b97",
+      "atlas_bytes": 18651,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "charge_stop",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/charge_stop/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/charge_stop/atlas.png",
+      "atlas_sha_manifest": "547f290c0af9ce46d931b3b75a1fdb08cbfe8c2e8fbc7cbc22311567b779e031",
+      "atlas_sha_actual": "547f290c0af9ce46d931b3b75a1fdb08cbfe8c2e8fbc7cbc22311567b779e031",
+      "atlas_bytes": 12422,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 29,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "chase_end",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/chase_end/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/chase_end/atlas.png",
+      "atlas_sha_manifest": "2695d29e699e09960ee6e495f8a07b26116329828bc60fe43de46795a7129b79",
+      "atlas_sha_actual": "2695d29e699e09960ee6e495f8a07b26116329828bc60fe43de46795a7129b79",
+      "atlas_bytes": 32950,
+      "atlas_size": [
+        1536,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 6,
+      "tick_count": 6,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "chase_light1",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/chase_light1/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/chase_light1/atlas.png",
+      "atlas_sha_manifest": "b64817fb5f92bb802b5602588b691205ec7ff1b248c1f2581da59a06d1552c10",
+      "atlas_sha_actual": "b64817fb5f92bb802b5602588b691205ec7ff1b248c1f2581da59a06d1552c10",
+      "atlas_bytes": 21442,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "chase_light2",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/chase_light2/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/chase_light2/atlas.png",
+      "atlas_sha_manifest": "5f2c3e0e20524b1b9d67afbee74af88863aea05dfc1e9a188b6bd8ad1209dcc9",
+      "atlas_sha_actual": "5f2c3e0e20524b1b9d67afbee74af88863aea05dfc1e9a188b6bd8ad1209dcc9",
+      "atlas_bytes": 20713,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "chase_takeoff",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/chase_takeoff/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/chase_takeoff/atlas.png",
+      "atlas_sha_manifest": "674e4e98e8dcbf00197e3aa6a7e98f38dd770469bb51216ed2d227ed9446cc38",
+      "atlas_sha_actual": "674e4e98e8dcbf00197e3aa6a7e98f38dd770469bb51216ed2d227ed9446cc38",
+      "atlas_bytes": 8256,
+      "atlas_size": [
+        384,
+        192
+      ],
+      "manifest_cell": 192,
+      "manifest_anchor": [
+        96,
+        184
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          192,
+          192
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 29,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 13,
+      "issues": [
+        "legacy_192_grid_anchor_96_184"
+      ],
+      "categories": [
+        "grid_policy_mismatch",
+        "teal_present_sparse"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "crouch",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/crouch/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/crouch/atlas.png",
+      "atlas_sha_manifest": "0c3a09a2658a9ea4db9c784edae2f33551bea28a69c422c6ff582fb28d831b0d",
+      "atlas_sha_actual": "0c3a09a2658a9ea4db9c784edae2f33551bea28a69c422c6ff582fb28d831b0d",
+      "atlas_bytes": 11122,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": true,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 30,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift",
+        "locomotion_or_core"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "crouch_blockstun",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/crouch_blockstun/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/crouch_blockstun/atlas.png",
+      "atlas_sha_manifest": "3af61bbdab040302175cf94e503ab8fa29705303a612730644abfc2ffc124115",
+      "atlas_sha_actual": "3af61bbdab040302175cf94e503ab8fa29705303a612730644abfc2ffc124115",
+      "atlas_bytes": 11739,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "crouch_guard",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/crouch_guard/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/crouch_guard/atlas.png",
+      "atlas_sha_manifest": "f165aa56a4b245498e0cac503d4fabd8c20b42a65090479fbd584172dd51f062",
+      "atlas_sha_actual": "f165aa56a4b245498e0cac503d4fabd8c20b42a65090479fbd584172dd51f062",
+      "atlas_bytes": 10263,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 28,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "crouch_light",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/crouch_light/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/crouch_light/atlas.png",
+      "atlas_sha_manifest": "b977823e46e193e920a2eb58c465ee50702cacd11cadb198e3b33837dcf81d08",
+      "atlas_sha_actual": "b977823e46e193e920a2eb58c465ee50702cacd11cadb198e3b33837dcf81d08",
+      "atlas_bytes": 23331,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "crouch_light2",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/crouch_light2/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/crouch_light2/atlas.png",
+      "atlas_sha_manifest": "19ed3b05b8ec5cc5b195d6f7c14790109ae3f79f09a34dc973751f2d5e30f7cf",
+      "atlas_sha_actual": "19ed3b05b8ec5cc5b195d6f7c14790109ae3f79f09a34dc973751f2d5e30f7cf",
+      "atlas_bytes": 22890,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "crouch_rise",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/crouch_rise/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/crouch_rise/atlas.png",
+      "atlas_sha_manifest": "5becf4a2b5918b2569583910592280ae321691023e9fc6ee6a302c62526554cc",
+      "atlas_sha_actual": "5becf4a2b5918b2569583910592280ae321691023e9fc6ee6a302c62526554cc",
+      "atlas_bytes": 11706,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "crouch_start",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/crouch_start/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/crouch_start/atlas.png",
+      "atlas_sha_manifest": "ddc30e31a50d804bcd38cca00aac462ea40d4983ca5e2ed2faab7965d6b2d37b",
+      "atlas_sha_actual": "ddc30e31a50d804bcd38cca00aac462ea40d4983ca5e2ed2faab7965d6b2d37b",
+      "atlas_bytes": 11198,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 30,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "crouch_sweep",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/crouch_sweep/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/crouch_sweep/atlas.png",
+      "atlas_sha_manifest": "d179b2aefb25d795ef0f842ff1e4c28d210d61cc31ac932a851375301fae0df6",
+      "atlas_sha_actual": "d179b2aefb25d795ef0f842ff1e4c28d210d61cc31ac932a851375301fae0df6",
+      "atlas_bytes": 37176,
+      "atlas_size": [
+        1792,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 7,
+      "tick_count": 7,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "crouch_turn",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/crouch_turn/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/crouch_turn/atlas.png",
+      "atlas_sha_manifest": "c4574a657be8fa95e180c8eca85a8a3c1dd3e8255631f7c4bc8b3bdab79f0702",
+      "atlas_sha_actual": "c4574a657be8fa95e180c8eca85a8a3c1dd3e8255631f7c4bc8b3bdab79f0702",
+      "atlas_bytes": 16422,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "crush",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/crush/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/crush/atlas.png",
+      "atlas_sha_manifest": "822d20ba7fd57d10b707c4a578c70bf5aa90ddc61b0d914303d9911d525a9ddd",
+      "atlas_sha_actual": "822d20ba7fd57d10b707c4a578c70bf5aa90ddc61b0d914303d9911d525a9ddd",
+      "atlas_bytes": 53436,
+      "atlas_size": [
+        2304,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 9,
+      "tick_count": 9,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "dash",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/dash/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/dash/atlas.png",
+      "atlas_sha_manifest": "5d4540e5b3f8bb80d822e71d8e19764b090aa7cdef601011b8839a967df87f70",
+      "atlas_sha_actual": "5d4540e5b3f8bb80d822e71d8e19764b090aa7cdef601011b8839a967df87f70",
+      "atlas_bytes": 21996,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": true,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift",
+        "locomotion_or_core"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "dash_heavy",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/dash_heavy/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/dash_heavy/atlas.png",
+      "atlas_sha_manifest": "b5807db0f7c77a0fb4c8a7829c053ca2cef4493d17350335096ab874786aedb5",
+      "atlas_sha_actual": "b5807db0f7c77a0fb4c8a7829c053ca2cef4493d17350335096ab874786aedb5",
+      "atlas_bytes": 34707,
+      "atlas_size": [
+        1536,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 6,
+      "tick_count": 6,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "dash_light",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/dash_light/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/dash_light/atlas.png",
+      "atlas_sha_manifest": "3ca60d09bc049523a2f21bc442f3b7ca1319bfc9b981bed055d5aa8a88c801ec",
+      "atlas_sha_actual": "3ca60d09bc049523a2f21bc442f3b7ca1319bfc9b981bed055d5aa8a88c801ec",
+      "atlas_bytes": 28971,
+      "atlas_size": [
+        1280,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 5,
+      "tick_count": 5,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "dash_start",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/dash_start/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/dash_start/atlas.png",
+      "atlas_sha_manifest": "30c5e7994f47407f18a905757a5d50aa09eeb1d3d6e948dab957b4b6f5047479",
+      "atlas_sha_actual": "30c5e7994f47407f18a905757a5d50aa09eeb1d3d6e948dab957b4b6f5047479",
+      "atlas_bytes": 11595,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "dash_stop",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/dash_stop/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/dash_stop/atlas.png",
+      "atlas_sha_manifest": "c65c4b897313d66a5e473bec315716cb1f0d5b4968ffe51de456e0b329355960",
+      "atlas_sha_actual": "c65c4b897313d66a5e473bec315716cb1f0d5b4968ffe51de456e0b329355960",
+      "atlas_bytes": 16924,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "dash_throw",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/dash_throw/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/dash_throw/atlas.png",
+      "atlas_sha_manifest": "38c6cd32ed819540811c9b69b8c5e0ddb6b70d9366fba06fab5cb1c6c1064562",
+      "atlas_sha_actual": "38c6cd32ed819540811c9b69b8c5e0ddb6b70d9366fba06fab5cb1c6c1064562",
+      "atlas_bytes": 34863,
+      "atlas_size": [
+        1536,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 6,
+      "tick_count": 6,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "defeat",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/defeat/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/defeat/atlas.png",
+      "atlas_sha_manifest": "fd0cae0db245465a7141dfdf8e1b4eaba49f88234736389c8ca0a3b9bfde97b7",
+      "atlas_sha_actual": "fd0cae0db245465a7141dfdf8e1b4eaba49f88234736389c8ca0a3b9bfde97b7",
+      "atlas_bytes": 8279,
+      "atlas_size": [
+        384,
+        192
+      ],
+      "manifest_cell": 192,
+      "manifest_anchor": [
+        96,
+        184
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          192,
+          192
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 28,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 19,
+      "issues": [
+        "legacy_192_grid_anchor_96_184"
+      ],
+      "categories": [
+        "grid_policy_mismatch",
+        "teal_present_sparse"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "diagonal_heavy",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/diagonal_heavy/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/diagonal_heavy/atlas.png",
+      "atlas_sha_manifest": "5b38913d4a08fcca95c2e87c2914bc4865f9f8b9758c8b44d14d13c1fd790cf1",
+      "atlas_sha_actual": "5b38913d4a08fcca95c2e87c2914bc4865f9f8b9758c8b44d14d13c1fd790cf1",
+      "atlas_bytes": 25755,
+      "atlas_size": [
+        1280,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 5,
+      "tick_count": 5,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "diagonal_light",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/diagonal_light/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/diagonal_light/atlas.png",
+      "atlas_sha_manifest": "5317a92cec32c8982f30d5857b06426ab7e8fd753d1cc97279c6d819b45a0c7f",
+      "atlas_sha_actual": "5317a92cec32c8982f30d5857b06426ab7e8fd753d1cc97279c6d819b45a0c7f",
+      "atlas_bytes": 15603,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "dive",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/dive/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/dive/atlas.png",
+      "atlas_sha_manifest": "ac1cc51f94437172a775b64262c991a7388a1cc0ac7edaf1bdede1fbcfd27306",
+      "atlas_sha_actual": "ac1cc51f94437172a775b64262c991a7388a1cc0ac7edaf1bdede1fbcfd27306",
+      "atlas_bytes": 26227,
+      "atlas_size": [
+        1280,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 5,
+      "tick_count": 5,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "dodge",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/dodge/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/dodge/atlas.png",
+      "atlas_sha_manifest": "e69ec509b11bee1152b77ebd7df1338a0b8bf02d737f00c80c9aeeff28f71548",
+      "atlas_sha_actual": "e69ec509b11bee1152b77ebd7df1338a0b8bf02d737f00c80c9aeeff28f71548",
+      "atlas_bytes": 33941,
+      "atlas_size": [
+        1536,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 6,
+      "tick_count": 6,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "dodge_counter",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/dodge_counter/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/dodge_counter/atlas.png",
+      "atlas_sha_manifest": "8ee98d7578234fb65764849cb591b4ba750c72ae8f2536c97b40f6fb2393d140",
+      "atlas_sha_actual": "8ee98d7578234fb65764849cb591b4ba750c72ae8f2536c97b40f6fb2393d140",
+      "atlas_bytes": 29274,
+      "atlas_size": [
+        1280,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 5,
+      "tick_count": 5,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "down",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/down/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/down/atlas.png",
+      "atlas_sha_manifest": "4d88ea1106c3a07a4aad4717a574c36ba0468f9d8043b9f18e2c1b70a740219f",
+      "atlas_sha_actual": "4d88ea1106c3a07a4aad4717a574c36ba0468f9d8043b9f18e2c1b70a740219f",
+      "atlas_bytes": 11472,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "flip_back",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/flip_back/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/flip_back/atlas.png",
+      "atlas_sha_manifest": "de7f2aac1eafbaa42ca998011d137ed87438cbf9ca7de74850f87f737af40948",
+      "atlas_sha_actual": "de7f2aac1eafbaa42ca998011d137ed87438cbf9ca7de74850f87f737af40948",
+      "atlas_bytes": 22491,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "flip_forward",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/flip_forward/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/flip_forward/atlas.png",
+      "atlas_sha_manifest": "6b6c78c04023319d6dbe4a513c4c39a081803154e9f0f712bc53fecc48dccef7",
+      "atlas_sha_actual": "6b6c78c04023319d6dbe4a513c4c39a081803154e9f0f712bc53fecc48dccef7",
+      "atlas_bytes": 20113,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "getup",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/getup/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/getup/atlas.png",
+      "atlas_sha_manifest": "44eafd1b9d420b6ef8fc14db9451a1173b4472f7784996295604dffe19bd7f74",
+      "atlas_sha_actual": "44eafd1b9d420b6ef8fc14db9451a1173b4472f7784996295604dffe19bd7f74",
+      "atlas_bytes": 12390,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 30,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "grabbed",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/grabbed/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/grabbed/atlas.png",
+      "atlas_sha_manifest": "4a7fbb35602a98d73efd3b5194f8fe50558e01fbc260f3e966a07b08e455eec2",
+      "atlas_sha_actual": "4a7fbb35602a98d73efd3b5194f8fe50558e01fbc260f3e966a07b08e455eec2",
+      "atlas_bytes": 19065,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "guard",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/guard/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/guard/atlas.png",
+      "atlas_sha_manifest": "ec080b078acb4074b187f14bf05bad6eb8c7674e1c55fb0c77a0f03f411d12ef",
+      "atlas_sha_actual": "ec080b078acb4074b187f14bf05bad6eb8c7674e1c55fb0c77a0f03f411d12ef",
+      "atlas_bytes": 10409,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": true,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift",
+        "locomotion_or_core"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "guard_counter",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/guard_counter/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/guard_counter/atlas.png",
+      "atlas_sha_manifest": "b9217a3a60282202a425c75433a49052b724c68c35a8ee6f0312720b00025e85",
+      "atlas_sha_actual": "b9217a3a60282202a425c75433a49052b724c68c35a8ee6f0312720b00025e85",
+      "atlas_bytes": 34580,
+      "atlas_size": [
+        1536,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 6,
+      "tick_count": 6,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "guardbreak",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/guardbreak/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/guardbreak/atlas.png",
+      "atlas_sha_manifest": "945ed0728b8c89ef87fa967a86b1c2b30af84a78f0da64d02bf53c7040b88c73",
+      "atlas_sha_actual": "945ed0728b8c89ef87fa967a86b1c2b30af84a78f0da64d02bf53c7040b88c73",
+      "atlas_bytes": 25031,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "heavy",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/heavy/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/heavy/atlas.png",
+      "atlas_sha_manifest": "6cd68764c8875d9106409871453a1b1763292c1bbadb5da55506d036035d9e36",
+      "atlas_sha_actual": "6cd68764c8875d9106409871453a1b1763292c1bbadb5da55506d036035d9e36",
+      "atlas_bytes": 22889,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "hit",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/hit/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/hit/atlas.png",
+      "atlas_sha_manifest": "48c171809bb57587654df2aefb17ebb8b696d84379db021e42d753721999354f",
+      "atlas_sha_actual": "48c171809bb57587654df2aefb17ebb8b696d84379db021e42d753721999354f",
+      "atlas_bytes": 12185,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "hit_air",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/hit_air/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/hit_air/atlas.png",
+      "atlas_sha_manifest": "2c7c79889eddc6b68d47f95762845625d73240c8efd0f3da2a957aa6df358984",
+      "atlas_sha_actual": "2c7c79889eddc6b68d47f95762845625d73240c8efd0f3da2a957aa6df358984",
+      "atlas_bytes": 16181,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 29,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "hit_crouch",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/hit_crouch/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/hit_crouch/atlas.png",
+      "atlas_sha_manifest": "24903c59441b22fa34b50edc07c7de6a0f0ca682faa3c1a7c1c05ad0126dd3ff",
+      "atlas_sha_actual": "24903c59441b22fa34b50edc07c7de6a0f0ca682faa3c1a7c1c05ad0126dd3ff",
+      "atlas_bytes": 16482,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 30,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "hit_high",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/hit_high/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/hit_high/atlas.png",
+      "atlas_sha_manifest": "6df97eacf52188698f7d6a04a2075ca01541d7acff1a7def817088ea4e520071",
+      "atlas_sha_actual": "6df97eacf52188698f7d6a04a2075ca01541d7acff1a7def817088ea4e520071",
+      "atlas_bytes": 17880,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "hit_mid",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/hit_mid/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/hit_mid/atlas.png",
+      "atlas_sha_manifest": "348a35cc03fadeeabd4618fc176e538b0513b923ead0c5815e95fb8fc0e5bd4f",
+      "atlas_sha_actual": "348a35cc03fadeeabd4618fc176e538b0513b923ead0c5815e95fb8fc0e5bd4f",
+      "atlas_bytes": 17125,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "idle",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/idle/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/idle/atlas.png",
+      "atlas_sha_manifest": "d2ab7f803efb15b8ef92fc2ab92a2ca10ab9d369791054db9be99850b7c1c34b",
+      "atlas_sha_actual": "d2ab7f803efb15b8ef92fc2ab92a2ca10ab9d369791054db9be99850b7c1c34b",
+      "atlas_bytes": 6390,
+      "atlas_size": [
+        256,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 1,
+      "tick_count": 1,
+      "loop": true,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 28,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift",
+        "locomotion_or_core"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "intro",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/intro/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/intro/atlas.png",
+      "atlas_sha_manifest": "5c5f84e75c289e9f8c22dda24de72c8a772856a2f0cd389f69666386339d0fce",
+      "atlas_sha_actual": "5c5f84e75c289e9f8c22dda24de72c8a772856a2f0cd389f69666386339d0fce",
+      "atlas_bytes": 17790,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "ko",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/ko/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/ko/atlas.png",
+      "atlas_sha_manifest": "ac35b1b3695a08e40b1bc8713d9881ba0123fd04cf92daf798b4ee7fa6fd2a7a",
+      "atlas_sha_actual": "ac35b1b3695a08e40b1bc8713d9881ba0123fd04cf92daf798b4ee7fa6fd2a7a",
+      "atlas_bytes": 11592,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 30,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "land",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/land/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/land/atlas.png",
+      "atlas_sha_manifest": "6ed871795e4e2adc86d1c9744a54e67e44a73a5b5bcc1b47d64a2698f33c79da",
+      "atlas_sha_actual": "6ed871795e4e2adc86d1c9744a54e67e44a73a5b5bcc1b47d64a2698f33c79da",
+      "atlas_bytes": 12296,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "launch_fall",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/launch_fall/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/launch_fall/atlas.png",
+      "atlas_sha_manifest": "50da61ba1645fe9d3f97977a667a187bbbc8c8f7716cbf123a935a3fa3d6ce5d",
+      "atlas_sha_actual": "50da61ba1645fe9d3f97977a667a187bbbc8c8f7716cbf123a935a3fa3d6ce5d",
+      "atlas_bytes": 18602,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "launch_rise",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/launch_rise/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/launch_rise/atlas.png",
+      "atlas_sha_manifest": "6de965c5916aaf783c3762495f54759947e1d86ef51d137b7318c5fd2a27e3ae",
+      "atlas_sha_actual": "6de965c5916aaf783c3762495f54759947e1d86ef51d137b7318c5fd2a27e3ae",
+      "atlas_bytes": 16884,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "launcher",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/launcher/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/launcher/atlas.png",
+      "atlas_sha_manifest": "45097b06b62488791ade6158eb686a6cc2f6ec83370d339b2c5723cdc75c2982",
+      "atlas_sha_actual": "45097b06b62488791ade6158eb686a6cc2f6ec83370d339b2c5723cdc75c2982",
+      "atlas_bytes": 41227,
+      "atlas_size": [
+        1792,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 7,
+      "tick_count": 7,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "light1",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/light1/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/light1/atlas.png",
+      "atlas_sha_manifest": "935b33e26d3ad228a6c20b4a93f9ac790d242a5dd419b308536783486c270752",
+      "atlas_sha_actual": "935b33e26d3ad228a6c20b4a93f9ac790d242a5dd419b308536783486c270752",
+      "atlas_bytes": 17056,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "light2",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/light2/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/light2/atlas.png",
+      "atlas_sha_manifest": "ca19001e0c6b415b737ab12f9fdf1c236e3639782cb3bac095677e66ca8336b6",
+      "atlas_sha_actual": "ca19001e0c6b415b737ab12f9fdf1c236e3639782cb3bac095677e66ca8336b6",
+      "atlas_bytes": 17974,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "light3",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/light3/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/light3/atlas.png",
+      "atlas_sha_manifest": "6b778549135af60f11cbabf23deff0fe639de80481a95b5e32ba9f982efe3558",
+      "atlas_sha_actual": "6b778549135af60f11cbabf23deff0fe639de80481a95b5e32ba9f982efe3558",
+      "atlas_bytes": 22354,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "low_pulse",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/low_pulse/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/low_pulse/atlas.png",
+      "atlas_sha_manifest": "b58389ded4573ec0959a637f53bd32285c357a6f9c28700b6cd9d9c38cc9744c",
+      "atlas_sha_actual": "b58389ded4573ec0959a637f53bd32285c357a6f9c28700b6cd9d9c38cc9744c",
+      "atlas_bytes": 26353,
+      "atlas_size": [
+        1280,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 5,
+      "tick_count": 5,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "motion_214",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/motion_214/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/motion_214/atlas.png",
+      "atlas_sha_manifest": "217c60eb205a941d188a4e23c68f2e1bd7cc5bfc4dfbe11ccde4001aade2d2f7",
+      "atlas_sha_actual": "217c60eb205a941d188a4e23c68f2e1bd7cc5bfc4dfbe11ccde4001aade2d2f7",
+      "atlas_bytes": 43876,
+      "atlas_size": [
+        2048,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 8,
+      "tick_count": 8,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "motion_22",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/motion_22/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/motion_22/atlas.png",
+      "atlas_sha_manifest": "1cfaf708a6e99fa1daf44f29d48344a4c34fe5e39d8bed004381c4c8c7f4e2e4",
+      "atlas_sha_actual": "1cfaf708a6e99fa1daf44f29d48344a4c34fe5e39d8bed004381c4c8c7f4e2e4",
+      "atlas_bytes": 44858,
+      "atlas_size": [
+        2048,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 8,
+      "tick_count": 8,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "motion_236",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/motion_236/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/motion_236/atlas.png",
+      "atlas_sha_manifest": "f6c9d7fbb0d70e1e4f9977d9ac5b565f9abf7084a8eb4a77327d08761a89957f",
+      "atlas_sha_actual": "f6c9d7fbb0d70e1e4f9977d9ac5b565f9abf7084a8eb4a77327d08761a89957f",
+      "atlas_bytes": 46093,
+      "atlas_size": [
+        2048,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 8,
+      "tick_count": 8,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "motion_41236",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/motion_41236/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/motion_41236/atlas.png",
+      "atlas_sha_manifest": "9a8c77a65a222005bd7c60acbb99b14cdd0a5033dd0ac4bf5c239489497f05b4",
+      "atlas_sha_actual": "9a8c77a65a222005bd7c60acbb99b14cdd0a5033dd0ac4bf5c239489497f05b4",
+      "atlas_bytes": 58247,
+      "atlas_size": [
+        2560,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 10,
+      "tick_count": 10,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "motion_623",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/motion_623/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/motion_623/atlas.png",
+      "atlas_sha_manifest": "7dbb70bf5ea6e433fa3e20f00e17f059ad1656209622c5a5f87dbdd3b740fbb0",
+      "atlas_sha_actual": "7dbb70bf5ea6e433fa3e20f00e17f059ad1656209622c5a5f87dbdd3b740fbb0",
+      "atlas_bytes": 45359,
+      "atlas_size": [
+        2048,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 8,
+      "tick_count": 8,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "pulse",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/pulse/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/pulse/atlas.png",
+      "atlas_sha_manifest": "6b78422399277c04db3281be96024e228b66cbd57ef6dfe68de2ec1b5a78ecd2",
+      "atlas_sha_actual": "6b78422399277c04db3281be96024e228b66cbd57ef6dfe68de2ec1b5a78ecd2",
+      "atlas_bytes": 36051,
+      "atlas_size": [
+        1536,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 6,
+      "tick_count": 6,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "ranged_forward",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/ranged_forward/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/ranged_forward/atlas.png",
+      "atlas_sha_manifest": "93b029837a3458b5f2992a88e214485cdd51e96ea72bd65751027c14b56757c6",
+      "atlas_sha_actual": "93b029837a3458b5f2992a88e214485cdd51e96ea72bd65751027c14b56757c6",
+      "atlas_bytes": 46738,
+      "atlas_size": [
+        2048,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 8,
+      "tick_count": 8,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "roll_back",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/roll_back/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/roll_back/atlas.png",
+      "atlas_sha_manifest": "3de7507bcf80a738cd3118e8b322d0f15bec134542a0d88657599f2cba17e961",
+      "atlas_sha_actual": "3de7507bcf80a738cd3118e8b322d0f15bec134542a0d88657599f2cba17e961",
+      "atlas_bytes": 27564,
+      "atlas_size": [
+        1280,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 5,
+      "tick_count": 5,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "roll_forward",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/roll_forward/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/roll_forward/atlas.png",
+      "atlas_sha_manifest": "1d01bbf9419342b6462887ffd6cb470378eadf640ab6c53f0f7c838aa73f4a52",
+      "atlas_sha_actual": "1d01bbf9419342b6462887ffd6cb470378eadf640ab6c53f0f7c838aa73f4a52",
+      "atlas_bytes": 27635,
+      "atlas_size": [
+        1280,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 5,
+      "tick_count": 5,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "slide",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/slide/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/slide/atlas.png",
+      "atlas_sha_manifest": "dd48a955198001d30dd856b2438f8b03a08587892b9787e4caf81697a44522da",
+      "atlas_sha_actual": "dd48a955198001d30dd856b2438f8b03a08587892b9787e4caf81697a44522da",
+      "atlas_bytes": 39190,
+      "atlas_size": [
+        2048,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 8,
+      "tick_count": 8,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "special",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/special/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/special/atlas.png",
+      "atlas_sha_manifest": "10ee8670737ef5e5fefc472a8b5444ec413d5dab3791f0ccf4f67078abbf35f8",
+      "atlas_sha_actual": "10ee8670737ef5e5fefc472a8b5444ec413d5dab3791f0ccf4f67078abbf35f8",
+      "atlas_bytes": 103809,
+      "atlas_size": [
+        3584,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 14,
+      "tick_count": 14,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "special2",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/special2/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/special2/atlas.png",
+      "atlas_sha_manifest": "60b2c40c96e4df19cff751d0d40d55890f61be3509c0e7d389187a02d0144b67",
+      "atlas_sha_actual": "60b2c40c96e4df19cff751d0d40d55890f61be3509c0e7d389187a02d0144b67",
+      "atlas_bytes": 120772,
+      "atlas_size": [
+        4096,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 16,
+      "tick_count": 16,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "special3",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/special3/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/special3/atlas.png",
+      "atlas_sha_manifest": "53c3fbc648c45089eb205975ecdec150a57504e3f5286dca3fe8fb67e6a0b718",
+      "atlas_sha_actual": "53c3fbc648c45089eb205975ecdec150a57504e3f5286dca3fe8fb67e6a0b718",
+      "atlas_bytes": 125434,
+      "atlas_size": [
+        4096,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 16,
+      "tick_count": 16,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "spin_heavy",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/spin_heavy/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/spin_heavy/atlas.png",
+      "atlas_sha_manifest": "0959e03e03aa59cbe28171dff95fe1ac8e30c85e9b23a5b0e219af3432c55a1f",
+      "atlas_sha_actual": "0959e03e03aa59cbe28171dff95fe1ac8e30c85e9b23a5b0e219af3432c55a1f",
+      "atlas_bytes": 40750,
+      "atlas_size": [
+        1792,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 7,
+      "tick_count": 7,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "stun",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/stun/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/stun/atlas.png",
+      "atlas_sha_manifest": "91039bb5bdaaa845e4475431a8e4b5409940503284cb26549572fcfa62bb3738",
+      "atlas_sha_actual": "91039bb5bdaaa845e4475431a8e4b5409940503284cb26549572fcfa62bb3738",
+      "atlas_bytes": 35430,
+      "atlas_size": [
+        1536,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 6,
+      "tick_count": 6,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "sweep",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/sweep/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/sweep/atlas.png",
+      "atlas_sha_manifest": "d91c5eb9d584899a2a8351dc0e9b31587bd8693980c6a725e92d689d2350a492",
+      "atlas_sha_actual": "d91c5eb9d584899a2a8351dc0e9b31587bd8693980c6a725e92d689d2350a492",
+      "atlas_bytes": 41356,
+      "atlas_size": [
+        1792,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 7,
+      "tick_count": 7,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "tackle",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/tackle/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/tackle/atlas.png",
+      "atlas_sha_manifest": "1cab966328d47db1be40aa6f0758b3cb99fd903256ae6d672b69e94076927364",
+      "atlas_sha_actual": "1cab966328d47db1be40aa6f0758b3cb99fd903256ae6d672b69e94076927364",
+      "atlas_bytes": 44227,
+      "atlas_size": [
+        2048,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 8,
+      "tick_count": 8,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "takeoff",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/takeoff/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/takeoff/atlas.png",
+      "atlas_sha_manifest": "98d027a2d69f609c11b0094b4fcff0688a8197646fb9cf4046e7a6f43554ec43",
+      "atlas_sha_actual": "98d027a2d69f609c11b0094b4fcff0688a8197646fb9cf4046e7a6f43554ec43",
+      "atlas_bytes": 11036,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "taunt",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/taunt/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/taunt/atlas.png",
+      "atlas_sha_manifest": "6af745d0c4cb9416967dd07606d41bad8015b409a720c22857d6354faeabb812",
+      "atlas_sha_actual": "6af745d0c4cb9416967dd07606d41bad8015b409a720c22857d6354faeabb812",
+      "atlas_bytes": 17742,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "throw_back",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/throw_back/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/throw_back/atlas.png",
+      "atlas_sha_manifest": "5918b98a8deb683b0e58e08ca33ce41c582133f8cad5149346d00eacdc4391b8",
+      "atlas_sha_actual": "5918b98a8deb683b0e58e08ca33ce41c582133f8cad5149346d00eacdc4391b8",
+      "atlas_bytes": 17748,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "throw_forward",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/throw_forward/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/throw_forward/atlas.png",
+      "atlas_sha_manifest": "d78a5e0215b1c0e6ccd25595ee1de68e60accbf573fa2a4cfdcacfea09be2f41",
+      "atlas_sha_actual": "d78a5e0215b1c0e6ccd25595ee1de68e60accbf573fa2a4cfdcacfea09be2f41",
+      "atlas_bytes": 18886,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "throw_tech",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/throw_tech/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/throw_tech/atlas.png",
+      "atlas_sha_manifest": "bd5fc0b0a5506e4265b906100c937a1ca0533fdc48f83b7b92892c340327f3c6",
+      "atlas_sha_actual": "bd5fc0b0a5506e4265b906100c937a1ca0533fdc48f83b7b92892c340327f3c6",
+      "atlas_bytes": 24522,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "thrown_air",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/thrown_air/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/thrown_air/atlas.png",
+      "atlas_sha_manifest": "632ff7efcb4db7de61e4874443c79832f7cd4a4bea94f9b8007290d1476bff82",
+      "atlas_sha_actual": "632ff7efcb4db7de61e4874443c79832f7cd4a4bea94f9b8007290d1476bff82",
+      "atlas_bytes": 25182,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "thrown_back",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/thrown_back/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/thrown_back/atlas.png",
+      "atlas_sha_manifest": "16bedc70f89f285d525fa76d0f44bba3185faea37d73b01c67ad51d0298ec1bc",
+      "atlas_sha_actual": "16bedc70f89f285d525fa76d0f44bba3185faea37d73b01c67ad51d0298ec1bc",
+      "atlas_bytes": 23475,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 30,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "thrown_dash",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/thrown_dash/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/thrown_dash/atlas.png",
+      "atlas_sha_manifest": "ed10045a708622c7254fd59b7ad4a002c62723a3e96b250c56422a6f69946f48",
+      "atlas_sha_actual": "ed10045a708622c7254fd59b7ad4a002c62723a3e96b250c56422a6f69946f48",
+      "atlas_bytes": 22644,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "thrown_forward",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/thrown_forward/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/thrown_forward/atlas.png",
+      "atlas_sha_manifest": "00c96045e9352e10c6d53c59e0347c198970039d6911ea5ebcd8981089781c2b",
+      "atlas_sha_actual": "00c96045e9352e10c6d53c59e0347c198970039d6911ea5ebcd8981089781c2b",
+      "atlas_bytes": 20047,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "attack_or_skill",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "timeout",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/timeout/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/timeout/atlas.png",
+      "atlas_sha_manifest": "3916c52d6009240faa09daff9f13e87118d23ed3698c87eb69523f995699a8b1",
+      "atlas_sha_actual": "3916c52d6009240faa09daff9f13e87118d23ed3698c87eb69523f995699a8b1",
+      "atlas_bytes": 12567,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "turn",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/turn/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/turn/atlas.png",
+      "atlas_sha_manifest": "2acc305ef941592bc9de0e44002bf2b8f41df221393f4255a8a3e1010dd6be54",
+      "atlas_sha_actual": "2acc305ef941592bc9de0e44002bf2b8f41df221393f4255a8a3e1010dd6be54",
+      "atlas_bytes": 16439,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "vertical_heavy",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/vertical_heavy/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/vertical_heavy/atlas.png",
+      "atlas_sha_manifest": "0055c62d920f39e043f067c34f8b7f7bb4d7237d9fce7344cfe082c3ce0675b0",
+      "atlas_sha_actual": "0055c62d920f39e043f067c34f8b7f7bb4d7237d9fce7344cfe082c3ce0675b0",
+      "atlas_bytes": 22162,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "vertical_jump",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/vertical_jump/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/vertical_jump/atlas.png",
+      "atlas_sha_manifest": "6d5a126856eefd0f235ee58afb995b5af9f0142d4f603417e32313d1ab402269",
+      "atlas_sha_actual": "6d5a126856eefd0f235ee58afb995b5af9f0142d4f603417e32313d1ab402269",
+      "atlas_bytes": 19344,
+      "atlas_size": [
+        960,
+        192
+      ],
+      "manifest_cell": 192,
+      "manifest_anchor": [
+        96,
+        184
+      ],
+      "rect_count": 5,
+      "tick_count": 5,
+      "loop": false,
+      "rect_sizes": [
+        [
+          192,
+          192
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 35,
+      "issues": [
+        "legacy_192_grid_anchor_96_184"
+      ],
+      "categories": [
+        "grid_policy_mismatch",
+        "teal_present_sparse"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "vertical_light",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/vertical_light/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/vertical_light/atlas.png",
+      "atlas_sha_manifest": "8b58713bd98a608d501a0c99e9a4cd68b514b0ccdd38a4688fadcca8093e0908",
+      "atlas_sha_actual": "8b58713bd98a608d501a0c99e9a4cd68b514b0ccdd38a4688fadcca8093e0908",
+      "atlas_bytes": 15814,
+      "atlas_size": [
+        768,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 3,
+      "tick_count": 3,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "victory",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/victory/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/victory/atlas.png",
+      "atlas_sha_manifest": "6342a7284e745e9aeed1f7d4f5a1d81a519203149dc0ff629d1b859bb43acfde",
+      "atlas_sha_actual": "6342a7284e745e9aeed1f7d4f5a1d81a519203149dc0ff629d1b859bb43acfde",
+      "atlas_bytes": 8250,
+      "atlas_size": [
+        384,
+        192
+      ],
+      "manifest_cell": 192,
+      "manifest_anchor": [
+        96,
+        184
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          192,
+          192
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 30,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 14,
+      "issues": [
+        "legacy_192_grid_anchor_96_184"
+      ],
+      "categories": [
+        "grid_policy_mismatch",
+        "teal_present_sparse"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "wake",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/wake/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/wake/atlas.png",
+      "atlas_sha_manifest": "691316288ae22ed9284273cc35f750a705b6c9d2c64f88d572a8fcc70ce86a63",
+      "atlas_sha_actual": "691316288ae22ed9284273cc35f750a705b6c9d2c64f88d572a8fcc70ce86a63",
+      "atlas_bytes": 28523,
+      "atlas_size": [
+        1280,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 5,
+      "tick_count": 5,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "wake_low",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/wake_low/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/wake_low/atlas.png",
+      "atlas_sha_manifest": "90d18f603d980c49694259bfc13fdaf154cf9daf7de03ca5ef70ed3272e558a1",
+      "atlas_sha_actual": "90d18f603d980c49694259bfc13fdaf154cf9daf7de03ca5ef70ed3272e558a1",
+      "atlas_bytes": 29546,
+      "atlas_size": [
+        1280,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 5,
+      "tick_count": 5,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "wake_mid",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/wake_mid/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/wake_mid/atlas.png",
+      "atlas_sha_manifest": "13284e0a135338dc46d22598e226e2a9ec6befa5e0efef110fa46d0db899cac9",
+      "atlas_sha_actual": "13284e0a135338dc46d22598e226e2a9ec6befa5e0efef110fa46d0db899cac9",
+      "atlas_bytes": 34767,
+      "atlas_size": [
+        1536,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 6,
+      "tick_count": 6,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "walk_back",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/walk_back/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/walk_back/atlas.png",
+      "atlas_sha_manifest": "108efdbb8aad035390149f287306d5eddbc1e2123987da6effc72cd1f7ff8cd5",
+      "atlas_sha_actual": "108efdbb8aad035390149f287306d5eddbc1e2123987da6effc72cd1f7ff8cd5",
+      "atlas_bytes": 22708,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": true,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 31,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift",
+        "locomotion_or_core"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "walk_forward",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/walk_forward/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/walk_forward/atlas.png",
+      "atlas_sha_manifest": "26b2fc276f9ca98f224f76a412884962114666abafbfb65f986629b8938c4717",
+      "atlas_sha_actual": "26b2fc276f9ca98f224f76a412884962114666abafbfb65f986629b8938c4717",
+      "atlas_bytes": 21873,
+      "atlas_size": [
+        1024,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 4,
+      "tick_count": 4,
+      "loop": true,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 32,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift",
+        "locomotion_or_core"
+      ],
+      "verdict": "rework_candidate"
+    },
+    {
+      "clip": "win",
+      "atlas_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-justice/animations/win/atlas.png",
+      "atlas_rel": "assets/fighters/ultraman-justice/animations/win/atlas.png",
+      "atlas_sha_manifest": "84a43f258ab0f0ecb58a7f52bbd726dab55cf86174d0205c751f1b81904c4281",
+      "atlas_sha_actual": "84a43f258ab0f0ecb58a7f52bbd726dab55cf86174d0205c751f1b81904c4281",
+      "atlas_bytes": 12939,
+      "atlas_size": [
+        512,
+        256
+      ],
+      "manifest_cell": 256,
+      "manifest_anchor": [
+        128,
+        248
+      ],
+      "rect_count": 2,
+      "tick_count": 2,
+      "loop": false,
+      "rect_sizes": [
+        [
+          256,
+          256
+        ]
+      ],
+      "rects_oob": 0,
+      "visible_colors": 30,
+      "alpha_binary": true,
+      "alpha_max": 255,
+      "teal_hue_px": 0,
+      "issues": [
+        "missing_teal_identity_pixels"
+      ],
+      "categories": [
+        "256_grid",
+        "identity_color_drift"
+      ],
+      "verdict": "rework_candidate"
+    }
+  ]
+}

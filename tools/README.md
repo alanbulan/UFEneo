@@ -102,20 +102,31 @@ baseline-1、水平按脚底段重心对到 anchor x。
 配套 `recalc_hurtboxes.py` 按重落图集重算 state_frames 受击框并保留节奏
 展开条目，见该目录 README.md。
 
+`rebuild/seven-character-rework-20261112/` 是七角色整帧返工的跨角色诊断
+批次，只放本批唯一的 A/B 复算脚本与说明；逐帧硬门仍由
+`check/seven_character_rework_hard_gate.py` 承担。冻结任务书
+`shared/SEVEN_CHARACTER_REWORK_BRIEF.md` 被 14 份 wiring 回执按 SHA 绑定，
+结案前不得改字或移动；它是本批任务书，不是第二套规则文件。
+
 ## 依赖
 
 ```bash
 .venv/bin/python -m pip install -r tools/requirements-checks.txt   # 跑验证
-.venv/bin/python -m pip install -r tools/requirements-art.txt      # 做美术/名册
+.venv/bin/python -m pip install -r tools/requirements-art.txt      # 做美术/名册与离线审片工具
 ```
 
 `requirements-checks.txt` 只有 Pillow 和 NumPy，是 `verify.py` 的全部依赖。
-OpenCV、OpenCC、mwparserfromhell 只在美术和名册工具里用到。
+`requirements-art.txt` 还含 OpenCV、OpenCC、mwparserfromhell 等美术、名册和
+离线审片依赖；`check/seven_character_rework_hard_gate.py` 是独立 F3 复算，
+未接入 `verify.py`，运行它需要其中的 OpenCV。`audio/transcribe.py` 用到的
+`faster-whisper` 是可选本机离线依赖，未登记在项目 requirements 文本中，
+运行游戏和全量验证都不需要它。
 
 ## 路径引导
 
-所有工具开头都有一段相同的引导，把 `tools/`、它的每个子目录、
-以及 `tools/rebuild/` 的每个子目录加入 `sys.path`：
+新增工具或需要跨目录 import 的工具都使用同一段引导，把 `tools/`、它的每个子目录、
+以及 `tools/rebuild/` 的每个子目录加入 `sys.path`；只靠自身脚本目录运行的
+历史批次工具不因缺少这段引导而自动失效：
 
 ```python
 _layout_sys.path[:0] = [str(_layout_root / "tools"),
@@ -123,11 +134,13 @@ _layout_sys.path[:0] = [str(_layout_root / "tools"),
     *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
 ```
 
-因此工具之间用**裸模块名**互相引用（`from art.pipeline import ...`），
+因此跨目录工具用**裸模块名**互相引用（`from art.pipeline import ...`），
 不要写 `tools.art.pipeline`。新增工具请沿用这段引导。
 
-模块名在 `tools/` 全局唯一：不要出现两个同名 `.py`，
-否则 `sys.path` 上先出现的那个会遮住另一个。
+新增工具的模块名在 `tools/` 内必须唯一，否则 `sys.path` 上先出现的那个
+会遮住另一个。历史批次中仍有同名脚本，靠各自脚本目录作 `sys.path[0]`
+隔离；这些不是可复用的公共模块，留待所属批次合并时改名，不要在新批次
+沿用它们的文件名。
 
 ## 需要外部 sprite-gen 技能的工具
 

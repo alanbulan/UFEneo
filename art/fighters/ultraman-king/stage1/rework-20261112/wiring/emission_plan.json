@@ -1,0 +1,4979 @@
+{
+  "fighter": "ultraman-king",
+  "scope": "plan_only",
+  "tick_hz": 60,
+  "replay": "InputFrame",
+  "source_files": {
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/air_crush.json": "b6e994f165adb3708bc520fcc534cb194bc7b4d89c88d16abdf9b79f220beae8",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/air_pulse.json": "8097bc61cdef4c4b63938bec4251db71a5d659739c01b502f1d0eac53dcca746",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/air_special.json": "1971f820b733a6be979fff1eda3308e97f657aee624332a24939822d7432dbcf",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/air_throw.json": "104cf1ebcac1be12c960555692b7d01380079cf478a2c00225537b1949a9e03c",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/back_counter.json": "dcfa2a84201873d69e8267042855bf34896756c0e9fc78f2eb7155f45482d94f",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/burst.json": "f3eabccb03c75622ef82c926d3e404a351f5f35da8d86dc940eeaff3fd4e7900",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/chase_end.json": "335d227e6629a1e56cdc87c39646cbd934e3f778ac9eeb8c2167ee1637fabd15",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/chase_light1.json": "66fdeb391230c23e4d3a1ef06b24a88dc3e0bda9724ece8c3949fbb63978bbb8",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/chase_light2.json": "839a784a59e71c6c619081f893f117b95f984315c5decd232d543f930f626fdd",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/crouch_light.json": "e9a8c1b093a545c4793e9e9872a2c69718b8d08b3a3c8f92ae7e750ee5c8b71a",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/crouch_light2.json": "14b3f0c37bfe83161dd792ee31055a514b6639ad0f48346425224846447caa69",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/crush.json": "644cf82ccce1628e97b86912d4e67890490b0abfa86cf850ddb4b6d767f33eaf",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/dash_heavy.json": "364e7bcdc69569892a79a31ffcb7c284ba3ce8096067b0799892196e573236fe",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/dash_light.json": "0b43dd9e6c92fa8d2316424b7677bc4186e3f63473467777b5fbcef0afd80769",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/dash_throw.json": "a3043c5300bf2b515987fc7788c3106ce7b05bc13fb536490cdcb831f34a0668",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/diagonal_heavy.json": "45841c2c998a60b796f0bf9ecc12d39adc07591e6c69070c6e26e819b8084647",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/diagonal_light.json": "15263b78a5181631686f21756a0c22e09a27248861d4a6cb7f38efe025ae3238",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/dive.json": "d001bcad17d37c458a3ce3072c50e263a156ea179936c6aebd2bd07fa7934277",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/dodge_counter.json": "f64d0719130154b5904df82cb9fea07fe3f60271953699e076e95313029ee1da",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/guard_counter.json": "1ec769792fa48f85d325df9d05b51bb400b65e1b9f8ca112e55b35920d6a2b4a",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/heavy.json": "3ad039aac08b86be579fda82e134d5435c37f9bc96eed68fabf3690d6ccbe9f9",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/launcher.json": "09bce7aa8239c0e7140779e155e6ca8154a571989eb1e2f75e623b5666d47a16",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/light1.json": "90f3be22934ee022d56166c7f82c3044bc31ffcd443f829f69b9a883d5974962",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/light2.json": "2e07db070b506ca8b3664701c6c9934ca4f06af37802f76f0aa3364484dc2906",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/light3.json": "dd291dc7f477ca884af3ff807c25e0205671b0b08ab15f3aad874889fccd1584",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/low_pulse.json": "7bd01506c4cb0c46f369908e8dfe4c03be2457f3258c2418f65708e8ebf254b1",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/motion_214.json": "e6a4921d744f37af0182cdbc75ab0e4b500dc97b65c15eb46b5ff2cd0d0160bf",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/motion_22.json": "5215403126519fb2e2458b9b898b496568008e2c674ada37a30b8122d9bf109f",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/motion_236.json": "ee9c1c0f8f4ce84a814a3a0f80100115e8663a1eb99be21dd7b95543e5a89c56",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/motion_41236.json": "e96be3aece7ba60e376a82607cf6e48110db176015e7657df837ee5127969679",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/motion_623.json": "84064ef6a64dd2283017077881db26623ae2fb281dc02f6b17aed70a1635927f",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/pulse.json": "9c829dbe3e93276e1b53ad009edff48f9a7871605b330b8bc6babc75e4c3a34e",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/ranged_forward.json": "31eca064a671051afd51dbbacd59199bfcae0c1fe82c8e3e236eafa00ede6716",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/slide.json": "da4e98a7c770b82a228108479db6c4ff8b032924a714614118a8256f1746f250",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/special.json": "f0292b339aeb17696b31d5922c22e01a309405d3e3ec5207dd7c8c0f293806a1",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/special2.json": "51546d29e3238661d13c5da792c656d97791bc74dc71ea2b420832ed713a2cb5",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/special3.json": "e3f49a798e72c8dc16c4a09226352d56bdc0cb5aecac74080387738cd48dcc96",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/spin_heavy.json": "066d46e2cfff9809ee5925102954756e031eb277ce008c83f23735e23c727c99",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/sweep.json": "7c3b6ecbd4bb4a8af2808bf36e21ce0e898dddba0bf78ec9262666b384eabb0b",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/tackle.json": "38c0b26e10967c2a74d8d423d665d45e409cc69f7b6c31790a2f01de3d9a3890",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/taunt.json": "291fb711ef11831249ff01193e824d99e74c6e924cbd7d387f75f6679d611ebd",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/throw_back.json": "07e62d22439c1a3022fe41692ef1caa9d4e1a0f535500fb93ecb7ea651343a09",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/throw_forward.json": "fd8c83290e10a56f12558b84ab82a4053a5333c0a4dc8e045f08bca8f49dbacd",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/vertical_heavy.json": "fd8a70b54d64cbdb4a9825e0ad9fe5a1282883c539dd5396a8d69c9a69383627",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/vertical_light.json": "77d52530de7aafd1af6aa47909e6b01a3e3b6e80f81f71ca3520f0a8f15a1df8",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/wake_low.json": "feceb3a2bc77548830f2725de3b4db191e94727a196b7f1f556cd4fd4f410549",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/moves/wake_mid.json": "6ae1e515a93110182df392bebf5c7b90d06702102a56b5f6b303939c79a6cc84",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/state_frames.json": "81361504cfbe9fd8947899d3557651b501798cd9b35a969b7d34623761ece454",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/definition.json": "a29061bf19347d680e82f4e7ffc1b3160299376403aee5ca63ffb93c2df86c9c",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/presentation/phase3_projectiles.json": "8ddce6876986cb1177ecb3d4608ede0ed2cee0c3122926cad6b34f00d7f030f2",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/presentation/charge_overlay_policy.json": "e466bed4dc536cf603d47e3d1ec74a0c4d41f37351a1411f5114ae8ad3b75c02",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/tools/rebuild/shared/q_charge_registry.py": "acc29fe416227c346f9305e0a6470990ba35a23236a48437e2f2a287926825f1",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-king/stage1/rework-20261112/asset_baseline.json": "a6833960612331557200b0d448cad6a3fb1659e0d9e3f5b7cbbf1e877fda4ec3",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-king/stage1/rework-20261112/clip_diagnosis.json": "a887de2450268ef4efd848af80a74768eb3c39aee19288eebf26111804496590",
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/fighters/ultraman-king/MOVES.md": "ee0be4c947be7d217d1171002994946de3aea3a33e66ef870fcde47f823b6025"
+  },
+  "manual_basis_table": [
+    {
+      "body_part": "掌",
+      "basis": "按当帧本人实际掌心/拳面，朝右与朝左分别核，双向原生误差 ≤2 px；不悬空、不穿体"
+    },
+    {
+      "body_part": "角",
+      "basis": "按当帧角尖/头镖刃根，先判朝向再核前后"
+    },
+    {
+      "body_part": "胸灯",
+      "basis": "按当帧计时器/胸灯中心"
+    },
+    {
+      "body_part": "额灯",
+      "basis": "按当帧额灯/光束发出部位"
+    }
+  ],
+  "emission_entries": [
+    {
+      "move": "air_pulse",
+      "tick": 14,
+      "source_sprite": 3,
+      "field": "shots[0].spawn",
+      "effect_id": "pulse",
+      "clip": "air_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_pulse.json 的运行时发射字段；空中斜下掌推，按当帧斜下前伸掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "air_pulse",
+      "tick": 14,
+      "source_sprite": 3,
+      "field": "shots[0].anchor",
+      "effect_id": "pulse",
+      "clip": "air_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_pulse.json 的运行时发射字段；空中斜下掌推，按当帧斜下前伸掌心",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "air_special",
+      "tick": 10,
+      "source_sprite": 4,
+      "field": "shots[0].spawn",
+      "effect_id": "beam_loop",
+      "clip": "air_special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_special.json 的运行时发射字段；空中前下短束，按当帧前伸掌/手臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "air_special",
+      "tick": 10,
+      "source_sprite": 4,
+      "field": "shots[0].anchor",
+      "effect_id": "beam_loop",
+      "clip": "air_special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/air_special.json 的运行时发射字段；空中前下短束，按当帧前伸掌/手臂前缘",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "low_pulse",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "shots[0].spawn",
+      "effect_id": "pulse",
+      "clip": "low_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/low_pulse.json 的运行时发射字段；蹲姿低位掌推，按当帧低位掌/拳面",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "low_pulse",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "shots[0].anchor",
+      "effect_id": "pulse",
+      "clip": "low_pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/low_pulse.json 的运行时发射字段；蹲姿低位掌推，按当帧低位掌/拳面",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 4,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_ring_form_back",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 4,
+      "source_sprite": 0,
+      "field": "attachments[1].anchor",
+      "effect_id": "king_fx_ring_form_front",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 5,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_ring_form_back",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 5,
+      "source_sprite": 1,
+      "field": "attachments[1].anchor",
+      "effect_id": "king_fx_ring_form_front",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 6,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_ring_form_back",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 6,
+      "source_sprite": 1,
+      "field": "attachments[1].anchor",
+      "effect_id": "king_fx_ring_form_front",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 7,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_ring_form_back",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 7,
+      "source_sprite": 1,
+      "field": "attachments[1].anchor",
+      "effect_id": "king_fx_ring_form_front",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 8,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_ring_form_back",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 8,
+      "source_sprite": 1,
+      "field": "attachments[1].anchor",
+      "effect_id": "king_fx_ring_form_front",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 9,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_ring_form_back",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 9,
+      "source_sprite": 1,
+      "field": "attachments[1].anchor",
+      "effect_id": "king_fx_ring_form_front",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 10,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_ring_form_back",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 10,
+      "source_sprite": 2,
+      "field": "attachments[1].anchor",
+      "effect_id": "king_fx_ring_form_front",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 11,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_ring_form_back",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 11,
+      "source_sprite": 2,
+      "field": "attachments[1].anchor",
+      "effect_id": "king_fx_ring_form_front",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 12,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_ring_form_back",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 12,
+      "source_sprite": 2,
+      "field": "attachments[1].anchor",
+      "effect_id": "king_fx_ring_form_front",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 13,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_ring_form_back",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 13,
+      "source_sprite": 2,
+      "field": "attachments[1].anchor",
+      "effect_id": "king_fx_ring_form_front",
+      "clip": "motion_214",
+      "body_part": "其它（贴掌金环双层挂件，按身体构图锚点核）",
+      "basis": "人工依据表条目不适用（其它（贴掌金环双层挂件，按身体构图锚点核））+ 按当帧身体构图核；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "shots[0].spawn",
+      "effect_id": "special_rings",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 22,
+      "source_sprite": 4,
+      "field": "shots[0].spawn",
+      "effect_id": "special_rings",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_214",
+      "tick": 22,
+      "source_sprite": 4,
+      "field": "shots[0].anchor",
+      "effect_id": "special_rings",
+      "clip": "motion_214",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_214.json data_source：贴掌金环 attach king_fx_ring_form_back+front 双层，anchor [0,0] 为身体构图锚点",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_22",
+      "tick": 22,
+      "source_sprite": 4,
+      "field": "shots[0].spawn",
+      "effect_id": "special_barrier",
+      "clip": "motion_22",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_22.json data_source：光壁由运行时 special_barrier 承载，人物帧只画掌前贴体光",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_22",
+      "tick": 22,
+      "source_sprite": 4,
+      "field": "shots[0].anchor",
+      "effect_id": "special_barrier",
+      "clip": "motion_22",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_22.json data_source：光壁由运行时 special_barrier 承载，人物帧只画掌前贴体光",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_236",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "shots[0].spawn",
+      "effect_id": "king_fx_palm_arrow_flight",
+      "clip": "motion_236",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_236.json 的运行时发射字段；双掌连推，按当帧前推掌心/拳面",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "motion_623",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "shots[0].spawn",
+      "effect_id": "king_fx_palm_arrow_flight",
+      "clip": "motion_623",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/motion_623.json 的运行时发射字段；升掌/升膝迎击，按当帧上冲掌心/拳面",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "pulse",
+      "tick": 20,
+      "source_sprite": 3,
+      "field": "shots[0].spawn",
+      "effect_id": "pulse",
+      "clip": "pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/pulse.json 的运行时发射字段；掌根/掌心前推，投射类只核手部动作与运行时发射层",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "pulse",
+      "tick": 20,
+      "source_sprite": 3,
+      "field": "shots[0].anchor",
+      "effect_id": "pulse",
+      "clip": "pulse",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/pulse.json 的运行时发射字段；掌根/掌心前推，投射类只核手部动作与运行时发射层",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "ranged_forward",
+      "tick": 18,
+      "source_sprite": 4,
+      "field": "shots[0].spawn",
+      "effect_id": "special_spiral",
+      "clip": "ranged_forward",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/ranged_forward.json data_source：电光只从指尖发出，不画到披风或须发",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "ranged_forward",
+      "tick": 18,
+      "source_sprite": 4,
+      "field": "shots[0].anchor",
+      "effect_id": "special_spiral",
+      "clip": "ranged_forward",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/ranged_forward.json data_source：电光只从指尖发出，不画到披风或须发",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 1,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 2,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 3,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 4,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 5,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 6,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 7,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 8,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 9,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 10,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 11,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 12,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 13,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 15,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 17,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 18,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 19,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 20,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 21,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 22,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 23,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 24,
+      "source_sprite": 4,
+      "field": "shots[0].spawn",
+      "effect_id": "king_fx_flasher_beam",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 24,
+      "source_sprite": 4,
+      "field": "shots[0].anchor",
+      "effect_id": "king_fx_flasher_beam",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 24,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 25,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 26,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 27,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 28,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 29,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 30,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 31,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special",
+      "tick": 32,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_flasher_charge_start",
+      "clip": "special",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special.json data_source：王者闪光双臂水平前伸",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 1,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 2,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 3,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 4,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 5,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 6,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 7,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 8,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 9,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 10,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 11,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 12,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 13,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 14,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 15,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 16,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 17,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 18,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 19,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 20,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 21,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 22,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 23,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 24,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 25,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 26,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 27,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 28,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 29,
+      "source_sprite": 5,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 30,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 31,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 32,
+      "source_sprite": 6,
+      "field": "shots[0].spawn",
+      "effect_id": "king_fx_baptism_arrow_flight",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 32,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 33,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 34,
+      "source_sprite": 6,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 35,
+      "source_sprite": 7,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 36,
+      "source_sprite": 7,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 37,
+      "source_sprite": 7,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 38,
+      "source_sprite": 7,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 39,
+      "source_sprite": 7,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 40,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special2",
+      "tick": 41,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_baptism_arrow_start",
+      "clip": "special2",
+      "body_part": "胸灯",
+      "basis": "人工依据表条目「胸」+ 当帧胸灯；依据：moves/special2.json data_source：洗礼光线胸前红宝玉聚能后张臂发射；挂件 king_fx_baptism_arrow_start 为胸前红宝玉聚能",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 1,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 2,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 3,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 4,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 5,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 6,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 7,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 8,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 9,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 10,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 11,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 12,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 13,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 14,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 15,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 16,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 17,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 18,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 19,
+      "source_sprite": 4,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 8,
+      "field": "shots[0].spawn",
+      "effect_id": "king_fx_rebirth_beam",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 8,
+      "field": "shots[0].anchor",
+      "effect_id": "king_fx_rebirth_beam",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 32,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 33,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 34,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 35,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 36,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 37,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 38,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 39,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 40,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 41,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 42,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 43,
+      "source_sprite": 8,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 44,
+      "source_sprite": 9,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 45,
+      "source_sprite": 9,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 46,
+      "source_sprite": 9,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 47,
+      "source_sprite": 9,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 48,
+      "source_sprite": 9,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 49,
+      "source_sprite": 9,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 50,
+      "source_sprite": 9,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 51,
+      "source_sprite": 9,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 52,
+      "source_sprite": 9,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 53,
+      "source_sprite": 9,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 54,
+      "source_sprite": 9,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 55,
+      "source_sprite": 9,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 56,
+      "source_sprite": 10,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 57,
+      "source_sprite": 10,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 58,
+      "source_sprite": 10,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 59,
+      "source_sprite": 10,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 60,
+      "source_sprite": 10,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 61,
+      "source_sprite": 10,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 62,
+      "source_sprite": 10,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 63,
+      "source_sprite": 10,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 64,
+      "source_sprite": 10,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 65,
+      "source_sprite": 10,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 66,
+      "source_sprite": 10,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 67,
+      "source_sprite": 10,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 68,
+      "source_sprite": 11,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 69,
+      "source_sprite": 11,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 70,
+      "source_sprite": 11,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 71,
+      "source_sprite": 11,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 72,
+      "source_sprite": 11,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 73,
+      "source_sprite": 11,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 74,
+      "source_sprite": 11,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 75,
+      "source_sprite": 11,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 76,
+      "source_sprite": 11,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 77,
+      "source_sprite": 11,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 78,
+      "source_sprite": 11,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 79,
+      "source_sprite": 11,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 80,
+      "source_sprite": 12,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 81,
+      "source_sprite": 12,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 82,
+      "source_sprite": 12,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "special3",
+      "tick": 83,
+      "source_sprite": 12,
+      "field": "attachments[0].anchor",
+      "effect_id": "king_fx_rebirth_charge_start",
+      "clip": "special3",
+      "body_part": "掌",
+      "basis": "人工依据表条目「掌」+ 当帧掌；依据：moves/special3.json data_source：王者再生光线双臂在脸前交叉后发射",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_start",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "charge_overlay_policy.placements.ultraman-king.charge_start.anchor",
+      "effect_id": "ultraman_king_fx_q_charge_start",
+      "clip": "charge_start",
+      "body_part": "其它（Q 周身蓄气圈身体构图锚点，按真实 Q 起势/保持/收势核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 周身蓄气圈身体构图锚点）+ 按真实 Q 起势/保持/收势与当帧身体构图核；依据：content/presentation/charge_overlay_policy.json 三态 placement 与 tools/rebuild/shared/q_charge_registry.py 口径",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_start",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_start",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-king/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_start",
+      "tick": 1,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_start",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-king/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_start",
+      "tick": 2,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_start",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-king/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "charge_overlay_policy.placements.ultraman-king.charge.anchor",
+      "effect_id": "ultraman_king_fx_q_charge",
+      "clip": "charge",
+      "body_part": "其它（Q 周身蓄气圈身体构图锚点，按真实 Q 起势/保持/收势核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 周身蓄气圈身体构图锚点）+ 按真实 Q 起势/保持/收势与当帧身体构图核；依据：content/presentation/charge_overlay_policy.json 三态 placement 与 tools/rebuild/shared/q_charge_registry.py 口径",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-king/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 1,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-king/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 2,
+      "source_sprite": 2,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-king/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge",
+      "tick": 3,
+      "source_sprite": 3,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-king/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_stop",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "charge_overlay_policy.placements.ultraman-king.charge_stop.anchor",
+      "effect_id": "ultraman_king_fx_q_charge_stop",
+      "clip": "charge_stop",
+      "body_part": "其它（Q 周身蓄气圈身体构图锚点，按真实 Q 起势/保持/收势核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 周身蓄气圈身体构图锚点）+ 按真实 Q 起势/保持/收势与当帧身体构图核；依据：content/presentation/charge_overlay_policy.json 三态 placement 与 tools/rebuild/shared/q_charge_registry.py 口径",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_stop",
+      "tick": 0,
+      "source_sprite": 0,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_stop",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-king/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    },
+    {
+      "move": "state:charge_stop",
+      "tick": 1,
+      "source_sprite": 1,
+      "field": "attachments[0].anchor",
+      "effect_id": "charge_aura",
+      "clip": "charge_stop",
+      "body_part": "其它（Q 状态帧 charge_aura 占位附件锚点，按身体构图核；非肢体发射）",
+      "basis": "人工依据表条目不适用（Q 状态帧 charge_aura 占位附件锚点）+ 按当帧身体构图核；依据：content/fighters/ultraman-king/state_frames.json 的 charge_* 附件",
+      "current_cell": [
+        256,
+        256
+      ],
+      "current_anchor": [
+        128,
+        248
+      ],
+      "point_right": null,
+      "point_left": null,
+      "coordinates_status": "pending_cell",
+      "bidirectional_native_error_px_tolerance": 2,
+      "note": "没有新帧，不虚构坐标；重画帧落格后按原生格双向核 ≤2 px"
+    }
+  ],
+  "phase3": {
+    "absolute_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/content/presentation/phase3_projectiles.json",
+    "sha256": "8ddce6876986cb1177ecb3d4608ede0ed2cee0c3122926cad6b34f00d7f030f2",
+    "entry_count": 722,
+    "q_effect_ids": [
+      "father_fx_q_charge",
+      "father_fx_q_charge_start",
+      "father_fx_q_charge_stop",
+      "justice_fx_q_charge",
+      "justice_fx_q_charge_start",
+      "justice_fx_q_charge_stop",
+      "mother_of_ultra_fx_q_charge",
+      "mother_of_ultra_fx_q_charge_start",
+      "mother_of_ultra_fx_q_charge_stop",
+      "ultraman_gaia_fx_q_charge",
+      "ultraman_gaia_fx_q_charge_start",
+      "ultraman_gaia_fx_q_charge_stop",
+      "ultraman_king_fx_q_charge",
+      "ultraman_king_fx_q_charge_start",
+      "ultraman_king_fx_q_charge_stop",
+      "zero_fx_q_charge",
+      "zero_fx_q_charge_start",
+      "zero_fx_q_charge_stop",
+      "zoffy_fx_q_charge",
+      "zoffy_fx_q_charge_start",
+      "zoffy_fx_q_charge_stop"
+    ],
+    "q_effect_id_count": 21,
+    "seven_fighter_referenced_effect_ids": [
+      "beam_hit",
+      "beam_loop",
+      "charge_aura",
+      "father_fx_arrow_flight",
+      "father_fx_arrow_hit",
+      "father_fx_barrier",
+      "father_fx_beam",
+      "father_fx_beam_hit",
+      "father_fx_catch_back",
+      "father_fx_catch_front",
+      "father_fx_pulse_flight",
+      "father_fx_pulse_hit",
+      "father_fx_q_charge",
+      "father_fx_q_charge_start",
+      "father_fx_q_charge_stop",
+      "father_fx_rings",
+      "father_fx_rings_hit",
+      "father_fx_spiral",
+      "father_fx_spiral_hit",
+      "gaia_fx_crusher_beam",
+      "gaia_fx_crusher_charge_start",
+      "gaia_fx_crusher_hit",
+      "gaia_fx_edge_charge_start",
+      "gaia_fx_edge_hit",
+      "gaia_fx_palm_ray_flight",
+      "gaia_fx_palm_ray_hit",
+      "gaia_fx_palm_ray_trail",
+      "gaia_fx_slash_charge_start",
+      "gaia_fx_slash_flight",
+      "gaia_fx_slash_hit",
+      "gaia_fx_slash_trail",
+      "gaia_fx_stream_beam",
+      "gaia_fx_stream_charge_start",
+      "gaia_fx_stream_hit",
+      "impact_guard",
+      "impact_heavy",
+      "impact_light",
+      "justice_fx_arrow_flight",
+      "justice_fx_arrow_hit",
+      "justice_fx_beam",
+      "justice_fx_beam_hit",
+      "justice_fx_pulse_flight",
+      "justice_fx_pulse_hit",
+      "justice_fx_q_charge",
+      "justice_fx_q_charge_start",
+      "justice_fx_q_charge_stop",
+      "king_fx_baptism_arrow_flight",
+      "king_fx_baptism_arrow_hit",
+      "king_fx_baptism_arrow_start",
+      "king_fx_baptism_arrow_trail",
+      "king_fx_flasher_beam",
+      "king_fx_flasher_charge_start",
+      "king_fx_flasher_hit",
+      "king_fx_palm_arrow_flight",
+      "king_fx_palm_arrow_hit",
+      "king_fx_palm_arrow_trail",
+      "king_fx_rebirth_beam",
+      "king_fx_rebirth_charge_start",
+      "king_fx_rebirth_hit",
+      "king_fx_ring_form_back",
+      "king_fx_ring_form_front",
+      "mother_fx_buster_beam",
+      "mother_fx_buster_hit",
+      "mother_fx_palm_ray_flight",
+      "mother_fx_palm_ray_hit",
+      "mother_fx_palm_ray_trail",
+      "mother_fx_ray_beam",
+      "mother_fx_ray_charge_start",
+      "mother_fx_ray_hit",
+      "mother_fx_shower_charge_start",
+      "mother_fx_slap_charge_start",
+      "mother_fx_slap_orb_flight",
+      "mother_fx_slap_orb_hit",
+      "mother_fx_slap_orb_trail",
+      "mother_of_ultra_fx_q_charge",
+      "mother_of_ultra_fx_q_charge_start",
+      "mother_of_ultra_fx_q_charge_stop",
+      "pulse",
+      "special_arrow",
+      "special_barrier",
+      "special_rings",
+      "special_spiral",
+      "ultraman_gaia_fx_q_charge",
+      "ultraman_gaia_fx_q_charge_start",
+      "ultraman_gaia_fx_q_charge_stop",
+      "ultraman_king_fx_q_charge",
+      "ultraman_king_fx_q_charge_start",
+      "ultraman_king_fx_q_charge_stop",
+      "zero_fx_emerium_beam",
+      "zero_fx_emerium_hit",
+      "zero_fx_pulse_flight",
+      "zero_fx_pulse_hit",
+      "zero_fx_q_charge",
+      "zero_fx_q_charge_start",
+      "zero_fx_q_charge_stop",
+      "zero_fx_slugger_catch",
+      "zero_fx_slugger_flight",
+      "zero_fx_slugger_hit",
+      "zero_fx_slugger_trail",
+      "zero_fx_wide_beam",
+      "zero_fx_wide_hit",
+      "zoffy_fx_frost_charge_start",
+      "zoffy_fx_frost_flight",
+      "zoffy_fx_frost_hit",
+      "zoffy_fx_frost_trail",
+      "zoffy_fx_m87_beam",
+      "zoffy_fx_m87_charge_start",
+      "zoffy_fx_m87_hit",
+      "zoffy_fx_orb_flight",
+      "zoffy_fx_orb_hit",
+      "zoffy_fx_orb_trail",
+      "zoffy_fx_q_charge",
+      "zoffy_fx_q_charge_start",
+      "zoffy_fx_q_charge_stop",
+      "zoffy_fx_rise_ray_flight",
+      "zoffy_fx_rise_ray_hit",
+      "zoffy_fx_rise_ray_trail",
+      "zoffy_fx_zap_beam",
+      "zoffy_fx_zap_charge_start",
+      "zoffy_fx_zap_hit"
+    ],
+    "referenced_effect_id_count": 120,
+    "registration_status": "all_registered",
+    "atlas_sha256_status": "已记录字段的条目全部与字节相符；6 个共享旧式 id 未记录该字段，按现状保留",
+    "legacy_ids_without_atlas_sha256": [
+      "beam_hit",
+      "impact_guard",
+      "impact_heavy",
+      "impact_light",
+      "king_fx_ring_form_back",
+      "king_fx_ring_form_front"
+    ],
+    "do_not_duplicate_registration": true,
+    "sha_reregistration_plan": {
+      "trigger": "仅在新增或改换贴图后",
+      "steps": [
+        "核新 atlas 尺寸/真 Alpha/主体",
+        "计算 atlas SHA",
+        "按 tools/rebuild/shared/q_charge_registry.py 口径补 phase3 条目",
+        "核 charge_overlay_policy.json 三态 placement 与 effect id 1:1",
+        "双向实机可见性复核"
+      ],
+      "current_action": "无"
+    }
+  },
+  "effect_id_scope": {
+    "shots": [
+      "beam_loop",
+      "king_fx_baptism_arrow_flight",
+      "king_fx_baptism_arrow_start",
+      "king_fx_baptism_arrow_trail",
+      "king_fx_flasher_beam",
+      "king_fx_flasher_charge_start",
+      "king_fx_palm_arrow_flight",
+      "king_fx_palm_arrow_trail",
+      "king_fx_rebirth_beam",
+      "king_fx_rebirth_charge_start",
+      "king_fx_ring_form_back",
+      "king_fx_ring_form_front",
+      "pulse",
+      "special_barrier",
+      "special_rings",
+      "special_spiral"
+    ],
+    "feedback_spark": [
+      "beam_hit",
+      "impact_heavy",
+      "impact_light",
+      "king_fx_baptism_arrow_hit",
+      "king_fx_flasher_hit",
+      "king_fx_palm_arrow_hit",
+      "king_fx_rebirth_hit"
+    ],
+    "feedback_block_spark": [
+      "impact_guard"
+    ],
+    "projectile_impacts": [],
+    "frame_impact_effect": [
+      "impact_heavy",
+      "impact_light"
+    ],
+    "frame_block_effect": [
+      "impact_guard"
+    ],
+    "state_frame_impact_effect": [
+      "impact_light"
+    ],
+    "state_frame_block_effect": [
+      "impact_guard"
+    ],
+    "state_frame_attachments": [
+      "charge_aura"
+    ],
+    "charge_overlay_policy_three_states": [
+      "ultraman_king_fx_q_charge_start",
+      "ultraman_king_fx_q_charge",
+      "ultraman_king_fx_q_charge_stop"
+    ],
+    "all_referenced_effect_ids": [
+      "beam_hit",
+      "beam_loop",
+      "charge_aura",
+      "impact_guard",
+      "impact_heavy",
+      "impact_light",
+      "king_fx_baptism_arrow_flight",
+      "king_fx_baptism_arrow_hit",
+      "king_fx_baptism_arrow_start",
+      "king_fx_baptism_arrow_trail",
+      "king_fx_flasher_beam",
+      "king_fx_flasher_charge_start",
+      "king_fx_flasher_hit",
+      "king_fx_palm_arrow_flight",
+      "king_fx_palm_arrow_hit",
+      "king_fx_palm_arrow_trail",
+      "king_fx_rebirth_beam",
+      "king_fx_rebirth_charge_start",
+      "king_fx_rebirth_hit",
+      "king_fx_ring_form_back",
+      "king_fx_ring_form_front",
+      "pulse",
+      "special_barrier",
+      "special_rings",
+      "special_spiral",
+      "ultraman_king_fx_q_charge",
+      "ultraman_king_fx_q_charge_start",
+      "ultraman_king_fx_q_charge_stop"
+    ],
+    "missing_ids": [],
+    "pending_ids": [],
+    "unregistered_ids": [],
+    "scope_note": "missing_ids 指空/缺字段引用；pending_ids 指 pending_ 前缀或含 pending 的 id；unregistered_ids 指 phase3 查不到条目导致表现层静默跳过的 id。三者本轮均为空。"
+  },
+  "plan_notes": [
+    "本文件只写接线计划，未改 content/、core/、input/、presentation/、ui/、assets/；未跑 Godot、verify，未动锁，未 commit。",
+    "没有新帧：全部 emission_entries 为 pending_cell，point_right/point_left 为 null；双向原生误差 ≤2 px 是重画帧落格后的验收标准，不是本轮已通过结论。",
+    "投射类 pulse、low_pulse、air_pulse、ranged_forward 只核手部/身体动作与运行时发射层；人物帧不得画能量球、光刃、飞行物，运行时 move_fx 已生成投射物，不双重特效。特效光色只在运行时规格定义，不写进人物帧计划。",
+    "Q 蓄气三态 placement 按 tools/rebuild/shared/q_charge_registry.py 口径；只登记落点时也要保证真实 Q 起势/保持/收势可见；技能帧不写周身蓄气圈例外。",
+    "current_cell/current_anchor 逐 clip 取自 asset_baseline.json 的 clips[move].rects 与 anchors；已核七角色每个 clip 内 rect 尺寸与 anchors 一致。不使用 definition.json 的 presentation 顶层旧值或 cells.json 顶层旧 anchor。",
+    "source_files 含只读 MOVES.md（仅作 body_part 依据，未把其中数值写成本计划坐标）；未读或依赖 W1 的 state_frames_plan/moves_plan。",
+    "Q placement 条目对应 charge_overlay_policy.json 三态 anchor；将来落 emission_points.json 时按 state:<状态> 的 attachments[].anchor 口径另建人工依据表。",
+    "king_fx_ring_form_back / king_fx_ring_form_front 挂件 anchor [0,0] 且 behind_fighter=true，属身体构图锚点；按当帧掌心与身体构图核，不按掌/角/胸灯/额灯发射点处理。"
+  ],
+  "blockers": []
+}

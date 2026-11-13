@@ -18,7 +18,7 @@
 | LibreSprite | 可选离线源稿工具，未捆绑可执行程序 | https://github.com/LibreSprite/LibreSprite ，GPL-2.0；third_party/libresprite |
 | rtmlib / DWPose | 可选测量辅助，不做骨骼绑定 | https://github.com/Tau-J/rtmlib 、https://github.com/IDEA-Research/DWPose ，Apache-2.0；third_party/rtmlib |
 | Pillow / NumPy | 本地图片和PCM检查 | HPND / BSD-3-Clause；tools/requirements-checks.txt，环境不入库 |
-| FFmpeg / yt-dlp | 可选离线媒体获取与处理工具 | https://ffmpeg.org/ 、https://github.com/yt-dlp/yt-dlp ；不分发本机程序和下载缓存 |
+| FFmpeg | 离线媒体处理与 PCM 解码工具；本机 PATH 提供，不随仓库上传 | https://ffmpeg.org/ ；不分发本机程序和下载缓存 |
 | Kits AI | 可选分离、分轨与转换服务 | https://docs.kits.ai/ ；凭据只在本机，不声称文生音效能力 |
 | Wikipedia文字 | 游戏资料使用带来源的简体摘录/改写 | CC BY-SA 4.0；各profile/roster条目保留原页、版本和来源；图片/IP不自动适用文本许可 |
 
