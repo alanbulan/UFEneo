@@ -1,0 +1,376 @@
+{
+  "fighter": "ultraman-zero",
+  "display": "赛罗奥特曼 · 基本红蓝形态",
+  "authority": "诊断代理只读复算；root_delegated_by_user 规则沿用，不冒称用户亲审",
+  "idle_pixel_whole_frame": {
+    "absolute_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-zero/stage1/idle/frames/identity-idle-pixel.png",
+    "sha256": "c36397a86bff3f6e1469e7efd611dad20ff4938bec30b03c703c9095c0e5df0f",
+    "size": [
+      256,
+      256
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "visible_colors": 32,
+    "role": "动作帧唯一身份锚；4× 图只核配色/像素块，不单独作动作参考"
+  },
+  "installed_idle_atlas": {
+    "absolute_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/assets/fighters/ultraman-zero/animations/idle/atlas.png",
+    "sha256": "1e2ce6a7ec46f21de0b981d6f001d54ae401b47cd53b76aedd3a334e7b75ffd7",
+    "cell": 256,
+    "anchor": [
+      128,
+      248
+    ],
+    "rects": [
+      [
+        0,
+        0,
+        256,
+        256
+      ]
+    ],
+    "ticks": [
+      10
+    ],
+    "subject_height": 172,
+    "subject_bbox": [
+      60,
+      76,
+      178,
+      247
+    ]
+  },
+  "production_reference": {
+    "absolute_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-zero/stage1/idle/frames/pixel-raw-02-official-side-anchor.png",
+    "sha256": "5f4651673a90f08056a250fea9a6f68ad339501a615658a183a7d07d3791dec3"
+  },
+  "official_side": {
+    "path": "art/fighters/ultraman-zero/stage1/idle/references/zero-side-head-official.png",
+    "source": "圆谷官方 2024 Zero15 拍立得右侧近侧脸裁图",
+    "url": "https://tsuburaya-prod.com/news/7732",
+    "angle": "人物朝画面右方的右侧近侧脸；只核头/颈/上胸，不是全身 90° 侧视",
+    "orientation": "朝右",
+    "absolute_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-zero/stage1/idle/references/zero-side-head-official.png",
+    "sha256": "a44cce4451a1849d2f59016e22ee8d19d51fb02dcc4bb122defe8c3d87f54741"
+  },
+  "official_full": {
+    "absolute_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-zero/sources/tsuburaya-zero/hero-zero.png",
+    "sha256": "3e4d7b7be52094c388ef97a91e9be4fc8e1aeac1ad4bc18ed8fff005d6eba4c1",
+    "angle": "圆谷官方角色页正面全身立像",
+    "url": "https://tsuburaya-prod.com/heroes/ultraman-zero"
+  },
+  "official_extra": null,
+  "orientation": "官方头部裁图为人物朝画面右方的右侧近侧脸；装机帧同为朝右固定侧视。",
+  "structure": "双头镖为额侧左右并列的两枚弯刃，贴头壳有宽基座、刃缘有转折凹口；朝右时两刃自额前向头顶后上方折起，刃尖 x 小于眼列 x，基座靠近眼列上方。蓝色额灯在双刃根之间、黄色眼在面罩前缘；层叠银蓝肩胸甲、蓝计时器，无披风。",
+  "front_back_criterion": "先判朝右；在眼列 x 左右各约 26 px 头部列带内，取两枚亮银刃的最高/最前像素均值 x，分别与黄眼列 x 比：刃尖/后掠端 x 应小于眼列 x，宽基座应贴眼列上方且不低于眼；禁止把最高行当冠顶，禁止用正面/3/4 图判侧视。",
+  "head_top_rule": "头部列带（眼列 x 左右各约 26 px）内最上方本体像素；禁止整帧 Alpha 最高行，披风/举拳/头镖外伸展件不算冠顶",
+  "cell": {
+    "width": 256,
+    "anchor": [
+      128,
+      248
+    ],
+    "baseline": 248,
+    "foot_row": 247
+  },
+  "standing_height_baseline": 172,
+  "unique_scale": 0.158767,
+  "scale_source": "art/fighters/ultraman-zero/stage1/idle/frames/pixel-raw-02-official-side-anchor.png",
+  "per_clip_cell_policy": "逐 clip 取自身 cell/anchor/rects/ticks；288 或 192 格不得用第一组尺寸缩放其余组，不得回落顶层旧 anchor",
+  "frozen_palette": {
+    "size": 32,
+    "colors": [
+      [
+        214,
+        40,
+        52
+      ],
+      [
+        45,
+        201,
+        248
+      ],
+      [
+        209,
+        198,
+        208
+      ],
+      [
+        25,
+        154,
+        27
+      ],
+      [
+        13,
+        49,
+        114
+      ],
+      [
+        246,
+        197,
+        28
+      ],
+      [
+        160,
+        149,
+        164
+      ],
+      [
+        128,
+        235,
+        66
+      ],
+      [
+        92,
+        19,
+        31
+      ],
+      [
+        201,
+        246,
+        253
+      ],
+      [
+        125,
+        97,
+        57
+      ],
+      [
+        25,
+        74,
+        154
+      ],
+      [
+        230,
+        74,
+        82
+      ],
+      [
+        13,
+        104,
+        21
+      ],
+      [
+        253,
+        246,
+        155
+      ],
+      [
+        189,
+        177,
+        191
+      ],
+      [
+        99,
+        91,
+        108
+      ],
+      [
+        11,
+        12,
+        25
+      ],
+      [
+        66,
+        114,
+        192
+      ],
+      [
+        203,
+        145,
+        29
+      ],
+      [
+        132,
+        122,
+        139
+      ],
+      [
+        233,
+        222,
+        227
+      ],
+      [
+        151,
+        52,
+        75
+      ],
+      [
+        215,
+        190,
+        159
+      ],
+      [
+        18,
+        32,
+        65
+      ],
+      [
+        152,
+        24,
+        38
+      ],
+      [
+        106,
+        211,
+        250
+      ],
+      [
+        72,
+        216,
+        31
+      ],
+      [
+        203,
+        167,
+        143
+      ],
+      [
+        252,
+        227,
+        64
+      ],
+      [
+        69,
+        65,
+        81
+      ],
+      [
+        24,
+        148,
+        224
+      ]
+    ],
+    "source": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraman-zero/stage1/cells/cells.json",
+    "recognition_colors": {
+      "palette": [
+        [
+          45,
+          201,
+          248
+        ],
+        [
+          106,
+          211,
+          250
+        ],
+        [
+          24,
+          148,
+          224
+        ],
+        [
+          246,
+          197,
+          28
+        ],
+        [
+          252,
+          227,
+          64
+        ]
+      ],
+      "names": [
+        "蓝额灯/青蓝光束色",
+        "黄眼",
+        "蓝计时器"
+      ]
+    },
+    "whole_image_mapping": true,
+    "max_colors": 32,
+    "status": "可用基线"
+  },
+  "limb_thickness_basis": "以 identity-idle-pixel.png 原生 256 格为准：头壳/双刃约 32 px 高，上臂约 12–14 px 厚、前臂 10–12 px、大腿 17–20 px、小腿 11–14 px、握拳 12–15 px；这些是目视像素块量级，不是自动造型通过。",
+  "identity_parts": "双头镖自额前向头顶后上方折起、蓝额灯、黄眼、蓝计时器、层叠银蓝肩胸甲；无披风",
+  "recognition": [
+    "蓝额灯",
+    "黄色眼",
+    "红银蓝基本形态",
+    "双头镖",
+    "彩色计时器"
+  ],
+  "allowed_posture_exceptions": [
+    "air_apex",
+    "air_crush",
+    "air_fall",
+    "air_pulse",
+    "air_recover",
+    "air_rise",
+    "air_special",
+    "air_tech",
+    "air_throw",
+    "backstep",
+    "bounce",
+    "chase_end",
+    "chase_light1",
+    "chase_light2",
+    "chase_takeoff",
+    "crouch",
+    "crouch_blockstun",
+    "crouch_guard",
+    "crouch_light",
+    "crouch_light2",
+    "crouch_rise",
+    "crouch_start",
+    "crouch_turn",
+    "dash",
+    "dash_heavy",
+    "dash_light",
+    "dash_start",
+    "dash_stop",
+    "dash_throw",
+    "defeat",
+    "diagonal_heavy",
+    "diagonal_light",
+    "dive",
+    "dodge",
+    "dodge_counter",
+    "down",
+    "flip_back",
+    "flip_forward",
+    "getup",
+    "getup_back",
+    "getup_forward",
+    "guardbreak",
+    "hit_air",
+    "hit_air_fall",
+    "hit_air_rise",
+    "hit_crouch",
+    "ko",
+    "land",
+    "launch_fall",
+    "launch_rise",
+    "launcher",
+    "low_pulse",
+    "motion_623",
+    "roll_back",
+    "roll_forward",
+    "slide",
+    "stun",
+    "sweep",
+    "takeoff",
+    "throw_back",
+    "throw_forward",
+    "throw_tech",
+    "thrown_air",
+    "thrown_back",
+    "thrown_dash",
+    "thrown_forward",
+    "vertical_heavy",
+    "vertical_jump",
+    "vertical_light",
+    "wake",
+    "wake_low",
+    "wake_mid"
+  ],
+  "exception_rule": "蹲/躺/被投/腾空/真实屈膝压低/披风展开允许高度变化，但必须逐帧登记数值并用头壳/骨长证明是姿势，不以「例外」放行整人缩放",
+  "visual_review": "已看 seven_idle.png、seven_walk_forward.png、seven_special.png、grid_defects.png、cross_* 与本角色 _A/_B 联系表；站距/色数/Alpha 不冒充造型通过",
+  "conflicts_and_gaps": [
+    "cells.json 早期字段 target_standing_height=188 是身份锚原生站高；2026-11-11 重标定后装机站高 172、scale 0.158767，本卡片以后者为唯一返工尺度。",
+    "definition.json presentation.cell=288/target_height=188 是旧口径；装机 113 个 clip 为 256、air_special 为 288。",
+    "assets/fighters/ultraman-zero/catalogue/model-native.png 的 32 色与冻结动作色板交集为 0；不可直接跑 stage_cells.py 默认色板。"
+  ]
+}

@@ -295,6 +295,14 @@ func _size_window() -> void:
 	if DisplayServer.get_name() == "headless": return
 	var window := get_window()
 	if window == null or window.mode != Window.MODE_WINDOWED: return
+	# 审片显式指定的窗口尺寸优先于按屏幕自动放大，便于逐项核 720/1080。
+	for arg in OS.get_cmdline_user_args():
+		if arg.begins_with("--capture-size="):
+			var parts := arg.trim_prefix("--capture-size=").split("x")
+			if parts.size() == 2 and parts[0].is_valid_int() and parts[1].is_valid_int():
+				window.size = Vector2i(int(parts[0]), int(parts[1]))
+				window.move_to_center()
+			return
 	var usable := DisplayServer.screen_get_usable_rect(window.current_screen).size
 	var factor := 1
 	for candidate in [6, 5, 4, 3, 2]:

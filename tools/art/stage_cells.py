@@ -3,8 +3,9 @@
 art/STYLE.md：同一动作整帧统一尺度和根点；不得按姿势外框归一身高。
 本工具只做确定性后处理，不改造型：
 
-1. 色板取自本人已批准图鉴定稿 `assets/fighters/<id>/catalogue/model-native.png`
-   的 32 色，与身份锚同源，动作帧与定稿同色；
+1. 默认色板取自本人已批准图鉴定稿 `assets/fighters/<id>/catalogue/model-native.png`
+   的 32 色；本批返工可用 `--palette-json` 显式传入冻结色板 JSON，避免图鉴旧
+   色板吞掉本人识别色；
 2. 用一张**直立参考帧**（通常是待机第 0 帧）的站高定出"源像素→原生像素"
    的唯一比例，全部帧乘同一比例。屈膝、腾空收腿因此保留真实压低/腾空高度，
    不会被拉直；
@@ -57,6 +58,46 @@ def approved_path(fighter: str) -> Path:
     if not path.exists():
         raise SystemExit(f"缺少已批准图鉴定稿：{path}")
     return path
+
+
+def frozen_palette(path_text: str) -> tuple[list, dict]:
+    """读取冻结色板 JSON；只接受 ≤32 个 RGB 三元组，不按身体区域重涂。"""
+    path = Path(path_text)
+    if not path.is_absolute():
+        path = ROOT / path
+    if not path.is_file():
+        raise SystemExit(f"冻结色板 JSON 不存在：{path}")
+    record = json.loads(path.read_text(encoding="utf-8"))
+    raw = record.get("colors", record) if isinstance(record, dict) else record
+    if not isinstance(raw, list) or not raw or len(raw) > PALETTE_SIZE:
+        raise SystemExit(f"冻结色板必须是 1–{PALETTE_SIZE} 色的列表：{path}")
+    colors = []
+    for index, color in enumerate(raw):
+        if not isinstance(color, (list, tuple)) or len(color) != 3:
+            raise SystemExit(f"冻结色板第 {index} 项不是 RGB 三元组：{color}")
+        if any(not isinstance(v, int) or v < 0 or v > 255 for v in color):
+            raise SystemExit(f"冻结色板第 {index} 项 RGB 越界：{color}")
+        colors.append(tuple(color))
+    if len(set(colors)) != len(colors):
+        raise SystemExit(f"冻结色板含重复 RGB：{path}")
+    source = record.get("source_png_absolute_path") if isinstance(record, dict) else ""
+    source_sha = record.get("source_png_sha256") if isinstance(record, dict) else ""
+    if source and source_sha:
+        source_path = Path(source)
+        if not source_path.is_absolute():
+            source_path = ROOT / source_path
+        actual = hashlib.sha256(source_path.read_bytes()).hexdigest() if source_path.is_file() else ""
+        if actual != source_sha:
+            raise SystemExit(f"冻结色板源图 SHA 不符：{source_path}")
+    metadata = {
+        "palette_source": "frozen_palette_json",
+        "palette_path": path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else str(path),
+        "palette_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+        "palette_size": len(colors),
+        "palette_rgb_sha256": hashlib.sha256(
+            b"".join(bytes(color) for color in colors)).hexdigest(),
+    }
+    return colors, metadata
 
 
 def head_height(mask: np.ndarray) -> int:
@@ -197,6 +238,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="横向对位用的底部带宽（占站高比例）；迈步/前跨角色连同锚一起用 0.20")
     parser.add_argument("--scale", type=float, default=0.0,
                         help="显式源→原生比例；默认按参考帧站高与目标站高换算")
+    parser.add_argument("--palette-json", default="",
+                        help="冻结色板 JSON（colors 为 ≤32 个 RGB 三元组）；默认读图鉴定稿")
     args = parser.parse_args(argv)
 
     reference_path = Path(args.scale_source)
@@ -209,8 +252,19 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit(f"参考帧头部无法测量：{reference_path}")
     scale = args.scale or (args.target_standing / reference.height)
 
-    approved = solid_source(approved_path(args.fighter))
-    palette = build_palette(approved, PALETTE_SIZE)
+    catalogue = ROOT / f"assets/fighters/{args.fighter}/catalogue/model-native.png"
+    if args.palette_json:
+        palette, palette_meta = frozen_palette(args.palette_json)
+    else:
+        approved = solid_source(approved_path(args.fighter))
+        palette = build_palette(approved, PALETTE_SIZE)
+        palette_meta = {
+            "palette_source": "catalogue_model_native",
+            "palette_sha256": hashlib.sha256(catalogue.read_bytes()).hexdigest(),
+            "palette_size": len(palette),
+            "palette_rgb_sha256": hashlib.sha256(
+                b"".join(bytes(color) for color in palette)).hexdigest(),
+        }
 
     out_dir = Path(args.out_dir) if args.out_dir else Path(f"reports/{args.fighter}/stage1")
     if not out_dir.is_absolute():
@@ -254,8 +308,9 @@ def main(argv: list[str] | None = None) -> int:
 
     report = {
         "fighter": args.fighter,
-        "approved": approved_path(args.fighter).relative_to(ROOT).as_posix(),
-        "approved_sha256": hashlib.sha256(approved_path(args.fighter).read_bytes()).hexdigest(),
+        "catalogue_input": catalogue.relative_to(ROOT).as_posix(),
+        "catalogue_input_sha256": hashlib.sha256(catalogue.read_bytes()).hexdigest() if catalogue.is_file() else None,
+        "palette": palette_meta,
         "scale": round(scale, 6),
         "scale_source": reference_path.relative_to(ROOT).as_posix(),
         "scale_source_head": reference_head,
