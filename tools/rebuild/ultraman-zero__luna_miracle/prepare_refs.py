@@ -116,6 +116,20 @@ def main() -> int:
     head.save(head_path)
     print("head", head.size, sha256(head_path))
 
+    # 本人图鉴侧视像素整帧的 4× 最近邻：只锁侧面轮廓、配色与冠鳍/胸肩甲位置。
+    catalogue = Image.open(
+        ROOT / "assets/fighters/ultraman-zero__luna_miracle/catalogue/model-native.png"
+    ).convert("RGBA")
+    alpha = np.array(catalogue)[:, :, 3]
+    ys, xs = np.nonzero(alpha)
+    catalogue = catalogue.crop(
+        (int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1))
+    catalogue = catalogue.resize(
+        (catalogue.width * 4, catalogue.height * 4), Image.Resampling.NEAREST)
+    catalogue_path = REFS / "luna-catalogue-side-x4.png"
+    catalogue.save(catalogue_path)
+    print("catalogue", catalogue.size, sha256(catalogue_path))
+
     (REFS / "prepare-check.json").write_text(
         json.dumps(result, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return 0
