@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "fighter": "ultraman-zero__luna_miracle",
+  "source_form": "ultraman-zero",
+  "status": "stage1_skeleton_pending_frames",
+  "playable": false,
+  "identity_anchor": {
+    "path": "art/fighters/ultraman-zero__luna_miracle/stage1/idle/frames/identity-idle-pixel.png",
+    "cell": 256,
+    "anchor": [
+      128,
+      248
+    ],
+    "standing_height": 188,
+    "foot_row": 247,
+    "palette_colors": 32,
+    "single_reference": true
+  },
+  "scope": {
+    "state_clips": 66,
+    "state_unique_sprites": 211,
+    "move_clips": 47,
+    "move_unique_sprites": 285,
+    "character_unique_sprites": 496,
+    "form_switch_frames": 6,
+    "form_switch_ticks": 60
+  },
+  "data_skeleton": {
+    "definition": "content/fighters/ultraman-zero__luna_miracle/definition.json",
+    "command_table": "content/fighters/ultraman-zero__luna_miracle/command_table.json",
+    "move_manifest": "content/fighters/ultraman-zero__luna_miracle/move_manifest.json",
+    "state_frames": "content/fighters/ultraman-zero__luna_miracle/state_frames.json",
+    "moves_dir": "content/fighters/ultraman-zero__luna_miracle/moves",
+    "moves_md": "content/fighters/ultraman-zero__luna_miracle/MOVES.md",
+    "sounds_md": "content/fighters/ultraman-zero__luna_miracle/SOUNDS.md",
+    "fx_id_prefix": "zero_luna_miracle_fx_*",
+    "no_pending_fx_ids": true,
+    "no_foreign_zero_fx_atlas_refs": true
+  },
+  "frame_gates": {
+    "standing_height": "188±8%",
+    "adjacent_standing_delta": "<=10%",
+    "components": 1,
+    "alpha": "binary",
+    "max_colors": 32,
+    "cell": 256,
+    "anchor": [
+      128,
+      248
+    ],
+    "skill_frames_body_only": true
+  },
+  "fx_family": {
+    "required_series": [
+      "wide",
+      "emerium",
+      "slugger",
+      "pulse",
+      "impact_*",
+      "q_charge_states"
+    ],
+    "pixel_fx_gates": {
+      "hard_alpha": true,
+      "max_colors": 16,
+      "four_connectivity_outside_subject_alpha_gte_200": 0
+    },
+    "proposals": {
+      "phase3_entries": "tools/rebuild/ultraman-zero__luna_miracle/fx-family-20261112/phase3_entries.json",
+      "charge_policy": "tools/rebuild/ultraman-zero__luna_miracle/fx-family-20261112/charge_policy.json"
+    },
+    "shared_registry_by_root": true
+  },
+  "open_work": [
+    "generate_split_land_all_66_state_clips_and_47_moves",
+    "generate_and_install_form_switch_6_frames",
+    "build_and_register_luna_pixel_fx_family",
+    "install_animations_manifest_and_runtime_assets",
+    "recompute_boxes_and_verify",
+    "set_playable_true_only_when_fully_installed_and_verified"
+  ]
+}
