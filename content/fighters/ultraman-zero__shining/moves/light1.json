@@ -1,0 +1,719 @@
+{
+ "id": "light1",
+ "display_name": "前手短直拳",
+ "startup": 5,
+ "active": 3,
+ "recovery": 12,
+ "damage": 65,
+ "hitstun": 20,
+ "blockstun": 12,
+ "pushback": 8,
+ "stun": 65,
+ "stamina_cost": 0,
+ "energy_cost": 0,
+ "kind": "strike",
+ "level": "mid",
+ "unblockable": false,
+ "launch": false,
+ "bounce": false,
+ "knockdown": false,
+ "feedback": {
+  "spark": "zero_shining_fx_impact_light",
+  "block_spark": "zero_shining_fx_impact_guard",
+  "hitstop": 4,
+  "blockstop": 3,
+  "shake": 0,
+  "flash": 2,
+  "color": [
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "cancel_rule": "命中后按取消窗口接续",
+ "audio": {
+  "hit": "hit_light",
+  "block": "guard"
+ },
+ "data_source": "沿用基础赛罗同名招式的帧数、启动/持续/收招、伤害、能量与判定；本形态动作帧待按光辉赛罗身份锚重新生成，当前未安装。",
+ "production_note": "未安装：本形态动作帧未生成；特效 id 已定为正式 zero_shining_fx_*，须由主会话在 content/presentation/phase3_projectiles.json 登记后可见。",
+ "frames": [
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -74,
+     0,
+     134,
+     63
+    ],
+    [
+     -50,
+     61,
+     83,
+     64
+    ],
+    [
+     -44,
+     123,
+     70,
+     64
+    ]
+   ],
+   "cancel": [],
+   "events": [
+    {
+     "kind": "sound",
+     "id": "light"
+    }
+   ]
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -74,
+     0,
+     134,
+     63
+    ],
+    [
+     -50,
+     61,
+     83,
+     64
+    ],
+    [
+     -44,
+     123,
+     70,
+     64
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -74,
+     0,
+     134,
+     63
+    ],
+    [
+     -50,
+     61,
+     83,
+     64
+    ],
+    [
+     -44,
+     123,
+     70,
+     64
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 0,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -74,
+     0,
+     134,
+     63
+    ],
+    [
+     -50,
+     61,
+     83,
+     64
+    ],
+    [
+     -44,
+     123,
+     70,
+     64
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -80,
+     0,
+     142,
+     64
+    ],
+    [
+     -47,
+     62,
+     84,
+     64
+    ],
+    [
+     -42,
+     124,
+     113,
+     65
+    ]
+   ],
+   "cancel": [],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     46,
+     78,
+     27,
+     28
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -80,
+     0,
+     142,
+     64
+    ],
+    [
+     -47,
+     62,
+     84,
+     64
+    ],
+    [
+     -42,
+     124,
+     113,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     46,
+     78,
+     27,
+     28
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -80,
+     0,
+     142,
+     64
+    ],
+    [
+     -47,
+     62,
+     84,
+     64
+    ],
+    [
+     -42,
+     124,
+     113,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [
+    [
+     46,
+     78,
+     27,
+     28
+    ]
+   ],
+   "hurtboxes": [
+    [
+     -80,
+     0,
+     142,
+     64
+    ],
+    [
+     -47,
+     62,
+     84,
+     64
+    ],
+    [
+     -42,
+     124,
+     113,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -80,
+     0,
+     142,
+     64
+    ],
+    [
+     -47,
+     62,
+     84,
+     64
+    ],
+    [
+     -42,
+     124,
+     113,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -80,
+     0,
+     142,
+     64
+    ],
+    [
+     -47,
+     62,
+     84,
+     64
+    ],
+    [
+     -42,
+     124,
+     113,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -80,
+     0,
+     142,
+     64
+    ],
+    [
+     -47,
+     62,
+     84,
+     64
+    ],
+    [
+     -42,
+     124,
+     113,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -80,
+     0,
+     142,
+     64
+    ],
+    [
+     -47,
+     62,
+     84,
+     64
+    ],
+    [
+     -42,
+     124,
+     113,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -73,
+     0,
+     132,
+     64
+    ],
+    [
+     -50,
+     62,
+     77,
+     65
+    ],
+    [
+     -44,
+     125,
+     64,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -73,
+     0,
+     132,
+     64
+    ],
+    [
+     -50,
+     62,
+     77,
+     65
+    ],
+    [
+     -44,
+     125,
+     64,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -73,
+     0,
+     132,
+     64
+    ],
+    [
+     -50,
+     62,
+     77,
+     65
+    ],
+    [
+     -44,
+     125,
+     64,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -73,
+     0,
+     132,
+     64
+    ],
+    [
+     -50,
+     62,
+     77,
+     65
+    ],
+    [
+     -44,
+     125,
+     64,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -73,
+     0,
+     132,
+     64
+    ],
+    [
+     -50,
+     62,
+     77,
+     65
+    ],
+    [
+     -44,
+     125,
+     64,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -73,
+     0,
+     132,
+     64
+    ],
+    [
+     -50,
+     62,
+     77,
+     65
+    ],
+    [
+     -44,
+     125,
+     64,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -73,
+     0,
+     132,
+     64
+    ],
+    [
+     -50,
+     62,
+     77,
+     65
+    ],
+    [
+     -44,
+     125,
+     64,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -73,
+     0,
+     132,
+     64
+    ],
+    [
+     -50,
+     62,
+     77,
+     65
+    ],
+    [
+     -44,
+     125,
+     64,
+     65
+    ]
+   ],
+   "cancel": [
+    "light2",
+    "heavy",
+    "launcher",
+    "special",
+    "motion_236"
+   ],
+   "events": []
+  }
+ ]
+}
