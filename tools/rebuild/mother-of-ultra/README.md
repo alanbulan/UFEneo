@@ -267,7 +267,7 @@
 - `heavy-00` 对照组：按正确面板复算，冠顶→眼 19 / 19 / 19、头壳 31 / 31 / 31，与记录一致（raw-02 头壳记录 30 对复算 31 为 3× 缩略量化误差）。该组是站姿起手、披风在身后低于头顶，整帧最高行即冠顶，**不受此缺陷影响；拒收是真的，刹车维持，不翻案**。
 - 代价：`air_fall-00` 三张源图已按错误结论删除，不可追回，须重出一次再判。
 - 诊断图：`stage1/diagnostic/air_fall00-landmark-audit-2026-11-10.png`，1668×800，220,657 bytes，SHA `6c68622e1564628233712dbf7357749ad0dc25e4de542d5f20b7ef1d3cf26653`。记录见 `stage1/requests.json` 的 `head_landmark_audit_2026_11_10`。
-- 规则写回：AGENTS.md“美术与资源”、docs/STAGE1_STANDARD.md 第 2 步，新增“冠顶只取头部列带，不得用整帧 Alpha 最高行”。
+- 规则写回：AGENTS.md“美术与资源”、docs/HANDBOOK.md 第 6 节，新增“冠顶只取头部列带，不得用整帧 Alpha 最高行”。
 - 未做：`air_fall-00` 重出、落格、签署；安装、Godot 启动、提交、录屏、720/1080、双朝向均未做。
 
 ## air_fall-00 重出、落格与自签 2026-11-10（air 组 2/2）
@@ -285,7 +285,7 @@
 
 ## 全 46 格并排复核与联系表 2026-11-10（air 组收口后；历史，已被下下节 47 格表取代）
 
-- 触发：`air_fall-00` 重出落格后，按 `docs/STAGE1_STANDARD.md` 第 5 步把本角色全部已落格帧并排看一次，确认没有因重出而出现比例/尺度漂移。
+- 触发：`air_fall-00` 重出落格后，按 `docs/HANDBOOK.md` 第 6 节把本角色全部已落格帧并排看一次，确认没有因重出而出现比例/尺度漂移。
 - 独立硬门复检（不引用旧记录，直接读 46 个 PNG）：192×192 全部一致；Alpha 仅 0/255；≤32 色；最低轮廓 ≤183；非技能帧整帧单连通（技能帧 light1-00…light3-03 只判人物主体）。**0 例外**。`heavy-00` 无落格文件，未计入。
 - 联系表：`art/fighters/mother-of-ultra/stage1/cells/review-all-46-2026-11-10.png`，3162×2764，644,512 bytes，SHA `a17693a419dda78dd9c3e66a39955d3f894a102dce7ae7da86a975830dfb5071`；46 格原生 2× 并排、逐格标帧名，另留 `heavy-00` 红色阻塞槽。该表为 heavy-00 落格前版本，已由下节 47 格表取代并删除。
 - 目视：同一固定比例、同一根点，idle→walk→dash→takeoff→air→land→light→heavy→受击/倒地/起身/胜负/KO 的头壳宽、肩宽、四肢粗细无逐帧漂移；`air_fall-00` 与 `air_rise-00`、`takeoff-01` 的腾空高度分层合理（最低轮廓 160 / 174 / 174）。
@@ -311,7 +311,7 @@
 
 ## 全 47 格并排复核与联系表 2026-11-10（heavy-00 落格后）
 
-- 触发：`heavy-00` 补落格并自签后，重出全帧联系表，替换 heavy-00 落格前的 46 格表；同时按 `docs/STAGE1_STANDARD.md` 第 5 步重跑一次整角色并排复核。
+- 触发：`heavy-00` 补落格并自签后，重出全帧联系表，替换 heavy-00 落格前的 46 格表；同时按 `docs/HANDBOOK.md` 第 6 节重跑一次整角色并排复核。
 - 独立硬门复检（直接读 47 个 PNG，不引用旧记录）：192×192 全部一致；Alpha 仅 0/255；≤32 色；最低轮廓 ≤183；非技能帧整帧单连通（技能帧 light1-00…light3-03 只判人物主体）；`x4/` 47 个文件逐一与原图最近邻 4× 逐像素相等。**0 例外**。
 - 联系表：`art/fighters/mother-of-ultra/stage1/cells/review-all-47-2026-11-10.png`，3180×2508，559,576 bytes，SHA `11cf3f9644d57231798ca1fff3c5a55e17ef97210ce7c179ac7c0ce3bcd701d1`；47 格原生 2× 并排（8 列×6 行，末格空），逐格标帧名，无阻塞槽。记录写入 `stage1/cells/cells.json` 的 `all_frames_review_sheet_2026_11_10`。
 - 目视：idle→walk→dash→takeoff→air→land→light→heavy→受击/倒地/起身/胜负/KO 的头壳宽、肩宽、四肢粗细无逐帧漂移；`heavy-00` 与 heavy-01…03 接续（起手沉身→蓄势→命中→收招），脚底同为 183。

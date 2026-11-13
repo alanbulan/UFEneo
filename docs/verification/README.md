@@ -1,10 +1,18 @@
 # 验证回执
 
-用途：核对随干净仓库交付的历史验证结论时读本文件。这里只放摘要，原始日志在本机 `reports/verification`。
+用途：核对随干净仓库交付的历史验证结论时读本文件。这里只放摘要，原始日志在本机 `reports/verification`。现行项目总览与唯一文档入口在根 [README](../../README.md)，当前状态与主题规范在 [HANDBOOK](../HANDBOOK.md)。
 
-本目录保留可以随干净仓库交接的结果摘要；原始测试输出在本机忽略的 `reports/verification`，重新运行会生成自己的输出，不上传整套日志和截图副本。
+本目录保留可以随干净仓库交接的结果摘要；原始测试输出在本机忽略的 `reports/verification`，重新运行会生成自己的输出，不上传整套日志和截图副本。冻结 `*.json` 回执原位保留，旧路径文字不改写；新建回执按现行入口登记。
 
-## 2026-11-13 仓库清洗、工具归位与文档入口收口
+## 2026-11-13 文档单一入口收口
+
+- 根 `README.md` 保留项目总览、获取与运行、验证命令及唯一文档入口，合并原 `docs/README.md` 索引表；根 `REBUILD_2D_PLAN.md` 不移动、不改名，2.5 节章节编号与锚点未改。
+- 其余 `docs/` 主题规范按状态与验证边界、目录架构、数据格式、美术流程、战斗设计、stage1 标准、音频、第三方合订为 `docs/HANDBOOK.md`；旧文档原文按主题保留，重复旧进度段与旧“获取与运行”段不复制新事实。`docs/verification/` 冻结回执原位保留，旧路径文字不改。
+- 同步更新根 `AGENTS.md`、`README.md`、`docs/verification/README.md`、`docs/PROJECT_LAYOUT.md`（经手册）、`tools/README.md`、`tools/check/layering.py`、七角色在制批次 README 与内容数据中的现行文档入口；按消费者、动态路径、SHA 与 Markdown 链接逐项核查。
+- 使用主仓库的 `.venv/bin/python` 经 `tools/godot_lock.py -- tools/verify.py --keep-going` 跑完整回归：导入、各项逻辑/资源/回放/启动退出检查共 59 项全部 PASS，退出码 0；`tools/maintenance/repository_audit.py` 返回 `status=passed`、59002 个文件、无 errors/warnings、源 SHA 核验通过。当前工作树无 `.venv`，使用主仓库同名环境；本机日志在忽略的 `reports/`，不随仓库提交。
+- 结果只说明逻辑、资源、回放与启动/退出检查，不表示美术或听感通过。无录屏、未听审、未用户亲审，按 `root_delegated_by_user` 自行验收；不修改历史 `user_approved`。
+
+## 2026-11-13 仓库清洗、工具归位与文档入口收口（历史）
 
 - 本机删除 4 个已无消费者的盖亚 attacks 临时脚本、6 个 `__pycache__` / 10 个 `.pyc`、5 个旧 Godot shader `.cache`、5,037 份过期本机日志、241 个未被回执点名的历史验证 run 与 12 个空目录；删除前核绝对路径、消费者、动态路径、SHA 与回执点名的 run id，未建备份或镜像。保留 `.venv`、`.godot`、`.tools/audio/jobs/`、两批返工审片证据、51 个未跟踪 `.import`、七角色在制分镜与回执数据、以及 `latest-run.json` / `repository-audit.json`。
 - 保留此前的全量 run `a092f9e2e135` 与 `cleanup-regression.json` 点名的 `2e157d320c68`、`e7b83f29987a`；后两个 run 的日志与结果摘要留在本机，引用它们的冻结回执未改。当前全量验证另生成 `0d9b633154df`，不把历史 run 删除写成逻辑验证通过。
@@ -256,4 +264,4 @@
 
 ## 边界
 
-没有进行全部人物双向 720/1080 逐动作审片、人耳听审或硬件键盘逐键测试，没有生成录屏。上述结果只说明资源、逻辑、回放及启动/退出验证结果，不表示游戏范围完成。接手步骤和已知余项见 [PROGRESS](../PROGRESS.md)。
+没有进行全部人物双向 720/1080 逐动作审片、人耳听审或硬件键盘逐键测试，没有生成录屏。上述结果只说明资源、逻辑、回放及启动/退出验证结果，不表示游戏范围完成。接手步骤和已知余项见 [HANDBOOK](../HANDBOOK.md) 的“当前状态与验证边界”。

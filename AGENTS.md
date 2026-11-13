@@ -5,13 +5,13 @@
 ## 当前任务
 
 - 2026-11-09 起恢复逐角色动作生产：未实机的奥特曼按“官方皮套照 → 格斗待机架势 → 待机像素整帧（此后作动作身份锚） → 单帧动作 → 落格”推进。不得恢复的是旧 worker、旧 Goal、旧批量安装器，不是生图本身。
-- 每轮先读本文件、REBUILD_2D_PLAN.md、docs/PROGRESS.md 和 git log -5。接手后按用户新指令开展具体工作。
+- 每轮先读本文件、REBUILD_2D_PLAN.md、根 README.md 唯一文档入口、docs/HANDBOOK.md 当前状态与验证边界，以及 git log -5。接手后按用户新指令开展具体工作。
 - 一律使用简体中文，不发送可选过程说明；必要进度说明简短。只报本轮新增，不重复已处理意见，不以检查数量冒充完成。
 - 汇报使用“本轮完成 / 怎么看 / 已知问题 / 下一步”；无录屏就写无录屏，不编造路径。
 
 ## 仓库纪律
 
-- 目录归属见 docs/PROJECT_LAYOUT.md。一个文件只有一个正式位置；运行素材在 assets，当前制作源在 art。
+- 目录归属见 docs/HANDBOOK.md 的“目录架构”。一个文件只有一个正式位置；运行素材在 assets，当前制作源在 art。
 - 用户明确要求直接清理、不做备份。确认废弃文件、缓存、历史副本和重复副本直接删除；不得再建归档仓库、旧目录副本或历史镜像。现用源稿和在制动作属于生产材料。
 - 删除前核实际消费者、动态路径和 SHA，不因文件名相似而删。递归删除/移动先核绝对目标在授权范围内；其它独立项目不纳入本仓库清理。
 - GitHub 只上传干净历史，不重新加入旧 Git/LFS 对象、旧 tags、工作树、录像、私人存档和原始响应池。
@@ -23,7 +23,7 @@
 - 只在主游戏开发，不建研究场景、测试脚本、独立预览网页。入口是 开始游戏.command 和 app/scenes/main.tscn，调试用主游戏训练/F1。
 - core 只做整数、60 tick、确定性模拟，不依赖渲染、Input、随机数和系统时间；一个状态一个文件，一个招式一个数据文件。
 - input 转换设备输入；presentation 只读模拟，负责画面/声音/镜头；app 装配流程；content 存数据；UI 共用 ui/kit 和 ui/theme。
-- 依赖方向只允许向下：core 与 input 不依赖任何其它层；presentation 只依赖 core/content；ui 只依赖 presentation/content；app 负责装配。分层细则与自查项见 docs/PROJECT_LAYOUT.md。
+- 依赖方向只允许向下：core 与 input 不依赖任何其它层；presentation 只依赖 core/content；ui 只依赖 presentation/content；app 负责装配。分层细则与自查项见 docs/HANDBOOK.md 的“目录架构”。
 - Godot 导入、验证和录制一律经 python tools/godot_lock.py -- <命令> 串行运行；不删活锁，不关用户进程，不以换引擎冒充修复。
 - 工具按职责放在 tools/check、art、audio、roster、media、runtime、maintenance、rebuild；tools/ 顶层可执行入口只有 verify.py 与 godot_lock.py（另有 README 与 requirements 文本）。新增工具沿用统一路径引导，模块名全局唯一。见 tools/README.md。
 - 当前本机制作 Python：`.venv/bin/python`（macOS，3.13；3.12+ 可用）。其它机器自建同名环境并配置 GODOT_PATH，不提交本机配置。
@@ -59,7 +59,7 @@
 - 招式、反馈与蓄气引用的每个 effect id（`shots`、`feedback.spark`、`projectile_impacts`、`charge_overlay_policy.json` 三态 placement）必须在 `content/presentation/phase3_projectiles.json` 有条目；查不到时 presentation 静默跳过，弹体与蓄气整段不可见，逻辑检查也不会报错。新增或改换贴图后必须补登记并核 atlas SHA；Q 蓄气用 `tools/rebuild/shared/q_charge_registry.py`。2026-11-12 盖亚/奥王/佐菲/奥母只换 policy 未登记、赛罗三招引用 pending id，均整段不可见，即此根因。
 - 正式 UI 使用像素套件与统一主题；不用 StyleBoxFlat、代码线框色块当装饰。布局使用容器和锚点。
 - 返工刹车：同一项检查连续拒收 3 个不同帧就暂停该项，先出诊断图；同一问题最多 2 种修法，仍不过就换思路或留待人工，不无限重生成。
-- 错误记录归位：跨角色的关键错误与返工规则写回本文件；单批次失败留在 `tools/rebuild/<id>/README.md`；根因类事故追加到 `docs/verification/README.md` 对应日期节。不再新建独立清单。
+- 错误记录归位：跨角色的关键错误与返工规则写回本文件；单批次失败留在 `tools/rebuild/<id>/README.md`；根因类事故追加到 `docs/verification/README.md` 对应日期节。主题规范统一并入 `docs/HANDBOOK.md`，不再新建独立清单。
 
 ## 不得回退的战斗规则
 
@@ -70,7 +70,7 @@
 - 泰罗一级泰罗切割、二级斯特利姆、三级奥特爆炸；欧米伽二级主动八次实体头镖连斩，一级回旋与三级光线方向保持。旧安装器不能覆盖新方案。
 - EX哥莫拉/EX雷德王直选与本体变身共存，具体形态贯穿 KO/胜败，新局重建。KO 慢放与束尾是只读表现，真实模拟/输入保持确定。
 - 2P 三格顺序和单格填充共同从右向左。保留远程、收招、脱身、体力与防御的实际反制，不扩大判定或加无敌强保连中。
-- 八套装甲须独立 S2–S7 动作、技能/武器/声音、变身、主游戏和回放；未齐前不开放。图鉴新增暂停，未完项见 docs/PROGRESS.md。
+- 八套装甲须独立 S2–S7 动作、技能/武器/声音、变身、主游戏和回放；未齐前不开放。图鉴新增暂停，未完项见 docs/HANDBOOK.md 的“当前状态与验证边界”。
 
 ## 生成与声音
 

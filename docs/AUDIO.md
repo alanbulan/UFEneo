@@ -2,7 +2,7 @@
 
 用途：制作、核对或分配游戏声音与配乐时读本文件。Kits 音频接口的凭据、连通性、计费边界，以及 8 只怪兽的原剧主题曲核查结论都以此为准。
 
-本文件合并原 `AUDIO_API.md` 与 `MONSTER_MUSIC.md`。前者是接口与制作边界，后者是配乐研究依据；两者都不代表当前声音完成度，角色声音缺口见 [PROGRESS](PROGRESS.md)。
+2026-11-13 收口：本文件原文已并入 [HANDBOOK](HANDBOOK.md) 的“第 7 节”，现行入口以根 [README](../README.md) 与手册为准。
 
 ## 一、Kits 音频接口
 
@@ -100,7 +100,7 @@ Kits 是**语音转换与分离**服务，不是文生音效或文生音乐。�
 
 ### 当前声音缺口
 
-见 [PROGRESS](PROGRESS.md) 的"后续优先级"：teo/arc/blazar/omega 缺通用状态音与语音表。
+见 [手册当前状态](HANDBOOK.md#第-1-节--progressmd) 的“后续优先级”：teo/arc/blazar/omega 缺通用状态音与语音表。
 佐菲、赛罗、盖亚、杰斯提斯、奥王、奥母、奥父自 2026-11-11 起已有 attack/super/hit/victory/intro/down/heavy/taunt/timeout 本人声音（新增 28 条事件声，未听审）；语音仍按合集区段分配，不是逐场原剧核对。
 补齐需要新录音或新分离轨，属收费操作，须用户明确授权后才能做。
 
