@@ -21,7 +21,7 @@
  "super_level": 1,
  "air_allowed": false,
  "feedback": {
-  "spark": "pending_corona_wide_hit",
+  "spark": "zero_strong_corona_fx_wide_hit",
   "block_spark": "impact_guard",
   "hitstop": 10,
   "blockstop": 5,
@@ -44,8 +44,8 @@
   "hit": "hit_heavy",
   "block": "guard"
  },
- "data_source": "强壮日冕赛罗形态沿用基础赛罗同招的帧数、起止帧、伤害、能量、硬直与命中时序，不扩判定；人物动作帧待按本形态待机锚重生成。 原始来源：伤害/消耗/硬直沿用已装机同体型必杀规则；发射根点取 special-11 手部中心，命中与光束为赛罗专属 PixelFX 自绘段。",
- "production_note": "未安装：强壮日冕赛罗人物动作帧尚未生成；专属特效 pending_corona_wide_beam、pending_corona_wide_hit 均为 pending，未登记前不显示。",
+ "data_source": "伤害/消耗/硬直与起止帧沿用基础赛罗同招；发射根点沿用手部中心，束体与命中为强壮日冕赛罗专属 PixelFX 自绘段。",
+ "production_note": "已安装：stage2 动作帧与强壮日冕专属特效已接线；实机 720/1080 双朝向与听审未做，无录屏。",
  "frames": [
   {
    "sprite": 0,
@@ -758,7 +758,7 @@
    "cancel": [],
    "shots": [
     {
-     "effect": "pending_corona_wide_beam",
+     "effect": "zero_strong_corona_fx_wide_beam",
      "spawn": [
       18,
       138
@@ -2155,5 +2155,5 @@
   }
  ],
  "manual_projectiles": true,
- "adaptation": "游戏改编的赛罗集束射线（Wide Zero Shot）：双臂前伸聚能后发射宽幅青蓝光束；人物帧不含光束，束体由运行时 pending_corona_wide_beam 承载。"
+ "adaptation": "游戏改编的赛罗集束射线（Wide Zero Shot）：强壮日冕赛罗双臂前伸聚能后发射宽幅金红光束；人物帧不含光束，束体由运行时 zero_strong_corona_fx_wide_beam 承载。"
 }

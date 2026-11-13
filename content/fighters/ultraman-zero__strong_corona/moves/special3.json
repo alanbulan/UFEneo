@@ -21,7 +21,7 @@
  "super_level": 3,
  "air_allowed": false,
  "feedback": {
-  "spark": "pending_corona_slugger_hit",
+  "spark": "zero_strong_corona_fx_slugger_hit",
   "block_spark": "impact_guard",
   "hitstop": 10,
   "blockstop": 5,
@@ -40,15 +40,15 @@
    1
   ],
   "projectile_impacts": {
-   "pending_corona_slugger_flight": "pending_corona_slugger_hit"
+   "zero_strong_corona_fx_slugger_flight": "zero_strong_corona_fx_slugger_hit"
   }
  },
  "audio": {
   "hit": "hit_heavy",
   "block": "guard"
  },
- "data_source": "强壮日冕赛罗形态沿用基础赛罗同招的帧数、起止帧、伤害、能量、硬直与命中时序，不扩判定；人物动作帧待按本形态待机锚重生成。 原始来源：伤害/消耗/硬直沿用已装机同体型必杀规则；双镖发射点按 special3-8 双手位置分别量取，飞行与回收为赛罗专属 PixelFX 自绘段。",
- "production_note": "未安装：强壮日冕赛罗人物动作帧尚未生成；专属特效 pending_corona_slugger_catch、pending_corona_slugger_flight、pending_corona_slugger_hit、pending_corona_slugger_trail 均为 pending，未登记前不显示。",
+ "data_source": "伤害/消耗/硬直与起止帧沿用基础赛罗同招；双镖发射点沿用手部位置，飞行与回收为强壮日冕赛罗专属 PixelFX 自绘段。",
+ "production_note": "已安装：stage2 动作帧与强壮日冕专属特效已接线；实机 720/1080 双朝向与听审未做，无录屏。",
  "frames": [
   {
    "sprite": 0,
@@ -991,7 +991,7 @@
    "cancel": [],
    "shots": [
     {
-     "effect": "pending_corona_slugger_flight",
+     "effect": "zero_strong_corona_fx_slugger_flight",
      "spawn": [
       59,
       132
@@ -1406,14 +1406,14 @@
        118
       ]
      },
-     "return_effect": "pending_corona_slugger_catch",
+     "return_effect": "zero_strong_corona_fx_slugger_catch",
      "return_sound": "slugger_catch",
      "max_hits": 2,
      "hit_interval": 20,
-     "trail_effect": "pending_corona_slugger_trail"
+     "trail_effect": "zero_strong_corona_fx_slugger_trail"
     },
     {
-     "effect": "pending_corona_slugger_flight",
+     "effect": "zero_strong_corona_fx_slugger_flight",
      "spawn": [
       33,
       133
@@ -1828,11 +1828,11 @@
        120
       ]
      },
-     "return_effect": "pending_corona_slugger_catch",
+     "return_effect": "zero_strong_corona_fx_slugger_catch",
      "return_sound": "slugger_catch",
      "max_hits": 2,
      "hit_interval": 20,
-     "trail_effect": "pending_corona_slugger_trail"
+     "trail_effect": "zero_strong_corona_fx_slugger_trail"
     }
    ],
    "cinematic_stage": "beam",
@@ -3619,5 +3619,5 @@
   }
  ],
  "manual_projectiles": true,
- "adaptation": "游戏改编的赛罗头镖（Zero Slugger）：取下双头镖掷出、回旋回收；人物帧只画取镖与投掷动作，飞行刃、拖尾与接刃闪光由运行时承载。"
+ "adaptation": "游戏改编的赛罗头镖（Zero Slugger）：强壮日冕赛罗取下双头镖掷出、回旋回收；人物帧只画取镖与投掷动作，飞行刃、拖尾与接刃闪光由运行时承载。"
 }
