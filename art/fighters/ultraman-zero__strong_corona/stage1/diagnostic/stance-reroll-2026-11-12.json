@@ -1,0 +1,58 @@
+{
+ "date": "2026-11-12",
+ "issue": "待机站姿连续失败：照片步后腿浅；像素候选01站距0.638、02站距0.710但后腿拉直、03站距0.657但后腿仍浅；改用基础赛罗下半身/剪影导引的 stance-raw-02(0.624)、stance-raw-03(0.609) 均带不可用的不透明背景光晕且两脚不同底。",
+ "root_cause": "图像模型为凑宽站距会拉直后腿；改成下半身或剪影导引后又自加不透明背景光晕并收窄站距。单靠生图提示无法同时稳定满足透明纯人物、0.65–0.80站距、双脚同底与双膝深屈。",
+ "decision": "停止继续重掷；采用 pixel-raw-03 落格（站距0.6543、双脚底差2px、32色/单连通/二值Alpha），后膝浅作为 known_issue 记录，root_delegated_by_user 签署，不冒充用户确认。若用户否决后膝形态，整锚与下游撤销重定。",
+ "items": [
+  {
+   "name": "stance-clean-01",
+   "file": "art/fighters/ultraman-zero__strong_corona/stage1/idle/frames/stance-clean-01.png",
+   "sha256": "7d4c9d2bb36b90f6b56d26977c9a136882cda66cfa40f356ea2b45e56fb97740",
+   "note": "照片0.661 后腿浅"
+  },
+  {
+   "name": "zero-idle",
+   "file": "art/fighters/ultraman-zero/stage1/cells/idle-00-cell.png",
+   "sha256": "8c5bb5fc1130318f125ee6cb8cbbfd4c1ff53babafb169808a154d77bf3f6b3d",
+   "note": "基准0.694 双膝弯"
+  },
+  {
+   "name": "father-idle",
+   "file": "art/fighters/father-of-ultra/stage1/cells/idle-00-cell.png",
+   "sha256": "63f51642c1a67169843a186be7d3547890406dfe98558a5d4d5add10e1ec1248",
+   "note": "基准0.665 双膝弯"
+  },
+  {
+   "name": "stance-raw-02",
+   "file": "art/fighters/ultraman-zero__strong_corona/stage1/idle/frames/stance-raw-02.png",
+   "sha256": "8b6e24c01ef7808f1488359420236e3f31af42a107bd9a1108f056b0772f3390",
+   "note": "0.624 光晕 脚不平"
+  },
+  {
+   "name": "pixel-01",
+   "file": "art/fighters/ultraman-zero__strong_corona/stage1/idle/frames/pixel-raw-01.png",
+   "sha256": "a67bd1a97d7699501968ccaf52ed2b4a143a74ad233e12106651f3750e7fe4ec",
+   "note": "0.639 站距窄 拒"
+  },
+  {
+   "name": "pixel-02",
+   "file": "art/fighters/ultraman-zero__strong_corona/stage1/idle/frames/pixel-raw-02.png",
+   "sha256": "095d0224e31e329ec38ebc4ae5c9c2d45d275b7da169c1818a7141c2a7db5bee",
+   "note": "0.710 后腿直 拒"
+  },
+  {
+   "name": "pixel-03",
+   "file": "art/fighters/ultraman-zero__strong_corona/stage1/idle/frames/pixel-raw-03.png",
+   "sha256": "2be6ecb821d7532be94514e3cbb2fc4a108d16f12b27994ea68b4b609d5ed327",
+   "note": "0.657 后腿浅 收"
+  },
+  {
+   "name": "stance-raw-03",
+   "file": "art/fighters/ultraman-zero__strong_corona/stage1/idle/frames/stance-raw-03.png",
+   "sha256": "c667acdbd5892016a073a11607fa1d5fb4492c12f5425b24ec837c0a7c0cddf3",
+   "note": "0.609 光晕 脚不平"
+  }
+ ],
+ "authority": "root_delegated_by_user",
+ "user_approved": false
+}
