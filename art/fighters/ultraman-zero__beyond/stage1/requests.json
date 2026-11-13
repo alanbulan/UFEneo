@@ -1,0 +1,1827 @@
+{
+ "schema": 1,
+ "fighter": "ultraman-zero__beyond",
+ "requests": [
+  {
+   "id": "stance-raw-03",
+   "step": "idle stance photo, approach-2-head-crop-anchor",
+   "date": "2026-11-12",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "background": "transparent",
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/references/side-head-mirrored-right-x12.png",
+    "art/fighters/ultraman-zero__beyond/sources/ref-02-official-figure-front.jpg",
+    "art/fighters/ultraman-zero/stage1/cells/idle-00-cell.png"
+   ],
+   "prompt": "参考图①（真实右侧头部结构与朝向）、②（官方正面配色/胸甲/紫纹/体量）、③（已装机同风格格斗站姿与画风，只借站姿，不抄其头冠造型）。画超限赛罗全身人物照：纯右侧视90°，人物朝画面右，只见近侧一只黄眼，远眼被鼻梁挡住；从冠顶到鞋底完整不裁切。头部必须是硬质银色金属：前额正中竖向蓝菱形额灯，眼上两侧各一枚蓝色鬓宝；中央一条宽冠脊向后仰，左右各一条宽长银片向后上方，最外侧一对宽大侧翼；四枚头镖是宽厚弯刃，刃根在耳上、贴头壳、刃缘有转折和凹口、刃尖向后上方折起，近侧遮远侧；禁止头发、羽毛、细长尖刺、许多碎尖。肩后一对银色肩甲刃向后上方展开；胸中央浅蓝椭圆水晶、两侧青蓝胸水晶；前臂外侧与小腿前外侧青蓝水晶；银色拳；深紫火焰条纹按参考图②。格斗待机：两脚前后分开，脚外缘间距约站高0.72，前后脚屈膝下沉，双拳抬到胸前护架。四肢粗细和肩宽与参考图②一致：上臂、大腿饱满，小腿有厚度，不细长手脚、不缩头不放大头。高清皮套渲染，不是像素画。透明背景，无光束光晕颗粒、无地面文字边框，只画单帧完整人物，不拼网格。",
+   "result": {
+    "path": "art/fighters/ultraman-zero__beyond/stage1/idle/references/stance-raw-03.png",
+    "sha256": "8074b27276b8cf3608aa8eda42437ea793c201bfe828cd276a8f5195415f01f7",
+    "size": [
+     1199,
+     1312
+    ],
+    "alpha": {
+     "min": 0,
+     "max": 255,
+     "unique": 256,
+     "background_corners": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "figure_bbox_alpha128": [
+     132,
+     3,
+     1072,
+     1289
+    ],
+    "height": 1287,
+    "width": 941,
+    "foot_span": 941,
+    "foot_span_over_height": 0.7312,
+    "yellow_eye_blobs": 1,
+    "head_blue_blobs": 4,
+    "direction": "朝右（眼 cx 677 < 额灯 cx 717）",
+    "verdict": "照片门通过（造型门按本人官方结构目视）：纯右侧视只近侧眼、只见近侧胸水晶与近侧肩甲刃；额灯/鬓宝/宽厚头冠片/肩甲刃/胸水晶/前臂/小腿水晶/紫纹可读；脚外缘0.7312；全身未裁切；透明背景；无FX/地面/文字。",
+    "known_simplification": "头冠仍为火焰状宽片扇，四枚头镖未逐枚分开，按侧视与188原生格的读法与已批准图鉴侧视像素同构；像素门继续核头宽/头高与结构。",
+    "usage": "MCP 未返回费用；未知。"
+   }
+  },
+  {
+   "id": "pixel-raw-03",
+   "step": "idle pixel whole-frame from accepted stance photo",
+   "date": "2026-11-12",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "requested_size": "1024x1536",
+   "background": "transparent",
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/stance-raw-03-canvas-1024x1536.png"
+   ],
+   "prompt": "把参考图整帧转成 2D 像素艺术整帧：严格保持同一人物、同一纯右侧视格斗待机姿势、同一朝向、同一身体比例与结构，不改姿势、不缩头、不改四肢粗细，不增删部件。像素画风，清晰硬边像素块，透明背景。主体单块连通，四边留白、不裁切。最多32色：银白、灰、深紫、青蓝水晶、黄眼、蓝色额灯，保持额灯/胸水晶/计时器识别色。Alpha 只有全透明与全不透明两档。无光束、光晕、颗粒、地面、文字、边框、网格。",
+   "result": {
+    "path": "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png",
+    "sha256": "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628",
+    "size": [
+     1024,
+     1536
+    ],
+    "alpha_unique": 255,
+    "figure_bbox_alpha128": [
+     108,
+     305,
+     915,
+     1410
+    ],
+    "height": 1106,
+    "width": 808,
+    "foot_span_over_height": 0.7306,
+    "colors_before_quantize": 52393,
+    "note": "模型返回为抗锯齿像素风原图；落格由 stage_cells 统一量化到图鉴32色并二值化 Alpha。"
+   },
+   "landed": {
+    "path": "art/fighters/ultraman-zero__beyond/stage1/cells/idle-00-cell.png",
+    "sha256": "96ed30ed996939e8693b20e58b78edb189fa618c01fa26482b2ff1225da46fd2",
+    "x4": "art/fighters/ultraman-zero__beyond/stage1/cells/idle-00-cell-x4.png",
+    "x4_sha256": "964f1d13fdaad6b46646302d47de1e123ebe241d6064e7e7bee33031ea9e8cef",
+    "scale": 0.169982,
+    "cell": 256,
+    "anchor": [
+     128,
+     248
+    ],
+    "standing": 188,
+    "foot_row": 247,
+    "foot_span_over_height": 0.7287,
+    "colors": 32,
+    "components": 1,
+    "binary_alpha": true
+   },
+   "signed_by": "root_delegated_by_user",
+   "usage": "MCP 未返回费用；未知。"
+  }
+ ],
+ "action_frames": [
+  {
+   "id": "backstep-00",
+   "clip": "guard/turn/backstep",
+   "frame": 0,
+   "purpose": "重心后坐蹬地",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的向后急退整帧，画面中只有本人，不画对手：朝右，重心后坐，前脚蹬地、后脚向后跨，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/backstep/frames/backstep-00-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/backstep/frames/backstep-00-raw.png",
+   "generation_id": "image-3954-1388",
+   "raw_sha256": "2f6cd168c46fb9a037e9258e518565fe43ed4173ec6d14f22672f2fa7f12b0d6",
+   "raw_size": [
+    1536,
+    1024
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    307,
+    14,
+    1215,
+    988
+   ],
+   "raw_height": 975,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/backstep-00-cell.png",
+    "cell_sha256": "828725c794633e7ac7c6d016c774f3dd800e2890946a8e133421372042ad5c90",
+    "height": 166,
+    "bbox": [
+     42,
+     82,
+     196,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "backstep-01",
+   "clip": "guard/turn/backstep",
+   "frame": 1,
+   "purpose": "后脚蹬地后撤",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的向后急退整帧，画面中只有本人，不画对手：朝右，后脚蹬地起跳后撤，前脚离地，身体略后仰，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/backstep/frames/backstep-01-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/backstep/frames/backstep-01-raw.png",
+   "generation_id": "image-3954-1407",
+   "raw_sha256": "f26b500e6815ff35ff179eda54274cb9216936241785ca8c2e6be8257cd1eb86",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    144,
+    267,
+    823,
+    1332
+   ],
+   "raw_height": 1066,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/backstep-01-cell.png",
+    "cell_sha256": "5e4fce720de35c7663786873795e3fa033a3762cbc38283229a6cda67d8d51c7",
+    "height": 181,
+    "bbox": [
+     122,
+     45,
+     237,
+     225
+    ],
+    "foot_row": 225,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "backstep-02",
+   "clip": "guard/turn/backstep",
+   "frame": 2,
+   "purpose": "腾空后撤",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的向后急退整帧，画面中只有本人，不画对手：朝右，腾空后撤，双腿收起，上身直立，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/backstep/frames/backstep-02-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/backstep/frames/backstep-02-raw.png",
+   "generation_id": "image-3954-1411",
+   "raw_sha256": "fa8543ba790197e0c5d3ed2f700bb8016bb805e0ffa5822ecbf250815864264e",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    245,
+    236,
+    726,
+    1175
+   ],
+   "raw_height": 940,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/backstep-02-cell.png",
+    "cell_sha256": "96fdaa6b6717ec7646e6783d2383c9b4d83683d4a3f6aaf11c74624793a21a2d",
+    "height": 160,
+    "bbox": [
+     75,
+     66,
+     156,
+     225
+    ],
+    "foot_row": 225,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "backstep-03",
+   "clip": "guard/turn/backstep",
+   "frame": 3,
+   "purpose": "后脚落地",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的向后急退整帧，画面中只有本人，不画对手：朝右，后脚先落地承重，前脚随后落下，双膝屈沉，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/backstep/frames/backstep-03-raw-v2.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/backstep/frames/backstep-03-raw-v2.png",
+   "generation_id": "image-3954-1436",
+   "raw_sha256": "9062f3673d6f6485c475e196a10c9dba9e2fd953c1710cb739e10dd0d856d9b0",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    148,
+    299,
+    767,
+    1395
+   ],
+   "raw_height": 1097,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/backstep-03-cell.png",
+    "cell_sha256": "294848949ab94163017efbc9f84de7860b7cb4be156f41712ddd28412ced8c90",
+    "height": 186,
+    "bbox": [
+     77,
+     62,
+     181,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user",
+   "note": "v1 输出为 2×6 多格拼图，连通块 12，拒收删除；v2 单帧通过。"
+  },
+  {
+   "id": "backstep-03-v1",
+   "clip": "backstep",
+   "frame": 3,
+   "purpose": "rejected_candidate",
+   "reason": "输出为多格拼图，整帧连通块 12，不是单帧人物；拒收删除，重掷 v2。删除前未记录完整 SHA 与实收尺寸（工作流疏漏，如实登记）。",
+   "rejected_raw_sha256": "未留存",
+   "rejected_actual_size": "未记录",
+   "review_status": "rejected"
+  },
+  {
+   "id": "backstep-04",
+   "clip": "guard/turn/backstep",
+   "frame": 4,
+   "purpose": "站稳回正",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的向后急退收势整帧，画面中只有本人，不画对手：朝右，双脚前后分开站稳，双膝微屈，重心回正，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/backstep/frames/backstep-04-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/backstep/frames/backstep-04-raw.png",
+   "generation_id": "image-3954-1418",
+   "raw_sha256": "fe966f8089582d02a0cb0ce82b00f6662a2b7b35d0ad93f4a13a03a9ee550cbc",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    178,
+    281,
+    848,
+    1376
+   ],
+   "raw_height": 1096,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/backstep-04-cell.png",
+    "cell_sha256": "b30c8215e50ad5baf7bbc076c534e6a40e5003b40f17bc4db422b9e30b22caa5",
+    "height": 186,
+    "bbox": [
+     68,
+     62,
+     181,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "crouch-00",
+   "clip": "crouch_start/crouch/crouch_rise/crouch_turn/crouch_guard",
+   "frame": 0,
+   "purpose": "低位蹲姿",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的蹲姿待机整帧，画面中只有本人，不画对手：朝右，低位蹲姿，双膝深屈，臀部下沉，双脚前后分开，上身直立，双拳胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/crouch/frames/crouch-00-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/crouch/frames/crouch-00-raw.png",
+   "generation_id": "image-3954-1277",
+   "raw_sha256": "3c09708afd7fe601792b9ac09067f4ddacd11abc59c7d55bb28f39dbde8adacc",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    117,
+    308,
+    915,
+    1335
+   ],
+   "raw_height": 1028,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/crouch-00-cell.png",
+    "cell_sha256": "ea88963c9c3cce8a4abb381c61711ba2a2fb5f16815cef0eb16f0fbc0b1932fe",
+    "height": 175,
+    "bbox": [
+     53,
+     73,
+     188,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "crouch-01",
+   "clip": "crouch_start/crouch/crouch_rise/crouch_turn/crouch_guard",
+   "frame": 1,
+   "purpose": "蹲姿呼吸微动",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的蹲姿待机整帧，画面中只有本人，不画对手：朝右，低位蹲姿，双膝再度下沉一点、重心略后移，双脚前后分开，双拳胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/crouch/frames/crouch-01-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/crouch/frames/crouch-01-raw.png",
+   "generation_id": "image-3954-1281",
+   "raw_sha256": "f05e1c9900715cfef8169db0e13be9d7a6fdb76a9dc6735adc21cb5a342f87f8",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    87,
+    349,
+    937,
+    1352
+   ],
+   "raw_height": 1004,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/crouch-01-cell.png",
+    "cell_sha256": "bd9b09eda095f3c9ae6042b20acac97df91507f1f123b9bdf025a663bc9d37f2",
+    "height": 171,
+    "bbox": [
+     48,
+     77,
+     192,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "crouch_guard-00",
+   "clip": "crouch_start/crouch/crouch_rise/crouch_turn/crouch_guard",
+   "frame": 0,
+   "purpose": "交叉护架",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的蹲姿防御整帧，画面中只有本人，不画对手：朝右，深蹲，双臂交叉护在胸前，收紧下颌，双肩前扣。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_guard/frames/crouch_guard-00-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_guard/frames/crouch_guard-00-raw.png",
+   "generation_id": "image-3954-1314",
+   "raw_sha256": "3bf08150b9e7ee73887a891e68c28672aa36ca4af48b1d7ce8563c79fd7be3f1",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    113,
+    351,
+    871,
+    1373
+   ],
+   "raw_height": 1023,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/crouch_guard-00-cell.png",
+    "cell_sha256": "1eead5a2d236496ce9cb3d25854cb76bba0397e1affd032ac0e7d327571ffd9e",
+    "height": 174,
+    "bbox": [
+     59,
+     74,
+     187,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "crouch_guard-01",
+   "clip": "crouch_start/crouch/crouch_rise/crouch_turn/crouch_guard",
+   "frame": 1,
+   "purpose": "护臂收紧",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的蹲姿防御整帧，画面中只有本人，不画对手：朝右，深蹲保持，护臂略上抬、肘部收得更紧，重心再下沉一点，下颌收紧。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_guard/frames/crouch_guard-01-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_guard/frames/crouch_guard-01-raw.png",
+   "generation_id": "image-3954-1318",
+   "raw_sha256": "4831de1897b071f6978932f7d4604346abd8bd2999fe8455661e11ba39f7d7b6",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    104,
+    435,
+    902,
+    1391
+   ],
+   "raw_height": 957,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/crouch_guard-01-cell.png",
+    "cell_sha256": "38ed83cbcf9e394ca69999b2f6b2d64d3009fa7b32952864b91fb8fed8807657",
+    "height": 163,
+    "bbox": [
+     56,
+     85,
+     191,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "crouch_rise-00",
+   "clip": "crouch_start/crouch/crouch_rise/crouch_turn/crouch_guard",
+   "frame": 0,
+   "purpose": "起身一半",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的蹲起回站立整帧，画面中只有本人，不画对手：朝右，从深蹲开始起身，双膝伸展一半，上身抬起，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_rise/frames/crouch_rise-00-raw-v2.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_rise/frames/crouch_rise-00-raw-v2.png",
+   "generation_id": "image-3954-1328",
+   "raw_sha256": "4dc4386f25f95875751287a2be1443f6666aa70088a63dc3e69185d311d2cb84",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    164,
+    308,
+    875,
+    1402
+   ],
+   "raw_height": 1095,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/crouch_rise-00-cell.png",
+    "cell_sha256": "6c20c566c39f9849a8165e9197fb810fcb313972c01b3f42c181eece1fdaa066",
+    "height": 186,
+    "bbox": [
+     63,
+     62,
+     183,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user",
+   "note": "v1 输出为 2172×724 多格序列条（SHA bd2d9141…），整帧拒收删除；v2 单帧通过。"
+  },
+  {
+   "id": "crouch_rise-00-v1",
+   "clip": "crouch_rise",
+   "frame": 0,
+   "purpose": "rejected_candidate",
+   "reason": "输出为 2172×724 多格序列条，不是单帧整身人物；整帧拒收删除，重掷 v2。",
+   "rejected_raw_sha256": "bd2d91419c4bd9d829e47451f30bf507ca6fcca1506b1603817a58e8f652b10e",
+   "rejected_actual_size": [
+    2172,
+    724
+   ],
+   "review_status": "rejected"
+  },
+  {
+   "id": "crouch_rise-01",
+   "clip": "crouch_start/crouch/crouch_rise/crouch_turn/crouch_guard",
+   "frame": 1,
+   "purpose": "站定",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的蹲起回站立整帧，画面中只有本人，不画对手：朝右，起身回到格斗站距，双膝微屈，身体直立，站高与参考图一致，不要拉长腿、不要放大头，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_rise/frames/crouch_rise-01-raw-v3.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_rise/frames/crouch_rise-01-raw-v3.png",
+   "generation_id": "image-3954-1349",
+   "raw_sha256": "490d780968b88c904bdf16ba4407ab4690ab47d646ef04ccde657829d3f11ba7",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    240,
+    206,
+    783,
+    1359
+   ],
+   "raw_height": 1154,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/crouch_rise-01-cell.png",
+    "cell_sha256": "0b67675dff113dc1ef538c5e220fdcbfc72e15f1ac441e4d39630a9ed2a208f9",
+    "height": 196,
+    "bbox": [
+     81,
+     52,
+     172,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user",
+   "note": "v1 序列条拒收；v2 单帧但站高204（+8.5%），重掷 v3 得196（+4%）。"
+  },
+  {
+   "id": "crouch_rise-01-v1",
+   "clip": "crouch_rise",
+   "frame": 1,
+   "purpose": "rejected_candidate",
+   "reason": "输出为 2172×724 多格序列条，不是单帧整身人物；整帧拒收删除。",
+   "rejected_raw_sha256": "47e1eb03abb2f9c5a5fe5587373df7d14356ddbc7506a3143cfedd1d53dc7d2a",
+   "rejected_actual_size": [
+    2172,
+    724
+   ],
+   "review_status": "rejected"
+  },
+  {
+   "id": "crouch_rise-01-v2",
+   "clip": "crouch_rise",
+   "frame": 1,
+   "purpose": "rejected_candidate",
+   "reason": "单帧但落格站高 204（+8.5%），腿部拉长；重掷 v3 得 196（+4%）。raw 已删除。",
+   "rejected_raw_sha256": "70d9d3099bede2edcb7212000b1077e2604b1a80135bb8eeda65a1e6f8b8dc2c",
+   "rejected_actual_size": [
+    1024,
+    1536
+   ],
+   "landed_bbox": [
+    77,
+    44,
+    174,
+    247
+   ],
+   "review_status": "rejected"
+  },
+  {
+   "id": "crouch_start-00",
+   "clip": "crouch_start/crouch/crouch_rise/crouch_turn/crouch_guard",
+   "frame": 0,
+   "purpose": "屈膝下沉",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的下蹲起势整帧，画面中只有本人，不画对手：朝右，双膝开始弯曲下沉，臀部后坐，上身略前倾，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_start/frames/crouch_start-00-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_start/frames/crouch_start-00-raw.png",
+   "generation_id": "image-3954-1267",
+   "raw_sha256": "08c7d56ec279683b75845e4f2a98b995ce49a8c9fbe232a333bd1deeb7e1e8d1",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    183,
+    341,
+    817,
+    1397
+   ],
+   "raw_height": 1057,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/crouch_start-00-cell.png",
+    "cell_sha256": "674188c4556a262046e7e81cb0b4f2baaa90df08d0804465b8014da2c7a75566",
+    "height": 180,
+    "bbox": [
+     71,
+     68,
+     178,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "crouch_start-01",
+   "clip": "crouch_start/crouch/crouch_rise/crouch_turn/crouch_guard",
+   "frame": 1,
+   "purpose": "蹲得更深",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的下蹲起势整帧，画面中只有本人，不画对手：朝右，下蹲更深，双膝大幅弯曲，双脚前后分开，双拳收到胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_start/frames/crouch_start-01-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_start/frames/crouch_start-01-raw.png",
+   "generation_id": "image-3954-1272",
+   "raw_sha256": "77b9c84d1f17c3de66ed61ff88869aa037b0864d4bd03678e2b08a07a89f0c5f",
+   "raw_size": [
+    1536,
+    1024
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    291,
+    24,
+    1159,
+    998
+   ],
+   "raw_height": 975,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/crouch_start-01-cell.png",
+    "cell_sha256": "e6068321a04cc689056b740272b8047e486a5163966ccd5519f63d1a80c08532",
+    "height": 166,
+    "bbox": [
+     46,
+     82,
+     193,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "crouch_turn-00",
+   "clip": "crouch_start/crouch/crouch_rise/crouch_turn/crouch_guard",
+   "frame": 0,
+   "purpose": "上身开始拧转",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的蹲姿转身整帧，画面中只有本人，不画对手：朝右，蹲姿中上身向左拧转，双肩一前一后，双拳保持护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_turn/frames/crouch_turn-00-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_turn/frames/crouch_turn-00-raw.png",
+   "generation_id": "image-3954-1299",
+   "raw_sha256": "065fc2b3bdd3fce3c9a005d082e56d4e611b0c3985089f89f32f30fdc8f5c2d2",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    109,
+    303,
+    912,
+    1353
+   ],
+   "raw_height": 1051,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/crouch_turn-00-cell.png",
+    "cell_sha256": "7067f46b22ba63d643720260e23ef9bec3adb25e8ca300a0cd9d6f3e92a34d49",
+    "height": 179,
+    "bbox": [
+     50,
+     69,
+     186,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "crouch_turn-01",
+   "clip": "crouch_start/crouch/crouch_rise/crouch_turn/crouch_guard",
+   "frame": 1,
+   "purpose": "侧转",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的蹲姿转身整帧，画面中只有本人，不画对手：朝右，蹲姿中身体侧转、背向后方一半，双脚原地碾转，双拳保持护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_turn/frames/crouch_turn-01-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_turn/frames/crouch_turn-01-raw.png",
+   "generation_id": "image-3954-1304",
+   "raw_sha256": "40f67b0e86da12bba0f2f9ed044416c1407530c97dee29996914b1b9e445ba11",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    164,
+    290,
+    853,
+    1377
+   ],
+   "raw_height": 1088,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/crouch_turn-01-cell.png",
+    "cell_sha256": "f15fd2db3f25918680f4b713ef16215451340b0b369f55324760bca632fd7b66",
+    "height": 185,
+    "bbox": [
+     61,
+     63,
+     177,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "crouch_turn-02",
+   "clip": "crouch_start/crouch/crouch_rise/crouch_turn/crouch_guard",
+   "frame": 2,
+   "purpose": "转回面向右",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的蹲姿转身整帧，画面中只有本人，不画对手：朝右，转回面向右侧，蹲姿稳定，双脚前后分开，双拳保持护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_turn/frames/crouch_turn-02-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/crouch_turn/frames/crouch_turn-02-raw.png",
+   "generation_id": "image-3954-1309",
+   "raw_sha256": "a16b29e2eb45f36d843af70054d861ab9330fb2b871d6f78148e63089e4becb6",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    78,
+    304,
+    943,
+    1392
+   ],
+   "raw_height": 1089,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/crouch_turn-02-cell.png",
+    "cell_sha256": "fea5d2d68e0262242012c167af599a89126ed18f549ab5ea7c791611d2e72112",
+    "height": 185,
+    "bbox": [
+     50,
+     63,
+     196,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "guard-00",
+   "clip": "guard/turn/backstep",
+   "frame": 0,
+   "purpose": "交叉护架",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的站立防御整帧，画面中只有本人，不画对手：朝右，双臂交叉护在胸前，下颌收紧，双肩前扣，双膝微屈。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/guard/frames/guard-00-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/guard/frames/guard-00-raw.png",
+   "generation_id": "image-3954-1364",
+   "raw_sha256": "053879944c6fba5c26aaa5527fdf38beaf409e9aa9bb54b2eb2f5d08bddbbead",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    154,
+    244,
+    857,
+    1404
+   ],
+   "raw_height": 1161,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/guard-00-cell.png",
+    "cell_sha256": "2ce12e233aee2fcd8c683babd5a776b493c1682250af056a47529dd54957b045",
+    "height": 197,
+    "bbox": [
+     65,
+     51,
+     184,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "guard-01",
+   "clip": "guard/turn/backstep",
+   "frame": 1,
+   "purpose": "护臂收紧",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的站立防御整帧，画面中只有本人，不画对手：朝右，护臂略上抬、肘部收得更紧，重心再下沉一点，下颌收紧。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/guard/frames/guard-01-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/guard/frames/guard-01-raw.png",
+   "generation_id": "image-3954-1369",
+   "raw_sha256": "aec8c43e532ae09c5f32008662c73aa5788ea3fdee62c44512dbd6ad68db4fd0",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    88,
+    314,
+    926,
+    1395
+   ],
+   "raw_height": 1082,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/guard-01-cell.png",
+    "cell_sha256": "b49e864613659daedde79907bbd71a421740bfa2c31d32c044e065c104b555e3",
+    "height": 184,
+    "bbox": [
+     50,
+     64,
+     192,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "turn-00",
+   "clip": "guard/turn/backstep",
+   "frame": 0,
+   "purpose": "上身开始拧转",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的站立转身整帧，画面中只有本人，不画对手：朝右，上身开始向左拧转，双肩一前一后，双脚原地碾转，双拳保持护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/turn/frames/turn-00-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/turn/frames/turn-00-raw.png",
+   "generation_id": "image-3954-1373",
+   "raw_sha256": "7ddd539b910f35cde5e312a08d3f83b488dcf0b8c7d4d4796842f37cafe4e3f4",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    140,
+    296,
+    830,
+    1393
+   ],
+   "raw_height": 1098,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/turn-00-cell.png",
+    "cell_sha256": "17cbda922764006ea28023256e5e8c49a252d4c36d57fa841d617c7fb0c23675",
+    "height": 187,
+    "bbox": [
+     66,
+     61,
+     182,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "turn-01",
+   "clip": "guard/turn/backstep",
+   "frame": 1,
+   "purpose": "侧转一半",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的站立转身整帧，画面中只有本人，不画对手：朝右，身体转到侧对前方一半，双肩一前一后，双脚原地碾转，双臂保持护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/turn/frames/turn-01-raw-v2.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/turn/frames/turn-01-raw-v2.png",
+   "generation_id": "image-3954-1402",
+   "raw_sha256": "f1fe99650ecb72c0cfd7c7108d144cf9d22fb1c1bf7441b39db6e38586903b51",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    250,
+    230,
+    778,
+    1369
+   ],
+   "raw_height": 1140,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/turn-01-cell.png",
+    "cell_sha256": "955ee6cf05591a41e93fbe030072a49b9e88af99f4d1a7d128330d24933005ec",
+    "height": 194,
+    "bbox": [
+     82,
+     54,
+     171,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user",
+   "note": "v1 输出为 8×4 多格拼图（SHA 35579d42…），连通块 34，拒收删除；v2 单帧通过。"
+  },
+  {
+   "id": "turn-01-v1",
+   "clip": "turn",
+   "frame": 1,
+   "purpose": "rejected_candidate",
+   "reason": "输出为 8×4 多格拼图，整帧连通块 34，不是单帧人物；拒收删除，重掷 v2。",
+   "rejected_raw_sha256": "35579d425187ee1878b54a01c6b2ce745f953ff4d69cbf09767271d55c431427",
+   "rejected_actual_size": [
+    1024,
+    1536
+   ],
+   "review_status": "rejected"
+  },
+  {
+   "id": "turn-02",
+   "clip": "guard/turn/backstep",
+   "frame": 2,
+   "purpose": "转回站定",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的站立转身整帧，画面中只有本人，不画对手：朝右，转回面向右侧站定，双脚前后分开，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/turn/frames/turn-02-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/turn/frames/turn-02-raw.png",
+   "generation_id": "image-3954-1383",
+   "raw_sha256": "75e3263856b6d7360638da3db9cbbfe9d57ed6162e9acdaec9f02a14cf9d4b88",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    177,
+    272,
+    882,
+    1409
+   ],
+   "raw_height": 1138,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/turn-02-cell.png",
+    "cell_sha256": "98f53fcbf7aaf176421094a8fed03a43b609e96bf010ec65c4da2dca63641ea3",
+    "height": 193,
+    "bbox": [
+     65,
+     55,
+     184,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "walk_back-00",
+   "clip": "walk_forward/walk_back",
+   "frame": 0,
+   "purpose": "前脚后收、后脚后落",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的向后撤步整帧，画面中只有本人，不画对手：朝右，前脚向后收、后脚向后落地，上身后坐，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/walk_back/frames/walk_back-00-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/walk_back/frames/walk_back-00-raw.png",
+   "generation_id": "image-3954-1213",
+   "raw_sha256": "f52aa2de198ca8a8343e28c03208659f2263cb44ff0f9215dde208922a19ea28",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    100,
+    294,
+    722,
+    1402
+   ],
+   "raw_height": 1109,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/walk_back-00-cell.png",
+    "cell_sha256": "96f6f5002759dcc0d2fb36dd331ad9b47e87b30dd8baaabcdacfef79e1cedd2b",
+    "height": 189,
+    "bbox": [
+     115,
+     59,
+     220,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "walk_back-01",
+   "clip": "walk_forward/walk_back",
+   "frame": 1,
+   "purpose": "后脚承重、前脚后收",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的向后撤步整帧，画面中只有本人，不画对手：朝右，后脚落地承重，前脚离地向后收，上身直立，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/walk_back/frames/walk_back-01-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/walk_back/frames/walk_back-01-raw.png",
+   "generation_id": "image-3954-1217",
+   "raw_sha256": "3f5eb4de6a6a94353eab032aa599023fb84dc78da1d9a39e34c813a46460f537",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    232,
+    217,
+    746,
+    1385
+   ],
+   "raw_height": 1169,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/walk_back-01-cell.png",
+    "cell_sha256": "4e7339fe8625181207f28469c5eb47f476f311ac410a72bb8091b8cfbabe2411",
+    "height": 199,
+    "bbox": [
+     59,
+     49,
+     146,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "walk_back-02",
+   "clip": "walk_forward/walk_back",
+   "frame": 2,
+   "purpose": "向后踏稳（v2 抬回站高）",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的向后撤步整帧，画面中只有本人，不画对手：朝右，双脚前后分开向后踏稳，双膝只轻微屈，重心几乎不降低，站高与参考图接近，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/walk_back/frames/walk_back-02-raw-v2.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/walk_back/frames/walk_back-02-raw-v2.png",
+   "generation_id": "image-3954-1237",
+   "raw_sha256": "4c1281332a7c724be8c5d8fd7776dcccb83156a34702bb5429a0c66772b193f2",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    102,
+    292,
+    875,
+    1396
+   ],
+   "raw_height": 1105,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/walk_back-02-cell.png",
+    "cell_sha256": "0993f6aae6a97be2630741db72dcf0b6c887ae35c43227f253d62199f2bd0b94",
+    "height": 188,
+    "bbox": [
+     56,
+     60,
+     187,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user",
+   "note": "v1 落格站高172（-8.5%）且相邻帧199→172突变13.6%>10%，重掷 v2 得站高188。"
+  },
+  {
+   "id": "walk_back-02-v1",
+   "clip": "walk_back",
+   "frame": 2,
+   "purpose": "rejected_candidate",
+   "reason": "落格站高172（-8.5%）且相邻帧199→172突变13.6%>10%，重掷 v2 得188；raw 已删除，无备份。",
+   "rejected_raw_sha256": "ba2ad8045137f7d93bd1675416d781caf41af5779718e8c2ca48b9b86ed5e3b1",
+   "rejected_actual_size": [
+    1024,
+    1536
+   ],
+   "landed_bbox": [
+    53,
+    76,
+    193,
+    247
+   ],
+   "review_status": "rejected"
+  },
+  {
+   "id": "walk_back-03",
+   "clip": "walk_forward/walk_back",
+   "frame": 3,
+   "purpose": "收步回站距",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的向后撤步收步整帧，画面中只有本人，不画对手：朝右，后撤收步，双脚收回格斗站距，双膝屈沉，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/walk_back/frames/walk_back-03-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/walk_back/frames/walk_back-03-raw.png",
+   "generation_id": "image-3954-1224",
+   "raw_sha256": "ad13d4c33c44e894c864b59d8602f21c7a81fb72c408966e7a4f76e6982800dd",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    285,
+    311,
+    742,
+    1364
+   ],
+   "raw_height": 1054,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/walk_back-03-cell.png",
+    "cell_sha256": "347d7aa5901dd081230f5daff85b62f9fb5929cb511f9ab3c89f0fd1084a5b88",
+    "height": 179,
+    "bbox": [
+     90,
+     69,
+     167,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "walk_forward-00",
+   "clip": "walk_forward/walk_back",
+   "frame": 0,
+   "purpose": "起步前踏",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的行走整帧，画面中只有本人，不画对手：朝右，从格斗待机迈出第一步，前脚前踏、后脚蹬地，双拳保持胸前护架，身体略前倾。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/walk_forward/frames/walk_forward-00-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/walk_forward/frames/walk_forward-00-raw.png",
+   "generation_id": "image-3954-1170",
+   "raw_sha256": "4c01754db0f5fa1045e497140d8cf1387010e169397642701ac6868209a27c1d",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    112,
+    296,
+    873,
+    1332
+   ],
+   "raw_height": 1037,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/walk_forward-00-cell.png",
+    "cell_sha256": "2f6ac1c67194a7b781abcd4cc9138b671ef9589e9c3070e0d6e318195d8ce37f",
+    "height": 176,
+    "bbox": [
+     46,
+     72,
+     175,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "walk_forward-01",
+   "clip": "walk_forward/walk_back",
+   "frame": 1,
+   "purpose": "后脚离地前收",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的行走整帧，画面中只有本人，不画对手：朝右，前脚落地承重、后脚离地屈膝前收，上身直立，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/walk_forward/frames/walk_forward-01-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/walk_forward/frames/walk_forward-01-raw.png",
+   "generation_id": "image-3954-1190",
+   "raw_sha256": "ecb10c249b5e688ba425538aa534b67479cb0018323e474f6ad6a127c55f7d10",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    218,
+    282,
+    835,
+    1386
+   ],
+   "raw_height": 1105,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/walk_forward-01-cell.png",
+    "cell_sha256": "bae263031ff858410a0f50bfe2341a91037ece1fa4bf0d7b5f2249b2359382f6",
+    "height": 188,
+    "bbox": [
+     42,
+     60,
+     146,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "walk_forward-02",
+   "clip": "walk_forward/walk_back",
+   "frame": 2,
+   "purpose": "另一脚越步前踏",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的行走整帧，画面中只有本人，不画对手：朝右，后脚越过前脚向前踏出，前腿在后蹬伸，重心略前移，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/walk_forward/frames/walk_forward-02-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/walk_forward/frames/walk_forward-02-raw.png",
+   "generation_id": "image-3954-1195",
+   "raw_sha256": "db003ab02f8d66557e09058db561b1186a9aa0bd802e86fbeb9633c4518c81b1",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    110,
+    296,
+    871,
+    1347
+   ],
+   "raw_height": 1052,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/walk_forward-02-cell.png",
+    "cell_sha256": "cc855eaa6466d7589b6e3817f5b10a6ce32d608d314e62e50b5f952142786a60",
+    "height": 179,
+    "bbox": [
+     43,
+     69,
+     172,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  },
+  {
+   "id": "walk_forward-03",
+   "clip": "walk_forward/walk_back",
+   "frame": 3,
+   "purpose": "新前脚踏稳",
+   "tool": "magpie-image.generate_image",
+   "model": "codex/gpt-image-2",
+   "quality": "high",
+   "background": "transparent",
+   "size": "1024x1536",
+   "n": 1,
+   "reference_images": [
+    "art/fighters/ultraman-zero__beyond/stage1/idle/frames/pixel-raw-03.png"
+   ],
+   "reference_sha256": [
+    "8fbb91c67d4e565d943a216fd9f5621b724323bc8f1ffdd80d58734b18f0c628"
+   ],
+   "prompt": "参考图是唯一身份与画风来源。画同一位人物超限赛罗的行走整帧，画面中只有本人，不画对手：朝右，新前脚踏实、后脚在后屈膝下沉，双脚再次前后分开，重心下沉，双拳保持胸前护架。头部保持参考图的宽厚银色冠片与贴头壳四枚弯刃头镖，不要细长发丝、碎尖或直立王冠。四肢粗细必须和参考图完全一致——手臂粗壮、大腿饱满、小腿有厚度，不要画细长的手脚。固定右侧视，完整不裁切，透明背景，无地面文字边框，无光效、无颗粒、无残影。",
+   "prompt_version": 1,
+   "requested_path": "art/fighters/ultraman-zero__beyond/stage1/walk_forward/frames/walk_forward-03-raw.png",
+   "actual_response_path": "art/fighters/ultraman-zero__beyond/stage1/walk_forward/frames/walk_forward-03-raw.png",
+   "generation_id": "image-3954-1200",
+   "raw_sha256": "c945c2c2a113ef265cdbd3bcf0fb15671f57a6a15493ca58c933c89e43b98078",
+   "raw_size": [
+    1024,
+    1536
+   ],
+   "raw_alpha_range": [
+    0,
+    254
+   ],
+   "raw_bbox_alpha128": [
+    140,
+    319,
+    884,
+    1345
+   ],
+   "raw_height": 1027,
+   "landed": {
+    "cell": "art/fighters/ultraman-zero__beyond/stage1/cells/walk_forward-03-cell.png",
+    "cell_sha256": "832dcf2dd0f773862f60e4b1c4d026c92e41939a4320d9717e35d73a6215ee6c",
+    "height": 175,
+    "bbox": [
+     55,
+     73,
+     181,
+     247
+    ],
+    "foot_row": 247,
+    "colors": 32,
+    "components": 1,
+    "scale": 0.169982
+   },
+   "review_status": "approved_root_delegated_by_user",
+   "review_authority": "root_delegated_by_user"
+  }
+ ]
+}
