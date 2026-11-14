@@ -58,6 +58,46 @@ def union(boxes):
     return x1 - x0, y1 - y0
 
 
+def check_installed(payload, clips, state) -> list[str]:
+    """清单标为已完成后：每条已装、受击 6 张盖满时间轴、蓄力剪辑与 crush 同格同根点、加强出招命中帧对齐。"""
+    errors: list[str] = []
+    for item in payload.get("frames", []):
+        if item.get("status") != "installed":
+            errors.append(f"缺帧 {item.get('clip')}-{item.get('order')} 未标 installed")
+        if int(item.get("cell", 0)) != 256 or list(item.get("anchor", [])) != [128, 248]:
+            errors.append(f"缺帧 {item.get('clip')}-{item.get('order')} 不是 256 格 [128,248]")
+    for key in ("hit_high", "hit_mid", "hit_crouch", "hit_air"):
+        clip = clips[key]
+        if len(clip["rects"]) != 6:
+            errors.append(f"{key} 应为 6 张，实为 {len(clip['rects'])}")
+        sprites = sorted({int(pose["sprite"]) for pose in state[key]})
+        if sprites != list(range(len(clip["rects"]))):
+            errors.append(f"{key} 状态帧 sprite {sprites} 未覆盖全部图")
+        expanded = [i for i, t in enumerate(clip["ticks"]) for _ in range(int(t))]
+        if expanded != [int(pose["sprite"]) for pose in state[key]]:
+            errors.append(f"{key} 状态帧 sprite 与剪辑 ticks 展开不一致")
+    crush = load(SEVEN / "moves/crush.json")
+    window = windows(crush["frames"])
+    for key, count in (("crush_charge", 3), ("crush_charged", 6)):
+        clip = clips.get(key)
+        if clip is None:
+            errors.append(f"缺少剪辑 {key}")
+            continue
+        if len(clip["rects"]) != count or clip.get("cell") != clips["crush"].get("cell") or list(clip.get("anchor", [])) != list(clips["crush"]["anchor"]):
+            errors.append(f"{key} 张数/格/根点与 crush 不一致")
+    charge = clips.get("crush_charge")
+    if charge is not None and [int(t) for t in charge["ticks"]] != [20, 12, 8]:
+        errors.append(f"crush_charge ticks {charge['ticks']} 不是 [20,12,8]（对应 0–19 / 20–31 / 32–39）")
+    charged = clips.get("crush_charged")
+    if charged is not None and window is not None:
+        ticks = [int(t) for t in charged["ticks"]]
+        if sum(ticks) != len(crush["frames"]) or not charged.get("timeline_driven"):
+            errors.append(f"crush_charged 总长 {sum(ticks)} ≠ crush {len(crush['frames'])} 或未标 timeline_driven")
+        elif sum(ticks[:2]) != window[0]:
+            errors.append(f"crush_charged 命中帧起点 {sum(ticks[:2])} ≠ 第一个出招帧 {window[0]}")
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     manifest = load(MANIFEST)
@@ -149,6 +189,8 @@ def main() -> int:
                 if field not in item or item[field] in ("", None, []):
                     errors.append(f"缺帧条目缺 {field}: {item.get('clip')}")
                     break
+        if payload.get("status") == "completed":
+            errors.extend(check_installed(payload, clips, state))
     if errors:
         print("SEVEN_DEMO_PIPELINE FAIL")
         for error in errors:

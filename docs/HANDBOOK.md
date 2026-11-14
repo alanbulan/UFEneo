@@ -53,8 +53,9 @@
 1. 读 `core/combat/feel_rules.gd` 的档。把该角色每一招的起手、持续、收招改成命中框窗口的真实长度；受击硬直、防御硬直、命中停顿和推退初速按档写进招式 JSON。模板值（受击 20、防御 12、推退 8）加载时仍会被同一公式覆盖；已经写成档位初速的推退保持不变。投技不改硬直。
 2. 走路循环的 `ticks` 必须等长，`state_frames` 里同一张走路图的重复次数和 `ticks` 相同。受击 `hit_high` / `hit_mid` / `hit_crouch` / `hit_air` 的状态帧长度不得短于本角色站立受击硬直的最大值，剪辑 `ticks` 之和等于这个长度。现有图不够就只重排、重复相邻已有帧；缺的新姿势写进 `tools/rebuild/<id>/` 的提示词清单，不在这里生图。
 3. 近身命中框的宽和高至少为 `round(0.22 × target_height)`（赛文身高 144，即 32）。更小的拳脚框以中心为基准补到这个尺寸。受击框并集的高至少为身高的 0.90、宽至少为 0.46。光弹嘴部那种边长小于 16 的框不放大。
-4. 站立 O 是超重击。点按不足 4 tick，在按下的同一 tick 出原来的 `crush`。按住满 4 tick 进入蓄力，松手按 0–19 / 20–39 / 40+ 出招，满 40 自动出手。1 档就是原招。2、3 档由 `UfeFeelRules.ensure_crush_charge` 从 `crush` 复制，没有专属剪辑就播超重击图，蓄力闪光用已登记的 `impact_heavy`。下段 O 和空中 O 不蓄力。赛文缺的蓄力姿势和加强出招记在缺帧清单里。
-5. 跑 `python3 tools/check/seven_demo_pipeline.py`。它检查走路帧时长方差、受击是否盖住硬直、命中框相对身高的比例，并核对缺帧清单。全量 `tools/verify.py` 会带上这项和 `tests/power_crush.gd`。
+4. 站立 O 是超重击。点按不足 4 tick，在按下的同一 tick 出原来的 `crush`。按住满 4 tick 进入蓄力，松手按 0–19 / 20–39 / 40+ 出招，满 40 自动出手。1 档就是原招。2、3 档由 `UfeFeelRules.ensure_crush_charge` 从 `crush` 复制，蓄力闪光用已登记的 `impact_heavy`。下段 O 和空中 O 不蓄力。表现层：角色有 `crush_charge` 剪辑时，蓄力按 `crush_hold` 取帧（ticks 20/12/8 对应 0–19、20–31、32–39）；有 `crush_charged` 剪辑时，2、3 档出招按招式 tick 播放（`timeline_driven`，总长等于 `crush` 帧数，命中帧从第一个出招帧开始）；没有专属剪辑就播超重击图。两者都是 256 格、根点 [128,248]，与 `crush` 一致。
+5. 缺的新姿势按清单用 magpie-image 逐帧生成，按待机锚推出的唯一比例落格（`tools/art/stage_cells.py`），在 `art/fighters/<id>/stage1/<批次>/` 留原图、`manifest.json` 和联系表，再按播放顺序插进受击时间轴、装新剪辑。赛文这一批见 `art/fighters/ultraseven/stage1/demo-missing-20261114/` 与 `tools/rebuild/ultraseven/demo-pipeline/install_demo_frames.py`：受击每段 6 张、ticks 合计 26，`crush_charge` 3 张、`crush_charged` 6 张。
+6. 跑 `python3 tools/check/seven_demo_pipeline.py`。它检查走路帧时长方差、受击是否盖住硬直、命中框相对身高的比例，核对缺帧清单，并在清单标为已完成时检查受击 6 张、蓄力剪辑的格、根点和时长。全量 `tools/verify.py` 会带上这项和 `tests/power_crush.gd`。
 
 检查表：
 

@@ -427,10 +427,13 @@ func _animation(f: UfeFighter, manifest: Dictionary) -> Dictionary:
 			tick = clampi((16-f.vy-2)/8,0,3)*8 if key == "flip_back" else clampi((16-f.vy-2)/8,0,3)*3 if key == "flip_forward" else 16-f.vy
 			if bool(manifest.get("clips",{}).get(key,{}).get("trajectory_driven",false)):
 				tick = f.definition.jump_speed-f.vy
-	if f.state == "crush_charge":
-		key = "crush"
-		tick = 0
 	var clips: Dictionary = manifest.get("clips", {})
+	# 站立 O 蓄力：有专属剪辑按 crush_hold 取帧，二、三档出招按招式 tick 播加强出招；没有就沿用超重击图。
+	if f.state == "crush_charge":
+		key = "crush_charge" if clips.has("crush_charge") else "crush"
+		tick = int(f.motion.get("crush_hold", 0)) if key == "crush_charge" else 0
+	elif str(f.move_id).begins_with("crush_charge_") and clips.has("crush_charged"):
+		key = "crush_charged"
 	if intro_tick>=0:
 		key="intro"
 		tick=intro_tick
@@ -453,7 +456,7 @@ func _animation(f: UfeFighter, manifest: Dictionary) -> Dictionary:
 		tick -= int(clip.ticks[index])
 		index += 1
 	# 走路允许只重排显示时长；模拟中的受击框/回放数据保持原样。
-	if intro_tick<0 and f.state not in ["victory","defeat","timeout"] and (not f.move_id.is_empty() or (f.definition.state_frames.has(key) and f.state!="walk") or (f.state=="dash" and f.definition.state_frames.has("dash")) or (f.state=="air" and key in ["vertical_jump","flip_back"])): index = clampi(int(f.frame().sprite)-int(clip.get("simulation_sprite_offset",0)),0,clip.rects.size()-1)
+	if intro_tick<0 and not bool(clip.get("timeline_driven",false)) and f.state not in ["victory","defeat","timeout"] and (not f.move_id.is_empty() or (f.definition.state_frames.has(key) and f.state!="walk") or (f.state=="dash" and f.definition.state_frames.has("dash")) or (f.state=="air" and key in ["vertical_jump","flip_back"])): index = clampi(int(f.frame().sprite)-int(clip.get("simulation_sprite_offset",0)),0,clip.rects.size()-1)
 	if f.state=="air" and key=="chase_takeoff":index=clip.rects.size()-1
 	if not grounded_pose.is_empty():index=clampi(int(grounded_pose.sprite)-int(clip.get("simulation_sprite_offset",0)),0,clip.rects.size()-1)
 	@warning_ignore("integer_division")

@@ -1,0 +1,1675 @@
+{
+ "character": "ultraseven",
+ "date": "2026-11-14",
+ "tool": "magpie-image MCP generate_image",
+ "identity_anchor": {
+  "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png",
+  "sha256": "ce11282f8cf20ecd8289db67c35e75a8a8e6d2248bddf54da37add4e1e8ea9d5",
+  "derived_from": "assets/fighters/ultraseven/animations/idle/atlas.png 第 0 帧（192 格）最近邻 ×4",
+  "native_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-native.png",
+  "native_standing_height": 153
+ },
+ "palette": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/palette.json",
+ "postprocess": "tools/art/stage_cells.py（唯一 scale、BOX 缩放、二值 Alpha、冻结色板、脚底带对锚点）",
+ "scale": {
+  "scale": 0.1632870864461046,
+  "basis": "upright_height_median",
+  "source_median": 937,
+  "target_native": 153,
+  "source_readings": [
+   985,
+   937,
+   918
+  ],
+  "checks": [
+   {
+    "kind": "standing",
+    "index": 0,
+    "raw": 985,
+    "native": 160.83778014941302,
+    "deviation": 0.05122732123799367,
+    "needs_review": true
+   },
+   {
+    "kind": "standing",
+    "index": 1,
+    "raw": 937,
+    "native": 153.0,
+    "deviation": 0.0,
+    "needs_review": false
+   },
+   {
+    "kind": "standing",
+    "index": 2,
+    "raw": 918,
+    "native": 149.89754535752402,
+    "deviation": -0.02027748132337237,
+    "needs_review": false
+   }
+  ],
+  "policy": "one_clean_source_one_scale; no_per_frame_rescale"
+ },
+ "body_gate": "直立帧站高对锚 153 偏差 ≤8%；同 clip 相邻直立帧突变 ≤10%；蹲/腾空/折腹/弓步登记数值、目视核",
+ "installed": false,
+ "frames": [
+  {
+   "name": "hit_high-04",
+   "clip": "hit_high",
+   "order": 4,
+   "pose": "高位受击的中间帧：头仍朝前，肩开始后撤，前臂抬到脸侧。介于现有起势和后仰顶点之间，双脚还踩在地上。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：攻击来自他面前（画面右侧），身体朝画面左侧退让。高位受击的中间帧：头仍朝前，肩开始后撤，前臂抬到脸侧。介于现有起势和后仰顶点之间，双脚还踩在地上。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_high-04.png",
+   "raw_sha256": "399fdb14a01c18c7389fc299c092ff13e8f4a57b369df31bd8fe64bdbc42da4e",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "transparent_px": 1353584,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true,
+    "note": "人工复核选定"
+   },
+   "raw_standing_height_px": 933,
+   "attempt": 3,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/hit/hit_high-04-cell.png",
+   "processed_sha256": "366cf2b4cc5fb50172b43c62cf9893a42023a5ab55c17b232180074aa9f45e18",
+   "native_bbox": [
+    77,
+    96,
+    164,
+    247
+   ],
+   "native_height": 152,
+   "native_width": 88,
+   "head_height": 12,
+   "colors": 28,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "upright",
+   "height_vs_anchor": -0.0065,
+   "body_gate": "pass",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": null,
+     "ok_auto": false,
+     "seconds": 20.0,
+     "text": "The image is still being made (20 s so far; it can take a few minutes). It goes on without this call and will be saved in the project (generated-images/ unless path said where). Don't ask for it again"
+    },
+    {
+     "attempt": 2,
+     "path": null,
+     "ok_auto": false,
+     "seconds": 20.0,
+     "text": "The image is still being made (20 s so far; it can take a few minutes). It goes on without this call and will be saved in the project (generated-images/ unless path said where). Don't ask for it again"
+    },
+    {
+     "attempt": 3,
+     "path": null,
+     "ok_auto": false,
+     "seconds": 20.0,
+     "text": "The image is still being made (20 s so far; it can take a few minutes). It goes on without this call and will be saved in the project (generated-images/ unless path said where). Don't ask for it again"
+    }
+   ],
+   "note": "首次调用因客户端轮询 id 解析错误连发 3 次；落地 2 张（hit_high-04.png 选用，take1794664681 未用），第 3 次随客户端关闭未落地。非生成失败。"
+  },
+  {
+   "name": "hit_high-05",
+   "clip": "hit_high",
+   "order": 5,
+   "pose": "高位受击回正：躯干从后仰顶点回到一半，前脚承重，后脚跟着地，拳还没回到护架。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：攻击来自他面前（画面右侧），身体朝画面左侧退让。高位受击回正：躯干从后仰顶点回到一半，前脚承重，后脚跟着地，拳还没回到护架。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_high-05.png",
+   "raw_sha256": "d31670ee496197b86affad402b2829f7e6aa43f5b09768007e548c5c7e3e1b34",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "transparent_px": 1190368,
+    "corners_alpha": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "real_alpha": true,
+    "note": "人工复核选定"
+   },
+   "raw_standing_height_px": 941,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/hit/hit_high-05-cell.png",
+   "processed_sha256": "ff80c9084dd5540a4d9bd546a7cbdc21a077382c29ddd274f051cdba1aec1c34",
+   "native_bbox": [
+    89,
+    94,
+    163,
+    247
+   ],
+   "native_height": 154,
+   "native_width": 75,
+   "head_height": 39,
+   "colors": 28,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "upright",
+   "height_vs_anchor": 0.0065,
+   "body_gate": "pass",
+   "adjacent_jump": 0.0132,
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_high-05.png",
+     "ok_auto": false,
+     "seconds": 45.7,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_high-05.png\n"
+    }
+   ],
+   "note": "首张自动判为假（右下角 alpha=1 的检查过严），人工复核为真透明，选用；随后的重试被中止未落地。"
+  },
+  {
+   "name": "hit_high-06",
+   "clip": "hit_high",
+   "order": 6,
+   "pose": "高位受击收势：重心回到格斗架势，双拳回到胸前，只剩肩的一点余振。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：攻击来自他面前（画面右侧），身体朝画面左侧退让。高位受击收势：重心回到格斗架势，双拳回到胸前，只剩肩的一点余振。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_high-06.png",
+   "raw_sha256": "8d99c21dee9f24eeed0cef7572624857f715d90017970c4e4d0de5cdd36bf433",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1371941,
+    "opaque_px": 180547,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 985,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/hit/hit_high-06-cell.png",
+   "processed_sha256": "47c1d90444c428b6fb4a13c0f3c4bea2a2f1bca73875fcfc049337adad3623fe",
+   "native_bbox": [
+    89,
+    87,
+    165,
+    247
+   ],
+   "native_height": 161,
+   "native_width": 77,
+   "head_height": 34,
+   "colors": 28,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "upright",
+   "height_vs_anchor": 0.0523,
+   "body_gate": "pass",
+   "adjacent_jump": 0.0455,
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_high-06.png",
+     "ok_auto": true,
+     "seconds": 42.2,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_high-06.png\n"
+    }
+   ]
+  },
+  {
+   "name": "hit_mid-04",
+   "clip": "hit_mid",
+   "order": 4,
+   "pose": "中段受击的中间帧：肋骨处折了一下，头低下半寸，双臂护在腹前。介于现有中段起势和折腹顶点之间。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：攻击来自他面前（画面右侧），身体朝画面左侧退让。中段受击的中间帧：肋骨处折了一下，头低下半寸，双臂护在腹前。介于现有中段起势和折腹顶点之间。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_mid-04-take1794665822.png",
+   "raw_sha256": "100112ac0a11b03ea9064ff1206e604b6565dd7a72e33261b90e05fa54dfc729",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "transparent_px": 1397636,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true,
+    "note": "人工复核选定"
+   },
+   "raw_standing_height_px": 872,
+   "attempt": 2,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/hit/hit_mid-04-cell.png",
+   "processed_sha256": "4fb613193f53bbd03e158bbab3f5c31cf23764ed1645757418075e6b5cadf8d8",
+   "native_bbox": [
+    95,
+    106,
+    162,
+    247
+   ],
+   "native_height": 142,
+   "native_width": 68,
+   "head_height": 11,
+   "colors": 25,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.0719,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_mid-04.png",
+     "ok_auto": true,
+     "seconds": 38.9,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_mid-04.png\n"
+    },
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_mid-04-take1794665780.png",
+     "ok_auto": false,
+     "seconds": 42.7,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_mid-04-take1794665780.png\n"
+    },
+    {
+     "attempt": 2,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_mid-04-take1794665822.png",
+     "ok_auto": true,
+     "seconds": 36.2,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_mid-04-take1794665822.png\n"
+    }
+   ],
+   "note": "首版没有折腹，按姿势不对重生一次：重生第 1 张为不透明底（假 Alpha，拒收，take1794665780），自动重试第 2 张选用。"
+  },
+  {
+   "name": "hit_mid-05",
+   "clip": "hit_mid",
+   "order": 5,
+   "pose": "中段受击回正：上身从折腹抬起一半，前臂还挡在身前，膝盖仍弯。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：攻击来自他面前（画面右侧），身体朝画面左侧退让。中段受击回正：上身从折腹抬起一半，前臂还挡在身前，膝盖仍弯。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_mid-05.png",
+   "raw_sha256": "a88b233bdff66f572d1a6d8efa1324633d419dd0f856e0159130221f0f6b7e57",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1379134,
+    "opaque_px": 173585,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 867,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/hit/hit_mid-05-cell.png",
+   "processed_sha256": "0f31e0ff8ddacac6121573708187c9bad7a01ae286a0f1eb02883e5d2c1372f2",
+   "native_bbox": [
+    103,
+    106,
+    171,
+    247
+   ],
+   "native_height": 142,
+   "native_width": 69,
+   "head_height": 11,
+   "colors": 25,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.0719,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_mid-05.png",
+     "ok_auto": true,
+     "seconds": 40.8,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_mid-05.png\n"
+    }
+   ]
+  },
+  {
+   "name": "hit_mid-06",
+   "clip": "hit_mid",
+   "order": 6,
+   "pose": "中段受击收势：回到前后脚的格斗架势，双拳回到胸前。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：攻击来自他面前（画面右侧），身体朝画面左侧退让。中段受击收势：回到前后脚的格斗架势，双拳回到胸前。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_mid-06.png",
+   "raw_sha256": "8a79c4d3d4515c51a403aa3456b121a18b3207df01c18da06db313fc9eda3187",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1322470,
+    "opaque_px": 182125,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 937,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/hit/hit_mid-06-cell.png",
+   "processed_sha256": "04d43ea60ddae73865284ddbd3fe9c9cf6e25bf2c7f2bc3f2541b265978b36de",
+   "native_bbox": [
+    84,
+    95,
+    169,
+    247
+   ],
+   "native_height": 153,
+   "native_width": 86,
+   "head_height": 42,
+   "colors": 28,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "upright",
+   "height_vs_anchor": 0.0,
+   "body_gate": "pass",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_mid-06.png",
+     "ok_auto": true,
+     "seconds": 43.7,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_mid-06.png\n"
+    }
+   ]
+  },
+  {
+   "name": "hit_crouch-04",
+   "clip": "hit_crouch",
+   "order": 4,
+   "pose": "蹲受击的中间帧：后膝更低，躯干前倾，一只前臂横在身前。介于现有蹲受击起势和最低点之间。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：攻击来自他面前（画面右侧），身体朝画面左侧退让。蹲受击的中间帧：后膝更低，躯干前倾，一只前臂横在身前。介于现有蹲受击起势和最低点之间。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_crouch-04.png",
+   "raw_sha256": "8c51fa8f08ca0b4e1d3beea592fb34210c6bf9c671e2a417dfc947643ba88fc2",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1372593,
+    "opaque_px": 179994,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 746,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/hit/hit_crouch-04-cell.png",
+   "processed_sha256": "9a67a81c576c7fd70398bc9f897192c588562b494f136ac26188b3634f1bce97",
+   "native_bbox": [
+    89,
+    126,
+    176,
+    247
+   ],
+   "native_height": 122,
+   "native_width": 88,
+   "head_height": 9,
+   "colors": 27,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.2026,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_crouch-04.png",
+     "ok_auto": true,
+     "seconds": 39.3,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_crouch-04.png\n"
+    }
+   ]
+  },
+  {
+   "name": "hit_crouch-05",
+   "clip": "hit_crouch",
+   "order": 5,
+   "pose": "蹲受击回升：膝仍弯，头和肩抬起一半，手还没回到蹲防。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：攻击来自他面前（画面右侧），身体朝画面左侧退让。蹲受击回升：膝仍弯，头和肩抬起一半，手还没回到蹲防。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_crouch-05.png",
+   "raw_sha256": "7cd1f1b9738f552e195f9baaa0dcb6f69a7abe661639bfa7d650f7894aec092a",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1357867,
+    "opaque_px": 191971,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 815,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/hit/hit_crouch-05-cell.png",
+   "processed_sha256": "1f2b0f0666779cc62fcb93b84c8fe0fae891c00ee18015dba2d15efbfbd45b12",
+   "native_bbox": [
+    87,
+    115,
+    178,
+    247
+   ],
+   "native_height": 133,
+   "native_width": 92,
+   "head_height": 10,
+   "colors": 26,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.1307,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_crouch-05.png",
+     "ok_auto": true,
+     "seconds": 40.5,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_crouch-05.png\n"
+    }
+   ]
+  },
+  {
+   "name": "hit_crouch-06",
+   "clip": "hit_crouch",
+   "order": 6,
+   "pose": "蹲受击收势：稳定的蹲姿防御，双脚不并拢，拳在胸前。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：攻击来自他面前（画面右侧），身体朝画面左侧退让。蹲受击收势：稳定的蹲姿防御，双脚不并拢，拳在胸前。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_crouch-06.png",
+   "raw_sha256": "8945503d5dc72f3f34f4cca786cb55e321d1fb3d671cc77fbbe464eed17f19f6",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1386813,
+    "opaque_px": 167663,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 774,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/hit/hit_crouch-06-cell.png",
+   "processed_sha256": "880470c3b9f4697a8fb2556968bebc7412420b1051ee883b1808040ad28885ed",
+   "native_bbox": [
+    87,
+    122,
+    167,
+    247
+   ],
+   "native_height": 126,
+   "native_width": 81,
+   "head_height": 40,
+   "colors": 28,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.1765,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_crouch-06.png",
+     "ok_auto": true,
+     "seconds": 40.2,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_crouch-06.png\n"
+    }
+   ]
+  },
+  {
+   "name": "hit_air-04",
+   "clip": "hit_air",
+   "order": 4,
+   "pose": "空中受击的中间帧：身体开始后仰，四肢还没完全甩开。介于现有腾空受击起势和展体之间。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：攻击来自他面前（画面右侧），身体朝画面左侧退让。空中受击的中间帧：身体开始后仰，四肢还没完全甩开。介于现有腾空受击起势和展体之间。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_air-04.png",
+   "raw_sha256": "715e8a2d72f8cb891e542686b2f519efbcd492f0ac32f91aa9f9ef9b99e56ebb",
+   "raw_size": [
+    1199,
+    1312
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1199,
+     1312
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1387129,
+    "opaque_px": 165282,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 896,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/hit/hit_air-04-cell.png",
+   "processed_sha256": "52cc9e10487f8cb10a3fa4445bee5502974288fc3408811a5cbd300b87eec76c",
+   "native_bbox": [
+    82,
+    102,
+    195,
+    247
+   ],
+   "native_height": 146,
+   "native_width": 114,
+   "head_height": 37,
+   "colors": 27,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.0458,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_air-04.png",
+     "ok_auto": true,
+     "seconds": 39.2,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_air-04.png\n"
+    }
+   ]
+  },
+  {
+   "name": "hit_air-05",
+   "clip": "hit_air",
+   "order": 5,
+   "pose": "空中受击收拢：躯干从展体收回，手脚向身体靠，仍完全离地。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：攻击来自他面前（画面右侧），身体朝画面左侧退让。空中受击收拢：躯干从展体收回，手脚向身体靠，仍完全离地。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_air-05.png",
+   "raw_sha256": "da5196ed3cf10d32dbe06ca0f1c99eefd5c90ae2a11648342724a36c676bf78a",
+   "raw_size": [
+    1247,
+    1261
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1247,
+     1261
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1427153,
+    "opaque_px": 133120,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 711,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/hit/hit_air-05-cell.png",
+   "processed_sha256": "f7a12d03577cf580c85508870fbc2e15a697126300413044106b2759a1d8b03e",
+   "native_bbox": [
+    94,
+    132,
+    146,
+    247
+   ],
+   "native_height": 116,
+   "native_width": 53,
+   "head_height": 9,
+   "colors": 26,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.2418,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_air-05.png",
+     "ok_auto": true,
+     "seconds": 41.3,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_air-05.png\n"
+    }
+   ]
+  },
+  {
+   "name": "hit_air-06",
+   "clip": "hit_air",
+   "order": 6,
+   "pose": "空中受击下落：从上一帧的蜷缩展开到一半，身体斜着往下掉，躯干仍向后倾斜，膝盖弯着，双臂半张开，双脚离地。不要笔直站立。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：攻击来自他面前（画面右侧），身体朝画面左侧退让。空中受击下落：从上一帧的蜷缩展开到一半，身体斜着往下掉，躯干仍向后倾斜，膝盖弯着，双臂半张开，双脚离地。不要笔直站立。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_air-06-v2-take1.png",
+   "raw_sha256": "e2008c5947c27c6c238d8be03aff157f873a0b28b6c3ed4c52eb481d9ec9d2f1",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "transparent_px": 1386529,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 1004,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/hit/hit_air-06-cell.png",
+   "processed_sha256": "dea1bd98ffc1747e4f563aceaa3e1f4a26ac7e7d903349a524bf358a5c7d0d9a",
+   "native_bbox": [
+    79,
+    113,
+    172,
+    247
+   ],
+   "native_height": 135,
+   "native_width": 94,
+   "head_height": 10,
+   "colors": 27,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.1176,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_air-06.png",
+     "ok_auto": true,
+     "seconds": 39.8,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_air-06.png\n"
+    },
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_air-06-take1794665859.png",
+     "ok_auto": true,
+     "seconds": 34.5,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_air-06-take1794665859.png\n"
+    },
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_air-06-v2-take1.png",
+     "ok_auto": true,
+     "seconds": 40.5,
+     "text": "v2 重生，一次通过"
+    }
+   ],
+   "note": "v1 笔直站立；按用户批准改姿势描述后 v2 一次生成通过。",
+   "previous_version": {
+    "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/hit_air-06.png",
+    "raw_sha256": "e1058c983f93f3050cb010b7f7acc9cd02e14545db32d757628bb49ef8dfb04b",
+    "pose": "空中受击收势：身体接近竖直下落，双臂回到身侧，脚不沾地。",
+    "reason": "笔直站立，与 hit_air-05 蜷缩衔接不上；用户批准改描述重生"
+   }
+  },
+  {
+   "name": "crush_charge-01",
+   "clip": "crush_charge",
+   "order": 1,
+   "pose": "蓄力起势：两脚比待机更宽，屈膝下沉，双拳收到肋侧。还没有出拳。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：蓄力起势：两脚比待机更宽，屈膝下沉，双拳收到肋侧。还没有出拳。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charge-01.png",
+   "raw_sha256": "cbd6af31f3017cfa145ec20e610368b4bb5bc40712fca34203a7625a65c34002",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1366292,
+    "opaque_px": 188274,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 855,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/crush/crush_charge-01-cell.png",
+   "processed_sha256": "fe4335a5e2f3385be8276b3875008d8bffa1fcc6aba804d702617b957055f5cf",
+   "native_bbox": [
+    76,
+    108,
+    169,
+    247
+   ],
+   "native_height": 140,
+   "native_width": 94,
+   "head_height": 38,
+   "colors": 29,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.085,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charge-01.png",
+     "ok_auto": true,
+     "seconds": 38.5,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charge-01.png\n"
+    }
+   ]
+  },
+  {
+   "name": "crush_charge-02",
+   "clip": "crush_charge",
+   "order": 2,
+   "pose": "蓄力中段：躯干拧紧，后手拳收到髋侧，前肩向前探，前脚踏实。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：蓄力中段：躯干拧紧，后手拳收到髋侧，前肩向前探，前脚踏实。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charge-02.png",
+   "raw_sha256": "879ee68044d76b0aa30aedd474e7e1babac40f4986c20e443abf5dffce76f1ff",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1349078,
+    "opaque_px": 201869,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 925,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/crush/crush_charge-02-cell.png",
+   "processed_sha256": "9d4828a34190c01bc5f9022253a728ab889a91ccf8c7fd1e40706c3d49ab5de1",
+   "native_bbox": [
+    82,
+    97,
+    173,
+    247
+   ],
+   "native_height": 151,
+   "native_width": 92,
+   "head_height": 34,
+   "colors": 28,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.0131,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charge-02.png",
+     "ok_auto": true,
+     "seconds": 40.5,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charge-02.png\n"
+    }
+   ]
+  },
+  {
+   "name": "crush_charge-03",
+   "clip": "crush_charge",
+   "order": 3,
+   "pose": "蓄力满档：前脚踏死，后拳贴髋，肩甲前压。这是自动出手前的最后一拍，拳还没有打出去。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：蓄力满档：前脚踏死，后拳贴髋，肩甲前压。这是自动出手前的最后一拍，拳还没有打出去。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charge-03.png",
+   "raw_sha256": "01c770b54c580a1085cd3f3f661507886c5c9147db6eafaeb610c850765b74e3",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1352738,
+    "opaque_px": 193328,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 886,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/crush/crush_charge-03-cell.png",
+   "processed_sha256": "d48bcdc3d182eb23a23ff8d525385384ab83be8f74dc675f8f7ec89e76163e66",
+   "native_bbox": [
+    76,
+    103,
+    170,
+    247
+   ],
+   "native_height": 145,
+   "native_width": 95,
+   "head_height": 34,
+   "colors": 28,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.0523,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charge-03.png",
+     "ok_auto": true,
+     "seconds": 45.1,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charge-03.png\n"
+    }
+   ]
+  },
+  {
+   "name": "crush_charged-01",
+   "clip": "crush_charged",
+   "order": 1,
+   "pose": "蓄力重击起手：比普通重击更低的收拳，后脚蹬地，前拳仍在腰侧。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：蓄力重击起手：比普通重击更低的收拳，后脚蹬地，前拳仍在腰侧。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-01.png",
+   "raw_sha256": "8a37e244b64b428db1373bd3a42d5af8f31d56c6d8b768f1e564f15f5697858c",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1367710,
+    "opaque_px": 183498,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 796,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/crush/crush_charged-01-cell.png",
+   "processed_sha256": "cff4b7313e5525f3ff059399ffb5077559c4370eb4506cdbc008cbc0d369a294",
+   "native_bbox": [
+    73,
+    118,
+    172,
+    247
+   ],
+   "native_height": 130,
+   "native_width": 100,
+   "head_height": 10,
+   "colors": 28,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.1503,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-01.png",
+     "ok_auto": true,
+     "seconds": 41.6,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-01.png\n"
+    }
+   ]
+  },
+  {
+   "name": "crush_charged-02",
+   "clip": "crush_charged",
+   "order": 2,
+   "pose": "蓄力重击上步：前脚跨出半步，拳仍收在腰侧，肩开始送出。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：蓄力重击上步：前脚跨出半步，拳仍收在腰侧，肩开始送出。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-02.png",
+   "raw_sha256": "f32ce05cb7a8b4caf99c840c339d1971dc62d0d267c4cd63f9311933fdef7723",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1367898,
+    "opaque_px": 184930,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 903,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/crush/crush_charged-02-cell.png",
+   "processed_sha256": "de83e8e9aaaf295bf280d90c03bca0dd8360eeacd44e7aa1ac26b6e45b449a10",
+   "native_bbox": [
+    84,
+    101,
+    168,
+    247
+   ],
+   "native_height": 147,
+   "native_width": 85,
+   "head_height": 35,
+   "colors": 28,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.0392,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-02.png",
+     "ok_auto": true,
+     "seconds": 39.2,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-02.png\n"
+    }
+   ]
+  },
+  {
+   "name": "crush_charged-03",
+   "clip": "crush_charged",
+   "order": 3,
+   "pose": "蓄力重击命中帧：拳打到胸高，臂与肩同粗，身体压在前脚上。手里没有光。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：蓄力重击命中帧：拳打到胸高，臂与肩同粗，身体压在前脚上。手里没有光。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-03.png",
+   "raw_sha256": "b5bb25d7a139d4183db049fc4dec204ef2920ca2af4c4c49248193ad00a41ad3",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1373754,
+    "opaque_px": 177951,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 775,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/crush/crush_charged-03-cell.png",
+   "processed_sha256": "6368671de1408c964493b83be0df099be2d3b218159fbece32e7aa3851d8cf71",
+   "native_bbox": [
+    77,
+    121,
+    195,
+    247
+   ],
+   "native_height": 127,
+   "native_width": 119,
+   "head_height": 10,
+   "colors": 27,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.1699,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-03.png",
+     "ok_auto": true,
+     "seconds": 42.0,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-03.png\n"
+    }
+   ]
+  },
+  {
+   "name": "crush_charged-04",
+   "clip": "crush_charged",
+   "order": 4,
+   "pose": "蓄力重击伸直：拳到达最远，躯干跟到前脚上方，后脚脚跟抬起。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：蓄力重击伸直：拳到达最远，躯干跟到前脚上方，后脚脚跟抬起。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-04.png",
+   "raw_sha256": "4d2e8d22d9ae8c6977879441f0aea364241ff16dcc847e9b6e102e4e3cb2982a",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1350754,
+    "opaque_px": 200432,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 839,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/crush/crush_charged-04-cell.png",
+   "processed_sha256": "87a68f5485979f14e67753fb4f2ba6e8d051fba438a2a3c8a95df77ac7fcc8f2",
+   "native_bbox": [
+    70,
+    111,
+    210,
+    247
+   ],
+   "native_height": 137,
+   "native_width": 141,
+   "head_height": 40,
+   "colors": 29,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": -0.1046,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-04.png",
+     "ok_auto": true,
+     "seconds": 43.7,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-04.png\n"
+    }
+   ]
+  },
+  {
+   "name": "crush_charged-05",
+   "clip": "crush_charged",
+   "order": 5,
+   "pose": "蓄力重击收回：拳回到胸前，前膝仍弯。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：蓄力重击收回：拳回到胸前，前膝仍弯。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-05-take1794665893.png",
+   "raw_sha256": "a6672b242d11f769d557e34533cd291898e453d9034c5b6d9d426f0c85a2bacc",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "transparent_px": 1370211,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true,
+    "note": "人工复核选定"
+   },
+   "raw_standing_height_px": 960,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/crush/crush_charged-05-cell.png",
+   "processed_sha256": "aadb30fc1706cbce90da094c41218141b7c21bd8185cf200c195db0e731ef877",
+   "native_bbox": [
+    88,
+    91,
+    165,
+    247
+   ],
+   "native_height": 157,
+   "native_width": 78,
+   "head_height": 39,
+   "colors": 29,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "pose_exception",
+   "height_vs_anchor": 0.0261,
+   "body_gate": "exempt_registered",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-05.png",
+     "ok_auto": true,
+     "seconds": 39.5,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-05.png\n"
+    },
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-05-take1794665893.png",
+     "ok_auto": true,
+     "seconds": 38.6,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-05-take1794665893.png\n"
+    }
+   ],
+   "note": "首版几乎直立、前膝不弯（站高 +6.5%），重生一次，选用新版（前膝弯、站高 +2.6%）。"
+  },
+  {
+   "name": "crush_charged-06",
+   "clip": "crush_charged",
+   "order": 6,
+   "pose": "蓄力重击收势：回到格斗待机，两脚分开，双拳护在胸前。",
+   "prompt": "以唯一参考图里的赛文为同一人，画这一帧：蓄力重击收势：回到格斗待机，两脚分开，双拳护在胸前。保持参考图的头冠与头顶头镖、额灯、银色胸甲护肩、头肩比例、躯干长度、手臂粗细、大腿饱满度、靴子体积和像素块大小完全一致，只改变关节位置和重心，不整人放大缩小，四肢粗壮不细长。固定90°右侧视，面朝画面右方，完整人物从头镖顶到鞋底不裁切，四周留白；真透明背景，只画人物本体，无地面、阴影、文字、边框、光束、光晕、颗粒、蓄气圈、能量球或任何特效。",
+   "model": "cpa/gpt-image-2.6-sunburst",
+   "quality": "high",
+   "background": "transparent",
+   "size_requested": "1024x1024",
+   "reference_images": [
+    "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/reference/idle-00-x4.png"
+   ],
+   "raw_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-06.png",
+   "raw_sha256": "091e52ed0be2585ba031295cdfd1353dfe68e3048282d529fbb1564a2cee6c67",
+   "raw_size": [
+    1254,
+    1254
+   ],
+   "raw_mode": "RGBA",
+   "raw_alpha_check": {
+    "size": [
+     1254,
+     1254
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "transparent_px": 1366596,
+    "opaque_px": 187622,
+    "corners_alpha": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "real_alpha": true
+   },
+   "raw_standing_height_px": 918,
+   "attempt": 1,
+   "cell": 256,
+   "anchor": [
+    128,
+    248
+   ],
+   "processed_path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/processed/crush/crush_charged-06-cell.png",
+   "processed_sha256": "055914d66ebb88f091ad99702c26419478106bddafef382d8058daf498adc98a",
+   "native_bbox": [
+    80,
+    98,
+    170,
+    247
+   ],
+   "native_height": 150,
+   "native_width": 91,
+   "head_height": 33,
+   "colors": 28,
+   "components": 1,
+   "alpha_values": [
+    0,
+    255
+   ],
+   "standing_class": "upright",
+   "height_vs_anchor": -0.0196,
+   "body_gate": "pass",
+   "generation_calls": [
+    {
+     "attempt": 1,
+     "path": "/Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-06.png",
+     "ok_auto": true,
+     "seconds": 39.2,
+     "text": "Generated with cpa/gpt-image-2.6-sunburst, saved to:\n- /Users/wurulan/Developer/Projects/Game/ultraman-neo/art/fighters/ultraseven/stage1/demo-missing-20261114/raw/crush_charged-06.png\n"
+    }
+   ]
+  }
+ ],
+ "unused_raw_takes": [
+  "raw/hit_high-04-take1794664681.png",
+  "raw/hit_mid-04.png（首版，姿势不对）",
+  "raw/hit_mid-04-take1794665780.png（假 Alpha）",
+  "raw/hit_air-06-take1794665859.png",
+  "raw/crush_charged-05.png（首版，姿势不对）",
+  "raw/hit_air-06.png（v1，笔直站立，已被 v2 取代）"
+ ],
+ "spec_deviation": "已按用户批准把 crush_charge / crush_charged 改落 256 格 [128,248]，与已装 crush 一致（原清单写 192）。"
+}
