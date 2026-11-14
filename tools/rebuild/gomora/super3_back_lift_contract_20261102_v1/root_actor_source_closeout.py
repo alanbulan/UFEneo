@@ -88,7 +88,7 @@ def main():
                ROOT / "tools/rebuild/gomora/super3_back_lift_pixelfx_20261102_v2"]
     folders += [p for p in DATE.iterdir() if p.is_dir() and p.name.startswith("gomora-super3-")]
     files = {p for folder in folders for p in folder.rglob("*") if p.is_file() and "__pycache__" not in p.parts}
-    files.update([ROOT / ".gitattributes", ROOT / "docs/PROGRESS.md",
+    files.update([ROOT / ".gitattributes", ROOT / "docs/HANDBOOK.md",
                   ROOT / "tools/rebuild/shared/root_whole_source_review_20261102.py"])
     names = sorted(p.relative_to(ROOT).as_posix() for p in files)
     save(OUT / "precise-paths.json", {"files": names, "source_reference_video_kept": True,

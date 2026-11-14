@@ -74,7 +74,7 @@ def main():
     paths.update(ROOT / row['path'] for row in contract['files'])
     paths.update([Path(__file__), Path(__file__).with_name('run_throw_target_step_regression.py'),
                   Path(__file__).with_name('throw_target_step_regression.gd'), Path(__file__).with_name('prepare_throw_target_patch.py'),
-                  ROOT / 'docs/PROGRESS.md', ROOT / 'docs/CURRENT_DELIVERY_HANDOFF.md', ROOT / 'reports/review/README.md'])
+                  ROOT / 'docs/HANDBOOK.md', ROOT / 'docs/CURRENT_DELIVERY_HANDOFF.md', ROOT / 'reports/review/README.md'])
     paths.add(REPORT / 'paths.nul')
     (REPORT / 'paths.nul').write_bytes(b'\0'.join(str(p.relative_to(ROOT).as_posix()).encode() for p in sorted(paths)) + b'\0')
     print(json.dumps(dict(accepted=True, scope='generic target rule', paths=len(paths), move_installed=False), ensure_ascii=False))
