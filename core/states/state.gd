@@ -28,6 +28,10 @@ func locomotion(f: UfeFighter, input: UfeInputFrame, command: Dictionary) -> voi
 		f.enter("guard")
 	elif input.held(UfeInputFrame.CHARGE):
 		f.enter("charge_start",9)
+	elif input.held(UfeInputFrame.POWER_CRUSH) and f.definition.moves.has("power_crush_1"):
+		f.motion.power_crush_hold = 0
+		f.motion.power_crush_tier = 1
+		f.enter("power_charge")
 	elif command.dash:
 		f.motion.direction = input.x
 		f.enter("dash" if input.x * f.facing > 0 else "backstep", 22 if input.x * f.facing > 0 else 16)

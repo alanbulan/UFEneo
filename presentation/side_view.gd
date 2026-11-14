@@ -427,6 +427,9 @@ func _animation(f: UfeFighter, manifest: Dictionary) -> Dictionary:
 			tick = clampi((16-f.vy-2)/8,0,3)*8 if key == "flip_back" else clampi((16-f.vy-2)/8,0,3)*3 if key == "flip_forward" else 16-f.vy
 			if bool(manifest.get("clips",{}).get(key,{}).get("trajectory_driven",false)):
 				tick = f.definition.jump_speed-f.vy
+	if f.state == "power_charge":
+		key = "heavy"
+		tick = 0
 	var clips: Dictionary = manifest.get("clips", {})
 	if intro_tick>=0:
 		key="intro"

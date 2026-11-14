@@ -136,6 +136,14 @@ func sync(sim: UfeMatchDirector, camera_x: int, camera_y: int) -> void:
 				var f:=sim.fighters[int(e.player)]
 				spawn(str(e.get("guard_effect","impact_guard")),int(e.get("x",f.x+f.facing*35)),int(e.get("height",f.height+80)),[1,1,1,1],int(e.get("effect_facing",1)))
 		for i in range(2):
+			var charger: UfeFighter = sim.fighters[i]
+			if charger.state != "power_charge":
+				continue
+			var interval := 4 if int(charger.motion.get("power_crush_tier", 1)) >= 3 else 8
+			if charger.state_tick % interval != 0:
+				continue
+			spawn("impact_heavy", charger.x + charger.facing * 24, charger.height + 96, [1.0, 0.82, 0.35, 1.0], charger.facing)
+		for i in range(2):
 			var f:=sim.fighters[i]
 			if previous.size()==2:
 				var old: Dictionary=previous[i]

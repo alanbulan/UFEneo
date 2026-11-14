@@ -6,7 +6,7 @@ class CapturePopup extends PopupPanel:
 	func _input(event: InputEvent) -> void:
 		if editor!=null and editor.capture_event(event):get_viewport().set_input_as_handled()
 
-const LABELS := {"left":"向左","right":"向右","up":"向上 / 斜向","down":"向下 / 斜向", "light":"轻击", "heavy":"重击", "throw":"投技", "guard":"防御", "charge":"蓄气", "special":"必杀", "crush":"超重击", "ranged":"远程技", "dodge":"闪避", "jump":"独立跳跃", "transform":"切换形态"}
+const LABELS := {"left":"向左","right":"向右","up":"向上 / 斜向","down":"向下 / 斜向", "light":"轻击", "heavy":"重击", "throw":"投技", "guard":"防御", "charge":"蓄气", "special":"必杀", "crush":"超重击", "ranged":"远程技", "dodge":"闪避", "jump":"独立跳跃", "transform":"切换形态", "power_crush":"蓄力超重击"}
 const RESERVED_KEYS := [KEY_ESCAPE,KEY_ENTER,KEY_KP_ENTER,KEY_F1,KEY_F2,KEY_F3,KEY_F4,KEY_F5,KEY_F6,KEY_R]
 var player: int=0
 var device_kind: String="keyboard"

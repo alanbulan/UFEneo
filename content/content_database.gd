@@ -69,6 +69,7 @@ static func fighter(id: String, allow_pilot: bool=false) -> UfeFighterDefinition
 			continue
 		result.moves[move_id] = read_json(source)
 		UfeFeelRules.apply_move(result.moves[move_id])
+	UfeFeelRules.ensure_power_crush(result.moves)
 	result.command_table = UfeQuickCommands.extend(result.command_table,result.moves)
 	return result
 
