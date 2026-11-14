@@ -35,7 +35,7 @@ macOS 用 `.venv/bin/python`、`export GODOT_PATH=...` 和 `开始游戏.command
 
 | 文件 | 内容 | 何时读 |
 | --- | --- | --- |
-| [AGENTS.md](AGENTS.md) | 唯一执行准则、当前任务与不可回退规则 | 每轮开工前 |
+| [AGENTS.md](AGENTS.md) | 唯一执行准则、手感基线与不可回退规则 | 每轮开工前 |
 | [REBUILD_2D_PLAN.md](REBUILD_2D_PLAN.md) | 游戏设计目标、完整招式矩阵（尤其 2.5 节）、阶段顺序 | 设计或规划招式时 |
 | 本文件 | 项目总览、获取与运行、验证命令、文档入口 | 了解或启动项目时 |
 | [docs/HANDBOOK.md](docs/HANDBOOK.md) | 当前状态与验证边界、目录架构、数据格式、美术流程、战斗设计、stage1 标准、音频、第三方 | 查现行主题规范、可玩范围或未完项时 |
@@ -45,6 +45,6 @@ macOS 用 `.venv/bin/python`、`export GODOT_PATH=...` 和 `开始游戏.command
 | [art/STYLE.md](art/STYLE.md) | 像素风格、尺寸校验、远侧肢体、待机与走路 | 绘制或验收像素帧时 |
 | [tools/rebuild/seven-character-rework-20261112/README.md](tools/rebuild/seven-character-rework-20261112/README.md) | 七角色返工当前在制批次的复算脚本 | 续作七角色动作时 |
 
-`REBUILD_2D_PLAN.md` 不移动、不改名，2.5 节章节编号及锚点保持不变；冻结回执中的旧路径文字一律不改写。当前状态不在设计文件重复维护，主题规范不按日期追加第二份副本。单角色在制材料留在 `art/fighters/<id>/stageN/` 或 `tools/rebuild/<批次>/`；历史回执只保留在 `docs/verification/` 或本机 `reports/`。
+`REBUILD_2D_PLAN.md` 不移动、不改名，2.5 节章节编号及锚点保持不变；冻结回执中的旧路径文字一律不改写。当前状态不在设计文件重复维护，主题规范不按日期追加第二份副本。原 `docs/PROGRESS.md`、`AUDIO.md`、`PROJECT_LAYOUT.md`、`STAGE1_STANDARD.md`、`ART_PIPELINE.md`、`DATA_FORMATS.md`、`COMBAT_DESIGN.md`、`THIRD_PARTY.md` 与 `docs/README.md` 已并入本表中的 HANDBOOK 或本文件；旧路径仍由 `tools/maintenance/layout_routes.json` 解析。单角色在制材料留在 `art/fighters/<id>/stageN/` 或 `tools/rebuild/<批次>/`；历史回执只保留在 `docs/verification/` 或本机 `reports/`。
 
 2026-11-03 按用户要求清理旧历史后建立新的 Git 基线，不包含旧工作树、缓存、录像或备份。现用运行素材与有效源稿保留；冻结来源中的旧路径通过 `art/source-index.json` 定位唯一文件。

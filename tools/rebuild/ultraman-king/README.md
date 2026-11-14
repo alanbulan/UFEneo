@@ -406,7 +406,7 @@
 - **修正门 = 0.2021–0.2373**（0.2197 两侧各 ±8%）。倍数仍是项目 ±8%，不是放宽；改的是口径，不是阈值。只设上限会放过缩头。
 - **按修正口径重评 v8–v13**：v10 头 0.2127 过，但鞋底 2.52 原生px、辉光 16,383、胸腹 3/4 不过；v11 头 0.278 不过；v12 头 0.2224 过，鞋底 1.58 不过；v13 头 0.2365、站距 0.755、鞋底 0.18、严格侧视、真 Alpha、全身不裁**全过**，**唯一不过项是主体外辉光 36,868 px**。v13 原图已按规则删除，不回溯签收。
 - **原结论「头高正确与站距正确互斥」作废**：v10/v12/v13 站距 0.71–0.76，头高在新口径下也全过；当时的「互斥」是两种口径各测一半造成的假象。
-- 诊断：`stage1/diagnostics/head-metric-definition-audit-20261110.png`、`crown-side-vs-front-20261110.png`；`stage1/requests.json` 新增 `metric_definition_audit_20261110`。已写回 `AGENTS.md`「比例核验两侧必须同口径」与 `docs/PROGRESS.md`、`docs/verification/README.md`。
+- 诊断：`stage1/diagnostics/head-metric-definition-audit-20261110.png`、`crown-side-vs-front-20261110.png`；`stage1/requests.json` 新增 `metric_definition_audit_20261110`。已写回 `AGENTS.md`「比例核验两侧必须同口径」与 `docs/HANDBOOK.md`、`docs/verification/README.md`。
 - 未改项目 ±8% 规则、未回溯签收、未生成新照片、未做像素候选、未安装、未启动 Godot、未提交/推送、无录屏。
 
 ## 2026-11-10 第十七轮：按双侧门与侧面冠形判据重出 v14/v15；两张均不过，刹车停

@@ -1,18 +1,18 @@
 # 七角色整帧返工总提示词（2026-11-12）
 
-用途：交给制作子代理，对 `ultraman-zero`、`ultraman-justice`、`ultraman-gaia`、`ultraman-king`、`zoffy`、`father-of-ultra`、`mother-of-ultra` 七个已装机角色的战斗表现做一次**按实测证据返工**。执行准则仍是根 `AGENTS.md`、`REBUILD_2D_PLAN.md`、`art/STYLE.md`、`docs/STAGE1_STANDARD.md`；本文是把这些规则落实到本批缺陷的可验收任务书，不另立规则。
+用途：交给制作子代理，对 `ultraman-zero`、`ultraman-justice`、`ultraman-gaia`、`ultraman-king`、`zoffy`、`father-of-ultra`、`mother-of-ultra` 七个已装机角色的战斗表现做一次**按实测证据返工**。执行准则仍是根 `AGENTS.md`、`REBUILD_2D_PLAN.md`、`art/STYLE.md`、`docs/HANDBOOK.md`；本文是把这些规则落实到本批缺陷的可验收任务书，不另立规则。
 
 ## 0. 总指令（原文交给子代理）
 
 你是本批七角色返工的制作代理。按 UFEneo 现有主游戏工程返工，不准另建研究场景、预览网页、独立测试项目、旧 worker 或批量安装器。用户对本批效果不满意；我已完成只读审计，缺陷不是“少几张特效”，而是**体型/姿态/身份/帧序/接线**同时失守。你的任务不是重新生成七套 500 帧来充数，而是按下面顺序找出所有导致画面不可用的帧，逐个修到一致、能连续播放、实机可见，并交完整证据。
 
-先读根 `AGENTS.md`、`REBUILD_2D_PLAN.md`、`docs/PROGRESS.md`、`docs/STAGE1_STANDARD.md`、`art/STYLE.md`、`docs/ART_PIPELINE.md`、`docs/COMBAT_DESIGN.md`、本文件、`reports/review/2026-11-12/seven-character-defects/audit.json` 与同目录全部联系表，再读 `git log -5`。本批审计证据是只读基线，不直接覆盖；所有新产物先落在各角色 `art/fighters/<id>/stage1/` 的在制位置，通过门后才按明确 clip 安装。不得把“clip 数量 / 逻辑 PASS 数量”当美术完成；不得用逻辑门代替人眼看联系表。
+先读根 `AGENTS.md`、`REBUILD_2D_PLAN.md`、`docs/HANDBOOK.md`、`art/STYLE.md`、本文件、`reports/review/2026-11-12/seven-character-defects/audit.json` 与同目录全部联系表，再读 `git log -5`。本批审计证据是只读基线，不直接覆盖；所有新产物先落在各角色 `art/fighters/<id>/stage1/` 的在制位置，通过门后才按明确 clip 安装。不得把“clip 数量 / 逻辑 PASS 数量”当美术完成；不得用逻辑门代替人眼看联系表。
 
 ### 工作边界
 
 - 七个角色：`ultraman-zero`（赛罗）、`ultraman-justice`（杰斯提斯标准型）、`ultraman-gaia`（盖亚 V2）、`ultraman-king`（奥王）、`zoffy`（佐菲）、`father-of-ultra`（奥父）、`mother-of-ultra`（奥母）。按本人身份、具体形态、版本和原剧依据核动作；不得沿用别角色模板，也不得把角色没有的部件写进提示词。
 - 只改这七角色相关 `art/`、`assets/fighters/<id>/animations/`、必要的 `content/fighters/<id>/` 与已登记特效配置；不得改 `core/` 的确定性模拟语义，不扩大判定，不靠改镜头/暂停/闪烁掩盖美术问题。
-- 新人物帧只用 MCP `magpie-image`（`codex/gpt-image-2`，quality high，transparent，输出 `path` 传本仓库绝对路径）；生成前核返回路径、尺寸和真实 Alpha。后处理只用免费离线工具和 `tools/rebuild/shared/forge_backend.py`，历史颜色兼容 `palette_mode('rgb')`。不恢复旧直连 worker。
+- 新人物帧只用 MCP `magpie-image`（`cpa/gpt-image-2.6-sunburst`，或留空 `model`；quality high，transparent，输出 `path` 传本仓库绝对路径）；生成前核返回路径、尺寸和真实 Alpha。已签收据里的 `codex/gpt-image-2` 不改。后处理只用免费离线工具和 `tools/rebuild/shared/forge_backend.py`，历史颜色兼容 `palette_mode('rgb')`。不恢复旧直连 worker。
 - 所有 Godot 导入、验证、录制经 `.venv/bin/python tools/godot_lock.py -- <命令>` 串行；不删活锁，不关用户进程。
 - 一文件一正式位置。运行素材在 `assets`，当前制作源在 `art`，本机审片在 `reports`。确认废弃的缓存、历史副本、重复副本直接删除，不留归档；删除前核实际消费者、动态路径、SHA。二进制走 Git LFS，`.uid`/`.import` 要提交，`.godot` 不提交。
 - 全程简体中文汇报，只报本轮新增，不重复已处理意见；不把检查数量冒充完成。制作代理不自签；根按 `root_delegated_by_user` 验收后继续，不冒称用户亲审或已听审；必要时短录屏，审后删除，无录屏就写无录屏。

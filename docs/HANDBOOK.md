@@ -32,6 +32,17 @@
 - `docs/PROGRESS.md` 的“获取与运行”旧段、重复历史进度、重复验证边界按主题归到本手册对应原节；获取与运行的现行命令只保留在根 `README.md`。
 - 原文中的路径、SHA、回执编号与当时结论均不回填改写；需要现行入口时按本手册顶部目录与根 `README.md` 查找。
 - 其余现行文档入口按根 `README.md`“唯一文档入口”表；历史回执仍在 `docs/verification/`。
+- 2026-11-14 起，`docs/PROGRESS.md`、`AUDIO.md`、`PROJECT_LAYOUT.md`、`STAGE1_STANDARD.md`、`ART_PIPELINE.md`、`DATA_FORMATS.md`、`COMBAT_DESIGN.md`、`THIRD_PARTY.md`、`docs/README.md` 的正文只留在本手册对应节。旧路径由 `tools/maintenance/layout_routes.json` 指回本手册或根 README，冻结回执里的旧路径文字不改。
+
+## 内容流水线
+
+手感先于美术。一条招式按这个顺序做，不反过来用生图结果决定逻辑时长。
+
+1. **定帧数据。** 按 `REBUILD_2D_PLAN.md` 2.5 节和 `core/combat/feel_rules.gd` 的档位写下 startup / active / recovery，以及受击硬直、防御硬直、命中停顿、推退初速和取消路线。普通技对齐轻 / 中 / 重档；已经手写过的推退只换成等距初速。
+2. **灰盒验手感。** 用占位帧或现有剪辑在主游戏训练模式打。看两个朝向：被防帧差、命中后能否接上下一招、推退是滑动而不是瞬移、转身 / 落地 / 起身按后能防。手感没过不生正式图。
+3. **按帧时长生图落格。** 逻辑时长已经定死。美术帧数和每一帧的 tick 服从这份帧数据：打击动作要能看出起手、发力和收势，禁止把同一姿势拉长去填 tick。走路用等长帧，步幅和每 tick 位移匹配。受击不少于能分出受击与恢复的帧，不用 3 帧硬撑整段硬直。
+4. **特效登记。** 人物帧不烘焙光束和粒子。新增或改换的 effect id 写入 `content/presentation/phase3_projectiles.json` 并核 atlas SHA。
+5. **验证。** `tools/godot_lock.py` 跑确定性、回放和分层检查。改了手感数值，PR 里写改前 / 改后对比。画面还要看两个朝向和 720/1080。逻辑通过不等于美术或听感通过。
 
 ---
 
@@ -44,12 +55,12 @@
 
 更新：2026-11-13。逐角色动作生产进行中（官方皮套照 → 格斗待机架势 → 待机像素整帧作动作身份锚 → 单帧动作 → 落格）；八装甲未齐，仍不开放。2026-11-03 清理交接只说明当时状态，完整历史摘要保留在 `docs/verification/README.md`，不在此复制。
 
-当前执行状态以 [AGENTS](../AGENTS.md) 的“当前任务”为准。
+当前执行状态以根 [AGENTS](../AGENTS.md) 和用户最新指令为准。
 
 
 ### 当前成果与历史证据索引
 
-本节按日期倒序保留制作与验证回执；只有本节开头、`AGENTS.md` 的“当前任务”、
+本节按日期倒序保留制作与验证回执；只有本节开头、根 `AGENTS.md`、
 “后续优先级”和“验证与发布边界”是现行结论。2026-11-12 及更早的单条记录
 只用于定位资源与历史证据，不另立文档，也不覆盖当前规则。
 
@@ -619,7 +630,10 @@ rendering 建议）在本项目是 `presentation` 只读 `UfeMatchDirector` 的�
 按 `content/roster/catalogue_scale.json` 落到设定身高（45m 档 173、人类固定 96 等）。
 最终校验用重设后的站高，不把中间值 192 当成成品要求。输出必须满足
 `binary_alpha: true`、`visible_colors <= 32`、`canvas: [384, 256]`、
-`native_root: [192, 248]`。不满足就不要接线。
+`native_root: [192, 248]`。不满足就不要接线。长尾、宽背与背鳍等横卧体型
+按三帧最大宽一次性等比缩入固定格，静帧与待机条共用该尺度、色板和根点，
+`strip_width_fit` 登记缩前/缩后高度与最大宽；不得裁轮廓或逐帧重标定。
+生成收据的 `fits_catalogue_cell` 只作报告，不进入辉光门。
 
 #### 动作帧
 
@@ -630,7 +644,7 @@ rendering 建议）在本项目是 `presentation` 只读 `UfeMatchDirector` 的�
 2. **待机像素整帧**：以第 1 步为底图转像素整帧，此帧即该角色的动作身份锚。
    `tools/art/identity_anchor.py <id>` 出的 4× 定稿锚只保证配色与像素块大小；
    原生宽度 <60 px 时模型读不出肩宽和四肢粗细、会自编身材，不得单独作动作参考。
-3. **生图**：MCP `magpie-image`，`codex/gpt-image-2`、quality high、background transparent。
+3. **生图**：MCP `magpie-image`，`cpa/gpt-image-2.6-sunburst`（或留空 `model` 跟随 Magpie 设置）、quality high、background transparent。
    只引用第 2 步那一张待机像素帧，提示词只写该帧动作（约 150–250 字）加固定尾串。
 4. **落格**：`tools/art/stage_cells.py` 统一比例缩放、二值 Alpha、32 色、脚底贴
    `baseline-1`、脚底段重心对到 anchor x。硬门只判连通块、Alpha、色数。
@@ -754,7 +768,7 @@ rendering 建议）在本项目是 `presentation` 只读 `UfeMatchDirector` 的�
      但仍须在原生格量，不能用诊断缩略图。
 
 3. **其余动作帧**
-   - 工具：MCP `magpie-image`，`codex/gpt-image-2`，quality high，
+   - 工具：MCP `magpie-image`，`cpa/gpt-image-2.6-sunburst`（或留空 `model` 跟随 Magpie 设置），quality high，
      background transparent，size 1024x1536。
    - 参考图：**只有**第 2 步那一张待机像素帧。
    - 提示词：150–250 字，只写这一帧的动作；必须带“四肢粗细必须和参考图
@@ -921,6 +935,10 @@ Kits 是**语音转换与分离**服务，不是文生音效或文生音乐。�
 见本手册第 1 节“后续优先级”：teo/arc/blazar/omega 缺通用状态音与语音表。
 佐菲、赛罗、盖亚、杰斯提斯、奥王、奥母、奥父自 2026-11-11 起已有 attack/super/hit/victory/intro/down/heavy/taunt/timeout 本人声音（新增 28 条事件声，未听审）；语音仍按合集区段分配，不是逐场原剧核对。
 补齐需要新录音或新分离轨，属收费操作，须用户明确授权后才能做。
+
+#### 2026-11-14 图鉴试听选声
+
+`ui/kit/catalogue_sound.gd` 在本作已装声音台账内扩大本人声覆盖：固定本人候选声优先；没有固定候选时只读 `content/audio/runtime.json` 的 `voices[base].intro`，核 `content/audio/sources.json` 同 id 为 installed 或 installed_pending_user_listening 且资源可载入，才作为本人声；仍无则回退项目自制 `catalogue_pick.wav`。不新增 `sounds` 键、不改 1:1 台账、不拿 `victory/attack` 顶替。`ultraman-arc` 的卢提昂对白与 `ultraman-omega` 的光线技能喊声按非本人试听排除。此改动只扩大既有合规音源复用，不是音乐模型生成，不是听审通过，`listening_reviewed` 仍为 `false`。
 
 ### 二、怪兽主题曲核查
 

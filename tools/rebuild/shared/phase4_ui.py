@@ -42,9 +42,7 @@ def approve():
  p=ROOT/'content/audio/sources.json';v=read(p)
  for r in v['records']:r.update(metadata_reviewed=True,listening_reviewed=False)
  save(p,v)
- p=ROOT/'docs/PROGRESS.md';old=p.read_text('utf-8-sig')
- archive=ROOT/'docs/progress-archive/2026-10-22-before-pixel-hud.md';archive.write_text(old,'utf-8')
- p.write_text('# 进度\n\n当前：阶段4第一批，制作正式像素UI套件、组件库、战斗HUD和暂停菜单。\n\n## 本轮任务\n- [x] 必杀返工审片通过，已同步manifest、production和特效来源状态。\n- [x] 音频来源、许可、响度清单已审；听感保持未审。\n- [ ] 像素UI套件与OFL字体。\n- [ ] 组件、主题、HUD和暂停菜单。\n- [ ] 主游戏双分辨率、长名、完整回合审片与verify。\n\n## 用户意见台账（本轮新增）\n- 待用户听审：音频待用户听审。\n\n下一步：完成第一批UI后停下。\n\n上一轮进度：docs/progress-archive/2026-10-22-before-pixel-hud.md。\n','utf-8')
+ # 进度正文已并入 docs/HANDBOOK.md。本函数不再覆盖任何文档。
 
 PARTS={
  'chrome': [('panel',(80,64)),('dialog',(80,64)),('toast',(84,22)),('timer',(48,40)),('button_normal',(84,24)),('button_hover',(84,24)),('button_pressed',(84,24)),('button_disabled',(84,24)),('button_selected',(84,24)),('tab_normal',(72,24)),('tab_selected',(72,24)),('list_normal',(84,20)),('list_selected',(84,20)),('scroll_track',(12,64)),('scroll_thumb',(12,24)),('portrait',(48,48))],
