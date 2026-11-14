@@ -68,6 +68,10 @@ func _unmapped_frame() -> Dictionary:
 		var entry: Array = battle_form.get("entry_frames", [])
 		if not entry.is_empty(): return entry[mini(state_tick, entry.size()-1)]
 	if move_id.is_empty():
+		if state == "power_charge":
+			var bracing: Array = definition.state_frames.get("idle", [])
+			if not bracing.is_empty():
+				return bracing[0]
 		var key := _unmapped_animation_key()
 		if state=="thrown" and definition.state_frames.has(key):
 			var poses: Array=definition.state_frames[key]
@@ -110,7 +114,12 @@ func _unmapped_animation_key() -> String:
 	if state == "captured" and motion.has("capture_victim"): return str(motion.capture_victim.animation)
 	if state == "transform": return str(battle_form.get("transform_animation", "transformation"))
 	if state == "form_entry": return str(battle_form.get("entry_animation", "form_entry"))
-	if not move_id.is_empty(): return move_id
+	if not move_id.is_empty():
+		if str(move_id).begins_with("power_crush"):
+			return "heavy"
+		return move_id
+	if state == "power_charge":
+		return "heavy"
 	if state=="thrown":return str(motion.get("pose","grabbed"))
 	if state=="hit": return str(motion.get("hit_pose","hit_high"))
 	if state=="launch": return "launch_rise" if vy>=0 else "launch_fall"

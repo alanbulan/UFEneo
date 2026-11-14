@@ -10,7 +10,7 @@ var previous: Array=["",""]
 var last_moves: Array=[{},{}]
 var feedback: Array=["", ""]
 var feedback_ticks: Array=[0,0]
-const STATE_NAMES={"idle":"待机","turn":"站立转身","crouch_turn":"蹲姿转身","walk":"移动","crouch":"蹲姿保持","crouch_start":"下蹲","crouch_rise":"起身","guard":"站防","crouch_guard":"蹲防","blockstun":"站防硬直","crouch_blockstun":"蹲防硬直","guardbreak":"破防","stun":"眩晕","air":"空中","takeoff":"起跳","land":"落地","dash":"冲刺","backstep":"后撤","dodge":"闪避","hit":"受击","launch":"击飞","bounce":"弹地","down":"倒地","wake":"起身","roll_forward":"前滚起身","roll_back":"后滚起身","air_tech":"空中受身","thrown":"被投","throw_tech":"拆投","burst":"爆气","charge_start":"蓄能起手","charge":"蓄能","charge_stop":"蓄能收势","intro":"登场","victory":"胜利","defeat":"失败","timeout":"时间到","attack":"攻击","air_attack":"空中攻击"}
+const STATE_NAMES={"idle":"待机","turn":"站立转身","crouch_turn":"蹲姿转身","walk":"移动","crouch":"蹲姿保持","crouch_start":"下蹲","crouch_rise":"起身","guard":"站防","crouch_guard":"蹲防","blockstun":"站防硬直","crouch_blockstun":"蹲防硬直","guardbreak":"破防","stun":"眩晕","air":"空中","takeoff":"起跳","land":"落地","dash":"冲刺","backstep":"后撤","dodge":"闪避","hit":"受击","launch":"击飞","bounce":"弹地","down":"倒地","wake":"起身","roll_forward":"前滚起身","roll_back":"后滚起身","air_tech":"空中受身","thrown":"被投","throw_tech":"拆投","burst":"爆气","charge_start":"蓄能起手","charge":"蓄能","charge_stop":"蓄能收势","power_charge":"蓄力超重击","intro":"登场","victory":"胜利","defeat":"失败","timeout":"时间到","attack":"攻击","air_attack":"空中攻击"}
 func _ready() -> void:
 	mouse_filter=Control.MOUSE_FILTER_IGNORE
 	for i in range(2):
@@ -77,6 +77,9 @@ func update_match(sim: UfeMatchDirector) -> void:
 		elif delay>0:info[i].text+="\n恢复等待%.1f秒"%(float(delay)/60.0)
 		else:info[i].text+="\n每秒恢复%d"%(recovery*60)
 		if f.state=="dodge" and bool(f.motion.get("dodge_tired",false)):info[i].text+="\n体力不足：闪避无敌缩短"
+		if f.state=="power_charge" or str(f.move_id).begins_with("power_crush"):
+			info[i].text+="\n蓄力超重击 %d档"%int(f.motion.get("power_crush_tier",1))
+			if f.state=="power_charge":info[i].text+=" · 按住%d tick"%int(f.motion.get("power_crush_hold",0))
 		if int(feedback_ticks[i])>0:
 			info[i].text+="\n"+str(feedback[i])
 			feedback_ticks[i]=int(feedback_ticks[i])-1

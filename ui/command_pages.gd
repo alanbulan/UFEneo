@@ -41,7 +41,7 @@ func _init() -> void:
 	for cell in [["输入",132],["招式",220],["起手",40],["攻击",40],["收招",40],["伤害",40]]:
 		var label:=Label.new();label.text=cell[0];label.custom_minimum_size.x=cell[1];headers.add_child(label)
 	rows.custom_minimum_size.y=72;rows.size_flags_vertical=Control.SIZE_EXPAND_FILL;column.add_child(rows)
-	var help:=Label.new();help.text="方向+远程直出：1P %s / 2P %s；形态：1P %s / 2P %s\n蓄能%s　闪避%s　必杀%s；方向组合见列表，设置可自定义。"%[UfeInputRouter.binding_label(0,"ranged"),UfeInputRouter.binding_label(1,"ranged"),UfeInputRouter.binding_label(0,"transform"),UfeInputRouter.binding_label(1,"transform"),UfeInputRouter.binding_label(0,"charge"),UfeInputRouter.binding_label(0,"dodge"),UfeInputRouter.binding_label(0,"special")];help.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;column.add_child(help)
+	var help:=Label.new();help.text="方向+远程直出：1P %s / 2P %s；形态：1P %s / 2P %s\n蓄能%s　闪避%s　必杀%s　蓄力超重击%s；方向组合见列表，设置可自定义。"%[UfeInputRouter.binding_label(0,"ranged"),UfeInputRouter.binding_label(1,"ranged"),UfeInputRouter.binding_label(0,"transform"),UfeInputRouter.binding_label(1,"transform"),UfeInputRouter.binding_label(0,"charge"),UfeInputRouter.binding_label(0,"dodge"),UfeInputRouter.binding_label(0,"special"),UfeInputRouter.binding_label(0,"power_crush")];help.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;column.add_child(help)
 static func category(entry: Dictionary) -> int:
 	var id:=str(entry.move)
 	if id.begins_with("special") or id in ["air_special","battle_transform","super_special3"]:return 7

@@ -44,6 +44,29 @@
 4. **特效登记。** 人物帧不烘焙光束和粒子。新增或改换的 effect id 写入 `content/presentation/phase3_projectiles.json` 并核 atlas SHA。
 5. **验证。** `tools/godot_lock.py` 跑确定性、回放和分层检查。改了手感数值，PR 里写改前 / 改后对比。画面还要看两个朝向和 720/1080。逻辑通过不等于美术或听感通过。
 
+## 示范角色：赛文
+
+以后每个角色按赛文这条做。赛文是当前素材最全的可玩角色（`assets/fighters/ultraseven/animations/`）。`docs/DEMO_CHARACTER.md` 由 `tools/maintenance/layout_routes.json` 指回本节，不另存一份正文。
+
+照抄步骤：
+
+1. 读 `core/combat/feel_rules.gd` 的档。把该角色每一招的起手、持续、收招改成命中框窗口的真实长度；受击硬直、防御硬直、命中停顿和推退初速按档写进招式 JSON。模板值（受击 20、防御 12、推退 8）加载时仍会被同一公式覆盖；已经写成档位初速的推退保持不变。投技不改硬直。
+2. 走路循环的 `ticks` 必须等长，`state_frames` 里同一张走路图的重复次数和 `ticks` 相同。受击 `hit_high` / `hit_mid` / `hit_crouch` / `hit_air` 的状态帧长度不得短于本角色站立受击硬直的最大值，剪辑 `ticks` 之和等于这个长度。现有图不够就只重排、重复相邻已有帧；缺的新姿势写进 `tools/rebuild/<id>/` 的提示词清单，不在这里生图。
+3. 近身命中框的宽和高至少为 `round(0.22 × target_height)`（赛文身高 144，即 32）。更小的拳脚框以中心为基准补到这个尺寸。受击框并集的高至少为身高的 0.90、宽至少为 0.46。光弹嘴部那种边长小于 16 的框不放大。
+4. 蓄力超重击不用每个角色单独做逻辑。`UfeFeelRules.ensure_power_crush` 在加载时从重击复制三档。没有专属剪辑就播重击图，蓄力时表现层播已登记的 `impact_heavy`。赛文缺的蓄力姿势和出招姿势同样记在缺帧清单里。
+5. 跑 `python3 tools/check/seven_demo_pipeline.py`。它检查走路帧时长方差、受击是否盖住硬直、命中框相对身高的比例，并核对缺帧清单。全量 `tools/verify.py` 会带上这项和 `tests/power_crush.gd`。
+
+检查表：
+
+- 轻击和重击的命中停顿、受击硬直、防御硬直、被防帧差、推退初速与手感基调表一致。
+- `walk_forward` 与 `walk_back` 的 `ticks` 方差为 0。
+- 四段受击的状态帧长度 ≥ 站立打击的最大受击硬直，且剪辑时长等于这个长度。
+- 近身命中框短边 / 身高 ≥ 0.22。
+- 蓄力 19 tick 松手是 1 档，20 tick 是 2 档，39 tick 仍是 2 档，40 tick 按住也自动出 3 档。
+- 蓄力中防御或闪避会取消，被打会进入受击而不是出招。
+- 同一输入跑两次，快照和内容指纹一致。
+- 训练模式能看到当前档位。Q 蓄能仍然进 `charge`，不进 `power_charge`。
+
 ---
 
 <a id="第-1-节--progressmd"></a>

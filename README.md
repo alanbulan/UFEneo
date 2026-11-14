@@ -20,7 +20,7 @@ macOS 用 `.venv/bin/python`、`export GODOT_PATH=...` 和 `开始游戏.command
 
 启动 **开始游戏.command** → 电脑对战/本地双人/训练 → 选人 → 场景与 BGM → 开始。
 
-1P：W/空格跳，S 蹲，AD 移动，J/K/L/O 攻击，U 防御，I 远程（I+方向直出原搓招），P 必杀，Q 蓄能，E 切已开放形态，N 闪避。2P 使用方向键与小键盘。正式设置可重绑和保存。Enter 暂停，F1 判定框，F2 招式表，F3 训练，F4 回放，F5 陪练，R 再战。
+1P：W/空格跳，S 蹲，AD 移动，J/K/L/O 攻击，G 蓄力超重击（按住蓄力、松开出招），U 防御，I 远程（I+方向直出原搓招），P 必杀，Q 蓄能，E 切已开放形态，N 闪避。2P 使用方向键与小键盘，蓄力超重击是小键盘 8。手柄蓄力超重击是 R3。正式设置可重绑和保存。Enter 暂停，F1 判定框，F2 招式表，F3 训练，F4 回放，F5 陪练，R 再战。
 
 ## 开发与验证
 
@@ -38,7 +38,7 @@ macOS 用 `.venv/bin/python`、`export GODOT_PATH=...` 和 `开始游戏.command
 | [AGENTS.md](AGENTS.md) | 唯一执行准则、手感基线与不可回退规则 | 每轮开工前 |
 | [REBUILD_2D_PLAN.md](REBUILD_2D_PLAN.md) | 游戏设计目标、完整招式矩阵（尤其 2.5 节）、阶段顺序 | 设计或规划招式时 |
 | 本文件 | 项目总览、获取与运行、验证命令、文档入口 | 了解或启动项目时 |
-| [docs/HANDBOOK.md](docs/HANDBOOK.md) | 当前状态与验证边界、目录架构、数据格式、美术流程、战斗设计、stage1 标准、音频、第三方 | 查现行主题规范、可玩范围或未完项时 |
+| [docs/HANDBOOK.md](docs/HANDBOOK.md) | 当前状态与验证边界、目录架构、数据格式、美术流程、战斗设计、stage1 标准、音频、第三方、赛文示范流水线 | 查现行主题规范、可玩范围、未完项，或照赛文做下一个角色时 |
 | [docs/verification/README.md](docs/verification/README.md) | 可随仓库交付的验证结果摘要与根因事故记录 | 核对历史验证结论时 |
 | [docs/verification/](docs/verification/) | 冻结历史回执，按原文件名和章节锚点保留 | 追查当时证据时 |
 | [tools/README.md](tools/README.md) | 工具目录归属、依赖、路径引导 | 增加、移动或运行工具时 |
