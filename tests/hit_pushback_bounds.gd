@@ -1,7 +1,7 @@
 extends SceneTree
 ## 真实step造成边界命中；只在fixture初始化设站位/HP/本测Definition，不在组内补救状态。
 const DAMAGE: int = 80
-const PUSH: int = 37
+const PUSH: int = 6
 const ENERGY_COST: int = 100
 const STAMINA_COST: int = 23
 const STOP: int = 7
@@ -101,7 +101,7 @@ func legacy_fingerprint(sim: UfeMatchDirector) -> String:
 
 func replay_and_fingerprint(sim: UfeMatchDirector, recorder: UfeReplayRecorder, rows: Array, facing: int, kind: String, projectile: bool, tag: String) -> Dictionary:
 	var legacy := legacy_fingerprint(sim)
-	check(UfeHitResolver.PUSHBACK_BOUNDARY_REVISION==1,tag+"/显式边界规则revision")
+	check(UfeHitResolver.PUSHBACK_BOUNDARY_REVISION==2,tag+"/显式边界规则revision")
 	check(sim.content_fingerprint==fixture(facing,kind,projectile).content_fingerprint,tag+"/相同规则重复建局指纹一致")
 	check(sim.content_fingerprint!=legacy,tag+"/同招式数据旧规则指纹必须不同")
 	var path := run_out + tag + "-replay.json"
@@ -172,10 +172,10 @@ func test_case(facing: int, kind: String, projectile: bool) -> void:
 				check(before.pair[1].hp-post.pair[1].hp==DAMAGE and post.pair[1].hp==(0 if kind=="front_wall_ko" else 920),tag+"/单次伤害保持")
 				check(post.pair[0].energy==90 and post.pair[1].energy==40 and post.pair[0].stamina==1000-STAMINA_COST,tag+"/命中能量体力保持")
 				check(post.hitstop==STOP,tag+"/实际命中触发hitstop")
-				if kind in ["middle","rear_wall"]:
-					check(post.pair[1].x-before.pair[1].x==facing*PUSH,tag+"/中场完整推后不被削弱")
-				else:
-					check(post.pair[1].x==(1252 if facing>0 else 28),tag+"/边界与近墙只截超出部分")
+				var room := (1252-int(before.pair[1].x)) if facing>0 else (int(before.pair[1].x)-28)
+				var applied := mini(PUSH, room)
+				check(post.pair[1].x-before.pair[1].x==facing*applied,tag+"/命中当帧只滑出初速或到墙")
+				check(post.pair[0].x-before.pair[0].x==-facing*(PUSH-applied),tag+"/贴墙的剩余推退转给攻击方")
 		if int(before.hitstop)>0 and not before.finished:
 			paused_ticks += 1
 			check(post.hitstop==int(before.hitstop)-1 and post.pair==before.pair and post.projectiles==before.projectiles,tag+"/hitstop全程边界合法且人物费用冻结/%s"%index)
@@ -190,7 +190,10 @@ func test_case(facing: int, kind: String, projectile: bool) -> void:
 	else:
 		check(not sim.finished and paused_ticks==STOP,tag+"/完整命中停顿持续且未误KO")
 		check(sim.fighters[1].stats.hp==920,tag+"/末状态不重复伤害")
-	check(sim.fighters[0].x==int(initial.actor),tag+"/本人无隐式挪位补救")
+	if kind in ["middle","rear_wall"]:
+		check(sim.fighters[0].x==int(initial.actor),tag+"/中场攻击方不被推退带走")
+	else:
+		check(sim.fighters[0].x!=int(initial.actor),tag+"/贴墙后攻击方必须被推开")
 	var replay_result := replay_and_fingerprint(sim,recorder,rows,facing,kind,projectile,tag)
 	write_json(run_out+tag+"-trace.json",{"rows":rows,"setup":initial,"projectile":projectile,"facing":facing,"case":kind,"replay":replay_result,
 		"starts":starts,"hits":hits,"paused_ticks":paused_ticks,"finished_ticks":finished_ticks})

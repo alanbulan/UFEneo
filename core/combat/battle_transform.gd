@@ -46,8 +46,7 @@ static func begin(f: UfeFighter, move_id: String = "battle_transform") -> void:
 		f.stats.energy = int(f.stats.energy) - ENERGY_COST
 		f.transformed_this_round = true
 	f.clear_move()
-	f.combat.buffer = ""
-	f.combat.buffer_ticks = 0
+	f.clear_input_buffer()
 	f.motion.jump_buffer = 0
 	f.motion.chase_window = 0
 	f.vx = 0
@@ -57,8 +56,7 @@ static func begin(f: UfeFighter, move_id: String = "battle_transform") -> void:
 	f.enter("transform")
 
 static func advance(f: UfeFighter) -> void:
-	f.combat.buffer = ""
-	f.combat.buffer_ticks = 0
+	f.clear_input_buffer()
 	f.motion.jump_buffer = 0
 	if f.state == "form_entry":
 		if f.state_tick >= f.battle_form.get("entry_frames", []).size(): f.enter("idle")

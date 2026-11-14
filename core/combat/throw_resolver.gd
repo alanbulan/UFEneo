@@ -17,8 +17,7 @@ static func abort_hold(sim: UfeMatchDirector, owner: int, victim: UfeFighter, re
 	# 正常数据已经过捕获前预检；仅防运行中损坏，保留最后有效位置及已付费用。
 	sim.events.append({"kind":"throw_hold_abort","player":owner,"move":actor.move_id,"reason":reason})
 	actor.clear_move()
-	actor.combat.buffer=""
-	actor.combat.buffer_ticks=0
+	actor.clear_input_buffer()
 	actor.enter("air" if actor.height>0 else "idle")
 	victim.combat.thrower=-1
 	victim.vx=0
@@ -33,8 +32,7 @@ static func tech(sim: UfeMatchDirector, owner: int) -> void:
 	var origin_b := int(b.motion.get("throw_origin_height",b.height)) if captured else b.height
 	for f in [a,b]:
 		f.clear_move()
-		f.combat.buffer=""
-		f.combat.buffer_ticks=0
+		f.clear_input_buffer()
 		f.combat.thrower=-1
 		f.vx=0
 		f.height=origin_a if f==a else origin_b

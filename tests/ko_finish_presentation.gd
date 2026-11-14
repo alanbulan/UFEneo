@@ -115,8 +115,17 @@ func timeout_case() -> void:
 
 func flash_case() -> void:
 	var feedback:=UfeCombatFeedback.new()
-	feedback.flash=[0,2];feedback.shake_ticks=4;feedback.particles=[{"age":0}]
-	check(feedback.advance_flash(false)[1]==2 and feedback.advance_flash(false)[1]==1 and feedback.advance_flash(false)[1]==0,"真实闪白两呈现帧结束，不随KO拉长")
+	feedback.flash=[0,2];feedback.shake_ticks=4;feedback.particles=[]
+	check(feedback.advance_flash(false)[1]==2 and feedback.advance_flash(false)[1]==2,"呈现帧不再消耗闪白")
+	var clock_sim:=UfeMatchDirector.new(definition("ultraman"),definition("zetton"),load("res://content/rules/neo.tres"),UfeContentDatabase.states())
+	feedback.last_tick=clock_sim.tick
+	clock_sim.tick+=1
+	feedback.sync(clock_sim,0,0)
+	check(feedback.flash[1]==1,"闪白随模拟tick减少")
+	clock_sim.tick+=1
+	feedback.sync(clock_sim,0,0)
+	check(feedback.flash[1]==0,"两tick后闪白结束")
+	feedback.particles=[{"age":0}]
 	check(int(feedback.particles[0].age)==0 and feedback.shake_ticks==4,"真实闪白时钟不再偷跑FX")
 	feedback.advance_effects(0)
 	check(int(feedback.particles[0].age)==0,"暂停FX零推进")

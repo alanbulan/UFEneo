@@ -115,7 +115,7 @@ static func contact(sim: UfeMatchDirector, owner: int, move: Dictionary, defendi
 	relation.phase = PHASES[0]; relation.phase_index = 0; relation.phase_age = 0
 	actor.move_tick = int(move.capture.success_tick)
 	target.clear_move(); target.vx = 0; target.vy = 0
-	target.combat.buffer = ""; target.combat.buffer_ticks = 0; target.motion.jump_buffer = 0
+	target.clear_input_buffer(); target.motion.jump_buffer = 0
 	target.motion.capture_victim = {"owner":owner,"token":token,"animation":"","frame":0}
 	target.enter("captured")
 	clear_shots(sim,owner,token)
@@ -182,7 +182,7 @@ static func after_move_tick(sim: UfeMatchDirector, owner: int, input: UfeInputFr
 
 static func finish_owner(actor: UfeFighter, input: UfeInputFrame) -> void:
 	actor.motion.erase("capture")
-	actor.clear_move(); actor.combat.buffer = ""; actor.combat.buffer_ticks = 0
+	actor.clear_move(); actor.clear_input_buffer()
 	actor.enter("crouch" if input.y < 0 else "idle")
 
 static func safe_position(actor: UfeFighter, target: UfeFighter, authored: int) -> void:
@@ -250,7 +250,7 @@ static func release_victim(sim: UfeMatchDirector, owner: int) -> void:
 		safe_position(actor,target,int(move.get("capture",{}).get("release_distance",80)))
 		target.enter("idle")
 	target.motion.erase("capture_victim")
-	target.combat.buffer = ""; target.combat.buffer_ticks = 0; target.motion.jump_buffer = 0
+	target.clear_input_buffer(); target.motion.jump_buffer = 0
 
 static func abort(sim: UfeMatchDirector, owner: int, reason: String) -> void:
 	var actor := sim.fighters[owner]
@@ -261,7 +261,7 @@ static func abort(sim: UfeMatchDirector, owner: int, reason: String) -> void:
 	actor.motion.erase("capture")
 	if actor.state == "capturing":
 		actor.clear_move(); actor.enter("air" if actor.height > 0 else "idle")
-	actor.combat.buffer = ""; actor.combat.buffer_ticks = 0
+	actor.clear_input_buffer()
 	sim.events.append({"kind":"capture_abort","player":owner,"move":str(relation.move),"reason":reason})
 
 static func cleanup(sim: UfeMatchDirector) -> void:

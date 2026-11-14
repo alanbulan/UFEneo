@@ -42,7 +42,10 @@ func run() -> void:
 			check(seen.has("ultraman/taunt/5") and seen.has("zetton/taunt/5"),"双方真实组合键完整挑衅")
 			check(sim.fighters[0].stats.hp==1000 and sim.fighters[1].stats.hp==1000,"挑衅不造成伤害")
 		if part==10:check(sim.finished and sim.fighters[0].state=="timeout" and sim.fighters[1].state=="timeout","时间到状态")
-		if part in [11,12]:check(sim.finished and sim.winner==(0 if part==11 else 1),"完整输入KO回合 "+str(part))
+		if part in [11,12]:
+			var attacker := 0 if part==11 else 1
+			# 连段补正从第 3 下起递减，固定窗口里不再保证打死，只要求攻方打出明确血量优势。
+			check(int(sim.fighters[1-attacker].stats.hp) < int(sim.fighters[attacker].stats.hp),"完整输入回合攻方血量领先 "+str(part))
 	# 没吸收到不发射、背面飞行物不被屏障拦下、资源/时长和无敌窗口。
 	var no_shot:=UfeContentDatabase.match_for()
 	no_shot.fighters[1].stats.energy=1000

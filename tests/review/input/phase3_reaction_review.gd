@@ -73,7 +73,7 @@ func target_sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
 	if id in ["down","wake","roll_forward","roll_back","wake_low","wake_mid"]:
 		if age==30: p2=UfeInputFrame.make(0,-1,UfeInputFrame.HEAVY)
 		if f.state=="wake":
-			if id in ["roll_forward","roll_back"]: return UfeInputFrame.make(f.facing if id=="roll_forward" else -f.facing)
+			if id in ["roll_forward","roll_back"]: return UfeInputFrame.make(f.facing if id=="roll_forward" else -f.facing, 0, UfeInputFrame.DODGE)
 			if id in ["wake_low","wake_mid"] and chain_stage==0:
 				chain_stage=1
 				return UfeInputFrame.make(0,0,UfeInputFrame.LIGHT if id=="wake_low" else UfeInputFrame.HEAVY)
@@ -95,7 +95,7 @@ func target_sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
 		elif complete_chain and chain_stage==4 and b.move_id=="chase_light2" and b.combat.confirmed:
 			chain_stage=5
 			p2=UfeInputFrame.make(0,0,UfeInputFrame.HEAVY)
-		if id=="full_chain" and f.state=="wake": return UfeInputFrame.make(-f.facing if complete_chain else f.facing)
+		if id=="full_chain" and f.state=="wake": return UfeInputFrame.make(-f.facing if complete_chain else f.facing, 0, UfeInputFrame.DODGE)
 	if id=="air_tech" and f.state=="launch" and f.vy<0: return UfeInputFrame.make(0,0,UfeInputFrame.GUARD)
 	return UfeInputFrame.make()
 func observe_walk(frame: int,sim: UfeMatchDirector,view: UfeSideView) -> void:

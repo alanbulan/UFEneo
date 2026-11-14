@@ -21,7 +21,8 @@ var move_id: String = ""
 var move_tick: int = 0
 var stats: Dictionary = {"hp": 1000, "energy": 0, "stamina": 1000, "stun": 0, "stun_immune": 0,
 	"chill_ticks": 0, "chill_percent": 100}
-var combat: Dictionary = {"buffer": "", "buffer_ticks": 0, "connected": false, "confirmed": false,
+var combat: Dictionary = {"buffer": "", "buffer_ticks": 0, "buffer_next": "", "buffer_next_ticks": 0,
+	"connected": false, "confirmed": false, "blocked": false,
 	"combo": 0, "combo_ticks": 0, "bounced": false, "invulnerable": 0, "thrower": -1, "throw_age": 0, "power": 1}
 var motion: Dictionary = {"jump_kind": "vertical", "direction": 1, "duration": 0, "chase_window": 0, "land_window": 0, "bounce_followup":false}
 var resolver := UfeCommandResolver.new()
@@ -121,7 +122,30 @@ func clear_move() -> void:
 	move_tick = 0
 	combat.connected = false
 	combat.confirmed = false
+	combat.blocked = false
 	combat.erase("hit_groups")
+
+func clear_input_buffer() -> void:
+	combat.buffer = ""
+	combat.buffer_ticks = 0
+	combat.buffer_next = ""
+	combat.buffer_next_ticks = 0
+
+## 最近两条指令。相同指令只刷新计时；第三条挤掉最旧的一条。
+func remember_command(move_id_to_keep: String, ticks: int) -> void:
+	if move_id_to_keep.is_empty():
+		return
+	if str(combat.buffer).is_empty() or str(combat.buffer) == move_id_to_keep:
+		combat.buffer = move_id_to_keep
+		combat.buffer_ticks = ticks
+	elif str(combat.buffer_next).is_empty() or str(combat.buffer_next) == move_id_to_keep:
+		combat.buffer_next = move_id_to_keep
+		combat.buffer_next_ticks = ticks
+	else:
+		combat.buffer = combat.buffer_next
+		combat.buffer_ticks = combat.buffer_next_ticks
+		combat.buffer_next = move_id_to_keep
+		combat.buffer_next_ticks = ticks
 
 func snapshot() -> Array:
 	var result: Array = [definition.id, x, height, vx, vy, facing, state, state_tick, move_id, move_tick,
