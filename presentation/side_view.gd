@@ -171,7 +171,10 @@ func update_view() -> void:
 			@warning_ignore("integer_division")
 			sprite.offset = Vector2(-sprite.texture.get_width()/2,-int(view_configs[i].get("anchor_y",sprite.texture.get_height()-24)))
 		sprite.flip_h = f.facing < 0
-		sprite.position = Vector2(f.x-camera_x+320,GROUND-f.height)+capture_view.render_offset(self,i)
+		var hit_jitter := 0
+		if simulation.hitstop>0 and f.state in ["hit","blockstun","crouch_blockstun","launch"]:
+			hit_jitter = 2 if simulation.tick%2==0 else -2
+		sprite.position = Vector2(f.x-camera_x+320+hit_jitter,GROUND-f.height)+capture_view.render_offset(self,i)
 	# 抬高镜头时世界向下平移；各背景层沿用原有视差比例。
 	backdrop.position.y = 0 # 最远背景沿用原来的零视差；不露出纹理上缘。
 	for layer in stage_layers:

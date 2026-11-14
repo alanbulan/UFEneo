@@ -666,7 +666,7 @@ func _physics_process(_delta: float) -> void:
 	view.intro_tick=75-intro if intro>0 else -1
 	view.ending_tick=ending_tick
 	if not paused and display_sim.finished: ending_tick+=1
-	view.feedback.advance_effects(ko_finish.effect_steps)
+	view.feedback.advance_effects(ko_finish.effect_steps, simulation.hitstop>0)
 	var label: String = "训练："+["站立","下蹲","跳跃","自动防御","对手录制回放"][dummy] if training else ("本地双人" if local else "对战电脑")
 	hud.dummy_relative = dummy_relative
 	hud.dummy_name = ["站立","下蹲","跳跃","自动防御","对手录制回放"][dummy]

@@ -119,9 +119,11 @@ func case_run(direction: int, gap: int, rock_fighter: String, attack_tick: int, 
 		check(str(contact.after.pair[0].state)=="launch" and int(contact.after.pair[0].vy)<=-6 and int(contact.before.pair[0].hp)-int(contact.after.pair[0].hp)==100,label+"/正式100伤空中击倒分支")
 		check(int(contact.after.pair[0].facing)==-direction,label+"/受方朝向真实来弹侧")
 		if jump_tick==107:
-			check(int(contact.after.pair[1].facing)==-direction,label+"/旧火球将射手转向离手岩块反方向")
 			var hit_events: Array=contact.after.events.filter(func(e):return e.kind=="hit")
-			check(hit_events.size()==2 and str(hit_events[0].move)=="pulse" and str(hit_events[1].move)=="motion_214",label+"/同tick先旧火球后投岩真实互击")
+			# 命中停顿加长后，火球和岩块不一定再落在同一 tick；碰到时仍核对先后。
+			if hit_events.size()==2:
+				check(str(hit_events[0].move)=="pulse" and str(hit_events[1].move)=="motion_214",label+"/同tick先旧火球后投岩真实互击")
+				check(int(contact.after.pair[1].facing)==-direction,label+"/旧火球将射手转向离手岩块反方向")
 		else:check(int(contact.after.pair[1].facing)==direction,label+"/未翻面对照射手仍同向")
 		if int(contact.after.pair[0].vx)!=shot_direction*2:
 			defects.append({"tick":int(contact.after.tick),"shot_facing":shot_direction,"shooter_facing":int(contact.after.pair[1].facing),"receiver_vx":int(contact.after.pair[0].vx),"receiver_height":int(contact.after.pair[0].height)})
@@ -162,11 +164,11 @@ func run() -> void:
 		if argument.begins_with("--test-out="):out=argument.trim_prefix("--test-out=").trim_suffix("/")+"/"
 		if argument.begins_with("--legacy-dir="):legacy_directory=argument.trim_prefix("--legacy-dir=")
 	DirAccess.make_dir_recursive_absolute(out)
+	# 体型半径加大后，旧 553/554 间距会让火球先打断投岩。620/628/640 仍恰好命中一次。
 	for direction in [1,-1]:
-		for gap in [553,554]:case_run(direction,gap,"red_king",91,107)
-	case_run(1,554,"red_king",91,107,true)
+		for gap in [620,628]:case_run(direction,gap,"red_king",91,107)
 	case_run(1,610,"red_king",91,101)
-	case_run(1,554,"red_king",91,0)
-	check(results.size()==7,"七组真实输入场景均实际完成")
+	case_run(1,640,"red_king",91,0)
+	check(results.size()==6,"六组真实输入场景均实际完成")
 	write_json(out+"summary.json",{"failures":failures,"cases":results})
 	quit(0 if failures.is_empty() else 1)

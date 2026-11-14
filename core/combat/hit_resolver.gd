@@ -1,7 +1,7 @@
 class_name UfeHitResolver
 extends RefCounted
 const CurrentCapture = preload("res://core/combat/throw_current_capture.gd")
-const PUSHBACK_BOUNDARY_REVISION := 1
+const PUSHBACK_BOUNDARY_REVISION := 2
 const THROW_TARGET_RULE_REVISION := 1
 const PROJECTILE_DIRECTION_RULE_REVISION := 2
 const PROJECTILE_MOVE_ISOLATION_RULE_REVISION := 1
@@ -35,7 +35,7 @@ static func invulnerable(f: UfeFighter) -> bool:
 		or int(f.combat.invulnerable)>0 or bool(f.frame().get("invulnerable",false))
 
 static func is_blocked(target: UfeFighter, move: Dictionary, defending: bool) -> bool:
-	var crouching := target.state in ["crouch","crouch_start","crouch_guard","crouch_blockstun"]
+	var crouching := target.state in ["crouch","crouch_start","crouch_guard","crouch_blockstun","crouch_turn"]
 	return defending and not bool(move.unblockable) and (str(move.level) != "low" or crouching) and (str(move.level) != "overhead" or not crouching)
 
 static func contact_point(a: UfeFighter,b: UfeFighter) -> Vector2i:
@@ -65,15 +65,22 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 		b.facing=-a.facing
 		b.enter("thrown")
 		return "hit" # 抓中不扣血；拆投窗口结束后，在落地冲击帧结算一次伤害。
-	var crouching := b.state in ["crouch","crouch_start","crouch_guard","crouch_blockstun"]
+	var crouching := b.state in ["crouch","crouch_start","crouch_guard","crouch_blockstun","crouch_turn"]
 	var airborne := b.height>0
 	var blocked := is_blocked(b,move,defending)
+	var impact_facing := projectile_facing if projectile_facing!=0 else a.facing
 	if blocked:
+		# confirmed 仍只表示打中，追击跳和命中取消沿用它。被防另记 blocked，取消窗口两边都认。
+		a.combat.blocked = true
 		b.clear_move()
 		b.enter("crouch_blockstun" if crouching else "blockstun", int(move.blockstun))
 		UfeStaminaRules.spend(b, UfeStaminaRules.block_cost(int(move.damage)))
-		b.stats.hp=maxi(0,int(b.stats.hp)-int(move.get("chip_damage",0)))
+		var chip := _scaled_damage(a, int(move.get("chip_damage", 0)))
+		b.stats.hp=maxi(0,int(b.stats.hp)-chip)
 		if b.stats.stamina == 0: b.enter("guardbreak", 35)
+		var block_speed := UfeFeelRules.block_push(int(move.get("pushback", 0)))
+		if block_speed > 0:
+			b.motion.push_vx = slide(b, a, impact_facing * block_speed)
 		return "block"
 	a.combat.confirmed = true
 	var impact_height := 0
@@ -85,7 +92,7 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 	# 弹体离手后可与射手朝向分离；0保留近战原有来向判定。
 	b.facing = -projectile_facing if projectile_facing!=0 else (1 if a.x>=b.x else -1)
 	b.clear_move()
-	b.stats.hp = maxi(0, int(b.stats.hp) - int(move.damage) * int(a.combat.power))
+	b.stats.hp = maxi(0, int(b.stats.hp) - _scaled_damage(a, int(move.damage) * int(a.combat.power)))
 	# 眩晕免疫期内不再累积，避免连续命中把对手永久锁在眩晕里。
 	if int(b.stats.get("stun_immune",0)) <= 0:
 		b.stats.stun = mini(rules.stun_threshold, int(b.stats.stun) + int(move.stun))
@@ -99,8 +106,9 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 	b.stats.energy = mini(3000, int(b.stats.energy) + 40)
 	a.combat.combo = int(a.combat.combo) + 1
 	a.combat.combo_ticks = 90
-	var impact_facing := projectile_facing if projectile_facing!=0 else a.facing
-	b.x = clampi(b.x + impact_facing * int(move.pushback), 28, 1252)
+	var hit_speed := int(move.get("pushback", 0))
+	if hit_speed > 0:
+		b.motion.push_vx = slide(b, a, impact_facing * hit_speed)
 	b.enter("hit", int(move.hitstun))
 	if bool(move.launch):
 		b.vy = 18
@@ -125,3 +133,24 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 		b.stats.stun = 0
 		b.stats.stun_immune = 60 + int(rules.stun_immunity)
 	return "hit"
+
+## 本 tick 走一步，并把衰减后的速度交还调用方。贴墙时走不完的像素转给另一方。
+static func slide(body: UfeFighter, other: UfeFighter, velocity: int) -> int:
+	if velocity == 0:
+		return 0
+	var proposed := body.x + velocity
+	var clamped := clampi(proposed, 28, 1252)
+	var leftover := proposed - clamped
+	body.x = clamped
+	if leftover != 0 and other != null:
+		other.x = clampi(other.x - leftover, 28, 1252)
+	if absi(velocity) <= 1:
+		return 0
+	return velocity - signi(velocity)
+
+static func _scaled_damage(attacker: UfeFighter, amount: int) -> int:
+	if amount <= 0:
+		return 0
+	@warning_ignore("integer_division") # 连段补正取整，结果为整数伤害。
+	var scaled := amount * UfeFeelRules.scale_percent(int(attacker.combat.combo) + 1) / 100
+	return maxi(1, scaled)

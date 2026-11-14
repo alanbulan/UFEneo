@@ -1,8 +1,8 @@
 class_name UfeCommandResolver
 extends RefCounted
 const Motion = preload("res://third_party/shoto/motion_parser.gd")
-const INPUT_BUFFER_TICKS := 10
-const RULE_REVISION := 4
+const INPUT_BUFFER_TICKS := 8
+const RULE_REVISION := 5
 const HELD_JUMP_STATES := ["idle","walk","guard","crouch","crouch_start","crouch_rise","crouch_guard","turn","crouch_turn","charge","charge_start","charge_stop"]
 const BUTTON_BITS := [1,2,4,8,16,32,64,128,256,512,1024]
 var previous: int = 0
@@ -58,7 +58,7 @@ func _select(frame: UfeInputFrame, state: String, table: Array, pressed: int, di
 		var simultaneous := true
 		for bit in BUTTON_BITS:
 			if mask & bit and age - int(press_ticks.get(str(bit), -100)) > 3: simultaneous = false
-		if not simultaneous or not Motion.matches(history, entry.motion, 5): continue
+		if not simultaneous or not UfeMotionLeniency.matches(history, entry.motion): continue
 		if best.is_empty() or int(entry.priority) > int(best.priority): best = entry
 	return best
 

@@ -6,25 +6,29 @@ var clips: Dictionary = {}
 var particles: Array = []
 var flash: Array = [0,0]
 var shake_ticks: int = 0
+var shake_amp: int = 2
+var shake_duration: int = 1
 var last_tick: int = -1
 var previous: Array = []
 var shake := Vector2.ZERO
 var projectile_observations:Array=[]
 
 func advance_flash(advance_fx: bool = true) -> Array:
+	# 闪白按模拟 tick 计，呈现帧不再把它缩短。
 	var flash_snapshot:=flash.duplicate()
-	for i in range(2):flash[i]=maxi(0,int(flash[i])-1)
 	if advance_fx:advance_effects(1) # 保留既有离线消费者接口；主游戏显式传false。
 	return flash_snapshot
 
-func advance_effects(ticks: int) -> void:
-	shake_ticks=maxi(0,shake_ticks-maxi(0,ticks))
+func advance_effects(ticks: int, hold_shake: bool = false) -> void:
+	if not hold_shake:
+		shake_ticks=maxi(0,shake_ticks-maxi(0,ticks))
 	for p in particles:p.age=int(p.age)+maxi(0,ticks)
+	_compose_shake()
 
 func reset_match() -> void:
 	for p in particles:p.node.queue_free()
 	particles.clear();projectile_observations.clear();previous.clear()
-	flash=[0,0];shake_ticks=0;last_tick=-1;shake=Vector2.ZERO
+	flash=[0,0];shake_ticks=0;shake_amp=2;shake_duration=1;last_tick=-1;shake=Vector2.ZERO
 
 func _ready() -> void:
 	z_index=5
@@ -100,6 +104,8 @@ func finish(sim:UfeMatchDirector,event:Dictionary,fb:Dictionary,trigger:String) 
 
 func sync(sim: UfeMatchDirector, camera_x: int, camera_y: int) -> void:
 	if last_tick!=sim.tick:
+		if last_tick>=0:
+			for i in range(2):flash[i]=maxi(0,int(flash[i])-1)
 		last_tick=sim.tick
 		for e in sim.events:
 			var kind:=str(e.kind)
@@ -108,8 +114,13 @@ func sync(sim: UfeMatchDirector, camera_x: int, camera_y: int) -> void:
 				var tint:Array=fb.get("block_color",fb.get("color",[1,1,1,1])) if kind=="block" else fb.get("color",[1,1,1,1])
 				spawn(str(fb.block_spark) if kind=="block" else impact_id(sim,e),int(e.x),int(e.height),tint,int(e.get("effect_facing",sim.fighters[int(e.player)].facing)))
 				if kind=="hit":
-					flash[1-int(e.player)]=clampi(int(fb.get("flash",2)),1,2)
-					shake_ticks=maxi(shake_ticks,int(fb.get("shake",0)))
+					flash[1-int(e.player)]=clampi(int(fb.get("flash",2)),1,3)
+					var amp := int(fb.get("shake",0))
+					var dur := int(fb.get("shake_ticks", amp))
+					if dur>shake_ticks:
+						shake_ticks=dur
+						shake_amp=maxi(amp,1 if dur>0 else 0)
+						shake_duration=maxi(dur,1)
 					if str(e.get("move",""))=="special3" or int(sim.fighters[1-int(e.player)].stats.hp)==0:
 						finish(sim,e,fb,"hit")
 			elif kind=="weapon_return" and e.has("effect"):
@@ -147,4 +158,13 @@ func sync(sim: UfeMatchDirector, camera_x: int, camera_y: int) -> void:
 		UfeEffectGeometry.apply_anchor(p.node,clip,r,-1 if p.node.flip_h else 1)
 		p.node.position=Vector2(int(p.x)-camera_x+320,304-int(p.height)+camera_y)
 	particles=particles.filter(func(p):return int(p.age)<UfeEffectTimeline.length(p.clip))
-	shake=Vector2((2 if shake_ticks%2==0 else -2),1 if shake_ticks%2==0 else -1) if shake_ticks>0 else Vector2.ZERO
+	_compose_shake()
+
+func _compose_shake() -> void:
+	if shake_ticks<=0:
+		shake=Vector2.ZERO
+		return
+	@warning_ignore("integer_division") # 震屏幅度按剩余 tick 取整衰减。
+	var amp := maxi(1, shake_amp * shake_ticks / maxi(1, shake_duration))
+	var sign := 1 if shake_ticks%2==0 else -1
+	shake=Vector2(sign*amp, sign*maxi(0, amp/2))

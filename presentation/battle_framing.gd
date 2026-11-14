@@ -11,14 +11,19 @@ const HELD_ENTITY_EFFECTS := ["red_king_super1_held","red_king_super2_held","red
 static func is_held_entity(attachment: Dictionary, clip: Dictionary) -> bool:
 	return str(attachment.get("effect","")) in HELD_ENTITY_EFFECTS or bool(attachment.get("framing_entity",clip.get("framing_entity",false)))
 
-static func fit(bounds: Rect2, previous_zoom: float, shake: Vector2 = Vector2.ZERO, safe: Rect2 = SAFE, recover_zoom: bool = true) -> Dictionary:
-	var limit := minf(1.0,minf(safe.size.x/maxf(1.0,bounds.size.x),safe.size.y/maxf(1.0,bounds.size.y)))
-	# 拉远立即保住新动作/击飞，靠近时缓慢回到正常比例。
-	var zoom := minf(limit,lerpf(previous_zoom,limit,0.15) if recover_zoom else previous_zoom)
-	zoom = maxf(0.0001,zoom)
+static func fit(bounds: Rect2, _previous_zoom: float, shake: Vector2 = Vector2.ZERO, safe: Rect2 = SAFE, _recover_zoom: bool = true) -> Dictionary:
+	var limit := minf(safe.size.x/maxf(1.0,bounds.size.x),safe.size.y/maxf(1.0,bounds.size.y))
+	# 平时锁在 1，像素不随跳跃做非整数缩放。只有轮廓大到需要一半或更小时才改用 1/2、1/3。
+	var zoom := 1.0
+	if limit <= 0.5:
+		var denom := 2
+		while denom < 8 and (1.0 / float(denom)) > limit + 0.00001:
+			denom += 1
+		zoom = 1.0 / float(denom)
 	var low := safe.position-bounds.position*zoom
 	var high := safe.end-bounds.end*zoom
-	var origin := Vector2(320-bounds.get_center().x*zoom,304*(1.0-zoom))+shake
+	var origin := Vector2(320-bounds.get_center().x*zoom,304*(1.0-zoom))
 	origin.x = clampf(origin.x,low.x,maxf(low.x,high.x))
 	origin.y = clampf(origin.y,low.y,maxf(low.y,high.y))
+	origin += shake
 	return {"zoom":zoom,"origin":origin,"bounds":Rect2(bounds.position*zoom+origin,bounds.size*zoom)}

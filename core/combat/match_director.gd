@@ -48,6 +48,7 @@ func _init(first: UfeFighterDefinition, second: UfeFighterDefinition, rule: UfeR
 	# 恢复姿态影响state_tick和实际受击框；旧格式6仍可解析，但旧内容指纹不可重放。
 	fingerprint_data.append(["crouch_guard_resume_hold", CROUCH_GUARD_RESUME_RULE_REVISION])
 	fingerprint_data.append(["hit_crouch_guard_resume_pose", HIT_CROUCH_GUARD_RESUME_RULE_REVISION])
+	fingerprint_data.append(["feel_rules", UfeFeelRules.REVISION])
 	if UfeThrowResolver.RootOffsets.used_in(fingerprint_data):
 		fingerprint_data.append(["throw_root_overrides", UfeThrowResolver.ROOT_OVERRIDE_RULE_REVISION])
 	if UfeThrowResolver.CurrentCapture.used_in(fingerprint_data):
@@ -87,8 +88,7 @@ func step(inputs: Array) -> void:
 			f.motion.jump_buffer = 7
 			f.motion.jump_x = inputs[i].x
 		if not str(command.move).is_empty():
-			f.combat.buffer = command.move
-			f.combat.buffer_ticks = UfeCommandResolver.INPUT_BUFFER_TICKS
+			f.remember_command(str(command.move), UfeCommandResolver.INPUT_BUFFER_TICKS)
 	UfeThrowResolver.input_step(self,commands)
 	if hitstop > 0:
 		hitstop -= 1
@@ -129,7 +129,7 @@ func step(inputs: Array) -> void:
 			var a := fighters[index]
 			var b := fighters[1-index]
 			var input: UfeInputFrame = inputs[1-index]
-			var guardable := b.height==0 and b.move_id.is_empty() and b.state in ["idle","walk","crouch","crouch_start","crouch_rise","guard","crouch_guard","blockstun","crouch_blockstun"]
+			var guardable := b.height==0 and b.move_id.is_empty() and b.state in ["idle","walk","crouch","crouch_start","crouch_rise","guard","crouch_guard","blockstun","crouch_blockstun","turn","crouch_turn","land","wake"]
 			var projectile_facing := int(contact.facing) if bool(contact.projectile) else 0
 			var facing_attack := projectile_facing*b.facing<0 if projectile_facing!=0 else (a.x-b.x)*b.facing>=0
 			var defending := guardable and facing_attack and (input.held(UfeInputFrame.GUARD) or input.x * b.facing < 0)
@@ -144,6 +144,10 @@ func step(inputs: Array) -> void:
 				result=UfeCaptureResolver.contact(self,index,contact.move,defending,int(contact.capture_token))
 			elif contact.has("guard_frame"):
 				UfeFrameGuard.block_melee(a,b,contact.move)
+				a.combat.blocked = true
+				var guard_speed := UfeFeelRules.block_push(int(contact.move.get("pushback", 0)))
+				if guard_speed > 0:
+					b.motion.push_vx = UfeHitResolver.slide(b, a, a.facing * guard_speed)
 				result="block"
 				feedback.block_spark=contact.guard_frame.get("guard_effect",feedback.block_spark)
 				feedback.block_color=[1,1,1,1]
@@ -230,20 +234,15 @@ func _advance(index: int, input: UfeInputFrame, command: Dictionary) -> void:
 				f.motion.bounce_followup = false
 				land_allowed = int(f.motion.land_window)>0
 				if land_allowed:
-					if int(command.pressed)&UfeInputFrame.HEAVY and input.y<0: f.combat.buffer = "sweep"
-					elif int(command.pressed)&UfeInputFrame.CRUSH and input.x==0 and input.y==0: f.combat.buffer = "crush"
-	var buffered := str(f.combat.buffer)
-	if not buffered.is_empty():
-		var cancel: bool = f.move_id.is_empty() or (f.combat.confirmed and buffered in f.frame().cancel)
-		var burst := buffered == "burst" and f.state in ["hit", "launch", "blockstun", "crouch_blockstun"]
-		var chord_upgrade := buffered == "special" and f.move_tick <= 3 and f.move_id in ["light1", "heavy"]
-		var actionable := f.state in ["idle", "walk", "dash", "backstep", "dodge", "crouch", "crouch_start", "crouch_rise", "guard", "crouch_guard", "air", "wake", "charge", "takeoff", "turn", "crouch_turn", "charge_start", "charge_stop"] or (f.state=="land" and land_allowed and buffered in ["sweep","crush"])
-		if UfeBattleTransform.is_command(buffered) and f.height == 0 and f.state in ["charge_start","charge_stop","turn","crouch_turn"]: actionable = true
-		var guard_counter := buffered == "guard_counter" and f.state in ["blockstun","crouch_blockstun"]
-		if (cancel and (actionable or not f.move_id.is_empty())) or burst or chord_upgrade or guard_counter:
-			_start(f, buffered)
-		f.combat.buffer_ticks = maxi(0, int(f.combat.buffer_ticks) - 1)
-		if f.combat.buffer_ticks == 0: f.combat.buffer = ""
+					if int(command.pressed)&UfeInputFrame.HEAVY and input.y<0: f.remember_command("sweep", UfeCommandResolver.INPUT_BUFFER_TICKS)
+					elif int(command.pressed)&UfeInputFrame.CRUSH and input.x==0 and input.y==0: f.remember_command("crush", UfeCommandResolver.INPUT_BUFFER_TICKS)
+	# I+↑ 比跳跃晚 1 tick 时，起跳还没超过初速高度就收回，再出快捷招。
+	if bool(command.get("consume_jump", false)) and f.state in ["takeoff", "air"] and f.state_tick <= 8 and f.height <= f.definition.jump_speed:
+		f.height = 0
+		f.vy = 0
+		f.vx = 0
+		f.enter("idle")
+	_release_buffers(f, input, command, land_allowed)
 	if f.state == "transform": return
 	if not f.move_id.is_empty():
 		# 在推进和末tick清招前捕获；不声明的旧招继续使用原状态恢复。
@@ -304,7 +303,58 @@ func _advance(index: int, input: UfeInputFrame, command: Dictionary) -> void:
 	if f.state == "charge": f.stats.energy = mini(3000, int(f.stats.energy) + 20)
 	UfeStaminaRules.advance(f, previous_state, stamina_regen)
 	f.stats.stun = maxi(0, int(f.stats.stun) - 1)
+	if f.state not in ["thrown", "captured"]:
+		var push := int(f.motion.get("push_vx", 0))
+		if push != 0:
+			f.motion.push_vx = UfeHitResolver.slide(f, other, push)
 	f.x = clampi(f.x, 28, 1252)
+
+func _release_buffers(f: UfeFighter, input: UfeInputFrame, command: Dictionary, land_allowed: bool) -> void:
+	var primary := str(f.combat.buffer)
+	var next_move := str(f.combat.get("buffer_next", ""))
+	var choice := ""
+	var keep := ""
+	var keep_ticks := 0
+	# 先出更早按下的那条，后一条留着等取消，避免连按被后键盖掉。
+	if not primary.is_empty() and _buffer_ready(f, primary, input, command, land_allowed):
+		choice = primary
+		keep = next_move
+		keep_ticks = int(f.combat.get("buffer_next_ticks", 0))
+	elif not next_move.is_empty() and _buffer_ready(f, next_move, input, command, land_allowed):
+		choice = next_move
+	if not choice.is_empty():
+		var before_move := f.move_id
+		var before_state := f.state
+		_start(f, choice)
+		if f.move_id != before_move or f.state != before_state:
+			if not keep.is_empty() and keep != f.move_id:
+				f.combat.buffer = keep
+				f.combat.buffer_ticks = maxi(0, keep_ticks - 1)
+				if int(f.combat.buffer_ticks) == 0:
+					f.combat.buffer = ""
+			return
+	_decay_buffer(f, "buffer", "buffer_ticks")
+	_decay_buffer(f, "buffer_next", "buffer_next_ticks")
+
+func _decay_buffer(f: UfeFighter, move_key: String, tick_key: String) -> void:
+	if str(f.combat.get(move_key, "")).is_empty():
+		return
+	f.combat[tick_key] = maxi(0, int(f.combat.get(tick_key, 0)) - 1)
+	if int(f.combat[tick_key]) == 0:
+		f.combat[move_key] = ""
+
+func _buffer_ready(f: UfeFighter, buffered: String, _input: UfeInputFrame, _command: Dictionary, land_allowed: bool) -> bool:
+	var contact: bool = bool(f.combat.confirmed) or bool(f.combat.get("blocked", false))
+	var listed: bool = f.frame().get("cancel", []).has(buffered)
+	var routed: bool = contact and UfeFeelRules.allows_route(f.move_id, buffered) and f.definition.moves.has(buffered)
+	var cancel: bool = f.move_id.is_empty() or (contact and (listed or routed))
+	var burst := buffered == "burst" and f.state in ["hit", "launch", "blockstun", "crouch_blockstun"]
+	var chord_upgrade := buffered == "special" and f.move_tick <= 3 and f.move_id in ["light1", "heavy"]
+	var actionable := f.state in ["idle", "walk", "dash", "backstep", "dodge", "crouch", "crouch_start", "crouch_rise", "guard", "crouch_guard", "air", "wake", "charge", "takeoff", "turn", "crouch_turn", "charge_start", "charge_stop"] or (f.state=="land" and land_allowed and buffered in ["sweep","crush"])
+	if UfeBattleTransform.is_command(buffered) and f.height == 0 and f.state in ["charge_start","charge_stop","turn","crouch_turn"]:
+		actionable = true
+	var guard_counter := buffered == "guard_counter" and f.state in ["blockstun","crouch_blockstun"]
+	return (cancel and (actionable or not f.move_id.is_empty())) or burst or chord_upgrade or guard_counter
 
 func _start(f: UfeFighter, id: String) -> void:
 	if UfeBattleTransform.is_command(id):
@@ -329,7 +379,7 @@ func _start(f: UfeFighter, id: String) -> void:
 		if not UfeCaptureResolver.can_start(f,move):return
 		var player := fighters.find(f)
 		if not UfeCaptureResolver.receiver_supported(fighters[1-player],move.capture):
-			f.combat.buffer = ""; f.combat.buffer_ticks = 0
+			f.clear_input_buffer()
 			events.append({"kind":"move_denied","player":player,"move":id,"reason":"capture_receiver"})
 			return
 	# 显式派生不能借残留输入缓存，在来源动作已结束的idle中独立启动。
@@ -342,7 +392,7 @@ func _start(f: UfeFighter, id: String) -> void:
 		return
 	var stamina_cost := maxi(0, int(move.stamina_cost))
 	if int(f.stats.stamina) < stamina_cost:
-		f.combat.buffer = ""; f.combat.buffer_ticks = 0
+		f.clear_input_buffer()
 		events.append({"kind":"move_denied","player":fighters.find(f),"move":id,"reason":"stamina","required":stamina_cost,"available":int(f.stats.stamina)})
 		return
 	f.stats.energy = int(f.stats.energy) - cost
@@ -352,8 +402,9 @@ func _start(f: UfeFighter, id: String) -> void:
 	f.clear_move()
 	f.combat.power = power
 	f.combat.absorbed = 0
-	f.combat.buffer = ""
-	f.combat.buffer_ticks = 0
+	f.clear_input_buffer()
+	# 自己出招就停下受击滑步，避免防反和取消被自己的推退带出距离。
+	f.motion.push_vx = 0
 	f.move_id = id
 	f.move_tick = 0
 	f.enter("air_attack" if f.height > 0 else "attack")

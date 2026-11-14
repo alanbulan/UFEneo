@@ -45,6 +45,8 @@ static func fighter(id: String, allow_pilot: bool=false) -> UfeFighterDefinition
 	result.max_health = int(data.max_health)
 	result.walk_speed = int(data.walk_speed)
 	result.jump_speed = int(data.get("jump_speed",16))
+	var presented: Dictionary = data.get("presentation", {})
+	result.body_radius = int(data.get("body_radius", UfeFeelRules.default_body_radius(str(data.get("template", "humanoid")), int(presented.get("target_height", 0)))))
 	var posture_path := "res://content/fighters/%s/state_frames.json" % id
 	if FileAccess.file_exists(posture_path): result.state_frames = read_json(posture_path)
 	result.command_table = template_commands(data.template)
@@ -66,6 +68,7 @@ static func fighter(id: String, allow_pilot: bool=false) -> UfeFighterDefinition
 			push_warning("缺少招式文件，已跳过：%s/%s" % [id, move_id])
 			continue
 		result.moves[move_id] = read_json(source)
+		UfeFeelRules.apply_move(result.moves[move_id])
 	result.command_table = UfeQuickCommands.extend(result.command_table,result.moves)
 	return result
 

@@ -436,7 +436,8 @@ func sync(sim: UfeMatchDirector,frozen: bool,intro_active: bool=false,result_sou
 				suppressed.append({"tick":last_tick,"id":"land","player":owner_index,"reason":"custom_throw_slam"})
 			else:cue(str(event.id),false,owner_index,sim.fighters[owner_index].animation_key() if owner_index>=0 and owner_index<sim.fighters.size() else "")
 		if event.kind in ["hit","block"]:
-			var heavy: bool=int(event.get("feedback",{}).get("hitstop",0))>=8
+			var weight := str(event.get("feedback",{}).get("impact_weight",""))
+			var heavy: bool=weight=="heavy" or (weight!="light" and int(event.get("feedback",{}).get("hitstop",0))>=7)
 			var custom:=data_contact_id(sim,event)
 			if event.has("guard_sound"):cue(str(event.guard_sound),false,int(event.get("guarded_by",1-owner_index)))
 			elif custom.is_empty():cue("block" if event.kind=="block" else "heavy" if heavy else "light",true,owner_index)

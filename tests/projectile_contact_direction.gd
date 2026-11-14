@@ -94,7 +94,8 @@ func test_case(facing: int, crossing: bool, guard: bool) -> void:
 		if crossing:
 			check(teleport_tick<int(after.tick) and int(before.pair[0].facing)==-facing and int(before.pair[1].facing)==facing,label+"/接触前射手已越身反向且受方朝射手")
 		if str(event.kind)=="hit":
-			check(int(after.pair[1].x)-int(before.pair[1].x)==facing*8,label+"/击退沿火球方向8px")
+			var push_speed := int(sim.fighters[0].definition.moves.pulse.pushback)
+			check(int(after.pair[1].x)-int(before.pair[1].x)==facing*push_speed,label+"/击退沿火球方向滑出初速")
 			check(int(after.pair[1].facing)==-facing,label+"/受击朝向真实来弹侧")
 			check(int(before.pair[1].hp)-int(after.pair[1].hp)==65,label+"/保持正式65伤害")
 		elif expected_block:

@@ -95,11 +95,15 @@ func run() -> void:
 	sim.events=[{"kind":"hit","player":0,"x":500,"height":80,"feedback":{"spark":"impact_light","block_spark":"impact_guard","flash":2}}]
 	feedback.sync(sim,320,0)
 	require(feedback.advance_flash()[1]==2,"首次呈现应闪白")
+	for i in range(4):
+		require(feedback.advance_flash()[1]==2,"同一模拟tick的呈现帧不能缩短闪白")
+	sim.events=[]
+	sim.tick+=1
 	feedback.sync(sim,320,0)
-	require(feedback.advance_flash()[1]==1,"同一模拟tick不能重新触发事件")
-	for i in range(20):
-		feedback.sync(sim,320,0)
-		require(feedback.advance_flash()[1]==0,"冻结模拟与KO期间也必须结束闪白")
+	require(feedback.advance_flash()[1]==1,"闪白按模拟tick减少")
+	sim.tick+=1
+	feedback.sync(sim,320,0)
+	require(feedback.advance_flash()[1]==0,"两tick后闪白结束")
 	require(feedback.particles.is_empty(),"KO后命中火花也应播完，不能卡在失败动画上")
 	var view:=UfeSideView.new();view.ending_tick=12
 	var f:=sim.fighters[1];f.state="defeat";f.move_id="light1"

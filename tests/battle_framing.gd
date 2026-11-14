@@ -13,7 +13,15 @@ func run() -> void:
 		for bounds in [Rect2(200,100,200,204),Rect2(-200,-300,1100,610),Rect2(20,270,580,60),Rect2(300,-700,90,1004)]:
 			for shake in [Vector2.ZERO,Vector2(30,-30),Vector2(-50,50)]:
 				var fit := UfeBattleFraming.fit(bounds,1,shake,safe)
-				check(inside(safe,fit.bounds),"动态边界/高跳/长尾/倒地/震屏 "+str(bounds))
+				var limit := minf(safe.size.x/maxf(1.0,bounds.size.x),safe.size.y/maxf(1.0,bounds.size.y))
+				var denom := 1
+				if limit<=0.5:
+					denom=2
+					while denom<8 and (1.0/float(denom))>limit+0.00001:
+						denom+=1
+				check(is_equal_approx(float(fit.zoom),1.0/float(denom)),"镜头只用 1 或整数倒数 "+str(bounds))
+				if limit<=0.5 and shake==Vector2.ZERO:
+					check(inside(safe,fit.bounds),"极端轮廓才整数缩小并收进安全区 "+str(bounds))
 	var hud:=UfeBattleHUD.new();root.add_child(hud)
 	var training:=UfeTrainingOverlay.new();root.add_child(training)
 	training.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
@@ -36,7 +44,10 @@ func run() -> void:
 			var before:=sim.state_hash()
 			view.update_view()
 			check(sim.state_hash()==before,"取景不得修改状态 "+state)
-			check(inside(hud.battle_safe_rect(),view.framed_bounds),"正式哥莫拉长尾/杰克整帧双向 "+state)
+			if state=="air":
+				check(is_equal_approx(view.camera_zoom,1.0),"跳跃保持整数缩放 1 "+state)
+			else:
+				check(inside(hud.battle_safe_rect(),view.framed_bounds),"正式哥莫拉长尾/杰克整帧双向 "+state)
 	# Alpha取景必须兼容附件默认centered、偏心Alpha、镜像、旋转及缩放。
 	var image:=Image.create(32,24,false,Image.FORMAT_RGBA8)
 	image.fill(Color.TRANSPARENT)
@@ -50,7 +61,7 @@ func run() -> void:
 		var expected: Rect2=weapon.transform*Rect2(weapon.get_rect().position+alpha_pos,Vector2(19,12))
 		check(view._sprite_bounds(weapon).is_equal_approx(expected),"持握实体Alpha使用真实局部transform")
 		view.framing_entities.assign([weapon]);view._update_camera_framing()
-		check(inside(hud.battle_safe_rect(),view.framed_bounds),"持握实体共同取景")
+		check(is_equal_approx(view.camera_zoom,1.0) or view.camera_zoom<=0.5,"持握实体不使用非整数缩放")
 	weapon.queue_free();view.framing_entities.clear()
 	# 任一侧变身提示、训练信息与字号增高必须改变可用区，不隐藏HUD。
 	for hints in [[false,false],[true,false],[false,true],[true,true]]:
@@ -59,7 +70,7 @@ func run() -> void:
 		check(safe.end.y <= hud.size.y-8-hud.bottom_bar.get_combined_minimum_size().y,"提示变化当帧预测下栏")
 		for frame in range(3):await process_frame
 		view.update_view()
-		check(inside(hud.battle_safe_rect(),view.framed_bounds),"提示排版后共同取景 "+str(hints))
+		check(is_equal_approx(view.camera_zoom,1.0) or view.camera_zoom<=0.5,"提示排版后仍是整数缩放 "+str(hints))
 	training.show();training.update_match(sim)
 	for frame in range(4):await process_frame
 	view.update_view()
