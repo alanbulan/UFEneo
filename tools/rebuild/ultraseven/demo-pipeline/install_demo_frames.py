@@ -12,12 +12,17 @@ definition 和 selection 一律不碰；拼图集和 SHA 复用 install_cells �
   为 32–39；40 自动出手）。
 - crush_charged：6 张，ticks [6,6,4,4,7,8]=35，与 crush 招式帧数相同；第 3 张（命中帧）从 tick 12
   开始，正好是第一个出招帧。表现层按 move_tick 取帧（timeline_driven）。
-用法：.venv/bin/python tools/rebuild/ultraseven/demo-pipeline/install_demo_frames.py [--dry-run]
+用法：.venv/bin/python tools/rebuild/ultraseven/demo-pipeline/install_demo_frames.py [--dry-run] [--base REV]
+
+重生某几帧后重装：加 `--base f00dfde6a`（装入前的 main）。受击 4 个 clip 的 3 张原图、旧时间轴和受击框
+从该提交读出，再按同样顺序重拼；manifest 与 state_frames 的其余部分取工作区现状。
 """
 from __future__ import annotations
 
 import argparse
+import io
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -58,13 +63,35 @@ def cell(name: str) -> Path:
     return path
 
 
+def git_show(rev: str, path: Path) -> bytes:
+    rel = path.relative_to(ROOT).as_posix()
+    return subprocess.run(["git", "show", f"{rev}:{rel}"], cwd=ROOT, check=True,
+                          capture_output=True).stdout
+
+
+def lfs_smudge(data: bytes) -> bytes:
+    if data.startswith(b"version https://git-lfs"):
+        return subprocess.run(["git", "lfs", "smudge"], cwd=ROOT, input=data, check=True,
+                              capture_output=True).stdout
+    return data
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--base", default="", help="重装时读受击原图和旧时间轴的提交（装入前的 main）")
     args = ap.parse_args()
     manifest = json.loads((ANIM / "manifest.json").read_text(encoding="utf-8"))
     clips = manifest["clips"]
     state = json.loads(STATE.read_text(encoding="utf-8"))
+    base_atlas = {}
+    if args.base:
+        base_manifest = json.loads(git_show(args.base, ANIM / "manifest.json"))
+        base_state = json.loads(git_show(args.base, STATE))
+        for clip in HIT_ORDER:
+            clips[clip] = base_manifest["clips"][clip]
+            state[clip] = base_state[clip]
+            base_atlas[clip] = Image.open(io.BytesIO(lfs_smudge(git_show(args.base, ANIM / clip / "atlas.png"))))
     tmp = BATCH / "install-tmp"
     tmp.mkdir(exist_ok=True)
     review = {"by": "root_delegated_by_user", "date": "2026-11-14",
@@ -74,7 +101,7 @@ def main() -> int:
         entry = clips[clip]
         if len(entry["rects"]) != 3:
             raise SystemExit(f"{clip} 已不是 3 张原图（{len(entry['rects'])}），拒绝重复安装")
-        old = Image.open(ANIM / clip / "atlas.png").convert("RGBA")
+        old = (base_atlas.get(clip) or Image.open(ANIM / clip / "atlas.png")).convert("RGBA")
         frames = []
         for kind, index, _ in order:
             if kind == "e":
