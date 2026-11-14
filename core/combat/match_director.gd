@@ -244,7 +244,18 @@ func _advance(index: int, input: UfeInputFrame, command: Dictionary) -> void:
 		f.enter("idle")
 	_release_buffers(f, input, command, land_allowed)
 	if f.state == "transform": return
-	if not f.move_id.is_empty():
+	var skip_state_step := false
+	if f.state == "crush_charge" and f.move_id.is_empty():
+		states["crush_charge"].step(f, input, command)
+		var fired := int(f.motion.get("crush_fire", 0))
+		if fired > 0:
+			f.motion.erase("crush_fire")
+			_start(f, "crush" if fired <= 1 else "crush_charge_%d" % fired)
+		elif f.state == "crush_charge":
+			skip_state_step = true
+	if not f.move_id.is_empty() and _convert_held_crush(f, input):
+		skip_state_step = true
+	elif not f.move_id.is_empty():
 		# 在推进和末tick清招前捕获；不声明的旧招继续使用原状态恢复。
 		if f.definition.moves[f.move_id].has("stamina_regen"):
 			stamina_regen = int(f.definition.moves[f.move_id].stamina_regen)
@@ -284,7 +295,7 @@ func _advance(index: int, input: UfeInputFrame, command: Dictionary) -> void:
 		if not capture_handled and f.move_tick >= f.definition.moves[f.move_id].frames.size():
 			f.clear_move()
 			f.enter("air" if f.height > 0 else "crouch" if input.y<0 else "idle")
-	else:
+	elif not skip_state_step:
 		if command.jump and f.chase_allowed() and int(f.motion.chase_window) > 0:
 			f.clear_move()
 			f.vy = 18
@@ -397,6 +408,7 @@ func _start(f: UfeFighter, id: String) -> void:
 		return
 	f.stats.energy = int(f.stats.energy) - cost
 	UfeStaminaRules.spend(f, stamina_cost)
+	var from_state := f.state
 	# 主动攻击结束侧闪来源的无敌；招式自己逐帧声明的特殊无敌照常读取。
 	if f.state=="dodge":f.combat.invulnerable=0
 	f.clear_move()
@@ -408,12 +420,40 @@ func _start(f: UfeFighter, id: String) -> void:
 	f.move_id = id
 	f.move_tick = 0
 	f.enter("air_attack" if f.height > 0 else "attack")
+	if id == "crush" and f.height == 0 and from_state in ["idle", "walk", "turn", "charge", "charge_start", "charge_stop"]:
+		f.motion.crush_chargeable = true
+		f.motion.crush_hold = 0
+		f.motion.crush_tier = 1
+		f.motion.crush_stamina_paid = stamina_cost
 	if move.has("capture"):UfeCaptureResolver.begin(self,fighters.find(f))
 	if id == "burst":
 		f.combat.invulnerable = 18
 		f.vx=0
 		f.vy=0
 		f.enter("burst")
+
+func _convert_held_crush(f: UfeFighter, input: UfeInputFrame) -> bool:
+	if f.move_id != "crush" or not bool(f.motion.get("crush_chargeable", false)):
+		return false
+	if not input.held(UfeInputFrame.CRUSH) or input.y < 0 or f.height > 0:
+		f.motion.crush_chargeable = false
+		return false
+	var hold := int(f.motion.get("crush_hold", 0)) + 1
+	f.motion.crush_hold = hold
+	f.motion.crush_tier = 1
+	if hold < UfeFeelRules.CRUSH_TAP_TICKS:
+		return false
+	if not f.frame().get("hitboxes", []).is_empty():
+		f.motion.crush_chargeable = false
+		return false
+	var paid := int(f.motion.get("crush_stamina_paid", 0))
+	f.stats.stamina = mini(UfeStaminaRules.MAXIMUM, int(f.stats.stamina) + paid)
+	f.combat.stamina_delay = 0
+	f.clear_move()
+	f.motion.crush_hold = hold
+	f.motion.crush_tier = 1
+	f.enter("crush_charge")
+	return true
 
 func _separate() -> void:
 	var a := fighters[0]
