@@ -2,7 +2,14 @@ class_name UfeFeelRules
 extends RefCounted
 ## 全角色共用的手感分档。招式 JSON 仍是逐帧真源；这里只改模板复制出来的
 ## 硬直/推退/停顿，并给出普通技接必杀的取消路线。不按角色名分支。
-const REVISION := 1
+const REVISION := 3
+## 站立 O（crush）点按不足 4 tick：按下的同一 tick 出原招，不延迟。
+## 连续按住满 4 tick 才离开已走出的起手，进入蓄力。
+const CRUSH_TAP_TICKS := 4
+const CRUSH_HOLD_TIER2 := 20
+const CRUSH_HOLD_AUTO := 40
+## 满档仍是破防。对方正在防御时进入更长的破防硬直，不改成击倒。
+const CRUSH_BREAK_TICKS := 50
 const SCALE_START := 3
 const SCALE_NUMERATOR := 90
 const SCALE_FLOOR := 30
@@ -114,10 +121,57 @@ static func apply_move(move: Dictionary) -> void:
 	var push := int(move.get("pushback", 0))
 	if push <= 0:
 		return
-	if not row.is_empty() and push == 8:
+	if not row.is_empty() and (push == 8 or push == int(row.push)):
 		move["pushback"] = int(row.push)
 	else:
 		move["pushback"] = _speed_for_distance(push)
+
+static func crush_charge_tier(hold: int) -> int:
+	if hold >= CRUSH_HOLD_AUTO:
+		return 3
+	if hold >= CRUSH_HOLD_TIER2:
+		return 2
+	return 1
+
+## 1 档就是原来的 crush。2、3 档从它复制，伤害 140% / 180%，停顿和推退各升一档。
+static func ensure_crush_charge(moves: Dictionary) -> void:
+	if moves.has("crush_charge_2") or not moves.has("crush"):
+		return
+	var base: Dictionary = moves["crush"]
+	var rows := [
+		{"tier": 2, "num": 14, "hitstop": 14, "block_adv": -4, "hit_adv": 2, "push": 8, "shake": 6, "shake_ticks": 14, "flash": 3, "break": 0},
+		{"tier": 3, "num": 18, "hitstop": 16, "block_adv": -6, "hit_adv": 4, "push": 10, "shake": 8, "shake_ticks": 16, "flash": 4, "break": CRUSH_BREAK_TICKS},
+	]
+	for row in rows:
+		var move: Dictionary = base.duplicate(true)
+		var id := "crush_charge_%d" % int(row.tier)
+		move["id"] = id
+		move["display_name"] = "超重击%d档" % int(row.tier)
+		move["unblockable"] = bool(base.get("unblockable", true))
+		move["launch"] = false
+		move["bounce"] = false
+		move["knockdown"] = false
+		move["energy_cost"] = 0
+		if int(row.break) > 0:
+			move["enhanced_guard_break"] = int(row.break)
+		@warning_ignore("integer_division")
+		move["damage"] = maxi(1, int(base.get("damage", 100)) * int(row.num) / 10)
+		move["pushback"] = int(row.push)
+		var recovery := _recovery_after_first_hit(move)
+		if recovery >= 0:
+			var blockstun := maxi(4, recovery + int(row.block_adv))
+			move["blockstun"] = blockstun
+			move["hitstun"] = maxi(blockstun + 2, recovery + int(row.hit_adv))
+		var feedback: Dictionary = move.get("feedback", {}).duplicate(true)
+		feedback["hitstop"] = int(row.hitstop)
+		feedback["blockstop"] = maxi(3, int(row.hitstop) - 2)
+		feedback["shake"] = int(row.shake)
+		feedback["shake_ticks"] = int(row.shake_ticks)
+		feedback["flash"] = int(row.flash)
+		feedback["impact_weight"] = "heavy"
+		move["feedback"] = feedback
+		move["_feel_applied"] = true
+		moves[id] = move
 
 static func block_push(hit_push: int) -> int:
 	if hit_push <= 0:

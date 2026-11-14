@@ -9,7 +9,7 @@ import uuid
 from runtime.environment import ROOT, godot_path, isolated_test_environment
 
 CASES = [
-    "logic_2d", "stamina_economy", "review_inputs", "armor_transform_routing", "air_only_start", "chase_interrupt",
+    "logic_2d", "power_crush", "seven_demo_pipeline", "stamina_economy", "review_inputs", "armor_transform_routing", "air_only_start", "chase_interrupt",
     "projectile_ground_expiry", "projectile_ground_clip", "projectile_contact_direction", "projectile_air_knockdown_direction", "projectile_move_isolation", "projectile_beam_reflection", "self_heal_and_wall", "chill_effect", "hit_pushback_bounds",
     "throw_hold_point_overrides", "throw_root_overrides", "throw_current_capture", "capture_mechanism",
     "capture_receiver_availability", "ko_finish_presentation", "transform_mechanism",
@@ -62,6 +62,9 @@ def main():
     if not args.skip_import:
         run("import", [executable, "--headless", "--path", str(ROOT), "--editor", "--import", "--quit"], 600)
     for case in args.only if args.only is not None else CASES:
+        if case == "seven_demo_pipeline":
+            run(case, [sys.executable, str(ROOT / "tools/check/seven_demo_pipeline.py")])
+            continue
         path = ROOT / "tests" / (case + ".gd")
         if not path.is_file():
             raise RuntimeError(f"Missing test: {case}")

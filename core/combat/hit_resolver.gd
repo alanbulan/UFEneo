@@ -110,7 +110,9 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 	if hit_speed > 0:
 		b.motion.push_vx = slide(b, a, impact_facing * hit_speed)
 	b.enter("hit", int(move.hitstun))
-	if bool(move.launch):
+	if int(move.get("enhanced_guard_break", 0)) > 0 and defending and not airborne:
+		b.enter("guardbreak", int(move.enhanced_guard_break))
+	elif bool(move.launch):
 		b.vy = 18
 		b.vx = impact_facing * 2
 		b.enter("launch")
