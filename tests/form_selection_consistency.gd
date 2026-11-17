@@ -1,0 +1,78 @@
+extends SceneTree
+## 选人界面形态开关与战斗切换表必须一致：只在一处实装会出现“能选出却切不了”或反之。
+var failures: Array[String] = []
+
+func _initialize() -> void:
+	call_deferred("run")
+
+func check(ok: bool, label: String) -> void:
+	if not ok:
+		failures.append(label)
+		printerr("FAIL " + label)
+
+func run() -> void:
+	var selection: Dictionary = UfeContentDatabase.read_json("res://content/roster/selection.json")
+	var registry: Dictionary = UfeBattleFormCatalog.registry()
+	var listed: Dictionary = {}
+	for row in selection.entries:
+		for form in row.get("forms", []):
+			# 默认形态同样登记，否则默认项与切换表脱钩时无人发现（切换片段冻结在首帧即由此漏过）。
+			listed[str(row.id) + "/" + str(form.get("id", ""))] = bool(form.get("implemented", false))
+	for base in registry:
+		var source: Dictionary = registry[base]
+		for raw in source.get("choices", []):
+			var key := str(base) + "/" + str(raw.get("id", ""))
+			if not listed.has(key): continue
+			var runtime := bool(raw.get("enabled", false)) and bool(raw.get("implemented", true))
+			check(runtime == bool(listed[key]), "%s 选人/战斗形态开关一致" % key)
+			if runtime:
+				var form_id := str(raw.get("target", ""))
+				var definition_path := "res://content/fighters/%s/definition.json" % form_id
+				check(not form_id.is_empty() and FileAccess.file_exists(definition_path), "%s 形态定义存在" % key)
+				if FileAccess.file_exists(definition_path):
+					var definition: Dictionary = UfeContentDatabase.read_json(definition_path)
+					var model := str(definition.get("presentation", {}).get("model", ""))
+					# 运行时必须指向动作整图；图鉴静态图放进 presentation 会让动作帧与rects对不上。
+					check(bool(definition.get("playable", false)) and FileAccess.file_exists(model) and not model.contains("/catalogue/"), "%s 运行时模型为可玩动作整图" % key)
+				# 切换动作读目标形态清单里的片段，缺片段会让人物隐形；时长必须与共用时间轴一致。
+				var timeline: Dictionary = UfeContentDatabase.read_json(str(raw.get("transform", "")))
+				var manifest: Dictionary = UfeContentDatabase.read_json("res://assets/fighters/%s/animations/manifest.json" % form_id)
+				var animation := str(raw.get("transform_animation", source.get("transform_animation", "")))
+				var clip: Dictionary = manifest.get("clips", {}).get(animation, {})
+				var ticks := 0
+				for value in clip.get("ticks", []): ticks += int(value)
+				check(not clip.is_empty() and ticks == timeline.get("frames", []).size(), "%s 切换动画时长与时间轴一致" % key)
+				# 时间轴的 sprite 才是实际显示帧；全填 0 会让人物在整段切换里冻结在首帧。
+				var frames: Array = timeline.get("frames", [])
+				var rects: int = clip.get("rects", []).size()
+				var sprites: Array = []
+				var overflow := 0
+				for frame in frames:
+					var sprite := int(frame.get("sprite", 0))
+					sprites.append(sprite)
+					if sprite < 0 or sprite >= rects: overflow += 1
+				var distinct := {}
+				for sprite in sprites: distinct[sprite] = true
+				check(overflow == 0, "%s 切换帧 sprite 在 %d 帧内" % [key, rects])
+				check(distinct.size() == mini(rects, frames.size()), "%s 切换帧逐帧推进（%d/%d）" % [key, distinct.size(), rects])
+	for key in listed:
+		# 多形态表里的选项必须与选人界面一一对应；单形态变身表沿用旧规则不在此列。
+		var base := str(key).get_slice("/", 0)
+		if not registry.has(base) or not registry[base].has("choices"): continue
+		check(registry[base].choices.any(func(raw): return str(raw.get("id","")) == str(key).get_slice("/",1)), "%s 已登记在战斗表" % key)
+	# 任何自称可玩的形态定义都不能指向图鉴静态图或留着 pending_ 特效id；半成品提前打开会让运行时静默缺图缺弹。
+	for row in selection.entries:
+		for form in row.get("forms", []):
+			var path := "res://content/fighters/%s/definition.json" % str(form.get("id", ""))
+			if not FileAccess.file_exists(path): continue
+			var definition: Dictionary = UfeContentDatabase.read_json(path)
+			if not bool(definition.get("playable", false)): continue
+			var model := str(definition.get("presentation", {}).get("model", ""))
+			check(FileAccess.file_exists(model) and not model.contains("/catalogue/"), "%s 可玩形态模型为动作整图" % str(form.id))
+			var pending: Array[String] = []
+			for move_id in definition.get("moves", {}):
+				var text := JSON.stringify(definition.moves[move_id])
+				if text.contains("\"pending_"): pending.append(str(move_id))
+			check(pending.is_empty(), "%s 可玩形态无pending特效id %s" % [str(form.id), str(pending)])
+	print("FORM_SELECTION_CONSISTENCY " + ("PASS" if failures.is_empty() else str(failures)))
+	quit(0 if failures.is_empty() else 1)

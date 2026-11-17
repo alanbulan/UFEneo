@@ -1,0 +1,3867 @@
+{
+  "schema": "ufeneo.luna.crouch-light-session-graphical-review.v1",
+  "date_utc": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "本轮完成": [
+    "原单批32组主游戏图形验证自然完成，未重跑；双向720/1080覆盖命中、站防、蹲防、落空，共256原生PNG。",
+    "16对原输入/独立回放各180tick五字段一致，全部运行exit0；独立复核图形门、冻结合同全部依赖与正式6文件SHA保持。",
+    "全部16组original各8捕获点已逐相静审及选定原图核查；回放图做技术核验，不冒称逐张独立美术验收。"
+  ],
+  "怎么看": {
+    "graphical_summary": {
+      "path": "reports/luna-crouch-light-resume/gui-v1-20261105-technical-summary.json",
+      "sha256": "57322ccbaaf699323c387066d0e65bc455fc802405efada8ba6d964fef772f35"
+    },
+    "independent_audit": {
+      "path": "reports/luna-crouch-light-resume/resumed-independent-group-count.json",
+      "sha256": "d7f62885be9cabb8ed1c0dae0cf7837aea305a93320e3c69c807302511e61335"
+    },
+    "contract": {
+      "path": "reports/luna-crouch-light-resume/contract-v2.json",
+      "sha256": "2c06c9d2b8562ff86b84ecb0d443222ed440ebfd7069e7297874fc6d79c320a8"
+    },
+    "runner": {
+      "path": "reports/luna-crouch-light-resume/graphical-v1/runner-result.json",
+      "sha256": "7de1dbe377f7c5a9cf23b1702b382f3de635fd2ef0c5af34d3d892bafb4c0a1c"
+    },
+    "runtime_receipt": "docs/verification/luna-crouch-light-session-resume.json",
+    "reports_note": "reports仅本机证据，不上传；本回执保留摘要与逐图SHA。"
+  },
+  "技术核验": [
+    "All 32 runner.check_trace graphical checks passed; exact PNG SHA, native dimensions, frozen request/capture tick and sprite identity, both fighters state/animation bindings verified.",
+    "Final safe rectangle equals actual HUD safe rectangle and both final rendered body bounds fit; formal training panels remain visible.",
+    "Each window settled for at least eight observations and 500 ms before simulation tick 0 advanced.",
+    "All process exits zero, auxiliary fresh simulation replay errors empty; only precisely classified unsupported VSync warning.",
+    "Each original/replay pair matches all 180 ticks for five fields; identical same-tick image keys are not mistaken for missing frames."
+  ],
+  "静态观察": {
+    "coverage": "全部十六组original各8点逐相联系表实际查看，并选看720右命中与1080左蹲防原生关键图；所有256张做尺寸/SHA/冻结身份核验，回放图未逐张独立视觉判断。",
+    "identity": "月亮蓝甲白尖头与红银双腿在三槽均可辨。近肩臂跨胸伸到受方低腹位置；另一拳在脸旁护持，未见缺肢。",
+    "entry_contact": {
+      "keys": [
+        "crouch_light-tick-02-phase-00",
+        "crouch_light-tick-03-phase-01"
+      ],
+      "global_ticks": [
+        22,
+        23
+      ],
+      "finding": "蹲架转跨胸低拳时头肩下沉、身体前探及前脚回收可见。共同镜头和训练板在入招时有变化，不能把所有屏幕位移当源体量变化。三槽没有渐伸中间整帧，静帧不足以接受原速接续；源测量14px/5.7px不冒充此处独立屏幕测量。 在whiff相邻原图中双脚和背景大致稳定，主要读到本人头肩降回与拳伸收；受方idle也自行运动，无直接camera字段，不认定镜头完全常量。"
+    },
+    "contact": "hit与stand_guard在tick23首次白闪、唯一65伤；block为持续下+GUARD，蓝火花且HP零损；whiff无火花/零伤。拳前缘朝向受方低腹可读，初接触特效遮住局部边界，不签精确穿插全无。受方无升空倒地。",
+    "receiver_guard_limit": "蹲防初始和结束是低蹲防，但防硬直期间受方呈较高站立防姿，不能把逻辑block通过等同全程蹲防姿势正确。该受方显示限制保留，不改素材。",
+    "contact_recovery": {
+      "keys": [
+        "crouch_light-tick-05-phase-01",
+        "crouch_light-tick-06-phase-02"
+      ],
+      "global_ticks_by_kind": {
+        "hit": [
+          29,
+          30
+        ],
+        "stand_guard": [
+          29,
+          30
+        ],
+        "block": [
+          28,
+          29
+        ],
+        "whiff": [
+          25,
+          26
+        ]
+      },
+      "finding": "伸拳收回蹲架时头肩上提、双拳归位，前腿/鞋轮廓变化可见。两完整端点能辨，未录实速，不依据静帧承诺无跳变/无滑步或强行判必须补帧。"
+    },
+    "return": "move17回收末→returned-crouch保持低架，末尾输入始终下方向；此批不是起身返回站立idle验收。",
+    "framing": "正常训练板/HUD始终保留，双方全身在安全区内。只验证实际完整可见，不宣称理想取景尺度。",
+    "remaining_limits": [
+      "未录屏、未验实速连续性/听感/真人键盘；使用冻结InputFrame原带和独立回放。",
+      "接触特效遮挡局部拳缘，保留近肩跨胸及头肩/前脚换相风险，不以技术通过接受整招美术。",
+      "仅RAM候选未安装，未开放装甲。"
+    ]
+  },
+  "groups": [
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 2460,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "28179007096d9fa5926f320b1158155e9bcbbe03be5d462a0ad2e08da2d07695",
+      "png_audit_sha256": "fe85bc62a6d409ef468349ad24f57fdd812736c8d0531c923ee4bbcde81ed5b4"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 753,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "8497d5ef73233fa60d6cd12e369b1b30b03aa146c17a1ba57778036ce74dc577",
+      "png_audit_sha256": "27f7e24d6b0c0fe88d454745f33cada38313abbbed06a1973237ad4e21aca1f0"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "stand_guard",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 9,
+      "window_elapsed_ms": 511,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "73b50a76344e357886daf92d6a95c3fd2da8cdf907ea661ddc7efc4c9ff1ceb3",
+      "png_audit_sha256": "dd74e9c49f46273caeb591712dd0fff1f2fdc6214e218be7d18ee9c3b8b89fe2"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "stand_guard",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 18,
+      "window_elapsed_ms": 500,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "5235bfa79e388a0aed1937fd23f448069c35f528af0822cb52a16e9421c09d28",
+      "png_audit_sha256": "1a2fb6038504e5067845cdc074dd7b4613b454ed14ad389e6dc1ebc3c106ee50"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 12,
+      "window_elapsed_ms": 521,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "2f9735624998c0c722d248b34f7d0db43712fbe4e562956536337c0bfe649a19",
+      "png_audit_sha256": "b6235478fc52814c222f723c049c887e1aa0e9d5a7587924ea47c759936ce295"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 20,
+      "window_elapsed_ms": 503,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "ab64050b0abd266273d5e190ba1dab2071744668da679b204947a944c4f91091",
+      "png_audit_sha256": "208e89fe6f3839323ce6207daa15fe17b6f0c2f7a222ed1e875e914672de40a4"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 902,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "92b6a012c105d7571d634de4c2f8197fa8936e0d6bea95e349bd464250b6fd06",
+      "png_audit_sha256": "a0bb03547c77b5d799aa810bf9e6269ddc75b8ecfe42ac6f5dc34f57ea8692a6"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 21,
+      "window_elapsed_ms": 508,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "99eb5e533b10b763cb12f6dbcb98ed81ab3b347019918a45fb40640d6fe042e6",
+      "png_audit_sha256": "d6d3a647ffee8d8811a0cb57b9257e31aa02d168cfe927126c49f23c2a659488"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 20,
+      "window_elapsed_ms": 514,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "13ffc2836cd6f685529f56b8806416571664e9f2351719793ccce2d87528a50c",
+      "png_audit_sha256": "0fcacea87648b7328719d583093cf4aab60d21464190141e7abe1f29297d2be2"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 19,
+      "window_elapsed_ms": 500,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "5cc9bdd20a4b2d6b6cc6c12e51b0db6991e3b5ebe275a82656954d4a1441f59b",
+      "png_audit_sha256": "04c8eebf76f62a32ad37eb00221d8259a699cb3f352fb154387576b81af53c09"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "stand_guard",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 18,
+      "window_elapsed_ms": 544,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "b14c765ad2774b73f694db7c539e906170ed8ad4d4c708ddfd01b48eaf84f4a2",
+      "png_audit_sha256": "b067a95081a70381c91ed17fe5eb710e346641524ccdfa440f6701c5845698e3"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "stand_guard",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 23,
+      "window_elapsed_ms": 501,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "865ff410ee60a38503742dd4fd05bbd82b5f2aebaa69ab9a3eb13f0477cb185d",
+      "png_audit_sha256": "4db37cb9f33331eca991dc4939b48a405d60bf4f4a4134724e8504a82f647775"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 21,
+      "window_elapsed_ms": 500,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "63ebe037732afc6e3c01ba82fabac565f0dd44733be5461efffb298ae9fe44f5",
+      "png_audit_sha256": "fda04dec6d1a9514b16307afe478442dbe93247bdb2d67e4760c137915efe7a3"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 14,
+      "window_elapsed_ms": 504,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "579b37ffe085f59318608a4cca4003c64b1205fcfd0c2ad642eafe7a554ead58",
+      "png_audit_sha256": "06cdc19b1b86d4095ecbe5289da97241b4cdc1aff315e24516bc77128ba2359c"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 2790,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "74f78679dee86448794f68a3cc02bc74a0466e1562bdc3c283c309bb8d98fe99",
+      "png_audit_sha256": "d76dffc7ffc633c23a72d487ca6c72294e6c48cb72930861b85c15a51ae3a1f3"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 27,
+      "window_elapsed_ms": 501,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "c1a39d2de51a8e1c5839d366413520d5008236d4355be83ac4cc2d8de901c68f",
+      "png_audit_sha256": "2a8f5527b79d7915dd253f1f2eff8da071522aa16f6221a083a91d7d709aef8c"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 10,
+      "window_elapsed_ms": 504,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "a76516646cefb62587399cf64ed75f820f5b3865361fa43c9af825e9fbc0a89b",
+      "png_audit_sha256": "cb2c840a667c0ab5826d573dbb7f7c7143ee7ff7c66d6224b2c676b34285befc"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 14,
+      "window_elapsed_ms": 545,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "e48f7565b56847dfbbfbbdb4e1a70ecee0e616514e75175d25724967b059c229",
+      "png_audit_sha256": "f0449c0d623c09b8f62a214e90862953a224f09978ee8194103e11900a483cc2"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "stand_guard",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 15,
+      "window_elapsed_ms": 514,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "384aa730f99bdbcb134bec4a0d721c396b0f366bef51396edcbacdbb1be59f19",
+      "png_audit_sha256": "6672fb660fda62f14d605f33ef864923f29b0959edc979e6fd37dffb4eb8282c"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "stand_guard",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 15,
+      "window_elapsed_ms": 517,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "94806ff2e4d650bd0d84ba0847262e060894cbb3613211034e1a51cc5e911edd",
+      "png_audit_sha256": "a21604645ecb0f83bf9aeb5b7dc01f0c39fb57f4636031cbbe8c51365f34a77f"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 572,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "8bcc6d8cd97c02918845ed384410cc0c9fe548252454d0e9f3c2765309811119",
+      "png_audit_sha256": "e51ae5aa63cb05b23b98e8c494b32c50d039b357c888bce24ab8294915efc190"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 506,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "3b779cfa4dfaeab73421da48801b8fafb39635982a0cfca6f144ae69702d843b",
+      "png_audit_sha256": "553494ef279cc62eb277fcbaa11d96b8569c4bee7722ea882a87cf1914f89b1c"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 523,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "05f279dd01e8d786d43b71a062062b0319bada3ce9d0bf5a7997d3aacde26488",
+      "png_audit_sha256": "2f69e2df9262f21ea921168df11aa6d44e8c2ebbeb62bb179de628c5a4c0d6a8"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 17,
+      "window_elapsed_ms": 502,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "60b2c78d848d81cb12d9198657f1e97405a194a84eef40c3b0a19cdec2087016",
+      "png_audit_sha256": "1b6e13b4ee7956aa7847accd0262e25b37aa845d49e5cfe98f5ae0ca1b08d8da"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 3814,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "afc358eab8e6629af1ceab662d446f3a8a9218545b3a664ca83bc21a0b4a08b1",
+      "png_audit_sha256": "b21c7a53490024b11d2dffb2fded457d03c678004af1fdb87ca4de3c19fca8f9"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 13,
+      "window_elapsed_ms": 514,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "81b3e7d82d8ad8f569ce3987259102fdeb6e97191cb915dbe0f49d498515d03d",
+      "png_audit_sha256": "b9a3c22d1beea245c72e80b942d2d992742b0d0b4656d72095a4097c62825e81"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "stand_guard",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 541,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "65c5ae420c616487757dc7a559f5092289366d3d72c60b080e84891c6cac3b07",
+      "png_audit_sha256": "d9058488e525ed79e4d0893ef190921757d7ef4f4f28cc73846e107a168b5e99"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "stand_guard",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 13,
+      "window_elapsed_ms": 507,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "638d99d75edec5682c3b7b84bee4a7344dc76ce207b8ca9cc52848dfcc75f7ce",
+      "png_audit_sha256": "a23ce0be547d5bc7174f93f50bd2d5a7eb025e72fa77a1bf0506284a3e22532c"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 13,
+      "window_elapsed_ms": 508,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "67b7eb21e927cd0e04736896d66eeb60f52e7e1336827f5a3376fdf19ba17ed7",
+      "png_audit_sha256": "dff55a81d8e449159b695d259f823c49239a235c2bc408e1670b82cd56f68333"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 15,
+      "window_elapsed_ms": 530,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "d176fa55e76f767b1796d0fcf3231e327a11dab5019eb1bd06d27b29770497db",
+      "png_audit_sha256": "c51ea230548dec93610aefa230efa0fadc6960e002093a8bd7ff72db95c64836"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 1362,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "2c7fe48a38f41b78a123a3cda2cfd25fccbfdbe8c34abbb8391f927fafed977c",
+      "png_audit_sha256": "7ce26a2d4f2f21e363f209121cca9a1c401f431cde69fbf795adf64583dcec76"
+    },
+    {
+      "folder": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 802,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "61850711500728ec65a70ee266119246cd008ad4b3cef834c6a14fb8b9360de5",
+      "png_audit_sha256": "c6dedc1c03b6b3e751af1b00437f026187cb69865b48fb2b032da31b45c78889"
+    }
+  ],
+  "replay_pairs": [
+    {
+      "original": "1280x720-right-hit-original",
+      "replay": "1280x720-right-hit-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1280x720-right-stand_guard-original",
+      "replay": "1280x720-right-stand_guard-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1280x720-right-block-original",
+      "replay": "1280x720-right-block-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1280x720-right-whiff-original",
+      "replay": "1280x720-right-whiff-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1280x720-left-hit-original",
+      "replay": "1280x720-left-hit-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1280x720-left-stand_guard-original",
+      "replay": "1280x720-left-stand_guard-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1280x720-left-block-original",
+      "replay": "1280x720-left-block-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1280x720-left-whiff-original",
+      "replay": "1280x720-left-whiff-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-right-hit-original",
+      "replay": "1920x1080-right-hit-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-right-stand_guard-original",
+      "replay": "1920x1080-right-stand_guard-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-right-block-original",
+      "replay": "1920x1080-right-block-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-right-whiff-original",
+      "replay": "1920x1080-right-whiff-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-left-hit-original",
+      "replay": "1920x1080-left-hit-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-left-stand_guard-original",
+      "replay": "1920x1080-left-stand_guard-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-left-block-original",
+      "replay": "1920x1080-left-block-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    },
+    {
+      "original": "1920x1080-left-whiff-original",
+      "replay": "1920x1080-left-whiff-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "9732281e2f4cbc76250cca72e6146714aca5de10ecc7da634e9bb7e356ec5879",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5a994cf7caf2f1518d77e92c1da6e2b9d15686810c70b615660ec432f1082360",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1373bcdc053b3ac8e010cd91374f9b5c9cc2d8f5e23f7cab083d2d590132c05a",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "70a7c0603c2f3da37c3992905027c83b1dfd9798f57271bbf4f6e4c58c001364",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ea528dd4e37c8e8c4368db580259b245ddff65e577e24657fa3213fe52e037c7",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "02daf3e866e16c13bae1973fe374cc675860d672c5d462e746f4e73a8eba078a",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d27e3ef33393aa25671b1cb428a808a465eb49901bf7d134a7e34d17c67f6fba",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c05c0f98041efd8c5170d82e08f885a29a6fbede9f8c47395b21985d6aa55263",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "9732281e2f4cbc76250cca72e6146714aca5de10ecc7da634e9bb7e356ec5879",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5a994cf7caf2f1518d77e92c1da6e2b9d15686810c70b615660ec432f1082360",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1373bcdc053b3ac8e010cd91374f9b5c9cc2d8f5e23f7cab083d2d590132c05a",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "70a7c0603c2f3da37c3992905027c83b1dfd9798f57271bbf4f6e4c58c001364",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ea528dd4e37c8e8c4368db580259b245ddff65e577e24657fa3213fe52e037c7",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "02daf3e866e16c13bae1973fe374cc675860d672c5d462e746f4e73a8eba078a",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d27e3ef33393aa25671b1cb428a808a465eb49901bf7d134a7e34d17c67f6fba",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-hit-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c05c0f98041efd8c5170d82e08f885a29a6fbede9f8c47395b21985d6aa55263",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f241755f9e0ae656ef5a624fc439a047631b4e8c567f07ef0560c0b0c8b64817",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1ee5d9975c8b4f832f9a3c88a0c94e6be46c83e53863f1049b163eeac4f9e6a1",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6e40a6b76e06f8fd3b6d0806d8ddc36cf895433eb18478abb72d2d2f26ea8302",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f571b6fa577f452ef58e05e67bcc236d208368d41eee47b26a286f1bacbb8131",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "50beea9abbf947d967ad29784ec61237a5f8d2a713504611fe176254227dd5ae",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "10a13329b5a1bbdcf0657304495d0d6957e72adb6bda6bbeeea7f28aa20458f6",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7d3d3e5e0daa641efa5d4a838b9c50489810627eff7773a035e3ccd3ef6bab9f",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "0abb18cbc44ec3e08ea9d227cafea463e2b773568ed3d3c8dc08917773f1c808",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f241755f9e0ae656ef5a624fc439a047631b4e8c567f07ef0560c0b0c8b64817",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1ee5d9975c8b4f832f9a3c88a0c94e6be46c83e53863f1049b163eeac4f9e6a1",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6e40a6b76e06f8fd3b6d0806d8ddc36cf895433eb18478abb72d2d2f26ea8302",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f571b6fa577f452ef58e05e67bcc236d208368d41eee47b26a286f1bacbb8131",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "50beea9abbf947d967ad29784ec61237a5f8d2a713504611fe176254227dd5ae",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "10a13329b5a1bbdcf0657304495d0d6957e72adb6bda6bbeeea7f28aa20458f6",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7d3d3e5e0daa641efa5d4a838b9c50489810627eff7773a035e3ccd3ef6bab9f",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-stand_guard-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "0abb18cbc44ec3e08ea9d227cafea463e2b773568ed3d3c8dc08917773f1c808",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "451af108b1105a461e5402669b9944479bbbd7364f79febaa011b7a25c6e5580",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f0e3b4362615bb87b6c5eaa3951f35322846b18321e9350fe90464d34e0c37db",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "fb019fed66bfbb20e511336fe61509ce110fb024f89350c6ca5158b388cee769",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e1c13cc96ca63586678ac78dcbb6a5f74f8f404fbe85918814770562f666f93b",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "fbb3b3e9b7fe87a78240156c4eb5aaf7a66287d473365636a26daea2af989226",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "8a36f85b386b5f0ceb48798593c01fbf439add3fbcac4ae6e5a82b24eddc30b9",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "3b6359ecf1c048eab167446aed91284a491681a5ed019a1e03a3f5eeea620437",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7a5dd331113d6112a753620ce7fa5b11c308779f42c236699a8d7a9acc201fa4",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "451af108b1105a461e5402669b9944479bbbd7364f79febaa011b7a25c6e5580",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f0e3b4362615bb87b6c5eaa3951f35322846b18321e9350fe90464d34e0c37db",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "fb019fed66bfbb20e511336fe61509ce110fb024f89350c6ca5158b388cee769",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e1c13cc96ca63586678ac78dcbb6a5f74f8f404fbe85918814770562f666f93b",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "fbb3b3e9b7fe87a78240156c4eb5aaf7a66287d473365636a26daea2af989226",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "8a36f85b386b5f0ceb48798593c01fbf439add3fbcac4ae6e5a82b24eddc30b9",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "3b6359ecf1c048eab167446aed91284a491681a5ed019a1e03a3f5eeea620437",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-block-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7a5dd331113d6112a753620ce7fa5b11c308779f42c236699a8d7a9acc201fa4",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "731ba3953339a71280470733eb94e29c88a4c2176613676aadee7fd3480fef88",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "97b54d5ac265d3d85a6fc797a993638410b7dc892b678549b12b51e1b13d9a22",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "cf37e84541e1b18552948547204c29a1ff5394eed279da5544272f1533026331",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "61b7329d9734268baa9657826d82bc85cd55f873f21df89b771e71a19e8ba8f8",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "602736136f18e4c8de68170774d6b3c1b86425e92e049a1b08ce54e5e681c0b6",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ccc448284551bd18e5a5e262fda422d8fc452e52b434bd8b2b0ec59051c8c7d7",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7ba63c2c2d6458de03101e47c1b183651bf8ebd5e132aa46f58915141f10b50f",
+      "captured_tick": 37,
+      "movie_frame": 36
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "3eb2680faeaca4b58a54413cf430a6f0d511cc309acd2b2e65c0dc1b119c2fa9",
+      "captured_tick": 38,
+      "movie_frame": 37
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "731ba3953339a71280470733eb94e29c88a4c2176613676aadee7fd3480fef88",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "97b54d5ac265d3d85a6fc797a993638410b7dc892b678549b12b51e1b13d9a22",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "cf37e84541e1b18552948547204c29a1ff5394eed279da5544272f1533026331",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "61b7329d9734268baa9657826d82bc85cd55f873f21df89b771e71a19e8ba8f8",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "602736136f18e4c8de68170774d6b3c1b86425e92e049a1b08ce54e5e681c0b6",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ccc448284551bd18e5a5e262fda422d8fc452e52b434bd8b2b0ec59051c8c7d7",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "7ba63c2c2d6458de03101e47c1b183651bf8ebd5e132aa46f58915141f10b50f",
+      "captured_tick": 37,
+      "movie_frame": 36
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-right-whiff-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "3eb2680faeaca4b58a54413cf430a6f0d511cc309acd2b2e65c0dc1b119c2fa9",
+      "captured_tick": 38,
+      "movie_frame": 37
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e399da2e723d9e1f8ce2f9d369f2d48f1277c65ca2b33169c8b918eb56704956",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b8ab40fa9193b64b18fb4d3485a9a2e7938974eafbec0db8cea9de32f08e831f",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b2e82fffe70098f72e63c87b1e77d4b37e8e6862cdf7453ac19fe217988102ea",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4203516be82abcb5334b19d9b4629689a0831349b42bc4455c5fc0ad933c58c0",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "768265f5f3e02500e25c0f6dcb6d70cffc93a112f1e31f6633b6dd2a15a097ee",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "34644c336d7d3cf732394eb4ce0bd89acaf2c97ec6aaa646937451141c203907",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c3d231e40eb66c9475df97ad6a06019d7a2b1c576dfda627d20a7e313bf894a7",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "41a825ac77ca2e39c04e58a6346306028965f2a23c30688a5d29a17f497b6b25",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e399da2e723d9e1f8ce2f9d369f2d48f1277c65ca2b33169c8b918eb56704956",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b8ab40fa9193b64b18fb4d3485a9a2e7938974eafbec0db8cea9de32f08e831f",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b2e82fffe70098f72e63c87b1e77d4b37e8e6862cdf7453ac19fe217988102ea",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4203516be82abcb5334b19d9b4629689a0831349b42bc4455c5fc0ad933c58c0",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "768265f5f3e02500e25c0f6dcb6d70cffc93a112f1e31f6633b6dd2a15a097ee",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "34644c336d7d3cf732394eb4ce0bd89acaf2c97ec6aaa646937451141c203907",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c3d231e40eb66c9475df97ad6a06019d7a2b1c576dfda627d20a7e313bf894a7",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-hit-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "41a825ac77ca2e39c04e58a6346306028965f2a23c30688a5d29a17f497b6b25",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "470608e540a79a5f3f6b467364d96f283bfddd99a910df04ffe88ba95b7da6ba",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a59741e440815f5389da560271ff8f3755d9e51abe659eef2aa03f1c8fde16ff",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6bd2ea06e049a03563eac511a242e658cb090b07c1689f4ea27ba9fcf6409390",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "196797cca7bd50911d53d991fb2b7025ecbe4a6594612c49ec84656596ddf130",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4bc77b5b353d80189d7c448c4e208e328148597c9dd1ecdbf6614201f5e81feb",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "34ccd5626730667db6ada843029fd13d35f7c273b36ef97485d283e14657fdfa",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "14e50d8f92139d4be9b319018e2e0a514004d37064497ecdcbbd3791f43d4e82",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "59c25b3ea9a9694c2f5213d8ea407a3600038656071fb57831f8b59996c2dd9b",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "470608e540a79a5f3f6b467364d96f283bfddd99a910df04ffe88ba95b7da6ba",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a59741e440815f5389da560271ff8f3755d9e51abe659eef2aa03f1c8fde16ff",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6bd2ea06e049a03563eac511a242e658cb090b07c1689f4ea27ba9fcf6409390",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "196797cca7bd50911d53d991fb2b7025ecbe4a6594612c49ec84656596ddf130",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4bc77b5b353d80189d7c448c4e208e328148597c9dd1ecdbf6614201f5e81feb",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "34ccd5626730667db6ada843029fd13d35f7c273b36ef97485d283e14657fdfa",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "14e50d8f92139d4be9b319018e2e0a514004d37064497ecdcbbd3791f43d4e82",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-stand_guard-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "59c25b3ea9a9694c2f5213d8ea407a3600038656071fb57831f8b59996c2dd9b",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b767e7b2dd7b0b1777066857bccab6c918b83d31d6c713585fedabf5a55c23c3",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "639b5735fa4b17596d21b1e18c3e328dbf7b6b061fccaac8a1513766b3538bbb",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "78d72ea2dceac8738e545e5eaf39b1e67d44940b68383b8fec94e41eb047b235",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5f7a839a064b12c1358ebe7a3362bfe6ad2a2b3d0d34974ed3e7eba4e294016d",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "9509ed87e6ad4de3222407aaf53b4a7641df3127621d17f9321bd844158ee6b7",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2d98cf964a3c26842127742a8f195b0d1f4be87211f71335145f1651aea03418",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f49dbbb9034841b04254ffe4b323ebd340ba74fa13550ee1aacccac6259afb00",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "26cb6d1cd06aaa347147cbf830a3e517940a170c28345062be271479809a0120",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b767e7b2dd7b0b1777066857bccab6c918b83d31d6c713585fedabf5a55c23c3",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "639b5735fa4b17596d21b1e18c3e328dbf7b6b061fccaac8a1513766b3538bbb",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "78d72ea2dceac8738e545e5eaf39b1e67d44940b68383b8fec94e41eb047b235",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5f7a839a064b12c1358ebe7a3362bfe6ad2a2b3d0d34974ed3e7eba4e294016d",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "9509ed87e6ad4de3222407aaf53b4a7641df3127621d17f9321bd844158ee6b7",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2d98cf964a3c26842127742a8f195b0d1f4be87211f71335145f1651aea03418",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f49dbbb9034841b04254ffe4b323ebd340ba74fa13550ee1aacccac6259afb00",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-block-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "26cb6d1cd06aaa347147cbf830a3e517940a170c28345062be271479809a0120",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b1256a568239db8f585da9f5d306c00e1cf32569f9489f836851fe3ce48786b1",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b7caa0fd6307f9e17a7fd2715bfdf789f7d655a9347023b29ca2acd4fa6a41b6",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2ad20406deea9bb3bbd3ff8689bfa5c029cc064ec7c1ad79b41c4bc40751e51e",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "314bb22be724ab90ca57013680c68ac9e2914145fb3eed1b4ef37a15c3a352f7",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "650bbe0bf8fff861e594f25ca32072b5520870f1f917d4fdb558e16153dee29b",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c375c7031012656a1e28ca8ee1d960bd8023ed1b8c085a5d9010f6a03bc8b3e3",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6bf0042a471417118bc05eb58ec35e4e4ddad8fab1ec89bb821b7647275309ef",
+      "captured_tick": 37,
+      "movie_frame": 36
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "bef0fb62008961b7c6260784efdf845d73a1e9d5e7979f00fa30845b9705ed72",
+      "captured_tick": 38,
+      "movie_frame": 37
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b1256a568239db8f585da9f5d306c00e1cf32569f9489f836851fe3ce48786b1",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b7caa0fd6307f9e17a7fd2715bfdf789f7d655a9347023b29ca2acd4fa6a41b6",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2ad20406deea9bb3bbd3ff8689bfa5c029cc064ec7c1ad79b41c4bc40751e51e",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "314bb22be724ab90ca57013680c68ac9e2914145fb3eed1b4ef37a15c3a352f7",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "650bbe0bf8fff861e594f25ca32072b5520870f1f917d4fdb558e16153dee29b",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c375c7031012656a1e28ca8ee1d960bd8023ed1b8c085a5d9010f6a03bc8b3e3",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6bf0042a471417118bc05eb58ec35e4e4ddad8fab1ec89bb821b7647275309ef",
+      "captured_tick": 37,
+      "movie_frame": 36
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1280x720-left-whiff-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "bef0fb62008961b7c6260784efdf845d73a1e9d5e7979f00fa30845b9705ed72",
+      "captured_tick": 38,
+      "movie_frame": 37
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "225f3b34cd22ceab6bf3d8fe6b3fb76e2c88bbb4578d2db69188912d0b2bc749",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "2d96538afbbec7d51f0247b6226677b3b64a6bea51080886326f5cc0ed57b57f",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "53afcc2115625f35cd727d97f279110bd21a0a768e6a410040883291fb3239cc",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1735e6ee7fe39782bd158d3e4ea1ff3d57b26919a333ba4846abb246f58570b7",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0ed4c161414b0ab17a59211c28cac3ab188f105d77c188bfe12697463165cc36",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0a72453cbed5ec8b74c72b5162a45fb7c61a71a5dac08147716a382fe99a4de6",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0d7a6fa705dcf38391a2c175221e8d45218940bb9f64db49504a55965c58e808",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "2091930fe43f146f2192ad83c074774122548a10bedfb57c269a421c17644672",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "225f3b34cd22ceab6bf3d8fe6b3fb76e2c88bbb4578d2db69188912d0b2bc749",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "2d96538afbbec7d51f0247b6226677b3b64a6bea51080886326f5cc0ed57b57f",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "53afcc2115625f35cd727d97f279110bd21a0a768e6a410040883291fb3239cc",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1735e6ee7fe39782bd158d3e4ea1ff3d57b26919a333ba4846abb246f58570b7",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0ed4c161414b0ab17a59211c28cac3ab188f105d77c188bfe12697463165cc36",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0a72453cbed5ec8b74c72b5162a45fb7c61a71a5dac08147716a382fe99a4de6",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0d7a6fa705dcf38391a2c175221e8d45218940bb9f64db49504a55965c58e808",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-hit-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "2091930fe43f146f2192ad83c074774122548a10bedfb57c269a421c17644672",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7f695279a4b84ef99cc9f389a25d6583b2f7a99ed49103921f2eef6e9ff8d41b",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c8eacbd46ad6936de771a3c6a2a4d840bea76b7082ec745e89ae4a247b060e47",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0aa55d170bbd6dee4401d0e28519ae8ee31e8f56232a7fcf667d871ae57ab1fe",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "532b0a8820ad80281387ef47709fba2f3bb6e8cb2320a149adfd0e7858443953",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6832223447a7260f3d6e768c9e76355a163970ec327f5f8b9ef4cb50257a46f6",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9a72abeddade68898d07ac7b46d71fe979532810862964e0e71cab51958cb7ed",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "fb56d02683c6b1584334aaee9877e970e7fd40fa6c630c33ed3bd42cf2125725",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "4a976ab75c50011e6e9be52ea96166d7a826dabfdafbc745cb0f9f51a88606aa",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7f695279a4b84ef99cc9f389a25d6583b2f7a99ed49103921f2eef6e9ff8d41b",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c8eacbd46ad6936de771a3c6a2a4d840bea76b7082ec745e89ae4a247b060e47",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0aa55d170bbd6dee4401d0e28519ae8ee31e8f56232a7fcf667d871ae57ab1fe",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "532b0a8820ad80281387ef47709fba2f3bb6e8cb2320a149adfd0e7858443953",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6832223447a7260f3d6e768c9e76355a163970ec327f5f8b9ef4cb50257a46f6",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9a72abeddade68898d07ac7b46d71fe979532810862964e0e71cab51958cb7ed",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "fb56d02683c6b1584334aaee9877e970e7fd40fa6c630c33ed3bd42cf2125725",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-stand_guard-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "4a976ab75c50011e6e9be52ea96166d7a826dabfdafbc745cb0f9f51a88606aa",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "acb2a8198b8b9e7d9eedfb9174bd38aadf7d028fd47e37fa1dd320cd9f46079e",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "da2e4450f2c8cb3b7022fabbb2befbd70e8504e7eee71818c755f8e48553146c",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c1586a0b48c5af94c4a94ea761112eba61de6583dd16d888b4f339c069a12916",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d544641b0feafd8ff05b59ef625f0ff0d3bedfc789862b9632cd6f79b7e7aee6",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "4e42933d1dc23d65ed2d6221b27ee15ce00d75385c8a6acce5c01805b1fe69a7",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a6aa3fbff08b06d92ca3402cdbad5b2201fba571d7828c529f91fcdcff7be510",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d7f2283b2342afc9e65b74678fb41bb1dc80663ec5980232f46a8a12dbe411c4",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7f0964a632397481b6605df85a0aef1bfa6e34521429a4b597ab4eb9c3a3f344",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "acb2a8198b8b9e7d9eedfb9174bd38aadf7d028fd47e37fa1dd320cd9f46079e",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "da2e4450f2c8cb3b7022fabbb2befbd70e8504e7eee71818c755f8e48553146c",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c1586a0b48c5af94c4a94ea761112eba61de6583dd16d888b4f339c069a12916",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d544641b0feafd8ff05b59ef625f0ff0d3bedfc789862b9632cd6f79b7e7aee6",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "4e42933d1dc23d65ed2d6221b27ee15ce00d75385c8a6acce5c01805b1fe69a7",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a6aa3fbff08b06d92ca3402cdbad5b2201fba571d7828c529f91fcdcff7be510",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d7f2283b2342afc9e65b74678fb41bb1dc80663ec5980232f46a8a12dbe411c4",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-block-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7f0964a632397481b6605df85a0aef1bfa6e34521429a4b597ab4eb9c3a3f344",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "46e58df580015c0dac6ff2ed5403f7751f0b9f2fc55491cda9e63498b771cee2",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "300faa6708b45c3c0b7730c803ec3fe944d2993e5937716ae6b3f27a81b88e6a",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "f66d8b8793757b4de54ee871730f07cf6a8dbf3f29f24daa44bd21ea2d826dfb",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "85f625d0c889267a0120bb10d0b8ec75fb904fe79ae25146ea6459f793f68471",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c0cb4455d7576437764a8b273cd986660fda7e77ee2671ad211d6ca66733925d",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "2722f81e1d78222721e6d1bd4c52f58772795fbfbc89ae529fd4b3fa41dd2029",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "26fbde0d9f0f179d01dbf89f42cd95c851c0f196fc7cb48261d2dbd1c8197839",
+      "captured_tick": 37,
+      "movie_frame": 36
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6bcba9ed88f938baf063b7f760a4ab300624b3cc99c93aa1121e2cc993ac7c9b",
+      "captured_tick": 38,
+      "movie_frame": 37
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "46e58df580015c0dac6ff2ed5403f7751f0b9f2fc55491cda9e63498b771cee2",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "300faa6708b45c3c0b7730c803ec3fe944d2993e5937716ae6b3f27a81b88e6a",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "f66d8b8793757b4de54ee871730f07cf6a8dbf3f29f24daa44bd21ea2d826dfb",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "85f625d0c889267a0120bb10d0b8ec75fb904fe79ae25146ea6459f793f68471",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c0cb4455d7576437764a8b273cd986660fda7e77ee2671ad211d6ca66733925d",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "2722f81e1d78222721e6d1bd4c52f58772795fbfbc89ae529fd4b3fa41dd2029",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "26fbde0d9f0f179d01dbf89f42cd95c851c0f196fc7cb48261d2dbd1c8197839",
+      "captured_tick": 37,
+      "movie_frame": 36
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-right-whiff-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6bcba9ed88f938baf063b7f760a4ab300624b3cc99c93aa1121e2cc993ac7c9b",
+      "captured_tick": 38,
+      "movie_frame": 37
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "797555fcfd51d4dac4d9cd5242eefe9cef5859b40fd2c8a3b1f0efbe4f20d64c",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7548fdecf0d615be11f25c953f94014200f1c2ccf98f7f1503e04bc6bc40c6f4",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "cd58199e96f5cf6c7cd8912f993bb0a041b502f6d14a8fac58205be659979c8f",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "cf8986ce5df91d207db8f9984d05b6fd3d69cc80365094a6c47b0e8908c8baf2",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "100e278091a0157e78297290a6317fd6c465b2b2b23b7b4a7948806e11ccd6c4",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "aba4de543ba22679bb347a71a735c0345ff10c6d7da4cc894819fafdca319f89",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7d6f2560fb9393cacfc049e2c71b8e2829053189689f48f644968dfad88747ee",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "083d8f4f49bd6aedd027bbb93bbff9b0223a59e92931b8995609b79c4adf3de0",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "797555fcfd51d4dac4d9cd5242eefe9cef5859b40fd2c8a3b1f0efbe4f20d64c",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7548fdecf0d615be11f25c953f94014200f1c2ccf98f7f1503e04bc6bc40c6f4",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "cd58199e96f5cf6c7cd8912f993bb0a041b502f6d14a8fac58205be659979c8f",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "cf8986ce5df91d207db8f9984d05b6fd3d69cc80365094a6c47b0e8908c8baf2",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "100e278091a0157e78297290a6317fd6c465b2b2b23b7b4a7948806e11ccd6c4",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "aba4de543ba22679bb347a71a735c0345ff10c6d7da4cc894819fafdca319f89",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7d6f2560fb9393cacfc049e2c71b8e2829053189689f48f644968dfad88747ee",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-hit-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "083d8f4f49bd6aedd027bbb93bbff9b0223a59e92931b8995609b79c4adf3de0",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1f3b03089a6252385ba616a69d8baaf1dc1795281f9d1bba16c47ec5166b40dc",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6f51da3af823bb261e39891dc580a9e45e13133c06c197795c4278d75fe3bca9",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "249d4762f19e668d5f48424fd3b5ef6b91f86bdb6d847a718f61d3dc41ad5af3",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "37896c822cf0d31e1ab5c83f6f822e60d6959127d2a9d5141c85a94464a44566",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "f75ce3b993670eabd94e9c1baa735d24274847e88e6c1efe666289c20244ba0b",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8af8cd8efddb56cc357d8f6adc878aa254ee11ba8a7ddccb87e06b78adc68856",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9a3fa4458088cf625cfe4bad7b2493cc85cfbb03b417931a5f6a1295043083a9",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "5b1a0be3574258f8d17330951f05c0bebb62e048efc75653068dabc7072efd88",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "1f3b03089a6252385ba616a69d8baaf1dc1795281f9d1bba16c47ec5166b40dc",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6f51da3af823bb261e39891dc580a9e45e13133c06c197795c4278d75fe3bca9",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "249d4762f19e668d5f48424fd3b5ef6b91f86bdb6d847a718f61d3dc41ad5af3",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "37896c822cf0d31e1ab5c83f6f822e60d6959127d2a9d5141c85a94464a44566",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "f75ce3b993670eabd94e9c1baa735d24274847e88e6c1efe666289c20244ba0b",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8af8cd8efddb56cc357d8f6adc878aa254ee11ba8a7ddccb87e06b78adc68856",
+      "captured_tick": 30,
+      "movie_frame": 29
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9a3fa4458088cf625cfe4bad7b2493cc85cfbb03b417931a5f6a1295043083a9",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-stand_guard-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "5b1a0be3574258f8d17330951f05c0bebb62e048efc75653068dabc7072efd88",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "149db73a223b960c460ee81db2f3162e742328f50a623dc7938e6d2d89bc6c0e",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "674f146e239722bb7e8a47940dd7ac540372c472ffedfa61b1074632ad255a85",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "08c7a6c4b3ded795c22d791a6b36a205ee0b9c4e6d4b2f2ab9d647d78b38cee4",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a1d33672781125836fb0d7c7859aaf8d0cfda1bfad3c3890a0a7bb8a8936e59f",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "5a0e52b90bd4dcef8236f33c4b2abd5c8cfd1e36ef9997c6d74abf3498c0d4f0",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "380df2067ded6723d2f0923b5d949bf3a3da524ee006bff181f312ee2463392a",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d7612c17938bd9312539a35ac18dc46070afdcbd22d4bb8cbfb476df02284767",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "bbe276f6f5cc2aadd7e4b7d386ac1b5c3459f1b83bab39bebcb2a90800c63a62",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "149db73a223b960c460ee81db2f3162e742328f50a623dc7938e6d2d89bc6c0e",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "674f146e239722bb7e8a47940dd7ac540372c472ffedfa61b1074632ad255a85",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "08c7a6c4b3ded795c22d791a6b36a205ee0b9c4e6d4b2f2ab9d647d78b38cee4",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a1d33672781125836fb0d7c7859aaf8d0cfda1bfad3c3890a0a7bb8a8936e59f",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "5a0e52b90bd4dcef8236f33c4b2abd5c8cfd1e36ef9997c6d74abf3498c0d4f0",
+      "captured_tick": 28,
+      "movie_frame": 27
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "380df2067ded6723d2f0923b5d949bf3a3da524ee006bff181f312ee2463392a",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d7612c17938bd9312539a35ac18dc46070afdcbd22d4bb8cbfb476df02284767",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-block-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "bbe276f6f5cc2aadd7e4b7d386ac1b5c3459f1b83bab39bebcb2a90800c63a62",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-original/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b3280134bd99f544996eaad360dd8fbaf894d41f2ad087c457cc767805806429",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-original/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "4bdedea69c3662366c10feef560066841f638192804ad2146179398820c8f08e",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-original/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "65f29f8f1306226d50a6f52de8f8b5f9062b05163dcebd9a04de5be067b669b4",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-original/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9c462d2c648138a966f4b9554171b2d25727fe4300fb2eaf8667613baae23248",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-original/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "911b94e8609c7d60fccf964b1807588fb69b643f91d1bbc6c7aba8326409cae4",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-original/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a9d6937ec82963c284182200fe8465b4c5a8e53768ac211d8ee84bbed162a4d2",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-original/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a699a817b7a835c6e2e3da00e169d1cd1fb9f45a97df7c7d26ec6fdb233080d0",
+      "captured_tick": 37,
+      "movie_frame": 36
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-original/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a5691acffadbc3dcddf8627616175be718fa6d957212aaf371ecffa3acc9e8fb",
+      "captured_tick": 38,
+      "movie_frame": 37
+    },
+    {
+      "key": "before-input-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-replay/before-input-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b3280134bd99f544996eaad360dd8fbaf894d41f2ad087c457cc767805806429",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "crouch_light-tick-01-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-replay/crouch_light-tick-01-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "4bdedea69c3662366c10feef560066841f638192804ad2146179398820c8f08e",
+      "captured_tick": 21,
+      "movie_frame": 20
+    },
+    {
+      "key": "crouch_light-tick-02-phase-00",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-replay/crouch_light-tick-02-phase-00.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "65f29f8f1306226d50a6f52de8f8b5f9062b05163dcebd9a04de5be067b669b4",
+      "captured_tick": 22,
+      "movie_frame": 21
+    },
+    {
+      "key": "crouch_light-tick-03-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-replay/crouch_light-tick-03-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9c462d2c648138a966f4b9554171b2d25727fe4300fb2eaf8667613baae23248",
+      "captured_tick": 23,
+      "movie_frame": 22
+    },
+    {
+      "key": "crouch_light-tick-05-phase-01",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-replay/crouch_light-tick-05-phase-01.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "911b94e8609c7d60fccf964b1807588fb69b643f91d1bbc6c7aba8326409cae4",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "crouch_light-tick-06-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-replay/crouch_light-tick-06-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a9d6937ec82963c284182200fe8465b4c5a8e53768ac211d8ee84bbed162a4d2",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "crouch_light-tick-17-phase-02",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-replay/crouch_light-tick-17-phase-02.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a699a817b7a835c6e2e3da00e169d1cd1fb9f45a97df7c7d26ec6fdb233080d0",
+      "captured_tick": 37,
+      "movie_frame": 36
+    },
+    {
+      "key": "returned-crouch",
+      "path": "reports/luna-crouch-light-resume/graphical-v1/1920x1080-left-whiff-replay/returned-crouch.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a5691acffadbc3dcddf8627616175be718fa6d957212aaf371ecffa3acc9e8fb",
+      "captured_tick": 38,
+      "movie_frame": 37
+    }
+  ],
+  "cleanup": {
+    "desktop_observed_utc": "2026-11-05T20:45:19Z",
+    "godot_window_absent": true,
+    "terminal_returned_to_shell_prompt": true,
+    "lock_absent_verified_utc": "2026-11-05T20:45:06Z",
+    "lock_manually_deleted": false,
+    "source_or_contract_modified_by_review": false,
+    "runner_completed": true,
+    "rerun_groups": 0
+  },
+  "formal_baseline_unchanged": {
+    "content/fighters/ultraman-arc/moves/crouch_light.json": "3f47e3cb9fa5fc89d26e21dd894c14a00479d26ac8780e358eb480e3d20a70d4",
+    "content/fighters/ultraman-arc/moves/crouch_light2.json": "f037ad833921011deac387399bae828be31fc950881d8051631b0fd8e28bf1fc",
+    "content/fighters/ultraman-arc__luna/definition.json": "a246f8b7f9b5a94ac432e5de7441f23c9ce9335588612b3893ccbe5482983dff",
+    "content/fighters/ultraman-arc/command_table.json": "d90069770de4340f9abd729b8b07dc4c4393c416f6910f48cc928bdda6c1babe",
+    "assets/fighters/ultraman-arc__luna/catalogue/model-native.png.import": "47e5953c10f6c6022cbfcede8132d7de915661ab3d8bfcf4b37f6a7f669a612b",
+    "assets/fighters/ultraman-arc__luna/catalogue/model-native.png": "602a33844e05f339808452a22368be3f2f6a6e38522ed114e566abdaa346a309"
+  },
+  "已知问题": [
+    "仅第一拳三槽、两个独立图像，不代表二拳取消执行或完整二连；站转蹲亦不在本次范围。",
+    "近肩跨胸伸拳与收拳可读；头肩下降/上提、身体前探与前脚变化保留实速待判，不以静帧认定顺滑或强制补相。",
+    "命中/站防白闪遮局部拳缘；蹲防虽零伤且蓝火花，受方防硬直呈较高站姿后返回蹲防，不称全程蹲防姿态正确。",
+    "无录屏、无原速动作、音频或真人键盘验收；未安装、未开放装甲、整招美术与严格尺寸未签。"
+  ],
+  "下一步": "保留第一拳候选与受方显示边界。后续按授权补足二拳与真实连打；正式安装前须独立完成站转蹲、实速连续性与相应声音验收。",
+  "installed": false,
+  "art_accepted": false,
+  "strict_size_accepted": false,
+  "audio_reviewed": false,
+  "real_time_motion_reviewed": false,
+  "video_recorded": false
+}

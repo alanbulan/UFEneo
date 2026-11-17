@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "installed": false,
+  "generation_performed": false,
+  "source_sha256": {
+    "R01": "5a4b04c94dafecbf75343011c12461b9b584b5c6ecf1867677bb010193dba99d",
+    "R02": "edda91826d3c7b13e7c255dd5544228224ca387d2147d81951d75488682f1ccf"
+  },
+  "same_side_knee_delta": [
+    [
+      -23,
+      -32
+    ],
+    [
+      -41,
+      -53
+    ]
+  ],
+  "swapped_correspondence_distances": [
+    56.824290580701486,
+    50.93132631298737
+  ],
+  "interpretation": "即使近远膝身份互换，约57与51px跳变仍存在，不依赖唯一对应来判断缺口。",
+  "arcs": [
+    {
+      "start_relative": [
+        4,
+        25
+      ],
+      "end_relative": [
+        -24,
+        -3
+      ],
+      "start_thigh_length": 25.317977802344327,
+      "end_thigh_length": 24.186773244895647,
+      "swing_degrees": 106.2152932697241,
+      "whole_pose_design_examples_only": [
+        {
+          "fraction": 0.3333333333333333,
+          "relative_knee": [
+            -11,
+            22
+          ]
+        },
+        {
+          "fraction": 0.5,
+          "relative_knee": [
+            -17,
+            18
+          ]
+        },
+        {
+          "fraction": 0.6666666666666666,
+          "relative_knee": [
+            -22,
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "start_relative": [
+        18,
+        28
+      ],
+      "end_relative": [
+        -28,
+        -21
+      ],
+      "start_thigh_length": 33.28663395418648,
+      "end_thigh_length": 35.0,
+      "swing_degrees": 159.6051239179516,
+      "whole_pose_design_examples_only": [
+        {
+          "fraction": 0.3333333333333333,
+          "relative_knee": [
+            -12,
+            32
+          ]
+        },
+        {
+          "fraction": 0.5,
+          "relative_knee": [
+            -25,
+            23
+          ]
+        },
+        {
+          "fraction": 0.6666666666666666,
+          "relative_knee": [
+            -33,
+            10
+          ]
+        }
+      ]
+    }
+  ],
+  "timing": {
+    "current": {
+      "20-23": "R00 / A05",
+      "24-27": "R01 / A06",
+      "28-31": "R02 / A07",
+      "32": "A02上提和离背起点"
+    },
+    "candidate_two_phase_layout_not_approved": {
+      "24-25": "R01 / A06",
+      "26-27": "新完整收腿早中相 / A06",
+      "28-29": "新完整收腿晚中相 / A07",
+      "30-31": "R02 / A07",
+      "32": "保持原上提边界，需重验"
+    }
+  },
+  "limits": [
+    "只延长静帧保持不能生成关节运动，不能用持帧平均速度证明顺滑。",
+    "弧样点不是逐帧旋转、插肢或缩放指令；新源若需要必须完整角色。",
+    "一张中相是否足够未知；两张相位方案也未保证足够，须按真实整相和动态复核。",
+    "接触点、髋/肩/膝/足路径和实际头角余量必须一起核，不能仅闭合膝位置。",
+    "不得沿用旧76tick结果签新时序；即使保留t32和t68边界也须重放。"
+  ]
+}

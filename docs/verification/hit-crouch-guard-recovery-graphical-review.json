@@ -1,0 +1,2160 @@
+{
+  "source_report": "reports/zetton-crouch-block-resume/gui-v3-20261105-technical-summary.json",
+  "source_sha256": "49538cee598b2f3c4ecde1ae1ce081722f68e8a654c1732b5939b59e7302ca88",
+  "independent_parent_recheck": "重新执行八组trace/64PNG尺寸、SHA、冻结tick、真实HUD与低姿恢复门；另查看1080-left tick57原生图，原crouch逻辑下完整低防保持可见。未重跑Godot。",
+  "schema": "ufeneo_zetton_crouch_block_graphical_technical_review_v1",
+  "created_utc": "2026-11-05T22:30:06.189667+00:00",
+  "contract": "reports/zetton-crouch-block-resume/contract-v3.json",
+  "contract_sha256": "ce36a725b57b4b039a043d57c26384371541717abebd5d1481531201b9a90c0f",
+  "technical_status": "passed",
+  "art_status": "scoped_recovery_static_review_real_time_not_accepted",
+  "installed": false,
+  "playable_release_accepted": false,
+  "scope": {
+    "runs": 8,
+    "original_replay_pairs": 4,
+    "native_sizes": [
+      [
+        1280,
+        720
+      ],
+      [
+        1920,
+        1080
+      ]
+    ],
+    "directions": [
+      "left",
+      "right"
+    ],
+    "kinds": [
+      "overhead"
+    ],
+    "png_count": 64,
+    "source": "existing main game with RAM candidate and frozen InputFrame tape; not human hardware input",
+    "tape_schema": "ufeneo_zetton_crouch_block_tape_v1",
+    "audio_reviewed": false,
+    "video_recorded": false,
+    "real_time_motion_reviewed": false
+  },
+  "technical_checks": [
+    "All 8 runner.check_trace graphical checks passed; exact PNG SHA, native dimensions, frozen request/capture tick and sprite identity, both fighters state/animation bindings verified.",
+    "Final safe rectangle equals actual HUD safe rectangle and both final rendered body bounds fit; formal training panels remain visible.",
+    "Each window settled for at least eight observations and 500 ms before simulation tick 0 advanced.",
+    "All process exits zero, auxiliary fresh simulation replay errors empty; only precisely classified unsupported VSync warning.",
+    "Each original/replay pair matches all 180 ticks for six fields; identical same-tick image keys are not mistaken for missing frames."
+  ],
+  "visual_review": {
+    "coverage": "双向720/1080四组original共32张捕获均以联系表逐图审阅，另原尺寸复核720-right及1080-left tick57中间crouch；四组replay做完整技术和逐tick配对，不冒称另行逐图美术审阅。",
+    "overhead_recovery": "实际56末受击→57中间crouch→58 guard0→59/60/61画面均核。57采用本人既有低防保持整帧，随后guard各龄继续低姿；未再见v2该恢复段高站插帧。此结论限定本轮冻结输入和四组original静帧，不称实速连续性。",
+    "logic_scope": "保留hit→crouch→crouch_guard原逻辑状态序列，tick57为crouch state_tick0、58为crouch_guard state_tick0；渲染恢复上下文映射低防，不把画面低防当状态机被跳过。",
+    "contact": "tick29真实overhead受击白闪遮住体内细节；无新蹲防格挡两相在本overhead路径的美术复验。",
+    "support_limits": "受击末到低防仍有姿态收拢，静帧不证明脚底完全无滑动或原速顺滑。旧两相大幅后震/鞋缘变化限制沿v2保留，本批不重验low/mid/release_down。",
+    "framing": "双方头角、身体、脚缘处于实际训练板/HUD安全区；近距画面重叠不据bounds自证绝无穿插，不宣称镜头常量。",
+    "remaining_limits": [
+      "新两帧仅RAM未安装；本图形批未改冻结代码/资源/合同，正式恢复core已在e7ac4ab4单独修复。",
+      "本批只验overhead八组，不扩大成全动作或所有输入条件验收。",
+      "无录屏、实速连续观察、听感或真人键盘验收；声音仅此前程序事件键对照，非本图形批听感结果。"
+    ]
+  },
+  "cleanup": {
+    "desktop_observed_utc": "2026-11-05T22:29:53Z",
+    "godot_window_absent": true,
+    "terminal_returned_to_shell_prompt": true,
+    "lock_absent_verified_utc": "2026-11-05T22:30:17.726953+00:00",
+    "lock_manually_deleted": false,
+    "source_or_contract_modified_by_review": false
+  },
+  "groups": [
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "overhead",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 1560,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "9dfb6b141f27ab6c0a9784127c699137c8a072fefa23e0d5ce2fd3b9e6f3ff04",
+      "png_audit_sha256": "1592a4b08c00c8eb29cbedb6541cb500d45fe80a7e916d85352dbc3f4fed24cc"
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "overhead",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 539,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "e792169fd9a4f59df7d7f78c188cc0185ae27934fa73f43be5d76b9e6550bdf1",
+      "png_audit_sha256": "a6b43fad3dd3855826a007b079786435060c4201d4dd1a4ce23952d6de0777a7"
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "overhead",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 505,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "dda7135c7775e2be2319b06dbf827c668a6bc06eb72a90310edbe7b49465a9fb",
+      "png_audit_sha256": "3e7dcf3e6faf5fabfb2a8f5ed1318f6463a7e05c74340af4e85f89e0421e342f"
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "overhead",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 518,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "b39eedd882734fc2545ccbea3d13df84f2f4cf976f94153fa2b4e0ed5e4ef4e3",
+      "png_audit_sha256": "d7d048131db59e86b2c59e689c07672c06193a6334749771a4f13b67c7d25078"
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "overhead",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 500,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "5446a389f1a47df1b1aa410efd2a8fd1e73e8d67a8b341dc40bfe439a232d376",
+      "png_audit_sha256": "124f36e0c48ffa43f8e10f9e035d7308ed67132852ec6d3c2f7cd18df33ef256"
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "overhead",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 17,
+      "window_elapsed_ms": 504,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "5f08ecaf6cba8c538528346025146bf7e7f36c63903d020e38dd560787b08535",
+      "png_audit_sha256": "e04c5d5ac8011a89505e8d9f6011354baa2e10d75af67ee82370eaea8e35e6c6"
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "overhead",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 591,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "c71dc895a355ef8fa8a79791980656f2ccff89c09be2cd37357fa24d89fb63bb",
+      "png_audit_sha256": "42dc3218f9825da851ddd8b57e254e8212f744f69e00390326ada56e39d99965"
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "overhead",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 8,
+      "exit_code": 0,
+      "window_stable_frames": 16,
+      "window_elapsed_ms": 517,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "f9ac11efc456377b0fc18eb88aa0dcc7f91efa3df6c77af5bb894f6064a06038",
+      "png_audit_sha256": "201441e8c41a74ada0f8a900547006b5081b071f0aa3a248a14cf506238a53eb"
+    }
+  ],
+  "replay_pairs": [
+    {
+      "original": "1280x720-right-overhead-original",
+      "replay": "1280x720-right-overhead-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1280x720-left-overhead-original",
+      "replay": "1280x720-left-overhead-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1920x1080-right-overhead-original",
+      "replay": "1920x1080-right-overhead-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1920x1080-left-overhead-original",
+      "replay": "1920x1080-left-overhead-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "43e09415c37cacae3e2867e046351261ce0b35c769023f010c3ece7bd8ab3004",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-original/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ddd2966ad1cd14c05b7916fd94c830800ceee5fa6ce981db6f94fbaf2aa0504c",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-original/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1467bacda1003d59d431b86d11280604069eec18ceadf8a5fc35cfa8524a2f6c",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "post-hit-crouch-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-original/post-hit-crouch-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "fd7f40677d85b164093308c95b376c8d984bf0d403053395ac33f2c3904ad13c",
+      "captured_tick": 57,
+      "movie_frame": 56
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "df15383ca259ddb88c940cc19879bc9b2a6fee5de6d88f55bad6a07fe65d317b",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "post-hit-guard-age-1",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-original/post-hit-guard-age-1.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "bebe42c7e23e0fd18564d797906713b4754c704bee3c915f14784093bf10d853",
+      "captured_tick": 59,
+      "movie_frame": 58
+    },
+    {
+      "key": "post-hit-guard-age-2",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-original/post-hit-guard-age-2.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "759e817c466ce8e7059651d7b5616ceb9dba19d303b1fb48ee1ac478928fe48b",
+      "captured_tick": 60,
+      "movie_frame": 59
+    },
+    {
+      "key": "post-hit-guard-age-3",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-original/post-hit-guard-age-3.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "cc5acfcba60e21a163a34eba2961adba2aa826dd6f3168778ae78d2851e191aa",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "43e09415c37cacae3e2867e046351261ce0b35c769023f010c3ece7bd8ab3004",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-replay/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ddd2966ad1cd14c05b7916fd94c830800ceee5fa6ce981db6f94fbaf2aa0504c",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-replay/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1467bacda1003d59d431b86d11280604069eec18ceadf8a5fc35cfa8524a2f6c",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "post-hit-crouch-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-replay/post-hit-crouch-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "fd7f40677d85b164093308c95b376c8d984bf0d403053395ac33f2c3904ad13c",
+      "captured_tick": 57,
+      "movie_frame": 56
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "df15383ca259ddb88c940cc19879bc9b2a6fee5de6d88f55bad6a07fe65d317b",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "post-hit-guard-age-1",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-replay/post-hit-guard-age-1.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "bebe42c7e23e0fd18564d797906713b4754c704bee3c915f14784093bf10d853",
+      "captured_tick": 59,
+      "movie_frame": 58
+    },
+    {
+      "key": "post-hit-guard-age-2",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-replay/post-hit-guard-age-2.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "759e817c466ce8e7059651d7b5616ceb9dba19d303b1fb48ee1ac478928fe48b",
+      "captured_tick": 60,
+      "movie_frame": 59
+    },
+    {
+      "key": "post-hit-guard-age-3",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-replay/post-hit-guard-age-3.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "cc5acfcba60e21a163a34eba2961adba2aa826dd6f3168778ae78d2851e191aa",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "eafd43d06d014489e6a1503452f67c81c1ef8a07c74bf92e836e533c74c01405",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-original/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "efa1e40aa5769b06ee39679057d7f4b84791f57a889310a7778f5681ba3d12d7",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-original/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "86220b6e355d29f390163e8bc414c1f12eef09effd7e92bd8cd0d116efbf0c5c",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "post-hit-crouch-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-original/post-hit-crouch-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "977159491546895928750e620f280ff5d0350691e4eb424493409b576fe2a13e",
+      "captured_tick": 57,
+      "movie_frame": 56
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c4b7aa62e03895abb29fdb4991a56c3bf9116334d2491ad65daa6662d7f8cd9d",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "post-hit-guard-age-1",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-original/post-hit-guard-age-1.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "36691f3ddd1a122b7a3a6515c8857d43de8ab9543e0e57d2f5dcd0321a40381d",
+      "captured_tick": 59,
+      "movie_frame": 58
+    },
+    {
+      "key": "post-hit-guard-age-2",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-original/post-hit-guard-age-2.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "00febef5afe01d6a895cb3acceee9b44c02d68d3c163c9fcb1054abd914799e9",
+      "captured_tick": 60,
+      "movie_frame": 59
+    },
+    {
+      "key": "post-hit-guard-age-3",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-original/post-hit-guard-age-3.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "88fa513cedbf0d50eb062ade289b431e418bbfc21ed8e97e5d2fc6f9d83a1b3d",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "eafd43d06d014489e6a1503452f67c81c1ef8a07c74bf92e836e533c74c01405",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-replay/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "efa1e40aa5769b06ee39679057d7f4b84791f57a889310a7778f5681ba3d12d7",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-replay/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "86220b6e355d29f390163e8bc414c1f12eef09effd7e92bd8cd0d116efbf0c5c",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "post-hit-crouch-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-replay/post-hit-crouch-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "977159491546895928750e620f280ff5d0350691e4eb424493409b576fe2a13e",
+      "captured_tick": 57,
+      "movie_frame": 56
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c4b7aa62e03895abb29fdb4991a56c3bf9116334d2491ad65daa6662d7f8cd9d",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "post-hit-guard-age-1",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-replay/post-hit-guard-age-1.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "36691f3ddd1a122b7a3a6515c8857d43de8ab9543e0e57d2f5dcd0321a40381d",
+      "captured_tick": 59,
+      "movie_frame": 58
+    },
+    {
+      "key": "post-hit-guard-age-2",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-replay/post-hit-guard-age-2.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "00febef5afe01d6a895cb3acceee9b44c02d68d3c163c9fcb1054abd914799e9",
+      "captured_tick": 60,
+      "movie_frame": 59
+    },
+    {
+      "key": "post-hit-guard-age-3",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-replay/post-hit-guard-age-3.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "88fa513cedbf0d50eb062ade289b431e418bbfc21ed8e97e5d2fc6f9d83a1b3d",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "f095903011cbb4305843773a61ecd3d38f1bc6f929a7180dcb78d4ec0815e9fd",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-original/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "582017e2379d32531f2221689962c7c07017c48447abc8285ff354332425831c",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-original/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c8ff80fedeece2b5719b46ee2cad2679af496f0e7585caac73800a7b581bff57",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "post-hit-crouch-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-original/post-hit-crouch-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "f9575fe01e838d442e3e1da6916f207efa117279462b08b2cf0255a05aedeffc",
+      "captured_tick": 57,
+      "movie_frame": 56
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e852ea7eaa614844a2ac550aec1681164db51df2c5c45fb2e92870b18acdda86",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "post-hit-guard-age-1",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-original/post-hit-guard-age-1.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "900faaad3b7fcf1a62c2eda86c29ff5f23b891a3bd5f5f7b23ba7f8c1bcc99df",
+      "captured_tick": 59,
+      "movie_frame": 58
+    },
+    {
+      "key": "post-hit-guard-age-2",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-original/post-hit-guard-age-2.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "dd88d27a6420c3f86b1c6bd8dcbaab43577bcf035bc89a8a87f46696a89434b6",
+      "captured_tick": 60,
+      "movie_frame": 59
+    },
+    {
+      "key": "post-hit-guard-age-3",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-original/post-hit-guard-age-3.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ad77265c93dd8219674571af5f3c1d2f03105b7a0d14fc8235c1e90e6774d0bc",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "f095903011cbb4305843773a61ecd3d38f1bc6f929a7180dcb78d4ec0815e9fd",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-replay/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "582017e2379d32531f2221689962c7c07017c48447abc8285ff354332425831c",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-replay/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c8ff80fedeece2b5719b46ee2cad2679af496f0e7585caac73800a7b581bff57",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "post-hit-crouch-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-replay/post-hit-crouch-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "f9575fe01e838d442e3e1da6916f207efa117279462b08b2cf0255a05aedeffc",
+      "captured_tick": 57,
+      "movie_frame": 56
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e852ea7eaa614844a2ac550aec1681164db51df2c5c45fb2e92870b18acdda86",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "post-hit-guard-age-1",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-replay/post-hit-guard-age-1.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "900faaad3b7fcf1a62c2eda86c29ff5f23b891a3bd5f5f7b23ba7f8c1bcc99df",
+      "captured_tick": 59,
+      "movie_frame": 58
+    },
+    {
+      "key": "post-hit-guard-age-2",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-replay/post-hit-guard-age-2.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "dd88d27a6420c3f86b1c6bd8dcbaab43577bcf035bc89a8a87f46696a89434b6",
+      "captured_tick": 60,
+      "movie_frame": 59
+    },
+    {
+      "key": "post-hit-guard-age-3",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-replay/post-hit-guard-age-3.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ad77265c93dd8219674571af5f3c1d2f03105b7a0d14fc8235c1e90e6774d0bc",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9eb93c976fdeb377e8b5a03aae24158d341a541997ad92a7363307f3e956af0a",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-original/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "53e6b4377883125d605bc7c1ffbc06ac53cb753f2b14cdf9e678f027d57d8e20",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-original/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "41347bc7f94f757a57e970344b2f91130e20d150f87f6c3cfd39aa3cc9e12e8f",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "post-hit-crouch-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-original/post-hit-crouch-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "425e63249a61d88d93486fa48d36490bed9b127dc56c28214ca95046db688ab9",
+      "captured_tick": 57,
+      "movie_frame": 56
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6fae49afbacf48c79b778ba2c4875c701436d2cea28ece334139fdc5faba2a41",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "post-hit-guard-age-1",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-original/post-hit-guard-age-1.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d09252955261498622a27c733695b877cc492b9b01bd71c905b989d05c38ef3b",
+      "captured_tick": 59,
+      "movie_frame": 58
+    },
+    {
+      "key": "post-hit-guard-age-2",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-original/post-hit-guard-age-2.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c6948a6ea4ca0fcc5a3efb6c28926c8a3ae817cbb35db4fb5426bea199d6b3ad",
+      "captured_tick": 60,
+      "movie_frame": 59
+    },
+    {
+      "key": "post-hit-guard-age-3",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-original/post-hit-guard-age-3.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d5800ea6b99be8f3d0422a761b148c9bb5ef8d9ddd401c70ff90153a14ac68f6",
+      "captured_tick": 61,
+      "movie_frame": 60
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9eb93c976fdeb377e8b5a03aae24158d341a541997ad92a7363307f3e956af0a",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-replay/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "53e6b4377883125d605bc7c1ffbc06ac53cb753f2b14cdf9e678f027d57d8e20",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-replay/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "41347bc7f94f757a57e970344b2f91130e20d150f87f6c3cfd39aa3cc9e12e8f",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "post-hit-crouch-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-replay/post-hit-crouch-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "425e63249a61d88d93486fa48d36490bed9b127dc56c28214ca95046db688ab9",
+      "captured_tick": 57,
+      "movie_frame": 56
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6fae49afbacf48c79b778ba2c4875c701436d2cea28ece334139fdc5faba2a41",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "post-hit-guard-age-1",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-replay/post-hit-guard-age-1.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d09252955261498622a27c733695b877cc492b9b01bd71c905b989d05c38ef3b",
+      "captured_tick": 59,
+      "movie_frame": 58
+    },
+    {
+      "key": "post-hit-guard-age-2",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-replay/post-hit-guard-age-2.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c6948a6ea4ca0fcc5a3efb6c28926c8a3ae817cbb35db4fb5426bea199d6b3ad",
+      "captured_tick": 60,
+      "movie_frame": 59
+    },
+    {
+      "key": "post-hit-guard-age-3",
+      "path": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-replay/post-hit-guard-age-3.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "d5800ea6b99be8f3d0422a761b148c9bb5ef8d9ddd401c70ff90153a14ac68f6",
+      "captured_tick": 61,
+      "movie_frame": 60
+    }
+  ],
+  "recovery_trace_evidence": [
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-original",
+      "rows": [
+        {
+          "tick": 56,
+          "state": "hit",
+          "state_tick": 19,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 2,
+            "key": "hit_crouch",
+            "rect": [
+              512.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/hit_crouch/head-calibrated.png"
+          },
+          "state_hash": "6005a54b8fd63cdef4c24ef9e6726d3554160a4f0a061a5a68d75211f88db552"
+        },
+        {
+          "tick": 57,
+          "state": "crouch",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "49a5d247f78b678c64082fbfcd14882910d7765974372fa0fa996fde46ff0fec"
+        },
+        {
+          "tick": 58,
+          "state": "crouch_guard",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "144bb3fe7625fb9cc5be267b101a26d44a3b0b6263a6aaa6c330fceee1fef10a"
+        },
+        {
+          "tick": 59,
+          "state": "crouch_guard",
+          "state_tick": 1,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "b323e8470ae295397461d9d8f9beb84b66d8022300ceef0639eed7dd883f4e26"
+        },
+        {
+          "tick": 60,
+          "state": "crouch_guard",
+          "state_tick": 2,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "9bc00e7504b9973df2001b514564fcc7998087edc2f2f720d11442e643f4ec83"
+        },
+        {
+          "tick": 61,
+          "state": "crouch_guard",
+          "state_tick": 3,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "38d82aac17f886991cd8c61e7613d975a256072695d96630ee4d20c0c5722244"
+        }
+      ]
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-right-overhead-replay",
+      "rows": [
+        {
+          "tick": 56,
+          "state": "hit",
+          "state_tick": 19,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 2,
+            "key": "hit_crouch",
+            "rect": [
+              512.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/hit_crouch/head-calibrated.png"
+          },
+          "state_hash": "6005a54b8fd63cdef4c24ef9e6726d3554160a4f0a061a5a68d75211f88db552"
+        },
+        {
+          "tick": 57,
+          "state": "crouch",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "49a5d247f78b678c64082fbfcd14882910d7765974372fa0fa996fde46ff0fec"
+        },
+        {
+          "tick": 58,
+          "state": "crouch_guard",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "144bb3fe7625fb9cc5be267b101a26d44a3b0b6263a6aaa6c330fceee1fef10a"
+        },
+        {
+          "tick": 59,
+          "state": "crouch_guard",
+          "state_tick": 1,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "b323e8470ae295397461d9d8f9beb84b66d8022300ceef0639eed7dd883f4e26"
+        },
+        {
+          "tick": 60,
+          "state": "crouch_guard",
+          "state_tick": 2,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "9bc00e7504b9973df2001b514564fcc7998087edc2f2f720d11442e643f4ec83"
+        },
+        {
+          "tick": 61,
+          "state": "crouch_guard",
+          "state_tick": 3,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "38d82aac17f886991cd8c61e7613d975a256072695d96630ee4d20c0c5722244"
+        }
+      ]
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-original",
+      "rows": [
+        {
+          "tick": 56,
+          "state": "hit",
+          "state_tick": 19,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 2,
+            "key": "hit_crouch",
+            "rect": [
+              512.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/hit_crouch/head-calibrated.png"
+          },
+          "state_hash": "c66907abe4eae3cdf31f7f72475f987c4d567faa68876f5d1517bcdb9e52ba5f"
+        },
+        {
+          "tick": 57,
+          "state": "crouch",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "cbbc139c1760880c741e591a2a1856500843313e85a3cc1ce14e221a036b3547"
+        },
+        {
+          "tick": 58,
+          "state": "crouch_guard",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "6a2b04e9c2ba4d4ddc327379caac22fea2ef4433c19b178548780ac30606b5d0"
+        },
+        {
+          "tick": 59,
+          "state": "crouch_guard",
+          "state_tick": 1,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "22fc4964f1d1ae2c6cdd7e341a1ce32c700ff7199c41a74ac2211bf2009ade2e"
+        },
+        {
+          "tick": 60,
+          "state": "crouch_guard",
+          "state_tick": 2,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "623e355bc454b3f71a3379854d8b9c671822888d62087805d20f34035523de6d"
+        },
+        {
+          "tick": 61,
+          "state": "crouch_guard",
+          "state_tick": 3,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "898c9bc24e82170ad51cc39871bd7c97d6545057450707e89a886fe0cc0c69d5"
+        }
+      ]
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1280x720-left-overhead-replay",
+      "rows": [
+        {
+          "tick": 56,
+          "state": "hit",
+          "state_tick": 19,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 2,
+            "key": "hit_crouch",
+            "rect": [
+              512.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/hit_crouch/head-calibrated.png"
+          },
+          "state_hash": "c66907abe4eae3cdf31f7f72475f987c4d567faa68876f5d1517bcdb9e52ba5f"
+        },
+        {
+          "tick": 57,
+          "state": "crouch",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "cbbc139c1760880c741e591a2a1856500843313e85a3cc1ce14e221a036b3547"
+        },
+        {
+          "tick": 58,
+          "state": "crouch_guard",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "6a2b04e9c2ba4d4ddc327379caac22fea2ef4433c19b178548780ac30606b5d0"
+        },
+        {
+          "tick": 59,
+          "state": "crouch_guard",
+          "state_tick": 1,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "22fc4964f1d1ae2c6cdd7e341a1ce32c700ff7199c41a74ac2211bf2009ade2e"
+        },
+        {
+          "tick": 60,
+          "state": "crouch_guard",
+          "state_tick": 2,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "623e355bc454b3f71a3379854d8b9c671822888d62087805d20f34035523de6d"
+        },
+        {
+          "tick": 61,
+          "state": "crouch_guard",
+          "state_tick": 3,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "898c9bc24e82170ad51cc39871bd7c97d6545057450707e89a886fe0cc0c69d5"
+        }
+      ]
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-original",
+      "rows": [
+        {
+          "tick": 56,
+          "state": "hit",
+          "state_tick": 19,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 2,
+            "key": "hit_crouch",
+            "rect": [
+              512.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/hit_crouch/head-calibrated.png"
+          },
+          "state_hash": "6005a54b8fd63cdef4c24ef9e6726d3554160a4f0a061a5a68d75211f88db552"
+        },
+        {
+          "tick": 57,
+          "state": "crouch",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "49a5d247f78b678c64082fbfcd14882910d7765974372fa0fa996fde46ff0fec"
+        },
+        {
+          "tick": 58,
+          "state": "crouch_guard",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "144bb3fe7625fb9cc5be267b101a26d44a3b0b6263a6aaa6c330fceee1fef10a"
+        },
+        {
+          "tick": 59,
+          "state": "crouch_guard",
+          "state_tick": 1,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "b323e8470ae295397461d9d8f9beb84b66d8022300ceef0639eed7dd883f4e26"
+        },
+        {
+          "tick": 60,
+          "state": "crouch_guard",
+          "state_tick": 2,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "9bc00e7504b9973df2001b514564fcc7998087edc2f2f720d11442e643f4ec83"
+        },
+        {
+          "tick": 61,
+          "state": "crouch_guard",
+          "state_tick": 3,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "38d82aac17f886991cd8c61e7613d975a256072695d96630ee4d20c0c5722244"
+        }
+      ]
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-right-overhead-replay",
+      "rows": [
+        {
+          "tick": 56,
+          "state": "hit",
+          "state_tick": 19,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 2,
+            "key": "hit_crouch",
+            "rect": [
+              512.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/hit_crouch/head-calibrated.png"
+          },
+          "state_hash": "6005a54b8fd63cdef4c24ef9e6726d3554160a4f0a061a5a68d75211f88db552"
+        },
+        {
+          "tick": 57,
+          "state": "crouch",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "49a5d247f78b678c64082fbfcd14882910d7765974372fa0fa996fde46ff0fec"
+        },
+        {
+          "tick": 58,
+          "state": "crouch_guard",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "144bb3fe7625fb9cc5be267b101a26d44a3b0b6263a6aaa6c330fceee1fef10a"
+        },
+        {
+          "tick": 59,
+          "state": "crouch_guard",
+          "state_tick": 1,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "b323e8470ae295397461d9d8f9beb84b66d8022300ceef0639eed7dd883f4e26"
+        },
+        {
+          "tick": 60,
+          "state": "crouch_guard",
+          "state_tick": 2,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "9bc00e7504b9973df2001b514564fcc7998087edc2f2f720d11442e643f4ec83"
+        },
+        {
+          "tick": 61,
+          "state": "crouch_guard",
+          "state_tick": 3,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "38d82aac17f886991cd8c61e7613d975a256072695d96630ee4d20c0c5722244"
+        }
+      ]
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-original",
+      "rows": [
+        {
+          "tick": 56,
+          "state": "hit",
+          "state_tick": 19,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 2,
+            "key": "hit_crouch",
+            "rect": [
+              512.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/hit_crouch/head-calibrated.png"
+          },
+          "state_hash": "c66907abe4eae3cdf31f7f72475f987c4d567faa68876f5d1517bcdb9e52ba5f"
+        },
+        {
+          "tick": 57,
+          "state": "crouch",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "cbbc139c1760880c741e591a2a1856500843313e85a3cc1ce14e221a036b3547"
+        },
+        {
+          "tick": 58,
+          "state": "crouch_guard",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "6a2b04e9c2ba4d4ddc327379caac22fea2ef4433c19b178548780ac30606b5d0"
+        },
+        {
+          "tick": 59,
+          "state": "crouch_guard",
+          "state_tick": 1,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "22fc4964f1d1ae2c6cdd7e341a1ce32c700ff7199c41a74ac2211bf2009ade2e"
+        },
+        {
+          "tick": 60,
+          "state": "crouch_guard",
+          "state_tick": 2,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "623e355bc454b3f71a3379854d8b9c671822888d62087805d20f34035523de6d"
+        },
+        {
+          "tick": 61,
+          "state": "crouch_guard",
+          "state_tick": 3,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "898c9bc24e82170ad51cc39871bd7c97d6545057450707e89a886fe0cc0c69d5"
+        }
+      ]
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v3/1920x1080-left-overhead-replay",
+      "rows": [
+        {
+          "tick": 56,
+          "state": "hit",
+          "state_tick": 19,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 2,
+            "key": "hit_crouch",
+            "rect": [
+              512.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/hit_crouch/head-calibrated.png"
+          },
+          "state_hash": "c66907abe4eae3cdf31f7f72475f987c4d567faa68876f5d1517bcdb9e52ba5f"
+        },
+        {
+          "tick": 57,
+          "state": "crouch",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "cbbc139c1760880c741e591a2a1856500843313e85a3cc1ce14e221a036b3547"
+        },
+        {
+          "tick": 58,
+          "state": "crouch_guard",
+          "state_tick": 0,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "6a2b04e9c2ba4d4ddc327379caac22fea2ef4433c19b178548780ac30606b5d0"
+        },
+        {
+          "tick": 59,
+          "state": "crouch_guard",
+          "state_tick": 1,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "22fc4964f1d1ae2c6cdd7e341a1ce32c700ff7199c41a74ac2211bf2009ade2e"
+        },
+        {
+          "tick": 60,
+          "state": "crouch_guard",
+          "state_tick": 2,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "623e355bc454b3f71a3379854d8b9c671822888d62087805d20f34035523de6d"
+        },
+        {
+          "tick": 61,
+          "state": "crouch_guard",
+          "state_tick": 3,
+          "animation": {
+            "anchor": [
+              128.0,
+              248.0
+            ],
+            "anchor_y": 248.0,
+            "cell": 256.0,
+            "index": 1,
+            "key": "crouch_guard",
+            "rect": [
+              256.0,
+              0.0,
+              256.0,
+              256.0
+            ],
+            "texture": "res://assets/fighters/zetton/animations/crouch_guard/head-calibrated.png"
+          },
+          "state_hash": "898c9bc24e82170ad51cc39871bd7c97d6545057450707e89a886fe0cc0c69d5"
+        }
+      ]
+    }
+  ]
+}

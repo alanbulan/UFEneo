@@ -1,0 +1,60 @@
+{
+ "fighter": "ultraman-zero__strong_corona",
+ "status": "proposal_only",
+ "charge_only_effects": [
+  "pending_corona_q_charge_start",
+  "pending_corona_q_charge_charge",
+  "pending_corona_q_charge_stop"
+ ],
+ "placements": {
+  "charge_start": {
+   "effect": "pending_corona_q_charge_start",
+   "anchor": [
+    0,
+    0
+   ],
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "behind_fighter": true,
+   "frames": 9,
+   "loop": false
+  },
+  "charge": {
+   "effect": "pending_corona_q_charge_charge",
+   "anchor": [
+    0,
+    0
+   ],
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "behind_fighter": true,
+   "frames": 24,
+   "loop": true
+  },
+  "charge_stop": {
+   "effect": "pending_corona_q_charge_stop",
+   "anchor": [
+    0,
+    0
+   ],
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "behind_fighter": true,
+   "frames": 9,
+   "loop": false
+  }
+ },
+ "note": "主会话合并进 charge_overlay_policy.json 前，本形态 Q 蓄气不可见。"
+}

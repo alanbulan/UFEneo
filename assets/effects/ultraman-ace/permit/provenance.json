@@ -1,0 +1,65 @@
+{
+  "art_source": "api",
+  "route": "tools/art_pipeline.py:generate_image",
+  "request": "art/fighters/ultraman-ace/stage4/effects-v2/requests/permit/01/brief.json",
+  "request_sha256": "36388ad782c591be4a2c602cd0bbd31fc1d4b976b52b419c7459b06f7204b953",
+  "source": "art/fighters/ultraman-ace/stage4/effects-v2/requests/permit/01/raw.provider.png",
+  "source_sha256": "0a2f451ea7577d4e40f5f9d816fad679a5d63f87df9bf6619561a345a2826613",
+  "provider_image_sha256": "a8affd53143e49c0ef42391ba2c06873e884aa56fb0a007e3821609b8d40877c",
+  "model": "gpt-image-2.5-sunburst",
+  "requested_quality": "high",
+  "actual_quality": "medium（本机接口固定返回；不因quality被忽略重发）",
+  "source_rects": [
+    [
+      0,
+      0,
+      836,
+      521
+    ],
+    [
+      836,
+      0,
+      1672,
+      521
+    ],
+    [
+      0,
+      521,
+      836,
+      941
+    ],
+    [
+      836,
+      521,
+      1672,
+      941
+    ]
+  ],
+  "selection_reason": "按原剧配色的独立GPT像素图层；四相共用统一整帧比例，保留亮芯、外焰和粒子；不是通用库换色",
+  "episode_reference": "art/fighters/ultraman-ace/references/effects/episode-234s.png",
+  "description": "金白色像素光字“立！击！斩”，三个字横排组成许可签名，必须准确清晰。四相为初亮、完整闪光、细火花、边缘收敛；无其他字、无人物。",
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "oklab",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "client_alpha_accepted": false,
+  "client_alpha": {
+    "transparent_fraction": 0.7054891586303711,
+    "visible_fraction": 0.1505565643310547,
+    "nonzero_fraction": 0.2945108413696289,
+    "opaque_fraction": 0.00010967254638671875,
+    "has_alpha_channel": true,
+    "rectangular_matte": false,
+    "clear_corners": false
+  },
+  "transforms": "读取provider高分原图的实际长宽网格（不把客户端补上的透明边当格子）；共同外框统一等比缩放；整图共享调色板量化和二值Alpha；未代码绘制最终特效"
+}

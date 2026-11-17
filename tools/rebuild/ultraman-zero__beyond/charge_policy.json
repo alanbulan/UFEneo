@@ -1,0 +1,63 @@
+{
+ "schema": 1,
+ "fighter": "ultraman-zero__beyond",
+ "status": "pending_merge",
+ "note": "待主会话并入共享 content/presentation/charge_overlay_policy.json 的 placements 与 charge_only_effects。",
+ "placement_key": "ultraman-zero__beyond",
+ "charge_only_effects": [
+  "zero_beyond_fx_q_charge_start",
+  "zero_beyond_fx_q_charge",
+  "zero_beyond_fx_q_charge_stop"
+ ],
+ "placement": {
+  "charge_start": {
+   "effect": "zero_beyond_fx_q_charge_start",
+   "anchor": [
+    0,
+    0
+   ],
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "behind_fighter": true,
+   "frames": 9,
+   "loop": false
+  },
+  "charge": {
+   "effect": "zero_beyond_fx_q_charge",
+   "anchor": [
+    0,
+    0
+   ],
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "behind_fighter": true,
+   "frames": 24,
+   "loop": true
+  },
+  "charge_stop": {
+   "effect": "zero_beyond_fx_q_charge_stop",
+   "anchor": [
+    0,
+    0
+   ],
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "behind_fighter": true,
+   "frames": 9,
+   "loop": false
+  }
+ },
+ "upstream_gate": "shared charge_overlay_policy.json placement remains base-zero-owned until merge; no shared edit by this worker."
+}

@@ -1,0 +1,88 @@
+{
+  "date_utc": "2026-11-05",
+  "action": "spin_heavy",
+  "review_scope": "实看提供的接触原PNG，与已实看第三版蓄势比较；Alpha/尺寸/SHA为Pillow实测。未配准、未做图像编辑、未运行Godot。",
+  "status": "完整接触关键相候选保留，回旋连续性与共同尺度未接受",
+  "source": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/contact-attempt-01.raw.png",
+    "sha256": "ebf2e309235a0996ddfd07a6ed6685004075bfceaa70d37b9ebf5887d84e7e90",
+    "metadata": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/source.json"
+  },
+  "comparison_source": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/turn-chamber-attempt-03.raw.png",
+    "sha256": "419811794ebc8bd7c3e5ddbb6bb989ed82b6999f1e5f06d29730eec367cd54d3"
+  },
+  "size": [
+    1312,
+    1199
+  ],
+  "mode": "RGBA",
+  "alpha": {
+    "min_max": [
+      0,
+      255
+    ],
+    "zero_pixels": 1225574,
+    "full255_pixels": 234,
+    "intermediate_pixels": 347280,
+    "threshold_bboxes": {
+      "1": [
+        0,
+        11,
+        1277,
+        1175
+      ],
+      "16": [
+        114,
+        29,
+        1199,
+        1132
+      ],
+      "64": [
+        115,
+        29,
+        1198,
+        1131
+      ],
+      "128": [
+        115,
+        29,
+        1198,
+        1131
+      ],
+      "200": [
+        115,
+        30,
+        1197,
+        1130
+      ],
+      "254": [
+        139,
+        30,
+        1152,
+        1130
+      ]
+    },
+    "finding": "存在真实透明，Alpha>=16的完整主体有留白，不见蓄势图那种大片外围光晕；仍有低Alpha噪点到左边缘及细边杂点，不能称已过干净原生Alpha门。"
+  },
+  "identity": "月亮银白后掠头冠、黄眼、蓝青胸肩、双腕圆盘和红银腿可辨；未多添武器/腿甲。头冠细节与全骨尺未量化，不将身份可辨当严格比例通过。",
+  "whole_frame": "两臂两拳、两腿两鞋及完整头冠/伸脚可见；未见裁切、断肢或第三腿。无对手、火花、文字或地板。",
+  "contact_surface": "踢腿抬在腰附近，大腿/小腿横向展开，脚尖弯向下，鞋底没有正面朝向画面右侧；静态形更接近绷脚扫击而非脚跟直线推出。没有对手和前后运动轨迹，无法证明实际接触由脚背/胫前发生，不能凭此扩大攻击框或宣布真实扫中。",
+  "support": "支撑膝轻屈，支撑鞋后跟高于前掌，仍保持第三版抬跟特征，未变回前两版平脚。无地线是设计要求；前掌世界坐标是否稳定须共同配准，不按不同画布的脚像素位置判滑步。",
+  "hip_and_shoulders": "胸肩与腰胯处于转体/后倾姿态，头仍看右；但胸甲比第三版窄斜面更展开、肩臂也换角，不能自动断言扭转沿同一方向继续。需补或核完整展开中相来确认肩→髋→膝→脚先后与方向，不能用重复停帧/旋转旧图代替。",
+  "anatomical_sides": "意图仍为右腿进攻、左腿支撑；从图中能跟踪踢出腿与承重腿连接，但单图本身不能证明与前图解剖左右未互换，须配准后的连续关键相进行髋根/膝/鞋追踪，不能简单按近亮远暗下结论。",
+  "continuity": {
+    "dimensions": "蓄势第三版1024×1536，本图1312×1199。不能按画布宽高或各图bbox独立填满同格；先按本人稳定骨长求单一整图采样尺度，保留必要画布留白。",
+    "motion_gap": "从高收膝到近横向伸腿角跨度显著，现有两关键相不能证明连续扫击；展开中相仍待。",
+    "upper_body": "胸面展开与双臂转位须整身连贯审，不以单独旋转头/肩甲修复。",
+    "recovery": "接触后的同向随势、收膝、落脚回架仍无本轮合格源；大面积背甲仍缺可靠本人参考。"
+  },
+  "decision": "可以保留本接触关键候选供后续统一尺度和整链核验，不将其判成已运行回旋重击；不安装、不开放装甲。",
+  "installed": false,
+  "art_passed": false,
+  "playable": false,
+  "godot_run": false,
+  "recording": false,
+  "generation_performed_by_this_reviewer": false,
+  "next_step": "先按获准范围处理共同尺度/Alpha候选和完整展开链，再真实4K命中/格挡/落空、独立回放、双向720/1080及实速核验。不自行再生成，不以旧侧踢/错源填缺。"
+}

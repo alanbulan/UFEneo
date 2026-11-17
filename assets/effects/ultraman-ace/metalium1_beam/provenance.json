@@ -1,0 +1,65 @@
+{
+  "art_source": "api",
+  "route": "tools/art_pipeline.py:generate_image",
+  "request": "art/fighters/ultraman-ace/stage4/effects-v2/requests/metalium1_beam/01/brief.json",
+  "request_sha256": "85efeef256817e6499c5e391e71ea936fd25b402aafad319c93deacf38dfec5e",
+  "source": "art/fighters/ultraman-ace/stage4/effects-v2/requests/metalium1_beam/01/raw.provider.png",
+  "source_sha256": "30773cffc5bb2300a2f6fc0ff5a8e926278e6a441af06dba2f4c3cfbb0c42ae2",
+  "provider_image_sha256": "399d99d8e8e63548d1cf587d84e7ad610fc7b03e4aab0f388e64ad0ad1bdd8c1",
+  "model": "gpt-image-2.5-sunburst",
+  "requested_quality": "high",
+  "actual_quality": "medium（本机接口固定返回；不因quality被忽略重发）",
+  "source_rects": [
+    [
+      0,
+      0,
+      1774,
+      222
+    ],
+    [
+      0,
+      222,
+      1774,
+      452
+    ],
+    [
+      0,
+      452,
+      1774,
+      667
+    ],
+    [
+      0,
+      667,
+      1774,
+      887
+    ]
+  ],
+  "selection_reason": "按原剧配色的独立GPT像素图层；四相共用统一整帧比例，保留亮芯、外焰和粒子；不是通用库换色",
+  "episode_reference": "art/fighters/ultraman-ace/references/effects/episode-129.4s.png",
+  "description": "梅塔利姆：灼白亮芯，红/朱红、青/湖蓝、金黄三束能量相互交织和交错闪烁，外缘有深蓝紫、橙红、浅青三个以上颜色层级；不是把一条白束整体染成粉红，不是均匀七条平行直线。水平向右持续光束，左端是平直发射截面，右端延伸出画，整条厚实能量有白芯、叠层火焰、簇状粒子；四相均为持续段，不从小到大生长，不做四次起手。",
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "oklab",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "client_alpha_accepted": false,
+  "client_alpha": {
+    "transparent_fraction": 0.685206413269043,
+    "visible_fraction": 0.21617794036865234,
+    "nonzero_fraction": 0.31479358673095703,
+    "opaque_fraction": 6.67572021484375e-06,
+    "has_alpha_channel": true,
+    "rectangular_matte": false,
+    "clear_corners": false
+  },
+  "transforms": "读取provider高分原图的实际长宽网格（不把客户端补上的透明边当格子）；共同外框统一等比缩放；整图共享调色板量化和二值Alpha；未代码绘制最终特效"
+}

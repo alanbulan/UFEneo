@@ -1,0 +1,393 @@
+{
+  "title": "正式训练F4回放输入历史显示：720与1080原生操作验证",
+  "source_sha256": {
+    "app/game_app.gd": "14fc9cbf2e47ed02d9cdbedc10c14fe00721b074e6b9bbc59ecb91b9f989d740",
+    "ui/training_overlay.gd": "ba8410381dc2bccb1b0aa7251cfb6fb4094ba941f8d7af58ef218e0bba38081e"
+  },
+  "scope": "正式app主场景，初代/杰顿，隔离XDG；原生1P D/J/K录制、F4播放、F1切换核对训练图标及调试输入历史。",
+  "pass": true,
+  "method": [
+    "从云桌面终端经Godot锁分别启动1280x720及1920x1080；Dummy音频、gl_compatibility。",
+    "初始窗口仍1180x812且内容640x360居中；原生标题栏拖动后窗口应用启动指定尺寸，最终每张证据经PIL核为1280x720或1920x1080。1080窗口大于桌面，绑定窗口截图完整保存1920x1080。",
+    "正式主菜单训练、默认初代/杰顿、场景开始；720选人曾尝试小键盘1但未推进，改正式Enter确认成功。没有依赖2P方向输入。",
+    "开场结束后D/J/K依次原生按住，每次请求4000ms，各段间自然工具操作间隔；实际模拟帧长度按保存录像列出，不假定4000ms必等于240tick。",
+    "录制末尾保存训练板与F1证据；按F4后不发送战斗键，只切换F1观察历史随录像逐段重建。两次结束均实际显示回放验证一致。",
+    "最后用受支持Sky Alt_L+F4正常关闭，桌面确认无游戏窗口和终端prompt。没有改源码、绑定、旧存档或注入状态。"
+  ],
+  "findings": [
+    "720早段训练板仅中性/右/中性，后逐步出现J方块和K三角，与录制末尾历史明显不同；F1文本同样从5:0/6:0重建至5:1/5:2。",
+    "1080早段F1不含录制末尾J/K，中段训练板出现J、后段出现K；F1终态与录制D/J/K顺序一致。",
+    "F1开启时正式代码隐藏训练板，因此两种显示分时核对，不声称同一精确tick同时截图。"
+  ],
+  "limitations": [
+    "原生截图不是冻结捕获，精确模拟tick未知；文件名early/mid/j只便于识别，逐图observation记实际内容。保存时间来自原始文件mtime，是写入时间而非精确画面采样时间。",
+    "没有录屏、全逐tick图形证明、音频或战斗动作美术验收。",
+    "1080 D/J/K实际采样分别192/140/222帧，720分别243/242/242帧，说明原生持键时长与模拟运行速率不宜等同；本项只验历史显示按真实录像更新。",
+    "未验证2P箭头、其它人物、交换双方、EX或完整训练生命周期。"
+  ],
+  "groups": [
+    {
+      "session": "gui720",
+      "visual_pass": true,
+      "images": [
+        {
+          "path": "reports/replay-input-display/20261105/gui720/record-d.jpg",
+          "format": "JPEG",
+          "width": 1280,
+          "height": 720,
+          "sha256": "7275fab268cc0f5b425f467e00062ee986371ded32db0d6cf8c423685c29cc95",
+          "saved_at_utc": "2026-11-05T14:10:56.052276+00:00",
+          "observation": "F1输入5:0 6:0 5:0，D移动后已释放。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui720/record-end-training.jpg",
+          "format": "JPEG",
+          "width": 1280,
+          "height": 720,
+          "sha256": "d8ff5f38417848daa3a0cd1ddf7870a8b63f5433fed5b81ff5dda8516f83d6b8",
+          "saved_at_utc": "2026-11-05T14:11:34.854521+00:00",
+          "observation": "末尾训练板包含轻击方块及重击三角，上一招重击。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui720/record-j.jpg",
+          "format": "JPEG",
+          "width": 1280,
+          "height": 720,
+          "sha256": "e08e3163630cc36a6f92b3e0f48a3ad10e8ba79dc154fe17d7af245f1d10ebf8",
+          "saved_at_utc": "2026-11-05T14:11:09.791652+00:00",
+          "observation": "F1新增5:1 5:0。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui720/record-k-debug.jpg",
+          "format": "JPEG",
+          "width": 1280,
+          "height": 720,
+          "sha256": "9b3bf3db7880b8067cbe90b82e2fccfc64d906cf30a470636f13b803013d1630",
+          "saved_at_utc": "2026-11-05T14:11:21.591119+00:00",
+          "observation": "F1新增5:2 5:0，录制D/J/K完整顺序。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui720/replay-early-training.jpg",
+          "format": "JPEG",
+          "width": 1280,
+          "height": 720,
+          "sha256": "5493202b566ca802c1515ca8ca9c88eed829a5b1cd211d00e8a980615b65f202",
+          "saved_at_utc": "2026-11-05T14:11:43.062150+00:00",
+          "observation": "回放早段训练板仅中性、右、中性，没有录制末尾J/K。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui720/replay-end-debug.jpg",
+          "format": "JPEG",
+          "width": 1280,
+          "height": 720,
+          "sha256": "e7a253d70d2cb4e644f0858bfe40b03ef3e7375dfd0151e9fb8ca55848c3c3d7",
+          "saved_at_utc": "2026-11-05T14:12:28.964076+00:00",
+          "observation": "显示回放验证一致，F1完整D/J/K输入顺序。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui720/replay-j-debug.jpg",
+          "format": "JPEG",
+          "width": 1280,
+          "height": 720,
+          "sha256": "bc6b621c71d2f563116aab62feb550acccd3beb85cf95b62456d945a3a23d913",
+          "saved_at_utc": "2026-11-05T14:12:11.936846+00:00",
+          "observation": "文件名j仅操作时暂名，实际画面已到K段，F1包含5:1及5:2，最后尚未追加释放中性。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui720/replay-j-training.jpg",
+          "format": "JPEG",
+          "width": 1280,
+          "height": 720,
+          "sha256": "40789ff62879803521e9cc445073f8cc35f4da57bb7bb355a737e8e7715abdc7",
+          "saved_at_utc": "2026-11-05T14:12:01.141334+00:00",
+          "observation": "训练板新增J方块，上一招轻击一段。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui720/replay-late-training.jpg",
+          "format": "JPEG",
+          "width": 1280,
+          "height": 720,
+          "sha256": "5a1dd8ece724d6060b5faeea3f28ca3e7354808a53448cbd76b66b1f6c79fd60",
+          "saved_at_utc": "2026-11-05T14:12:21.504414+00:00",
+          "observation": "训练板已有J/K且上一招重击。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui720/replay-mid-debug.jpg",
+          "format": "JPEG",
+          "width": 1280,
+          "height": 720,
+          "sha256": "0585063170757f8e13fecb124c5474004da8701e3e170d0ed01fb21d662c2ff9",
+          "saved_at_utc": "2026-11-05T14:11:50.769802+00:00",
+          "observation": "F1早中段只有5:0 6:0 5:0，未提前出现J/K。",
+          "exact_capture_tick": null
+        }
+      ],
+      "recorded_tape": {
+        "path": "reports/replay-input-display/20261105/gui720/xdg-data/godot/app_userdata/奥特曼格斗进化Neo/last_replay.json",
+        "sha256": "7998e42521de83f417edca483fb8ebd7c3b423c1b081bc2925112d6a1dc4d327",
+        "format": 6,
+        "fighters": [
+          "ultraman",
+          "zetton"
+        ],
+        "frames": 2607,
+        "player1_transitions": [
+          {
+            "zero_based_replay_frame": 0,
+            "player1_input": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "zero_based_replay_frame": 182,
+            "player1_input": [
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "zero_based_replay_frame": 425,
+            "player1_input": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "zero_based_replay_frame": 1013,
+            "player1_input": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "zero_based_replay_frame": 1255,
+            "player1_input": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "zero_based_replay_frame": 1719,
+            "player1_input": [
+              0,
+              0,
+              2
+            ]
+          },
+          {
+            "zero_based_replay_frame": 1961,
+            "player1_input": [
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "engine_log": {
+        "path": "reports/replay-input-display/20261105/gui720/engine.log",
+        "sha256": "51c12a04fa638dca9153a6702e161ece54d9a5448f7643c76f05619feeea32c5",
+        "known_environment_warning": "Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.",
+        "other_warnings_or_errors_observed": false
+      }
+    },
+    {
+      "session": "gui1080",
+      "visual_pass": true,
+      "images": [
+        {
+          "path": "reports/replay-input-display/20261105/gui1080/record-d.jpg",
+          "format": "JPEG",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "171f5dd3663408467abb09a8ee8538d3ec46b5db8b6ca8c8bd5558fb9488d51e",
+          "saved_at_utc": "2026-11-05T14:14:46.953798+00:00",
+          "observation": "训练板中性、右、中性。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui1080/record-end-debug.jpg",
+          "format": "JPEG",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "e1296c8c0f18767d116de42737dd1f8d3560e1eb1465197c35bdadac1d5cd341",
+          "saved_at_utc": "2026-11-05T14:15:25.032088+00:00",
+          "observation": "F1完整5:0 6:0 5:0 5:1 5:0 5:2 5:0。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui1080/record-end-training.jpg",
+          "format": "JPEG",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "cbe55fcba780967a4aef0ca0e78ed952547664fcc812c3d4631487a65f0ee317",
+          "saved_at_utc": "2026-11-05T14:15:16.132489+00:00",
+          "observation": "训练板含J/K，上一招重击。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui1080/record-j.jpg",
+          "format": "JPEG",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "d20639eac8eaafad863e6445bebc1ddda1a8c096ffba45170786d70a5f48e10c",
+          "saved_at_utc": "2026-11-05T14:15:00.353198+00:00",
+          "observation": "训练板新增J方块，上一招轻击一段。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui1080/replay-early-debug.jpg",
+          "format": "JPEG",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "d92018159ba78b8ed04a03848fe703ead62c2e97e24be98622b65b3200c85175",
+          "saved_at_utc": "2026-11-05T14:15:34.127679+00:00",
+          "observation": "早段F1只有5:0 6:0 5:0，没有末尾J/K。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui1080/replay-end-debug.jpg",
+          "format": "JPEG",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "e3e41f85fe0b0b7548ec09738c4ae165a1aa82d2e74d7ec7f5f1ff3d37bf325b",
+          "saved_at_utc": "2026-11-05T14:16:13.493906+00:00",
+          "observation": "回放验证一致，F1保留完整D/J/K顺序。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui1080/replay-late-training.jpg",
+          "format": "JPEG",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "c661192af4aed048169e92c0b40c064155b983d6342b680844f744d997a07e20",
+          "saved_at_utc": "2026-11-05T14:16:02.618395+00:00",
+          "observation": "训练板含J/K，上一招重击。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui1080/replay-mid-debug.jpg",
+          "format": "JPEG",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "c6ab31ee2b2119224f48e8ba33bc6c101a0f45f49527c10130d0700856fc8e54",
+          "saved_at_utc": "2026-11-05T14:15:54.002784+00:00",
+          "observation": "实际已到K后，F1完整D/J/K及释放。",
+          "exact_capture_tick": null
+        },
+        {
+          "path": "reports/replay-input-display/20261105/gui1080/replay-mid-training.jpg",
+          "format": "JPEG",
+          "width": 1920,
+          "height": 1080,
+          "sha256": "35f4e128a99c3ec235407e9ee20fc01342863145feea69237c8aa28e6bcb6516",
+          "saved_at_utc": "2026-11-05T14:15:45.123184+00:00",
+          "observation": "训练板新增J方块，上一招轻击一段。",
+          "exact_capture_tick": null
+        }
+      ],
+      "recorded_tape": {
+        "path": "reports/replay-input-display/20261105/gui1080/xdg-data/godot/app_userdata/奥特曼格斗进化Neo/last_replay.json",
+        "sha256": "37d274b234d4aa38a58e221aa7e042418395f2f6b1f27aa0322226aa069b93df",
+        "format": 6,
+        "fighters": [
+          "ultraman",
+          "zetton"
+        ],
+        "frames": 1975,
+        "player1_transitions": [
+          {
+            "zero_based_replay_frame": 0,
+            "player1_input": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "zero_based_replay_frame": 184,
+            "player1_input": [
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "zero_based_replay_frame": 376,
+            "player1_input": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "zero_based_replay_frame": 706,
+            "player1_input": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "zero_based_replay_frame": 846,
+            "player1_input": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "zero_based_replay_frame": 1207,
+            "player1_input": [
+              0,
+              0,
+              2
+            ]
+          },
+          {
+            "zero_based_replay_frame": 1429,
+            "player1_input": [
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "engine_log": {
+        "path": "reports/replay-input-display/20261105/gui1080/engine.log",
+        "sha256": "51c12a04fa638dca9153a6702e161ece54d9a5448f7643c76f05619feeea32c5",
+        "known_environment_warning": "Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.",
+        "other_warnings_or_errors_observed": false
+      }
+    }
+  ],
+  "image_count": 19,
+  "cleanup": {
+    "desktop_game_window_absent_at_utc": "2026-11-05T14:16:27Z",
+    "terminal_prompt_returned": true,
+    "godot_lock_absent_at_utc": "2026-11-05T14:16:40Z",
+    "sources_unchanged": true
+  },
+  "reviewer": "root_delegated_by_user",
+  "source_receipt": {
+    "path": "reports/replay-input-display/20261105/gui-technical-summary.json",
+    "sha256": "a874fdd80fe16f568edc629252bbbf99bb3797e14c110a5e08523bb976cf9b78"
+  },
+  "independent_review": "独立PIL核19张JPEG实际尺寸及SHA、两带2607/1975帧与全部1P输入转折；另实看720早段训练板及J出现后的原图，不把图名当精确tick。"
+}

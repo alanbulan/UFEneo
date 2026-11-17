@@ -1,0 +1,342 @@
+{
+  "schema": "ufeneo.luna.crouch-light-session-resume.v1",
+  "date_utc": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "本轮完成": [
+    "actual crouch→v3近侧左拳→actual crouch三槽RAM候选进入正式main训练入口，只有两个独立图像，不把重复基架计作新生成相。",
+    "保持3/3/12共18tick、65伤/30体力low，以及原frame3..17的crouch_light2取消目标。",
+    "8个双向逻辑案、16个主游戏headless原输入/独立回放通过；父侧另读8对180tick五字段一致，正式6文件SHA保持。"
+  ],
+  "怎么看": {
+    "contract": {
+      "path": "reports/luna-crouch-light-resume/contract-v2.json",
+      "sha256": "2c06c9d2b8562ff86b84ecb0d443222ed440ebfd7069e7297874fc6d79c320a8"
+    },
+    "technical_receipt": {
+      "path": "reports/luna-crouch-light-resume/technical-receipt-final.json",
+      "sha256": "1eeaead86d020ff7e5e1079fdd2fc2426b2cd071324224347763c74b199e942a"
+    },
+    "independent_review": {
+      "path": "reports/luna-crouch-light-resume/independent-review.json",
+      "sha256": "05f8a15c0a248c0b1f3439070b6e84858684c5acadfc55bc06ef3fec59f3f6b3"
+    },
+    "parent_pair_audit": {
+      "path": "reports/luna-crouch-light-resume/parent-headless-pair-audit.json",
+      "sha256": "92e8119341aa9025e50af830d7aaeaeb340585b5609f6268364dc3ec5cb49b9f"
+    },
+    "manifest": {
+      "path": "art/fighters/ultraman-arc__luna/stage2/crouch-light-registered-20261105-v1/manifest.json",
+      "sha256": "635e8c6f9468c0a7d9678f6bc8df4b79629de8523282b8d9a6a7181d0389235c"
+    },
+    "tool_readme": "tools/rebuild/ultraman-arc/luna-crouch-light-resume/README.md",
+    "reports_note": "reports仅本机临时证据，不随Git上传；本回执保留可复核摘要和指纹。"
+  },
+  "rules_and_inputs": {
+    "original_rules": {
+      "startup": 3,
+      "active": 3,
+      "recovery": 12,
+      "damage": 65,
+      "stamina": 30,
+      "level": "low",
+      "unblockable": false,
+      "cancel_frames_3_to_17": [
+        "crouch_light2"
+      ],
+      "second_punch_loaded": false
+    },
+    "input": "全程下方向，movie_frame20仅一次LIGHT；随后持续下，正式解析器在crouch状态触发2J，收招回crouch；非真人键盘，无直接赋move_id。",
+    "fixture_distances": {
+      "hit": 75,
+      "stand_guard": 75,
+      "block": 75,
+      "whiff": 260
+    },
+    "defense": "stand_guard是站立GUARD，按low规则受65；block是下+GUARD，蹲防0伤且block。不与crush不可防混淆，不含特殊melee_guard屏例外。",
+    "cancel_scope": "保留cancel字符串不等于取消执行通过；第二拳未加载、未再次输入，明确不验二连。",
+    "transition_scope": "idle/crouch_start用同蹲架作输入准备，不验站转蹲及全蹲姿循环。"
+  },
+  "geometry_and_collision": {
+    "runtime_root": [
+      160,
+      280
+    ],
+    "comparison_anchor": [
+      110,
+      280
+    ],
+    "fist_alpha_roi": [
+      204,
+      200,
+      215,
+      213
+    ],
+    "runtime_fist_box": [
+      44,
+      67,
+      11,
+      13
+    ],
+    "active_ticks": [
+      3,
+      4,
+      5
+    ],
+    "hurtboxes": "由本次完整帧Alpha横带形成，未加无敌或位移强保命中。",
+    "event_coordinates": {
+      "right": {
+        "attacker_root_x": 590,
+        "fist_world_rect": [
+          634,
+          67,
+          11,
+          13
+        ],
+        "event": [
+          639,
+          73
+        ]
+      },
+      "left": {
+        "attacker_root_x": 690,
+        "fist_world_rect": [
+          635,
+          67,
+          11,
+          13
+        ],
+        "event": [
+          640,
+          73
+        ]
+      },
+      "interpretation": "事件中心与拳框中心一致；真实resolver/原输入回放验证，非观察器另算交集"
+    },
+    "limits": "事件中心符合镜像拳框中心且真实resolver决定命中/格挡；观察器没有逐tick交集矩形，不能声称另行重算每个碰撞坐标。"
+  },
+  "logic_result": {
+    "candidate_contract_sha256": "2c06c9d2b8562ff86b84ecb0d443222ed440ebfd7069e7297874fc6d79c320a8",
+    "cases": [
+      {
+        "contact_counts": {
+          "crouch_light": 1
+        },
+        "contacts": {
+          "crouch_light": "hit"
+        },
+        "damage": 65,
+        "direction": 1,
+        "final_hash": "c8648582c4632630d1325888267adbd9fbe22fe801a1fcf9b74faeeeb264245a",
+        "initial_gap": 75,
+        "kind": "hit",
+        "moves": [
+          "crouch_light"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "crouch_light": 1
+        },
+        "contacts": {
+          "crouch_light": "hit"
+        },
+        "damage": 65,
+        "direction": 1,
+        "final_hash": "f1b92eeb3385636cea9d51425bc4f86b8b903ec73b0d30176dd1b89099edb51a",
+        "initial_gap": 75,
+        "kind": "stand_guard",
+        "moves": [
+          "crouch_light"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "crouch_light": 1
+        },
+        "contacts": {
+          "crouch_light": "block"
+        },
+        "damage": 0,
+        "direction": 1,
+        "final_hash": "e73ba18e950f2121a46018737b1533b61a43e0ad27a7d1a473aabe0660621ce0",
+        "initial_gap": 75,
+        "kind": "block",
+        "moves": [
+          "crouch_light"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {},
+        "contacts": {},
+        "damage": 0,
+        "direction": 1,
+        "final_hash": "b03b09fec26818c9aced6f259a37aea6e9592ea588328daa565b6b78d95825c4",
+        "initial_gap": 260,
+        "kind": "whiff",
+        "moves": [
+          "crouch_light"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "crouch_light": 1
+        },
+        "contacts": {
+          "crouch_light": "hit"
+        },
+        "damage": 65,
+        "direction": -1,
+        "final_hash": "013b3677c70bd4806eac709dfd4d9c07bd91f607197327ef3e78fc2318890bd3",
+        "initial_gap": 75,
+        "kind": "hit",
+        "moves": [
+          "crouch_light"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "crouch_light": 1
+        },
+        "contacts": {
+          "crouch_light": "hit"
+        },
+        "damage": 65,
+        "direction": -1,
+        "final_hash": "5772b9b29d13786a06bb7c98b8c5929f5ea767769e2c52039f59e174d380de77",
+        "initial_gap": 75,
+        "kind": "stand_guard",
+        "moves": [
+          "crouch_light"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {
+          "crouch_light": 1
+        },
+        "contacts": {
+          "crouch_light": "block"
+        },
+        "damage": 0,
+        "direction": -1,
+        "final_hash": "138da254c85a45cc518b2556becef3ae4db5a54e1ea3709174733094de753a69",
+        "initial_gap": 75,
+        "kind": "block",
+        "moves": [
+          "crouch_light"
+        ],
+        "replay_errors": []
+      },
+      {
+        "contact_counts": {},
+        "contacts": {},
+        "damage": 0,
+        "direction": -1,
+        "final_hash": "f968a46d3fb92de12ad7152abbe6572dbd72b0a8f79db25c68ccbe82bbdf3685",
+        "initial_gap": 260,
+        "kind": "whiff",
+        "moves": [
+          "crouch_light"
+        ],
+        "replay_errors": []
+      }
+    ],
+    "errors": [],
+    "graphical_review": false,
+    "installed": false,
+    "original_inputs_replayed": true,
+    "phases": [
+      "crouch_light:0",
+      "crouch_light:1",
+      "crouch_light:2"
+    ],
+    "playable": false,
+    "simulation_presentation_phase_checked": true,
+    "single_crouch_light_input_checked": true
+  },
+  "headless_result": {
+    "processes": 16,
+    "ticks_each": 180,
+    "original_replay_pairs": 8,
+    "five_fields": [
+      "state_hash",
+      "events",
+      "projectiles",
+      "original_inputs",
+      "pair"
+    ],
+    "equal": true,
+    "graphical_review": false
+  },
+  "evidence": {
+    "static-v1.log": {
+      "path": "reports/luna-crouch-light-resume/static-v1.log",
+      "sha256": "218fda3db2f6abe16f67d5b1b2859df9515e7d046f0af3cbb2ab5b47a0ae17ec"
+    },
+    "logic-v1.json": {
+      "path": "reports/luna-crouch-light-resume/logic-v1.json",
+      "sha256": "e08b5b8f56bc94732a1c43d144d2825adc954ec3c8f16cc5102e5ac2fbdee5d0"
+    },
+    "logic-v1.log": {
+      "path": "reports/luna-crouch-light-resume/logic-v1.log",
+      "sha256": "2a6e73309fd32071c140293cafa12ea5d345ab4d518202cdfb700c1328d2fe26"
+    },
+    "headless-v1/runner-result.json": {
+      "path": "reports/luna-crouch-light-resume/headless-v1/runner-result.json",
+      "sha256": "864a87740a977dc66926e1e360cb4926cf200d0db72b2eb7fe2f6593fcdffbfe"
+    },
+    "import-v1/stdout.log": {
+      "path": "reports/luna-crouch-light-resume/import-v1/stdout.log",
+      "sha256": "cd9e411cc1559fba8e5374f231f05a73bf2e848d5b531c2d2c703ec09f35ce25"
+    }
+  },
+  "contract_history": [
+    {
+      "name": "contract-first.json",
+      "simulated": false,
+      "reason": "初封拳ROI[203,199,215,213)，未执行；像素复核后收紧，旧合同保留但不再有效"
+    },
+    {
+      "name": "contract-v2.json",
+      "simulated": true,
+      "reason": "紧框[204,200,215,213)→[44,67,11,13]，原玩法与时序不变"
+    }
+  ],
+  "offline_check": {
+    "path": "tools/rebuild/ultraman-arc/luna-crouch-light-resume/test_check.py",
+    "sha256": "79052be157fa36c916f916c4e39b328e28a8084924a1d8fc9f4f0c544f557d95",
+    "bound_to_runtime_contract": false
+  },
+  "formal_baseline": {
+    "path": "reports/luna-crouch-light-resume/parent-original-resource-sha.json",
+    "sha256": "37502ed2ca119b5c83251ccc387949c0b9cd19b41cf6822384fb870d3c9c105f"
+  },
+  "formal_baseline_unchanged": true,
+  "failed_executions": [],
+  "graphical_result": {
+    "status": "已移交显示负责人，32组待执行核验",
+    "planned_groups": 32,
+    "stills_each": 8,
+    "planned_png": 256,
+    "contract_sha256": "2c06c9d2b8562ff86b84ecb0d443222ed440ebfd7069e7297874fc6d79c320a8"
+  },
+  "已知问题": [
+    "三槽两独立图只用于原时序试排，未证明出拳/回收连续；原几何头肩低14px、前脚约回5.7px是图形重点。",
+    "只验证第一拳；第二拳取消、站转蹲、全蹲架循环、真人键盘均未验。",
+    "无录屏、实速、听感或整招美术验收；图形尚待，不安装或开放。"
+  ],
+  "下一步": [
+    "按同v2合同串行做双向720/1080、hit/站防/蹲防/whiff×原输入/回放32组；重点实际拳面与受方、头肩/脚位变化。",
+    "据真实表现再判断中相需求，不能仅因检查数量或单相姿态成立称招式完成。"
+  ],
+  "installed": false,
+  "art_passed": false,
+  "real_time_accepted": false,
+  "audio_reviewed": false,
+  "recording": false
+}

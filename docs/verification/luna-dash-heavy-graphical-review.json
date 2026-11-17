@@ -1,0 +1,1426 @@
+{
+  "date": "2026-11-05",
+  "reviewer": "root_delegated_by_user",
+  "status": "technical_pass_visual_transitions_not_accepted",
+  "technical_summary": {
+    "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-technical-summary.json",
+    "sha256": "e016d046e2282724ce9adbbf8fa21cbcecaebbd385b82701d71eb846d6ba944f"
+  },
+  "technical_result": "12组192张原生PNG尺寸/SHA/冻结tick/sprite/hash核对，各组六攻击相独立；两处边界相邻tick正确，问题不是漏截或帧序竞争。",
+  "cases": [
+    {
+      "directory": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-left-block",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "trace": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-left-block/main-trace.json",
+        "sha256": "02c407c3f6c6191789b8e88c28b05a40f8f0ff5036fa744c9fc84147820630a8"
+      },
+      "window_setup": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-left-block/window-setup.json",
+        "sha256": "8430a96de894ddd9055c4b977ccd32e0f4bde64776dd88b5c0dde0ed7f940b91"
+      },
+      "images": [
+        {
+          "file": "settled-idle-000.png",
+          "sha256": "958a388ea60bff854fb17d6fc289b266ab6a4486cd79260d5c23ddf81969e516",
+          "tick": 1,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-00.png",
+          "sha256": "4dfe51d049867803623b73f1d7af98ecbe2a9974454eae208328d70a8451aebd",
+          "tick": 23,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-01.png",
+          "sha256": "82b47a71ffbd495889cb2680a59fe8eeffcd3c019306d2a5d6abb0fd2ff63dbb",
+          "tick": 25,
+          "phase": 1
+        },
+        {
+          "file": "dash-phase-02.png",
+          "sha256": "2528430f2576fe5e462c85cc43cea9656bd5b137931e0951cdae3b90a32b3b68",
+          "tick": 27,
+          "phase": 2
+        },
+        {
+          "file": "dash-phase-03.png",
+          "sha256": "baf36a13be6db400e9ca86c6f9eff9db37c123602646c2f8d6d03b161e7dbe2c",
+          "tick": 30,
+          "phase": 3
+        },
+        {
+          "file": "dash-phase-04.png",
+          "sha256": "cc3be134389282e443d78f263683eb8892b2d7b122e5a8e58e35db39c2477bce",
+          "tick": 33,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-00.png",
+          "sha256": "c6f09dc9c17c9e758f2b077e0e8ad63371339d35f113230409fdf97f3a273c1d",
+          "tick": 35,
+          "phase": 0
+        },
+        {
+          "file": "dash_heavy-phase-01.png",
+          "sha256": "74d5e713bfec0ecd3ff40a9282f65da3a84434d3a6600eb4163e5f1146bdbf1b",
+          "tick": 36,
+          "phase": 1
+        },
+        {
+          "file": "dash_heavy-phase-02.png",
+          "sha256": "830fbd2ee79e656e6851c2fce5716c5c06f2a66e00ad81aa315660372ea2d1d8",
+          "tick": 38,
+          "phase": 2
+        },
+        {
+          "file": "dash_heavy-phase-03.png",
+          "sha256": "8589d71ab764c2839110fc010ed602e60719aa64d9a4aeedd04e82643fc00f7d",
+          "tick": 44,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-03-last.png",
+          "sha256": "098ca9e1e70671dbbb8d371e8a7406b693d487446456a3133c20540f6579e72d",
+          "tick": 47,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-04.png",
+          "sha256": "f2ab68ba92945e9d0ef8348591db11da689dd5104a6c6951e695e3b895191191",
+          "tick": 48,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-05.png",
+          "sha256": "4d28b73c84d195d4d9fce22a2a1c4c6b796f0a91d092c98b6aaf102c214bb4c9",
+          "tick": 52,
+          "phase": 5
+        },
+        {
+          "file": "dash_heavy-phase-05-last.png",
+          "sha256": "07f2217c694aca33d3a8f91bc7d36bf9eaa443da58cb4e17f3e294750ff94298",
+          "tick": 58,
+          "phase": 5
+        },
+        {
+          "file": "recovered-guard-first.png",
+          "sha256": "ebe8898831823903afdcbebe7b9859cdc5837791481f0a4c94948b2d453241bb",
+          "tick": 59,
+          "phase": 0
+        },
+        {
+          "file": "settled-idle-112.png",
+          "sha256": "b69590ef4fdaa4219d19acdedfadd30b7fe9f5da4d9d0a6a8bdddaf8d9ccff4c",
+          "tick": 113,
+          "phase": 5
+        }
+      ]
+    },
+    {
+      "directory": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-left-hit",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "trace": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-left-hit/main-trace.json",
+        "sha256": "76288d4e3c2510bb05abb319e0fa8cb6c62a52a11471ec64772abda4cf50e937"
+      },
+      "window_setup": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-left-hit/window-setup.json",
+        "sha256": "c0374ee1c19d250d3f54f822d086167c30c45f7ca3f62a3ad65e7106cb62e754"
+      },
+      "images": [
+        {
+          "file": "settled-idle-000.png",
+          "sha256": "422dbab1e7cd8f7dce4fb5760850962d51c8d5139b9e7995a1a761b062124eaa",
+          "tick": 1,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-00.png",
+          "sha256": "1af26471b2ea7b78caacead0922774c7a7a675c180e490b062abe958f357e3e9",
+          "tick": 23,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-01.png",
+          "sha256": "4828fcd9a40dd15262fe19d344b600e4eee9ef815a6cc9558a99d1922603d139",
+          "tick": 25,
+          "phase": 1
+        },
+        {
+          "file": "dash-phase-02.png",
+          "sha256": "0e6f76b71eacca38497ab910a20e4501dd8ff584b08d20326e9c6bc9d2ab5993",
+          "tick": 27,
+          "phase": 2
+        },
+        {
+          "file": "dash-phase-03.png",
+          "sha256": "4e080c9099d5c18acd5ba35ff1fb566def386dbc22b2cd38d15be02fc86613a6",
+          "tick": 30,
+          "phase": 3
+        },
+        {
+          "file": "dash-phase-04.png",
+          "sha256": "c4130cdc24060c697134e504f5f23fc322d970002d23a328bfcf5469bd6a8126",
+          "tick": 33,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-00.png",
+          "sha256": "515e871f1b49b8fa6b3ccc514ae8e1aa5bcec3cbe5e158163cefaa894594daa7",
+          "tick": 35,
+          "phase": 0
+        },
+        {
+          "file": "dash_heavy-phase-01.png",
+          "sha256": "a3b0366f7fe04db46ba3550237d221e6f77f81786d088430ddf6aa983db52baf",
+          "tick": 36,
+          "phase": 1
+        },
+        {
+          "file": "dash_heavy-phase-02.png",
+          "sha256": "253002397029d01c7b03687cd44a5751d9ff79e94cf43dc9ed9fff79ce29a6e7",
+          "tick": 38,
+          "phase": 2
+        },
+        {
+          "file": "dash_heavy-phase-03.png",
+          "sha256": "6c4be5ceeb825a976f1bcb18833d39aa1940e24cbe03d7a0c3d6a093925bf815",
+          "tick": 47,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-03-last.png",
+          "sha256": "73088ceafa6757ee3343cfe3ce7187ffa13eb0da388ac77bfc55e0c3a842bf7c",
+          "tick": 50,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-04.png",
+          "sha256": "79382e595d59ab68c44ead7302083b432fe269b9b9b159e20ef2dbfd922d5df8",
+          "tick": 51,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-05.png",
+          "sha256": "6eea18ec72a66c41d42e070c59b3ba7a6207f5b0e592e1d805768f3c7dc7e919",
+          "tick": 55,
+          "phase": 5
+        },
+        {
+          "file": "dash_heavy-phase-05-last.png",
+          "sha256": "6c53d50b97fd272a607a7cebb22b118bf8daca719634d8cc697e68655a578809",
+          "tick": 61,
+          "phase": 5
+        },
+        {
+          "file": "recovered-guard-first.png",
+          "sha256": "eadd476d2fe5db4cfa5fd920e22eec69773794c1128e5a0dffbd9af9ee583199",
+          "tick": 62,
+          "phase": 0
+        },
+        {
+          "file": "settled-idle-112.png",
+          "sha256": "317eed3d1b9e88e7771ed95292135266eedaf650ba55f869ef71bb9bb374ec45",
+          "tick": 113,
+          "phase": 5
+        }
+      ]
+    },
+    {
+      "directory": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-left-whiff",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "trace": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-left-whiff/main-trace.json",
+        "sha256": "f461a44e5ee4ad50da0bab5cf3e1c6806880e1a472abf00af7c46ad852ed8360"
+      },
+      "window_setup": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-left-whiff/window-setup.json",
+        "sha256": "9912334b5d9b267c4dd1648089240a9378485adf6170e6d4832eaf47981b8b19"
+      },
+      "images": [
+        {
+          "file": "settled-idle-000.png",
+          "sha256": "a7572ffe516428e3affdadc3b82b7327c2ed14e8bb2775752e055f9fc408b514",
+          "tick": 1,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-00.png",
+          "sha256": "516487e2e42042f9a1edaf4fa1f18e2d8e39e37f48413424bb65f742b80871e1",
+          "tick": 23,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-01.png",
+          "sha256": "946631166c1e9c49a89e760b878246aa9f1225e7e62195bce740347dd8142afe",
+          "tick": 25,
+          "phase": 1
+        },
+        {
+          "file": "dash-phase-02.png",
+          "sha256": "55c0d027ce2727bb3bb9ecd6ad9d8a0cd0ea925e09449190e06f6d035a6eb2bb",
+          "tick": 27,
+          "phase": 2
+        },
+        {
+          "file": "dash-phase-03.png",
+          "sha256": "d9ffe231fe2bc32d9bba0cd724e3cb19d125a69682596dcb5d68670ca6599f35",
+          "tick": 30,
+          "phase": 3
+        },
+        {
+          "file": "dash-phase-04.png",
+          "sha256": "5bbc424da3d67d9eeb0934ae44892d3640a260d2cedbf39abbede61381d084ba",
+          "tick": 33,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-00.png",
+          "sha256": "8c04267ea82aa07166797b425f822d90806124d47155ff7be088d5d804399554",
+          "tick": 35,
+          "phase": 0
+        },
+        {
+          "file": "dash_heavy-phase-01.png",
+          "sha256": "e7036f116a2dd088d92f295e31f868d740326bc57dd1331282822979c0eb20cd",
+          "tick": 36,
+          "phase": 1
+        },
+        {
+          "file": "dash_heavy-phase-02.png",
+          "sha256": "f8f95265d8a9696d6c4b6727d28c6e5ecec40920a83c7be29ee79156cda4ada7",
+          "tick": 38,
+          "phase": 2
+        },
+        {
+          "file": "dash_heavy-phase-03.png",
+          "sha256": "78579e353cf1495607470238cc5d52695e985ddff9ead9f230d139e9504a1f45",
+          "tick": 41,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-03-last.png",
+          "sha256": "0c149f83499b5fdcb6c607592435b1dae7e7960907dd77691e23efa656da97f9",
+          "tick": 44,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-04.png",
+          "sha256": "81fc5e983a9ecdbb4c1c90bd92895ca23211a944c7824e4b25489594d279d76e",
+          "tick": 45,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-05.png",
+          "sha256": "29036a3b552a1002aa885189382a7ac52267e9174a126af920a4ce28bc53985c",
+          "tick": 49,
+          "phase": 5
+        },
+        {
+          "file": "dash_heavy-phase-05-last.png",
+          "sha256": "507dd9d06dc69f88017f4b751e849fec2e54f1301e37e26e1fd2a4a654282e7e",
+          "tick": 55,
+          "phase": 5
+        },
+        {
+          "file": "recovered-guard-first.png",
+          "sha256": "f3fea175eee97551a9ce47cedc87f143894070cbac2823032e5756d9c0d920b1",
+          "tick": 56,
+          "phase": 0
+        },
+        {
+          "file": "settled-idle-112.png",
+          "sha256": "9162d3b328be0888620d413bdea2334fd223de6be2f417945e522e0459d2fe7b",
+          "tick": 113,
+          "phase": 5
+        }
+      ]
+    },
+    {
+      "directory": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-right-block",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "trace": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-right-block/main-trace.json",
+        "sha256": "867338a49151df1a1beb004cbcb8d15a0738a473574aa843a631dee27aeddf5d"
+      },
+      "window_setup": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-right-block/window-setup.json",
+        "sha256": "1106d22191f717055287b30f4614f31083eea880a0a489d017dc52c1a0d3dc53"
+      },
+      "images": [
+        {
+          "file": "settled-idle-000.png",
+          "sha256": "0f5198788896e914ac9108dec74164005507f220280f72c3bfae5a5e9b4b3c7a",
+          "tick": 1,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-00.png",
+          "sha256": "b747d32fc2607d964acc9aed73d910a19706110473eb7cbada63c763ecc394a9",
+          "tick": 23,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-01.png",
+          "sha256": "ec85c5297e35aad06a16ae04a3097255824bc541f5b3ea93d82f537332e4af2d",
+          "tick": 25,
+          "phase": 1
+        },
+        {
+          "file": "dash-phase-02.png",
+          "sha256": "0e11755070211bf8ce1e474432628647bf1e4d7956ebfc087649777b2d40cd1a",
+          "tick": 27,
+          "phase": 2
+        },
+        {
+          "file": "dash-phase-03.png",
+          "sha256": "552a057100ca6784a3e02946569fe8dd3ac69111bfc622f32e281bf8ef59c099",
+          "tick": 30,
+          "phase": 3
+        },
+        {
+          "file": "dash-phase-04.png",
+          "sha256": "3bd959d8dedde5078aae6abc79d2ec9da474883b9a33fbf6d9d0e762f534a7b3",
+          "tick": 33,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-00.png",
+          "sha256": "d182a4c88ea2ad9a8470405f28186499a63154125f11ad6799b2142ca1c2d54d",
+          "tick": 35,
+          "phase": 0
+        },
+        {
+          "file": "dash_heavy-phase-01.png",
+          "sha256": "9ba825e8bc86100fc89842ee7a75c6b344359a24cc36f9c88af45c35610441b5",
+          "tick": 36,
+          "phase": 1
+        },
+        {
+          "file": "dash_heavy-phase-02.png",
+          "sha256": "f1432d1bbc19dbacbd4c921948a0f5ee717fda479643c19235d0668408f8c132",
+          "tick": 38,
+          "phase": 2
+        },
+        {
+          "file": "dash_heavy-phase-03.png",
+          "sha256": "a2b5fd3663cf237befa5ee7218a54be986f534a57ccfe1486b988f7e01c7c1c3",
+          "tick": 44,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-03-last.png",
+          "sha256": "a90b38a23703eb7af28a899c81ac2227f585bfdc82a25de852772de754f5c06c",
+          "tick": 47,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-04.png",
+          "sha256": "977c7c63f91f493421696d7f4ba217ec622601d158f0eeeee0b764b78cebd69f",
+          "tick": 48,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-05.png",
+          "sha256": "d1dd441c738fd6cffc8e085e7224b75f2b57df790dcdc5c70077ace47d69022f",
+          "tick": 52,
+          "phase": 5
+        },
+        {
+          "file": "dash_heavy-phase-05-last.png",
+          "sha256": "9e13a2ef67200141bd3dfcabf4da3e9d0a4c18d2b159cb11d4efda5ad28d8f55",
+          "tick": 58,
+          "phase": 5
+        },
+        {
+          "file": "recovered-guard-first.png",
+          "sha256": "355c40e36f5d7195f3c00e06484661b843e7857579d522e87c6e545c3f9609f0",
+          "tick": 59,
+          "phase": 0
+        },
+        {
+          "file": "settled-idle-112.png",
+          "sha256": "21d1a4c3f11aa0e6fa80a18d1aef9fe89d26ad26df323eb032d6f005f37a4f0c",
+          "tick": 113,
+          "phase": 5
+        }
+      ]
+    },
+    {
+      "directory": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-right-hit",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "trace": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-right-hit/main-trace.json",
+        "sha256": "e112a9affbc555b24e594ee99ffe3902bc78055c3163429d1b7537856849c9cd"
+      },
+      "window_setup": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-right-hit/window-setup.json",
+        "sha256": "0bd78af103095c4cc1c9aad5b910983c2bb5f59dac813e58746102895159823c"
+      },
+      "images": [
+        {
+          "file": "settled-idle-000.png",
+          "sha256": "1258dfc38ac460efbed34754c0300899eabcb51953d9e9ad6122ff0f901a38a4",
+          "tick": 1,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-00.png",
+          "sha256": "87363e5bb6cab9d9a0a81164ef8ce03fed24a405e8f4b16be7e05f0841791bbd",
+          "tick": 23,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-01.png",
+          "sha256": "d8620ad5f434b44c08082f993f270d8bdc78aa7e1672b335464c5011277944c7",
+          "tick": 25,
+          "phase": 1
+        },
+        {
+          "file": "dash-phase-02.png",
+          "sha256": "e9c1abd760e89b751c0959f610e31f6ecac30cbb078ce724eaa2afead547a14f",
+          "tick": 27,
+          "phase": 2
+        },
+        {
+          "file": "dash-phase-03.png",
+          "sha256": "d4d750e592c11a7b189dced4036fda83f9ca926de9fd41026c2ef1517b7f7f54",
+          "tick": 30,
+          "phase": 3
+        },
+        {
+          "file": "dash-phase-04.png",
+          "sha256": "506a03a0ca04598f8c1d365d0ba087888a19ab93eeb5698408afb7eb97591e70",
+          "tick": 33,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-00.png",
+          "sha256": "ce1ce813d19d7ed1fc0d8043bf05c4e6360ab7d2d7a66c0fcc4546e85ce4f07a",
+          "tick": 35,
+          "phase": 0
+        },
+        {
+          "file": "dash_heavy-phase-01.png",
+          "sha256": "979571c60a91399395830a04e513c60d56425197f76130f7f77c446084ea3e53",
+          "tick": 36,
+          "phase": 1
+        },
+        {
+          "file": "dash_heavy-phase-02.png",
+          "sha256": "75fdfe30ea05616fb6d630da5d20a0b7d16727537bed985c29cd25f96633a3b8",
+          "tick": 38,
+          "phase": 2
+        },
+        {
+          "file": "dash_heavy-phase-03.png",
+          "sha256": "d0c699ec9da71e185a9578464d1a1139e65fb85cb7e7a1ea9976ddd48571761d",
+          "tick": 47,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-03-last.png",
+          "sha256": "728f455e871ea7f0e18cbacd2ef7823e5b8aa6cf9a21bc8749ba36826123019c",
+          "tick": 50,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-04.png",
+          "sha256": "a1fa4a7870fb02db3410e52efe8b38145f613a543dac7c3a6f06dd6972dd6910",
+          "tick": 51,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-05.png",
+          "sha256": "46c062790dd31e54d14cbfffe37cf5f9a161c2846ae891a3ccfc7e53d646d500",
+          "tick": 55,
+          "phase": 5
+        },
+        {
+          "file": "dash_heavy-phase-05-last.png",
+          "sha256": "379523674ac63736a4c6f921307fc7ba5d226934d729401b3ffd8c8b02b6ad51",
+          "tick": 61,
+          "phase": 5
+        },
+        {
+          "file": "recovered-guard-first.png",
+          "sha256": "0902e64205be43a86aff492eb74628665e89b562733d6ddd10688e378ec11ea0",
+          "tick": 62,
+          "phase": 0
+        },
+        {
+          "file": "settled-idle-112.png",
+          "sha256": "f7873d6029954a79ed02263d9ec01ec642883a395a0746d7ceb55dac34027f52",
+          "tick": 113,
+          "phase": 5
+        }
+      ]
+    },
+    {
+      "directory": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-right-whiff",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "trace": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-right-whiff/main-trace.json",
+        "sha256": "e37f8d7b42022c9efda11f6a81af1418477da1ce238972d731908e092f16f4fb"
+      },
+      "window_setup": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-1080-right-whiff/window-setup.json",
+        "sha256": "573bace20329f60c59395ed70e384e487b38469d4d8fe9450aee9b7463a01d60"
+      },
+      "images": [
+        {
+          "file": "settled-idle-000.png",
+          "sha256": "3a20e8aa3823f44123c6113239360dc5049df8fc24ba81cb0a82ea2bd26afcc8",
+          "tick": 1,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-00.png",
+          "sha256": "c79071d105d03ce49fb69bcecbedb948255f11bffae30050ac5bbdc7fd8e4eea",
+          "tick": 23,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-01.png",
+          "sha256": "f343712224755962990948174cc1e728fae9c8164998fb6d5eb74e2d9ca33d88",
+          "tick": 25,
+          "phase": 1
+        },
+        {
+          "file": "dash-phase-02.png",
+          "sha256": "87b2ef1fd1c16e5a541aedb154ac13ac6b8383b82b53862e60e30f3b3d8350ae",
+          "tick": 27,
+          "phase": 2
+        },
+        {
+          "file": "dash-phase-03.png",
+          "sha256": "869fca2b1bc5b8286996bab39eb8fd9a3d4a332cab2d817ea6a6f023600f4d99",
+          "tick": 30,
+          "phase": 3
+        },
+        {
+          "file": "dash-phase-04.png",
+          "sha256": "eaaa6024ae38a2fadb249d393eeffe0a066636729558a8e77eed052b2cb6fa74",
+          "tick": 33,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-00.png",
+          "sha256": "9a776fe0eba371f2050c58d03d66ad9f177a758c7a3cf3a172db0d8acef20f82",
+          "tick": 35,
+          "phase": 0
+        },
+        {
+          "file": "dash_heavy-phase-01.png",
+          "sha256": "e346a16af97a75773ba5efde58a69abecffc0318898887a30b55999a4fa497df",
+          "tick": 36,
+          "phase": 1
+        },
+        {
+          "file": "dash_heavy-phase-02.png",
+          "sha256": "2501919a3c6315a1f0d19480e426490b3e31922082d4c6d6f89837559da4ba31",
+          "tick": 38,
+          "phase": 2
+        },
+        {
+          "file": "dash_heavy-phase-03.png",
+          "sha256": "7791c54cb003584694d9fa148d1bc47f589daf479fa0387e5d8bca8872f5a80b",
+          "tick": 41,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-03-last.png",
+          "sha256": "60643ea111a81096a17af1b1e444fbf6f4e30824e5266d7861f4b5a62ca99902",
+          "tick": 44,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-04.png",
+          "sha256": "bd689a99326b9b6f4dff6b43b9df618131ee8f5cc9719a7e7d9dc99bc8b3a199",
+          "tick": 45,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-05.png",
+          "sha256": "501fe2461192dc7a0bd643ce8ff49ac6e5272f9a04b6e6360327951f786472bf",
+          "tick": 49,
+          "phase": 5
+        },
+        {
+          "file": "dash_heavy-phase-05-last.png",
+          "sha256": "b6091cad41297ffc15637eabeec1ca120832e04a71014863df7d24e84a9f3e1a",
+          "tick": 55,
+          "phase": 5
+        },
+        {
+          "file": "recovered-guard-first.png",
+          "sha256": "babbafbae6a6b082df886b55dbda2ab584b7fd2fe36afb9e4e876a331f863c84",
+          "tick": 56,
+          "phase": 0
+        },
+        {
+          "file": "settled-idle-112.png",
+          "sha256": "9fe04c4e818a6aea75eea9fe7433936905f56cd407b38818f6adb2547ae9451b",
+          "tick": 113,
+          "phase": 5
+        }
+      ]
+    },
+    {
+      "directory": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-left-block",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "trace": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-left-block/main-trace.json",
+        "sha256": "f11673a6520ca9661ec57d2a6ead3ffec7436c8bf05631bf403be22c94f36a2b"
+      },
+      "window_setup": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-left-block/window-setup.json",
+        "sha256": "c302e63dfe6097eb62dfa9cb9a0790cc3d0e529fcb879db6d10d9302b2efa1eb"
+      },
+      "images": [
+        {
+          "file": "settled-idle-000.png",
+          "sha256": "caa1ec71156b1056703d78a23fa288c9649541b4fd57780d8f8bdd04dffc6c09",
+          "tick": 1,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-00.png",
+          "sha256": "a01c467aecd23b02ebd9bf90c7ca3a30453823d9c69efe7276a6be45be8c032d",
+          "tick": 23,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-01.png",
+          "sha256": "43faa2b3c1bbf4d97d7c003abe3f89160285c60f9e9062cd74fe278f047dac0c",
+          "tick": 25,
+          "phase": 1
+        },
+        {
+          "file": "dash-phase-02.png",
+          "sha256": "bf738c7ffe5c8136d70a821bddb983822c8d47a9ab18291eb9582d44fd8e99a0",
+          "tick": 27,
+          "phase": 2
+        },
+        {
+          "file": "dash-phase-03.png",
+          "sha256": "47bd0df79f361468f296f45b5228f159d6dbf83b64a812d3f4610272d9066f8c",
+          "tick": 30,
+          "phase": 3
+        },
+        {
+          "file": "dash-phase-04.png",
+          "sha256": "da1c6eb7ecef01d8e54ac7d84ab6c9ce19ef07f7e6becd21f6e520c000c91be4",
+          "tick": 33,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-00.png",
+          "sha256": "6d0d44e4d71c3a6e95a3ec629b11f9533ce6692160adecfec21364395754cdb1",
+          "tick": 35,
+          "phase": 0
+        },
+        {
+          "file": "dash_heavy-phase-01.png",
+          "sha256": "cf5b2d34cd6c8286eaaa7f77d86e8dea9f25160076b161779283e46efee6653f",
+          "tick": 36,
+          "phase": 1
+        },
+        {
+          "file": "dash_heavy-phase-02.png",
+          "sha256": "9e6d4eb0fd2bd50a90f3e9deeafdcd314fd192a34d4fd4238d5194fe2a816db5",
+          "tick": 38,
+          "phase": 2
+        },
+        {
+          "file": "dash_heavy-phase-03.png",
+          "sha256": "855d205dff90d980844b0393fc570c9d6c39c9f5a3916b2790b25684f94f3673",
+          "tick": 44,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-03-last.png",
+          "sha256": "b2bc1b6b2d05a8334cc5718f1e21908ad73ad2617eecf257a5fa838bd4798da9",
+          "tick": 47,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-04.png",
+          "sha256": "aca4bdf16c138d4fbdae1a7f2997cd97a14dd995bb721b25345a88049cd1b52b",
+          "tick": 48,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-05.png",
+          "sha256": "e3e782693c84318a1de4b39cd89c5143d0c53e949fd2191e7ae8574a28c466b4",
+          "tick": 52,
+          "phase": 5
+        },
+        {
+          "file": "dash_heavy-phase-05-last.png",
+          "sha256": "67ce1da6ce54529804df6b9fecbfcf76473e84248b1f89f75c182ce03d5ffef6",
+          "tick": 58,
+          "phase": 5
+        },
+        {
+          "file": "recovered-guard-first.png",
+          "sha256": "d823824b15b17ee6dd8cabbd3316951a849445cd6349d8cf44693db7d57c783f",
+          "tick": 59,
+          "phase": 0
+        },
+        {
+          "file": "settled-idle-112.png",
+          "sha256": "485e63055ff481be7cbb434da57524506768742f7a65303df3323e7d73728000",
+          "tick": 113,
+          "phase": 5
+        }
+      ]
+    },
+    {
+      "directory": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-left-hit",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "trace": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-left-hit/main-trace.json",
+        "sha256": "4cc3eb347f62ced16e3f81cea16b7a19bbf3567570dc8ba2b99846c0106810b1"
+      },
+      "window_setup": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-left-hit/window-setup.json",
+        "sha256": "c3989b603f825ce7efebb4612c0e452b7bc3ebe8c81932c89de85acd86ace3b9"
+      },
+      "images": [
+        {
+          "file": "settled-idle-000.png",
+          "sha256": "8b9524a8b2d0ee3fcda1b8fdb2ba397863c893c96621aa8639926d0272b78fd0",
+          "tick": 1,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-00.png",
+          "sha256": "8bfaafb5b031b77db87cf8a2ad273d223efd1d467a14ab295fe7e69825f03e7d",
+          "tick": 23,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-01.png",
+          "sha256": "b82539924b2448d69b0dc7245540e15e772ed36fa198468cae6d2ec59c4675ba",
+          "tick": 25,
+          "phase": 1
+        },
+        {
+          "file": "dash-phase-02.png",
+          "sha256": "ae4757b0cdd2e3596dc5492bc4f4a669cbe58047f2fc8631990da81dc1091e54",
+          "tick": 27,
+          "phase": 2
+        },
+        {
+          "file": "dash-phase-03.png",
+          "sha256": "4fe4aa57636b90b7e93b2a1c047eb74fc80a5fa33da437c5a84223f353d4a2c3",
+          "tick": 30,
+          "phase": 3
+        },
+        {
+          "file": "dash-phase-04.png",
+          "sha256": "ae0c702b06bdb7c1a735b43517f1ff4cbc31760c6ae71a444ffdb247622fff42",
+          "tick": 33,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-00.png",
+          "sha256": "3f60d09cff0c3afd0e71a0c328665b2e54542dfe4dabc2603574c58acdcdebe9",
+          "tick": 35,
+          "phase": 0
+        },
+        {
+          "file": "dash_heavy-phase-01.png",
+          "sha256": "58324a94fc2de16d14fbebfcadb5d3d619d5242e170aea610e62fbc25be9db09",
+          "tick": 36,
+          "phase": 1
+        },
+        {
+          "file": "dash_heavy-phase-02.png",
+          "sha256": "f87f046aa033da384af5c8e3931b8aefbdb9dcac4296c25d27c3f3c6912797f5",
+          "tick": 38,
+          "phase": 2
+        },
+        {
+          "file": "dash_heavy-phase-03.png",
+          "sha256": "96568b73cfad8e672d99a7128c089244bf980518d769d7751bc43355231f0803",
+          "tick": 47,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-03-last.png",
+          "sha256": "13ec3c6efd2a6930ef8906427026f3f503297b2efe40892ced026763294411d2",
+          "tick": 50,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-04.png",
+          "sha256": "0db81ece3c20f1982dbe5fb0840a7375692486d87598c61cb017d35c1d846046",
+          "tick": 51,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-05.png",
+          "sha256": "204d44cf2464c7052eb12de1bfc80c2f931087925de5f351725500c9cfb8a278",
+          "tick": 55,
+          "phase": 5
+        },
+        {
+          "file": "dash_heavy-phase-05-last.png",
+          "sha256": "8b006f0ab04508e31b040edd135e4dec14e36c1627d10692a644cdeed024a07d",
+          "tick": 61,
+          "phase": 5
+        },
+        {
+          "file": "recovered-guard-first.png",
+          "sha256": "f082b110e3625bbdde7f1cffdb3e09b7b1b215cb602e8deb21876985aef51ee5",
+          "tick": 62,
+          "phase": 0
+        },
+        {
+          "file": "settled-idle-112.png",
+          "sha256": "e68689bdbd71449ad6b82e94ebe5b50150862a2caaca282409dcdb0858da361d",
+          "tick": 113,
+          "phase": 5
+        }
+      ]
+    },
+    {
+      "directory": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-left-whiff",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "trace": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-left-whiff/main-trace.json",
+        "sha256": "8be10afc63b94bcbebe4fb431649e1272ac7cc8e7a6fd16d77ebb1d33dd41995"
+      },
+      "window_setup": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-left-whiff/window-setup.json",
+        "sha256": "32c924e1078e76ae3719ebf1bbc9888eb4554de95a8e009d21ce862af25504e4"
+      },
+      "images": [
+        {
+          "file": "settled-idle-000.png",
+          "sha256": "4ac3f200d0ad7b096a0002b749a452de63a3abab0445f5bd473659599e4e7ca6",
+          "tick": 1,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-00.png",
+          "sha256": "6050aff5b92d5b83b3bcb01e91c80c5d91a3ba55dbc1cd908f9137215735b767",
+          "tick": 23,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-01.png",
+          "sha256": "0a10ae39f953621db6bfda6325815804410057276e8a9b4c9b4ae02c68949e9e",
+          "tick": 25,
+          "phase": 1
+        },
+        {
+          "file": "dash-phase-02.png",
+          "sha256": "8b3566ebb6b0f3074524e3341ddf1419a74311b48ee7fe41788b8e61f65677c9",
+          "tick": 27,
+          "phase": 2
+        },
+        {
+          "file": "dash-phase-03.png",
+          "sha256": "f58e4c60012492492b37ffabcb89fa7ff585ef383789ab31ccc0eb7bd760366a",
+          "tick": 30,
+          "phase": 3
+        },
+        {
+          "file": "dash-phase-04.png",
+          "sha256": "47c3492d0ce4ae420f4ca048ef9eb1c7c2b9767ca878b991f68cb4086d38b61c",
+          "tick": 33,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-00.png",
+          "sha256": "8121ae77ed3f138279b2ba6165b92673de089dc6fb964148ca7e712c32fbd0a5",
+          "tick": 35,
+          "phase": 0
+        },
+        {
+          "file": "dash_heavy-phase-01.png",
+          "sha256": "78398932acd2cf188b96a24dc7efbb9cb0995c27200a30828e69de7f8d2bfd60",
+          "tick": 36,
+          "phase": 1
+        },
+        {
+          "file": "dash_heavy-phase-02.png",
+          "sha256": "9b5ce72f944fd53d7df0de9ca29b58b0a405ba848badaaf1bde6844230b014fa",
+          "tick": 38,
+          "phase": 2
+        },
+        {
+          "file": "dash_heavy-phase-03.png",
+          "sha256": "6d32e4228616ca97d1eff7299a29727d209d19cef6516f783354eef0109a0cb7",
+          "tick": 41,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-03-last.png",
+          "sha256": "bb399cb60abc7b1943188cd4a657af635c5ab80b63f0f25184e11d5fd9912e12",
+          "tick": 44,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-04.png",
+          "sha256": "bfc9375104b9fc0c50c96967d9f8f62d8f79a19d791492d1f4a338ba2ecb12b0",
+          "tick": 45,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-05.png",
+          "sha256": "3a2a31769c76306a8bd2bc31d0b2b1fa5f994d79d7bac3eaf3a520316b035b96",
+          "tick": 49,
+          "phase": 5
+        },
+        {
+          "file": "dash_heavy-phase-05-last.png",
+          "sha256": "67d2ddfcb54092fae45880f7c40cb7fbed8188d69b8240d9259262ea55b9f985",
+          "tick": 55,
+          "phase": 5
+        },
+        {
+          "file": "recovered-guard-first.png",
+          "sha256": "adb7141238b80ff8906a97233d132dad983d6cf28ad2f47370e8635d56736d23",
+          "tick": 56,
+          "phase": 0
+        },
+        {
+          "file": "settled-idle-112.png",
+          "sha256": "8e8db69442f162e5c62a749d63f4b7be90582adfaac5adddcdff7b9e3f4b5e31",
+          "tick": 113,
+          "phase": 5
+        }
+      ]
+    },
+    {
+      "directory": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-right-block",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "trace": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-right-block/main-trace.json",
+        "sha256": "3dc2f8db39e8e8f8a9d7ae561a727a39d5789fdee7326f06c0fc3c4d0d4ee721"
+      },
+      "window_setup": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-right-block/window-setup.json",
+        "sha256": "f3b7d7a079cc7b2a6f100ef8f95fef3dd724f52406a5d643529f9baca2969dba"
+      },
+      "images": [
+        {
+          "file": "settled-idle-000.png",
+          "sha256": "c3374d06e58559869f11d0d2b9269fa09a7d5f6de3110242480129b6f7097738",
+          "tick": 1,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-00.png",
+          "sha256": "3616f4978ecc355040dff5fcb9d59ae95855c154d65220eb99c789ec91528f3b",
+          "tick": 23,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-01.png",
+          "sha256": "49269e84756818909b499f57954edfed0082caf3b65118f1e822c8335d734f9e",
+          "tick": 25,
+          "phase": 1
+        },
+        {
+          "file": "dash-phase-02.png",
+          "sha256": "2fefbf40d41effc1c3cb61ac176b9c93445b8a0baa9ce8f3944edb4bb7a6999b",
+          "tick": 27,
+          "phase": 2
+        },
+        {
+          "file": "dash-phase-03.png",
+          "sha256": "c5eaa4aae7e07a2586a3c570a734544218ced8bb574106153ca34892041fb0fe",
+          "tick": 30,
+          "phase": 3
+        },
+        {
+          "file": "dash-phase-04.png",
+          "sha256": "5073287b21f5c9771605b91354343b9a63abedb62ab7d115d2ca8fe02bc61333",
+          "tick": 33,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-00.png",
+          "sha256": "b698916164cbd0299089f68efaa25241a7c2fe08821cdb90aa8fc377eddcf639",
+          "tick": 35,
+          "phase": 0
+        },
+        {
+          "file": "dash_heavy-phase-01.png",
+          "sha256": "a1729c48569ade1317cec84cef9e7b65c881849eab370f39ef0dfe2bca1b1a58",
+          "tick": 36,
+          "phase": 1
+        },
+        {
+          "file": "dash_heavy-phase-02.png",
+          "sha256": "2d4e432fe27aa8900289984799a5c08d9c71d50fa30768bf33e2fda4d9ca2c8d",
+          "tick": 38,
+          "phase": 2
+        },
+        {
+          "file": "dash_heavy-phase-03.png",
+          "sha256": "69ea03fac769c0940bdafdbce60507225aa11fe2e153831b581bb0628b813237",
+          "tick": 44,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-03-last.png",
+          "sha256": "b9f9a73ae9b0342af5d1773b83909cd2bcaa806dfaf05b2ab5e2945a0a4825cb",
+          "tick": 47,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-04.png",
+          "sha256": "b403d4a83d8433160416432b0696a836b1dbb3b28ad76c3df7a615a8f8ea43a6",
+          "tick": 48,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-05.png",
+          "sha256": "0e2fb144083e83d8e60522bd97f8de8366c6b3b6907c894a402425db30bd8eaf",
+          "tick": 52,
+          "phase": 5
+        },
+        {
+          "file": "dash_heavy-phase-05-last.png",
+          "sha256": "b9b51c3a50659612274fc6cc609e9d363388ca73a86625bdff3106cc3f217a9c",
+          "tick": 58,
+          "phase": 5
+        },
+        {
+          "file": "recovered-guard-first.png",
+          "sha256": "d6f7dfa1c1b6775c633eff44563a602c6523f3ca5ec56f4c3b3169dc74d83e73",
+          "tick": 59,
+          "phase": 0
+        },
+        {
+          "file": "settled-idle-112.png",
+          "sha256": "3db5e007c6d4711c3456000524fb3d9f0c018c0838f8706ae3329804c5c79aa5",
+          "tick": 113,
+          "phase": 5
+        }
+      ]
+    },
+    {
+      "directory": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-right-hit",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "trace": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-right-hit/main-trace.json",
+        "sha256": "d7ab9283ee7d97e411b58f5f065a5add7e41e9cdc61aeddda1f83a57109e6c02"
+      },
+      "window_setup": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-right-hit/window-setup.json",
+        "sha256": "2288301efcb2b1fc11d6e733e588ba7b4d45015662e3cbf7ef7e99e36b8a0ac3"
+      },
+      "images": [
+        {
+          "file": "settled-idle-000.png",
+          "sha256": "14e07b0dca1c1be5f53b3cbb06d701373d758247e1dd1d99e420689eda58ca80",
+          "tick": 1,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-00.png",
+          "sha256": "ce7a3936927c955ab1fa9dadc9f544ee964f2b071a77ceb9851c29d8c0e448a1",
+          "tick": 23,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-01.png",
+          "sha256": "f1f1fd68b04d8a29810a058cf1ad7f35bf8906186d7fde99dd08cd7b94307ca0",
+          "tick": 25,
+          "phase": 1
+        },
+        {
+          "file": "dash-phase-02.png",
+          "sha256": "b71bf94da48761cc8b1529e8b9b718943c8c94a6b668355e3727114a6fbeece1",
+          "tick": 27,
+          "phase": 2
+        },
+        {
+          "file": "dash-phase-03.png",
+          "sha256": "341480fdeef6fd9e8bd32e8d0f17c604ac390fd65229a0d10f23e62f847115b7",
+          "tick": 30,
+          "phase": 3
+        },
+        {
+          "file": "dash-phase-04.png",
+          "sha256": "617d4bcad0cd125097ffd3ecc1100689fa8fdff0e59a697f030d899745746b60",
+          "tick": 33,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-00.png",
+          "sha256": "25e6682c386d1697259978e165d3efae1cd60fc3029642e5e8f8ad019999e858",
+          "tick": 35,
+          "phase": 0
+        },
+        {
+          "file": "dash_heavy-phase-01.png",
+          "sha256": "1a98f07922735be3ea9b5aa70ba0af64168bfcf3dbd88c05864312f01f615c9a",
+          "tick": 36,
+          "phase": 1
+        },
+        {
+          "file": "dash_heavy-phase-02.png",
+          "sha256": "c9cb6e5f35955f8881ed46393f1b993a7f524f58020710a44a1b195c1822b6e8",
+          "tick": 38,
+          "phase": 2
+        },
+        {
+          "file": "dash_heavy-phase-03.png",
+          "sha256": "0d91bdeee430a64dddeb187057589303fd3f262c9c4cc4a1ecfa152e5c686c0e",
+          "tick": 47,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-03-last.png",
+          "sha256": "555c744c2a4a6ae4b94b64e473588d3c3ff08c1b364151b5f577e1bff35d51dc",
+          "tick": 50,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-04.png",
+          "sha256": "fcf016757853d0dc3db4211f0ae7257cba4db1132f36d741dacc40ea29e8c485",
+          "tick": 51,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-05.png",
+          "sha256": "4514fe637ed6e56ed698006d714925cf196c482c34f7e62facbd492639f2799e",
+          "tick": 55,
+          "phase": 5
+        },
+        {
+          "file": "dash_heavy-phase-05-last.png",
+          "sha256": "7d8f99b384b357375be7bc583776f586bd083295b9db08888883d3ab37e35fad",
+          "tick": 61,
+          "phase": 5
+        },
+        {
+          "file": "recovered-guard-first.png",
+          "sha256": "9eec89fd78f78ce079f0904944921fda1500d66758eee1e9362b1b7fe8e1307a",
+          "tick": 62,
+          "phase": 0
+        },
+        {
+          "file": "settled-idle-112.png",
+          "sha256": "47df25bd5dc2584299e62a95b61df66537f4b9b8d2c1e407698b9e049a6599bd",
+          "tick": 113,
+          "phase": 5
+        }
+      ]
+    },
+    {
+      "directory": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-right-whiff",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "trace": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-right-whiff/main-trace.json",
+        "sha256": "0e7143c5234ab4f892e6c82a475f07929f787b6717ea6fba4fc33c8257a734e8"
+      },
+      "window_setup": {
+        "path": "reports/luna-dash-heavy-resume/gui-v2-20261105-720-right-whiff/window-setup.json",
+        "sha256": "74467a71195a08897082c685d564217c001f4640d328468f5f45584bcd12dadd"
+      },
+      "images": [
+        {
+          "file": "settled-idle-000.png",
+          "sha256": "4ebd5ddad0c5acdd07ee2f34ae85b1b673b9f3feca07c4670abc52a4f1783be8",
+          "tick": 1,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-00.png",
+          "sha256": "4568cc7276fc036fe26b02f4aacffe0ec7ca793ef0117cc7430b3660c5a9d742",
+          "tick": 23,
+          "phase": 0
+        },
+        {
+          "file": "dash-phase-01.png",
+          "sha256": "35bb62efb74ce8f88fc9934b67e07f1a6fd74181efb465a6f6ac36faa42bfae2",
+          "tick": 25,
+          "phase": 1
+        },
+        {
+          "file": "dash-phase-02.png",
+          "sha256": "9b48c5f9864ca8b11326ff8cbb4eeb70c7411797a0d24d28ca33691092311822",
+          "tick": 27,
+          "phase": 2
+        },
+        {
+          "file": "dash-phase-03.png",
+          "sha256": "1703bd7526307ac21f67bdde0521ba92aca0ed5abf179d8608eae809254817cd",
+          "tick": 30,
+          "phase": 3
+        },
+        {
+          "file": "dash-phase-04.png",
+          "sha256": "b56045f05b66f1770f999e9a28aee3274ea0d5ed9f9934bb1ecc84288e31b851",
+          "tick": 33,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-00.png",
+          "sha256": "0b5605b513ef7f8ea28f670cdf3ab393896c7b6c92b643ce9eb0f733370d9149",
+          "tick": 35,
+          "phase": 0
+        },
+        {
+          "file": "dash_heavy-phase-01.png",
+          "sha256": "734ea8d735aff52cd0ecc0dbe11025e5ea49718804dfe5bde1b7a01a2b9dcc93",
+          "tick": 36,
+          "phase": 1
+        },
+        {
+          "file": "dash_heavy-phase-02.png",
+          "sha256": "daa80847bb3a5a1e8c524ac3fcde43f991ad7964ba925e4e0952b66769b35a33",
+          "tick": 38,
+          "phase": 2
+        },
+        {
+          "file": "dash_heavy-phase-03.png",
+          "sha256": "eb6559e3fe2c5c21f87a379f47d05710d2e1512119b63d15c3ff345cf3e09680",
+          "tick": 41,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-03-last.png",
+          "sha256": "d759310b7935b4995a0d27f31e7dca93de6b8a3f24de71d9f748f6addd766f7c",
+          "tick": 44,
+          "phase": 3
+        },
+        {
+          "file": "dash_heavy-phase-04.png",
+          "sha256": "5dbd764ba51c43c294a45fc919b854ea2880dcb9ddae8e10c928566e3334308b",
+          "tick": 45,
+          "phase": 4
+        },
+        {
+          "file": "dash_heavy-phase-05.png",
+          "sha256": "e09ebb725e06204e434e80aad37b75b71dfd22c6f18a35751debd24bcd25069d",
+          "tick": 49,
+          "phase": 5
+        },
+        {
+          "file": "dash_heavy-phase-05-last.png",
+          "sha256": "5fa9337fadef8ffd06f0bb1ddb8c67bea3fb994f466edfb084b2488f6341bcae",
+          "tick": 55,
+          "phase": 5
+        },
+        {
+          "file": "recovered-guard-first.png",
+          "sha256": "4e97776302b4fa9b029fc2b62bf4fa8a81de540744ac012bad09d80f07c09528",
+          "tick": 56,
+          "phase": 0
+        },
+        {
+          "file": "settled-idle-112.png",
+          "sha256": "14d8b0c69663e24eb19efcd214fbb90575618a5039e374e3bb2d96d7817661d3",
+          "tick": 113,
+          "phase": 5
+        }
+      ]
+    }
+  ],
+  "visual_review_scope": "全部12组实际逐相PNG；720右whiff四张边界原生全图。",
+  "report_maintainer_observed": "另实际查看720-right-whiff第4相原生图；结合全部r002源及共同尺度六相，确认低伏落地与护架跨度问题。",
+  "observations": [
+    "双分辨率双向均有落地硬切：03末仍在空中伸腿，下一tick04直接低伏触地，没有可见收腿下落过渡。",
+    "双分辨率双向均有回架硬切：05末仍低姿弓步，下一tick护架首直接站直，缺可见起身衔接。",
+    "whiff两处边界tick44→45、55→56；block47→48、58→59；hit50→51、61→62，均连续且截图冻结/相位正确。",
+    "hit和block接触tick38，hit65伤害一次，block0伤害一次；whiff无接触。",
+    "人物完整入镜，无训练叠层遮挡；近距hit/block双方大幅重叠，落地躯干被对手遮挡，使用whiff确认两处硬切。",
+    "既有站防手位与中低接触不匹配仍在，不靠移火花伪修。"
+  ],
+  "existing_whole_frame_alternative": {
+    "sources": [
+      {
+        "phase": 4,
+        "source": {
+          "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-04/request-001/raw.provider.png",
+          "sha256": "ccc4fe639535216a6ee0f9ef5d7de04e31cf27a0e0a4d181216a522bd72ee7b4"
+        },
+        "request_state": {
+          "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-04/request-001/request-state.json",
+          "sha256": "62a01308a899e47ba0d203f1a80742a3e3415a63b5f60a7002bbde34bbdbfe51"
+        },
+        "common_159_sample": {
+          "path": "reports/luna-dash-heavy-resume/selection-samples-r001/phase-04.png",
+          "sha256": "7ab98a4b7e5cb59556453173850954bb6e78403668f4fe5e826fe12399ca8ee6"
+        }
+      },
+      {
+        "phase": 5,
+        "source": {
+          "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-05/request-001/raw.provider.png",
+          "sha256": "8b47d3b8f76621be4e3557c81fe9f052009172041879eb36fe609cbe82bf9801"
+        },
+        "request_state": {
+          "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/dash_heavy/phase-05/request-001/request-state.json",
+          "sha256": "e2a860188371bb6a0a2716c6ff577de35960f36095f3ff394b0bf50e2c7e0a9d"
+        },
+        "common_159_sample": {
+          "path": "reports/luna-dash-heavy-resume/selection-samples-r001/phase-05.png",
+          "sha256": "ad14f26e86c98d2a9ad47923644705a9e0172bbcb72c8149dfd4ae703e76e350"
+        }
+      }
+    ],
+    "review": "实际查看04/05 request001完整源及共同159联系图；头身无明显缩人，屈膝承重→站起更接近回架，存在可研究的整帧替代。",
+    "not_accepted_reason": "保持03水平伸腿时，04仍已双脚着地，收膝放脚过程未补；04明亮近腿在前、05明亮近腿到后，可能把低伏硬切换成前后脚互换硬切。未在主游戏替换、未声称该替代通过。",
+    "status": "not_applied_transition_gap_remains",
+    "boundary": "不切肢、不逐相放大、不改攻击判定/时序强保通过；保留现有候选和真实失败证据。"
+  },
+  "limits": [
+    "只前置dash00–04接飞踢，未验完整九相冲刺。",
+    "无录屏；自动InputFrame非真人硬件；音频Dummy未验收。",
+    "未修改生产代码、合同或旧证据。技术采集通过不等于落地/回架美术通过。",
+    "03→04与05→护架仍缺通过验收的完整过渡，现阶段不能称飞踢美术完成。",
+    "完整S2/S2–S7、严格比例、本人声音、4.7未整体验收。"
+  ],
+  "installed": false,
+  "playable": false,
+  "visual_accepted": false
+}

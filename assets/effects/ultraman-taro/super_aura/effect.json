@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "id": "super_aura",
+  "texture": "res://assets/effects/ultraman-taro/super_aura/atlas.png",
+  "cell": 256,
+  "rects": [
+    [
+      0,
+      0,
+      256,
+      256
+    ],
+    [
+      256,
+      0,
+      256,
+      256
+    ],
+    [
+      512,
+      0,
+      256,
+      256
+    ],
+    [
+      768,
+      0,
+      256,
+      256
+    ],
+    [
+      1024,
+      0,
+      256,
+      256
+    ],
+    [
+      1280,
+      0,
+      256,
+      256
+    ]
+  ],
+  "ticks": [
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+  ],
+  "anchor": [
+    128,
+    248
+  ],
+  "loop": true,
+  "art_source": "api",
+  "route": "tools/art_pipeline.py::generate_image",
+  "use": "超级状态专用、机制未接入；第二轮光效待指挥目视",
+  "source": "art/fighters/ultraman-taro/stage4/super-taro/revision-2/generation/01/rejected/raw.png",
+  "source_sha256": "040610a1685addcca0b38f60aa39307b5402c01f5f02f4603d36cdfa58fd0041",
+  "atlas_sha256": "02d5b383268e6f2ff8c4afd36591f0eb8917d4d8877ea7b91dd8fef513251245",
+  "blend_mode": "add",
+  "emission_gain": 0.72,
+  "attachment": {
+    "mode": "current_sprite_alpha_exterior_texture",
+    "padding_native": 3,
+    "inner_goldwhite_width_native": 1,
+    "upward_tongue_limit_native": 12,
+    "body_alpha_occlusion": true,
+    "transparent_gaps_preserved": true,
+    "texture_mapping": "根点不变的GPT火焰流场逐相采样；禁止最近色填满透明区；只裁Alpha，不生成描边或几何图形",
+    "goldwhite_rgb_threshold": [
+      235,
+      205,
+      120
+    ],
+    "tongue_rule": "参考super_aura_revision.py::aura；3px外的原画连通簇需向上、h>=5且h>=1.2w、连接3px外缘，最大12px",
+    "horn_spark": {
+      "source": "同一GPT纹理自然光点，当前六相只裁Alpha；不另贴人工光点",
+      "positions": "随当前人物双角Alpha外缘"
+    }
+  }
+}

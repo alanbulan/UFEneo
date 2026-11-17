@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "scope": "03起离背候选离线诊断",
+  "reviewer": "root_delegated_by_user",
+  "runtime_installed": false,
+  "accepted": false,
+  "test_command": "python -m unittest discover -s tools/rebuild/gomora/back_lift_resume -p 'test_departure_review.py' -v",
+  "tests": "4 passed",
+  "measurement_sha256": "93f8fadebda5972e7bf0ca8ddd93a416988f5e225f58827dcb2343647e00263e",
+  "first_fully_separated_tick": 40,
+  "max_pelvis_step": 16.15549442140351,
+  "first03_separation_diagnostic": {
+    "root_search_x": [
+      -100,
+      100
+    ],
+    "root_search_y": [
+      0,
+      200
+    ],
+    "min_first03_pelvis_step": 86.97700845625813,
+    "root": [
+      -97,
+      71
+    ],
+    "accepted": false,
+    "meaning": "有界整Alpha零重叠解，不是全局下界，不表示真实遮挡都错误；拒绝将此解当瞬移补丁。"
+  },
+  "actual_visual_review": [
+    "reports/gomora-resume/departure-review/tick-35.png",
+    "reports/gomora-resume/departure-review/tick-40.png"
+  ],
+  "visual_verdict": "04/05离背无整Alpha交叠；03角臂关系未通过，不能安装",
+  "no_generation": true,
+  "no_user_codex": true,
+  "recording": null,
+  "runtime_not_verified": [
+    "air_capture",
+    "landing",
+    "main_game_720_1080",
+    "replay"
+  ]
+}

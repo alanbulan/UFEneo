@@ -1,0 +1,65 @@
+{
+  "art_source": "api",
+  "route": "tools/art_pipeline.py:generate_image",
+  "request": "art/fighters/ultraman-ace/stage4/effects-v2/requests/trails_cutting/02/brief.json",
+  "request_sha256": "d9f0f20716eb95e5c985954638e0f83b2e3d3da59416075c0a094c7452fee12f",
+  "source": "art/fighters/ultraman-ace/stage4/effects-v2/requests/trails_cutting/02/raw.provider.png",
+  "source_sha256": "ad30b20139bd4fdd6b41512de1331306638073147008124235cb11055bc6a4e1",
+  "provider_image_sha256": "2044793a4fb1c3ddc93a0050b8ae1012583ecffb87178d6faf07d67d06614e6f",
+  "model": "gpt-image-2.5-sunburst",
+  "requested_quality": "high",
+  "actual_quality": "medium（本机接口固定返回；不因quality被忽略重发）",
+  "source_rects": [
+    [
+      0,
+      786,
+      362,
+      1086
+    ],
+    [
+      362,
+      786,
+      724,
+      1086
+    ],
+    [
+      724,
+      786,
+      1086,
+      1086
+    ],
+    [
+      1086,
+      786,
+      1448,
+      1086
+    ]
+  ],
+  "selection_reason": "按原剧配色的独立GPT像素图层；四相共用统一整帧比例，保留亮芯、外焰和粒子；不是通用库换色",
+  "episode_reference": "配色取自本轮原剧依据；中空身体弧是游戏表现，无直接原剧贴图",
+  "description": "纯能量尾迹单独一层，右边为透明的接续端，向左渐细、破碎、退散。只有稠密但断续的细火舌、星屑和短能量片，没有飞行主体、没有圆环或椭圆光盘、没有月牙、没有菱形箭头、没有亮球、没有实体白核。尾迹从右侧约90%处向左伸展至10%，右侧留完全透明的小缺口给飞行主体。白金色扁椭圆锯齿光轮仅参考颜色，不画所述飞行体。四相只让火舌和碎屑起伏。",
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "oklab",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "client_alpha_accepted": true,
+  "client_alpha": {
+    "transparent_fraction": 0.7301235198974609,
+    "visible_fraction": 0.10971736907958984,
+    "nonzero_fraction": 0.26987648010253906,
+    "opaque_fraction": 7.62939453125e-06,
+    "has_alpha_channel": true,
+    "rectangular_matte": false,
+    "clear_corners": true
+  },
+  "transforms": "读取provider高分原图的实际长宽网格（不把客户端补上的透明边当格子）；共同外框统一等比缩放；整图共享调色板量化和二值Alpha；未代码绘制最终特效"
+}

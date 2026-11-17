@@ -1,0 +1,178 @@
+{
+  "date": "2026-11-05",
+  "acceptance": "root_delegated_by_user",
+  "status": "所检换人回放与再战路径通过",
+  "source": "reports/replay-match-loading/gui-20261105-technical-summary.json",
+  "source_sha256": "7225d27f1ef09986765a59c256f32feab7dceb3cf6d996de8365e7f55f98172e",
+  "engine": "Godot 4.6.3 official, gl_compatibility, Dummy audio",
+  "app_sha256": "4fab69898996f16e55abb225e9636cf36cec375f4928f00e5419c1dee62267db",
+  "scope": "独立隔离720/1080主游戏，先初代/杰顿真实D移动并F4保存，再F6选赛文/杰顿；新局开场暂停，经正式菜单加载旧录像，恢复初代/杰顿和位移终点，R再战仍为录像双方。",
+  "zero_frames": "开场姿势和90秒画面仅辅助；关键是菜单加载前后原文件SHA相同。冻结源码在新局已有输入时会写入当前赛文组合，因未发生该变化，结合实际恢复旧人物，支持本轮0当前输入条件成立；未直接读精确intro tick。",
+  "same_file_at_load": {
+    "gui720": {
+      "sha256": "04fe1a0f3c3fb764598ee53897eb4c071a4e04cd38e9068ddac1a8c1e5b3bc90",
+      "fighters": [
+        "ultraman",
+        "zetton"
+      ],
+      "frames": 499,
+      "p1_counts": {
+        "[0, 0, 0]": 439,
+        "[1, 0, 0]": 60
+      },
+      "final_hash": "a86c2b6238f74790b65645ddfa521e5c75ffa4d52bd35afb4863d89c984bf745",
+      "unchanged_after_cross_match_load": true,
+      "unchanged_immediately_after_cross_match_load": true,
+      "after_cleanup": {
+        "sha256": "0f1da2714295ff3ae4d3b2c6b9c8468735212ec7aaf6cac75273111d22c591cc",
+        "fighters": [
+          "ultraman",
+          "zetton"
+        ],
+        "frames": 268
+      }
+    },
+    "gui1080": {
+      "sha256": "80b808e4e3781db7f5f12f351ca4e65a4d5eb214b3340857ff480cda7210b5de",
+      "fighters": [
+        "ultraman",
+        "zetton"
+      ],
+      "frames": 834,
+      "p1_counts": {
+        "[0, 0, 0]": 772,
+        "[1, 0, 0]": 62
+      },
+      "final_hash": "7a55a3fadb9fd54ed4459842c444d5073a0340133f39d65f14093cdab16cc1fe",
+      "unchanged_immediately_after_cross_match_load": true,
+      "after_cleanup": {
+        "sha256": "80b808e4e3781db7f5f12f351ca4e65a4d5eb214b3340857ff480cda7210b5de",
+        "fighters": [
+          "ultraman",
+          "zetton"
+        ],
+        "frames": 834
+      }
+    }
+  },
+  "known_attempts": [
+    "720首尝试Esc过早，仍在VS前端而返回主菜单；未调用F4覆盖，保留失败图后重新按正式流程成功。",
+    "720验证完成后，绑定窗口Alt+F4未关闭且文件后来成为R后268帧新带；原因未定位到快捷键或通道。499帧原带仅在此前菜单加载时SHA相同，不声称关闭全程不变。1080最终仍为原834帧同SHA。"
+  ],
+  "independent_review": "复核14JPEG真实尺寸与SHA：720/1080各7图；另实看1080改选赛文暂停、载回初代两张及720R再战一张。赛文机器ID为ultraseven，按实际画面和正式定义核对，不冒称另有runtime ID trace。",
+  "limits": [
+    "只验初代/杰顿→赛文/杰顿→载回原带→R原双方；交换双方、EX等仅有逻辑回归，不称图形通过。",
+    "无逐tick图形hash仪器或录像，文件SHA不变不等于每一渲染帧完全一致。",
+    "无声音、动画美术与Godot4.7验收；训练2P非零录制问题仍单独未定位。"
+  ],
+  "cleanup": {
+    "native_windows_absent": true,
+    "launch_terminal_returned_to_prompt": true,
+    "confirmed_utc": "2026-11-05T06:49:58Z",
+    "lock_absent": true,
+    "lock_checked_utc": "2026-11-05T06:50:53Z",
+    "normal_close": "Sky Alt_L+F4",
+    "manual_lock_deletion": false,
+    "numeric_exit_status": "not captured"
+  },
+  "screenshots": [
+    {
+      "path": "reports/replay-match-loading/gui1080/01-original-replay.jpg",
+      "format": "JPEG",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "f075097eca2cc3ccdc3c166f80f881c0eb4cd8874196678500630cd8d89aa436"
+    },
+    {
+      "path": "reports/replay-match-loading/gui1080/02-changed-selection.jpg",
+      "format": "JPEG",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "1dc92aecb815c002d8e89b48f2804911b2b08dea3e3f20e8e20cce4dba0317a9"
+    },
+    {
+      "path": "reports/replay-match-loading/gui1080/03-new-match-paused.jpg",
+      "format": "JPEG",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "8ff3cc5065505a77648493ba097c45d90d5f17c82ee06a187b1098d17167d2ff"
+    },
+    {
+      "path": "reports/replay-match-loading/gui1080/04-play-replay-menu.jpg",
+      "format": "JPEG",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "111c5dc941b93aeabaadb2d6cdc1ea97f1e7b0932039d30a2ceee6e1a12a8106"
+    },
+    {
+      "path": "reports/replay-match-loading/gui1080/05-loaded-original-replay.jpg",
+      "format": "JPEG",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "e10aede6a3be740486e7e40227512cdcd1e57c1b960c7a0947635bbfe8c173d4"
+    },
+    {
+      "path": "reports/replay-match-loading/gui1080/06-loaded-replay-ended.jpg",
+      "format": "JPEG",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "a91727484be71ed0703e5ba985ed9abfbdedfaf9af8644b85574e7ff06006dd6"
+    },
+    {
+      "path": "reports/replay-match-loading/gui1080/07-restart-keeps-original-fighters.jpg",
+      "format": "JPEG",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "b400356692c469d09047b4da6ab530f888a9afa4910523e13eb1e4fe1b625cbc"
+    },
+    {
+      "path": "reports/replay-match-loading/gui720/01-original-replay.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "07ace09c15aa32727ba7ff3042296399d367033883a33b47ee94203686658660"
+    },
+    {
+      "path": "reports/replay-match-loading/gui720/02-changed-selection.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "cac436b84b149219202704d07122107dbff6cf9fa94cb522b04f6124050c23ad"
+    },
+    {
+      "path": "reports/replay-match-loading/gui720/03-new-match-pause-attempt.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "dbe91be79d889ab37054228d6fb4b9c38e8141ac9e934fee58dbd30c19f2c553"
+    },
+    {
+      "path": "reports/replay-match-loading/gui720/04-new-match-paused.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "9baf55affab50cae9cc5358548d096669efcef8d26aac01cfac472b3f982b772"
+    },
+    {
+      "path": "reports/replay-match-loading/gui720/05-loaded-original-replay.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "3944aa76222a9cd3ee46a16a83286c44d6f4287e15ba2a9465ce9e19e437961a"
+    },
+    {
+      "path": "reports/replay-match-loading/gui720/06-loaded-replay-ended.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "6106291435403aa1229e5fc3edf1f1ca5a1c20b810ed1272236bcec13627e319"
+    },
+    {
+      "path": "reports/replay-match-loading/gui720/07-restart-keeps-original-fighters.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "7727a466408c42cd5ac012e87e9bbbde1dd3d1e1767a6b7cfa9722fb1d9cdc2e"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "ufeneo.luna.spin-landing-review.v1",
+  "date_utc": "2026-11-05",
+  "status": "保留落脚意图候选；腿追踪、实际地平线与idle接续未通过",
+  "raw_file": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/landing-attempt-01.raw.png",
+  "raw_sha256": "5f95d22e5cccebb0145ce6f86b8f04d786fa66f5e281bcd3bd5c54ed7038cb76",
+  "source_manifest": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/source.json",
+  "size": [
+    1199,
+    1312
+  ],
+  "mode": "RGBA",
+  "alpha": {
+    "min": 0,
+    "max": 255,
+    "zero": 1195504,
+    "full": 218,
+    "partial": 377366,
+    "bbox_nonzero": [
+      50,
+      28,
+      1163,
+      1312
+    ],
+    "bbox_128": [
+      221,
+      41,
+      866,
+      1194
+    ],
+    "assessment": "真实RGBA透明；低Alpha噪点触底边，128阈值整身留白，无明显人物裁切。原字节保留，未以清理后图冒称原生干净透明。"
+  },
+  "visual_review": {
+    "identity": "实看新原图、recover-low、本人定稿、实际idle phase00原源及已配准六帧atlas。月亮头冠/黄眼/蓝青胸肩甲/胸灯/双腕圆甲和红银四肢可辨，两臂两腿连接完整，没有新增大面积未知背甲。",
+    "legs": "右侧鞋已从高悬位置降至与另一鞋近同高度，膝微屈、脚跟较前掌抬起，具有初落脚意图。画面左腿鞋近全底，符合旧支撑腿降跟方向。但下收的横跨近侧大腿到本图右侧腿，骨盆遮挡次序改变；没有连续中相可严格证明同一解剖右腿一直落到右侧，也不能单凭红银配色判定已经换腿。保留追踪不确定，不签左右锁定。",
+    "support": "两鞋最低点仍有小高差；没有地面，右前掌接触属于姿态推断，不能声称两脚已共同承担重量。本相更接近触地候选，未验证实际支撑面。左支撑鞋位置应在全图同尺后核，不能用每帧鞋底中心强行锁定。",
+    "transition_from_low": "低收约200源像素离地缺口明显缩小，悬空小腿展开向地，躯干继续直立。两张尺寸不同，原坐标不能直接作根点位移；膝展开、骨盆遮挡和站距变化尚需同尺完整帧核验。",
+    "transition_to_idle": "本图窄站、双膝软屈、右鞋跟抬起；实际idle是明显宽站且两鞋较平，近腿白面更突出，远拳更近脸。必须核站距展开、下肢遮挡/配色转面和护拳回位，不能用clean-model等同于实际idle，也不能直接宣布本图已闭环。"
+  },
+  "shoe_diagnostics": {
+    "method": "Alpha>=128，局部ROI取鞋下段轮廓；左ROI[370,1120,610,1230]、右ROI[680,1110,890,1230]，只比较本图鞋底高度，不等于地面接触判定。",
+    "screen_left_shoe_lower_bbox": [
+      388,
+      1120,
+      589,
+      1194
+    ],
+    "screen_right_shoe_lower_bbox": [
+      691,
+      1110,
+      866,
+      1186
+    ],
+    "bottom_difference_source_px": 8,
+    "limitation": "左右指画面位置，不以此擅定解剖左右；前后脚透视与绘图误差可能影响高度，须归一主游戏侧视平面再核。"
+  },
+  "idle_references": [
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/idle/phase-00/request-001/raw.provider.png",
+      "sha256": "fcbe466ab9489a4ccd5cc8a8a3fdddacfad9d7895b70133624bf5134851a491b"
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/launcher-registered-20261105-v1/idle/atlas.png",
+      "sha256": "57321a6eef8a67f2f8404de3599f5f4b0505d3b1d186da73ef6af0aa864d6e74"
+    }
+  ],
+  "remaining": [
+    "recover-low→landing骨盆遮挡变化中的右攻左撑追踪尚未可靠成立。",
+    "两鞋底高度与原支撑前掌需同尺配准核，不得单独挪脚假齐地面。",
+    "落脚后向实际idle宽站、拳位/胸肩角度接续及整招时序仍未验证。"
+  ],
+  "generation_performed_by_reviewer": false,
+  "installed": false,
+  "playable": false,
+  "art_passed": false,
+  "godot_run": false,
+  "real_input_replay": false,
+  "recording": false,
+  "next_step": "先将现有链按完整整图统一骨尺/前掌锚，重点追踪下收→着地两腿与idle站距；只在可解释且无硬伤后才考虑真实输入回放，不继续无依据追加图或安装。",
+  "independent_review": "独立审阅实看landing、recover-low及实际idle phase00/01：位置配对可解释同腿落下，没有可确认断接；骨盆前后遮挡变化尚不能锁定同一解剖腿。右前掌初落地可读，窄站/跟未落与idle宽站仍有接续边界。"
+}

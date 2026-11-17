@@ -1,0 +1,3654 @@
+{
+  "fighter": "ultraman-arc__galaxion",
+  "reviewer": "root_delegated_by_user",
+  "status": "single_far_side_straight_punch_candidate_static_pass_with_limits",
+  "source_candidate_commit": "22aa9def",
+  "source_summary": {
+    "path": "reports/galaxion-light1-resume/gui-v1-20261105-technical-summary.json",
+    "sha256": "b7660a211856c8d4a8f29fbed1b49b0121d3498bde3f906e6b942db60ee85660"
+  },
+  "contract": {
+    "path": "reports/galaxion-light1-resume/contract-v3.json",
+    "sha256": "e40801d5deeb6f339055b51fda5fd6fb8e4c6f9bec895c30b199cb62f092b08c"
+  },
+  "actual_main_scene": "app/scenes/main.tscn",
+  "technical_passed": true,
+  "static_visual_acceptance": "single_far_side_straight_punch_passed_with_limits",
+  "groups": 24,
+  "ticks_per_group": 120,
+  "pngs": 264,
+  "captures_per_group": 11,
+  "visual_review": {
+    "scope": "12组原输入各11张，共132张独立原生截图全部实看，覆盖双向720/1080与命中/防御/落空；另原生1080右命中move_tick3细看。回放12组仅技术核验，不伪称额外逐图目视。",
+    "findings": [
+      "实际可辨为单远侧直拳：护架直接伸到接触、同远拳保持、回护并接idle。无渐伸中间相，不是近侧左拳、左右交替或三连。",
+      "五相均完整，两臂躯干与双腿同量级，whiff最清楚呈现伸收，未见阻塞级全身体量硬跳、断肢或错相。快速伸出本身不当作渐伸动画完成。",
+      "hit真实拳端与对手胸部接触，tick22白闪遮住接触皮肤细节，后续非白闪相可见拳仍靠胸；block蓝火花在拳/对手胸腹交界，但旧站防高举手不贴火花，不能称站防姿态已修复。",
+      "正式HUD和训练板保留，两人完整轮廓无HUD裁切。长招名换行使板更高，场内人物保守缩小，不宣称理想缩放。",
+      "合同实际有效拳框只11或12像素宽高，未为命中扩成躯干大框；画面无调试框，因此精确框尺寸来自冻结合同核对，实际接触来自PNG观察。"
+    ],
+    "limits": [
+      "每组11张捕获，phase0仅可见move_tick1，首尾共用，不伪称捕获move_tick0。",
+      "无录屏、实速顺滑或音频验收。",
+      "12回放组技术核验，未重复逐图视觉复核。",
+      "单拳候选通过不代表银河装甲开放或连段制作完成。"
+    ]
+  },
+  "frozen_small_fist_boxes": {
+    "1": [
+      52,
+      90,
+      11,
+      11
+    ],
+    "2": [
+      49,
+      93,
+      11,
+      11
+    ],
+    "3": [
+      51,
+      86,
+      12,
+      12
+    ]
+  },
+  "independent_root_review": {
+    "all_png_files_size_sha_and_frozen_ticks_checked": true,
+    "final_safe_equals_hud_safe_and_both_bounds_inside": true,
+    "all24_graphical_runs_same_simulation_fields_as_headless_v3": true,
+    "independent_native_views": [
+      "1280x720-right-block-original/light1-tick-02-phase-01.png",
+      "1280x720-right-whiff-original/light1-tick-02-phase-01.png",
+      "1920x1080-left-hit-original/light1-tick-02-phase-01.png",
+      "1920x1080-right-whiff-original/light1-tick-19-phase-04.png"
+    ],
+    "observation": "独立实看真拳端、蓝火花、白闪以及回护；双方全轮廓避开训练板/底HUD。白闪遮住被击者细节；站防手位仍高，保守缩小不称理想缩放。"
+  },
+  "cases": [
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-original",
+      "direction": "right",
+      "kind": "hit",
+      "replay": false,
+      "damage": 65,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "hit",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 647
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-replay",
+      "direction": "right",
+      "kind": "hit",
+      "replay": true,
+      "damage": 65,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "hit",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 647
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-original",
+      "direction": "right",
+      "kind": "block",
+      "replay": false,
+      "damage": 0,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "block",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 647
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-replay",
+      "direction": "right",
+      "kind": "block",
+      "replay": true,
+      "damage": 0,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "block",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 647
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-original",
+      "direction": "right",
+      "kind": "whiff",
+      "replay": false,
+      "damage": 0,
+      "contacts": [],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-replay",
+      "direction": "right",
+      "kind": "whiff",
+      "replay": true,
+      "damage": 0,
+      "contacts": [],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-original",
+      "direction": "left",
+      "kind": "hit",
+      "replay": false,
+      "damage": 65,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "hit",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 632
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-replay",
+      "direction": "left",
+      "kind": "hit",
+      "replay": true,
+      "damage": 65,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "hit",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 632
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-original",
+      "direction": "left",
+      "kind": "block",
+      "replay": false,
+      "damage": 0,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "block",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 632
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-replay",
+      "direction": "left",
+      "kind": "block",
+      "replay": true,
+      "damage": 0,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "block",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 632
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-original",
+      "direction": "left",
+      "kind": "whiff",
+      "replay": false,
+      "damage": 0,
+      "contacts": [],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-replay",
+      "direction": "left",
+      "kind": "whiff",
+      "replay": true,
+      "damage": 0,
+      "contacts": [],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-original",
+      "direction": "right",
+      "kind": "hit",
+      "replay": false,
+      "damage": 65,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "hit",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 647
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-replay",
+      "direction": "right",
+      "kind": "hit",
+      "replay": true,
+      "damage": 65,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "hit",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 647
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-original",
+      "direction": "right",
+      "kind": "block",
+      "replay": false,
+      "damage": 0,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "block",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 647
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-replay",
+      "direction": "right",
+      "kind": "block",
+      "replay": true,
+      "damage": 0,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "block",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 647
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-original",
+      "direction": "right",
+      "kind": "whiff",
+      "replay": false,
+      "damage": 0,
+      "contacts": [],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-replay",
+      "direction": "right",
+      "kind": "whiff",
+      "replay": true,
+      "damage": 0,
+      "contacts": [],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-original",
+      "direction": "left",
+      "kind": "hit",
+      "replay": false,
+      "damage": 65,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "hit",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 632
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-replay",
+      "direction": "left",
+      "kind": "hit",
+      "replay": true,
+      "damage": 65,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "hit",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 632
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-original",
+      "direction": "left",
+      "kind": "block",
+      "replay": false,
+      "damage": 0,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "block",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 632
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-replay",
+      "direction": "left",
+      "kind": "block",
+      "replay": true,
+      "damage": 0,
+      "contacts": [
+        {
+          "tick": 22,
+          "event": {
+            "feedback": {
+              "block_spark": "impact_guard",
+              "blockstop": 3.0,
+              "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "flash": 2.0,
+              "hitstop": 4.0,
+              "shake": 0.0,
+              "spark": "impact_light"
+            },
+            "height": 95,
+            "kind": "block",
+            "move": "light1",
+            "player": 0,
+            "projectile": false,
+            "x": 632
+          }
+        }
+      ],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-original",
+      "direction": "left",
+      "kind": "whiff",
+      "replay": false,
+      "damage": 0,
+      "contacts": [],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    },
+    {
+      "folder": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-replay",
+      "direction": "left",
+      "kind": "whiff",
+      "replay": true,
+      "damage": 0,
+      "contacts": [],
+      "pngs": 11,
+      "headless_simulation_fields_equal": true
+    }
+  ],
+  "images": [
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-original/before-input-idle.png",
+      "sha256": "df3e1c0c7de2a3795c0575e3f26d106f966b414af448a95f3245381c7340b54e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-original/light1-tick-01-phase-00.png",
+      "sha256": "a5297fcd61bc0cafc0c522d6da207be5181bf9142a0c9a4f0870a4f0d0a6897d",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-original/light1-tick-02-phase-01.png",
+      "sha256": "1475883ed674af43e3d9c71414085439d5bb8f81f1b209a48f7e91b57f37ea84",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-original/light1-tick-03-phase-01.png",
+      "sha256": "6443d3f4807ff16cf67490b7e7300f8b874000a12ae76c1adcb0dacf20e29a9e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-original/light1-tick-04-phase-02.png",
+      "sha256": "ae70e794436956ee10576d16d79424888b8226f9ee78b0a1bd3599819f1905d1",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-original/light1-tick-05-phase-02.png",
+      "sha256": "4cf0c9eafd4a2efb5250caaecb7fd5b0478dfea2f28124c18cd031e49f78ad32",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-original/light1-tick-06-phase-03.png",
+      "sha256": "d994135a51697ea24b3e0fc41c392978d96dd970e69217eff1f53de37b76439c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-original/light1-tick-07-phase-03.png",
+      "sha256": "bb254b950ffe6a115f950c4056c394d24be26f3ba76bf500ee8dff27be9a71f7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-original/light1-tick-08-phase-04.png",
+      "sha256": "7148f59d258013b6c148cf18f30420f74b9ec71cc0b07e6a38eaceaf59d9d6fe",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 32,
+      "movie_frame": 31,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-original/light1-tick-19-phase-04.png",
+      "sha256": "583869aaece403b2482e4609e1f93c27940bdfdaaebef22188c43bccd600fd9e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-original/returned-idle.png",
+      "sha256": "2a8dd228a8e637524e222d548abf1f24f830f274315feb1e81652c60aabeef83",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 44,
+      "movie_frame": 43,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-replay/before-input-idle.png",
+      "sha256": "df3e1c0c7de2a3795c0575e3f26d106f966b414af448a95f3245381c7340b54e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-replay/light1-tick-01-phase-00.png",
+      "sha256": "a5297fcd61bc0cafc0c522d6da207be5181bf9142a0c9a4f0870a4f0d0a6897d",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-replay/light1-tick-02-phase-01.png",
+      "sha256": "1475883ed674af43e3d9c71414085439d5bb8f81f1b209a48f7e91b57f37ea84",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-replay/light1-tick-03-phase-01.png",
+      "sha256": "6443d3f4807ff16cf67490b7e7300f8b874000a12ae76c1adcb0dacf20e29a9e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-replay/light1-tick-04-phase-02.png",
+      "sha256": "ae70e794436956ee10576d16d79424888b8226f9ee78b0a1bd3599819f1905d1",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-replay/light1-tick-05-phase-02.png",
+      "sha256": "4cf0c9eafd4a2efb5250caaecb7fd5b0478dfea2f28124c18cd031e49f78ad32",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-replay/light1-tick-06-phase-03.png",
+      "sha256": "d994135a51697ea24b3e0fc41c392978d96dd970e69217eff1f53de37b76439c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-replay/light1-tick-07-phase-03.png",
+      "sha256": "bb254b950ffe6a115f950c4056c394d24be26f3ba76bf500ee8dff27be9a71f7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-replay/light1-tick-08-phase-04.png",
+      "sha256": "7148f59d258013b6c148cf18f30420f74b9ec71cc0b07e6a38eaceaf59d9d6fe",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 32,
+      "movie_frame": 31,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-replay/light1-tick-19-phase-04.png",
+      "sha256": "583869aaece403b2482e4609e1f93c27940bdfdaaebef22188c43bccd600fd9e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-hit-replay/returned-idle.png",
+      "sha256": "2a8dd228a8e637524e222d548abf1f24f830f274315feb1e81652c60aabeef83",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 44,
+      "movie_frame": 43,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-original/before-input-idle.png",
+      "sha256": "6505073a2ff89ccd9f96988e5c0b74eac7714077d57968a0e4372765ed00eaf1",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-original/light1-tick-01-phase-00.png",
+      "sha256": "7bb655d67c377a418cb470944123f71f45e7422abb2ad8e1cac6d1d5f4d74c10",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-original/light1-tick-02-phase-01.png",
+      "sha256": "4bac8baf339d94d5cce161bdf7fb23ece2d2f8c60cafdae6dae57c21368bf9cb",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-original/light1-tick-03-phase-01.png",
+      "sha256": "e068dbfce71b1fb6ac6d50c2972eefe3961f177d195ea527988ec3a6cb85c771",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-original/light1-tick-04-phase-02.png",
+      "sha256": "7b2edba881f4d10e58f55e577ac2233f23f5eb87c08ec298860b736bb0395244",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-original/light1-tick-05-phase-02.png",
+      "sha256": "11ed803b0349dbd4cd7ba74881c745915572564423a08bd6216e0447af5ac7b4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-original/light1-tick-06-phase-03.png",
+      "sha256": "c9a73cafdda5058b518588be49990cfc537d8c58d44ce31fd5d3f05fd830b8cd",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-original/light1-tick-07-phase-03.png",
+      "sha256": "7c7bf6eed7ca10a08b61ff36b587315baec5f0831478054f47fcc36f9a0f6f27",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-original/light1-tick-08-phase-04.png",
+      "sha256": "fd31e1bb94f020ff8f94a5732d6faa78a26c83ac971e93490dcc72537c81e4e1",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-original/light1-tick-19-phase-04.png",
+      "sha256": "a1734b9f6ef22628a6cb199a9061e073d9876f579a04758af286c3b00c1b8081",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-original/returned-idle.png",
+      "sha256": "416eb236ac212627a223f1f08cd5381f397f9b2b0d66d9669bb6e217f89212c7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-replay/before-input-idle.png",
+      "sha256": "6505073a2ff89ccd9f96988e5c0b74eac7714077d57968a0e4372765ed00eaf1",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-replay/light1-tick-01-phase-00.png",
+      "sha256": "7bb655d67c377a418cb470944123f71f45e7422abb2ad8e1cac6d1d5f4d74c10",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-replay/light1-tick-02-phase-01.png",
+      "sha256": "4bac8baf339d94d5cce161bdf7fb23ece2d2f8c60cafdae6dae57c21368bf9cb",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-replay/light1-tick-03-phase-01.png",
+      "sha256": "e068dbfce71b1fb6ac6d50c2972eefe3961f177d195ea527988ec3a6cb85c771",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-replay/light1-tick-04-phase-02.png",
+      "sha256": "7b2edba881f4d10e58f55e577ac2233f23f5eb87c08ec298860b736bb0395244",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-replay/light1-tick-05-phase-02.png",
+      "sha256": "11ed803b0349dbd4cd7ba74881c745915572564423a08bd6216e0447af5ac7b4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-replay/light1-tick-06-phase-03.png",
+      "sha256": "c9a73cafdda5058b518588be49990cfc537d8c58d44ce31fd5d3f05fd830b8cd",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-replay/light1-tick-07-phase-03.png",
+      "sha256": "7c7bf6eed7ca10a08b61ff36b587315baec5f0831478054f47fcc36f9a0f6f27",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-replay/light1-tick-08-phase-04.png",
+      "sha256": "fd31e1bb94f020ff8f94a5732d6faa78a26c83ac971e93490dcc72537c81e4e1",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-replay/light1-tick-19-phase-04.png",
+      "sha256": "a1734b9f6ef22628a6cb199a9061e073d9876f579a04758af286c3b00c1b8081",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-block-replay/returned-idle.png",
+      "sha256": "416eb236ac212627a223f1f08cd5381f397f9b2b0d66d9669bb6e217f89212c7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-original/before-input-idle.png",
+      "sha256": "6f10b7825107539497eba894b38803a7c13a37a3653b6ea2fe30941a44745b75",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-original/light1-tick-01-phase-00.png",
+      "sha256": "ab0f930740f745f1249c7f8ec3cc7376a94b348c0db3b893f04975ac711414e9",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-original/light1-tick-02-phase-01.png",
+      "sha256": "a6b2e0bc3c1ee956de68aed9a6d32f7ec00aaa12f4a2176b0e5c8d052e86d854",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-original/light1-tick-03-phase-01.png",
+      "sha256": "22416b6170eac0573a6a43521a903247db4948216290f813fe1b840d45de309c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 23,
+      "movie_frame": 22,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-original/light1-tick-04-phase-02.png",
+      "sha256": "6a2cda623cb9d9139e62aa89970777b81c46f0dd40bda1812346dc39ca3e97b9",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-original/light1-tick-05-phase-02.png",
+      "sha256": "8360d20baf15e0c26910566d28e6dee6083f70b851a043b0f53d94b47f5e2274",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-original/light1-tick-06-phase-03.png",
+      "sha256": "7ab6f0e44f6f46a430a02d5151ccb7da2d323a5cc3867ebb07ae634ed4a9587b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-original/light1-tick-07-phase-03.png",
+      "sha256": "5dfa0fae562410b129c3e69f8861ec3baca7246c617b88de2f43ece454b42e96",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-original/light1-tick-08-phase-04.png",
+      "sha256": "97a86a387d2d5263189c8c39806114fbd51a6131b2125fa0fdd7c452713bd7f6",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-original/light1-tick-19-phase-04.png",
+      "sha256": "3be57d4086415da765c46d87cf6a979bdf443b2211be9873c2eba41a954f34f5",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 39,
+      "movie_frame": 38,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-original/returned-idle.png",
+      "sha256": "85f48281820479bfb67cb696e46136b530f6888a19ffb4d617faf12db5fc76b9",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 40,
+      "movie_frame": 39,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-replay/before-input-idle.png",
+      "sha256": "6f10b7825107539497eba894b38803a7c13a37a3653b6ea2fe30941a44745b75",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-replay/light1-tick-01-phase-00.png",
+      "sha256": "ab0f930740f745f1249c7f8ec3cc7376a94b348c0db3b893f04975ac711414e9",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-replay/light1-tick-02-phase-01.png",
+      "sha256": "a6b2e0bc3c1ee956de68aed9a6d32f7ec00aaa12f4a2176b0e5c8d052e86d854",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-replay/light1-tick-03-phase-01.png",
+      "sha256": "22416b6170eac0573a6a43521a903247db4948216290f813fe1b840d45de309c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 23,
+      "movie_frame": 22,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-replay/light1-tick-04-phase-02.png",
+      "sha256": "6a2cda623cb9d9139e62aa89970777b81c46f0dd40bda1812346dc39ca3e97b9",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-replay/light1-tick-05-phase-02.png",
+      "sha256": "8360d20baf15e0c26910566d28e6dee6083f70b851a043b0f53d94b47f5e2274",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-replay/light1-tick-06-phase-03.png",
+      "sha256": "7ab6f0e44f6f46a430a02d5151ccb7da2d323a5cc3867ebb07ae634ed4a9587b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-replay/light1-tick-07-phase-03.png",
+      "sha256": "5dfa0fae562410b129c3e69f8861ec3baca7246c617b88de2f43ece454b42e96",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-replay/light1-tick-08-phase-04.png",
+      "sha256": "97a86a387d2d5263189c8c39806114fbd51a6131b2125fa0fdd7c452713bd7f6",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-replay/light1-tick-19-phase-04.png",
+      "sha256": "3be57d4086415da765c46d87cf6a979bdf443b2211be9873c2eba41a954f34f5",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 39,
+      "movie_frame": 38,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-right-whiff-replay/returned-idle.png",
+      "sha256": "85f48281820479bfb67cb696e46136b530f6888a19ffb4d617faf12db5fc76b9",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 40,
+      "movie_frame": 39,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-original/before-input-idle.png",
+      "sha256": "75ebd0f1e7ae56b57353d857c58cd9c76590719c7121fae70c864f0bf69922a5",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-original/light1-tick-01-phase-00.png",
+      "sha256": "ae7710d773f6ff7673bd5c99ddf2c2fdc3ce951b08f346cb54ba2c26ff5e243c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-original/light1-tick-02-phase-01.png",
+      "sha256": "a2e997d9eeb4aa68a68a7b9a6aff92e79b0110651e7dfd0ee37f1b5338c38e6e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-original/light1-tick-03-phase-01.png",
+      "sha256": "b8c590bb4cacfd0eae511dec201a6a589fdf0eb0054e559b6e56295e27ca80d2",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-original/light1-tick-04-phase-02.png",
+      "sha256": "9409f197f57439094e123a3208bc2756930adff14f7c9d416e762000679c59c5",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-original/light1-tick-05-phase-02.png",
+      "sha256": "ba871c7d5652d8b74ed09e4d9781a0f56ab8215c2f35ccca2982648fcb11a54d",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-original/light1-tick-06-phase-03.png",
+      "sha256": "1234caa71ea73791749b876df5a129eed01d790d1d606f80f41aff6d8e6a6189",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-original/light1-tick-07-phase-03.png",
+      "sha256": "7943d94b5c7f37e2fca3cb8affd5e43bd5fec6a82f0bba6189c037ef9f0a2a4f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-original/light1-tick-08-phase-04.png",
+      "sha256": "65f23e30096177f68654b0c178788b6412ce0c70a85d05f282e6682ee66769d4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 32,
+      "movie_frame": 31,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-original/light1-tick-19-phase-04.png",
+      "sha256": "3d5cd0b4f30df7a6e1b9dd8d6603778e6bf7c6f14b7506b8211dbbb4bb2b3ecd",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-original/returned-idle.png",
+      "sha256": "14cc40b2e8c3af8829d1888df6cfe180799de46a6b999dcff33bd620d693f527",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 44,
+      "movie_frame": 43,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-replay/before-input-idle.png",
+      "sha256": "75ebd0f1e7ae56b57353d857c58cd9c76590719c7121fae70c864f0bf69922a5",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-replay/light1-tick-01-phase-00.png",
+      "sha256": "ae7710d773f6ff7673bd5c99ddf2c2fdc3ce951b08f346cb54ba2c26ff5e243c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-replay/light1-tick-02-phase-01.png",
+      "sha256": "a2e997d9eeb4aa68a68a7b9a6aff92e79b0110651e7dfd0ee37f1b5338c38e6e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-replay/light1-tick-03-phase-01.png",
+      "sha256": "b8c590bb4cacfd0eae511dec201a6a589fdf0eb0054e559b6e56295e27ca80d2",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-replay/light1-tick-04-phase-02.png",
+      "sha256": "9409f197f57439094e123a3208bc2756930adff14f7c9d416e762000679c59c5",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-replay/light1-tick-05-phase-02.png",
+      "sha256": "ba871c7d5652d8b74ed09e4d9781a0f56ab8215c2f35ccca2982648fcb11a54d",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-replay/light1-tick-06-phase-03.png",
+      "sha256": "1234caa71ea73791749b876df5a129eed01d790d1d606f80f41aff6d8e6a6189",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-replay/light1-tick-07-phase-03.png",
+      "sha256": "7943d94b5c7f37e2fca3cb8affd5e43bd5fec6a82f0bba6189c037ef9f0a2a4f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-replay/light1-tick-08-phase-04.png",
+      "sha256": "65f23e30096177f68654b0c178788b6412ce0c70a85d05f282e6682ee66769d4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 32,
+      "movie_frame": 31,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-replay/light1-tick-19-phase-04.png",
+      "sha256": "3d5cd0b4f30df7a6e1b9dd8d6603778e6bf7c6f14b7506b8211dbbb4bb2b3ecd",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-hit-replay/returned-idle.png",
+      "sha256": "14cc40b2e8c3af8829d1888df6cfe180799de46a6b999dcff33bd620d693f527",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 44,
+      "movie_frame": 43,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-original/before-input-idle.png",
+      "sha256": "713097c42316eca80d00824524b5a2fd660e8f558054322c76087927c1669490",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-original/light1-tick-01-phase-00.png",
+      "sha256": "4292c5fbc5ef126bc3e1c4049902067d0ab902ba2b20843a2b91d005a1a3df33",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-original/light1-tick-02-phase-01.png",
+      "sha256": "f195145b30df24aabcabb5177152bc483c0a2df254a605bd40d8f4b9c71763b3",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-original/light1-tick-03-phase-01.png",
+      "sha256": "dc67833ab6b52d94c9986b83017bacc0c59d73e2770b227b8b8aa75069ff924b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-original/light1-tick-04-phase-02.png",
+      "sha256": "32ecd2ca96362f28b9b0665d6cc1260f24618c0b3d261698270413f08c51a984",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-original/light1-tick-05-phase-02.png",
+      "sha256": "b901f41aa170fde5c7b3580d2b68856e9d6b19420dff57d8fad619cff27e03ae",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-original/light1-tick-06-phase-03.png",
+      "sha256": "d5ee3f09f35b7e314044a2f9e65f786159d3ba7daaf679081a35ada1c6c72c9f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-original/light1-tick-07-phase-03.png",
+      "sha256": "7319f019b869aad0fcecfac1eab16adeab286ef20d432c91f202ada140518dd1",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-original/light1-tick-08-phase-04.png",
+      "sha256": "41e0dabc7d489b3952844eae868672ba7d395baf5d24ebd2c1c259aaa21ae47b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-original/light1-tick-19-phase-04.png",
+      "sha256": "7282fe5c7aab2f1da3fc1f820a1894a413f7eb0f56e5233ae59b6415501df86f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-original/returned-idle.png",
+      "sha256": "650352f7eaf245c6dd65f3f86ee5a469825a2592eac72e7acd1d7e24828992df",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-replay/before-input-idle.png",
+      "sha256": "713097c42316eca80d00824524b5a2fd660e8f558054322c76087927c1669490",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-replay/light1-tick-01-phase-00.png",
+      "sha256": "4292c5fbc5ef126bc3e1c4049902067d0ab902ba2b20843a2b91d005a1a3df33",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-replay/light1-tick-02-phase-01.png",
+      "sha256": "f195145b30df24aabcabb5177152bc483c0a2df254a605bd40d8f4b9c71763b3",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-replay/light1-tick-03-phase-01.png",
+      "sha256": "dc67833ab6b52d94c9986b83017bacc0c59d73e2770b227b8b8aa75069ff924b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-replay/light1-tick-04-phase-02.png",
+      "sha256": "32ecd2ca96362f28b9b0665d6cc1260f24618c0b3d261698270413f08c51a984",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-replay/light1-tick-05-phase-02.png",
+      "sha256": "b901f41aa170fde5c7b3580d2b68856e9d6b19420dff57d8fad619cff27e03ae",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-replay/light1-tick-06-phase-03.png",
+      "sha256": "d5ee3f09f35b7e314044a2f9e65f786159d3ba7daaf679081a35ada1c6c72c9f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-replay/light1-tick-07-phase-03.png",
+      "sha256": "7319f019b869aad0fcecfac1eab16adeab286ef20d432c91f202ada140518dd1",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-replay/light1-tick-08-phase-04.png",
+      "sha256": "41e0dabc7d489b3952844eae868672ba7d395baf5d24ebd2c1c259aaa21ae47b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-replay/light1-tick-19-phase-04.png",
+      "sha256": "7282fe5c7aab2f1da3fc1f820a1894a413f7eb0f56e5233ae59b6415501df86f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-block-replay/returned-idle.png",
+      "sha256": "650352f7eaf245c6dd65f3f86ee5a469825a2592eac72e7acd1d7e24828992df",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-original/before-input-idle.png",
+      "sha256": "b1bd041c5c248098624d43d228964ae7edebeb829f27d97b85fa4837ee139e55",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-original/light1-tick-01-phase-00.png",
+      "sha256": "6390861690e24ba01e60ebe0f75fd827bee52e511fa431b177aa5302907219e4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-original/light1-tick-02-phase-01.png",
+      "sha256": "8e6e212140b0057f364e37b721b243e75d1b5eb21db25a39181e63e0472810dd",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-original/light1-tick-03-phase-01.png",
+      "sha256": "1ea5bb4fb7fe441ee1e8b5701b485c642825c77a39d10025d66747e005210bc4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 23,
+      "movie_frame": 22,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-original/light1-tick-04-phase-02.png",
+      "sha256": "ec192eb60e8d5bfe6db4b31009b212ab0c6da17a8258e1fc0cac3e45000955e8",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-original/light1-tick-05-phase-02.png",
+      "sha256": "c3d67bae75964ea752e2858a4d233e09f2a6f742733664713f8c2a7e3300d49d",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-original/light1-tick-06-phase-03.png",
+      "sha256": "0fcf78c257216320fd448cd621e3ad533af84255c4c7d51eca7f8aa222c3f537",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-original/light1-tick-07-phase-03.png",
+      "sha256": "feac0e16c1390ac6b2b69f7f8576a031347114c9f6194a82f7e7e874186112a0",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-original/light1-tick-08-phase-04.png",
+      "sha256": "ebd117961f894fc529099a2dd4582470a3697713d410ef1018b02903cfe2eb63",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-original/light1-tick-19-phase-04.png",
+      "sha256": "79bd95183b70a64eb3795abd47b2a829000afdac8ce8e3ab5140b473498bb5db",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 39,
+      "movie_frame": 38,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-original/returned-idle.png",
+      "sha256": "9465f5a86ebeb91d8b9792efbe32dfbf4f0fb0e883797d9ed064b52eb617fad7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 40,
+      "movie_frame": 39,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-replay/before-input-idle.png",
+      "sha256": "b1bd041c5c248098624d43d228964ae7edebeb829f27d97b85fa4837ee139e55",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-replay/light1-tick-01-phase-00.png",
+      "sha256": "6390861690e24ba01e60ebe0f75fd827bee52e511fa431b177aa5302907219e4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-replay/light1-tick-02-phase-01.png",
+      "sha256": "8e6e212140b0057f364e37b721b243e75d1b5eb21db25a39181e63e0472810dd",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-replay/light1-tick-03-phase-01.png",
+      "sha256": "1ea5bb4fb7fe441ee1e8b5701b485c642825c77a39d10025d66747e005210bc4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 23,
+      "movie_frame": 22,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-replay/light1-tick-04-phase-02.png",
+      "sha256": "ec192eb60e8d5bfe6db4b31009b212ab0c6da17a8258e1fc0cac3e45000955e8",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-replay/light1-tick-05-phase-02.png",
+      "sha256": "c3d67bae75964ea752e2858a4d233e09f2a6f742733664713f8c2a7e3300d49d",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-replay/light1-tick-06-phase-03.png",
+      "sha256": "0fcf78c257216320fd448cd621e3ad533af84255c4c7d51eca7f8aa222c3f537",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-replay/light1-tick-07-phase-03.png",
+      "sha256": "feac0e16c1390ac6b2b69f7f8576a031347114c9f6194a82f7e7e874186112a0",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-replay/light1-tick-08-phase-04.png",
+      "sha256": "ebd117961f894fc529099a2dd4582470a3697713d410ef1018b02903cfe2eb63",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-replay/light1-tick-19-phase-04.png",
+      "sha256": "79bd95183b70a64eb3795abd47b2a829000afdac8ce8e3ab5140b473498bb5db",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 39,
+      "movie_frame": 38,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1280x720-left-whiff-replay/returned-idle.png",
+      "sha256": "9465f5a86ebeb91d8b9792efbe32dfbf4f0fb0e883797d9ed064b52eb617fad7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 40,
+      "movie_frame": 39,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-original/before-input-idle.png",
+      "sha256": "0e68b35fc7dcb01f9b8357cbe1a5c699af5149eebc6d7ff08f898ef743f86765",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-original/light1-tick-01-phase-00.png",
+      "sha256": "7723b496250c98c4bb8fad9f259ce7f5d0ca888289f1f65c7ca5ed558bce3a07",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-original/light1-tick-02-phase-01.png",
+      "sha256": "2b22bcc5071f0becd28c9f9f0deea3078372a3be62ad038173602082632276c0",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-original/light1-tick-03-phase-01.png",
+      "sha256": "f099dc00e32b0ecb1f7940f534f4b20a3e44fac9bda5efa40ddbff3c41a10ec8",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-original/light1-tick-04-phase-02.png",
+      "sha256": "1d0163b620e11d9734dbffa923580db39fc433aed127c962dbdc85a8d2240503",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-original/light1-tick-05-phase-02.png",
+      "sha256": "9451c5cacb5d764c47632aba8a2b9075b498d001736c8fbbe38c87616e7a8f10",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-original/light1-tick-06-phase-03.png",
+      "sha256": "a7d4698ae704a3c2e97f70f90f0fc9ed1cccc9ca64c3102bc06edb3e3a9b472b",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-original/light1-tick-07-phase-03.png",
+      "sha256": "fa854982147e37a76ec86fa30055b00fe42c346f2bc06def4e77e1c88d13524e",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-original/light1-tick-08-phase-04.png",
+      "sha256": "8ecffecc3433035fe83d394015e306cbcee7a4c97dc40a65c605b330e22454c6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 32,
+      "movie_frame": 31,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-original/light1-tick-19-phase-04.png",
+      "sha256": "c9b24a5efa2ef3acfdd657dfc92452f682df819e5e46e9e4e025324a28090674",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-original/returned-idle.png",
+      "sha256": "ecd17f4e5dcebe93ce7c4ef54c27c4711cc2423ddb4e4d3cae9b193ac61f07bf",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 44,
+      "movie_frame": 43,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-replay/before-input-idle.png",
+      "sha256": "0e68b35fc7dcb01f9b8357cbe1a5c699af5149eebc6d7ff08f898ef743f86765",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-replay/light1-tick-01-phase-00.png",
+      "sha256": "7723b496250c98c4bb8fad9f259ce7f5d0ca888289f1f65c7ca5ed558bce3a07",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-replay/light1-tick-02-phase-01.png",
+      "sha256": "2b22bcc5071f0becd28c9f9f0deea3078372a3be62ad038173602082632276c0",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-replay/light1-tick-03-phase-01.png",
+      "sha256": "f099dc00e32b0ecb1f7940f534f4b20a3e44fac9bda5efa40ddbff3c41a10ec8",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-replay/light1-tick-04-phase-02.png",
+      "sha256": "1d0163b620e11d9734dbffa923580db39fc433aed127c962dbdc85a8d2240503",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-replay/light1-tick-05-phase-02.png",
+      "sha256": "9451c5cacb5d764c47632aba8a2b9075b498d001736c8fbbe38c87616e7a8f10",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-replay/light1-tick-06-phase-03.png",
+      "sha256": "a7d4698ae704a3c2e97f70f90f0fc9ed1cccc9ca64c3102bc06edb3e3a9b472b",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-replay/light1-tick-07-phase-03.png",
+      "sha256": "fa854982147e37a76ec86fa30055b00fe42c346f2bc06def4e77e1c88d13524e",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-replay/light1-tick-08-phase-04.png",
+      "sha256": "8ecffecc3433035fe83d394015e306cbcee7a4c97dc40a65c605b330e22454c6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 32,
+      "movie_frame": 31,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-replay/light1-tick-19-phase-04.png",
+      "sha256": "c9b24a5efa2ef3acfdd657dfc92452f682df819e5e46e9e4e025324a28090674",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-hit-replay/returned-idle.png",
+      "sha256": "ecd17f4e5dcebe93ce7c4ef54c27c4711cc2423ddb4e4d3cae9b193ac61f07bf",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 44,
+      "movie_frame": 43,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-original/before-input-idle.png",
+      "sha256": "05c5b1a5e75fe4778c09fd0afbbb28d23a804a26b964ca2005c30e6c6e542f6b",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-original/light1-tick-01-phase-00.png",
+      "sha256": "2de4b0e582798d0a4624a057938ee0c6c043e838ed6c28fd1184e6b27a101d96",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-original/light1-tick-02-phase-01.png",
+      "sha256": "c2c3767437bac6e6b53818dbe11736130df4f5895f443421b471f81464bc053e",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-original/light1-tick-03-phase-01.png",
+      "sha256": "c891d3df4230176a6e8a53b9a3514ee4d2e9e6237d6b59afd1833f02d6c099af",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-original/light1-tick-04-phase-02.png",
+      "sha256": "9b5c6c6925b2cf6dcc91faed1bf6125ecf3e506e6b06d75b469629cd5b780559",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-original/light1-tick-05-phase-02.png",
+      "sha256": "bfcf514813f7c88a2b4655083b05c24df34b2d79f50bf0632d254c97e908b61a",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-original/light1-tick-06-phase-03.png",
+      "sha256": "052b066c4fa9104d28b0494d7ddedd032651114d013ffab7c1ec312082e1d9b8",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-original/light1-tick-07-phase-03.png",
+      "sha256": "a9a90ce9bffd01048d33b49e4ebb829b150f7d54960941bc3e35a23c360785a0",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-original/light1-tick-08-phase-04.png",
+      "sha256": "ed979be5bc944e3f0f10296254aca0ef48544f8562a0686c6edf785e42ac4549",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-original/light1-tick-19-phase-04.png",
+      "sha256": "957b5bb6cfc626ce5977ffcac0b302f9cb0ddd7d1aaf8f22c04cf2352e61ebe2",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-original/returned-idle.png",
+      "sha256": "2dd64ca9cfeaadf762af015cdb5724bb41ccc5ba933de4b2c2fd31fd23ba9e84",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-replay/before-input-idle.png",
+      "sha256": "05c5b1a5e75fe4778c09fd0afbbb28d23a804a26b964ca2005c30e6c6e542f6b",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-replay/light1-tick-01-phase-00.png",
+      "sha256": "2de4b0e582798d0a4624a057938ee0c6c043e838ed6c28fd1184e6b27a101d96",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-replay/light1-tick-02-phase-01.png",
+      "sha256": "c2c3767437bac6e6b53818dbe11736130df4f5895f443421b471f81464bc053e",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-replay/light1-tick-03-phase-01.png",
+      "sha256": "c891d3df4230176a6e8a53b9a3514ee4d2e9e6237d6b59afd1833f02d6c099af",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-replay/light1-tick-04-phase-02.png",
+      "sha256": "9b5c6c6925b2cf6dcc91faed1bf6125ecf3e506e6b06d75b469629cd5b780559",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-replay/light1-tick-05-phase-02.png",
+      "sha256": "bfcf514813f7c88a2b4655083b05c24df34b2d79f50bf0632d254c97e908b61a",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-replay/light1-tick-06-phase-03.png",
+      "sha256": "052b066c4fa9104d28b0494d7ddedd032651114d013ffab7c1ec312082e1d9b8",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-replay/light1-tick-07-phase-03.png",
+      "sha256": "a9a90ce9bffd01048d33b49e4ebb829b150f7d54960941bc3e35a23c360785a0",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-replay/light1-tick-08-phase-04.png",
+      "sha256": "ed979be5bc944e3f0f10296254aca0ef48544f8562a0686c6edf785e42ac4549",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-replay/light1-tick-19-phase-04.png",
+      "sha256": "957b5bb6cfc626ce5977ffcac0b302f9cb0ddd7d1aaf8f22c04cf2352e61ebe2",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-block-replay/returned-idle.png",
+      "sha256": "2dd64ca9cfeaadf762af015cdb5724bb41ccc5ba933de4b2c2fd31fd23ba9e84",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-original/before-input-idle.png",
+      "sha256": "1bc0bbe6752acffd105844e79a8ee96eaee0e4b31e12d183ca964d02526f7365",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-original/light1-tick-01-phase-00.png",
+      "sha256": "e961e57fd60864fc496e88c1096cdfee88f6af56fae78755d415c3aae5a623c6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-original/light1-tick-02-phase-01.png",
+      "sha256": "c37a8f03188b80b2b2069c755f5e5b84a2c2cae38f8f8242ec414b8cdf73af05",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-original/light1-tick-03-phase-01.png",
+      "sha256": "678c0d02c63a559a84210cf77bf95d6ab4de81e96ae830968819dd76e4e2a544",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 23,
+      "movie_frame": 22,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-original/light1-tick-04-phase-02.png",
+      "sha256": "c81f0208b051a415e8a1f90d232389e32dfcfb52eec87dbc16fc0bc14fe0d3b3",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-original/light1-tick-05-phase-02.png",
+      "sha256": "af127620bbdcca54bf9bc9b2f7500566aa6999cbd541fa2a2144cd6204b6d009",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-original/light1-tick-06-phase-03.png",
+      "sha256": "d09e6b0f49ce040c92f7bc8ea828db63fc13c83a6394e0abf8d58ef1abb7f140",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-original/light1-tick-07-phase-03.png",
+      "sha256": "8adc781ee98aa6af68871dadd1fed4a781ea98784d2a6da383934e6c15ebe5a5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-original/light1-tick-08-phase-04.png",
+      "sha256": "be391b3e8ec3d6da9117ee2976fcc9e1d47c1cfc48870cdacf4cb81ed95273bb",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-original/light1-tick-19-phase-04.png",
+      "sha256": "709aecf2fd7b1f54063c67259f8f51cf029cb795bc676f601be03b47c895e057",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 39,
+      "movie_frame": 38,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-original/returned-idle.png",
+      "sha256": "04011ba1dbe2878b180d984ba18143d75c6978c5fd27831ce9033a2087fe886d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 40,
+      "movie_frame": 39,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-replay/before-input-idle.png",
+      "sha256": "1bc0bbe6752acffd105844e79a8ee96eaee0e4b31e12d183ca964d02526f7365",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-replay/light1-tick-01-phase-00.png",
+      "sha256": "e961e57fd60864fc496e88c1096cdfee88f6af56fae78755d415c3aae5a623c6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-replay/light1-tick-02-phase-01.png",
+      "sha256": "c37a8f03188b80b2b2069c755f5e5b84a2c2cae38f8f8242ec414b8cdf73af05",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-replay/light1-tick-03-phase-01.png",
+      "sha256": "678c0d02c63a559a84210cf77bf95d6ab4de81e96ae830968819dd76e4e2a544",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 23,
+      "movie_frame": 22,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-replay/light1-tick-04-phase-02.png",
+      "sha256": "c81f0208b051a415e8a1f90d232389e32dfcfb52eec87dbc16fc0bc14fe0d3b3",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-replay/light1-tick-05-phase-02.png",
+      "sha256": "af127620bbdcca54bf9bc9b2f7500566aa6999cbd541fa2a2144cd6204b6d009",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-replay/light1-tick-06-phase-03.png",
+      "sha256": "d09e6b0f49ce040c92f7bc8ea828db63fc13c83a6394e0abf8d58ef1abb7f140",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-replay/light1-tick-07-phase-03.png",
+      "sha256": "8adc781ee98aa6af68871dadd1fed4a781ea98784d2a6da383934e6c15ebe5a5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-replay/light1-tick-08-phase-04.png",
+      "sha256": "be391b3e8ec3d6da9117ee2976fcc9e1d47c1cfc48870cdacf4cb81ed95273bb",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-replay/light1-tick-19-phase-04.png",
+      "sha256": "709aecf2fd7b1f54063c67259f8f51cf029cb795bc676f601be03b47c895e057",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 39,
+      "movie_frame": 38,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-right-whiff-replay/returned-idle.png",
+      "sha256": "04011ba1dbe2878b180d984ba18143d75c6978c5fd27831ce9033a2087fe886d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 40,
+      "movie_frame": 39,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-original/before-input-idle.png",
+      "sha256": "38c376d2810335ca7b84de62e0e0f0c70fe70f62153468569dce0c6370a32ebe",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-original/light1-tick-01-phase-00.png",
+      "sha256": "a98995cfcfca4b6e175718f92e3238da6c117de16b1d767f8c8f1fe4d7dd3982",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-original/light1-tick-02-phase-01.png",
+      "sha256": "2df56cb3e8f821b753d380f291b8d111d68debbf62c732bbaafe96c1de450fa2",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-original/light1-tick-03-phase-01.png",
+      "sha256": "c6970c93abfd24fc5fd846a148829d3f2867efeacaf6e045a05f2169c85f727c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-original/light1-tick-04-phase-02.png",
+      "sha256": "8121929a27ecaf0d3a8545becfc105b6e545fb6925ae00c5a76aa9217a167eed",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-original/light1-tick-05-phase-02.png",
+      "sha256": "69ada31cd880c6bf328896137e0cae08c03e1fe8980361a9ea731ab6011cda34",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-original/light1-tick-06-phase-03.png",
+      "sha256": "e2f57b2ee3da4d9c1a15ef0982eab78222b4d3c98dd26f4cffad4729dde19739",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-original/light1-tick-07-phase-03.png",
+      "sha256": "9b60cbcf141c9d94b24c62f654726ddb07c6f607194fc64f9549e12bd2582ce9",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-original/light1-tick-08-phase-04.png",
+      "sha256": "0225041b4d9f6357a3411d8dfe3327e185dd638ef586c9ab4d8978b299c8c4dd",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 32,
+      "movie_frame": 31,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-original/light1-tick-19-phase-04.png",
+      "sha256": "f625f1d11e102c8c110077225cfa02fc274465d73886282bea3f3c49842f159c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-original/returned-idle.png",
+      "sha256": "a2e9c8cd974e217ada94fe47a11ffb954795b06f921584cf5db1dd3f00dc2c29",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 44,
+      "movie_frame": 43,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-replay/before-input-idle.png",
+      "sha256": "38c376d2810335ca7b84de62e0e0f0c70fe70f62153468569dce0c6370a32ebe",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-replay/light1-tick-01-phase-00.png",
+      "sha256": "a98995cfcfca4b6e175718f92e3238da6c117de16b1d767f8c8f1fe4d7dd3982",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-replay/light1-tick-02-phase-01.png",
+      "sha256": "2df56cb3e8f821b753d380f291b8d111d68debbf62c732bbaafe96c1de450fa2",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-replay/light1-tick-03-phase-01.png",
+      "sha256": "c6970c93abfd24fc5fd846a148829d3f2867efeacaf6e045a05f2169c85f727c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-replay/light1-tick-04-phase-02.png",
+      "sha256": "8121929a27ecaf0d3a8545becfc105b6e545fb6925ae00c5a76aa9217a167eed",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-replay/light1-tick-05-phase-02.png",
+      "sha256": "69ada31cd880c6bf328896137e0cae08c03e1fe8980361a9ea731ab6011cda34",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-replay/light1-tick-06-phase-03.png",
+      "sha256": "e2f57b2ee3da4d9c1a15ef0982eab78222b4d3c98dd26f4cffad4729dde19739",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-replay/light1-tick-07-phase-03.png",
+      "sha256": "9b60cbcf141c9d94b24c62f654726ddb07c6f607194fc64f9549e12bd2582ce9",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-replay/light1-tick-08-phase-04.png",
+      "sha256": "0225041b4d9f6357a3411d8dfe3327e185dd638ef586c9ab4d8978b299c8c4dd",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 32,
+      "movie_frame": 31,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-replay/light1-tick-19-phase-04.png",
+      "sha256": "f625f1d11e102c8c110077225cfa02fc274465d73886282bea3f3c49842f159c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-hit-replay/returned-idle.png",
+      "sha256": "a2e9c8cd974e217ada94fe47a11ffb954795b06f921584cf5db1dd3f00dc2c29",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 44,
+      "movie_frame": 43,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-original/before-input-idle.png",
+      "sha256": "f5e3cd665cd75c4d0ff955ec06bb12c6291f86f9de236933e24a56e3c7070aed",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-original/light1-tick-01-phase-00.png",
+      "sha256": "1a5cb44429c20ebcd0cbbe03eb2cff0af5ed9da4231a42f94bcd0143b366d259",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-original/light1-tick-02-phase-01.png",
+      "sha256": "9e6cf6c390d6bfbce122be44fdedb3259b9a13e63b40accc76a4e38fe668ad40",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-original/light1-tick-03-phase-01.png",
+      "sha256": "08e5c4cd17d47126f02dc5339af2530faacac9445f7d580f760032ae62448554",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-original/light1-tick-04-phase-02.png",
+      "sha256": "918b17acbd9fbd84abecad5d4f901dbbbbde7ccc8d3b057fac567e8ce3de55ca",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-original/light1-tick-05-phase-02.png",
+      "sha256": "dc0cc1385c5c2ee1c3172bed0f011ef8ffbde59fa0600d251e351440dcbdfd5b",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-original/light1-tick-06-phase-03.png",
+      "sha256": "f4ca2c03ca3c60a5c0a777a9d5ba1b174eebc4ff2f14e8d23ff624f675268e28",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-original/light1-tick-07-phase-03.png",
+      "sha256": "0b5492f6d69b4fafde0fd8a4c720e60277c14d59fac41ec10fb9a595c283c7d8",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-original/light1-tick-08-phase-04.png",
+      "sha256": "345c291e652b504d33b376f82e4d7cabfe0bb762f105e41e8b9e279241eedd16",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-original/light1-tick-19-phase-04.png",
+      "sha256": "c088cb933acce78e19370cb4cb415517e93fb7d8c5e39adafdaeebf99e2cb12d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-original/returned-idle.png",
+      "sha256": "7146e519f18946ef3a5975cb5aa59fa5caedcbc0a4dc6f5092edd04f0a7fab34",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-replay/before-input-idle.png",
+      "sha256": "f5e3cd665cd75c4d0ff955ec06bb12c6291f86f9de236933e24a56e3c7070aed",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-replay/light1-tick-01-phase-00.png",
+      "sha256": "1a5cb44429c20ebcd0cbbe03eb2cff0af5ed9da4231a42f94bcd0143b366d259",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-replay/light1-tick-02-phase-01.png",
+      "sha256": "9e6cf6c390d6bfbce122be44fdedb3259b9a13e63b40accc76a4e38fe668ad40",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-replay/light1-tick-03-phase-01.png",
+      "sha256": "08e5c4cd17d47126f02dc5339af2530faacac9445f7d580f760032ae62448554",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-replay/light1-tick-04-phase-02.png",
+      "sha256": "918b17acbd9fbd84abecad5d4f901dbbbbde7ccc8d3b057fac567e8ce3de55ca",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-replay/light1-tick-05-phase-02.png",
+      "sha256": "dc0cc1385c5c2ee1c3172bed0f011ef8ffbde59fa0600d251e351440dcbdfd5b",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-replay/light1-tick-06-phase-03.png",
+      "sha256": "f4ca2c03ca3c60a5c0a777a9d5ba1b174eebc4ff2f14e8d23ff624f675268e28",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 29,
+      "movie_frame": 28,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-replay/light1-tick-07-phase-03.png",
+      "sha256": "0b5492f6d69b4fafde0fd8a4c720e60277c14d59fac41ec10fb9a595c283c7d8",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-replay/light1-tick-08-phase-04.png",
+      "sha256": "345c291e652b504d33b376f82e4d7cabfe0bb762f105e41e8b9e279241eedd16",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-replay/light1-tick-19-phase-04.png",
+      "sha256": "c088cb933acce78e19370cb4cb415517e93fb7d8c5e39adafdaeebf99e2cb12d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-block-replay/returned-idle.png",
+      "sha256": "7146e519f18946ef3a5975cb5aa59fa5caedcbc0a4dc6f5092edd04f0a7fab34",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-original/before-input-idle.png",
+      "sha256": "118e5bafef5a9e63211d2d4091aa110c230559d34f9c600ca9abae4d2e1d95fa",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-original/light1-tick-01-phase-00.png",
+      "sha256": "c7fe2e437459ef1d87a9f17bc89416f7873b86e5df89e28240851322528094ff",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-original/light1-tick-02-phase-01.png",
+      "sha256": "822faa2ef300b0675b4baee1b5bfd39d6beab0694865b548bdc6e52584f540d5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-original/light1-tick-03-phase-01.png",
+      "sha256": "6fb5b35aa8a6028d415490c702abb471f4b6933c391952b0557f867b880e66a5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 23,
+      "movie_frame": 22,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-original/light1-tick-04-phase-02.png",
+      "sha256": "d443dba0be4d5c5dc8d2e710dd569acd0853b357456c3d5cb5bbe9d952311dd5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-original/light1-tick-05-phase-02.png",
+      "sha256": "521d762f1cbb7b2bd5250c7a568292b5d4893722f94838148b3552929a708d71",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-original/light1-tick-06-phase-03.png",
+      "sha256": "98b6fe798b57673d76388f54bb991532f35bba2446f2d364a4df8b887e811e79",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-original/light1-tick-07-phase-03.png",
+      "sha256": "d0d2aaca729504f3adb977d837ca7ee5958de39dec2c91343bc786a560266549",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-original/light1-tick-08-phase-04.png",
+      "sha256": "deca5cbaf2d8b9e9d178bca230d4541a5cf715f92d80bd93a87bfa4d907919fe",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-original/light1-tick-19-phase-04.png",
+      "sha256": "d4cef7a882c147de464f2da03f2b46ecf58c3851a986009a2846a86ca7f2dad7",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 39,
+      "movie_frame": 38,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-original/returned-idle.png",
+      "sha256": "9942cfa41db7475e16602b4f8cb7212ac85bbcad8b4921ef608bf6e67745a14d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 40,
+      "movie_frame": 39,
+      "key": "returned-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-replay/before-input-idle.png",
+      "sha256": "118e5bafef5a9e63211d2d4091aa110c230559d34f9c600ca9abae4d2e1d95fa",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "before-input-idle"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-replay/light1-tick-01-phase-00.png",
+      "sha256": "c7fe2e437459ef1d87a9f17bc89416f7873b86e5df89e28240851322528094ff",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 21,
+      "movie_frame": 20,
+      "key": "light1-tick-01-phase-00"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-replay/light1-tick-02-phase-01.png",
+      "sha256": "822faa2ef300b0675b4baee1b5bfd39d6beab0694865b548bdc6e52584f540d5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 22,
+      "movie_frame": 21,
+      "key": "light1-tick-02-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-replay/light1-tick-03-phase-01.png",
+      "sha256": "6fb5b35aa8a6028d415490c702abb471f4b6933c391952b0557f867b880e66a5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 23,
+      "movie_frame": 22,
+      "key": "light1-tick-03-phase-01"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-replay/light1-tick-04-phase-02.png",
+      "sha256": "d443dba0be4d5c5dc8d2e710dd569acd0853b357456c3d5cb5bbe9d952311dd5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "light1-tick-04-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-replay/light1-tick-05-phase-02.png",
+      "sha256": "521d762f1cbb7b2bd5250c7a568292b5d4893722f94838148b3552929a708d71",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "light1-tick-05-phase-02"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-replay/light1-tick-06-phase-03.png",
+      "sha256": "98b6fe798b57673d76388f54bb991532f35bba2446f2d364a4df8b887e811e79",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 26,
+      "movie_frame": 25,
+      "key": "light1-tick-06-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-replay/light1-tick-07-phase-03.png",
+      "sha256": "d0d2aaca729504f3adb977d837ca7ee5958de39dec2c91343bc786a560266549",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "light1-tick-07-phase-03"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-replay/light1-tick-08-phase-04.png",
+      "sha256": "deca5cbaf2d8b9e9d178bca230d4541a5cf715f92d80bd93a87bfa4d907919fe",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "light1-tick-08-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-replay/light1-tick-19-phase-04.png",
+      "sha256": "d4cef7a882c147de464f2da03f2b46ecf58c3851a986009a2846a86ca7f2dad7",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 39,
+      "movie_frame": 38,
+      "key": "light1-tick-19-phase-04"
+    },
+    {
+      "path": "reports/galaxion-light1-resume/graphical-v1/1920x1080-left-whiff-replay/returned-idle.png",
+      "sha256": "9942cfa41db7475e16602b4f8cb7212ac85bbcad8b4921ef608bf6e67745a14d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 40,
+      "movie_frame": 39,
+      "key": "returned-idle"
+    }
+  ],
+  "closed": {
+    "desktop_prompt_returned": true,
+    "godot_window_absent": true,
+    "lock_released": true
+  },
+  "source_limits": [
+    "同招完整帧重排[原04,00,01,02,03]，原04旧收势重用于起始护架。",
+    "原00–02为同一远侧拳接触保持，未补出渐伸中间相。",
+    "原brief近侧左拳与现远侧拳不符，不算原近侧第一拳或左右交替三连完成。",
+    "单拳候选仍未开放银河；light3收腿回架与heavy原蓄力臂砸落缺帧继续保留。"
+  ],
+  "limits": [
+    "Godot4.6.3，目标4.7未验。",
+    "phase0首个可见move_tick=1，唯一图同时覆盖首尾，不伪造不可见0；11张不是全120tick逐帧视觉。",
+    "无录屏、实速顺滑、声音或真人硬件输入验收；FX不宣称跨运行完全一致。",
+    "没有调试框的画面不能证明精确11–12px尺寸；尺寸来自冻结定义，实际接触来自原生PNG。"
+  ],
+  "playable": false,
+  "implemented": false,
+  "select_visible": false,
+  "transform_enabled": false
+}

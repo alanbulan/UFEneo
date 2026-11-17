@@ -1,0 +1,774 @@
+[
+  {
+    "move": "light1",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn"
+    ],
+    "directions": [
+      4,
+      5,
+      6
+    ],
+    "buttons": 1,
+    "priority": 10,
+    "motion": [],
+    "display_name": "前手短直拳"
+  },
+  {
+    "move": "light2",
+    "states": [
+      "light1",
+      "dash_light"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 1,
+    "priority": 10,
+    "motion": [],
+    "display_name": "后手直拳"
+  },
+  {
+    "move": "light3",
+    "states": [
+      "light2"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 1,
+    "priority": 10,
+    "motion": [],
+    "display_name": "进身摆拳"
+  },
+  {
+    "move": "heavy",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn"
+    ],
+    "directions": [
+      5
+    ],
+    "buttons": 2,
+    "priority": 10,
+    "motion": [],
+    "display_name": "踏步重掌"
+  },
+  {
+    "move": "launcher",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn"
+    ],
+    "directions": [
+      6
+    ],
+    "buttons": 2,
+    "priority": 10,
+    "motion": [],
+    "display_name": "上勾升击"
+  },
+  {
+    "move": "spin_heavy",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn"
+    ],
+    "directions": [
+      4
+    ],
+    "buttons": 2,
+    "priority": 10,
+    "motion": [],
+    "display_name": "回身高位肘击"
+  },
+  {
+    "move": "crush",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn"
+    ],
+    "directions": [
+      4,
+      5
+    ],
+    "buttons": 64,
+    "priority": 10,
+    "motion": [],
+    "display_name": "双拳破甲砸击"
+  },
+  {
+    "move": "tackle",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn"
+    ],
+    "directions": [
+      6
+    ],
+    "buttons": 64,
+    "priority": 10,
+    "motion": [],
+    "display_name": "沉肩突进"
+  },
+  {
+    "move": "crouch_light",
+    "states": [
+      "crouch"
+    ],
+    "directions": [
+      1,
+      2,
+      3
+    ],
+    "buttons": 1,
+    "priority": 10,
+    "motion": [],
+    "display_name": "蹲姿短拳"
+  },
+  {
+    "move": "sweep",
+    "states": [
+      "crouch"
+    ],
+    "directions": [
+      1,
+      2,
+      3
+    ],
+    "buttons": 2,
+    "priority": 10,
+    "motion": [],
+    "display_name": "低扫脚跟"
+  },
+  {
+    "move": "slide",
+    "states": [
+      "crouch"
+    ],
+    "directions": [
+      1,
+      2,
+      3
+    ],
+    "buttons": 64,
+    "priority": 10,
+    "motion": [],
+    "display_name": "低身滑铲"
+  },
+  {
+    "move": "crouch_light2",
+    "states": [
+      "crouch_light"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 1,
+    "priority": 10,
+    "motion": [],
+    "display_name": "蹲姿反手肘"
+  },
+  {
+    "move": "sweep",
+    "states": [
+      "crouch_light2"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 2,
+    "priority": 10,
+    "motion": [],
+    "display_name": "连段回身扫"
+  },
+  {
+    "move": "vertical_light",
+    "states": [
+      "vertical_air"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 1,
+    "priority": 10,
+    "motion": [],
+    "display_name": "垂直跳短拳"
+  },
+  {
+    "move": "vertical_heavy",
+    "states": [
+      "vertical_air"
+    ],
+    "directions": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "buttons": 2,
+    "priority": 10,
+    "motion": [],
+    "display_name": "垂直跳下劈掌"
+  },
+  {
+    "move": "diagonal_light",
+    "states": [
+      "diagonal_air"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 1,
+    "priority": 10,
+    "motion": [],
+    "display_name": "斜跳膝撞"
+  },
+  {
+    "move": "diagonal_heavy",
+    "states": [
+      "diagonal_air"
+    ],
+    "directions": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "buttons": 2,
+    "priority": 10,
+    "motion": [],
+    "display_name": "斜跳侧飞踢"
+  },
+  {
+    "move": "air_crush",
+    "states": [
+      "vertical_air",
+      "diagonal_air",
+      "chase_air",
+      "air_tech"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 64,
+    "priority": 10,
+    "motion": [],
+    "display_name": "空中双拳下砸"
+  },
+  {
+    "move": "dive",
+    "states": [
+      "vertical_air",
+      "diagonal_air",
+      "chase_air",
+      "air_tech"
+    ],
+    "directions": [
+      1,
+      2,
+      3
+    ],
+    "buttons": 2,
+    "priority": 10,
+    "motion": [],
+    "display_name": "俯冲脚跟踢"
+  },
+  {
+    "move": "chase_light1",
+    "states": [
+      "chase_air"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 1,
+    "priority": 10,
+    "motion": [],
+    "display_name": "追击上挑短拳"
+  },
+  {
+    "move": "chase_light2",
+    "states": [
+      "chase_light1"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 1,
+    "priority": 10,
+    "motion": [],
+    "display_name": "追击反手横击"
+  },
+  {
+    "move": "chase_end",
+    "states": [
+      "chase_light2",
+      "chase_air"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 2,
+    "priority": 10,
+    "motion": [],
+    "display_name": "追击翻掌砸地"
+  },
+  {
+    "move": "sweep",
+    "states": [
+      "land"
+    ],
+    "directions": [
+      1,
+      2,
+      3
+    ],
+    "buttons": 2,
+    "priority": 10,
+    "motion": [],
+    "display_name": "弹地追击低踢"
+  },
+  {
+    "move": "crush",
+    "states": [
+      "land"
+    ],
+    "directions": [
+      5
+    ],
+    "buttons": 64,
+    "priority": 10,
+    "motion": [],
+    "display_name": "弹地追击踏击"
+  },
+  {
+    "move": "dash_light",
+    "states": [
+      "dash"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 1,
+    "priority": 40,
+    "motion": [],
+    "display_name": "冲刺肩前拳"
+  },
+  {
+    "move": "dash_heavy",
+    "states": [
+      "dash"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 2,
+    "priority": 40,
+    "motion": [],
+    "display_name": "冲刺腾身飞踢"
+  },
+  {
+    "move": "back_counter",
+    "states": [
+      "backstep"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 2,
+    "priority": 40,
+    "motion": [],
+    "display_name": "后撤回蹬"
+  },
+  {
+    "move": "dodge_counter",
+    "states": [
+      "dodge"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 1,
+    "priority": 40,
+    "motion": [],
+    "display_name": "侧闪返肘"
+  },
+  {
+    "move": "wake_low",
+    "states": [
+      "wake"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 1,
+    "priority": 40,
+    "motion": [],
+    "display_name": "起身横扫"
+  },
+  {
+    "move": "wake_mid",
+    "states": [
+      "wake"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 2,
+    "priority": 40,
+    "motion": [],
+    "display_name": "起身掌击"
+  },
+  {
+    "move": "guard_counter",
+    "states": [
+      "guard",
+      "blockstun"
+    ],
+    "directions": [
+      6
+    ],
+    "buttons": 2,
+    "priority": 40,
+    "motion": [],
+    "display_name": "格挡推肘"
+  },
+  {
+    "move": "throw_forward",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn"
+    ],
+    "directions": [
+      5,
+      6
+    ],
+    "buttons": 4,
+    "priority": 10,
+    "motion": [],
+    "display_name": "前投"
+  },
+  {
+    "move": "throw_back",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn"
+    ],
+    "directions": [
+      4
+    ],
+    "buttons": 4,
+    "priority": 10,
+    "motion": [],
+    "display_name": "后投"
+  },
+  {
+    "move": "dash_throw",
+    "states": [
+      "dash"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 4,
+    "priority": 40,
+    "motion": [],
+    "display_name": "冲刺擒抱"
+  },
+  {
+    "move": "air_throw",
+    "states": [
+      "vertical_air",
+      "diagonal_air",
+      "chase_air",
+      "air_tech"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 4,
+    "priority": 10,
+    "motion": [],
+    "display_name": "空投"
+  },
+  {
+    "move": "pulse",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn"
+    ],
+    "directions": [
+      4,
+      5
+    ],
+    "buttons": 128,
+    "priority": 10,
+    "motion": [],
+    "display_name": "超级射击"
+  },
+  {
+    "move": "ranged_forward",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn"
+    ],
+    "directions": [
+      6
+    ],
+    "buttons": 128,
+    "priority": 10,
+    "motion": [],
+    "display_name": "头镖"
+  },
+  {
+    "move": "low_pulse",
+    "states": [
+      "crouch"
+    ],
+    "directions": [
+      1,
+      2,
+      3
+    ],
+    "buttons": 128,
+    "priority": 10,
+    "motion": [],
+    "display_name": "低姿超级射击"
+  },
+  {
+    "move": "air_pulse",
+    "states": [
+      "vertical_air",
+      "diagonal_air",
+      "chase_air",
+      "air_tech"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 128,
+    "priority": 10,
+    "motion": [],
+    "display_name": "斜下超级射击"
+  },
+  {
+    "move": "motion_236",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn",
+      "crouch"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 1,
+    "priority": 80,
+    "motion": [
+      2,
+      3,
+      6
+    ],
+    "display_name": "楔形光线"
+  },
+  {
+    "move": "motion_623",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn",
+      "crouch"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 2,
+    "priority": 80,
+    "motion": [
+      6,
+      2,
+      3
+    ],
+    "display_name": "对空肘击"
+  },
+  {
+    "move": "motion_214",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn",
+      "crouch"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 128,
+    "priority": 80,
+    "motion": [
+      2,
+      1,
+      4
+    ],
+    "display_name": "合掌光线"
+  },
+  {
+    "move": "motion_22",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn",
+      "crouch"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 64,
+    "priority": 80,
+    "motion": [
+      2,
+      5,
+      2
+    ],
+    "display_name": "超级念力"
+  },
+  {
+    "move": "motion_41236",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn",
+      "crouch"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 4,
+    "priority": 80,
+    "motion": [
+      4,
+      1,
+      2,
+      3,
+      6
+    ],
+    "display_name": "过肩强投（游戏编排）"
+  },
+  {
+    "move": "burst",
+    "states": [
+      "hit",
+      "launch",
+      "blockstun"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 24,
+    "priority": 40,
+    "motion": [],
+    "display_name": "爆气脱离"
+  },
+  {
+    "move": "special",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn",
+      "crouch",
+      "light1",
+      "heavy"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 32,
+    "priority": 100,
+    "motion": [],
+    "display_name": "集束射线·一级"
+  },
+  {
+    "move": "special",
+    "states": [
+      "idle",
+      "walk",
+      "charge",
+      "turn",
+      "crouch",
+      "light1",
+      "heavy"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 3,
+    "priority": 100,
+    "motion": [],
+    "display_name": "集束射线·一级"
+  },
+  {
+    "move": "air_special",
+    "states": [
+      "vertical_air",
+      "diagonal_air",
+      "chase_air",
+      "air_tech"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 32,
+    "priority": 100,
+    "motion": [],
+    "display_name": "空中念力头镖（游戏改编）"
+  },
+  {
+    "key": "taunt",
+    "move": "taunt",
+    "display_name": "挑衅（防御+投技）",
+    "states": [
+      "idle",
+      "walk",
+      "guard",
+      "turn"
+    ],
+    "directions": [
+      0
+    ],
+    "buttons": 12,
+    "priority": 90,
+    "motion": []
+  }
+]

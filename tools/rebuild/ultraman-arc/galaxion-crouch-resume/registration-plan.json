@@ -1,0 +1,277 @@
+{
+  "fighter": "ultraman-arc__galaxion",
+  "reviewer": "root_delegated_by_user",
+  "actions": {
+    "idle": {
+      "sample_size": 157,
+      "hip_x": [
+        646,
+        646,
+        646,
+        646,
+        646,
+        646
+      ],
+      "common_horizontal_reference_x": 646,
+      "visual_landmarks": [
+        {
+          "skull_top": [
+            600,
+            174
+          ],
+          "chin": [
+            695,
+            306
+          ],
+          "neck_base": [
+            615,
+            335
+          ],
+          "hip_center": [
+            640,
+            650
+          ]
+        },
+        {
+          "skull_top": [
+            612,
+            184
+          ],
+          "chin": [
+            716,
+            326
+          ],
+          "neck_base": [
+            636,
+            356
+          ],
+          "hip_center": [
+            659,
+            665
+          ]
+        },
+        {
+          "skull_top": [
+            601,
+            168
+          ],
+          "chin": [
+            701,
+            309
+          ],
+          "neck_base": [
+            617,
+            340
+          ],
+          "hip_center": [
+            644,
+            653
+          ]
+        },
+        {
+          "skull_top": [
+            601,
+            177
+          ],
+          "chin": [
+            698,
+            319
+          ],
+          "neck_base": [
+            614,
+            348
+          ],
+          "hip_center": [
+            638,
+            663
+          ]
+        },
+        {
+          "skull_top": [
+            613,
+            147
+          ],
+          "chin": [
+            720,
+            290
+          ],
+          "neck_base": [
+            636,
+            319
+          ],
+          "hip_center": [
+            654,
+            649
+          ]
+        },
+        {
+          "skull_top": [
+            594,
+            164
+          ],
+          "chin": [
+            701,
+            305
+          ],
+          "neck_base": [
+            614,
+            334
+          ],
+          "hip_center": [
+            641,
+            654
+          ]
+        }
+      ]
+    },
+    "crouch_start": {
+      "sample_size": 148,
+      "hip_x": [
+        638,
+        638
+      ],
+      "common_horizontal_reference_x": 638,
+      "visual_landmarks": [
+        {
+          "skull_top": [
+            669,
+            280
+          ],
+          "chin": [
+            758,
+            445
+          ],
+          "neck_base": [
+            670,
+            468
+          ],
+          "hip_center": [
+            633,
+            781
+          ]
+        },
+        {
+          "skull_top": [
+            680,
+            267
+          ],
+          "chin": [
+            785,
+            420
+          ],
+          "neck_base": [
+            701,
+            446
+          ],
+          "hip_center": [
+            642,
+            770
+          ]
+        }
+      ]
+    },
+    "crouch": {
+      "sample_size": 132,
+      "hip_x": [
+        650,
+        650
+      ],
+      "common_horizontal_reference_x": 650,
+      "visual_landmarks": [
+        {
+          "skull_top": [
+            710,
+            290
+          ],
+          "chin": [
+            827,
+            465
+          ],
+          "neck_base": [
+            737,
+            493
+          ],
+          "hip_center": [
+            676,
+            822
+          ]
+        },
+        {
+          "skull_top": [
+            658,
+            275
+          ],
+          "chin": [
+            781,
+            450
+          ],
+          "neck_base": [
+            687,
+            478
+          ],
+          "hip_center": [
+            624,
+            807
+          ]
+        }
+      ]
+    },
+    "crouch_rise": {
+      "sample_size": 153,
+      "hip_x": [
+        650,
+        650
+      ],
+      "common_horizontal_reference_x": 650,
+      "visual_landmarks": [
+        {
+          "skull_top": [
+            640,
+            203
+          ],
+          "chin": [
+            746,
+            354
+          ],
+          "neck_base": [
+            664,
+            382
+          ],
+          "hip_center": [
+            657,
+            694
+          ]
+        },
+        {
+          "skull_top": [
+            604,
+            162
+          ],
+          "chin": [
+            711,
+            295
+          ],
+          "neck_base": [
+            629,
+            324
+          ],
+          "hip_center": [
+            642,
+            628
+          ]
+        }
+      ]
+    }
+  },
+  "measurement_method": "完整原1254图目视同定义颅顶（不含长鳍冠尖）/下巴与颈髋交叉比对；近似测点，头端±10–15px，颈±15px，髋±20–30px，不是亚像素精测或模型尺寸硬门。",
+  "model_reference": "art/fighters/ultraman-arc__galaxion/model/measurements.json",
+  "model_head_shell": 22.147811549975096,
+  "per_action_scale_reason": "各动作原图身体占画幅不同，按本人头躯干选整动作同一采样比例，不以姿势剪影面积归一；同动作不逐相缩放。",
+  "horizontal_policy": "整动作使用同一平均髋X作画布参考，保留相间真实横向重心差，不逐相强锁骨盆；靴底按采样后真实Alpha底边逐整图竖移到280。",
+  "limits": [
+    "idle00拳位比其他相高，须实际检查循环，不以配准伪称修复。",
+    "start两相均半蹲，不能声称明显逐渐下沉；rise00半起至01站立成立。",
+    "rise两相头长仍约8%差异，不逐帧归一掩盖。",
+    "仅接受正式主游戏候选验证，不开放装甲，不代表最终美术验收。"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+ "schema": 1,
+ "fighter": "ultraman-zero__ultimate",
+ "display_name": "究极赛罗",
+ "status": "pending_bake_and_merge",
+ "policy": "PixelFX 离线烘焙自绘原创像素；硬 Alpha；≤8 色；不用基础赛罗或他人图集；运行时图集放 assets/effects/ultraman-zero__ultimate/。",
+ "upstream": {
+  "name": "PixelFX",
+  "commit": "a8415968",
+  "license": "MIT"
+ },
+ "source_moves": "content/fighters/ultraman-zero__ultimate/moves/*.json",
+ "effects": [
+  {
+   "id": "zero_ultimate_fx_wide_beam",
+   "kind": "shot",
+   "planned_frames": 4,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_wide_beam/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_wide_hit",
+   "kind": "impact",
+   "planned_frames": 4,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_wide_hit/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_emerium_beam",
+   "kind": "shot",
+   "planned_frames": 4,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_emerium_beam/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_emerium_hit",
+   "kind": "impact",
+   "planned_frames": 4,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_emerium_hit/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_slugger_flight",
+   "kind": "projectile",
+   "planned_frames": 4,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_slugger_flight/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_slugger_trail",
+   "kind": "trail",
+   "planned_frames": 4,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_slugger_trail/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_slugger_hit",
+   "kind": "impact",
+   "planned_frames": 4,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_slugger_hit/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_slugger_catch",
+   "kind": "catch",
+   "planned_frames": 4,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_slugger_catch/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_q_charge_start",
+   "kind": "q_charge_start",
+   "planned_frames": 9,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_q_charge_start/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_q_charge",
+   "kind": "q_charge_loop",
+   "planned_frames": 24,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_q_charge/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_q_charge_stop",
+   "kind": "q_charge_stop",
+   "planned_frames": 9,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_q_charge_stop/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_impact_light",
+   "kind": "impact",
+   "planned_frames": 4,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_impact_light/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_impact_heavy",
+   "kind": "impact",
+   "planned_frames": 4,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_impact_heavy/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_impact_guard",
+   "kind": "impact",
+   "planned_frames": 4,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_impact_guard/atlas.png"
+  },
+  {
+   "id": "zero_ultimate_fx_pulse",
+   "kind": "projectile",
+   "planned_frames": 5,
+   "status": "pending_bake",
+   "runtime_path": "res://assets/effects/ultraman-zero__ultimate/zero_ultimate_fx_pulse/atlas.png"
+  }
+ ],
+ "q_charge": {
+  "start": {
+   "effect": "zero_ultimate_fx_q_charge_start",
+   "frames": 9,
+   "loop": false
+  },
+  "loop": {
+   "effect": "zero_ultimate_fx_q_charge",
+   "frames": 24,
+   "loop": true
+  },
+  "stop": {
+   "effect": "zero_ultimate_fx_q_charge_stop",
+   "frames": 9,
+   "loop": false
+  }
+ },
+ "note": "四个基础光弹共用一个 zero_ultimate_fx_pulse 弹体；三个能量槽终结分别用 wide/emerium/slugger 三组独立图集。"
+}

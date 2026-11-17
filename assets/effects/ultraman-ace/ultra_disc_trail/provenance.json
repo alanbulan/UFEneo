@@ -1,0 +1,65 @@
+{
+  "art_source": "api",
+  "route": "tools/art_pipeline.py:generate_image",
+  "request": "art/fighters/ultraman-ace/stage4/effects-v2/requests/trails_cool_pink/01/brief.json",
+  "request_sha256": "db16261084d3d2c041e96f8d5058c16b663e371c61d8a28168364e4e51a2a434",
+  "source": "art/fighters/ultraman-ace/stage4/effects-v2/requests/trails_cool_pink/01/raw.provider.png",
+  "source_sha256": "e476cd509eddec383e09a78aa4d98a02c35dab8310bd4f0d1363f1125994b674",
+  "provider_image_sha256": "8b6d4a64dd20a4f10a535d8bdeab47cd0229941bc268c7e1223efb5aac39836f",
+  "model": "gpt-image-2.5-sunburst",
+  "requested_quality": "high",
+  "actual_quality": "medium（本机接口固定返回；不因quality被忽略重发）",
+  "source_rects": [
+    [
+      0,
+      0,
+      444,
+      420
+    ],
+    [
+      444,
+      0,
+      887,
+      420
+    ],
+    [
+      887,
+      0,
+      1330,
+      420
+    ],
+    [
+      1330,
+      0,
+      1774,
+      420
+    ]
+  ],
+  "selection_reason": "按原剧配色的独立GPT像素图层；四相共用统一整帧比例，保留亮芯、外焰和粒子；不是通用库换色",
+  "episode_reference": "配色取自本轮原剧依据；中空身体弧是游戏表现，无直接原剧贴图",
+  "description": "独立的冰青与浅金能量尾迹。冷白、浅青、饱和青蓝、少量淡金星屑，绝不能使用红色或橙红色。只画向左后方散开的短细碎火和星点，右侧接续端空白透明，能量分布如一小片向左飘散的羽毛；没有明确外轮廓、实体内核或环状构造。四相同大小、同位置，只改变星屑和碎火。",
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "oklab",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "client_alpha_accepted": false,
+  "client_alpha": {
+    "transparent_fraction": 0.8230171203613281,
+    "visible_fraction": 0.060092926025390625,
+    "nonzero_fraction": 0.17698287963867188,
+    "opaque_fraction": 0.00017452239990234375,
+    "has_alpha_channel": true,
+    "rectangular_matte": false,
+    "clear_corners": false
+  },
+  "transforms": "读取provider高分原图的实际长宽网格（不把客户端补上的透明边当格子）；共同外框统一等比缩放；整图共享调色板量化和二值Alpha；未代码绘制最终特效"
+}

@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "date_utc": "2026-11-05",
+  "status": "candidate_only_not_installed",
+  "art_passed": false,
+  "root_approved": false,
+  "user_approved": false,
+  "scope": "heavy之后首个缺失站立攻击launcher的phase-02单张候选，不代表整招或整套装甲完成",
+  "provenance": {
+    "source": "父任务报告：用户明确要求的本会话内置image_gen",
+    "transparent_background_requested": true,
+    "model": null,
+    "quality": null,
+    "usage": null,
+    "cost": null,
+    "metadata_note": "上述字段工具未提供；不继承旧gpt-image/high/usage，不宣称免费或项目客户端生成。与AGENTS所写现行high客户端流程不同，仅按本次用户指令保留待审候选。",
+    "original_received_path": "reports/luna-uppercut-candidate.png",
+    "original_bytes_preserved": true,
+    "prompt": "Create ONE complete animation frame for this exact Luna Armor Ultraman Arc character, matching the references' 2D side-view pixel-art fighting game style and overall proportions. Facing right, standing with both feet on the ground in the same left/right stance. He is making an upward uppercut: the FAR-SIDE RIGHT FIST rises from in front of the abdomen to just above and ahead of the face, with the fist clearly higher than the bent elbow and the forearm angled strongly upward. This must not be a horizontal straight punch, open palm, or two raised arms. The NEAR-SIDE LEFT fist remains protecting the abdomen. Slightly straighten knees and lift hips to put power into the upward punch; neither foot leaves ground, do not change foot positions. Preserve exact Luna armor identity: swept silver crest, yellow eye, cyan-blue shoulder and chest armor, circular blue chest light and BOTH circular wrist armors, red-and-silver limbs, distinct near bright/far darker limbs. Complete body, head crest, both hands, both boots and all wrist tips fully within canvas with generous margin. No opponent, weapon, sparks, motion trails, beams, lettering, ground or background. Transparent background, sharp coherent pixel art, no sliced limbs.",
+    "references": [
+      {
+        "path": "art/fighters/ultraman-arc__luna/model/clean-model-source.png",
+        "sha256": "f07ca34c959008bb1104af55a9d6c5c6a8e7b2d57c510a13cf8c2ed2c2bc4ddf",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "alpha_zero": 1190306,
+        "alpha_partial": 381527,
+        "alpha_opaque": 683,
+        "alpha_bounds": {
+          "1": [
+            0,
+            4,
+            1240,
+            1254
+          ],
+          "16": [
+            285,
+            63,
+            1027,
+            1209
+          ],
+          "64": [
+            286,
+            64,
+            1026,
+            1209
+          ],
+          "128": [
+            286,
+            64,
+            1026,
+            1209
+          ],
+          "192": [
+            287,
+            64,
+            1025,
+            1208
+          ],
+          "250": [
+            287,
+            65,
+            1020,
+            1207
+          ]
+        }
+      },
+      {
+        "path": "art/fighters/ultraman-arc__luna/stage2/ground-codex-20261027/launcher/phase-04/request-001/raw.provider.png",
+        "sha256": "050cf42326df196bf1748eb470a9f862ae75654b3117d66e359e98fdf26f9164",
+        "size": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA",
+        "alpha_zero": 1121055,
+        "alpha_partial": 450620,
+        "alpha_opaque": 841,
+        "alpha_bounds": {
+          "1": [
+            0,
+            17,
+            1236,
+            1254
+          ],
+          "16": [
+            263,
+            66,
+            1140,
+            1211
+          ],
+          "64": [
+            264,
+            67,
+            1139,
+            1210
+          ],
+          "128": [
+            264,
+            67,
+            1139,
+            1210
+          ],
+          "192": [
+            264,
+            67,
+            1138,
+            1210
+          ],
+          "250": [
+            265,
+            68,
+            1138,
+            1209
+          ]
+        }
+      }
+    ]
+  },
+  "candidate": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/launcher-session-candidate-20261105/phase-02.raw.png",
+    "sha256": "9a4ada8d79389213981a0ccfbe4eecf314b934f78771a45b488b4910b802f914",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_zero": 1184843,
+    "alpha_partial": 387097,
+    "alpha_opaque": 576,
+    "alpha_bounds": {
+      "1": [
+        0,
+        21,
+        1240,
+        1254
+      ],
+      "16": [
+        275,
+        63,
+        1015,
+        1202
+      ],
+      "64": [
+        276,
+        63,
+        1015,
+        1201
+      ],
+      "128": [
+        276,
+        64,
+        1015,
+        1201
+      ],
+      "192": [
+        277,
+        64,
+        1014,
+        1201
+      ],
+      "250": [
+        277,
+        65,
+        1014,
+        1200
+      ]
+    }
+  },
+  "review": {
+    "method": "只读原图视觉检查与PIL alpha/SHA测量；未运行Godot、未改模拟或现用资源",
+    "identity": "月亮本人后掠银冠、黄眼、蓝青肩胸甲、圆胸灯和两侧圆腕甲均可辨；红银四肢、完整双臂双腿。未见错形态或明显断肢。单帧保留，不等于全套美术通过。",
+    "pose": "远侧拳已到脸前上方，拳高于弯肘、前臂向上；近侧拳护腹，不再是原02的水平直拳。单帧不能证明从腹部上挑的运动轨迹。",
+    "stance": "未遵守原脚位不变：同1254画布候选alpha>=128右端1015，旧04为1139；两者该端均为前鞋。候选前鞋明显内收、站距缩窄，躯干更直。不能单独移动脚、切肢或局部拉伸修补。",
+    "scale": "候选alpha>=128高度1137，旧04高度1143，仅相差6px不能证明头身尺度已匹配；姿态与脚距改变，尚未测头/胸/骨段并完成统一尺度根点注册，未生成运行atlas。",
+    "alpha": "RGBA有真实透明像素，不是RGB棋盘。但非零alpha包围盒触左/底边，存在低alpha噪点；alpha>=16主体有完整边距。保留原字节，未阈值清理，也不将主体未裁切说成完整原始轮廓无边界问题。",
+    "continuity": "旧01为前伸张掌，不是合格腹部蓄拳；旧03仍水平直拳。插入此候选会产生张掌/高拳/横拳跳变，不能验收起手-接触-收招链。旧04回护架仅比例/身份参考，非直接相邻已验。",
+    "not_verified": [
+      "统一尺度和根点",
+      "真实输入与攻击框",
+      "独立回放",
+      "双向720/1080主游戏图形",
+      "实速/录屏",
+      "声音"
+    ]
+  },
+  "next_step": "先补或选真正腹部蓄拳与高位回收的完整相，并保持固定支撑脚及本人尺度；整链合格后再注册候选、真实输入/回放/图形核验。不得直接安装当前单张或开放月亮装甲。",
+  "prior_evidence": "docs/verification/luna-s2-next-source-review.json"
+}

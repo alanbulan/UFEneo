@@ -1,0 +1,116 @@
+{
+  "reviewer": "root_delegated_by_user",
+  "scope": "只研究R02一张新的腹侧最低承重完整母相，未调用任何收费接口、未运行生成客户端或读取用户Codex凭据/本机配置。",
+  "status": "not_authorized_or_ready_to_generate",
+  "source_gap": "tools/rebuild/gomora/back_lift_resume/RECEIVER_GAP.md",
+  "proposed_request": {
+    "count": 1,
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1024x1024",
+    "background": "transparent",
+    "output": "单个初代C型完整人物；哥莫拉只作几何参考不烘焙；先R02成功再议00/01/03，不批量下单。",
+    "references": [
+      {
+        "path": "art/fighters/ultraman/model/model-reference-x4.png",
+        "sha256": "9e084ba7ff4f4ff2ed343e2d20650ebbec5b648156cddd066ad10165e68f0e71",
+        "size": [
+          768,
+          768
+        ]
+      },
+      {
+        "path": "art/fighters/gomora/stage4/super3-back-lift-registration/current/07.png",
+        "sha256": "359a96088d95e0a9dc29ad5e95db83f0ed72311f64e6f7f4fd57dba7a42d4114",
+        "size": [
+          512,
+          320
+        ]
+      },
+      {
+        "path": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-02/request-001/candidate.png",
+        "sha256": "a1bd22871293a01b36c5b233280d8b409eef9c034ffb97fe0e79ee88f851b886",
+        "size": [
+          1024,
+          1024
+        ]
+      },
+      {
+        "path": "assets/fighters/ultraman/animations/thrown_back/head-calibrated.png",
+        "sha256": "5db5abdf1d0233ef07d7489248f01ff0577fdd60debc385d4a9a845fe5363bea",
+        "size": [
+          768,
+          192
+        ]
+      }
+    ],
+    "references_within_existing_budget_envelope": true
+  },
+  "cost": {
+    "official_price_url": "https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst",
+    "checked_date": "2026-11-05",
+    "standard_usd_per_million": {
+      "text_input": 5,
+      "image_input": 8,
+      "image_output": 30
+    },
+    "direct_images_api_cache_discount_assumed": false,
+    "historical_R02": {
+      "metadata": "art/fighters/ultraman/stage5/gomora-super3-back-lift-receiver-20261102-v1/phase-02/request-001/candidate.metadata.json",
+      "text_input_tokens": 1126,
+      "image_input_tokens": 1774,
+      "output_tokens": 1756,
+      "estimated_usage_cost_usd": 0.072502
+    },
+    "historical_other_receiver_range_usd": [
+      0.080644,
+      0.080824
+    ],
+    "new_one_image_planning_estimate_usd": [
+      0.08,
+      0.12
+    ],
+    "estimate_is_not_a_guaranteed_cap": true,
+    "existing_per_request_reservation_usd": 1,
+    "budget_formula": "(5*文本输入tokens+8*图像输入tokens+30*输出tokens)/1000000",
+    "current_balance_verified": false,
+    "old_ledger_is_not_current_balance": true,
+    "unknown_prior_requests": "仍占额，不释放或重发；不能以新请求重试旧未知请求。"
+  },
+  "routes": {
+    "project_client": {
+      "entry": "tools/art_pipeline.py:generate_image",
+      "budget": "tools/image_budget.py:OfficialImageBudget",
+      "supports_exact_required_request": true,
+      "credential_access_not_attempted": true,
+      "blockers": [
+        "当前local_image_config会读用户Codex目录里的本机配置；credentials还可能回退Codex provider，现有禁止访问条件下不运行。",
+        "dry-run会先调用image_fields/image_route，仍可能读本机配置，不能把dry-run当无凭据访问保证。",
+        "未核实当前独立官方API认证、预算台账或网络许可，不能声称已经可发请求。"
+      ],
+      "safe_preparation_needed": [
+        "若用户选择官方API路线，先获准进行最小客户端配置隔离：显式非Codex配置/凭据来源并禁用Codex回退，继续走同一generate_image/预算逻辑。",
+        "由用户选择并授权独立官方API支付账户、一次1张R02及额度；凭据通过允许的安全交付，不在聊天或仓库存储。",
+        "只核非秘密当前预算总额/未知占额，保留20美元余量要求；无当前余额则不自动下单。"
+      ]
+    },
+    "session_image_tool": {
+      "available_by_tool_schema": true,
+      "called": false,
+      "can_reference_local_images_and_request_transparency": true,
+      "explicit_model_parameter": false,
+      "explicit_high_quality_parameter": false,
+      "project_usage_receipt_or_budget_hook_exposed": false,
+      "compatible_with_current_repository_pipeline_rule": false,
+      "notes": "不能仅因为工具可用就称免费、指定Sunburst/high或已按项目预占结算；若要换制作途径，需用户明确改变项目制作途径要求并确认其计费方式，不能自行替代。"
+    }
+  },
+  "permissions_needed": [
+    "现在仍只有研究权限，没有收费生成批准。",
+    "一张全新R02的明确范围与费用授权，不包括后续三相、重试或整批自动生成。",
+    "若走官方API，需独立非Codex认证的合规配置与必要网络权限；若产生/扩大持久凭据访问，按安全确认流程。"
+  ],
+  "no_generation_request_sent": true,
+  "no_user_credentials_read": true,
+  "no_new_artifact_generated": true
+}

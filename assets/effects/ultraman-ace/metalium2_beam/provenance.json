@@ -1,0 +1,65 @@
+{
+  "art_source": "api",
+  "route": "tools/art_pipeline.py:generate_image",
+  "request": "art/fighters/ultraman-ace/stage4/effects-v2/requests/metalium2_beam/03/brief.json",
+  "request_sha256": "674bb76fd3caa8d60a2cfaf4838015be59bbd37797a37a2ff29f314f88d88ed7",
+  "source": "art/fighters/ultraman-ace/stage4/effects-v2/requests/metalium2_beam/03/raw.provider.png",
+  "source_sha256": "10f9c52b0c110955fdbb6f9df05570d05968bc68c3958ad4b85127c1ef5e1128",
+  "provider_image_sha256": "85f100c660b9c80fe1f269dc85581d324d836004ae8dd7804846dac017bb289e",
+  "model": "gpt-image-2.5-sunburst",
+  "requested_quality": "high",
+  "actual_quality": "medium（本机接口固定返回；不因quality被忽略重发）",
+  "source_rects": [
+    [
+      0,
+      0,
+      1659,
+      258
+    ],
+    [
+      0,
+      258,
+      1659,
+      491
+    ],
+    [
+      0,
+      491,
+      1659,
+      703
+    ],
+    [
+      0,
+      703,
+      1659,
+      948
+    ]
+  ],
+  "selection_reason": "按原剧配色的独立GPT像素图层；四相共用统一整帧比例，保留亮芯、外焰和粒子；不是通用库换色",
+  "episode_reference": "art/fighters/ultraman-ace/references/effects/episode-129.4s.png",
+  "description": "梅塔利姆：灼白亮芯，红/朱红、青/湖蓝、金黄三束能量相互交织和交错闪烁，外缘有深蓝紫、橙红、浅青三个以上颜色层级；不是把一条白束整体染成粉红，不是均匀七条平行直线。二级持续光束，四行各一整段完全贯通画面的长方柱能量流。左右两端都是相同厚度的平直横截面，不能收尖、不能变成火箭或喷流；不要起手闪星或独立球核。每行从横坐标约2%一直延伸到98%，主束高度约该行高度65%，宽高比至少5:1。中间持续厚白亮芯和稠密红青黄火焰一直贯穿到右端，四相均保持同样粗细。主束必须完整长到右边界。",
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "oklab",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "client_alpha_accepted": false,
+  "client_alpha": {
+    "transparent_fraction": 0.574976921081543,
+    "visible_fraction": 0.32012939453125,
+    "nonzero_fraction": 0.42502307891845703,
+    "opaque_fraction": 6.103515625e-05,
+    "has_alpha_channel": true,
+    "rectangular_matte": false,
+    "clear_corners": false
+  },
+  "transforms": "读取provider高分原图的实际长宽网格（不把客户端补上的透明边当格子）；共同外框统一等比缩放；整图共享调色板量化和二值Alpha；未代码绘制最终特效"
+}

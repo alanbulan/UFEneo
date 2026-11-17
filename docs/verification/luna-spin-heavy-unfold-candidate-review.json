@@ -1,0 +1,98 @@
+{
+  "date_utc": "2026-11-05",
+  "action": "spin_heavy",
+  "status": "展开屈膝关键相可辨，但新脚尖上翘与接触脚下压之间未接受",
+  "review_scope": "实看完整展开原图，并与已实看的蓄势第三版和接触版比较；只读Alpha/尺寸/SHA，不运行或修改素材。",
+  "source": {
+    "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/unfold-attempt-01.raw.png",
+    "sha256": "47dcbc087217c985807fcf5f6d168f28fed98d1a035172647e936d7a95ec1fe9",
+    "metadata": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/source.json"
+  },
+  "references": [
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/turn-chamber-attempt-03.raw.png",
+      "sha256": "419811794ebc8bd7c3e5ddbb6bb989ed82b6999f1e5f06d29730eec367cd54d3"
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/contact-attempt-01.raw.png",
+      "sha256": "ebf2e309235a0996ddfd07a6ed6685004075bfceaa70d37b9ebf5887d84e7e90"
+    },
+    {
+      "path": "art/fighters/ultraman-arc__luna/model/clean-model-source.png",
+      "sha256": "f07ca34c959008bb1104af55a9d6c5c6a8e7b2d57c510a13cf8c2ed2c2bc4ddf"
+    }
+  ],
+  "size": [
+    1278,
+    1230
+  ],
+  "mode": "RGBA",
+  "alpha": {
+    "min_max": [
+      0,
+      255
+    ],
+    "zero_pixels": 1267638,
+    "full255_pixels": 249,
+    "intermediate_pixels": 304053,
+    "threshold_bboxes": {
+      "1": [
+        0,
+        23,
+        1254,
+        1230
+      ],
+      "16": [
+        228,
+        51,
+        1052,
+        1139
+      ],
+      "64": [
+        229,
+        51,
+        1052,
+        1138
+      ],
+      "128": [
+        229,
+        52,
+        1052,
+        1138
+      ],
+      "200": [
+        230,
+        52,
+        1051,
+        1138
+      ],
+      "254": [
+        230,
+        52,
+        1051,
+        1104
+      ]
+    },
+    "finding": "真实Alpha存在，主体阈值16有完整留白；低Alpha噪点触左/下边，边缘有细杂点。不见第三版蓄势大片光晕，但不是已清洁sprite。"
+  },
+  "identity_and_whole_body": "月亮银白后掠头冠、黄眼、蓝青胸肩、圆胸灯、两腕圆甲与红银腿可辨；完整两臂两拳两腿两鞋，无明显断肢/多腿/裁切。全骨尺/头冠细差未量化。",
+  "right_leg": "大腿已在腰高向右展开，小腿明显屈折，未像接触版近横向伸直，确能提供腿部展开分段；目视为钝角屈膝，不把提示词120度当实测角度。",
+  "new_ankle_boundary": "本图攻击脚尖明显上翘、脚跟较朝前，接触版脚尖向下绷出；这两张间新增踝脚转向变化，不能直接据本图声称脚背沿同一扫击弧连续。不得局部旋转脚、贴脚、改判定去掩盖。",
+  "support": "另一腿独立承重、支撑膝微屈，后跟高于前掌，保留抬跟；两鞋完整。与第三版及接触版是否同一世界前掌点尚未共同配准，不凭原图像素坐标称锁脚成功。",
+  "anatomical_sides": "设计为右腿扫、左腿撑；完整腿链可辨且未见多腿，但必须沿全身骨盆/膝/鞋连续追踪解剖身份，静帧近远与颜色不能替代左右确认。",
+  "hip_and_upper_body": "胸肩/双臂角度已较接触版接近，较蓄势第三版胸面更展开；有腰胯后倾与护架，但三关键相的转向次序、同侧发力与骨长仍待统一尺度验证，不以看起来像中相就签真实回旋。",
+  "continuity": {
+    "benefit": "腿部收膝→屈膝展开→近伸腿的分段比只有两张更可读。",
+    "remaining": "蓄势→展开上身/髋腿跨度、展开→接触踝脚转向，以及接触后随势/收膝/落脚回架未闭环。",
+    "scale": "三图1024×1536、1278×1230、1312×1199不同尺寸；须按骨长统一整图采样，不按各图bbox撑满，也不逐肢修。",
+    "unknown_rear_armor": "本图未主动新增大面积背甲，但后续背面随势仍缺可靠本人参考。"
+  },
+  "decision": "保留原源和有用腿部展开形，不接受完整连贯性、不安装；脚向差异是待核边界，不用单图直接宣判整个动作失败或通过。",
+  "installed": false,
+  "playable": false,
+  "art_passed": false,
+  "godot_run": false,
+  "recording": false,
+  "generation_performed_by_this_reviewer": false,
+  "next_step": "下一步先在授权范围内统一尺度比对三相骨长、支撑点及脚尖路径；是否需新完整相由整链证据判断。不自行生成，不切肢或局部旋转修复。"
+}

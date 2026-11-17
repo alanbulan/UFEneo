@@ -1,0 +1,725 @@
+{
+  "status": "twelve_real_input_replays_and_production_feedback_audits_passed",
+  "contract": "reports/gomora-builtin/main-midlate-feedback-local-20261105/contract.json",
+  "contract_sha256": "c5fb548202e7b01bd440777af9d97a38a38c1f087500adf01174574cbddf30b7",
+  "source_files": [
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/build_feedback_candidate.py",
+      "sha256": "310122b1cbd1da8c0d6230aacd17d401177d7e710ae31c7af47aa5104cb20fb6"
+    },
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/build_feedback_local_candidate.py",
+      "sha256": "b532c2c8f128a7270515ca44f2b4611c573057882884ee653a20e7fddee76b44"
+    },
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/feedback_audit_run.py",
+      "sha256": "8ddeb06c4477f1759beeab856cb039a3bd6c1c017902d32d3111b7bc56e04350"
+    },
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/runtime/feedback_audit.gd",
+      "sha256": "c54408f2c277696fb3928c84e76c6231e5d41ab21fdd49aa43cf744260c0ffb6"
+    }
+  ],
+  "audit": "reports/gomora-builtin/main-midlate-feedback-local-20261105/feedback-audit/audit-result.json",
+  "audit_sha256": "6fa95634b87ceaf74bf9323a71ec5cc3d567431d053891602eccdf1490f8888e",
+  "cases": [
+    {
+      "case": "owner0-rear_vertical_hit",
+      "replay": "reports/gomora-builtin/main-midlate-feedback-local-20261105/owner0-rear_vertical_hit-replay/replay-result.json",
+      "replay_sha256": "c9dc0c4fce6c35ea452824d19779743ec8bed707168cba3198eb21de6fa8387f",
+      "ticks": 321,
+      "captures": 1,
+      "slams": 1,
+      "whiffs": 0,
+      "damage": 490,
+      "errors": [],
+      "final_victim": {
+        "height": 0,
+        "motion": {
+          "bounce_followup": false,
+          "chase_window": 0,
+          "direction": 1,
+          "duration": 35,
+          "jump_buffer": 0,
+          "jump_kind": "vertical",
+          "jump_x": 0,
+          "land_window": 0,
+          "pose": "gomora_back_lift_receiver",
+          "pose_sprite": 11,
+          "throw_move": "special3",
+          "throw_origin_height": 45,
+          "throw_released": false
+        },
+        "state": "down",
+        "thrower": -1
+      },
+      "capture_ticks": [
+        255
+      ],
+      "slam_ticks": [
+        309
+      ],
+      "tech_ticks": [],
+      "whiff_ticks": [],
+      "capture_spark_nodes": [
+        {
+          "events": [
+            "hit"
+          ],
+          "height": 117,
+          "id": "impact_light",
+          "node_created": true,
+          "tick": 255,
+          "x": 451
+        }
+      ],
+      "explosion_nodes": [
+        {
+          "events": [
+            "throw_slam",
+            "sound"
+          ],
+          "height": 0,
+          "id": "explosion",
+          "node_created": true,
+          "tick": 309,
+          "x": 213
+        }
+      ],
+      "old_fingerprint": "5a86555f67183959fc0cfe1787e9f031ffcdeef65fca2934af311e8b902500ba",
+      "new_fingerprint": "9088abe50d9ba2837abad3840897b14f0d482fdf4a3ae01b6353179de287726f",
+      "format6_sha256": "6504e9b9ae5c1c57fe520bcbec3c2a0011d4e320d2aa2496ac6325202a2dc763"
+    },
+    {
+      "case": "owner0-rear_vertical_tech1",
+      "replay": "reports/gomora-builtin/main-midlate-feedback-local-20261105/owner0-rear_vertical_tech1-replay/replay-result.json",
+      "replay_sha256": "4ee45ab06040ae34f53ca81b9e9d875c5ace49388769e765fa7b58f74d1ca20f",
+      "ticks": 256,
+      "captures": 1,
+      "slams": 0,
+      "whiffs": 0,
+      "damage": 0,
+      "errors": [],
+      "final_victim": {
+        "height": 51,
+        "motion": {
+          "bounce_followup": false,
+          "chase_window": 0,
+          "direction": 1,
+          "duration": 15,
+          "jump_buffer": 0,
+          "jump_kind": "vertical",
+          "jump_x": 0,
+          "land_window": 0,
+          "tech_direction": 1,
+          "throw_move": "special3",
+          "throw_origin_height": 45,
+          "throw_released": false
+        },
+        "state": "throw_tech",
+        "thrower": -1
+      },
+      "capture_ticks": [
+        255
+      ],
+      "slam_ticks": [],
+      "tech_ticks": [
+        256
+      ],
+      "whiff_ticks": [],
+      "capture_spark_nodes": [
+        {
+          "events": [
+            "hit"
+          ],
+          "height": 117,
+          "id": "impact_light",
+          "node_created": true,
+          "tick": 255,
+          "x": 451
+        }
+      ],
+      "explosion_nodes": [],
+      "old_fingerprint": "5a86555f67183959fc0cfe1787e9f031ffcdeef65fca2934af311e8b902500ba",
+      "new_fingerprint": "9088abe50d9ba2837abad3840897b14f0d482fdf4a3ae01b6353179de287726f",
+      "format6_sha256": "cf06a442ed5c2e7c70e5e4b9257ff11a3ca01fa8a82aea4c6feada5290eaa7f2"
+    },
+    {
+      "case": "owner0-rear_vertical_tech2",
+      "replay": "reports/gomora-builtin/main-midlate-feedback-local-20261105/owner0-rear_vertical_tech2-replay/replay-result.json",
+      "replay_sha256": "0f2fb65bf1ad93291dd6b231022c499201cb05b0e7c5c92e382c355a3ab32549",
+      "ticks": 257,
+      "captures": 1,
+      "slams": 0,
+      "whiffs": 0,
+      "damage": 0,
+      "errors": [],
+      "final_victim": {
+        "height": 51,
+        "motion": {
+          "bounce_followup": false,
+          "chase_window": 0,
+          "direction": 1,
+          "duration": 15,
+          "jump_buffer": 0,
+          "jump_kind": "vertical",
+          "jump_x": 0,
+          "land_window": 0,
+          "tech_direction": 1,
+          "throw_move": "special3",
+          "throw_origin_height": 45,
+          "throw_released": false
+        },
+        "state": "throw_tech",
+        "thrower": -1
+      },
+      "capture_ticks": [
+        255
+      ],
+      "slam_ticks": [],
+      "tech_ticks": [
+        257
+      ],
+      "whiff_ticks": [],
+      "capture_spark_nodes": [
+        {
+          "events": [
+            "hit"
+          ],
+          "height": 117,
+          "id": "impact_light",
+          "node_created": true,
+          "tick": 255,
+          "x": 451
+        }
+      ],
+      "explosion_nodes": [],
+      "old_fingerprint": "5a86555f67183959fc0cfe1787e9f031ffcdeef65fca2934af311e8b902500ba",
+      "new_fingerprint": "9088abe50d9ba2837abad3840897b14f0d482fdf4a3ae01b6353179de287726f",
+      "format6_sha256": "0247fd32b9bcb4294b0ebdb6852df550b3a8bce55a26ea76d946190c00ad2edd"
+    },
+    {
+      "case": "owner0-rear_vertical_tech3",
+      "replay": "reports/gomora-builtin/main-midlate-feedback-local-20261105/owner0-rear_vertical_tech3-replay/replay-result.json",
+      "replay_sha256": "440995b3f811a9ec63b66d34d47b8522c1d47030e49c70a724658b0144c2b5e5",
+      "ticks": 258,
+      "captures": 1,
+      "slams": 0,
+      "whiffs": 0,
+      "damage": 0,
+      "errors": [],
+      "final_victim": {
+        "height": 51,
+        "motion": {
+          "bounce_followup": false,
+          "chase_window": 0,
+          "direction": 1,
+          "duration": 15,
+          "jump_buffer": 0,
+          "jump_kind": "vertical",
+          "jump_x": 0,
+          "land_window": 0,
+          "tech_direction": 1,
+          "throw_move": "special3",
+          "throw_origin_height": 45,
+          "throw_released": false
+        },
+        "state": "throw_tech",
+        "thrower": -1
+      },
+      "capture_ticks": [
+        255
+      ],
+      "slam_ticks": [],
+      "tech_ticks": [
+        258
+      ],
+      "whiff_ticks": [],
+      "capture_spark_nodes": [
+        {
+          "events": [
+            "hit"
+          ],
+          "height": 117,
+          "id": "impact_light",
+          "node_created": true,
+          "tick": 255,
+          "x": 451
+        }
+      ],
+      "explosion_nodes": [],
+      "old_fingerprint": "5a86555f67183959fc0cfe1787e9f031ffcdeef65fca2934af311e8b902500ba",
+      "new_fingerprint": "9088abe50d9ba2837abad3840897b14f0d482fdf4a3ae01b6353179de287726f",
+      "format6_sha256": "710209a38b4044f162a8995b0c7c223d0c6ac45f0148d1a460e438025b68d87b"
+    },
+    {
+      "case": "owner0-rear_vertical_tech4",
+      "replay": "reports/gomora-builtin/main-midlate-feedback-local-20261105/owner0-rear_vertical_tech4-replay/replay-result.json",
+      "replay_sha256": "63b1e25f890128873371d46e973aa982f97d97c8820a9f8bd2bd4f7aa45e79e4",
+      "ticks": 321,
+      "captures": 1,
+      "slams": 1,
+      "whiffs": 0,
+      "damage": 490,
+      "errors": [],
+      "final_victim": {
+        "height": 0,
+        "motion": {
+          "bounce_followup": false,
+          "chase_window": 0,
+          "direction": 1,
+          "duration": 35,
+          "jump_buffer": 0,
+          "jump_kind": "vertical",
+          "jump_x": 0,
+          "land_window": 0,
+          "pose": "gomora_back_lift_receiver",
+          "pose_sprite": 11,
+          "throw_move": "special3",
+          "throw_origin_height": 45,
+          "throw_released": false
+        },
+        "state": "down",
+        "thrower": -1
+      },
+      "capture_ticks": [
+        255
+      ],
+      "slam_ticks": [
+        309
+      ],
+      "tech_ticks": [],
+      "whiff_ticks": [],
+      "capture_spark_nodes": [
+        {
+          "events": [
+            "hit"
+          ],
+          "height": 117,
+          "id": "impact_light",
+          "node_created": true,
+          "tick": 255,
+          "x": 451
+        }
+      ],
+      "explosion_nodes": [
+        {
+          "events": [
+            "throw_slam",
+            "sound"
+          ],
+          "height": 0,
+          "id": "explosion",
+          "node_created": true,
+          "tick": 309,
+          "x": 213
+        }
+      ],
+      "old_fingerprint": "5a86555f67183959fc0cfe1787e9f031ffcdeef65fca2934af311e8b902500ba",
+      "new_fingerprint": "9088abe50d9ba2837abad3840897b14f0d482fdf4a3ae01b6353179de287726f",
+      "format6_sha256": "0f01df6579a0595c1b0c04fcb848bd563cbf676b946832df02a20fea48c79176"
+    },
+    {
+      "case": "owner0-whiff",
+      "replay": "reports/gomora-builtin/main-midlate-feedback-local-20261105/owner0-whiff-replay/replay-result.json",
+      "replay_sha256": "251a5726ac642b1267387ac9bc5202b8148c8e2a6ddae84daeb18b7d679d947c",
+      "ticks": 225,
+      "captures": 0,
+      "slams": 0,
+      "whiffs": 1,
+      "damage": 0,
+      "errors": [],
+      "final_victim": {
+        "height": 0,
+        "motion": {
+          "bounce_followup": false,
+          "chase_window": 0,
+          "direction": 1,
+          "duration": 0,
+          "jump_buffer": 0,
+          "jump_kind": "diagonal",
+          "jump_x": -1,
+          "land_window": 0
+        },
+        "state": "idle",
+        "thrower": -1
+      },
+      "capture_ticks": [],
+      "slam_ticks": [],
+      "tech_ticks": [],
+      "whiff_ticks": [
+        205
+      ],
+      "capture_spark_nodes": [],
+      "explosion_nodes": [],
+      "old_fingerprint": "5a86555f67183959fc0cfe1787e9f031ffcdeef65fca2934af311e8b902500ba",
+      "new_fingerprint": "9088abe50d9ba2837abad3840897b14f0d482fdf4a3ae01b6353179de287726f",
+      "format6_sha256": "c6b740845b72392503e92ad6a0a95ba7f4faf2899945d6a52672d71c8289b9ee"
+    },
+    {
+      "case": "owner1-rear_vertical_hit",
+      "replay": "reports/gomora-builtin/main-midlate-feedback-local-20261105/owner1-rear_vertical_hit-replay/replay-result.json",
+      "replay_sha256": "41187479d70000ac9d532134c078d3e395da95486d0c2d20c142327b49e81473",
+      "ticks": 321,
+      "captures": 1,
+      "slams": 1,
+      "whiffs": 0,
+      "damage": 490,
+      "errors": [],
+      "final_victim": {
+        "height": 0,
+        "motion": {
+          "bounce_followup": false,
+          "chase_window": 0,
+          "direction": 1,
+          "duration": 35,
+          "jump_buffer": 0,
+          "jump_kind": "vertical",
+          "jump_x": 0,
+          "land_window": 0,
+          "pose": "gomora_back_lift_receiver",
+          "pose_sprite": 11,
+          "throw_move": "special3",
+          "throw_origin_height": 45,
+          "throw_released": false
+        },
+        "state": "down",
+        "thrower": -1
+      },
+      "capture_ticks": [
+        255
+      ],
+      "slam_ticks": [
+        309
+      ],
+      "tech_ticks": [],
+      "whiff_ticks": [],
+      "capture_spark_nodes": [
+        {
+          "events": [
+            "hit"
+          ],
+          "height": 117,
+          "id": "impact_light",
+          "node_created": true,
+          "tick": 255,
+          "x": 768
+        }
+      ],
+      "explosion_nodes": [
+        {
+          "events": [
+            "throw_slam",
+            "sound"
+          ],
+          "height": 0,
+          "id": "explosion",
+          "node_created": true,
+          "tick": 309,
+          "x": 1007
+        }
+      ],
+      "old_fingerprint": "48f9ac0c995b69d451a0cfe06889205ccd69a5033aa848c1f05205967cab364b",
+      "new_fingerprint": "d8a2a77cdcef759efc74ff307491dddda087f402fd4fa0e170313ae3ceb3685e",
+      "format6_sha256": "704b8e81a51d2444615f1dce7cc39b76d75e04f9c7772483f3f1924318b7c762"
+    },
+    {
+      "case": "owner1-rear_vertical_tech1",
+      "replay": "reports/gomora-builtin/main-midlate-feedback-local-20261105/owner1-rear_vertical_tech1-replay/replay-result.json",
+      "replay_sha256": "10aff94820bb144d4477f88a124708b3aab5e2c781d499ad2568dd6fc39dec3f",
+      "ticks": 256,
+      "captures": 1,
+      "slams": 0,
+      "whiffs": 0,
+      "damage": 0,
+      "errors": [],
+      "final_victim": {
+        "height": 51,
+        "motion": {
+          "bounce_followup": false,
+          "chase_window": 0,
+          "direction": 1,
+          "duration": 15,
+          "jump_buffer": 0,
+          "jump_kind": "vertical",
+          "jump_x": 0,
+          "land_window": 0,
+          "tech_direction": -1,
+          "throw_move": "special3",
+          "throw_origin_height": 45,
+          "throw_released": false
+        },
+        "state": "throw_tech",
+        "thrower": -1
+      },
+      "capture_ticks": [
+        255
+      ],
+      "slam_ticks": [],
+      "tech_ticks": [
+        256
+      ],
+      "whiff_ticks": [],
+      "capture_spark_nodes": [
+        {
+          "events": [
+            "hit"
+          ],
+          "height": 117,
+          "id": "impact_light",
+          "node_created": true,
+          "tick": 255,
+          "x": 768
+        }
+      ],
+      "explosion_nodes": [],
+      "old_fingerprint": "48f9ac0c995b69d451a0cfe06889205ccd69a5033aa848c1f05205967cab364b",
+      "new_fingerprint": "d8a2a77cdcef759efc74ff307491dddda087f402fd4fa0e170313ae3ceb3685e",
+      "format6_sha256": "75b9df6c6f7279eacea7b150e3e775f09286c73019a0667c8be4366c225030d3"
+    },
+    {
+      "case": "owner1-rear_vertical_tech2",
+      "replay": "reports/gomora-builtin/main-midlate-feedback-local-20261105/owner1-rear_vertical_tech2-replay/replay-result.json",
+      "replay_sha256": "807f76e7943c98d47b7dfc5ae7e4b6b98fd4a5bf92f64eabdad64072440830ed",
+      "ticks": 257,
+      "captures": 1,
+      "slams": 0,
+      "whiffs": 0,
+      "damage": 0,
+      "errors": [],
+      "final_victim": {
+        "height": 51,
+        "motion": {
+          "bounce_followup": false,
+          "chase_window": 0,
+          "direction": 1,
+          "duration": 15,
+          "jump_buffer": 0,
+          "jump_kind": "vertical",
+          "jump_x": 0,
+          "land_window": 0,
+          "tech_direction": -1,
+          "throw_move": "special3",
+          "throw_origin_height": 45,
+          "throw_released": false
+        },
+        "state": "throw_tech",
+        "thrower": -1
+      },
+      "capture_ticks": [
+        255
+      ],
+      "slam_ticks": [],
+      "tech_ticks": [
+        257
+      ],
+      "whiff_ticks": [],
+      "capture_spark_nodes": [
+        {
+          "events": [
+            "hit"
+          ],
+          "height": 117,
+          "id": "impact_light",
+          "node_created": true,
+          "tick": 255,
+          "x": 768
+        }
+      ],
+      "explosion_nodes": [],
+      "old_fingerprint": "48f9ac0c995b69d451a0cfe06889205ccd69a5033aa848c1f05205967cab364b",
+      "new_fingerprint": "d8a2a77cdcef759efc74ff307491dddda087f402fd4fa0e170313ae3ceb3685e",
+      "format6_sha256": "d6862cc64e676720fa7c9350916608444a3635c8d6a99aaae8cd072aaea81a7a"
+    },
+    {
+      "case": "owner1-rear_vertical_tech3",
+      "replay": "reports/gomora-builtin/main-midlate-feedback-local-20261105/owner1-rear_vertical_tech3-replay/replay-result.json",
+      "replay_sha256": "39d8cecd62508172a9fe86fac8874946be9c1f4fb93ca0f0cead1d37751b8715",
+      "ticks": 258,
+      "captures": 1,
+      "slams": 0,
+      "whiffs": 0,
+      "damage": 0,
+      "errors": [],
+      "final_victim": {
+        "height": 51,
+        "motion": {
+          "bounce_followup": false,
+          "chase_window": 0,
+          "direction": 1,
+          "duration": 15,
+          "jump_buffer": 0,
+          "jump_kind": "vertical",
+          "jump_x": 0,
+          "land_window": 0,
+          "tech_direction": -1,
+          "throw_move": "special3",
+          "throw_origin_height": 45,
+          "throw_released": false
+        },
+        "state": "throw_tech",
+        "thrower": -1
+      },
+      "capture_ticks": [
+        255
+      ],
+      "slam_ticks": [],
+      "tech_ticks": [
+        258
+      ],
+      "whiff_ticks": [],
+      "capture_spark_nodes": [
+        {
+          "events": [
+            "hit"
+          ],
+          "height": 117,
+          "id": "impact_light",
+          "node_created": true,
+          "tick": 255,
+          "x": 768
+        }
+      ],
+      "explosion_nodes": [],
+      "old_fingerprint": "48f9ac0c995b69d451a0cfe06889205ccd69a5033aa848c1f05205967cab364b",
+      "new_fingerprint": "d8a2a77cdcef759efc74ff307491dddda087f402fd4fa0e170313ae3ceb3685e",
+      "format6_sha256": "31ee42991025baeefeecc56e6850e7180eafe3e80a347e9a628d1e7418004372"
+    },
+    {
+      "case": "owner1-rear_vertical_tech4",
+      "replay": "reports/gomora-builtin/main-midlate-feedback-local-20261105/owner1-rear_vertical_tech4-replay/replay-result.json",
+      "replay_sha256": "4ee43863f561c5cb52c27feb54a73feb0b50c81aeda5861e3a918b355e264ff7",
+      "ticks": 321,
+      "captures": 1,
+      "slams": 1,
+      "whiffs": 0,
+      "damage": 490,
+      "errors": [],
+      "final_victim": {
+        "height": 0,
+        "motion": {
+          "bounce_followup": false,
+          "chase_window": 0,
+          "direction": 1,
+          "duration": 35,
+          "jump_buffer": 0,
+          "jump_kind": "vertical",
+          "jump_x": 0,
+          "land_window": 0,
+          "pose": "gomora_back_lift_receiver",
+          "pose_sprite": 11,
+          "throw_move": "special3",
+          "throw_origin_height": 45,
+          "throw_released": false
+        },
+        "state": "down",
+        "thrower": -1
+      },
+      "capture_ticks": [
+        255
+      ],
+      "slam_ticks": [
+        309
+      ],
+      "tech_ticks": [],
+      "whiff_ticks": [],
+      "capture_spark_nodes": [
+        {
+          "events": [
+            "hit"
+          ],
+          "height": 117,
+          "id": "impact_light",
+          "node_created": true,
+          "tick": 255,
+          "x": 768
+        }
+      ],
+      "explosion_nodes": [
+        {
+          "events": [
+            "throw_slam",
+            "sound"
+          ],
+          "height": 0,
+          "id": "explosion",
+          "node_created": true,
+          "tick": 309,
+          "x": 1007
+        }
+      ],
+      "old_fingerprint": "48f9ac0c995b69d451a0cfe06889205ccd69a5033aa848c1f05205967cab364b",
+      "new_fingerprint": "d8a2a77cdcef759efc74ff307491dddda087f402fd4fa0e170313ae3ceb3685e",
+      "format6_sha256": "f604d959239239f3d4df970c4606ebe22ba2bd660b109b834390377da533ce98"
+    },
+    {
+      "case": "owner1-whiff",
+      "replay": "reports/gomora-builtin/main-midlate-feedback-local-20261105/owner1-whiff-replay/replay-result.json",
+      "replay_sha256": "87891e9d6a0b4c3e1d411b8991b3ae406cc747c5b031964e30cccbcaec93de50",
+      "ticks": 225,
+      "captures": 0,
+      "slams": 0,
+      "whiffs": 1,
+      "damage": 0,
+      "errors": [],
+      "final_victim": {
+        "height": 0,
+        "motion": {
+          "bounce_followup": false,
+          "chase_window": 0,
+          "direction": 1,
+          "duration": 0,
+          "jump_buffer": 0,
+          "jump_kind": "diagonal",
+          "jump_x": 1,
+          "land_window": 0
+        },
+        "state": "idle",
+        "thrower": -1
+      },
+      "capture_ticks": [],
+      "slam_ticks": [],
+      "tech_ticks": [],
+      "whiff_ticks": [
+        205
+      ],
+      "capture_spark_nodes": [],
+      "explosion_nodes": [],
+      "old_fingerprint": "48f9ac0c995b69d451a0cfe06889205ccd69a5033aa848c1f05205967cab364b",
+      "new_fingerprint": "d8a2a77cdcef759efc74ff307491dddda087f402fd4fa0e170313ae3ceb3685e",
+      "format6_sha256": "e200f1761a61ae5268acbcbf19ca8437bf2096654f3807c13e8688aef550ea07"
+    }
+  ],
+  "authorized_display_changes": {
+    "spark": "impact_light",
+    "finish_effect": "explosion",
+    "finish_trigger": "throw_slam"
+  },
+  "unchanged": "所有完整帧/root/捕获框/14门槛/伤害/费用/hitstop/flash/shake/block_spark及正式注册表不改。新旧同输入逐tick人物snapshot、比赛状态和仅剥离三项显示字段后的事件一致；实际flash/shake计数也一致。",
+  "hash_limit": "内容指纹因显示合同变更而不同；不声称旧新state_hash或内容hash相同。每份新输入带在本合同下独立及format6二次回放一致。",
+  "presentation_evidence": "实例化生产UfeCombatFeedback，真实sync及super.spawn记录节点是否生成，不用仅事件名冒充可见节点。重复同tick sync无重复发射。capture生成一次impact_light而无explosion；slam生成一次explosion；tech1–3和whiff无explosion；tech4已错过拆投窗口，正常撞地有一次explosion。",
+  "history": [
+    {
+      "path": "reports/gomora-builtin/main-midlate-feedback-20261105/contract.json",
+      "note": "首版仅将爆炸移到slam，仍用未注册impact_hit；不满足合理局部反馈要求。"
+    },
+    {
+      "path": "reports/gomora-builtin/main-midlate-feedback-20261105/feedback-audit",
+      "note": "首次新审计GDScript类型推断编译失败，保留。"
+    },
+    {
+      "path": "reports/gomora-builtin/main-midlate-feedback-20261105/feedback-audit-v2",
+      "note": "严格impact_hit实际节点断言失败；发现原名未注册。"
+    },
+    {
+      "path": "reports/gomora-builtin/main-midlate-feedback-20261105/feedback-audit-v3",
+      "note": "确认原调用未生成节点及爆炸时刻，仅事实审计通过，不作为局部反馈验收。"
+    }
+  ],
+  "limits": [
+    "生产反馈节点审计不是主游戏图形/听感验收；待正常四组实际呈现。",
+    "完整姿态连续性未因FX改动获通过；自动键非真人，无实速录屏，未安装正式三级。"
+  ],
+  "installed": false,
+  "art_accepted": false
+}

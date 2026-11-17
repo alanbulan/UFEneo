@@ -1,0 +1,3216 @@
+{
+  "source_report": "reports/zetton-crouch-block-resume/gui-v2-20261105-technical-summary.json",
+  "source_sha256": "e2b823093b2c17bc495f30af6fa41473bb461c24b62c7e0a752a7ea9d23859ec",
+  "independent_parent_recheck": "32组check_trace重新核过；另查看1920x1080-left-low-original返回tick41原生PNG，低蹲保持可见；未重跑Godot。",
+  "schema": "ufeneo_zetton_crouch_block_graphical_technical_review_v1",
+  "created_utc": "2026-11-05T22:05:42.388944+00:00",
+  "contract": "reports/zetton-crouch-block-resume/contract-v2.json",
+  "contract_sha256": "54619ba3332cd59f993aa888adf1f227938461ce6defbbb6a2ce437c44640e6c",
+  "technical_status": "passed",
+  "art_status": "scoped_recovery_static_review_real_time_not_accepted",
+  "installed": false,
+  "playable_release_accepted": false,
+  "scope": {
+    "runs": 32,
+    "original_replay_pairs": 16,
+    "native_sizes": [
+      [
+        1280,
+        720
+      ],
+      [
+        1920,
+        1080
+      ]
+    ],
+    "directions": [
+      "left",
+      "right"
+    ],
+    "kinds": [
+      "low",
+      "mid",
+      "overhead",
+      "release_down"
+    ],
+    "png_count": 176,
+    "source": "existing main game with RAM candidate and frozen InputFrame tape; not human hardware input",
+    "tape_schema": "ufeneo_zetton_crouch_block_tape_v1",
+    "audio_reviewed": false,
+    "video_recorded": false,
+    "real_time_motion_reviewed": false
+  },
+  "technical_checks": [
+    "All 32 runner.check_trace graphical checks passed; exact PNG SHA, native dimensions, frozen request/capture tick and sprite identity, both fighters state/animation bindings verified.",
+    "Final safe rectangle equals actual HUD safe rectangle and both final rendered body bounds fit; formal training panels remain visible.",
+    "Each window settled for at least eight observations and 500 ms before simulation tick 0 advanced.",
+    "All process exits zero, auxiliary fresh simulation replay errors empty; only precisely classified unsupported VSync warning.",
+    "Each original/replay pair matches all 180 ticks for six fields; identical same-tick image keys are not mistaken for missing frames."
+  ],
+  "visual_review": {
+    "coverage": "逐图审阅双向720/1080四类共16组original全部88张捕获图的联系表；另原尺寸核720-right-low及1080-left-low返回tick41。其余16组replay执行技术逐帧配对与PNG审计，不冒称逐图独立美术审阅。",
+    "stun_pose": "两新整帧低髋、屈膝和后腿折起可辨。phase0头胸大幅后仰、phase1回缓接近旧低架；硬直期间不再采用旧高站姿。黑白躯干与角头、双腿完整，训练板/HUD未裁切。",
+    "timing": "low/mid/release_down实际blockstun保持12，hitstop使冻结trace中两相分别出现8/7tick。源表4/6只是十行比例，不宣称4+6原速或连续动作验收。",
+    "release_down": "首次block后松下并继续GUARD；两相仍低髋，结束后返回高站防与输入目的相符。不能把此例有意站起混同持续下的回防错误。",
+    "overhead": "overhead真实白闪受击，不调用新蹲防硬直片；旧受击后返crouch_guard首帧仍高姿。该路径本轮明确未改，不能说所有回防站高都解决。",
+    "support_limits": "phase0大幅后震→phase1近乎回正的姿态跨度与后鞋缘变化可见。约7–8px为已有源测量，不冒充本次屏幕精测；固定anchor与静帧不足以证明足底无滑动或原速顺滑。",
+    "framing": "双方完整轮廓含角头、脚缘处于实际HUD安全区，训练板保留；不宣称镜头完全常量或理想尺度。",
+    "remaining_limits": [
+      "本轮仅修蹲防硬直持续下的返回路径；初次入架、overhead受击返回及松键路径并未一概改成低姿。",
+      "无录屏/实速连续观察/听感/真人键盘验收；仅真实主游戏冻结InputFrame原录与独立回放。",
+      "新两帧仅RAM未安装；本图形批未改冻结代码/资源/合同，正式恢复core已在dffc7312单独修复",
+      "初次接触火花/白闪覆盖部分细节；近距双方原有画面重叠不据bounds判定绝无穿插。"
+    ],
+    "scoped_recovery": {
+      "status": "static_boundary_verified",
+      "low_ticks": [
+        40,
+        41
+      ],
+      "mid_ticks": [
+        39,
+        40
+      ],
+      "keys": [
+        "stun-phase-1-last",
+        "returned-guard"
+      ],
+      "finding": "持续下+GUARD时，新两相结束直接进入低蹲保持，不再重播v1的高站首帧；仅此crouch_blockstun返回路径的静态边界验证，非实速连续性接受。"
+    }
+  },
+  "cleanup": {
+    "desktop_observed_utc": "2026-11-05T22:05:21Z",
+    "godot_window_absent": true,
+    "terminal_returned_to_shell_prompt": true,
+    "lock_absent_verified_utc": "2026-11-05T22:05:56.694506+00:00",
+    "lock_manually_deleted": false,
+    "source_or_contract_modified_by_review": false,
+    "batch_continuity": "环境重连后原队列继续，21:59原桌面仍见Godot窗口和运行终端，未清锁或重复启动；最终32组自然完成，桌面无Godot窗口且原终端回到shell提示符。"
+  },
+  "groups": [
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "low",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 1360,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "64b7aebc8a8eab4138d02ead87ebb09d8f3f8f9e37416cc1dd202e4209130bd3",
+      "png_audit_sha256": "9b8be2eb8258a6d411ad77ae58921670401b02619b99901139a702bcff26efdd",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "low",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 821,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "d3c329ce599f384849c868d139cf7323373d6fc910e668efadf6d9733d96ab49",
+      "png_audit_sha256": "531b8716b30343a2929bac1d32d29397bf836500c931bdb60f09c012ad0bf4a4",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "mid",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 536,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "b18836557998df17c29c686ac57940ad2f0f3e90682981c10ee26f534a99ca42",
+      "png_audit_sha256": "2b20d00c35422e72bd6a9e9446c2272d964d5e4284e9ac1bd3561ac690ef0892",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "mid",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 13,
+      "window_elapsed_ms": 503,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "843af373f929b89004285442352947e36662ae3b0bf5f648c10d3480de67f432",
+      "png_audit_sha256": "1dd412f13bed219fe0acfe838f139585d507db1d69ad206aa8741db5aaeea77e",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-overhead-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "overhead",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 4,
+      "exit_code": 0,
+      "window_stable_frames": 21,
+      "window_elapsed_ms": 516,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "6f04175ca13ce94ca7dfdf3a82f07c9a26de2cb196344410857719242c789578",
+      "png_audit_sha256": "12ae1dfdc3fc9b953695c27b15cab2a586c725d749046169e174f5c6044c0161",
+      "observed_timing": {
+        "duration": 20,
+        "observed_stun_tick_count": 0,
+        "phase_observed_ticks": {
+          "0": 0,
+          "1": 0
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-overhead-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "overhead",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 4,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 630,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "fda68b8034388310b0ae6f44c8fafd5618a0de442b6f71daaf581ae96e89947a",
+      "png_audit_sha256": "199301d75b33f59b9577ec29546137ada52f5dc0b663486e81bc6bc552a479c9",
+      "observed_timing": {
+        "duration": 20,
+        "observed_stun_tick_count": 0,
+        "phase_observed_ticks": {
+          "0": 0,
+          "1": 0
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "release_down",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 23,
+      "window_elapsed_ms": 506,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "254bca17344a1f60ac3f12f996c326d8662b9c19d554124507b9c60143bb0ad6",
+      "png_audit_sha256": "3952c8bdc464f8117fa6ad862108b7b6587614be5a84a3e109a8def51ba05405",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "release_down",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 9,
+      "window_elapsed_ms": 520,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "c52b7cdc02b77a1cd53f7f792a4014bf2c8bd36dc7eaefce5777343594fb92ad",
+      "png_audit_sha256": "c96dc6701d7146c18f9e266b522a8b857cc8180fb7e719f1b09706b720b6887a",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "low",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 24,
+      "window_elapsed_ms": 506,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "27177ed9c42d2dcce821e0830c358be74d9142195c6cb70ca66ddbd24f398a40",
+      "png_audit_sha256": "41c31886e688812061abcec7631e64de3e5879ca343c7b0e6dcd87b0c77eac9e",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "low",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 26,
+      "window_elapsed_ms": 512,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "dee51eeea1d673b332123f970938db1060dd59ca3be1908c44d4e52c58c97750",
+      "png_audit_sha256": "51f20254707dca82fd0a2c9180c144e2b94cfd272dd0685efc42c5e7d9298074",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "mid",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 25,
+      "window_elapsed_ms": 528,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "9c0678c9a8d9a9f6ecc265a1254dd09e99ea6afe3700a5bf0f4799b4ed88aa8f",
+      "png_audit_sha256": "c597eabef2070c81c785a5a1dd17d31a2d3927f9a00f041036b95312291ff9e0",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "mid",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 23,
+      "window_elapsed_ms": 506,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "fc4e69857450ba8a286924814e1935f003dda06e492ec8a5607b2001c7161c6b",
+      "png_audit_sha256": "75ad2f4722fb60400c69a9fc6bbb431f8b8bdd35ab84eebb570df9dd465dcc69",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-overhead-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "overhead",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 4,
+      "exit_code": 0,
+      "window_stable_frames": 24,
+      "window_elapsed_ms": 513,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "c14da1f664671558dfff8e11a9740ca588881d47d233ff5c81c7c52a94112311",
+      "png_audit_sha256": "1f0ad4de8631f84cd8223d06af4e73bb354cd7ac9ac55128d0438087ca2edde8",
+      "observed_timing": {
+        "duration": 20,
+        "observed_stun_tick_count": 0,
+        "phase_observed_ticks": {
+          "0": 0,
+          "1": 0
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-overhead-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "overhead",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 4,
+      "exit_code": 0,
+      "window_stable_frames": 21,
+      "window_elapsed_ms": 519,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "38a15345011c144505c92f392896c5d43389c146ddaffece2bb7398eaf70e785",
+      "png_audit_sha256": "5c8e1eda42e6b006469a5a82fd5f8389deb3c6bd93db6d5075d066e171a39a07",
+      "observed_timing": {
+        "duration": 20,
+        "observed_stun_tick_count": 0,
+        "phase_observed_ticks": {
+          "0": 0,
+          "1": 0
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "release_down",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 17,
+      "window_elapsed_ms": 514,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "fe505b5c3f493f40918376ae7bac1cdf0eb0b2ce58ef6c1416ffcf786b3343e4",
+      "png_audit_sha256": "ff66ba2fc2b2df3ca3ca3fead0bde53fbea2bba4385cfea7a12e2c022384a41e",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "release_down",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 22,
+      "window_elapsed_ms": 511,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "f4c5879c65444399924e1472203ca8256ade99f04763fccd56181e37daa123bb",
+      "png_audit_sha256": "3ae09c0371e5f61602d6420e735384cb793d8960ce7d6e6d9d35e8538d12f14a",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "low",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 9,
+      "window_elapsed_ms": 543,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "c0a57995d0e9dc16dcbeba83aec1b919442319528828d457f423b5a013b8698e",
+      "png_audit_sha256": "f818bd2181c62017cd0970fa76ef6b198ce6d16bf6889fe77e2aedd958d5bd51",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "low",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 15,
+      "window_elapsed_ms": 503,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "73a8f7e442fc30e3d65563ecb947118f2f06f8635e055925d183e8a382fb6b49",
+      "png_audit_sha256": "41d1a12f0b4c6d339219836d0855911b77121cd247dd9f54ae955c89ac52f3aa",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "mid",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 12,
+      "window_elapsed_ms": 509,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "4053c321bb106c26718a6feb75983c4ff15149caac3a98ccaf73b323c82fbbf2",
+      "png_audit_sha256": "5b8912459207c21e2333fc68e43037140bb5f25f5660e8d84d1c3263158a874f",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "mid",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 13,
+      "window_elapsed_ms": 514,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "b7218166dbea4c0e2ed18cefc584677db0d80f2af408aa6f9c82568c4e266d40",
+      "png_audit_sha256": "2f15de0c26b7fd5577f5db3b9a803d3d6f2af381f31a0016822622b71bc74040",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-overhead-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "overhead",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 4,
+      "exit_code": 0,
+      "window_stable_frames": 14,
+      "window_elapsed_ms": 501,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "43afdc5e2f77e7e25dbc86a43b10e2573fc59eb07c0913e189aa029c308dac13",
+      "png_audit_sha256": "8f4bfe75f615c7795917d06a032e307722fcfdd2ec82f753148603bbcd99ce83",
+      "observed_timing": {
+        "duration": 20,
+        "observed_stun_tick_count": 0,
+        "phase_observed_ticks": {
+          "0": 0,
+          "1": 0
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-overhead-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "overhead",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 4,
+      "exit_code": 0,
+      "window_stable_frames": 10,
+      "window_elapsed_ms": 517,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "58f21880a2efc5b7bfd5e5ae5fab8d3c6e5e7a539745550111aafe181d46d82d",
+      "png_audit_sha256": "954a905482f86ec0f36adf6b7467fa9bdc63a044f371eea03ae5b6403853fd74",
+      "observed_timing": {
+        "duration": 20,
+        "observed_stun_tick_count": 0,
+        "phase_observed_ticks": {
+          "0": 0,
+          "1": 0
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "release_down",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 14,
+      "window_elapsed_ms": 519,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "24b466616f4da29a5deeb5c43ef99b8b7cdd84d68c6744a6396326159308f772",
+      "png_audit_sha256": "77b6b93da94f131a1fac82bae233bcc0e61280bba152ba78b2f5b56a0267430f",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "release_down",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 14,
+      "window_elapsed_ms": 532,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "563ee1dc1b316493199c52976b03f1644c0941758869b2e915b56d37d03d6a4e",
+      "png_audit_sha256": "ff2fc85ad6015cbc4f6d5e418f71d1611fbd50408767815a991fe3b7e58f67e9",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "low",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 15,
+      "window_elapsed_ms": 504,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "00a929460872813bee9624648487b1bc43402e209752d39f8440b24ae79b530a",
+      "png_audit_sha256": "08c0c06e4c5371cb989fb69ec4088611461edbba4666a53e1be4ab3528a0d112",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "low",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 538,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "b993e056bf50f12d7531edf3d03813f030136ced9060d4cc34f3fdfeee4195fc",
+      "png_audit_sha256": "2ef3c76c2cf5483e78ea7b41c49c6b8aa31e6e4ec82a98a271b16f7c9d5b23b0",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "mid",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 12,
+      "window_elapsed_ms": 514,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "9047373d771528fa765deb6e6cd63501af9f174df107cacd8e2bee07303e62c7",
+      "png_audit_sha256": "79a92de2d8eb70109e5608ecf869d1adcce7b78c5296418ed549f9528b6d7389",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "mid",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 15,
+      "window_elapsed_ms": 516,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "898f9d7262422947116d83fbbee1687fbbea9932d47286387f4d6e7171b73081",
+      "png_audit_sha256": "14648f4b735f6edbfb6678083ea1c4d9b2f945708d2f3961c2ea787c79413870",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-overhead-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "overhead",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 4,
+      "exit_code": 0,
+      "window_stable_frames": 17,
+      "window_elapsed_ms": 577,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "b390bf6a6549a8851ab00eaca8e6fd058ef06b1cce975340ba84371d74c3e9d7",
+      "png_audit_sha256": "eac63aa0c6df17f6b47fd5ab87c1680934739d0e91c7720c640b7361c57d3d54",
+      "observed_timing": {
+        "duration": 20,
+        "observed_stun_tick_count": 0,
+        "phase_observed_ticks": {
+          "0": 0,
+          "1": 0
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-overhead-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "overhead",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 4,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 513,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "85c26bbd40a15305d5f84f562c89eb434e7b332664d2e11de898525078737aa9",
+      "png_audit_sha256": "b99ca0da6e673d162e28d6772d7224dc602df9eab24a8b265081c57190a15c3a",
+      "observed_timing": {
+        "duration": 20,
+        "observed_stun_tick_count": 0,
+        "phase_observed_ticks": {
+          "0": 0,
+          "1": 0
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "release_down",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 17,
+      "window_elapsed_ms": 524,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "bd8ac844577ea7e6681ff7c73dd24636f68c49e8c21a71f135a74a1ce98dd74e",
+      "png_audit_sha256": "72979f04fd89b68127ce0802b92bec987f96c151493bcbe0307d2de429fe601d",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    },
+    {
+      "folder": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "release_down",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 6,
+      "exit_code": 0,
+      "window_stable_frames": 15,
+      "window_elapsed_ms": 521,
+      "known_warning": "confirmed unsupported VSync only",
+      "trace_sha256": "21d9a95c34495be73e939b76925161315dad1994c6600ed62e7decc3ab1fc09e",
+      "png_audit_sha256": "28aab83364f2139f2fb6e4d9d2b0e16f6c97556df67abc9164267c90523245d5",
+      "observed_timing": {
+        "duration": 12,
+        "observed_stun_tick_count": 15,
+        "phase_observed_ticks": {
+          "0": 8,
+          "1": 7
+        },
+        "includes_hitstop": true,
+        "wall_clock_art_timing_claimed": false
+      }
+    }
+  ],
+  "replay_pairs": [
+    {
+      "original": "1280x720-right-low-original",
+      "replay": "1280x720-right-low-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1280x720-right-mid-original",
+      "replay": "1280x720-right-mid-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1280x720-right-overhead-original",
+      "replay": "1280x720-right-overhead-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1280x720-right-release_down-original",
+      "replay": "1280x720-right-release_down-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1280x720-left-low-original",
+      "replay": "1280x720-left-low-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1280x720-left-mid-original",
+      "replay": "1280x720-left-mid-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1280x720-left-overhead-original",
+      "replay": "1280x720-left-overhead-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1280x720-left-release_down-original",
+      "replay": "1280x720-left-release_down-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1920x1080-right-low-original",
+      "replay": "1920x1080-right-low-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1920x1080-right-mid-original",
+      "replay": "1920x1080-right-mid-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1920x1080-right-overhead-original",
+      "replay": "1920x1080-right-overhead-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1920x1080-right-release_down-original",
+      "replay": "1920x1080-right-release_down-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1920x1080-left-low-original",
+      "replay": "1920x1080-left-low-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1920x1080-left-mid-original",
+      "replay": "1920x1080-left-mid-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1920x1080-left-overhead-original",
+      "replay": "1920x1080-left-overhead-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    },
+    {
+      "original": "1920x1080-left-release_down-original",
+      "replay": "1920x1080-left-release_down-replay",
+      "ticks": 180,
+      "equal_fields": [
+        "state_hash",
+        "events",
+        "projectiles",
+        "original_inputs",
+        "pair",
+        "hitstop"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4a63acee52ccd0161556cc36f29ce5b98e29a517ebd7ebf5880373d556fc656b",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-original/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "26d7516ef4591c4161dd498614af10de56af57801f8e1b0a2f11fa3fc93fabf9",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-original/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1ad75d0cba66ddc2fd1aa9ae8819bb12e8e9066e5667703d00941db4116c3f22",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-original/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "9efa841284cb0b19bc6f403b5197bbbac19760c6edc786e1f53aa63c457fd638",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-original/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "0903c46289265a42403d55b05b2d9cb806f726631b2e0ae68a2de36bdaf5a3e8",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "dfbef0cd33844d270611c204b3f69a3f270110f26bf4075a8154cd3f441351cd",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4a63acee52ccd0161556cc36f29ce5b98e29a517ebd7ebf5880373d556fc656b",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-replay/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "26d7516ef4591c4161dd498614af10de56af57801f8e1b0a2f11fa3fc93fabf9",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-replay/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1ad75d0cba66ddc2fd1aa9ae8819bb12e8e9066e5667703d00941db4116c3f22",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-replay/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "9efa841284cb0b19bc6f403b5197bbbac19760c6edc786e1f53aa63c457fd638",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-replay/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "0903c46289265a42403d55b05b2d9cb806f726631b2e0ae68a2de36bdaf5a3e8",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-low-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "dfbef0cd33844d270611c204b3f69a3f270110f26bf4075a8154cd3f441351cd",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5c20dadaedaadb4a3e17a2fb99b6098496079c01182c1e8503a138bd1a9b4852",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-original/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "210b1bee1e56e852c3ede2a7c7e706261f6e5b3f3d0e548d7c3c49972ebdedea",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-original/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "669a986c022e97a72b3c67e3dc5179491db4269f73067fe1bfedf6de67a07d73",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-original/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d6233b1174d6a4a39aeb2e0bf40503082b1986aedd22ef695730a008414499e3",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-original/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6f41202641434186fe24dc817a492f65421b271c8df3d5c5e27f39415f5b207c",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1003aa2a0667117ca4853e74b64528a06ef02c9273cce26b260c6736846fc80e",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "5c20dadaedaadb4a3e17a2fb99b6098496079c01182c1e8503a138bd1a9b4852",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-replay/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "210b1bee1e56e852c3ede2a7c7e706261f6e5b3f3d0e548d7c3c49972ebdedea",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-replay/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "669a986c022e97a72b3c67e3dc5179491db4269f73067fe1bfedf6de67a07d73",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-replay/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d6233b1174d6a4a39aeb2e0bf40503082b1986aedd22ef695730a008414499e3",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-replay/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "6f41202641434186fe24dc817a492f65421b271c8df3d5c5e27f39415f5b207c",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-mid-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1003aa2a0667117ca4853e74b64528a06ef02c9273cce26b260c6736846fc80e",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-overhead-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "43e09415c37cacae3e2867e046351261ce0b35c769023f010c3ece7bd8ab3004",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-overhead-original/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ddd2966ad1cd14c05b7916fd94c830800ceee5fa6ce981db6f94fbaf2aa0504c",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-overhead-original/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1467bacda1003d59d431b86d11280604069eec18ceadf8a5fc35cfa8524a2f6c",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-overhead-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e8920ec4be61a2c0590f3e8915d04f21524c60b62f5fea7d4c9df32c29497999",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-overhead-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "43e09415c37cacae3e2867e046351261ce0b35c769023f010c3ece7bd8ab3004",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-overhead-replay/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "ddd2966ad1cd14c05b7916fd94c830800ceee5fa6ce981db6f94fbaf2aa0504c",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-overhead-replay/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "1467bacda1003d59d431b86d11280604069eec18ceadf8a5fc35cfa8524a2f6c",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-overhead-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "e8920ec4be61a2c0590f3e8915d04f21524c60b62f5fea7d4c9df32c29497999",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4a63acee52ccd0161556cc36f29ce5b98e29a517ebd7ebf5880373d556fc656b",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-original/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "26d7516ef4591c4161dd498614af10de56af57801f8e1b0a2f11fa3fc93fabf9",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-original/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "66a0a735aad01d316b27d70ae4a543ca9d3870a43b0c0641b876a890ca3f0e50",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-original/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "33673fa2951feed781aea8ea793685b147f729ac437cc27f31a9360741b62e60",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-original/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "702b3d553f6bf46e2366cbf10d34dea883fe3b3995442ca231ad8c8a7b03d16b",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c74521fa4ad5e2bd1e71ca1ed4f70208e1a362bef6cdc0ac85acf5e61720d39a",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4a63acee52ccd0161556cc36f29ce5b98e29a517ebd7ebf5880373d556fc656b",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-replay/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "26d7516ef4591c4161dd498614af10de56af57801f8e1b0a2f11fa3fc93fabf9",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-replay/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "66a0a735aad01d316b27d70ae4a543ca9d3870a43b0c0641b876a890ca3f0e50",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-replay/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "33673fa2951feed781aea8ea793685b147f729ac437cc27f31a9360741b62e60",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-replay/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "702b3d553f6bf46e2366cbf10d34dea883fe3b3995442ca231ad8c8a7b03d16b",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-right-release_down-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c74521fa4ad5e2bd1e71ca1ed4f70208e1a362bef6cdc0ac85acf5e61720d39a",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b5821080acfef990c9a3f924ceb634c570524dea7237cb572742f79bba174664",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-original/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "087c73d17b03b7c73f6d47356632218258b8200f20050bb36d7833adf7e211f2",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-original/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d63e978390ca390351dfcdda1578cbfb2a6b780c3e9a35d8f94776a0739b4f90",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-original/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f0702271412e2792c39250a9620eed83d86188bb0b093c32cf80b44ff4b14cc0",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-original/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "adaa9fcf174d90511dbbc7b7a691386d72a6fd3b22b588d80b3c711ef0307db6",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2a8a4c86c6c51dfed4df86c06fe7c9a6c7210ef439e36430b81e3f5e1f0a215a",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b5821080acfef990c9a3f924ceb634c570524dea7237cb572742f79bba174664",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-replay/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "087c73d17b03b7c73f6d47356632218258b8200f20050bb36d7833adf7e211f2",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-replay/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d63e978390ca390351dfcdda1578cbfb2a6b780c3e9a35d8f94776a0739b4f90",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-replay/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "f0702271412e2792c39250a9620eed83d86188bb0b093c32cf80b44ff4b14cc0",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-replay/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "adaa9fcf174d90511dbbc7b7a691386d72a6fd3b22b588d80b3c711ef0307db6",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-low-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "2a8a4c86c6c51dfed4df86c06fe7c9a6c7210ef439e36430b81e3f5e1f0a215a",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d982731c74abbe1c2ea74faa9a0ff543a27b1a6ab0e1f003f310f5ffda47f3f1",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-original/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a948c7ff3f8db6c12ccb816787d838a85771b6116f4f2ac2e5c35614b8afb9d3",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-original/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b7abf76304ddd936f48e6a8a444f9f36e209d0215204d5d0a952560131c479c7",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-original/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "98398ff9ef7d8df951dddcdd780fa1c355941840b8ab716487d76c63c216b35e",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-original/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "70c357ad49adf78a76840fa3aad0150e45eb55a9948e8386135dfb955f0d76c5",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "0adb0074aeffb57fef4b2824c4d89ac114589a9ff1773e17be771e0ff62abfae",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d982731c74abbe1c2ea74faa9a0ff543a27b1a6ab0e1f003f310f5ffda47f3f1",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-replay/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a948c7ff3f8db6c12ccb816787d838a85771b6116f4f2ac2e5c35614b8afb9d3",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-replay/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b7abf76304ddd936f48e6a8a444f9f36e209d0215204d5d0a952560131c479c7",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-replay/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "98398ff9ef7d8df951dddcdd780fa1c355941840b8ab716487d76c63c216b35e",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-replay/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "70c357ad49adf78a76840fa3aad0150e45eb55a9948e8386135dfb955f0d76c5",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-mid-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "0adb0074aeffb57fef4b2824c4d89ac114589a9ff1773e17be771e0ff62abfae",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-overhead-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "eafd43d06d014489e6a1503452f67c81c1ef8a07c74bf92e836e533c74c01405",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-overhead-original/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "efa1e40aa5769b06ee39679057d7f4b84791f57a889310a7778f5681ba3d12d7",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-overhead-original/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "86220b6e355d29f390163e8bc414c1f12eef09effd7e92bd8cd0d116efbf0c5c",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-overhead-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4c3bd8fbc5e4b4e842069102ee2a6f58dca1236001d5aec699c6830c96591053",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-overhead-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "eafd43d06d014489e6a1503452f67c81c1ef8a07c74bf92e836e533c74c01405",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-overhead-replay/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "efa1e40aa5769b06ee39679057d7f4b84791f57a889310a7778f5681ba3d12d7",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-overhead-replay/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "86220b6e355d29f390163e8bc414c1f12eef09effd7e92bd8cd0d116efbf0c5c",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-overhead-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "4c3bd8fbc5e4b4e842069102ee2a6f58dca1236001d5aec699c6830c96591053",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b5821080acfef990c9a3f924ceb634c570524dea7237cb572742f79bba174664",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-original/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "087c73d17b03b7c73f6d47356632218258b8200f20050bb36d7833adf7e211f2",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-original/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a94fd8e3b388fece9b4423f15963312b17012bc49e4e8529f83a61d478a78433",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-original/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "23799ec2ba4717c250a79f89944df829c06e5b73ffdd8d72a7bba76fc14cdd22",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-original/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c7933feb89fb4bfaf84a6172d109fa9d0e45b851f8e70e381b2ce7bfb5749373",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d9cdb9a84c3f9a229e10c2ba2ad79d9738ffa44d2b796e50d7d0e9e3adfe1c5e",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "b5821080acfef990c9a3f924ceb634c570524dea7237cb572742f79bba174664",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-replay/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "087c73d17b03b7c73f6d47356632218258b8200f20050bb36d7833adf7e211f2",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-replay/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "a94fd8e3b388fece9b4423f15963312b17012bc49e4e8529f83a61d478a78433",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-replay/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "23799ec2ba4717c250a79f89944df829c06e5b73ffdd8d72a7bba76fc14cdd22",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-replay/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "c7933feb89fb4bfaf84a6172d109fa9d0e45b851f8e70e381b2ce7bfb5749373",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1280x720-left-release_down-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "sha256": "d9cdb9a84c3f9a229e10c2ba2ad79d9738ffa44d2b796e50d7d0e9e3adfe1c5e",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "055bba948ba26fb26ce203137f449e63ab28805bb39bd3bd5330d65acf56e708",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-original/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e195126c614b9b0de7182774f088403c9f1ba0e0c0b1bede9ae3a0f6f3fdde37",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-original/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "50dab5ae94150af9e5f3280ef957ba1f2e58691056cb797a3378bdda2b92c07a",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-original/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7a41842d05898edc852322c92e53d6c9afc6c4befd12852fc9136a12739b0fd1",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-original/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "92bdd43ef755e04082e870f5e5369f749ac3cbedeb0825264ff4db18aec5200a",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "323d5702c361608a36800ae727f75ef1a9081891ac460b88e10acda858cf8eda",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "055bba948ba26fb26ce203137f449e63ab28805bb39bd3bd5330d65acf56e708",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-replay/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e195126c614b9b0de7182774f088403c9f1ba0e0c0b1bede9ae3a0f6f3fdde37",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-replay/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "50dab5ae94150af9e5f3280ef957ba1f2e58691056cb797a3378bdda2b92c07a",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-replay/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7a41842d05898edc852322c92e53d6c9afc6c4befd12852fc9136a12739b0fd1",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-replay/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "92bdd43ef755e04082e870f5e5369f749ac3cbedeb0825264ff4db18aec5200a",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-low-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "323d5702c361608a36800ae727f75ef1a9081891ac460b88e10acda858cf8eda",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c41655c011c7fced9a43d2f8352f5a5e9224bb36c62175fc7ff30446151f05cd",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-original/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b4eb2321b2d01e479b499a4f5c89c3624f94deb6d7a8c4256091e4dcd1183cb3",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-original/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "3d5a9a5a6aa8d9d5229ecfacee8064a0392d2fecbc65a7796ec2155c512e0565",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-original/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6e9fe2866a19601096f7f67f8996818e9999f10817d6ed0d8fb372dcad60d0dc",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-original/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0a62ad4298ec3fcdb4ee03515f808fb44198d3b3ef2b8aa3f75d4abc3d1f8e81",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "80c3ccf50c7c8b9fc62099ede49f1f373d2d88c16b25c42c4e00a09b484466a0",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c41655c011c7fced9a43d2f8352f5a5e9224bb36c62175fc7ff30446151f05cd",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-replay/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b4eb2321b2d01e479b499a4f5c89c3624f94deb6d7a8c4256091e4dcd1183cb3",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-replay/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "3d5a9a5a6aa8d9d5229ecfacee8064a0392d2fecbc65a7796ec2155c512e0565",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-replay/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6e9fe2866a19601096f7f67f8996818e9999f10817d6ed0d8fb372dcad60d0dc",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-replay/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "0a62ad4298ec3fcdb4ee03515f808fb44198d3b3ef2b8aa3f75d4abc3d1f8e81",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-mid-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "80c3ccf50c7c8b9fc62099ede49f1f373d2d88c16b25c42c4e00a09b484466a0",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-overhead-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "f095903011cbb4305843773a61ecd3d38f1bc6f929a7180dcb78d4ec0815e9fd",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-overhead-original/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "582017e2379d32531f2221689962c7c07017c48447abc8285ff354332425831c",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-overhead-original/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c8ff80fedeece2b5719b46ee2cad2679af496f0e7585caac73800a7b581bff57",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-overhead-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ec8e3df2d20249b59880a028507b712527f310a3613db45d3f4b2f082fb3a6a6",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-overhead-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "f095903011cbb4305843773a61ecd3d38f1bc6f929a7180dcb78d4ec0815e9fd",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-overhead-replay/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "582017e2379d32531f2221689962c7c07017c48447abc8285ff354332425831c",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-overhead-replay/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c8ff80fedeece2b5719b46ee2cad2679af496f0e7585caac73800a7b581bff57",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-overhead-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ec8e3df2d20249b59880a028507b712527f310a3613db45d3f4b2f082fb3a6a6",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "055bba948ba26fb26ce203137f449e63ab28805bb39bd3bd5330d65acf56e708",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-original/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e195126c614b9b0de7182774f088403c9f1ba0e0c0b1bede9ae3a0f6f3fdde37",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-original/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "43cc6e8897a7ab44b01c4b638d6b089eec969c90a7ea767f7395ad6374af4b10",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-original/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "83c18dd60024a9c0169885ca8ed4ddc659e091d9004376c2bba8f194e37c8420",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-original/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b38741ea863d648440b6c844f0343f0d1705b768f98193edd37a70b6e246feb4",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "695eccbd41a8293a92281df6633df144c74f4336387db4967dead68dd42b6cc5",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "055bba948ba26fb26ce203137f449e63ab28805bb39bd3bd5330d65acf56e708",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-replay/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e195126c614b9b0de7182774f088403c9f1ba0e0c0b1bede9ae3a0f6f3fdde37",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-replay/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "43cc6e8897a7ab44b01c4b638d6b089eec969c90a7ea767f7395ad6374af4b10",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-replay/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "83c18dd60024a9c0169885ca8ed4ddc659e091d9004376c2bba8f194e37c8420",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-replay/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b38741ea863d648440b6c844f0343f0d1705b768f98193edd37a70b6e246feb4",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-right-release_down-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "695eccbd41a8293a92281df6633df144c74f4336387db4967dead68dd42b6cc5",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a8ce5d857b1e1c3b0cf289a8a3dfab8dd80ca6209ac572527a6d22d48e1a3097",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-original/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c010ce54a71d120ed5d3fad72ad9c7e8b81d060fd621d389d624be9e95d9f49c",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-original/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8024b3315c7e4b2cb7af49ea473799f56e3acf49b8115a570187616117c8a73b",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-original/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e66dd81283e51158c7a5f19d0039ca89739671f93218974e8ef26392b261e8f7",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-original/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "11908a749bb4661ec7918d1cd51c9cff28c343b0360654aafd05874f49c96fc2",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b8dc37695bdb1ed3f59b217ba34d107874d5f6d3efe52ab6342a8ce8a36e024d",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a8ce5d857b1e1c3b0cf289a8a3dfab8dd80ca6209ac572527a6d22d48e1a3097",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-replay/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c010ce54a71d120ed5d3fad72ad9c7e8b81d060fd621d389d624be9e95d9f49c",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-replay/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8024b3315c7e4b2cb7af49ea473799f56e3acf49b8115a570187616117c8a73b",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-replay/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "e66dd81283e51158c7a5f19d0039ca89739671f93218974e8ef26392b261e8f7",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-replay/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "11908a749bb4661ec7918d1cd51c9cff28c343b0360654aafd05874f49c96fc2",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-low-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "b8dc37695bdb1ed3f59b217ba34d107874d5f6d3efe52ab6342a8ce8a36e024d",
+      "captured_tick": 41,
+      "movie_frame": 40
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "817f13a6fc2bfc9a249e27e32f00c270cf3f84a5e4d0bbd2eca79ff81d157ae5",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-original/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c9af6d26c9e14aa6a7090b191dd0bb0407ec4bee8fa445f96139faa9d891123a",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-original/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "62e150122be9929862655295d2a90605da5a05fcfaed33235db51fae7a6d0b01",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-original/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "13057397e8e7abe5e28f7c2a15fc31dd4dee035f15082e121dddd81ff0dede6e",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-original/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8ee7cf0780ac6fda98ae1bd62e62d6a26855033802454de70620d91f85f9618d",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ee7648e05c11a788138d0d1a8cc1d93ef3cfd326644aecbde1a1473839464d12",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "817f13a6fc2bfc9a249e27e32f00c270cf3f84a5e4d0bbd2eca79ff81d157ae5",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-replay/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c9af6d26c9e14aa6a7090b191dd0bb0407ec4bee8fa445f96139faa9d891123a",
+      "captured_tick": 25,
+      "movie_frame": 24
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-replay/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "62e150122be9929862655295d2a90605da5a05fcfaed33235db51fae7a6d0b01",
+      "captured_tick": 32,
+      "movie_frame": 31
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-replay/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "13057397e8e7abe5e28f7c2a15fc31dd4dee035f15082e121dddd81ff0dede6e",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-replay/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8ee7cf0780ac6fda98ae1bd62e62d6a26855033802454de70620d91f85f9618d",
+      "captured_tick": 39,
+      "movie_frame": 38
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-mid-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ee7648e05c11a788138d0d1a8cc1d93ef3cfd326644aecbde1a1473839464d12",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-overhead-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9eb93c976fdeb377e8b5a03aae24158d341a541997ad92a7363307f3e956af0a",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-overhead-original/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "53e6b4377883125d605bc7c1ffbc06ac53cb753f2b14cdf9e678f027d57d8e20",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-overhead-original/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "41347bc7f94f757a57e970344b2f91130e20d150f87f6c3cfd39aa3cc9e12e8f",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-overhead-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8d0be8cb5ec267b801200491df10665c1144bbf74b8adff7bfae90e810ed9885",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-overhead-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "9eb93c976fdeb377e8b5a03aae24158d341a541997ad92a7363307f3e956af0a",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "overhead-hit-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-overhead-replay/overhead-hit-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "53e6b4377883125d605bc7c1ffbc06ac53cb753f2b14cdf9e678f027d57d8e20",
+      "captured_tick": 29,
+      "movie_frame": 28
+    },
+    {
+      "key": "overhead-hit-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-overhead-replay/overhead-hit-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "41347bc7f94f757a57e970344b2f91130e20d150f87f6c3cfd39aa3cc9e12e8f",
+      "captured_tick": 56,
+      "movie_frame": 55
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-overhead-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8d0be8cb5ec267b801200491df10665c1144bbf74b8adff7bfae90e810ed9885",
+      "captured_tick": 58,
+      "movie_frame": 57
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-original/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a8ce5d857b1e1c3b0cf289a8a3dfab8dd80ca6209ac572527a6d22d48e1a3097",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-original/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c010ce54a71d120ed5d3fad72ad9c7e8b81d060fd621d389d624be9e95d9f49c",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-original/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "4dd300eb9c41b2fcfedd6c903d414ff2b6c00b971791df95920abdf609506b79",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-original/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6eca30bec1bfc9990c08397a7de1b9c40e31d4aee3e4ce406ab75219f2067254",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-original/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7b3e1d4a7822f75f89c84d2e50b980091328203a576dba58489ab105dd3b9d4f",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-original/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "3771fc4292a951bfde84bedf533f58b6fbacf39e5195d427bb6eb16981c3c79f",
+      "captured_tick": 42,
+      "movie_frame": 41
+    },
+    {
+      "key": "before-input-crouch-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-replay/before-input-crouch-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "a8ce5d857b1e1c3b0cf289a8a3dfab8dd80ca6209ac572527a6d22d48e1a3097",
+      "captured_tick": 20,
+      "movie_frame": 19
+    },
+    {
+      "key": "stun-phase-0-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-replay/stun-phase-0-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "c010ce54a71d120ed5d3fad72ad9c7e8b81d060fd621d389d624be9e95d9f49c",
+      "captured_tick": 26,
+      "movie_frame": 25
+    },
+    {
+      "key": "stun-phase-0-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-replay/stun-phase-0-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "4dd300eb9c41b2fcfedd6c903d414ff2b6c00b971791df95920abdf609506b79",
+      "captured_tick": 33,
+      "movie_frame": 32
+    },
+    {
+      "key": "stun-phase-1-first",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-replay/stun-phase-1-first.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "6eca30bec1bfc9990c08397a7de1b9c40e31d4aee3e4ce406ab75219f2067254",
+      "captured_tick": 34,
+      "movie_frame": 33
+    },
+    {
+      "key": "stun-phase-1-last",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-replay/stun-phase-1-last.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "7b3e1d4a7822f75f89c84d2e50b980091328203a576dba58489ab105dd3b9d4f",
+      "captured_tick": 40,
+      "movie_frame": 39
+    },
+    {
+      "key": "returned-guard",
+      "path": "reports/zetton-crouch-block-resume/graphical-v2/1920x1080-left-release_down-replay/returned-guard.png",
+      "format": "PNG",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "3771fc4292a951bfde84bedf533f58b6fbacf39e5195d427bb6eb16981c3c79f",
+      "captured_tick": 42,
+      "movie_frame": 41
+    }
+  ]
+}

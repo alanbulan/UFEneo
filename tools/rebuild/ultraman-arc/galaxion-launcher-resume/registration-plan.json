@@ -1,0 +1,198 @@
+{
+  "fighter": "ultraman-arc__galaxion",
+  "reviewer": "root_delegated_by_user",
+  "source_order": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "actions": {
+    "launcher": {
+      "sample_size": 160,
+      "hip_x": [
+        670,
+        660,
+        667,
+        646,
+        663,
+        667,
+        670
+      ],
+      "source_sha256": {
+        "0": "dc689ebe5d49d1e113fb508dfdbf0bbf671a9b06a539c8f567982498d304825f",
+        "1": "469bd4a3627a06bbfcd6e9cfd9fa017c1de9a759303b815057684dcf66e1ff7c",
+        "2": "cec7630c11299fc57feaeb0d97c2dc9e77e39e1a5bbe5ccee5c6d9a7847fb865",
+        "3": "e6ace190437945f3afc01a3e98d3d982284bdfd5041cac5d6e1c7fc6e3108e60",
+        "4": "260d0149aec17291f1644aa6de2cef10f44e2f1ef2d59288ffc18ce09e85f731",
+        "5": "df97736c53df95584224c3a9fbba6c91661781e8741bda52297a55a310cde764",
+        "6": "094588be2f23944767d85ab3acca636d408e0fa07fe337a2800a7ee24a9725bd"
+      },
+      "original_visual_landmarks": {
+        "0": {
+          "skull_top": [
+            720,
+            243
+          ],
+          "chin": [
+            811,
+            399
+          ],
+          "neck_base": [
+            730,
+            430
+          ],
+          "hip_center": [
+            670,
+            704
+          ]
+        },
+        "1": {
+          "skull_top": [
+            715,
+            199
+          ],
+          "chin": [
+            805,
+            349
+          ],
+          "neck_base": [
+            729,
+            383
+          ],
+          "hip_center": [
+            660,
+            659
+          ]
+        },
+        "2": {
+          "skull_top": [
+            630,
+            176
+          ],
+          "chin": [
+            725,
+            312
+          ],
+          "neck_base": [
+            649,
+            345
+          ],
+          "hip_center": [
+            667,
+            637
+          ]
+        },
+        "3": {
+          "skull_top": [
+            611,
+            181
+          ],
+          "chin": [
+            703,
+            314
+          ],
+          "neck_base": [
+            628,
+            342
+          ],
+          "hip_center": [
+            646,
+            632
+          ]
+        },
+        "4": {
+          "skull_top": [
+            702,
+            202
+          ],
+          "chin": [
+            799,
+            348
+          ],
+          "neck_base": [
+            717,
+            381
+          ],
+          "hip_center": [
+            663,
+            644
+          ]
+        },
+        "5": {
+          "skull_top": [
+            741,
+            267
+          ],
+          "chin": [
+            830,
+            418
+          ],
+          "neck_base": [
+            749,
+            451
+          ],
+          "hip_center": [
+            667,
+            714
+          ]
+        },
+        "6": {
+          "skull_top": [
+            699,
+            224
+          ],
+          "chin": [
+            790,
+            375
+          ],
+          "neck_base": [
+            716,
+            402
+          ],
+          "hip_center": [
+            670,
+            687
+          ]
+        }
+      },
+      "source_fist_rois": {
+        "2": [
+          953,
+          102,
+          1058,
+          195
+        ]
+      },
+      "raw_full_fist_extent_diagnostic": [
+        945,
+        96,
+        1066,
+        205
+      ],
+      "near_support_bottom_y": [
+        1196,
+        1209,
+        1196,
+        1196,
+        1210,
+        1207,
+        1222
+      ]
+    }
+  },
+  "measurement_precision": "完整1254原图人工近似头点±10–15、颈髋±15–25、hipX±20；拳ROI±6–10原px；非精测硬门。颅顶是头壳对应部位不含长冠尖，颈髋用欧氏距离。",
+  "model_reference": "art/fighters/ultraman-arc__galaxion/model/measurements.json",
+  "model_head_shell": 22.147811549975096,
+  "model_torso": 37.099836527701136,
+  "registration": "七相统一160方图，按髋横向及实际低鞋底仅整图平移到160/280，不拉齐双鞋、不切肢、不逐相归一。",
+  "semantic_limits": [
+    "原七相顺序保留；00/01屈肘，02唯一同臂前上升拳，03降臂前伸只作后摇，04回护05微蹲06恢复。",
+    "原brief腹部蓄右拳未逐项实现，不冒称原设计完全通过。",
+    "仅02拳本体ROI生成攻击框，缩有效为5，后摇12，总23tick不变；原本体正式招式不改。",
+    "未开放银河，尚无本人完整追击跳/空中动作，本候选不宣称追击连段完成。"
+  ]
+}

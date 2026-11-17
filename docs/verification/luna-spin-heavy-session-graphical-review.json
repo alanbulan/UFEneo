@@ -1,0 +1,465 @@
+{
+  "date_utc": "2026-11-05",
+  "status": "图形技术通过，逐相静态审阅完成，实速连续/整招美术未验收",
+  "installed": false,
+  "art_passed": false,
+  "source_summary": {
+    "path": "reports/luna-spin-heavy-resume/gui-v1-20261105-technical-summary.json",
+    "sha256": "eaf54434a8ef1309cb48c84d852c09b468968f90adf23b0661bf027fd5511ea3"
+  },
+  "scope": {
+    "valid_groups": 24,
+    "native_png": 480,
+    "original_replay_pairs": 12,
+    "trace_ticks_per_group": 180,
+    "sizes": [
+      [
+        1280,
+        720
+      ],
+      [
+        1920,
+        1080
+      ]
+    ],
+    "directions": [
+      "right",
+      "left"
+    ],
+    "kinds": [
+      "hit",
+      "block",
+      "whiff"
+    ]
+  },
+  "checks": [
+    "重读24组main-trace并重新执行check_trace，图像SHA/原生尺寸/request冻结相位/安全区通过",
+    "独立重开480张PNG核格式尺寸，六种条件每尺寸对应原回放五字段180tick完全一致",
+    "24成功进程均0，辅助新模拟回放无错，只允许已识别VSync环境警告",
+    "保留一例tick0窗口稳定门失败，不把它列为成功或删除；续跑只七组",
+    "已复核冻结合同依赖不变，正式装甲仍关闭"
+  ],
+  "visual_review": {
+    "coverage": "已实看十二个original全20捕获点联系表，并单独查看原生起手、尾段、接触关键PNG。回放组做完整技术核验，未逐张独立目视。",
+    "identity": "月亮本人蓝甲、白色尖头、红银双腿可辨；入蓄抬臂至头侧/后侧、抬膝、展开、接触、收腿、回架十槽完整出现。未见缺肢或全身轮廓被HUD裁切，不等于严格头身体量统一通过。",
+    "entry_boundary": {
+      "keys": [
+        "spin_heavy-tick-01-phase-00",
+        "spin_heavy-tick-02-phase-01"
+      ],
+      "global_ticks": [
+        21,
+        22
+      ],
+      "finding": "从护架宽站到提膝、抬臂并收拢身体，肩臂方向变化明显，原图仍能辨完整本人轮廓。背景和对手也随共同取景变化，不将屏幕体量变化全部当素材缩放。未验原速，不凭静帧签入蓄顺滑。"
+    },
+    "low_to_tail": {
+      "keys": [
+        "spin_heavy-tick-19-phase-07",
+        "spin_heavy-tick-20-phase-08"
+      ],
+      "global_ticks_by_kind": {
+        "whiff": [
+          39,
+          40
+        ],
+        "block": [
+          42,
+          43
+        ],
+        "hit": [
+          43,
+          44
+        ]
+      },
+      "finding": "前方抬膝转到身后伸腿，攻击鞋跨身幅度明显。正常画面双向均可见，未隐藏FX。这是需要保留的脚路连续性风险，十槽齐全或技术通过不能解除。没有原速连续观察，不能称该跨身已顺。"
+    },
+    "tail_to_idle": {
+      "keys": [
+        "spin_heavy-tick-23-phase-08",
+        "spin_heavy-tick-24-phase-09"
+      ],
+      "global_ticks_by_kind": {
+        "whiff": [
+          43,
+          44
+        ],
+        "block": [
+          46,
+          47
+        ],
+        "hit": [
+          47,
+          48
+        ]
+      },
+      "finding": "悬空鞋向后方落下，最终两脚回站姿可辨；支撑鞋外轮廓转向及头胸横移仍可见。世界x与anchor不变不证明无滑步；背景及对手也随构图微移。request无直接camera/scale字段，不将全部屏幕横移单独归咎素材或相机。"
+    },
+    "camera_evidence": "例如720右hit move19/20/24的safe恒[16,189,608,129]、世界x恒590，但final body bounds宽71.31/75.44/82.5且高129，伴随背景构图变化；这些是边界记录，不是相机恒定证明。",
+    "contact_and_opponent": "正常hit白闪遮住部分脚/受方接触细节；block蓝火花位于伸脚与受方下腹附近，杰顿既有举手高位姿势未因此修复。受方始终在地面，未借用升空倒地演出，之后自然回idle或guard。",
+    "remaining_limits": [
+      "无连续录屏和原速运动验收，无音频验收；逐相暂停截图不能证明实速顺滑。",
+      "low→tail02跨身、tail02→idle鞋轮廓/胸头变化，以及起手体量/抬臂接续仍需连续观察，不强制由静帧推出必须新增相。",
+      "仅内存候选，未安装、未开放装甲、未接受严格体量或整招美术。"
+    ]
+  },
+  "visual_review_attribution": "云桌面审阅者看12个original全20捕获点及关键原图；本任务另直接看720right-hit尾段原图和登记atlas，不伪称回放480张均逐张目视。",
+  "failure_and_resume": {
+    "folder": "reports/luna-spin-heavy-resume/graphical-v1/1920x1080-right-whiff-replay",
+    "exit_code": 1,
+    "reason": "All four observations were native1920x1080, but only four stable frames occurred by 5915ms, below unchanged eight-frame gate; simulation never started.",
+    "window_setup_sha256": "408c6930905896d35f5ed14b3b5cd9571952d96662efdd3d906115c70e170140",
+    "retry": "Seven missing groups only in graphical-v1-resume; original failure retained."
+  },
+  "resume_script": {
+    "path": "tools/rebuild/ultraman-arc/luna-spin-heavy-resume/resume_graphical.py",
+    "sha256": "02186e83d18326a01d6d6f74cda5a90875c3875543ebe1eddf04bfbd726fa86c"
+  },
+  "cleanup": {
+    "desktop_observed_utc": "2026-11-05T18:45:10Z",
+    "godot_window_absent": true,
+    "terminal_returned_to_shell_prompt": true,
+    "lock_absent_verified_utc": "2026-11-05T18:45:20Z",
+    "lock_manually_deleted": false,
+    "source_or_contract_modified_by_review": false
+  },
+  "groups": [
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1280x720-right-block-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 12,
+      "window_elapsed_ms": 1101,
+      "trace_sha256": "9385c082616def58987fa8604cf3955c76d0781d26eb48de65e8974b8040f448",
+      "png_audit_sha256": "bb87da01d046f7df4637ab6d7704940ef1d50253fd101eb4021c557154bbc2c4"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1920x1080-right-block-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 9,
+      "window_elapsed_ms": 522,
+      "trace_sha256": "ad5e97fd329d0574581f62f4a5578b38dbf5df3f7a780bc2dfff2e9db3bffd76",
+      "png_audit_sha256": "f7d3180acf557e04c882565b6ad7811fe2e2564ce25c36921d812df35afd1cc2"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1280x720-left-hit-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 27,
+      "window_elapsed_ms": 500,
+      "trace_sha256": "46e3f56480605e65d5d36b016ef311833c1db9b3721ab7e7943feeec95f15f6a",
+      "png_audit_sha256": "a963e730ffa38d10a1282dcc147bd581ecf7fcc94c6fd7bd81887533d129908d"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1920x1080-right-hit-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 13,
+      "window_elapsed_ms": 508,
+      "trace_sha256": "858f7f1f611c0abbd6589109bd7c740b4f579c88f8136d76fd65c793cc82b0b0",
+      "png_audit_sha256": "d621fbc7f99d20815f1996c3a34efd83e8c824bee5a41823eed96e3b3cc02bf5"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1280x720-left-block-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 760,
+      "trace_sha256": "c3f778a8b6d2d01d6ab27d46afd5b6a5ed89a01964e2c877abce185069a13b5d",
+      "png_audit_sha256": "3ef83e1771d3f5de7811380b58f6f61f7ccd9e0378033fddbee2340b18fa1caa"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1280x720-left-whiff-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 12,
+      "window_elapsed_ms": 542,
+      "trace_sha256": "2069da80ec07668f2ece9353105035ad149871bc5319fc92e8c6acddba5f1ae9",
+      "png_audit_sha256": "fa7b7d4d4e213df255f7dc3bbf9fd9f1bbf8f214358ff94ee7472d31c18187af"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1280x720-right-hit-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 521,
+      "trace_sha256": "4643942befae2a0daa87c424283b2bf4cc4a8c030b406a103dd8f72e8bb658c9",
+      "png_audit_sha256": "9a42e3e6a4de70aa5da129019f8f547332544ff5c345fdc41afc6f802aa39636"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1280x720-right-whiff-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 30,
+      "window_elapsed_ms": 507,
+      "trace_sha256": "2405b7cc139b1f73478f218f033b4f5ad9165d0bf97ae0088b9ee0ba5b9397f0",
+      "png_audit_sha256": "707311fa9e2e8d7a9b745eea573e8e860320187a61c4c38bc50e2ec35433e640"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1280x720-left-block-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 10,
+      "window_elapsed_ms": 554,
+      "trace_sha256": "c01eb971eb7e7f93e39f8ddc695f4fa575bcb7485824d811bab5881c6c08e78e",
+      "png_audit_sha256": "ed9618d9e554bd7c9468673edef1dac5f9af0b6f8bf020671ebdb655aded733c"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1280x720-left-whiff-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 12,
+      "window_elapsed_ms": 503,
+      "trace_sha256": "44cff6e9f7178fa152bcb74a0e698bb8441b194a6e8d33c7cb684aba85dfb2f9",
+      "png_audit_sha256": "c6916b40e6a08bf3e8822e4a2f354019c333b4a52816940125506aa866bc4cfb"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1920x1080-right-block-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 554,
+      "trace_sha256": "38316522c7019ca09da1106d450569667249c91233275a94f1823e72b2c6a678",
+      "png_audit_sha256": "b693ac105599ce90f0635de8faf9b5c0990d0305c0717a9bc2a203e0b7c39aad"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1280x720-left-hit-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 20,
+      "window_elapsed_ms": 510,
+      "trace_sha256": "6719d672b83064ad4b0948acc80d8114e384b61a548d11d209069cd2748511bd",
+      "png_audit_sha256": "9035e21cd4d58f2c253760bfe98334dc5a3a6944a95efd25d8bb58f97b25348d"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1920x1080-right-hit-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 508,
+      "trace_sha256": "96813ad426c860064a722908ac4dacaa5387cbe03e361eb380f1ce52a3b9fd7f",
+      "png_audit_sha256": "fe96e319643314d89b9ad145db02b0df07b0daf856ef403d074f3e55cbc81f93"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1280x720-right-hit-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "hit",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 1452,
+      "trace_sha256": "17098e8a2ccde1e3f5b2af6a9adaa489522a0628903b9153be8dd3561b90a8b4",
+      "png_audit_sha256": "a6309fb7a760e547f123d8e09f4d5100bd7eb60aaae6cf504879c6985a6d8aca"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1920x1080-right-whiff-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 14,
+      "window_elapsed_ms": 513,
+      "trace_sha256": "deeaf7514e52a0a9cec07f16ecc69d913267e8a000339a60bdd4d94e03059083",
+      "png_audit_sha256": "423bc72f7048c5b6f4c1ffea6b8b27f2ac3f80837d9446b6bdd291253fbe8cba"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1280x720-right-block-replay",
+      "original": false,
+      "size": "1280x720",
+      "kind": "block",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 619,
+      "trace_sha256": "628576e2f3cd69d13e63f462cea313116d9288a9714dfae540adacce3dc0d359",
+      "png_audit_sha256": "cedd821234649853518eb0d28ad0c3fc61d8b6e1fb96324e1e5b3af4c343cf55"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1/1280x720-right-whiff-original",
+      "original": true,
+      "size": "1280x720",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 15,
+      "window_elapsed_ms": 514,
+      "trace_sha256": "be7ecf7b7bfd248e1104038d06f60158d9f9a3598e6f83c09a10150920dd4fc3",
+      "png_audit_sha256": "907ad75ff09bca9ba807a3b9e189a8efcd8a085b2feb2bd5a5f5c8dc9c983b34"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1-resume/1920x1080-right-whiff-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "right",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 1959,
+      "trace_sha256": "a5058608e7296565e41aac9b472a11ba1f8d2fbdab4cb8f289a723c5f8db4091",
+      "png_audit_sha256": "43952ceed4242d7bbc10079a86f79186a3f9edbaf6d39d92cccb74048705917d"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1-resume/1920x1080-left-hit-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 680,
+      "trace_sha256": "243b14b0cf1f82e78789dec333a3ea5b7167b1f47d1475480be210e375608fba",
+      "png_audit_sha256": "5ce61cc78f7300792d7331391727301b6b0a923e7775d32f0a29ffa14af1c88a"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1-resume/1920x1080-left-hit-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "hit",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 11,
+      "window_elapsed_ms": 512,
+      "trace_sha256": "8ad9967870dcac13785b3b973e6094e827362a69f331e47c3bd6f31f89fb4c12",
+      "png_audit_sha256": "dd8143eeb2d7622ea98aeba2d7c074083dd66ef13800dfa7bf63aadcd1386392"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1-resume/1920x1080-left-block-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 540,
+      "trace_sha256": "db8f53c155364e2124d1625c4127d8e7a298a1e68dddd8cb851c26ad289a2b68",
+      "png_audit_sha256": "69d2125edd007bbfeb4ba552dbcd028069d4aa437f9f37d4ba6d3ea233fb2dc5"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1-resume/1920x1080-left-block-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "block",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 715,
+      "trace_sha256": "691e90484192f44bd0555af0f7d208133d291375a5e9f0357a8610cfc4da94b8",
+      "png_audit_sha256": "1e52852381c4927f12049872ff34e79c5f4233c96ac08f6220bfeaa7b47fc453"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1-resume/1920x1080-left-whiff-original",
+      "original": true,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 13,
+      "window_elapsed_ms": 558,
+      "trace_sha256": "3c464515dfb782fe37315432388ff7b362ec65eb0fcbdfa09332d5b33248f22f",
+      "png_audit_sha256": "aa310c8de04949eefac62473f0e3c71c3f09bac695d3fd372f8c5f92653d9191"
+    },
+    {
+      "folder": "reports/luna-spin-heavy-resume/graphical-v1-resume/1920x1080-left-whiff-replay",
+      "original": false,
+      "size": "1920x1080",
+      "kind": "whiff",
+      "direction": "left",
+      "tick_count": 180,
+      "png_count": 20,
+      "exit_code": 0,
+      "window_stable_frames": 8,
+      "window_elapsed_ms": 3599,
+      "trace_sha256": "d831bb30574eaf0bd7456a7b99ba99f1f0da63875aef05d2bf2a04c5c64374ad",
+      "png_audit_sha256": "8ab601c6246bab5db738bd4749830014e03c55d3781e41b970bc2970b0e1d9a8"
+    }
+  ],
+  "next_minimum": "保留当前候选，优先连续原速观察入蓄、low→tail02与落回idle，辨别真实体量/脚路和共同镜头影响；不据静帧机械新增相。单相idle与声音也未验收；未充分验收不安装。"
+}

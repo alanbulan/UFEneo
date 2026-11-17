@@ -1,0 +1,4229 @@
+{
+  "fighter": "ultraman-arc__galaxion",
+  "reviewer": "root_delegated_by_user",
+  "status": "candidate_state_family_static_pass_with_observations",
+  "technical_passed": true,
+  "static_visual_acceptance": "passed_with_observations_not_realtime_acceptance",
+  "source_summary": {
+    "path": "reports/galaxion-crouch-resume/gui-v1-20261105-technical-summary.json",
+    "sha256": "a7b8f1d4a1ada0a8511ac66105a0d4b26fc995d0378831568e5e17e2f0d24de9"
+  },
+  "contract": {
+    "path": "reports/galaxion-crouch-resume/contract-v2.json",
+    "sha256": "fb6649a891dae65ef7e74af31f7a1119a08259b30a0b10e4b52d49bc0b1a602c"
+  },
+  "source_candidate_commit": "6158fa34",
+  "complete_source_frames": 12,
+  "actual_main_scene": "app/scenes/main.tscn",
+  "groups": 8,
+  "ticks_per_group": 240,
+  "pngs": 352,
+  "captures_per_group": 44,
+  "not_every_tick_visual_capture": true,
+  "visual_review": {
+    "scope": "720right全部44张；720left及1080双向各前19与末8张，共125张独立原输入截图，涵盖全部12相、首轮起止边界、保持循环及idle六相回环。另原生1080left起身末tick84与idle首tick85大图细看。",
+    "findings": [
+      "双方完整轮廓、脚底、头顶均避开实际训练板和HUD，无裁切或开放断肢。训练板全程保留，不用隐藏规避。",
+      "idle00近脸高护拳与01胸前手位变化可见，05到00回环也有举拳变化；躯干和双腿仍保持同一体量与站位，没有足以据静帧拒收的整体硬切。",
+      "入蹲00/01高度近似，主要膝部和护手变化；start末到crouch首继续压低，双腿完整、支撑可读，没有倒置或忽大忽小。",
+      "保持00/01有小幅重心和手位变化，循环脚底仍有支撑，不把小幅变化称流畅呼吸。",
+      "rise00/01逐步伸膝站起，末到idle首脚底与全身体量大致接续。头盔细部/头长和手位有差异，已保留，不以局部细差否定整状态族，也不宣称像素级完全一致。"
+    ],
+    "limits": [
+      "截图为每组44张选定相位，不是全部240tick连续视觉；idle六相的选样不等同每个相邻tick边界均捕获。",
+      "无录屏、音频或实速顺滑验收。",
+      "回放四对逐tick技术检查，未额外逐图视觉复核。",
+      "仅候选状态族静帧验收，不代表银河装甲完整开放。"
+    ]
+  },
+  "independent_root_review": {
+    "all_352_png_sizes_sha_ticks_hud_bounds_checked": true,
+    "all_8_runs_simulation_fields_same_as_headless_v2": true,
+    "original_frame_views": [
+      "1280x720-right-original/crouch-0-n-05-crouch_start-phase-01.png",
+      "1280x720-right-original/crouch-0-n-06-crouch-phase-00.png",
+      "1920x1080-left-original/crouch-0-n-59-crouch_rise-phase-01.png",
+      "1920x1080-left-original/crouch-0-n-60-idle-phase-00.png"
+    ],
+    "observations": "独立实际看入保持及起身→idle边界；两人全轮廓在真实训练板下与底HUD上，头躯干无明显整体硬跳，护手有变化但不伪称完全无差。"
+  },
+  "cases": [
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original",
+      "png_count": 44,
+      "exit_code": 0,
+      "window_status": "native_window_stable",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "capture_check_errors": [],
+      "trace_failures": [],
+      "log_diagnostics_passed": true,
+      "known_warning": "仅精确已知VSync不支持环境警告",
+      "trace": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/main-trace.json",
+        "sha256": "dbb54499e7119bcd5611b84272f75c4dbd93047624d0bd22bfdb4ea757a20e32"
+      },
+      "process": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/process.json",
+        "sha256": "5325f44cd0601e7b5aa5ddb1edd4347dab320d6c40d674c03188eb12a3698750"
+      }
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay",
+      "png_count": 44,
+      "exit_code": 0,
+      "window_status": "native_window_stable",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "capture_check_errors": [],
+      "trace_failures": [],
+      "log_diagnostics_passed": true,
+      "known_warning": "仅精确已知VSync不支持环境警告",
+      "trace": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/main-trace.json",
+        "sha256": "3e46bb7acb31e5e46c3e763fd22143ab75a62f4c42fe510dd1e39494ec47a5c4"
+      },
+      "process": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/process.json",
+        "sha256": "78aa7ee58942fad23c07251c8fcd088060209066b0eb84f9a39bb48cde92fbeb"
+      }
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original",
+      "png_count": 44,
+      "exit_code": 0,
+      "window_status": "native_window_stable",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "capture_check_errors": [],
+      "trace_failures": [],
+      "log_diagnostics_passed": true,
+      "known_warning": "仅精确已知VSync不支持环境警告",
+      "trace": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/main-trace.json",
+        "sha256": "2190b057fa890d5b20813dcc87f71d383c8fd2e4815af274626176c1c4af1ca4"
+      },
+      "process": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/process.json",
+        "sha256": "be59e57a8ed7ba6300e9dd2d5e20db1ca1a64c20a88a3eceb383e28db75eaef7"
+      }
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay",
+      "png_count": 44,
+      "exit_code": 0,
+      "window_status": "native_window_stable",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "capture_check_errors": [],
+      "trace_failures": [],
+      "log_diagnostics_passed": true,
+      "known_warning": "仅精确已知VSync不支持环境警告",
+      "trace": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/main-trace.json",
+        "sha256": "6497c501625450dcc93d3d96333d23fcb73d74705574865aafaf7bb19b38fd53"
+      },
+      "process": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/process.json",
+        "sha256": "bad5d912f63f62909a064c2aeb8b539beb659dae714d8a739d24d989335bd363"
+      }
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original",
+      "png_count": 44,
+      "exit_code": 0,
+      "window_status": "native_window_stable",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "capture_check_errors": [],
+      "trace_failures": [],
+      "log_diagnostics_passed": true,
+      "known_warning": "仅精确已知VSync不支持环境警告",
+      "trace": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/main-trace.json",
+        "sha256": "486149699c5fac0075fa9d06dc609602fd600ead7fefe279a0af929f1af628d5"
+      },
+      "process": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/process.json",
+        "sha256": "1fb5ca201ea29c426e99c7b56408ade3e4799a86d0a50084099d7ff53f2ab46f"
+      }
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay",
+      "png_count": 44,
+      "exit_code": 0,
+      "window_status": "native_window_stable",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "capture_check_errors": [],
+      "trace_failures": [],
+      "log_diagnostics_passed": true,
+      "known_warning": "仅精确已知VSync不支持环境警告",
+      "trace": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/main-trace.json",
+        "sha256": "409bd9f6a8c0c947a97b9eeb6d5c4762a2821206927aaf26d00f44bbcae3a06b"
+      },
+      "process": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/process.json",
+        "sha256": "56c9ce95a7a3c2f50f7bc58d52485bfc6d6b2d0d78a1054fa8183670a828bb9e"
+      }
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original",
+      "png_count": 44,
+      "exit_code": 0,
+      "window_status": "native_window_stable",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "capture_check_errors": [],
+      "trace_failures": [],
+      "log_diagnostics_passed": true,
+      "known_warning": "仅精确已知VSync不支持环境警告",
+      "trace": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/main-trace.json",
+        "sha256": "b6e75ba442435051825ed8026ed235e350de3609ad330eb575f5f65ad25b91ab"
+      },
+      "process": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/process.json",
+        "sha256": "e7ecfa4882a5382d399bebcfa72d1262ad5efc65b04c2bdaaf6dbdd08e93cbbc"
+      }
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay",
+      "png_count": 44,
+      "exit_code": 0,
+      "window_status": "native_window_stable",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "capture_check_errors": [],
+      "trace_failures": [],
+      "log_diagnostics_passed": true,
+      "known_warning": "仅精确已知VSync不支持环境警告",
+      "trace": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/main-trace.json",
+        "sha256": "cafd0c3418163af47b44a97eee7f9c145723eb7e761c691a708bf109a415e9c7"
+      },
+      "process": {
+        "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/process.json",
+        "sha256": "da5a488373e0bb750d86dda8f3f2e104670dfe1e8e8878fc2f032512efdb83b2"
+      }
+    }
+  ],
+  "replay_comparisons": [
+    {
+      "size": "1280x720",
+      "direction": "right",
+      "ticks": 240,
+      "replay_exact_fields": [
+        "state_hash",
+        "simulation_fingerprint",
+        "original_inputs",
+        "pair",
+        "events",
+        "projectiles"
+      ]
+    },
+    {
+      "size": "1280x720",
+      "direction": "left",
+      "ticks": 240,
+      "replay_exact_fields": [
+        "state_hash",
+        "simulation_fingerprint",
+        "original_inputs",
+        "pair",
+        "events",
+        "projectiles"
+      ]
+    },
+    {
+      "size": "1920x1080",
+      "direction": "right",
+      "ticks": 240,
+      "replay_exact_fields": [
+        "state_hash",
+        "simulation_fingerprint",
+        "original_inputs",
+        "pair",
+        "events",
+        "projectiles"
+      ]
+    },
+    {
+      "size": "1920x1080",
+      "direction": "left",
+      "ticks": 240,
+      "replay_exact_fields": [
+        "state_hash",
+        "simulation_fingerprint",
+        "original_inputs",
+        "pair",
+        "events",
+        "projectiles"
+      ]
+    }
+  ],
+  "final_hud_bounds": [
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original",
+      "captures": 44,
+      "final_safe_equals_hud_safe": true,
+      "both_body_bounds_inside_safe": true,
+      "both_pair_state_sprite_region_match_trace": true
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay",
+      "captures": 44,
+      "final_safe_equals_hud_safe": true,
+      "both_body_bounds_inside_safe": true,
+      "both_pair_state_sprite_region_match_trace": true
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original",
+      "captures": 44,
+      "final_safe_equals_hud_safe": true,
+      "both_body_bounds_inside_safe": true,
+      "both_pair_state_sprite_region_match_trace": true
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay",
+      "captures": 44,
+      "final_safe_equals_hud_safe": true,
+      "both_body_bounds_inside_safe": true,
+      "both_pair_state_sprite_region_match_trace": true
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original",
+      "captures": 44,
+      "final_safe_equals_hud_safe": true,
+      "both_body_bounds_inside_safe": true,
+      "both_pair_state_sprite_region_match_trace": true
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay",
+      "captures": 44,
+      "final_safe_equals_hud_safe": true,
+      "both_body_bounds_inside_safe": true,
+      "both_pair_state_sprite_region_match_trace": true
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original",
+      "captures": 44,
+      "final_safe_equals_hud_safe": true,
+      "both_body_bounds_inside_safe": true,
+      "both_pair_state_sprite_region_match_trace": true
+    },
+    {
+      "folder": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay",
+      "captures": 44,
+      "final_safe_equals_hud_safe": true,
+      "both_body_bounds_inside_safe": true,
+      "both_pair_state_sprite_region_match_trace": true
+    }
+  ],
+  "images": [
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/settled-idle-000.png",
+      "sha256": "627eb605f05bef4bb2530ec5cd80c3f48b7a1b2ef86983b37712e7b015b742f4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "settled-idle-000"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/settled-idle-023.png",
+      "sha256": "825e6768af3d4988b844c96202f5cb69f97c718f22f2dbb5d2c09b1b03ec89a9",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "settled-idle-023"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-00-crouch_start-phase-00.png",
+      "sha256": "cfe7dca521de34fe87e3443347343b6061d40a0340f146524ee92a9788fe7d08",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "crouch-0-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-02-crouch_start-phase-00.png",
+      "sha256": "3634210cd2980d4e3a14335f29af7f027797d93ad9bb5135ef05d75b6e14331f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "crouch-0-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-03-crouch_start-phase-01.png",
+      "sha256": "a21827ab89cb78f60123b0276987370f36c7c3f35605121c925007234f8ce08e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "crouch-0-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-05-crouch_start-phase-01.png",
+      "sha256": "313ccd525b0d8fd7353d4e28fc6d95b86a3ce1b0c9f01f4c4e541a88b957ed12",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "crouch-0-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-06-crouch-phase-00.png",
+      "sha256": "0fd25896df4f91ff57ff46b779fe6fd75ec48c718cc45eb03f7ee86ce5c3919e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "crouch-0-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-17-crouch-phase-00.png",
+      "sha256": "5558d8ee1b92d3f05463854acd70074c85152cdad35350c358b169ad38f7f74c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "crouch-0-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-18-crouch-phase-01.png",
+      "sha256": "e74f65cba687eb090909a9b9a16370be7c7e8ccf81fdff2a8d985d1e13f5ce0c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "crouch-0-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-29-crouch-phase-01.png",
+      "sha256": "9f45d6c9448e33031d76de74c643380aa90e5d9990205f375d0f99517920dfa9",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 54,
+      "movie_frame": 53,
+      "key": "crouch-0-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-30-crouch-phase-00.png",
+      "sha256": "53b3ba00786873d6230bf232676a649be47b4400bc3a37c173dc5054eb4cd094",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 55,
+      "movie_frame": 54,
+      "key": "crouch-0-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-41-crouch-phase-00.png",
+      "sha256": "8745ed18b0c5d0f9237d32bf6f90c78fa565bc5e7d103eccb463783aa680cd83",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 66,
+      "movie_frame": 65,
+      "key": "crouch-0-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-42-crouch-phase-01.png",
+      "sha256": "f66fb5b8d8b8f65c515365aa19dc6c96f1a9bb1af251e89ec7845e815792402c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 67,
+      "movie_frame": 66,
+      "key": "crouch-0-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-53-crouch-phase-01.png",
+      "sha256": "e9c68a204d8ef57170149397f724f59a1ef22647637672bfbe5677828aa6388c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 78,
+      "movie_frame": 77,
+      "key": "crouch-0-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-54-crouch_rise-phase-00.png",
+      "sha256": "1df3d00e8f3cbb0b3bc93a26c6d405a0daa5d19dcccbbebbf5fdddab160c1af6",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 79,
+      "movie_frame": 78,
+      "key": "crouch-0-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-56-crouch_rise-phase-00.png",
+      "sha256": "5645319cbec8e063075d5cf92a7fb73acf26edc83ef76009f79288dc6d15b647",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 81,
+      "movie_frame": 80,
+      "key": "crouch-0-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-57-crouch_rise-phase-01.png",
+      "sha256": "dd4906ed6654a052eb6c497526e3cd8a319289cba505040a0e2d280defc6d9b8",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 82,
+      "movie_frame": 81,
+      "key": "crouch-0-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-59-crouch_rise-phase-01.png",
+      "sha256": "1d09d217930ce00d08ec26e590600b550d0f72098e318ee3d02566f49766ac2a",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 84,
+      "movie_frame": 83,
+      "key": "crouch-0-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-0-n-60-idle-phase-00.png",
+      "sha256": "92e860d99402775bbff0b16d375302fa531bfe1263a91fb470bc59c754cdad73",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 85,
+      "movie_frame": 84,
+      "key": "crouch-0-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/settled-idle-090.png",
+      "sha256": "591a16e8f8e46f6aa0f0753917f19cd4d5f62a928a6cd3f4a14545cf0f8bba95",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 91,
+      "movie_frame": 90,
+      "key": "settled-idle-090"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-00-crouch_start-phase-00.png",
+      "sha256": "4d666b9b31e4dce3b516e9a43060e761e0f492f77481ee4c4dba218a63b6fa78",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 103,
+      "movie_frame": 102,
+      "key": "crouch-1-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-02-crouch_start-phase-00.png",
+      "sha256": "f715911991473d0ab73ff26fa1ae4a45736967c7899434aa1330dd2fcd90ff03",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 105,
+      "movie_frame": 104,
+      "key": "crouch-1-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-03-crouch_start-phase-01.png",
+      "sha256": "a4e9844f326544876b584da099b33b499eb1f92dff3b0608b696186819fd3ed0",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 106,
+      "movie_frame": 105,
+      "key": "crouch-1-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-05-crouch_start-phase-01.png",
+      "sha256": "5b3b6be3013d89b5c1361a7b3337f236996a5196aa9d6b5f0cba5f0635d23bdd",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 108,
+      "movie_frame": 107,
+      "key": "crouch-1-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-06-crouch-phase-00.png",
+      "sha256": "595f56ef0e127645dedd17186a899d8ead0f1293fa488bf809877fb7ed90ba22",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 109,
+      "movie_frame": 108,
+      "key": "crouch-1-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-17-crouch-phase-00.png",
+      "sha256": "c0d4f408f9e97277da9a787743ea18623ae8a8f0ea4ce4616111102a5291f77f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 120,
+      "movie_frame": 119,
+      "key": "crouch-1-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-18-crouch-phase-01.png",
+      "sha256": "b4e2fab8f983096929dc99f4a99fce89664869ef3ef6cb7c5755825701f910bf",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 121,
+      "movie_frame": 120,
+      "key": "crouch-1-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-29-crouch-phase-01.png",
+      "sha256": "1600f5b120020692a5e3ec9ca9d5ce7d4195a40f9736275680cb8a9f22e71770",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 132,
+      "movie_frame": 131,
+      "key": "crouch-1-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-30-crouch-phase-00.png",
+      "sha256": "b29dea2312313edba2d5863b74fd7bfd903d4952173aa0cd7e5f7bc0e8bcdb5e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 133,
+      "movie_frame": 132,
+      "key": "crouch-1-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-41-crouch-phase-00.png",
+      "sha256": "ff0b93858b4d2f1a23d55533cb349a724e35679bf1775feaa225111eb686078e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 144,
+      "movie_frame": 143,
+      "key": "crouch-1-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-42-crouch-phase-01.png",
+      "sha256": "a1071c7f0861bdb4a253b8c5662293d4ae9ad5f604dd703a3803cc44da535a06",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 145,
+      "movie_frame": 144,
+      "key": "crouch-1-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-53-crouch-phase-01.png",
+      "sha256": "194f27080c689c1c44fb41151faf0484f9d680012ba596038ada0e6efb81dcd7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 156,
+      "movie_frame": 155,
+      "key": "crouch-1-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-54-crouch_rise-phase-00.png",
+      "sha256": "0805ce10d0738f2d16311381651bc138ba10b2292fbfbb75abbd15db46bd3fc3",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 157,
+      "movie_frame": 156,
+      "key": "crouch-1-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-56-crouch_rise-phase-00.png",
+      "sha256": "f82d8d218816d538ac572a967e0ff736bf05f7f23bd27d419f355d09fa153d54",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 159,
+      "movie_frame": 158,
+      "key": "crouch-1-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-57-crouch_rise-phase-01.png",
+      "sha256": "fcfeb6a26e534062368c06d33d097c6e003adac2b6c7c2dd9858341a2953591f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 160,
+      "movie_frame": 159,
+      "key": "crouch-1-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-59-crouch_rise-phase-01.png",
+      "sha256": "184668ad0f500d17f285a3e5c9b72e5f0437f837a8c5072a67d15a8d63bbf917",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 162,
+      "movie_frame": 161,
+      "key": "crouch-1-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/crouch-1-n-60-idle-phase-00.png",
+      "sha256": "ed4b9b657f7b6b7514b6921dfd74ac24688bb67fa3d7bfa84a78c68c703662d7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 163,
+      "movie_frame": 162,
+      "key": "crouch-1-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/settled-idle-170.png",
+      "sha256": "ed1723cbe5c12645c3df1571ad682d0a14766a56a00b0898684bf02d1a3dcb00",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 171,
+      "movie_frame": 170,
+      "key": "settled-idle-170"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/settled-idle-180.png",
+      "sha256": "61194fa97b5262575824235c612fb25f95196ada2cfed3cd5b9fed2ed8a69a24",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 181,
+      "movie_frame": 180,
+      "key": "settled-idle-180"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/settled-idle-190.png",
+      "sha256": "167db066151b5063b1b0ee42904807642493637d5160a30d78fc23dae91726f7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 191,
+      "movie_frame": 190,
+      "key": "settled-idle-190"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/settled-idle-200.png",
+      "sha256": "d48f2436ad4f824f67b9f0c06892c9bcd12bb3a3a3e87aa3448020ff459227fb",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 201,
+      "movie_frame": 200,
+      "key": "settled-idle-200"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/settled-idle-210.png",
+      "sha256": "7e8c4ee57164622f7c21a2b84382c328fd56a782f93d35a2b7240309e25c31dc",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 211,
+      "movie_frame": 210,
+      "key": "settled-idle-210"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/settled-idle-220.png",
+      "sha256": "2561c066e0cdedf2b809eb068791222aba7bb8a28e856449e18e42fc21617636",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 221,
+      "movie_frame": 220,
+      "key": "settled-idle-220"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-original/settled-idle-230.png",
+      "sha256": "78031d53eee2c2a66bc9d51446093a1437f11d6159c48bf80c0e8007af7f0bc6",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 231,
+      "movie_frame": 230,
+      "key": "settled-idle-230"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/settled-idle-000.png",
+      "sha256": "627eb605f05bef4bb2530ec5cd80c3f48b7a1b2ef86983b37712e7b015b742f4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "settled-idle-000"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/settled-idle-023.png",
+      "sha256": "825e6768af3d4988b844c96202f5cb69f97c718f22f2dbb5d2c09b1b03ec89a9",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "settled-idle-023"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-00-crouch_start-phase-00.png",
+      "sha256": "cfe7dca521de34fe87e3443347343b6061d40a0340f146524ee92a9788fe7d08",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "crouch-0-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-02-crouch_start-phase-00.png",
+      "sha256": "3634210cd2980d4e3a14335f29af7f027797d93ad9bb5135ef05d75b6e14331f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "crouch-0-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-03-crouch_start-phase-01.png",
+      "sha256": "a21827ab89cb78f60123b0276987370f36c7c3f35605121c925007234f8ce08e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "crouch-0-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-05-crouch_start-phase-01.png",
+      "sha256": "313ccd525b0d8fd7353d4e28fc6d95b86a3ce1b0c9f01f4c4e541a88b957ed12",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "crouch-0-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-06-crouch-phase-00.png",
+      "sha256": "0fd25896df4f91ff57ff46b779fe6fd75ec48c718cc45eb03f7ee86ce5c3919e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "crouch-0-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-17-crouch-phase-00.png",
+      "sha256": "5558d8ee1b92d3f05463854acd70074c85152cdad35350c358b169ad38f7f74c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "crouch-0-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-18-crouch-phase-01.png",
+      "sha256": "e74f65cba687eb090909a9b9a16370be7c7e8ccf81fdff2a8d985d1e13f5ce0c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "crouch-0-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-29-crouch-phase-01.png",
+      "sha256": "9f45d6c9448e33031d76de74c643380aa90e5d9990205f375d0f99517920dfa9",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 54,
+      "movie_frame": 53,
+      "key": "crouch-0-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-30-crouch-phase-00.png",
+      "sha256": "53b3ba00786873d6230bf232676a649be47b4400bc3a37c173dc5054eb4cd094",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 55,
+      "movie_frame": 54,
+      "key": "crouch-0-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-41-crouch-phase-00.png",
+      "sha256": "8745ed18b0c5d0f9237d32bf6f90c78fa565bc5e7d103eccb463783aa680cd83",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 66,
+      "movie_frame": 65,
+      "key": "crouch-0-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-42-crouch-phase-01.png",
+      "sha256": "f66fb5b8d8b8f65c515365aa19dc6c96f1a9bb1af251e89ec7845e815792402c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 67,
+      "movie_frame": 66,
+      "key": "crouch-0-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-53-crouch-phase-01.png",
+      "sha256": "e9c68a204d8ef57170149397f724f59a1ef22647637672bfbe5677828aa6388c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 78,
+      "movie_frame": 77,
+      "key": "crouch-0-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-54-crouch_rise-phase-00.png",
+      "sha256": "1df3d00e8f3cbb0b3bc93a26c6d405a0daa5d19dcccbbebbf5fdddab160c1af6",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 79,
+      "movie_frame": 78,
+      "key": "crouch-0-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-56-crouch_rise-phase-00.png",
+      "sha256": "5645319cbec8e063075d5cf92a7fb73acf26edc83ef76009f79288dc6d15b647",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 81,
+      "movie_frame": 80,
+      "key": "crouch-0-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-57-crouch_rise-phase-01.png",
+      "sha256": "dd4906ed6654a052eb6c497526e3cd8a319289cba505040a0e2d280defc6d9b8",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 82,
+      "movie_frame": 81,
+      "key": "crouch-0-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-59-crouch_rise-phase-01.png",
+      "sha256": "1d09d217930ce00d08ec26e590600b550d0f72098e318ee3d02566f49766ac2a",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 84,
+      "movie_frame": 83,
+      "key": "crouch-0-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-0-n-60-idle-phase-00.png",
+      "sha256": "92e860d99402775bbff0b16d375302fa531bfe1263a91fb470bc59c754cdad73",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 85,
+      "movie_frame": 84,
+      "key": "crouch-0-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/settled-idle-090.png",
+      "sha256": "591a16e8f8e46f6aa0f0753917f19cd4d5f62a928a6cd3f4a14545cf0f8bba95",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 91,
+      "movie_frame": 90,
+      "key": "settled-idle-090"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-00-crouch_start-phase-00.png",
+      "sha256": "4d666b9b31e4dce3b516e9a43060e761e0f492f77481ee4c4dba218a63b6fa78",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 103,
+      "movie_frame": 102,
+      "key": "crouch-1-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-02-crouch_start-phase-00.png",
+      "sha256": "f715911991473d0ab73ff26fa1ae4a45736967c7899434aa1330dd2fcd90ff03",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 105,
+      "movie_frame": 104,
+      "key": "crouch-1-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-03-crouch_start-phase-01.png",
+      "sha256": "a4e9844f326544876b584da099b33b499eb1f92dff3b0608b696186819fd3ed0",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 106,
+      "movie_frame": 105,
+      "key": "crouch-1-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-05-crouch_start-phase-01.png",
+      "sha256": "5b3b6be3013d89b5c1361a7b3337f236996a5196aa9d6b5f0cba5f0635d23bdd",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 108,
+      "movie_frame": 107,
+      "key": "crouch-1-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-06-crouch-phase-00.png",
+      "sha256": "595f56ef0e127645dedd17186a899d8ead0f1293fa488bf809877fb7ed90ba22",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 109,
+      "movie_frame": 108,
+      "key": "crouch-1-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-17-crouch-phase-00.png",
+      "sha256": "c0d4f408f9e97277da9a787743ea18623ae8a8f0ea4ce4616111102a5291f77f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 120,
+      "movie_frame": 119,
+      "key": "crouch-1-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-18-crouch-phase-01.png",
+      "sha256": "b4e2fab8f983096929dc99f4a99fce89664869ef3ef6cb7c5755825701f910bf",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 121,
+      "movie_frame": 120,
+      "key": "crouch-1-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-29-crouch-phase-01.png",
+      "sha256": "1600f5b120020692a5e3ec9ca9d5ce7d4195a40f9736275680cb8a9f22e71770",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 132,
+      "movie_frame": 131,
+      "key": "crouch-1-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-30-crouch-phase-00.png",
+      "sha256": "b29dea2312313edba2d5863b74fd7bfd903d4952173aa0cd7e5f7bc0e8bcdb5e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 133,
+      "movie_frame": 132,
+      "key": "crouch-1-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-41-crouch-phase-00.png",
+      "sha256": "ff0b93858b4d2f1a23d55533cb349a724e35679bf1775feaa225111eb686078e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 144,
+      "movie_frame": 143,
+      "key": "crouch-1-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-42-crouch-phase-01.png",
+      "sha256": "a1071c7f0861bdb4a253b8c5662293d4ae9ad5f604dd703a3803cc44da535a06",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 145,
+      "movie_frame": 144,
+      "key": "crouch-1-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-53-crouch-phase-01.png",
+      "sha256": "194f27080c689c1c44fb41151faf0484f9d680012ba596038ada0e6efb81dcd7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 156,
+      "movie_frame": 155,
+      "key": "crouch-1-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-54-crouch_rise-phase-00.png",
+      "sha256": "0805ce10d0738f2d16311381651bc138ba10b2292fbfbb75abbd15db46bd3fc3",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 157,
+      "movie_frame": 156,
+      "key": "crouch-1-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-56-crouch_rise-phase-00.png",
+      "sha256": "f82d8d218816d538ac572a967e0ff736bf05f7f23bd27d419f355d09fa153d54",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 159,
+      "movie_frame": 158,
+      "key": "crouch-1-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-57-crouch_rise-phase-01.png",
+      "sha256": "fcfeb6a26e534062368c06d33d097c6e003adac2b6c7c2dd9858341a2953591f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 160,
+      "movie_frame": 159,
+      "key": "crouch-1-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-59-crouch_rise-phase-01.png",
+      "sha256": "184668ad0f500d17f285a3e5c9b72e5f0437f837a8c5072a67d15a8d63bbf917",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 162,
+      "movie_frame": 161,
+      "key": "crouch-1-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/crouch-1-n-60-idle-phase-00.png",
+      "sha256": "ed4b9b657f7b6b7514b6921dfd74ac24688bb67fa3d7bfa84a78c68c703662d7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 163,
+      "movie_frame": 162,
+      "key": "crouch-1-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/settled-idle-170.png",
+      "sha256": "ed1723cbe5c12645c3df1571ad682d0a14766a56a00b0898684bf02d1a3dcb00",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 171,
+      "movie_frame": 170,
+      "key": "settled-idle-170"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/settled-idle-180.png",
+      "sha256": "61194fa97b5262575824235c612fb25f95196ada2cfed3cd5b9fed2ed8a69a24",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 181,
+      "movie_frame": 180,
+      "key": "settled-idle-180"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/settled-idle-190.png",
+      "sha256": "167db066151b5063b1b0ee42904807642493637d5160a30d78fc23dae91726f7",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 191,
+      "movie_frame": 190,
+      "key": "settled-idle-190"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/settled-idle-200.png",
+      "sha256": "d48f2436ad4f824f67b9f0c06892c9bcd12bb3a3a3e87aa3448020ff459227fb",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 201,
+      "movie_frame": 200,
+      "key": "settled-idle-200"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/settled-idle-210.png",
+      "sha256": "7e8c4ee57164622f7c21a2b84382c328fd56a782f93d35a2b7240309e25c31dc",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 211,
+      "movie_frame": 210,
+      "key": "settled-idle-210"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/settled-idle-220.png",
+      "sha256": "2561c066e0cdedf2b809eb068791222aba7bb8a28e856449e18e42fc21617636",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 221,
+      "movie_frame": 220,
+      "key": "settled-idle-220"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-right-replay/settled-idle-230.png",
+      "sha256": "78031d53eee2c2a66bc9d51446093a1437f11d6159c48bf80c0e8007af7f0bc6",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 231,
+      "movie_frame": 230,
+      "key": "settled-idle-230"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/settled-idle-000.png",
+      "sha256": "0911db63fde59eee8d834423bcdc9d84325d9eb5ddae160ca53706cbfc65e89e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "settled-idle-000"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/settled-idle-023.png",
+      "sha256": "86815ee29185f579ed8da386773c2efd50c789b776697f843e30eb7cd68ea148",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "settled-idle-023"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-00-crouch_start-phase-00.png",
+      "sha256": "7809085afd3877e448e91f309001ea9e214e24b72921afe2da3033c6e1a1a388",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "crouch-0-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-02-crouch_start-phase-00.png",
+      "sha256": "4c51334924ad6bd6dee51bff2b09d531be01235711ad895ea6a05ed95a8e8361",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "crouch-0-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-03-crouch_start-phase-01.png",
+      "sha256": "8dc086c5202cbb5f8bfabd9bcc9b56d3290a2994318448063ef641e6edb78d18",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "crouch-0-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-05-crouch_start-phase-01.png",
+      "sha256": "e8bbf790ef562e7e82f32448bae012ec38a101840818a2295a4f5c5a29a68a6f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "crouch-0-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-06-crouch-phase-00.png",
+      "sha256": "cc6ee73966460ae41cf0cf93cf2a84e761832363f91d075a509f53b9fc153551",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "crouch-0-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-17-crouch-phase-00.png",
+      "sha256": "cb8ec5960acbf7345593712a7282da170bb653f2924c7b60b6a35bb04a0bfd71",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "crouch-0-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-18-crouch-phase-01.png",
+      "sha256": "ece21b297b554dc88dd871b5da3acc6e6b3970c5cf5acce55596a09a2d5c145b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "crouch-0-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-29-crouch-phase-01.png",
+      "sha256": "faf82147fafeb0c81d2867fd65178d05cdf19ca4b1f6a88266e5d313f9f5e965",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 54,
+      "movie_frame": 53,
+      "key": "crouch-0-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-30-crouch-phase-00.png",
+      "sha256": "ea5067643d8941c8201f9b1625a59ad2c5327161b3b6915f343cb6910693c5a2",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 55,
+      "movie_frame": 54,
+      "key": "crouch-0-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-41-crouch-phase-00.png",
+      "sha256": "1f9b582fc579d47d90ed2b67c9f3008f67f08a4e55c30591683733c560e86ecb",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 66,
+      "movie_frame": 65,
+      "key": "crouch-0-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-42-crouch-phase-01.png",
+      "sha256": "12cbf8c341f27c88cbb9d7d719fd5dee7325325da194480a2157572512d8848b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 67,
+      "movie_frame": 66,
+      "key": "crouch-0-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-53-crouch-phase-01.png",
+      "sha256": "107dfe264c8224775518515d1bace541bbf44538aec8b03c2b415f9984899f38",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 78,
+      "movie_frame": 77,
+      "key": "crouch-0-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-54-crouch_rise-phase-00.png",
+      "sha256": "0b3c6064c84b5ae35f46534269ae40dfe27ebc7d301ebcaed634588ecd7d983c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 79,
+      "movie_frame": 78,
+      "key": "crouch-0-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-56-crouch_rise-phase-00.png",
+      "sha256": "4221145c37f093c0ab39d9eeaa62595ef4d4ee8bd97b57fa507a59b22161ea5a",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 81,
+      "movie_frame": 80,
+      "key": "crouch-0-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-57-crouch_rise-phase-01.png",
+      "sha256": "f1bf976f29d152f3b74c79d1ca501bb10e9bdd26595a3ed4b79c0769301ef2a8",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 82,
+      "movie_frame": 81,
+      "key": "crouch-0-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-59-crouch_rise-phase-01.png",
+      "sha256": "b8d42b8be8542775741650477312385207a05f7fd295aae81acd040f8f108efd",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 84,
+      "movie_frame": 83,
+      "key": "crouch-0-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-0-n-60-idle-phase-00.png",
+      "sha256": "28fa581700eca4b712d52ca3033b5698598a83eb805267d22e7bc40bac63d6d6",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 85,
+      "movie_frame": 84,
+      "key": "crouch-0-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/settled-idle-090.png",
+      "sha256": "be70834ab1c1ae5464868339d9cd1f57b437a7a6847403d05f18bdd44c2978d3",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 91,
+      "movie_frame": 90,
+      "key": "settled-idle-090"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-00-crouch_start-phase-00.png",
+      "sha256": "3268e6478df697a8ad51668954cf83b321dc1a2f048524e43fa5867dffe41fc2",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 103,
+      "movie_frame": 102,
+      "key": "crouch-1-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-02-crouch_start-phase-00.png",
+      "sha256": "1b79f6b7cc088d4e2a2232e308b3a1c4cbb538ed153604edd75b374b35008be4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 105,
+      "movie_frame": 104,
+      "key": "crouch-1-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-03-crouch_start-phase-01.png",
+      "sha256": "81e8b00340ec783d208a9288bd83ded167a03fea05f34897508565477373d77e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 106,
+      "movie_frame": 105,
+      "key": "crouch-1-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-05-crouch_start-phase-01.png",
+      "sha256": "95d5a82e6e06d0486154a5672f3a7e57c455ea7493ddb3cca21b6b7d14ee601a",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 108,
+      "movie_frame": 107,
+      "key": "crouch-1-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-06-crouch-phase-00.png",
+      "sha256": "36f96bcccfdd481d88bb624eabb46127422dcda0a075d4a65b3ee958c2c7e7b8",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 109,
+      "movie_frame": 108,
+      "key": "crouch-1-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-17-crouch-phase-00.png",
+      "sha256": "40e4e6f04f502de4cf2641d3e7a278e01724a47a8fa7b9a479058b23751f8718",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 120,
+      "movie_frame": 119,
+      "key": "crouch-1-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-18-crouch-phase-01.png",
+      "sha256": "1ea9b9a649fe97333d8c23958bf6d2801225d1e2def68e56ae6ff74abc1fa9e3",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 121,
+      "movie_frame": 120,
+      "key": "crouch-1-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-29-crouch-phase-01.png",
+      "sha256": "ad63a72e7c8c44a76b49b1ea6e734e50c82a2c699667d51a759d1da36d2edc1a",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 132,
+      "movie_frame": 131,
+      "key": "crouch-1-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-30-crouch-phase-00.png",
+      "sha256": "3c7a44552d234c75c29fc14859d42140e34727f0c2fb2a227f71ce2ff0fc949c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 133,
+      "movie_frame": 132,
+      "key": "crouch-1-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-41-crouch-phase-00.png",
+      "sha256": "eda041d72f19c0aa640b683a2a748980e17619ceba4cdc07d8f22b0eb3bf9c43",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 144,
+      "movie_frame": 143,
+      "key": "crouch-1-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-42-crouch-phase-01.png",
+      "sha256": "828248029eb86f9155486a933a3fae828d2016cc443482f9fd2a05274d0baf02",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 145,
+      "movie_frame": 144,
+      "key": "crouch-1-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-53-crouch-phase-01.png",
+      "sha256": "753e4b94eff29671f876e9e2c50131ec74aa9d7d2f4d45e304779580ad8f79d4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 156,
+      "movie_frame": 155,
+      "key": "crouch-1-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-54-crouch_rise-phase-00.png",
+      "sha256": "39ed527324d8fb6c348d7fe55b9617fc0a422f3c4ada9ea2d79d6c0cc15c1f44",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 157,
+      "movie_frame": 156,
+      "key": "crouch-1-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-56-crouch_rise-phase-00.png",
+      "sha256": "740b254ced95ff895ac1398f2c6a3c57c3dea1ab7ceb4d7b3971f99784ce471c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 159,
+      "movie_frame": 158,
+      "key": "crouch-1-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-57-crouch_rise-phase-01.png",
+      "sha256": "ee40189958f2112c3bd21c51753a35e8366efa2b99b611fd36616c2d733a5c83",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 160,
+      "movie_frame": 159,
+      "key": "crouch-1-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-59-crouch_rise-phase-01.png",
+      "sha256": "e415db412b715c18f2fbfff59e74c06c0b46789acd3659a18a50a5022431f88c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 162,
+      "movie_frame": 161,
+      "key": "crouch-1-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/crouch-1-n-60-idle-phase-00.png",
+      "sha256": "4261cdf8855228c1c665fb3af9d2da46b358993fff943bbcd86ab89caf9ef1c0",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 163,
+      "movie_frame": 162,
+      "key": "crouch-1-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/settled-idle-170.png",
+      "sha256": "96202f8f52b960aa73960021baa652a4d678a7f9af36c6c122b6daf9a972858a",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 171,
+      "movie_frame": 170,
+      "key": "settled-idle-170"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/settled-idle-180.png",
+      "sha256": "5edff66d0fd9f8da788ff13368cf0ed461eb52a885920d9e502f93127570b502",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 181,
+      "movie_frame": 180,
+      "key": "settled-idle-180"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/settled-idle-190.png",
+      "sha256": "adb34d90955df7012033bfe6a041130782f83d37fa16e98d708365a31b357502",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 191,
+      "movie_frame": 190,
+      "key": "settled-idle-190"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/settled-idle-200.png",
+      "sha256": "3c4b30a98d2b4c8e523b0ac90d9fe0cb5d607c312eea4de4d0009fa0dc28ec78",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 201,
+      "movie_frame": 200,
+      "key": "settled-idle-200"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/settled-idle-210.png",
+      "sha256": "09a38db7fe0d80a4d9b8ac8f8419eec4f4e35e54937746dd5b24c0e1ac16555b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 211,
+      "movie_frame": 210,
+      "key": "settled-idle-210"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/settled-idle-220.png",
+      "sha256": "76e5574253a394472633c4e797ec7d1d583c4d015c340af91ae21b3e805e072e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 221,
+      "movie_frame": 220,
+      "key": "settled-idle-220"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-original/settled-idle-230.png",
+      "sha256": "0d52e72fa403eaf2bb054f73788ffc8bd5d7cf6381ca128dff546b90fa3cc989",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 231,
+      "movie_frame": 230,
+      "key": "settled-idle-230"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/settled-idle-000.png",
+      "sha256": "0911db63fde59eee8d834423bcdc9d84325d9eb5ddae160ca53706cbfc65e89e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "settled-idle-000"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/settled-idle-023.png",
+      "sha256": "86815ee29185f579ed8da386773c2efd50c789b776697f843e30eb7cd68ea148",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "settled-idle-023"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-00-crouch_start-phase-00.png",
+      "sha256": "7809085afd3877e448e91f309001ea9e214e24b72921afe2da3033c6e1a1a388",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "crouch-0-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-02-crouch_start-phase-00.png",
+      "sha256": "4c51334924ad6bd6dee51bff2b09d531be01235711ad895ea6a05ed95a8e8361",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "crouch-0-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-03-crouch_start-phase-01.png",
+      "sha256": "8dc086c5202cbb5f8bfabd9bcc9b56d3290a2994318448063ef641e6edb78d18",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "crouch-0-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-05-crouch_start-phase-01.png",
+      "sha256": "e8bbf790ef562e7e82f32448bae012ec38a101840818a2295a4f5c5a29a68a6f",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "crouch-0-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-06-crouch-phase-00.png",
+      "sha256": "cc6ee73966460ae41cf0cf93cf2a84e761832363f91d075a509f53b9fc153551",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "crouch-0-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-17-crouch-phase-00.png",
+      "sha256": "cb8ec5960acbf7345593712a7282da170bb653f2924c7b60b6a35bb04a0bfd71",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "crouch-0-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-18-crouch-phase-01.png",
+      "sha256": "ece21b297b554dc88dd871b5da3acc6e6b3970c5cf5acce55596a09a2d5c145b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "crouch-0-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-29-crouch-phase-01.png",
+      "sha256": "faf82147fafeb0c81d2867fd65178d05cdf19ca4b1f6a88266e5d313f9f5e965",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 54,
+      "movie_frame": 53,
+      "key": "crouch-0-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-30-crouch-phase-00.png",
+      "sha256": "ea5067643d8941c8201f9b1625a59ad2c5327161b3b6915f343cb6910693c5a2",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 55,
+      "movie_frame": 54,
+      "key": "crouch-0-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-41-crouch-phase-00.png",
+      "sha256": "1f9b582fc579d47d90ed2b67c9f3008f67f08a4e55c30591683733c560e86ecb",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 66,
+      "movie_frame": 65,
+      "key": "crouch-0-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-42-crouch-phase-01.png",
+      "sha256": "12cbf8c341f27c88cbb9d7d719fd5dee7325325da194480a2157572512d8848b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 67,
+      "movie_frame": 66,
+      "key": "crouch-0-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-53-crouch-phase-01.png",
+      "sha256": "107dfe264c8224775518515d1bace541bbf44538aec8b03c2b415f9984899f38",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 78,
+      "movie_frame": 77,
+      "key": "crouch-0-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-54-crouch_rise-phase-00.png",
+      "sha256": "0b3c6064c84b5ae35f46534269ae40dfe27ebc7d301ebcaed634588ecd7d983c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 79,
+      "movie_frame": 78,
+      "key": "crouch-0-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-56-crouch_rise-phase-00.png",
+      "sha256": "4221145c37f093c0ab39d9eeaa62595ef4d4ee8bd97b57fa507a59b22161ea5a",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 81,
+      "movie_frame": 80,
+      "key": "crouch-0-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-57-crouch_rise-phase-01.png",
+      "sha256": "f1bf976f29d152f3b74c79d1ca501bb10e9bdd26595a3ed4b79c0769301ef2a8",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 82,
+      "movie_frame": 81,
+      "key": "crouch-0-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-59-crouch_rise-phase-01.png",
+      "sha256": "b8d42b8be8542775741650477312385207a05f7fd295aae81acd040f8f108efd",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 84,
+      "movie_frame": 83,
+      "key": "crouch-0-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-0-n-60-idle-phase-00.png",
+      "sha256": "28fa581700eca4b712d52ca3033b5698598a83eb805267d22e7bc40bac63d6d6",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 85,
+      "movie_frame": 84,
+      "key": "crouch-0-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/settled-idle-090.png",
+      "sha256": "be70834ab1c1ae5464868339d9cd1f57b437a7a6847403d05f18bdd44c2978d3",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 91,
+      "movie_frame": 90,
+      "key": "settled-idle-090"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-00-crouch_start-phase-00.png",
+      "sha256": "3268e6478df697a8ad51668954cf83b321dc1a2f048524e43fa5867dffe41fc2",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 103,
+      "movie_frame": 102,
+      "key": "crouch-1-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-02-crouch_start-phase-00.png",
+      "sha256": "1b79f6b7cc088d4e2a2232e308b3a1c4cbb538ed153604edd75b374b35008be4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 105,
+      "movie_frame": 104,
+      "key": "crouch-1-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-03-crouch_start-phase-01.png",
+      "sha256": "81e8b00340ec783d208a9288bd83ded167a03fea05f34897508565477373d77e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 106,
+      "movie_frame": 105,
+      "key": "crouch-1-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-05-crouch_start-phase-01.png",
+      "sha256": "95d5a82e6e06d0486154a5672f3a7e57c455ea7493ddb3cca21b6b7d14ee601a",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 108,
+      "movie_frame": 107,
+      "key": "crouch-1-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-06-crouch-phase-00.png",
+      "sha256": "36f96bcccfdd481d88bb624eabb46127422dcda0a075d4a65b3ee958c2c7e7b8",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 109,
+      "movie_frame": 108,
+      "key": "crouch-1-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-17-crouch-phase-00.png",
+      "sha256": "40e4e6f04f502de4cf2641d3e7a278e01724a47a8fa7b9a479058b23751f8718",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 120,
+      "movie_frame": 119,
+      "key": "crouch-1-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-18-crouch-phase-01.png",
+      "sha256": "1ea9b9a649fe97333d8c23958bf6d2801225d1e2def68e56ae6ff74abc1fa9e3",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 121,
+      "movie_frame": 120,
+      "key": "crouch-1-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-29-crouch-phase-01.png",
+      "sha256": "ad63a72e7c8c44a76b49b1ea6e734e50c82a2c699667d51a759d1da36d2edc1a",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 132,
+      "movie_frame": 131,
+      "key": "crouch-1-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-30-crouch-phase-00.png",
+      "sha256": "3c7a44552d234c75c29fc14859d42140e34727f0c2fb2a227f71ce2ff0fc949c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 133,
+      "movie_frame": 132,
+      "key": "crouch-1-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-41-crouch-phase-00.png",
+      "sha256": "eda041d72f19c0aa640b683a2a748980e17619ceba4cdc07d8f22b0eb3bf9c43",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 144,
+      "movie_frame": 143,
+      "key": "crouch-1-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-42-crouch-phase-01.png",
+      "sha256": "828248029eb86f9155486a933a3fae828d2016cc443482f9fd2a05274d0baf02",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 145,
+      "movie_frame": 144,
+      "key": "crouch-1-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-53-crouch-phase-01.png",
+      "sha256": "753e4b94eff29671f876e9e2c50131ec74aa9d7d2f4d45e304779580ad8f79d4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 156,
+      "movie_frame": 155,
+      "key": "crouch-1-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-54-crouch_rise-phase-00.png",
+      "sha256": "39ed527324d8fb6c348d7fe55b9617fc0a422f3c4ada9ea2d79d6c0cc15c1f44",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 157,
+      "movie_frame": 156,
+      "key": "crouch-1-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-56-crouch_rise-phase-00.png",
+      "sha256": "740b254ced95ff895ac1398f2c6a3c57c3dea1ab7ceb4d7b3971f99784ce471c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 159,
+      "movie_frame": 158,
+      "key": "crouch-1-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-57-crouch_rise-phase-01.png",
+      "sha256": "ee40189958f2112c3bd21c51753a35e8366efa2b99b611fd36616c2d733a5c83",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 160,
+      "movie_frame": 159,
+      "key": "crouch-1-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-59-crouch_rise-phase-01.png",
+      "sha256": "e415db412b715c18f2fbfff59e74c06c0b46789acd3659a18a50a5022431f88c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 162,
+      "movie_frame": 161,
+      "key": "crouch-1-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/crouch-1-n-60-idle-phase-00.png",
+      "sha256": "4261cdf8855228c1c665fb3af9d2da46b358993fff943bbcd86ab89caf9ef1c0",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 163,
+      "movie_frame": 162,
+      "key": "crouch-1-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/settled-idle-170.png",
+      "sha256": "96202f8f52b960aa73960021baa652a4d678a7f9af36c6c122b6daf9a972858a",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 171,
+      "movie_frame": 170,
+      "key": "settled-idle-170"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/settled-idle-180.png",
+      "sha256": "5edff66d0fd9f8da788ff13368cf0ed461eb52a885920d9e502f93127570b502",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 181,
+      "movie_frame": 180,
+      "key": "settled-idle-180"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/settled-idle-190.png",
+      "sha256": "adb34d90955df7012033bfe6a041130782f83d37fa16e98d708365a31b357502",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 191,
+      "movie_frame": 190,
+      "key": "settled-idle-190"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/settled-idle-200.png",
+      "sha256": "3c4b30a98d2b4c8e523b0ac90d9fe0cb5d607c312eea4de4d0009fa0dc28ec78",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 201,
+      "movie_frame": 200,
+      "key": "settled-idle-200"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/settled-idle-210.png",
+      "sha256": "09a38db7fe0d80a4d9b8ac8f8419eec4f4e35e54937746dd5b24c0e1ac16555b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 211,
+      "movie_frame": 210,
+      "key": "settled-idle-210"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/settled-idle-220.png",
+      "sha256": "76e5574253a394472633c4e797ec7d1d583c4d015c340af91ae21b3e805e072e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 221,
+      "movie_frame": 220,
+      "key": "settled-idle-220"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1280x720-left-replay/settled-idle-230.png",
+      "sha256": "0d52e72fa403eaf2bb054f73788ffc8bd5d7cf6381ca128dff546b90fa3cc989",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "tick": 231,
+      "movie_frame": 230,
+      "key": "settled-idle-230"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/settled-idle-000.png",
+      "sha256": "003025b20b76153fa9669b1630c3fe71c8da872f11c72b526c9c8f6ddcef333d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "settled-idle-000"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/settled-idle-023.png",
+      "sha256": "d9c58f81c6e41b410869a9484bbc49bb30625d2090907d126a0fa4c37ca92d58",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "settled-idle-023"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-00-crouch_start-phase-00.png",
+      "sha256": "d1488c98f518b4ce64625b74a0b23607e38658048be00aaae066de19323dd2fa",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "crouch-0-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-02-crouch_start-phase-00.png",
+      "sha256": "1ca7d1a62eb8b98a1432f0a5abfde7f36e3492bdc8bd1cab8c8045660f326831",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "crouch-0-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-03-crouch_start-phase-01.png",
+      "sha256": "d6e7898eaa2fe0d7bf38e604da80989f931cb43455cfcd7797d57c9878eb8218",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "crouch-0-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-05-crouch_start-phase-01.png",
+      "sha256": "20019a4bb9caa1575114c199b24ff26575fdf99d8664e8c684fc85a4ad6568f3",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "crouch-0-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-06-crouch-phase-00.png",
+      "sha256": "9cfc04894b24da2973624110422f8a3e4822c6dac8bf905baed0868cf3c98b25",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "crouch-0-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-17-crouch-phase-00.png",
+      "sha256": "19b563525694b02dc8683d72871b2482bafb9b8a49a0f3e3cfe8f70ce3969dfb",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "crouch-0-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-18-crouch-phase-01.png",
+      "sha256": "69286cecdda4c01c36fd8b29aeda2bee4540d7dd6fdddaffd247a405b04b89ed",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "crouch-0-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-29-crouch-phase-01.png",
+      "sha256": "e45fd364df01b53d481f1f64a9893243bed1e5e7eda8dab8d82a090b783511a6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 54,
+      "movie_frame": 53,
+      "key": "crouch-0-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-30-crouch-phase-00.png",
+      "sha256": "837f46149f71997bfd0e482b3184967be7f48ae9ce3e3a567eca923d33707082",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 55,
+      "movie_frame": 54,
+      "key": "crouch-0-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-41-crouch-phase-00.png",
+      "sha256": "2ad0372969a8977d1c40e0607b527f267fe6d4d54db4d2a5a5d2c31cf3d4e030",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 66,
+      "movie_frame": 65,
+      "key": "crouch-0-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-42-crouch-phase-01.png",
+      "sha256": "b6ea49cd010866c09af43e09bd3ac5a32c32d3f2eac84c48a76845906803bc7a",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 67,
+      "movie_frame": 66,
+      "key": "crouch-0-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-53-crouch-phase-01.png",
+      "sha256": "328441fd123b400228d5d39502cd1eb3e4a4964988d69a4e57e3a32ca79b2e50",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 78,
+      "movie_frame": 77,
+      "key": "crouch-0-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-54-crouch_rise-phase-00.png",
+      "sha256": "e4ed89212b396d15b11342d66e6897d061b61f7e5155a8ffed3550c097134de6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 79,
+      "movie_frame": 78,
+      "key": "crouch-0-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-56-crouch_rise-phase-00.png",
+      "sha256": "07cb637f813300799ad9e2cc04583e01b4655c18c0cd44dbe4638f0f75340673",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 81,
+      "movie_frame": 80,
+      "key": "crouch-0-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-57-crouch_rise-phase-01.png",
+      "sha256": "95921b271ac823c7b4e31cc9b99264ac0afd5671b263b15cc240383c9b4e55c5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 82,
+      "movie_frame": 81,
+      "key": "crouch-0-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-59-crouch_rise-phase-01.png",
+      "sha256": "242083c7972c6d00d4a3b181954d7069d4a381339bed1dfc63a5541dfd459c6f",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 84,
+      "movie_frame": 83,
+      "key": "crouch-0-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-0-n-60-idle-phase-00.png",
+      "sha256": "9d1173041ade57bf775f1a5318670382dc364b1ff662c4c0b5d2c35c5b71a0bb",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 85,
+      "movie_frame": 84,
+      "key": "crouch-0-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/settled-idle-090.png",
+      "sha256": "24e325ce2eadb4ece16d155ad6e0cafe784d475dd34d235a268f546251150f30",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 91,
+      "movie_frame": 90,
+      "key": "settled-idle-090"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-00-crouch_start-phase-00.png",
+      "sha256": "2f4d7145e4270c16cfcaaf7be14c86646635971166348e4fff5b39263589c092",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 103,
+      "movie_frame": 102,
+      "key": "crouch-1-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-02-crouch_start-phase-00.png",
+      "sha256": "76324db9541352d5c6d873bb01515cf58900cc56a9fbe82bd7aef30ec7f0c92b",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 105,
+      "movie_frame": 104,
+      "key": "crouch-1-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-03-crouch_start-phase-01.png",
+      "sha256": "dc3b8afecd60d876eacf623f1413254bda31b7013e65083e73307c575351c8d6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 106,
+      "movie_frame": 105,
+      "key": "crouch-1-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-05-crouch_start-phase-01.png",
+      "sha256": "7baf42a4aad98bb8f4e6d8625fdd5bf91368c33b9ecfd0315621191fe05f4cd8",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 108,
+      "movie_frame": 107,
+      "key": "crouch-1-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-06-crouch-phase-00.png",
+      "sha256": "03d489bd3bea41b0c5e687e4277dfe3cd9cb5c93086ea1c84cce6fdeb71871e5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 109,
+      "movie_frame": 108,
+      "key": "crouch-1-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-17-crouch-phase-00.png",
+      "sha256": "31270772a7e441f2e046fc3a75537726e6fb749697c58a769e0924bf8dc63cca",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 120,
+      "movie_frame": 119,
+      "key": "crouch-1-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-18-crouch-phase-01.png",
+      "sha256": "53196fa9827fff9f995aced20bcc51026be535147a79da1fddd1a004025eb3cc",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 121,
+      "movie_frame": 120,
+      "key": "crouch-1-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-29-crouch-phase-01.png",
+      "sha256": "8340881d8278c5efe4fa5c2438a5cab968a05491f856ffa5655bb733b3876a0c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 132,
+      "movie_frame": 131,
+      "key": "crouch-1-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-30-crouch-phase-00.png",
+      "sha256": "c99f53ac05bb38602cac3ed2d78dcac9ba111778b317be135f5421c2484225c4",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 133,
+      "movie_frame": 132,
+      "key": "crouch-1-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-41-crouch-phase-00.png",
+      "sha256": "ee2bc700e2427a6fba7bf7fa58bf0552296f40908e203def7397e0001c57d9a2",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 144,
+      "movie_frame": 143,
+      "key": "crouch-1-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-42-crouch-phase-01.png",
+      "sha256": "b3346c33cc83781e5d5c0bcc8a1fb01b73596be1f12374d15f58d68774d88731",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 145,
+      "movie_frame": 144,
+      "key": "crouch-1-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-53-crouch-phase-01.png",
+      "sha256": "825e6877eca92d9482454eca379c462fa511ee97901a37d38199070c8d6227e3",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 156,
+      "movie_frame": 155,
+      "key": "crouch-1-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-54-crouch_rise-phase-00.png",
+      "sha256": "69f0156eac42f960142d841aeebeee35adc79d2453418683cef3bf087f36ed76",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 157,
+      "movie_frame": 156,
+      "key": "crouch-1-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-56-crouch_rise-phase-00.png",
+      "sha256": "62cc08b94e3d4cce297d665c03bc47c19694c81704e6b6bf0aec1c400e5b96b4",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 159,
+      "movie_frame": 158,
+      "key": "crouch-1-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-57-crouch_rise-phase-01.png",
+      "sha256": "4632c65dbfe5e01922dcedb07b9a04f6c157f66d0a6d0b55fa1b8be910b538c9",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 160,
+      "movie_frame": 159,
+      "key": "crouch-1-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-59-crouch_rise-phase-01.png",
+      "sha256": "908d5fd16941177067336fb2664398222f046df53890bb0124352eb3ed00cbff",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 162,
+      "movie_frame": 161,
+      "key": "crouch-1-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/crouch-1-n-60-idle-phase-00.png",
+      "sha256": "ae9785e7cd1560563fa8d1ea74e6372d9f482552ebc03d8cfa715dbdcae40632",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 163,
+      "movie_frame": 162,
+      "key": "crouch-1-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/settled-idle-170.png",
+      "sha256": "70407f1688782310b6fb84d07a926748fbe36ab00087cd3c3e18bf56df6fc1fd",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 171,
+      "movie_frame": 170,
+      "key": "settled-idle-170"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/settled-idle-180.png",
+      "sha256": "e337a53db19b3456a5e023d84ea8836928bec146bed04554eb0a85ea91553c4d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 181,
+      "movie_frame": 180,
+      "key": "settled-idle-180"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/settled-idle-190.png",
+      "sha256": "eea27186297ee7994c9c2b7dfc7ab02f58edbe62ed09e84778ff3562c060ec49",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 191,
+      "movie_frame": 190,
+      "key": "settled-idle-190"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/settled-idle-200.png",
+      "sha256": "c05881abfbe4cf780b108b8cf9bcbbdb46ed95a7dbb4f38d10f18a63f49213ec",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 201,
+      "movie_frame": 200,
+      "key": "settled-idle-200"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/settled-idle-210.png",
+      "sha256": "849238d837d141bc2b38edb3330f059f6523a504901eae78b5dc011d87c6462d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 211,
+      "movie_frame": 210,
+      "key": "settled-idle-210"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/settled-idle-220.png",
+      "sha256": "822199dda8f34275478a369a38cfb543132a5ace74bc7e4f5f868d9370762e55",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 221,
+      "movie_frame": 220,
+      "key": "settled-idle-220"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-original/settled-idle-230.png",
+      "sha256": "ca159999c1288b0f973d05aff7e280a4a689a26e769daee78a32279341ee5f68",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 231,
+      "movie_frame": 230,
+      "key": "settled-idle-230"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/settled-idle-000.png",
+      "sha256": "003025b20b76153fa9669b1630c3fe71c8da872f11c72b526c9c8f6ddcef333d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "settled-idle-000"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/settled-idle-023.png",
+      "sha256": "d9c58f81c6e41b410869a9484bbc49bb30625d2090907d126a0fa4c37ca92d58",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "settled-idle-023"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-00-crouch_start-phase-00.png",
+      "sha256": "d1488c98f518b4ce64625b74a0b23607e38658048be00aaae066de19323dd2fa",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "crouch-0-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-02-crouch_start-phase-00.png",
+      "sha256": "1ca7d1a62eb8b98a1432f0a5abfde7f36e3492bdc8bd1cab8c8045660f326831",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "crouch-0-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-03-crouch_start-phase-01.png",
+      "sha256": "d6e7898eaa2fe0d7bf38e604da80989f931cb43455cfcd7797d57c9878eb8218",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "crouch-0-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-05-crouch_start-phase-01.png",
+      "sha256": "20019a4bb9caa1575114c199b24ff26575fdf99d8664e8c684fc85a4ad6568f3",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "crouch-0-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-06-crouch-phase-00.png",
+      "sha256": "9cfc04894b24da2973624110422f8a3e4822c6dac8bf905baed0868cf3c98b25",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "crouch-0-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-17-crouch-phase-00.png",
+      "sha256": "19b563525694b02dc8683d72871b2482bafb9b8a49a0f3e3cfe8f70ce3969dfb",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "crouch-0-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-18-crouch-phase-01.png",
+      "sha256": "69286cecdda4c01c36fd8b29aeda2bee4540d7dd6fdddaffd247a405b04b89ed",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "crouch-0-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-29-crouch-phase-01.png",
+      "sha256": "e45fd364df01b53d481f1f64a9893243bed1e5e7eda8dab8d82a090b783511a6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 54,
+      "movie_frame": 53,
+      "key": "crouch-0-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-30-crouch-phase-00.png",
+      "sha256": "837f46149f71997bfd0e482b3184967be7f48ae9ce3e3a567eca923d33707082",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 55,
+      "movie_frame": 54,
+      "key": "crouch-0-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-41-crouch-phase-00.png",
+      "sha256": "2ad0372969a8977d1c40e0607b527f267fe6d4d54db4d2a5a5d2c31cf3d4e030",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 66,
+      "movie_frame": 65,
+      "key": "crouch-0-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-42-crouch-phase-01.png",
+      "sha256": "b6ea49cd010866c09af43e09bd3ac5a32c32d3f2eac84c48a76845906803bc7a",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 67,
+      "movie_frame": 66,
+      "key": "crouch-0-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-53-crouch-phase-01.png",
+      "sha256": "328441fd123b400228d5d39502cd1eb3e4a4964988d69a4e57e3a32ca79b2e50",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 78,
+      "movie_frame": 77,
+      "key": "crouch-0-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-54-crouch_rise-phase-00.png",
+      "sha256": "e4ed89212b396d15b11342d66e6897d061b61f7e5155a8ffed3550c097134de6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 79,
+      "movie_frame": 78,
+      "key": "crouch-0-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-56-crouch_rise-phase-00.png",
+      "sha256": "07cb637f813300799ad9e2cc04583e01b4655c18c0cd44dbe4638f0f75340673",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 81,
+      "movie_frame": 80,
+      "key": "crouch-0-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-57-crouch_rise-phase-01.png",
+      "sha256": "95921b271ac823c7b4e31cc9b99264ac0afd5671b263b15cc240383c9b4e55c5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 82,
+      "movie_frame": 81,
+      "key": "crouch-0-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-59-crouch_rise-phase-01.png",
+      "sha256": "242083c7972c6d00d4a3b181954d7069d4a381339bed1dfc63a5541dfd459c6f",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 84,
+      "movie_frame": 83,
+      "key": "crouch-0-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-0-n-60-idle-phase-00.png",
+      "sha256": "9d1173041ade57bf775f1a5318670382dc364b1ff662c4c0b5d2c35c5b71a0bb",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 85,
+      "movie_frame": 84,
+      "key": "crouch-0-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/settled-idle-090.png",
+      "sha256": "24e325ce2eadb4ece16d155ad6e0cafe784d475dd34d235a268f546251150f30",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 91,
+      "movie_frame": 90,
+      "key": "settled-idle-090"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-00-crouch_start-phase-00.png",
+      "sha256": "2f4d7145e4270c16cfcaaf7be14c86646635971166348e4fff5b39263589c092",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 103,
+      "movie_frame": 102,
+      "key": "crouch-1-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-02-crouch_start-phase-00.png",
+      "sha256": "76324db9541352d5c6d873bb01515cf58900cc56a9fbe82bd7aef30ec7f0c92b",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 105,
+      "movie_frame": 104,
+      "key": "crouch-1-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-03-crouch_start-phase-01.png",
+      "sha256": "dc3b8afecd60d876eacf623f1413254bda31b7013e65083e73307c575351c8d6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 106,
+      "movie_frame": 105,
+      "key": "crouch-1-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-05-crouch_start-phase-01.png",
+      "sha256": "7baf42a4aad98bb8f4e6d8625fdd5bf91368c33b9ecfd0315621191fe05f4cd8",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 108,
+      "movie_frame": 107,
+      "key": "crouch-1-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-06-crouch-phase-00.png",
+      "sha256": "03d489bd3bea41b0c5e687e4277dfe3cd9cb5c93086ea1c84cce6fdeb71871e5",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 109,
+      "movie_frame": 108,
+      "key": "crouch-1-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-17-crouch-phase-00.png",
+      "sha256": "31270772a7e441f2e046fc3a75537726e6fb749697c58a769e0924bf8dc63cca",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 120,
+      "movie_frame": 119,
+      "key": "crouch-1-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-18-crouch-phase-01.png",
+      "sha256": "53196fa9827fff9f995aced20bcc51026be535147a79da1fddd1a004025eb3cc",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 121,
+      "movie_frame": 120,
+      "key": "crouch-1-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-29-crouch-phase-01.png",
+      "sha256": "8340881d8278c5efe4fa5c2438a5cab968a05491f856ffa5655bb733b3876a0c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 132,
+      "movie_frame": 131,
+      "key": "crouch-1-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-30-crouch-phase-00.png",
+      "sha256": "c99f53ac05bb38602cac3ed2d78dcac9ba111778b317be135f5421c2484225c4",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 133,
+      "movie_frame": 132,
+      "key": "crouch-1-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-41-crouch-phase-00.png",
+      "sha256": "ee2bc700e2427a6fba7bf7fa58bf0552296f40908e203def7397e0001c57d9a2",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 144,
+      "movie_frame": 143,
+      "key": "crouch-1-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-42-crouch-phase-01.png",
+      "sha256": "b3346c33cc83781e5d5c0bcc8a1fb01b73596be1f12374d15f58d68774d88731",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 145,
+      "movie_frame": 144,
+      "key": "crouch-1-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-53-crouch-phase-01.png",
+      "sha256": "825e6877eca92d9482454eca379c462fa511ee97901a37d38199070c8d6227e3",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 156,
+      "movie_frame": 155,
+      "key": "crouch-1-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-54-crouch_rise-phase-00.png",
+      "sha256": "69f0156eac42f960142d841aeebeee35adc79d2453418683cef3bf087f36ed76",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 157,
+      "movie_frame": 156,
+      "key": "crouch-1-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-56-crouch_rise-phase-00.png",
+      "sha256": "62cc08b94e3d4cce297d665c03bc47c19694c81704e6b6bf0aec1c400e5b96b4",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 159,
+      "movie_frame": 158,
+      "key": "crouch-1-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-57-crouch_rise-phase-01.png",
+      "sha256": "4632c65dbfe5e01922dcedb07b9a04f6c157f66d0a6d0b55fa1b8be910b538c9",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 160,
+      "movie_frame": 159,
+      "key": "crouch-1-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-59-crouch_rise-phase-01.png",
+      "sha256": "908d5fd16941177067336fb2664398222f046df53890bb0124352eb3ed00cbff",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 162,
+      "movie_frame": 161,
+      "key": "crouch-1-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/crouch-1-n-60-idle-phase-00.png",
+      "sha256": "ae9785e7cd1560563fa8d1ea74e6372d9f482552ebc03d8cfa715dbdcae40632",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 163,
+      "movie_frame": 162,
+      "key": "crouch-1-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/settled-idle-170.png",
+      "sha256": "70407f1688782310b6fb84d07a926748fbe36ab00087cd3c3e18bf56df6fc1fd",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 171,
+      "movie_frame": 170,
+      "key": "settled-idle-170"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/settled-idle-180.png",
+      "sha256": "e337a53db19b3456a5e023d84ea8836928bec146bed04554eb0a85ea91553c4d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 181,
+      "movie_frame": 180,
+      "key": "settled-idle-180"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/settled-idle-190.png",
+      "sha256": "eea27186297ee7994c9c2b7dfc7ab02f58edbe62ed09e84778ff3562c060ec49",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 191,
+      "movie_frame": 190,
+      "key": "settled-idle-190"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/settled-idle-200.png",
+      "sha256": "c05881abfbe4cf780b108b8cf9bcbbdb46ed95a7dbb4f38d10f18a63f49213ec",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 201,
+      "movie_frame": 200,
+      "key": "settled-idle-200"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/settled-idle-210.png",
+      "sha256": "849238d837d141bc2b38edb3330f059f6523a504901eae78b5dc011d87c6462d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 211,
+      "movie_frame": 210,
+      "key": "settled-idle-210"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/settled-idle-220.png",
+      "sha256": "822199dda8f34275478a369a38cfb543132a5ace74bc7e4f5f868d9370762e55",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 221,
+      "movie_frame": 220,
+      "key": "settled-idle-220"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-right-replay/settled-idle-230.png",
+      "sha256": "ca159999c1288b0f973d05aff7e280a4a689a26e769daee78a32279341ee5f68",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 231,
+      "movie_frame": 230,
+      "key": "settled-idle-230"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/settled-idle-000.png",
+      "sha256": "4057ef408123a13de7641a5c1df6c24efce431b2b00338ebf4bf5fc3fc387908",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "settled-idle-000"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/settled-idle-023.png",
+      "sha256": "32d762be140b4ae6662867670a7697e8836a2c8f3f819acd529a3a8b0a0cb666",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "settled-idle-023"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-00-crouch_start-phase-00.png",
+      "sha256": "abccddc77125d8adbe709d4855743405ecc9323f3072e3f51808047a2b8f3da6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "crouch-0-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-02-crouch_start-phase-00.png",
+      "sha256": "9f48802fe7ab176d114b911cc96d6294df93f8be73a803570cbe0b10e981ff58",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "crouch-0-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-03-crouch_start-phase-01.png",
+      "sha256": "c89673cb6447b2d076b14c10075b00f782fd48bf1a7510d283f934260685545a",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "crouch-0-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-05-crouch_start-phase-01.png",
+      "sha256": "1fe566ed16e4801120006282b485d5fc89d8d43a235682e79fb79fd3609d516c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "crouch-0-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-06-crouch-phase-00.png",
+      "sha256": "cfd931dadc96792195f766c91f864e0aa6a802b0a47a9fcc9c0e847a0b3fa9cf",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "crouch-0-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-17-crouch-phase-00.png",
+      "sha256": "cb62298cfa71b517294cd264caecb66e8606e76087f0bddb7b14bcce14adb63e",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "crouch-0-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-18-crouch-phase-01.png",
+      "sha256": "4324644da2f38b21faaabf7e26e22e6e69a004c29fe98d7f14b8c1731612a76e",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "crouch-0-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-29-crouch-phase-01.png",
+      "sha256": "091ef910dd2b8965f3fef8a0b33bf93130cfeda124583227a2d7e406d72b59b0",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 54,
+      "movie_frame": 53,
+      "key": "crouch-0-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-30-crouch-phase-00.png",
+      "sha256": "d14b267683bd693c8f5bad28b8e4a429efc4877ef7c24d2f149d9134a60d8ccb",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 55,
+      "movie_frame": 54,
+      "key": "crouch-0-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-41-crouch-phase-00.png",
+      "sha256": "4a53c2ace65f6cb1a5007c0883d6a2cc2b7cd1da5657aff26979c345da516fc3",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 66,
+      "movie_frame": 65,
+      "key": "crouch-0-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-42-crouch-phase-01.png",
+      "sha256": "008d57346c62291d6039db72f6755518d3383ac8db4a92ab97c71bb9dfb46eaf",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 67,
+      "movie_frame": 66,
+      "key": "crouch-0-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-53-crouch-phase-01.png",
+      "sha256": "0da859010874734e98e3d002059645a299f2b6db6cdb23ee6ed1ab92366d312a",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 78,
+      "movie_frame": 77,
+      "key": "crouch-0-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-54-crouch_rise-phase-00.png",
+      "sha256": "f06a933e79b343b6c5b6d7a33619ff11e69dabb6e41dea504cf8d0aee26c410e",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 79,
+      "movie_frame": 78,
+      "key": "crouch-0-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-56-crouch_rise-phase-00.png",
+      "sha256": "8eda682cdb5d293675ee435be62f361f49dac312b874be5d1c2b5220f8e476f1",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 81,
+      "movie_frame": 80,
+      "key": "crouch-0-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-57-crouch_rise-phase-01.png",
+      "sha256": "3da1bc37e6b519d8998c6947c84935bd9ce6462e6a5a8d14061624679317f47d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 82,
+      "movie_frame": 81,
+      "key": "crouch-0-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-59-crouch_rise-phase-01.png",
+      "sha256": "5296e688b82f4e9078cb0eb6762dad94d9d41462cd67821f8a124da2a809f7ae",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 84,
+      "movie_frame": 83,
+      "key": "crouch-0-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-0-n-60-idle-phase-00.png",
+      "sha256": "2d40cc59f976dbabc0b8e293180b89cf9c9fd3c9cb55f62c179d0c71b080aec7",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 85,
+      "movie_frame": 84,
+      "key": "crouch-0-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/settled-idle-090.png",
+      "sha256": "d6301841cbf3fea385319b405aea89fa161afdc8ea9daed57bf317c08d42409c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 91,
+      "movie_frame": 90,
+      "key": "settled-idle-090"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-00-crouch_start-phase-00.png",
+      "sha256": "a762db564f0f0996633ee3e792850a78d945335129bd95e8605b95e2df5835d8",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 103,
+      "movie_frame": 102,
+      "key": "crouch-1-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-02-crouch_start-phase-00.png",
+      "sha256": "8bf09ff168fc06634f3e884586b205aabe3ce176d1be00561e398230fe3c3b5c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 105,
+      "movie_frame": 104,
+      "key": "crouch-1-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-03-crouch_start-phase-01.png",
+      "sha256": "8ef453c3f4c003e707a517fa6c6dbf0b4905c7f82df1e6e055741943c983b821",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 106,
+      "movie_frame": 105,
+      "key": "crouch-1-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-05-crouch_start-phase-01.png",
+      "sha256": "627967d3a99647edb0de13ae40a416bc339aa1ec834c62e14214a3aa3f5ee0dc",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 108,
+      "movie_frame": 107,
+      "key": "crouch-1-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-06-crouch-phase-00.png",
+      "sha256": "a7d2a87ea971b60b2f83ce1e5e81495f36ec0138e6242353978960f4e9b06442",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 109,
+      "movie_frame": 108,
+      "key": "crouch-1-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-17-crouch-phase-00.png",
+      "sha256": "611667694077c3a9f98285d4c44a02a185dc8780f3a60f608ae1dd53d947e2bd",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 120,
+      "movie_frame": 119,
+      "key": "crouch-1-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-18-crouch-phase-01.png",
+      "sha256": "93ea7e0b521ce21985d6770747bf0ecb36fd6f765287fec9820695f5e3385e76",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 121,
+      "movie_frame": 120,
+      "key": "crouch-1-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-29-crouch-phase-01.png",
+      "sha256": "4c3de1086e747a83c87cc848d67b5e95ae2c5c057510f166eb44746ac58033b6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 132,
+      "movie_frame": 131,
+      "key": "crouch-1-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-30-crouch-phase-00.png",
+      "sha256": "c33dbc890b981bcdac4bab79cee2c0923bfb748ae1a15c67ba389a5cb53d848b",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 133,
+      "movie_frame": 132,
+      "key": "crouch-1-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-41-crouch-phase-00.png",
+      "sha256": "d132ef2977e41b25b9ab5012037b9342ae59075d73f8de05b0942a079acf7a92",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 144,
+      "movie_frame": 143,
+      "key": "crouch-1-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-42-crouch-phase-01.png",
+      "sha256": "5233164e6380f3a74d19082350c68c4224a8ee8c8a15cc5c1fe1c8ce9a638b61",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 145,
+      "movie_frame": 144,
+      "key": "crouch-1-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-53-crouch-phase-01.png",
+      "sha256": "60c0be9ed4d835adcaa57b7154c6b5c779e8c9a69477bfb517f572e14ec2b3c9",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 156,
+      "movie_frame": 155,
+      "key": "crouch-1-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-54-crouch_rise-phase-00.png",
+      "sha256": "354251e4ca703532d0569a5777bb03f0e0fd9ca31083103c7ddd91faf69ff717",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 157,
+      "movie_frame": 156,
+      "key": "crouch-1-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-56-crouch_rise-phase-00.png",
+      "sha256": "e59ec13869509388257bea2478b95d13cf7918105fda1fd2f3a57ef2af4fcbff",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 159,
+      "movie_frame": 158,
+      "key": "crouch-1-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-57-crouch_rise-phase-01.png",
+      "sha256": "d410e805f36bf3bfa063c60ec6265f4148cc0d6b5e2eee5074301a7525afd293",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 160,
+      "movie_frame": 159,
+      "key": "crouch-1-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-59-crouch_rise-phase-01.png",
+      "sha256": "6c1d4dcf69f48ef170288411050230087290fd8468c26bd2660abcdafc30e9af",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 162,
+      "movie_frame": 161,
+      "key": "crouch-1-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/crouch-1-n-60-idle-phase-00.png",
+      "sha256": "414026ef0774d19977a089e2e160bbe05beb5169ee703b0789b4ab53ebb2cf1c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 163,
+      "movie_frame": 162,
+      "key": "crouch-1-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/settled-idle-170.png",
+      "sha256": "4796274743ca06c18a9b1d034af1b7c2c93f4eb2b0180a97596be13d3728c2ba",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 171,
+      "movie_frame": 170,
+      "key": "settled-idle-170"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/settled-idle-180.png",
+      "sha256": "68cce14ab50dad45054faf8546d3d71991f1f662173461e5ece06e270d049762",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 181,
+      "movie_frame": 180,
+      "key": "settled-idle-180"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/settled-idle-190.png",
+      "sha256": "f616617d1119435c8efaa8658d763421e8448dfec7628b2eee3f32d6e460a686",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 191,
+      "movie_frame": 190,
+      "key": "settled-idle-190"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/settled-idle-200.png",
+      "sha256": "6daeb9dbae4adf0834e7b5543ff8bf57b7d261867fb9025898bef105d8a7afbf",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 201,
+      "movie_frame": 200,
+      "key": "settled-idle-200"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/settled-idle-210.png",
+      "sha256": "63fc4957991cd45fce2c23665b15e5bf023b33091cdf538d10c29f82af970afb",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 211,
+      "movie_frame": 210,
+      "key": "settled-idle-210"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/settled-idle-220.png",
+      "sha256": "b712346aadc5ffa7f3bdd616afa3f28a5e2b97315175ae2c3a444ab0e3827b9f",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 221,
+      "movie_frame": 220,
+      "key": "settled-idle-220"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-original/settled-idle-230.png",
+      "sha256": "3f7299e9b6699de0ec7bd2ef2e559d1569f402a752fd0f19d6e8c3ad3a75c2f3",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 231,
+      "movie_frame": 230,
+      "key": "settled-idle-230"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/settled-idle-000.png",
+      "sha256": "4057ef408123a13de7641a5c1df6c24efce431b2b00338ebf4bf5fc3fc387908",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 1,
+      "movie_frame": 0,
+      "key": "settled-idle-000"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/settled-idle-023.png",
+      "sha256": "32d762be140b4ae6662867670a7697e8836a2c8f3f819acd529a3a8b0a0cb666",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 24,
+      "movie_frame": 23,
+      "key": "settled-idle-023"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-00-crouch_start-phase-00.png",
+      "sha256": "abccddc77125d8adbe709d4855743405ecc9323f3072e3f51808047a2b8f3da6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 25,
+      "movie_frame": 24,
+      "key": "crouch-0-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-02-crouch_start-phase-00.png",
+      "sha256": "9f48802fe7ab176d114b911cc96d6294df93f8be73a803570cbe0b10e981ff58",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 27,
+      "movie_frame": 26,
+      "key": "crouch-0-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-03-crouch_start-phase-01.png",
+      "sha256": "c89673cb6447b2d076b14c10075b00f782fd48bf1a7510d283f934260685545a",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 28,
+      "movie_frame": 27,
+      "key": "crouch-0-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-05-crouch_start-phase-01.png",
+      "sha256": "1fe566ed16e4801120006282b485d5fc89d8d43a235682e79fb79fd3609d516c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 30,
+      "movie_frame": 29,
+      "key": "crouch-0-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-06-crouch-phase-00.png",
+      "sha256": "cfd931dadc96792195f766c91f864e0aa6a802b0a47a9fcc9c0e847a0b3fa9cf",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 31,
+      "movie_frame": 30,
+      "key": "crouch-0-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-17-crouch-phase-00.png",
+      "sha256": "cb62298cfa71b517294cd264caecb66e8606e76087f0bddb7b14bcce14adb63e",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 42,
+      "movie_frame": 41,
+      "key": "crouch-0-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-18-crouch-phase-01.png",
+      "sha256": "4324644da2f38b21faaabf7e26e22e6e69a004c29fe98d7f14b8c1731612a76e",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 43,
+      "movie_frame": 42,
+      "key": "crouch-0-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-29-crouch-phase-01.png",
+      "sha256": "091ef910dd2b8965f3fef8a0b33bf93130cfeda124583227a2d7e406d72b59b0",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 54,
+      "movie_frame": 53,
+      "key": "crouch-0-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-30-crouch-phase-00.png",
+      "sha256": "d14b267683bd693c8f5bad28b8e4a429efc4877ef7c24d2f149d9134a60d8ccb",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 55,
+      "movie_frame": 54,
+      "key": "crouch-0-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-41-crouch-phase-00.png",
+      "sha256": "4a53c2ace65f6cb1a5007c0883d6a2cc2b7cd1da5657aff26979c345da516fc3",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 66,
+      "movie_frame": 65,
+      "key": "crouch-0-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-42-crouch-phase-01.png",
+      "sha256": "008d57346c62291d6039db72f6755518d3383ac8db4a92ab97c71bb9dfb46eaf",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 67,
+      "movie_frame": 66,
+      "key": "crouch-0-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-53-crouch-phase-01.png",
+      "sha256": "0da859010874734e98e3d002059645a299f2b6db6cdb23ee6ed1ab92366d312a",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 78,
+      "movie_frame": 77,
+      "key": "crouch-0-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-54-crouch_rise-phase-00.png",
+      "sha256": "f06a933e79b343b6c5b6d7a33619ff11e69dabb6e41dea504cf8d0aee26c410e",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 79,
+      "movie_frame": 78,
+      "key": "crouch-0-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-56-crouch_rise-phase-00.png",
+      "sha256": "8eda682cdb5d293675ee435be62f361f49dac312b874be5d1c2b5220f8e476f1",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 81,
+      "movie_frame": 80,
+      "key": "crouch-0-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-57-crouch_rise-phase-01.png",
+      "sha256": "3da1bc37e6b519d8998c6947c84935bd9ce6462e6a5a8d14061624679317f47d",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 82,
+      "movie_frame": 81,
+      "key": "crouch-0-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-59-crouch_rise-phase-01.png",
+      "sha256": "5296e688b82f4e9078cb0eb6762dad94d9d41462cd67821f8a124da2a809f7ae",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 84,
+      "movie_frame": 83,
+      "key": "crouch-0-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-0-n-60-idle-phase-00.png",
+      "sha256": "2d40cc59f976dbabc0b8e293180b89cf9c9fd3c9cb55f62c179d0c71b080aec7",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 85,
+      "movie_frame": 84,
+      "key": "crouch-0-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/settled-idle-090.png",
+      "sha256": "d6301841cbf3fea385319b405aea89fa161afdc8ea9daed57bf317c08d42409c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 91,
+      "movie_frame": 90,
+      "key": "settled-idle-090"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-00-crouch_start-phase-00.png",
+      "sha256": "a762db564f0f0996633ee3e792850a78d945335129bd95e8605b95e2df5835d8",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 103,
+      "movie_frame": 102,
+      "key": "crouch-1-n-00-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-02-crouch_start-phase-00.png",
+      "sha256": "8bf09ff168fc06634f3e884586b205aabe3ce176d1be00561e398230fe3c3b5c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 105,
+      "movie_frame": 104,
+      "key": "crouch-1-n-02-crouch_start-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-03-crouch_start-phase-01.png",
+      "sha256": "8ef453c3f4c003e707a517fa6c6dbf0b4905c7f82df1e6e055741943c983b821",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 106,
+      "movie_frame": 105,
+      "key": "crouch-1-n-03-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-05-crouch_start-phase-01.png",
+      "sha256": "627967d3a99647edb0de13ae40a416bc339aa1ec834c62e14214a3aa3f5ee0dc",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 108,
+      "movie_frame": 107,
+      "key": "crouch-1-n-05-crouch_start-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-06-crouch-phase-00.png",
+      "sha256": "a7d2a87ea971b60b2f83ce1e5e81495f36ec0138e6242353978960f4e9b06442",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 109,
+      "movie_frame": 108,
+      "key": "crouch-1-n-06-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-17-crouch-phase-00.png",
+      "sha256": "611667694077c3a9f98285d4c44a02a185dc8780f3a60f608ae1dd53d947e2bd",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 120,
+      "movie_frame": 119,
+      "key": "crouch-1-n-17-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-18-crouch-phase-01.png",
+      "sha256": "93ea7e0b521ce21985d6770747bf0ecb36fd6f765287fec9820695f5e3385e76",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 121,
+      "movie_frame": 120,
+      "key": "crouch-1-n-18-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-29-crouch-phase-01.png",
+      "sha256": "4c3de1086e747a83c87cc848d67b5e95ae2c5c057510f166eb44746ac58033b6",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 132,
+      "movie_frame": 131,
+      "key": "crouch-1-n-29-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-30-crouch-phase-00.png",
+      "sha256": "c33dbc890b981bcdac4bab79cee2c0923bfb748ae1a15c67ba389a5cb53d848b",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 133,
+      "movie_frame": 132,
+      "key": "crouch-1-n-30-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-41-crouch-phase-00.png",
+      "sha256": "d132ef2977e41b25b9ab5012037b9342ae59075d73f8de05b0942a079acf7a92",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 144,
+      "movie_frame": 143,
+      "key": "crouch-1-n-41-crouch-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-42-crouch-phase-01.png",
+      "sha256": "5233164e6380f3a74d19082350c68c4224a8ee8c8a15cc5c1fe1c8ce9a638b61",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 145,
+      "movie_frame": 144,
+      "key": "crouch-1-n-42-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-53-crouch-phase-01.png",
+      "sha256": "60c0be9ed4d835adcaa57b7154c6b5c779e8c9a69477bfb517f572e14ec2b3c9",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 156,
+      "movie_frame": 155,
+      "key": "crouch-1-n-53-crouch-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-54-crouch_rise-phase-00.png",
+      "sha256": "354251e4ca703532d0569a5777bb03f0e0fd9ca31083103c7ddd91faf69ff717",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 157,
+      "movie_frame": 156,
+      "key": "crouch-1-n-54-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-56-crouch_rise-phase-00.png",
+      "sha256": "e59ec13869509388257bea2478b95d13cf7918105fda1fd2f3a57ef2af4fcbff",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 159,
+      "movie_frame": 158,
+      "key": "crouch-1-n-56-crouch_rise-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-57-crouch_rise-phase-01.png",
+      "sha256": "d410e805f36bf3bfa063c60ec6265f4148cc0d6b5e2eee5074301a7525afd293",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 160,
+      "movie_frame": 159,
+      "key": "crouch-1-n-57-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-59-crouch_rise-phase-01.png",
+      "sha256": "6c1d4dcf69f48ef170288411050230087290fd8468c26bd2660abcdafc30e9af",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 162,
+      "movie_frame": 161,
+      "key": "crouch-1-n-59-crouch_rise-phase-01"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/crouch-1-n-60-idle-phase-00.png",
+      "sha256": "414026ef0774d19977a089e2e160bbe05beb5169ee703b0789b4ab53ebb2cf1c",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 163,
+      "movie_frame": 162,
+      "key": "crouch-1-n-60-idle-phase-00"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/settled-idle-170.png",
+      "sha256": "4796274743ca06c18a9b1d034af1b7c2c93f4eb2b0180a97596be13d3728c2ba",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 171,
+      "movie_frame": 170,
+      "key": "settled-idle-170"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/settled-idle-180.png",
+      "sha256": "68cce14ab50dad45054faf8546d3d71991f1f662173461e5ece06e270d049762",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 181,
+      "movie_frame": 180,
+      "key": "settled-idle-180"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/settled-idle-190.png",
+      "sha256": "f616617d1119435c8efaa8658d763421e8448dfec7628b2eee3f32d6e460a686",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 191,
+      "movie_frame": 190,
+      "key": "settled-idle-190"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/settled-idle-200.png",
+      "sha256": "6daeb9dbae4adf0834e7b5543ff8bf57b7d261867fb9025898bef105d8a7afbf",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 201,
+      "movie_frame": 200,
+      "key": "settled-idle-200"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/settled-idle-210.png",
+      "sha256": "63fc4957991cd45fce2c23665b15e5bf023b33091cdf538d10c29f82af970afb",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 211,
+      "movie_frame": 210,
+      "key": "settled-idle-210"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/settled-idle-220.png",
+      "sha256": "b712346aadc5ffa7f3bdd616afa3f28a5e2b97315175ae2c3a444ab0e3827b9f",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 221,
+      "movie_frame": 220,
+      "key": "settled-idle-220"
+    },
+    {
+      "path": "reports/galaxion-crouch-resume/graphical-v1/1920x1080-left-replay/settled-idle-230.png",
+      "sha256": "3f7299e9b6699de0ec7bd2ef2e559d1569f402a752fd0f19d6e8c3ad3a75c2f3",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "tick": 231,
+      "movie_frame": 230,
+      "key": "settled-idle-230"
+    }
+  ],
+  "closed": {
+    "desktop_prompt_returned": true,
+    "godot_window_absent": true,
+    "lock_released": true
+  },
+  "limits": [
+    "Godot4.6.3，4.7未验；仅银河本人四状态候选，不代表完整S2–S7或装甲开放。",
+    "无录屏、实速顺滑、音频或真人硬件输入验收。",
+    "125张独立原输入选样实际目视覆盖12相与首轮边界；并未目视所有回放图或所有240tick。",
+    "idle护拳回环、start相间高度接近、rise头长/手位细差保留；未为局部细差切肢或逐相缩放。"
+  ],
+  "playable": false,
+  "implemented": false,
+  "select_visible": false,
+  "transform_enabled": false
+}

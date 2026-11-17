@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "language": "zh-CN",
+  "purpose": "reviewed_combat_effect_not_fighter",
+  "state": "contact",
+  "anchor_px": [
+    36,
+    32
+  ],
+  "bundle_sha256": "3637bacddfebb76e180ab19f1bfefd6502c9454262d7822a0f2da936f87789cb",
+  "compose_report_sha256": "d84bd5281889fff937935cc7282437b0fee43a508b4298a6f977e4206eb5c4c2",
+  "reviewer": "Codex：查看原剧接触帧、GPT原行及四张原生硬格帧，逐帧核对固定竖纹、上下短叉与透明缺口。",
+  "checks": {
+    "pixel_grid": true,
+    "alpha": true,
+    "pivot": true,
+    "motion": true,
+    "timing": true,
+    "curated": true
+  },
+  "frame_review": [
+    "上端分叉、双横纹接通。",
+    "上叉缩进、下叉分开。",
+    "左侧横纹缩短、下缘小叉分开。",
+    "上缘短亮点和下叉变化，接触竖纹不移位。"
+  ],
+  "source_visual_packet": "art/shared/references/effects/ultraman/spacium-beam/contact-v001/source.json",
+  "source_run": "art/runs/spacium_contact_compact_v002",
+  "raw_sha256": "6359f0cbe9a1a5caddf56e28efe3f721eb4225fb7abb4ba737d07edaf225c0f5",
+  "raw_warnings": [
+    "contact: pitch crosscheck: axis ratio y/x disagrees — run-length 0.999 vs grid 0.960 (4.0%); one axis may have collapsed to the other",
+    "palette: pinned (2 colors, palette.lock.json)",
+    "pixel unfake: pitch=[(25.98, 23.98), 23.98, (24.94, 23.98), (24.98, 23.98)] scale=2x logical<=32x32 palette=2"
+  ],
+  "raw_source": "raw-source.json",
+  "limits": [
+    "参考只证明竖掌附近暖白短纹，不证明爆炸或伤害；不是杰顿吸收机制。",
+    "四相位为Neo持续光线短纹理改编，源67毫秒时序不变，不宣称原剧逐帧转描。",
+    "原图4%横纵格距交叉分歧保留；最终2×2硬格、二值透明与固定接触基点独立通过。",
+    "只减少透明画布，同源四帧与原128画布中央64区域逐像素相同，无重新缩放、重画或API重发。"
+  ]
+}

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="UfeMoveData" load_steps=2 format=3]
+[ext_resource type="Script" path="res://core/combat/move_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = "light_2"
+display_name = "二段·近身横击"
+startup = 7
+active = 3
+recovery = 18
+damage = 55
+hitstun = 24
+reach = 152
+contact_height = 194
+pushback = 8
+stamina_cost = 35
+chain_next = "light_3"
+chain_open = 10
+chain_close = 21
+advance_distance = 12
+advance_ticks = 5
+cancel_targets = PackedStringArray("heavy", "launcher", "sweep", "pulse", "special")

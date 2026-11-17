@@ -1,0 +1,97 @@
+{
+  "schema": "ufeneo.luna.spin-follow-review.v1",
+  "date_utc": "2026-11-05",
+  "status": "保留踢后初始屈膝回收候选，未接受完整回旋动作",
+  "raw_file": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/follow-attempt-01.raw.png",
+  "raw_sha256": "3e2dfb14d138e3b8e7bc753f8060492b34db144c850fe002406016d883034a44",
+  "source_manifest": "art/fighters/ultraman-arc__luna/stage2/spin-heavy-session-candidate-20261105/source.json",
+  "size": [
+    1312,
+    1199
+  ],
+  "mode": "RGBA",
+  "alpha": {
+    "min": 0,
+    "max": 255,
+    "zero": 1257329,
+    "full": 283,
+    "partial": 315476,
+    "bbox_nonzero": [
+      41,
+      24,
+      1292,
+      1181
+    ],
+    "bbox_128": [
+      137,
+      28,
+      1031,
+      1131
+    ],
+    "assessment": "真实透明RGBA，非RGB棋盘；绝大多数人物像素为中间Alpha，低透明外围噪点保留。Alpha存在不等于干净像素运行资源。完整头冠双拳双脚及甲尖在128阈值内有留边。"
+  },
+  "visual_review": {
+    "identity": "实看本人clean-model、contact、unfold及新源：银白后掠头冠、黄眼、蓝青胸肩甲、圆胸灯与双腕圆甲、红银四肢一致；未见错身份或新增第三肢。这里是项目本人参考一致性，不冒称官方逐片装甲形制已核准。",
+    "legs": "新图前伸悬空腿保持髋→抬膝→小腿→脚连续，落地腿仍从后侧骨盆经屈膝到前掌；与contact的前后遮挡拓扑一致，未见换腿。单帧不能独立证明解剖左右，仍沿计划标右攻左支撑。",
+    "support": "支撑脚跟高于前掌，膝轻屈；两张同尺寸原图下支撑鞋位置接近。没有地面，接地点由前掌轮廓推断，不冒称实际受力或运行无滑步。",
+    "retraction": "contact近直腿→新图明显屈膝，踢脚更靠近身体，符合初始回收方向。脚尖由下压变上翘，接近unfold形状；可解释为收踝，未据静帧强制新增一相。",
+    "torso": "头看右，胸灯与斜胸面仍可见；肩胸轮廓很接近contact，未呈现足够新背部面，无法据此证明同向转髋随势已经完成。不能将屈膝回收等同于完整旋身。",
+    "back": "未展示大面积中央背甲，现有肩后尖甲轮廓沿用参考；官方Bandai文字说明本人背部有两翼，不能一概将背翼判臆造，但翼根/中央背甲几何尚未目视核实，本帧不解决该缺口。"
+  },
+  "same_size_comparison": {
+    "method": "contact与follow均1312×1199，无缩放/平移；ROI x470:670,y995:1150，Alpha>=128最底四行取均值。不是全链骨尺重新构建。",
+    "contact_support_anchor": [
+      600.9659442724458,
+      1131
+    ],
+    "follow_support_anchor": [
+      599.0511363636364,
+      1131
+    ],
+    "delta_source_px": [
+      -1.9148079088093937,
+      0
+    ],
+    "manual_follow_landmarks": {
+      "attack_hip": [
+        561,
+        531
+      ],
+      "attack_knee": [
+        758,
+        483
+      ],
+      "attack_ankle": [
+        918,
+        561
+      ],
+      "attack_toe": [
+        1018,
+        506
+      ]
+    },
+    "manual_joint_uncertainty_source_px": 18,
+    "projected_knee_angle_deg": 140.31719696951848,
+    "contact_prior_angle_deg": 168.97608419379512,
+    "comparison": "人工投影膝角减小，膝/脚向躯干回收。关节被装甲覆盖且有透视，不能把估计值当真实骨长或自动验收门。"
+  },
+  "official_rear_constraint": {
+    "url": "https://toy.bandai.co.jp/ja/series/ultraman/topics/01_18752/",
+    "finding": "官方开发博客文字确认背部两翼；本轮先前图片读取未返回可目视图，不签完整背面结构。",
+    "permission": "官方版权保留，页面禁止未经授权转载；未下载或加入官网图片。"
+  },
+  "remaining": [
+    "入招护架→蓄势、完整旋转路径、进一步收腿→落脚→回架和全招时序仍未成立。",
+    "这张回收与展开形态近，不直接把展开倒放充当后段；保留独立新原源。",
+    "尚未统一五相全链骨尺/根点或运行主游戏真实输入回放。"
+  ],
+  "generation_performed_by_reviewer": false,
+  "installed": false,
+  "playable": false,
+  "art_passed": false,
+  "godot_run": false,
+  "real_input_replay": false,
+  "recording": false,
+  "next_step": "保留有效初始收腿相，先核后续下收/落脚回架与统一整图骨尺时序，再决定是否具备真实输入回放条件；不安装、不开放装甲。",
+  "independent_review": "独立审阅与本轮一致：同支撑腿拓扑未见交换，脚尖上翘可属于收踝；初始回收有用，胸肩近接触相，不足证明继续同向回旋。"
+}

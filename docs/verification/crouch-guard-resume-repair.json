@@ -1,0 +1,79 @@
+{
+  "commit": "dffc73125e411837289590cf6cd1bb9b38e0dcf2",
+  "reviewer": "root_delegated_by_user",
+  "red": {
+    "path": "reports/crouch-guard-resume/red-v2/result.json",
+    "sha256": "2331ddb47313f17e2a1b1c3b9d30fb5c6246dd009fab14bb98358b047d298f98"
+  },
+  "red_failures": {
+    "resume_starts_at_own_hold": 20,
+    "resumed_guard_never_replays_entry": 60,
+    "resume_semantics_versioned": 1
+  },
+  "green": {
+    "path": "reports/crouch-guard-resume/green-v1/result.json",
+    "sha256": "8ce7a05118e973c1d319422b04e49880fd0dda9c1993eb37c34f37b073435893"
+  },
+  "green_errors": [],
+  "cases": 40,
+  "legacy_content_rejections_and_new_acceptances": 40,
+  "logs": [
+    {
+      "path": "reports/crouch-guard-resume/red-v1-import.log",
+      "sha256": "88a65891fcfd1b9f913a70de3df0508e5bc3ce83dca9418150bf4d7ac5d341b2"
+    },
+    {
+      "path": "reports/crouch-guard-resume/red-v2.log",
+      "sha256": "24c748dc52474c3de530df745f48b34ca59ce0eff77719341096faf25f6c3d8a"
+    },
+    {
+      "path": "reports/crouch-guard-resume/green-v1.log",
+      "sha256": "87552e23c14900287e7e92da3f1e5bf92179d416318d3d915d0f8249c842031a"
+    },
+    {
+      "path": "reports/crouch-guard-resume/regression-v1/logic-2d.log",
+      "sha256": "23f27dba5277267ed66ba6830fffca21eb41e25c6418c5e5975faeb71d8cb113"
+    },
+    {
+      "path": "reports/crouch-guard-resume/regression-v1/phase3-crouch-block.log",
+      "sha256": "bca356d016e77d48a5def65bee59fb565ef536988a47c82401980b16f4205f30"
+    }
+  ],
+  "existing_audit": {
+    "path": "reports/crouch-guard-resume/regression-v1/phase3-crouch-block.json",
+    "sha256": "2dac9e4f5963ba6677b5a640b40fcb74ef7441fa42281196d6cfda238fd96068"
+  },
+  "source_files": [
+    {
+      "path": "core/states/crouch_blockstun.gd",
+      "sha256": "b5bc2c3dd2b685418b5106cd149c45e67bf23e9fac1ac170f93e40d5d4bd8975"
+    },
+    {
+      "path": "core/combat/match_director.gd",
+      "sha256": "3d015be339b31347064bf035d1257cd2387e4cd53296c1f617732c8eda3f27be"
+    },
+    {
+      "path": "tests/crouch_guard_resume.gd",
+      "sha256": "78099b5cf0f8043493f7b2270b6bc535c4e852886409838d57340c67a12c28d8"
+    },
+    {
+      "path": "tests/crouch_guard_resume.gd.uid",
+      "sha256": "32310d8311a3061218bb0e747a2ffd80a2a7f76df2ac2cf16a9984e2a3864f80"
+    }
+  ],
+  "not_authoritative": [
+    "red-v1.log was a relative-output-path launch assertion and was interrupted; no simulated evidence",
+    "red-v1/result.json had 40 JSON int/float comparison false positives; canonicalized before the clean red-v2 baseline"
+  ],
+  "scope": "只修蹲防硬直持续下防恢复；初次入架/松键/overhead回防旧分支保持，未安装新美术、未改RAM合同/入口/docs",
+  "graphical_review": false,
+  "art_accepted": false,
+  "audio_listened": false,
+  "video_recorded": false,
+  "source_report": {
+    "path": "reports/crouch-guard-resume/repair-summary-v1.json",
+    "sha256": "e3a8ac82f1a90821a731b188e57f24a393f6f4ffc8d8d0406bea2bdf3d2e73c2"
+  },
+  "说明": "v1真实图形暴露已低蹲受挡恢复重新播放站高入架。仅此分支进入本人crouch_guard末保持行，模拟受击框与显示一致；首次入架、松键、高段受击后的原路径不改。此为正式core修复但新两帧仍只RAM。",
+  "回放影响": "内容指纹新增恢复规则版本1，格式6不变。旧录像可解析但拒绝按新模拟重播；不声称同指纹或旧录像兼容。"
+}

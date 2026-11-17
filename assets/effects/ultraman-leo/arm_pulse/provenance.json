@@ -1,0 +1,88 @@
+{
+  "fighter": "ultraman-leo",
+  "art_source": "api",
+  "source": "reports/review/2026-10-25/presentation-fx2/art-fixes/leo-arm-pulse/request-01/raw.png",
+  "source_sha256": "3d773d4f45a316cf81b6e89acbaf49d5ec9c9401286b3e15d13859335a7a9253",
+  "route": "tools/art_pipeline.py:generate_image",
+  "clean_reference": "art/fighters/ultraman-leo/stage4/effects-v2/arm_pulse/request-01/raw.png",
+  "reason": "第五节获准实机可见性返修，四相一起重画大一号，判定/速度/寿命不变",
+  "uniform_scale": 0.1875,
+  "anchor_policy": "整图统一比例，按暗核重心只作整帧平移并加透明边",
+  "operations": [
+    "forge_backend，RGB兼容调色板",
+    "整帧网格还原与二值Alpha，不画新像素"
+  ],
+  "atlas_sha256": "cbe865d9b29e6338983b33a06e7bfcc5dc1cb29a5e028e23fbcc5bc261669539",
+  "selected_for_runtime": true,
+  "review_status": "候选未装，待执行自查及指挥目视",
+  "registration": [
+    {
+      "dark_core_center": [
+        68.70579268292683,
+        70.90396341463415
+      ],
+      "mask_rule": "Alpha>0,R<70,G<60,B<120",
+      "core_pixels": 656,
+      "whole_frame_translation": [
+        3,
+        1
+      ],
+      "registered_core_center": [
+        71.70579268292683,
+        71.90396341463415
+      ],
+      "alpha_sum_unchanged": true
+    },
+    {
+      "dark_core_center": [
+        67.18960244648318,
+        71.75382262996942
+      ],
+      "mask_rule": "Alpha>0,R<70,G<60,B<120",
+      "core_pixels": 654,
+      "whole_frame_translation": [
+        5,
+        0
+      ],
+      "registered_core_center": [
+        72.18960244648318,
+        71.75382262996942
+      ],
+      "alpha_sum_unchanged": true
+    },
+    {
+      "dark_core_center": [
+        70.11130136986301,
+        53.46232876712329
+      ],
+      "mask_rule": "Alpha>0,R<70,G<60,B<120",
+      "core_pixels": 584,
+      "whole_frame_translation": [
+        2,
+        19
+      ],
+      "registered_core_center": [
+        72.11130136986301,
+        72.4623287671233
+      ],
+      "alpha_sum_unchanged": true
+    },
+    {
+      "dark_core_center": [
+        69.78688524590164,
+        52.92827868852459
+      ],
+      "mask_rule": "Alpha>0,R<70,G<60,B<120",
+      "core_pixels": 488,
+      "whole_frame_translation": [
+        2,
+        19
+      ],
+      "registered_core_center": [
+        71.78688524590164,
+        71.92827868852459
+      ],
+      "alpha_sum_unchanged": true
+    }
+  ]
+}

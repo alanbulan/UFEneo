@@ -1,0 +1,49 @@
+{
+  "status": "red_reproduced_product_unchanged",
+  "source_commit": "0580eb5c53a59a5476816d6722a5003ae78fda08",
+  "engine": "Godot4.6.3.stable.official.7d41c59c4",
+  "evidence_directory": "reports/replay-match-loading/red-20261105",
+  "command": "XDG_DATA_HOME=/tmp/ufeneo-replay-match-red-20261105/data XDG_CONFIG_HOME=/tmp/ufeneo-replay-match-red-20261105/config XDG_CACHE_HOME=/tmp/ufeneo-replay-match-red-20261105/cache python tools/godot_lock.py -- godot --headless --path . --script tests/replay_match_loading.gd -- --replay-test-out=/tmp/ufeneo-replay-match-red-20261105/final",
+  "exit_code": 1,
+  "checks": 126,
+  "errors": [
+    "播放许可符合预期/different_fighter",
+    "播放许可符合预期/swapped_sides",
+    "播放许可符合预期/ex_direct_from_other_pair"
+  ],
+  "script_error_count": 0,
+  "expected_existing_json_parser_error_count": 1,
+  "files_sha256": {
+    "app/game_app.gd": "126e90536ed45c34afa0577e3c1e53db669c1830515682e59f2cfdc8ccb29aeb",
+    "core/replay/replay_recorder.gd": "f4fd4db1508d450126a6befdf2a09c84e25e5e7872285a58748dbe525af14f56",
+    "tests/replay_match_loading.gd": "2b232b33d80b9d6d5e3c8b5fdf88579ad4dab4afefd6e3c72f6193afc9f5673c",
+    "tests/replay_match_loading.gd.uid": "fe0b9bda139bc3c8cb7d796d7ec13c3be81bc9614fc91dd66efd4b3f04c557c9"
+  },
+  "initial_run": {
+    "checks": 126,
+    "errors_count": 6,
+    "log": "initial-test-assertion-error.log",
+    "description": "首次错误地直接比较JSON解析float数组与原始int数组，造成三个F4输入比较假失败；测试修为UfeInputFrame.unpack().pack()后，最终只剩三个换组误拒。未改产品以消除假失败。"
+  },
+  "case_summary": {
+    "same_pair": "实际F4保存24帧，按原输入播放最终hash一致",
+    "different_fighter": "本版本刚录初代/杰顿，当前泰罗/杰顿时误拒",
+    "swapped_sides": "本版本刚录初代/杰顿，当前杰顿/初代时误拒",
+    "ex_direct": "本版本刚录EX哥莫拉/初代，当前初代/杰顿时误拒",
+    "true_rule_change": "录制夹具真实round_ticks减少60，现行规则拒绝且原局/磁带未变",
+    "malformed": "未知/路径/非字符串ID、错误人数/帧/格式/tick_rate/rules与损坏JSON均拒绝，文件/原局/磁带未变"
+  },
+  "limitations": [
+    "Input.action_press plus real App physics, synthetic F4/Esc InputEventKey and real pause-menu button signals; not physical hardware input",
+    "Negative metadata cases start from a different matchup. On the old loader they are rejected by the unrelated current fingerprint before metadata validation; not proof of independent old metadata validation.",
+    "没有原生键鼠或图形验收。",
+    "损坏JSON负例原产品parse_string打印ERROR；保持原日志，不宣称零错误。"
+  ],
+  "next_minimal_change": [
+    "一次读取用JSON.new().parse检查Error并返回last_error，避免故意损坏文件打印全局ERROR。",
+    "抽严格格式与输入结构解析；保留load_file(path,expected)严格API。",
+    "App先校验fighter_ids字符串/合法ID/现有可加载定义，构建录制组合临时模拟，再比较当前计算指纹。",
+    "只有全部成功才替换当前对局；拒绝保留原文件、模拟、暂停和陪练磁带。",
+    "后续增加伪造content等于当前指纹而fighter_ids未知/不匹配的防绕过负例，不能只信磁带fingerprint。"
+  ]
+}

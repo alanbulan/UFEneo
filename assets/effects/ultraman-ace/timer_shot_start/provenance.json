@@ -1,0 +1,65 @@
+{
+  "art_source": "api",
+  "route": "tools/art_pipeline.py:generate_image",
+  "request": "art/fighters/ultraman-ace/stage4/effects-v2/requests/timer_shot_layers/01/brief.json",
+  "request_sha256": "82ddf036a4552a01b1bf210fada0a80d1a34591c3367b5fc462b3d85698499d5",
+  "source": "art/fighters/ultraman-ace/stage4/effects-v2/requests/timer_shot_layers/01/raw.provider.png",
+  "source_sha256": "73da7d3aef7313a8519140b5df86eb9998941887fe8e1c221dc9521dc7e7cd13",
+  "provider_image_sha256": "bb438c839e4808d26424b61e7674d9e5ed6b9e7cce2a9dfcdde045e13d76455c",
+  "model": "gpt-image-2.5-sunburst",
+  "requested_quality": "high",
+  "actual_quality": "medium（本机接口固定返回；不因quality被忽略重发）",
+  "source_rects": [
+    [
+      0,
+      0,
+      384,
+      474
+    ],
+    [
+      384,
+      0,
+      768,
+      474
+    ],
+    [
+      768,
+      0,
+      1152,
+      474
+    ],
+    [
+      1152,
+      0,
+      1536,
+      474
+    ]
+  ],
+  "selection_reason": "按原剧配色的独立GPT像素图层；四相共用统一整帧比例，保留亮芯、外焰和粒子；不是通用库换色",
+  "episode_reference": "art/fighters/ultraman-ace/references/effects/episode-86s.png",
+  "description": "计时器射击：胸前计时器发射的彩色光带，原剧86秒可见红、青绿、金黄交替色段；重画为白金亮芯、红橙/翠青/金黄色流动能量带与高密度碎光，不能只画三根线。发射口的厚实聚能闪星，中心结实发亮，四周短锥形火舌与小光屑，中心位置不变，四相依次收聚、绽开、回收、再绽开。",
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "oklab",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "client_alpha_accepted": false,
+  "client_alpha": {
+    "transparent_fraction": 0.6941127777099609,
+    "visible_fraction": 0.12180805206298828,
+    "nonzero_fraction": 0.30588722229003906,
+    "opaque_fraction": 0.00014400482177734375,
+    "has_alpha_channel": true,
+    "rectangular_matte": false,
+    "clear_corners": false
+  },
+  "transforms": "读取provider高分原图的实际长宽网格（不把客户端补上的透明边当格子）；共同外框统一等比缩放；整图共享调色板量化和二值Alpha；未代码绘制最终特效"
+}

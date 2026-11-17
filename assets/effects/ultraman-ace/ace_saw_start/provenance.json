@@ -1,0 +1,65 @@
+{
+  "art_source": "api",
+  "route": "tools/art_pipeline.py:generate_image",
+  "request": "art/fighters/ultraman-ace/stage4/effects-v2/requests/ace_saw_projectile/01/brief.json",
+  "request_sha256": "9fec584ab28fb806bca3c3370d61686f0dd2a7120f31979c3277fee24a7d1730",
+  "source": "art/fighters/ultraman-ace/stage4/effects-v2/requests/ace_saw_projectile/01/raw.provider.png",
+  "source_sha256": "abe927d2499e3d7f878c3a7347a0b524ca9fdd87c412e232e6a47bdceb4400f7",
+  "provider_image_sha256": "8d250817396e75c870e783d681fd86e32b5b9bfe71b50223141d666b8da309bd",
+  "model": "gpt-image-2.5-sunburst",
+  "requested_quality": "high",
+  "actual_quality": "medium（本机接口固定返回；不因quality被忽略重发）",
+  "source_rects": [
+    [
+      0,
+      942,
+      314,
+      1254
+    ],
+    [
+      314,
+      942,
+      627,
+      1254
+    ],
+    [
+      627,
+      942,
+      940,
+      1254
+    ],
+    [
+      940,
+      942,
+      1254,
+      1254
+    ]
+  ],
+  "selection_reason": "按原剧配色的独立GPT像素图层；四相共用统一整帧比例，保留亮芯、外焰和粒子；不是通用库换色",
+  "episode_reference": "art/fighters/ultraman-ace/references/effects/episode-264s.png",
+  "description": "艾斯断头刀：白金色扁椭圆锯齿光轮，连续三角锯齿外圈，白亮核心、金黄锋刃、橙红细火舌与浅青粒子，朝右飞行，齿轮感清楚，不能是赛文头镖。发射前凝聚闪光：四相在同一中心聚合、闪亮、膨胀火舌、回收，不画手和人物。",
+  "backend": {
+    "backend": "agent-sprite-forge",
+    "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+    "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+    "numpy": "2.5.2",
+    "palette_distance": "oklab",
+    "grid": "clean integer only",
+    "files": {
+      "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+      "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+      "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+    }
+  },
+  "client_alpha_accepted": false,
+  "client_alpha": {
+    "transparent_fraction": 0.5887327194213867,
+    "visible_fraction": 0.1826791763305664,
+    "nonzero_fraction": 0.4112672805786133,
+    "opaque_fraction": 1.52587890625e-05,
+    "has_alpha_channel": true,
+    "rectangular_matte": false,
+    "clear_corners": false
+  },
+  "transforms": "读取provider高分原图的实际长宽网格（不把客户端补上的透明边当格子）；共同外框统一等比缩放；整图共享调色板量化和二值Alpha；未代码绘制最终特效"
+}

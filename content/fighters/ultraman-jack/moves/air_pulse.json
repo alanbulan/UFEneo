@@ -1,0 +1,797 @@
+{
+  "id": "air_pulse",
+  "display_name": "空中超级射线",
+  "startup": 6,
+  "active": 4,
+  "recovery": 10,
+  "damage": 65,
+  "hitstun": 20,
+  "blockstun": 12,
+  "pushback": 8,
+  "stun": 65,
+  "stamina_cost": 30,
+  "energy_cost": 0,
+  "kind": "projectile",
+  "level": "mid",
+  "unblockable": false,
+  "launch": false,
+  "bounce": false,
+  "knockdown": false,
+  "frames": [
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -26,
+          91,
+          56,
+          45
+        ],
+        [
+          -26,
+          46,
+          89,
+          45
+        ],
+        [
+          -27,
+          0,
+          60,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "jack_air_pulse_charge"
+        }
+      ],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        51,
+        73
+      ]
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -26,
+          91,
+          56,
+          45
+        ],
+        [
+          -26,
+          46,
+          89,
+          45
+        ],
+        [
+          -27,
+          0,
+          60,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        51,
+        73
+      ]
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -26,
+          91,
+          56,
+          45
+        ],
+        [
+          -26,
+          46,
+          89,
+          45
+        ],
+        [
+          -27,
+          0,
+          60,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        51,
+        73
+      ]
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          92,
+          41,
+          45
+        ],
+        [
+          -20,
+          46,
+          81,
+          46
+        ],
+        [
+          -24,
+          0,
+          50,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        45,
+        64
+      ]
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          92,
+          41,
+          45
+        ],
+        [
+          -20,
+          46,
+          81,
+          46
+        ],
+        [
+          -24,
+          0,
+          50,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        45,
+        64
+      ]
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -20,
+          92,
+          41,
+          45
+        ],
+        [
+          -20,
+          46,
+          81,
+          46
+        ],
+        [
+          -24,
+          0,
+          50,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        45,
+        64
+      ]
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          34,
+          58,
+          12,
+          12
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -23,
+          87,
+          41,
+          43
+        ],
+        [
+          -23,
+          44,
+          79,
+          43
+        ],
+        [
+          -23,
+          0,
+          56,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "jack_air_pulse_cast"
+        }
+      ],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        40,
+        64
+      ],
+      "audio_loop": "jack_air_pulse_loop"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          34,
+          58,
+          12,
+          12
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -23,
+          87,
+          41,
+          43
+        ],
+        [
+          -23,
+          44,
+          79,
+          43
+        ],
+        [
+          -23,
+          0,
+          56,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        40,
+        64
+      ],
+      "audio_loop": "jack_air_pulse_loop"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          34,
+          58,
+          12,
+          12
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -23,
+          87,
+          41,
+          43
+        ],
+        [
+          -23,
+          44,
+          79,
+          43
+        ],
+        [
+          -23,
+          0,
+          56,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        40,
+        64
+      ],
+      "audio_loop": "jack_air_pulse_loop"
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [
+        [
+          34,
+          58,
+          12,
+          12
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -23,
+          87,
+          41,
+          43
+        ],
+        [
+          -23,
+          44,
+          79,
+          43
+        ],
+        [
+          -23,
+          0,
+          56,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        40,
+        64
+      ],
+      "audio_loop": "jack_air_pulse_loop"
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -27,
+          98,
+          90,
+          49
+        ],
+        [
+          -25,
+          49,
+          89,
+          49
+        ],
+        [
+          -34,
+          0,
+          71,
+          49
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        51,
+        96
+      ]
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -27,
+          98,
+          90,
+          49
+        ],
+        [
+          -25,
+          49,
+          89,
+          49
+        ],
+        [
+          -34,
+          0,
+          71,
+          49
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        51,
+        96
+      ]
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -27,
+          98,
+          90,
+          49
+        ],
+        [
+          -25,
+          49,
+          89,
+          49
+        ],
+        [
+          -34,
+          0,
+          71,
+          49
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        51,
+        96
+      ]
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -27,
+          98,
+          90,
+          49
+        ],
+        [
+          -25,
+          49,
+          89,
+          49
+        ],
+        [
+          -34,
+          0,
+          71,
+          49
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        51,
+        96
+      ]
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -32,
+          90,
+          69,
+          45
+        ],
+        [
+          -39,
+          45,
+          76,
+          45
+        ],
+        [
+          -32,
+          0,
+          63,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        31,
+        88
+      ]
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -32,
+          90,
+          69,
+          45
+        ],
+        [
+          -39,
+          45,
+          76,
+          45
+        ],
+        [
+          -32,
+          0,
+          63,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        31,
+        88
+      ]
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -32,
+          90,
+          69,
+          45
+        ],
+        [
+          -39,
+          45,
+          76,
+          45
+        ],
+        [
+          -32,
+          0,
+          63,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        31,
+        88
+      ]
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -32,
+          90,
+          69,
+          45
+        ],
+        [
+          -39,
+          45,
+          76,
+          45
+        ],
+        [
+          -32,
+          0,
+          63,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        31,
+        88
+      ]
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -32,
+          90,
+          69,
+          45
+        ],
+        [
+          -39,
+          45,
+          76,
+          45
+        ],
+        [
+          -32,
+          0,
+          63,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        31,
+        88
+      ]
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -32,
+          90,
+          69,
+          45
+        ],
+        [
+          -39,
+          45,
+          76,
+          45
+        ],
+        [
+          -32,
+          0,
+          63,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "jack_air_ray_hit",
+      "block_effect": "impact_guard",
+      "beam_origin": [
+        31,
+        88
+      ]
+    }
+  ],
+  "feedback": {
+    "spark": "jack_air_ray_hit",
+    "block_spark": "impact_guard",
+    "hitstop": 4,
+    "blockstop": 3,
+    "shake": 0,
+    "flash": 2,
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "block_color": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "projectile": {
+    "effect": "jack_air_ray_flight",
+    "spawn": [
+      40,
+      64
+    ],
+    "box": [
+      -8,
+      -3,
+      16,
+      6
+    ],
+    "speed": 7,
+    "vy": -7,
+    "life": 100,
+    "anchor": [
+      40,
+      64
+    ],
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "trail_effect": "jack_air_ray_trail"
+  },
+  "production_note": "杰克独立GPT整帧；伤害、消耗、时长与取消节奏沿用已审赛文，挂点为本角色实测；待指挥目视。",
+  "audio": {
+    "hit": "jack_air_pulse_contact",
+    "block": "jack_guard",
+    "throw_slam": "down"
+  }
+}

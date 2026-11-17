@@ -1,0 +1,1732 @@
+{
+  "id": "air_special",
+  "display_name": "空中雷欧飞踢（游戏改编）",
+  "startup": 7,
+  "active": 18,
+  "recovery": 8,
+  "damage": 60,
+  "chip_damage": 6,
+  "hitstun": 18,
+  "blockstun": 12,
+  "pushback": 0,
+  "stun": 25,
+  "stamina_cost": 30,
+  "energy_cost": 1000,
+  "kind": "strike",
+  "level": "mid",
+  "unblockable": false,
+  "launch": false,
+  "bounce": false,
+  "knockdown": false,
+  "air_allowed": true,
+  "finish_on_landing": true,
+  "frames": [
+    {
+      "sprite": 0,
+      "dx": 3,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -36,
+          90,
+          71,
+          45
+        ],
+        [
+          -58,
+          45,
+          109,
+          45
+        ],
+        [
+          -52,
+          0,
+          91,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "leo_air_special_charge"
+        }
+      ],
+      "invulnerable": false,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ]
+    },
+    {
+      "sprite": 0,
+      "dx": 3,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -36,
+          90,
+          71,
+          45
+        ],
+        [
+          -58,
+          45,
+          109,
+          45
+        ],
+        [
+          -52,
+          0,
+          91,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": false,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ]
+    },
+    {
+      "sprite": 1,
+      "dx": 3,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -26,
+          77,
+          77,
+          38
+        ],
+        [
+          -58,
+          39,
+          109,
+          38
+        ],
+        [
+          -47,
+          0,
+          83,
+          39
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": false,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ]
+    },
+    {
+      "sprite": 2,
+      "dx": 3,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -33,
+          86,
+          62,
+          43
+        ],
+        [
+          -60,
+          43,
+          108,
+          43
+        ],
+        [
+          -55,
+          0,
+          96,
+          43
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_start",
+          "anchor": [
+            -23,
+            15
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 3,
+      "dx": 3,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -31,
+          83,
+          60,
+          41
+        ],
+        [
+          -55,
+          42,
+          103,
+          41
+        ],
+        [
+          -47,
+          0,
+          86,
+          42
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_start",
+          "anchor": [
+            -25,
+            16
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 4,
+      "dx": 3,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -37,
+          81,
+          64,
+          40
+        ],
+        [
+          -55,
+          41,
+          91,
+          40
+        ],
+        [
+          -43,
+          0,
+          101,
+          41
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_start",
+          "anchor": [
+            57,
+            2
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 5,
+      "dx": 3,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -57,
+          90,
+          88,
+          44
+        ],
+        [
+          -70,
+          45,
+          111,
+          45
+        ],
+        [
+          -21,
+          0,
+          95,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_start",
+          "anchor": [
+            73,
+            3
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 6,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          54,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -61,
+          90,
+          90,
+          44
+        ],
+        [
+          -71,
+          45,
+          119,
+          45
+        ],
+        [
+          -26,
+          0,
+          97,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "leo_air_special_cast"
+        }
+      ],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            68,
+            3
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 6,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          54,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -61,
+          90,
+          90,
+          44
+        ],
+        [
+          -71,
+          45,
+          119,
+          45
+        ],
+        [
+          -26,
+          0,
+          97,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            68,
+            3
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 6,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          54,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -61,
+          90,
+          90,
+          44
+        ],
+        [
+          -71,
+          45,
+          119,
+          45
+        ],
+        [
+          -26,
+          0,
+          97,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            68,
+            3
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 6,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          54,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -61,
+          90,
+          90,
+          44
+        ],
+        [
+          -71,
+          45,
+          119,
+          45
+        ],
+        [
+          -26,
+          0,
+          97,
+          45
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            68,
+            3
+          ],
+          "sprite": 0,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 7,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          58,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -70,
+          87,
+          98,
+          43
+        ],
+        [
+          -73,
+          44,
+          111,
+          43
+        ],
+        [
+          -31,
+          0,
+          105,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            72,
+            3
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 7,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          58,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -70,
+          87,
+          98,
+          43
+        ],
+        [
+          -73,
+          44,
+          111,
+          43
+        ],
+        [
+          -31,
+          0,
+          105,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            72,
+            3
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 7,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          58,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -70,
+          87,
+          98,
+          43
+        ],
+        [
+          -73,
+          44,
+          111,
+          43
+        ],
+        [
+          -31,
+          0,
+          105,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            72,
+            3
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 7,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          58,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -70,
+          87,
+          98,
+          43
+        ],
+        [
+          -73,
+          44,
+          111,
+          43
+        ],
+        [
+          -31,
+          0,
+          105,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            72,
+            3
+          ],
+          "sprite": 1,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 7,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          58,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -70,
+          87,
+          98,
+          43
+        ],
+        [
+          -73,
+          44,
+          111,
+          43
+        ],
+        [
+          -31,
+          0,
+          105,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            72,
+            3
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 8,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          67,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -66,
+          93,
+          95,
+          46
+        ],
+        [
+          -72,
+          47,
+          115,
+          46
+        ],
+        [
+          -21,
+          0,
+          104,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            81,
+            3
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 8,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          67,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -66,
+          93,
+          95,
+          46
+        ],
+        [
+          -72,
+          47,
+          115,
+          46
+        ],
+        [
+          -21,
+          0,
+          104,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            81,
+            3
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 8,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          67,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -66,
+          93,
+          95,
+          46
+        ],
+        [
+          -72,
+          47,
+          115,
+          46
+        ],
+        [
+          -21,
+          0,
+          104,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            81,
+            3
+          ],
+          "sprite": 2,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 8,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          67,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -66,
+          93,
+          95,
+          46
+        ],
+        [
+          -72,
+          47,
+          115,
+          46
+        ],
+        [
+          -21,
+          0,
+          104,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            81,
+            3
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 8,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          67,
+          -11,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -66,
+          93,
+          95,
+          46
+        ],
+        [
+          -72,
+          47,
+          115,
+          46
+        ],
+        [
+          -21,
+          0,
+          104,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            81,
+            3
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 9,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          57,
+          -12,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -54,
+          92,
+          81,
+          45
+        ],
+        [
+          -66,
+          46,
+          108,
+          46
+        ],
+        [
+          -40,
+          0,
+          114,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            71,
+            2
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 9,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          57,
+          -12,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -54,
+          92,
+          81,
+          45
+        ],
+        [
+          -66,
+          46,
+          108,
+          46
+        ],
+        [
+          -40,
+          0,
+          114,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            71,
+            2
+          ],
+          "sprite": 3,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 9,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          57,
+          -12,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -54,
+          92,
+          81,
+          45
+        ],
+        [
+          -66,
+          46,
+          108,
+          46
+        ],
+        [
+          -40,
+          0,
+          114,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            71,
+            2
+          ],
+          "sprite": 4,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 9,
+      "dx": 3,
+      "dy": -2,
+      "hitboxes": [
+        [
+          57,
+          -12,
+          28,
+          28
+        ]
+      ],
+      "hurtboxes": [
+        [
+          -54,
+          92,
+          81,
+          45
+        ],
+        [
+          -66,
+          46,
+          108,
+          46
+        ],
+        [
+          -40,
+          0,
+          114,
+          46
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ],
+      "attachments": [
+        {
+          "effect": "leo_kick_flame",
+          "anchor": [
+            71,
+            2
+          ],
+          "sprite": 4,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "trail_effect": "leo_kick_trail"
+        }
+      ],
+      "audio_loop": "leo_air_special_loop"
+    },
+    {
+      "sprite": 10,
+      "dx": 0,
+      "dy": -2,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -30,
+          78,
+          56,
+          38
+        ],
+        [
+          -42,
+          39,
+          81,
+          39
+        ],
+        [
+          -23,
+          0,
+          58,
+          39
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ]
+    },
+    {
+      "sprite": 10,
+      "dx": 0,
+      "dy": -2,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -30,
+          78,
+          56,
+          38
+        ],
+        [
+          -42,
+          39,
+          81,
+          39
+        ],
+        [
+          -23,
+          0,
+          58,
+          39
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ]
+    },
+    {
+      "sprite": 11,
+      "dx": 0,
+      "dy": -2,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -36,
+          85,
+          63,
+          42
+        ],
+        [
+          -65,
+          43,
+          103,
+          42
+        ],
+        [
+          -18,
+          0,
+          55,
+          43
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ]
+    },
+    {
+      "sprite": 11,
+      "dx": 0,
+      "dy": -2,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -36,
+          85,
+          63,
+          42
+        ],
+        [
+          -65,
+          43,
+          103,
+          42
+        ],
+        [
+          -18,
+          0,
+          55,
+          43
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": true,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ]
+    },
+    {
+      "sprite": 12,
+      "dx": 0,
+      "dy": -2,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -31,
+          79,
+          57,
+          39
+        ],
+        [
+          -45,
+          40,
+          76,
+          39
+        ],
+        [
+          -26,
+          0,
+          52,
+          40
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": false,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ]
+    },
+    {
+      "sprite": 12,
+      "dx": 0,
+      "dy": -2,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -31,
+          79,
+          57,
+          39
+        ],
+        [
+          -45,
+          40,
+          76,
+          39
+        ],
+        [
+          -26,
+          0,
+          52,
+          40
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": false,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ]
+    },
+    {
+      "sprite": 13,
+      "dx": 0,
+      "dy": -2,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -40,
+          98,
+          72,
+          48
+        ],
+        [
+          -48,
+          49,
+          90,
+          49
+        ],
+        [
+          -13,
+          0,
+          47,
+          49
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": false,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ]
+    },
+    {
+      "sprite": 13,
+      "dx": 0,
+      "dy": -2,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -40,
+          98,
+          72,
+          48
+        ],
+        [
+          -48,
+          49,
+          90,
+          49
+        ],
+        [
+          -13,
+          0,
+          47,
+          49
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "invulnerable": false,
+      "impact_effect": "leo_kick_hit",
+      "block_effect": "impact_guard",
+      "velocity": [
+        0,
+        0
+      ]
+    }
+  ],
+  "feedback": {
+    "spark": "leo_kick_hit",
+    "block_spark": "impact_guard",
+    "hitstop": 10,
+    "blockstop": 6,
+    "shake": 1,
+    "flash": 2,
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "block_color": [
+      0.7,
+      1.0,
+      0.85,
+      1.0
+    ]
+  },
+  "adaptation": "按MOVES的雷欧实体招式；沿用赛文伤害、能量消耗、无敌/取消窗口，判定挂在本角色实际手脚或全身轮廓。伞盾仅阻挡，无吸收或反射。",
+  "production_note": "雷欧第6阶段独立GPT整帧；规则时长与伤害消耗基于已审赛文，招式身份与姿势依MOVES；候选交指挥审。",
+  "audio": {
+    "hit": "leo_air_special_contact",
+    "block": "leo_guard",
+    "throw_slam": "down"
+  },
+  "manual_projectiles": true
+}

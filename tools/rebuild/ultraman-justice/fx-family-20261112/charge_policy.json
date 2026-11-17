@@ -1,0 +1,61 @@
+{
+  "placements": {
+    "ultraman-justice": {
+      "charge_start": {
+        "effect": "justice_fx_q_charge_start",
+        "anchor": [
+          0,
+          0
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "behind_fighter": true,
+        "frames": 9,
+        "loop": false
+      },
+      "charge": {
+        "effect": "justice_fx_q_charge",
+        "anchor": [
+          0,
+          0
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "behind_fighter": true,
+        "frames": 24,
+        "loop": true
+      },
+      "charge_stop": {
+        "effect": "justice_fx_q_charge_stop",
+        "anchor": [
+          0,
+          0
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "behind_fighter": true,
+        "frames": 9,
+        "loop": false
+      }
+    }
+  },
+  "charge_only_effects": [
+    "justice_fx_q_charge_start",
+    "justice_fx_q_charge",
+    "justice_fx_q_charge_stop"
+  ],
+  "basis": "杰斯提斯标准型银白/冰蓝亮芯、银红外焰，与本人普通技能同一色系；Q 三态沿用本人专属环而非通用 charge_aura。",
+  "activation_dependency": "当前 content/fighters/ultraman-justice/state_frames.json 与运行 manifest 的 charge_start/charge/charge_stop 均无 attachments，UfeChargeEffectPolicy 只替换已有挂件，不会凭空追加。合并 placements 后仍需根会话把通用 charge_aura 挂件补进这三个 Q 状态帧（本任务允许范围不含 state_frames.json），否则这三段仍不会显示。"
+}

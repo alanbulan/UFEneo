@@ -1,0 +1,886 @@
+{
+  "air_allowed": true,
+  "air_only": true,
+  "id": "air_pulse",
+  "display_name": "空中掌弹",
+  "startup": 8,
+  "active": 3,
+  "recovery": 12,
+  "damage": 65,
+  "hitstun": 20,
+  "blockstun": 12,
+  "pushback": 8,
+  "stun": 65,
+  "stamina_cost": 30,
+  "energy_cost": 0,
+  "kind": "projectile",
+  "level": "mid",
+  "unblockable": false,
+  "launch": false,
+  "bounce": false,
+  "knockdown": false,
+  "frames": [
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -13,
+          97,
+          38,
+          47
+        ],
+        [
+          -11,
+          49,
+          54,
+          48
+        ],
+        [
+          -14,
+          1,
+          55,
+          48
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "teo_air_pulse_charge"
+        }
+      ],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -13,
+          97,
+          38,
+          47
+        ],
+        [
+          -11,
+          49,
+          54,
+          48
+        ],
+        [
+          -14,
+          1,
+          55,
+          48
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -13,
+          97,
+          38,
+          47
+        ],
+        [
+          -11,
+          49,
+          54,
+          48
+        ],
+        [
+          -14,
+          1,
+          55,
+          48
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 0,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -13,
+          97,
+          38,
+          47
+        ],
+        [
+          -11,
+          49,
+          54,
+          48
+        ],
+        [
+          -14,
+          1,
+          55,
+          48
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          100,
+          47,
+          44
+        ],
+        [
+          -14,
+          56,
+          67,
+          44
+        ],
+        [
+          -29,
+          12,
+          74,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          100,
+          47,
+          44
+        ],
+        [
+          -14,
+          56,
+          67,
+          44
+        ],
+        [
+          -29,
+          12,
+          74,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          100,
+          47,
+          44
+        ],
+        [
+          -14,
+          56,
+          67,
+          44
+        ],
+        [
+          -29,
+          12,
+          74,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 1,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          100,
+          47,
+          44
+        ],
+        [
+          -14,
+          56,
+          67,
+          44
+        ],
+        [
+          -29,
+          12,
+          74,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [
+        {
+          "kind": "sound",
+          "id": "teo_air_pulse_release"
+        }
+      ],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [],
+      "shots": [
+        {
+          "effect": "teo_air_pulse_flight",
+          "trail_effect": "teo_air_pulse_trail",
+          "spawn": [
+            54,
+            81
+          ],
+          "box": [
+            71,
+            -50,
+            18,
+            20
+          ],
+          "speed": 8,
+          "vy": -4,
+          "life": 100,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "visual_scale": 1,
+          "level": 1,
+          "expire_below_height": 53
+        }
+      ]
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -14,
+          98,
+          47,
+          44
+        ],
+        [
+          -13,
+          54,
+          73,
+          44
+        ],
+        [
+          -29,
+          10,
+          75,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "teo_air_pulse_start",
+          "sprite": 0,
+          "anchor": [
+            54,
+            81
+          ],
+          "behind_fighter": false,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -14,
+          98,
+          47,
+          44
+        ],
+        [
+          -13,
+          54,
+          73,
+          44
+        ],
+        [
+          -29,
+          10,
+          75,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "teo_air_pulse_start",
+          "sprite": 1,
+          "anchor": [
+            54,
+            81
+          ],
+          "behind_fighter": false,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -14,
+          98,
+          47,
+          44
+        ],
+        [
+          -13,
+          54,
+          73,
+          44
+        ],
+        [
+          -29,
+          10,
+          75,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "teo_air_pulse_start",
+          "sprite": 2,
+          "anchor": [
+            54,
+            81
+          ],
+          "behind_fighter": false,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 2,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -14,
+          98,
+          47,
+          44
+        ],
+        [
+          -13,
+          54,
+          73,
+          44
+        ],
+        [
+          -29,
+          10,
+          75,
+          44
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": [
+        {
+          "effect": "teo_air_pulse_start",
+          "sprite": 3,
+          "anchor": [
+            54,
+            81
+          ],
+          "behind_fighter": false,
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          94,
+          50,
+          49
+        ],
+        [
+          -12,
+          45,
+          48,
+          49
+        ],
+        [
+          -11,
+          -5,
+          42,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          94,
+          50,
+          49
+        ],
+        [
+          -12,
+          45,
+          48,
+          49
+        ],
+        [
+          -11,
+          -5,
+          42,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          94,
+          50,
+          49
+        ],
+        [
+          -12,
+          45,
+          48,
+          49
+        ],
+        [
+          -11,
+          -5,
+          42,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          94,
+          50,
+          49
+        ],
+        [
+          -12,
+          45,
+          48,
+          49
+        ],
+        [
+          -11,
+          -5,
+          42,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 3,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          94,
+          50,
+          49
+        ],
+        [
+          -12,
+          45,
+          48,
+          49
+        ],
+        [
+          -11,
+          -5,
+          42,
+          50
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          97,
+          41,
+          46
+        ],
+        [
+          -13,
+          51,
+          57,
+          46
+        ],
+        [
+          -10,
+          4,
+          54,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          97,
+          41,
+          46
+        ],
+        [
+          -13,
+          51,
+          57,
+          46
+        ],
+        [
+          -10,
+          4,
+          54,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          97,
+          41,
+          46
+        ],
+        [
+          -13,
+          51,
+          57,
+          46
+        ],
+        [
+          -10,
+          4,
+          54,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          97,
+          41,
+          46
+        ],
+        [
+          -13,
+          51,
+          57,
+          46
+        ],
+        [
+          -10,
+          4,
+          54,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          97,
+          41,
+          46
+        ],
+        [
+          -13,
+          51,
+          57,
+          46
+        ],
+        [
+          -10,
+          4,
+          54,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    },
+    {
+      "sprite": 4,
+      "dx": 0,
+      "dy": 0,
+      "hitboxes": [],
+      "hurtboxes": [
+        [
+          -15,
+          97,
+          41,
+          46
+        ],
+        [
+          -13,
+          51,
+          57,
+          46
+        ],
+        [
+          -10,
+          4,
+          54,
+          47
+        ]
+      ],
+      "cancel": [],
+      "events": [],
+      "impact_effect": "teo_air_pulse_hit",
+      "block_effect": "impact_guard",
+      "attachments": []
+    }
+  ],
+  "feedback": {
+    "spark": "impact_heavy",
+    "block_spark": "impact_guard",
+    "hitstop": 8,
+    "blockstop": 5,
+    "shake": 3,
+    "flash": 2,
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "projectile_impacts": {
+      "teo_air_pulse_flight": "teo_air_pulse_hit"
+    }
+  },
+  "projectile": {
+    "effect": "teo_air_pulse_flight",
+    "trail_effect": "teo_air_pulse_trail",
+    "spawn": [
+      54,
+      81
+    ],
+    "box": [
+      71,
+      -50,
+      18,
+      20
+    ],
+    "speed": 8,
+    "vy": -4,
+    "life": 100,
+    "color": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "visual_scale": 1,
+    "level": 1,
+    "expire_below_height": 53
+  },
+  "audio": {
+    "hit": "teo_air_pulse_hit",
+    "block": "teo_air_pulse_guard"
+  }
+}

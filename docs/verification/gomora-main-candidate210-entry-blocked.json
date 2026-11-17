@@ -1,0 +1,380 @@
+{
+  "date": "2026-11-05",
+  "status": "historical_forward_diagonal_route_blocked",
+  "scope": "仅普通前向斜跳路线的67次历史入口诊断；不是整体招式不可能。后续rear_vertical_hit通过真实Q保持朝向、先越身落地、背后垂直跳在未改原合同下完成捕获。",
+  "attempts": 67,
+  "actual_special3_starts": 67,
+  "captures": 0,
+  "slams": 0,
+  "runs": [
+    {
+      "path": "reports/gomora-builtin/main-candidate210/search-first/search-result.json",
+      "sha256": "969f68900195892db21bb86bb9037913adc2727a2de677bfce356ff55bdb2e9c",
+      "attempts": 1,
+      "actual_special3_starts": 1,
+      "captures": 0,
+      "slams": 0,
+      "contract_sha256": "a35974925b969f73330d671e6f0d0e012b9b928de500152bb34279d5e746027b"
+    },
+    {
+      "path": "reports/gomora-builtin/main-candidate210/search-near/search-result.json",
+      "sha256": "47c813e0d7fbdb3690cb8965abae703b7b61e8c7a00f1f440d74c0a2dfc970dc",
+      "attempts": 25,
+      "actual_special3_starts": 25,
+      "captures": 0,
+      "slams": 0,
+      "contract_sha256": "a35974925b969f73330d671e6f0d0e012b9b928de500152bb34279d5e746027b"
+    },
+    {
+      "path": "reports/gomora-builtin/main-candidate210/search-airbody/search-result.json",
+      "sha256": "585c4071a154b8add2e668081365b5e5e3eeda382726a79e6a8649d03a43f44d",
+      "attempts": 24,
+      "actual_special3_starts": 24,
+      "captures": 0,
+      "slams": 0,
+      "contract_sha256": "fd06f71df08b410a3e8fff2576a6578491b6052242d598f47e140fd997771785"
+    },
+    {
+      "path": "reports/gomora-builtin/main-candidate210/search-airbody-cross/search-result.json",
+      "sha256": "67fa20aefd2b2abdd97e7516c0bb5089ca58a3bcfe1ef2ff29ac640883074d25",
+      "attempts": 1,
+      "actual_special3_starts": 1,
+      "captures": 0,
+      "slams": 0,
+      "contract_sha256": "fd06f71df08b410a3e8fff2576a6578491b6052242d598f47e140fd997771785"
+    },
+    {
+      "path": "reports/gomora-builtin/main-candidate210/entry-blocked-tape/search-result.json",
+      "sha256": "0e5fde72860a06955aaea893e54ba20a32040b05c427cb77540f75636d32e1d6",
+      "attempts": 1,
+      "actual_special3_starts": 1,
+      "captures": 0,
+      "slams": 0,
+      "contract_sha256": "fd06f71df08b410a3e8fff2576a6578491b6052242d598f47e140fd997771785"
+    },
+    {
+      "path": "reports/gomora-builtin/main-candidate210/search-r00-reference/search-result.json",
+      "sha256": "66350ac664fbf38c6306355a173f8a50de2dc4481ed88c83c58afdb928a4ca46",
+      "attempts": 15,
+      "actual_special3_starts": 15,
+      "captures": 0,
+      "slams": 0,
+      "contract_sha256": "fd06f71df08b410a3e8fff2576a6578491b6052242d598f47e140fd997771785"
+    }
+  ],
+  "diagnosis": [
+    "原合同：初代缺diagonal_air，实际斜跳退回单框[-18,0,36,128]；要求的中躯干索引1不存在，拒绝正确。",
+    "airbody合同：保留fallback并集，只新增现装flip_forward胸腹子区；没有扩大hurtbox。",
+    "末相胸腹local y84..98与背部hit y111..123相交需root约13..39，而首承重root50±14要求36..64；交集36..39不含真实下降高度45或31。",
+    "实际下降70→58→45→31→16→0；height31时首承重高度差19，不能放大14界限强接。",
+    "gap76/80/84/88收敛相同跨越轨迹，height31时相对x=-68；gap92及以上下降时仍受真实推挤停在前方+36。追加15组无body_contact=true，不存在已核实仅高度差拒绝的参考。"
+  ],
+  "incoming_reference": {
+    "path": "reports/gomora-builtin/main-candidate210/entry-blocked-reference-replay/replay-result.json",
+    "windows": [
+      {
+        "actor_facing": 1,
+        "actor_root": [
+          476,
+          0
+        ],
+        "actual_animation": {
+          "anchor": [
+            96.0,
+            184.0
+          ],
+          "anchor_y": 184.0,
+          "cell": 192.0,
+          "index": 3,
+          "key": "flip_forward",
+          "rect": [
+            576.0,
+            0.0,
+            192.0,
+            192.0
+          ],
+          "texture": "res://assets/fighters/ultraman/animations/flip_forward/head-calibrated.png"
+        },
+        "animation_key": "air",
+        "incoming_frame": {
+          "cancel": [],
+          "dx": 0.0,
+          "dy": 0.0,
+          "events": [],
+          "hitboxes": [],
+          "hurtboxes": [
+            [
+              -18.0,
+              0.0,
+              36.0,
+              128.0
+            ],
+            [
+              -6.0,
+              84.0,
+              13.0,
+              14.0
+            ]
+          ],
+          "sprite": 3.0
+        },
+        "jump_kind": "diagonal",
+        "raw": 16,
+        "state_tick": 26,
+        "tick": 201,
+        "victim_facing": -1,
+        "victim_root": [
+          420,
+          70
+        ],
+        "victim_vx": -4,
+        "victim_vy": -12
+      },
+      {
+        "actor_facing": 1,
+        "actor_root": [
+          476,
+          0
+        ],
+        "actual_animation": {
+          "anchor": [
+            96.0,
+            184.0
+          ],
+          "anchor_y": 184.0,
+          "cell": 192.0,
+          "index": 3,
+          "key": "flip_forward",
+          "rect": [
+            576.0,
+            0.0,
+            192.0,
+            192.0
+          ],
+          "texture": "res://assets/fighters/ultraman/animations/flip_forward/head-calibrated.png"
+        },
+        "animation_key": "air",
+        "incoming_frame": {
+          "cancel": [],
+          "dx": 0.0,
+          "dy": 0.0,
+          "events": [],
+          "hitboxes": [],
+          "hurtboxes": [
+            [
+              -18.0,
+              0.0,
+              36.0,
+              128.0
+            ],
+            [
+              -6.0,
+              84.0,
+              13.0,
+              14.0
+            ]
+          ],
+          "sprite": 3.0
+        },
+        "jump_kind": "diagonal",
+        "raw": 17,
+        "state_tick": 27,
+        "tick": 202,
+        "victim_facing": -1,
+        "victim_root": [
+          416,
+          58
+        ],
+        "victim_vx": -4,
+        "victim_vy": -13
+      },
+      {
+        "actor_facing": 1,
+        "actor_root": [
+          476,
+          0
+        ],
+        "actual_animation": {
+          "anchor": [
+            96.0,
+            184.0
+          ],
+          "anchor_y": 184.0,
+          "cell": 192.0,
+          "index": 3,
+          "key": "flip_forward",
+          "rect": [
+            576.0,
+            0.0,
+            192.0,
+            192.0
+          ],
+          "texture": "res://assets/fighters/ultraman/animations/flip_forward/head-calibrated.png"
+        },
+        "animation_key": "air",
+        "incoming_frame": {
+          "cancel": [],
+          "dx": 0.0,
+          "dy": 0.0,
+          "events": [],
+          "hitboxes": [],
+          "hurtboxes": [
+            [
+              -18.0,
+              0.0,
+              36.0,
+              128.0
+            ],
+            [
+              -6.0,
+              84.0,
+              13.0,
+              14.0
+            ]
+          ],
+          "sprite": 3.0
+        },
+        "jump_kind": "diagonal",
+        "raw": 18,
+        "state_tick": 28,
+        "tick": 203,
+        "victim_facing": -1,
+        "victim_root": [
+          412,
+          45
+        ],
+        "victim_vx": -4,
+        "victim_vy": -14
+      },
+      {
+        "actor_facing": 1,
+        "actor_root": [
+          476,
+          0
+        ],
+        "actual_animation": {
+          "anchor": [
+            96.0,
+            184.0
+          ],
+          "anchor_y": 184.0,
+          "cell": 192.0,
+          "index": 3,
+          "key": "flip_forward",
+          "rect": [
+            576.0,
+            0.0,
+            192.0,
+            192.0
+          ],
+          "texture": "res://assets/fighters/ultraman/animations/flip_forward/head-calibrated.png"
+        },
+        "animation_key": "air",
+        "incoming_frame": {
+          "cancel": [],
+          "dx": 0.0,
+          "dy": 0.0,
+          "events": [],
+          "hitboxes": [],
+          "hurtboxes": [
+            [
+              -18.0,
+              0.0,
+              36.0,
+              128.0
+            ],
+            [
+              -6.0,
+              84.0,
+              13.0,
+              14.0
+            ]
+          ],
+          "sprite": 3.0
+        },
+        "jump_kind": "diagonal",
+        "raw": 19,
+        "state_tick": 29,
+        "tick": 204,
+        "victim_facing": -1,
+        "victim_root": [
+          408,
+          31
+        ],
+        "victim_vx": -4,
+        "victim_vy": -15
+      }
+    ],
+    "interpretation": "原始flip_forward格3在本对局朝左镜像显示；不能把未镜像源当作相同朝向。"
+  },
+  "independent_replay": {
+    "path": "reports/gomora-builtin/main-candidate210/entry-blocked-reference-replay/replay-result.json",
+    "sha256": "07064d520907f24f07377e0f852ff53e190b72d4c160a8637586bbfaaa19945b",
+    "errors": [],
+    "ticks": 225,
+    "starts": 1,
+    "captures": 0,
+    "slams": 0,
+    "damage": 0,
+    "whiffs": 1,
+    "format6": "/workspace/scratch/a5f6e938602a/ufeneo/reports/gomora-builtin/main-candidate210/entry-blocked-reference-replay/format6-entry-blocked.json",
+    "expected": "entry_blocked",
+    "not_release_validation": true,
+    "not_main_visual_validation": true,
+    "loads_driver": false,
+    "calls_sample": false
+  },
+  "harness_files": [
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/runtime/blocked_replay.gd",
+      "sha256": "ca5bc3b659e817222d1c74cb0bfa2227480736cc295234a2eb398ba6a409847f"
+    },
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/runtime/driver.gd",
+      "sha256": "f381ee00a849d399f96f74005917ed2315684536a136f9f67c0e661938589582"
+    },
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/runtime/entry.gd",
+      "sha256": "a5b49049532bf8d2787db78efb8fd6b1c7c1f04de0a34fa9681f553d7526d98a"
+    },
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/runtime/factory.gd",
+      "sha256": "55b615da5faa7ce86b503db987382dd23c11da690f509c35cae87343776a9fa7"
+    },
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/runtime/game.gd",
+      "sha256": "bcd48b25219a30c1bab8dd81a32904c2b11a35f579f7114fce33ac9383c5a0b7"
+    },
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/runtime/replay.gd",
+      "sha256": "e2e7e6964a18d185c7c2b07d538db88ad8793eebd21e185541695bdae0e37532"
+    },
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/runtime/search.gd",
+      "sha256": "7da88e7d46e5e60866e98e09d4c011fc7936b9abac7811115a78405e37f31e59"
+    },
+    {
+      "path": "tools/rebuild/gomora/back_lift_resume/runtime_run.py",
+      "sha256": "f878afadf2ae729bb08ea4c1bf25bfb92ab63700dbd1d94db2c2dd34dbc13604"
+    }
+  ],
+  "checks": {
+    "python_compile": "passed",
+    "gdscript_check_only": "reports/gomora-builtin/main-candidate210/harness-compile-isolated.log",
+    "editor_import": "reports/gomora-builtin/main-candidate210/harness-import-isolated.log",
+    "uid": "tools/.gdignore按项目现制排除tools扫描；未移除ignore，未伪造UID。"
+  },
+  "graphics": "历史普通前向斜跳诊断。本轮主游戏改用rear_vertical_hit成功路线，图形与独立回放见新回执。",
+  "unchanged": [
+    "core",
+    "正式content",
+    "正式assets",
+    "用户设置及上次回放"
+  ],
+  "installed": false,
+  "accepted": false,
+  "state_injection": false,
+  "paid_requests": 0,
+  "user_codex_invoked": false,
+  "subsequent_success_reference": "reports/gomora-builtin/main-candidate210/rear-vertical-search-v2/search-result.json"
+}

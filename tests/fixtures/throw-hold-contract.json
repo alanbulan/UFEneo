@@ -1,0 +1,439 @@
+{
+  "schema": 1,
+  "status": "proposal_not_installed",
+  "owner": "ultraman-teo",
+  "move": "motion_41236",
+  "startup": 8,
+  "active": 3,
+  "recovery": 12,
+  "total_ticks": 23,
+  "damage": 115,
+  "stamina_cost": 30,
+  "energy_cost": 0,
+  "field": "target.hold_point_overrides",
+  "payload": {
+    "ultraseven": {
+      "grabbed": {
+        "0": [
+          -7,
+          44
+        ],
+        "1": [
+          -10,
+          32
+        ],
+        "2": [
+          -16,
+          23
+        ]
+      }
+    },
+    "zetton": {
+      "grabbed": {
+        "0": [
+          3,
+          86
+        ],
+        "1": [
+          5,
+          77
+        ],
+        "2": [
+          -10,
+          61
+        ]
+      }
+    }
+  },
+  "lookup_order": [
+    "exact victim definition id",
+    "target pose",
+    "actual selected victim pose sprite as decimal string"
+  ],
+  "field_absent": "保持现有pose.grab_points[target.grab_point]与root分支逐字语义；旧招式/旧回放不受影响。",
+  "field_present": "严格白名单；不得回退到该对手的通用waist/near_shoulder、不得按近似id或体型猜点。",
+  "unavailable_before_capture": "不进入throw begin，按投技落空处理：已支付费用不退、不生成hit/block/throw_slam/throw_tech、不扣目标HP、不加命中停顿。",
+  "invalid_or_missing_known_pose": "捕获前预检本招全部hold相位和实际pose变体，任何缺点则本次不可捕获；不先捕获后临时回退。",
+  "held_lookup": "捕获前点表/姿势链已完整；held使用同一精确查找，不允许运行中换目标或定义。异常路径不得回退旧waist；根实现时须提供无伤确定性退出或断言诊断。",
+  "point_units": "受方本地整数(x,离自身根点高度)，和原grab_points相同；只读数据，不读取图片/系统时间。",
+  "point_validation": "非空Dictionary，精确id/pose/十进制sprite字符串层级，末端长度2的整数值数组；负数x合法，本合同y非负；浮点解析值必须没有小数。",
+  "release_scope": "mode=release/root不读覆盖；继续现有release/landing/separation规则。",
+  "adapted_target_ids": [
+    "ultraseven",
+    "zetton"
+  ],
+  "unlisted_targets": "本招按落空处理；提欧playable=false保持，不宣称全名册适配。",
+  "transforms": {
+    "root": [
+      0,
+      0
+    ],
+    "victim_facing": -1,
+    "formula_x": "b.x=a.x+a.facing*grip.x-b.facing*point.x",
+    "formula_height": "b.height=a.height+grip.height-point.height"
+  },
+  "phases": [
+    {
+      "owner_sprite": 0,
+      "source": "old00",
+      "ticks": [
+        0,
+        2
+      ],
+      "target_mode": "hold",
+      "target_pose": "grabbed",
+      "target_sprite": 2,
+      "capture_allowed": false
+    },
+    {
+      "owner_sprite": 1,
+      "source": "old01",
+      "ticks": [
+        3,
+        6
+      ],
+      "target_mode": "hold",
+      "target_pose": "grabbed",
+      "target_sprite": 2,
+      "capture_allowed": false
+    },
+    {
+      "owner_sprite": 2,
+      "source": "old02",
+      "ticks": [
+        7,
+        10
+      ],
+      "target_mode": "hold",
+      "target_pose": "grabbed",
+      "target_sprite": 2,
+      "capture_allowed_ticks": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "owner_sprite": 3,
+      "source": "lift_chest",
+      "ticks": [
+        11,
+        12
+      ],
+      "target_mode": "hold",
+      "target_pose": "grabbed",
+      "target_sprite": 1
+    },
+    {
+      "owner_sprite": 4,
+      "source": "lift_face",
+      "ticks": [
+        13,
+        14
+      ],
+      "target_mode": "hold",
+      "target_pose": "grabbed",
+      "target_sprite": 0
+    },
+    {
+      "owner_sprite": 5,
+      "source": "overhead_forward",
+      "ticks": [
+        15,
+        16
+      ],
+      "target_mode": "hold",
+      "target_pose": "grabbed",
+      "target_sprite": 0
+    },
+    {
+      "owner_sprite": 6,
+      "source": "arc_forward_old04",
+      "ticks": [
+        17,
+        18
+      ],
+      "target_mode": "hold",
+      "target_pose": "grabbed",
+      "target_sprite": 0
+    },
+    {
+      "owner_sprite": 7,
+      "source": "release_old05",
+      "ticks": [
+        19,
+        20
+      ],
+      "target_mode": "release",
+      "override_lookup": false
+    },
+    {
+      "owner_sprite": 8,
+      "source": "recover_old06",
+      "ticks": [
+        21,
+        21
+      ],
+      "target_mode": "release",
+      "override_lookup": false
+    },
+    {
+      "owner_sprite": 9,
+      "source": "guard_old07",
+      "ticks": [
+        22,
+        22
+      ],
+      "target_mode": "release",
+      "override_lookup": false
+    }
+  ],
+  "actual_visible_points": [
+    {
+      "fighter": "ultraseven",
+      "pose": "grabbed",
+      "sprite": 0,
+      "point_local": [
+        -7,
+        44
+      ],
+      "point_native": [
+        121,
+        204
+      ],
+      "visible_near_waist_band_native": [
+        113,
+        194,
+        132,
+        211
+      ],
+      "manual_native_uncertainty": 2,
+      "far_waist_surface": "occluded_not_directly_measured",
+      "source": {
+        "atlas": "assets/fighters/ultraseven/animations/grabbed/atlas.png",
+        "atlas_sha256": "e29d7436dcca34a0196d82c42b8502a8ef0a80acfd0f520dc90257293c494472",
+        "manifest": "assets/fighters/ultraseven/animations/manifest.json",
+        "manifest_sha256": "e244d73e9e51dc95c227067b7bcd710f875a5816a89d5a8121944a52b20b7c1c",
+        "states": "content/fighters/ultraseven/state_frames.json",
+        "states_sha256": "150ebc62a6916f74cbf061384c92f37fc8f75cdfd5bbc5954689a64aa32683c6",
+        "rect": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "anchor": [
+          128,
+          248
+        ]
+      }
+    },
+    {
+      "fighter": "ultraseven",
+      "pose": "grabbed",
+      "sprite": 1,
+      "point_local": [
+        -10,
+        32
+      ],
+      "point_native": [
+        118,
+        216
+      ],
+      "visible_near_waist_band_native": [
+        110,
+        208,
+        128,
+        224
+      ],
+      "manual_native_uncertainty": 2,
+      "far_waist_surface": "occluded_not_directly_measured",
+      "source": {
+        "atlas": "assets/fighters/ultraseven/animations/grabbed/atlas.png",
+        "atlas_sha256": "e29d7436dcca34a0196d82c42b8502a8ef0a80acfd0f520dc90257293c494472",
+        "manifest": "assets/fighters/ultraseven/animations/manifest.json",
+        "manifest_sha256": "e244d73e9e51dc95c227067b7bcd710f875a5816a89d5a8121944a52b20b7c1c",
+        "states": "content/fighters/ultraseven/state_frames.json",
+        "states_sha256": "150ebc62a6916f74cbf061384c92f37fc8f75cdfd5bbc5954689a64aa32683c6",
+        "rect": [
+          256,
+          0,
+          256,
+          256
+        ],
+        "anchor": [
+          128,
+          248
+        ]
+      }
+    },
+    {
+      "fighter": "ultraseven",
+      "pose": "grabbed",
+      "sprite": 2,
+      "point_local": [
+        -16,
+        23
+      ],
+      "point_native": [
+        112,
+        225
+      ],
+      "visible_near_waist_band_native": [
+        98,
+        216,
+        121,
+        234
+      ],
+      "manual_native_uncertainty": 2,
+      "far_waist_surface": "occluded_not_directly_measured",
+      "source": {
+        "atlas": "assets/fighters/ultraseven/animations/grabbed/atlas.png",
+        "atlas_sha256": "e29d7436dcca34a0196d82c42b8502a8ef0a80acfd0f520dc90257293c494472",
+        "manifest": "assets/fighters/ultraseven/animations/manifest.json",
+        "manifest_sha256": "e244d73e9e51dc95c227067b7bcd710f875a5816a89d5a8121944a52b20b7c1c",
+        "states": "content/fighters/ultraseven/state_frames.json",
+        "states_sha256": "150ebc62a6916f74cbf061384c92f37fc8f75cdfd5bbc5954689a64aa32683c6",
+        "rect": [
+          512,
+          0,
+          256,
+          256
+        ],
+        "anchor": [
+          128,
+          248
+        ]
+      }
+    },
+    {
+      "fighter": "zetton",
+      "pose": "grabbed",
+      "sprite": 0,
+      "point_local": [
+        3,
+        86
+      ],
+      "point_native": [
+        131.0,
+        162
+      ],
+      "visible_near_waist_band_native": [
+        115,
+        156,
+        149,
+        169
+      ],
+      "manual_native_uncertainty": 3,
+      "far_waist_surface": "occluded_not_directly_measured",
+      "source": {
+        "atlas": "assets/fighters/zetton/animations/grabbed/head-calibrated.png",
+        "atlas_sha256": "9d1b7a70f443ae0f5349548e6ec7b95832db8fc56167aa58d63ad19608a1630c",
+        "manifest": "assets/fighters/zetton/animations/manifest.json",
+        "manifest_sha256": "0c561c510b7233a684c67c94c36eab6d7cde7a3c8445dd51fc4b30296b881cec",
+        "states": "content/fighters/zetton/state_frames.json",
+        "states_sha256": "ac33caeb8ca5e01011fccc508a8f0b693e03b311f6781ce9ca46c245eb306f6c",
+        "rect": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "anchor": [
+          128.0,
+          248
+        ]
+      }
+    },
+    {
+      "fighter": "zetton",
+      "pose": "grabbed",
+      "sprite": 1,
+      "point_local": [
+        5,
+        77
+      ],
+      "point_native": [
+        133.0,
+        171
+      ],
+      "visible_near_waist_band_native": [
+        122,
+        164,
+        144,
+        179
+      ],
+      "manual_native_uncertainty": 3,
+      "far_waist_surface": "occluded_not_directly_measured",
+      "source": {
+        "atlas": "assets/fighters/zetton/animations/grabbed/head-calibrated.png",
+        "atlas_sha256": "9d1b7a70f443ae0f5349548e6ec7b95832db8fc56167aa58d63ad19608a1630c",
+        "manifest": "assets/fighters/zetton/animations/manifest.json",
+        "manifest_sha256": "0c561c510b7233a684c67c94c36eab6d7cde7a3c8445dd51fc4b30296b881cec",
+        "states": "content/fighters/zetton/state_frames.json",
+        "states_sha256": "ac33caeb8ca5e01011fccc508a8f0b693e03b311f6781ce9ca46c245eb306f6c",
+        "rect": [
+          256,
+          0,
+          256,
+          256
+        ],
+        "anchor": [
+          128.0,
+          248
+        ]
+      }
+    },
+    {
+      "fighter": "zetton",
+      "pose": "grabbed",
+      "sprite": 2,
+      "point_local": [
+        -10,
+        61
+      ],
+      "point_native": [
+        118.0,
+        187
+      ],
+      "visible_near_waist_band_native": [
+        109,
+        178,
+        130,
+        199
+      ],
+      "manual_native_uncertainty": 3,
+      "far_waist_surface": "occluded_not_directly_measured",
+      "source": {
+        "atlas": "assets/fighters/zetton/animations/grabbed/head-calibrated.png",
+        "atlas_sha256": "9d1b7a70f443ae0f5349548e6ec7b95832db8fc56167aa58d63ad19608a1630c",
+        "manifest": "assets/fighters/zetton/animations/manifest.json",
+        "manifest_sha256": "0c561c510b7233a684c67c94c36eab6d7cde7a3c8445dd51fc4b30296b881cec",
+        "states": "content/fighters/zetton/state_frames.json",
+        "states_sha256": "ac33caeb8ca5e01011fccc508a8f0b693e03b311f6781ce9ca46c245eb306f6c",
+        "rect": [
+          512,
+          0,
+          256,
+          256
+        ],
+        "anchor": [
+          128.0,
+          248
+        ]
+      }
+    }
+  ],
+  "floor_decision": "低位捕获必须用grabbed2；杰顿grabbed0真腰高86，低位手高约67，直接用0会穿地。grabbed2真腰高61，实际脚底随根点，低位根高约6。胸前转grabbed1，脸前及过头转grabbed0，不能抬高抓点掩盖。",
+  "visual_limit": "双掌投影与可见腰面分别核验；远腰面遮挡，无直接实测点；两种整人绘制先后都保留，不能拼成分件遮挡通过。",
+  "runtime_expected_tests": [
+    "字段缺省的旧抓投逐tick状态/事件/旧回放保持",
+    "两向两对手正确点与抓持高度",
+    "未知id/新形态/缺pose/sprite零伤落空",
+    "3tick拆投与第4tick不拆",
+    "站/蹲防、远距、空中、墙边",
+    "全程无穿地、释放后落地单次伤害、全相与输入回放"
+  ],
+  "art_not_final": true,
+  "not_installed": true
+}

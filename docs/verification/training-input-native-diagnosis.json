@@ -1,0 +1,292 @@
+{
+  "date": "2026-11-05",
+  "acceptance": "root_delegated_by_user",
+  "status": "完成本次工具输入路径辨因，未接受默认2P非零物理录制",
+  "source": "reports/training-input-audit/gui-20261105/technical-summary.json",
+  "source_sha256": "9c9f8befa2643f34f6079d79b21ea9f12e0daf063105e4a382f3b2fae4d363c5",
+  "scope": "正式主场景原生720隔离会话；本地双人、真实训练录制、同模式受支持Sky箭头对照；不注入Input，不改绑定或产品输入逻辑。",
+  "finding": [
+    "Right逻辑码4194321但physical码0；Down逻辑码4194322但physical码4194310。两种受支持输入路径均如此，逻辑状态真而物理状态/action假，poll2及实际second中立。",
+    "本地双人training=false/local=true时已复现；录制段training=true/dummy=4/dummy_recording=true/intro=0，排除本次未开录制。最后所有箭头释放之后才Enter停止。",
+    "D逻辑/物理码均68，p1_right真并有实际移动，是同窗口对照。",
+    "证据明确本次云桌面输入链不能提供匹配绑定的物理箭头；未定位更底层工具/OS组件，不据此认定产品键盘缺陷。"
+  ],
+  "historical_boundary": "先前1378帧全零整局录像不含模式/原生事件，不能由本次结果倒推旧尝试唯一原因。",
+  "recording_interval": {
+    "first_observed_sequence": 8330,
+    "last_observed_sequence": 11518,
+    "forbidden_key_events_before_sky_release": [],
+    "note": "No Enter/R/F4 between confirmed recording start and last tested arrow release; Enter stop was sequence11519 after all holds."
+  },
+  "raw_log": {
+    "path": "reports/training-input-audit/gui-20261105/native-input.jsonl",
+    "sha256": "b96231f12c77efb6729c6d2891c7a71960403e7e30be45364a1ab2912cdf446c",
+    "rows": 3531,
+    "header": {
+      "keys": [
+        "D",
+        "Right",
+        "Down",
+        "Enter",
+        "R",
+        "F4"
+      ],
+      "kind": "header",
+      "max_bytes": 16777216,
+      "max_rows": 20000,
+      "note": "Godot事件来源不等于已验证物理硬件；每physics前后被动采样，相同状态最多60采样心跳；不记录unicode/文本。",
+      "schema": 1,
+      "sequence": 0
+    },
+    "closed": {
+      "capped": false,
+      "kind": "closed",
+      "physics_sample": 12807,
+      "sequence": 12850
+    }
+  },
+  "segments": {
+    "local_bound": {
+      "sequence_range": [
+        5323,
+        5492
+      ],
+      "keys": {
+        "Right": {
+          "observed_rows": 3,
+          "modes": [
+            "{\"dummy\": 0, \"dummy_recording\": false, \"finished\": false, \"intro\": 0, \"local\": true, \"paused\": false, \"replay\": false, \"training\": false}"
+          ],
+          "key_states": [
+            "{\"logical\": true, \"physical\": false}"
+          ],
+          "actions": [
+            "{\"p1_right\": false, \"p2_down\": false, \"p2_right\": false}"
+          ],
+          "poll2": [
+            "[0, 0, 0]"
+          ],
+          "second": [
+            "[0, 0, 0]"
+          ]
+        },
+        "Down": {
+          "observed_rows": 3,
+          "modes": [
+            "{\"dummy\": 0, \"dummy_recording\": false, \"finished\": false, \"intro\": 0, \"local\": true, \"paused\": false, \"replay\": false, \"training\": false}"
+          ],
+          "key_states": [
+            "{\"logical\": true, \"physical\": false}"
+          ],
+          "actions": [
+            "{\"p1_right\": false, \"p2_down\": false, \"p2_right\": false}"
+          ],
+          "poll2": [
+            "[0, 0, 0]"
+          ],
+          "second": [
+            "[0, 0, 0]"
+          ]
+        },
+        "D": {
+          "observed_rows": 3,
+          "modes": [
+            "{\"dummy\": 0, \"dummy_recording\": false, \"finished\": false, \"intro\": 0, \"local\": true, \"paused\": false, \"replay\": false, \"training\": false}"
+          ],
+          "key_states": [
+            "{\"logical\": true, \"physical\": true}"
+          ],
+          "actions": [
+            "{\"p1_right\": true, \"p2_down\": false, \"p2_right\": false}"
+          ],
+          "poll2": [
+            "[0, 0, 0]"
+          ],
+          "second": [
+            "[0, 0, 0]"
+          ]
+        }
+      }
+    },
+    "record_bound": {
+      "sequence_range": [
+        9326,
+        9546
+      ],
+      "keys": {
+        "Right": {
+          "observed_rows": 63,
+          "modes": [
+            "{\"dummy\": 4, \"dummy_recording\": true, \"finished\": false, \"intro\": 0, \"local\": true, \"paused\": false, \"replay\": false, \"training\": true}"
+          ],
+          "key_states": [
+            "{\"logical\": true, \"physical\": false}"
+          ],
+          "actions": [
+            "{\"p1_right\": false, \"p2_down\": false, \"p2_right\": false}"
+          ],
+          "poll2": [
+            "[0, 0, 0]"
+          ],
+          "second": [
+            "[0, 0, 0]"
+          ]
+        },
+        "Down": {
+          "observed_rows": 58,
+          "modes": [
+            "{\"dummy\": 4, \"dummy_recording\": true, \"finished\": false, \"intro\": 0, \"local\": true, \"paused\": false, \"replay\": false, \"training\": true}"
+          ],
+          "key_states": [
+            "{\"logical\": true, \"physical\": false}"
+          ],
+          "actions": [
+            "{\"p1_right\": false, \"p2_down\": false, \"p2_right\": false}"
+          ],
+          "poll2": [
+            "[0, 0, 0]"
+          ],
+          "second": [
+            "[0, 0, 0]"
+          ]
+        },
+        "D": {
+          "observed_rows": 57,
+          "modes": [
+            "{\"dummy\": 4, \"dummy_recording\": true, \"finished\": false, \"intro\": 0, \"local\": true, \"paused\": false, \"replay\": false, \"training\": true}"
+          ],
+          "key_states": [
+            "{\"logical\": true, \"physical\": true}"
+          ],
+          "actions": [
+            "{\"p1_right\": true, \"p2_down\": false, \"p2_right\": false}"
+          ],
+          "poll2": [
+            "[0, 0, 0]"
+          ],
+          "second": [
+            "[0, 0, 0]"
+          ]
+        }
+      }
+    },
+    "record_sky": {
+      "sequence_range": [
+        9547,
+        11518
+      ],
+      "keys": {
+        "Right": {
+          "observed_rows": 61,
+          "modes": [
+            "{\"dummy\": 4, \"dummy_recording\": true, \"finished\": false, \"intro\": 0, \"local\": true, \"paused\": false, \"replay\": false, \"training\": true}"
+          ],
+          "key_states": [
+            "{\"logical\": true, \"physical\": false}"
+          ],
+          "actions": [
+            "{\"p1_right\": false, \"p2_down\": false, \"p2_right\": false}"
+          ],
+          "poll2": [
+            "[0, 0, 0]"
+          ],
+          "second": [
+            "[0, 0, 0]"
+          ]
+        },
+        "Down": {
+          "observed_rows": 61,
+          "modes": [
+            "{\"dummy\": 4, \"dummy_recording\": true, \"finished\": false, \"intro\": 0, \"local\": true, \"paused\": false, \"replay\": false, \"training\": true}"
+          ],
+          "key_states": [
+            "{\"logical\": true, \"physical\": false}"
+          ],
+          "actions": [
+            "{\"p1_right\": false, \"p2_down\": false, \"p2_right\": false}"
+          ],
+          "poll2": [
+            "[0, 0, 0]"
+          ],
+          "second": [
+            "[0, 0, 0]"
+          ]
+        },
+        "D": {
+          "observed_rows": 0,
+          "modes": [],
+          "key_states": [],
+          "actions": [],
+          "poll2": [],
+          "second": []
+        }
+      }
+    }
+  },
+  "limits": [
+    "观测行数不是统一逐physics持续帧数，静止状态会去重；不以61行冒称精确1秒。",
+    "默认2P有效物理箭头下的非零录制/循环仍未验；不能用全零带或Input.action_press证明。",
+    "无1080重复、录像、音频、真人硬件键盘或美术验收。",
+    "没有为适配异常工具物理码改游戏逻辑/绑定；观察器默认关闭。"
+  ],
+  "independent_review": "独立解码全部3531行、核header/closed未截断及原日志SHA；核7JPEG尺寸/SHA，并实看录制前原图。记录状态以日志为准，不能只凭画面推断。",
+  "screenshots": [
+    {
+      "path": "reports/training-input-audit/gui-20261105/01-local-before-keys.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "f533e21226d5adb7db57e5d25f86609ad048e5f030febb4b8403b4bc6c9b9df3"
+    },
+    {
+      "path": "reports/training-input-audit/gui-20261105/02-local-after-keys.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "a03dcdb35cf87a10ca3449eacc10f55a1b96b605ca868a7990da9fa6660a750e"
+    },
+    {
+      "path": "reports/training-input-audit/gui-20261105/03-record-menu.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "b463f2e77388b613abb9a125de8bb8d12ee9bbff8aedf5ff53de7cbdd232431f"
+    },
+    {
+      "path": "reports/training-input-audit/gui-20261105/04-record-before-keys.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "abab73f35670862464ab7ae0587ff8f41671eb010799fa703363ef0698bcc85c"
+    },
+    {
+      "path": "reports/training-input-audit/gui-20261105/05-record-after-bound-keys.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "b6e8e8e14a4bac52e50047617c4372b6fa51dacebf2bfadf6798fbe97171dd86"
+    },
+    {
+      "path": "reports/training-input-audit/gui-20261105/06-record-after-sky-arrows.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "fc92b332ed0ae5e335aaabfdbef6ec06e3330bb3bbf45836038089e4fdbd49bb"
+    },
+    {
+      "path": "reports/training-input-audit/gui-20261105/07-record-stopped.jpg",
+      "format": "JPEG",
+      "width": 1280,
+      "height": 720,
+      "sha256": "18d9fe6283ef6b209fb161247ae287bfd4acdd76cd878598e7a004aad3c5348a"
+    }
+  ],
+  "cleanup": {
+    "native_window_absent": true,
+    "terminal_prompt_returned": true,
+    "observed_utc": "2026-11-05T07:12:11Z",
+    "lock_absent": true,
+    "normal_close": true,
+    "manual_lock_deletion": false
+  }
+}

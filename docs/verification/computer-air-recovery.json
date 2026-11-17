@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-05",
+  "scope": "电脑通过真实防御输入使用已有空中受身",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "behavior": [
+    "电脑不再在被击飞时永远放弃空中受身；只在下降且状态帧达到 max(13,难度延迟) 后决定。",
+    "easy/normal/hard 单次受身概率35/65/90%，本次击飞不重复抽签，hitstop不重掷，连续击飞状态帧回退重新判定。",
+    "中断被击飞前未完成指令队列；成功时仅输出GUARD，资格、无敌与持续时间仍由既有core处理。",
+    "不改角色/素材/招式参数、core指纹或回放格式；既有原输入回放不依赖新AI。"
+  ],
+  "tests": [
+    {
+      "name": "computer_ai",
+      "status": "passed",
+      "exit": 0,
+      "log": "reports/verification/runs/639069523e43/computer_ai.log",
+      "sha256": "ddca433ceb2e7e8ab1945184c56d8c9d575bf87b6c3eab85284919327234971a"
+    },
+    {
+      "name": "logic_2d",
+      "status": "passed",
+      "exit": 0,
+      "log": "reports/verification/runs/639069523e43/logic_2d.log",
+      "sha256": "1731798ba17eab419e2bad3db5ae5adbca0b834ad8b19a46955e107c9a67e413"
+    },
+    {
+      "name": "phase3_reaction",
+      "status": "passed",
+      "exit": 0,
+      "log": "reports/verification/runs/639069523e43/phase3_reaction.log",
+      "sha256": "b2f4e91083a53169197ebd994a1c36cab181fb3cc789a2311a5f5563acae9c44"
+    }
+  ],
+  "coverage": [
+    "相同100个种子分别检查三档概率递增且均存在成功/失败。",
+    "上升/规则下限/难度延迟前不抽概率；状态帧冻结及持续下降不重复抽签。",
+    "连续击飞和离开后再次击飞两种重置路径。",
+    "左右真实升击命中，电脑真实GUARD进入air_tech；100tick实际输入存盘、加载、无AI独立重放最终hash一致。",
+    "原有确定性三档电脑完整对局、逐tick同种子输入、同tick缓存、高低防御、蓄能必杀与回放回归。"
+  ],
+  "limits": [
+    "未在项目目标Godot4.7验证。",
+    "本次仅无头逻辑测试，未做人物双向720/1080实际画面或人耳听审。",
+    "无录屏；三档概率是本轮初始设定，尚未真人对局平衡验收。",
+    "normal/hard均受13帧规则下限约束，不能宣称三档实际受身阈值互异。"
+  ]
+}

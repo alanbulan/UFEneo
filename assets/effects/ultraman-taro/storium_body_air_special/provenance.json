@@ -1,0 +1,41 @@
+{
+  "source_effect": "storium_body",
+  "source_effect_sha256": "b6c265e444dec68a168b7f1a7261f6fc2092f8a8e4866acb175756764767657d",
+  "source": {
+    "request": "art/fighters/ultraman-taro/stage4/effects-v2/storium_body/01/brief.json",
+    "request_sha256": "638d7ea021151ee6847df6ba51e1d46f54d966bc5dfc68ea9a6d71abc7d7f740",
+    "source": "art/fighters/ultraman-taro/stage4/effects-v2/storium_body/01/rejected/raw.png",
+    "source_sha256": "7e8c5fa170aebcb2ef297f26bc44ae2681fef079675e3fb91dbbb397876ce5a6",
+    "metadata": "art/fighters/ultraman-taro/stage4/effects-v2/storium_body/01/rejected/raw.metadata.json",
+    "selected_attempt": 1,
+    "selection_reason": "专属原剧配色与形状、四相完整，保留GPT亮芯/外焰/粒子；数值结果不代替指挥审片",
+    "references": [
+      "art/fighters/ultraman-taro/stage4/effects-v2/storium_body/layout-guide.png",
+      "art/fighters/ultraman-taro/stage4/effects-v2/storium_body/episode-reference.png"
+    ],
+    "backend": {
+      "backend": "agent-sprite-forge",
+      "scripts": "C:\\Users\\13080\\.codex\\skills\\generate2dsprite\\scripts",
+      "python": "C:\\Users\\13080\\.codex\\venvs\\ufeneo\\Scripts\\python.exe",
+      "numpy": "2.5.2",
+      "palette_distance": "oklab",
+      "grid": "clean integer only",
+      "files": {
+        "forge_palette.py": "fd62e77ccc2d41c2ad50152d51048f5c9f18a3f94f8064247f5c721821607ebe",
+        "pixel_reduce.py": "dcfa614389671ca4b1168d4ffe9ea7dbbf94e37bfbd73e54afad46cc15b342cf",
+        "forge_core.py": "f227ac7fd81335544a9f33f23cde74324a4e6f906146581562e705d4214bf61b"
+      }
+    },
+    "operations": [
+      "整格切片",
+      "同一原图统一等比采样",
+      "整图共享RGB色板量化",
+      "二值Alpha",
+      "整帧平移注册"
+    ],
+    "generated_pixels_only": true
+  },
+  "selection_reason": "同一GPT全身特效按当前人物整帧Alpha裁剪注册，保护脸和计时器；不绘制特效、不修改人物、不拼接肢体",
+  "fighter_clip": "assets/fighters/ultraman-taro/animations/air_special/atlas.png",
+  "fighter_atlas_sha256": "183de53a4003d284628bea036e56437f5313fc2e76601f053286e060e841c575"
+}
