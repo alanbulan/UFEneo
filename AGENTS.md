@@ -4,25 +4,25 @@
 
 ## 工作方式
 
-- 每轮先读本文件、REBUILD_2D_PLAN.md、根 README.md、docs/HANDBOOK.md 的当前状态，以及 `git log -5`。然后按用户新指令做。
+- 每轮先读本文件、REBUILD_2D_PLAN.md、根 README.md、docs/HANDBOOK.md，以及 `git log -5`。然后按用户新指令做。
 - 简体中文。汇报用「本轮完成 / 怎么看 / 已知问题 / 下一步」。只报本轮新增。无录屏就写无录屏。逻辑或资源检查通过不等于美术或听感通过。
 - 根按用户委托验收时注明 `root_delegated_by_user`，不改历史 `user_approved`，不把听审写成已听审。
 
 ## 仓库纪律
 
 - 单仓单目录单主干：只在当前仓库根目录与 `main` 分支开发。禁止 `git worktree`，禁止在母目录或仓外新建物理文件夹（如 `../<角色>`）；生图与脚本输出路径写前必须核对落在仓库根内。如确需临时分支，当轮验证通过后必须合并回 `main` 并删除分支。
-- 一个文件一个正式位置。运行素材在 `assets`，当前制作源在 `art`。目录表见 HANDBOOK「目录架构」。根、`docs/`、`art/`、`tools/` 与 `tools/rebuild/` 顶层由 `tools/maintenance/repository_audit.py` 白名单硬门守卫并随 `tools/verify.py` 运行；不再按日期增设第二个 `art/catalogue-rebuild-*` 顶层目录，一次性迁移与安装脚本用完即删，不堆在 `tools/rebuild/` 顶层。
+- 一个文件一个正式位置。运行素材在 `assets`，当前制作源在 `art`。目录白名单见 [docs/HANDBOOK.md](docs/HANDBOOK.md)。全仓核心文档收敛为根三文件（`README.md`、`AGENTS.md`、`REBUILD_2D_PLAN.md`）与 `docs/HANDBOOK.md`（外加角色目录下的 `MOVES.md` / `SOUNDS.md`），由 `tools/maintenance/repository_audit.py` 白名单硬门（含根、`docs/`、`art/`、`tools/` 与全仓 `.md` 落盘位置守卫）随 `tools/verify.py` 运行；不再按日期增设第二个 `art/catalogue-rebuild-*` 顶层目录，禁止在仓内堆放散落一次性脚本或历史自证回执目录。
 - 确认废弃的文件、缓存和重复副本直接删除，不另建归档。删除前核消费者、动态路径和 SHA。现用源稿和在制动作是生产材料。
-- Git 与 GitHub 只托管源码、配置、JSON 数据、Godot `.uid` / `.import` 文本侧车与文档；`art/` 制作源（仅跟踪 `.gdignore` 与 `STYLE.md`）及图片、音频、字体等二进制媒体只留本机，由 `.gitignore` 忽略，停用 Git LFS。`.godot` 与本机环境、凭据、令牌、Cookie、私人存档不入库。
+- Git 与 GitHub 只托管源码、配置、JSON 数据、Godot `.uid` / `.import` 文本侧车与文档；`art/` 制作源（仅跟踪 `.gdignore`）及图片、音频、字体等二进制媒体只留本机，由 `.gitignore` 忽略，停用 Git LFS。`.godot` 与本机环境、凭据、令牌、Cookie、私人存档不入库。
 - 按明确路径提交，中文提交信息，先读 diff，不覆盖其它任务。不重建 Git 历史。
 
 ## 架构与确定性
 
-- 只在主游戏开发。入口是 `开始游戏.command` 和 `app/scenes/main.tscn`，调试用训练模式 / F1。不建研究场景、独立测试脚本或预览网页。
+- 只在主游戏开发。入口是 `开始游戏.command` 和 `app/scenes/main.tscn`，调试用训练模式 / F1，CLI 审片通过 `--harness=res://tests/review/cli_harness.gd`（`UfeAppHarness`）挂载。不建研究场景、独立测试脚本或预览网页。
 - `core` 只做整数、60 tick、确定性模拟，不依赖渲染、`Input`、随机数和系统时间。一个状态一个文件，一个招式一个数据文件。
-- 依赖只向下：`core` 与 `input` 不依赖其它层；`presentation` 只依赖 `core` / `content`；`ui` 只依赖 `presentation` / `content`；`app` 负责装配。`presentation` 只读模拟。
+- 严格六层单向依赖（DAG）：`core` 零层间依赖；`content` 与 `input` 仅依赖 `core`；`presentation` 只依赖 `core` / `content` 且只读模拟；`ui` 依赖 `core` / `content` / `input` / `presentation`；`app` 负责装配；运行层零 `tests/` 引用（路径与全局 `class_name` 由 `tools/check/layering.py` 硬门守卫）。全仓 `.gd` 执行 GDScript 零警告硬门（`project.godot` 固化 12 项严格警告 `=2`，由 `tools/check/gdscript_warnings.py` 扫描）。
 - Godot 导入、验证和录制经 `python tools/godot_lock.py -- <命令>` 串行。不删活锁，不关用户进程。
-- 工具放在 `tools/check`、`art`、`audio`、`roster`、`media`、`runtime`、`maintenance`、`rebuild`。顶层可执行入口只有 `verify.py` 与 `godot_lock.py`。模块名全局唯一。
+- 工具放在 `tools/check`、`art`、`audio`、`roster`、`media`、`runtime`、`maintenance`。顶层可执行入口只有 `verify.py` 与 `godot_lock.py`。模块名在 `tools/` 下全局唯一，禁止通配 `sys.path` 注入与路径猴子补丁。
 - 本机制作 Python 是 `.venv`（3.12+）。本机 `GODOT_PATH` 不入库。
 
 ## 手感基调
@@ -48,13 +48,17 @@
 
 ## 美术硬门
 
-先定帧数据和手感档，在训练模式验手感，再按该帧时长生图落格。流水线见 HANDBOOK「内容流水线」。美术帧数和每帧时长服从帧数据，不用拉长单帧去填逻辑时长。
+先定帧数据和手感档，在训练模式验手感，再按该帧时长生图落格。流水线见 [docs/HANDBOOK.md](docs/HANDBOOK.md)「角色与特效美术流水线」。美术帧数和每帧时长服从帧数据，不用拉长单帧去填逻辑时长。
 
 - 固定侧视、2D 像素整帧。禁止切肢、骨骼拼片、IK、旋转贴肢，以及静止人物加特效冒充动作。持武器时人物与武器一起生成。
-- 人物用 GPT Image high，经 MCP `magpie-image`（当前模型 `cpa/gpt-image-2.6-sunburst`；调用时留空 `model` 可跟随 Magpie 设置。已签收据里的 `codex/gpt-image-2` 保持原值）。输出 `path` 用本仓库绝对路径。核实际路径、尺寸和 Alpha 后再落格。
+- 生图双通道择优：支持 MCP `magpie-image.generate_image`（如 `cpa/gpt-image-2.6-sunburst` 等；调用时留空 `model` 可跟随 Magpie 设置）与 Antigravity 内置 `image-generator` 子代理同题对比择优，角色立项先择优定待机像素锚点。输出 `path` 用本仓库绝对路径，核实际路径、尺寸和 Alpha 后再落格。
+- 动作生产双模（均以定稿的 1 张侧视像素待机整帧为唯一身份锚）：
+  - **模式 A（I2V 图生视频抽帧，优先用于连贯动作/循环）**：以待机像素锚点为首帧，经 `magpie-image.generate_video` 生成 1–3 秒固定侧视机位、纯色背景短片，再经 `tools/art/character_pipeline.py extract-video` 抽帧去背、二值化 Alpha 并按锚统一比例缩放、量化到本人 ≤32 色。
+  - **模式 B（整帧静态图/条带生成）**：以同一张待机像素锚点为参考出单帧或条带（每条 ≤8 帧），经 `tools/art/character_pipeline.py` 统一比例落格。
+  - 两条路线统一通过 `tools/art/character_pipeline.py` 与 `tools/check/sprite_quality.py` 硬门验收；走路循环帧 `ticks` 方差必须为 0，每一帧相对前一帧要有可见手、臂或腿位移。
 - 动作帧只引用一张身份锚：官方皮套照定格斗待机，再转成待机像素整帧。4× 锚只保证配色和像素块；原生宽 <60 px 不得单独作动作参考。待机是格斗架势：脚外缘间距约为站高的 0.65–0.80，前后脚屈膝，双拳在胸前。定架势最多再借 1 张已装机成品的站姿和画风。
 - 侧视必须用来自真实侧视的参考。标志结构的前后朝向先按官方来源写死，再按同一视角、同一地标核验。提示词约 150–250 字，只写该帧动作，并要求四肢粗细与锚一致。角色没有的部件不得写入。
-- 动作帧只画人物本体，不烘焙光束、光晕、颗粒、蓄气圈。投射类招式手里不画能量球或飞行物。每一帧相对前一帧要有可见的手、臂或腿位移。
+- 动作帧只画人物本体，不烘焙光束、光晕、颗粒、蓄气圈；飞行道具与打击光效统一由 `third_party/pixelfx` 离线烘焙进 `assets/fx/phase3`。投射类招式手里不画能量球或飞行物。
 - 透明背景必须是真实 Alpha。辉光门：主体为 alpha≥200 的最大连通块，外扩 3 px；主体外 alpha≥16 不超过 100 px，主体外 alpha≥200 必须为 0。alpha 1–15 只登记。
 - 同一角色用待机锚推出的同一 scale 落格。站姿帧与锚的站高偏差 >8%，或同组相邻站姿帧高度突变 >10%，重掷该帧。蹲、躺、被投、腾空除外，但要登记。不缩人物、不裁轮廓、不逐帧改比例去凑固定格。安装按每个 clip 自己的格和根点。
 - 图鉴静图和待机条固定 384×256。横卧体型按三帧最大宽一次性等比缩进固定格，静图与整条 strip 共用高度、根点和 `strip_width_fit`。`fits_catalogue_cell` 只作报告。
@@ -62,7 +66,7 @@
 - 每个 effect id 必须在 `content/presentation/phase3_projectiles.json` 有条目。发射点对本人部位，双向误差不大于 2 原生像素。
 - 同一项检查连续拒收 3 帧就暂停并出诊断图。同一问题最多两种修法。
 
-比例测量、冠顶列带和辉光口径的操作细节在 HANDBOOK 美术节，不在本文件堆事故经过。
+比例测量、冠顶列带、安全区和质检门操作细节见 [docs/HANDBOOK.md](docs/HANDBOOK.md)，不在本文件堆事故经过。
 
 ## 不得回退的战斗规则
 
