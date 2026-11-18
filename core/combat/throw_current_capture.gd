@@ -99,25 +99,25 @@ static func eligible(a: UfeFighter, b: UfeFighter, move: Dictionary) -> bool:
 	return absi(b.x-desired_x) <= int(data.max_entry_root_delta[0]) and absi(b.height-desired_height) <= int(data.max_entry_root_delta[1])
 
 static func remember(b: UfeFighter, move: Dictionary) -> void:
-	b.motion.erase("throw_current_capture")
+	b.motion.clear_throw_current_capture()
 	if not move.has("throw_current_capture"): return
 	b.motion.throw_current_capture = {"active":true,"animation":b.animation_key(),"frame":b.frame().duplicate(true),
 		"x":b.x,"height":b.height,"facing":b.facing,"vx":b.vx,"vy":b.vy,"state":b.state,
 		"state_tick":b.state_tick,"move_id":b.move_id,"move_tick":b.move_tick,
-		"motion":b.motion.duplicate(true)}
+		"motion":b.motion.to_dict()}
 
 static func preserve(b: UfeFighter, target: Dictionary) -> bool:
 	if str(target.get("mode","")) != "capture_current":
-		b.motion.erase("throw_current_capture")
+		b.motion.clear_throw_current_capture()
 		return false
-	var current: Dictionary = b.motion.get("throw_current_capture",{})
+	var current: Dictionary = b.motion.throw_current_capture
 	if current.is_empty(): return false
 	current.active = true
 	b.x = int(current.x); b.height = int(current.height); b.facing = int(current.facing)
 	return true
 
 static func active(b: UfeFighter) -> bool:
-	return b.state=="thrown" and bool(b.motion.get("throw_current_capture",{}).get("active",false))
+	return b.state=="thrown" and bool(b.motion.throw_current_capture.get("active",false))
 
 static func visual_fighter(b: UfeFighter) -> UfeFighter:
 	# 表现只读副本重用原动画解析，避免另写一套跳跃相位算法。
@@ -127,7 +127,7 @@ static func visual_fighter(b: UfeFighter) -> UfeFighter:
 	view.vx=int(saved.vx);view.vy=int(saved.vy)
 	view.state=str(saved.state);view.state_tick=int(saved.state_tick)
 	view.move_id=str(saved.move_id);view.move_tick=int(saved.move_tick)
-	view.motion=saved.motion.duplicate(true)
+	view.motion=UfeFighterMotion.from_dict(saved.motion)
 	view.battle_form=b.battle_form
 	return view
 

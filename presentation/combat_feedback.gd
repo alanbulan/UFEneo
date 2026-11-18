@@ -155,7 +155,7 @@ func sync(sim: UfeMatchDirector, camera_x: int, camera_y: int, animation_manifes
 			var charger: UfeFighter = sim.fighters[i]
 			if charger.state != "crush_charge":
 				continue
-			var interval := 4 if int(charger.motion.get("crush_tier", 1)) >= 3 else 8
+			var interval := 4 if charger.motion.crush_tier >= 3 else 8
 			if charger.state_tick % interval != 0:
 				continue
 			var point := _crush_charge_power_point(charger, i, animation_manifests)
@@ -188,7 +188,7 @@ func sync(sim: UfeMatchDirector, camera_x: int, camera_y: int, animation_manifes
 func _crush_charge_power_point(f: UfeFighter, fighter_index: int, animation_manifests: Array) -> Vector2i:
 	# 蓄力闪烁点随当前 crush_charge 整帧的头标中心走；旧数组只作未登记角色的回退。
 	var fallback: Array = [[32, 126], [38, 124], [50, 104]]
-	var hold := int(f.motion.get("crush_hold", 0))
+	var hold := f.motion.crush_hold
 	var frame_index := 0 if hold < 20 else 1 if hold < 32 else 2
 	if fighter_index >= 0 and fighter_index < animation_manifests.size():
 		var manifest_variant: Variant = animation_manifests[fighter_index]

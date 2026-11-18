@@ -14,9 +14,9 @@ func binding(actor: UfeFighter, move: String) -> Dictionary:
 
 func render_offset(view: UfeSideView,index: int) -> Vector2:
 	var f := view.simulation.fighters[index]
-	if not f.motion.has("capture_victim"):return Vector2.ZERO
+	if not f.motion.has_capture_victim():return Vector2.ZERO
 	var actor := view.simulation.fighters[int(f.motion.capture_victim.owner)]
-	var relation:Dictionary=actor.motion.get("capture",{})
+	var relation:Dictionary=actor.motion.capture
 	if str(relation.get("phase",""))!="shrink":return Vector2.ZERO
 	var duration:=int(actor.definition.moves[actor.move_id].capture.stages[1].ticks)
 	var remaining:=maxi(0,duration-1-int(relation.phase_age))
@@ -27,9 +27,9 @@ func attachments_for(view: UfeSideView, index: int) -> Array:
 	var result: Array=[]
 	var f := view.simulation.fighters[index]
 	var owner := index
-	if f.motion.has("capture_victim"): owner=int(f.motion.capture_victim.owner)
+	if f.motion.has_capture_victim(): owner=int(f.motion.capture_victim.owner)
 	var actor := view.simulation.fighters[owner]
-	var relation: Dictionary=actor.motion.get("capture",{})
+	var relation: Dictionary=actor.motion.capture
 	if relation.is_empty():return result
 	var spec: Dictionary=binding(actor,str(relation.move)).get("phases",{}).get(str(relation.phase),{})
 	if spec.is_empty():return result
@@ -63,7 +63,7 @@ func sync_events(view: UfeSideView) -> void:
 			if bool(contact.get("capture_intercepted",false)) and int(contact.player)==1-owner:
 				point=[int(contact.x),int(contact.height)];guarded=true;break
 		if point.is_empty():
-			var token := int(actor.motion.get("capture",{}).get("token",-1))
+			var token := int(actor.motion.capture.get("token",-1))
 			for p in view.feedback.projectile_observations+sim.projectiles:
 				if bool(p.get("capture",false)) and int(p.source_owner)==owner and int(p.get("capture_token",-2))==token:
 					point=[int(p.x),int(p.height)];break

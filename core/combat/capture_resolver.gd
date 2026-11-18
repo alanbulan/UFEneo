@@ -59,7 +59,7 @@ static func locked(f: UfeFighter) -> bool:
 	return f.state in ["capturing","captured"]
 
 static func can_start(f: UfeFighter, move: Dictionary) -> bool:
-	return f.height == 0 and not f.motion.has("capture_victim") and not f.motion.has("capture") and valid_move(move)
+	return f.height == 0 and not f.motion.has_capture_victim() and not f.motion.has_capture() and valid_move(move)
 
 static func begin(sim: UfeMatchDirector, owner: int) -> void:
 	var actor := sim.fighters[owner]
@@ -75,8 +75,8 @@ static func projectile_valid(sim: UfeMatchDirector, p: Dictionary) -> bool:
 	var owner := int(p.get("source_owner",-1))
 	if owner < 0 or owner >= sim.fighters.size() or int(p.owner) != owner: return false
 	var actor := sim.fighters[owner]
-	var relation: Dictionary = actor.motion.get("capture",{})
-	return not relation.is_empty() and actor.state == "capturing" and actor.move_id == str(p.move) and int(relation.token) == int(p.get("capture_token",-1)) and str(relation.phase) == "flight" and int(actor.stats.hp) > 0
+	var relation: Dictionary = actor.motion.capture
+	return not relation.is_empty() and actor.state == "capturing" and actor.move_id == str(p.move) and int(relation.token) == int(p.get("capture_token",-1)) and str(relation.phase) == "flight" and actor.stats.hp > 0
 
 static func clear_shots(sim: UfeMatchDirector, owner: int, token: int) -> void:
 	for p in sim.projectiles:
@@ -93,14 +93,14 @@ static func receiver_supported(target: UfeFighter, data: Dictionary) -> bool:
 	return true
 
 static func eligible(target: UfeFighter, data: Dictionary) -> bool:
-	if target.height != 0 or target.motion.has("capture") or target.motion.has("capture_victim") or UfeHitResolver.invulnerable(target): return false
+	if target.height != 0 or target.motion.has_capture() or target.motion.has_capture_victim() or UfeHitResolver.invulnerable(target): return false
 	if target.state in ["down","thrown","captured","capturing","defeat","victory","timeout","air","air_attack","takeoff","launch","bounce"]: return false
-	return int(target.stats.hp) > 0 and receiver_supported(target,data)
+	return target.stats.hp > 0 and receiver_supported(target,data)
 
 static func contact(sim: UfeMatchDirector, owner: int, move: Dictionary, defending: bool, token: int) -> String:
 	var actor := sim.fighters[owner]
 	var target := sim.fighters[1-owner]
-	var relation: Dictionary = actor.motion.get("capture",{})
+	var relation: Dictionary = actor.motion.capture
 	if relation.is_empty() or str(relation.phase) != "flight" or int(relation.token) != token or actor.move_id != str(move.id) or actor.state != "capturing": return "ignored"
 	if not eligible(target,move.capture):
 		fail(sim,owner,"invalid_target")
@@ -125,7 +125,7 @@ static func contact(sim: UfeMatchDirector, owner: int, move: Dictionary, defendi
 
 static func fail(sim: UfeMatchDirector, owner: int, reason: String) -> void:
 	var actor := sim.fighters[owner]
-	var relation: Dictionary = actor.motion.get("capture",{})
+	var relation: Dictionary = actor.motion.capture
 	if relation.is_empty() or str(relation.phase) in ["failed","recovery"]: return
 	if int(relation.victim) >= 0:
 		abort(sim,owner,reason)
@@ -142,13 +142,13 @@ static func settle(sim: UfeMatchDirector, owner: int) -> void:
 	var target := sim.fighters[int(relation.victim)]
 	var move: Dictionary = actor.definition.moves[actor.move_id]
 	relation.settled = true
-	target.stats.hp = maxi(0,int(target.stats.hp)-int(move.damage))
-	actor.combat.combo = int(actor.combat.combo)+1; actor.combat.combo_ticks = 90
+	target.stats.hp = maxi(0,target.stats.hp-int(move.damage))
+	actor.combat.combo += 1; actor.combat.combo_ticks = 90
 	sim.events.append({"kind":"capture_impact","player":owner,"victim":int(relation.victim),"move":actor.move_id,"damage":int(move.damage),"x":target.x,"height":target.height})
 
 static func after_move_tick(sim: UfeMatchDirector, owner: int, input: UfeInputFrame) -> bool:
 	var actor := sim.fighters[owner]
-	if not actor.motion.has("capture"): return false
+	if not actor.motion.has_capture(): return false
 	var relation: Dictionary = actor.motion.capture
 	var move: Dictionary = actor.definition.moves[actor.move_id]
 	var data: Dictionary = move.capture
@@ -177,11 +177,11 @@ static func after_move_tick(sim: UfeMatchDirector, owner: int, input: UfeInputFr
 		if actor.move_tick >= int(data.success_end_tick): finish_owner(actor,input)
 	elif phase == "failed":
 		if actor.move_tick >= move.frames.size(): finish_owner(actor,input)
-	if actor.motion.has("capture"): sync_victim(sim,owner)
+	if actor.motion.has_capture(): sync_victim(sim,owner)
 	return true
 
 static func finish_owner(actor: UfeFighter, input: UfeInputFrame) -> void:
-	actor.motion.erase("capture")
+	actor.motion.clear_capture()
 	actor.clear_move(); actor.clear_input_buffer()
 	actor.enter("crouch" if input.y < 0 else "idle")
 
@@ -192,14 +192,13 @@ static func safe_position(actor: UfeFighter, target: UfeFighter, authored: int) 
 			distance = maxi(distance,UfeThrowResolver.separated_distance(a,1,b,-1,1))
 	# 成对平移保留安全间距；不单独夹住目标造成躯体重叠。
 	target.x = actor.x+actor.facing*distance
-	var left := mini(actor.x,target.x); var right := maxi(actor.x,target.x)
-	var shift := 28-left if left < 28 else 1252-right if right > 1252 else 0
+	var shift := UfeStateRules.stage_pair_shift(actor.x, target.x)
 	actor.x += shift; target.x += shift
 	target.height = 0; target.vx = 0; target.vy = 0
 
 static func sync_victim(sim: UfeMatchDirector, owner: int) -> void:
 	var actor := sim.fighters[owner]
-	var relation: Dictionary = actor.motion.get("capture",{})
+	var relation: Dictionary = actor.motion.capture
 	if relation.is_empty() or int(relation.victim) < 0 or str(relation.phase) not in PHASES: return
 	var target := sim.fighters[int(relation.victim)]
 	var data: Dictionary = actor.definition.moves[actor.move_id].capture
@@ -239,26 +238,26 @@ static func sync_victim(sim: UfeMatchDirector, owner: int) -> void:
 
 static func release_victim(sim: UfeMatchDirector, owner: int) -> void:
 	var actor := sim.fighters[owner]
-	var relation: Dictionary = actor.motion.get("capture",{})
+	var relation: Dictionary = actor.motion.capture
 	var victim := int(relation.get("victim",-1))
 	if victim < 0 or victim >= sim.fighters.size(): return
 	var target := sim.fighters[victim]
-	var pose: Dictionary = target.motion.get("capture_victim",{})
+	var pose: Dictionary = target.motion.capture_victim
 	if pose.is_empty() or int(pose.get("owner",-1)) != owner or int(pose.get("token",-1)) != int(relation.token): return
 	if target.state == "captured":
 		var move: Dictionary = actor.definition.moves.get(str(relation.move),{})
 		safe_position(actor,target,int(move.get("capture",{}).get("release_distance",80)))
 		target.enter("idle")
-	target.motion.erase("capture_victim")
+	target.motion.clear_capture_victim()
 	target.clear_input_buffer(); target.motion.jump_buffer = 0
 
 static func abort(sim: UfeMatchDirector, owner: int, reason: String) -> void:
 	var actor := sim.fighters[owner]
-	var relation: Dictionary = actor.motion.get("capture",{})
+	var relation: Dictionary = actor.motion.capture
 	if relation.is_empty(): return
 	clear_shots(sim,owner,int(relation.token))
 	release_victim(sim,owner)
-	actor.motion.erase("capture")
+	actor.motion.clear_capture()
 	if actor.state == "capturing":
 		actor.clear_move(); actor.enter("air" if actor.height > 0 else "idle")
 	actor.clear_input_buffer()
@@ -268,29 +267,29 @@ static func cleanup(sim: UfeMatchDirector) -> void:
 	var changed := false
 	for owner in range(sim.fighters.size()):
 		var actor := sim.fighters[owner]
-		if not actor.motion.has("capture"): continue
+		if not actor.motion.has_capture(): continue
 		changed = true
 		var relation: Dictionary = actor.motion.capture
-		var invalid := sim.finished or int(actor.stats.hp) <= 0 or actor.state != "capturing" or actor.move_id != str(relation.move)
+		var invalid := sim.finished or actor.stats.hp <= 0 or actor.state != "capturing" or actor.move_id != str(relation.move)
 		invalid = invalid or not actor.definition.moves.has(str(relation.move))
 		if not invalid: invalid = not valid_move(actor.definition.moves[str(relation.move)])
 		var victim := int(relation.victim)
 		invalid = invalid or victim < -1 or victim >= sim.fighters.size()
 		if victim >= 0 and not invalid:
 			var target := sim.fighters[victim]
-			var pose: Dictionary = target.motion.get("capture_victim",{})
-			invalid = int(target.stats.hp) <= 0 or target.state != "captured" or int(pose.get("owner",-1)) != owner or int(pose.get("token",-1)) != int(relation.token)
+			var pose: Dictionary = target.motion.capture_victim
+			invalid = target.stats.hp <= 0 or target.state != "captured" or int(pose.get("owner",-1)) != owner or int(pose.get("token",-1)) != int(relation.token)
 		if invalid: abort(sim,owner,"interrupted_or_terminal")
 	for target in sim.fighters:
-		if target.state != "captured" and not target.motion.has("capture_victim"): continue
-		var pose: Dictionary = target.motion.get("capture_victim",{})
+		if target.state != "captured" and not target.motion.has_capture_victim(): continue
+		var pose: Dictionary = target.motion.capture_victim
 		var owner := int(pose.get("owner",-1))
-		if owner >= 0 and owner < sim.fighters.size() and sim.fighters[owner].motion.has("capture"): continue
+		if owner >= 0 and owner < sim.fighters.size() and sim.fighters[owner].motion.has_capture(): continue
 		changed = true
-		target.motion.erase("capture_victim")
+		target.motion.clear_capture_victim()
 		if target.state == "captured":
 			if owner >= 0 and owner < sim.fighters.size(): safe_position(sim.fighters[owner],target,80)
 			else:
-				target.x = clampi(target.x,28,1252); target.height = 0; target.vx = 0; target.vy = 0
+				target.x = UfeStateRules.clamp_stage_x(target.x); target.height = 0; target.vx = 0; target.vy = 0
 			target.clear_move(); target.enter("idle")
 	if changed: sim.projectiles = sim.projectiles.filter(func(p): return int(p.life) > 0)

@@ -110,7 +110,7 @@ func sample(config: Dictionary, age: int, sim: UfeMatchDirector) -> Array:
 
 func mutate(config: Dictionary, sim: UfeMatchDirector) -> void:
 	# 专门的损坏注入与输入实战分列；不会冒称这些字段由按键制造。
-	if not sim.fighters[0].motion.has("capture"): return
+	if not sim.fighters[0].motion.has_capture(): return
 	var phase := str(sim.fighters[0].motion.capture.phase)
 	if str(config.kind) == "move_changed" and phase == "shrink":
 		sim.fighters[0].clear_move(); sim.fighters[0].enter("idle")
@@ -222,7 +222,7 @@ func new_cases() -> void:
 			var record := run_case({"opponent":"zetton","facing":facing,"kind":kind})
 			check_case(record); cases.append(record)
 	var fresh := fixture({"opponent":"zetton","facing":1,"kind":"success"})
-	check(fresh.projectiles.is_empty() and fresh.fighters.all(func(f): return not f.motion.has("capture") and not f.motion.has("capture_victim")),"重开构造不共享旧关系或弹体")
+	check(fresh.projectiles.is_empty() and fresh.fighters.all(func(f): return not f.motion.has_capture() and not f.motion.has_capture_victim()),"重开构造不共享旧关系或弹体")
 	# 单独的判定注入：实际输入先捕获，再核被捕获姿势即便残留盾字段也不能反弹新弹体。
 	var config := {"opponent":"zetton","facing":1,"kind":"success"}
 	var protected := fixture(config)

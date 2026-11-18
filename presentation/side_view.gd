@@ -145,7 +145,7 @@ func update_view() -> void:
 				var intro_frame: Dictionary=intro_frames[clampi(intro_tick,0,intro_frames.size()-1)]
 				if intro_frame.has("opacity"):sprite.self_modulate.a=float(intro_frame["opacity"])
 		# 抱持者整张图在前，两个操作方向使用同一规则，不拆肢体做遮挡。
-		sprite.z_index = 3 if (other.state=="thrown" and int(other.combat.thrower)==i) or (other.state=="captured" and int(other.motion.get("capture_victim",{}).get("owner",-1))==i) else 2
+		sprite.z_index = 3 if (other.state=="thrown" and int(other.combat.thrower)==i) or (other.state=="captured" and int(other.motion.capture_victim.get("owner",-1))==i) else 2
 		(sprite.material as ShaderMaterial).set_shader_parameter("red_timer",f.definition.id == "ultraman" and int(f.stats.hp)>0 and int(f.stats.hp)<=300 and simulation.tick%30<15)
 		var animation := _animation(f, manifests[i])
 		if not animation.is_empty():
@@ -162,7 +162,7 @@ func update_view() -> void:
 			var anchor: Array = animation.anchor
 			sprite.offset = Vector2(-int(anchor[0]),-int(anchor[1]))
 			# 捕获小人的根在剪影中心；偏心裁片朝左时，锚点也须在格内镜像。
-			if f.motion.has("capture_victim") and animation.key == "capture_shrinking":
+			if f.motion.has_capture_victim() and animation.key == "capture_shrinking":
 				UfeEffectGeometry.apply_anchor(sprite,{"anchor":anchor},rect,f.facing)
 		else:
 			sprite.texture = models[i]
@@ -424,30 +424,25 @@ func _animation(f: UfeFighter, manifest: Dictionary) -> Dictionary:
 			form_manifests[form_id]=UfeContentDatabase.read_json("res://assets/fighters/%s/animations/manifest.json"%form_id)
 		manifest=form_manifests[form_id]
 	if manifest.is_empty(): return {}
-	var key := f.animation_key()
-	var tick := f.move_tick if not f.move_id.is_empty() else f.state_tick
-	if f.move_id.is_empty():
-		if f.state == "walk": key = "walk_forward" if f.resolver.previous_x*f.facing > 0 else "walk_back"
-		if f.state == "dash":
-			var start_ticks := _clip_ticks(manifest.get("clips",{}).get("dash_start",{}))
-			var stop_ticks := _clip_ticks(manifest.get("clips",{}).get("dash_stop",{}))
-			if tick < start_ticks: key = "dash_start"
-			elif tick >= int(f.motion.duration)-stop_ticks:
-				key = "dash_stop"
-				tick -= int(f.motion.duration)-stop_ticks
-			else: tick -= start_ticks
-		if f.state == "takeoff" and f.motion.jump_kind == "chase": key = "chase_takeoff"
-		if f.state == "air":
-			key = "flip_forward" if f.motion.jump_kind == "diagonal" else "flip_back" if f.motion.jump_kind == "backward" else "chase_takeoff" if f.motion.jump_kind == "chase" else "vertical_jump"
-			@warning_ignore("integer_division")
-			tick = clampi((16-f.vy-2)/8,0,3)*8 if key == "flip_back" else clampi((16-f.vy-2)/8,0,3)*3 if key == "flip_forward" else 16-f.vy
-			if bool(manifest.get("clips",{}).get(key,{}).get("trajectory_driven",false)):
-				tick = f.definition.jump_speed-f.vy
+	var pose := f.visual_pose()
+	var key := str(pose.key)
+	var tick := int(pose.tick)
 	var clips: Dictionary = manifest.get("clips", {})
+	if f.move_id.is_empty():
+		if f.state == "dash":
+			var start_ticks := _clip_ticks(clips.get("dash_start",{}))
+			var stop_ticks := _clip_ticks(clips.get("dash_stop",{}))
+			if tick < start_ticks: key = "dash_start"
+			elif tick >= f.motion.duration-stop_ticks:
+				key = "dash_stop"
+				tick -= f.motion.duration-stop_ticks
+			else: tick -= start_ticks
+		elif f.state == "air" and bool(clips.get(key,{}).get("trajectory_driven",false)):
+			tick = f.definition.jump_speed-f.vy
 	# 站立 O 蓄力：有专属剪辑按 crush_hold 取帧，二、三档出招按招式 tick 播加强出招；没有就沿用超重击图。
 	if f.state == "crush_charge":
 		key = "crush_charge" if clips.has("crush_charge") else "crush"
-		tick = int(f.motion.get("crush_hold", 0)) if key == "crush_charge" else 0
+		tick = f.motion.crush_hold if key == "crush_charge" else 0
 	elif str(f.move_id).begins_with("crush_charge_") and clips.has("crush_charged"):
 		key = "crush_charged"
 	if intro_tick>=0:
@@ -456,15 +451,14 @@ func _animation(f: UfeFighter, manifest: Dictionary) -> Dictionary:
 	elif f.state in ["victory","defeat","timeout"]:
 		key=f.state
 		tick=ending_tick
-	var grounded_pose: Dictionary=f.motion.get("ko_grounded_pose",{}) if intro_tick<0 and f.state=="defeat" else {}
+	var grounded_pose: Dictionary=f.motion.ko_grounded_pose if intro_tick<0 and f.state=="defeat" else {}
 	if not grounded_pose.is_empty() and clips.has(str(grounded_pose.key)):
 		key=str(grounded_pose.key)
 		tick=0
 	else:grounded_pose={}
 	if not clips.has(key): return {}
 	var clip: Dictionary = clips[key]
-	var total := 0
-	for duration in clip.ticks: total += int(duration)
+	var total := _clip_ticks(clip)
 	if bool(clip.get("loop",false)): tick %= maxi(1,total)
 	else: tick = mini(tick,total-1)
 	var index := 0
@@ -472,7 +466,7 @@ func _animation(f: UfeFighter, manifest: Dictionary) -> Dictionary:
 		tick -= int(clip.ticks[index])
 		index += 1
 	# 走路允许只重排显示时长；模拟中的受击框/回放数据保持原样。
-	if intro_tick<0 and not bool(clip.get("timeline_driven",false)) and f.state not in ["victory","defeat","timeout"] and (not f.move_id.is_empty() or (f.definition.state_frames.has(key) and f.state!="walk") or (f.state=="dash" and f.definition.state_frames.has("dash")) or (f.state=="air" and key in ["vertical_jump","flip_back"])): index = clampi(int(f.frame().sprite)-int(clip.get("simulation_sprite_offset",0)),0,clip.rects.size()-1)
+	if intro_tick<0 and not bool(clip.get("timeline_driven",false)) and f.state not in ["victory","defeat","timeout"] and (not f.move_id.is_empty() or (f.definition.state_frames.has(key) and f.state!="walk") or (f.state=="dash" and f.definition.state_frames.has("dash")) or (f.state=="air" and key in ["vertical_jump","flip_back"])): index = clampi(int(pose.move_sprite)-int(clip.get("simulation_sprite_offset",0)),0,clip.rects.size()-1)
 	if f.state=="air" and key=="chase_takeoff":index=clip.rects.size()-1
 	if not grounded_pose.is_empty():index=clampi(int(grounded_pose.sprite)-int(clip.get("simulation_sprite_offset",0)),0,clip.rects.size()-1)
 	@warning_ignore("integer_division")

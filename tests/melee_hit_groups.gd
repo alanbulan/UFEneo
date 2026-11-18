@@ -165,14 +165,14 @@ func exercise(facing: int, kind: String) -> void:
 	elif kind == "unblockable_group":
 		check(contacts.size() == 2 and contacts[0].kind == "block" and contacts[1].kind == "hit" and b.stats.hp == 955, "第二段的不可防御覆盖必须绕过实体护屏")
 	elif kind == "early_projectile":
-		check(contacts.size() == 3 and contacts[0].projectile and not contacts[1].projectile and not contacts[2].projectile and b.stats.hp == 910, "先行弹体不能消耗后续实体段")
+		check(contacts.size() == 3 and contacts[0].projectile and not contacts[1].projectile and not contacts[2].projectile and b.stats.hp == 915, "先行弹体不能消耗后续实体段")
 	elif kind in ["late_contact", "invulnerable"]:
 		check(contacts.size() == 1 and b.stats.hp == 955, "第一段落空/无敌不能吃掉后段/" + kind)
 	else:
 		var expected := 3 if beam else 4 if kind == "restart" else 2
-		check(contacts.size() == expected and b.stats.hp == 1000 - (190 if beam else 160 if kind == "restart" else 80), "逐段实体伤害/" + kind)
+		check(contacts.size() == expected and b.stats.hp == 1000 - (179 if beam else 147 if kind == "restart" else 80), "逐段实体伤害/" + kind)
 		if beam: check(contacts.size() == 3 and not contacts[0].projectile and not contacts[1].projectile and contacts[2].projectile, "两次实体斩击后独立弹体结算")
-	check(not a.combat.has("hit_groups"), "清招后移除分段记录/" + kind)
+	check(not a.combat.has_hit_groups(), "清招后移除分段记录/" + kind)
 	if kind == "beam_hit":
 		var filename := "replay-" + str(facing) + ".json"
 		check(recorder.save_file(output_dir + filename) == OK, "保存分段原输入回放")

@@ -167,7 +167,7 @@ func capture_audio_case(hit: bool) -> Dictionary:
 	else:
 		check(failures==1 and stage_events.is_empty() and stage_played.is_empty() and seen_clips.is_empty(),"相同输入未抓中不误播包罩缩小恢复阶段")
 		check(int(sim.fighters[1].stats.hp)==sim.fighters[1].definition.max_health,"未抓中基线无捕获伤害")
-	check(not sim.fighters[0].motion.has("capture") and not sim.fighters[1].motion.has("capture_victim"),"捕获/落空自然收招清关系 "+str(hit))
+	check(not sim.fighters[0].motion.has_capture() and not sim.fighters[1].motion.has_capture_victim(),"捕获/落空自然收招清关系 "+str(hit))
 	var result: Dictionary={"case":"hit" if hit else "miss","initial_positions":[430,580 if hit else 1130],"initial_energy":500,"starts":starts,"failures":failures,"expected_stage_audio":expected,"stage_events":stage_events,"stage_played":stage_played,"victim_clips":seen_clips,"victim_hp":int(sim.fighters[1].stats.hp),"inputs":all_inputs,"inputs_sha256":JSON.stringify(all_inputs).sha256_text(),"trace":trace}
 	audio.free()
 	return result

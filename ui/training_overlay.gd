@@ -69,17 +69,17 @@ func update_match(sim: UfeMatchDirector) -> void:
 		info[i].text="%s · 连段%d\n"%[state_name,f.combat.combo]
 		if last.is_empty():info[i].text+="起手 — / 攻击 — / 收招 —"
 		else:info[i].text+="%s %s\n起手%d 攻击%d 收招%d"%[phase,str(last.get("display_name","")) if f.move_id.is_empty() else str(f.move_tick),int(last.startup),int(last.active),int(last.recovery)]
-		var delay:=int(f.combat.get("stamina_delay",0))
+		var delay := f.combat.stamina_delay
 		var recovery:=UfeStaminaRules.rate(f)
-		info[i].text+="\n体力%d / 1000 · 远程%s"%[int(f.stats.stamina),UfeInputRouter.binding_label(i,"ranged")]
+		info[i].text+="\n体力%d / 1000 · 远程%s"%[f.stats.stamina,UfeInputRouter.binding_label(i,"ranged")]
 		if not f.move_id.is_empty() and int(last.get("stamina_cost",0))>0:info[i].text+=" · 本招消耗%d"%int(last.get("stamina_cost",0))
 		if recovery==0:info[i].text+="\n攻防动作中暂停恢复"
 		elif delay>0:info[i].text+="\n恢复等待%.1f秒"%(float(delay)/60.0)
 		else:info[i].text+="\n每秒恢复%d"%(recovery*60)
-		if f.state=="dodge" and bool(f.motion.get("dodge_tired",false)):info[i].text+="\n体力不足：闪避无敌缩短"
+		if f.state=="dodge" and f.motion.dodge_tired:info[i].text+="\n体力不足：闪避无敌缩短"
 		if f.state=="crush_charge" or str(f.move_id).begins_with("crush_charge"):
-			info[i].text+="\n超重击 %d档"%int(f.motion.get("crush_tier",1))
-			if f.state=="crush_charge":info[i].text+=" · 按住%d tick"%int(f.motion.get("crush_hold",0))
+			info[i].text+="\n超重击 %d档"%f.motion.crush_tier
+			if f.state=="crush_charge":info[i].text+=" · 按住%d tick"%f.motion.crush_hold
 		if int(feedback_ticks[i])>0:
 			info[i].text+="\n"+str(feedback[i])
 			feedback_ticks[i]=int(feedback_ticks[i])-1

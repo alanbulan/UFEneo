@@ -41,8 +41,8 @@ func run() -> void:
 			var label: String=str(identity)+"/"+str(facing)
 			need(result.state=="defeat" and result.x==512 and result.height==0 and result.facing==facing,label+":结算状态或已落根点变化")
 			need(before==after,label+":已躺整相在结算被站立相替换")
-			need(source.state_hash()==source_hash and not source.fighters[0].motion.has("ko_grounded_pose"),label+":改写真实终局")
-			need(not show.scene.fighters[1].motion.has("ko_grounded_pose"),label+":胜方误用败方倒地相")
+			need(source.state_hash()==source_hash and not source.fighters[0].motion.has_ko_grounded_pose(),label+":改写真实终局")
+			need(not show.scene.fighters[1].motion.has_ko_grounded_pose(),label+":胜方误用败方倒地相")
 			show.reset()
 			need(show.scene==null and not show.active,label+":reset残留显示副本")
 			need(view._animation(source.fighters[0],manifest).get("key","")=="defeat",label+":普通败北流程被全局替换")
@@ -50,7 +50,7 @@ func run() -> void:
 			show.source=source;show.scene=UfeBattleFormCatalog.match_for(id,opponent,false)
 			show.scene.fighters[0].stats.hp=0;show.scene.fighters[0].enter("hit",20)
 			show._ceremony()
-			need(not show.scene.fighters[0].motion.has("ko_grounded_pose"),label+":非倒地误持末相")
+			need(not show.scene.fighters[0].motion.has_ko_grounded_pose(),label+":非倒地误持末相")
 			# 超时不进入末击慢放/落地持相；换新局也须清旧副本。
 			var timeout:=UfeBattleFormCatalog.match_for(id,opponent,false)
 			timeout.finished=true;timeout.remaining=0

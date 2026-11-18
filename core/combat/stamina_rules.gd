@@ -43,8 +43,8 @@ static func advance(f: UfeFighter, previous_state: String, explicit_regen: int =
 	if recovery == 0 or previous_state in ["attack","air_attack","guard","crouch_guard","blockstun","crouch_blockstun","hit","launch","bounce","down","guardbreak","dodge","dash","backstep","stun"]:
 		f.combat.stamina_delay = RECOVERY_DELAY
 		return
-	if int(f.combat.get("stamina_delay",0)) > 0:
-		f.combat.stamina_delay = int(f.combat.stamina_delay) - 1
+	if f.combat.stamina_delay > 0:
+		f.combat.stamina_delay -= 1
 		return
 	# 旧显式抑制只能进一步限制恢复，不能绕过状态和等待时间。
 	if explicit_regen >= 0: recovery = mini(recovery, explicit_regen)

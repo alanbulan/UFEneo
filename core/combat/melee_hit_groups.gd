@@ -59,9 +59,9 @@ static func spent(f: UfeFighter) -> bool:
 	if group <= 0: return bool(f.combat.connected)
 	var required: int = int(f.frame().get("requires_hit_group", 0))
 	# 仅明确记录的实际hit放行；旧bool去重记录、block和尝试均不算。
-	var prior: Variant = f.combat.get("hit_groups", {}).get(str(required), "")
+	var prior: Variant = f.combat.get_hit_group(required, "")
 	if required>0 and not (prior is String and prior=="hit"): return true
-	return f.combat.get("hit_groups", {}).has(str(group))
+	return f.combat.has_hit_group(group)
 
 static func contact_move(f: UfeFighter, move: Dictionary) -> Dictionary:
 	var result := move.duplicate(true)
@@ -73,10 +73,9 @@ static func contact_move(f: UfeFighter, move: Dictionary) -> Dictionary:
 static func record(f: UfeFighter, group: int, move_id: String, result: String = "") -> void:
 	# 同tick互相打断的接触仍照旧结算，但不能给已清除/已换招的攻击者留下旧段记录。
 	if group <= 0 or f.move_id != move_id: return
-	if not f.combat.has("hit_groups"): f.combat.hit_groups = {}
 	var dependent: bool = f.definition.moves[move_id].frames.any(func(frame): return frame.has("requires_hit_group"))
 	# 未启用依赖的旧招仍逐位写旧bool值；新招保存明确实际结果进入快照。
 	if dependent:
-		f.combat.hit_groups[str(group)] = result
+		f.combat.set_hit_group(group, result)
 	else:
-		f.combat.hit_groups[str(group)] = true
+		f.combat.set_hit_group(group, true)

@@ -6,8 +6,8 @@ func step(f: UfeFighter, _input: UfeInputFrame, _command: Dictionary) -> void:
 
 ## 受方减速（chill）只作用于移动位移，不改变出招、受击与硬直时序。
 static func move_speed(f: UfeFighter, base: int) -> int:
-	if int(f.stats.get("chill_ticks", 0)) <= 0:return base
-	var percent := clampi(int(f.stats.get("chill_percent", 100)), 1, 100)
+	if f.stats.chill_ticks <= 0:return base
+	var percent := clampi(f.stats.chill_percent, 1, 100)
 	@warning_ignore("integer_division") # 整数取整，结果为整数像素。
 	return maxi(1, (base * percent + 50) / 100)
 

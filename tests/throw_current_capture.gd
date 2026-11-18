@@ -53,7 +53,7 @@ func scenario(facing: int,kind: String) -> void:
 			var view:=UfeSideView.new();var manifest: Dictionary=UfeContentDatabase.read_json("res://assets/fighters/ultraseven/animations/manifest.json")
 			check(view._animation(b,manifest)==view._animation(Capture.visual_fighter(b),manifest),"保相表现复用原动画")
 			view.free()
-		if b.state!="thrown":check(not b.motion.has("throw_current_capture"),"退出清快照")
+		if b.state!="thrown":check(not b.motion.has_throw_current_capture(),"退出清快照")
 		for event in sim.events:
 			if event.kind=="throw_slam":slams+=1;check(b.height==0,"唯一伤害在落地")
 			if event.kind=="throw_tech":techs+=1
@@ -111,12 +111,12 @@ func run() -> void:
 	check(view._animation(b,manifest)==original_animation and b.frame()==original_frame,"捕获前后真实整相一致")
 	view.free()
 	check(Capture.active(b),"保存有效")
-	a.move_tick=3;UfeThrowResolver.sync(sim);check(not b.motion.has("throw_current_capture"),"hold停用")
+	a.move_tick=3;UfeThrowResolver.sync(sim);check(not b.motion.has_throw_current_capture(),"hold停用")
 	b.enter("air");Capture.remember(b,move);b.enter("thrown")
 	a.frame().target={"mode":"root","pose":"thrown_back","sprite":0,"root":[20,60]}
-	UfeThrowResolver.sync(sim);check(not b.motion.has("throw_current_capture"),"root停用")
+	UfeThrowResolver.sync(sim);check(not b.motion.has_throw_current_capture(),"root停用")
 	b.enter("air");Capture.remember(b,move);b.enter("thrown");a.clear_move();UfeThrowResolver.sync(sim)
-	check(not Capture.active(b) and not b.motion.has("throw_current_capture"),"中断清快照")
+	check(not Capture.active(b) and not b.motion.has_throw_current_capture(),"中断清快照")
 	# 人工对照：当前全局规则仅省capture扩展，不是历史版本回放。
 	var baseline:=fixture(1,false)
 	var forms: Array=[]

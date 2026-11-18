@@ -28,8 +28,8 @@ static func tech(sim: UfeMatchDirector, owner: int) -> void:
 	var a := sim.fighters[owner]
 	var b := sim.fighters[1-owner]
 	var captured := b.state=="thrown"
-	var origin_a := int(a.motion.get("throw_origin_height",a.height)) if captured else a.height
-	var origin_b := int(b.motion.get("throw_origin_height",b.height)) if captured else b.height
+	var origin_a := a.motion.throw_origin_height if captured else a.height
+	var origin_b := b.motion.throw_origin_height if captured else b.height
 	for f in [a,b]:
 		f.clear_move()
 		f.clear_input_buffer()
@@ -210,7 +210,7 @@ static func sync(sim: UfeMatchDirector) -> void:
 			b.x=a.x+a.facing*int(grip[0])-b.facing*int(grabbed[0])+a.facing*int(offset[0])
 			b.height=a.height+int(grip[1])-int(grabbed[1])+int(offset[1])
 		elif str(target.get("mode","root"))=="release":
-			if not bool(b.motion.get("throw_released",false)):
+			if not b.motion.throw_released:
 				b.motion.throw_released=true
 				b.motion.release_x=(b.x-a.x)*a.facing
 				b.motion.release_height=b.height
@@ -226,12 +226,10 @@ static func sync(sim: UfeMatchDirector) -> void:
 			b.x=a.x+a.facing*int(offset[0])
 			b.height=int(offset[1])+(0 if bool(target.get("ground",false)) else a.height)
 		# 靠墙时整体平移配对，不能单独夹住受投者而断开抓点。
-		var left:=mini(a.x,b.x)
-		var right:=maxi(a.x,b.x)
-		var shift:=28-left if left<28 else 1252-right if right>1252 else 0
+		var shift := UfeStateRules.stage_pair_shift(a.x, b.x)
 		a.x+=shift
 		b.x+=shift
-		if bool(target.get("impact",false)) and not bool(b.combat.get("throw_damage_done",false)):
+		if bool(target.get("impact",false)) and not b.combat.throw_damage_done:
 			var move: Dictionary=a.definition.moves[a.move_id]
 			b.combat.throw_damage_done=true
 			b.stats.hp=maxi(0,int(b.stats.hp)-int(move.damage))

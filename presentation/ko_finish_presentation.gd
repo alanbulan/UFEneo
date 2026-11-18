@@ -64,7 +64,7 @@ static func fighter_copy(record: Dictionary) -> UfeFighter:
 	f.transformed_this_round=bool(record.transformed_this_round)
 	f.height=int(row[2]);f.vx=int(row[3]);f.vy=int(row[4]);f.facing=int(row[5])
 	f.state=str(row[6]);f.state_tick=int(row[7]);f.move_id=str(row[8]);f.move_tick=int(row[9])
-	f.stats=row[10].duplicate(true);f.combat=row[11].duplicate(true);f.motion=row[12].duplicate(true)
+	f.stats=UfeFighterStats.from_dict(row[10]);f.combat=UfeFighterCombat.from_dict(row[11]);f.motion=UfeFighterMotion.from_dict(row[12])
 	var input: Array=row[13]
 	f.resolver.previous=int(input[0]);f.resolver.age=int(input[1])
 	f.resolver.history=input[2].duplicate(true);f.resolver.press_ticks=input[3].duplicate(true)
@@ -108,7 +108,7 @@ func _advance_pose() -> void:
 			var frame:=f.frame()
 			# 只读本招已有整相和位移；不执行shots、伤害、取消、变身或新攻击。
 			if frame.has("velocity"):f.vx=int(frame.velocity[0])*f.facing;f.vy=int(frame.velocity[1])
-			if frame.has("teleport"):f.x=clampi(scene.fighters[1-i].x+f.facing*int(frame.teleport),28,1252)
+			if frame.has("teleport"):f.x=UfeStateRules.clamp_stage_x(scene.fighters[1-i].x+f.facing*int(frame.teleport))
 			f.x+=int(frame.get("dx",0))*f.facing
 			f.height=maxi(0,f.height+int(frame.get("dy",0)))
 			for event in frame.get("events",[]):
@@ -116,7 +116,7 @@ func _advance_pose() -> void:
 			var frames: Array=f.definition.moves[f.move_id].frames
 			if f.move_tick+1<frames.size():f.move_tick+=1
 			else:move_done[i]=true
-		f.x=clampi(f.x,28,1252)
+		f.x=UfeStateRules.clamp_stage_x(f.x)
 	for i in range(scene.fighters.size()):
 		_sync_throw(i)
 		_sync_capture(i)
@@ -149,7 +149,7 @@ func _sync_throw(index: int) -> void:
 			b.x=a.x+a.facing*int(grip[0])-b.facing*int(point[0])+a.facing*int(offset[0])
 			b.height=maxi(0,a.height+int(grip[1])-int(point[1])+int(offset[1]))
 		"release":
-			if not bool(b.motion.get("throw_released",false)):
+			if not b.motion.throw_released:
 				b.motion.throw_released=true;b.motion.release_x=(b.x-a.x)*a.facing;b.motion.release_height=b.height
 				b.motion.release_goal_x=UfeThrowResolver.landing_offset(a,b,int(offset[0]))
 			var progress: Array=target.progress
@@ -165,7 +165,7 @@ func _sync_throw(index: int) -> void:
 
 func _sync_capture(owner: int) -> void:
 	var actor:=scene.fighters[owner]
-	var relation: Dictionary=actor.motion.get("capture",{})
+	var relation: Dictionary=actor.motion.capture
 	var victim:=int(relation.get("victim",-1))
 	if victim<0 or victim>=scene.fighters.size() or actor.move_id.is_empty():return
 	var stages: Array=actor.definition.moves[actor.move_id].get("capture",{}).get("stages",[])
@@ -176,16 +176,16 @@ func _sync_capture(owner: int) -> void:
 	if int(relation.phase_age)>=int(stages[phase_index].ticks):
 		phase_index+=1
 		if phase_index>=stages.size():
-			target.motion.erase("capture_victim")
-			target.enter("down" if int(target.stats.hp)<=0 else "idle",35)
+			target.motion.clear_capture_victim()
+			target.enter("down" if target.stats.hp<=0 else "idle",35)
 			target.height=0;target.vx=0;target.vy=0
-			actor.motion.erase("capture")
+			actor.motion.clear_capture()
 			return
 		relation.phase_index=phase_index;relation.phase=str(stages[phase_index].id);relation.phase_age=0
 	var phase: Dictionary=stages[phase_index]
 	var age:=mini(int(relation.phase_age),int(phase.ticks)-1)
 	var selected: Variant=phase.victim_frames[age]
-	var pose: Dictionary=target.motion.get("capture_victim",{})
+	var pose: Dictionary=target.motion.capture_victim
 	if pose.is_empty():return
 	pose.animation=str(selected.animation) if selected is Dictionary else str(phase.victim_animation)
 	pose.frame=int(selected.frame) if selected is Dictionary else int(selected)
@@ -215,8 +215,7 @@ func _sync_capture(owner: int) -> void:
 				target.x=int(relation.release_x);target.height=0
 
 static func _pair_inside(first: UfeFighter, second: UfeFighter) -> void:
-	var left:=mini(first.x,second.x);var right:=maxi(first.x,second.x)
-	var shift:=28-left if left<28 else 1252-right if right>1252 else 0
+	var shift := UfeStateRules.stage_pair_shift(first.x, second.x)
 	first.x+=shift;second.x+=shift
 
 func _advance_projectiles() -> void:

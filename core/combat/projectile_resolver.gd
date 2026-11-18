@@ -10,7 +10,7 @@ static func spawn(sim: UfeMatchDirector, index: int, shot: Dictionary, move_id: 
 		"box":shot.get("box",[-12,-10,24,20]),"effect":shot.get("effect","pulse"),"move":move_id,"power":f.combat.power,
 		"ground_height":int(shot.get("ground_height",-1)),"color":shot.get("color",[1,1,1,1])})
 	var p: Dictionary=sim.projectiles.back()
-	if bool(shot.get("capture",false)) and f.motion.has("capture"):
+	if bool(shot.get("capture",false)) and f.motion.has_capture():
 		p.capture=true; p.capture_token=int(f.motion.capture.token)
 		p.life=mini(int(p.life),int(f.definition.moves[move_id].capture.flight_max_ticks))
 	if bool(f.battle_form.get("enabled",false)) and str(f.battle_form.get("mode",""))=="definition":
@@ -67,7 +67,7 @@ static func emit(sim: UfeMatchDirector, index: int) -> void:
 	var f := sim.fighters[index]
 	var frame := f.frame()
 	for shot in frame.get("shots",[]): spawn(sim,index,shot,f.move_id)
-	if frame.get("counter_shot",{}).is_empty() or int(f.combat.get("absorbed",0))==0: return
+	if frame.get("counter_shot",{}).is_empty() or f.combat.absorbed==0: return
 	spawn(sim,index,frame.counter_shot,f.move_id)
 	f.combat.absorbed=0
 	f.combat.confirmed=true
@@ -132,7 +132,7 @@ static func advance(sim: UfeMatchDirector, contacts: Array) -> void:
 			if bool(p.get("capture",false)):
 				p.life=0
 				if mode=="absorb":
-					target.combat.absorbed=int(target.combat.get("absorbed",0))+1
+					target.combat.absorbed += 1
 					target.combat.confirmed=true
 				UfeCaptureResolver.fail(sim,int(p.source_owner),"projectile_"+mode)
 				var event_kind := "projectile_reflect" if mode=="reflect" else "projectile_absorb" if mode=="absorb" else "projectile_block"
@@ -153,7 +153,7 @@ static func advance(sim: UfeMatchDirector, contacts: Array) -> void:
 			else:
 				p.life=0
 				if mode=="absorb":
-					target.combat.absorbed=int(target.combat.get("absorbed",0))+1
+					target.combat.absorbed += 1
 					target.combat.confirmed=true
 				sim.events.append(UfeFrameGuard.decorate({"kind":"projectile_absorb" if mode=="absorb" else "projectile_block","player":target_index,"move":target.move_id},frame,point,target.facing))
 			continue

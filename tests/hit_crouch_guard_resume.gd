@@ -65,7 +65,7 @@ func run_case(target: String, direction: int, kind: String) -> void:
 		var incoming=defense(frame,kind,direction,saw_hit,recovery,f)
 		var fire=kind!="initial" and (frame==20 or (kind=="repeat" and frame==85))
 		var pair=[UfeInputFrame.make(-direction if fire else 0,0,UfeInputFrame.HEAVY if fire else 0),incoming]
-		var was_pose=str(f.motion.get("hit_pose",""))
+		var was_pose: String=f.motion.hit_pose
 		sim.step(pair);recorder.append(pair,sim)
 		var row={"tick":sim.tick,"inputs":[pair[0].pack(),pair[1].pack()],"hash":sim.state_hash(),"events":sim.events.duplicate(true),"projectiles":sim.projectiles.duplicate(true),"hitstop":sim.hitstop,"fighters":[row_f(sim.fighters[0],manifests[0]),row_f(f,manifests[1])]}
 		trace.append(row)
@@ -83,7 +83,7 @@ func run_case(target: String, direction: int, kind: String) -> void:
 			var hold: Dictionary=f.definition.state_frames.crouch_guard[-1]
 			check(f.animation_key()=="crouch_guard" and f.frame().sprite==hold.sprite and f.frame().hurtboxes==hold.hurtboxes,"recovery_uses_own_low_hold",{"case":id,"frame":frame})
 			check(int(row.fighters[1].animation.index)==int(hold.sprite),"visual_matches_simulation",{"case":id,"frame":frame})
-		if not hold_expected:check(not f.motion.has(FLAG),"context_not_leaked",{"case":id,"frame":frame})
+		if not hold_expected:check(not f.motion.hit_crouch_guard_resume,"context_not_leaked",{"case":id,"frame":frame})
 		if prior=="crouch" and f.state=="crouch_guard":check(f.state_tick==0 and key(f)=="crouch_guard","original_guard_entry_tick_and_audio",{"case":id,"frame":frame})
 		prior=f.state
 	check(kind=="initial" or saw_hit,"real_overhead_hit_observed",{"case":id})
@@ -130,21 +130,21 @@ func units() -> void:
 		if present:data.state_frames.crouch_guard=[]
 		var guarded_fighter=UfeFighter.new(data,0);guarded_fighter.motion.hit_pose="hit_crouch";guarded_fighter.enter("hit",1);guarded_fighter.state_tick=1
 		hit.step(guarded_fighter,UfeInputFrame.make(0,-1,UfeInputFrame.GUARD),{})
-		check(guarded_fighter.state=="crouch" and guarded_fighter.state_tick==0 and not guarded_fighter.motion.has(FLAG),"missing_empty_fallback",{"unit":true,"empty":present})
+		check(guarded_fighter.state=="crouch" and guarded_fighter.state_tick==0 and not guarded_fighter.motion.hit_crouch_guard_resume,"missing_empty_fallback",{"unit":true,"empty":present})
 	for next_state in ["hit","attack","air","crouch_turn","crouch_rise","idle","crouch_blockstun"]:
-		var entering_fighter=make_match("zetton",1).fighters[1];entering_fighter.enter("crouch");entering_fighter.motion[FLAG]=true
-		entering_fighter.enter(next_state);check(not entering_fighter.motion.has(FLAG),"unrelated_enter_clears",{"state":next_state,"unit":true})
-	var f=make_match("zetton",1).fighters[1];f.enter("crouch");f.motion[FLAG]=true
+		var entering_fighter=make_match("zetton",1).fighters[1];entering_fighter.enter("crouch");entering_fighter.motion.hit_crouch_guard_resume=true
+		entering_fighter.enter(next_state);check(not entering_fighter.motion.hit_crouch_guard_resume,"unrelated_enter_clears",{"state":next_state,"unit":true})
+	var f=make_match("zetton",1).fighters[1];f.enter("crouch");f.motion.hit_crouch_guard_resume=true
 	crouch.step(f,UfeInputFrame.make(0,-1),{"jump":false})
-	check(not f.motion.has(FLAG) and f.state=="crouch","release_without_enter_clears",{"unit":true})
-	f.motion[FLAG]=true;f.clear_move();check(not f.motion.has(FLAG),"clear_move_clears",{"unit":true})
+	check(not f.motion.hit_crouch_guard_resume and f.state=="crouch","release_without_enter_clears",{"unit":true})
+	f.motion.hit_crouch_guard_resume=true;f.clear_move();check(not f.motion.hit_crouch_guard_resume,"clear_move_clears",{"unit":true})
 	f.enter("idle");f.enter("crouch_guard")
 	check(f.state_tick==0 and f.frame()==f.definition.state_frames.crouch_guard[0],"later_initial_guard_entry_still_zero",{"unit":true})
 	for h in [0,20]:
 		for pose in ["hit_high","hit_mid","hit_air"]:
 			f.enter("hit",1);f.motion.hit_pose=pose;f.height=h;f.state_tick=1
 			hit.step(f,UfeInputFrame.make(0,-1,UfeInputFrame.GUARD),{})
-			check(not f.motion.has(FLAG) and f.state==("air" if h>0 else "crouch"),"standing_or_air_hit_never_maps",{"height":h,"pose":pose,"unit":true})
+			check(not f.motion.hit_crouch_guard_resume and f.state==("air" if h>0 else "crouch"),"standing_or_air_hit_never_maps",{"height":h,"pose":pose,"unit":true})
 	var audio_source=FileAccess.get_file_as_string("res://presentation/side_audio.gd")
 	check(audio_source.contains("var key: String=_state_entry_key(f)"),"actual_audio_sync_uses_entry_key_helper",{"unit":true})
 func run() -> void:

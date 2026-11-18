@@ -35,7 +35,7 @@ static func invulnerable(f: UfeFighter) -> bool:
 		or int(f.combat.invulnerable)>0 or bool(f.frame().get("invulnerable",false))
 
 static func is_blocked(target: UfeFighter, move: Dictionary, defending: bool) -> bool:
-	var crouching := target.state in ["crouch","crouch_start","crouch_guard","crouch_blockstun","crouch_turn"]
+	var crouching := UfeStateRules.is_crouch_state(target.state)
 	return defending and not bool(move.unblockable) and (str(move.level) != "low" or crouching) and (str(move.level) != "overhead" or not crouching)
 
 static func contact_point(a: UfeFighter,b: UfeFighter) -> Vector2i:
@@ -65,7 +65,7 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 		b.facing=-a.facing
 		b.enter("thrown")
 		return "hit" # 抓中不扣血；拆投窗口结束后，在落地冲击帧结算一次伤害。
-	var crouching := b.state in ["crouch","crouch_start","crouch_guard","crouch_blockstun","crouch_turn"]
+	var crouching := UfeStateRules.is_crouch_state(b.state)
 	var airborne := b.height>0
 	var blocked := is_blocked(b,move,defending)
 	var impact_facing := projectile_facing if projectile_facing!=0 else a.facing
@@ -76,7 +76,7 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 		b.enter("crouch_blockstun" if crouching else "blockstun", int(move.blockstun))
 		UfeStaminaRules.spend(b, UfeStaminaRules.block_cost(int(move.damage)))
 		var chip := _scaled_damage(a, int(move.get("chip_damage", 0)))
-		b.stats.hp=maxi(0,int(b.stats.hp)-chip)
+		b.stats.hp=maxi(0,b.stats.hp-chip)
 		if b.stats.stamina == 0: b.enter("guardbreak", 35)
 		var block_speed := UfeFeelRules.block_push(int(move.get("pushback", 0)))
 		if block_speed > 0:
@@ -92,19 +92,19 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 	# 弹体离手后可与射手朝向分离；0保留近战原有来向判定。
 	b.facing = -projectile_facing if projectile_facing!=0 else (1 if a.x>=b.x else -1)
 	b.clear_move()
-	b.stats.hp = maxi(0, int(b.stats.hp) - _scaled_damage(a, int(move.damage) * int(a.combat.power)))
+	b.stats.hp = maxi(0, b.stats.hp - _scaled_damage(a, int(move.damage) * a.combat.power))
 	# 眩晕免疫期内不再累积，避免连续命中把对手永久锁在眩晕里。
-	if int(b.stats.get("stun_immune",0)) <= 0:
-		b.stats.stun = mini(rules.stun_threshold, int(b.stats.stun) + int(move.stun))
+	if b.stats.stun_immune <= 0:
+		b.stats.stun = mini(rules.stun_threshold, b.stats.stun + int(move.stun))
 	# 减速只改受方移动速度，不改招式时序；未过期的减速取更强档并延长到较长剩余。
 	if move.has("chill"):
 		var chill: Dictionary = move.chill
-		var chilled := int(b.stats.get("chill_ticks", 0)) > 0
-		b.stats.chill_ticks = maxi(int(b.stats.get("chill_ticks", 0)), int(chill.ticks))
-		b.stats.chill_percent = mini(int(b.stats.get("chill_percent", 100)), int(chill.speed_percent)) if chilled else int(chill.speed_percent)
-	a.stats.energy = mini(3000, int(a.stats.energy) + 90)
-	b.stats.energy = mini(3000, int(b.stats.energy) + 40)
-	a.combat.combo = int(a.combat.combo) + 1
+		var chilled := b.stats.chill_ticks > 0
+		b.stats.chill_ticks = maxi(b.stats.chill_ticks, int(chill.ticks))
+		b.stats.chill_percent = mini(b.stats.chill_percent, int(chill.speed_percent)) if chilled else int(chill.speed_percent)
+	a.stats.energy = mini(3000, a.stats.energy + 90)
+	b.stats.energy = mini(3000, b.stats.energy + 40)
+	a.combat.combo += 1
 	a.combat.combo_ticks = 90
 	var hit_speed := int(move.get("pushback", 0))
 	if hit_speed > 0:
@@ -130,7 +130,7 @@ static func apply(a: UfeFighter, b: UfeFighter, move: Dictionary, defending: boo
 			b.vy=mini(b.vy,-6)
 			b.enter("launch")
 		else: b.enter("down", 35)
-	elif int(b.stats.stun) >= rules.stun_threshold:
+	elif b.stats.stun >= rules.stun_threshold:
 		b.enter("stun", 60)
 		b.stats.stun = 0
 		b.stats.stun_immune = 60 + int(rules.stun_immunity)
@@ -141,11 +141,11 @@ static func slide(body: UfeFighter, other: UfeFighter, velocity: int) -> int:
 	if velocity == 0:
 		return 0
 	var proposed := body.x + velocity
-	var clamped := clampi(proposed, 28, 1252)
+	var clamped := UfeStateRules.clamp_stage_x(proposed)
 	var leftover := proposed - clamped
 	body.x = clamped
 	if leftover != 0 and other != null:
-		other.x = clampi(other.x - leftover, 28, 1252)
+		other.x = UfeStateRules.clamp_stage_x(other.x - leftover)
 	if absi(velocity) <= 1:
 		return 0
 	return velocity - signi(velocity)
