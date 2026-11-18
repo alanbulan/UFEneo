@@ -158,6 +158,16 @@ func after_ready(app: Control) -> void:
 		app._show_page("title")
 	if capture_ui in ["title", "select", "vs", "archive", "settings", "commands", "training"]:
 		app.front.selections = app.selected_fighters.duplicate()
+		for player: int in range(2):
+			var options: Array = UfeFighterDisplay.select_forms(str(app.front.selections[player]))
+			var chosen: String = str((options[0] as Dictionary).get("id", "default")) if not options.is_empty() and options[0] is Dictionary else "default"
+			for raw_form: Variant in options:
+				if raw_form is Dictionary:
+					var form_dict: Dictionary = raw_form
+					if bool(form_dict.get("implemented", false)):
+						chosen = str(form_dict.get("id", chosen))
+						break
+			app.front.selected_forms[player] = chosen
 		if capture_ui == "training":
 			app.training = true
 			app.front.hide()

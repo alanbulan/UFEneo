@@ -36,7 +36,7 @@ DEFAULT_MIN_WALK_DIFF_PX = 20
 
 # 非站姿豁免列表（蹲、躺、被投、腾空、倒地、滚翻等），只登记不按站姿站高门判错。
 NON_STANDING_TOKENS = (
-    "crouch", "sweep", "slide", "down", "ko", "defeat", "wake", "roll", "bounce",
+    "crouch", "sweep", "slide", "down", "ko", "defeat", "wake", "roll", "flip", "bounce",
     "thrown", "air", "jump", "takeoff", "launch", "fall", "dive",
     "chase", "vertical", "diagonal", "hit_crouch", "hit_air",
     "block_crouch", "guard_crouch", "low_pulse", "capture_", "backstep",
