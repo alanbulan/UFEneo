@@ -19,11 +19,10 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-_layout_root = next(p for p in Path(__file__).resolve().parents if (p / "project.godot").is_file())
-if str(_layout_root / "tools") not in sys.path:
-    sys.path.insert(0, str(_layout_root / "tools"))
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
 
-ROOT = _layout_root
 DISPLAY_PATH = ROOT / "content/roster/catalogue_display.json"
 DEFAULT_THRESHOLD = 0.85
 

@@ -1,6 +1,6 @@
 """把单帧生成图落进战斗格：全套共用一个源像素比例。
 
-art/STYLE.md：同一动作整帧统一尺度和根点；不得按姿势外框归一身高。
+docs/HANDBOOK.md：同一动作整帧统一尺度和根点；不得按姿势外框归一身高。
 本工具只做确定性后处理，不改造型：
 
 1. 默认色板取自本人已批准图鉴定稿 `assets/fighters/<id>/catalogue/model-native.png`

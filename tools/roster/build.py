@@ -1,23 +1,20 @@
 """Compile the editable roster and first-party evidence into Godot content packs."""
 
-# 目录迁移：只解析冻结证据中的旧路径；不复制素材。
-import sys as _layout_sys
-from pathlib import Path as _LayoutNativePath
-_layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-if str(_layout_root / "tools") not in _layout_sys.path:
-    _layout_sys.path.insert(0, str(_layout_root / "tools"))
-from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from collections import Counter
 from pathlib import Path
-Path = _LayoutProjectPath
 import argparse
-import json; json = _LayoutJson
+import json
 import re
+import sys
 import unicodedata
+
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
+
 import roster.wiki_catalog
 from art.paths import brief_path
 
-ROOT = _LayoutProjectPath(_layout_root)
 DATA = ROOT / "content/roster"
 FUSIONS = {
     "ultraman-legend": ["ultraman-cosmos", "ultraman-justice"],

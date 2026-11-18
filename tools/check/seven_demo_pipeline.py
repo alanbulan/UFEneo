@@ -9,7 +9,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 SEVEN = ROOT / "content/fighters/ultraseven"
 MANIFEST = ROOT / "assets/fighters/ultraseven/animations/manifest.json"
-MISSING = ROOT / "tools/rebuild/ultraseven/demo-pipeline/missing_frames.json"
 TARGET_HEIGHT = 144
 MIN_HIT = 32
 MIN_HURT_H = 130
@@ -58,14 +57,9 @@ def union(boxes):
     return x1 - x0, y1 - y0
 
 
-def check_installed(payload, clips, state) -> list[str]:
-    """清单标为已完成后：每条已装、受击 6 张盖满时间轴、蓄力剪辑与 crush 同格同根点、加强出招命中帧对齐。"""
+def check_installed(clips, state) -> list[str]:
+    """受击 6 张盖满时间轴、蓄力剪辑与 crush 同格同根点、加强出招命中帧对齐。"""
     errors: list[str] = []
-    for item in payload.get("frames", []):
-        if item.get("status") != "installed":
-            errors.append(f"缺帧 {item.get('clip')}-{item.get('order')} 未标 installed")
-        if int(item.get("cell", 0)) != 256 or list(item.get("anchor", [])) != [128, 248]:
-            errors.append(f"缺帧 {item.get('clip')}-{item.get('order')} 不是 256 格 [128,248]")
     for key in ("hit_high", "hit_mid", "hit_crouch", "hit_air"):
         clip = clips[key]
         if len(clip["rects"]) != 6:
@@ -175,28 +169,13 @@ def main() -> int:
         if length < max_stun or total < max_stun or total != length:
             errors.append(f"{key} 长度 {length} / 时长 {total} 未盖住硬直 {max_stun}")
 
-    if not MISSING.is_file():
-        errors.append("缺少缺帧清单")
-        count = 0
-    else:
-        payload = load(MISSING)
-        frames = payload.get("frames", [])
-        count = len(frames)
-        if int(payload.get("count", -1)) != count:
-            errors.append("缺帧清单 count 与条目数不一致")
-        for item in frames:
-            for field in ("clip", "order", "pose", "cell", "anchor"):
-                if field not in item or item[field] in ("", None, []):
-                    errors.append(f"缺帧条目缺 {field}: {item.get('clip')}")
-                    break
-        if payload.get("status") == "completed":
-            errors.extend(check_installed(payload, clips, state))
+    errors.extend(check_installed(clips, state))
     if errors:
         print("SEVEN_DEMO_PIPELINE FAIL")
         for error in errors:
             print(" -", error)
         return 1
-    print(f"SEVEN_DEMO_PIPELINE PASS walk_variance=0 hitstun_cover={max_stun} hitbox_min={MIN_HIT}/{TARGET_HEIGHT} missing_frames={count}")
+    print(f"SEVEN_DEMO_PIPELINE PASS walk_variance=0 hitstun_cover={max_stun} hitbox_min={MIN_HIT}/{TARGET_HEIGHT}")
     return 0
 
 

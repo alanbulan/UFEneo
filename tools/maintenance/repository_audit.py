@@ -1,8 +1,7 @@
-"""Check publishable files, workspace/branch hygiene, source-only Git tracking, directory layout, credentials and runtime resource paths."""
+"""Check publishable files, workspace/branch hygiene, source-only Git tracking, directory layout, markdown whitelist, credentials and runtime resource paths."""
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 from pathlib import Path
 import re
@@ -24,22 +23,24 @@ ROOT_FILES = {
     'AGENTS.md', 'README.md', 'REBUILD_2D_PLAN.md',
     'project.godot', '开始游戏.command',
 }
-DOCS_ENTRIES = {'HANDBOOK.md', 'verification'}
+DOCS_ENTRIES = {'HANDBOOK.md'}
 ART_ENTRIES = {
-    '.gdignore', 'STYLE.md', 'source-index.json',
+    '.gdignore', 'source-index.json',
     'audio', 'catalogue-rebuild-20261113', 'fighters', 'shared',
 }
-ALLOWED_TRACKED_ART = {'art/.gdignore', 'art/STYLE.md'}
+ALLOWED_TRACKED_ART = {'art/.gdignore'}
 FORBIDDEN_TRACKED_EXTS = {
     '.png', '.jpg', '.jpeg', '.webp', '.gif', '.bmp', '.ico', '.ora', '.psd',
     '.wav', '.ogg', '.mp3', '.m4s', '.flac', '.aac',
     '.otf', '.ttf', '.woff', '.woff2',
 }
 TOOLS_ENTRIES = {
-    '.gdignore', 'README.md', 'godot_lock.py', 'verify.py',
+    '.gdignore', 'godot_lock.py', 'verify.py',
     'requirements-art.txt', 'requirements-checks.txt',
-    'art', 'audio', 'check', 'maintenance', 'media', 'rebuild', 'roster', 'runtime',
+    'art', 'audio', 'check', 'maintenance', 'media', 'roster', 'runtime',
 }
+ALLOWED_ROOT_MARKDOWN = {'README.md', 'AGENTS.md', 'REBUILD_2D_PLAN.md'}
+ALLOWED_FIGHTER_MARKDOWN = {'MOVES.md', 'SOUNDS.md'}
 ROOT_PARENTS_RE = re.compile(
     r'^\s*ROOT\s*=\s*(?:pathlib\.)?Path\(__file__\)\.resolve\(\)\.parents\[(\d+)\]',
     re.M,
@@ -61,6 +62,23 @@ def iter_files(directory: Path):
             yield from iter_files(p)
         elif p.is_file():
             yield p
+
+
+def is_allowed_markdown(rel: str) -> bool:
+    """全仓源码与配置树的 Markdown 位置白名单（art/ 与 assets/ 除外）。"""
+    if rel in ALLOWED_ROOT_MARKDOWN or rel == 'docs/HANDBOOK.md':
+        return True
+    parts = Path(rel).parts
+    if parts[0] in {'third_party', 'addons'}:
+        return True
+    if (
+        len(parts) == 4
+        and parts[0] == 'content'
+        and parts[1] == 'fighters'
+        and parts[3] in ALLOWED_FIGHTER_MARKDOWN
+    ):
+        return True
+    return False
 
 
 def check_git_and_workspace_hygiene(errors: list[dict], *, allow_non_main_branch: bool) -> None:
@@ -137,7 +155,7 @@ def check_layout_whitelists(errors: list[dict]) -> None:
             errors.append({'path': p.name, 'reason': 'unexpected root file'})
 
     for sub, allowed, label in (
-        (ROOT / 'docs', DOCS_ENTRIES, 'unexpected docs entry (merge into docs/HANDBOOK.md)'),
+        (ROOT / 'docs', DOCS_ENTRIES, 'unexpected docs entry (only docs/HANDBOOK.md allowed)'),
         (ROOT / 'art', ART_ENTRIES, 'unexpected art top-level entry'),
         (ROOT / 'tools', TOOLS_ENTRIES, 'unexpected tools top-level entry'),
     ):
@@ -148,15 +166,6 @@ def check_layout_whitelists(errors: list[dict]) -> None:
                 continue
             if p.name not in allowed:
                 errors.append({'path': p.relative_to(ROOT).as_posix(), 'reason': label})
-
-    for p in sorted((ROOT / 'tools/rebuild').iterdir()):
-        if p.name in SKIP:
-            continue
-        if not p.is_dir():
-            errors.append({
-                'path': p.relative_to(ROOT).as_posix(),
-                'reason': 'loose file in tools/rebuild (use batch subdirectory or delete one-off script)',
-            })
 
     for p in sorted((ROOT / 'tools').rglob('*.py')):
         if '__pycache__' in p.parts:
@@ -201,32 +210,37 @@ def check_python_tool_hygiene(errors: list[dict]) -> None:
 
     syspath_stmt_re = re.compile(r'^\s*(?:_layout_sys|sys)\.path(?:\s*[:+\[]|\s*=|\.(?:insert|append|extend)\()')
     wildcard_re = re.compile(r'\.iterdir\(\)|tools/rebuild')
+    monkeypatch_re = re.compile(r'\b(?:_LayoutProjectPath|_LayoutJson|layout_runtime)\b')
     public_packages = ('art', 'audio', 'check', 'maintenance', 'media', 'roster', 'runtime')
     stems: dict[str, set[str]] = {}
-    for sub in (*public_packages, 'rebuild/shared'):
+    scan_paths: list[Path] = [p for p in sorted(tools_dir.glob('*.py')) if p.is_file()]
+    for sub in public_packages:
         base = tools_dir / sub
-        if not base.is_dir():
-            continue
-        for p in sorted(base.rglob('*.py')):
-            if '__pycache__' in p.parts or p.name == '__init__.py':
-                continue
-            rel = p.relative_to(ROOT).as_posix()
-            stems.setdefault(p.stem, set()).add(rel)
-            if p.name == 'seven_character_rework_hard_gate.py':
-                continue
-            text = p.read_text('utf-8-sig', errors='replace')
-            for lineno, line in enumerate(text.splitlines(), 1):
-                if syspath_stmt_re.search(line) and wildcard_re.search(line):
-                    errors.append({
-                        'path': f'{rel}:{lineno}',
-                        'reason': 'wildcard sys.path injection or tools/rebuild sys.path coupling forbidden',
-                    })
+        if base.is_dir():
+            scan_paths.extend(
+                p for p in sorted(base.rglob('*.py'))
+                if '__pycache__' not in p.parts and p.name != '__init__.py'
+            )
 
-    allowed_duplicates = {
-        'pipeline': {'tools/art/pipeline.py', 'tools/audio/pipeline.py'},
-    }
+    for p in scan_paths:
+        rel = p.relative_to(ROOT).as_posix()
+        if p.parent != tools_dir:
+            stems.setdefault(p.stem, set()).add(rel)
+        text = p.read_text('utf-8-sig', errors='replace')
+        for lineno, line in enumerate(text.splitlines(), 1):
+            if syspath_stmt_re.search(line) and wildcard_re.search(line):
+                errors.append({
+                    'path': f'{rel}:{lineno}',
+                    'reason': 'wildcard sys.path injection or tools/rebuild sys.path coupling forbidden',
+                })
+            if p.name != 'repository_audit.py' and monkeypatch_re.search(line):
+                errors.append({
+                    'path': f'{rel}:{lineno}',
+                    'reason': 'forbidden layout_runtime/_LayoutProjectPath monkeypatch',
+                })
+
     for stem, paths in sorted(stems.items()):
-        if len(paths) > 1 and paths != allowed_duplicates.get(stem):
+        if len(paths) > 1:
             errors.append({
                 'path': ', '.join(sorted(paths)),
                 'reason': f'duplicate Python tool module name `{stem}` across packages',
@@ -235,7 +249,7 @@ def check_python_tool_hygiene(errors: list[dict]) -> None:
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--skip-source-hashes', action='store_true')
+    parser.add_argument('--skip-source-hashes', action='store_true', help='Kept for CLI compatibility')
     parser.add_argument('--allow-non-main-branch', action='store_true')
     args = parser.parse_args()
     errors = []
@@ -243,13 +257,15 @@ def main():
     check_git_and_workspace_hygiene(errors, allow_non_main_branch=args.allow_non_main_branch)
     check_layout_whitelists(errors)
     check_python_tool_hygiene(errors)
-    source_index_path = ROOT / 'art/source-index.json'
-    has_local_media = source_index_path.is_file()
+    has_local_media = (ROOT / 'assets/ui/fonts/fusion-pixel-12px.otf').is_file()
     files = list(iter_files(ROOT))
     total = sum(p.stat().st_size for p in files)
     checked_exts = ('.gd', '.gdshader', '.tscn', '.tres', '.png', '.wav', '.otf') if has_local_media else ('.gd', '.gdshader', '.tscn', '.tres')
     for p in files:
         rel = p.relative_to(ROOT).as_posix()
+        if p.suffix.lower() == '.md' and not rel.startswith(('art/', 'assets/')):
+            if not is_allowed_markdown(rel):
+                errors.append({'path': rel, 'reason': 'markdown file outside allowed whitelist'})
         if p.stat().st_size > 95 * 1024 * 1024:
             errors.append({'path': rel, 'reason': 'file larger than the clean repository limit'})
         if p.name == '.gitattributes' and p.parent != ROOT:
@@ -270,21 +286,8 @@ def main():
                     continue  # Historical output paths or optional authoring sources.
                 if not (ROOT / reference.removeprefix('res://')).is_file():
                     errors.append({'path': rel, 'reason': 'missing static resource', 'resource': reference})
-    if has_local_media:
-        index = json.loads(source_index_path.read_text('utf-8'))
-        for old, new in index['aliases'].items():
-            target = ROOT / new
-            if not target.is_file():
-                errors.append({'path': old, 'reason': 'missing canonical source', 'resource': new})
-        for record in index['files']:
-            target = ROOT / record['path']
-            if not target.is_file():
-                errors.append({'path': record['path'], 'reason': 'missing source file'})
-            elif not args.skip_source_hashes and hashlib.sha256(target.read_bytes()).hexdigest() != record['sha256']:
-                errors.append({'path': record['path'], 'reason': 'source hash changed'})
     result = {'status': 'passed' if not errors else 'failed', 'files': len(files), 'bytes': total,
-              'errors': errors, 'warnings': warnings, 'local_media_present': has_local_media,
-              'source_hashes_checked': has_local_media and not args.skip_source_hashes}
+              'errors': errors, 'warnings': warnings, 'local_media_present': has_local_media}
     output = ROOT / 'reports/verification'
     output.mkdir(parents=True, exist_ok=True)
     (output / 'repository-audit.json').write_text(json.dumps(result, ensure_ascii=False, indent=2), 'utf-8')

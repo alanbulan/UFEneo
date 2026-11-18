@@ -4,7 +4,7 @@
 腾空收腿当成尺度错误。报告写到 reports/frame-scale-jumps.json，异常或
 需要人眼复核时非零退出。
 
-判定口径（STYLE.md“尺寸校验”）：
+判定口径（docs/HANDBOOK.md 美术流程与尺寸校验）：
 - 头部是无遮挡时最稳定的比例基准；头宽与头部面积（面积取平方根折成线性比例）
   必须同时明显偏大，且站高也偏大，才记为确定的整帧尺度突变。
 - 只有站高偏大、头部正常：视为姿势（站直/抬臂/特效）不报。
@@ -27,13 +27,6 @@
 
 from __future__ import annotations
 
-# 目录迁移：只解析冻结证据中的旧路径；不复制素材。
-import sys as _layout_sys
-from pathlib import Path as _LayoutNativePath
-_layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-if str(_layout_root / "tools") not in _layout_sys.path:
-    _layout_sys.path.insert(0, str(_layout_root / "tools"))
-
 import argparse
 import hashlib
 import json
@@ -46,7 +39,9 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageFilter
 
-ROOT = _LayoutNativePath(_layout_root)
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
 DEFAULT_REPORT = ROOT / "reports/frame-scale-jumps.json"
 THRESHOLD = 0.08
 # 确定突变要求两个头部指标都至少达到阈值的一半，避免单人头的转头/局部重画误判。

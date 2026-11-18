@@ -1,18 +1,10 @@
 """运行时音频/特效资源清单校验；不代替画面与听感审片。"""
 
-# 目录迁移：只解析冻结证据中的旧路径；不复制素材。
-import sys as _layout_sys
-from pathlib import Path as _LayoutNativePath
-_layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-if str(_layout_root / "tools") not in _layout_sys.path:
-    _layout_sys.path.insert(0, str(_layout_root / "tools"))
-from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
-import hashlib,json,math,wave; json = _LayoutJson
+import hashlib, json, math, wave
 from pathlib import Path
-Path = _LayoutProjectPath
 import numpy as np
 from PIL import Image
-ROOT=_LayoutProjectPath(_layout_root)
+ROOT = Path(__file__).resolve().parents[2]
 def read(path):return json.loads(path.read_text(encoding='utf-8-sig'))
 def main():
  records=read(ROOT/'content/audio/sources.json')['records'];ids=set();metrics=[]

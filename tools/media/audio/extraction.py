@@ -1,15 +1,13 @@
 """有来源的音频截取；先在浮点域衰减，再量化，避免新增削波。"""
 from __future__ import annotations
 
-# 目录迁移：只解析冻结证据中的旧路径；不复制素材。
-import sys as _layout_sys
-from pathlib import Path as _LayoutNativePath
-_layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-if str(_layout_root / "tools") not in _layout_sys.path:
-    _layout_sys.path.insert(0, str(_layout_root / "tools"))
-from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
-
 import math
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[3]
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
 
 
 def extraction_gain(spec):

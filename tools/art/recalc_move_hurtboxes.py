@@ -6,8 +6,7 @@
 重算，再按 frame["sprite"] 写回全部帧；其它字段（sprite/dx/dy/hitboxes/
 cancel/events/shots/target/电影化键）一律原样保留。
 
-不改伤害、判定、节奏，也不碰 state_frames.json（那是
-tools/rebuild/body-rescale/recalc_hurtboxes.py 的职责）。
+不改伤害、判定、节奏，也不碰 state_frames.json（请用 derive_fighter_data.py --states-only）。
 
 用法：
     .venv/bin/python tools/art/recalc_move_hurtboxes.py --fighter ultraman-zero \

@@ -2,10 +2,15 @@
 from __future__ import annotations
 import argparse
 import json
+from pathlib import Path
 import re
 import subprocess
 import sys
 import uuid
+
+_TOOLS_DIR = Path(__file__).resolve().parent
+if str(_TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(_TOOLS_DIR))
 from runtime.environment import ROOT, godot_path, isolated_test_environment
 
 CASES = [

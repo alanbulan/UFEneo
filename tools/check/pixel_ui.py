@@ -1,17 +1,9 @@
 """正式UI禁用绘图检查及九宫格清单/像素字体完整性，不评价画面美丑。"""
 
-# 目录迁移：只解析冻结证据中的旧路径；不复制素材。
-import sys as _layout_sys
-from pathlib import Path as _LayoutNativePath
-_layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-if str(_layout_root / "tools") not in _layout_sys.path:
-    _layout_sys.path.insert(0, str(_layout_root / "tools"))
-from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+import hashlib, json, re, sys
 from pathlib import Path
-Path = _LayoutProjectPath
-import re,json,hashlib,sys; json = _LayoutJson
 from PIL import Image
-ROOT=_LayoutProjectPath(_layout_root)
+ROOT = Path(__file__).resolve().parents[2]
 FORBIDDEN=re.compile(r'\bStyleBoxFlat\b|\b(?:draw_(?:line|dashed_line|rect|circle|arc|polygon|colored_polygon|polyline|multiline|mesh|primitive|style_box))\s*\(')
 def main():
  errors=[]

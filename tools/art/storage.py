@@ -1,24 +1,20 @@
 """Audit categorized art; optionally prune obsolete generated drafts and caches."""
 
-# 目录迁移：只解析冻结证据中的旧路径；不复制素材。
-import sys as _layout_sys
-from pathlib import Path as _LayoutNativePath
-_layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-if str(_layout_root / "tools") not in _layout_sys.path:
-    _layout_sys.path.insert(0, str(_layout_root / "tools"))
-from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
-Path = _LayoutProjectPath
 import argparse
 import hashlib
-import json; json = _LayoutJson
+import json
 import re
+import sys
+
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
 
 from art.paths import LEGACY_KEYART, PIXEL_PORTRAITS, asset_id, brief_path, pixel_portrait_path
 
-ROOT = _LayoutProjectPath(_layout_root)
 MAINTENANCE = "reports/maintenance"
 
 
@@ -213,7 +209,7 @@ def audit(write_index=False):
     if write_index:
         index = {"schema": 1, "generated_by": "tools/art/storage.py --index", "characters": indexed, "runs": runs,
                  "backgrounds": "art/shared/legacy/concepts/backgrounds", "shared_effects": "art/shared/legacy/concepts/effects",
-                 "legacy_hd_archive": LEGACY_KEYART, "storage_guide": "docs/ASSET_STORAGE.md"}
+                 "legacy_hd_archive": LEGACY_KEYART, "storage_guide": "docs/HANDBOOK.md"}
         (ROOT / "art/catalog.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     out = ROOT / MAINTENANCE / "art-storage-audit.json"
     out.parent.mkdir(parents=True, exist_ok=True)

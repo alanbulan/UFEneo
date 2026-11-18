@@ -48,11 +48,6 @@ CHECKS: dict[str, dict[str, str]] = {
         "module": "check.catalogue_idle",
         "summary": "图鉴待机动画条画布尺寸、二值 Alpha、站高与帧差分体检",
     },
-    "body_length": {
-        "mode": "authoring_gate",
-        "module": "check.body_length",
-        "summary": "赛文/初代/杰顿定稿真实骨长校准与躺姿配置门",
-    },
     "catalogue_facing": {
         "mode": "authoring_gate",
         "module": "check.catalogue_facing",
@@ -63,40 +58,10 @@ CHECKS: dict[str, dict[str, str]] = {
         "module": "check.frame_scale_jumps",
         "summary": "已装动画逐帧人物尺度突变检测与定锚修复",
     },
-    "head_size_check": {
+    "sprite_quality": {
         "mode": "authoring_gate",
-        "module": "check.head_size_check",
-        "summary": "头部尺度门审计与已装头镖帧校验",
-    },
-    "islands": {
-        "mode": "authoring_gate",
-        "module": "check.islands",
-        "summary": "已装角色图集微小游离像素块扫描",
-    },
-    "limb_idle": {
-        "mode": "authoring_gate",
-        "module": "check.limb_idle",
-        "summary": "远近侧肢体明暗与待机轨迹门",
-    },
-    "loops": {
-        "mode": "authoring_gate",
-        "module": "check.loops",
-        "summary": "循环整帧动作头部特征连续性检查",
-    },
-    "seven_air_special": {
-        "mode": "authoring_gate",
-        "module": "check.seven_air_special",
-        "summary": "赛文空中念力头镖制作台账与帧校验",
-    },
-    "seven_character_rework_hard_gate": {
-        "mode": "authoring_gate",
-        "module": "check.seven_character_rework_hard_gate",
-        "summary": "七角色整帧返工批次冻结复算硬门（SHA 绑定只读保留）",
-    },
-    "walk_standing": {
-        "mode": "authoring_gate",
-        "module": "check.walk_standing",
-        "summary": "走路周期脚/眼测量与站立循环检查",
+        "module": "check.sprite_quality",
+        "summary": "通用精灵像素硬门（辉光门/二值 Alpha/孤岛/≤32 色/站姿高差/走路等长位移）",
     },
 }
 

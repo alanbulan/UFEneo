@@ -25,22 +25,18 @@ assets/fighters/<id>/animations/manifest.json 的角色；已实机角色默认�
 """
 from __future__ import annotations
 
-# 目录迁移：只解析冻结证据中的旧路径；不复制素材。
-import sys as _layout_sys
-from pathlib import Path as _LayoutNativePath
-_layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-if str(_layout_root / "tools") not in _layout_sys.path:
-    _layout_sys.path.insert(0, str(_layout_root / "tools"))
-
 import argparse
 import hashlib
 import json
 from pathlib import Path
+import sys
 
 import numpy as np
 from PIL import Image
 
-ROOT = _layout_root
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
 DISPLAY_PATH = ROOT / "content/roster/catalogue_display.json"
 SELECTION_PATH = ROOT / "content/roster/selection.json"
 SCALE = 4

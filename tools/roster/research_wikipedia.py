@@ -1,27 +1,25 @@
 """Import revision-linked Wikipedia research, never fabricated frame or move data."""
 
-# 目录迁移：只解析冻结证据中的旧路径；不复制素材。
-import sys as _layout_sys
-from pathlib import Path as _LayoutNativePath
-_layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-if str(_layout_root / "tools") not in _layout_sys.path:
-    _layout_sys.path.insert(0, str(_layout_root / "tools"))
-from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from datetime import datetime, timezone
 from pathlib import Path
-Path = _LayoutProjectPath
 import argparse
 import hashlib
-import json; json = _LayoutJson
+import json
 import re
+import sys
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
-import urllib.error
-import time
-import mwparserfromhell
-from roster.chinese_text import simplified_text, select_chinese_variant
 
-ROOT = _LayoutProjectPath(_layout_root)
+import mwparserfromhell
+
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
+
+from roster.chinese_text import select_chinese_variant, simplified_text
+
 DEST = ROOT / "docs/research/wikipedia"
 PAGES = {
     "ultraman": "初代奥特曼", "seven": "赛文奥特曼", "jack": "归来的奥特曼", "ace": "艾斯奥特曼",

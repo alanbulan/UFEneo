@@ -1,23 +1,17 @@
 """只录制主游戏。成功转码后删除AVI；临时MP4审阅后直接删除。须经Godot锁运行。"""
 
-# 目录迁移：只解析冻结证据中的旧路径；不复制素材。
-import sys as _layout_sys
-from pathlib import Path as _LayoutNativePath
-_layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-if str(_layout_root / "tools") not in _layout_sys.path:
-    _layout_sys.path.insert(0, str(_layout_root / "tools"))
-from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
-from pathlib import Path
-Path = _LayoutProjectPath
 import argparse
 import hashlib
-import json; json = _LayoutJson
+import json
+from pathlib import Path
 import re
 import subprocess
 import sys
-sys.path.insert(0, str((_LayoutProjectPath(_layout_root) / 'tools')))
+
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
 from runtime.environment import godot_path
-ROOT = _LayoutProjectPath(_layout_root)
 
 
 def main():
