@@ -4,17 +4,17 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 import sys
 from pathlib import Path
 Path = _LayoutProjectPath
 from collections import defaultdict
 from PIL import Image
 ROOT=_LayoutProjectPath(_layout_root)
-sys.path.insert(0,str(ROOT/'tools/rebuild'))
-from head_scale import read,sha,measure,WORK
-import head_size
+from rebuild.shared.head_scale import read,sha,measure,WORK
+import rebuild.shared.head_size as head_size
 
 def main():
  q=read(WORK/'audit.json');rows=q['rows'];seen=set();scales={};blocked=[]
@@ -42,7 +42,7 @@ def main():
    if not clip.get('head_qa'):continue # 本轮保留旧版的阻塞动作在上面的全量审计中报错。
    folder=(ROOT/clip['head_qa']).parent;hq=head_size.validate(folder,fighter)
    if fighter=='ultraseven':
-    import slugger_qa
+    import rebuild.shared.slugger_qa as slugger_qa
     assert clip.get('slugger_qa'),'赛文正式动作缺少头镖质检'
     slugger_qa.validate(folder)
    atlas=Image.open(ROOT/clip['texture'].removeprefix('res://')).convert('RGBA')

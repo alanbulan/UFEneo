@@ -17,9 +17,10 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "tools/media/art"))
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
 
-import catalogue_reference as CR  # noqa: E402
+import media.art.catalogue_reference as CR  # noqa: E402
 
 IMAGE_TO_IMAGE = "mcp_image_to_image_from_official_reference"
 

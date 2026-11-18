@@ -23,8 +23,9 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "tools/art"))
-from derive_fighter_data import band_boxes, largest_component, load_mask  # noqa: E402
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
+from art.derive_fighter_data import band_boxes, largest_component, load_mask  # noqa: E402
 
 
 def boxes_for_clip(manifest: dict, clip_id: str,

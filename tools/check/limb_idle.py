@@ -4,8 +4,9 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from pathlib import Path
 Path = _LayoutProjectPath
 import argparse
@@ -14,10 +15,9 @@ from collections import Counter
 import numpy as np
 from PIL import Image
 ROOT=_LayoutProjectPath(_layout_root)
-sys.path.insert(0,str(ROOT/'tools/rebuild'))
-from head_scale import read,save,sha
-import limb_color_qa as color
-import idle_qa
+from rebuild.shared.head_scale import read,save,sha
+import rebuild.shared.limb_color_qa as color
+import rebuild.shared.idle_qa as idle_qa
 
 
 def frame_row(records,clip,index):

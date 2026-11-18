@@ -13,10 +13,11 @@ sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[3]
 REPORT = ROOT / "reports/review/2026-11-01/ex-direct-selection-runtime-v1"
 PREFIX = "res://tests/ex_direct_selection_review_"
-sys.path.insert(0, str(ROOT / "tools"))
-sys.path.insert(0, str(ROOT / "tools/rebuild/ultraman-omega"))
-from verify import godot_path
-from codex_s6_energy_runtime import lock_required
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
+from runtime.environment import godot_path
+from rebuild.shared.production_io import load_rebuild_script
+lock_required = load_rebuild_script("ultraman-omega/codex_s6_energy_runtime.py").lock_required
 
 CASES = [{'id': 'cpu-ex-gomora-left', 'mode': 'cpu', 'fighters': ['ex_gomora', 'zetton'], 'stage': 'light-country', 'music': 'auto', 'focus': 0}, {'id': 'local-ex-gomora-right', 'mode': 'local', 'fighters': ['ultraseven', 'ex_gomora'], 'stage': 'ultra-arena', 'music': 'monster-pressure', 'focus': 1}, {'id': 'cpu-ex-red-king-left', 'mode': 'cpu', 'fighters': ['ex_red_king', 'zetton'], 'stage': 'monster-graveyard', 'music': 'auto', 'focus': 0}, {'id': 'local-ex-red-king-right', 'mode': 'local', 'fighters': ['ultraseven', 'ex_red_king'], 'stage': 'light-country', 'music': 'off', 'focus': 1}]
 

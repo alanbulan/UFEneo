@@ -4,8 +4,9 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from pathlib import Path
 Path = _LayoutProjectPath
 import json,sys,hashlib,urllib.request,zipfile,io,shutil,argparse; json = _LayoutJson
@@ -86,8 +87,7 @@ def generate(keys):
   print(producer.generate('ui-p4-'+key),flush=True)
 
 def extract():
- sys.path.insert(0,str(ROOT/'tools/rebuild'))
- import process_phase2 as process
+ import rebuild.shared.process_phase2 as process
  # GPT并未严格遵守等分格，因此审片后固定每个完整部件的实际矩形。
  crops={
  'chrome':[(24,35,400,283),(412,38,776,283),(794,125,1176,221),(1238,60,1480,272),(24,344,392,461),(410,340,777,463),(788,344,1152,458),(1166,343,1520,456),(22,548,395,669),(451,551,774,671),(809,550,1128,668),(1170,559,1519,657),(23,790,394,891),(555,700,635,982),(932,773,1000,925),(1218,706,1478,963)],

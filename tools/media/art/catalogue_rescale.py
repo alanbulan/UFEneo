@@ -120,11 +120,11 @@ def rescale_one(catalogue_id: str, kind: str, scale: dict,
 
     if raw.is_file():
         # 从原始高分图重跑，画质最好。
-        from catalogue_native import build_head_weighted_palette, downsample, load_raw
+        from media.art.catalogue_native import build_head_weighted_palette, downsample, load_raw
         source = load_raw(raw)
         reduced = downsample(trim(source), height)
         palette = build_head_weighted_palette(reduced)
-        from catalogue_native import apply_palette
+        from media.art.catalogue_native import apply_palette
         quantized = apply_palette(reduced, palette)
         canvas, placement = place(quantized, height)
         path = "raw"
@@ -179,7 +179,7 @@ def main() -> int:
     # 同步 display 里的 visible_height_including_ornaments 与 native_root。
     # 逐条经 catalogue_store 的 flock 合并，避免与其它批处理并发时整文件覆盖。
     if not args.dry_run:
-        import catalogue_store
+        import media.art.catalogue_store as catalogue_store
         for row in results:
             entry = display["entries"].get(row["id"])
             if entry is None:
@@ -222,5 +222,6 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.path.insert(0, str(ROOT / "tools/media/art"))
+    if str(ROOT / "tools") not in sys.path:
+        sys.path.insert(0, str(ROOT / "tools"))
     raise SystemExit(main())

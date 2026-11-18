@@ -4,8 +4,9 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from pathlib import Path
 Path = _LayoutProjectPath
 from types import SimpleNamespace
@@ -18,11 +19,9 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = _LayoutProjectPath(_layout_root)
-sys.path.insert(0, str(ROOT / 'tools'))
-sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path.home() / '.codex/skills/sprite-gen'))
 import art.pipeline
-from process_phase2 import components
+from rebuild.shared.process_phase2 import components
 from sprite_gen.frames.extract import detect_pixel_grid, grid_snap_downscale, _kcentroid_downscale, apply_palette, binarize_alpha
 
 RUN = ROOT / 'art/fighters/ultraman/stage2/generation/walk_forward_single_v1'
@@ -206,9 +205,9 @@ def extract(i,attempt):
     if source_alpha['transparent_fraction']<.05 or source_alpha['rectangular_matte']:raise ValueError('原图没有可靠真透明')
     solid=image.getchannel('A').point(lambda a:255 if a>=200 else 0)
     bbox=solid.getbbox();cut=image.crop(bbox)
-    import head_size
+    import rebuild.shared.head_size as head_size
     factor,heads,head_reference,head_issues=head_size.calibration('ultraman',[cut],{})
-    from process_phase2 import snap_for_scale
+    from rebuild.shared.process_phase2 import snap_for_scale
     snap,pitch,phase=snap_for_scale(cut,factor,max_pitch=12)
     height=round(cut.height*factor);width=round(cut.width*factor)
     if width>176:raise ValueError('人物超宽，禁止裁切')

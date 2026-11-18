@@ -211,5 +211,6 @@ func _compose_shake() -> void:
 		return
 	@warning_ignore("integer_division") # 震屏幅度按剩余 tick 取整衰减。
 	var amp := maxi(1, shake_amp * shake_ticks / maxi(1, shake_duration))
-	var sign := 1 if shake_ticks%2==0 else -1
-	shake=Vector2(sign*amp, sign*maxi(0, amp/2))
+	var shake_dir := 1 if shake_ticks%2==0 else -1
+	@warning_ignore("integer_division") # 竖向震屏取半像素整数。
+	shake=Vector2(shake_dir*amp, shake_dir*maxi(0, amp/2))

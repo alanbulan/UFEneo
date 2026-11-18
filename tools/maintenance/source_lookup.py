@@ -5,9 +5,9 @@ import json
 from pathlib import Path
 import sys
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from layout_runtime import ROOT, translate
+from maintenance.layout_runtime import ROOT, translate
 
 
 def main():

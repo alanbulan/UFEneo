@@ -4,14 +4,14 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 import argparse,copy,math,sys
 from pathlib import Path
 Path = _LayoutProjectPath
 from PIL import Image,ImageDraw
-sys.path.insert(0,str(Path(__file__).resolve().parent))
-from phase3_air import ROOT,read,save,sha,font,producer,process,spec
+from rebuild.shared.phase3_air import ROOT,read,save,sha,font,producer,process,spec
 
 WORK=ROOT/'art/fighters/zetton/stage3/legacy/zetton1'
 OUT=ROOT/'reports/review/2026-10-22-zetton-first'

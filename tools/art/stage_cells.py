@@ -40,8 +40,9 @@ import numpy as np
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "tools/media/art"))
-from catalogue_native import (  # noqa: E402
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
+from media.art.catalogue_native import (  # noqa: E402
     apply_palette, build_palette, harden_alpha, trim,
 )
 

@@ -79,9 +79,9 @@ func run() -> void:
 	for id in ["ultraman-zero", "father-of-ultra", "ultraman-justice"]:
 		var layout: Dictionary = UfeChargeEffectPolicy.data().placements[id]
 		for state in ["charge_start", "charge", "charge_stop"]:
-			var charged := UfeFighter.new(UfeContentDatabase.fighter(id, true), 470)
-			charged.enter(state)
-			var aura := UfeChargeEffectPolicy.filter(charged, {}, [], false)
+			var q_fighter := UfeFighter.new(UfeContentDatabase.fighter(id, true), 470)
+			q_fighter.enter(state)
+			var aura := UfeChargeEffectPolicy.filter(q_fighter, {}, [], false)
 			var expected := str(layout[state].effect)
 			check(aura.any(func(item): return str(item.get("effect", "")) == expected), "%s/%s q_charge_injected_without_attachments" % [id, state])
 	var charged := UfeFighter.new(UfeContentDatabase.fighter("ultraman-zero", true), 470)

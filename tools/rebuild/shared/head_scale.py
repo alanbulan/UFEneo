@@ -4,8 +4,9 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from pathlib import Path
 Path = _LayoutProjectPath
 from collections import defaultdict
@@ -13,7 +14,7 @@ import argparse, hashlib, json, math, sys; json = _LayoutJson
 import numpy as np
 import cv2
 from PIL import Image, ImageDraw, ImageFont
-from production_io import read_json
+from rebuild.shared.production_io import read_json
 
 ROOT=_LayoutProjectPath(_layout_root)
 WORK=ROOT/'art/shared/production/head-scale'
@@ -21,7 +22,7 @@ OUT=ROOT/'reports/review/2026-10-22-head-scale'
 def read(p):return read_json(p)
 def save(p,v):
  # 原子写入：并行会话读同一JSON时不会读到半截内容。
- import art_phase2
+ import rebuild.shared.art_phase2 as art_phase2
  art_phase2.save(Path(p),v)
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def font(n=16):return ImageFont.truetype('/System/Library/Fonts/Hiragino Sans GB.ttc',n)
@@ -139,7 +140,7 @@ def inventory():
 
 def audit(probe=False,fresh=False,fighter_filter=None,resume=False):
  """先在开发目录重处理；超差绝不安装，也不逐帧修比例。"""
- sys.path.insert(0,str(Path(__file__).resolve().parent));import process_phase2 as proc
+ import rebuild.shared.process_phase2 as proc
  rows=read(WORK/'inventory.json');groups=defaultdict(list)
  for row in rows:
   if row['raw_exists']:groups[(row['fighter'],row['raw'])].append(row)

@@ -4,8 +4,9 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from pathlib import Path
 Path = _LayoutProjectPath
 from statistics import median
@@ -22,8 +23,7 @@ ROOT=_LayoutProjectPath(_layout_root)
 sys.path.insert(0,str(Path.home()/'.codex/skills/sprite-gen'))
 from sprite_gen.frames.extract import (detect_pixel_grid,grid_snap_downscale,
     _kcentroid_downscale,apply_palette,binarize_alpha)
-sys.path.insert(0,str(Path(__file__).resolve().parent))
-from art_phase2 import CLIPS, save
+from rebuild.shared.art_phase2 import CLIPS, save
 
 
 def grid_figures(image,cols,rows,expected,with_bounds=False):
@@ -134,7 +134,7 @@ def process(name,take=None):
     fighter=request.get('fighter','ultraman');native_cell=int(request.get('native_cell',192));anchor=request.get('native_anchor',[native_cell//2,native_cell-8])
     palette=json.loads((ROOT/f'content/fighters/{fighter}/palette.json').read_text('utf-8'))['colors']
     # 姿势外框不是身体尺度；只有头部稳定特征能决定整张原图的唯一比例。
-    import head_size
+    import rebuild.shared.head_size as head_size
     try:factor,raw_heads,head_reference,head_issues=head_size.calibration(fighter,cells,request)
     except ValueError as exc:return dict(action=name,status='blocked',reason=str(exc))
     correction=float(request.get('head_scale_multiplier',1))
@@ -189,7 +189,7 @@ def process(name,take=None):
         raw_region=request.get('head_regions',{}).get(str(index))
         raw_region=[[x*cell.width,y*cell.height] for x,y in raw_region] if raw_region else raw_heads[index]['polygon']
         head_region=[[offset[0]+x*factor,offset[1]+y*factor] for x,y in raw_region]
-        direction=request.get('head_directions',{}).get(str(index),[0,-1]) if fighter=='ultraseven' else __import__('head_scale').pose_direction(request,index)
+        direction=request.get('head_directions',{}).get(str(index),[0,-1]) if fighter=='ultraseven' else __import__('rebuild.shared.head_scale', fromlist=['ROOT']).pose_direction(request,index)
         measurement_axis=request.get('head_measurement_axes',{}).get(str(index),request.get('head_measurement_axis','length'))
         measured_head=head_size.width_measure(canvas,head_region) if measurement_axis=='width' else head_size.head(canvas,fighter,hint,direction=direction,region=head_region,method=head_reference.get('measurement_method'),facing=request.get('head_facings',{}).get(str(index)))
         head_deviation=(measured_head[measurement_axis]/head_reference['measurement'][measurement_axis]-1) if measured_head else None
@@ -223,7 +223,7 @@ def process(name,take=None):
         head_records[index]['image_sha256']=hashlib.sha256((out/f'frame-{index}.png').read_bytes()).hexdigest()
     atlas.save(out/'atlas.png')
     save(out/'head-qa.json',dict(scale_policy='per_frame_head',reference=head_reference,frames=head_records,issues=head_issues,rule='逐帧头部比例；成品头部偏差≤±8%；不使用姿势外框'))
-    import limb_color_qa
+    import rebuild.shared.limb_color_qa as limb_color_qa
     limb_color_qa.freeze_raw_baseline(out,frames,raw)
     # 联系表真 4 倍最近邻；每动作一行，背景只用于审片。
     contact=Image.new('RGB',(native_cell*len(frames)*4,native_cell*4+64),(29,35,48))
@@ -257,7 +257,7 @@ def install():
         if not (source/'qa.json').exists():
             production[name]=dict(status='not_processed',reviewed=False);continue
         qa=json.loads((source/'qa.json').read_text('utf-8'))
-        import head_size
+        import rebuild.shared.head_size as head_size
         head_size.validate(source,'ultraman')
         production[name]=dict(status=qa['status'],reviewed=False,issues=qa['issues'])
         if qa['status']=='blocked':continue

@@ -31,8 +31,9 @@ ROOT_Y = 248
 # 脚底重心只取最低的这一段行，避免尾巴/武器把水平对齐拉偏。
 FOOT_FRACTION = 0.12
 
-sys.path.insert(0, str(ROOT / "tools/media/art"))
-from catalogue_native import (  # noqa: E402
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
+from media.art.catalogue_native import (  # noqa: E402
     apply_palette, build_palette, downsample, harden_alpha, load_raw, trim,
 )
 
@@ -139,7 +140,7 @@ def main() -> int:
 
     report = build_strip(args.catalogue_id, entry, args.frames, args.dry_run)
     if not args.dry_run:
-        from catalogue_store import update_entry
+        from media.art.catalogue_store import update_entry
         update_entry(args.catalogue_id, {
             "strip": "res://" + report["out"],
             "frames": report["frames"],

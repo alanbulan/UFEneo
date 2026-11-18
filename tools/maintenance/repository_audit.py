@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 SKIP = {
@@ -172,6 +173,66 @@ def check_layout_whitelists(errors: list[dict]) -> None:
                 })
 
 
+def check_python_tool_hygiene(errors: list[dict]) -> None:
+    tools_dir = ROOT / 'tools'
+    if str(tools_dir) not in sys.path:
+        sys.path.insert(0, str(tools_dir))
+    from check.registry import CHECKS
+
+    check_files = {
+        p.stem: p
+        for p in sorted((tools_dir / 'check').glob('*.py'))
+        if p.name not in {'registry.py', '__init__.py'}
+    }
+    for stem, p in check_files.items():
+        if stem not in CHECKS:
+            errors.append({
+                'path': p.relative_to(ROOT).as_posix(),
+                'reason': 'check script missing from tools/check/registry.py',
+            })
+    for stem, meta in CHECKS.items():
+        mod_rel = str(meta.get('module', '')).replace('.', '/') + '.py'
+        script = tools_dir / mod_rel
+        if not script.is_file():
+            errors.append({
+                'path': f'tools/check/registry.py:{stem}',
+                'reason': 'registered check script missing on disk',
+            })
+
+    syspath_stmt_re = re.compile(r'^\s*(?:_layout_sys|sys)\.path(?:\s*[:+\[]|\s*=|\.(?:insert|append|extend)\()')
+    wildcard_re = re.compile(r'\.iterdir\(\)|tools/rebuild')
+    public_packages = ('art', 'audio', 'check', 'maintenance', 'media', 'roster', 'runtime')
+    stems: dict[str, set[str]] = {}
+    for sub in (*public_packages, 'rebuild/shared'):
+        base = tools_dir / sub
+        if not base.is_dir():
+            continue
+        for p in sorted(base.rglob('*.py')):
+            if '__pycache__' in p.parts or p.name == '__init__.py':
+                continue
+            rel = p.relative_to(ROOT).as_posix()
+            stems.setdefault(p.stem, set()).add(rel)
+            if p.name == 'seven_character_rework_hard_gate.py':
+                continue
+            text = p.read_text('utf-8-sig', errors='replace')
+            for lineno, line in enumerate(text.splitlines(), 1):
+                if syspath_stmt_re.search(line) and wildcard_re.search(line):
+                    errors.append({
+                        'path': f'{rel}:{lineno}',
+                        'reason': 'wildcard sys.path injection or tools/rebuild sys.path coupling forbidden',
+                    })
+
+    allowed_duplicates = {
+        'pipeline': {'tools/art/pipeline.py', 'tools/audio/pipeline.py'},
+    }
+    for stem, paths in sorted(stems.items()):
+        if len(paths) > 1 and paths != allowed_duplicates.get(stem):
+            errors.append({
+                'path': ', '.join(sorted(paths)),
+                'reason': f'duplicate Python tool module name `{stem}` across packages',
+            })
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--skip-source-hashes', action='store_true')
@@ -181,6 +242,7 @@ def main():
     warnings = []
     check_git_and_workspace_hygiene(errors, allow_non_main_branch=args.allow_non_main_branch)
     check_layout_whitelists(errors)
+    check_python_tool_hygiene(errors)
     source_index_path = ROOT / 'art/source-index.json'
     has_local_media = source_index_path.is_file()
     files = list(iter_files(ROOT))

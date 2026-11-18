@@ -16,8 +16,10 @@ import subprocess
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-import catalogue_store  # noqa: E402 - 同目录工具
+_TOOLS_DIR = str(Path(__file__).resolve().parents[2])
+if _TOOLS_DIR not in sys.path:
+    sys.path.insert(0, _TOOLS_DIR)
+import media.art.catalogue_store as catalogue_store  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[3]
 VENV = ROOT / ".venv/bin/python"

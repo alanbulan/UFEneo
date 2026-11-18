@@ -9,8 +9,9 @@ from __future__ import annotations
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 
 import argparse
 import base64
@@ -104,7 +105,7 @@ def frontend_profile_path():
 
 def frontend_image_result(args, fields):
     """复用网页真实协议；已提交任务只恢复 GET，不重复 POST。"""
-    from frontend_session_client import FrontendError, FrontendSessionClient
+    from rebuild.shared.frontend_session_client import FrontendError, FrontendSessionClient
 
     client = FrontendSessionClient(frontend_profile_path())
     width, height = map(int, fields["size"].split("x"))
@@ -933,7 +934,7 @@ def doctor(args):
                   "art_generation": "GPT Image only", "postprocessing": "local open-source tools only",
                   "api_transport": "frontend_session_https"}
         if args.check_api:
-            from frontend_session_client import FrontendError, FrontendSessionClient, TASK_ID
+            from rebuild.shared.frontend_session_client import FrontendError, FrontendSessionClient, TASK_ID
             task_id = os.environ.get("UFE_WEB_DOCTOR_TASK_ID") or "ufeneo-doctor-nonexistent"
             if not TASK_ID.fullmatch(task_id):
                 raise ValueError("Invalid frontend doctor task ID")
@@ -1045,7 +1046,7 @@ def main():
 
 
 if __name__ == "__main__":
-    from frontend_session_client import FrontendError
+    from rebuild.shared.frontend_session_client import FrontendError
     try:
         main()
     except (ValueError, KeyError, OSError, subprocess.CalledProcessError, FrontendError) as exc:

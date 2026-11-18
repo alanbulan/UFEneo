@@ -10,8 +10,11 @@ from types import SimpleNamespace
 
 sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[3]
-sys.path[:0]=[str(ROOT/"tools"),str(ROOT/"tools/rebuild/ultraman-omega")]
-from codex_super_cinematic_art import official,read,ref,save,UNKNOWN
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
+from rebuild.shared.production_io import load_rebuild_script
+_omega_art = load_rebuild_script("ultraman-omega/codex_super_cinematic_art.py")
+official, read, ref, save, UNKNOWN = _omega_art.official, _omega_art.read, _omega_art.ref, _omega_art.save, _omega_art.UNKNOWN
 from art.image_budget import OfficialImageBudget
 
 

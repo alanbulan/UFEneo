@@ -4,8 +4,9 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from pathlib import Path
 Path = _LayoutProjectPath
 import json,sys; json = _LayoutJson
@@ -13,7 +14,7 @@ from functools import lru_cache
 import numpy as np
 import cv2
 from PIL import Image
-from head_scale import ROOT,read,save,sha
+from rebuild.shared.head_scale import ROOT,read,save,sha
 
 
 @lru_cache(maxsize=None)
@@ -90,7 +91,7 @@ def validate_folder(folder,fighter,action):
         # 基线由原图确定性处理入口冻结并核对指纹，不是事后补的颜色标签。
     result=validate(images,fighter,baselines)
     if action=='idle':
-        import idle_qa
+        import rebuild.shared.idle_qa as idle_qa
         motion=idle_qa.measure(images,fighter,q['frames'])
         save(folder/'idle-qa.json',motion)
         if motion['issues']:raise ValueError('; '.join(motion['issues']))

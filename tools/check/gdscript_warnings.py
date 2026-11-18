@@ -1,32 +1,34 @@
 """扫描 GDScript 静态分析警告，对应编辑器 Debugger 面板里的黄色警告。
 
-原理：临时把 project.godot 的相关警告级别设为「错误」，再用 `--check-only`
-逐文件解析——这样 Godot 自己的分析器会报出 exact 文件与行号，不需要自己
-写正则去猜类型。
+原理：校验 project.godot 的 [debug] 段已固化全部严格警告级别（2 = 视作错误），
+再并发使用 `--headless --check-only` 只读解析每个 `.gd` 文件，不修改项目文件。
 
 用法：
     python tools/check/gdscript_warnings.py            # 扫描全仓
     python tools/check/gdscript_warnings.py --summary  # 只输出按文件汇总
     python tools/check/gdscript_warnings.py --fix-hint # 附带修复建议
 
-退出码：0 = 零警告，1 = 有警告。
+退出码：0 = 零警告，1 = 有警告或配置缺失。
 """
 from __future__ import annotations
 
 import argparse
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 import re
-import shutil
 import subprocess
 import sys
-import tempfile
-from collections import Counter
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+_TOOLS_DIR = Path(__file__).resolve().parents[1]
+if str(_TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(_TOOLS_DIR))
+
+from runtime.environment import ROOT, godot_path
+
 PROJECT = ROOT / "project.godot"
 SCAN_DIRS = ("core", "input", "presentation", "ui", "app", "content", "tests")
 
-# 需要纳入扫描的警告类别。级别 2 = 当成错误，从而在 --check-only 时暴露。
 WARNING_SETTINGS = {
     "unused_parameter": 2,
     "unused_variable": 2,
@@ -36,7 +38,6 @@ WARNING_SETTINGS = {
     "shadowed_variable_base_class": 2,
     "shadowed_variable": 2,
     "standalone_expression": 2,
-    # 2026-11-08 补：编辑器里还出现过这三类。
     "incompatible_ternary": 2,
     "confusable_local_declaration": 2,
     "confusable_local_usage": 2,
@@ -46,47 +47,31 @@ WARNING_SETTINGS = {
 MESSAGE = re.compile(r"Parse Error: (?P<message>.+?)(?: \(Warning treated as error\))?$")
 
 
-def godot_executable() -> str:
-    """从 GODOT_PATH 或常见安装位置取 Godot 可执行文件。"""
-    import os
-    candidate = os.environ.get("GODOT_PATH", "").strip()
-    if candidate and Path(candidate).is_file():
-        return candidate
-    for guess in ("/opt/homebrew/bin/godot", "/Applications/Godot.app/Contents/MacOS/Godot"):
-        if Path(guess).is_file():
-            return guess
-    found = shutil.which("godot")
-    if found:
-        return found
-    raise SystemExit("未找到 Godot；设置 GODOT_PATH 或把它加进 PATH")
-
-
-def with_warning_settings():
-    """临时把警告级别写进 project.godot，返回恢复函数。"""
-    original = PROJECT.read_text(encoding="utf-8")
-    if "[debug]" in original:
-        # 已有 debug 段：逐条插入缺失项。
-        lines = original.splitlines()
-        insert_at = lines.index("[debug]") + 1
-        existing = {line.split("=")[0].strip() for line in lines}
-        additions = [
-            f"gdscript/warnings/{name}={level}"
-            for name, level in WARNING_SETTINGS.items()
-            if f"gdscript/warnings/{name}" not in existing
-        ]
-        lines[insert_at:insert_at] = additions
-        patched = "\n".join(lines) + "\n"
-    else:
-        block = "\n[debug]\n\n" + "\n".join(
-            f"gdscript/warnings/{name}={level}" for name, level in WARNING_SETTINGS.items()
-        ) + "\n"
-        patched = original.rstrip() + "\n" + block
-    PROJECT.write_text(patched, encoding="utf-8")
-
-    def restore() -> None:
-        PROJECT.write_text(original, encoding="utf-8")
-
-    return restore
+def verify_project_settings() -> list[str]:
+    """只读校验 project.godot 已固化 exclude_addons=true 及全部严格警告级别=2。"""
+    if not PROJECT.is_file():
+        return ["缺少 project.godot"]
+    content = PROJECT.read_text(encoding="utf-8")
+    in_debug = False
+    debug_values: dict[str, str] = {}
+    for raw in content.splitlines():
+        line = raw.strip()
+        if not line or line.startswith(";"):
+            continue
+        if line.startswith("[") and line.endswith("]"):
+            in_debug = line == "[debug]"
+            continue
+        if in_debug and "=" in line:
+            key, value = line.split("=", 1)
+            debug_values[key.strip()] = value.strip()
+    errors: list[str] = []
+    if debug_values.get("gdscript/warnings/exclude_addons") != "true":
+        errors.append("project.godot [debug] 缺少 gdscript/warnings/exclude_addons=true")
+    for name, level in WARNING_SETTINGS.items():
+        key = f"gdscript/warnings/{name}"
+        if debug_values.get(key) != str(level):
+            errors.append(f"project.godot [debug] 缺少或未固化 {key}={level}（当前：{debug_values.get(key, '未配置')}）")
+    return errors
 
 
 def scan_file(executable: str, relative: str) -> list[dict]:
@@ -109,7 +94,6 @@ def scan_file(executable: str, relative: str) -> list[dict]:
             continue
         location = re.search(r"at: GDScript::reload \(res://(?P<path>[^:]+):(?P<line>\d+)\)", line)
         if location and pending:
-            # 只保留本文件自己的警告；依赖文件的警告由依赖自己那一轮报告。
             if location.group("path") == relative:
                 findings.append({
                     "file": relative,
@@ -136,7 +120,7 @@ def fix_hint(message: str) -> str:
         name = match.group(1) if match else "x"
         return f'前缀下划线："{name}" -> "_{name}"'
     if "Integer division" in message:
-        return "确认是否有意取整；有意则用 int() 显式表达或加 @warning_ignore(\"integer_division\")"
+        return '确认是否有意取整；有意则用 int() 显式表达或加 @warning_ignore("integer_division")'
     if "shadowing an already-declared" in message:
         match = re.search(r'"(\w+)"', message)
         name = match.group(1) if match else "x"
@@ -146,7 +130,7 @@ def fix_hint(message: str) -> str:
     if "declared but never used" in message:
         match = re.search(r'"(\w+)"', message)
         name = match.group(1) if match else "x"
-        return f'删掉或改名 "_​{name}"'
+        return f'删掉或改名 "_{name}"'
     return ""
 
 
@@ -157,22 +141,23 @@ def main() -> int:
     parser.add_argument("--only", nargs="*", help="只扫描指定目录")
     args = parser.parse_args()
 
-    executable = godot_executable()
+    config_errors = verify_project_settings()
+    if config_errors:
+        for err in config_errors:
+            print("配置错误:", err, file=sys.stderr)
+        print("GDSCRIPT_WARNINGS FAIL")
+        return 1
+
+    executable = godot_path()
     targets = sources()
     if args.only:
         targets = [t for t in targets if t.split("/")[0] in args.only]
 
-    restore = with_warning_settings()
     findings: list[dict] = []
-    try:
-        for index, relative in enumerate(targets, 1):
-            findings.extend(scan_file(executable, relative))
-            if index % 40 == 0:
-                print(f"  已扫描 {index}/{len(targets)}，累计 {len(findings)} 条", file=sys.stderr)
-    finally:
-        restore()
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        for file_findings in executor.map(lambda rel: scan_file(executable, rel), targets):
+            findings.extend(file_findings)
 
-    # 同一文件同一行的同类警告去重。
     unique = {(f["file"], f["line"], f["message"]): f for f in findings}
     findings = sorted(unique.values(), key=lambda f: (f["file"], f["line"]))
 

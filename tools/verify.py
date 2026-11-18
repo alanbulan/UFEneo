@@ -62,6 +62,12 @@ def main():
     if not args.skip_import:
         run("import", [executable, "--headless", "--path", str(ROOT), "--editor", "--import", "--quit"], 600)
     for case in args.only if args.only is not None else CASES:
+        if case == "gdscript_warnings":
+            run("gdscript-warnings", [sys.executable, str(ROOT / "tools/check/gdscript_warnings.py")])
+            continue
+        if case == "layering":
+            run("layering", [sys.executable, str(ROOT / "tools/check/layering.py")])
+            continue
         if case == "seven_demo_pipeline":
             run(case, [sys.executable, str(ROOT / "tools/check/seven_demo_pipeline.py")])
             continue
@@ -90,6 +96,7 @@ def main():
         if case == "capture_mechanism" and outcomes[-1]["status"] == "passed":
             run("capture_mechanism_replay", command + ["--replay"])
     if args.only is None:
+        run("gdscript-warnings", [sys.executable, str(ROOT / "tools/check/gdscript_warnings.py")])
         run("repository-audit", [sys.executable, str(ROOT / "tools/maintenance/repository_audit.py")])
         run("layering", [sys.executable, str(ROOT / "tools/check/layering.py")])
         run("catalogue-references", [sys.executable, str(ROOT / "tools/check/catalogue_references.py")])

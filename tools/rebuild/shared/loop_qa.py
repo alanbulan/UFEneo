@@ -4,30 +4,35 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from pathlib import Path
 Path = _LayoutProjectPath
 import numpy as np
 from PIL import Image
-from head_scale import ROOT,read,save
-from idle_qa import feature as legacy_feature
-from loop_repair_landmarks import marked_feature
+from rebuild.shared.head_scale import ROOT,read,save
+from rebuild.shared.idle_qa import feature as legacy_feature
+from rebuild.shared.loop_repair_landmarks import marked_feature
 import hashlib
 
 
 def feature(im,fighter,row):
     if fighter=='ultraman-teo':
-        from teo_loop_feature import feature as teo_feature
+        from rebuild.shared.production_io import load_rebuild_script
+        teo_feature = load_rebuild_script("ultraman-teo/teo_loop_feature.py").feature
         return teo_feature(im,row)
     if fighter=='ultraman-omega':
-        from omega_loop_feature import feature as omega_feature
+        from rebuild.shared.production_io import load_rebuild_script
+        omega_feature = load_rebuild_script("ultraman-omega/omega_loop_feature.py").feature
         return omega_feature(im,row)
     if fighter=='ultraman-blazar':
-        from blazar_loop_feature import feature as blazar_feature
+        from rebuild.shared.production_io import load_rebuild_script
+        blazar_feature = load_rebuild_script("ultraman-blazar/blazar_loop_feature.py").feature
         return blazar_feature(im,row)
     if fighter=='neronga':
-        from neronga_loop_feature import feature as neronga_feature
+        from rebuild.shared.production_io import load_rebuild_script
+        neronga_feature = load_rebuild_script("neronga/neronga_loop_feature.py").feature
         return neronga_feature(im,row)
     # 初代已装旧循环有逐帧完整近侧眼框标注：避免跳选远眼/眼框碎片。
     # 精确像素哈希绑定；无标注的新帧、杰顿、赛文继续原有检测路径。
@@ -58,15 +63,17 @@ def evaluate(centers,action,factor=1.0):
 
 
 def measure(images,fighter,heads,action):
-    from form_loop_feature import configuration, feature as form_feature
+    from rebuild.shared.form_loop_feature import configuration, feature as form_feature
     form=configuration(fighter)
     if form is not None:
         return dict(fighter=fighter,**evaluate([form_feature(im,fighter,h,form) for im,h in zip(images,heads)],action,form['scale']))
     if fighter=='red_king':
-        from redking_loop_feature import measure as redking_measure
+        from rebuild.shared.production_io import load_rebuild_script
+        redking_measure = load_rebuild_script("red_king/redking_loop_feature.py").measure
         return redking_measure(images,heads,action)
     if fighter=='black_king':
-        from blackking_loop_feature import measure as blackking_measure
+        from rebuild.shared.production_io import load_rebuild_script
+        blackking_measure = load_rebuild_script("black_king/blackking_loop_feature.py").measure
         return blackking_measure(images,heads,action)
     if any(h.get('loop_motion_reference') in ['head_shell_center','head_center'] for h in heads):
         if not action.startswith('flip_'):raise ValueError('头壳中心只可用于翻转轨迹报告，不可替代待机或走路眼高')

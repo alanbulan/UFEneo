@@ -4,8 +4,9 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from pathlib import Path
 Path = _LayoutProjectPath
 from types import SimpleNamespace
@@ -14,12 +15,16 @@ import argparse,copy,hashlib,math,shutil,sys,time
 import cv2,numpy as np
 from contextlib import contextmanager
 from PIL import Image,ImageDraw
-from head_scale import ROOT,read,save,sha,font
-from loop_repair_plan import RUN,REPORT,WORK,rel,old_frame,snapshot
-import head_size,island_qa,process_phase2 as proc,loop_qa
+from rebuild.shared.head_scale import ROOT,read,save,sha,font
+from rebuild.shared.loop_repair_plan import RUN,REPORT,WORK,rel,old_frame,snapshot
+import rebuild.shared.head_size as head_size
+import rebuild.shared.island_qa as island_qa
+import rebuild.shared.process_phase2 as proc
+import rebuild.shared.loop_qa as loop_qa
 sys.path.insert(0,str(ROOT/'tools'))
-import art.pipeline,produce_character
-from qa_brake import Brake
+import art.pipeline
+import art.produce_character as produce_character
+from rebuild.shared.qa_brake import Brake
 produce_character.BRAKE_PATH=WORK/'brake.json'
 
 MODEL='gpt-image-2.5-sunburst'
@@ -89,7 +94,7 @@ def measured_feet(im,fighter,boxes):
 
 
 def eye_feature(im,fighter,head):
-    if fighter=='zetton':return __import__('idle_qa').feature(im,fighter,dict(hint=head['center'])),None
+    if fighter=='zetton':return __import__('rebuild.shared.idle_qa', fromlist=['feature']).feature(im,fighter,dict(hint=head['center'])),None
     a=np.array(im);r,g,b=a[:,:,:3].astype(int).transpose(2,0,1);yy,xx=np.indices(a.shape[:2]);cx,cy=head['center']
     mask=(a[:,:,3]>0)&(abs(xx-cx)<24)&(abs(yy-cy)<20)&(r>90)&(g>50)&(r-b>40)&(g-b>25)
     n,ls,stats,cs=cv2.connectedComponentsWithStats(mask.astype('uint8'),8)

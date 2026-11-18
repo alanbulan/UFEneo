@@ -85,13 +85,14 @@ static func scale_percent(hit_index: int) -> int:
 		return 100
 	var percent := 100
 	for _i in range(hit_index - (SCALE_START - 1)):
+		@warning_ignore("integer_division") # 整数百分比连段补正，向下取整。
 		percent = maxi(SCALE_FLOOR, percent * SCALE_NUMERATOR / 100)
 	return percent
 
 static func default_body_radius(template: String, target_height: int) -> int:
 	if template == "biped_tail":
-		var height := target_height if target_height > 0 else 190
-		return clampi(int(round(float(height) * 0.26)), 46, 56)
+		var tail_height := target_height if target_height > 0 else 190
+		return clampi(int(round(float(tail_height) * 0.26)), 46, 56)
 	var height := target_height if target_height > 0 else 170
 	return clampi(int(round(float(height) * 0.17)), 28, 40)
 
@@ -176,6 +177,7 @@ static func ensure_crush_charge(moves: Dictionary) -> void:
 static func block_push(hit_push: int) -> int:
 	if hit_push <= 0:
 		return 0
+	@warning_ignore("integer_division") # 被防推退按 1.3 倍整数取整。
 	return maxi(hit_push, hit_push * 13 / 10)
 
 static func _recovery_after_first_hit(move: Dictionary) -> int:
@@ -189,6 +191,7 @@ static func _recovery_after_first_hit(move: Dictionary) -> int:
 ## 最小初速，使 1+2+…+k 不小于原来的一次性推退距离。
 static func _speed_for_distance(distance: int) -> int:
 	var speed := 1
+	@warning_ignore("integer_division") # 连续整数求和 n*(n+1)/2 必为整数。
 	while speed < 18 and speed * (speed + 1) / 2 < distance:
 		speed += 1
 	return speed

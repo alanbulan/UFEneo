@@ -29,8 +29,9 @@ CANVAS_HEIGHT = 256
 ROOT_X = 192
 ROOT_Y = 248
 
-sys.path.insert(0, str(ROOT / "tools/media/art"))
-import catalogue_store  # noqa: E402
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
+import media.art.catalogue_store as catalogue_store  # noqa: E402
 
 
 def frame_images(strip: Image.Image, frames: int) -> list[Image.Image]:

@@ -4,14 +4,15 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from pathlib import Path
 Path = _LayoutProjectPath
 import hashlib,json,math; json = _LayoutJson
 import numpy as np
 from PIL import Image
-from head_scale import measure,pose_direction,ROOT
+from rebuild.shared.head_scale import measure,pose_direction,ROOT
 
 TOLERANCE=.08
 def digest(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -33,7 +34,7 @@ def head(im,fighter,hint=None,direction=None,region=None,method=None,facing=None
  if fighter in ['ultraman','zetton']:return measure(im,fighter,hint,direction,region)
  if fighter=='ultraseven':
   if method=='eye-ear-v2':
-   from seven_head_features import measure as seven_measure
+   from rebuild.ultraseven.seven_head_features import measure as seven_measure
    return seven_measure(im,hint)
   a=np.array(im);r,g,b=a[:,:,:3].astype(int).transpose(2,0,1)
   ys,xs=np.where((a[:,:,3]>0)&(g>r*1.3)&(g>b*1.1)&(g>80))
@@ -118,7 +119,7 @@ def validate(folder,fighter):
   if q.get('scale_policy')!='per_frame_head' and raw.as_posix() in scales and not math.isclose(scales[raw.as_posix()],row['shared_scale'],abs_tol=1e-10):issues.append('同一原图使用不同缩放系数')
   scales[raw.as_posix()]=row['shared_scale']
   if row.get('size_policy')=='standing_height':
-   import standing_size_qa
+   import rebuild.shared.standing_size_qa as standing_size_qa
    peer_heights=[]
    if row.get('crown_view')=='back':
     peers=[peer for peer in q['frames'] if abs(peer['frame']-row['frame'])==1]
@@ -149,7 +150,7 @@ def validate(folder,fighter):
    continue
   if q.get('pilot_polish_source') is True and row.get('head_polish',{}).get('changed'):
    # 只接入本轮白名单派生帧；来源、像素、配置和整头读数均须重新核对。
-   from pilot_polish_qa import validate_registered_head
+   from rebuild.shared.pilot_polish_qa import validate_registered_head
    validate_registered_head(folder,fighter,q,row)
    continue
   axis=row.get('measurement_axis','length')

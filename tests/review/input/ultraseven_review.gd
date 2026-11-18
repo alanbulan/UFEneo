@@ -43,6 +43,7 @@ func command_input(id: String, age: int, f: UfeFighter) -> UfeInputFrame:
 	var dirs: Array=[6,2,3] if id=="motion_623" else [4,1,2,3,6]
 	var last: int=dirs.size()*2-1
 	if age<0 or age>last:return UfeInputFrame.make()
+	@warning_ignore("integer_division") # 每步保持 2 tick，按整数索引取方向步。
 	var d: int=int(dirs[mini(age/2,dirs.size()-1)])
 	var x:= -1 if d in [1,4,7] else 1 if d in [3,6,9] else 0
 	var y:= -1 if d in [1,2,3] else 1 if d in [7,8,9] else 0

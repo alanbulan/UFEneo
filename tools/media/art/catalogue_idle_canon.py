@@ -30,9 +30,10 @@ CANVAS_WIDTH = 384
 CANVAS_HEIGHT = 256
 ROOT_Y = 248
 
-sys.path.insert(0, str(ROOT / "tools/media/art"))
-from catalogue_native import apply_palette, build_palette, harden_alpha, trim  # noqa: E402
-import catalogue_rescale  # noqa: E402
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
+from media.art.catalogue_native import apply_palette, build_palette, harden_alpha, trim  # noqa: E402
+import media.art.catalogue_rescale as catalogue_rescale  # noqa: E402
 
 
 def _usable(clip) -> dict | None:
@@ -184,7 +185,7 @@ def main() -> int:
         report["basis"] = basis
         results.append(report)
         if not args.dry_run:
-            from catalogue_store import update_entry
+            from media.art.catalogue_store import update_entry
             update_entry(catalogue_id, {
                 "strip": "res://" + report["out"],
                 "frames": report["frames"],

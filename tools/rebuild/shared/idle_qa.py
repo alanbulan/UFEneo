@@ -4,26 +4,30 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 import numpy as np,cv2
 from PIL import Image
-from head_scale import ROOT,read,save
+from rebuild.shared.head_scale import ROOT,read,save
 
 
 def feature(im,fighter,row):
-    from form_loop_feature import configuration, feature as form_feature, hint
+    from rebuild.shared.form_loop_feature import configuration, feature as form_feature, hint
     form=configuration(fighter)
     if form is not None:return form_feature(im,fighter,row,form)
     if fighter=='eleking':
-        from eleking_loop_feature import feature as eleking_feature
+        from rebuild.shared.production_io import load_rebuild_script
+        eleking_feature = load_rebuild_script("eleking/eleking_loop_feature.py").feature
         return eleking_feature(im,row)
     if fighter=='black_king':
-        from blackking_loop_feature import feature as blackking_feature
+        from rebuild.shared.production_io import load_rebuild_script
+        blackking_feature = load_rebuild_script("black_king/blackking_loop_feature.py").feature
         return blackking_feature(im,row)
     if fighter=='gomora':
         # 哥莫拉浅褐鳞甲不能混入金黄色眼睛；其他角色继续原有特征路径。
-        from gomora_qa import eye
+        from rebuild.shared.production_io import load_rebuild_script
+        eye = load_rebuild_script("gomora/gomora_qa.py").eye
         measured=eye(im)
         if not measured:raise ValueError('哥莫拉黄色眼睛不可测量')
         return measured['center']

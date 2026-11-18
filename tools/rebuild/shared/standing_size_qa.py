@@ -4,16 +4,17 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 import numpy as np
 from PIL import Image
-from head_scale import ROOT,read
+from rebuild.shared.head_scale import ROOT,read
 
 TOLERANCE=.03
 
 def measure(im,fighter,row):
-    import head_size
+    import rebuild.shared.head_size as head_size
     # 明确的头骨区域只用于测量（不是调色遮罩），排除可摘冠刃。
     region=row.get('head_region')
     a=np.array(im);r,g,b=a[:,:,:3].astype(int).transpose(2,0,1)

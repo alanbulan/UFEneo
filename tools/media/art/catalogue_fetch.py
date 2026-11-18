@@ -12,8 +12,10 @@ from pathlib import Path
 import sys
 import urllib.request
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-import catalogue_reference as CR
+_TOOLS_DIR = str(Path(__file__).resolve().parents[2])
+if _TOOLS_DIR not in sys.path:
+    sys.path.insert(0, _TOOLS_DIR)
+import media.art.catalogue_reference as CR
 
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120.0 Safari/537.36")

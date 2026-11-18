@@ -20,11 +20,8 @@ import numpy as np
 from PIL import Image
 
 _layout_root = next(p for p in Path(__file__).resolve().parents if (p / "project.godot").is_file())
-sys.path[:0] = [
-    str(_layout_root / "tools"),
-    *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()],
-    *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()],
-]
+if str(_layout_root / "tools") not in sys.path:
+    sys.path.insert(0, str(_layout_root / "tools"))
 
 ROOT = _layout_root
 DISPLAY_PATH = ROOT / "content/roster/catalogue_display.json"

@@ -31,8 +31,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "tools/art"))
-import expand_move_holds as emh  # noqa: E402
+if str(ROOT / "tools") not in sys.path:
+    sys.path.insert(0, str(ROOT / "tools"))
+import art.expand_move_holds as emh  # noqa: E402
 
 PER_FRAME_DROP = ("events", "shots", "hitboxes", "attachments", "beam_origin")
 

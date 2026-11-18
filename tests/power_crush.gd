@@ -31,7 +31,9 @@ func test_loaded_numbers() -> void:
 	var original: Dictionary = moves.crush
 	check(bool(original.unblockable) and not bool(original.knockdown), "原超重击仍是破防，不是击倒")
 	check(moves.has("crush_charge_2") and moves.has("crush_charge_3") and not moves.has("power_crush_1"), "只从原超重击派生二档和三档")
+	@warning_ignore("integer_division") # 140% 整数伤害断言，与 feel_rules 同口径。
 	check(int(moves.crush_charge_2.damage) == int(original.damage) * 14 / 10, "二档伤害为原招的 140%")
+	@warning_ignore("integer_division") # 180% 整数伤害断言，与 feel_rules 同口径。
 	check(int(moves.crush_charge_3.damage) == int(original.damage) * 18 / 10, "三档伤害为原招的 180%")
 	check(int(moves.crush_charge_2.feedback.hitstop) == int(original.feedback.hitstop) + 2, "二档停顿升一档")
 	check(int(moves.crush_charge_2.pushback) == int(original.pushback) + 2, "二档推退升一档")

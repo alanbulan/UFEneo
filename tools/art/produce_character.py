@@ -4,21 +4,21 @@
 import sys as _layout_sys
 from pathlib import Path as _LayoutNativePath
 _layout_root = next(p for p in _LayoutNativePath(__file__).resolve().parents if (p / "project.godot").is_file())
-_layout_sys.path[:0] = [str(_layout_root / "tools"), *[str(p) for p in (_layout_root / "tools").iterdir() if p.is_dir()], *[str(p) for p in (_layout_root / "tools/rebuild").iterdir() if p.is_dir()]]
-from layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
+if str(_layout_root / "tools") not in _layout_sys.path:
+    _layout_sys.path.insert(0, str(_layout_root / "tools"))
+from maintenance.layout_runtime import ProjectPath as _LayoutProjectPath, json_proxy as _LayoutJson
 from pathlib import Path
 Path = _LayoutProjectPath
 import argparse,json,sys,hashlib,shutil,re; json = _LayoutJson
 from threading import Lock
 ROOT=_LayoutProjectPath(_layout_root)
-sys.path.insert(0,str(ROOT/'tools/rebuild'))
-import art_phase2 as art
-import process_phase2 as process
-import head_size
-import limb_color_qa
-import island_qa
-import body_length_qa
-from qa_brake import Brake
+import rebuild.shared.art_phase2 as art
+import rebuild.shared.process_phase2 as process
+import rebuild.shared.head_size as head_size
+import rebuild.shared.limb_color_qa as limb_color_qa
+import rebuild.shared.island_qa as island_qa
+import rebuild.shared.body_length_qa as body_length_qa
+from rebuild.shared.qa_brake import Brake
 from art.roster_production import single_writer
 MUTEX=Lock()
 BRAKE_PATH=ROOT/'art/production/quality-gate-v2/brake.json'
@@ -37,13 +37,13 @@ def _quality_gate(folder,fighter,action):
     island_qa.validate_folder(folder,fighter,action)
     body_length_qa.validate_folder(folder,fighter,action)
     limb_color_qa.validate_folder(folder,fighter,action)
-    import loop_qa
+    import rebuild.shared.loop_qa as loop_qa
     loop_qa.validate_folder(folder,fighter,action)
     if action in ['walk_forward','walk_back']:
-        import walk_cycle_qa
+        import rebuild.shared.walk_cycle_qa as walk_cycle_qa
         walk_cycle_qa.validate_folder(folder,fighter,action)
     if fighter=='ultraseven':
-        import slugger_qa
+        import rebuild.shared.slugger_qa as slugger_qa
         slugger_qa.validate(folder)
 
 def quality_gate(folder,fighter,action):
@@ -88,16 +88,16 @@ def run(fighter,action,reuse=False,install=False):
     if not reuse and brake.blocked(['head_size','postprocess_color','walk_motion' if action.startswith('walk_') else 'resource_quality']):
         return dict(action=action,status='待人工',reason='同一检查连续拒收三个不同帧，已暂停生成，详见诊断图',paused=brake.state['paused'])
     if fighter=='ultraseven':
-        import stage4_ultraseven as seven
+        import rebuild.shared.stage4_ultraseven as seven
         if install:
             if not reuse:raise ValueError('赛文必须先生成并逐帧自检，--reuse --install只安装通过的成品')
-            from ultraseven_install import install as install_seven
+            from rebuild.ultraseven.ultraseven_install import install as install_seven
             return install_seven(action)
         if reuse:
             key='s4seven_'+action.replace('/','_')
             result=process.process(key)
             if result.get('status')!='blocked':
-                import slugger_qa
+                import rebuild.shared.slugger_qa as slugger_qa
                 quality_gate(ROOT/f'art/fighters/ultraman/stage2/legacy/processed/{key}',fighter,action.split('/')[0])
             return result
         result=seven.generate(action)
@@ -121,7 +121,7 @@ def run(fighter,action,reuse=False,install=False):
         return {'action':action,'status':'installed_pending_user_review','source':'curated','generation_requests':0}
     profile=read(ROOT/'art/shared/stage3/batches/profiles.json')[action]
     if profile['method']=='single':
-        import walk_single as walk
+        import rebuild.shared.walk_single as walk
         work=ROOT/_LayoutJson.path_text(f'art/phase3/{action}');work.mkdir(exist_ok=True)
         art.save(work/'poses.json',{'frames':[{'height':108,'foot_bottom':184} for _ in range(profile['frames'])]})
         walk.WORK=work;walk.RUN=ROOT/f'art/fighters/ultraman/stage2/generation/phase3_{action}'
