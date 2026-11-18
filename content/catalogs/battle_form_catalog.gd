@@ -2,7 +2,7 @@ class_name UfeBattleFormCatalog
 extends RefCounted
 ## 对局装配门面；文件读取留在content，core只接收整数规则和定义。
 const PATH := "res://content/catalogs/battle_forms.json"
-const GROUND_STATES := ["idle","walk","crouch","crouch_start","crouch_rise","guard","crouch_guard","charge","charge_start","charge_stop","turn","crouch_turn"]
+const GROUND_STATES := UfeStateRules.TRANSFORM_GROUND_STATES
 
 static func registry() -> Dictionary:
 	return UfeContentDatabase.read_json(PATH).forms

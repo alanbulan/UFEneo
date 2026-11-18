@@ -10,23 +10,13 @@ static var unlisted_form_displays: Dictionary={}
 static var identity_displays: Dictionary={}
 
 static func identity_id(id: String) -> String:
-	if identity_displays.is_empty():identity_displays=UfeContentDatabase.read_json("res://content/roster/identity_display.json")
-	var aliases: Dictionary=identity_displays.get("aliases",{})
-	var visited: Dictionary={}
-	while aliases.has(id) and not visited.has(id):
-		visited[id]=true
-		id=str(aliases[id])
-	return id
+	return UfeIdentityCatalog.identity_id(id)
 
 static func identity_entry(id: String) -> Dictionary:
-	var canonical:=identity_id(id)
-	return identity_displays.get("entries",{}).get(canonical,{})
+	return UfeIdentityCatalog.identity_entry(id)
 
 static func resolved_id(id: String, form_id: String="") -> String:
-	if form_id.is_empty() or form_id=="default":return identity_id(id)
-	if not identity_entry(form_id).is_empty():return identity_id(form_id)
-	var combined:=id+"__"+form_id
-	return combined if not identity_entry(combined).is_empty() else identity_id(id)
+	return UfeIdentityCatalog.resolved_id(id,form_id)
 
 static func name_variation(id: String) -> String:
 	return str(identity_entry(id).get("name_variation","FighterName"))

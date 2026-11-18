@@ -7,6 +7,7 @@ const BUTTONS := [-1,-1,-1,-1,JOY_BUTTON_X,JOY_BUTTON_Y,JOY_BUTTON_A,-1,-1,-1,JO
 static var slots := UfeControllerSlots.new()
 static var key_bindings: Dictionary = {}
 static var joy_bindings: Dictionary = {}
+const SETTINGS_PATH := "user://settings.json"
 
 static func default_key_binding(player: int, action: String) -> Dictionary:
 	var index := ACTIONS.find(action)
@@ -48,8 +49,15 @@ static func binding_label(player: int, action: String) -> String:
 	parts.append(str(keypad.get(code,OS.get_keycode_string(code))))
 	return "+".join(parts)
 
+static func _saved_settings() -> Dictionary:
+	if FileAccess.file_exists(SETTINGS_PATH):
+		var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(SETTINGS_PATH))
+		if parsed is Dictionary:
+			return parsed
+	return {}
+
 static func configure() -> void:
-	configure_values(UfePlayerSettings.values())
+	configure_values(_saved_settings())
 
 static func configure_values(settings: Dictionary) -> void:
 	key_bindings = settings.get("key_bindings",{}).duplicate(true)

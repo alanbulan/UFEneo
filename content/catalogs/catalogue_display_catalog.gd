@@ -206,7 +206,7 @@ func profile_for(id: String) -> Dictionary:
 
 func _with_identity_title(id: String, data: Dictionary) -> Dictionary:
 	var result := UfeDisplayText.profile(data.duplicate(true))
-	var identity := UfeFighterDisplay.identity_entry(id)
+	var identity := UfeIdentityCatalog.identity_entry(id)
 	for key in ["title", "title_status", "title_source_url", "title_source_excerpt", "title_note"]:
 		if identity.has(key): result[key] = UfeDisplayText.text(str(identity[key]))
 	# 只投影明确过时的称号占位；来源原件和身高/体重等未知事实保持。
@@ -254,7 +254,7 @@ func title_source_lines(profile: Dictionary) -> String:
 
 func title_for(id: String) -> String:
 	id = canonical_id(id)
-	var identity := UfeFighterDisplay.identity_entry(id)
+	var identity := UfeIdentityCatalog.identity_entry(id)
 	if identity.has("title") and not str(identity.title).is_empty(): return UfeDisplayText.text(str(identity.title))
 	# 名册已把称号与名字拆开，登记过的称号直接采用，不再从名称里猜。
 	var structured := UfeDisplayText.text(str(row_for(id).get("title", ""))).strip_edges()

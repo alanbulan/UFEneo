@@ -130,7 +130,7 @@ func decide(sim: UfeMatchDirector,seen: Dictionary) -> UfeInputFrame:
 	travel_x=0
 	@warning_ignore("integer_division") # AI 决策间隔按tick减半，整数。
 	next_decision=sim.tick+maxi(4,int(LEVELS[difficulty].delay)/2)
-	if UfeBattleTransform.can_transform(f) and f.state in UfeBattleFormCatalog.GROUND_STATES and roll()<35:
+	if UfeBattleTransform.can_transform(f) and f.state in UfeStateRules.TRANSFORM_GROUND_STATES and roll()<35:
 		motion_input([2,5,2],UfeInputFrame.SPECIAL)
 		note("transform")
 		var transform_input: Array=queue.pop_front()

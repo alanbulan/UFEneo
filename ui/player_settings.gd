@@ -24,4 +24,5 @@ static func apply(data: Dictionary, persist: bool=true) -> Error:
 			var value:=clampf(float(combined.get(key,0.8)),0,1)
 			AudioServer.set_bus_volume_db(bus,linear_to_db(maxf(0.0001,value)))
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if combined.get("fullscreen",false) else DisplayServer.WINDOW_MODE_WINDOWED)
+	UfeInputRouter.configure_values(combined)
 	return OK

@@ -1,7 +1,21 @@
 class_name UfeContentDatabase
 extends RefCounted
+
+static var _json_cache: Dictionary = {}
+
+
+static func clear_cache() -> void:
+	_json_cache.clear()
+
+
 static func read_json(path: String):
-	return JSON.parse_string(FileAccess.get_file_as_string(path))
+	if not _json_cache.has(path):
+		var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
+		_json_cache[path] = parsed
+	var cached: Variant = _json_cache[path]
+	if cached is Dictionary or cached is Array:
+		return cached.duplicate(true)
+	return cached
 
 # 父模板在前，子模板只保存差异；旧humanoid没有template.json时行为不变。
 static func template_chain(id: String) -> Array[String]:
@@ -69,7 +83,10 @@ static func fighter(id: String, allow_pilot: bool=false) -> UfeFighterDefinition
 			continue
 		result.moves[move_id] = read_json(source)
 		UfeFeelRules.apply_move(result.moves[move_id])
+		assert(UfeMoveData.validate(result.moves[move_id]), "招式数据不合法: %s/%s" % [id, move_id])
 	UfeFeelRules.ensure_crush_charge(result.moves)
+	for move_id in result.moves:
+		assert(UfeMoveData.validate(result.moves[move_id]), "招式数据不合法: %s/%s" % [id, move_id])
 	result.command_table = UfeQuickCommands.extend(result.command_table,result.moves)
 	return result
 

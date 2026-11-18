@@ -17,7 +17,7 @@ OUT=ROOT/'reports/review/2026-10-22-pixel-pages'
 def capture(page,res='1280x720',extra=()):
  OUT.mkdir(parents=True,exist_ok=True)
  name=page+'-'+res+('-long' if '--review-long-text' in extra else '')
- command=[godot_path(),'--path',str(ROOT),'--resolution',res,'--',f'--capture-ui={page}',f'--capture={OUT/(name+".png")}','--capture-frame=45','--auto-quit=65',*extra]
+ command=[godot_path(),'--path',str(ROOT),'--resolution',res,'--','--harness=res://tests/review/cli_harness.gd',f'--capture-ui={page}',f'--capture={OUT/(name+".png")}','--capture-frame=45','--auto-quit=65',*extra]
  result=subprocess.run(command,cwd=ROOT,capture_output=True,timeout=80)
  output=(result.stdout+result.stderr).decode('utf-8','replace').replace('\r\n','\n').replace('\r','');(OUT/(name+'.log')).write_text(output,'utf-8')
  if 'SCRIPT ERROR' in output or '\nERROR:' in output:raise RuntimeError(output[-5000:])

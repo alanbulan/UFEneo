@@ -115,6 +115,7 @@ def main():
         command.append('--review-trace='+str(target/(args.name+'-trace.json')))
     if args.ultraseven or args.forward_candidate or args.seven_defense or args.seven_fourth or args.seven_body or args.seven_air_special:
         command.append('--review-capture-frames='+str(args.frames))
+    command.append('--harness=res://tests/review/cli_harness.gd')
     manifest_path=ROOT/'assets/fighters/zetton/animations/manifest.json'
     manifest_before=hashlib.sha256(manifest_path.read_bytes()).hexdigest() if args.zetton_defense or args.zetton_air else None
     with (target/(args.name+'.log')).open('w', encoding='utf-8') as log:
