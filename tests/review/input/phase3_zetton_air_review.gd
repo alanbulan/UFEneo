@@ -29,7 +29,7 @@ func sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
 	var id: String=action_id(frame)
 	var age:=frame-section(frame)*240
 	passive=UfeInputFrame.make()
-	if age==25 and id in ["vertical_light","vertical_heavy","diagonal_light","diagonal_heavy","air_crush","dive"]:passive=UfeInputFrame.make(0,1)
+	if age==25 and id in ["vertical_light","vertical_heavy","diagonal_light","diagonal_heavy","air_crush","dive"]:passive=UfeInputFrame.make(0,1,UfeInputFrame.JUMP)
 	var action_input:=target_sample(id,age,sim)
 	if active_player==0:return action_input
 	var first:=passive;passive=action_input;return first
@@ -40,7 +40,7 @@ func target_sample(id: String,age: int,sim: UfeMatchDirector) -> UfeInputFrame:
 		if age==30:
 			chain_stage=1;return UfeInputFrame.make(direction,0,UfeInputFrame.HEAVY)
 		if chain_stage==1 and int(f.motion.chase_window)>0 and (active_player==0 or int(f.motion.chase_window)<=19) and f.combat.confirmed:
-			chain_stage=2;return UfeInputFrame.make(direction,1)
+			chain_stage=2;return UfeInputFrame.make(direction,1,UfeInputFrame.JUMP)
 		if chain_stage==2 and id!="chase_takeoff" and f.state=="air" and f.height>35:
 			chain_stage=3;return UfeInputFrame.make(0,0,UfeInputFrame.LIGHT)
 		if chain_stage==3 and id!="chase_light1" and f.move_id=="chase_light1" and f.combat.confirmed:
@@ -51,9 +51,9 @@ func target_sample(id: String,age: int,sim: UfeMatchDirector) -> UfeInputFrame:
 			chain_stage=6;return UfeInputFrame.make(0,-1,UfeInputFrame.HEAVY)
 		return UfeInputFrame.make()
 	if id in ["vertical_jump","flip_forward","flip_back","takeoff","land"]:
-		return UfeInputFrame.make(direction*(1 if id=="flip_forward" else -1 if id=="flip_back" else 0) if age==30 else 0,1 if age==30 else 0)
+		return UfeInputFrame.make(direction*(1 if id=="flip_forward" else -1 if id=="flip_back" else 0) if age==30 else 0,0,UfeInputFrame.JUMP if age==30 else 0)
 	if id in ["vertical_light","vertical_heavy","diagonal_light","diagonal_heavy","air_crush","dive","air_pulse"]:
-		if age==25:return UfeInputFrame.make(direction if id.begins_with("diagonal") else 0,1)
+		if age==25:return UfeInputFrame.make(direction if id.begins_with("diagonal") else 0,1,UfeInputFrame.JUMP)
 		if age==29:
 			var button:=UfeInputFrame.LIGHT if id in ["vertical_light","diagonal_light"] else UfeInputFrame.CRUSH if id=="air_crush" else UfeInputFrame.RANGED if id=="air_pulse" else UfeInputFrame.HEAVY
 			return UfeInputFrame.make(0,-1 if id=="dive" else 0,button)

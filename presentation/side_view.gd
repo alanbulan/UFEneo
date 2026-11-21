@@ -11,6 +11,8 @@ var camera_zoom: float = 1.0
 var framed_bounds := Rect2()
 var framing_safe_rect := UfeBattleFraming.SAFE
 var framing_safe_provider: Callable
+var framing_zoom_safe_rect := UfeBattleFraming.SAFE
+var framing_zoom_safe_provider: Callable
 var framing_entities: Array[Sprite2D] = []
 var frame_bounds: Dictionary = {}
 var camera_config:Dictionary={}
@@ -170,7 +172,8 @@ func update_view() -> void:
 			var native: bool = bool(view_configs[i].get("native",false))
 			sprite.scale = Vector2.ONE if native else Vector2(0.5,0.5)
 			@warning_ignore("integer_division")
-			sprite.offset = Vector2(-sprite.texture.get_width()/2,-int(view_configs[i].get("anchor_y",sprite.texture.get_height()-24)))
+			var fallback_anchor: Array = view_configs[i].get("anchor", [sprite.texture.get_width()/2,int(view_configs[i].get("anchor_y",sprite.texture.get_height()-24))])
+			sprite.offset = Vector2(-int(fallback_anchor[0]),-int(fallback_anchor[1]))
 		sprite.flip_h = f.facing < 0
 		var hit_jitter := 0
 		if simulation.hitstop>0 and f.state in ["hit","blockstun","crouch_blockstun","launch"]:
@@ -381,8 +384,9 @@ func _sprite_bounds(sprite: Sprite2D) -> Rect2:
 func _refresh_layout_framing() -> void:
 	if not framing_safe_provider.is_valid() or fighters.is_empty() or fighters[0].texture==null:return
 	var safe: Rect2 = framing_safe_provider.call()
-	if safe.is_equal_approx(framing_safe_rect):return
-	# 排版回调只收紧共同镜头，不重复模拟、特效时钟或镜头回近插值。
+	var zoom_safe: Rect2 = framing_zoom_safe_provider.call() if framing_zoom_safe_provider.is_valid() else safe
+	if safe.is_equal_approx(framing_safe_rect) and zoom_safe.is_equal_approx(framing_zoom_safe_rect):return
+	# 排版回调只重取共同镜头；不重复模拟或特效时钟，临时覆盖层不改变缩放预算。
 	_update_camera_framing(false)
 	if layered_stage!=null:layered_stage.sync(camera_x,camera_y,cinematic.active,camera_zoom,position)
 
@@ -398,7 +402,8 @@ func _update_camera_framing(recover_zoom: bool = true) -> void:
 	for entity in framing_entities:
 		if entity.visible and entity.texture!=null:bounds=bounds.merge(_sprite_bounds(entity))
 	if framing_safe_provider.is_valid():framing_safe_rect=framing_safe_provider.call()
-	var frame := UfeBattleFraming.fit(bounds,camera_zoom,feedback.shake,framing_safe_rect,recover_zoom)
+	framing_zoom_safe_rect=framing_zoom_safe_provider.call() if framing_zoom_safe_provider.is_valid() else framing_safe_rect
+	var frame := UfeBattleFraming.fit(bounds,camera_zoom,feedback.shake,framing_safe_rect,recover_zoom,framing_zoom_safe_rect)
 	var zoom := float(frame.zoom)
 	var origin: Vector2 = frame.origin
 	# 起跳后沿用起跳前的竖直取景与缩放：每次跳跃整场上下平移、顶点瞬间落进 1/2 都太抢眼。

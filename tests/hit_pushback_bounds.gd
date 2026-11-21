@@ -59,7 +59,7 @@ func definition(projectile: bool, attacker: bool) -> UfeFighterDefinition:
 		move.projectile = {"spawn":[70,60],"speed":16,"vy":0,"life":30,"box":[-12,-10,24,20],"effect":"pulse"}
 	check(UfeMoveData.validate(move),"夹具招式必须先通过数据合法性/"+str(projectile))
 	data.moves[MOVE] = move
-	data.command_table = [{"move":MOVE,"states":["idle"],"directions":[5],"buttons":UfeInputFrame.LIGHT,"priority":10,"motion":[]}]
+	data.command_table = [{"move":MOVE,"states":["idle"],"directions":[5],"buttons":UfeInputFrame.LIGHT,"priority":10}]
 	return data
 
 func setup(facing: int, kind: String) -> Dictionary:

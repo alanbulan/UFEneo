@@ -3,7 +3,7 @@ extends UfeReviewDriver
 @warning_ignore_start("integer_division")
 ## 主游戏训练模式逐招输入。只在分组开始设站位，组内不改坐标/状态。
 const ACTIONS := ["spin_heavy","ranged_forward","vertical_jump","flip_back","vertical_light","vertical_heavy","diagonal_light","air_crush","dive","air_pulse","chase_light2","chase_end","dash_light","dash_heavy","backstep","back_counter","dodge","dodge_counter","full_combo"]
-const NAMES := ["回旋后踢 A+K","举掌八分光轮 D+I","垂直跳 W","后跳空翻 A+W","垂直跳轻击 W→J","垂直跳下击 W→K","斜跳膝撞 D+W→J","空中双拳下砸 W→O","俯冲踢 W→S+K","空中光弹 W→I","空轻二段 升击→追击→J→J","空中终结 升击→追击→J→J→K","冲刺拳 D,D→J","冲刺飞踢 D,D→K","后撤步 A,A","后撤反击 A,A→K","闪避 Q","闪避反击 Q→J","完整连段：升击→追击跳→空轻两段→砸地弹地→落地扫腿"]
+const NAMES := ["回旋后踢 A+K","举掌八分光轮 D+I","垂直跳 Space","后跳空翻 A+Space","垂直跳轻击 Space→J","垂直跳下击 Space→K","斜跳膝撞 D+Space→J","空中双拳下砸 Space→O","俯冲踢 Space→S+K","空中光弹 Space→I","空轻二段 升击→追击→J→J","空中终结 升击→追击→J→J→K","冲刺拳 D,D→J","冲刺飞踢 D,D→K","后撤步 A,A","后撤反击 A,A→K","闪避 N","闪避反击 N→J","完整连段：升击→追击跳→空轻两段→砸地弹地→落地扫腿"]
 var chain_stage: int = 0
 var emitted: Dictionary = {}
 
@@ -20,7 +20,7 @@ func prepare_match(sim: UfeMatchDirector) -> void:
 	sim.fighters[1].x = 750 if id=="ranged_forward" else 650 if id=="air_pulse" else 600 if id in ["dash_light","dash_heavy"] else 555 if id=="diagonal_light" else 535
 func second_sample(frame: int) -> UfeInputFrame:
 	var id: String = ACTIONS[section(frame)]
-	return UfeInputFrame.make(0,1 if frame%180==25 and id in ["vertical_light","vertical_heavy","diagonal_light","air_crush","dive"] else 0)
+	return UfeInputFrame.make(0,0,UfeInputFrame.JUMP if frame%180==25 and id in ["vertical_light","vertical_heavy","diagonal_light","air_crush","dive"] else 0)
 func once(key: String, input: UfeInputFrame) -> UfeInputFrame:
 	if emitted.has(key): return UfeInputFrame.make()
 	emitted[key] = true
@@ -37,7 +37,7 @@ func sample(frame: int, sim: UfeMatchDirector) -> UfeInputFrame:
 			return UfeInputFrame.make(1,0,UfeInputFrame.HEAVY)
 		if chain_stage==1 and int(f.motion.chase_window)>0 and f.combat.confirmed:
 			chain_stage = 2
-			return UfeInputFrame.make(1,1)
+			return UfeInputFrame.make(1,1,UfeInputFrame.JUMP)
 		if chain_stage==2 and f.state=="air" and f.height>35:
 			chain_stage = 3
 			return UfeInputFrame.make(0,0,UfeInputFrame.LIGHT)
@@ -52,9 +52,9 @@ func sample(frame: int, sim: UfeMatchDirector) -> UfeInputFrame:
 			return UfeInputFrame.make(0,-1,UfeInputFrame.HEAVY)
 		return UfeInputFrame.make()
 	if id in ["vertical_jump","flip_back"]:
-		return UfeInputFrame.make(-1 if id=="flip_back" and age==30 else 0,1 if age==30 else 0)
+		return UfeInputFrame.make(-1 if id=="flip_back" and age==30 else 0,0,UfeInputFrame.JUMP if age==30 else 0)
 	if id in ["vertical_light","vertical_heavy","diagonal_light","air_crush","dive","air_pulse"]:
-		if age==25: return UfeInputFrame.make(1 if id=="diagonal_light" else 0,1)
+		if age==25: return UfeInputFrame.make(1 if id=="diagonal_light" else 0,1,UfeInputFrame.JUMP)
 		if age==29:
 			var button := UfeInputFrame.LIGHT if id in ["vertical_light","diagonal_light"] else UfeInputFrame.CRUSH if id=="air_crush" else UfeInputFrame.RANGED if id=="air_pulse" else UfeInputFrame.HEAVY
 			return UfeInputFrame.make(0,-1 if id=="dive" else 0,button)

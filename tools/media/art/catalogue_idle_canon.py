@@ -68,6 +68,8 @@ def anchor_of(clip: dict, index: int, rect: list) -> tuple[float, float]:
     anchors = clip.get("anchors") or []
     if len(anchors) > index and len(anchors[index]) >= 2:
         return float(anchors[index][0]), float(anchors[index][1])
+    if len(clip.get("anchor", [])) >= 2:
+        return float(clip["anchor"][0]), float(clip["anchor"][1])
     cell = clip.get("cell")
     cell_width = cell if isinstance(cell, int) else int(cell[0])
     return cell_width / 2.0, float(clip.get("anchor_y", rect[3]))
@@ -132,18 +134,22 @@ def build_strip(catalogue_id: str, clip: dict, target_height: int,
 
     strip = Image.new("RGBA", (CANVAS_WIDTH * len(cells), CANVAS_HEIGHT), (0, 0, 0, 0))
     placed: list[dict] = []
+    bounds: list[tuple[int, int, int, int]] = []
     for index, resized in enumerate(resized_cells):
         left, top = anchors_px[index]
         left += shift
         frame = Image.new("RGBA", (CANVAS_WIDTH, CANVAS_HEIGHT), (0, 0, 0, 0))
         frame.alpha_composite(resized, (left, top))
+        bounds.append(frame.getchannel("A").getbbox())
         strip.alpha_composite(frame, (CANVAS_WIDTH * index, 0))
         placed.append({"frame": index, "left": left, "top": top})
 
     out = ROOT / f"assets/fighters/{catalogue_id}/catalogue/anim-strip.png"
+    static_out = out.with_name("model-native.png")
     if not dry_run:
         out.parent.mkdir(parents=True, exist_ok=True)
         strip.save(out)
+        strip.crop((0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)).save(static_out)
     return {
         "id": catalogue_id,
         "frames": len(cells),
@@ -152,8 +158,14 @@ def build_strip(catalogue_id: str, clip: dict, target_height: int,
         "scale": round(scale, 4),
         "size": [strip.width, strip.height],
         "placed": placed,
+        "frame_heights": [box[3] - box[1] for box in bounds],
+        "max_width": max(box[2] - box[0] for box in bounds),
         "out": out.relative_to(ROOT).as_posix(),
         "sha256": hashlib.sha256(out.read_bytes()).hexdigest() if not dry_run else "",
+        "image": static_out.relative_to(ROOT).as_posix(),
+        "image_sha256": hashlib.sha256(static_out.read_bytes()).hexdigest() if not dry_run else "",
+        "source_texture": clip["texture"],
+        "source_sha256": hashlib.sha256(atlas_path.read_bytes()).hexdigest(),
     }
 
 
@@ -185,13 +197,36 @@ def main() -> int:
         report["basis"] = basis
         results.append(report)
         if not args.dry_run:
-            from media.art.catalogue_store import update_entry
+            from media.art.catalogue_store import remove_fields, update_entry
             update_entry(catalogue_id, {
+                "image": "res://" + report["image"],
+                "image_sha256": report["image_sha256"],
+                "native_canvas": [CANVAS_WIDTH, CANVAS_HEIGHT],
+                "native_root": [CANVAS_WIDTH // 2, ROOT_Y],
+                "visible_height_including_ornaments": int(statistics.median(report["frame_heights"])),
+                "scale_target": height,
+                "scale_basis": "本人战斗待机整条共用倍率；静图直接取待机条第0格，同色板、同根点。",
                 "strip": "res://" + report["out"],
                 "frames": report["frames"],
                 "strip_sha256": report["sha256"],
-                "idle_source": "battle_canon_idle",
+                "strip_cell": [CANVAS_WIDTH, CANVAS_HEIGHT],
+                "strip_root": [CANVAS_WIDTH // 2, ROOT_Y],
+                "strip_alignment": "battle_idle_shared_scale_root",
+                "strip_width_fit": {
+                    "nominal_height": height,
+                    "height": int(statistics.median(report["frame_heights"])),
+                    "frame_heights": report["frame_heights"],
+                    "max_width": report["max_width"],
+                    "available_width": CANVAS_WIDTH - 4,
+                    "uniform_scale_applied": False,
+                    "basis": "catalogue_fixed_cell",
+                },
+                "idle_source": "battle_idle_frames",
+                "idle_source_texture": report["source_texture"],
+                "idle_source_sha256": report["source_sha256"],
+                "art_source": "battle_idle_frames",
             })
+            remove_fields(catalogue_id, ("raw_sha256", "rebuild_batch", "rebuild_receipt"))
 
     counts: dict[str, int] = {}
     for row in results:

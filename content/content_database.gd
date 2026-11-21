@@ -87,7 +87,9 @@ static func fighter(id: String, allow_pilot: bool=false) -> UfeFighterDefinition
 	UfeFeelRules.ensure_crush_charge(result.moves)
 	for move_id in result.moves:
 		assert(UfeMoveData.validate(result.moves[move_id]), "招式数据不合法: %s/%s" % [id, move_id])
-	result.command_table = UfeQuickCommands.extend(result.command_table,result.moves)
+	for entry in result.command_table:
+		if bool(entry.get("direction_skill", false)) and result.moves.has(str(entry.move)):
+			entry.min_energy = maxi(int(entry.get("min_energy", 0)), int(result.moves[str(entry.move)].get("energy_cost", 0)))
 	return result
 
 static func states() -> Dictionary:

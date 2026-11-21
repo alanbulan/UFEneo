@@ -29,13 +29,8 @@ func prepare_match(sim: UfeMatchDirector) -> void:
 		sim.fighters[0].stats.energy=0
 		sim.fighters[1].stats.energy=0
 func command_input(id: String, age: int, f: UfeFighter) -> UfeInputFrame:
-	var dirs: Array=[2,3,6] if id=="motion_236" else [6,2,3] if id=="motion_623" else [2,1,4] if id=="motion_214" else [2,5,2]
-	if age<0 or age>5:return UfeInputFrame.make()
-	var d: int=int(dirs[age/2])
-	var x:= -1 if d in [1,4,7] else 1 if d in [3,6,9] else 0
-	var y:= -1 if d in [1,2,3] else 1 if d in [7,8,9] else 0
-	var bit: int=UfeInputFrame.LIGHT if id=="motion_236" else UfeInputFrame.HEAVY if id=="motion_623" else UfeInputFrame.RANGED if id=="motion_214" else UfeInputFrame.CRUSH
-	return UfeInputFrame.make(x*f.facing,y,bit if age==5 else 0)
+	# 保留原组内发动tick；只送当前I+方向，不再制造历史方向序列。
+	return direction_skill_input(id,f.facing) if age==5 else UfeInputFrame.make()
 func sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
 	var part:=section(frame)
 	var age: int=frame-int(S_STARTS[part])

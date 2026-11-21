@@ -22,7 +22,7 @@
  "air_allowed": false,
  "feedback": {
   "spark": "zoffy_fx_frost_hit",
-  "block_spark": "impact_guard",
+  "block_spark": "zoffy_hit_guard",
   "hitstop": 10,
   "blockstop": 5,
   "shake": 4,
@@ -46,7 +46,7 @@
   "block": "guard"
  },
  "data_source": "超级冻霜：双掌前推的冷冻锥/场，淡青白光；原剧技能见 MOVES.md §1.4。锥体尺寸、300 伤害/30 削气为游戏编排；命中附带 120 tick 移动减速至 50%（walk/dash/backstep 位移，不改变出招、受击与硬直时序），减速数值为游戏编排。",
- "production_note": "特效弹链: 蓄力 attach zoffy_fx_frost_start(锥形渐成渐进, 帧0-31) + zoffy_fx_frost_flight 淡青白冷冻锥(内嵌菱形冰晶+霜雾), 命中 zoffy_fx_frost_hit 六芒冰晶爆; chill 120tick 减速机制保持; 对齐原剧超级冻霜冷冻锥。全部引自制家族。",
+ "production_note": "零基 tick32 发射单个 zoffy_fx_frost_flight 晶粒霜雾弹，speed6/life46/box[-18,-14,36,28] 与 chill120tick/50% 保持；首次呈现 tick33 至56 挂接 zoffy_fx_frost_cone，12图各2tick逐tick显式sprite，仅近掌喷发、无独立伤害。现装人物 sprite6–11 掌点为格内[136,82]、相对脚底[40,102]，新人物装机后须重测。保留原起手附件与 frost_hit；PixelFX离线组合，不是Q周身圈。",
  "chill": {
   "ticks": 120,
   "speed_percent": 50
@@ -59,22 +59,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -67,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -39,
-     61,
-     83,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -35,
-     122,
-     89,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -90,8 +90,8 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      51,
-      134
+      20,
+      104
      ],
      "sprite": 0,
      "color": [
@@ -110,22 +110,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -67,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -39,
-     61,
-     83,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -35,
-     122,
-     89,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -136,8 +136,8 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      51,
-      134
+      20,
+      104
      ],
      "sprite": 0,
      "color": [
@@ -156,22 +156,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -67,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -39,
-     61,
-     83,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -35,
-     122,
-     89,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -182,10 +182,10 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      51,
-      134
+      20,
+      104
      ],
-     "sprite": 0,
+     "sprite": 1,
      "color": [
       1,
       1,
@@ -202,22 +202,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -67,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -39,
-     61,
-     83,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -35,
-     122,
-     89,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -228,10 +228,10 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      51,
-      134
+      20,
+      104
      ],
-     "sprite": 0,
+     "sprite": 1,
      "color": [
       1,
       1,
@@ -248,22 +248,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -67,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -39,
-     61,
-     83,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -35,
-     122,
-     89,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -274,8 +274,560 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      51,
-      134
+      20,
+      104
+     ],
+     "sprite": 2,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     101,
+     50
+    ],
+    [
+     -41,
+     48,
+     58,
+     50
+    ],
+    [
+     -37,
+     96,
+     51,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 2,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     101,
+     50
+    ],
+    [
+     -41,
+     48,
+     58,
+     50
+    ],
+    [
+     -37,
+     96,
+     51,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 3,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     101,
+     50
+    ],
+    [
+     -41,
+     48,
+     58,
+     50
+    ],
+    [
+     -37,
+     96,
+     51,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 3,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     101,
+     50
+    ],
+    [
+     -41,
+     48,
+     58,
+     50
+    ],
+    [
+     -37,
+     96,
+     51,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 4,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 1,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     101,
+     50
+    ],
+    [
+     -41,
+     48,
+     58,
+     50
+    ],
+    [
+     -37,
+     96,
+     51,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 4,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     101,
+     50
+    ],
+    [
+     -41,
+     48,
+     58,
+     51
+    ],
+    [
+     -37,
+     97,
+     51,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 5,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     101,
+     50
+    ],
+    [
+     -41,
+     48,
+     58,
+     51
+    ],
+    [
+     -37,
+     97,
+     51,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 5,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     101,
+     50
+    ],
+    [
+     -41,
+     48,
+     58,
+     51
+    ],
+    [
+     -37,
+     97,
+     51,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 6,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     101,
+     50
+    ],
+    [
+     -41,
+     48,
+     58,
+     51
+    ],
+    [
+     -37,
+     97,
+     51,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 6,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 2,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     101,
+     50
+    ],
+    [
+     -41,
+     48,
+     58,
+     51
+    ],
+    [
+     -37,
+     97,
+     51,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 7,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     101,
+     50
+    ],
+    [
+     -41,
+     48,
+     58,
+     51
+    ],
+    [
+     -37,
+     97,
+     51,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 7,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 3,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     101,
+     50
+    ],
+    [
+     -41,
+     48,
+     58,
+     51
+    ],
+    [
+     -37,
+     97,
+     51,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
      ],
      "sprite": 0,
      "color": [
@@ -288,28 +840,28 @@
    ]
   },
   {
-   "sprite": 1,
+   "sprite": 3,
    "dx": 0,
    "dy": 0,
    "hitboxes": [],
    "hurtboxes": [
     [
-     -64,
+     -63,
      0,
-     126,
-     63
+     101,
+     50
     ],
     [
-     -36,
-     61,
-     77,
-     63
+     -41,
+     48,
+     58,
+     51
     ],
     [
-     -33,
-     122,
-     74,
-     64
+     -37,
+     97,
+     51,
+     51
     ]
    ],
    "cancel": [],
@@ -320,424 +872,10 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      38,
-      129
+      20,
+      104
      ],
-     "sprite": 1,
-     "color": [
-      1,
-      1,
-      1,
-      1
-     ]
-    }
-   ]
-  },
-  {
-   "sprite": 1,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -64,
-     0,
-     126,
-     63
-    ],
-    [
-     -36,
-     61,
-     77,
-     63
-    ],
-    [
-     -33,
-     122,
-     74,
-     64
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard",
-   "attachments": [
-    {
-     "effect": "zoffy_fx_frost_charge_start",
-     "anchor": [
-      38,
-      129
-     ],
-     "sprite": 1,
-     "color": [
-      1,
-      1,
-      1,
-      1
-     ]
-    }
-   ]
-  },
-  {
-   "sprite": 1,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -64,
-     0,
-     126,
-     63
-    ],
-    [
-     -36,
-     61,
-     77,
-     63
-    ],
-    [
-     -33,
-     122,
-     74,
-     64
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard",
-   "attachments": [
-    {
-     "effect": "zoffy_fx_frost_charge_start",
-     "anchor": [
-      38,
-      129
-     ],
-     "sprite": 1,
-     "color": [
-      1,
-      1,
-      1,
-      1
-     ]
-    }
-   ]
-  },
-  {
-   "sprite": 1,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -64,
-     0,
-     126,
-     63
-    ],
-    [
-     -36,
-     61,
-     77,
-     63
-    ],
-    [
-     -33,
-     122,
-     74,
-     64
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard",
-   "attachments": [
-    {
-     "effect": "zoffy_fx_frost_charge_start",
-     "anchor": [
-      38,
-      129
-     ],
-     "sprite": 1,
-     "color": [
-      1,
-      1,
-      1,
-      1
-     ]
-    }
-   ]
-  },
-  {
-   "sprite": 1,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -64,
-     0,
-     126,
-     63
-    ],
-    [
-     -36,
-     61,
-     77,
-     63
-    ],
-    [
-     -33,
-     122,
-     74,
-     64
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard",
-   "attachments": [
-    {
-     "effect": "zoffy_fx_frost_charge_start",
-     "anchor": [
-      38,
-      129
-     ],
-     "sprite": 1,
-     "color": [
-      1,
-      1,
-      1,
-      1
-     ]
-    }
-   ]
-  },
-  {
-   "sprite": 2,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -64,
-     0,
-     126,
-     63
-    ],
-    [
-     -33,
-     61,
-     74,
-     63
-    ],
-    [
-     -31,
-     122,
-     63,
-     64
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard",
-   "attachments": [
-    {
-     "effect": "zoffy_fx_frost_charge_start",
-     "anchor": [
-      33,
-      115
-     ],
-     "sprite": 2,
-     "color": [
-      1,
-      1,
-      1,
-      1
-     ]
-    }
-   ]
-  },
-  {
-   "sprite": 2,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -64,
-     0,
-     126,
-     63
-    ],
-    [
-     -33,
-     61,
-     74,
-     63
-    ],
-    [
-     -31,
-     122,
-     63,
-     64
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard",
-   "attachments": [
-    {
-     "effect": "zoffy_fx_frost_charge_start",
-     "anchor": [
-      33,
-      115
-     ],
-     "sprite": 2,
-     "color": [
-      1,
-      1,
-      1,
-      1
-     ]
-    }
-   ]
-  },
-  {
-   "sprite": 2,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -64,
-     0,
-     126,
-     63
-    ],
-    [
-     -33,
-     61,
-     74,
-     63
-    ],
-    [
-     -31,
-     122,
-     63,
-     64
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard",
-   "attachments": [
-    {
-     "effect": "zoffy_fx_frost_charge_start",
-     "anchor": [
-      33,
-      115
-     ],
-     "sprite": 2,
-     "color": [
-      1,
-      1,
-      1,
-      1
-     ]
-    }
-   ]
-  },
-  {
-   "sprite": 2,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -64,
-     0,
-     126,
-     63
-    ],
-    [
-     -33,
-     61,
-     74,
-     63
-    ],
-    [
-     -31,
-     122,
-     63,
-     64
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard",
-   "attachments": [
-    {
-     "effect": "zoffy_fx_frost_charge_start",
-     "anchor": [
-      33,
-      115
-     ],
-     "sprite": 2,
-     "color": [
-      1,
-      1,
-      1,
-      1
-     ]
-    }
-   ]
-  },
-  {
-   "sprite": 2,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -64,
-     0,
-     126,
-     63
-    ],
-    [
-     -33,
-     61,
-     74,
-     63
-    ],
-    [
-     -31,
-     122,
-     63,
-     64
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard",
-   "attachments": [
-    {
-     "effect": "zoffy_fx_frost_charge_start",
-     "anchor": [
-      33,
-      115
-     ],
-     "sprite": 2,
+     "sprite": 0,
      "color": [
       1,
       1,
@@ -754,22 +892,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -63,
      0,
-     126,
-     62
+     101,
+     50
     ],
     [
-     -33,
-     60,
-     75,
-     62
+     -41,
+     48,
+     58,
+     51
     ],
     [
-     -35,
-     120,
-     59,
-     63
+     -37,
+     97,
+     51,
+     51
     ]
    ],
    "cancel": [],
@@ -780,10 +918,10 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      21,
-      126
+      20,
+      104
      ],
-     "sprite": 3,
+     "sprite": 1,
      "color": [
       1,
       1,
@@ -800,22 +938,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -63,
      0,
-     126,
-     62
+     101,
+     50
     ],
     [
-     -33,
-     60,
-     75,
-     62
+     -41,
+     48,
+     58,
+     51
     ],
     [
-     -35,
-     120,
-     59,
-     63
+     -37,
+     97,
+     51,
+     51
     ]
    ],
    "cancel": [],
@@ -826,10 +964,10 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      21,
-      126
+      20,
+      104
      ],
-     "sprite": 3,
+     "sprite": 1,
      "color": [
       1,
       1,
@@ -840,28 +978,28 @@
    ]
   },
   {
-   "sprite": 3,
+   "sprite": 4,
    "dx": 0,
    "dy": 0,
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -63,
      0,
-     126,
-     62
+     101,
+     50
     ],
     [
-     -33,
-     60,
-     75,
-     62
+     -41,
+     48,
+     58,
+     51
     ],
     [
-     -35,
-     120,
-     59,
-     63
+     -37,
+     97,
+     51,
+     51
     ]
    ],
    "cancel": [],
@@ -872,10 +1010,10 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      21,
-      126
+      20,
+      104
      ],
-     "sprite": 3,
+     "sprite": 2,
      "color": [
       1,
       1,
@@ -886,28 +1024,28 @@
    ]
   },
   {
-   "sprite": 3,
+   "sprite": 4,
    "dx": 0,
    "dy": 0,
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -63,
      0,
-     126,
-     62
+     101,
+     50
     ],
     [
-     -33,
-     60,
-     75,
-     62
+     -41,
+     48,
+     58,
+     51
     ],
     [
-     -35,
-     120,
-     59,
-     63
+     -37,
+     97,
+     51,
+     51
     ]
    ],
    "cancel": [],
@@ -918,10 +1056,10 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      21,
-      126
+      20,
+      104
      ],
-     "sprite": 3,
+     "sprite": 2,
      "color": [
       1,
       1,
@@ -932,28 +1070,28 @@
    ]
   },
   {
-   "sprite": 3,
+   "sprite": 4,
    "dx": 0,
    "dy": 0,
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -63,
      0,
-     126,
-     62
+     101,
+     50
     ],
     [
-     -33,
-     60,
-     75,
-     62
+     -41,
+     48,
+     58,
+     51
     ],
     [
-     -35,
-     120,
-     59,
-     63
+     -37,
+     97,
+     51,
+     51
     ]
    ],
    "cancel": [],
@@ -964,8 +1102,8 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      21,
-      126
+      20,
+      104
      ],
      "sprite": 3,
      "color": [
@@ -984,22 +1122,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -64,
+     -63,
      0,
-     126,
-     63
+     101,
+     50
     ],
     [
-     -33,
-     61,
-     74,
-     63
+     -41,
+     48,
+     58,
+     51
     ],
     [
-     -33,
-     122,
-     71,
-     64
+     -37,
+     97,
+     51,
+     51
     ]
    ],
    "cancel": [],
@@ -1010,8 +1148,54 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      35,
-      131
+      20,
+      104
+     ],
+     "sprite": 3,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 4,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -63,
+     0,
+     101,
+     50
+    ],
+    [
+     -41,
+     48,
+     58,
+     51
+    ],
+    [
+     -37,
+     97,
+     51,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
      ],
      "sprite": 4,
      "color": [
@@ -1024,28 +1208,28 @@
    ]
   },
   {
-   "sprite": 4,
+   "sprite": 5,
    "dx": 0,
    "dy": 0,
    "hitboxes": [],
    "hurtboxes": [
     [
-     -64,
+     -63,
      0,
-     126,
-     63
+     101,
+     50
     ],
     [
-     -33,
-     61,
-     74,
-     63
+     -41,
+     48,
+     58,
+     51
     ],
     [
-     -33,
-     122,
-     71,
-     64
+     -37,
+     97,
+     51,
+     51
     ]
    ],
    "cancel": [],
@@ -1056,8 +1240,8 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      35,
-      131
+      20,
+      104
      ],
      "sprite": 4,
      "color": [
@@ -1070,28 +1254,28 @@
    ]
   },
   {
-   "sprite": 4,
+   "sprite": 5,
    "dx": 0,
    "dy": 0,
    "hitboxes": [],
    "hurtboxes": [
     [
-     -64,
+     -63,
      0,
-     126,
-     63
+     101,
+     50
     ],
     [
-     -33,
-     61,
-     74,
-     63
+     -41,
+     48,
+     58,
+     51
     ],
     [
-     -33,
-     122,
-     71,
-     64
+     -37,
+     97,
+     51,
+     51
     ]
    ],
    "cancel": [],
@@ -1102,10 +1286,10 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      35,
-      131
+      20,
+      104
      ],
-     "sprite": 4,
+     "sprite": 5,
      "color": [
       1,
       1,
@@ -1116,28 +1300,28 @@
    ]
   },
   {
-   "sprite": 4,
+   "sprite": 5,
    "dx": 0,
    "dy": 0,
    "hitboxes": [],
    "hurtboxes": [
     [
-     -64,
+     -63,
      0,
-     126,
-     63
+     101,
+     50
     ],
     [
-     -33,
-     61,
-     74,
-     63
+     -41,
+     48,
+     58,
+     51
     ],
     [
-     -33,
-     122,
-     71,
-     64
+     -37,
+     97,
+     51,
+     51
     ]
    ],
    "cancel": [],
@@ -1148,10 +1332,10 @@
     {
      "effect": "zoffy_fx_frost_charge_start",
      "anchor": [
-      35,
-      131
+      20,
+      104
      ],
-     "sprite": 4,
+     "sprite": 5,
      "color": [
       1,
       1,
@@ -1162,34 +1346,50 @@
    ]
   },
   {
-   "sprite": 4,
+   "sprite": 5,
    "dx": 0,
    "dy": 0,
    "hitboxes": [],
    "hurtboxes": [
     [
-     -64,
+     -63,
      0,
-     126,
-     63
+     101,
+     50
     ],
     [
-     -33,
-     61,
-     74,
-     63
+     -41,
+     48,
+     58,
+     51
     ],
     [
-     -33,
-     122,
-     71,
-     64
+     -37,
+     97,
+     51,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 6,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 5,
@@ -1198,148 +1398,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -64,
+     -63,
      0,
-     126,
-     63
+     101,
+     50
     ],
     [
-     -33,
-     61,
-     74,
-     63
+     -41,
+     48,
+     58,
+     51
     ],
     [
-     -32,
-     122,
-     76,
-     64
+     -37,
+     97,
+     51,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
-  },
-  {
-   "sprite": 5,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -64,
-     0,
-     126,
-     63
-    ],
-    [
-     -33,
-     61,
-     74,
-     63
-    ],
-    [
-     -32,
-     122,
-     76,
-     64
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
-  },
-  {
-   "sprite": 5,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -64,
-     0,
-     126,
-     63
-    ],
-    [
-     -33,
-     61,
-     74,
-     63
-    ],
-    [
-     -32,
-     122,
-     76,
-     64
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
-  },
-  {
-   "sprite": 5,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -64,
-     0,
-     126,
-     63
-    ],
-    [
-     -33,
-     61,
-     74,
-     63
-    ],
-    [
-     -32,
-     122,
-     76,
-     64
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
-  },
-  {
-   "sprite": 5,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -64,
-     0,
-     126,
-     63
-    ],
-    [
-     -33,
-     61,
-     74,
-     63
-    ],
-    [
-     -32,
-     122,
-     76,
-     64
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 6,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 6,
@@ -1348,28 +1444,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -72,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -34,
-     61,
-     76,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -33,
-     122,
-     95,
-     64
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 7,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 6,
@@ -1378,28 +1490,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -72,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -34,
-     61,
-     76,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -33,
-     122,
-     95,
-     64
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_charge_start",
+     "anchor": [
+      20,
+      104
+     ],
+     "sprite": 7,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 6,
@@ -1408,22 +1536,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -72,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -34,
-     61,
-     76,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -33,
-     122,
-     95,
-     64
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
@@ -1434,14 +1562,14 @@
     {
      "effect": "zoffy_fx_frost_flight",
      "spawn": [
-      59,
-      139
+      40,
+      102
      ],
      "box": [
+      -18,
       -14,
-      -10,
-      28,
-      20
+      36,
+      28
      ],
      "speed": 6,
      "life": 46,
@@ -1451,7 +1579,11 @@
       1,
       1
      ],
-     "trail_effect": "zoffy_fx_frost_trail"
+     "trail_effect": "zoffy_fx_frost_trail",
+     "anchor": [
+      40,
+      102
+     ]
     }
    ]
   },
@@ -1462,28 +1594,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -72,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -34,
-     61,
-     76,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -33,
-     122,
-     95,
-     64
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 0,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 6,
@@ -1492,28 +1640,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -72,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -34,
-     61,
-     76,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -33,
-     122,
-     95,
-     64
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 0,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 7,
@@ -1522,28 +1686,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -64,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -34,
-     61,
-     76,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -33,
-     122,
-     95,
-     64
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 1,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 7,
@@ -1552,28 +1732,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -64,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -34,
-     61,
-     76,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -33,
-     122,
-     95,
-     64
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 1,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 7,
@@ -1582,28 +1778,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -64,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -34,
-     61,
-     76,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -33,
-     122,
-     95,
-     64
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 2,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 7,
@@ -1612,28 +1824,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -64,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -34,
-     61,
-     76,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -33,
-     122,
-     95,
-     64
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 2,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 7,
@@ -1642,28 +1870,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -64,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -34,
-     61,
-     76,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -33,
-     122,
-     95,
-     64
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 3,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 8,
@@ -1672,28 +1916,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -25,
-     122,
-     90,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 3,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 8,
@@ -1702,28 +1962,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -25,
-     122,
-     90,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 4,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 8,
@@ -1732,28 +2008,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -25,
-     122,
-     90,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 4,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 8,
@@ -1762,28 +2054,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -25,
-     122,
-     90,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 5,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 8,
@@ -1792,28 +2100,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -25,
-     122,
-     90,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 5,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 9,
@@ -1822,28 +2146,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -27,
-     122,
-     92,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 6,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 9,
@@ -1852,28 +2192,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -27,
-     122,
-     92,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 6,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 9,
@@ -1882,28 +2238,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -27,
-     122,
-     92,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 7,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 9,
@@ -1912,28 +2284,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -27,
-     122,
-     92,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 7,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 9,
@@ -1942,28 +2330,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -27,
-     122,
-     92,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 8,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 10,
@@ -1972,28 +2376,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -28,
-     122,
-     93,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 8,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 10,
@@ -2002,28 +2422,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -28,
-     122,
-     93,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 9,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 10,
@@ -2032,28 +2468,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -28,
-     122,
-     93,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 9,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 10,
@@ -2062,28 +2514,44 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -28,
-     122,
-     93,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
    "events": [],
    "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 10,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
   },
   {
    "sprite": 10,
@@ -2092,22 +2560,160 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -72,
      0,
-     126,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     75,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -28,
-     122,
-     93,
-     63
+     -40,
+     98,
+     83,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 10,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 11,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -72,
+     0,
+     103,
+     51
+    ],
+    [
+     -47,
+     49,
+     87,
+     51
+    ],
+    [
+     -40,
+     98,
+     83,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 11,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 11,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -72,
+     0,
+     103,
+     51
+    ],
+    [
+     -47,
+     49,
+     87,
+     51
+    ],
+    [
+     -40,
+     98,
+     83,
+     51
+    ]
+   ],
+   "cancel": [],
+   "events": [],
+   "impact_effect": "impact_light",
+   "block_effect": "impact_guard",
+   "attachments": [
+    {
+     "effect": "zoffy_fx_frost_cone",
+     "anchor": [
+      40,
+      102
+     ],
+     "sprite": 11,
+     "color": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "sprite": 11,
+   "dx": 0,
+   "dy": 0,
+   "hitboxes": [],
+   "hurtboxes": [
+    [
+     -72,
+     0,
+     103,
+     51
+    ],
+    [
+     -47,
+     49,
+     87,
+     51
+    ],
+    [
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
@@ -2122,22 +2728,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -72,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -36,
-     61,
-     93,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -29,
-     122,
-     93,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
@@ -2152,112 +2758,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -72,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -36,
-     61,
-     93,
-     63
+     -47,
+     49,
+     87,
+     51
     ],
     [
-     -29,
-     122,
-     93,
-     63
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
-  },
-  {
-   "sprite": 11,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -65,
-     0,
-     127,
-     63
-    ],
-    [
-     -36,
-     61,
-     93,
-     63
-    ],
-    [
-     -29,
-     122,
-     93,
-     63
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
-  },
-  {
-   "sprite": 11,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -65,
-     0,
-     127,
-     63
-    ],
-    [
-     -36,
-     61,
-     93,
-     63
-    ],
-    [
-     -29,
-     122,
-     93,
-     63
-    ]
-   ],
-   "cancel": [],
-   "events": [],
-   "impact_effect": "impact_light",
-   "block_effect": "impact_guard"
-  },
-  {
-   "sprite": 11,
-   "dx": 0,
-   "dy": 0,
-   "hitboxes": [],
-   "hurtboxes": [
-    [
-     -65,
-     0,
-     127,
-     63
-    ],
-    [
-     -36,
-     61,
-     93,
-     63
-    ],
-    [
-     -29,
-     122,
-     93,
-     63
+     -40,
+     98,
+     83,
+     51
     ]
    ],
    "cancel": [],
@@ -2274,20 +2790,20 @@
     [
      -65,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     90,
-     63
+     -45,
+     49,
+     69,
+     51
     ],
     [
-     -30,
-     122,
-     87,
-     64
+     -43,
+     98,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2304,20 +2820,20 @@
     [
      -65,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     90,
-     63
+     -45,
+     49,
+     69,
+     51
     ],
     [
-     -30,
-     122,
-     87,
-     64
+     -43,
+     98,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2334,20 +2850,20 @@
     [
      -65,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     90,
-     63
+     -45,
+     49,
+     69,
+     51
     ],
     [
-     -30,
-     122,
-     87,
-     64
+     -43,
+     98,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2364,20 +2880,20 @@
     [
      -65,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     90,
-     63
+     -45,
+     49,
+     69,
+     51
     ],
     [
-     -30,
-     122,
-     87,
-     64
+     -43,
+     98,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2394,20 +2910,20 @@
     [
      -65,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     90,
-     63
+     -45,
+     49,
+     69,
+     51
     ],
     [
-     -30,
-     122,
-     87,
-     64
+     -43,
+     98,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2422,22 +2938,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -65,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     76,
-     63
-    ],
-    [
-     -33,
-     122,
+     -45,
+     49,
      69,
-     64
+     51
+    ],
+    [
+     -43,
+     98,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2452,22 +2968,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -65,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     76,
-     63
-    ],
-    [
-     -33,
-     122,
+     -45,
+     49,
      69,
-     64
+     51
+    ],
+    [
+     -43,
+     98,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2482,22 +2998,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -65,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     76,
-     63
-    ],
-    [
-     -33,
-     122,
+     -45,
+     49,
      69,
-     64
+     51
+    ],
+    [
+     -43,
+     98,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2512,22 +3028,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -65,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     76,
-     63
-    ],
-    [
-     -33,
-     122,
+     -45,
+     49,
      69,
-     64
+     51
+    ],
+    [
+     -43,
+     98,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2542,22 +3058,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -66,
+     -65,
      0,
-     127,
-     63
+     103,
+     51
     ],
     [
-     -37,
-     61,
-     76,
-     63
-    ],
-    [
-     -33,
-     122,
+     -45,
+     49,
      69,
-     64
+     51
+    ],
+    [
+     -43,
+     98,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2572,22 +3088,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -37,
-     61,
-     77,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -35,
-     122,
-     71,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2602,22 +3118,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -37,
-     61,
-     77,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -35,
-     122,
-     71,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2632,22 +3148,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -37,
-     61,
-     77,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -35,
-     122,
-     71,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2662,22 +3178,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -37,
-     61,
-     77,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -35,
-     122,
-     71,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2692,22 +3208,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -65,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -37,
-     61,
-     77,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -35,
-     122,
-     71,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2722,22 +3238,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -67,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -44,
-     61,
-     81,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -42,
-     122,
-     84,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2752,22 +3268,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -67,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -44,
-     61,
-     81,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -42,
-     122,
-     84,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2782,22 +3298,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -67,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -44,
-     61,
-     81,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -42,
-     122,
-     84,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2812,22 +3328,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -67,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -44,
-     61,
-     81,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -42,
-     122,
-     84,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],
@@ -2842,22 +3358,22 @@
    "hitboxes": [],
    "hurtboxes": [
     [
-     -67,
+     -78,
      0,
-     127,
-     63
+     102,
+     50
     ],
     [
-     -44,
-     61,
-     81,
-     63
+     -59,
+     48,
+     70,
+     51
     ],
     [
-     -42,
-     122,
-     84,
-     64
+     -57,
+     97,
+     75,
+     51
     ]
    ],
    "cancel": [],

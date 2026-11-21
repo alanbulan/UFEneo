@@ -62,7 +62,7 @@ func test_landing_buffer() -> void:
 			evidence["landing/%s/%s" % [facing,stop]] = trace
 
 func jump_input(tick: int) -> UfeInputFrame:
-	if tick == 0: return UfeInputFrame.make(0, 1)
+	if tick == 0: return UfeInputFrame.make(0, 1, UfeInputFrame.JUMP)
 	if tick == 2: return UfeInputFrame.make(0, 0, UfeInputFrame.RANGED)
 	return UfeInputFrame.make()
 
@@ -77,7 +77,7 @@ func test_natural_air_start() -> void:
 			sim.step([jump_input(tick), UfeInputFrame.make()])
 			trace.append(row(sim))
 			if tick == 2:
-				check(f.height > 0 and f.state == "air_attack" and f.move_id == "air_pulse", "natural_W_then_I_starts_air_%s" % facing)
+				check(f.height > 0 and f.state == "air_attack" and f.move_id == "air_pulse", "natural_Space_then_I_starts_air_%s" % facing)
 				check(int(f.stats.energy) == 777 and int(f.stats.stamina) == 965, "natural_I_pays_35_stamina_no_energy_%s" % facing)
 			for projectile in sim.projectiles:
 				if str(projectile.get("move", "")) == "air_pulse": seen_projectile = true

@@ -10,6 +10,10 @@ static func spawn(sim: UfeMatchDirector, index: int, shot: Dictionary, move_id: 
 		"box":shot.get("box",[-12,-10,24,20]),"effect":shot.get("effect","pulse"),"move":move_id,"power":f.combat.power,
 		"ground_height":int(shot.get("ground_height",-1)),"color":shot.get("color",[1,1,1,1])})
 	var p: Dictionary=sim.projectiles.back()
+	if str(shot.get("tick_clock",""))=="pose":
+		# 显式人物姿势时钟：发射样本就是age 0，life是完整可交互样本数。
+		assert(bool(shot.get("beam",false)) and int(p.speed)==0 and int(p.vy)==0 and not shot.has("integer_path"),"pose时钟只允许静止持束")
+		p.spawn_tick=sim.tick
 	if bool(shot.get("capture",false)) and f.motion.has_capture():
 		p.capture=true; p.capture_token=int(f.motion.capture.token)
 		p.life=mini(int(p.life),int(f.definition.moves[move_id].capture.flight_max_ticks))
@@ -66,12 +70,19 @@ static func contact_point(projectile: Dictionary, target: Rect2i) -> Variant:
 static func emit(sim: UfeMatchDirector, index: int) -> void:
 	var f := sim.fighters[index]
 	var frame := f.frame()
-	for shot in frame.get("shots",[]): spawn(sim,index,shot,f.move_id)
+	for shot in frame.get("shots",[]):
+		if str(shot.get("tick_clock",""))!="pose":spawn(sim,index,shot,f.move_id)
 	if frame.get("counter_shot",{}).is_empty() or f.combat.absorbed==0: return
 	spawn(sim,index,frame.counter_shot,f.move_id)
 	f.combat.absorbed=0
 	f.combat.confirmed=true
 	sim.events.append({"kind":"absorb_counter","player":index,"move":f.move_id})
+
+static func emit_pose(sim: UfeMatchDirector, index: int) -> void:
+	# 双方推进、落地清招后，从当前可见姿势发射；旧shots仍在原推进阶段触发。
+	var f:=sim.fighters[index]
+	for shot in f.frame().get("shots",[]):
+		if str(shot.get("tick_clock",""))=="pose":spawn(sim,index,shot,f.move_id)
 
 static func advance(sim: UfeMatchDirector, contacts: Array) -> void:
 	for p in sim.projectiles:
@@ -97,7 +108,7 @@ static func advance(sim: UfeMatchDirector, contacts: Array) -> void:
 		if int(p.ground_height)>=0 and int(p.height)<=int(p.ground_height):
 			p.height=int(p.ground_height)
 			p.vy=0
-		if not returning:
+		if not returning and int(p.get("spawn_tick",-1))!=sim.tick:
 			p.life=int(p.life)-1
 			p.age=int(p.age)+1
 		@warning_ignore("integer_division") # 每4tick一相，整数帧索引。

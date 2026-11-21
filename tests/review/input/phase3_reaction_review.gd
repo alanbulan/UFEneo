@@ -54,7 +54,7 @@ func target_sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
 			return UfeInputFrame.make(f.facing,0,UfeInputFrame.HEAVY)
 		return UfeInputFrame.make(0,-1 if id in ["crouch_guard","crouch_blockstun"] else 0,UfeInputFrame.GUARD if age<160 else 0)
 	if id=="hit_high":
-		if age==20: p2=UfeInputFrame.make(0,1)
+		if age==20: p2=UfeInputFrame.make(0,1,UfeInputFrame.JUMP)
 		# 杰顿现有独立跳跃手刀/较低跳弧，提早出掌使实际掌端命中初代头部。
 		if age==(54 if target_player==0 else 45): p2=UfeInputFrame.make(0,0,UfeInputFrame.LIGHT)
 		return UfeInputFrame.make()
@@ -69,7 +69,7 @@ func target_sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
 			chain_stage=1
 			return UfeInputFrame.make(0,0,UfeInputFrame.GUARD|UfeInputFrame.CHARGE)
 		var jump_age:=24 if target_player==1 else 30
-		return UfeInputFrame.make(0,-1 if id=="hit_crouch" else 1 if id=="hit_air" and age==jump_age else 0)
+		return UfeInputFrame.make(0,-1 if id=="hit_crouch" else 0,UfeInputFrame.JUMP if id=="hit_air" and age==jump_age else 0)
 	if id in ["down","wake","roll_forward","roll_back","wake_low","wake_mid"]:
 		if age==30: p2=UfeInputFrame.make(0,-1,UfeInputFrame.HEAVY)
 		if f.state=="wake":
@@ -85,7 +85,7 @@ func target_sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
 	if id in ["bounce","full_chain"]:
 		if chain_stage==1 and b.combat.confirmed and int(b.motion.chase_window)>0 and int(b.motion.chase_window)<=21:
 			chain_stage=2
-			p2=UfeInputFrame.make(b.facing,1)
+			p2=UfeInputFrame.make(b.facing,1,UfeInputFrame.JUMP)
 		elif chain_stage==2 and b.state=="air" and b.height>35:
 			chain_stage=3
 			p2=UfeInputFrame.make(0,0,UfeInputFrame.LIGHT if complete_chain else UfeInputFrame.HEAVY)

@@ -5,10 +5,17 @@ var gate_b_driver: UfeGateBReview = null
 var ui_fixes_debug: UfeUIFixesDebug = null
 var capture_ui: String = ""
 var long_text: bool = false
+var review_stills: String = ""
+var last_still_key: String = ""
+var force_review_draw: bool = false
+var review_draw_count: int = 0
+var review_pending_tick: int = -1
+var review_render_trace: Array = []
 
 
 func parse_args(app: Control, args: PackedStringArray) -> void:
 	long_text = "--review-long-text" in args
+	force_review_draw = "--review-force-draw" in args
 	for arg in args:
 		if arg == "--review-ultraseven-air-special":
 			app.review = true
@@ -77,9 +84,11 @@ func parse_args(app: Control, args: PackedStringArray) -> void:
 		elif arg == "--review-zetton-air":
 			app.review = true
 			app.review_driver = UfePhase3ZettonAirReview.new()
-		elif arg == "--review-throws":
+		elif arg in ["--review-throws","--review-fighter-throws"]:
 			app.review = true
-			app.review_driver = UfePhase3ThrowReview.new()
+			var driver := UfePhase3ThrowReview.new()
+			driver.fighter_audit = arg=="--review-fighter-throws"
+			app.review_driver = driver
 		elif arg == "--review-gate-b-patch":
 			app.review = true
 			app.review_driver = UfeGateBPatchReview.new()
@@ -113,8 +122,24 @@ func parse_args(app: Control, args: PackedStringArray) -> void:
 			capture_ui = arg.trim_prefix("--capture-ui=")
 		elif arg.begins_with("--capture-pair="):
 			var pair: Array = Array(arg.trim_prefix("--capture-pair=").split(","))
-			if pair.size() == 2 and pair.all(func(id): return FileAccess.file_exists("res://content/fighters/%s/definition.json" % id)):
-				app.selected_fighters = [pair[0], pair[1]]
+			if pair.size() != 2 or not pair.all(_capture_fighter_available):
+				push_error("审片角色必须是两个存在且已开放的角色id，禁止路径或默认回退：" + arg)
+				app.set_physics_process(false)
+				app.get_tree().quit(1)
+				return
+			app.selected_fighters = [pair[0], pair[1]]
+		elif arg == "--review-skills" or arg.begins_with("--review-skill="):
+			app.review = true
+			var driver := _ensure_driver(app)
+			driver.profile = "fighter_skills"
+			if arg.begins_with("--review-skill="):
+				var requested := arg.trim_prefix("--review-skill=")
+				assert(requested == "idle" or requested in UfeReviewDriver.SKILL_ACTIONS,"未登记的动作审片输入: "+requested)
+				driver.selected_skill = requested
+		elif arg.begins_with("--review-stills="):
+			review_stills = arg.trim_prefix("--review-stills=")
+			assert(not review_stills.is_empty(),"技能截图输出目录不能为空")
+			assert(DirAccess.make_dir_recursive_absolute(review_stills)==OK,"无法创建技能截图目录")
 		elif arg == "--review-final":
 			app.review = true
 			_ensure_driver(app).profile = "gate_a_final"
@@ -128,6 +153,25 @@ func parse_args(app: Control, args: PackedStringArray) -> void:
 			app.review_trace = arg.trim_prefix("--review-trace=")
 		elif arg.begins_with("--review-capture-frames="):
 			app.review_capture_frames = int(arg.trim_prefix("--review-capture-frames="))
+	if force_review_draw:
+		assert(app.review_capture_frames > 0 and not str(app.review_trace).is_empty(), "强制录制必须指定帧数与trace路径")
+		app.auto_quit = 0
+
+
+func _capture_fighter_available(id: String) -> bool:
+	var pattern := RegEx.create_from_string("^[a-z0-9][a-z0-9_-]*$")
+	var matched := pattern.search(id)
+	if matched == null or matched.get_string() != id:
+		return false
+	var path := "res://content/fighters/%s/definition.json" % id
+	if not FileAccess.file_exists(path):
+		return false
+	var definition: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
+	if not definition is Dictionary or definition.get("id", "") != id:
+		return false
+	var playable: Variant = definition.get("playable", true)
+	var pilot: Variant = definition.get("pilot_playable", false)
+	return (playable is bool and playable) or (pilot is bool and pilot)
 
 
 func _ensure_driver(app: Control) -> UfeReviewDriver:
@@ -154,6 +198,8 @@ func after_start_match(app: Control) -> void:
 
 
 func after_ready(app: Control) -> void:
+	if force_review_draw:
+		RenderingServer.frame_post_draw.connect(_on_review_draw)
 	if app.review_driver is UfePixelPagesReview:
 		app._show_page("title")
 	if capture_ui in ["title", "select", "vs", "archive", "settings", "commands", "training"]:
@@ -220,6 +266,10 @@ func on_begin_match_from_front(app: Control) -> void:
 
 
 func before_physics(app: Control, tick: int) -> void:
+	if force_review_draw:
+		assert(review_pending_tick == -1 and tick == review_render_trace.size(), "一个呈现帧内推进多个模拟tick，不能覆盖待绘制姿势")
+		review_pending_tick = tick
+		app.get_tree().create_timer(0.0, true, false, true).timeout.connect(_queue_review_draw.bind(app, tick), CONNECT_ONE_SHOT)
 	if ui_fixes_debug != null:
 		ui_fixes_debug.drive(tick)
 	if gate_b_driver != null:
@@ -274,6 +324,18 @@ func override_inputs(app: Control, tick: int, first: UfeInputFrame, second: UfeI
 
 
 func after_step(app: Control, tick: int) -> void:
+	if not review_stills.is_empty() and app.review and app.review_driver is UfeReviewDriver:
+		var driver := app.review_driver as UfeReviewDriver
+		if driver is UfePixelUIControls:
+			driver.capture_still(app,tick,review_stills)
+		var throw_audit := driver is UfePhase3ThrowReview and (driver as UfePhase3ThrowReview).fighter_audit
+		if (driver.profile=="fighter_skills" or throw_audit) and tick%180>=18 and tick%180<=150:
+			var fighter: UfeFighter = app.simulation.fighters[0]
+			var victim: UfeFighter = app.simulation.fighters[1]
+			var key := "%d:%s:%d:%s:%d:%d" % [driver.section(tick),fighter.move_id,int(fighter.frame().get("sprite",0)),victim.state,victim.motion.pose_sprite,floori((tick%180)/6.0)]
+			if key!=last_still_key:
+				last_still_key = key
+				_capture_skill_still.call_deferred(app,"%s/%02d-%04d.png" % [review_stills,driver.section(tick),tick])
 	if app.review and app.review_driver is UfePhase3AudioReview:
 		var audio_driver := app.review_driver as UfePhase3AudioReview
 		if not audio_driver.trace.is_empty():
@@ -298,3 +360,82 @@ func after_step(app: Control, tick: int) -> void:
 				"viewport": [app.viewport.size.x, app.viewport.size.y],
 				"debug": app.hud.debug_visible,
 			}
+
+
+func _queue_review_draw(app: Control, tick: int) -> void:
+	_complete_review_draw.call_deferred(app, tick)
+	if tick + 1 == int(app.review_capture_frames):
+		app.set_physics_process(false)
+		app.get_tree().quit()
+
+
+func _complete_review_draw(app: Control, tick: int) -> void:
+	assert(review_pending_tick == tick and int(app.capture_tick) == tick + 1, "待绘制tick已被覆盖或未完成模拟")
+	var previous_count := review_draw_count
+	RenderingServer.force_sync()
+	RenderingServer.force_draw(true, 1.0 / 60.0)
+	RenderingServer.force_sync()
+	assert(review_draw_count == previous_count + 1, "主游戏录制没有完成本tick重绘")
+	var root_image: Image = app.get_viewport().get_texture().get_image()
+	var scene_image: Image = app.viewport.get_texture().get_image()
+	assert(root_image != null and not root_image.is_empty() and scene_image != null and not scene_image.is_empty(), "重绘后无法读取实际像素")
+	var rendered: Dictionary = {
+		"capture_tick": tick,
+		"source_movie_frame": Engine.get_process_frames(),
+		"render_pass": review_draw_count,
+		"front_visible": is_instance_valid(app.front) and bool(app.front.visible),
+		"root_size": [root_image.get_width(), root_image.get_height()],
+		"root_format": root_image.get_format(),
+		"root_sha256": _review_image_sha256(root_image),
+		"viewport_size": [scene_image.get_width(), scene_image.get_height()],
+		"viewport_format": scene_image.get_format(),
+		"viewport_sha256": _review_image_sha256(scene_image),
+		"rendered_sprites": app.view.fighters.map(func(sprite): return {"flip_h":sprite.flip_h,"x":sprite.position.x,"y":sprite.position.y}),
+	}
+	review_render_trace.append(rendered)
+	if app.review and app.review_driver is UfeReviewDriver:
+		var driver := app.review_driver as UfeReviewDriver
+		if not driver.trace.is_empty() and int(driver.trace[-1].get("movie_frame", -1)) == tick:
+			for key: String in ["source_movie_frame", "render_pass", "rendered_sprites", "root_sha256", "viewport_sha256"]:
+				driver.trace[-1][key] = rendered[key]
+	review_pending_tick = -1
+	if tick + 1 == int(app.review_capture_frames):
+		_save_review_render_trace(app)
+
+
+func _review_image_sha256(image: Image) -> String:
+	var context := HashingContext.new()
+	var error := context.start(HashingContext.HASH_SHA256)
+	assert(error == OK, "无法初始化录制像素哈希")
+	error = context.update(image.get_data())
+	assert(error == OK, "无法计算录制像素哈希")
+	return context.finish().hex_encode()
+
+
+func _save_review_render_trace(app: Control) -> void:
+	var report: Dictionary = {}
+	var path := str(app.review_trace)
+	if app.review and app.review_driver is UfeReviewDriver:
+		app.review_driver.call("save_file", path)
+		var saved: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
+		assert(saved is Dictionary, "无法读取录制模拟trace")
+		report = saved
+	report.render_trace = review_render_trace
+	report.render_mapping = "capture_tick为主游戏输入tick；source_movie_frame为MovieWriter原片从0开始的实际帧号；SHA来自该次frame_post_draw之后的完整像素。"
+	var output := FileAccess.open(path, FileAccess.WRITE)
+	assert(output != null, "无法保存逐帧重绘证据")
+	output.store_string(JSON.stringify(report, "\t"))
+
+
+func _on_review_draw() -> void:
+	review_draw_count += 1
+
+
+func _capture_skill_still(app: Control, path: String) -> void:
+	await RenderingServer.frame_post_draw
+	var image := app.get_viewport().get_texture().get_image()
+	# 整数倍窗口还原到原生640宽，避免逐招截图占满本机磁盘；不改游戏渲染。
+	if image.get_width()>640 and image.get_width()%640==0:
+		image.resize(640,roundi(640.0*image.get_height()/image.get_width()),Image.INTERPOLATE_NEAREST)
+	var error := image.save_png(path)
+	assert(error==OK,"技能截图保存失败: "+path)

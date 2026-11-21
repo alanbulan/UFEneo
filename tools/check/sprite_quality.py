@@ -16,8 +16,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
+import re
 import sys
 from typing import Any
 
@@ -158,6 +160,8 @@ def inspect_clip_sequence(
     max_stray_area: int = DEFAULT_STRAY_ISLAND_AREA,
     min_walk_diff: int = DEFAULT_MIN_WALK_DIFF_PX,
     standing_override: bool | None = None,
+    standing_by_frame: list[bool | None] | None = None,
+    standing_reasons: list[str | None] | None = None,
     palette_colors: set[tuple[int, int, int]] | None = None,
 ) -> dict[str, Any]:
     errors: list[str] = []
@@ -165,15 +169,22 @@ def inspect_clip_sequence(
     exempt_frames: list[dict[str, Any]] = []
     frame_rows: list[dict[str, Any]] = []
 
-    standing = standing_override if standing_override is not None else is_standing_clip(clip_name)
+    standing_clip = standing_override if standing_override is not None else is_standing_clip(clip_name)
+    if standing_by_frame is not None and len(standing_by_frame) != len(frames):
+        raise ValueError(f"{clip_name}: standing_by_frame 张数与图帧不符")
+    if standing_reasons is not None and len(standing_reasons) != len(frames):
+        raise ValueError(f"{clip_name}: standing_reasons 张数与图帧不符")
     multi_ok = allow_multi_component if allow_multi_component is not None else allows_multi_component(clip_name)
 
     prev_standing_h: int | None = None
     for idx, arr in enumerate(frames):
         info = analyze_frame(arr, max_stray_area=max_stray_area)
+        frame_standing = standing_clip
+        if standing_clip and standing_by_frame is not None and standing_by_frame[idx] is not None:
+            frame_standing = standing_by_frame[idx]
         info["clip"] = clip_name
         info["frame"] = idx
-        info["standing"] = standing
+        info["standing"] = frame_standing
         frame_rows.append(info)
 
         if info["empty"]:
@@ -200,8 +211,14 @@ def inspect_clip_sequence(
             warnings.append(f"{clip_name}[{idx:02d}]: 连通块 {info['components']} (>1)")
 
         h = info["height"]
-        if not standing:
-            exempt_frames.append({"clip": clip_name, "frame": idx, "height": h, "reason": "non_standing_pose"})
+        if not frame_standing:
+            reason = (
+                standing_reasons[idx]
+                if standing_reasons is not None and standing_reasons[idx]
+                else "non_standing_pose"
+            )
+            exempt_frames.append({"clip": clip_name, "frame": idx, "height": h, "reason": reason})
+            prev_standing_h = None
             continue
 
         if anchor_height and anchor_height > 0:
@@ -236,7 +253,7 @@ def inspect_clip_sequence(
     return {
         "clip": clip_name,
         "frames": len(frames),
-        "standing": standing,
+        "standing": standing_clip,
         "frame_metrics": frame_rows,
         "exempt_frames": exempt_frames,
         "errors": errors,
@@ -277,6 +294,80 @@ def _load_fighter_clips(fighter: str) -> tuple[dict[str, tuple[list[np.ndarray],
     return clips_data, anchor_height
 
 
+def _load_standing_metadata(
+    fighter: str,
+    clips_data: dict[str, tuple[list[np.ndarray], list[int]]],
+    path: Path | None = None,
+) -> tuple[dict[str, list[bool | None]], dict[str, list[str | None]], list[str]]:
+    """只采纳与当前图集像素、制作输出 SHA 同时一致且有原因的逐帧豁免。"""
+    source_root = (ROOT / "art/fighters" / fighter).resolve()
+    explicit_path = path is not None
+    path = path or source_root / "stage1/cells/cells.json"
+    path = (path if path.is_absolute() else ROOT / path).resolve()
+    if not path.is_relative_to(source_root):
+        raise ValueError(f"姿势登记必须位于本角色制作目录：{path}")
+    if not path.is_file():
+        if explicit_path:
+            raise FileNotFoundError(f"缺少指定姿势登记：{path}")
+        return {}, {}, []
+    document = json.loads(path.read_text(encoding="utf-8"))
+    rows = document.get("frames", []) if isinstance(document, dict) else []
+    flags = {clip: [None] * len(frames) for clip, (frames, _) in clips_data.items()}
+    reasons = {clip: [None] * len(frames) for clip, (frames, _) in clips_data.items()}
+    warnings: list[str] = []
+
+    normalized_clips = {
+        re.sub(r"[-_]+", "_", clip): clip for clip in clips_data if is_standing_clip(clip)
+    }
+    for row in rows:
+        if not isinstance(row, dict) or row.get("standing") is not False:
+            continue
+        frame_name = str(row.get("frame", ""))
+        if not frame_name.endswith("-cell"):
+            continue
+        normalized_name = re.sub(r"[-_]+", "_", frame_name[:-5])
+        for normalized_clip, clip in normalized_clips.items():
+            prefix = normalized_clip + "_"
+            if not normalized_name.startswith(prefix):
+                continue
+            match = re.match(r"(\d+)(?:_|$)", normalized_name[len(prefix):])
+            if match is None:
+                continue
+            index = int(match.group(1))
+            frames = clips_data[clip][0]
+            if index >= len(frames):
+                continue
+            reason = row.get("standing_reason")
+            output = row.get("output")
+            expected_sha = row.get("output_sha256")
+            problem = ""
+            if not isinstance(reason, str) or not reason.strip():
+                problem = "缺少逐帧姿势原因"
+            elif not isinstance(output, str) or not output:
+                problem = "缺少制作输出路径"
+            elif not isinstance(expected_sha, str) or not re.fullmatch(r"[0-9a-f]{64}", expected_sha):
+                problem = "缺少有效制作输出 SHA256"
+            else:
+                output_path = Path(output)
+                output_path = (output_path if output_path.is_absolute() else ROOT / output_path).resolve()
+                if not output_path.is_relative_to(source_root) or not output_path.is_file():
+                    problem = "制作输出缺失或不在本角色制作目录"
+                elif hashlib.sha256(output_path.read_bytes()).hexdigest() != expected_sha:
+                    problem = "制作输出 SHA256 已变化"
+                else:
+                    with Image.open(output_path) as opened:
+                        output_pixels = np.array(opened.convert("RGBA"), dtype=np.uint8)
+                    if not np.array_equal(output_pixels, frames[index]):
+                        problem = "制作输出与当前图集帧像素不一致"
+            if problem:
+                warnings.append(f"{clip}[{index:02d}]: 忽略无效非站姿登记：{problem}")
+            else:
+                flags[clip][index] = False
+                reasons[clip][index] = reason.strip()
+            break
+    return flags, reasons, warnings
+
+
 def run_check(args: argparse.Namespace) -> dict[str, Any]:
     palette_colors: set[tuple[int, int, int]] = set()
     clip_reports: list[dict[str, Any]] = []
@@ -299,6 +390,13 @@ def run_check(args: argparse.Namespace) -> dict[str, Any]:
         if anchor_height is None:
             anchor_height = idle_h
         selected = set(args.clip) if args.clip else None
+        selected_clips = {
+            clip: data for clip, data in clips_data.items() if selected is None or clip in selected
+        }
+        standing_flags, standing_reasons, metadata_warnings = _load_standing_metadata(
+            args.fighter, selected_clips, args.standing_metadata
+        )
+        all_warnings.extend(metadata_warnings)
         for clip_name, (frames, ticks) in clips_data.items():
             if selected is not None and clip_name not in selected:
                 continue
@@ -308,6 +406,8 @@ def run_check(args: argparse.Namespace) -> dict[str, Any]:
                 allow_multi_component=True if args.allow_multi_component else None,
                 max_stray_area=args.max_stray_area,
                 min_walk_diff=args.min_walk_diff,
+                standing_by_frame=standing_flags.get(clip_name),
+                standing_reasons=standing_reasons.get(clip_name),
                 palette_colors=palette_colors,
             )
             clip_reports.append(rep)
@@ -383,6 +483,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-stray-area", type=int, default=DEFAULT_STRAY_ISLAND_AREA, help="孤岛碎点最大面积阈值")
     parser.add_argument("--min-walk-diff", type=int, default=DEFAULT_MIN_WALK_DIFF_PX, help="走路相邻帧最小像素差异")
     parser.add_argument("--json-out", type=Path, default=None, help="写入 JSON 报告路径")
+    parser.add_argument("--standing-metadata", type=Path, default=None, help="当前制作 cells.json；豁免须与已装帧像素及输出 SHA 一致")
     parser.add_argument("--json", action="store_true", help="标准输出打印完整 JSON")
     return parser
 

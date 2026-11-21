@@ -41,7 +41,7 @@ func prepare_match(sim: UfeMatchDirector) -> void:
 func target_sample(id: String,age: int,sim: UfeMatchDirector) -> UfeInputFrame:
 	if id=="air_tech":
 		var f := sim.fighters[0]
-		if age==30:return UfeInputFrame.make(0,1)
+		if age==30:return UfeInputFrame.make(0,1,UfeInputFrame.JUMP)
 		if f.state=="air" and f.vy<0:return once("air_tech",UfeInputFrame.make(0,0,UfeInputFrame.GUARD))
 		return UfeInputFrame.make()
 	return super.target_sample(id,age,sim)

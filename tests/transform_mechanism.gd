@@ -15,8 +15,7 @@ func setup(id: String = "ultraman-taro", overrides: Dictionary = {}) -> UfeMatch
 	sim.fighters[0].stats.energy = 3000
 	return sim
 func transform_input(sim: UfeMatchDirector) -> void:
-	for input in [UfeInputFrame.make(0,-1), neutral(), UfeInputFrame.make(0,-1,UfeInputFrame.SPECIAL)]:
-		sim.step([input, neutral()])
+	sim.step([UfeInputFrame.make(0,0,UfeInputFrame.TRANSFORM), neutral()])
 func _initialize() -> void: call_deferred("run")
 
 func test_conditions_and_fallback() -> void:
@@ -28,7 +27,18 @@ func test_conditions_and_fallback() -> void:
 		if missing == "once": f.transformed_this_round = true
 		transform_input(blocked_sim)
 		check(f.state != "transform", "test_conditions_" + missing)
-		check(f.move_id == ("special2" if missing == "energy" else "special3"), "test_fallback_" + missing)
+		check(f.move_id.is_empty() and int(f.stats.energy) == (2000 if missing == "energy" else 3000), "test_E_denied_without_P_or_cost_" + missing)
+		# 启动层也重验；不能绕过resolver把失效E递归回退为P。
+		blocked_sim._start(f,"battle_transform")
+		check(f.state != "transform" and f.move_id.is_empty() and int(f.stats.energy) == (2000 if missing == "energy" else 3000), "test_direct_start_denied_without_P_or_cost_" + missing)
+	# 真E先在hitstop排入缓存，释放前条件失效；不改成P，也不支付任何能量。
+	var buffered := setup()
+	buffered.hitstop = 1
+	transform_input(buffered)
+	check(buffered.fighters[0].combat.buffer == "battle_transform", "test_E_really_buffered_during_hitstop")
+	buffered.fighters[0].stats.hp = 501
+	advance(buffered,UfeCommandResolver.INPUT_BUFFER_TICKS + 1)
+	check(buffered.fighters[0].state != "transform" and buffered.fighters[0].move_id.is_empty() and buffered.fighters[0].stats.energy == 3000 and not buffered.fighters[0].transformed_this_round and buffered.fighters[0].combat.buffer.is_empty(), "test_expired_E_condition_no_P_no_cost")
 	var sim := setup()
 	transform_input(sim)
 	check(sim.fighters[0].state == "transform" and sim.fighters[0].stats.energy == 0, "test_half_health_and_cost")
@@ -36,9 +46,15 @@ func test_conditions_and_fallback() -> void:
 	var held := setup()
 	for i in range(8): held.step([UfeInputFrame.make(0,-1,UfeInputFrame.SPECIAL if i==7 else 0), neutral()])
 	check(held.fighters[0].state != "transform", "test_held_down_is_not_double_down")
+	var legacy := setup()
+	for input in [UfeInputFrame.make(0,-1), neutral(), UfeInputFrame.make(0,-1,UfeInputFrame.SPECIAL)]: legacy.step([input,neutral()])
+	check(legacy.fighters[0].state != "transform" and legacy.fighters[0].move_id == "special3" and not legacy.fighters[0].transformed_this_round, "test_old_22P_only_P_no_transform")
 	var matrix := setup()
 	for input in [UfeInputFrame.make(0,-1), neutral(), UfeInputFrame.make(0,-1,UfeInputFrame.CRUSH)]: matrix.step([input,neutral()])
-	check(matrix.fighters[0].move_id == "motion_22", "test_existing_22_crush_unchanged")
+	check(matrix.fighters[0].move_id != "motion_22", "test_old_22O_not_direction_skill")
+	var simple := setup()
+	simple.step([UfeInputFrame.make(0,1,UfeInputFrame.RANGED),neutral()])
+	check(simple.fighters[0].move_id == "motion_22" and simple.fighters[0].height == 0, "test_I_up_ground_skill_without_jump")
 	cases.append("test_conditions_and_fallback")
 
 func test_invulnerable_and_control() -> void:
@@ -94,7 +110,7 @@ func test_super_beam_and_round_reset() -> void:
 		check(f.form_id.is_empty() and f.transformed_this_round, "test_cosmo_always_reverts_" + str(hit))
 		f.stats.energy = 3000
 		transform_input(super_sim)
-		check(f.state != "transform" and f.move_id == "special3", "test_no_second_transform_after_cosmo")
+		check(f.state != "transform" and f.move_id.is_empty() and int(f.stats.energy) == 3000, "test_no_second_transform_after_cosmo")
 	var sim := setup()
 	transform_input(sim); advance(sim,60)
 	sim.remaining = 1
@@ -112,7 +128,7 @@ func test_ex_definition_switch() -> void:
 		var closed := setup(base, disabled)
 		check(not UfeBattleTransform.can_transform(closed.fighters[0]), "test_ex_disabled_" + base)
 		transform_input(closed)
-		check(closed.fighters[0].move_id == "special3" and closed.fighters[0].definition.id == base, "test_ex_disabled_fallback_" + base)
+		check(closed.fighters[0].move_id.is_empty() and int(closed.fighters[0].stats.energy) == 3000 and closed.fighters[0].definition.id == base, "test_ex_disabled_fallback_" + base)
 		var enabled := {}; enabled[base] = true
 		var sim := setup(base, enabled)
 		var f := sim.fighters[0]
@@ -164,7 +180,6 @@ func test_replay_format6() -> void:
 	var sim := UfeBattleFormCatalog.match_for("ultraman-taro", "ultraman")
 	var twin := UfeBattleFormCatalog.match_for("ultraman-taro", "ultraman")
 	var record := UfeReplayRecorder.new()
-	var motion_age := -1
 	var hit_count := 0
 	var transform_tick := -1
 	var cosmo_tick := -1
@@ -172,11 +187,7 @@ func test_replay_format6() -> void:
 		var input := neutral(); var other := neutral()
 		var f := sim.fighters[0]
 		if not f.transformed_this_round:
-			if motion_age < 0 and UfeBattleTransform.can_transform(f) and f.state in UfeBattleFormCatalog.GROUND_STATES: motion_age = 0
-			if motion_age >= 0 and motion_age < 3:
-				input = UfeInputFrame.make(0,-1 if motion_age != 1 else 0,UfeInputFrame.SPECIAL if motion_age == 2 else 0)
-				motion_age += 1
-			else: input = UfeInputFrame.make(0,0,UfeInputFrame.CHARGE)
+			input = UfeInputFrame.make(0,0,UfeInputFrame.TRANSFORM if UfeBattleTransform.can_transform(f) and f.state in UfeBattleFormCatalog.GROUND_STATES else UfeInputFrame.CHARGE)
 			if int(f.stats.hp) > 500 and tick % 85 == 30: other = UfeInputFrame.make(0,0,UfeInputFrame.RANGED)
 		elif f.state != "transform":
 			input = UfeInputFrame.make(0,0,UfeInputFrame.SPECIAL if int(f.stats.energy)>=3000 else UfeInputFrame.CHARGE)
@@ -187,7 +198,7 @@ func test_replay_format6() -> void:
 		check(sim.state_hash() == twin.state_hash(), "test_transform_tick_determinism")
 		if sim.events.any(func(e):return e.kind == "hit" and e.get("move","") == "super_special3"): hit_count += 1
 	check(sim.fighters[0].transformed_this_round and hit_count > 0, "test_replay_natural_start_reaches_transform_and_cosmo")
-	print("自然开局回放诊断 ", {"transform_tick":transform_tick,"cosmo_tick":cosmo_tick,"hp":sim.fighters[0].stats.hp,"energy":sim.fighters[0].stats.energy,"state":sim.fighters[0].state,"motion_age":motion_age,"hit_count":hit_count})
+	print("自然开局回放诊断 ", {"transform_tick":transform_tick,"cosmo_tick":cosmo_tick,"hp":sim.fighters[0].stats.hp,"energy":sim.fighters[0].stats.energy,"state":sim.fighters[0].state,"hit_count":hit_count})
 	check(record.save_file("user://transform-format6.json") == OK, "test_format6_save")
 	var loaded := UfeReplayRecorder.load_file("user://transform-format6.json", sim.content_fingerprint)
 	check(loaded != null and UfeReplayRecorder.FORMAT == 6, "test_format6_load")

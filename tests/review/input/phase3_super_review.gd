@@ -26,7 +26,7 @@ func sample(frame: int,_sim: UfeMatchDirector) -> UfeInputFrame:
 	var a:=UfeInputFrame.make()
 	var b:=UfeInputFrame.make()
 	if not feedback_only:
-		if age==30:a=UfeInputFrame.make(0,0,UfeInputFrame.LIGHT|UfeInputFrame.HEAVY if part==2 else UfeInputFrame.SPECIAL)
+		if age==30:a=UfeInputFrame.make(0,0,UfeInputFrame.SPECIAL)
 		if part%2==1:b=UfeInputFrame.make(0,0,UfeInputFrame.GUARD)
 	else:
 		match part:

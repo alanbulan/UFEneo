@@ -39,16 +39,8 @@ func second_sample(frame: int) -> UfeInputFrame:
 	if ready_action(id) and id=="dash_sequence" and age>=30:return UfeInputFrame.make(1)
 	return UfeInputFrame.make()
 func command_input(id: String, age: int, f: UfeFighter) -> UfeInputFrame:
-	# 每步 2 tick、末步同 tick 按键：623 共 6 tick，41236 共 10 tick，均在缓冲窗口内。
-	var dirs: Array=[6,2,3] if id=="motion_623" else [4,1,2,3,6]
-	var last: int=dirs.size()*2-1
-	if age<0 or age>last:return UfeInputFrame.make()
-	@warning_ignore("integer_division") # 每步保持 2 tick，按整数索引取方向步。
-	var d: int=int(dirs[mini(age/2,dirs.size()-1)])
-	var x:= -1 if d in [1,4,7] else 1 if d in [3,6,9] else 0
-	var y:= -1 if d in [1,2,3] else 1 if d in [7,8,9] else 0
-	var bit: int=UfeInputFrame.HEAVY if id=="motion_623" else UfeInputFrame.THROW
-	return UfeInputFrame.make(x*f.facing,y,bit if age==last else 0)
+	var press := 5 if id=="motion_623" else 9
+	return direction_skill_input(id,f.facing) if age==press else UfeInputFrame.make()
 func sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
 	var id: String=ACTIONS[section(frame)];var age: int=frame if not selected_action.is_empty() else frame-int(START[section(frame)]);var f:=sim.fighters[0]
 	if not ready_action(id):return UfeInputFrame.make()
@@ -80,19 +72,19 @@ func sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
 		return UfeInputFrame.make(0,0,UfeInputFrame.LIGHT if trigger else 0)
 	if id=="air_pulse":
 		# 垂直跳后在空中按 I 出空中光弹，镖体从手中飞出。
-		if age==25:return UfeInputFrame.make(0,1)
+		if age==25:return UfeInputFrame.make(0,1,UfeInputFrame.JUMP)
 		if age==45:return UfeInputFrame.make(0,0,UfeInputFrame.RANGED)
 		return UfeInputFrame.make()
 	if id=="special2":
-		# 二级必杀要两格能量：蓄 110 tick 后按 J+K。
+		# 二级必杀要两格能量：蓄 110 tick 后按 P。
 		if age>=10 and age<120:return UfeInputFrame.make(0,0,UfeInputFrame.CHARGE)
-		if age==120 or age==121:return UfeInputFrame.make(0,0,UfeInputFrame.LIGHT|UfeInputFrame.HEAVY)
+		if age==120 or age==121:return UfeInputFrame.make(0,0,UfeInputFrame.SPECIAL)
 		return UfeInputFrame.make()
 	if id in ["special","special3"]:
-		# 必杀要能量：special 一格（蓄 50 tick）、special3 三格（蓄 150 tick），再同 tick 按 J+K。
+		# 必杀要能量：special 一格（蓄 50 tick）、special3 三格（蓄 150 tick），再同 tick 按 P。
 		var press: int=80 if id=="special" else 185
 		if age>=10 and age<press:return UfeInputFrame.make(0,0,UfeInputFrame.CHARGE)
-		if age==press or age==press+1:return UfeInputFrame.make(0,0,UfeInputFrame.LIGHT|UfeInputFrame.HEAVY)
+		if age==press or age==press+1:return UfeInputFrame.make(0,0,UfeInputFrame.SPECIAL)
 		return UfeInputFrame.make()
 	if id=="combo_air":
 		# 轻两下→升击→追击跳→空轻两段→砸地弹地→落地扫腿；每段都在真实命中后才按下一下。
@@ -102,7 +94,7 @@ func sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
 			if f.move_id=="light2" and chain==1:chain=2;return UfeInputFrame.make(f.facing,0,UfeInputFrame.HEAVY)
 			if f.move_id=="chase_light1" and chain==4:chain=5;return UfeInputFrame.make(0,0,UfeInputFrame.LIGHT)
 			if f.move_id=="chase_light2" and chain==5:chain=6;return UfeInputFrame.make(0,0,UfeInputFrame.HEAVY)
-		if chain==2 and int(f.motion.chase_window)>0 and f.combat.confirmed:chain=3;return UfeInputFrame.make(f.facing,1)
+		if chain==2 and int(f.motion.chase_window)>0 and f.combat.confirmed:chain=3;return UfeInputFrame.make(f.facing,1,UfeInputFrame.JUMP)
 		if chain==3 and f.state=="air" and f.height>35:chain=4;return UfeInputFrame.make(0,0,UfeInputFrame.LIGHT)
 		if chain==6 and f.state=="land" and int(f.motion.land_window)>0:chain=7;return UfeInputFrame.make(0,-1,UfeInputFrame.HEAVY)
 		return UfeInputFrame.make()

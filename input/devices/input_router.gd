@@ -3,7 +3,7 @@ extends RefCounted
 const ACTIONS := ["left","right","up","down","light","heavy","throw","guard","charge","special","crush","ranged","dodge","jump","transform"]
 const KEYS := [[KEY_A,KEY_D,KEY_W,KEY_S,KEY_J,KEY_K,KEY_L,KEY_U,KEY_Q,KEY_P,KEY_O,KEY_I,KEY_N,KEY_SPACE,KEY_E],
 	[KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN,KEY_KP_1,KEY_KP_2,KEY_KP_3,KEY_KP_4,KEY_KP_5,KEY_KP_6,KEY_KP_0,KEY_KP_7,KEY_KP_9,KEY_KP_ADD,KEY_KP_PERIOD]]
-const BUTTONS := [-1,-1,-1,-1,JOY_BUTTON_X,JOY_BUTTON_Y,JOY_BUTTON_A,-1,-1,-1,JOY_BUTTON_B,JOY_BUTTON_RIGHT_SHOULDER,JOY_BUTTON_LEFT_SHOULDER,-1,JOY_BUTTON_LEFT_STICK]
+const BUTTONS := [-1,-1,-1,-1,JOY_BUTTON_X,JOY_BUTTON_Y,JOY_BUTTON_A,-1,-1,JOY_BUTTON_LEFT_STICK,JOY_BUTTON_B,JOY_BUTTON_RIGHT_SHOULDER,JOY_BUTTON_LEFT_SHOULDER,JOY_BUTTON_RIGHT_STICK,JOY_BUTTON_BACK]
 static var slots := UfeControllerSlots.new()
 static var key_bindings: Dictionary = {}
 static var joy_bindings: Dictionary = {}

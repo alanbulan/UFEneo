@@ -153,6 +153,49 @@ func test_replay() -> void:
 	check(first == second, "同一输入两次快照与指纹一致")
 	check(str(first[-1]).length() == 64, "内容指纹稳定")
 
+func approach_zoffy_contact(sim: UfeMatchDirector, facing: int, at_wall: bool) -> void:
+	var actor := sim.fighters[0]
+	var victim := sim.fighters[1]
+	victim.x = (UfeStateRules.STAGE_RIGHT if facing > 0 else UfeStateRules.STAGE_LEFT) if at_wall else 640 + facing * 80
+	actor.x = victim.x - facing * 160
+	actor.facing = facing; victim.facing = -facing
+	# 从明确的远距连续步行接触；不把双方直接摆到期望命中的根距。
+	for _tick in range(100): sim.step([UfeInputFrame.make(facing), UfeInputFrame.make()])
+	for _tick in range(8): sim.step([UfeInputFrame.make(), UfeInputFrame.make()])
+	check(actor.state == "idle" and victim.state == "idle", "真实贴身后双方回到待机")
+	var gap := absi(actor.x - victim.x)
+	for _tick in range(8): sim.step([UfeInputFrame.make(), UfeInputFrame.make()])
+	check(absi(actor.x - victim.x) == gap, "行走转待机不把双方弹开")
+	check(gap == actor.definition.body_radius + victim.definition.body_radius, "行走达到生产推挤边界且不穿身")
+
+func test_zoffy_real_contacts() -> void:
+	# 正式角色、真实步行和O输入；中央及贴墙均须经几何结算，不直接调用apply。
+	for opponent in ["ultraman", "zoffy"]:
+		for facing in [1, -1]:
+			for at_wall in [false, true]:
+				for held_ticks in [1, 20, 40]:
+					for extra_gap in [0, 160]:
+						var sim := UfeContentDatabase.match_for("zoffy", str(opponent))
+						approach_zoffy_contact(sim, facing, at_wall)
+						var actor := sim.fighters[0]
+						var victim := sim.fighters[1]
+						for _tick in range(floori(float(extra_gap) / actor.definition.walk_speed)): sim.step([UfeInputFrame.make(-facing), UfeInputFrame.make()])
+						sim.step([UfeInputFrame.make(), UfeInputFrame.make()])
+						var move_id := "crush" if held_ticks == 1 else "crush_charge_2" if held_ticks == 20 else "crush_charge_3"
+						var label := "佐菲真实超重击/%s/%d/%s/%d/%d" % [opponent, facing, str(at_wall), held_ticks, extra_gap]
+						var started := false
+						var hits: Array = []
+						for tick in range(120):
+							sim.step([crush_input(tick < held_ticks), UfeInputFrame.make()])
+							started = started or actor.move_id == move_id
+							for event in sim.events:
+								if event.kind == "hit" and int(event.player) == 0: hits.append(str(event.move))
+						check(started, label + "/真实输入按档启动")
+						var expected: Array = [move_id] if extra_gap == 0 else []
+						check(hits == expected, label + "/贴身仅命中一次而远处落空")
+						var damage := int(actor.definition.moves[move_id].damage) if extra_gap == 0 else 0
+						check(victim.stats.hp == victim.definition.max_health - damage, label + "/真实几何结算档位伤害")
+
 func run() -> void:
 	test_loaded_numbers()
 	test_tap_is_immediate()
@@ -160,5 +203,6 @@ func run() -> void:
 	test_other_buttons_and_cancel()
 	test_guard_break_and_overlay()
 	test_replay()
+	test_zoffy_real_contacts()
 	print("POWER_CRUSH " + ("PASS" if errors.is_empty() else str(errors)))
 	quit(0 if errors.is_empty() else 1)

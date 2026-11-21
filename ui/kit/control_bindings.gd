@@ -68,7 +68,7 @@ func _build_rows() -> void:
 		var clear:=PixelButton.new("清空");row.add_child(clear);clear.pressed.connect(func():_store(action,{"keycode":0} if device_kind=="keyboard" else {"kind":"none"}))
 		var restore:=PixelButton.new("默认");row.add_child(restore);restore.pressed.connect(func():_store(action,null))
 	var help:=Label.new();help.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-	help.text="默认1P：WASD方向，J/K/L攻投，U防，I远程，O超重，P必杀；Q蓄气、N闪避、E形态。\nI加↖/↑/↗/↘/↙各直出一个原搓招；正中与←/→/↓仍是普通远程。\nEnter、Esc、F1–F6、R及手柄Start保留给暂停、调试和重开。手柄默认□+△必杀、上方向跳跃。"
+	help.text="默认1P：AD移动、S蹲、W只组合上方向，空格独立跳跃；J/K/L攻投，U防，I远程，O超重，P必杀，Q蓄气、N闪避、E形态。\nI+↖/↑/↗/↘/↙一方向一招；中立与←/→/↓仍是普通远程。\n默认2P：↑只组合上方向，小键盘+独立跳跃。手柄：L3必杀、R3跳跃、Back形态，方向上不跳。\nEnter、Esc、F1–F6、R及手柄Start保留给暂停、调试和重开。"
 	row_list.add_child(help)
 
 func is_capturing() -> bool:return capturing
@@ -82,7 +82,7 @@ func begin_capture(action: String) -> void:
 	for pad in Input.get_connected_joypads():
 		if Input.is_joy_button_pressed(pad,JOY_BUTTON_A):ignored_buttons.append(JOY_BUTTON_A)
 	popup_heading.text="%dP · %s · %s"%[player+1,"键盘" if device_kind=="keyboard" else "手柄",LABELS.get(action,action)]
-	popup_hint.text="请按新的主键，可同时按Ctrl / Shift / Alt / Win。\nEsc取消；点击取消也可保留原绑定。" if device_kind=="keyboard" else "请按手柄按钮，或推动摇杆 / 扳机。\nEsc或手柄返回取消；Start保留为暂停。"
+	popup_hint.text="请按新的主键，可同时按Ctrl / Shift / Alt / Win。\nEsc取消；点击取消也可保留原绑定。" if device_kind=="keyboard" else "请按手柄按钮（含Back），或推动摇杆 / 扳机。\nEsc或点击取消保留原绑定；Start保留为暂停。"
 	# 原生弹层随正式640×360界面的整数倍率缩放。
 	popup.content_scale_factor=maxf(1.0,get_screen_transform().get_scale().abs().x)
 	popup.reset_size()
@@ -122,10 +122,9 @@ func capture_event(event: InputEvent) -> bool:
 			if not event.pressed:ignored_buttons.erase(int(event.button_index))
 			return true
 		if not event.pressed:return true
-		if event.button_index==JOY_BUTTON_BACK:cancel_capture();return true
 		if device_kind!="joypad":return true
 		if event.button_index==JOY_BUTTON_START:
-			popup_hint.text="Start保留为暂停，请换一个按钮。\nEsc或手柄返回取消。";return true
+			popup_hint.text="Start保留为暂停，请换一个按钮。\nEsc或点击取消保留原绑定。";return true
 		_attempt({"kind":"button","button":int(event.button_index)});return true
 	if event is InputEventJoypadMotion:
 		if device_kind=="joypad" and absf(event.axis_value)>=0.75:
@@ -169,8 +168,6 @@ func _mapping_conflict(owner_index: int, kind: String, action: String, value: Va
 				var existing:=_key_signature(_effective_binding(settings,kind,other_player,other))
 				# 修饰组合也占用主键，避免普通同键在实战中被组合覆盖。
 				if int(incoming[0])!=int(existing[0]):continue
-				# 2P默认的上方向和独立跳跃共用↑，是原有有意重合。
-				if owner_index==1 and other_player==1 and action in ["up","jump"] and other in ["up","jump"] and incoming==existing and incoming==[KEY_UP,false,false,false,false]:continue
 			else:
 				var incoming:=_joy_signatures(value);var existing:=_joy_signatures(_effective_binding(settings,kind,other_player,other))
 				if not incoming.any(func(item):return item in existing):continue
@@ -236,7 +233,7 @@ func _binding_text(action: String) -> String:
 	if device_kind=="keyboard":return UfeInputRouter.binding_label(player,action)
 	var value: Variant=UfeInputRouter.get_joy_binding(player,action)
 	if value is int or value is float:value={"kind":"button","button":int(value)} if int(value)>=0 else {"kind":"none"}
-	if not value is Dictionary or str(value.get("kind","none"))=="none":return "未绑定（沿组合输入）" if action in ["special","jump"] else "未绑定"
+	if not value is Dictionary or str(value.get("kind","none"))=="none":return "未绑定"
 	if value.kind=="button":return _joy_button_text(int(value.button))
 	var axis:=int(value.get("axis",0));var side:=int(value.get("value",1))
 	var axis_name: String="L2" if axis==JOY_AXIS_TRIGGER_LEFT else "R2" if axis==JOY_AXIS_TRIGGER_RIGHT else "左摇杆" if axis in [JOY_AXIS_LEFT_X,JOY_AXIS_LEFT_Y] else "右摇杆" if axis in [JOY_AXIS_RIGHT_X,JOY_AXIS_RIGHT_Y] else "轴%d"%axis
@@ -247,4 +244,4 @@ func _binding_text(action: String) -> String:
 	return axis_name
 
 static func _joy_button_text(index: int) -> String:
-	return str({JOY_BUTTON_X:"□ / X",JOY_BUTTON_Y:"△ / Y",JOY_BUTTON_A:"× / A",JOY_BUTTON_B:"○ / B",JOY_BUTTON_LEFT_SHOULDER:"L1",JOY_BUTTON_RIGHT_SHOULDER:"R1",JOY_BUTTON_LEFT_STICK:"L3",JOY_BUTTON_RIGHT_STICK:"R3",JOY_BUTTON_DPAD_LEFT:"十字左",JOY_BUTTON_DPAD_RIGHT:"十字右",JOY_BUTTON_DPAD_UP:"十字上",JOY_BUTTON_DPAD_DOWN:"十字下",JOY_BUTTON_START:"Start",JOY_BUTTON_BACK:"返回"}.get(index,"按钮%d"%[index+1]))
+	return str({JOY_BUTTON_X:"□ / X",JOY_BUTTON_Y:"△ / Y",JOY_BUTTON_A:"× / A",JOY_BUTTON_B:"○ / B",JOY_BUTTON_LEFT_SHOULDER:"L1",JOY_BUTTON_RIGHT_SHOULDER:"R1",JOY_BUTTON_LEFT_STICK:"L3",JOY_BUTTON_RIGHT_STICK:"R3",JOY_BUTTON_DPAD_LEFT:"十字左",JOY_BUTTON_DPAD_RIGHT:"十字右",JOY_BUTTON_DPAD_UP:"十字上",JOY_BUTTON_DPAD_DOWN:"十字下",JOY_BUTTON_START:"Start",JOY_BUTTON_BACK:"Back"}.get(index,"按钮%d"%[index+1]))

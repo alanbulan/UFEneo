@@ -1,5 +1,6 @@
 class_name UfeMatchDirector
 extends RefCounted
+const ContactEvent = preload("res://core/combat/contact_event.gd")
 const MOVE_START_RULE_REVISION := UfeMatchFingerprint.MOVE_START_RULE_REVISION
 const CHASE_INTERRUPT_RULE_REVISION := UfeMatchFingerprint.CHASE_INTERRUPT_RULE_REVISION
 const CROUCH_GUARD_RESUME_RULE_REVISION := UfeMatchFingerprint.CROUCH_GUARD_RESUME_RULE_REVISION
@@ -52,6 +53,7 @@ func command_state(f: UfeFighter) -> String:
 	return UfeInputBuffer.command_state(f)
 
 func step(inputs: Array) -> void:
+	# Tick contract: cleanup/input → hitstop → actor advance → contact collection → resolution → terminal.
 	events.clear()
 	UfeCaptureResolver.cleanup(self)
 	UfeReturningProjectile.cleanup_explicit(self)
@@ -79,6 +81,7 @@ func step(inputs: Array) -> void:
 	for i in range(2):
 		var f := fighters[i]
 		if f.move_id.is_empty(): continue
+		if not freeze_opponent: UfeProjectileResolver.emit_pose(self, i)
 		var move: Dictionary = f.definition.moves[f.move_id]
 		var frame := f.frame()
 		if str(move.kind) == "projectile" and not frame.hitboxes.is_empty() and not f.combat.connected:
@@ -90,51 +93,7 @@ func step(inputs: Array) -> void:
 			if UfeFrameGuard.melee_point(f, fighters[1 - i], contact.move) != null: contact.guard_frame = fighters[1 - i].frame().duplicate(true)
 			contacts.append(contact)
 	if not freeze_opponent: UfeProjectileResolver.advance(self, contacts)
-	if contacts.size() == 2 and str(contacts[0].move.kind) == "throw" and str(contacts[1].move.kind) == "throw":
-		UfeThrowResolver.tech(self, int(contacts[0].owner))
-	else:
-		for contact in contacts:
-			var index := int(contact.owner)
-			var a := fighters[index]
-			var b := fighters[1 - index]
-			var input: UfeInputFrame = inputs[1 - index]
-			var guardable := b.height == 0 and b.move_id.is_empty() and UfeStateRules.is_guardable_state(b.state)
-			var projectile_facing := int(contact.facing) if bool(contact.projectile) else 0
-			var facing_attack := projectile_facing * b.facing < 0 if projectile_facing != 0 else (a.x - b.x) * b.facing >= 0
-			var defending := guardable and facing_attack and (input.held(UfeInputFrame.GUARD) or input.x * b.facing < 0)
-			var old_power := a.combat.power
-			var feedback: Dictionary = contact.move.get("feedback", {"spark": "impact_heavy", "block_spark": "impact_guard", "hitstop": 6, "blockstop": 3, "shake": 0, "flash": 2}).duplicate(true)
-			if not bool(contact.projectile):
-				feedback.spark = a.frame().get("impact_effect", feedback.spark)
-				feedback.block_spark = a.frame().get("block_effect", feedback.block_spark)
-			if contact.projectile: a.combat.power = int(contact.power)
-			var result: String
-			if bool(contact.get("capture", false)):
-				result = UfeCaptureResolver.contact(self, index, contact.move, defending, int(contact.capture_token))
-			elif contact.has("guard_frame"):
-				UfeFrameGuard.block_melee(a, b, contact.move)
-				a.combat.blocked = true
-				var guard_speed := UfeFeelRules.block_push(int(contact.move.get("pushback", 0)))
-				if guard_speed > 0:
-					b.motion.push_vx = UfeHitResolver.slide(b, a, a.facing * guard_speed)
-				result = "block"
-				feedback.block_spark = contact.guard_frame.get("guard_effect", feedback.block_spark)
-				feedback.block_color = [1, 1, 1, 1]
-			else:
-				result = UfeHitResolver.apply(a, b, contact.move, defending, rules, projectile_facing)
-			a.combat.power = old_power
-			if result in ["capture", "ignored"]: continue
-			if contact.has("hit_group"): UfeMeleeHitGroups.record(a, int(contact.hit_group), str(contact.move.id), result)
-			if str(contact.move.kind) == "throw" and result == "hit":
-				UfeThrowResolver.begin(self, index, contact.move)
-			var point: Vector2i = contact.get("point", Vector2i(b.x, b.height + 80))
-			var event: Dictionary = {"kind": result, "player": index, "move": contact.move.id, "projectile": contact.projectile, "x": point.x, "height": point.y, "feedback": feedback}
-			if contact.has("weapon_id"): event.weapon_id = str(contact.weapon_id)
-			if contact.has("guard_frame"):
-				event.guarded_by = 1 - index
-				UfeFrameGuard.decorate(event, contact.guard_frame, point, b.facing)
-			events.append(event)
-			hitstop = maxi(hitstop, int(feedback.get("blockstop", 3) if result == "block" else feedback.get("hitstop", 6)))
+	_resolve_contacts(contacts, inputs)
 	UfeThrowResolver.sync(self)
 	if remaining > 0 and (fighters[0].stats.hp <= 0 or fighters[1].stats.hp <= 0):
 		_capture_terminal_view()
@@ -149,6 +108,54 @@ func step(inputs: Array) -> void:
 			fighters[i].clear_move()
 			fighters[i].enter("timeout" if remaining <= 0 else "victory" if i == winner else "defeat")
 		UfeReturningProjectile.cleanup_explicit(self)
+
+## Contact-resolution phase. Candidate collection is complete; emitted events describe committed results.
+func _resolve_contacts(contacts: Array, inputs: Array) -> void:
+	if contacts.size() == 2 and str(contacts[0].move.kind) == "throw" and str(contacts[1].move.kind) == "throw":
+		UfeThrowResolver.tech(self, int(contacts[0].owner))
+		return
+	for contact in contacts:
+		var index := int(contact.owner)
+		var a := fighters[index]
+		var b := fighters[1 - index]
+		var input: UfeInputFrame = inputs[1 - index]
+		var guardable := b.height == 0 and b.move_id.is_empty() and UfeStateRules.is_guardable_state(b.state)
+		var projectile_facing := int(contact.facing) if bool(contact.projectile) else 0
+		var facing_attack := projectile_facing * b.facing < 0 if projectile_facing != 0 else (a.x - b.x) * b.facing >= 0
+		var defending := guardable and facing_attack and (input.held(UfeInputFrame.GUARD) or input.x * b.facing < 0)
+		var old_power := a.combat.power
+		var feedback: Dictionary = contact.move.get("feedback", {"spark": "impact_heavy", "block_spark": "impact_guard", "hitstop": 6, "blockstop": 3, "shake": 0, "flash": 2}).duplicate(true)
+		if not bool(contact.projectile):
+			feedback.spark = a.frame().get("impact_effect", feedback.spark)
+			feedback.block_spark = a.frame().get("block_effect", feedback.block_spark)
+		if contact.projectile: a.combat.power = int(contact.power)
+		var result: String
+		if bool(contact.get("capture", false)):
+			result = UfeCaptureResolver.contact(self, index, contact.move, defending, int(contact.capture_token))
+		elif contact.has("guard_frame"):
+			UfeFrameGuard.block_melee(a, b, contact.move)
+			a.combat.blocked = true
+			var guard_speed := UfeFeelRules.block_push(int(contact.move.get("pushback", 0)))
+			if guard_speed > 0:
+				b.motion.push_vx = UfeHitResolver.slide(b, a, a.facing * guard_speed)
+			result = "block"
+			feedback.block_spark = contact.guard_frame.get("guard_effect", feedback.block_spark)
+			feedback.block_color = [1, 1, 1, 1]
+		else:
+			result = UfeHitResolver.apply(a, b, contact.move, defending, rules, projectile_facing)
+		a.combat.power = old_power
+		if result in ["capture", "ignored"]: continue
+		if contact.has("hit_group"): UfeMeleeHitGroups.record(a, int(contact.hit_group), str(contact.move.id), result)
+		if str(contact.move.kind) == "throw" and result == "hit":
+			UfeThrowResolver.begin(self, index, contact.move)
+		var point: Vector2i = contact.get("point", Vector2i(b.x, b.height + 80))
+		var event: Dictionary = ContactEvent.make(result, index, str(contact.move.id), bool(contact.projectile), point, feedback)
+		if contact.has("weapon_id"): event.weapon_id = str(contact.weapon_id)
+		if contact.has("guard_frame"):
+			event.guarded_by = 1 - index
+			UfeFrameGuard.decorate(event, contact.guard_frame, point, b.facing)
+		events.append(event)
+		hitstop = maxi(hitstop, int(feedback.get("blockstop", 3) if result == "block" else feedback.get("hitstop", 6)))
 
 func _advance(index: int, input: UfeInputFrame, command: Dictionary) -> void:
 	var f := fighters[index]
@@ -206,12 +213,6 @@ func _advance(index: int, input: UfeInputFrame, command: Dictionary) -> void:
 				if land_allowed:
 					if int(command.pressed) & UfeInputFrame.HEAVY and input.y < 0: f.remember_command("sweep", UfeCommandResolver.INPUT_BUFFER_TICKS)
 					elif int(command.pressed) & UfeInputFrame.CRUSH and input.x == 0 and input.y == 0: f.remember_command("crush", UfeCommandResolver.INPUT_BUFFER_TICKS)
-	# I+↑ 比跳跃晚 1 tick 时，起跳还没超过初速高度就收回，再出快捷招。
-	if bool(command.get("consume_jump", false)) and f.state in ["takeoff", "air"] and f.state_tick <= 8 and f.height <= f.definition.jump_speed:
-		f.height = 0
-		f.vy = 0
-		f.vx = 0
-		f.enter("idle")
 	UfeInputBuffer.release(f, land_allowed, _start)
 	if f.state == "transform": return
 	var skip_state_step := false
@@ -295,9 +296,7 @@ func _start(f: UfeFighter, id: String) -> void:
 		if f.height == 0 and UfeBattleTransform.can_transform(f, id):
 			UfeBattleTransform.begin(f, id)
 			events.append({"kind": "transform", "player": fighters.find(f), "form": f.battle_form.id})
-		else:
-			_start(f, "special") # 条件失效时保留同次P输入的普通必杀。
-		return
+		return # E 是独立形态键；启动条件失效时不回退为 P 必杀。
 	if id == "special" and f.height > 0: return
 	if UfeReturningProjectile.blocks_move(self, f, id): return
 	if id == "special":

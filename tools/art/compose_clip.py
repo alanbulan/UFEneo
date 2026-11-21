@@ -43,6 +43,7 @@ def main():
     manifest_path = ROOT / f"assets/fighters/{args.fighter}/animations/manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     clips = manifest["clips"]
+    prior = clips.get(args.clip, {})
 
     if args.from_clip:
         if args.from_clip not in clips:
@@ -56,6 +57,7 @@ def main():
         anchors = [list(a) for a in src["anchors"]]
         ticks = list(src["ticks"])
         cell = src["cell"]
+        anchor = src.get("anchor", manifest.get("anchor", [96, 184]))
         out_atlas = src_atlas
     else:
         if not args.frame:
@@ -75,29 +77,36 @@ def main():
         for i, im in enumerate(cells):
             out_atlas.alpha_composite(im, (cw * i, 0))
         rects = [[cw * i, 0, cw, ch] for i in range(len(cells))]
-        anchor = manifest.get("anchor", [cw // 2, ch - 8])
+        prior_cell = prior.get("cell")
+        prior_size = [prior_cell, prior_cell] if isinstance(prior_cell, int) else prior_cell
+        anchor = (prior.get("anchor", manifest.get("anchor", [cw // 2, ch - 8]))
+                  if prior_size == [cw, ch] else manifest.get("anchor", [cw // 2, ch - 8]))
         anchors = [list(anchor) for _ in cells]
-        ticks = [int(t) for t in args.ticks.split(",")] if args.ticks else [10] * len(cells)
+        ticks = ([int(t) for t in args.ticks.split(",")] if args.ticks else
+                 list(prior.get("ticks", [])) if prior else [10] * len(cells))
         cell = cw if cw == ch else [cw, ch]
 
-    ticks = ticks if len(ticks) == len(rects) else [10] * len(rects)
+    if len(ticks) != len(rects) or any(t <= 0 for t in ticks):
+        raise SystemExit("ticks 必须与图张数一致且为正数，禁止默认10tick覆盖已有节奏")
     clip_dir = ROOT / f"assets/fighters/{args.fighter}/animations/{args.clip}"
     clip_dir.mkdir(parents=True, exist_ok=True)
     atlas_path = clip_dir / "atlas.png"
     out_atlas.save(atlas_path)
 
-    clips[args.clip] = {
+    entry = dict(prior)
+    entry.update({
         "texture": f"res://assets/fighters/{args.fighter}/animations/{args.clip}/atlas.png",
         "cell": cell,
-        "anchor": list(manifest.get("anchor", [192 // 2, 192 - 8])),
-        "anchor_y": int(manifest.get("anchor", [0, 184])[1]),
+        "anchor": list(anchor),
+        "anchor_y": int(anchor[1]),
         "anchors": anchors,
         "rects": rects,
         "ticks": ticks,
-        "loop": bool(args.loop),
+        "loop": bool(args.loop or prior.get("loop", False)),
         "atlas_sha256": sha256_file(atlas_path),
         "composed_from": args.from_clip or [str(Path(f).name) for f in args.frame],
-    }
+    })
+    clips[args.clip] = entry
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"{args.fighter}/{args.clip}: {len(rects)} frames " + ("from " + args.from_clip if args.from_clip else "composed"))
 

@@ -66,7 +66,7 @@ func case_run(direction: int, gap: int, rock_fighter: String, attack_tick: int, 
 		elif phase == "recover" and a.state == "idle" and a.move_id.is_empty():
 			first=UfeInputFrame.make(-direction,-1,UfeInputFrame.RANGED)
 			phase="done"
-		if jump_tick>0 and t >= jump_tick and t < jump_tick + 3: first=UfeInputFrame.make(direction,1,0)
+		if jump_tick>0 and t >= jump_tick and t < jump_tick + 3: first=UfeInputFrame.make(direction,1,UfeInputFrame.JUMP)
 		if t == 80: second=UfeInputFrame.make(0,0,UfeInputFrame.DODGE)
 		if t == attack_tick: second=UfeInputFrame.make(-direction,-1,UfeInputFrame.RANGED)
 		var before := observe(sim)

@@ -36,14 +36,14 @@ func run() -> void:
 	for facing in [-1,1]:
 		var sim:=match_at(facing);var repeated:=match_at(facing)
 		var recorder:=UfeReplayRecorder.new();var seen:=false
-		var motion: Array=[[0,-1,0],[1,-1,0],[1,0,UfeInputFrame.LIGHT]]
+		var skill: Array=[[1,1,UfeInputFrame.RANGED],[0,0,0],[0,0,0]]
 		for tick in range(60):
-			var packed: Array=motion[tick] if tick<3 else [0,0,0]
+			var packed: Array=skill[tick] if tick<3 else [0,0,0]
 			var adapted:=Tape.sample(packed,1,facing,true)
 			var pair: Array=[UfeInputFrame.make(),adapted]
 			sim.step(pair);recorder.append(pair,sim)
 			if sim.fighters[1].move_id=="motion_236":seen=true
-		check(seen,"换边后原236轻击仍真实触发切割光线/%s"%facing)
+		check(seen,"换边后I+前上仍真实触发切割光线/%s"%facing)
 		var path:="user://training-tape-%s.json"%facing
 		check(recorder.save_file(path)==OK,"写隔离实际对局回放")
 		var loaded:=UfeReplayRecorder.load_file(path,repeated.content_fingerprint)

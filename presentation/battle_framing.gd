@@ -11,15 +11,14 @@ const HELD_ENTITY_EFFECTS := ["red_king_super1_held","red_king_super2_held","red
 static func is_held_entity(attachment: Dictionary, clip: Dictionary) -> bool:
 	return str(attachment.get("effect","")) in HELD_ENTITY_EFFECTS or bool(attachment.get("framing_entity",clip.get("framing_entity",false)))
 
-static func fit(bounds: Rect2, _previous_zoom: float, shake: Vector2 = Vector2.ZERO, safe: Rect2 = SAFE, _recover_zoom: bool = true) -> Dictionary:
-	var limit := minf(safe.size.x/maxf(1.0,bounds.size.x),safe.size.y/maxf(1.0,bounds.size.y))
-	# 平时锁在 1，像素不随跳跃做非整数缩放。只有轮廓大到需要一半或更小时才改用 1/2、1/3。
+static func fit(bounds: Rect2, _previous_zoom: float, shake: Vector2 = Vector2.ZERO, safe: Rect2 = SAFE, _recover_zoom: bool = true, zoom_safe: Rect2 = Rect2()) -> Dictionary:
+	# 常驻HUD决定缩放预算；训练信息等临时覆盖层只通过safe平移避让。
+	var zoom_area := zoom_safe if zoom_safe.has_area() else safe
+	var limit := minf(zoom_area.size.x/maxf(1.0,bounds.size.x),zoom_area.size.y/maxf(1.0,bounds.size.y))
+	# 平时锁在1；极端轮廓只用1/2或1/3，不因覆盖层挤压一路缩到1/8。
 	var zoom := 1.0
 	if limit <= 0.5:
-		var denom := 2
-		while denom < 8 and (1.0 / float(denom)) > limit + 0.00001:
-			denom += 1
-		zoom = 1.0 / float(denom)
+		zoom = 0.5 if limit >= 0.5 - 0.00001 else 1.0 / 3.0
 	var low := safe.position-bounds.position*zoom
 	var high := safe.end-bounds.end*zoom
 	var origin := Vector2(320-bounds.get_center().x*zoom,304*(1.0-zoom))

@@ -42,11 +42,9 @@ func legacy_snapshots() -> Dictionary:
 				var input := UfeInputFrame.make()
 				if tick == 10: input = UfeInputFrame.make(0, 0, UfeInputFrame.RANGED)
 				if tick == 90: input = UfeInputFrame.make(facing, 0, UfeInputFrame.RANGED)
-				if tick == 190: input = UfeInputFrame.make(0, 1)
+				if tick == 190: input = UfeInputFrame.make(0, 1, UfeInputFrame.JUMP)
 				if tick == 198: input = UfeInputFrame.make(0, 0, UfeInputFrame.RANGED)
-				if tick == 300: input = UfeInputFrame.make(0, -1)
-				if tick == 301: input = UfeInputFrame.make(facing, -1)
-				if tick == 302: input = UfeInputFrame.make(facing, 0, UfeInputFrame.LIGHT)
+				if tick == 302: input = UfeInputFrame.make(facing, 1, UfeInputFrame.RANGED)
 				if tick == 430: input = UfeInputFrame.make(0, 0, UfeInputFrame.SPECIAL)
 				sim.step([input, UfeInputFrame.make()])
 				projectiles_seen += sim.projectiles.size()
@@ -102,12 +100,65 @@ func test_validation() -> void:
 		copy = move.duplicate(true); copy.frames[0].shots = [shot(60, value)]
 		check(not UfeMoveData.validate(copy), "逐帧shots非法阈值被拒/%s" % value)
 
+func test_installed_beam_boxes() -> void:
+	# 按当前PNG原生平铺后的Alpha包围框登记，不用未被绘制消费的thickness推算。
+	# 行：角色、招式、发射tick、首相框、后三相高度；所有相位均为4tick。
+	var cases: Array = [
+		["father-of-ultra", "special", 35, [0,-34,420,68], 68],
+		["father-of-ultra", "special2", 40, [0,-34,480,68], 68],
+		["father-of-ultra", "air_special", 10, [0,-31,280,61], 61],
+		["ultraman-justice", "special", 24, [0,-28,360,54], 55],
+		["ultraman-justice", "special2", 32, [0,-28,520,54], 55],
+		["ultraman-justice", "special3", 32, [0,-28,640,54], 55],
+		["ultraman-justice", "air_special", 10, [0,-28,420,54], 55],
+		["mother-of-ultra", "air_special", 10, [0,-11,420,21], 22],
+		["ultraman-gaia", "air_special", 10, [0,-11,420,21], 22],
+		["ultraman-king", "air_special", 10, [0,-11,280,21], 22],
+	]
+	for row in cases:
+		for facing in [-1, 1]:
+			var sim := UfeContentDatabase.match_for(str(row[0]), "zetton")
+			var f := sim.fighters[0]
+			var move_id := str(row[1])
+			var label := "%s/%s/%s" % [row[0], move_id, facing]
+			f.x = 1000 if facing < 0 else 250; f.facing = facing; f.height = 100
+			sim.fighters[1].combat.invulnerable = 999
+			f.move_id = move_id; f.move_tick = int(row[2])
+			var data: Dictionary = f.definition.moves[move_id].frames[f.move_tick].shots[0]
+			# JSON加载的嵌套数组用float存数；统一预期类型，几何仍逐像素精确比较。
+			var first: Array = JSON.parse_string(JSON.stringify(row[3]))
+			check(data.get("box", []) == first, "现装束首相显式框/" + label)
+			var phases: Array = []
+			for phase in range(4):
+				var box: Array = first.duplicate()
+				if phase > 0: box[3] = float(row[4])
+				phases.append(box)
+			if int(row[4]) != int(first[3]):
+				check(data.get("frame_boxes", []) == phases, "现装束逐相显式框/" + label)
+			UfeProjectileResolver.spawn(sim, 0, data, move_id)
+			var contacts: Array = []
+			for age in range(int(data.life)):
+				if age > 0: UfeProjectileResolver.advance(sim, contacts)
+				check(sim.projectiles.size() == 1, "现装束寿命未被改写/" + label)
+				if sim.projectiles.is_empty(): break
+				var p: Dictionary = sim.projectiles[0]
+				var local: Array = phases[(age >> 2) % phases.size()]
+				check(p.box == local, "模拟实际消费逐相束框/" + label + "/" + str(age))
+				var left := int(p.x) + int(local[0]) if facing > 0 else int(p.x) - int(local[0]) - int(local[2])
+				var expected := Rect2i(left, int(p.height) + int(local[1]), int(local[2]), int(local[3]))
+				check(UfeProjectileResolver.world_hitboxes(p) == [expected], "F1与接触共用双向整束框/" + label)
+				for offset in [0, expected.size.x >> 1, expected.size.x - 1]:
+					var target := Rect2i(expected.position.x + int(offset), int(p.height), 1, 1)
+					check(UfeProjectileResolver.contact_point(p, target) != null, "束近中远端可接触/" + label)
+				for point in [Vector2i(expected.position.x - 1, int(p.height)), Vector2i(expected.end.x, int(p.height)), Vector2i(expected.get_center().x, expected.position.y - 1), Vector2i(expected.get_center().x, expected.end.y)]:
+					check(UfeProjectileResolver.contact_point(p, Rect2i(point, Vector2i.ONE)) == null, "束框四边外不得接触/" + label)
+
 func run() -> void:
 	var args := OS.get_cmdline_user_args()
 	if "--baseline" in args:
 		write_json(OUT + "legacy-before.json", legacy_snapshots())
 		print("PROJECTILE_GROUND_BASELINE_SAVED"); quit(0); return
-	test_boundaries(); test_validation()
+	test_boundaries(); test_validation(); test_installed_beam_boxes()
 	if "--compare" in args:
 		var baseline: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(OUT + "legacy-before.json"))
 		var current := legacy_snapshots()

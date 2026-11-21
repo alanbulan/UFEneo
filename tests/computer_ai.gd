@@ -7,6 +7,7 @@ func run() -> void:
 	test_air_recovery()
 	test_guard_counter()
 	test_burst_escape()
+	test_direction_skill_inputs()
 	var a:=UfeContentDatabase.match_for();var b:=UfeContentDatabase.match_for()
 	var ai:=UfeComputerController.new(301,"hard",1);var copy:=UfeComputerController.new(301,"hard",1)
 	var player:=UfeComputerController.new(917,"normal",0)
@@ -51,7 +52,7 @@ func run() -> void:
 			require(wake.buttons&(UfeInputFrame.LIGHT|UfeInputFrame.HEAVY)!=0,"起身应通过攻击输入反击")
 			sim.fighters[1].enter("idle")
 		require(samples.has("low") and samples.has("high"),"两种高度的防御都应可发生")
-	require(moves.has("motion_236") or moves.has("motion_214"),"真实指令输入应解析为专属技")
+	require(moves.has("motion_236") or moves.has("motion_214"),"真实I+当前方向输入应解析为专属技")
 	# 投技落点会改变混战的后续选择；独立的安静靶局验证真实蓄能与必杀，
 	# 不要求某一场固定种子的混战必定活到蓄能完成。
 	var charged_sim:=UfeContentDatabase.match_for();charged_sim.fighters[0].x=330
@@ -69,6 +70,31 @@ func run() -> void:
 	require(charged_ai.actions.has("charge") and energy_peak>=1000 and saw_super,"实际积攒能量后应使用必杀")
 	print("确定性三档电脑输入、反应延迟、高低防御、起身反击和普通输入回放验证完成；招式 ",moves.keys()," 行为 ",ai.actions," 回合 ",a.tick)
 	quit()
+
+func test_direction_skill_inputs() -> void:
+	var expected: Dictionary={9:"motion_236",3:"motion_623",1:"motion_214",8:"motion_22"}
+	for facing in [-1,1]:
+		for level in ["easy","normal","hard"]:
+			var sim:=UfeContentDatabase.match_for()
+			var actor:=sim.fighters[1]
+			actor.x=640;actor.facing=facing;actor.stats.energy=999
+			sim.fighters[0].x=actor.x+facing*200;sim.fighters[0].facing=-facing
+			var seen: Dictionary={"x":sim.fighters[0].x,"height":0,"move":"","move_start":0,"level":"mid","threat":false}
+			var samples:=0
+			for match_seed in range(1,129):
+				var ai:=UfeComputerController.new(match_seed,level,1)
+				var before:=sim.state_hash()
+				var chosen:=ai.decide(sim,seen)
+				require(sim.state_hash()==before,"方向技能决策不修改模拟")
+				if int(ai.actions.get("special",0))==0:continue
+				samples+=1
+				var direction: int=5+chosen.x*int(facing)+chosen.y*3
+				require(chosen.buttons==UfeInputFrame.RANGED and expected.has(direction),"AI单帧I+当前相对方向，不混入JUMP或E")
+				require(ai.queue==[[0,0,0]],"AI方向技只排松键帧，不排旧搓招历史")
+				var resolver:=UfeCommandResolver.new()
+				var command:=resolver.resolve(chosen,facing,"idle",actor.definition.command_table,actor.stats.energy)
+				require(command.move==str(expected.get(direction,"")) and not bool(command.jump),"双朝向AI方向技能真实解析且上方向不跳")
+			require(samples>0,"每档双朝向都有真实I+方向技能样本")
 
 # 只使用现有空中受身规则与GUARD输入，不注入受身状态。
 func test_air_recovery() -> void:

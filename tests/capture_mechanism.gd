@@ -29,8 +29,8 @@ func move_data(id: String, damage: int = 115) -> Dictionary:
 		"stamina_cost":0,"energy_cost":0,"level":"mid","unblockable":false,"chip_damage":0,
 		"launch":false,"bounce":false,"knockdown":false,"frames":[]}
 
-func command(id: String, buttons: int, motion: Array = []) -> Dictionary:
-	return {"states":["idle","walk","crouch","turn","charge","guard"],"directions":[0],"buttons":buttons,"motion":motion,"priority":800,"move":id}
+func command(id: String, buttons: int, direction_skill: bool = false) -> Dictionary:
+	return {"states":["idle","walk","crouch","turn","charge","guard"],"directions":[7] if direction_skill else [0],"buttons":buttons,"direction_skill":direction_skill,"priority":800,"move":id}
 
 func repeat_index(index: int, count: int) -> Array:
 	var result: Array = []
@@ -57,7 +57,7 @@ func fixture(config: Dictionary) -> UfeMatchDirector:
 	var first := UfeContentDatabase.fighter("ultraman-teo",true)
 	var second := UfeContentDatabase.fighter(str(config.opponent),true)
 	first.moves.motion_41236 = capture_move()
-	first.command_table = UfeContentDatabase.merge_commands(first.command_table,[command("motion_41236",UfeInputFrame.THROW,[4,1,2,3,6])])
+	first.command_table = UfeContentDatabase.merge_commands(first.command_table,[command("motion_41236",UfeInputFrame.RANGED,true)])
 	for name in ["fixture_enclosed","fixture_shrinking","fixture_restore"]:
 		var count := 6 if name == "fixture_shrinking" else 4
 		second.state_frames[name] = []
@@ -92,20 +92,16 @@ func sample(config: Dictionary, age: int, sim: UfeMatchDirector) -> Array:
 	var facing := int(config.facing)
 	var start := 10
 	var elapsed := age-start
-	if elapsed == 0: first = UfeInputFrame.make(-facing,0)
-	if elapsed == 1: first = UfeInputFrame.make(-facing,-1)
-	if elapsed == 2: first = UfeInputFrame.make(0,-1)
-	if elapsed == 3: first = UfeInputFrame.make(facing,-1)
-	if elapsed == 4: first = UfeInputFrame.make(facing,0,UfeInputFrame.THROW)
+	if elapsed == 4: first = UfeInputFrame.make(-facing,1,UfeInputFrame.RANGED)
 	match str(config.kind):
 		"guard","reflect","absorb": second = UfeInputFrame.make(0,0,UfeInputFrame.GUARD)
 		"crouch_guard": second = UfeInputFrame.make(0,-1,UfeInputFrame.GUARD)
 		"airborne":
-			if age == 20: second = UfeInputFrame.make(0,1)
+			if age == 20: second = UfeInputFrame.make(0,1,UfeInputFrame.JUMP)
 		"interrupted","death":
 			if age == 0: second = UfeInputFrame.make(0,0,UfeInputFrame.RANGED)
 		"victim_mash":
-			if sim.fighters[1].state == "captured": second = UfeInputFrame.make(-facing,1,UfeInputFrame.THROW|UfeInputFrame.LIGHT|UfeInputFrame.HEAVY)
+			if sim.fighters[1].state == "captured": second = UfeInputFrame.make(-facing,1,UfeInputFrame.THROW|UfeInputFrame.LIGHT|UfeInputFrame.HEAVY|UfeInputFrame.JUMP)
 	return [first,second]
 
 func mutate(config: Dictionary, sim: UfeMatchDirector) -> void:

@@ -5,18 +5,21 @@ import argparse, subprocess, sys
 TOOLS = Path(__file__).resolve().parents[1]
 if str(TOOLS) not in sys.path:
     sys.path.insert(0, str(TOOLS))
-from runtime.environment import ROOT, godot_path
+from runtime.environment import ROOT, godot_path, isolated_test_environment
 
 
 def capture(page: str, res: str, out_dir: Path, long_text: bool) -> None:
+    if not out_dir.resolve().is_relative_to(ROOT / "reports"):
+        raise RuntimeError("截图输出必须位于本工程reports目录内")
     out_dir.mkdir(parents=True, exist_ok=True)
     name = f"{page}-{res}{'-long' if long_text else ''}"
     cmd = [godot_path(), "--path", str(ROOT), "--resolution", res, "--",
-           "--harness=res://tests/review/cli_harness.gd", f"--capture-ui={page}",
+           "--harness=res://tests/review/cli_harness.gd", f"--capture-size={res}", f"--capture-ui={page}",
            f"--capture={out_dir / (name + '.png')}", "--capture-frame=45", "--auto-quit=65"]
     if long_text:
         cmd.append("--review-long-text")
-    proc = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, errors="replace", timeout=80)
+    proc = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, errors="replace", timeout=80,
+                          env=isolated_test_environment(out_dir / (name + "-runtime")))
     output = (proc.stdout or "") + (proc.stderr or "")
     (out_dir / f"{name}.log").write_text(output, encoding="utf-8")
     if "SCRIPT ERROR" in output or "\nERROR:" in output or not (out_dir / f"{name}.png").is_file():

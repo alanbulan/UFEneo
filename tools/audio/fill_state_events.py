@@ -2,8 +2,8 @@
 
 背景：side_audio 按 `state_events[角色][进入状态]` 播放声音；新角色只登记了
 13 个键，而已装机基准（ultraman-taro）覆盖 53 个键。缺键不会报错，只是那
-些状态静默。本工具只补“缺的键”，不覆盖已有条目、不改 runtime.json 资源，
-并把每个键映射到 runtime.json 已存在且已登记的通用音效 id。
+些状态静默。本工具补“缺的键”，保留已有声音；移除与脚步表重复的 walk
+入态 step，缺失脚步绑定按本人行走 clip 的帧时长补齐，不改音频资源。
 
 用法：
     .venv/bin/python tools/audio/fill_state_events.py
@@ -76,15 +76,35 @@ GENERIC = {
     "vertical_jump": "jump",
     "victory": "entry",
     "wake": "step",
-    "walk_back": "step",
-    "walk_forward": "step",
 }
 
 
-FOOTSTEP = {
-    "walk_forward": {"cycle_ticks": 40, "contacts": [0, 20], "sounds": ["step"]},
-    "walk_back": {"cycle_ticks": 40, "contacts": [0, 20], "sounds": ["step"]},
-}
+WALK_STATES = ("walk_forward", "walk_back")
+
+
+def build_footstep(fighter: str, key: str) -> dict:
+    definition_path = ROOT / "content/fighters" / fighter / "definition.json"
+    definition = json.loads(definition_path.read_text(encoding="utf-8"))
+    manifest_ref = definition.get("presentation", {}).get("manifest", "")
+    if not isinstance(manifest_ref, str) or not manifest_ref.startswith("res://"):
+        raise SystemExit(f"{fighter}: 缺少本人图集 manifest，拒绝猜测脚步周期")
+    manifest_path = ROOT / manifest_ref.removeprefix("res://")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    clip = manifest.get("clips", {}).get(key, {})
+    ticks = clip.get("ticks", [])
+    if (
+        not isinstance(ticks, list)
+        or len(ticks) < 2
+        or len(ticks) != len(clip.get("rects", []))
+        or any(type(duration) is not int or duration <= 0 for duration in ticks)
+        or not clip.get("loop", False)
+    ):
+        raise SystemExit(f"{fighter}/{key}: 行走 clip 缺失或帧时长无效，拒绝猜测脚步周期")
+    return {
+        "cycle_ticks": sum(ticks),
+        "contacts": [0, sum(ticks[:len(ticks) // 2])],
+        "sounds": ["step"],
+    }
 
 
 def main() -> None:
@@ -98,13 +118,19 @@ def main() -> None:
     runtime = json.loads(runtime_path.read_text(encoding="utf-8"))
     known = set(runtime.get("sounds", {})) | set(runtime.get("aliases", {}))
     base_keys = sorted(events[BASE])
-    missing_base = [k for k in base_keys if k not in GENERIC]
+    missing_base = [k for k in base_keys if k not in GENERIC and k not in WALK_STATES]
     if missing_base:
         raise SystemExit(f"基准键没有通用映射：{missing_base}")
     for fighter in (args.fighter or NEW):
         table = events.setdefault(fighter, {})
         added = []
+        removed = 0
         for key in base_keys:
+            if key in WALK_STATES:
+                cues = table.get(key, [])
+                table[key] = [cue for cue in cues if not (cue.get("kind") == "sound" and cue.get("id") == "step")]
+                removed += len(cues) - len(table[key])
+                continue
             if key in table:
                 continue
             sound = GENERIC[key]
@@ -113,7 +139,7 @@ def main() -> None:
             table[key] = [{"kind": "sound", "id": sound}]
             added.append(key)
         events[fighter] = {k: table[k] for k in sorted(table)}
-        print(f"{fighter}: 补 {len(added)} 键，现有 {len(events[fighter])}/{len(base_keys)}")
+        print(f"{fighter}: 补 {len(added)} 键，移除 {removed} 条重复步声，现有 {len(events[fighter])}/{len(base_keys)}")
     bad = []
     for fighter in (args.fighter or NEW):
         for key, cues in events[fighter].items():
@@ -122,24 +148,25 @@ def main() -> None:
                     bad.append((fighter, key, cue.get("id")))
     if bad:
         raise SystemExit(f"仍有无主引用：{bad[:10]}")
-    if args.dry_run:
-        print("dry-run：未写文件 footsteps")
-        return
-    path.write_text(json.dumps(events, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"已写入 {path}")
-    # 脚步声：runtime.json 里部分新角色只有一个方向，补齐两个方向。
     footsteps = runtime.setdefault("footsteps", {})
     changed = False
     for fighter in (args.fighter or NEW):
         table = footsteps.setdefault(fighter, {})
         added = []
-        for key, row in FOOTSTEP.items():
+        for key in WALK_STATES:
             if key not in table:
-                table[key] = json.loads(json.dumps(row))
+                if "step" not in known:
+                    raise SystemExit("step 不在 runtime.json，拒绝写空引用")
+                table[key] = build_footstep(fighter, key)
                 added.append(key)
         if added:
             changed = True
             print(f"{fighter}: 补脚步声 {added}")
+    if args.dry_run:
+        print("dry-run：未写状态音效或脚步表")
+        return
+    path.write_text(json.dumps(events, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"已写入 {path}")
     if changed:
         runtime_path.write_text(json.dumps(runtime, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"已写入 {runtime_path}")

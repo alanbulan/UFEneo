@@ -2,7 +2,66 @@ extends SceneTree
 func _initialize() -> void:call_deferred("run")
 func require(value: bool,message: String) -> void:
 	if not value:push_error(message);quit(1)
+func check_control_binding_capture() -> void:
+	# 合成真实 InputEvent 走正式设置控件；原设置只在内存备份，结束后逐字节还原。
+	var existed:=FileAccess.file_exists(UfePlayerSettings.PATH)
+	var original_bytes:=PackedByteArray()
+	if existed:
+		var original:=FileAccess.open(UfePlayerSettings.PATH,FileAccess.READ)
+		original_bytes=original.get_buffer(original.get_length());original.close()
+	var original_settings:=UfePlayerSettings.values()
+	var original_router:={"key_bindings":UfeInputRouter.key_bindings.duplicate(true),"joy_bindings":UfeInputRouter.joy_bindings.duplicate(true)}
+	var original_window_mode:=DisplayServer.window_get_mode()
+	var fixture:=original_settings.duplicate(true)
+	fixture.key_bindings={"p1_light":KEY_V,"p2_light":{"keycode":KEY_H,"ctrl":true}}
+	fixture.joy_bindings={"p1_light":JOY_BUTTON_X,"p1_jump":-1,"p1_transform":-1}
+	fixture.input_migration_probe={"keep":[1,"原样"]}
+	var checks: Dictionary={}
+	checks["旧格式设置夹具可保存"]=UfePlayerSettings.apply(fixture)==OK
+	if bool(checks["旧格式设置夹具可保存"]):
+		# JSON数值读回为float；比较两次落盘值，避免把格式转换误判为丢设置。
+		var stored_fixture:=UfePlayerSettings.values()
+		checks["原整数键位和修饰键字典继续有效"]=int(UfeInputRouter.get_key_binding(0,"light").keycode)==KEY_V and UfeInputRouter.get_key_binding(1,"light")=={"keycode":KEY_H,"ctrl":true,"alt":false,"shift":false,"meta":false}
+		checks["旧整数手柄格式继续有效"]=UfeInputRouter.get_joy_binding(0,"light")=={"kind":"button","button":JOY_BUTTON_X}
+		checks["默认上下方向与独立跳跃不混用"]=int(UfeInputRouter.default_key_binding(0,"up").keycode)==KEY_W and int(UfeInputRouter.default_key_binding(0,"jump").keycode)==KEY_SPACE and int(UfeInputRouter.default_key_binding(1,"up").keycode)==KEY_UP and int(UfeInputRouter.default_key_binding(1,"jump").keycode)==KEY_KP_ADD
+		checks["默认手柄三独立键"]=UfeInputRouter.default_joy_binding(0,"special")=={"kind":"button","button":JOY_BUTTON_LEFT_STICK} and UfeInputRouter.default_joy_binding(0,"jump")=={"kind":"button","button":JOY_BUTTON_RIGHT_STICK} and UfeInputRouter.default_joy_binding(0,"transform")=={"kind":"button","button":JOY_BUTTON_BACK}
+		var editor:=UfeControlBindings.new();root.add_child(editor)
+		await process_frame
+		editor.device_kind="joypad"
+		editor.begin_capture("jump")
+		var back:=InputEventJoypadButton.new();back.button_index=JOY_BUTTON_BACK;back.pressed=true
+		var back_handled:=editor.capture_event(back)
+		var after_back:=UfePlayerSettings.values()
+		var saved_jump:=UfeInputRouter.get_joy_binding(0,"jump")
+		checks["Back可捕获并保存而非取消"]=back_handled and not editor.is_capturing() and saved_jump.size()==2 and str(saved_jump.get("kind",""))=="button" and int(saved_jump.get("button",-1))==JOY_BUTTON_BACK
+		if not bool(checks["Back可捕获并保存而非取消"]):
+			printerr("BINDING_CAPTURE_DIAGNOSTIC ",JSON.stringify({"handled":back_handled,"capturing":editor.is_capturing(),"hint":editor.popup_hint.text,"message":editor.message.text,"joy_bindings":after_back.get("joy_bindings",{}),"jump":saved_jump}))
+		var expected_settings:=stored_fixture.duplicate(true)
+		expected_settings.joy_bindings.p1_jump=after_back.joy_bindings.get("p1_jump")
+		checks["保存单项不清空旧格式或其它设置"]=after_back==expected_settings
+		editor.begin_capture("special")
+		var start:=InputEventJoypadButton.new();start.button_index=JOY_BUTTON_START;start.pressed=true
+		checks["Start保留暂停且不结束捕获"]=editor.capture_event(start) and editor.is_capturing() and UfePlayerSettings.values()==after_back
+		var escape:=InputEventKey.new();escape.physical_keycode=KEY_ESCAPE;escape.pressed=true
+		checks["Esc取消手柄捕获且原绑定不变"]=editor.capture_event(escape) and not editor.is_capturing() and UfePlayerSettings.values()==after_back
+		editor.device_kind="keyboard";editor.begin_capture("jump")
+		checks["Esc取消键盘捕获且原绑定不变"]=editor.capture_event(escape) and not editor.is_capturing() and UfePlayerSettings.values()==after_back
+		editor.free()
+	if existed:
+		var restored:=FileAccess.open(UfePlayerSettings.PATH,FileAccess.WRITE)
+		checks["原设置文件可还原"]=restored!=null
+		if restored!=null:
+			restored.store_buffer(original_bytes);restored.flush()
+			checks["原设置原字节还原写入成功"]=restored.get_error()==OK;restored.close()
+	else:
+		checks["移除测试临时设置"]=not FileAccess.file_exists(UfePlayerSettings.PATH) or DirAccess.remove_absolute(ProjectSettings.globalize_path(UfePlayerSettings.PATH))==OK
+	UfePlayerSettings.apply(original_settings,false)
+	UfeInputRouter.configure_values(original_router)
+	DisplayServer.window_set_mode(original_window_mode)
+	for label in checks:require(bool(checks[label]),str(label))
+
 func run() -> void:
+	await check_control_binding_capture()
 	var model:=UfeRosterModel.new()
 	var plan: Dictionary=UfeContentDatabase.read_json("res://content/roster/selection.json")
 	require(model.entries==plan.entries,"网格必须只消费正式名单")

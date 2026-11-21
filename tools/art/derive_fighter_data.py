@@ -22,6 +22,7 @@
 from __future__ import annotations
 
 import argparse
+from copy import deepcopy
 import json
 from pathlib import Path
 
@@ -44,6 +45,61 @@ MOVE_IDS = [
 ]
 
 THROW_IDS = {"throw_forward", "throw_back", "air_throw", "dash_throw", "motion_41236"}
+POSE_STATES = {"grabbed", "thrown_forward", "thrown_back", "thrown_air", "thrown_dash"}
+AIR_STATE_CLIPS = {"vertical_air": "vertical_jump", "backward_air": "flip_back", "diagonal_air": "flip_forward"}
+
+
+def build_state_entries(clip_id: str, clip: dict, masks: list,
+                        ax: int, ay: int, existing: list) -> list[dict]:
+    """计时状态一 tick 一行；被投状态一姿势一行，保留抓点等语义字段。"""
+    ticks = clip["ticks"]
+    if len(ticks) != len(masks) or any(type(t) is not int or t <= 0 for t in ticks):
+        raise ValueError(f"{clip_id}: ticks 必须逐图对应且为正整数")
+    offset = int(clip.get("simulation_sprite_offset", 0))
+    sprites = ([i for i in range(len(masks))] if clip_id in POSE_STATES else
+               [i for i, duration in enumerate(ticks) for _ in range(duration)])
+    by_sprite = {int(row["sprite"]): row for row in existing}
+    aligned = len(existing) == len(sprites) and all(
+        int(row["sprite"]) == sprite + offset for row, sprite in zip(existing, sprites))
+    result = []
+    for tick, sprite in enumerate(sprites):
+        prior = existing[tick] if aligned else by_sprite.get(sprite + offset, {})
+        row = deepcopy(prior)
+        if clip_id in POSE_STATES and not row.get("grab_points"):
+            raise ValueError(f"{clip_id}[{sprite}]: 先按本人姿势标注 grab_points，禁止派生器抹掉抓点协议")
+        for key, value in {"dx": 0, "dy": 0, "hitboxes": [], "cancel": [], "events": [],
+                           "impact_effect": "impact_light", "block_effect": "impact_guard"}.items():
+            row.setdefault(key, deepcopy(value))
+        row.update(sprite=sprite + offset, hurtboxes=band_boxes(masks[sprite], ax, ay))
+        result.append(row)
+    return result
+
+def build_air_states(clips: dict, states: dict, jump_speed: int) -> dict:
+    """把本人已落格姿势采样到真实跳跃轨迹；追击保持渲染器使用的末姿势。"""
+    if type(jump_speed) is not int or jump_speed <= 0:
+        raise ValueError("jump_speed 必须为正整数")
+    flight_ticks = jump_speed * 2
+    result = {}
+    for air_key, clip_key in {**AIR_STATE_CLIPS, "chase_air": "chase_takeoff"}.items():
+        if clip_key not in states:
+            continue
+        clip = clips[clip_key]
+        durations = clip["ticks"]
+        if len(durations) != len(clip["rects"]) or any(type(duration) is not int or duration <= 0 for duration in durations):
+            raise ValueError(f"{clip_key}: ticks 必须逐图对应且为正整数")
+        offset = int(clip.get("simulation_sprite_offset", 0))
+        expected = [sprite + offset for sprite, duration in enumerate(durations) for _ in range(duration)]
+        source = states[clip_key]
+        if [row.get("sprite") for row in source] != expected:
+            raise ValueError(f"{clip_key}: 源状态必须逐 tick 对齐已装 clip，先刷新本人状态帧")
+        if air_key == "chase_air":
+            result[air_key] = [deepcopy(source[-1]) for _ in range(max(flight_ticks, jump_speed + 18 + 1))]
+        else:
+            if clip.get("trajectory_driven") and len(source) != flight_ticks:
+                raise ValueError(f"{clip_key}: 显式轨迹时长须等于真实跳跃 {flight_ticks} tick")
+            result[air_key] = [deepcopy(source[tick * len(source) // flight_ticks]) for tick in range(flight_ticks)]
+    return result
+
 
 DISPLAY_NAMES = {
     "light1": "前手短直拳", "light2": "后手直拳", "light3": "进身上勾拳",
@@ -73,6 +129,26 @@ DISPLAY_NAMES = {
 def load_mask(im: Image.Image, rect: list[int]) -> np.ndarray:
     cell = np.array(im.crop((rect[0], rect[1], rect[0] + rect[2], rect[1] + rect[3])))
     return cell[:, :, 3] > 0
+
+
+def refresh_move_geometry(move: dict, clip: dict, image: Image.Image) -> dict:
+    durations = clip["ticks"]
+    if (len(durations) != len(clip["rects"])
+            or any(type(duration) is not int or duration <= 0 for duration in durations)
+            or sum(durations) != len(move["frames"])):
+        raise ValueError(f"{move['id']}: 新图时间线必须与现用招式总tick一致")
+    anchors = clip.get("anchors", [clip["anchor"]] * len(durations))
+    if len(anchors) != len(durations):
+        raise ValueError(f"{move['id']}: 根点张数与新图不符")
+    boxes = [band_boxes(load_mask(image, rect), *anchor)
+             for rect, anchor in zip(clip["rects"], anchors)]
+    result = deepcopy(move)
+    frame_index = 0
+    for sprite, duration in enumerate(durations):
+        for _ in range(duration):
+            result["frames"][frame_index].update(sprite=sprite, hurtboxes=deepcopy(boxes[sprite]))
+            frame_index += 1
+    return result
 
 
 def largest_component(mask: np.ndarray) -> np.ndarray:
@@ -348,12 +424,29 @@ def main() -> None:
     ap.add_argument("--donor-standing", type=int, default=188)
     ap.add_argument("--states-only", action="store_true",
                     help="只按已装 clip 重写 state_frames，不重建招式（手工调过的招式不被覆盖）")
+    ap.add_argument("--refresh-move", action="append", default=[],
+                    help="仅按已装图和ticks刷新指定现用招式的sprite与hurtboxes，保留其它玩法字段")
     ap.add_argument("--state-clip", action="append", default=[],
                     help="配合 --states-only：只重算这些状态 clip，并与现有 state_frames 合并")
     args = ap.parse_args()
 
     fighter = args.fighter
     manifest = json.loads((ROOT / f"assets/fighters/{fighter}/animations/manifest.json").read_text(encoding="utf-8"))
+    if args.refresh_move:
+        if args.states_only or args.state_clip:
+            raise SystemExit("--refresh-move 不与状态派生混用")
+        prepared = {}
+        for move_id in dict.fromkeys(args.refresh_move):
+            move_path = ROOT / f"content/fighters/{fighter}/moves/{move_id}.json"
+            move = json.loads(move_path.read_text(encoding="utf-8"))
+            clip = manifest["clips"][move_id]
+            with Image.open(ROOT / clip["texture"].removeprefix("res://")) as opened:
+                prepared[move_path] = refresh_move_geometry(move, clip, opened.convert("RGBA"))
+        for move_path, move in prepared.items():
+            if args.write:
+                move_path.write_text(json.dumps(move, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+            print(f"{fighter}/{move['id']}: {len(move['frames'])} tick，仅刷新人物图号与受击框" + ("，已写入" if args.write else "，未写入"))
+        return
     ax, ay = manifest.get("anchor", [96, 184])
     cfg_path = ROOT / f"art/fighters/{fighter}/stage1/move_fx.json"
     config = json.loads(cfg_path.read_text(encoding="utf-8")) if cfg_path.is_file() else {}
@@ -398,6 +491,13 @@ def main() -> None:
             raise SystemExit(f"--state-clip 不是已装状态 clip：{unknown}")
         state_ids = list(dict.fromkeys(args.state_clip))
 
+    sf_path = ROOT / f"content/fighters/{fighter}/state_frames.json"
+    existing_states = json.loads(sf_path.read_text(encoding="utf-8")) if sf_path.is_file() else {}
+    segmented_dash = all("simulation_sprite_offset" in clips.get(k, {})
+                         for k in ("dash_start", "dash", "dash_stop"))
+    if segmented_dash and any(k in state_ids for k in ("dash_start", "dash", "dash_stop")):
+        # 任一分段改动都重算完整组合表，不能留下旧的起步/刹停时间线。
+        state_ids = list(dict.fromkeys([*state_ids, "dash_start", "dash", "dash_stop"]))
     states = {}
     for clip_id in state_ids:
         clip = clips[clip_id]
@@ -405,14 +505,13 @@ def main() -> None:
         masks = [largest_component(load_mask(im, r)) for r in clip["rects"]]
         # 加大格的 clip 有自己的根点（如 256 格 [128,248]），量框必须用该 clip 的根点。
         sax, say = clip.get("anchor", [ax, ay])
-        entries = []
-        for i, mask in enumerate(masks):
-            entries.append({
-                "sprite": i, "dx": 0, "dy": 0, "hitboxes": [],
-                "hurtboxes": band_boxes(mask, sax, say), "cancel": [], "events": [],
-                "impact_effect": "impact_light", "block_effect": "impact_guard",
-            })
-        states[clip_id] = entries
+        states[clip_id] = build_state_entries(
+            clip_id, clip, masks, sax, say, existing_states.get(clip_id, []))
+    if segmented_dash and "dash" in states:
+        states["dash"] = [deepcopy(row) for key in ("dash_start", "dash", "dash_stop")
+                          for row in states.get(key, existing_states.get(key, []))]
+    definition = json.loads((ROOT / f"content/fighters/{fighter}/definition.json").read_text(encoding="utf-8"))
+    states.update(build_air_states(clips, states, int(definition.get("jump_speed", 16))))
 
     print(f"{fighter}: moves {len(out_moves)} (缺 clip {missing}) states {len(states)}")
     if not args.write:
@@ -426,13 +525,11 @@ def main() -> None:
                 json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         (content / "move_manifest.json").write_text(
             json.dumps(sorted(out_moves), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    sf_path = content / "state_frames.json"
-    if args.states_only and sf_path.is_file():
-        merged = json.loads(sf_path.read_text(encoding="utf-8"))
-        merged.update(states)
-        states = {k: merged[k] for k in sorted(merged)}
+    # 未重算的轨迹别名/专用姿势同样是运行协议，完整派生也不能静默删除。
+    existing_states.update(states)
+    states = {k: existing_states[k] for k in sorted(existing_states)}
     sf_path.write_text(
-        json.dumps(states, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        json.dumps(states, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"已写入 {content}" + ("（仅 state_frames）" if args.states_only else ""))
 
 

@@ -25,7 +25,7 @@ func length_frames() -> int: return capture_length() + 2
 func boxes(_frame: int) -> bool: return false
 func matchup() -> Array: return ["ultraman-arc", "zetton" if combination(review_frame) < 2 else "ultraseven"]
 func label(frame: int) -> String:
-    return "亚刻 · " + ("214＋I 回身光剑二连" if action(frame) == "motion_214" else "6＋I 光剑掷返") + " · " + case_id(frame) + " · " + ("朝左" if mirrored(frame) else "朝右") + " · 训练试制"
+    return "亚刻 · " + ("↙＋I 回身光剑二连" if action(frame) == "motion_214" else "6＋I 光剑掷返") + " · " + case_id(frame) + " · " + ("朝左" if mirrored(frame) else "朝右") + " · 训练试制"
 
 func prepare_match(sim: UfeMatchDirector) -> void:
     var own: UfeFighter = sim.fighters[0]
@@ -51,10 +51,8 @@ func sample(frame: int, sim: UfeMatchDirector) -> UfeInputFrame:
     var facing: int = -1 if mirrored(frame) else 1
     p2 = UfeInputFrame.make(0, 0, UfeInputFrame.GUARD if case_id(frame) == "stand_guard" else 0)
     if action(frame) == "motion_214":
-        # 真实2→1→4+I；前两步自然蹲起手，后方目标也不会在出招前被待机自动转身改朝向。
-        if age == 0: return UfeInputFrame.make(0, -1)
-        if age == 1: return UfeInputFrame.make(-facing, -1)
-        if age == 2: return UfeInputFrame.make(-facing, 0, UfeInputFrame.RANGED)
+        # 开组第一tick送I+后下，后方目标不先经待机自动转身。
+        if age == 0: return UfeInputFrame.make(-facing, -1, UfeInputFrame.RANGED)
     elif age == 20: return UfeInputFrame.make(facing, 0, UfeInputFrame.RANGED)
     return UfeInputFrame.make()
 
@@ -144,7 +142,7 @@ func save_file(path: String) -> void:
         push_error("亚刻本批剑技trace保存失败")
         return
     output.store_string(JSON.stringify({"profile": profile, "trace": trace, "stills": stills, "generated_videos": 0,
-        "source": "原主游戏main.tscn训练；双对手双向真实214I/6I，214另加背后站位证明首斩。组内只送双方InputFrame，无摆状态/补tick/重置朝向。214两挥刃沿既有单次接触规则；投剑记录完整整数飞行/回程和真实节点。"}))
+        "source": "原主游戏main.tscn训练；双对手双向真实↙I/6I，214另加背后站位证明首斩。组内只送双方InputFrame，无摆状态/补tick/重置朝向。214两挥刃沿既有单次接触规则；投剑记录完整整数飞行/回程和真实节点。"}))
     output.close()
     trace_saved = true
 @warning_ignore_restore("integer_division")

@@ -63,8 +63,6 @@ static func resolve_step_commands(fighters: Array[UfeFighter], inputs: Array) ->
 		if context == "land" and f.motion.land_window <= 0:
 			command.move = ""
 		commands.append(command)
-		if bool(command.get("consume_jump", false)):
-			f.motion.jump_buffer = 0
 		if bool(command.jump):
 			f.motion.jump_buffer = 7
 			f.motion.jump_x = input.x
@@ -123,7 +121,6 @@ static func ready(f: UfeFighter, buffered: String, land_allowed: bool) -> bool:
 	var routed := contact and UfeFeelRules.allows_route(f.move_id, buffered) and f.definition.moves.has(buffered)
 	var cancel := f.move_id.is_empty() or (contact and (listed or routed))
 	var burst := buffered == "burst" and f.state in ["hit", "launch", "blockstun", "crouch_blockstun"]
-	var chord_upgrade := buffered == "special" and f.move_tick <= 3 and f.move_id in ["light1", "heavy"]
 	var actionable := f.state in [
 		"idle", "walk", "dash", "backstep", "dodge",
 		"crouch", "crouch_start", "crouch_rise", "guard", "crouch_guard",
@@ -132,4 +129,4 @@ static func ready(f: UfeFighter, buffered: String, land_allowed: bool) -> bool:
 	if UfeBattleTransform.is_command(buffered) and f.height == 0 and f.state in ["charge_start", "charge_stop", "turn", "crouch_turn"]:
 		actionable = true
 	var guard_counter := buffered == "guard_counter" and f.state in ["blockstun", "crouch_blockstun"]
-	return (cancel and (actionable or not f.move_id.is_empty())) or burst or chord_upgrade or guard_counter
+	return (cancel and (actionable or not f.move_id.is_empty())) or burst or guard_counter

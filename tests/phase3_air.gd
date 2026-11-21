@@ -4,7 +4,56 @@ func check(ok: bool, label: String) -> void:
 	if not ok: failures.append(label)
 func _initialize() -> void: call_deferred("run")
 func neutral() -> UfeInputFrame: return UfeInputFrame.make()
+func test_air_special_landing() -> void:
+	# 在发射/生效前一tick、当tick和后一tick落地；只截断非返航空中招式。
+	var cases: Array = [
+		["father-of-ultra", 10, "beam"], ["mother-of-ultra", 10, "beam"],
+		["ultraman-gaia", 10, "beam"], ["ultraman-king", 10, "beam"],
+		["ultraman-justice", 10, "beam"], ["ultraman-zero", 10, "beam"],
+		["ultraman-ace", 7, "independent"], ["red_king", 12, "none"],
+	]
+	for row in cases:
+		for facing in [-1, 1]:
+			for boundary in [int(row[1]) - 1, int(row[1]), int(row[1]) + 1]:
+				var sim := UfeContentDatabase.match_for(str(row[0]), "zetton")
+				var f := sim.fighters[0]
+				var label := "%s/%s/tick%s" % [row[0], facing, boundary]
+				f.x = 1100 if facing < 0 else 150; f.facing = facing
+				sim.fighters[1].x = 150 if facing < 0 else 1100
+				f.height = 600; f.vy = 0; f.motion.jump_kind = "vertical"; f.enter("air")
+				f.stats.energy = 1000
+				check(not bool(f.definition.moves.air_special.get("finish_on_landing", false)), "非返航空中必杀按落地结束/" + label)
+				sim.step([UfeInputFrame.make(0, 0, UfeInputFrame.SPECIAL), neutral()])
+				check(f.move_id == "air_special", "真实P启动空中必杀/" + label)
+				for _tick in range(1, int(boundary)): sim.step([neutral(), neutral()])
+				check(f.move_id == "air_special" and f.move_tick == int(boundary), "落地前到达指定发射边界/" + label)
+				var emitted := int(boundary) > int(row[1]) and str(row[2]) != "none"
+				check(sim.projectiles.size() == (1 if emitted else 0), "落地前仅到发射帧才出弹/" + label)
+				f.height = 1; f.vy = -1
+				sim.step([neutral(), neutral()])
+				check(f.height == 0 and f.move_id.is_empty() and f.state == "land" and f.animation_key() == "land", "同tick清空空中招式并显示落地/" + label)
+				var surviving := emitted and str(row[2]) == "independent"
+				check(sim.projectiles.size() == (1 if surviving else 0), "落地收束持续束但不误删已发独立弹/" + label)
+				for _tick in range(6):
+					sim.step([neutral(), neutral()])
+					check(sim.projectiles.size() == (1 if surviving else 0), "发射前落地不得延迟偷射/" + label)
+	# 赛文头镖确需落地继续返航/装回；不能用批量删除标志破坏合理分支。
+	for facing in [-1, 1]:
+		var sim := UfeContentDatabase.match_for("ultraseven", "zetton")
+		var f := sim.fighters[0]
+		f.x = 1000 if facing < 0 else 250; f.facing = facing
+		f.height = 600; f.vy = 0; f.motion.jump_kind = "vertical"; f.enter("air")
+		f.stats.energy = 1000
+		check(bool(f.definition.moves.air_special.get("finish_on_landing", false)), "赛文返航保招声明保留")
+		sim.step([UfeInputFrame.make(0, 0, UfeInputFrame.SPECIAL), neutral()])
+		for _tick in range(7): sim.step([neutral(), neutral()])
+		check(not sim.projectiles.is_empty() and sim.projectiles[0].has("integer_path"), "赛文真实P已发返航头镖")
+		f.height = 1; f.vy = -1
+		sim.step([neutral(), neutral()])
+		check(f.height == 0 and f.move_id == "air_special" and not sim.projectiles.is_empty(), "赛文落地仍完成头镖返航")
+
 func run() -> void:
+	test_air_special_landing()
 	var driver := UfePhase3AirReview.new()
 	var sim := UfeContentDatabase.match_for()
 	var twin := UfeContentDatabase.match_for()
@@ -84,8 +133,8 @@ func run() -> void:
 	var jump := UfeContentDatabase.match_for()
 	var dive := UfeContentDatabase.match_for()
 	for frame in range(20):
-		jump.step([UfeInputFrame.make(0,1 if frame==0 else 0),neutral()])
-		dive.step([UfeInputFrame.make(0,1 if frame==0 else -1 if frame==4 else 0,UfeInputFrame.HEAVY if frame==4 else 0),neutral()])
+		jump.step([UfeInputFrame.make(0,0,UfeInputFrame.JUMP if frame==0 else 0),neutral()])
+		dive.step([UfeInputFrame.make(0,1 if frame==0 else -1 if frame==4 else 0,UfeInputFrame.JUMP if frame==0 else UfeInputFrame.HEAVY if frame==4 else 0),neutral()])
 	check(dive.fighters[0].x>jump.fighters[0].x and dive.fighters[0].height<jump.fighters[0].height,"俯冲未改变落点与竖直轨迹")
 	check(int(attacker.definition.moves.air_pulse.projectile.vy)<0,"空中光弹缺少斜下速度")
 	view.free()

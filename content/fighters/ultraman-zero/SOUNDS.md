@@ -1,78 +1,34 @@
-# 赛罗奥特曼声音来源计划（draft 2026-11-10）
+# 赛罗声音卡
 
-状态：本轮未生成、未截取、未分离、未绑定任何声音；未改 `content/audio/*.json`，未改运行时，未安装。以下只是计划与来源门槛，不伪造。逐格动作数据见 `MOVES.md` 与 `moves/*.json`。
+截至 2026-11-21，赛罗已有运行语音、状态声、脚步声和招式声音绑定。下列 9 个语音 ID 对应 `voices` 的 10 个事件槽（`light` 复用 `attack`）；已逐项核对 [runtime.json](../../audio/runtime.json)、[sources.json](../../audio/sources.json)、本机文件路径与输出 SHA。9 条来源记录均为 `runtime_status=installed`、`listening_reviewed=false`。旧计划中的“未安装、均未绑定”已经不适用，逐集定位和听审仍未完成。
 
-## 一、原则
+## 已安装语音
 
-- `source_kind=episode` 只用于原剧/电影实际音轨；数字拟音、转换、合成一律标 `original`；二创/翻奏标 `derivative`；转载原剧标 `episode` 并注明 `reprint`。不把二创或转载写成原剧原声。
-- 本人喊声、叫招、受击、胜利逐项核归属（声优、作品、集数/时间码）。未核到就留空，不用相似声音冒充。
-- 来源记录逐项写明上传者/平台、URL、作品与集数、时间码、SHA、取得日期；共享音效可用，但标 `original`/`shared`，不当作赛罗专属原声。
-- 质量门槛沿用项目：SNR ≥ 12 dB，约 −20 LUFS，真峰值 ≤ −1 dBTP；不裁连续 ≥0.3 秒半音内稳定音乐音高、≥0.5 秒平直段、节拍或纯噪声。
-- 一个动作至少一个声音事件；蓄力、发射、持续、命中、终结分开挂，不用一条长音盖完整段。
-- 声音来源记录与运行时按 1:1 对 id：`sources.json` 中 `installed` 记录的 id 必须是 `runtime.json` `sounds` 的键，`sounds` 的 `source_record` 必须指回记录；纯源、未装或仅作 OGG 母带的记录标 `pending_install`。本轮不做任何注册，故不改这两份文件。
+| 事件槽 | 运行 ID | 合集内时间码 |
+| --- | --- | --- |
+| 登场 `intro` | `zero_roar_intro_20261110` | 00:00:02.000–00:00:05.000 |
+| 攻击 `attack` / `light` | `zero_voice_attack_20261110` | 00:00:06.330–00:00:07.190 |
+| 必杀 `super` | `zero_voice_special_20261110` | 00:00:12.770–00:00:14.210 |
+| 受击 `hit` | `zero_voice_hit_20261110` | 00:00:20.050–00:00:20.510 |
+| 胜利 `victory` | `zero_voice_win_20261110` | 00:01:04.510–00:01:06.390 |
+| 倒地 `down` | `zero_voice_down_20261111` | 00:00:07.820–00:00:08.380 |
+| 挑衅 `taunt` | `zero_voice_taunt_20261111` | 00:00:09.460–00:00:10.620 |
+| 重击 `heavy` | `zero_voice_heavy_20261111` | 00:00:02.180–00:00:03.340 |
+| 超时 `timeout` | `zero_voice_timeout_20261111` | 00:00:53.760–00:00:55.560 |
 
-## 二、本角色已存在但本轮未绑定的运行时声音（事实）
+来源为 Bilibili 上传者夕阳的勇者的[「赛罗奥特曼部分战吼」](https://www.bilibili.com/video/BV1BdC3YjEGq)，台账取得日期 2026-11-10，登记 `source_kind=episode`、`reprint=true`，作品只定位到《奥特曼》系列，未逐集定位。表内时间码是合集位置，不是原剧时间码。登场段经 Kits 人声分离，各事件槽仍是按片段特征作候选分配，不是已经核实的本人叫招或台词。
 
-`content/audio/runtime.json` 已有 5 条赛罗语音，`voices["ultraman-zero"]` 也已把 attack/super/hit/victory/intro 指向它们；这些是既有注册，不是本轮新增，也不是本轮绑定：
+## 当前声音接线
 
-|id|用途|来源性质|
-|---|---|---|
-|`zero_roar_intro_20261110`|登场战吼|episode（B站转载战吼合集，`reprint`）|
-|`zero_voice_attack_20261110`|攻击|episode（同上，`reprint`）|
-|`zero_voice_hit_20261110`|受击|episode（同上，`reprint`）|
-|`zero_voice_special_20261110`|必杀|episode（同上，`reprint`）|
-|`zero_voice_win_20261110`|胜利|episode（同上，`reprint`）|
+- [state_events.json](../../audio/state_events.json) 登记 53 个状态键，前后走入口留空，其余 51 个状态入口引用 11 个共享原创音效 ID。前走脚步表已按 clip 改为 72 tick、接触点 `[0,36]`；后走为 40 tick、`[0,20]`，均用 `step` 并由脚步相位调度。已移除重复的入态 `step`；冲刺 sprite 1/3 另接 `step`。
+- 受击、重击、挑衅通过 `frame_sounds` 的 sprite 0 接对应语音；挑衅默认 `U+L`（防御+投技）的真实输入到语音恰一次已通过 `phase3_fx_audio` 回归，范围为 `root_delegated_by_user`，未听审。
+- 集束射线、艾梅利姆切割、赛罗头镖和空中集束射线均声明共享原创 `beam_start`，命中/被防接 `hit_heavy` / `guard`；四招没有显式 `audio_loop`。头镖起手目前也复用 `beam_start`，不能写成双刃专属掷出声已经完成。
+- `special3` 的两枚实体头镖已把 `return_sound` 接到 `omega_super1_catch`，由真实 `weapon_return` 事件消费；回接专项已通过。该 ID 对应 `assets/audio/fighters/ultraman-omega/super1/catch.wav`，是 0.22 秒项目原创机械拟音，来源记录为 `original`、`installed_pending_user_listening`、`listening_reviewed=false`。它不是欧米伽演员语音，也不是赛罗原剧回接音；没有固定时间播放的伪回接事件。
+- 赛罗过顶摔 `motion_41236` 使用原创 `taro_motion_41236_charge`、`taro_throw_grab`、`taro_motion_41236_contact`、`taro_guard`；基础光弹使用原创 `fireball`。这些均为已有项目拟音，不作为本人原剧声音证明。
 
-以上均为“未逐集定位”的战吼合集来源，未核到具体作品/集数/时码，不能当作已核实的原剧台词或叫招。本轮 `moves/*.json` 的 `audio` 字段只引用已存在的通用 id，不引用这 5 条，也不新增声音 id。
+## 待完成与验收边界
 
-## 三、事件表（计划，未绑定）
-
-|事件|计划来源|source_kind|当前状态|备注|
-|---|---|---|---|---|
-|普攻挥空|共享 `whiff_light` / `whiff_heavy`（别名 `light`/`heavy`/`sweep`/`launcher`/`throw`）|original|未绑定|原创数字音效，不是赛罗原声|
-|普攻命中|共享 `hit_light` / `hit_heavy`|original|未绑定|0.12s / 0.23s，约 −20 LUFS|
-|被防|共享 `guard`|original|未绑定|0.12s|
-|投技抓取/摔落|共享 `land` 作落地摔击；抓取与提起待做|original / TBD|未绑定|`throw_slam`/`throw_lift`/`throw_grab` 在运行时不存在，本轮不引用；抓取声未核|
-|爆气|共享冲击/爆发类；本角色独立爆气声待做|original / TBD|未绑定|爆气冲击是独立运行时效果，人物帧不含 FX|
-|集束射线蓄光|共享 `charge`（loop）或原剧蓄能音轨|original / episode|未绑定|若用原剧须核集数与时码|
-|集束射线发射|共享 `beam_start`|original|已写入 `special` 第 0 相事件|0.35s；CC0-1.0 原创，不是赛罗原声|
-|集束射线持续|共享 `beam_loop`|original|未绑定|0.6s loop；赛罗整帧仅 3 tick，本轮不挂持续段|
-|集束射线命中|共享 `hit_heavy` + `beam_hit` 命中特效|original|已写入 `audio.hit`|不扩判定|
-|艾梅利姆切割蓄光|额灯蓄光专用声待做|TBD|未绑定|不能拿集束射线声冒充|
-|艾梅利姆切割发射|细锐绿束专用声待做|TBD|未绑定|与集束射线宽束分开|
-|赛罗头镖掷出|双刃破空专用声待做|TBD|未绑定|实体飞刃，不用光束声顶替|
-|赛罗头镖回收|双镖装回头上的归位声待做|TBD|未绑定|收势相挂，不与命中声合并|
-|低姿光弹 / 空中光弹|共享 `fireball`|original|已写入两招第 3 相事件|0.6s；运行时通用 pulse 特效配套|
-|受击|共享 `hit_light` / `hit_heavy`，或本人受击战吼|original / episode|未绑定|逐动作选力度，不全部只挂通用命中|
-|防御硬直 / 破防|共享 `guard`；破防另做|original / TBD|未绑定|破防不拿普通格挡声冒充|
-|登场|本人登场战吼 `zero_roar_intro_20261110`|episode（`reprint`）|已注册、未在本轮绑定|来源未逐集定位|
-|胜利|本人胜利声 `zero_voice_win_20261110`|episode（`reprint`）|已注册、未在本轮绑定|同上|
-|挑衅|本人挑衅/招手声待做|TBD|未绑定|未核到就留空|
-|叫招“赛罗集束射线”|原剧/电影本人叫招音轨|episode|未核|须核实是否叫招、声优与具体时码；不凭印象写集数|
-
-## 四、已核实的共享音源（事实，非本轮新增）
-
-|id|文件|时长|响度|来源性质|
-|---|---|---:|---:|---|
-|`beam_start`|`assets/audio/production/v1/beam_start.wav`|0.35s|−20.0 LUFS|原创数字音效，CC0-1.0|
-|`beam_loop`|`assets/audio/production/v1/beam_loop.wav`|0.6s loop|−20.04 LUFS|原创数字音效，CC0-1.0|
-|`hit_light`|`assets/audio/production/v1/hit_light.wav`|0.12s|−20.0 LUFS|原创数字音效，CC0-1.0|
-|`hit_heavy`|`assets/audio/production/v1/hit_heavy.wav`|0.23s|−20.0 LUFS|原创数字音效，CC0-1.0|
-|`guard`|`assets/audio/production/v1/guard.wav`|0.12s|−20.02 LUFS|原创数字音效，CC0-1.0|
-|`fireball`|`assets/audio/production/v1/fireball.wav`|0.6s|−20.0 LUFS|原创数字音效，CC0-1.0|
-|`land`|`assets/audio/production/v1/land.wav`|0.3s|−20.83 LUFS|原创数字音效，CC0-1.0|
-
-以上 `true_peak_dbtp` 在 `sources.json` 中为空，属未测项；数值测量不等于人耳通过，正式启用前须按门槛复听并补测真峰值。以上均为共享原创音效，不是赛罗原声。
-
-## 五、原声/拟音边界
-
-- 若找到赛罗本人集束射线/艾梅利姆切割/头镖的干净原剧音轨：登记作品与集数、时码、`source_kind=episode`、SHA、响度与峰值；与音乐/旁白/其他角色重叠的段不得直接当本人音效。B站转载须标 `reprint` 并记上传者、URL、取得日期。
-- 若找不到干净原声：用原创数字拟音，登记 `source_kind=original`、工具、参数、许可；不得写成“原剧赛罗音效”。
-- 叫招/喊声必须与画面动作同源核对；不能用其他奥特曼（含赛文、泰罗）的喊声或光束声替代。
-- 二创/翻奏如采用，标 `derivative`，记原曲与二创作者、平台、URL；不冒称官方原声。
-
-## 六、未做
-
-- 未截取任何原剧/电影音轨；未生成任何拟音；未做 Kits 分离；未改共享音频注册；未做试听。
-- 未绑定集束射线/艾梅利姆切割/头镖/投技/受击/登场/胜利等任何事件到本角色新 id。
-- 未生成或安装声音文件到 `assets/audio/characters/ultraman-zero/`；未改 `content/audio/sources.json`、`runtime.json`、`battle_music.json`。
+- 前后走图像和脚步周期现分别为 72 / 40 tick；移除重复入态步声后，已通过 `phase3_fx_audio` 双朝向逐 tick 两周期回归（`root_delegated_by_user`）。该检查只确认接线相位和发声次数，真实触地观感与听感仍需复核。
+- 集束射线、艾梅利姆切割、双头镖的独立起势/持续/终结声音和原剧镜头来源仍待核实；新增回接绑定不代表整套头镖声音已还原。
+- 语音角色版本、事件语义、分离残留与总体听感仍待听审。来源许可台账为转载仅个人研究、未登记商业再分发授权；原创回接拟音按现有 CC0-1.0 来源记录复用。
+- 本轮同步接线与文档，没有采集、生成或替换音频，没有修改 `listening_reviewed`；无录屏。资源和逻辑调度检查不等于听审通过。

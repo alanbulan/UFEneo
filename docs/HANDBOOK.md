@@ -105,8 +105,15 @@ app ──→ ui ──→ presentation ──→ content ──→ core ←─�
 | `content/fighters/<id>/moves/<id>.json` | 招式头字段：`startup`/`active`/`recovery`/`damage`/`hitstun`/`blockstun`/`pushback`/`stun`/`stamina_cost`/`energy_cost`/`kind`/`level`/`unblockable`/`launch`/`bounce`/`knockdown`；逐 tick 显式 `frames[]` |
 | `content/fighters/<id>/state_frames.json` | 非招式状态（`idle`/`walk_forward`/`walk_back`/`crouch`/`guard`/`hit_*`/`down`/`wake` 等）逐 tick `sprite`/`dx`/`dy`/`hurtboxes`/`cancel`/`events` |
 | `assets/fighters/<id>/animations/manifest.json` | 图集元数据：`schema: 1`、`cell`、`anchor`、`reviewed`、`clips.<name>`（`texture`、`cell`、`anchor`、`anchor_y`、`rects`、`ticks`、`loop`、`atlas_sha256`、`timeline_driven`） |
+| `content/templates/<template>/command_table.json`、`content/fighters/<id>/command_table.json` | 命令按当前 `directions`、`buttons`、`states` 与 `priority` 匹配，无 `motion` 字段；方向技标记 `direction_skill: true`，形态命令标记 `transform: true`，不再使用 `quick_cast` / `quick_transform` 重复条目 |
 | `content/states.json` | 状态 ID 到 `res://core/states/*.gd` 脚本路径映射（包含 `transform`、`form_entry`、`capturing`、`captured` 全部运行状态） |
 | `content/presentation/phase3_projectiles.json` | 全项目飞行道具、光束、刀光、受击与蓄气特效唯一注册表（`texture`、`rects`、`ticks`、`atlas_sha256`、`colors`、`alpha_binary`、`display_scale: [1,1]`） |
+
+现行输入只认当前方向与独立动作键：I+↖/↑/↗/↘/↙分别对应 `motion_41236` / `motion_22` / `motion_236` / `motion_623` / `motion_214`，一方向一招。`motion_*` 只保留技能 ID 与动作，236/623/214/22/41236 序列识别已移除。P 独立必杀、E 独立形态；删除 J+K 必杀与 22+P 形态重复别名，保留爆气的防御+蓄能、挑衅的防御+投技。F2 直接列唯一现行命令，不再分“快捷/原”双行。
+
+I 的所有组合按 2026-11-21 用户裁定统一远程：招式不含近战攻击框或贴身投技，伤害通过真实飞行物/光束接触；人物整帧要体现本人发射动作，旧拳脚帧叠弹体不能作为完成。当前未整改的近战 I 技必须在角色卡保留缺口，不据现存实现推翻新规则。
+
+1P Space（空格）与 2P 小键盘+独立跳跃；W、2P ↑仅是组合上方向。手柄默认 L3 必杀、R3 独立跳跃、Back 形态、Start 暂停，上方向不跳。resolver 不吞显式 `JUMP`，不再用 `consume_jump` 回收起跳；`InputGlyphs.show_input()` 的第三参数为当前方向候选项而非连续序列，保留二参数与四参数调用，按钮位 `512` 显示跳跃。设置页对上方向与跳跃执行正常冲突检查，不再豁免 2P 共用 ↑；Back 可绑定，Esc 或取消按钮退出捕获，未绑定不回退组合别名。已有自定义键格式与用户设置保持，不自动清空。
 
 ### 3.2 招式帧、远程、多段与投技协议
 
@@ -137,6 +144,7 @@ app ──→ ui ──→ presentation ──→ content ──→ core ←─�
   { "effect": "seven_beam_core", "beam": true, "spawn": [17, 132], "anchor": [17, 132],
     "speed": 0, "life": 8, "origin_by_frame": {"6": [17, 132], "8": [19, 130]} }
   ```
+  - 完整逐相持束可显式声明 `"tick_clock": "pose"`（仅 `beam: true`、`speed/vy: 0`、无返航路径）：双方推进、触地清招后，按当前 `move_tick` 的 `shots[]` 发射。发射样本为 `age=0`，`life=N` 精确覆盖 `0..N-1` 共 N 个可显示/接触样本；发射当 tick 不预扣寿命，后续随模拟推进，命中停顿不跳相。`origin_by_frame` 与人物当前可见姿势同 tick，落地/中断仍立即清束。不声明的旧弹体维持原推进及快照格式。佐菲 Z/M87/空中 Z 三束使用此契约；这是修复首相缺失的内容指纹变更，不保证兼容旧版本回放。
 - **显式返航武器与独立多段招式（`hit_groups`）**：
   - 返航武器（如头镖/光剑掷返）须声明 `weapon_id`、`integer_path`（首点 `[0,0]`）、`return_ticks`、`return_anchor`、`return_anchor_by_tick` 与 `owner_interrupt_policy: "clear"`。
   - `kind: "strike"` 多段实体招式在根定义 `"hit_groups": {"1": {...}, "2": {...}}`，有效帧填正整数 `"hit_group"`；每段在一次发动内最多接触一次并在 `UfeFighterCombat.hit_groups` 独立记账。
@@ -145,7 +153,7 @@ app ──→ ui ──→ presentation ──→ content ──→ core ←─�
 ### 3.3 战斗形态、变身与三槽必杀规范
 
 <a id="第-5-节--combat_designmd"></a>
-- **形态与变身**：运行配置以 `content/catalogs/battle_forms.json` 为准（`E` 键与兼容 `22+P` 触发；`mode` 为 `palette` 调色板切换或 `definition` 完整角色替换，EX 形态切换后保持至 KO 与胜败结算，新局重建）。只有轮廓完全相同、仅换配色的形态可共用帧；八套装甲（亚刻三装甲、布莱泽法德兰、欧米伽四装甲）未各自齐备 S2–S7 动作、武器、技能、声音与回放闭环前不开放。
+- **形态与变身**：运行配置以 `content/catalogs/battle_forms.json` 为准（`E` 独立形态键触发，命令标记 `transform: true`；`mode` 为 `palette` 调色板切换或 `definition` 完整角色替换，EX 形态切换后保持至 KO 与胜败结算，新局重建）。只有轮廓完全相同、仅换配色的形态可共用帧；八套装甲（亚刻三装甲、布莱泽法德兰、欧米伽四装甲）未各自齐备 S2–S7 动作、武器、技能、声音与回放闭环前不开放。
 - **三槽必杀差异规则**：1/2/3 格能量必杀必须对应**三个不同名称、独立整帧人物动作与实际效果差异的技能**（例如近战/投摔、飞刃切割、连续射击、持续光线、抓取爆炸），不得仅靠改名、加粗光束或改数值拆分同一招式；原剧技能确实极少者须绑定角色、版本与可核实依据登记例外。
 
 ---
@@ -191,6 +199,8 @@ app ──→ ui ──→ presentation ──→ content ──→ core ←─�
 | 镜头与安全区 | 原生视口 `640×360`；镜头缩放固定 `1`（仅超半屏用 `1/2`/`1/3`） | 双方整帧 Alpha 与活跃投射物/持握实体受 `hud.battle_safe_rect()` 约束；通用候选验收用 `tests/review/common/candidate_harness.gd`（`UfeCandidateHarness`） |
 
 > **制动规则**：同一项检查连续拒收 3 帧立即暂停并输出诊断图，同一问题最多尝试 2 种修法；逻辑或数值检查通过不等于美术人工审片通过。
+
+逐帧非站姿登记须给出 `standing_reason`、制作 `output` 与 `output_sha256`。`sprite_quality.py` 仅在制作输出哈希和当前图集对应帧像素均一致时采用豁免；同名旧帧、缺少原因或已变更的输出只报失效登记并恢复站姿检查。默认读取本角色 `stage1/cells/cells.json`，其它当前制作目录可用 `--standing-metadata` 明确指定；登记与输出必须位于本角色 `art/fighters/<id>/` 内。数值过门不替代姿势原因和美术审阅。
 
 ---
 

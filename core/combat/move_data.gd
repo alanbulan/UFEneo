@@ -18,7 +18,8 @@ static func validate(move: Dictionary) -> bool:
 		if not valid_self_heal(move.self_heal):return false
 		if int(move.self_heal.frame)>=move.frames.size():return false
 	if move.has("chill") and not valid_chill(move.chill):return false
-	for frame in move.frames:
+	for frame_index in range(move.frames.size()):
+		var frame: Dictionary=move.frames[frame_index]
 		for key in ["sprite", "dx", "dy", "hitboxes", "hurtboxes", "cancel", "events"]:
 			if not frame.has(key): return false
 		for box in frame.hitboxes + frame.hurtboxes:
@@ -31,15 +32,18 @@ static func validate(move: Dictionary) -> bool:
 		for key in ["guard_effect","guard_sound"]:
 			if frame.has(key) and (not frame[key] is String or str(frame[key]).is_empty()):return false
 		if frame.has("guard_respects_unblockable") and not frame.guard_respects_unblockable is bool:return false
+		if frame.get("counter_shot",{}).has("tick_clock"):return false
 		var weapon_ids: Dictionary={}
 		for shot in frame.get("shots",[]):
 			if not shot is Dictionary or not valid_projectile(shot,move.frames.size()):return false
+			if shot.has("tick_clock") and (frame_index==0 or frame_index+int(shot.life)>move.frames.size()):return false
 			if shot.has("weapon_id"):
 				if weapon_ids.has(str(shot.weapon_id)):return false
 				weapon_ids[str(shot.weapon_id)]=true
 			if bool(shot.get("capture",false)) and not move.has("capture"):return false
 		for shot in frame.get("shots",[]):
 			if shot.has("pair_trail_peer_id") and not weapon_ids.has(str(shot.pair_trail_peer_id)):return false
+	if move.get("projectile",{}).has("tick_clock"):return false # 姿势时钟只允许显式逐帧shots。
 	if not valid_projectile(move.get("projectile",{}),move.frames.size()):return false
 	if bool(move.get("projectile",{}).get("capture",false)) and not move.has("capture"):return false
 	if move.has("capture") and not UfeCaptureResolver.valid_move(move):return false
@@ -77,6 +81,14 @@ static func valid_guard_box(box: Variant) -> bool:
 	return int(box[2])>0 and int(box[3])>0
 
 static func valid_projectile(shot: Dictionary, frame_count: int) -> bool:
+	if shot.has("tick_clock"):
+		if not shot.tick_clock is String or shot.tick_clock!="pose":return false
+		if not shot.get("beam",false) is bool or not bool(shot.get("beam",false)):return false
+		if shot.has("integer_path") or bool(shot.get("capture",false)):return false
+		for axis in ["speed","vy"]:
+			var velocity: Variant=shot.get(axis,8 if axis=="speed" else 0)
+			if not explicit_weapon_integer(velocity) or int(velocity)!=0:return false
+		if not explicit_weapon_integer(shot.get("life",null)) or int(shot.life)<=0 or int(shot.life)>frame_count:return false
 	if shot.has("capture") and not shot.capture is bool:return false
 	if shot.has("no_hit") and not shot.no_hit is bool:return false
 	if shot.has("wall") and not shot.wall is bool:return false

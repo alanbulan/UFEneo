@@ -46,7 +46,7 @@ func play(opponent: String,facing: int,edge: int,kind: String,mode: String="vali
 		if tick==10:inputs[0]=UfeInputFrame.make(0,0,UfeInputFrame.THROW)
 		if kind=="guard":inputs[1]=UfeInputFrame.make(0,0,UfeInputFrame.GUARD)
 		if kind=="crouch_guard":inputs[1]=UfeInputFrame.make(0,-1,UfeInputFrame.GUARD)
-		if kind=="air" and tick==9:inputs[1]=UfeInputFrame.make(0,1)
+		if kind=="air" and tick==9:inputs[1]=UfeInputFrame.make(0,1,UfeInputFrame.JUMP)
 		if kind=="simultaneous" and tick==10:inputs[1]=UfeInputFrame.make(0,0,UfeInputFrame.THROW)
 		if captured:
 			age+=1

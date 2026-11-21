@@ -21,6 +21,14 @@ func run() -> void:
 	hud.update_match(sim,"",0,false)
 	for i in range(2):
 		require(hud.portraits[i].picture.texture!=null,"头像资源应接入")
+	var zoffy_portrait:=UfeFighterDisplay.portrait("zoffy")
+	require(zoffy_portrait.resource_path=="res://assets/fighters/zoffy/portraits/hud.png","佐菲头像应使用本人正式资源，不回退占位图")
+	require(zoffy_portrait.get_size()==UfeFighterDisplay.portrait("ultraman").get_size(),"佐菲头肩头像应与初代保持同一画布规格")
+	var zoffy_portrait_bounds:=zoffy_portrait.get_image().get_used_rect()
+	require(zoffy_portrait_bounds.position.y==4,"佐菲头像顶部保留与现用头肩像一致的4px空隙")
+	require(zoffy_portrait_bounds.position.x>=2 and zoffy_portrait_bounds.end.x<=38,"佐菲专绘头像两侧应留空，不再用举拳战斗帧撑满画布")
+	hud.portraits[0].set_fighter("zoffy")
+	require(hud.portraits[0].picture.texture==zoffy_portrait,"正式HUD应接入佐菲头肩像")
 	sim.fighters[0].stats.hp=700
 	hud.update_match(sim,"",0,false)
 	require(hud.health[0].delayed>hud.health[0].bar.value,"受伤先留白色残影")

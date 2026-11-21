@@ -45,6 +45,8 @@ func run() -> void:
 			"res://assets/fighters/%s/animations/manifest.json" % id)
 		var clips: Dictionary = manifest.get("clips", {})
 		check(not clips.is_empty(), id + " 有动画清单")
+		if id == "zoffy": check_zoffy_data(definition, clips)
+		else: check_air_runtime(id, definition, manifest)
 		var local: Dictionary = {}
 		var local_manifest := "res://content/fighters/%s/move_manifest.json" % id
 		if FileAccess.file_exists(local_manifest):
@@ -89,3 +91,138 @@ func run() -> void:
 	print("ROSTER_DATA_INTEGRITY " + ("PASS" if failures.is_empty() else str(failures)))
 	print("  checked " + str(fighters.size()) + " fighters / " + str(required_moves.size()) + " required moves")
 	quit(0 if failures.is_empty() else 1)
+
+func check_air_runtime(id: String, definition: UfeFighterDefinition, manifest: Dictionary) -> void:
+	var clips: Dictionary = manifest.clips
+	var pairs := {"vertical": "vertical_jump", "diagonal": "flip_forward", "backward": "flip_back", "chase": "chase_takeoff"}
+	var view := UfeSideView.new()
+	for kind in pairs:
+		var alias: String = str(kind) + "_air"
+		var clip_key: String = pairs[kind]
+		var rows: Array = definition.state_frames.get(alias, [])
+		var source: Array = definition.state_frames.get(clip_key, [])
+		var clip: Dictionary = clips.get(clip_key, {})
+		check(not rows.is_empty() and not source.is_empty() and not clip.is_empty(), "%s/%s 本人空中轨迹与源姿势存在" % [id, alias])
+		if rows.is_empty() or source.is_empty() or clip.is_empty():continue
+		if kind != "chase":check(rows.size() == definition.jump_speed * 2, "%s/%s 保持完整普通跳跃周期" % [id, alias])
+		var facing_samples: Array = []
+		for player in range(2):
+			var sim := UfeContentDatabase.match_for(id, id, true)
+			var actor := sim.fighters[player]
+			if kind == "chase":
+				actor.enter("air")
+				actor.motion.jump_kind = "chase"
+				actor.vy = 18
+			var seen: Dictionary = {}
+			var samples: Array = []
+			var last_air_age := -1
+			var last_air_sprite := -1
+			var landed := false
+			for tick in range(80):
+				var inputs: Array = [UfeInputFrame.make(), UfeInputFrame.make()]
+				if tick == 0 and kind != "chase":
+					var direction: int = 1 if kind == "diagonal" else -1 if kind == "backward" else 0
+					inputs[player] = UfeInputFrame.make(direction * actor.facing, 0, UfeInputFrame.JUMP)
+				sim.step(inputs)
+				if actor.state == "air":
+					var frame := actor.frame()
+					var shown := view._animation(actor, manifest)
+					var age := actor.definition.jump_speed - actor.vy
+					var sprite := int(frame.get("sprite", -1))
+					check(int(shown.get("index", -1)) == sprite - int(clip.get("simulation_sprite_offset", 0)), "%s/%s/%d/%d 双向显示帧与受击姿势一致" % [id, alias, player, tick])
+					check(source.any(func(pose): return int(pose.sprite) == sprite and pose.hurtboxes == frame.hurtboxes), "%s/%s/%d/%d 复用本人同姿势受击框" % [id, alias, player, tick])
+					if kind == "chase":
+						check(age < rows.size(), "%s/%s/%d/%d 追击轨迹覆盖实际下降索引" % [id, alias, player, tick])
+						check(sprite == int(source[-1].sprite), "%s/%s 保持本人追击末姿势" % [id, alias])
+					seen[sprite] = true
+					samples.append([age, sprite, frame.hurtboxes])
+					last_air_age = age
+					last_air_sprite = sprite
+				elif actor.state == "land":
+					landed = true
+					break
+			check(landed and not samples.is_empty(), "%s/%s/%d 从实际飞行落地" % [id, alias, player])
+			check(last_air_sprite == int(source[-1].sprite), "%s/%s/%d 落地前最后tick使用末姿势" % [id, alias, player])
+			if kind != "chase":
+				check(last_air_age == definition.jump_speed * 2, "%s/%s/%d 不改变普通跳跃物理时长" % [id, alias, player])
+				check(seen.size() == clip.rects.size(), "%s/%s/%d 整条本人空中图均可达" % [id, alias, player])
+			facing_samples.append(samples)
+		check(facing_samples[0] == facing_samples[1], "%s/%s 原生左右朝向共用相同姿势与受击框" % [id, alias])
+	view.free()
+
+# 佐菲连贯性契约：计时表按 tick 展开，受投表仍按姿势索引；不作美术验收。
+func zoffy_clip_sprites(clip: Dictionary, offset: int = 0) -> Array[int]:
+	var result: Array[int] = []
+	var durations: Array = clip.get("ticks", [])
+	for sprite in range(durations.size()):
+		for _tick in range(int(durations[sprite])):
+			result.append(sprite + offset)
+	return result
+
+func check_zoffy_data(definition: UfeFighterDefinition, clips: Dictionary) -> void:
+	var dash_sprites: Array[int] = []
+	var dash_sizes := [2, 4, 3]
+	var dash_offset := 0
+	for part in range(3):
+		var key: String = ["dash_start", "dash", "dash_stop"][part]
+		var clip: Dictionary = clips.get(key, {})
+		check(clip.get("rects", []).size() == dash_sizes[part], "zoffy/%s 九图冲刺分段" % key)
+		check(not bool(clip.get("loop", true)), "zoffy/%s 冲刺分段不循环" % key)
+		check(int(clip.get("simulation_sprite_offset", -1)) == dash_offset, "zoffy/%s 模拟全局 sprite 偏移" % key)
+		for duration in clip.get("ticks", []):
+			check(int(duration) >= 2 and int(duration) <= 4, "zoffy/%s 每格 2..4 tick" % key)
+		dash_sprites.append_array(zoffy_clip_sprites(clip, dash_offset))
+		dash_offset += int(dash_sizes[part])
+	check(dash_sprites.size() == 22, "zoffy/dash 三段总长仍为 22 tick")
+	for key in definition.state_frames:
+		if not clips.has(key): continue
+		var rows: Array = definition.state_frames[key]
+		var clip: Dictionary = clips[key]
+		check(clip.get("ticks", []).size() == clip.rects.size(), "zoffy/%s 图片与时长一一对应" % key)
+		for duration in clip.get("ticks", []):
+			check(int(duration) > 0, "zoffy/%s 每张图时长为正" % key)
+		var actual: Array[int] = []
+		for row in rows: actual.append(int(row.get("sprite", -1)))
+		if str(key) == "grabbed" or str(key).begins_with("thrown_"):
+			check(rows.size() == clip.rects.size(), "zoffy/%s 每姿势一行，不按 ticks 扩展" % key)
+			for index in range(rows.size()):
+				check(int(rows[index].get("sprite", -1)) == index, "zoffy/%s 保留姿势编号 %d" % [key, index])
+				var points: Dictionary = rows[index].get("grab_points", {})
+				check(points.has("waist"), "zoffy/%s/%d 有旧式 hold 腰抓点" % [key, index])
+				for point in points:
+					check(UfeThrowResolver.HoldPoints.point_valid(points[point]), "zoffy/%s/%d/%s 抓点为合法整数坐标" % [key, index, point])
+			continue
+		var expected := dash_sprites if str(key) == "dash" else zoffy_clip_sprites(clip, int(clip.get("simulation_sprite_offset", 0)))
+		check(actual == expected and not expected.is_empty(), "zoffy/%s sprite 逐 tick 展开等于 clip.ticks" % key)
+	check(definition.state_frames.get("idle", []).size() == 60, "zoffy/idle 完整周期为 60 tick 而不是 6 tick")
+	# 这里只覆盖普通跳跃；chase_takeoff/追击空中不使用此轨迹协议。
+	for pair in [["vertical_air", "vertical_jump"], ["diagonal_air", "flip_forward"], ["backward_air", "flip_back"]]:
+		var clip: Dictionary = clips.get(pair[1], {})
+		check(bool(clip.get("trajectory_driven", false)), "zoffy/%s 按轨迹驱动" % pair[1])
+		check(zoffy_clip_sprites(clip).size() == 32, "zoffy/%s 普通跳跃总长 32 tick" % pair[1])
+		var trajectory: Array = definition.state_frames.get(pair[0], [])
+		check(trajectory.size() == 32 and trajectory == definition.state_frames.get(pair[1], []), "zoffy/%s 轨迹表与跳跃姿势及受击框一致" % pair[0])
+	check_zoffy_normals(definition, clips)
+
+func check_zoffy_normals(definition: UfeFighterDefinition, clips: Dictionary) -> void:
+	# 重设计只重排真实 sprite，锁住本轮修复前的总时长、有效窗与伤害。
+	for baseline in [["light1", 10, 3, 7, 65], ["light2", 10, 3, 7, 65], ["light3", 11, 3, 6, 65], ["heavy", 14, 4, 10, 100]]:
+		var key := str(baseline[0])
+		var move: Dictionary = definition.moves[key]
+		var clip: Dictionary = clips.get(key, {})
+		var sprite_count: int = clip.get("rects", []).size()
+		check(sprite_count > 1 and sprite_count <= 8, "zoffy/%s 使用 2..8 张真实图" % key)
+		check(clip.get("ticks", []).size() == sprite_count, "zoffy/%s 图片与时长一一对应" % key)
+		for duration in clip.get("ticks", []):
+			check(int(duration) > 0, "zoffy/%s 每张攻击图均可达" % key)
+		check([int(move.startup), int(move.active), int(move.recovery), int(move.damage)] == baseline.slice(1), "zoffy/%s 帧数据与伤害不变" % key)
+		check(move.frames.size() == int(baseline[1]) + int(baseline[2]) + int(baseline[3]), "zoffy/%s 总时长不变" % key)
+		var sprites: Array[int] = []
+		for tick in range(move.frames.size()):
+			var row: Dictionary = move.frames[tick]
+			sprites.append(int(row.sprite))
+			check((not row.hitboxes.is_empty()) == (tick >= int(baseline[1]) and tick < int(baseline[1]) + int(baseline[2])), "zoffy/%s/%d active 窗口不变" % [key, tick])
+			var expected_cancel: Array = ["light2"] if key == "light1" and tick >= 10 and tick <= 18 else ["light3", "launcher"] if key == "light2" and tick >= 10 and tick <= 18 else []
+			var cancel: Array = row.cancel
+			check(cancel.size() == expected_cancel.size() and expected_cancel.all(func(target: String) -> bool: return cancel.has(target)), "zoffy/%s/%d 仅在原取消窗添加 launcher" % [key, tick])
+		check(sprites == zoffy_clip_sprites(clip), "zoffy/%s 招式 sprite 与真实图时长逐 tick 对应" % key)

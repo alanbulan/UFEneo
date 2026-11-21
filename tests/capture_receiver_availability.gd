@@ -62,13 +62,6 @@ func play(config: Dictionary, saved: Array = []) -> Dictionary:
 					var elapsed := age-cast_age
 					if str(config.input) == "I7" and elapsed == 0:
 						pair[owner] = UfeInputFrame.make(-own.facing,1,UfeInputFrame.RANGED)
-					elif str(config.input) == "41236L":
-						match elapsed:
-							0: pair[owner] = UfeInputFrame.make(-own.facing,0)
-							1: pair[owner] = UfeInputFrame.make(-own.facing,-1)
-							2: pair[owner] = UfeInputFrame.make(0,-1)
-							3: pair[owner] = UfeInputFrame.make(own.facing,-1)
-							4: pair[owner] = UfeInputFrame.make(own.facing,0,UfeInputFrame.THROW)
 		else:
 			pair = saved[age].inputs.map(func(p):return UfeInputFrame.unpack(p))
 		var before_stamina := int(own.stats.stamina)
@@ -107,8 +100,6 @@ func run() -> void:
 	if input_source.is_empty():
 		for target in IDS:
 			for owner in [0,1]: records.append(play({"target":target,"owner":owner,"input":"I7"}))
-		for target in ["ultraman-omega","zetton"]:
-			for owner in [0,1]: records.append(play({"target":target,"owner":owner,"input":"41236L"}))
 	else:
 		var original: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(input_source))
 		for record in original.records:

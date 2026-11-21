@@ -67,8 +67,8 @@ static func fighter_copy(record: Dictionary) -> UfeFighter:
 	f.stats=UfeFighterStats.from_dict(row[10]);f.combat=UfeFighterCombat.from_dict(row[11]);f.motion=UfeFighterMotion.from_dict(row[12])
 	var input: Array=row[13]
 	f.resolver.previous=int(input[0]);f.resolver.age=int(input[1])
-	f.resolver.history=input[2].duplicate(true);f.resolver.press_ticks=input[3].duplicate(true)
-	f.resolver.tap_direction=int(input[4]);f.resolver.tap_tick=int(input[5]);f.resolver.previous_x=int(input[6])
+	f.resolver.press_ticks=input[2].duplicate(true)
+	f.resolver.tap_direction=int(input[3]);f.resolver.tap_tick=int(input[4]);f.resolver.previous_x=int(input[5])
 	return f
 
 static func fighter_record(f: UfeFighter) -> Dictionary:

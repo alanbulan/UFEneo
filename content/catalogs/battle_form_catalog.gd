@@ -8,11 +8,8 @@ static func registry() -> Dictionary:
 	return UfeContentDatabase.read_json(PATH).forms
 
 static func command(display_name: String, move_id: String = "battle_transform", directions: Array = [0]) -> Dictionary:
-	var entry := {"move":move_id, "display_name":display_name, "states":GROUND_STATES,
-		"directions":directions, "buttons":UfeInputFrame.SPECIAL, "motion":[2,5,2], "priority":1000}
-	# 上方向仅在本次22+P确实选中装甲时消费，不影响普通跳跃。
-	if directions.any(func(d): return int(d) >= 7): entry.consume_jump = true
-	return entry
+	return {"move":move_id, "display_name":display_name, "states":GROUND_STATES,
+		"directions":directions, "buttons":UfeInputFrame.TRANSFORM, "transform":true, "priority":1000}
 
 static func prepare(id: String, allow_pilot: bool, enabled_overrides: Dictionary = {}) -> Dictionary:
 	var source: Dictionary = registry().get(id, {})
@@ -40,9 +37,7 @@ static func _assemble_single(definition: UfeFighterDefinition, form: Dictionary,
 		var super_move: Dictionary = UfeContentDatabase.read_json(str(form.super_move))
 		definition.moves[str(super_move.id)] = super_move
 	definition.moves[move_id] = move
-	var original := command(str(move.display_name), move_id, directions)
-	definition.command_table.append(original)
-	definition.command_table.append(UfeQuickCommands.transform(original))
+	definition.command_table.append(command(str(move.display_name), move_id, directions))
 	return {"definition":definition, "form":form}
 
 static func _assemble_choices(definition: UfeFighterDefinition, source: Dictionary) -> Dictionary:
@@ -67,7 +62,7 @@ static func _assemble_choices(definition: UfeFighterDefinition, source: Dictiona
 			if not (2 in directions and 5 in directions): return _closed_choices(definition, source, "默认形态须接下和中立")
 		active.append(raw)
 	if default_count != 1: return _closed_choices(definition, source, "须开放且仅开放一个默认形态")
-	# 只有一个可切形态时没有切换可做：不接指令，避免把22+P变成必杀备用入口。
+	# 只有一个可切形态时没有切换可做，不装配形态键指令。
 	if active.size() < 2: return {"definition":definition, "form":{}}
 	var choices := {}
 	var selected := {}

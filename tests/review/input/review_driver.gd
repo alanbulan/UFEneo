@@ -13,15 +13,51 @@ var trace: Array = []
 var profile: String = "gate_a"
 var last_inputs: Array = []
 var review_frame: int = 0
+var pose_alpha_bounds: Dictionary = {}
 const PHASE3_ACTIONS := ["heavy","spin_heavy","crush","tackle","pulse","ranged_forward","crouch_light","crouch_light2","sweep","slide","low_pulse"]
 const PHASE3_LABELS := ["重击 K","回旋重击 A+K","超重击 O","突进撞击 D+O","光弹 I","八分光轮 D+I","下段轻击 S+J","下段轻击二段 S+J→J","扫腿 S+K","滑铲 S+O","低姿光弹 S+I"]
+const SKILL_ACTIONS := ["pulse","ranged_forward","low_pulse","air_pulse","motion_236","motion_623","motion_214","motion_22","motion_41236","special","special2","special3","air_special","charge"]
+var selected_skill: String = ""
+
+func skill_id(frame: int) -> String:
+	return selected_skill if not selected_skill.is_empty() else str(SKILL_ACTIONS[section(frame)%SKILL_ACTIONS.size()])
+
+func skill_count() -> int:
+	return 1 if not selected_skill.is_empty() else SKILL_ACTIONS.size()
+
+func direction_skill_input(id: String, facing: int) -> UfeInputFrame:
+	var axes: Array = {"motion_236":[1,1],"motion_623":[1,-1],"motion_214":[-1,-1],"motion_22":[0,1],"motion_41236":[-1,1]}.get(id,[0,0])
+	return UfeInputFrame.make(int(axes[0])*facing,int(axes[1]),UfeInputFrame.RANGED)
+
+func skill_input(frame: int, sim: UfeMatchDirector) -> UfeInputFrame:
+	var id := skill_id(frame)
+	var age := frame%180
+	var facing := sim.fighters[0].facing
+	if id == "idle":return UfeInputFrame.make()
+	if id == "charge":
+		return UfeInputFrame.make(0,0,UfeInputFrame.CHARGE if age>=20 and age<80 else 0)
+	if id in ["air_pulse","air_special"]:
+		if age==20:return UfeInputFrame.make(0,0,UfeInputFrame.JUMP)
+		return UfeInputFrame.make(0,0,(UfeInputFrame.RANGED if id=="air_pulse" else UfeInputFrame.SPECIAL) if age==30 else 0)
+	if id.begins_with("motion_"):
+		return direction_skill_input(id,facing) if age==20 else UfeInputFrame.make()
+	var bit := UfeInputFrame.SPECIAL if id.begins_with("special") else UfeInputFrame.RANGED
+	return UfeInputFrame.make(facing if id=="ranged_forward" and age==30 else 0,-1 if id=="low_pulse" and age>=20 and age<100 else 0,bit if age==30 else 0)
 
 func remember_inputs(inputs: Array) -> void:
 	# 记录真正送进模拟的输入；观察时不再调用有状态的sample。
 	last_inputs = [inputs[0].pack(),inputs[1].pack()]
 
 func prepare_match(sim: UfeMatchDirector) -> void:
-	if profile == "phase3_standing":
+	if profile == "fighter_skills":
+		var direction := 1 if section(review_frame)<skill_count() else -1
+		var gap := 72 if skill_id(review_frame)=="motion_41236" else 80 if skill_id(review_frame)=="motion_236" else 280
+		sim.fighters[0].x = 640-direction*(gap/2)
+		sim.fighters[1].x = sim.fighters[0].x+direction*gap
+		sim.fighters[0].facing = direction
+		sim.fighters[1].facing = -direction
+		sim.fighters[0].stats.energy = 1000 if skill_id(review_frame)=="special" else 2000 if skill_id(review_frame)=="special2" else 3000
+	elif profile == "phase3_standing":
 		sim.fighters[0].x = 470
 		sim.fighters[1].x = 750 if PHASE3_ACTIONS[mini(review_frame/180,10)] in ["pulse","ranged_forward","low_pulse"] else 535
 	elif profile == "forward_walk":
@@ -64,18 +100,64 @@ func second_sample(frame: int) -> UfeInputFrame:
 	return UfeInputFrame.make(walk_input(frame))
 
 func observe_walk(frame: int, sim: UfeMatchDirector, view: UfeSideView) -> void:
-	if not is_walk_review() and profile not in ["dash_once","locomotion_switches","color_switches","gate_a_final","phase3_standing"]: return
+	if not is_walk_review() and profile not in ["dash_once","locomotion_switches","color_switches","gate_a_final","phase3_standing","fighter_skills"]: return
 	var f := sim.fighters[0]
 	var animation := view._animation(f,view.manifests[0])
 	var first := UfeInputFrame.unpack(last_inputs[0]) if last_inputs.size()==2 else UfeInputFrame.make()
 	var second := UfeInputFrame.unpack(last_inputs[1]) if last_inputs.size()==2 else UfeInputFrame.make()
 	trace.append({"movie_frame":frame,"section":section(frame),"boxes":view.show_boxes,"tick":sim.tick,"held_forward":profile == "forward_walk" and held_walk(frame),"held_backward":profile == "back_walk" and held_walk(frame),"input_p1_x":first.x,"input_p2_x":second.x,"inputs":last_inputs.duplicate(true),"state":f.state,"state_tick":f.state_tick,"move":f.move_id,"move_tick":f.move_tick,"x":f.x,"target_x":sim.fighters[1].x,"target_height":sim.fighters[1].height,"facing":f.facing,"height":f.height,"camera_x":view.camera_x,"sprite_index":animation.get("index",-1),"texture":animation.get("texture","")})
-	if profile == "phase3_standing":
+	trace[-1].pair = observed_pair(sim,view)
+	if profile in ["phase3_standing","fighter_skills"]:
 		trace[-1].events = sim.events.duplicate(true)
+		trace[-1].state_hash = sim.state_hash()
 		trace[-1].target_hp = sim.fighters[1].stats.hp
 		trace[-1].projectiles = sim.projectiles.duplicate(true)
 
+func observed_pair(sim: UfeMatchDirector, view: UfeSideView) -> Array:
+	var pair: Array = []
+	for player: int in range(2):
+		var fighter := sim.fighters[player]
+		var animation := view._animation(fighter,view.manifests[player])
+		var data := fighter.frame()
+		var entry: Dictionary = {"player":player,"fighter":fighter.definition.id,"x":fighter.x,"height":fighter.height,"facing":fighter.facing,"state":fighter.state,"state_tick":fighter.state_tick,"move":fighter.move_id,"move_tick":fighter.move_tick,"pose":fighter.visual_pose(),"clip":animation.get("key",""),"sprite":animation.get("index",-1)}
+		var hurt_boxes: Array = data.get("hurtboxes",[])
+		if not hurt_boxes.is_empty():
+			var bottom := int(hurt_boxes[0][1])
+			for box: Array in hurt_boxes:
+				bottom = mini(bottom,int(box[1]))
+			entry.hurtbox_bottom = fighter.height+bottom
+		var pixels := observed_alpha_bounds(animation)
+		if not pixels.is_empty():
+			entry.pixel_bottom = fighter.height+int(pixels.offset)
+			entry.ground_clearance = entry.pixel_bottom
+			entry.pixel_height = int(pixels.bounds[3])
+			entry.pixel_top = entry.pixel_bottom+entry.pixel_height
+			entry.alpha_bounds = pixels.bounds
+			entry.texture = animation.texture
+			entry.rect = animation.rect
+			entry.anchor = animation.anchor
+		pair.append(entry)
+	return pair
+
+func observed_alpha_bounds(animation: Dictionary) -> Dictionary:
+	var path := str(animation.get("texture",""))
+	var rect: Array = animation.get("rect",[])
+	var anchor: Array = animation.get("anchor",[])
+	if path.is_empty() or rect.size()!=4 or anchor.size()!=2: return {}
+	var key := "%s:%s:%s" % [path,rect,anchor]
+	if not pose_alpha_bounds.has(key):
+		var texture := load(path) as Texture2D
+		var image: Image = texture.get_image() if texture!=null else null
+		if image==null: return {}
+		if image.is_compressed(): image.decompress()
+		var region := Rect2i(int(rect[0]),int(rect[1]),int(rect[2]),int(rect[3]))
+		var used := image.get_region(region).get_used_rect()
+		if not used.has_area(): return {}
+		pose_alpha_bounds[key] = {"offset":int(anchor[1])-used.end.y,"bounds":[used.position.x,used.position.y,used.size.x,used.size.y]}
+	return pose_alpha_bounds[key]
+
 func length_frames() -> int:
+	if profile == "fighter_skills": return skill_count()*360
 	if profile == "phase3_standing": return 1980
 	if profile == "dash_once": return 240
 	if profile == "locomotion_switches": return 360
@@ -84,6 +166,7 @@ func length_frames() -> int:
 	return 480 if is_walk_review() else 1800
 
 func label(frame: int) -> String:
+	if profile == "fighter_skills":return skill_id(frame)+(" · 向右" if section(frame)<skill_count() else " · 向左")+" · 主游戏真实输入"
 	if profile == "phase3_standing": return PHASE3_LABELS[section(frame)]+" · F1判定框"
 	if profile == "forward_walk": return "前走循环 · 持续前进6秒 · 陪练同步后退保持距离"
 	if profile == "back_walk": return "后走循环 · 持续后退6秒 · 陪练同步前进保持距离"
@@ -93,6 +176,7 @@ func label(frame: int) -> String:
 	return str(LABELS[section(frame)])
 
 func boxes(frame: int) -> bool:
+	if profile == "fighter_skills":return false
 	if profile == "phase3_standing": return true
 	if is_walk_review() or profile in ["dash_once","locomotion_switches","color_switches"]: return false
 	var part := section(frame)
@@ -102,6 +186,7 @@ func boxes(frame: int) -> bool:
 	return frame-int(STARTS[part]) > (60 if part in [4,5] else 120)
 
 func section(frame: int) -> int:
+	if profile == "fighter_skills":return mini(frame/180,skill_count()*2-1)
 	if profile == "phase3_standing": return mini(frame/180,10)
 	if is_walk_review() or profile in ["dash_once","locomotion_switches","color_switches"]: return 0
 	var result := 0
@@ -111,6 +196,7 @@ func section(frame: int) -> int:
 	return result
 
 func sample(frame: int, sim: UfeMatchDirector) -> UfeInputFrame:
+	if profile == "fighter_skills":return skill_input(frame,sim)
 	if profile == "phase3_standing":
 		var id: String = PHASE3_ACTIONS[section(frame)]
 		var standing_age := frame%180
@@ -144,14 +230,14 @@ func sample(frame: int, sim: UfeMatchDirector) -> UfeInputFrame:
 			if age<290: return UfeInputFrame.make(0,0,UfeInputFrame.LIGHT if age%9==0 else 0)
 		4:
 			if age<50: return UfeInputFrame.make(1)
-			if age==70: return UfeInputFrame.make(1,1)
+			if age==70: return UfeInputFrame.make(1,1,UfeInputFrame.JUMP)
 			if age==90: return UfeInputFrame.make(0,0,UfeInputFrame.HEAVY)
 		5:
 			if age<120: return UfeInputFrame.make(1)
 			if age==126: return UfeInputFrame.make(1,0,UfeInputFrame.HEAVY)
 			if int(f.motion.chase_window)>0 and f.combat.confirmed:
 				launched = true
-				return UfeInputFrame.make(1,1)
+				return UfeInputFrame.make(1,1,UfeInputFrame.JUMP)
 			if launched and f.state=="air" and f.height>35 and not aerial_struck:
 				aerial_struck = true
 				return UfeInputFrame.make(0,0,UfeInputFrame.LIGHT)
@@ -171,5 +257,7 @@ func save_file(path: String) -> void:
 		source = "主游戏训练模式真实InputFrame，40秒六组；每组开始reset_round一次，组内不重置人物/姿势/镜头；后半F1，攻击及跳跃在两半各演示。"
 	elif profile == "phase3_standing":
 		source = "主游戏训练模式真实InputFrame；逐招分组reset_round，近战间距65、远程280；组内不重置坐标/姿势/镜头，F1全程；每招记录命中事件与对手HP。"
-	file.store_string(JSON.stringify({"profile":profile,"input_source":source, "moves":moves_seen.keys(),"states":states_seen.keys(),"chase_jump":launched,"aerial_light":aerial_struck,"trace":trace},"\t"))
+	if profile == "fighter_skills":
+		source = "主游戏逐技能双朝向真实InputFrame；每组只设开局距离、朝向和能量，组内不改坐标、姿势、判定或镜头；人物动作与特效由正式数据驱动。"
+	file.store_string(JSON.stringify({"profile":profile,"input_source":source,"clearance_units":"原生像素，向上为正，0为地面；pair记录双方实际姿势、图集Alpha边界和受击框底缘；ground_clearance等于pixel_bottom，保留负值，不夹取高度。", "moves":moves_seen.keys(),"states":states_seen.keys(),"chase_jump":launched,"aerial_light":aerial_struck,"trace":trace},"\t"))
 @warning_ignore_restore("integer_division")

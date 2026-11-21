@@ -201,7 +201,7 @@ func _player_bottom(parent: Node, player: int) -> void:
 	lower.add_child(gauge)
 	if player==1:lower.move_child(gauge,0)
 	stamina.append(gauge)
-	var transform_hint:=text(column,"↓↓ + P 可变身",11)
+	var transform_hint:=text(column,"形态键 %s 可变身"%UfeInputRouter.binding_label(player,"transform"),11)
 	transform_hint.visible=false
 	transform_hints.append(transform_hint)
 
@@ -342,9 +342,13 @@ func show_selection(ids: Array) -> void:
 	for i in range(2):selection_names[i].set_fighter(str(ids[i]),"玩家%d："%[i+1])
 	selection.show()
 
+## 缩放预算只看常驻HUD，不随训练信息或诊断/暂停覆盖层显隐改变。
+func battle_zoom_rect() -> Rect2:
+	return battle_safe_rect(false)
+
 ## 与世界共用同一Viewport坐标。容器延迟排版期间同时保守采用新最小高度，
 ## 绘制前由镜头再次读取最终布局；不把暂停/Ready等有意叠层当作障碍。
-func battle_safe_rect() -> Rect2:
+func battle_safe_rect(include_overlays: bool = true) -> Rect2:
 	var viewport_rect := get_viewport_rect()
 	var safe := arena_space.get_global_rect().intersection(viewport_rect)
 	var layout_ready := safe.has_area()
@@ -361,10 +365,11 @@ func battle_safe_rect() -> Rect2:
 	if bottom_bar.visible:
 		bottom = minf(bottom,inner.end.y-bottom_bar.get_combined_minimum_size().y)
 		if layout_ready:bottom=minf(bottom,bottom_bar.get_global_rect().position.y)
-	for overlay in framing_top_overlays:
-		if is_instance_valid(overlay) and overlay.is_visible_in_tree():
-			var rect := overlay.get_global_rect()
-			top = maxf(top,rect.position.y+maxf(rect.size.y,overlay.get_combined_minimum_size().y))
+	if include_overlays:
+		for overlay in framing_top_overlays:
+			if is_instance_valid(overlay) and overlay.is_visible_in_tree():
+				var rect := overlay.get_global_rect()
+				top = maxf(top,rect.position.y+maxf(rect.size.y,overlay.get_combined_minimum_size().y))
 	if word_center.get_parent()==self and word_center.is_visible_in_tree():
 		# 结算刚reparent时size还可能残留原arena高度；TOP_WIDE的目标高度是内容最小值。
 		top = maxf(top,word_center.get_global_rect().position.y+word_center.get_combined_minimum_size().y)

@@ -143,6 +143,7 @@ func start_match() -> void:
 	ui_layer.add_child(hud)
 	hud.action_requested.connect(_action)
 	view.framing_safe_provider=hud.battle_safe_rect
+	view.framing_zoom_safe_provider=hud.battle_zoom_rect
 	training_overlay=UfeTrainingOverlay.new()
 	ui_layer.add_child(training_overlay)
 	training_overlay.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
@@ -529,7 +530,7 @@ func _physics_process(_delta: float) -> void:
 	capture_tick += 1
 	if review and review_driver != null:
 		var driver_len: int = int(review_driver.call("length_frames"))
-		if capture_tick == driver_len - 1 or (review_capture_frames > 0 and capture_tick == review_capture_frames - 2):
+		if capture_tick == driver_len or (review_capture_frames > 0 and capture_tick == review_capture_frames):
 			review_driver.call("save_file", review_trace)
 	if not capture_path.is_empty() and capture_tick == capture_frame: _capture.call_deferred()
 	if training_input_audit!=null:training_input_audit.end_frame(self)

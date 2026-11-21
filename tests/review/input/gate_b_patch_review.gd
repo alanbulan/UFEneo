@@ -8,7 +8,7 @@ func length_frames() -> int:return 1440
 func boxes(_frame: int) -> bool:return true
 func label(frame: int) -> String:
 	var part:=section(frame)
-	return ("初代 → 杰顿" if part%2==0 else "杰顿 → 初代")+" · "+["41236× 对站防·不可防","41236× 第3tick拆投","41236× 起跳避开","三级必杀KO·爆炸"][part/2]
+	return ("初代 → 杰顿" if part%2==0 else "杰顿 → 初代")+" · "+["I+↖ 对站防·不可防","I+↖ 第3tick拆投","I+↖ 起跳避开","三级必杀KO·爆炸"][part/2]
 func prepare_match(sim: UfeMatchDirector) -> void:
 	active_player=section(review_frame)%2
 	capture_age=0
@@ -23,15 +23,12 @@ func sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
 	var a:=UfeInputFrame.make();var b:=UfeInputFrame.make()
 	var facing:=sim.fighters[active_player].facing
 	if part<6:
-		if age>=26 and age<=30:
-			var dirs: Array=[[-1,0],[-1,-1],[0,-1],[1,-1],[1,0]]
-			var dir: Array=dirs[age-26]
-			a=UfeInputFrame.make(int(dir[0])*facing,int(dir[1]),UfeInputFrame.THROW if age==30 else 0)
+		if age==30:a=direction_skill_input("motion_41236",facing)
 		if part<2:b=UfeInputFrame.make(0,0,UfeInputFrame.GUARD)
 		elif part<4 and sim.fighters[1-active_player].state=="thrown":
 			capture_age+=1
 			if capture_age==3:b=UfeInputFrame.make(0,0,UfeInputFrame.THROW)
-		elif part>=4 and age==29:b=UfeInputFrame.make(0,1)
+		elif part>=4 and age==29:b=UfeInputFrame.make(0,1,UfeInputFrame.JUMP)
 	elif age==30:a=UfeInputFrame.make(0,0,UfeInputFrame.SPECIAL)
 	passive=b if active_player==0 else a
 	return a if active_player==0 else b

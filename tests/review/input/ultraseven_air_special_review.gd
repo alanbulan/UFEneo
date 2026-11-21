@@ -12,7 +12,7 @@ func prepare_match(sim: UfeMatchDirector) -> void:
 	sim.fighters[0].stats.energy=1000
 func sample(frame: int,_sim: UfeMatchDirector) -> UfeInputFrame:
 	var age:=frame%240
-	if age==30:return UfeInputFrame.make(0,1)
+	if age==30:return UfeInputFrame.make(0,1,UfeInputFrame.JUMP)
 	if age==36:return UfeInputFrame.make(0,0,UfeInputFrame.SPECIAL)
 	return UfeInputFrame.make()
 func second_sample(_frame: int) -> UfeInputFrame:return UfeInputFrame.make()

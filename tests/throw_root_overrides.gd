@@ -141,7 +141,7 @@ func actual_input_cases() -> void:
 				for tick in range(110):
 					var inputs:=[UfeInputFrame.make(),UfeInputFrame.make()]
 					if tick==10:inputs[0]=UfeInputFrame.make(0,0,UfeInputFrame.THROW)
-					if kind=="miss" and tick==9:inputs[1]=UfeInputFrame.make(0,1)
+					if kind=="miss" and tick==9:inputs[1]=UfeInputFrame.make(0,1,UfeInputFrame.JUMP)
 					if captured:
 						age+=1
 						if kind=="tech3" and age==3:inputs[1]=UfeInputFrame.make(0,0,UfeInputFrame.THROW)

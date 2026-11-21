@@ -109,11 +109,26 @@ def load_cells_json(fighter: str):
         return None
 
 
-def anchor_for(fighter, cell_w, cell_h, cells_json):
-    if isinstance(cells_json, dict):
-        a = cells_json.get("anchor")
-        if isinstance(a, (list, tuple)) and len(a) == 2 and all(x is not None for x in a):
-            return [int(a[0]), int(a[1])]
+def cell_matches(cell, cell_w, cell_h):
+    if type(cell) is int:
+        cell = [cell, cell]
+    return (isinstance(cell, (list, tuple)) and len(cell) == 2
+            and all(type(value) is int for value in cell)
+            and list(cell) == [cell_w, cell_h])
+
+
+def valid_anchor(point):
+    return (isinstance(point, (list, tuple)) and len(point) == 2
+            and all(type(value) is int for value in point))
+
+
+def anchor_for(fighter, cell_w, cell_h, cells_json, prior=None):
+    # 清单/定义的同格校准优先；旧制作格的顶层根点不能写进新格。
+    for source in (prior, cells_json):
+        if isinstance(source, dict) and cell_matches(source.get("cell"), cell_w, cell_h):
+            a = source.get("anchor")
+            if valid_anchor(a):
+                return list(a)
     return [cell_w // 2, cell_h - 8]
 
 
@@ -128,14 +143,40 @@ def anchor_from_records(clip: str, cells_json):
         return None
     foot_rows = []
     for rec in cells_json["frames"]:
-        name = str(rec.get("frame", ""))
-        if (name.startswith(clip + "-") and rec.get("standing") is True
-                and isinstance(rec.get("foot_row"), int)):
+        name = str(rec.get("frame", "")).replace("-", "_")
+        if (name.startswith(clip.replace("-", "_") + "_") and rec.get("standing") is True
+                and type(rec.get("foot_row")) is int):
             foot_rows.append(int(rec["foot_row"]))
     if not foot_rows:
         # 全腾空/全蹲姿势没有直立帧：脚底行不是根点基线，交给上层回退。
         return None
     return None, max(foot_rows) + 1
+
+
+def clip_anchors(clip, cell_w, cell_h, frame_count, cells_json, prior):
+    """纯计算根点；同格校准不可被旧记录或图张数变化静默重置。"""
+    same_cell = cell_matches(prior.get("cell"), cell_w, cell_h)
+    prior_anchor = prior.get("anchor")
+    if same_cell and "anchor" in prior and not valid_anchor(prior_anchor):
+        raise SystemExit(f"{clip}: 既有 anchor 无效，禁止静默重置根点")
+    if same_cell and valid_anchor(prior_anchor):
+        anchor = list(prior_anchor)
+    else:
+        record_anchor = anchor_from_records(clip, cells_json)
+        # 脚底行属于各自制作格；越出目标格的旧记录不适合作回退。
+        anchor_y = (record_anchor[1] if record_anchor is not None
+                    and 0 < record_anchor[1] <= cell_h else cell_h - 8)
+        anchor = [cell_w // 2, anchor_y]
+
+    if "anchors" in prior:
+        points = prior["anchors"]
+        if not isinstance(points, (list, tuple)) or any(not valid_anchor(point) for point in points):
+            raise SystemExit(f"{clip}: 既有逐图 anchors 无效，禁止静默重置根点")
+        if same_cell:
+            if len(points) != frame_count:
+                raise SystemExit(f"{clip}: 逐图 anchors 张数不符，先用 compose_clip 明确根点；禁止静默重置")
+            return anchor, [list(point) for point in points]
+    return anchor, [list(anchor) for _ in range(frame_count)]
 
 
 def build_atlas(frames, cell_w, cell_h):
@@ -154,7 +195,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--fighter", required=True)
     ap.add_argument("--dry-run", action="store_true")
-    ap.add_argument("--ticks", type=int, default=TICKS)
+    ap.add_argument("--ticks", type=int, default=None,
+                    help="显式重设每图时长；省略时保留既有节奏，新 clip 才使用默认10tick")
     ap.add_argument("--only", default="", help="逗号分隔的 clip 名；只装这些")
     ap.add_argument("--merge", action="store_true",
                     help="保留 manifest 里未重装的 clip（合成/改名过的帧不被清掉）")
@@ -173,22 +215,28 @@ def main():
     first_cell = next(iter(groups.values()))[0][1]
     cw, ch = cell_size(first_cell)
     cells_json = load_cells_json(fighter)
-    anchor = anchor_for(fighter, cw, ch, cells_json)
 
     anim_root = FIGHTER_ASSETS / fighter / "animations"
     # 已有 manifest 的每个 clip 自带根点（赛罗/杰斯等按格改过 [128,248]，
     # cells.json 顶层仍是旧 [96,184]）；重装单个 clip 时必须沿用该 clip 的
     # 根点，否则 256 格人物整体上移 64 px。新 clip 才用 cells.json 的值。
-    prior_clips = {}
+    prior_manifest = {}
     prior_path = anim_root / "manifest.json"
     if prior_path.is_file():
-        try:
-            prior_clips = json.loads(prior_path.read_text(encoding="utf-8")).get("clips", {})
-        except Exception:
-            prior_clips = {}
+        prior_manifest = json.loads(prior_path.read_text(encoding="utf-8"))
+    prior_clips = prior_manifest.get("clips", {})
+    anchor = anchor_for(fighter, cw, ch, cells_json, prior_manifest)
+    if args.ticks is not None and args.ticks <= 0:
+        raise SystemExit("--ticks 必须为正整数")
+    # 先校验全部目标，再写任何图集；不能把改图张数误当作重新设计时长。
+    for clip, rows in groups.items():
+        prior = prior_clips.get(clip, {})
+        if args.ticks is None and prior and len(prior.get("ticks", [])) != len(rows):
+            raise SystemExit(f"{clip}: 图张数已变，先用 compose_clip 明确逐帧 ticks；禁止默认10tick覆盖既有节奏")
     print(f"{fighter}: {len(groups)} clips, cell {cw}x{ch}, anchor {anchor}")
 
     clips = OrderedDict()
+    frame_sets = {}
     total_frames = 0
     for clip in sorted(groups):
         frames = [p for (_, p) in groups[clip]]
@@ -196,40 +244,31 @@ def main():
         # 同一角色可有多种格宽（父奥基础招 256/288，其余 192）：格尺寸跟
         # clip 走，不能拿本批第一组的尺寸去缩放其余组，否则人物被压扁。
         total_frames += len(frames)
-        atlas = build_atlas(frames, clip_cw, clip_ch)
-        clip_dir = anim_root / clip
-        atlas_path = clip_dir / "atlas.png"
+        frame_sets[clip] = (frames, clip_cw, clip_ch)
         rects = [[clip_cw * i, 0, clip_cw, clip_ch] for i in range(len(frames))]
-        record_anchor = anchor_from_records(clip, cells_json)
         prior = prior_clips.get(clip) or {}
-        prior_anchor = prior.get("anchor")
-        prior_cell = prior.get("cell")
-        if isinstance(prior_cell, int):
-            prior_cell = [prior_cell, prior_cell]
-        clip_anchor = list(anchor)
-        if record_anchor is not None:
-            clip_anchor = [clip_cw // 2, int(record_anchor[1])]
-        elif (isinstance(prior_anchor, (list, tuple)) and len(prior_anchor) == 2
-              and isinstance(prior_cell, (list, tuple)) and len(prior_cell) == 2
-              and [int(prior_cell[0]), int(prior_cell[1])] == [clip_cw, clip_ch]):
-            clip_anchor = [int(prior_anchor[0]), int(prior_anchor[1])]
-        else:
-            clip_anchor = [clip_cw // 2, clip_ch - 8]
-        anchors = [list(clip_anchor) for _ in frames]
-        entry = {
+        clip_anchor, anchors = clip_anchors(clip, clip_cw, clip_ch, len(frames), cells_json, prior)
+        entry = dict(prior)
+        entry.update({
             "texture": f"res://assets/fighters/{fighter}/animations/{clip}/atlas.png",
             "cell": clip_cw if clip_cw == clip_ch else [clip_cw, clip_ch],
             "anchor": list(clip_anchor),
             "anchor_y": clip_anchor[1],
             "anchors": anchors,
             "rects": rects,
-            "ticks": [args.ticks] * len(frames),
-            "loop": clip in LOOP_CLIPS,
-        }
+            "ticks": ([args.ticks] * len(frames) if args.ticks is not None else
+                      list(prior["ticks"]) if prior else [TICKS] * len(frames)),
+            "loop": bool(prior.get("loop", clip in LOOP_CLIPS and clip != "dash")),
+        })
         clips[clip] = entry
+
+    # 全部目标的根点与张数检查通过后，才允许写入第一个图集。
+    for clip, (frames, clip_cw, clip_ch) in frame_sets.items():
+        atlas = build_atlas(frames, clip_cw, clip_ch)
         if not args.dry_run:
+            clip_dir = anim_root / clip
             clip_dir.mkdir(parents=True, exist_ok=True)
-            atlas.save(atlas_path)
+            atlas.save(clip_dir / "atlas.png")
 
     identity_revision = "root_delegated_by_user_2026-11-10"
 
@@ -239,14 +278,15 @@ def main():
         merged.update(clips)
         clips = merged
 
-    manifest = {
+    manifest = dict(prior_manifest) if args.merge else {}
+    manifest.update({
         "schema": 1,
         "cell": [cw, ch],
         "anchor": list(anchor),
         "reviewed": False,
-        "identity_revision": identity_revision,
+        "identity_revision": prior_manifest.get("identity_revision", identity_revision),
         "clips": clips,
-    }
+    })
 
     if not args.dry_run:
         for clip, entry in clips.items():
@@ -311,11 +351,13 @@ def main():
         if "stage2_status" in d:
             d["stage2_status"] = "stage1_action_frames_installed"
         if "presentation" in d and isinstance(d["presentation"], dict):
+            presentation_anchor = anchor_for(fighter, cw, ch,
+                                             {"cell": [cw, ch], "anchor": anchor}, d["presentation"])
             d["presentation"]["manifest"] = f"res://assets/fighters/{fighter}/animations/manifest.json"
             d["presentation"]["model"] = f"res://assets/fighters/{fighter}/model-native.png"
             d["presentation"]["cell"] = cw if cw == ch else [cw, ch]
-            d["presentation"]["anchor"] = list(anchor)
-            d["presentation"]["anchor_y"] = anchor[1]
+            d["presentation"]["anchor"] = presentation_anchor
+            d["presentation"]["anchor_y"] = presentation_anchor[1]
     if not args.dry_run:
         (CONTENT / fighter).mkdir(parents=True, exist_ok=True)
         def_path.write_text(json.dumps(d, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

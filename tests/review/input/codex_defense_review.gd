@@ -62,7 +62,7 @@ func target_sample(frame: int,sim: UfeMatchDirector) -> UfeInputFrame:
 			return UfeInputFrame.make()
 		if id=="hit_air":
 			p2=UfeInputFrame.make(0,0,UfeInputFrame.HEAVY if age==20 else 0)
-			return UfeInputFrame.make(0,1 if age==26 else 0)
+			return UfeInputFrame.make(0,0,UfeInputFrame.JUMP if age==26 else 0)
 	return super.target_sample(frame,sim)
 
 func observe_walk(frame: int,sim: UfeMatchDirector,view: UfeSideView) -> void:

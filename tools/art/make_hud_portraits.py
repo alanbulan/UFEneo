@@ -1,9 +1,9 @@
-"""从已装待机像素整帧裁出 36×36 HUD 肖像。
+"""从已装待机整帧生成 36×36 HUD 草稿；默认保留现有正式头像。
 
 HUD 只读 `content/roster/selection.json` 的 `hud_portrait`（缺失时回退主题图标，
-再回退 locked）。新角色没有主题图标，直接由待机身份锚裁头肩是最小改动：同一
-像素画风、不重新生成身份；裁切以头部列带中心为准，保留头冠/双角完整（头宽大于
-36 px 的角色按头宽取正方形后最近邻缩到 36）。
+再回退 locked）。自动裁切只提供缺图时的草稿，不保证与现用 40×40 专绘头像的
+视角、构图和像素画法一致。禁止默认覆盖已安装头像；确需重新裁草稿时，显式传入
+--regenerate，之后仍须在正式选人页和双侧 HUD 做视觉检查。
 
 用法：
     .venv/bin/python tools/art/make_hud_portraits.py            # 只生成 PNG
@@ -52,24 +52,28 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--fighter", action="append", default=[])
     ap.add_argument("--write", action="store_true", help="同时写 selection.json 的 hud_portrait")
+    ap.add_argument("--regenerate", action="store_true", help="显式覆盖现有头像为自动裁切草稿；不代表美术验收")
     args = ap.parse_args()
     fighters = args.fighter or NEW
     sel_path = ROOT / "content/roster/selection.json"
     sel = json.loads(sel_path.read_text(encoding="utf-8")) if sel_path.is_file() else {"entries": []}
     done = []
     for fid in fighters:
-        man_path = ROOT / f"assets/fighters/{fid}/animations/manifest.json"
-        man = json.loads(man_path.read_text(encoding="utf-8"))
-        clip = man.get("clips", {}).get("idle")
-        if not clip:
-            print(f"{fid}: 缺 idle clip，跳过")
-            continue
-        x, y, w, h = clip["rects"][0]
-        atlas = Image.open(ROOT / clip["texture"].removeprefix("res://")).convert("RGBA")
-        icon = head_crop(atlas.crop((x, y, x + w, y + h)))
         out = ROOT / f"assets/fighters/{fid}/portraits/hud.png"
-        out.parent.mkdir(parents=True, exist_ok=True)
-        icon.save(out)
+        if out.is_file() and not args.regenerate:
+            print(f"{fid}: 保留现有正式头像；未重新裁切")
+        else:
+            man_path = ROOT / f"assets/fighters/{fid}/animations/manifest.json"
+            man = json.loads(man_path.read_text(encoding="utf-8"))
+            clip = man.get("clips", {}).get("idle")
+            if not clip:
+                print(f"{fid}: 缺 idle clip，跳过")
+                continue
+            x, y, w, h = clip["rects"][0]
+            atlas = Image.open(ROOT / clip["texture"].removeprefix("res://")).convert("RGBA")
+            icon = head_crop(atlas.crop((x, y, x + w, y + h)))
+            out.parent.mkdir(parents=True, exist_ok=True)
+            icon.save(out)
         for e in sel.get("entries", []):
             if e.get("id") == fid:
                 e["hud_portrait"] = f"res://assets/fighters/{fid}/portraits/hud.png"

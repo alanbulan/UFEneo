@@ -27,7 +27,7 @@ func legacy_snapshots() -> Dictionary:
 				var events: Array = []
 				for tick in range(360):
 					var input := UfeInputFrame.make()
-					if tick in [0, 2]: input = UfeInputFrame.make(0, -1, UfeInputFrame.SPECIAL if tick == 2 else 0)
+					if tick == 2: input = UfeInputFrame.make(0, 0, UfeInputFrame.TRANSFORM)
 					if tick == 130: input = UfeInputFrame.make(0, 0, UfeInputFrame.LIGHT)
 					if tick == 175: f.stats.energy = 3000
 					if tick == 176: input = UfeInputFrame.make(0, 0, UfeInputFrame.SPECIAL)
@@ -64,8 +64,7 @@ func input_for(direction: int, facing: int, buttons: int = 0) -> UfeInputFrame:
 
 func drive(sim: UfeMatchDirector, direction: int) -> void:
 	var facing := sim.fighters[0].facing
-	for input in [input_for(2,facing), input_for(5,facing), input_for(2,facing), input_for(direction,facing,UfeInputFrame.SPECIAL)]:
-		sim.step([input, UfeInputFrame.make()])
+	sim.step([input_for(direction,facing,UfeInputFrame.TRANSFORM), UfeInputFrame.make()])
 
 func advance(sim: UfeMatchDirector, ticks: int) -> void:
 	for tick in range(ticks): sim.step([UfeInputFrame.make(), UfeInputFrame.make()])
@@ -97,7 +96,7 @@ func test_routing_and_lifecycle() -> void:
 			f.stats.energy = 3000
 			drive(sim,2)
 			check(f.state != "transform" and f.transformed_this_round and not UfeBattleTransform.can_transform(f), "no_second_armor_%s_%s" % [facing,direction])
-			# 第二次22+P回退到三级必杀，其演出也暂停计时；先自然收招再验局末。
+			# 第二次E不再回退P，也不重复变身；继续推进到局末。
 			advance(sim,160)
 			sim.remaining = 1; advance(sim,1)
 			check(sim.finished and f.definition == target and f.form_id == "fixture-" + selector, "round_end_retains_selected_form_%s_%s" % [facing,direction])
@@ -165,7 +164,7 @@ func test_buffer_fallback_and_jump() -> void:
 	buffered.hitstop = 7
 	drive(buffered,8)
 	check(buffered.fighters[0].combat.buffer == "battle_transform__fixture-up", "buffer_keeps_target_id")
-	for tick in range(5): buffered.step([input_for(6,1),UfeInputFrame.make()])
+	for tick in range(8): buffered.step([input_for(6,1),UfeInputFrame.make()])
 	check(buffered.fighters[0].state == "transform" and buffered.fighters[0].battle_form.id == "fixture-up", "buffer_uses_input_time_selector")
 	for missing in ["energy","health","once"]:
 		var sim := fixture(); var f := sim.fighters[0]
@@ -174,22 +173,27 @@ func test_buffer_fallback_and_jump() -> void:
 		if missing == "once": f.transformed_this_round = true
 		drive(sim,8)
 		check(f.state != "transform" and f.definition.id == "ultraman", "condition_fallback_"+missing)
-		check(f.move_id == ("special2" if missing == "energy" else "special3") and f.height == 0, "ordinary_super_fallback_"+missing)
+		check(f.move_id.is_empty() and f.height == 0 and int(f.stats.energy) == (2000 if missing == "energy" else 3000), "E_denied_without_super_or_cost_"+missing)
 	for direction in [7,8,9]:
 		var jump := fixture()
 		jump.step([input_for(direction,1,UfeInputFrame.SPECIAL),UfeInputFrame.make()])
 		check(jump.fighters[0].state != "transform", "plain_up_special_does_not_transform_%s" % direction)
 		var simple := fixture()
 		simple.step([input_for(direction,1),UfeInputFrame.make()])
-		check(simple.fighters[0].state == "takeoff", "ordinary_jump_kept_%s" % direction)
+		check(simple.fighters[0].state != "takeoff" and simple.fighters[0].height == 0, "up_direction_only_does_not_jump_%s" % direction)
+		simple.step([input_for(direction,1,UfeInputFrame.JUMP),UfeInputFrame.make()])
+		check(simple.fighters[0].state == "takeoff", "explicit_jump_with_direction_kept_%s" % direction)
 	var expired := fixture()
 	for d in [2,5,2]: expired.step([input_for(d,1),UfeInputFrame.make()])
 	advance(expired,20)
-	expired.step([input_for(8,1),UfeInputFrame.make()])
+	expired.step([input_for(8,1,UfeInputFrame.JUMP),UfeInputFrame.make()])
 	check(expired.fighters[0].state == "takeoff", "expired_double_down_does_not_swallow_jump")
 	var crush := fixture()
 	for input in [input_for(2,1),input_for(5,1),input_for(2,1,UfeInputFrame.CRUSH)]: crush.step([input,UfeInputFrame.make()])
-	check(crush.fighters[0].move_id == "motion_22", "existing_double_down_crush_kept")
+	check(crush.fighters[0].move_id != "motion_22", "old_double_down_crush_no_skill")
+	var simple_skill := fixture()
+	simple_skill.step([input_for(8,1,UfeInputFrame.RANGED),UfeInputFrame.make()])
+	check(simple_skill.fighters[0].move_id == "motion_22" and simple_skill.fighters[0].height == 0, "I_up_skill_no_jump")
 
 func test_configuration_and_fingerprint() -> void:
 	for defect in ["directions","default","duplicate","disabled"]:
@@ -225,8 +229,8 @@ func test_replay(run_out: String) -> void:
 			var twin := fixture(facing)
 			var recorder := UfeReplayRecorder.new()
 			for tick in range(160):
-				var input := input_for(2,facing) if tick in [0,2] else input_for(5,facing)
-				if tick == 3: input = input_for(direction,facing,UfeInputFrame.SPECIAL)
+				var input := input_for(5,facing)
+				if tick == 3: input = input_for(direction,facing,UfeInputFrame.TRANSFORM)
 				if tick == 125: input = input_for(5,facing,UfeInputFrame.LIGHT)
 				var pair := [input,UfeInputFrame.make()]
 				sim.step(pair); twin.step(pair); recorder.append(pair,sim)

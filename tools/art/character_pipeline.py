@@ -219,6 +219,8 @@ def cmd_stage(args: argparse.Namespace) -> int:
         argv.extend(["--scale", str(args.scale)])
     if args.palette_json:
         argv.extend(["--palette-json", str(args.palette_json)])
+    if args.source_root is not None:
+        argv.extend(["--source-root", *(str(v) for v in args.source_root)])
     for item in args.frame:
         argv.extend(["--frame", item])
     for item in args.air:
@@ -255,6 +257,8 @@ def cmd_derive(args: argparse.Namespace) -> int:
         cmd.append("--states-only")
     for c in args.state_clip:
         cmd.extend(["--state-clip", c])
+    for move_id in args.refresh_move:
+        cmd.extend(["--refresh-move", move_id])
     if args.write:
         cmd.append("--write")
     return subprocess.run(cmd, cwd=ROOT, check=False).returncode
@@ -264,8 +268,9 @@ def cmd_install(args: argparse.Namespace) -> int:
     cmd = [
         sys.executable, str(ROOT / "tools/art/install_cells.py"),
         "--fighter", args.fighter,
-        "--ticks", str(args.ticks),
     ]
+    if args.ticks is not None:
+        cmd.extend(["--ticks", str(args.ticks)])
     if args.only:
         cmd.extend(["--only", args.only])
     if args.merge:
@@ -285,6 +290,8 @@ def cmd_check(args: argparse.Namespace) -> int:
         sq_cmd.extend(["--clip", c])
     if args.anchor is not None:
         sq_cmd.extend(["--anchor", str(args.anchor)])
+    if args.standing_metadata is not None:
+        sq_cmd.extend(["--standing-metadata", str(args.standing_metadata)])
     if args.ticks:
         sq_cmd.extend(["--ticks", args.ticks])
     if args.allow_soft_alpha:
@@ -351,6 +358,8 @@ def build_parser() -> argparse.ArgumentParser:
     p_stage.add_argument("--baseline", type=int, default=stage_cells.BASELINE)
     p_stage.add_argument("--cell", type=int, default=stage_cells.CELL)
     p_stage.add_argument("--foot-band", type=float, default=0.08)
+    p_stage.add_argument("--source-root", type=float, nargs=2, metavar=("X", "Y"),
+                         help="条带所有源帧共享的根点；不按每帧脚心重对齐")
     p_stage.add_argument("--scale", type=float, default=0.0)
     p_stage.add_argument("--palette-json", default="")
     p_stage.add_argument("--compose-clip", default="", help="落格后立即拼装为已安装 manifest 中的指定 clip")
@@ -363,13 +372,15 @@ def build_parser() -> argparse.ArgumentParser:
     p_derive.add_argument("--standing", type=int, default=154)
     p_derive.add_argument("--donor-standing", type=int, default=188)
     p_derive.add_argument("--states-only", action="store_true")
+    p_derive.add_argument("--refresh-move", action="append", default=[])
     p_derive.add_argument("--state-clip", action="append", default=[])
     p_derive.add_argument("--write", action="store_true")
     p_derive.set_defaults(func=cmd_derive)
 
     p_install = sub.add_parser("install", help="调用 install_cells 安装角色图集与清单")
     p_install.add_argument("--fighter", required=True)
-    p_install.add_argument("--ticks", type=int, default=10)
+    p_install.add_argument("--ticks", type=int, default=None,
+                           help="省略时保留已有逐帧节奏；显式指定才覆盖")
     p_install.add_argument("--only", default="")
     p_install.add_argument("--merge", action="store_true")
     p_install.add_argument("--dry-run", action="store_true")
@@ -380,6 +391,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_check.add_argument("--dir", type=Path, default=None, help="可选：检查候选目录而非已装 manifest")
     p_check.add_argument("--clip", action="append", default=[])
     p_check.add_argument("--anchor", type=Path, default=None)
+    p_check.add_argument("--standing-metadata", type=Path, default=None)
     p_check.add_argument("--ticks", default="")
     p_check.add_argument("--allow-soft-alpha", action="store_true")
     p_check.add_argument("--json-out", type=Path, default=None)

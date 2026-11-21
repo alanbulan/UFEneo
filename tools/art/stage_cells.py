@@ -9,8 +9,9 @@ docs/HANDBOOK.md：同一动作整帧统一尺度和根点；不得按姿势外�
 2. 用一张**直立参考帧**（通常是待机第 0 帧）的站高定出"源像素→原生像素"
    的唯一比例，全部帧乘同一比例。屈膝、腾空收腿因此保留真实压低/腾空高度，
    不会被拉直；
-3. 缩放后二值 Alpha、量化到 32 色、水平按脚底段重心对到 anchor x，
-   脚底贴 baseline-1，腾空帧由 `@脚底行` 指定；
+3. 缩放后二值 Alpha、量化到 32 色。默认水平按脚底段重心对到 anchor x，
+   脚底贴 baseline-1，腾空帧由 `@脚底行` 指定；连续源帧可传共享
+   `--source-root X Y`，保留源画布及重心位移，不逐帧 trim 或脚心重定位；
 4. 逐帧核：头高与参考帧偏差 ≤±8%（身份比例）、直立帧站高 ≤±3%、
    连通块 1、Alpha 二值、色数 ≤32。任一项不过就报红并要求重生成，
    不用硬拉或换色掩盖。
@@ -69,7 +70,7 @@ def frozen_palette(path_text: str) -> tuple[list, dict]:
     if not path.is_file():
         raise SystemExit(f"冻结色板 JSON 不存在：{path}")
     record = json.loads(path.read_text(encoding="utf-8"))
-    raw = record.get("colors", record) if isinstance(record, dict) else record
+    raw = record.get("colors", record.get("all_colors", record)) if isinstance(record, dict) else record
     if not isinstance(raw, list) or not raw or len(raw) > PALETTE_SIZE:
         raise SystemExit(f"冻结色板必须是 1–{PALETTE_SIZE} 色的列表：{path}")
     colors = []
@@ -184,15 +185,29 @@ def parse_frame(text: str) -> tuple[str, Path, int | None]:
 
 def build(source: Path, out: Path, palette: list, scale: float, foot_row: int,
           anchor_x: int = ANCHOR_X, cell: int = CELL,
-          foot_band: float = 0.08) -> dict:
-    solid = solid_source(source)
+          foot_band: float = 0.08,
+          source_root: tuple[float, float] | None = None) -> dict:
+    # 连续条带必须保留同一个源坐标系；逐帧 trim/脚心重定位会吃掉腾空和重心位移。
+    solid = (harden_alpha(Image.open(source).convert("RGBA"))
+             if source_root is not None else solid_source(source))
     size = (max(1, round(solid.width * scale)), max(1, round(solid.height * scale)))
     scaled = harden_alpha(solid.resize(size, Image.BOX))
     scaled = apply_palette(scaled, palette)
     mask = np.array(scaled)[:, :, 3] > 0
-    center = foot_center(mask, foot_band)
+    if not mask.any():
+        raise ValueError(f"落格帧全透明：{source}")
+    if source_root is None:
+        center = foot_center(mask, foot_band)
+        position = (round(anchor_x - center), foot_row + 1 - scaled.height)
+    else:
+        position = (anchor_x - round(source_root[0] * scale),
+                    foot_row + 1 - round(source_root[1] * scale))
+        ys, xs = np.where(mask)
+        if (xs.min() + position[0] < 0 or xs.max() + position[0] >= cell
+                or ys.min() + position[1] < 0 or ys.max() + position[1] >= cell):
+            raise ValueError(f"固定根点落格会裁切轮廓，须增大制作格而不是缩人物：{source}")
     canvas = Image.new("RGBA", (cell, cell), (0, 0, 0, 0))
-    canvas.alpha_composite(scaled, (round(anchor_x - center), foot_row + 1 - scaled.height))
+    canvas.alpha_composite(scaled, position)
     out.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(out)
 
@@ -208,6 +223,7 @@ def build(source: Path, out: Path, palette: list, scale: float, foot_row: int,
         "output": out.relative_to(ROOT).as_posix(),
         "output_sha256": hashlib.sha256(out.read_bytes()).hexdigest(),
         "scale": round(scale, 6),
+        "source_root": list(source_root) if source_root is not None else None,
         "bbox": [int(xs.min()), int(ys.min()), int(xs.max()), int(ys.max())],
         "height": height,
         "width": int(xs.max() - xs.min() + 1),
@@ -237,6 +253,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="制作格边长；默认 192，原生体量容不下时按角色统一增大")
     parser.add_argument("--foot-band", type=float, default=0.08,
                         help="横向对位用的底部带宽（占站高比例）；迈步/前跨角色连同锚一起用 0.20")
+    parser.add_argument("--source-root", type=float, nargs=2, metavar=("X", "Y"),
+                        help="连续源帧共用的根点坐标（Y 为脚底之后一行）；保留腾空和横向位移")
     parser.add_argument("--scale", type=float, default=0.0,
                         help="显式源→原生比例；默认按参考帧站高与目标站高换算")
     parser.add_argument("--palette-json", default="",
@@ -279,7 +297,8 @@ def main(argv: list[str] | None = None) -> int:
         row = build(path, out_dir / f"{name}-cell.png", palette, scale,
                     foot if foot is not None else args.baseline - 1,
                     anchor_x=args.anchor_x, cell=args.cell,
-                    foot_band=args.foot_band)
+                    foot_band=args.foot_band,
+                    source_root=tuple(args.source_root) if args.source_root is not None else None)
         row["standing"] = name not in air
         reports.append(row)
 
